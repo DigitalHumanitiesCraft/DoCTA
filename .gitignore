@@ -24,3 +24,8 @@ sources/
 
 # Internal working documents
 temp/
+
+# Node/npm (only used for Playwright testing, not part of the project)
+node_modules/
+package.json
+package-lock.json
