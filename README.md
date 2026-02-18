@@ -4,8 +4,6 @@ A functional web prototype demonstrating Digital Humanities methods for analyzin
 
 **Live:** [dhcraft.org/DoCTA](https://dhcraft.org/DoCTA/)
 
-![Dashboard](docs/screenshots/dashboard.png)
-
 ## What This Is
 
 DoCTA is a methodological proof-of-concept for an FWF research grant resubmission (APART-GSK). It shows that a computational pipeline -from digitized manuscript to structured knowledge network -works on real Early New High German source material.
@@ -24,16 +22,6 @@ The prototype processes 6,288 historical persons, 42,893 relations, 312 archival
 | **Netzwerk-Explorer** | Interactive graph of the Sigmund court network |
 | **Knowledge Vault** | Promptotyping documentation (6 research documents) |
 | **Hilfe** | User guide and project context |
-
-### Screenshots
-
-| Pipeline Demo | Facettierte Suche | Netzwerk-Explorer |
-|:---:|:---:|:---:|
-| ![Pipeline](docs/screenshots/pipeline.png) | ![Search](docs/screenshots/search.png) | ![Network](docs/screenshots/network.png) |
-
-| Quellenübersicht | Quellen-Explorer |
-|:---:|:---:|
-| ![Sources](docs/screenshots/sources.png) | ![Viewer](docs/screenshots/viewer.png) |
 
 ## Data Sources
 

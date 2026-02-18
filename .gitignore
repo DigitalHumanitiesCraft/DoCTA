@@ -24,6 +24,7 @@ sources/
 
 # Internal working documents
 temp/
+docs/screenshots/
 
 # Node/npm (only used for Playwright testing, not part of the project)
 node_modules/
