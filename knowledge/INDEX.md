@@ -1,4 +1,4 @@
-# DoCTA Knowledge — Map of Content
+# DoCTA Knowledge -- Map of Content
 
 ## Promptotyping Phase
 
@@ -9,7 +9,7 @@
 | 1. Preparation | ✓ Quelldokumente in `sources/` |
 | 2. Exploration | ✓ SiCProD API, CSV, Transkribus Collection kartiert |
 | 3. Destillation | ✓ 6 Knowledge-Dateien, alle Daten exportiert |
-| 4. Implementation | Bereit — keine blockierenden Punkte |
+| 4. Implementation | Bereit -- keine blockierenden Punkte |
 
 ## Dateien nach Zweck
 
@@ -23,12 +23,12 @@
 
 ## Leseordnung für LLM-Context
 
-1. **INDEX.md** (dieses Dokument) — Orientierung
-2. **REQUIREMENTS.md** — Was der Prototyp leisten muss
-3. **DATA.md** — Welche Daten verfügbar sind und wo sie brechen
-4. **CONTEXT.md** — Domänenwissen für korrekte Interpretation
-5. **TECH.md** — Wie der Prototyp gebaut wird
-6. **JOURNAL.md** — Entscheidungshistorie (optional, bei Bedarf)
+1. **INDEX.md** (dieses Dokument) -- Orientierung
+2. **REQUIREMENTS.md** -- Was der Prototyp leisten muss
+3. **DATA.md** -- Welche Daten verfügbar sind und wo sie brechen
+4. **CONTEXT.md** -- Domänenwissen für korrekte Interpretation
+5. **TECH.md** -- Wie der Prototyp gebaut wird
+6. **JOURNAL.md** -- Entscheidungshistorie (optional, bei Bedarf)
 
 ## Quelldokumente (`sources/`)
 
@@ -40,7 +40,7 @@ Die Knowledge-Dateien destillieren diese Quelldokumente:
 | `sources/requirements-barbara.md` | Barbaras Anforderungen (94 Zeilen) | Ja, in knowledge/REQUIREMENTS.md integriert |
 | `sources/raitbuch-2-analyse.md` | Quellenanalyse (186 Zeilen) | Ja, in DATA.md |
 | `sources/coocr-htr-epistemologie.md` | Epistemologie-Argumentation (133 Zeilen) | Ja, Kernkonzepte in CONTEXT.md |
-| `sources/fwf-proposal-2025.md` | Abgelehnter FWF-Antrag (~900 Zeilen) | Teilweise — Bibliografie und WP-Details nicht erfasst |
+| `sources/fwf-proposal-2025.md` | Abgelehnter FWF-Antrag (~900 Zeilen) | Teilweise -- Bibliografie und WP-Details nicht erfasst |
 | `sources/gutachten-denicolo.pdf` | Gutachten (26/40 Punkte) | Ja, in REQUIREMENTS.md |
 | `sources/quellen-katalog.csv` | Quellenübersicht (316 Einträge) | Ja, Analyse in DATA.md |
 | `sources/sicpas-modell.svg` | SiCPAS-Diagramm (742 KB SVG) | Textuell in CONTEXT.md |

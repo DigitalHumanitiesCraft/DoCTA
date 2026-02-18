@@ -1,4 +1,4 @@
-# CONTEXT — Domänenwissen, Methoden, Epistemologie
+# CONTEXT -- Domänenwissen, Methoden, Epistemologie
 
 ## Hypothese
 
@@ -51,7 +51,7 @@ Zwei Konzeptebenen:
 | Ebene | Definition | Beispiel | Wer annotiert |
 |-------|-----------|---------|---------------|
 | **Practice** | Einzelne Handlung, Trigger-Verb, Agent↔Patient | "kaufen", "schenken", "kochen" | LLM + Validierung |
-| **Event** | Cluster von Personen, Dingen, Praktiken — benennbar | Hochzeit, Fest, Transaktion | **Nur Fachwissenschaftlerin** (interpretatorisch) |
+| **Event** | Cluster von Personen, Dingen, Praktiken -- benennbar | Hochzeit, Fest, Transaktion | **Nur Fachwissenschaftlerin** (interpretatorisch) |
 
 Practice-Annotation folgt BeNASch-Schema. Event-Aggregation ist interpretatorische Leistung.
 
@@ -79,7 +79,7 @@ Modelliert Ereignisse formal: Trigger-Verb → Agent → Patient. Annotationspla
 
 | Fallstudie | Quellen | Status |
 |-----------|---------|--------|
-| **Hofküche** (empfohlen für Prototyp) | Raitbücher (Zahlungen), Inventare (Küchenausstattung) | Küchenmeister-Fund in Raitbuch 2 fol. 2r — Verifizierung durch Barbara ausstehend |
+| **Hofküche** (empfohlen für Prototyp) | Raitbücher (Zahlungen), Inventare (Küchenausstattung) | Küchenmeister-Fund in Raitbuch 2 fol. 2r -- Verifizierung durch Barbara ausstehend |
 | Herzogliche Privatgemächer | Inventare, Hofordnungen | Nicht begonnen |
 | Medizinalpersonen | Raitbücher, Raumanalyse | Nicht begonnen |
 | Luxuskonsum | Raitbücher, Inventare | Nicht begonnen |
@@ -92,9 +92,9 @@ Modelliert Ereignisse formal: Trigger-Verb → Agent → Patient. Annotationspla
 |----------------|----------------|-----------|
 | Person (6.288) | person | Direkt |
 | Place (736) | place | place/space-Unterscheidung fehlt in SiCProD |
-| Institution (215) | group / court | 207 ohne Typ — Zuordnung unklar |
+| Institution (215) | group / court | 207 ohne Typ -- Zuordnung unklar |
 | Function (1.613) | practice (Trigger) | Funktionen ≠ Praktiken, aber Brücke vorhanden |
-| Salary (2.906) | — | Verknüpfung Person↔Funktion, keine Geldbeträge |
+| Salary (2.906) | -- | Verknüpfung Person↔Funktion, keine Geldbeträge |
 | Event (28) | event | Nur Großereignisse, keine Alltagspraktiken |
 | Relation (42.893) | Relationen | Relationstypen müssen auf SiCPAS gemappt werden |
 

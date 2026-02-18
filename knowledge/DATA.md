@@ -1,4 +1,4 @@
-# DATA — Datenquellen, Struktur, Qualität
+# DATA -- Datenquellen, Struktur, Qualität
 
 ## 1. SiCProD API
 
@@ -10,7 +10,7 @@
 | Typ | Endpunkt | Anzahl | Qualität |
 |-----|----------|--------|----------|
 | Person | `apis_ontology.person/` | 6.288 | Gut. Name, Daten, Geschlecht, Namensvarianten, Referenzen. `first_name` immer null, `status` immer leer. |
-| Ort | `apis_ontology.place/` | 736 | Mittel. Typ vorhanden (Stadt, Burg, Dorf). **Viele ohne lat/lng** — Karte wird Lücken haben. |
+| Ort | `apis_ontology.place/` | 736 | Mittel. Typ vorhanden (Stadt, Burg, Dorf). **Viele ohne lat/lng** -- Karte wird Lücken haben. |
 | Institution | `apis_ontology.institution/` | 215 | **Schlecht. 207 von 215 ohne Typ.** Nur 5 Universität, 1 Kanzlei, 1 Küche, 1 Pfarrei typifiziert. |
 | Funktion | `apis_ontology.function/` | 1.613 | Gut. 79+ distinkte Hofämter. Mischung aus Hofpositionen und regionalen Ämtern. |
 | Gehalt | `apis_ontology.salary/` | 2.906 | **Keine Geldbeträge.** Nur Verknüpfungen Person↔Funktion. |
@@ -89,7 +89,7 @@ Relationstypen (Auswahl): `nimmtteilan`, `wirdausgeuebtvon`, `istan`, `wirdausbe
 
 ### Kernwert und Grenzen
 
-**Hauptwert:** Personennetzwerk — 6.288 Personen mit 42.893 Relationen.
+**Hauptwert:** Personennetzwerk -- 6.288 Personen mit 42.893 Relationen.
 **Grenzen:** Events fast leer (28), Salaries ohne Beträge, Institutionen untypisiert. Finanzielle und praxeologische Daten müssen aus den Raitbüchern kommen, nicht aus SiCProD.
 
 ### Pre-Fetch-Strategie
@@ -142,7 +142,7 @@ Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, R
 
 ### Bekannte Qualitätsprobleme
 
-1. 16 Geisterspalten (Spalte3–18) — Excel-Export-Artefakte
+1. 16 Geisterspalten (Spalte3–18) -- Excel-Export-Artefakte
 2. Datumsformate: `YYYY`, `YYYY-YYYY`, `YYYY.MM.DD`, `ca.`, `15. Jh.`, offene Ranges (`-1564`, `1229-`)
 3. Repertorium-Sektion nutzt Unicode en-dash (–), Rest nutzt ASCII-Hyphen (-) → Parser-Falle
 4. Echtes Duplikat: Hs. 0041 (zwei identische Zeilen)
@@ -165,16 +165,16 @@ Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, R
 ### Hofordnungen (DoCTA-Projekt, 11 Einträge)
 
 Darunter ein zusammenhängendes Cluster zur Hochzeit Sigmunds 1484:
-- Hs. 2466: "Notl der hochzeit" — Einladungsregister (60 S.)
-- Hs. 2467: "Rescribent der hochzeit" — Verordnungen an Hofämter (100 S.)
-- Hs. 2468: "Fueterzetl" — Festteilnehmer und Pferde (35 S.)
+- Hs. 2466: "Notl der hochzeit" -- Einladungsregister (60 S.)
+- Hs. 2467: "Rescribent der hochzeit" -- Verordnungen an Hofämter (100 S.)
+- Hs. 2468: "Fueterzetl" -- Festteilnehmer und Pferde (35 S.)
 - Hs. 2469: Register Hochzeit Sigmunds mit Katharina von Sachsen (140 S.)
 
 ### Für Prototyp nutzbar
 
 Sofort: **55 Burgeninventare** (Tier 1, finale Transkriptionen in Transkribus Collection 2197991).
 Mit Transkription: **Raitbuch 2** (123 Doppelseiten, Prototyp-Quelle, nicht transkribiert).
-Script-Output: `data/sources.json` — CSV bereinigt und als JSON für `sources.html`.
+Script-Output: `data/sources.json` -- CSV bereinigt und als JSON für `sources.html`.
 
 ---
 
@@ -196,7 +196,7 @@ Script-Output: `data/sources.json` — CSV bereinigt und als JSON für `sources.
 ### Transkriptionsstatus-Realität
 
 **Erwartung (aus CSV):** 55 Burgeninventare mit "Inventaria" = finale Transkriptionen.
-**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen). Nur 3 davon Status "DONE", 54 zeigen "IN_PROGRESS" — aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator.
+**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen). Nur 3 davon Status "DONE", 54 zeigen "IN_PROGRESS" -- aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator.
 
 **Raitbücher:** 26 Bände digitalisiert, 6 (Nr. 1–6) haben Layout-Analyse (Baselines, Regionen), 20 (Nr. 7–26) Status "NEW". **Keines hat Transkriptionstext.**
 
@@ -280,7 +280,7 @@ Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Se
 | Umfang | 123 Doppelseiten (fol. 0v-1r bis fol. 122v-123r) |
 | Dateinamen | `OÖKAM Raitbuch 2, fol. {Xv-Yr}.jpg` |
 | Digitalisate | JPG via IIIF, ohne Auth ladbar |
-| Layout-Analyse | Ja (Baselines, Regionen) — kein Text |
+| Layout-Analyse | Ja (Baselines, Regionen) -- kein Text |
 | Transkriptionsstatus | **Nicht transkribiert** (0 Zeilen, 0 Wörter) |
 | Datierung | 1462–1463 (Abgrenzung zu klären) |
 | IIIF-Beispiel (fol. 0v-1r) | `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/max/0/default.jpg` |
@@ -305,7 +305,7 @@ Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Se
 
 ### Erste Kategorie
 
-**"prussian vnd Solde aussserhalb Lanndes"** (Provision und Sold außerhalb Landes) — Personalzahlungen jenseits Tirols. Möglicher Küchenmeister-Fund in Zeile 9, fol. 2r ("[?]kuncmeister" → "kuechenmeister"?). **Verifizierung durch Barbara ausstehend.**
+**"prussian vnd Solde aussserhalb Lanndes"** (Provision und Sold außerhalb Landes) -- Personalzahlungen jenseits Tirols. Möglicher Küchenmeister-Fund in Zeile 9, fol. 2r ("[?]kuncmeister" → "kuechenmeister"?). **Verifizierung durch Barbara ausstehend.**
 
 ### Sprachliche Herausforderungen
 

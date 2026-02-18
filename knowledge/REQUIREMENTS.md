@@ -1,4 +1,4 @@
-# REQUIREMENTS — Ziele, Constraints, Erfolgskriterien
+# REQUIREMENTS -- Ziele, Constraints, Erfolgskriterien
 
 ## Projektrahmen
 
@@ -80,6 +80,6 @@ Der Prototyp ist erfolgreich, wenn:
 
 ## Prototyp-Prioritäten (User-Entscheidung)
 
-1. **Pipeline-Demo** — Schrittweise an echtem Quellenbeispiel
-2. **Facettierte Suche** — SiCProD-Daten explorierbar
-3. **Quellenexploration** — Bild + Transkription + Entitäten
+1. **Pipeline-Demo** -- Schrittweise an echtem Quellenbeispiel
+2. **Facettierte Suche** -- SiCProD-Daten explorierbar
+3. **Quellenexploration** -- Bild + Transkription + Entitäten

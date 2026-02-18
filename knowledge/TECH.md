@@ -1,4 +1,4 @@
-# TECH — Architektur, Libraries, Projektstruktur
+# TECH -- Architektur, Libraries, Projektstruktur
 
 ## Constraint
 
@@ -114,7 +114,7 @@ Konsistent mit coOCR/HTR (externes Referenzprojekt, entwickelt von DHCraft):
 | Aspekt | Umsetzung |
 |--------|-----------|
 | Farbschema | Warm, hell |
-| Konfidenz | Grün (sicher), Gelb (prüfenswert), Rot (problematisch) — kategorisch, nicht numerisch |
+| Konfidenz | Grün (sicher), Gelb (prüfenswert), Rot (problematisch) -- kategorisch, nicht numerisch |
 | HTML | Semantisch, ARIA-Labels |
 | Layout | Desktop-First, responsiv (kein Mobile-Fokus) |
 | Typografie | Monospace für Quellentext, Sans-Serif für UI |

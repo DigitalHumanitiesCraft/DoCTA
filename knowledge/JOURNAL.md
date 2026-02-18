@@ -1,4 +1,4 @@
-# JOURNAL — Entscheidungen, Exploration, offene Fragen
+# JOURNAL -- Entscheidungen, Exploration, offene Fragen
 
 ## Phasenstatus (17.02.2026)
 
@@ -93,20 +93,20 @@ Nur 55 von 315 Quellen sind transkribiert (17.5%), ausschließlich Burgeninventa
 | SiCProD Salaries für Finanzen | Keine Beträge, nur Links | Finanzielle Daten aus Raitbüchern |
 | SVG-Modelldiagramm lesen | 742 KB einzeilig | Inhalt textuell in CONTEXT.md |
 | PDF auf Windows lesen | pdftoppm nicht verfügbar | Agent-basierte Extraktion |
-| Transkribus Auth — falsches PW | Erstes PW falsch → 401. Korrektes PW vom User erhalten | Immer PW direkt vom User übernehmen, nicht aus Gedächtnis |
+| Transkribus Auth -- falsches PW | Erstes PW falsch → 401. Korrektes PW vom User erhalten | Immer PW direkt vom User übernehmen, nicht aus Gedächtnis |
 
 ---
 
 ## Explorationsergebnisse: Transkribus (17.02.2026)
 
-### Collection 2197991 — Erwartung vs. Realität
+### Collection 2197991 -- Erwartung vs. Realität
 
 | Was wir dachten | Was wir fanden | Konsequenz |
 |----------------|---------------|------------|
-| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.730 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig — nach Zeilenanzahl filtern |
+| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.730 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig -- nach Zeilenanzahl filtern |
 | Raitbücher „nicht transkribiert" | **Bestätigt.** 26 Raitbücher, 8.561 Seiten, 0 Zeilen Text. Nr. 1–6 haben Layout-Analyse. | HTR muss vor Prototyp laufen (mindestens für RB2) |
 | Collection-Umfang unklar | **115 Dokumente, 12.236 Seiten.** 64 Inventare + 26 Raitbücher + 12 Kopialbücher + 13 Andere | Deutlich mehr Material als erwartet |
-| IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen — kein Pre-Fetch für Bilder nötig |
+| IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen -- kein Pre-Fetch für Bilder nötig |
 | PAGE-XML Format unbekannt | Strukturiert: Page → TextRegion (Coords) → TextLine (Coords, Baseline, Unicode) | Parser-Logik klar, Pre-Fetch-Script kann geschrieben werden |
 
 ### Zusätzliche Dokumente (nicht in CSV)
@@ -134,7 +134,7 @@ Die Collection enthält Dokumente, die in der CSV-Quellenübersicht nicht expliz
 ### Wichtig für Antrag
 
 - [ ] Methodologischer Textbaustein (~1–2 Seiten) für ÖAW
-- [ ] Fallstudie finalisieren (A/B/C) — inkl. Küchenmeister-Fund verifizieren (Barbara)
+- [ ] Fallstudie finalisieren (A/B/C) -- inkl. Küchenmeister-Fund verifizieren (Barbara)
 - [ ] Practice↔BeNASch-Mapping (mit Bern)
 - [ ] Historische Linguistik-Literatur (Gutachten-Punkt 5)
 
