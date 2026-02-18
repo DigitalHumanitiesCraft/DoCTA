@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilfe | DoCTA</title>
+  <meta name="description" content="Kurzanleitung für den DoCTA-Prototyp: Seitenübersicht, Datenquellen, Konfidenz-Kategorien und Hinweise für Gutachter.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4" style="max-width: 860px;">
+    <header class="mb-4">
+      <h1>Hilfe & Anleitung</h1>
+      <p class="text-body-secondary">Kurzanleitung für den DoCTA-Prototyp - Digital Court Studies, Methodenprototyp für die ÖAW-Einreichung.</p>
+    </header>
+
+    <!-- Quick Start -->
+    <section class="help-section">
+      <h2>Schnellstart</h2>
+      <div class="help-step">
+        <span class="help-step-nr">1</span>
+        <div><strong>Dashboard</strong> - Die <a href="index.html">Startseite</a> zeigt die Datenbasis (Personen, Relationen, Orte, Quellen) und verlinkt zu allen Bereichen.</div>
+      </div>
+      <div class="help-step">
+        <span class="help-step-nr">2</span>
+        <div><strong>Pipeline erkunden</strong> - Die <a href="pipeline.html">Pipeline-Demo</a> zeigt den Weg von der handschriftlichen Quelle bis zum analysierbaren Netzwerk, Schritt für Schritt.</div>
+      </div>
+      <div class="help-step">
+        <span class="help-step-nr">3</span>
+        <div><strong>Daten durchsuchen</strong> - Die <a href="search.html">Facettierte Suche</a> macht 6.288 Personen, 736 Orte, 1.613 Funktionen und 215 Institutionen mit Filtern zugänglich.</div>
+      </div>
+      <div class="help-step">
+        <span class="help-step-nr">4</span>
+        <div><strong>Quellen ansehen</strong> - Der <a href="viewer.html">Quellen-Explorer</a> zeigt Digitalisat und Transkription nebeneinander.</div>
+      </div>
+    </section>
+
+    <!-- Pages Overview -->
+    <section class="help-section">
+      <h2>Seitenübersicht</h2>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Dashboard <span class="text-body-secondary">(index.html)</span></h3>
+          <p class="small mb-0">Einstiegsseite mit Kennzahlen (Personen, Relationen, Orte, Quellen, Transkriptionen, Hofämter), Pipeline-Übersicht und Navigation zu allen Bereichen. Die Zahlen werden live aus den JSON-Daten geladen.</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Pipeline-Demo <span class="text-body-secondary">(pipeline.html)</span></h3>
+          <p class="small mb-2">Fünf Schritte der Forschungspipeline am Beispiel des Inventars Thaur A 49.1:</p>
+          <ol class="small mb-0">
+            <li><strong>Quelle</strong> - Digitalisat mit archivalischen Metadaten</li>
+            <li><strong>HTR</strong> - Handwritten Text Recognition mit Transkribus (Frühneuhochdeutsch, Kurrentschrift)</li>
+            <li><strong>NER</strong> - Named Entity Recognition mit LLM-Unterstützung (Personen, Orte, Objekte, Zeitangaben)</li>
+            <li><strong>Relationen</strong> - Extraktion von Beziehungen zwischen Entitäten</li>
+            <li><strong>Netzwerk</strong> - Resultierende Relationen als interaktiver Graph</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Quellenübersicht <span class="text-body-secondary">(sources.html)</span></h3>
+          <p class="small mb-0">312 Quellen aus dem Tiroler Landesarchiv: Raitbücher, Inventare, Kopialbücher, Hofordnungen. Filterbar nach Kategorie, sortierbar nach Signatur, Datierung oder Seitenanzahl. Verfügbarkeitstiers zeigen den Bearbeitungsstand.</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Facettierte Suche <span class="text-body-secondary">(search.html)</span></h3>
+          <p class="small mb-0">Durchsucht alle Entitäten aus der SiCProD-Datenbank. Facetten: Entitätstyp (Person, Ort, Funktion, Institution), Geschlecht, Zeitraum. Klick auf ein Ergebnis zeigt Details und Verbindungen.</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Quellen-Explorer <span class="text-body-secondary">(viewer.html)</span></h3>
+          <p class="small mb-0">Zwei-Panel-Ansicht: links das Digitalisat (via IIIF/Transkribus), rechts die Transkription mit Zeilennummern. 57 Inventare mit Volltext verfügbar. Blättern zwischen Seiten möglich.</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Netzwerk-Explorer <span class="text-body-secondary">(network.html)</span></h3>
+          <p class="small mb-0">Interaktiver Beziehungsgraph basierend auf SiCProD-Daten. Knoten = Personen/Institutionen, Kanten = Relationen. Filter nach Typ und Funktion. Klick auf Knoten zeigt Details und Nachbarschaft.</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="h6 mb-1">Knowledge Vault <span class="text-body-secondary">(knowledge.html)</span></h3>
+          <p class="small mb-0">Promptotyping-Wissensbasis: 6 Markdown-Dokumente mit allen Entscheidungen, Datenquellen, Architekturdetails und dem Explorations-Journal. Transparenz über den Entwicklungsprozess.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="help-section">
+      <h2>Datenquellen</h2>
+      <div class="table-responsive">
+        <table class="table table-sm">
+          <thead>
+            <tr><th>Quelle</th><th>Inhalt</th><th>Umfang</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW)</td>
+              <td>Personen, Orte, Institutionen, Funktionen, Relationen</td>
+              <td>6.288 Personen, 42.893 Relationen</td>
+            </tr>
+            <tr>
+              <td>Transkribus (READ-COOP)</td>
+              <td>Digitalisate und Transkriptionen</td>
+              <td>115 Dokumente, 12.236 Seiten, 57 mit Volltext</td>
+            </tr>
+            <tr>
+              <td>Tiroler Landesarchiv</td>
+              <td>Quellenübersicht (CSV)</td>
+              <td>312 Quelleneinträge</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Confidence Categories -->
+    <section class="help-section">
+      <h2>Konfidenz-Kategorien</h2>
+      <p class="small mb-3">Der Prototyp verwendet <strong>kategorielle Konfidenz</strong> statt numerischer Prozente - ein bewusster epistemologischer Ansatz, der auf LLM-Bias-Forschung basiert:</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card border-0" style="background: var(--conf-high-bg);">
+            <div class="card-body py-2 px-3">
+              <strong style="color: var(--conf-high);">Sicher</strong>
+              <p class="small mb-0 mt-1">Hohe Übereinstimmung, eindeutig identifizierbar. Keine manuelle Prüfung nötig.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0" style="background: var(--conf-medium-bg);">
+            <div class="card-body py-2 px-3">
+              <strong style="color: var(--conf-medium);">Prüfenswert</strong>
+              <p class="small mb-0 mt-1">Plausibel, aber Ambiguität möglich. Expert:in sollte gegenlesen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0" style="background: var(--conf-low-bg);">
+            <div class="card-body py-2 px-3">
+              <strong style="color: var(--conf-low);">Problematisch</strong>
+              <p class="small mb-0 mt-1">Niedrige Konfidenz, schwer lesbar oder mehrdeutig. Manuelle Korrektur empfohlen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tier System -->
+    <section class="help-section">
+      <h2>Verfügbarkeitstiers</h2>
+      <p class="small mb-3">Die Quellenübersicht zeigt den Bearbeitungsstand jeder Quelle:</p>
+      <table class="table table-sm">
+        <thead>
+          <tr><th>Tier</th><th>Bedeutung</th><th>Anzahl</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tier tier--1">Tier 1</span></td><td>Digitalisiert + Transkribiert (Volltext)</td><td>57 Inventare</td></tr>
+          <tr><td><span class="tier tier--2">Tier 2</span></td><td>Digitalisiert, nicht transkribiert</td><td>~60 Quellen</td></tr>
+          <tr><td><span class="tier tier--3">Tier 3</span></td><td>Identifiziert, nicht digitalisiert</td><td>~100 Quellen</td></tr>
+          <tr><td><span class="tier tier--4">Tier 4</span></td><td>Potenziell relevant, ungesichtet</td><td>~100 Quellen</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- For Reviewers -->
+    <section class="help-section">
+      <h2>Für Gutachter</h2>
+      <p class="small">Dieser Prototyp demonstriert die methodische Machbarkeit des DoCTA-Projekts. Er adressiert die Kritikpunkte des FWF-Gutachtens direkt:</p>
+      <ul class="small">
+        <li><strong>Methoden funktionieren:</strong> HTR und NER auf echten frühneuhochdeutschen Quellen (Kurrentschrift, Abkürzungen, Latein-Mischung)</li>
+        <li><strong>LLM-Integration sichtbar:</strong> Pipeline-Schritte 3–4 zeigen die LLM-gestützte Extraktion</li>
+        <li><strong>Quellen charakterisiert:</strong> 312 Einträge mit Kategorien, Datierungen, Verfügbarkeitstiers</li>
+        <li><strong>Echte Beispiele:</strong> 57 Inventare mit Transkription und Digitalisat</li>
+        <li><strong>Qualitätsmetriken:</strong> Kategorielle Konfidenz (sicher / prüfenswert / problematisch)</li>
+        <li><strong>Konkreter Projektplan:</strong> Der Prototyp selbst IST der funktionierende Beweis</li>
+      </ul>
+      <p class="small text-body-secondary">Entwickelt mit der <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>-Methode. Quellcode: <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>
+
+    <!-- Tech Info -->
+    <section class="help-section">
+      <h2>Technische Informationen</h2>
+      <table class="table table-sm">
+        <tbody>
+          <tr><td class="fw-bold" style="width: 180px;">Tech Stack</td><td>Vanilla JavaScript (ES6 Modules), Bootstrap 5.3, kein Build-Prozess</td></tr>
+          <tr><td class="fw-bold">Hosting</td><td>GitHub Pages (statisch, kein Backend)</td></tr>
+          <tr><td class="fw-bold">Visualisierung</td><td>Cytoscape.js (Netzwerk), OpenSeadragon (Bilder), marked.js (Markdown)</td></tr>
+          <tr><td class="fw-bold">Datenformat</td><td>Pre-processed JSON (SiCProD API → statische Dateien)</td></tr>
+          <tr><td class="fw-bold">Caching</td><td>IndexedDB im Browser (automatisch, kein Server nötig)</td></tr>
+          <tr><td class="fw-bold">Methodik</td><td>Promptotyping: Preparation → Exploration → Distillation → Implementation</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+    initNav('help');
+    initBanner();
+  </script>
+</body>
+</html>

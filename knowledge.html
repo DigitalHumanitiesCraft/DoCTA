@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Vault | DoCTA</title>
+  <meta name="description" content="Promptotyping-Wissensbasis: Requirements, Daten, Kontext, Technik und Entscheidungsjournal des DoCTA-Projekts.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-lg-3 col-xl-2 border-end py-3 px-3" style="min-height: calc(100vh - 56px); background: #fff;">
+        <h2 class="h6 text-body-secondary mb-3">Knowledge Vault</h2>
+        <nav id="kv-nav" aria-label="Knowledge documents"></nav>
+      </aside>
+
+      <!-- Content -->
+      <main id="main" class="col-lg-9 col-xl-10 py-4 px-4">
+        <div id="kv-content" class="kv-content"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script src="lib/marked.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+
+    initNav('knowledge');
+    initBanner();
+
+    const DOCS = [
+      { id: 'INDEX',        file: 'knowledge/INDEX.md',        title: 'Übersicht',         desc: 'Map of Content, Phasenstatus' },
+      { id: 'REQUIREMENTS', file: 'knowledge/REQUIREMENTS.md', title: 'Requirements',       desc: 'Gutachten-Kritik, Ziele, Constraints' },
+      { id: 'DATA',         file: 'knowledge/DATA.md',         title: 'Daten',              desc: 'SiCProD, CSV, Transkribus, Qualität' },
+      { id: 'CONTEXT',      file: 'knowledge/CONTEXT.md',      title: 'Kontext',            desc: 'Datenmodell, Praxeologie, BeNASch' },
+      { id: 'TECH',         file: 'knowledge/TECH.md',         title: 'Technik',            desc: 'Architektur, Libraries, Design-System' },
+      { id: 'JOURNAL',      file: 'knowledge/JOURNAL.md',      title: 'Journal',            desc: 'Entscheidungen, Exploration, Sackgassen' },
+    ];
+
+    const navEl = document.getElementById('kv-nav');
+    const contentEl = document.getElementById('kv-content');
+    const cache = {};
+
+    // Build sidebar
+    navEl.innerHTML = DOCS.map(d =>
+      `<a class="kv-sidebar-item" href="#${d.id}" data-doc="${d.id}">
+        <span class="kv-title">${d.title}</span>
+        <span class="kv-desc">${d.desc}</span>
+      </a>`
+    ).join('');
+
+    // Welcome state
+    function showWelcome() {
+      contentEl.innerHTML = `
+        <h1 class="mb-3">Knowledge Vault</h1>
+        <p class="text-body-secondary mb-4">Promptotyping-Wissensbasis des DoCTA-Projekts - 6 Dokumente, destilliert aus den Quelldokumenten der Explorations- und Destillationsphase.</p>
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h6 mb-2">Expert in the Loop</h3>
+                <p class="small text-body-secondary mb-0">Kategorielle Konfidenz (sicher / prüfenswert / problematisch) statt numerischer Prozente - informierte Entscheidung statt falscher Präzision.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h6 mb-2">Documents as Source of Truth</h3>
+                <p class="small text-body-secondary mb-0">Alle Entscheidungen, Datenquellen und Architekturdetails in versionierten Markdown-Dateien - Code ist disposable, Wissen bleibt.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h6 mb-2">Echte Quellen, echte Daten</h3>
+                <p class="small text-body-secondary mb-0">6.288 Personen, 42.893 Relationen, 57 transkribierte Inventare - kein Mockup, sondern funktionierender Prototyp an realem Material.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h6 mb-2">Statisch & Zugänglich</h3>
+                <p class="small text-body-secondary mb-0">Vanilla JS, kein Build-Prozess, GitHub Pages - für Gutachter direkt im Browser zugänglich, ohne Installation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h5 mb-3">Dokumente</h2>
+        <div class="list-group">
+          ${DOCS.map(d => `
+            <a href="#${d.id}" class="list-group-item list-group-item-action">
+              <strong>${d.title}</strong>
+              <span class="text-body-secondary ms-2">${d.desc}</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // Load and render a document
+    async function loadDoc(id) {
+      const doc = DOCS.find(d => d.id === id);
+      if (!doc) { showWelcome(); return; }
+
+      // Update active sidebar
+      navEl.querySelectorAll('.kv-sidebar-item').forEach(el => {
+        el.classList.toggle('active', el.dataset.doc === id);
+      });
+
+      // Show loading
+      contentEl.innerHTML = `<div class="loading"><div class="loading__spinner"></div>Dokument wird geladen...</div>`;
+
+      try {
+        if (!cache[id]) {
+          const resp = await fetch(doc.file);
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          cache[id] = await resp.text();
+        }
+        contentEl.innerHTML = marked.parse(cache[id]);
+      } catch (err) {
+        contentEl.innerHTML = `<div class="alert alert-warning">Dokument konnte nicht geladen werden: ${doc.file}</div>`;
+        console.error('Knowledge load error:', err);
+      }
+    }
+
+    // Hash routing
+    function onHash() {
+      const hash = location.hash.replace('#', '');
+      if (hash && DOCS.find(d => d.id === hash)) {
+        loadDoc(hash);
+      } else {
+        showWelcome();
+        navEl.querySelectorAll('.kv-sidebar-item').forEach(el => el.classList.remove('active'));
+      }
+    }
+
+    window.addEventListener('hashchange', onHash);
+    onHash();
+  </script>
+</body>
+</html>

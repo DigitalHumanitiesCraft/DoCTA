@@ -1,0 +1,7473 @@
+[
+ {
+  "id": 4617,
+  "label": "Aarau",
+  "type": "Stadt",
+  "lat": 47.390434,
+  "lng": 8.0446,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7162,
+  "label": "Absam",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.29646,
+  "lng": 11.51487,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7373,
+  "label": "Abtei/Badia",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.610124,
+  "lng": 11.893487,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 778,
+  "label": "Achensee",
+  "type": "Gewässer",
+  "lat": 47.4619634,
+  "lng": 11.7090438,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10494,
+  "label": "Achringen (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10879,
+  "label": "Altkirch",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11265,
+  "label": "Ansbach",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6795,
+  "label": "Ansitz Gargütz (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2621,
+  "label": "Ansitz Klebenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.511664,
+  "lng": 11.3524,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6597,
+  "label": "Ansitz Schernstein (?)",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5837,
+  "label": "Ansitz Sigmundsried",
+  "type": "Burg/Schloss",
+  "lat": 47.053397,
+  "lng": 10.651616,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2624,
+  "label": "Ansitz Sparberegg",
+  "type": "Burg/Schloss",
+  "lat": 47.2833,
+  "lng": 11.5,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9245,
+  "label": "Ansitz Winkel (Gerstburg)",
+  "type": "Burg/Schloss",
+  "lat": 46.502613,
+  "lng": 11.352294,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7200,
+  "label": "Antoniterkloster Issenheim",
+  "type": "Kloster",
+  "lat": 47.9023,
+  "lng": 7.24957,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2409,
+  "label": "Arz/Arsio",
+  "type": "Burg/Schloss",
+  "lat": 46.4319,
+  "lng": 11.1077,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2642,
+  "label": "Augsburg",
+  "type": "Stadt",
+  "lat": 48.3705,
+  "lng": 10.8978,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7012,
+  "label": "Axams",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.230277777778,
+  "lng": 11.279166666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5024,
+  "label": "Bad Aibling",
+  "type": "Stadt",
+  "lat": 47.866667,
+  "lng": 12.016667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2459,
+  "label": "Baden",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10878,
+  "label": "Bad Ragaz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9726,
+  "label": "Bad Urach",
+  "type": "Stadt",
+  "lat": 48.4932,
+  "lng": 9.39895,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6566,
+  "label": "Bairawies",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.8344,
+  "lng": 11.5358,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2609,
+  "label": "Basel",
+  "type": "Stadt",
+  "lat": 47.5606,
+  "lng": 7.5906,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5607,
+  "label": "Bayreuth",
+  "type": "Stadt",
+  "lat": 49.948055555556,
+  "lng": 11.578333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2121,
+  "label": "Beaumont-en-Véron",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.196667,
+  "lng": 0.187222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4082,
+  "label": "Berau",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.69511,
+  "lng": 8.258759,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Ühlingen-Birkendorf"
+  ]
+ },
+ {
+  "id": 6723,
+  "label": "Bergheim (Elsass)",
+  "type": "Stadt",
+  "lat": 48.205277777778,
+  "lng": 7.3616666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4915,
+  "label": "Bergvogtei Todtnau",
+  "type": "Bergrevier",
+  "lat": 47.8333,
+  "lng": 7.95,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6982,
+  "label": "Bergwerk am Weißen Schrofen (?)",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4439,
+  "label": "Bergwerk im Frickental (?)",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4441,
+  "label": "Bergwerk in Almajur",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4445,
+  "label": "Bergwerk in Terenten",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11320,
+  "label": "Bergwerk zu Diersberg (?)",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6983,
+  "label": "Bergwerk zu Gossensaß",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6987,
+  "label": "Bergwerk zu Klausen",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6985,
+  "label": "Bergwerk zu Lantsch",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6981,
+  "label": "Bergwerk zu Schwaz",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6986,
+  "label": "Bergwerk zu Vomperbach",
+  "type": "Bergrevier",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7440,
+  "label": "Bern",
+  "type": "Stadt",
+  "lat": 46.94798,
+  "lng": 7.44743,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9141,
+  "label": "Bernkastel-Kues",
+  "type": "Stadt",
+  "lat": 49.916111111111,
+  "lng": 7.0694444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9954,
+  "label": "Berwang",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8379,
+  "label": "Bibrach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11780,
+  "label": "Bichlbach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7894,
+  "label": "Biezighofen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.945833333333,
+  "lng": 7.8147222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7895,
+  "label": "Binzen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.631111111111,
+  "lng": 7.6233333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3805,
+  "label": "Biringen (?)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12657,
+  "label": "Bischofszell",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5573,
+  "label": "Blaubeuren",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.411944444444,
+  "lng": 9.785,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 977,
+  "label": "Bludenz",
+  "type": "Stadt",
+  "lat": 47.153333333333,
+  "lng": 9.8219444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13262,
+  "label": "Bludesch",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12262,
+  "label": "Blumenegg",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10735,
+  "label": "Borgo Valsugana",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1893,
+  "label": "Bozen",
+  "type": "Stadt",
+  "lat": 46.498113,
+  "lng": 11.35478,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4095,
+  "label": "Bräunlingen",
+  "type": "Stadt",
+  "lat": 47.929722222222,
+  "lng": 8.4480555555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1136,
+  "label": "Bregenz",
+  "type": "Stadt",
+  "lat": 47.505,
+  "lng": 9.7491666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5070,
+  "label": "Bregenzerwald",
+  "type": "Landschaft/Region",
+  "lat": 47.3728,
+  "lng": 9.91278,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1855,
+  "label": "Breisach am Rhein",
+  "type": "Stadt",
+  "lat": 48.028888888889,
+  "lng": 7.58,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7385,
+  "label": "Breisgau",
+  "type": "Landschaft/Region",
+  "lat": 47.93333333,
+  "lng": 7.81666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10659,
+  "label": "Breslau",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 282,
+  "label": "Brixen",
+  "type": "Stadt",
+  "lat": 46.716549,
+  "lng": 11.657851,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1486,
+  "label": "Bruneck",
+  "type": "Stadt",
+  "lat": 46.796319,
+  "lng": 11.935512,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9990,
+  "label": "Brünn/Brno",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7110,
+  "label": "Buchenstein/Fodom",
+  "type": "Tal",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2069,
+  "label": "Burg Alt-Montfort",
+  "type": "Burg/Schloss",
+  "lat": 47.311929,
+  "lng": 9.665694,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2735,
+  "label": "Burg Altspaur",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6581,
+  "label": "Burg Angenstein",
+  "type": "Burg/Schloss",
+  "lat": 47.4633,
+  "lng": 7.60487,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5250,
+  "label": "Burg Auer",
+  "type": "Burg/Schloss",
+  "lat": 46.699385,
+  "lng": 11.161149,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1102,
+  "label": "Burg Belasi",
+  "type": "Burg/Schloss",
+  "lat": 46.248903,
+  "lng": 11.039667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2079,
+  "label": "Burg Berneck",
+  "type": "Burg/Schloss",
+  "lat": 47.0758,
+  "lng": 10.7019,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2447,
+  "label": "Burg Boymont",
+  "type": "Burg/Schloss",
+  "lat": 46.483693,
+  "lng": 11.245451,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Boimont"
+  ]
+ },
+ {
+  "id": 5254,
+  "label": "Burg Brandis",
+  "type": "Burg/Schloss",
+  "lat": 46.59444444,
+  "lng": 11.16111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3499,
+  "label": "Burg Bregenz",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7024,
+  "label": "Burg Burgstall",
+  "type": "Burg/Schloss",
+  "lat": 46.611944444444,
+  "lng": 11.192777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6870,
+  "label": "Burg Caldonazzo",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2048,
+  "label": "Burg Canau/Cagno",
+  "type": "Burg/Schloss",
+  "lat": 46.3888943,
+  "lng": 11.0369226,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8799,
+  "label": "Burg Drackenstein",
+  "type": "Burg/Schloss",
+  "lat": 47.6416,
+  "lng": 9.6317,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3337,
+  "label": "Burg Ehrenberg",
+  "type": "Burg/Schloss",
+  "lat": 47.4656,
+  "lng": 10.7183,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3577,
+  "label": "Burg Eschenlohe (Ulten)",
+  "type": "Burg/Schloss",
+  "lat": 46.597231,
+  "lng": 11.098412,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2269,
+  "label": "Burg Festenstein ob Andrian",
+  "type": "Burg/Schloss",
+  "lat": 46.511994,
+  "lng": 11.218769,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1105,
+  "label": "Burg Freundsberg",
+  "type": "Burg/Schloss",
+  "lat": 47.3433,
+  "lng": 11.7175,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3357,
+  "label": "Burg Fussach",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2187,
+  "label": "Burg Gernstein",
+  "type": "Burg/Schloss",
+  "lat": 46.509307,
+  "lng": 11.352766,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Garnstein",
+   "Gerenstein"
+  ]
+ },
+ {
+  "id": 2188,
+  "label": "Burg Glatsch",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Gles"
+  ]
+ },
+ {
+  "id": 7010,
+  "label": "Burggrafenamt",
+  "type": "Landschaft/Region",
+  "lat": 46.666666666667,
+  "lng": 11.166666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2745,
+  "label": "Burg Greifenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.511736,
+  "lng": 11.29188,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 517,
+  "label": "Burg Gutenberg",
+  "type": "Burg/Schloss",
+  "lat": 47.06525,
+  "lng": 9.5002777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Gutenburg"
+  ]
+ },
+ {
+  "id": 3578,
+  "label": "Burg Hasegg",
+  "type": "Burg/Schloss",
+  "lat": 47.27936,
+  "lng": 11.50699,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4117,
+  "label": "Burg Hauenstein",
+  "type": "",
+  "lat": 47.582,
+  "lng": 8.1065,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3457,
+  "label": "Burg Helfmirgott",
+  "type": "Burg/Schloss",
+  "lat": 46.654185,
+  "lng": 10.471384,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4945,
+  "label": "Burg Hirzstein",
+  "type": "Burg/Schloss",
+  "lat": 47.836389,
+  "lng": 7.180278,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3288,
+  "label": "Burg Hocheppan",
+  "type": "Burg/Schloss",
+  "lat": 46.492654,
+  "lng": 11.242216,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5248,
+  "label": "Burg Hochnaturns",
+  "type": "Burg/Schloss",
+  "lat": 46.65349,
+  "lng": 11.003242,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 212,
+  "label": "Burg Hohenfreyberg",
+  "type": "",
+  "lat": 47.61361,
+  "lng": 10.5875,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5831,
+  "label": "Burg Hohengundelfingen",
+  "type": "Burg/Schloss",
+  "lat": 48.3236,
+  "lng": 9.50583,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4423,
+  "label": "Burg Hohenkrähen",
+  "type": "Burg/Schloss",
+  "lat": 47.79888889,
+  "lng": 8.82055556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Krayen"
+  ]
+ },
+ {
+  "id": 4042,
+  "label": "Burg Hohenschramberg",
+  "type": "Burg/Schloss",
+  "lat": 48.2257,
+  "lng": 8.37849,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5624,
+  "label": "Burg Hohkönigsburg",
+  "type": "Burg/Schloss",
+  "lat": 48.249444444444,
+  "lng": 7.3441666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5701,
+  "label": "Burg Hohlandsberg",
+  "type": "Burg/Schloss",
+  "lat": 48.06,
+  "lng": 7.26916667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3308,
+  "label": "Burg Hörtenberg",
+  "type": "Burg/Schloss",
+  "lat": 47.29416667,
+  "lng": 11.07944444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1411,
+  "label": "Burg Ivano",
+  "type": "Burg/Schloss",
+  "lat": 46.056079,
+  "lng": 11.529164,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5240,
+  "label": "Burg Jagdberg",
+  "type": "Burg/Schloss",
+  "lat": 47.2031,
+  "lng": 9.70056,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4154,
+  "label": "Burg Jungholz",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3373,
+  "label": "Burg Kaltern",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2575,
+  "label": "Burg Karneid",
+  "type": "Burg/Schloss",
+  "lat": 46.489459,
+  "lng": 11.397833,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5258,
+  "label": "Burg Kasatsch",
+  "type": "Burg/Schloss",
+  "lat": 46.54754806,
+  "lng": 11.19801694,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3383,
+  "label": "Burg Klamm",
+  "type": "Burg/Schloss",
+  "lat": 47.2983,
+  "lng": 10.9497,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2074,
+  "label": "Burg Kronburg",
+  "type": "Burg/Schloss",
+  "lat": 47.1756,
+  "lng": 10.6236,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7450,
+  "label": "Burg Kronmetz",
+  "type": "Burg/Schloss",
+  "lat": 46.220287,
+  "lng": 11.108791,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Burg Metz",
+   "Castel San Gottardo"
+  ]
+ },
+ {
+  "id": 10245,
+  "label": "Burg Kropfsberg",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5251,
+  "label": "Burg Labers",
+  "type": "Burg/Schloss",
+  "lat": 46.668677,
+  "lng": 11.191173,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7027,
+  "label": "Burg Laimburg",
+  "type": "Burg/Schloss",
+  "lat": 46.383756,
+  "lng": 11.284831,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2403,
+  "label": "Burg Latsch",
+  "type": "Burg/Schloss",
+  "lat": 46.618103,
+  "lng": 10.85979,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3557,
+  "label": "Burg Laudegg",
+  "type": "Burg/Schloss",
+  "lat": 47.0762,
+  "lng": 10.6526,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4240,
+  "label": "Burg Lebenberg",
+  "type": "Burg/Schloss",
+  "lat": 46.642258,
+  "lng": 11.144588,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 951,
+  "label": "Burg Leuchtenburg",
+  "type": "Burg/Schloss",
+  "lat": 46.378929,
+  "lng": 11.279873,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4112,
+  "label": "Burg Liebenfels",
+  "type": "",
+  "lat": 47.631368,
+  "lng": 8.925863,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6834,
+  "label": "Burg Liebenstein",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2171,
+  "label": "Burg Lili",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2740,
+  "label": "Burg Lug auf dem Nons",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4399,
+  "label": "Burg Mägdeberg",
+  "type": "Burg/Schloss",
+  "lat": 47.80527778,
+  "lng": 8.7975,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2180,
+  "label": "Burg Montbozon",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3493,
+  "label": "Burg Nauders",
+  "type": "Burg/Schloss",
+  "lat": 46.8871,
+  "lng": 10.5032,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Schloss Naudersberg"
+  ]
+ },
+ {
+  "id": 3049,
+  "label": "Burg Neuburg",
+  "type": "Burg/Schloss",
+  "lat": 47.3244,
+  "lng": 9.62361,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Neuenburg"
+  ]
+ },
+ {
+  "id": 945,
+  "label": "Burg Neuhaus",
+  "type": "Burg/Schloss",
+  "lat": 46.5251421,
+  "lng": 11.2545323,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9756,
+  "label": "Burg Neu-Montfort",
+  "type": "Burg/Schloss",
+  "lat": 47.3292,
+  "lng": 9.64472,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7451,
+  "label": "Burg Neurasen",
+  "type": "Burg/Schloss",
+  "lat": 46.790981,
+  "lng": 12.040415,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2446,
+  "label": "Burg Payrsberg",
+  "type": "Burg/Schloss",
+  "lat": 46.535417,
+  "lng": 11.198333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2495,
+  "label": "Burg Persen/Pergine",
+  "type": "Burg/Schloss",
+  "lat": 46.058886,
+  "lng": 11.249346,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3569,
+  "label": "Burg Pisein/Beseno",
+  "type": "Burg/Schloss",
+  "lat": 45.930976,
+  "lng": 11.109495,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6507,
+  "label": "Burg Rafenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.526111,
+  "lng": 11.357083,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Ravenstein"
+  ]
+ },
+ {
+  "id": 6360,
+  "label": "Burg Raspenbühel",
+  "type": "Burg/Schloss",
+  "lat": 47.14,
+  "lng": 11.454722222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Leimbühel",
+   "Vordere Burg zu Matrei"
+  ]
+ },
+ {
+  "id": 1616,
+  "label": "Burg Reifenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.878011,
+  "lng": 11.444627,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3046,
+  "label": "Burg Reinegg",
+  "type": "Burg/Schloss",
+  "lat": 46.640874,
+  "lng": 11.363753,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Reineck"
+  ]
+ },
+ {
+  "id": 7029,
+  "label": "Burg Rettenberg",
+  "type": "Burg/Schloss",
+  "lat": 47.2951595,
+  "lng": 11.6420042,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1341,
+  "label": "Burg Rottenburg",
+  "type": "",
+  "lat": 47.3844,
+  "lng": 11.7981,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3456,
+  "label": "Burg Rotund",
+  "type": "Burg/Schloss",
+  "lat": 46.655296,
+  "lng": 10.468382,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3827,
+  "label": "Burg Säben",
+  "type": "Burg/Schloss",
+  "lat": 46.646389,
+  "lng": 11.568333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7031,
+  "label": "Burg Salern",
+  "type": "Burg/Schloss",
+  "lat": 46.74319722,
+  "lng": 11.62904722,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3423,
+  "label": "Burg Salurn",
+  "type": "Burg/Schloss",
+  "lat": 46.235784,
+  "lng": 11.206253,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Haderburg"
+  ]
+ },
+ {
+  "id": 8558,
+  "label": "Burg San Pietro",
+  "type": "Burg/Schloss",
+  "lat": 46.269213,
+  "lng": 11.112258,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3500,
+  "label": "Burg Sarnthein",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3460,
+  "label": "Burg Schattenburg",
+  "type": "Burg/Schloss",
+  "lat": 47.2365,
+  "lng": 9.59934,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7032,
+  "label": "Burg Schenkenberg",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3356,
+  "label": "Burg Schlossberg",
+  "type": "Burg/Schloss",
+  "lat": 47.343411,
+  "lng": 11.202374,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6735,
+  "label": "Burg Schöneck",
+  "type": "Burg/Schloss",
+  "lat": 46.820228,
+  "lng": 11.847916,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 289,
+  "label": "Burg Schrofenstein",
+  "type": "",
+  "lat": 47.1556,
+  "lng": 10.5649,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5935,
+  "label": "Burg Schwarzenburg",
+  "type": "",
+  "lat": 48.0702,
+  "lng": 7.96318,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Schwarzenberg"
+  ]
+ },
+ {
+  "id": 3326,
+  "label": "Burg Segonzano",
+  "type": "Burg/Schloss",
+  "lat": 46.186569,
+  "lng": 11.251355,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Zugeczan"
+  ]
+ },
+ {
+  "id": 7009,
+  "label": "Burg Sprechenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.883783,
+  "lng": 11.455484,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6823,
+  "label": "Burgstall Zenoberg",
+  "type": "Burg/Schloss",
+  "lat": 46.6741989,
+  "lng": 11.1716879,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3340,
+  "label": "Burg Stein am Gallian/Calliano",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2576,
+  "label": "Burg Steinegg",
+  "type": "Burg/Schloss",
+  "lat": 46.48944444,
+  "lng": 11.45333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5253,
+  "label": "Burg Stein unter Lebenberg",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4213,
+  "label": "Burg St. Martinsberg unter Zirl (Martinsbühel)",
+  "type": "Burg/Schloss",
+  "lat": 47.2671552,
+  "lng": 11.2682328,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "St. Martinsberg ob Innsbruck am Inn"
+  ]
+ },
+ {
+  "id": 6333,
+  "label": "Burg St. Michael/San Michele",
+  "type": "Burg/Schloss",
+  "lat": 46.307769,
+  "lng": 10.736604,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3964,
+  "label": "Burg St. Petersberg",
+  "type": "",
+  "lat": 47.2554,
+  "lng": 10.9093,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5374,
+  "label": "Burg Strassberg",
+  "type": "Burg/Schloss",
+  "lat": 46.926025,
+  "lng": 11.45203056,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Straßberg"
+  ]
+ },
+ {
+  "id": 3415,
+  "label": "Burg Taufers",
+  "type": "Burg/Schloss",
+  "lat": 46.923289,
+  "lng": 11.948351,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3960,
+  "label": "Burg Telfan (?)",
+  "type": "",
+  "lat": 46.089986,
+  "lng": 11.17934,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3361,
+  "label": "Burg Tenno",
+  "type": "Burg/Schloss",
+  "lat": 45.916665,
+  "lng": 10.833195,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3724,
+  "label": "Burg Thaur",
+  "type": "Burg/Schloss",
+  "lat": 47.30118056,
+  "lng": 11.46593333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5249,
+  "label": "Burg Thurnstein",
+  "type": "Burg/Schloss",
+  "lat": 46.691761,
+  "lng": 11.134462,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Turnstein"
+  ]
+ },
+ {
+  "id": 3962,
+  "label": "Burg Tisens (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6359,
+  "label": "Burg Trautson",
+  "type": "Burg/Schloss",
+  "lat": 47.1389046,
+  "lng": 11.4554683,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Hintere Burg Matrei"
+  ]
+ },
+ {
+  "id": 4078,
+  "label": "Burg Triberg",
+  "type": "Burg/Schloss",
+  "lat": 48.1308,
+  "lng": 8.23167,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2191,
+  "label": "Burg Valör/Valer",
+  "type": "Burg/Schloss",
+  "lat": 46.330546,
+  "lng": 11.047371,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5609,
+  "label": "Burg Velseck",
+  "type": "Burg/Schloss",
+  "lat": 46.477503,
+  "lng": 11.513558,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6319,
+  "label": "Burg Vilsegg",
+  "type": "Burg/Schloss",
+  "lat": 47.5567,
+  "lng": 10.6261,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 198,
+  "label": "Burg Visiaun/Visione",
+  "type": "Burg/Schloss",
+  "lat": 46.235511111111,
+  "lng": 11.066561111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Vision"
+  ]
+ },
+ {
+  "id": 3494,
+  "label": "Burg Vorst",
+  "type": "Burg/Schloss",
+  "lat": 46.67845,
+  "lng": 11.119564,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Forst"
+  ]
+ },
+ {
+  "id": 3977,
+  "label": "Burg Wagegg",
+  "type": "Burg/Schloss",
+  "lat": 47.766048888519,
+  "lng": 10.380073972361,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4118,
+  "label": "Burg Waseneck",
+  "type": "Burg/Schloss",
+  "lat": 48.2767,
+  "lng": 8.5801,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3715,
+  "label": "Burg Welfenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.85753889,
+  "lng": 11.51156667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4456,
+  "label": "Burg Werfenstein (Struden)",
+  "type": "Burg/Schloss",
+  "lat": 48.2298,
+  "lng": 14.8923,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1281,
+  "label": "Burg Wetzelstetten",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2559,
+  "label": "Burg Wiesneck",
+  "type": "Burg/Schloss",
+  "lat": 47.96666944,
+  "lng": 7.99966389,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7040,
+  "label": "Burg Wolkenstein",
+  "type": "Burg/Schloss",
+  "lat": 46.564157,
+  "lng": 11.769984,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2255,
+  "label": "Burg zu Bludenz",
+  "type": "Burg/Schloss",
+  "lat": 47.1575,
+  "lng": 9.82056,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4102,
+  "label": "Burkheim",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 48.1011,
+  "lng": 7.59806,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12453,
+  "label": "Bürs",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7149,
+  "label": "Caithness",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5502,
+  "label": "Castel Corno",
+  "type": "Burg/Schloss",
+  "lat": 45.889008,
+  "lng": 10.991478,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5112,
+  "label": "Chur",
+  "type": "Stadt",
+  "lat": 46.85212,
+  "lng": 9.52965,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4785,
+  "label": "Davos",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.809055555556,
+  "lng": 9.8398333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8922,
+  "label": "Dießen am Ammersee",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.95,
+  "lng": 11.1,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5272,
+  "label": "Diessenhofen",
+  "type": "Stadt",
+  "lat": 47.683333333333,
+  "lng": 8.7497222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5520,
+  "label": "Dillingen an der Donau",
+  "type": "Stadt",
+  "lat": 48.566666666667,
+  "lng": 10.466666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7210,
+  "label": "Donauwörth",
+  "type": "Stadt",
+  "lat": 48.718430555556,
+  "lng": 10.776988888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4790,
+  "label": "Dornbirn",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.416666666667,
+  "lng": 9.75,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7204,
+  "label": "Drei Bünde",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11656,
+  "label": "Eferding",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 840,
+  "label": "Ehingen",
+  "type": "Stadt",
+  "lat": 48.283333333333,
+  "lng": 9.7236111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12552,
+  "label": "Ehrenkirchen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6892,
+  "label": "Eichstätt",
+  "type": "Stadt",
+  "lat": 48.891944444444,
+  "lng": 11.183888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7205,
+  "label": "Eidgenossenschaft",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.056806,
+  "lng": 7.920113,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1130,
+  "label": "Einsiedeln",
+  "type": "Kloster",
+  "lat": 47.127777777778,
+  "lng": 8.7430555555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10271,
+  "label": "Elbing/Elbląg",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2175,
+  "label": "Elicort",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7442,
+  "label": "Endingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.538611111111,
+  "lng": 8.2902777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7206,
+  "label": "Engadin",
+  "type": "Tal",
+  "lat": 46.5497,
+  "lng": 9.8959,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4905,
+  "label": "Engelburg",
+  "type": "Burg/Schloss",
+  "lat": 47.8149,
+  "lng": 7.10119,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8163,
+  "label": "Engen",
+  "type": "Stadt",
+  "lat": 47.852777777778,
+  "lng": 8.7713888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7014,
+  "label": "Enneberg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.698,
+  "lng": 11.93123,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3624,
+  "label": "Ensisheim",
+  "type": "Stadt",
+  "lat": 47.865555555556,
+  "lng": 7.3525,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5547,
+  "label": "Eppan",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.455333,
+  "lng": 11.259049,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10581,
+  "label": "Erding",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "https://www.wikidata.org/wiki/Q15980"
+  ]
+ },
+ {
+  "id": 3813,
+  "label": "Eutinger Tal (?)",
+  "type": "Tal",
+  "lat": 48.4634,
+  "lng": 8.7309,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4451,
+  "label": "Eyrs",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.62979,
+  "lng": 10.64619,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7013,
+  "label": "Fassatal",
+  "type": "Tal",
+  "lat": 46.448147222222,
+  "lng": 11.69735,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2164,
+  "label": "Feldkirch",
+  "type": "Stadt",
+  "lat": 47.238055555556,
+  "lng": 9.5983333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7444,
+  "label": "Feldthurns",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.668674,
+  "lng": 11.598439,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4175,
+  "label": "Feste Brunnenburg",
+  "type": "Burg/Schloss",
+  "lat": 46.691901,
+  "lng": 11.147883,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4256,
+  "label": "Feste Sigmundseck",
+  "type": "Burg/Schloss",
+  "lat": 46.92932501,
+  "lng": 10.48697226,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6810,
+  "label": "Feste Staffelfelden",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6527,
+  "label": "Feste Strassberg (Malix)",
+  "type": "Burg/Schloss",
+  "lat": 46.8064,
+  "lng": 9.53375,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4234,
+  "label": "Festung Hohentwiel",
+  "type": "Burg/Schloss",
+  "lat": 47.76472222,
+  "lng": 8.81888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9901,
+  "label": "Feuchtwangen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10766,
+  "label": "Fiss",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7015,
+  "label": "Flaas",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.58634,
+  "lng": 11.2965,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7905,
+  "label": "Flandern",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2556,
+  "label": "Flaurling",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.292222222222,
+  "lng": 11.123055555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8516,
+  "label": "Fleimstal/Val die Fiemme",
+  "type": "Tal",
+  "lat": 46.2833,
+  "lng": 11.5667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5252,
+  "label": "Fragsburg",
+  "type": "Burg/Schloss",
+  "lat": 46.638617,
+  "lng": 11.192245,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2912,
+  "label": "Frankfurt am Main",
+  "type": "Stadt",
+  "lat": 50.110555555556,
+  "lng": 8.6822222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9132,
+  "label": "Frankreich",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7321,
+  "label": "Franziskanerkloster Brixen",
+  "type": "Kloster",
+  "lat": 46.711707,
+  "lng": 11.658752,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7143,
+  "label": "Frastanz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.22,
+  "lng": 9.62,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11021,
+  "label": "Frauenfeld",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 68,
+  "label": "Freiburg im Breisgau",
+  "type": "Stadt",
+  "lat": 47.995,
+  "lng": 7.85,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5017,
+  "label": "Freiburg im Üechtland/Fribourg",
+  "type": "Stadt",
+  "lat": 46.80624,
+  "lng": 7.16259,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6538,
+  "label": "Freising",
+  "type": "Stadt",
+  "lat": 48.402777777778,
+  "lng": 11.748888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 551,
+  "label": "Freundsheim",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.30705,
+  "lng": 10.95586,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9984,
+  "label": "Fronhausen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7955,
+  "label": "Fügen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.35,
+  "lng": 11.833333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7007,
+  "label": "Fürstbistum Brixen",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7006,
+  "label": "Fürstbistum Trient",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 46.0674,
+  "lng": 11.1214,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7056,
+  "label": "Fürsterzbistum Salzburg",
+  "type": "",
+  "lat": 47.8,
+  "lng": 13.033333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9098,
+  "label": "Fußach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.478333333333,
+  "lng": 9.6638888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5414,
+  "label": "Füssen",
+  "type": "Stadt",
+  "lat": 47.566666666667,
+  "lng": 10.7,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7020,
+  "label": "Galtür",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.968055555556,
+  "lng": 10.186944444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11716,
+  "label": "Garda",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7017,
+  "label": "Gargazon",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.584781,
+  "lng": 11.20273,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4194,
+  "label": "Gericht Kastelruth",
+  "type": "Gericht",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12176,
+  "label": "Giengen an der Brenz",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8791,
+  "label": "Gisingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.216666666667,
+  "lng": 9.5833333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 564,
+  "label": "Glarus",
+  "type": "Stadt",
+  "lat": 47.033055555556,
+  "lng": 9.0663888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 485,
+  "label": "Glurns",
+  "type": "Stadt",
+  "lat": 46.671492,
+  "lng": 10.553913,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5046,
+  "label": "Göppingen",
+  "type": "Stadt",
+  "lat": 48.7025,
+  "lng": 9.6527777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1844,
+  "label": "Gossensass",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.93813,
+  "lng": 11.44247,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4538,
+  "label": "Götzis",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.334166666667,
+  "lng": 9.6452777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7201,
+  "label": "Grafschaft Görz",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 45.933333333333,
+  "lng": 13.616666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7016,
+  "label": "Grafschaft Tirol",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 46.9161,
+  "lng": 11.2061,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7434,
+  "label": "Grauer Bund",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Oberer Bund"
+  ]
+ },
+ {
+  "id": 1290,
+  "label": "Graun",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.808655,
+  "lng": 10.54144,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7190,
+  "label": "Graunersee",
+  "type": "Gewässer",
+  "lat": 46.801,
+  "lng": 10.531,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Reschensee"
+  ]
+ },
+ {
+  "id": 10454,
+  "label": "Graz",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7044,
+  "label": "Gries bei Bozen",
+  "type": "",
+  "lat": 46.500379,
+  "lng": 11.33888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8511,
+  "label": "Grigno",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.01601,
+  "lng": 11.63379,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3685,
+  "label": "Grünsheim (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7018,
+  "label": "Gufidaun",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.64861111,
+  "lng": 11.60138889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12663,
+  "label": "Gurtweil",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10543,
+  "label": "Habsheim",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11604,
+  "label": "Hainzenberg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9140,
+  "label": "Hallein",
+  "type": "Stadt",
+  "lat": 47.666666666667,
+  "lng": 13.083333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 171,
+  "label": "Hall in Tirol",
+  "type": "Stadt",
+  "lat": 47.283333333333,
+  "lng": 11.5,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5845,
+  "label": "Hardwald",
+  "type": "Landschaft/Region",
+  "lat": 47.7861,
+  "lng": 7.45417,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8646,
+  "label": "Hechingen",
+  "type": "Stadt",
+  "lat": 48.351666666667,
+  "lng": 8.9633333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7384,
+  "label": "Hegau",
+  "type": "Landschaft/Region",
+  "lat": 47.79638889,
+  "lng": 8.75,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10019,
+  "label": "Heidelberg",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2441,
+  "label": "Heiterwang",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.444444444444,
+  "lng": 10.749444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7892,
+  "label": "Herrschaft Belfort",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4752,
+  "label": "Herrschaft Berg bei Ehingen",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 48.2625,
+  "lng": 9.73528,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7890,
+  "label": "Herrschaft Bludenz",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6353,
+  "label": "Herrschaft Bregenz",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7066,
+  "label": "Herrschaft Feldkirch",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2566,
+  "label": "Herrschaft Haigerloch",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3303,
+  "label": "Herrschaft Hohenberg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5226,
+  "label": "Herrschaft Hohenegg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.627977,
+  "lng": 10.040006,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4128,
+  "label": "Herrschaft Kastelberg und Waldkirch",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1415,
+  "label": "Herrschaft Langeneck",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1254,
+  "label": "Herrschaft Meßkirch",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5028,
+  "label": "Herrschaft Nomi",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 53,
+  "label": "Herrschaft Rodeneck",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2168,
+  "label": "Herrschaft Sonnenberg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7054,
+  "label": "Herzogtum Bayern",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7209,
+  "label": "Herzogtum Burgund",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.323056,
+  "lng": 5.041944,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 43,
+  "label": "Hohengeroldseck",
+  "type": "",
+  "lat": 48.3325,
+  "lng": 7.98028,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7102,
+  "label": "Homberg im Fricktal",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3812,
+  "label": "Horb am Neckar",
+  "type": "Stadt",
+  "lat": 48.445,
+  "lng": 8.6911111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11953,
+  "label": "Hornberg",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 571,
+  "label": "Hötting",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.2717,
+  "lng": 11.3867,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Hettingen"
+  ]
+ },
+ {
+  "id": 10632,
+  "label": "Igls",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4877,
+  "label": "Immenstadt",
+  "type": "Stadt",
+  "lat": 47.561389,
+  "lng": 10.221111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2138,
+  "label": "Imst",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.239444444444,
+  "lng": 10.738055555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7211,
+  "label": "Ingerkingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.19988,
+  "lng": 9.77206,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6030,
+  "label": "Ingoldingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.025833333333,
+  "lng": 9.7419444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 28,
+  "label": "Innsbruck",
+  "type": "Stadt",
+  "lat": 47.268333333333,
+  "lng": 11.393333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7195,
+  "label": "Inntal",
+  "type": "Tal",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7019,
+  "label": "Ischgl",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.013055555556,
+  "lng": 10.288055555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7741,
+  "label": "Isny",
+  "type": "Stadt",
+  "lat": 47.691944444444,
+  "lng": 10.039444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1194,
+  "label": "Italien",
+  "type": "Landschaft/Region",
+  "lat": 42.5,
+  "lng": 12.5,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1412,
+  "label": "Ivano",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.056997554005,
+  "lng": 11.529300312809,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3364,
+  "label": "Jaufenburg",
+  "type": "Burg/Schloss",
+  "lat": 46.815178,
+  "lng": 11.252479,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6793,
+  "label": "Jenaz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.916388888889,
+  "lng": 9.7163888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7034,
+  "label": "Jenesien",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.535035,
+  "lng": 11.331384,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12332,
+  "label": "Kaisheim",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5603,
+  "label": "Kaltern",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.413259,
+  "lng": 11.246203,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9145,
+  "label": "Kärnten",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 46.7525,
+  "lng": 13.8617,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4728,
+  "label": "Kassel",
+  "type": "Stadt",
+  "lat": 51.315777777778,
+  "lng": 9.4979166666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7021,
+  "label": "Kastelruth",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.567843,
+  "lng": 11.559685,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9681,
+  "label": "Kaufbeuren",
+  "type": "Stadt",
+  "lat": 47.88,
+  "lng": 10.6225,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6732,
+  "label": "Kehlburg",
+  "type": "Burg/Schloss",
+  "lat": 46.8233,
+  "lng": 11.9605,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1813,
+  "label": "Kematen in Tirol",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.254166666667,
+  "lng": 11.272222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7212,
+  "label": "Kempten",
+  "type": "Stadt",
+  "lat": 47.733333333333,
+  "lng": 10.316666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12035,
+  "label": "Kenzingen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 71,
+  "label": "Kitzingen",
+  "type": "Stadt",
+  "lat": 49.733333333333,
+  "lng": 10.166666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7004,
+  "label": "Klausen (Südtirol)",
+  "type": "Stadt",
+  "lat": 46.639924,
+  "lng": 11.56635,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6725,
+  "label": "Klause unter Rottenburg",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10877,
+  "label": "Kloster Dinkelsbühl",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10457,
+  "label": "Kloster Ettenheimmünster",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7679,
+  "label": "Kloster Feldbach",
+  "type": "Kloster",
+  "lat": 47.664738,
+  "lng": 8.974519,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7041,
+  "label": "Kloster Frauenchiemsee",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.872191395001,
+  "lng": 12.424872390592,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7085,
+  "label": "Kloster Kempten",
+  "type": "",
+  "lat": 47.72826033627,
+  "lng": 10.31315830544,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Fürststift Kempten"
+  ]
+ },
+ {
+  "id": 6176,
+  "label": "Kloster Lure/Lüders",
+  "type": "",
+  "lat": 47.686944444444,
+  "lng": 6.4911111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7088,
+  "label": "Kloster Marienberg",
+  "type": "Kloster",
+  "lat": 46.686398,
+  "lng": 10.55141,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7678,
+  "label": "Kloster Muri-Gries",
+  "type": "Kloster",
+  "lat": 46.503222,
+  "lng": 11.335027,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7680,
+  "label": "Kloster Neustift",
+  "type": "Kloster",
+  "lat": 46.744161,
+  "lng": 11.648468,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12546,
+  "label": "Kloster Ochsenhausen",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12423,
+  "label": "Klosters",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7170,
+  "label": "Kloster Salem",
+  "type": "Kloster",
+  "lat": 47.77611111,
+  "lng": 9.27722222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7090,
+  "label": "Kloster Schussenried",
+  "type": "Kloster",
+  "lat": 48.0073,
+  "lng": 9.65858,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7328,
+  "label": "Kloster Sonnenburg",
+  "type": "Kloster",
+  "lat": 46.78565,
+  "lng": 11.890628,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4559,
+  "label": "Kloster St. Blasien im Schwarzwald",
+  "type": "Kloster",
+  "lat": 47.76,
+  "lng": 8.13,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4926,
+  "label": "Kloster St. Johann in Müstair",
+  "type": "Kloster",
+  "lat": 46.629166666667,
+  "lng": 10.447777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Kloster St. Johann im Münstertal"
+  ]
+ },
+ {
+  "id": 6173,
+  "label": "Kloster St. Peter im Schwarzwald",
+  "type": "",
+  "lat": 48.0166,
+  "lng": 8.0325,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Kloster St. Peter auf dem Schwarzwald"
+  ]
+ },
+ {
+  "id": 5172,
+  "label": "Kloster Tegernsee",
+  "type": "Kloster",
+  "lat": 47.707440018449,
+  "lng": 11.756854504286,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7406,
+  "label": "Kloster Urspring",
+  "type": "Kloster",
+  "lat": 48.3819,
+  "lng": 9.7188,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3801,
+  "label": "Kochelsee",
+  "type": "Gewässer",
+  "lat": 47.646111111111,
+  "lng": 11.337222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5562,
+  "label": "Kollegiatstift Innichen",
+  "type": "Kloster",
+  "lat": 46.73284167,
+  "lng": 12.28280556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3839,
+  "label": "Kollegiatstift St. Martin zu Rheinfelden",
+  "type": "Kloster",
+  "lat": 47.55408,
+  "lng": 7.79263,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1594,
+  "label": "Kollmann",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.5898,
+  "lng": 11.52397,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7207,
+  "label": "Kolmar",
+  "type": "Stadt",
+  "lat": 48.081111111111,
+  "lng": 7.355,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5318,
+  "label": "Köln",
+  "type": "Stadt",
+  "lat": 50.942222222222,
+  "lng": 6.9577777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 546,
+  "label": "Konstanz",
+  "type": "Stadt",
+  "lat": 47.663333333333,
+  "lng": 9.1752777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7202,
+  "label": "Krems",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2637,
+  "label": "Kufstein",
+  "type": "Stadt",
+  "lat": 47.583333333333,
+  "lng": 12.166666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7197,
+  "label": "Kuntersweg",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6502,
+  "label": "Kürnbach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.9924,
+  "lng": 9.671,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4039,
+  "label": "Kurtatsch",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.31401,
+  "lng": 11.22388,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6571,
+  "label": "Kuttenberg/Kutná Hora",
+  "type": "Stadt",
+  "lat": 49.948444972662,
+  "lng": 15.268225887967,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2772,
+  "label": "Laas",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.616614,
+  "lng": 10.700159,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4314,
+  "label": "Lamprechtsburg",
+  "type": "Burg/Schloss",
+  "lat": 46.783495,
+  "lng": 11.964502,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7026,
+  "label": "Lana",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.616019,
+  "lng": 11.144859,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2435,
+  "label": "Landeck",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.133333333333,
+  "lng": 10.566666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11449,
+  "label": "Landgrafschaft Hessen",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4461,
+  "label": "Landgrafschaft Nellenburg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.492,
+  "lng": 9.847,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9928,
+  "label": "Landsberg",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7831,
+  "label": "Landser",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.685,
+  "lng": 7.3908333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4622,
+  "label": "Landshut",
+  "type": "Stadt",
+  "lat": 48.539722222222,
+  "lng": 12.150833333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7063,
+  "label": "Landvogtei Elsass",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2360,
+  "label": "Lans",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.238333333333,
+  "lng": 11.431388888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13417,
+  "label": "Lantsch/Lenz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7022,
+  "label": "Latzfons",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.66965,
+  "lng": 11.55135,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 491,
+  "label": "Laufenburg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.55,
+  "lng": 8.05,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4721,
+  "label": "Lauingen",
+  "type": "Stadt",
+  "lat": 48.566666666667,
+  "lng": 10.433333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Laugingen"
+  ]
+ },
+ {
+  "id": 13346,
+  "label": "Laupheim",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1610,
+  "label": "Laurentiuskloster bei Trient",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7011,
+  "label": "Lechaschau",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.489722222222,
+  "lng": 10.706111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5852,
+  "label": "Leibnitz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.783055555556,
+  "lng": 15.545,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4255,
+  "label": "Leithen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.28989,
+  "lng": 11.21955,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7409,
+  "label": "Lengmoos",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.54365,
+  "lng": 11.4678,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5257,
+  "label": "Leonburg",
+  "type": "Burg/Schloss",
+  "lat": 46.584649,
+  "lng": 11.163274,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Lanaburg"
+  ]
+ },
+ {
+  "id": 7233,
+  "label": "Lermoos",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.4,
+  "lng": 10.883333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7192,
+  "label": "Leutasch",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.366666666667,
+  "lng": 11.15,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10030,
+  "label": "Leutkirch",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7042,
+  "label": "Leutkircher Heide",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7833,
+  "label": "Liebfrauenkloster Meran",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10010,
+  "label": "Lienz",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1463,
+  "label": "Lindau",
+  "type": "Stadt",
+  "lat": 47.545833333333,
+  "lng": 9.6838888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9998,
+  "label": "Linz",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4953,
+  "label": "Logelheim",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.021389,
+  "lng": 7.408056,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13596,
+  "label": "Lothringen",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7199,
+  "label": "Lueg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.0292,
+  "lng": 11.4919,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5114,
+  "label": "Lugnez",
+  "type": "Landschaft/Region",
+  "lat": 47.483333333333,
+  "lng": 7.1,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8519,
+  "label": "Lurx",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.91423,
+  "lng": 11.44257,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7023,
+  "label": "Lüsen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.746466,
+  "lng": 11.761084,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 483,
+  "label": "Luzern",
+  "type": "Stadt",
+  "lat": 47.0523,
+  "lng": 8.3059,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7183,
+  "label": "Magdeburg",
+  "type": "Stadt",
+  "lat": 52.131666666667,
+  "lng": 11.639166666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8373,
+  "label": "Mailand/Milano",
+  "type": "Stadt",
+  "lat": 45.466944444444,
+  "lng": 9.19,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2393,
+  "label": "Mals",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.687919,
+  "lng": 10.546549,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1365,
+  "label": "Mantua",
+  "type": "Stadt",
+  "lat": 45.156388888889,
+  "lng": 10.791111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11645,
+  "label": "Marchtal",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5236,
+  "label": "Mareit",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.89225,
+  "lng": 11.3493,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7672,
+  "label": "Marienstift im Kreuzgang zu Brixen",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3417,
+  "label": "Markgrafschaft Burgau",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7445,
+  "label": "Marling",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.655632,
+  "lng": 11.140534,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4549,
+  "label": "Masmünster/Masevaux",
+  "type": "",
+  "lat": 47.773611111111,
+  "lng": 6.9958333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Maßmünster"
+  ]
+ },
+ {
+  "id": 2904,
+  "label": "Matrei am Brenner",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.130833333333,
+  "lng": 11.453055555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3884,
+  "label": "Memmingen",
+  "type": "Stadt",
+  "lat": 47.987777777778,
+  "lng": 10.181111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 348,
+  "label": "Meran",
+  "type": "Stadt",
+  "lat": 46.669555,
+  "lng": 11.159419,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9164,
+  "label": "Mergentheim",
+  "type": "Stadt",
+  "lat": 49.5,
+  "lng": 9.7666666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5188,
+  "label": "Metz",
+  "type": "Stadt",
+  "lat": 49.119722222222,
+  "lng": 6.1769444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6101,
+  "label": "Michelsburg",
+  "type": "Burg/Schloss",
+  "lat": 46.772256,
+  "lng": 11.892448,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "St. Michelsburg",
+   "Michlsburg",
+   "Michaelsburg"
+  ]
+ },
+ {
+  "id": 2905,
+  "label": "Mieming",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.3,
+  "lng": 10.983333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1058,
+  "label": "Mindelheim",
+  "type": "Stadt",
+  "lat": 48.033333333333,
+  "lng": 10.466666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7260,
+  "label": "Missian",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.485,
+  "lng": 11.25418,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7443,
+  "label": "Mistelbach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.566666666667,
+  "lng": 16.566666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7025,
+  "label": "Mölten",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.586392,
+  "lng": 11.256156,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12713,
+  "label": "Mömpelgard/Montbéliard",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4891,
+  "label": "Montafon",
+  "type": "Tal",
+  "lat": 47.041944444444,
+  "lng": 9.9516666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4048,
+  "label": "Mühlau",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.2817,
+  "lng": 11.41,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7008,
+  "label": "Mühlbacher Klause",
+  "type": "Burg/Schloss",
+  "lat": 46.811934,
+  "lng": 11.684754,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4951,
+  "label": "Mühlheim an der Donau",
+  "type": "Stadt",
+  "lat": 48.030556,
+  "lng": 8.885833,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8507,
+  "label": "Mühlsee (bei Lans)",
+  "type": "Gewässer",
+  "lat": 47.243055555556,
+  "lng": 11.428611111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5455,
+  "label": "München",
+  "type": "Stadt",
+  "lat": 48.1375,
+  "lng": 11.575,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11652,
+  "label": "Munderkingen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3673,
+  "label": "Münsingen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9257,
+  "label": "Münster in Tirol",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.421111111111,
+  "lng": 11.833888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1094,
+  "label": "Münstermaifeld",
+  "type": "Kloster",
+  "lat": 50.247675,
+  "lng": 7.362681,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3103,
+  "label": "Murnau am Staffelsee",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.683333333333,
+  "lng": 11.2,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2334,
+  "label": "Nassereith",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.316666666667,
+  "lng": 10.833333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1188,
+  "label": "Natters",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.233888888889,
+  "lng": 11.373333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3743,
+  "label": "Naturns",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.649886,
+  "lng": 11.004195,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2203,
+  "label": "Nauders",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.866666666667,
+  "lng": 10.516666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10118,
+  "label": "Navis",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1830,
+  "label": "Nesselwang",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 482,
+  "label": "Neuburg (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7545,
+  "label": "Neuburg an der Donau",
+  "type": "Stadt",
+  "lat": 48.733333333333,
+  "lng": 11.183333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2606,
+  "label": "Neuenburg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10441,
+  "label": "Neuenburg am Rhein",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2617,
+  "label": "Neumarkt (Südtirol)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.31777,
+  "lng": 11.27337,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4216,
+  "label": "Niederhaus/Klause zu Sigmundsburg",
+  "type": "Burg/Schloss",
+  "lat": 47.3451,
+  "lng": 10.8238,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7897,
+  "label": "Niedermumpf",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.547222222222,
+  "lng": 7.9194444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7439,
+  "label": "Niederschwaben",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7080,
+  "label": "Nonstal",
+  "type": "Tal",
+  "lat": 46.366666666667,
+  "lng": 11.033333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5021,
+  "label": "Nördlingen",
+  "type": "Stadt",
+  "lat": 48.850831,
+  "lng": 10.489575,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2008,
+  "label": "Nürnberg",
+  "type": "Stadt",
+  "lat": 49.453888888889,
+  "lng": 11.0775,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5719,
+  "label": "Oberbergheim",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.966388888889,
+  "lng": 7.3952777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2371,
+  "label": "Oberhofen im Inntal",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.303055555556,
+  "lng": 11.095833333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7118,
+  "label": "Oberinntal",
+  "type": "Tal",
+  "lat": 47.21583333,
+  "lng": 10.7225,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1806,
+  "label": "Oberperfuss",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.244861111111,
+  "lng": 11.248638888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 533,
+  "label": "Oberschwaben",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7378,
+  "label": "Oberstdorf",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.409722222222,
+  "lng": 10.279166666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11441,
+  "label": "Ochsenhausen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7150,
+  "label": "Osimo",
+  "type": "Stadt",
+  "lat": 43.486080555556,
+  "lng": 13.4821,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1665,
+  "label": "Padua",
+  "type": "Stadt",
+  "lat": 45.406388888889,
+  "lng": 11.877777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Padova"
+  ]
+ },
+ {
+  "id": 3619,
+  "label": "Pähl",
+  "type": "Burg/Schloss",
+  "lat": 47.9,
+  "lng": 11.183333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7182,
+  "label": "Passau",
+  "type": "Stadt",
+  "lat": 48.5748229,
+  "lng": 13.4609744,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 157,
+  "label": "Passeier",
+  "type": "Tal",
+  "lat": 46.766666666667,
+  "lng": 11.216666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7114,
+  "label": "Persen/Pergine",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.066666666667,
+  "lng": 11.233333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3870,
+  "label": "Pettnau",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.291944444444,
+  "lng": 11.16,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11650,
+  "label": "Pfaffenhausen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Pfaffenhawsen"
+  ]
+ },
+ {
+  "id": 3776,
+  "label": "Pfunds",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.966666666667,
+  "lng": 10.55,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7388,
+  "label": "Portenau/Pordenone",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9250,
+  "label": "Prag",
+  "type": "Stadt",
+  "lat": 50.0875,
+  "lng": 14.421388888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5060,
+  "label": "Prättigau",
+  "type": "Tal",
+  "lat": 46.9165,
+  "lng": 9.8537194444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7215,
+  "label": "Preußen",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7107,
+  "label": "Primör/Primiero",
+  "type": "Tal",
+  "lat": 46.183333333333,
+  "lng": 11.833333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7028,
+  "label": "Prutz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.076388888889,
+  "lng": 10.663611111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1969,
+  "label": "Radolfzell am Bodensee",
+  "type": "Stadt",
+  "lat": 47.736944444444,
+  "lng": 8.9697222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7043,
+  "label": "Rankweil",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.266666666667,
+  "lng": 9.65,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12559,
+  "label": "Ranspach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6415,
+  "label": "Rapperswil",
+  "type": "Stadt",
+  "lat": 47.22557,
+  "lng": 8.82228,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4710,
+  "label": "Rattenberg",
+  "type": "Stadt",
+  "lat": 47.438888888889,
+  "lng": 11.893333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4405,
+  "label": "Ravenna",
+  "type": "Stadt",
+  "lat": 44.416111111111,
+  "lng": 12.201666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4510,
+  "label": "Ravensburg",
+  "type": "Stadt",
+  "lat": 47.783055555556,
+  "lng": 9.6113888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1038,
+  "label": "Regensburg",
+  "type": "Stadt",
+  "lat": 49.016666666667,
+  "lng": 12.083333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2442,
+  "label": "Remau (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6789,
+  "label": "Rendena-Tal/Val Rendena",
+  "type": "Tal",
+  "lat": 46.1149,
+  "lng": 10.7536,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 896,
+  "label": "Rentschach (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1176,
+  "label": "Reschen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.8275,
+  "lng": 10.521,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4484,
+  "label": "Reutlingen",
+  "type": "Stadt",
+  "lat": 48.483333333333,
+  "lng": 9.2166666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5537,
+  "label": "Reutte",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.483333333333,
+  "lng": 10.716666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7103,
+  "label": "Rheinfelden",
+  "type": "Stadt",
+  "lat": 47.553888888889,
+  "lng": 7.7958333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10082,
+  "label": "Rhodos",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 566,
+  "label": "Riedlingen",
+  "type": "Stadt",
+  "lat": 48.155277777778,
+  "lng": 9.4727777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4820,
+  "label": "Rielasingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.732,
+  "lng": 8.8404,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9526,
+  "label": "Rietz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.284722222222,
+  "lng": 11.030555555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7030,
+  "label": "Ritten",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.54039,
+  "lng": 11.457027,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 173,
+  "label": "Rom",
+  "type": "Stadt",
+  "lat": 41.893055555556,
+  "lng": 12.482777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11269,
+  "label": "Rosenheim",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": -1.0,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12094,
+  "label": "Rotholz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 823,
+  "label": "Rottenburg am Neckar",
+  "type": "Stadt",
+  "lat": 48.477222222222,
+  "lng": 8.9344444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3848,
+  "label": "Rottweil",
+  "type": "Stadt",
+  "lat": 48.168055555556,
+  "lng": 8.6247222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 69,
+  "label": "Rovereit/Rovereto",
+  "type": "Stadt",
+  "lat": 45.883333333333,
+  "lng": 11.034166666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3446,
+  "label": "Rüdlingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.566666666667,
+  "lng": 8.5663888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7408,
+  "label": "Ryn",
+  "type": "Stadt",
+  "lat": 53.937777777778,
+  "lng": 21.548055555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10446,
+  "label": "Säckingen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5446,
+  "label": "Salzburg",
+  "type": "Stadt",
+  "lat": 47.8,
+  "lng": 13.045,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1592,
+  "label": "Sargans",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.0481,
+  "lng": 9.4398,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11617,
+  "label": "Saulgrub",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7216,
+  "label": "Savoyen",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13242,
+  "label": "Schaffhausen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9992,
+  "label": "Schärding",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7191,
+  "label": "Scharnitz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.388333333333,
+  "lng": 11.265,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5164,
+  "label": "Schattenburg Feldkirch",
+  "type": "Burg/Schloss",
+  "lat": 47.2365,
+  "lng": 9.59934,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4464,
+  "label": "Schelklingen",
+  "type": "Stadt",
+  "lat": 48.375555555556,
+  "lng": 9.7327777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1196,
+  "label": "Schellingen (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4587,
+  "label": "Schlanders",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.628069,
+  "lng": 10.773477,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7033,
+  "label": "Schlandersburg",
+  "type": "Burg/Schloss",
+  "lat": 46.630138888889,
+  "lng": 10.773805555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9394,
+  "label": "Schlitters",
+  "type": "",
+  "lat": 47.366666666667,
+  "lng": 11.816666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3719,
+  "label": "Schloss Altenburg",
+  "type": "Burg/Schloss",
+  "lat": 46.46953,
+  "lng": 11.268051,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6949,
+  "label": "Schloss Althewen",
+  "type": "Burg/Schloss",
+  "lat": 47.83581944,
+  "lng": 8.74779722,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Hohenhewen"
+  ]
+ },
+ {
+  "id": 3380,
+  "label": "Schloss Ambras",
+  "type": "Burg/Schloss",
+  "lat": 47.256666666667,
+  "lng": 11.434722222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5261,
+  "label": "Schloss Anger",
+  "type": "Burg/Schloss",
+  "lat": 46.644656,
+  "lng": 11.583297,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2401,
+  "label": "Schloss Annenberg",
+  "type": "Burg/Schloss",
+  "lat": 46.630343,
+  "lng": 10.839354,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5596,
+  "label": "Schloss Bidenegg",
+  "type": "Burg/Schloss",
+  "lat": 47.121,
+  "lng": 10.6351,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Pidenegg",
+   "Bideneck"
+  ]
+ },
+ {
+  "id": 6798,
+  "label": "Schloss Blochmont",
+  "type": "Burg/Schloss",
+  "lat": 47.4474794,
+  "lng": 7.3437218,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3819,
+  "label": "Schloss Bocksberg (Markgrafschaft Burgau)",
+  "type": "Burg/Schloss",
+  "lat": 48.5089,
+  "lng": 10.6839,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4227,
+  "label": "Schloss Bodman",
+  "type": "Burg/Schloss",
+  "lat": 47.79523611,
+  "lng": 9.04402778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10142,
+  "label": "Schloss Buonconsiglio (Trient)",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4402,
+  "label": "Schloss Cles",
+  "type": "",
+  "lat": 46.3706,
+  "lng": 11.041678,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3564,
+  "label": "Schloss Coredo/Coreth",
+  "type": "Burg/Schloss",
+  "lat": 46.34786111,
+  "lng": 11.09372222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4862,
+  "label": "Schloss Donaueschingen",
+  "type": "Burg/Schloss",
+  "lat": 47.949926,
+  "lng": 8.50168,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6818,
+  "label": "Schloss Dorneck",
+  "type": "Burg/Schloss",
+  "lat": 47.47999,
+  "lng": 7.62808,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2402,
+  "label": "Schloss Dornsberg",
+  "type": "Burg/Schloss",
+  "lat": 46.642292,
+  "lng": 11.026121,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Tarantsberg"
+  ]
+ },
+ {
+  "id": 6843,
+  "label": "Schloss Eberhardzell",
+  "type": "Burg/Schloss",
+  "lat": 48.0024,
+  "lng": 9.8231,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3487,
+  "label": "Schloss Enn",
+  "type": "Burg/Schloss",
+  "lat": 46.331773,
+  "lng": 11.307818,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3374,
+  "label": "Schloss Fernstein",
+  "type": "Burg/Schloss",
+  "lat": 47.346,
+  "lng": 10.8175,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2071,
+  "label": "Schloss Fragenstein",
+  "type": "Burg/Schloss",
+  "lat": 47.27833333,
+  "lng": 11.23916667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5497,
+  "label": "Schloss Gleißenburg",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4610,
+  "label": "Schloss Hinterhohenschwangau",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6454,
+  "label": "Schloss Hohenegg",
+  "type": "Burg/Schloss",
+  "lat": 47.628,
+  "lng": 10.04,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4860,
+  "label": "Schloss Hohenems",
+  "type": "Burg/Schloss",
+  "lat": 47.3628,
+  "lng": 9.69,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4609,
+  "label": "Schloss Hohenschwangau",
+  "type": "Burg/Schloss",
+  "lat": 47.555555555556,
+  "lng": 10.736111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4045,
+  "label": "Schloss Hornberg",
+  "type": "Burg/Schloss",
+  "lat": 48.21138889,
+  "lng": 8.22805556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7313,
+  "label": "Schloss Illzig (Illzach?)",
+  "type": "Burg/Schloss",
+  "lat": 47.782222222222,
+  "lng": 7.3480555555556,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3570,
+  "label": "Schloss Juval",
+  "type": "Burg/Schloss",
+  "lat": 46.651752,
+  "lng": 10.967832,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4113,
+  "label": "Schloss Kargegg",
+  "type": "Burg/Schloss",
+  "lat": 47.7655,
+  "lng": 9.0935,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3276,
+  "label": "Schloss Kastelbell",
+  "type": "Burg/Schloss",
+  "lat": 46.628028,
+  "lng": 10.898274,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3259,
+  "label": "Schloss Kastelpfund/Castelfondo",
+  "type": "Burg/Schloss",
+  "lat": 46.44768,
+  "lng": 11.124078,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 747,
+  "label": "Schloss Königsberg/Monreale",
+  "type": "Burg/Schloss",
+  "lat": 46.204013,
+  "lng": 11.152934,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Castello di Monreale"
+  ]
+ },
+ {
+  "id": 4052,
+  "label": "Schloss Landeck",
+  "type": "Burg/Schloss",
+  "lat": 47.1354,
+  "lng": 10.5686,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6722,
+  "label": "Schloss Landser",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 119,
+  "label": "Schloss Lichtenberg",
+  "type": "Burg/Schloss",
+  "lat": 46.633674,
+  "lng": 10.564438,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Liechtemberg"
+  ]
+ },
+ {
+  "id": 4754,
+  "label": "Schloss Lodron",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7891,
+  "label": "Schloss Marschlins",
+  "type": "Burg/Schloss",
+  "lat": 46.954444444444,
+  "lng": 9.5844444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4599,
+  "label": "Schloss Mayenburg",
+  "type": "Burg/Schloss",
+  "lat": 46.592007,
+  "lng": 11.148623,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5283,
+  "label": "Schloss Moos",
+  "type": "Burg/Schloss",
+  "lat": 46.90055556,
+  "lng": 11.45027778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6822,
+  "label": "Schloss Münchenstein",
+  "type": "Burg/Schloss",
+  "lat": 47.5125,
+  "lng": 7.6213888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4462,
+  "label": "Schloss Nellenburg",
+  "type": "Burg/Schloss",
+  "lat": 47.84861111,
+  "lng": 8.98472222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2194,
+  "label": "Schloss Neuspaur",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1950,
+  "label": "Schloss Neustarkenberg",
+  "type": "Burg/Schloss",
+  "lat": 47.261502,
+  "lng": 10.754378,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5026,
+  "label": "Schloss Nomi",
+  "type": "Burg/Schloss",
+  "lat": 45.930941666667,
+  "lng": 11.073461111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7038,
+  "label": "Schloss Prösels",
+  "type": "Burg/Schloss",
+  "lat": 46.505434,
+  "lng": 11.495637,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5191,
+  "label": "Schloss Ravensburg",
+  "type": "Burg/Schloss",
+  "lat": 47.77783333,
+  "lng": 9.61666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Veitsburg"
+  ]
+ },
+ {
+  "id": 2622,
+  "label": "Schloss Rendelstein",
+  "type": "Burg/Schloss",
+  "lat": 46.51308,
+  "lng": 11.353447,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4643,
+  "label": "Schloss Ried (Wangen)",
+  "type": "Burg/Schloss",
+  "lat": 46.520481,
+  "lng": 11.361328,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 54,
+  "label": "Schloss Rodenegg",
+  "type": "Burg/Schloss",
+  "lat": 46.77336,
+  "lng": 11.687345,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3304,
+  "label": "Schloss Rothenburg",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2161,
+  "label": "Schloss Runkelstein",
+  "type": "Burg/Schloss",
+  "lat": 46.517484,
+  "lng": 11.358994,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4155,
+  "label": "Schloss Schauenburg",
+  "type": "Burg/Schloss",
+  "lat": 48.5395,
+  "lng": 8.0945,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3371,
+  "label": "Schloss Schenna",
+  "type": "Burg/Schloss",
+  "lat": 46.69072,
+  "lng": 11.18786,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6505,
+  "label": "Schloss Schneeberg",
+  "type": "Burg/Schloss",
+  "lat": 47.0799,
+  "lng": 11.4127,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4217,
+  "label": "Schloss Sigmundsburg",
+  "type": "Burg/Schloss",
+  "lat": 47.3451,
+  "lng": 10.8238,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4776,
+  "label": "Schloss Sigmundseck",
+  "type": "Burg/Schloss",
+  "lat": 46.929269444444,
+  "lng": 10.487211111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Klause Sigmundseck"
+  ]
+ },
+ {
+  "id": 4248,
+  "label": "Schloss Sigmundsfreud",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4285,
+  "label": "Schloss Sigmundskron (Schloss Firmian)",
+  "type": "Burg/Schloss",
+  "lat": 46.480332,
+  "lng": 11.305318,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6738,
+  "label": "Schloss Sigmundslust",
+  "type": "Burg/Schloss",
+  "lat": 47.3420249,
+  "lng": 11.6798884,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7305,
+  "label": "Schloss Stadion",
+  "type": "Burg/Schloss",
+  "lat": 48.185833333333,
+  "lng": 9.6916666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4536,
+  "label": "Schloss Staufenberg",
+  "type": "Burg/Schloss",
+  "lat": 48.501,
+  "lng": 8.0273,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5729,
+  "label": "Schloss Stein (?)",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6337,
+  "label": "Schloss Steinbrunn",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6064,
+  "label": "Schloss Stenico",
+  "type": "Burg/Schloss",
+  "lat": 46.050629,
+  "lng": 10.852191,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3573,
+  "label": "Schloss Tarasp",
+  "type": "Burg/Schloss",
+  "lat": 46.778888888889,
+  "lng": 10.261666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Trasp"
+  ]
+ },
+ {
+  "id": 1489,
+  "label": "Schloss Thurn",
+  "type": "Burg/Schloss",
+  "lat": 46.680769,
+  "lng": 11.893309,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4016,
+  "label": "Schloss Tirol",
+  "type": "Burg/Schloss",
+  "lat": 46.694494,
+  "lng": 11.144793,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5032,
+  "label": "Schloss Tosters",
+  "type": "Burg/Schloss",
+  "lat": 47.2425,
+  "lng": 9.575,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2102,
+  "label": "Schloss Tratzberg",
+  "type": "Burg/Schloss",
+  "lat": 47.3847,
+  "lng": 11.7431,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3211,
+  "label": "Schloss Vellenberg",
+  "type": "Burg/Schloss",
+  "lat": 47.2422,
+  "lng": 11.3128,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7380,
+  "label": "Schloss Wartensee",
+  "type": "Burg/Schloss",
+  "lat": 47.4717,
+  "lng": 9.53104,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4836,
+  "label": "Schloss Weiler",
+  "type": "Burg/Schloss",
+  "lat": 49.1191,
+  "lng": 9.39539,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4044,
+  "label": "Schloss Weitlingen",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1401,
+  "label": "Schloss Welsperg",
+  "type": "Burg/Schloss",
+  "lat": 46.759757,
+  "lng": 12.113838,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Welsberg"
+  ]
+ },
+ {
+  "id": 275,
+  "label": "Schloss Wiesberg",
+  "type": "Burg/Schloss",
+  "lat": 47.1169,
+  "lng": 10.4928,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4011,
+  "label": "Schloss zum Rocken in Sulls (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11192,
+  "label": "Schluderns",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9943,
+  "label": "Schongau",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7217,
+  "label": "Schottland",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8766,
+  "label": "Schwabegg (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2584,
+  "label": "Schwaben",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 48.37844,
+  "lng": 9.963274,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7084,
+  "label": "Schwarzwald",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2134,
+  "label": "Schwaz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.35,
+  "lng": 11.7,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 486,
+  "label": "Schwyz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.020546,
+  "lng": 8.658332,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4928,
+  "label": "Sechs Gerichte im Prättigau",
+  "type": "Gericht",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Gerichte zu Davos, zum Kloster im Prättigau, zu Lenz, zu Churwalden, das",
+   "vordere Gericht in Schanfik zu St. Peter und das innere an",
+   "der langen Wiese"
+  ]
+ },
+ {
+  "id": 7153,
+  "label": "Seckau",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.275,
+  "lng": 14.785,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5403,
+  "label": "Seefeld",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.329444444444,
+  "lng": 11.189166666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7208,
+  "label": "Sélestat/Schlettstadt",
+  "type": "Stadt",
+  "lat": 48.259444444444,
+  "lng": 7.4541666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8409,
+  "label": "Sellrain",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.213333333333,
+  "lng": 11.213888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7898,
+  "label": "Sennheim/Cernay",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.806666666667,
+  "lng": 7.1758333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11226,
+  "label": "Silz",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4299,
+  "label": "Sitz Rubein (Obermais)",
+  "type": "Burg/Schloss",
+  "lat": 46.6656,
+  "lng": 11.1789,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6499,
+  "label": "Solothurn",
+  "type": "Stadt",
+  "lat": 47.208055555556,
+  "lng": 7.5375,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11442,
+  "label": "Sonderheim",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10479,
+  "label": "Sonthofen",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10287,
+  "label": "Soyen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9387,
+  "label": "Sparberegg",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11427,
+  "label": "Speyer",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2643,
+  "label": "Spiegelfreudensee",
+  "type": "Gewässer",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 83,
+  "label": "Stadtpalais Stürtzels in Freiburg",
+  "type": "Haus/Hof",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Basler Hof"
+  ]
+ },
+ {
+  "id": 7035,
+  "label": "Stams",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.276388888889,
+  "lng": 10.983333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10381,
+  "label": "Steiermark",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3654,
+  "label": "Steinach",
+  "type": "Gericht",
+  "lat": 47.083333333333,
+  "lng": 11.466666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2903,
+  "label": "Sterzing",
+  "type": "Stadt",
+  "lat": 46.896324,
+  "lng": 11.43194,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10032,
+  "label": "St. Gallen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6606,
+  "label": "Stift Oelenberg",
+  "type": "Kloster",
+  "lat": 47.746027777778,
+  "lng": 7.2133694444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6998,
+  "label": "Stift Stams",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.2775,
+  "lng": 10.9842,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7045,
+  "label": "Stift St. Georgenberg",
+  "type": "Kloster",
+  "lat": 47.376594,
+  "lng": 11.692189,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10378,
+  "label": "Stift St. Michael an der Etsch",
+  "type": "Kloster",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1356,
+  "label": "Stift Wilten",
+  "type": "Kloster",
+  "lat": 47.2537,
+  "lng": 11.4005,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6909,
+  "label": "St. Lorenzen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.783454,
+  "lng": 11.903071,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2264,
+  "label": "St. Margarethen (Buch in Tirol)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11611,
+  "label": "St. Martin in Passeier",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1110,
+  "label": "Stockach",
+  "type": "Stadt",
+  "lat": 47.851388888889,
+  "lng": 9.0113888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3903,
+  "label": "Straßburg",
+  "type": "Stadt",
+  "lat": 48.573333333333,
+  "lng": 7.7522222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11835,
+  "label": "Strass (im Zillertal)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13455,
+  "label": "Straubing",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2577,
+  "label": "Struden",
+  "type": "Landschaft/Region",
+  "lat": 48.2,
+  "lng": 14.916666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1772,
+  "label": "Stubaital",
+  "type": "Tal",
+  "lat": 47.1667,
+  "lng": 11.3167,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 499,
+  "label": "Stuttgart",
+  "type": "Stadt",
+  "lat": 48.7775,
+  "lng": 9.18,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2502,
+  "label": "Sulzberg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4767,
+  "label": "Sulztal",
+  "type": "Tal",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7386,
+  "label": "Sundgau",
+  "type": "Landschaft/Region",
+  "lat": 48.081111111111,
+  "lng": 7.355,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10419,
+  "label": "Tannberg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1076,
+  "label": "Tannheim (Tirol)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.483333333333,
+  "lng": 10.516666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2774,
+  "label": "Tarsch",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.607711,
+  "lng": 10.877322,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7005,
+  "label": "Taufers (Ahrntal)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.911215,
+  "lng": 11.948447,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Sand in Taufers"
+  ]
+ },
+ {
+  "id": 2235,
+  "label": "Telfs",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.306944444444,
+  "lng": 11.072222222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2746,
+  "label": "Terlan",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.529301,
+  "lng": 11.248678,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13245,
+  "label": "Tetingen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4717,
+  "label": "Tettnang",
+  "type": "Stadt",
+  "lat": 47.670833333333,
+  "lng": 9.5875,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2657,
+  "label": "Thann",
+  "type": "Stadt",
+  "lat": 47.806666666667,
+  "lng": 7.1044444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4409,
+  "label": "Thaur",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.295,
+  "lng": 11.471944444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "https://www.wikidata.org/wiki/Q694309"
+  ]
+ },
+ {
+  "id": 7436,
+  "label": "Thurgau",
+  "type": "Landschaft/Region",
+  "lat": 47.583333333333,
+  "lng": 9.0666666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7036,
+  "label": "Tiers",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.467348,
+  "lng": 11.52748,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7446,
+  "label": "Tisens",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.563898,
+  "lng": 11.169497,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5062,
+  "label": "Tisis",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.2256,
+  "lng": 9.58139,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5836,
+  "label": "Tissen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.0476,
+  "lng": 9.51054,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3857,
+  "label": "Toblach",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.735425,
+  "lng": 12.22428,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8527,
+  "label": "Töll",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.677226139946,
+  "lng": 11.084387582364,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1474,
+  "label": "Tölz",
+  "type": "Stadt",
+  "lat": 47.760277777778,
+  "lng": 11.556666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2113,
+  "label": "Tramin",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.34151,
+  "lng": 11.24228,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4077,
+  "label": "Triberg",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 48.130833333333,
+  "lng": 8.2316666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1042,
+  "label": "Trient",
+  "type": "Stadt",
+  "lat": 46.06666667,
+  "lng": 11.11666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3588,
+  "label": "Trins",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.06976,
+  "lng": 11.39787,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10057,
+  "label": "Trobach (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2779,
+  "label": "Tschars",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.63873,
+  "lng": 10.94178,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10513,
+  "label": "Tübingen",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6189,
+  "label": "Turm Hauzenheim",
+  "type": "Burg/Schloss",
+  "lat": 47.2783128,
+  "lng": 11.5494446,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Hautzenheim",
+   "Stachelburg"
+  ]
+ },
+ {
+  "id": 4851,
+  "label": "Turm zu Bozen",
+  "type": "Lehen",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2165,
+  "label": "Turm zu Bregenz",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7156,
+  "label": "Turm zu Ehingen",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2747,
+  "label": "Turm zu Feldthurns",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6339,
+  "label": "Turm zu Glurns",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2280,
+  "label": "Turm zu Imst",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3428,
+  "label": "Turm zu Mals",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4572,
+  "label": "Turm zu Pfunds",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4179,
+  "label": "Turm zu Ried",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5173,
+  "label": "Turm zu Trient an der Brücke, genannt der rote Turm",
+  "type": "Burg/Schloss",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7213,
+  "label": "Überlingen",
+  "type": "Stadt",
+  "lat": 47.766666666667,
+  "lng": 9.165,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5061,
+  "label": "Übersaxen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.253333333333,
+  "lng": 9.6711111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2246,
+  "label": "Udelberg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3093,
+  "label": "Ulm",
+  "type": "Stadt",
+  "lat": 48.39841,
+  "lng": 9.99155,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10063,
+  "label": "Ungarn",
+  "type": "Land/Herrschaftskomplex",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7046,
+  "label": "Universität Basel",
+  "type": "",
+  "lat": 47.55852,
+  "lng": 7.58346,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7047,
+  "label": "Universität Bologna",
+  "type": "",
+  "lat": 44.493888888889,
+  "lng": 11.342777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7048,
+  "label": "Universität Freiburg im Breisgau",
+  "type": "",
+  "lat": 47.994166666667,
+  "lng": 7.8469444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7049,
+  "label": "Universität Heidelberg",
+  "type": "",
+  "lat": 49.4190991,
+  "lng": 8.6702507,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7050,
+  "label": "Universität Leipzig",
+  "type": "",
+  "lat": 51.3387,
+  "lng": 12.378727777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7051,
+  "label": "Universität Pavia",
+  "type": "",
+  "lat": 45.18675,
+  "lng": 9.15586,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7052,
+  "label": "Universität Wien",
+  "type": "",
+  "lat": 48.213055555556,
+  "lng": 16.359722222222,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7037,
+  "label": "Unterfennberg",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.2727,
+  "lng": 11.18194,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8525,
+  "label": "Unterrain",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.49065,
+  "lng": 11.25954,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5076,
+  "label": "Unterwalden",
+  "type": "Landschaft/Region",
+  "lat": 46.87,
+  "lng": 8.31,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1420,
+  "label": "Urbino",
+  "type": "Stadt",
+  "lat": 43.725238888889,
+  "lng": 12.6372,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5075,
+  "label": "Uri",
+  "type": "Landschaft/Region",
+  "lat": 46.783333333333,
+  "lng": 8.6166666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2656,
+  "label": "Uri (?)",
+  "type": "",
+  "lat": 46.783333333333,
+  "lng": 8.6166666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7389,
+  "label": "Valsugana",
+  "type": "Tal",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3657,
+  "label": "Veldes (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4981,
+  "label": "Veltlin",
+  "type": "Tal",
+  "lat": 46.166667,
+  "lng": 9.866667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5933,
+  "label": "Venedig",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 3602,
+  "label": "Verona",
+  "type": "Stadt",
+  "lat": 45.438611111111,
+  "lng": 10.992777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1992,
+  "label": "Vier Gerichte (Vier Waldstätte?)",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12266,
+  "label": "Villach",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7039,
+  "label": "Villanders",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.632934,
+  "lng": 11.540101,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 236,
+  "label": "Villingen",
+  "type": "Stadt",
+  "lat": 48.05967,
+  "lng": 8.45989,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7105,
+  "label": "Vinschgau",
+  "type": "Tal",
+  "lat": 46.66667,
+  "lng": 10.58333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7448,
+  "label": "Volders",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.2875,
+  "lng": 11.565277777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7529,
+  "label": "Vomp",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.342222222222,
+  "lng": 11.683333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5245,
+  "label": "Vorarlberg",
+  "type": "Landschaft/Region",
+  "lat": 47.243611111111,
+  "lng": 9.8938888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4707,
+  "label": "Vorlande",
+  "type": "Land/Herrschaftskomplex",
+  "lat": 47.418359,
+  "lng": 8.913607,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Vorderösterreich"
+  ]
+ },
+ {
+  "id": 10163,
+  "label": "Vorstadt zu Bregenz",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7447,
+  "label": "Waldkirch",
+  "type": "Stadt",
+  "lat": 48.093888888889,
+  "lng": 7.9608333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13086,
+  "label": "Waldrast",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 660,
+  "label": "Waldshut",
+  "type": "Stadt",
+  "lat": 47.623055555556,
+  "lng": 8.2144444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7074,
+  "label": "Walenstadt",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.1234,
+  "lng": 9.315,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5619,
+  "label": "Walgau",
+  "type": "Tal",
+  "lat": 47.1844,
+  "lng": 9.72167,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 2420,
+  "label": "Wasserburg (?)",
+  "type": "",
+  "lat": 48.060833333333,
+  "lng": 12.233333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4243,
+  "label": "Wasserburg am Inn",
+  "type": "Stadt",
+  "lat": 48.060833333333,
+  "lng": 12.233333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4910,
+  "label": "\"Wasserhaus\" Buchheim",
+  "type": "Burg/Schloss",
+  "lat": 48.056111111111,
+  "lng": 7.7819444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12783,
+  "label": "Weggis",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5290,
+  "label": "Wehrburg (Prissian)",
+  "type": "Burg/Schloss",
+  "lat": 46.5493,
+  "lng": 11.1853,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Werberg"
+  ]
+ },
+ {
+  "id": 3651,
+  "label": "Weiden in der Oberpfalz",
+  "type": "Stadt",
+  "lat": 49.673530555556,
+  "lng": 12.166061111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10034,
+  "label": "Weil",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": [
+   "Wil"
+  ]
+ },
+ {
+  "id": 9497,
+  "label": "Weilheim",
+  "type": "Stadt",
+  "lat": 47.833333333333,
+  "lng": 11.133333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4819,
+  "label": "Weingarten (Altdorf)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.80777,
+  "lng": 9.64172,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7581,
+  "label": "Weißenburg in Bayern",
+  "type": "Stadt",
+  "lat": 49.030555555556,
+  "lng": 10.971944444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 11561,
+  "label": "Weißenburg/Wissembourg (Elsass)",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7438,
+  "label": "Weißenhorn",
+  "type": "Stadt",
+  "lat": 48.30437,
+  "lng": 10.15926,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 751,
+  "label": "Weitting (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7372,
+  "label": "Wengen (Südtirol)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.657719,
+  "lng": 11.924326,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12181,
+  "label": "Wenns",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1915,
+  "label": "Werdenberg",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10399,
+  "label": "Westfriesland",
+  "type": "Landschaft/Region",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1451,
+  "label": "Wetzlar",
+  "type": "Stadt",
+  "lat": 50.566666666667,
+  "lng": 8.5,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6449,
+  "label": "Wien",
+  "type": "Stadt",
+  "lat": 48.208333333333,
+  "lng": 16.3725,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 10078,
+  "label": "Wiener Neustadt",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9383,
+  "label": "Wiesen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 46.90003,
+  "lng": 11.46507,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9414,
+  "label": "Wilten",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 523,
+  "label": "Winterthur",
+  "type": "Stadt",
+  "lat": 47.4992,
+  "lng": 8.72671,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 8648,
+  "label": "Wolfach",
+  "type": "",
+  "lat": 48.299444444444,
+  "lng": 8.2227777777778,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7578,
+  "label": "Wolferstadt",
+  "type": "Stadt",
+  "lat": 48.916666666667,
+  "lng": 10.783333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 9987,
+  "label": "Worms (Bartholomäberg)",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6741,
+  "label": "Wucherhaus in Bozen",
+  "type": "Haus/Hof",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7203,
+  "label": "Würzburg",
+  "type": "Stadt",
+  "lat": 49.794444444444,
+  "lng": 9.9294444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 12407,
+  "label": "Zabern/Saverne",
+  "type": "Stadt",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4223,
+  "label": "Zams",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.157777777778,
+  "lng": 10.589444444444,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 1310,
+  "label": "Zell (?)",
+  "type": "",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 7214,
+  "label": "Zell am Untersee",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4797,
+  "label": "Ziemetshausen",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.3,
+  "lng": 10.533333333333,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 13567,
+  "label": "Zillertal",
+  "type": "Tal",
+  "lat": null,
+  "lng": null,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 6194,
+  "label": "Zirl",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 47.273333333333,
+  "lng": 11.241388888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5077,
+  "label": "Zug",
+  "type": "Landschaft/Region",
+  "lat": 47.1648,
+  "lng": 8.548,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 484,
+  "label": "Zürich",
+  "type": "Stadt",
+  "lat": 47.374444444444,
+  "lng": 8.5411111111111,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 5078,
+  "label": "Zürich (Kanton)",
+  "type": "Landschaft/Region",
+  "lat": 47.413055611111,
+  "lng": 8.6563888888889,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ },
+ {
+  "id": 4795,
+  "label": "Zwiefalten",
+  "type": "Dorf/Nachbarschaft/Gemein/Siedlung/Weiler",
+  "lat": 48.2325,
+  "lng": 9.4641666666667,
+  "start_date": "",
+  "end_date": "",
+  "alternative_label": []
+ }
+]

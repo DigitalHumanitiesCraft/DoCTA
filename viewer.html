@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quellen-Explorer | DoCTA</title>
+  <meta name="description" content="Quellen-Explorer: Digitalisat neben Transkription. 57 Inventare mit Volltext aus dem Tiroler Landesarchiv.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="viewer-layout">
+      <!-- Image Panel -->
+      <div class="viewer-panel">
+        <div class="viewer-panel__header">
+          <span><a href="sources.html" class="text-body-secondary text-decoration-none" style="font-weight:400">&larr; Quellen</a> &middot; Digitalisat</span>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-outline-secondary btn-sm" id="btn-prev-page" disabled aria-label="Vorherige Seite">←</button>
+            <span id="page-indicator" class="small">Seite 1/1</span>
+            <button class="btn btn-outline-secondary btn-sm" id="btn-next-page" disabled aria-label="Nächste Seite">→</button>
+          </div>
+        </div>
+        <div class="osd-container" id="osd-viewer">
+          <div id="osd-placeholder" style="display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:0.875rem;text-align:center;padding:2rem;">
+            Bitte wählen Sie ein Dokument aus der Liste rechts.
+          </div>
+        </div>
+      </div>
+
+      <!-- Transcription Panel -->
+      <div class="viewer-panel" style="overflow-y:auto">
+        <div class="viewer-panel__header">
+          <span>Transkription</span>
+          <select class="form-select form-select-sm" id="doc-selector" aria-label="Dokument auswählen" style="max-width:300px">
+            <option value="">Dokument wählen...</option>
+          </select>
+        </div>
+        <div id="transcription-container" style="padding:0">
+          <div class="loading">Wählen Sie ein Dokument oder öffnen Sie eine Quelle aus der <a href="sources.html">Quellenübersicht</a>.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="lib/openseadragon.min.js"></script>
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+    import { loadJSON } from './js/data-loader.js';
+    import { getParams, setParams, escapeHTML } from './js/utils.js';
+
+    initNav('viewer');
+    initBanner();
+
+    let viewer = null;
+    let currentDoc = null;
+    let currentPage = 0;
+    let entitiesData = null;
+
+    loadJSON('data/demo/thaur_entities.json').then(data => {
+      entitiesData = data;
+    }).catch(() => {});
+
+    function initOSD() {
+      const placeholder = document.getElementById('osd-placeholder');
+      if (placeholder) placeholder.remove();
+      viewer = OpenSeadragon({
+        id: 'osd-viewer',
+        prefixUrl: 'lib/images/',
+        showNavigator: false,
+        showNavigationControl: false,
+        minZoomLevel: 0.5,
+        maxZoomLevel: 5,
+        defaultZoomLevel: 0.9,
+        gestureSettingsMouse: { clickToZoom: false, dblClickToZoom: true },
+      });
+    }
+
+    function loadImage(iiifUrl) {
+      if (!viewer) initOSD();
+      viewer.open({ type: 'image', url: iiifUrl });
+      document.getElementById('osd-viewer').classList.add('osd-active');
+    }
+
+    function renderTranscription(doc, pageNr) {
+      const container = document.getElementById('transcription-container');
+      const page = doc.pages.find(p => p.pageNr === pageNr);
+      if (!page) {
+        container.innerHTML = '<div class="loading text-body-secondary">Keine Transkription für diese Seite</div>';
+        return;
+      }
+
+      const isDemo = doc.docId === 11328300;
+      const entityMap = new Map();
+      if (isDemo && entitiesData) {
+        for (const ent of entitiesData.entities) {
+          if (ent.type !== 'object') {
+            entityMap.set(ent.text.toLowerCase(), ent);
+          }
+        }
+      }
+
+      let lineNr = 0;
+      for (const p of doc.pages) {
+        if (p.pageNr < pageNr) {
+          for (const r of p.regions) lineNr += r.lines.length;
+        }
+      }
+
+      let html = '<div class="transcription">';
+      for (const region of page.regions) {
+        for (const line of region.lines) {
+          lineNr++;
+          let text = escapeHTML(line.text);
+          if (isDemo) {
+            const confLabels = { high: 'sicher', medium: 'prüfenswert', low: 'problematisch' };
+            for (const [key, ent] of entityMap) {
+              const conf = ent.confidence || 'high';
+              const regex = new RegExp(`(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+              text = text.replace(regex, `<span class="entity entity--${ent.type}" data-conf="${conf}" title="${escapeHTML(ent.normalized || ent.text)} (${confLabels[conf]})">\$1</span>`);
+            }
+          }
+          html += `<div class="transcription__line"><span class="transcription__line-nr">${lineNr}</span><span>${text}</span></div>`;
+        }
+      }
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    function setPage(pageNr) {
+      if (!currentDoc) return;
+      pageNr = Math.max(0, Math.min(currentDoc.pages.length - 1, pageNr));
+      currentPage = pageNr;
+
+      const page = currentDoc.pages[pageNr];
+      loadImage(page.iiif);
+      renderTranscription(currentDoc, page.pageNr);
+
+      document.getElementById('page-indicator').textContent = `Seite ${pageNr + 1}/${currentDoc.pages.length}`;
+      document.getElementById('btn-prev-page').disabled = pageNr === 0;
+      document.getElementById('btn-next-page').disabled = pageNr === currentDoc.pages.length - 1;
+
+      setParams({ doc: String(currentDoc.docId), page: String(pageNr + 1) });
+    }
+
+    async function loadDocument(docId) {
+      try {
+        currentDoc = await loadJSON(`data/transcriptions/${docId}.json`);
+        const params = getParams();
+        const startPage = parseInt(params.page || '1') - 1;
+        setPage(startPage);
+      } catch (err) {
+        document.getElementById('transcription-container').innerHTML =
+          `<div class="loading text-body-secondary">Dokument ${docId} konnte nicht geladen werden: ${err.message}</div>`;
+      }
+    }
+
+    document.getElementById('btn-prev-page').addEventListener('click', () => setPage(currentPage - 1));
+    document.getElementById('btn-next-page').addEventListener('click', () => setPage(currentPage + 1));
+
+    document.getElementById('doc-selector').addEventListener('change', (e) => {
+      if (e.target.value) loadDocument(e.target.value);
+    });
+
+    async function init() {
+      try {
+        const mapping = await loadJSON('data/source_mapping.json');
+        const selector = document.getElementById('doc-selector');
+
+        const docsWithText = mapping.matched
+          .filter(m => m.has_text)
+          .sort((a, b) => a.csv_signatur.localeCompare(b.csv_signatur));
+
+        for (const doc of docsWithText) {
+          const opt = document.createElement('option');
+          opt.value = doc.transkribus_id;
+          opt.textContent = `${doc.csv_signatur} - ${doc.csv_titel}`;
+          selector.appendChild(opt);
+        }
+
+        const demoInList = docsWithText.find(d => d.transkribus_id === 11328300);
+        if (!demoInList) {
+          const opt = document.createElement('option');
+          opt.value = '11328300';
+          opt.textContent = 'Thaur A 49.1 - Inventar Schloss Thaur (Demo)';
+          selector.insertBefore(opt, selector.options[1]);
+        }
+
+        const params = getParams();
+        if (params.doc) {
+          selector.value = params.doc;
+          loadDocument(params.doc);
+        }
+      } catch (err) {
+        console.error('Failed to load source mapping:', err);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

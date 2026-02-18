@@ -1,0 +1,1810 @@
+{
+ "nodes": [
+  {
+   "id": "function-193",
+   "label": "Diener Sigmunds",
+   "type": "function",
+   "x": 0.0957,
+   "y": 0.0458,
+   "degree": 750,
+   "betweenness": 0.038767
+  },
+  {
+   "id": "person-18",
+   "label": "Sigmund von Tirol",
+   "type": "person",
+   "x": -0.0382,
+   "y": -0.0232,
+   "degree": 388,
+   "betweenness": 0.071151
+  },
+  {
+   "id": "function-45",
+   "label": "Rat Sigmunds",
+   "type": "function",
+   "x": 0.0334,
+   "y": -0.0291,
+   "degree": 371,
+   "betweenness": 0.171379
+  },
+  {
+   "id": "function-582",
+   "label": "Bote (Sigmunds)",
+   "type": "function",
+   "x": 0.771,
+   "y": 0.5093,
+   "degree": 281,
+   "betweenness": 0.025735
+  },
+  {
+   "id": "place-28",
+   "label": "Innsbruck",
+   "type": "place",
+   "x": -0.0384,
+   "y": -0.1104,
+   "degree": 264,
+   "betweenness": 0.190257
+  },
+  {
+   "id": "institution-7057",
+   "label": "Gesandtschaften",
+   "type": "institution",
+   "x": -0.31,
+   "y": 0.4227,
+   "degree": 256,
+   "betweenness": 0.00609
+  },
+  {
+   "id": "function-643",
+   "label": "Schütze",
+   "type": "function",
+   "x": 0.4446,
+   "y": 0.8832,
+   "degree": 193,
+   "betweenness": 0.017608
+  },
+  {
+   "id": "institution-707",
+   "label": "Pfleger, Amtleute, Richter und Hauptleute in Tirol",
+   "type": "institution",
+   "x": -0.5338,
+   "y": 0.4295,
+   "degree": 188,
+   "betweenness": 0.022818
+  },
+  {
+   "id": "institution-6991",
+   "label": "Orden/Klöster, Geistliche",
+   "type": "institution",
+   "x": -0.8602,
+   "y": 0.531,
+   "degree": 112,
+   "betweenness": 0.017309
+  },
+  {
+   "id": "function-2296",
+   "label": "Kommissar/Schiedsrichter",
+   "type": "function",
+   "x": 0.1142,
+   "y": -0.0759,
+   "degree": 100,
+   "betweenness": 0.038496
+  },
+  {
+   "id": "function-1780",
+   "label": "Gesandter Sigmunds",
+   "type": "function",
+   "x": 0.1526,
+   "y": 0.1059,
+   "degree": 96,
+   "betweenness": 0.013185
+  },
+  {
+   "id": "institution-6984",
+   "label": "Vögte, Amtmänner, Hauptleute und Richter in den Vorlanden",
+   "type": "institution",
+   "x": -0.7223,
+   "y": 0.5572,
+   "degree": 94,
+   "betweenness": 0.0042
+  },
+  {
+   "id": "function-1337",
+   "label": "Einspänniger Knecht",
+   "type": "function",
+   "x": 0.3835,
+   "y": 0.884,
+   "degree": 91,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-2640",
+   "label": "Handwerker am/für den Hof",
+   "type": "institution",
+   "x": 0.2935,
+   "y": 0.0727,
+   "degree": 90,
+   "betweenness": 0.002284
+  },
+  {
+   "id": "institution-323",
+   "label": "Hofstaat Sigmunds",
+   "type": "institution",
+   "x": 0.1826,
+   "y": -0.1382,
+   "degree": 83,
+   "betweenness": 0.040492
+  },
+  {
+   "id": "function-923",
+   "label": "Büchsenmeister",
+   "type": "function",
+   "x": -0.2,
+   "y": -0.9792,
+   "degree": 82,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-171",
+   "label": "Hall in Tirol",
+   "type": "place",
+   "x": 0.8569,
+   "y": 0.4353,
+   "degree": 77,
+   "betweenness": 0.010951
+  },
+  {
+   "id": "function-837",
+   "label": "Fußknecht",
+   "type": "function",
+   "x": -0.7964,
+   "y": -0.648,
+   "degree": 72,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-6993",
+   "label": "Städte",
+   "type": "institution",
+   "x": -0.4,
+   "y": -0.9269,
+   "degree": 69,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-4692",
+   "label": "Wirt/Wirtin",
+   "type": "function",
+   "x": -0.9772,
+   "y": 0.0049,
+   "degree": 67,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-3217",
+   "label": "Landesfürstliche Gerichte in Tirol",
+   "type": "institution",
+   "x": 0.8967,
+   "y": 0.304,
+   "degree": 64,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-681",
+   "label": "Stallknecht",
+   "type": "function",
+   "x": -0.7187,
+   "y": 0.6537,
+   "degree": 54,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-770",
+   "label": "Büchsenschütze/Büchsenknecht",
+   "type": "function",
+   "x": -0.0886,
+   "y": 0.9845,
+   "degree": 52,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-77",
+   "label": "Hofgesinde",
+   "type": "function",
+   "x": -0.5423,
+   "y": -0.875,
+   "degree": 52,
+   "betweenness": 0.001143
+  },
+  {
+   "id": "function-115",
+   "label": "Trompeter",
+   "type": "function",
+   "x": -0.4352,
+   "y": 0.8451,
+   "degree": 52,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-1042",
+   "label": "Trient",
+   "type": "place",
+   "x": -0.4744,
+   "y": 0.7865,
+   "degree": 51,
+   "betweenness": 0.000242
+  },
+  {
+   "id": "institution-7180",
+   "label": "Diener und Knechte außerhalb des Hofs",
+   "type": "institution",
+   "x": 0.5127,
+   "y": 0.8031,
+   "degree": 51,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-126",
+   "label": "Türhüter",
+   "type": "function",
+   "x": -0.0863,
+   "y": -0.8058,
+   "degree": 48,
+   "betweenness": 0.000282
+  },
+  {
+   "id": "place-2164",
+   "label": "Feldkirch",
+   "type": "place",
+   "x": 0.2628,
+   "y": -0.6206,
+   "degree": 47,
+   "betweenness": 0.000422
+  },
+  {
+   "id": "function-46",
+   "label": "Kämmerer",
+   "type": "function",
+   "x": 0.1578,
+   "y": 0.3243,
+   "degree": 47,
+   "betweenness": 0.008649
+  },
+  {
+   "id": "person-954",
+   "label": "Leonhard von Weineck",
+   "type": "person",
+   "x": -0.1676,
+   "y": 0.2522,
+   "degree": 45,
+   "betweenness": 0.032503
+  },
+  {
+   "id": "function-1048",
+   "label": "Gesandter Sigmunds bei Kaiser Friedrich III.",
+   "type": "function",
+   "x": 0.3814,
+   "y": 0.3159,
+   "degree": 45,
+   "betweenness": 0.010847
+  },
+  {
+   "id": "function-3348",
+   "label": "Arzt",
+   "type": "function",
+   "x": -0.2059,
+   "y": 0.9283,
+   "degree": 44,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-734",
+   "label": "Diener im Stall des Herzogs",
+   "type": "function",
+   "x": -0.6117,
+   "y": 0.8231,
+   "degree": 44,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-222",
+   "label": "Kaspar von Laubenberg",
+   "type": "person",
+   "x": 0.3353,
+   "y": 0.6624,
+   "degree": 43,
+   "betweenness": 0.013484
+  },
+  {
+   "id": "person-1318",
+   "label": "Hildebrand Rasp von Laufenbach",
+   "type": "person",
+   "x": 0.1487,
+   "y": 0.4703,
+   "degree": 43,
+   "betweenness": 0.021556
+  },
+  {
+   "id": "place-348",
+   "label": "Meran",
+   "type": "place",
+   "x": -0.6284,
+   "y": -0.7937,
+   "degree": 43,
+   "betweenness": 0.000126
+  },
+  {
+   "id": "place-1136",
+   "label": "Bregenz",
+   "type": "place",
+   "x": 0.785,
+   "y": 0.6412,
+   "degree": 42,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-693",
+   "label": "Reitender Bote",
+   "type": "function",
+   "x": 0.4738,
+   "y": -0.8611,
+   "degree": 42,
+   "betweenness": 0.00868
+  },
+  {
+   "id": "person-98",
+   "label": "Ulrich von Freundsberg",
+   "type": "person",
+   "x": -0.5605,
+   "y": 0.2399,
+   "degree": 41,
+   "betweenness": 0.005708
+  },
+  {
+   "id": "function-2638",
+   "label": "Baumeister (Werkmeister, Zimmermann, Maurer)",
+   "type": "function",
+   "x": -0.289,
+   "y": -0.9686,
+   "degree": 41,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-109",
+   "label": "Kanzleischreiber",
+   "type": "function",
+   "x": -0.737,
+   "y": -0.7281,
+   "degree": 41,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1820",
+   "label": "Kaplan Sigmunds",
+   "type": "function",
+   "x": 0.6174,
+   "y": 0.8043,
+   "degree": 41,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-1893",
+   "label": "Bozen",
+   "type": "place",
+   "x": -0.8354,
+   "y": 0.466,
+   "degree": 40,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1024",
+   "label": "Fischer",
+   "type": "function",
+   "x": -0.7823,
+   "y": 0.5995,
+   "degree": 40,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-7194",
+   "label": "Forst, Jagd und Fischerei in Tirol",
+   "type": "institution",
+   "x": 0.846,
+   "y": -0.1885,
+   "degree": 39,
+   "betweenness": 0.005544
+  },
+  {
+   "id": "function-4802",
+   "label": "Kaplan",
+   "type": "function",
+   "x": 0.902,
+   "y": 0.2696,
+   "degree": 38,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1721",
+   "label": "Wagenknecht",
+   "type": "function",
+   "x": -0.9669,
+   "y": -0.136,
+   "degree": 38,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-6460",
+   "label": "Schneider",
+   "type": "function",
+   "x": -0.4438,
+   "y": 0.9138,
+   "degree": 37,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-8848",
+   "label": "Söldner",
+   "type": "function",
+   "x": 0.3302,
+   "y": 0.8827,
+   "degree": 37,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-2642",
+   "label": "Augsburg",
+   "type": "place",
+   "x": -0.9138,
+   "y": -0.3772,
+   "degree": 36,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-1443",
+   "label": "Jakob von Ems zu Hohenems",
+   "type": "person",
+   "x": 0.0232,
+   "y": -0.2041,
+   "degree": 35,
+   "betweenness": 0.010216
+  },
+  {
+   "id": "person-96",
+   "label": "Jakob Trapp",
+   "type": "person",
+   "x": 0.3061,
+   "y": 0.4711,
+   "degree": 35,
+   "betweenness": 0.026998
+  },
+  {
+   "id": "function-220",
+   "label": "Marschall",
+   "type": "function",
+   "x": 0.7168,
+   "y": 0.1313,
+   "degree": 35,
+   "betweenness": 0.008788
+  },
+  {
+   "id": "function-4747",
+   "label": "Prokurator Sigmunds",
+   "type": "function",
+   "x": -0.1109,
+   "y": 0.0637,
+   "degree": 35,
+   "betweenness": 0.001158
+  },
+  {
+   "id": "person-296",
+   "label": "Walther von Stadion",
+   "type": "person",
+   "x": -0.1455,
+   "y": 0.689,
+   "degree": 34,
+   "betweenness": 0.005672
+  },
+  {
+   "id": "institution-6988",
+   "label": "Bistum Brixen",
+   "type": "institution",
+   "x": 0.9129,
+   "y": -0.3685,
+   "degree": 34,
+   "betweenness": 0.004843
+  },
+  {
+   "id": "institution-702",
+   "label": "Hofstaat der Herzogin",
+   "type": "institution",
+   "x": -0.4658,
+   "y": -0.8639,
+   "degree": 34,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-97",
+   "label": "Hofmeister",
+   "type": "function",
+   "x": 0.4356,
+   "y": -0.6162,
+   "degree": 34,
+   "betweenness": 0.004771
+  },
+  {
+   "id": "function-4833",
+   "label": "(Hof-)Schmied",
+   "type": "function",
+   "x": -0.1566,
+   "y": -0.9741,
+   "degree": 34,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-2134",
+   "label": "Schwaz",
+   "type": "place",
+   "x": 0.9487,
+   "y": -0.2979,
+   "degree": 33,
+   "betweenness": 0.000158
+  },
+  {
+   "id": "function-278",
+   "label": "Diener des Kammermeisters",
+   "type": "function",
+   "x": 0.9705,
+   "y": 0.1833,
+   "degree": 33,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-480",
+   "label": "Edelknabe",
+   "type": "function",
+   "x": 0.5761,
+   "y": -0.7985,
+   "degree": 33,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-84",
+   "label": "Gesandter Sigmunds bei den Eidgenossen",
+   "type": "function",
+   "x": -0.2309,
+   "y": 0.5265,
+   "degree": 32,
+   "betweenness": 0.008071
+  },
+  {
+   "id": "person-315",
+   "label": "Hans Jakob von Bodmann (der Jüngere)",
+   "type": "person",
+   "x": 0.6355,
+   "y": -0.0757,
+   "degree": 31,
+   "betweenness": 0.001635
+  },
+  {
+   "id": "person-258",
+   "label": "Niklas von Firmian",
+   "type": "person",
+   "x": -0.7873,
+   "y": -0.1612,
+   "degree": 31,
+   "betweenness": 0.023173
+  },
+  {
+   "id": "institution-327",
+   "label": "Bergbau (Bergregal)",
+   "type": "institution",
+   "x": 0.6062,
+   "y": -0.7518,
+   "degree": 31,
+   "betweenness": 0.00156
+  },
+  {
+   "id": "institution-6926",
+   "label": "Vorlande/Vorderösterreich",
+   "type": "institution",
+   "x": -0.6471,
+   "y": 0.7451,
+   "degree": 31,
+   "betweenness": 0.003972
+  },
+  {
+   "id": "function-36",
+   "label": "Sekretär",
+   "type": "function",
+   "x": -0.5453,
+   "y": -0.7912,
+   "degree": 31,
+   "betweenness": 6e-05
+  },
+  {
+   "id": "person-16",
+   "label": "Konrad Stürtzel",
+   "type": "person",
+   "x": -0.0054,
+   "y": 0.2373,
+   "degree": 30,
+   "betweenness": 0.018088
+  },
+  {
+   "id": "place-2008",
+   "label": "Nürnberg",
+   "type": "place",
+   "x": 0.6742,
+   "y": -0.7572,
+   "degree": 30,
+   "betweenness": 0.000148
+  },
+  {
+   "id": "function-292",
+   "label": "Domherr zu Brixen",
+   "type": "function",
+   "x": -0.9693,
+   "y": -0.1854,
+   "degree": 30,
+   "betweenness": 0.030759
+  },
+  {
+   "id": "person-51",
+   "label": "Gaudenz von Matsch",
+   "type": "person",
+   "x": 0.7493,
+   "y": -0.0252,
+   "degree": 29,
+   "betweenness": 0.011493
+  },
+  {
+   "id": "person-228",
+   "label": "Arnold von Niedertor",
+   "type": "person",
+   "x": 0.7008,
+   "y": 0.5298,
+   "degree": 29,
+   "betweenness": 0.000395
+  },
+  {
+   "id": "place-7016",
+   "label": "Grafschaft Tirol",
+   "type": "place",
+   "x": 0.4584,
+   "y": -0.4111,
+   "degree": 29,
+   "betweenness": 0.052705
+  },
+  {
+   "id": "place-546",
+   "label": "Konstanz",
+   "type": "place",
+   "x": -0.9918,
+   "y": 0.0531,
+   "degree": 29,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1729",
+   "label": "Goldschmied",
+   "type": "function",
+   "x": -0.9411,
+   "y": 0.3092,
+   "degree": 29,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-26",
+   "label": "Küchenmeister",
+   "type": "function",
+   "x": -0.1064,
+   "y": -0.4402,
+   "degree": 29,
+   "betweenness": 0.003182
+  },
+  {
+   "id": "function-7768",
+   "label": "Rottmeister",
+   "type": "function",
+   "x": -0.6045,
+   "y": -0.7443,
+   "degree": 29,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-3132",
+   "label": "Schlosser",
+   "type": "function",
+   "x": 0.3825,
+   "y": -0.8992,
+   "degree": 29,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-484",
+   "label": "Zürich",
+   "type": "place",
+   "x": 0.3237,
+   "y": 0.9285,
+   "degree": 28,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1580",
+   "label": "Harnischmeister",
+   "type": "function",
+   "x": 0.5335,
+   "y": -0.8173,
+   "degree": 28,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-2087",
+   "label": "Koch des Herzogs",
+   "type": "function",
+   "x": 0.2877,
+   "y": -0.9489,
+   "degree": 28,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1578",
+   "label": "Metzger / Zuschroter",
+   "type": "function",
+   "x": 0.0748,
+   "y": 0.8134,
+   "degree": 28,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-608",
+   "label": "Pfeifer",
+   "type": "function",
+   "x": -0.8611,
+   "y": -0.3226,
+   "degree": 28,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-60",
+   "label": "Salzmair zu Hall",
+   "type": "function",
+   "x": 0.1599,
+   "y": -0.8197,
+   "degree": 28,
+   "betweenness": 0.009369
+  },
+  {
+   "id": "function-701",
+   "label": "Stallmeister",
+   "type": "function",
+   "x": -0.9767,
+   "y": -0.0936,
+   "degree": 28,
+   "betweenness": 0.002897
+  },
+  {
+   "id": "person-878",
+   "label": "Matthias von Castelbark",
+   "type": "person",
+   "x": 0.4316,
+   "y": 0.5232,
+   "degree": 27,
+   "betweenness": 0.001018
+  },
+  {
+   "id": "person-303",
+   "label": "Oswald von Tierstein",
+   "type": "person",
+   "x": -0.4475,
+   "y": 0.4284,
+   "degree": 27,
+   "betweenness": 0.026731
+  },
+  {
+   "id": "person-21",
+   "label": "Konrad Vintler",
+   "type": "person",
+   "x": 0.8022,
+   "y": -0.1277,
+   "degree": 27,
+   "betweenness": 0.00388
+  },
+  {
+   "id": "institution-321",
+   "label": "Hofamt",
+   "type": "institution",
+   "x": 0.3252,
+   "y": 0.3087,
+   "degree": 27,
+   "betweenness": 0.00412
+  },
+  {
+   "id": "institution-6925",
+   "label": "Tirol",
+   "type": "institution",
+   "x": 0.1848,
+   "y": -0.3222,
+   "degree": 27,
+   "betweenness": 0.017489
+  },
+  {
+   "id": "person-24",
+   "label": "Hans Kripp",
+   "type": "person",
+   "x": -0.0598,
+   "y": -0.6955,
+   "degree": 26,
+   "betweenness": 0.004311
+  },
+  {
+   "id": "person-2933",
+   "label": "Matthias Turndl",
+   "type": "person",
+   "x": 0.1874,
+   "y": 0.9751,
+   "degree": 26,
+   "betweenness": 0.00121
+  },
+  {
+   "id": "person-1608",
+   "label": "Leonhard von Völseck",
+   "type": "person",
+   "x": -0.5326,
+   "y": 0.0578,
+   "degree": 26,
+   "betweenness": 0.003547
+  },
+  {
+   "id": "place-977",
+   "label": "Bludenz",
+   "type": "place",
+   "x": 0.9943,
+   "y": -0.0594,
+   "degree": 26,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-2902",
+   "label": "Leonhard Jöchl",
+   "type": "person",
+   "x": 0.7069,
+   "y": -0.6464,
+   "degree": 25,
+   "betweenness": 0.000294
+  },
+  {
+   "id": "person-92",
+   "label": "Hans Ramung",
+   "type": "person",
+   "x": -0.2542,
+   "y": -0.0104,
+   "degree": 25,
+   "betweenness": 0.033567
+  },
+  {
+   "id": "place-282",
+   "label": "Brixen",
+   "type": "place",
+   "x": 0.5861,
+   "y": 0.7475,
+   "degree": 25,
+   "betweenness": 0.034063
+  },
+  {
+   "id": "function-3146",
+   "label": "(Hof-)Bäcker",
+   "type": "function",
+   "x": -0.8145,
+   "y": -0.5683,
+   "degree": 25,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-691",
+   "label": "Schenk",
+   "type": "function",
+   "x": 0.9387,
+   "y": -0.2362,
+   "degree": 25,
+   "betweenness": 0.001557
+  },
+  {
+   "id": "function-4625",
+   "label": "Schmelzer",
+   "type": "function",
+   "x": 0.4093,
+   "y": 0.8276,
+   "degree": 25,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-172",
+   "label": "Ludwig von Freyberg",
+   "type": "person",
+   "x": -0.6629,
+   "y": 0.2806,
+   "degree": 24,
+   "betweenness": 0.00296
+  },
+  {
+   "id": "person-1121",
+   "label": "Degen Fuchs von Fuchsberg",
+   "type": "person",
+   "x": 0.3094,
+   "y": -0.8391,
+   "degree": 24,
+   "betweenness": 0.004435
+  },
+  {
+   "id": "place-3624",
+   "label": "Ensisheim",
+   "type": "place",
+   "x": 0.7848,
+   "y": -0.633,
+   "degree": 24,
+   "betweenness": 0.000692
+  },
+  {
+   "id": "institution-3216",
+   "label": "Dem Landesfürsten nicht zugehörige Gerichte in Tirol",
+   "type": "institution",
+   "x": 0.8357,
+   "y": -0.5084,
+   "degree": 24,
+   "betweenness": 0.008869
+  },
+  {
+   "id": "function-1870",
+   "label": "Gesandter Sigmunds in Österreich",
+   "type": "function",
+   "x": -0.369,
+   "y": 0.8298,
+   "degree": 24,
+   "betweenness": 0.003596
+  },
+  {
+   "id": "function-2152",
+   "label": "Gesandter Sigmunds in Venedig",
+   "type": "function",
+   "x": -0.1946,
+   "y": -0.7481,
+   "degree": 24,
+   "betweenness": 0.002546
+  },
+  {
+   "id": "person-176",
+   "label": "Heinrich von Freyberg (zu Hohenfreyberg)",
+   "type": "person",
+   "x": -0.2084,
+   "y": -0.9459,
+   "degree": 23,
+   "betweenness": 0.000808
+  },
+  {
+   "id": "person-294",
+   "label": "Leopold Spieß vom Spieß",
+   "type": "person",
+   "x": 0.1625,
+   "y": -0.9845,
+   "degree": 23,
+   "betweenness": 0.002595
+  },
+  {
+   "id": "person-89",
+   "label": "Benedikt Wegmacher",
+   "type": "person",
+   "x": -0.879,
+   "y": -0.4737,
+   "degree": 23,
+   "betweenness": 0.007584
+  },
+  {
+   "id": "place-483",
+   "label": "Luzern",
+   "type": "place",
+   "x": 0.9227,
+   "y": -0.4078,
+   "degree": 23,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-7154",
+   "label": "Boten",
+   "type": "institution",
+   "x": 0.665,
+   "y": -0.7328,
+   "degree": 23,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-49",
+   "label": "Pfleger zu Landeck",
+   "type": "function",
+   "x": -0.2788,
+   "y": 0.9053,
+   "degree": 23,
+   "betweenness": 0.0107
+  },
+  {
+   "id": "function-2137",
+   "label": "Richter und Amtmann/Pfleger zu Imst",
+   "type": "function",
+   "x": 0.9761,
+   "y": 0.0126,
+   "degree": 23,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-8810",
+   "label": "Schuster",
+   "type": "function",
+   "x": -0.6911,
+   "y": -0.6681,
+   "degree": 23,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-316",
+   "label": "Georg von Absberg",
+   "type": "person",
+   "x": 0.8051,
+   "y": 0.3301,
+   "degree": 22,
+   "betweenness": 0.006958
+  },
+  {
+   "id": "person-2170",
+   "label": "Wilhelm Baldauf",
+   "type": "person",
+   "x": -0.1409,
+   "y": 0.9768,
+   "degree": 22,
+   "betweenness": 0.000737
+  },
+  {
+   "id": "person-153",
+   "label": "Konrad Klammer",
+   "type": "person",
+   "x": 0.5529,
+   "y": 0.367,
+   "degree": 22,
+   "betweenness": 0.005627
+  },
+  {
+   "id": "person-129",
+   "label": "Sigmund von Neideck",
+   "type": "person",
+   "x": 0.0437,
+   "y": -0.2801,
+   "degree": 22,
+   "betweenness": 0.002552
+  },
+  {
+   "id": "function-1262",
+   "label": "Gesandter Sigmunds an der Kurie",
+   "type": "function",
+   "x": 0.4958,
+   "y": 0.6587,
+   "degree": 22,
+   "betweenness": 0.000515
+  },
+  {
+   "id": "function-1634",
+   "label": "Pfleger zu Thaur",
+   "type": "function",
+   "x": -0.6961,
+   "y": 0.3313,
+   "degree": 22,
+   "betweenness": 0.006813
+  },
+  {
+   "id": "function-3693",
+   "label": "Priester/Geistlicher",
+   "type": "function",
+   "x": -0.5297,
+   "y": 0.8648,
+   "degree": 22,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-3143",
+   "label": "Tischler",
+   "type": "function",
+   "x": 0.7776,
+   "y": -0.5946,
+   "degree": 22,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-579",
+   "label": "Georg Burggraf",
+   "type": "person",
+   "x": -0.9687,
+   "y": 0.2239,
+   "degree": 21,
+   "betweenness": 0.000997
+  },
+  {
+   "id": "person-86",
+   "label": "Reichart Klieber",
+   "type": "person",
+   "x": -0.3084,
+   "y": 0.672,
+   "degree": 21,
+   "betweenness": 0.002842
+  },
+  {
+   "id": "person-308",
+   "label": "Burkhard von Knöringen",
+   "type": "person",
+   "x": 0.7603,
+   "y": 0.5455,
+   "degree": 21,
+   "betweenness": 0.004436
+  },
+  {
+   "id": "person-1117",
+   "label": "Bartholomäus von Liechtenstein",
+   "type": "person",
+   "x": -0.7783,
+   "y": -0.4801,
+   "degree": 21,
+   "betweenness": 0.000678
+  },
+  {
+   "id": "person-301",
+   "label": "Ludwig von Maßmünster",
+   "type": "person",
+   "x": 0.566,
+   "y": 0.8076,
+   "degree": 21,
+   "betweenness": 0.039304
+  },
+  {
+   "id": "person-65",
+   "label": "Oswald von Säben",
+   "type": "person",
+   "x": -0.2836,
+   "y": -0.1082,
+   "degree": 21,
+   "betweenness": 0.005046
+  },
+  {
+   "id": "person-2901",
+   "label": "Thomas Schebl",
+   "type": "person",
+   "x": -0.3691,
+   "y": 0.9202,
+   "degree": 21,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-68",
+   "label": "Freiburg im Breisgau",
+   "type": "place",
+   "x": -0.9509,
+   "y": -0.3172,
+   "degree": 21,
+   "betweenness": 3.9e-05
+  },
+  {
+   "id": "institution-328",
+   "label": "Militär",
+   "type": "institution",
+   "x": 0.2591,
+   "y": -0.1966,
+   "degree": 21,
+   "betweenness": 0.044302
+  },
+  {
+   "id": "function-1926",
+   "label": "Gesandter Sigmunds bei Maximilian I.",
+   "type": "function",
+   "x": -1.0,
+   "y": -0.0152,
+   "degree": 21,
+   "betweenness": 0.002785
+  },
+  {
+   "id": "function-271",
+   "label": "Kammermeister",
+   "type": "function",
+   "x": 0.459,
+   "y": 0.3697,
+   "degree": 21,
+   "betweenness": 0.002791
+  },
+  {
+   "id": "function-30",
+   "label": "Tiroler Kanzler",
+   "type": "function",
+   "x": -0.3886,
+   "y": -0.7648,
+   "degree": 21,
+   "betweenness": 0.001313
+  },
+  {
+   "id": "person-304",
+   "label": "Heinrich Anich",
+   "type": "person",
+   "x": -0.6772,
+   "y": -0.7455,
+   "degree": 20,
+   "betweenness": 0.002277
+  },
+  {
+   "id": "person-1256",
+   "label": "Christoph von Firmian",
+   "type": "person",
+   "x": 0.1788,
+   "y": -0.8931,
+   "degree": 20,
+   "betweenness": 0.009951
+  },
+  {
+   "id": "person-2906",
+   "label": "Augustin von Matrei",
+   "type": "person",
+   "x": -0.9365,
+   "y": -0.2649,
+   "degree": 20,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-2907",
+   "label": "Oswald von Mieming",
+   "type": "person",
+   "x": -0.0497,
+   "y": -0.9734,
+   "degree": 20,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-2609",
+   "label": "Basel",
+   "type": "place",
+   "x": -0.2375,
+   "y": 0.8911,
+   "degree": 20,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-1411",
+   "label": "Burg Ivano",
+   "type": "place",
+   "x": -0.8747,
+   "y": 0.4537,
+   "degree": 20,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-699",
+   "label": "Geordneter Rat",
+   "type": "function",
+   "x": -0.3879,
+   "y": 0.2765,
+   "degree": 20,
+   "betweenness": 0.00435
+  },
+  {
+   "id": "function-1862",
+   "label": "Gesandter Sigmunds in den Vorlanden",
+   "type": "function",
+   "x": -0.504,
+   "y": -0.0959,
+   "degree": 20,
+   "betweenness": 0.034613
+  },
+  {
+   "id": "function-105",
+   "label": "Hauptmann",
+   "type": "function",
+   "x": -0.3304,
+   "y": -0.2032,
+   "degree": 20,
+   "betweenness": 0.002418
+  },
+  {
+   "id": "function-697",
+   "label": "Hofmarschall",
+   "type": "function",
+   "x": 0.3644,
+   "y": 0.0062,
+   "degree": 20,
+   "betweenness": 0.004074
+  },
+  {
+   "id": "function-276",
+   "label": "Kammerknecht",
+   "type": "function",
+   "x": -0.7144,
+   "y": 0.7346,
+   "degree": 20,
+   "betweenness": 0.000282
+  },
+  {
+   "id": "person-162",
+   "label": "Georg von Annenberg",
+   "type": "person",
+   "x": -0.3223,
+   "y": -0.9398,
+   "degree": 19,
+   "betweenness": 0.000278
+  },
+  {
+   "id": "person-1874",
+   "label": "Georg von Castelbark",
+   "type": "person",
+   "x": -0.5242,
+   "y": -0.2214,
+   "degree": 19,
+   "betweenness": 0.001722
+  },
+  {
+   "id": "person-187",
+   "label": "Michael von Freyberg (der Jüngere)",
+   "type": "person",
+   "x": 0.6562,
+   "y": 0.6849,
+   "degree": 19,
+   "betweenness": 0.002458
+  },
+  {
+   "id": "person-312",
+   "label": "Ulrich Kneussl",
+   "type": "person",
+   "x": -0.0111,
+   "y": -0.7217,
+   "degree": 19,
+   "betweenness": 0.002963
+  },
+  {
+   "id": "person-457",
+   "label": "Hans Lanz von Liebenfels",
+   "type": "person",
+   "x": 0.7285,
+   "y": -0.1002,
+   "degree": 19,
+   "betweenness": 0.018909
+  },
+  {
+   "id": "person-1270",
+   "label": "Martin von Neideck",
+   "type": "person",
+   "x": -0.2343,
+   "y": 0.1524,
+   "degree": 19,
+   "betweenness": 0.008966
+  },
+  {
+   "id": "place-4048",
+   "label": "Mühlau",
+   "type": "place",
+   "x": 0.8213,
+   "y": -0.4717,
+   "degree": 19,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-7148",
+   "label": "Bischöfe",
+   "type": "institution",
+   "x": 0.0739,
+   "y": -0.9858,
+   "degree": 19,
+   "betweenness": 0.0
+  },
+  {
+   "id": "institution-326",
+   "label": "Saline Hall in Tirol",
+   "type": "institution",
+   "x": 0.9659,
+   "y": 0.0918,
+   "degree": 19,
+   "betweenness": 0.006725
+  },
+  {
+   "id": "institution-708",
+   "label": "Zollwesen in Tirol",
+   "type": "institution",
+   "x": 0.9616,
+   "y": 0.0554,
+   "degree": 19,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-6889",
+   "label": "Gesandter Sigmunds in Frankreich",
+   "type": "function",
+   "x": -0.1587,
+   "y": 0.3613,
+   "degree": 19,
+   "betweenness": 0.000886
+  },
+  {
+   "id": "function-1561",
+   "label": "Jägerknecht",
+   "type": "function",
+   "x": -0.5935,
+   "y": 0.583,
+   "degree": 19,
+   "betweenness": 0.000503
+  },
+  {
+   "id": "function-3055",
+   "label": "Kammerjungfrau der Herzogin",
+   "type": "function",
+   "x": -0.5084,
+   "y": -0.8704,
+   "degree": 19,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-243",
+   "label": "(Land-)Richter zu Gries und Bozen",
+   "type": "function",
+   "x": -0.7983,
+   "y": -0.5897,
+   "degree": 19,
+   "betweenness": 0.010145
+  },
+  {
+   "id": "function-338",
+   "label": "Landvogt im Elsass",
+   "type": "function",
+   "x": -0.0432,
+   "y": 0.9773,
+   "degree": 19,
+   "betweenness": 0.023199
+  },
+  {
+   "id": "function-3109",
+   "label": "Marstaller",
+   "type": "function",
+   "x": 0.6916,
+   "y": -0.7069,
+   "degree": 19,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-234",
+   "label": "Wundarzt",
+   "type": "function",
+   "x": 0.9654,
+   "y": -0.0893,
+   "degree": 19,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-101",
+   "label": "Christoph Botsch",
+   "type": "person",
+   "x": 0.8035,
+   "y": 0.0395,
+   "degree": 18,
+   "betweenness": 0.004189
+  },
+  {
+   "id": "person-73",
+   "label": "Bernhard Gradner",
+   "type": "person",
+   "x": -0.9914,
+   "y": 0.1129,
+   "degree": 18,
+   "betweenness": 0.001161
+  },
+  {
+   "id": "person-2273",
+   "label": "Heinrich Harber",
+   "type": "person",
+   "x": 0.8721,
+   "y": -0.4773,
+   "degree": 18,
+   "betweenness": 0.000163
+  },
+  {
+   "id": "person-241",
+   "label": "Ulrich von Matsch (der Jüngere)",
+   "type": "person",
+   "x": 0.8833,
+   "y": -0.4264,
+   "degree": 18,
+   "betweenness": 0.002323
+  },
+  {
+   "id": "person-387",
+   "label": "Pilgrim von Reischach",
+   "type": "person",
+   "x": -0.4036,
+   "y": -0.3312,
+   "degree": 18,
+   "betweenness": 0.001247
+  },
+  {
+   "id": "person-251",
+   "label": "Heinrich von Rotenstein",
+   "type": "person",
+   "x": -0.1111,
+   "y": -0.9798,
+   "degree": 18,
+   "betweenness": 0.001753
+  },
+  {
+   "id": "person-104",
+   "label": "Werner von Schienen",
+   "type": "person",
+   "x": -0.9267,
+   "y": 0.3648,
+   "degree": 18,
+   "betweenness": 0.005755
+  },
+  {
+   "id": "person-72",
+   "label": "Ulrich von Schlandersberg",
+   "type": "person",
+   "x": 0.7867,
+   "y": 0.2075,
+   "degree": 18,
+   "betweenness": 0.001872
+  },
+  {
+   "id": "person-1934",
+   "label": "Ruhland von Spaur",
+   "type": "person",
+   "x": -0.1375,
+   "y": -0.206,
+   "degree": 18,
+   "betweenness": 0.012589
+  },
+  {
+   "id": "person-309",
+   "label": "Lorenz Wirsung",
+   "type": "person",
+   "x": -0.2195,
+   "y": -0.1947,
+   "degree": 18,
+   "betweenness": 0.046627
+  },
+  {
+   "id": "person-960",
+   "label": "Oswald von Wolkenstein-Rodenegg",
+   "type": "person",
+   "x": 0.1932,
+   "y": -0.9876,
+   "degree": 18,
+   "betweenness": 0.001203
+  },
+  {
+   "id": "institution-6989",
+   "label": "Bistum Trient",
+   "type": "institution",
+   "x": 0.141,
+   "y": 0.9819,
+   "degree": 18,
+   "betweenness": 0.002115
+  },
+  {
+   "id": "institution-7193",
+   "label": "Forst und Jagd in den Vorlanden",
+   "type": "institution",
+   "x": -0.8338,
+   "y": -0.5017,
+   "degree": 18,
+   "betweenness": 0.003538
+  },
+  {
+   "id": "institution-3113",
+   "label": "Hofmusik",
+   "type": "institution",
+   "x": 0.4853,
+   "y": -0.8736,
+   "degree": 18,
+   "betweenness": 2.5e-05
+  },
+  {
+   "id": "institution-7062",
+   "label": "Landvogtei Elsass",
+   "type": "institution",
+   "x": 0.2394,
+   "y": 0.9219,
+   "degree": 18,
+   "betweenness": 0.00868
+  },
+  {
+   "id": "function-713",
+   "label": "Bergrichter zu Schwaz",
+   "type": "function",
+   "x": 0.2975,
+   "y": 0.9216,
+   "degree": 18,
+   "betweenness": 0.003809
+  },
+  {
+   "id": "function-242",
+   "label": "Hauptmann an der Etsch",
+   "type": "function",
+   "x": 0.5257,
+   "y": 0.1664,
+   "degree": 18,
+   "betweenness": 0.041818
+  },
+  {
+   "id": "function-256",
+   "label": "(Hauptmann und) Vikar auf dem Nons (und in Sulz)",
+   "type": "function",
+   "x": 0.0226,
+   "y": 0.9622,
+   "degree": 18,
+   "betweenness": 0.023125
+  },
+  {
+   "id": "function-38",
+   "label": "Pfleger zu Kaltern",
+   "type": "function",
+   "x": 0.0538,
+   "y": -0.7786,
+   "degree": 18,
+   "betweenness": 0.003272
+  },
+  {
+   "id": "function-6828",
+   "label": "Schmelzer zu Schwaz",
+   "type": "function",
+   "x": -0.3353,
+   "y": -0.8903,
+   "degree": 18,
+   "betweenness": 0.004927
+  },
+  {
+   "id": "person-90",
+   "label": "Lorenz Blumenau",
+   "type": "person",
+   "x": -0.7608,
+   "y": 0.0904,
+   "degree": 17,
+   "betweenness": 0.001623
+  },
+  {
+   "id": "person-1704",
+   "label": "Leonhard Bote",
+   "type": "person",
+   "x": 0.4892,
+   "y": 0.8284,
+   "degree": 17,
+   "betweenness": 0.017258
+  },
+  {
+   "id": "person-2628",
+   "label": "Hans von Maltitz",
+   "type": "person",
+   "x": 0.6143,
+   "y": -0.4859,
+   "degree": 17,
+   "betweenness": 0.014572
+  },
+  {
+   "id": "person-385",
+   "label": "Dietrich von Rümlang",
+   "type": "person",
+   "x": 0.8954,
+   "y": -0.2874,
+   "degree": 17,
+   "betweenness": 0.000339
+  },
+  {
+   "id": "person-3260",
+   "label": "Dorothea von Thun, verh. von Hack/Schintl/von Weineck",
+   "type": "person",
+   "x": -0.1581,
+   "y": 0.9227,
+   "degree": 17,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-2181",
+   "label": "Hans Voyt (von Gochsheim)",
+   "type": "person",
+   "x": -0.8481,
+   "y": 0.575,
+   "degree": 17,
+   "betweenness": 0.008934
+  },
+  {
+   "id": "person-3261",
+   "label": "Adam von Weineck",
+   "type": "person",
+   "x": -0.9603,
+   "y": 0.169,
+   "degree": 17,
+   "betweenness": 0.000675
+  },
+  {
+   "id": "person-1331",
+   "label": "Balthasar von Welsberg",
+   "type": "person",
+   "x": -0.9057,
+   "y": 0.2286,
+   "degree": 17,
+   "betweenness": 0.0
+  },
+  {
+   "id": "person-44",
+   "label": "Georg von Werdenberg-Sargans",
+   "type": "person",
+   "x": 0.4963,
+   "y": -0.0301,
+   "degree": 17,
+   "betweenness": 0.004867
+  },
+  {
+   "id": "person-1416",
+   "label": "Jobst Nikolaus von Zollern",
+   "type": "person",
+   "x": 0.9177,
+   "y": 0.3903,
+   "degree": 17,
+   "betweenness": 0.000818
+  },
+  {
+   "id": "place-840",
+   "label": "Ehingen",
+   "type": "place",
+   "x": 0.2367,
+   "y": -0.9385,
+   "degree": 17,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-7063",
+   "label": "Landvogtei Elsass",
+   "type": "place",
+   "x": 0.8268,
+   "y": -0.5562,
+   "degree": 17,
+   "betweenness": 0.0
+  },
+  {
+   "id": "place-4707",
+   "label": "Vorlande",
+   "type": "place",
+   "x": -0.6177,
+   "y": 0.7092,
+   "degree": 17,
+   "betweenness": 0.029977
+  },
+  {
+   "id": "function-716",
+   "label": "Bergrichter zu Sterzing (Gossensaß, Steinach, Schneeberg, hinteres Passeier)",
+   "type": "function",
+   "x": 0.1235,
+   "y": 0.9289,
+   "degree": 17,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-1199",
+   "label": "Falknerknecht",
+   "type": "function",
+   "x": -0.86,
+   "y": -0.4197,
+   "degree": 17,
+   "betweenness": 0.0
+  },
+  {
+   "id": "function-3877",
+   "label": "Gesandter Sigmunds in Basel",
+   "type": "function",
+   "x": -0.015,
+   "y": 0.9686,
+   "degree": 17,
+   "betweenness": 0.00984
+  }
+ ],
+ "metadata": {
+  "totalNodes": 8852,
+  "totalEdges": 32411,
+  "displayedNodes": 200,
+  "layoutAlgorithm": "spring_layout"
+ }
+}

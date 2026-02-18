@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netzwerk-Explorer | DoCTA</title>
+  <meta name="description" content="Interaktiver Beziehungsgraph: 6.288 Personen und 42.893 Relationen aus der SiCProD-Datenbank. Filter, Suche, Detailansicht.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="network-page">
+      <div class="network-header">
+        <h1 class="h5 mb-0">Netzwerk-Explorer</h1>
+        <p class="small mb-0 text-body-secondary">Interaktiver Beziehungsgraph basierend auf SiCProD-Daten (Top-200 nach Vernetzungsgrad)</p>
+      </div>
+      <div class="network-toolbar">
+        <input type="search" id="node-search" placeholder="Person suchen..." aria-label="Knotensuche">
+        <select id="filter-reltype" aria-label="Relationstyp filtern">
+          <option value="">Alle Relationstypen</option>
+        </select>
+        <button class="btn btn-outline-secondary btn-sm" id="btn-reset">Ansicht zurücksetzen</button>
+      </div>
+
+      <div id="cy"></div>
+
+      <!-- Detail sidebar -->
+      <div class="network-sidebar" id="detail-sidebar" style="display:none">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h3 class="h6 mb-0" id="sidebar-name"></h3>
+          <button class="btn btn-outline-secondary btn-sm" id="btn-close-sidebar" aria-label="Schließen">×</button>
+        </div>
+        <div id="sidebar-content"></div>
+      </div>
+
+      <div class="network-info" id="network-info">
+        Laden...
+      </div>
+    </div>
+  </main>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner, formatNumber } from './js/app.js';
+    import { loadAll, loadJSON } from './js/data-loader.js';
+    import { getParams, debounce, escapeHTML } from './js/utils.js';
+
+    initNav('network');
+    initBanner();
+
+    let cy = null;
+    let allPersons = {};
+    let allRelations = [];
+
+    async function init() {
+      const info = document.getElementById('network-info');
+      info.textContent = 'Daten werden geladen...';
+
+      try {
+        let data;
+        try {
+          data = await loadAll({
+            persons: 'data/persons.json',
+            relations: 'data/relations.json',
+            places: 'data/places.json',
+            institutions: 'data/institutions.json',
+            functions: 'data/functions.json',
+          });
+        } catch {
+          info.textContent = 'SiCProD-Daten nicht verfügbar. Führen Sie scripts/fetch_sicprod.py aus.';
+          return;
+        }
+
+        info.textContent = 'Netzwerk wird aufgebaut...';
+
+        for (const p of data.persons) {
+          const name = [p.first_name, p.name].filter(Boolean).join(' ');
+          allPersons[p.id] = { ...p, displayName: name || '(unbekannt)' };
+        }
+
+        const entityIndex = {};
+        for (const p of data.persons) entityIndex[`person-${p.id}`] = { name: [p.first_name, p.name].filter(Boolean).join(' ') || '(unbekannt)', type: 'person' };
+        for (const pl of data.places) entityIndex[`place-${pl.id}`] = { name: pl.label, type: 'place' };
+        for (const inst of data.institutions) entityIndex[`institution-${inst.id}`] = { name: inst.name, type: 'institution' };
+        for (const f of data.functions) entityIndex[`function-${f.id}`] = { name: f.name, type: 'function' };
+
+        allRelations = data.relations;
+
+        const degree = {};
+        for (const r of allRelations) {
+          if (r.subj_id) degree[`${r.subj_type}-${r.subj_id}`] = (degree[`${r.subj_type}-${r.subj_id}`] || 0) + 1;
+          if (r.obj_id) degree[`${r.obj_type}-${r.obj_id}`] = (degree[`${r.obj_type}-${r.obj_id}`] || 0) + 1;
+        }
+
+        const topNodes = Object.entries(degree)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 200)
+          .map(([key]) => key);
+
+        const topNodeSet = new Set(topNodes);
+
+        const elements = [];
+        const addedNodes = new Set();
+
+        for (const nodeKey of topNodes) {
+          const entity = entityIndex[nodeKey];
+          if (!entity) continue;
+          elements.push({
+            data: { id: nodeKey, label: entity.name, type: entity.type, degree: degree[nodeKey] || 0 },
+          });
+          addedNodes.add(nodeKey);
+        }
+
+        const relTypeCounts = {};
+        for (const r of allRelations) {
+          const srcKey = `${r.subj_type}-${r.subj_id}`;
+          const tgtKey = `${r.obj_type}-${r.obj_id}`;
+          if (addedNodes.has(srcKey) && addedNodes.has(tgtKey)) {
+            elements.push({
+              data: { source: srcKey, target: tgtKey, relType: r.relation_type },
+            });
+            relTypeCounts[r.relation_type] = (relTypeCounts[r.relation_type] || 0) + 1;
+          }
+        }
+
+        const relSelect = document.getElementById('filter-reltype');
+        Object.entries(relTypeCounts)
+          .sort((a, b) => b[1] - a[1])
+          .forEach(([type, count]) => {
+            const opt = document.createElement('option');
+            opt.value = type;
+            opt.textContent = `${type} (${count})`;
+            relSelect.appendChild(opt);
+          });
+
+        info.textContent = `${formatNumber(addedNodes.size)} Knoten, ${formatNumber(elements.filter(e => e.data.source).length)} Kanten (Top-200 nach Vernetzungsgrad)`;
+
+        const cytoscapeModule = await import('./lib/cytoscape.esm.min.mjs');
+        const cytoscape = cytoscapeModule.default;
+
+        cy = cytoscape({
+          container: document.getElementById('cy'),
+          elements: elements,
+          style: [
+            {
+              selector: 'node',
+              style: {
+                'label': 'data(label)', 'text-valign': 'bottom', 'text-halign': 'center',
+                'font-size': '8px', 'font-family': '-apple-system, sans-serif',
+                'text-margin-y': 5, 'text-max-width': '80px', 'text-wrap': 'ellipsis',
+                'min-zoomed-font-size': 8,
+              },
+            },
+            {
+              selector: 'node[type="person"]',
+              style: {
+                'background-color': '#1565c0',
+                'width': 'mapData(degree, 1, 100, 10, 40)',
+                'height': 'mapData(degree, 1, 100, 10, 40)',
+              },
+            },
+            {
+              selector: 'node[type="place"]',
+              style: {
+                'background-color': '#2e7d32', 'shape': 'diamond',
+                'width': 'mapData(degree, 1, 100, 12, 35)',
+                'height': 'mapData(degree, 1, 100, 12, 35)',
+              },
+            },
+            {
+              selector: 'node[type="institution"]',
+              style: {
+                'background-color': '#e65100', 'shape': 'round-rectangle',
+                'width': 'mapData(degree, 1, 100, 12, 35)',
+                'height': 'mapData(degree, 1, 100, 12, 35)',
+              },
+            },
+            {
+              selector: 'node[type="function"]',
+              style: {
+                'background-color': '#6a1b9a', 'shape': 'ellipse',
+                'width': 'mapData(degree, 1, 100, 8, 30)',
+                'height': 'mapData(degree, 1, 100, 8, 30)',
+              },
+            },
+            {
+              selector: 'edge',
+              style: {
+                'width': 0.5, 'line-color': '#d4cfc6', 'target-arrow-shape': 'none',
+                'curve-style': 'haystack', 'opacity': 0.4,
+              },
+            },
+            { selector: ':selected', style: { 'border-width': 2, 'border-color': '#8b5e3c' } },
+            { selector: '.highlighted', style: { 'background-color': '#c62828', 'border-width': 3, 'border-color': '#c62828', 'z-index': 100 } },
+            { selector: '.neighbor', style: { 'opacity': 1, 'z-index': 50 } },
+            { selector: '.faded', style: { 'opacity': 0.1 } },
+          ],
+          layout: {
+            name: 'cose', animate: false, nodeRepulsion: 12000,
+            idealEdgeLength: 60, gravity: 0.3, numIter: 300,
+          },
+        });
+
+        cy.on('tap', 'node', function(evt) {
+          showNodeDetail(evt.target);
+        });
+
+        cy.on('tap', function(evt) {
+          if (evt.target === cy) {
+            document.getElementById('detail-sidebar').style.display = 'none';
+            cy.elements().removeClass('highlighted neighbor faded');
+          }
+        });
+
+        document.getElementById('node-search').addEventListener('input', debounce((e) => {
+          const q = e.target.value.toLowerCase().trim();
+          if (!q) {
+            cy.elements().removeClass('highlighted faded');
+            return;
+          }
+          cy.elements().addClass('faded');
+          const matches = cy.nodes().filter(n => n.data('label').toLowerCase().includes(q));
+          matches.removeClass('faded').addClass('highlighted');
+        }, 200));
+
+        document.getElementById('filter-reltype').addEventListener('change', (e) => {
+          const type = e.target.value;
+          if (!type) {
+            cy.elements().style('display', 'element');
+            return;
+          }
+          cy.edges().forEach(edge => {
+            edge.style('display', edge.data('relType') === type ? 'element' : 'none');
+          });
+        });
+
+        document.getElementById('btn-reset').addEventListener('click', () => {
+          cy.elements().removeClass('highlighted neighbor faded').style('display', 'element');
+          cy.fit(undefined, 50);
+          document.getElementById('node-search').value = '';
+          document.getElementById('filter-reltype').value = '';
+          document.getElementById('detail-sidebar').style.display = 'none';
+        });
+
+        document.getElementById('btn-close-sidebar').addEventListener('click', () => {
+          document.getElementById('detail-sidebar').style.display = 'none';
+          cy.elements().removeClass('highlighted neighbor faded');
+        });
+
+        const params = getParams();
+        if (params.highlight) {
+          const node = cy.getElementById(`person-${params.highlight}`);
+          if (node.length) {
+            showNodeDetail(node);
+            cy.center(node);
+          }
+        }
+
+      } catch (err) {
+        info.textContent = `Fehler: ${err.message}`;
+        console.error(err);
+      }
+    }
+
+    function showNodeDetail(node) {
+      cy.elements().removeClass('highlighted neighbor faded').addClass('faded');
+      node.removeClass('faded').addClass('highlighted');
+      const neighborhood = node.neighborhood();
+      neighborhood.removeClass('faded').addClass('neighbor');
+
+      const sidebar = document.getElementById('detail-sidebar');
+      sidebar.style.display = 'block';
+      document.getElementById('sidebar-name').textContent = node.data('label');
+
+      const connections = neighborhood.nodes().map(n => ({
+        name: n.data('label'), type: n.data('type'),
+      })).sort((a, b) => a.name.localeCompare(b.name));
+
+      let html = `<div class="detail-panel__field"><span class="detail-panel__label">Typ</span><span class="entity entity--${node.data('type')}">${node.data('type')}</span></div>`;
+      html += `<div class="detail-panel__field"><span class="detail-panel__label">Verbindungen</span>${node.data('degree')}</div>`;
+      html += `<div class="detail-panel__field"><span class="detail-panel__label">Nachbarn (${connections.length})</span>`;
+      html += connections.slice(0, 20).map(c =>
+        `<div class="small"><span class="entity entity--${c.type}" style="font-size:0.6rem">${c.type}</span> ${escapeHTML(c.name)}</div>`
+      ).join('');
+      if (connections.length > 20) html += `<div class="small text-body-secondary">… und ${connections.length - 20} weitere</div>`;
+      html += '</div>';
+      html += `<div class="mt-2 d-flex gap-2 flex-wrap">`;
+      html += `<a href="search.html?q=${encodeURIComponent(node.data('label'))}" class="btn btn-outline-accent btn-sm">In Suche öffnen</a>`;
+      html += `<a href="viewer.html?doc=11328300" class="btn btn-outline-secondary btn-sm">In Transkription suchen</a>`;
+      html += `</div>`;
+
+      document.getElementById('sidebar-content').innerHTML = html;
+    }
+
+    init();
+  </script>
+</body>
+</html>

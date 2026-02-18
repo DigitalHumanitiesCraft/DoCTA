@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoCTA | Digital Court Studies Prototype</title>
+  <meta name="description" content="DoCTA Prototyp: Digitale Erschließung höfischer Praktiken am Hof Sigmunds von Tirol (1427-1496). 6.288 Personen, 42.893 Relationen, 312 Quellen.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4">
+    <header class="mb-4">
+      <h1>Doing Court in the Tyrolean Alps</h1>
+      <p class="text-body-secondary">Digitale Erschließung höfischer Praktiken am Hof Sigmunds von Tirol (1427–1496). Methodenprototyp</p>
+    </header>
+
+    <!-- Pipeline Overview -->
+    <section class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Forschungspipeline</h2>
+        <p class="small text-body-secondary mb-3">Von der handschriftlichen Quelle zum analysierbaren Netzwerk. Jeder Schritt an echtem Material demonstriert.</p>
+        <div class="pipeline-steps">
+          <a href="pipeline.html?step=1" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Schritt 1</span>
+            <span class="pipeline-step__label">Quelle</span>
+          </a>
+          <a href="pipeline.html?step=2" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Schritt 2</span>
+            <span class="pipeline-step__label">HTR</span>
+          </a>
+          <a href="pipeline.html?step=3" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Schritt 3</span>
+            <span class="pipeline-step__label">NER</span>
+          </a>
+          <a href="pipeline.html?step=4" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Schritt 4</span>
+            <span class="pipeline-step__label">Relationen</span>
+          </a>
+          <a href="pipeline.html?step=5" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Schritt 5</span>
+            <span class="pipeline-step__label">Netzwerk</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Dashboard -->
+    <section class="mb-4">
+      <h2 class="h5 mb-3">Datenbasis</h2>
+      <div class="row g-3" id="stats-grid">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-persons">–</div>
+              <div class="stat-label">Personen (SiCProD)</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-relations">–</div>
+              <div class="stat-label">Relationen</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-places">–</div>
+              <div class="stat-label">Orte</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-sources">–</div>
+              <div class="stat-label">Quellen</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-transcriptions">–</div>
+              <div class="stat-label">Transkriptionen</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-functions">–</div>
+              <div class="stat-label">Hofämter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="mb-4">
+      <h2 class="h5 mb-3">Bereiche erkunden</h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <a href="pipeline.html" class="card card-clickable h-100">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Pipeline-Demo</h3>
+              <p class="small text-body-secondary mb-0">Quelle → HTR → NER → Relationen → Netzwerk, Schritt für Schritt an echtem Inventar</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="sources.html" class="card card-clickable h-100">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Quellenübersicht</h3>
+              <p class="small text-body-secondary mb-0">312 Quellen: Raitbücher, Inventare, Kopialbücher, Hofordnungen. Filterbar und sortierbar</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="search.html" class="card card-clickable h-100">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Facettierte Suche</h3>
+              <p class="small text-body-secondary mb-0">6.288 Personen, 736 Orte, 1.613 Funktionen, 215 Institutionen - durchsuchbar mit Facetten</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="viewer.html" class="card card-clickable h-100">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Quellen-Explorer</h3>
+              <p class="small text-body-secondary mb-0">Digitalisat neben Transkription. 57 Inventare mit Volltext</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="network.html" class="card card-clickable h-100">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Netzwerk-Explorer</h3>
+              <p class="small text-body-secondary mb-0">Interaktiver Beziehungsgraph: Personen, Funktionen, Institutionen</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviewer Context -->
+    <section class="card">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Für Gutachter</h2>
+        <p class="small">Dieser Prototyp demonstriert die methodische Machbarkeit des DoCTA-Projekts an konkretem Quellenmaterial. Er adressiert die Kritikpunkte des FWF-Gutachtens direkt:</p>
+        <ul class="small">
+          <li>Methoden funktionieren auf frühneuhochdeutschen Quellen (Kurrentschrift, Abkürzungen)</li>
+          <li>LLM-Integration in der Pipeline sichtbar (Schritt 3–4)</li>
+          <li>Quellencharakterisierung mit 312 Einträgen und Verfügbarkeitstiers</li>
+          <li>Echte Quellenbeispiele mit Transkription und Entitätserkennung</li>
+          <li>Qualitätsmetriken: Konfidenz-Kategorien (sicher / prüfenswert / problematisch)</li>
+        </ul>
+        <p class="small text-body-secondary mb-0">Datenquellen: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW), Transkribus (READ-COOP), Tiroler Landesarchiv.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner, formatNumber } from './js/app.js';
+    import { loadJSON } from './js/data-loader.js';
+
+    initNav('dashboard');
+    initBanner();
+
+    async function loadStats() {
+      try {
+        const [persons, relations, places, sources, functions, mapping] = await Promise.all([
+          loadJSON('data/persons.json').catch(() => []),
+          loadJSON('data/relations.json').catch(() => []),
+          loadJSON('data/places.json').catch(() => []),
+          loadJSON('data/sources.json').catch(() => []),
+          loadJSON('data/functions.json').catch(() => []),
+          loadJSON('data/source_mapping.json').catch(() => ({ matched: [] })),
+        ]);
+
+        document.getElementById('stat-persons').textContent = formatNumber(persons.length);
+        document.getElementById('stat-relations').textContent = formatNumber(relations.length);
+        document.getElementById('stat-places').textContent = formatNumber(places.length);
+        document.getElementById('stat-sources').textContent = formatNumber(sources.length);
+        document.getElementById('stat-functions').textContent = formatNumber(functions.length);
+
+        const transcriptions = (mapping.matched || []).filter(m => m.has_text).length;
+        document.getElementById('stat-transcriptions').textContent = formatNumber(transcriptions);
+      } catch (err) {
+        console.error('Failed to load stats:', err);
+      }
+    }
+
+    loadStats();
+  </script>
+</body>
+</html>

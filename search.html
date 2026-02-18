@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facettierte Suche | DoCTA</title>
+  <meta name="description" content="Facettierte Suche über 6.288 Personen, 736 Orte, 1.613 Funktionen und 215 Institutionen am Hof Sigmunds von Tirol.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4">
+    <h1>Facettierte Suche</h1>
+    <p class="text-body-secondary mb-4">Durchsuchen Sie die SiCProD-Datenbank: Personen, Orte, Funktionen und Institutionen am Hof Sigmunds von Tirol</p>
+
+    <div class="row g-2 mb-4 align-items-center">
+      <div class="col-md-9">
+        <input type="search" class="form-control" id="search-input" placeholder="Name, Ort oder Funktion suchen..." aria-label="Freitextsuche">
+      </div>
+      <div class="col-md-3 text-end">
+        <span class="small text-body-secondary" id="result-count"></span>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Facet Panel -->
+      <div class="col-lg-3">
+        <aside class="facet-panel" aria-label="Filter">
+          <div class="facet-group">
+            <div class="facet-group__title">Entitätstyp</div>
+            <div id="facet-type"></div>
+          </div>
+          <div class="facet-group">
+            <div class="facet-group__title">Geschlecht</div>
+            <div id="facet-gender"></div>
+          </div>
+          <div class="facet-group">
+            <div class="facet-group__title">Funktion (Top 15)</div>
+            <div id="facet-function"></div>
+          </div>
+          <div class="facet-group">
+            <div class="facet-group__title">Ortstyp</div>
+            <div id="facet-placetype"></div>
+          </div>
+          <button class="btn btn-outline-secondary btn-sm mt-1" id="clear-filters">Filter zurücksetzen</button>
+        </aside>
+      </div>
+
+      <!-- Results -->
+      <div class="col-lg-9">
+        <div class="card" id="results-container">
+          <div class="card-body">
+            <div class="loading">Daten werden geladen...</div>
+          </div>
+        </div>
+
+        <!-- Detail Panel -->
+        <div class="card mt-3" id="detail-panel" style="display:none">
+          <div class="card-body">
+            <h3 class="h6" id="detail-name"></h3>
+            <div id="detail-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner, formatNumber } from './js/app.js';
+    import { loadAll } from './js/data-loader.js';
+    import { escapeHTML, debounce, getParams, setParams } from './js/utils.js';
+
+    initNav('search');
+    initBanner();
+
+    let allItems = [];
+    let activeFilters = { type: new Set(), gender: new Set(), function: new Set(), placetype: new Set() };
+
+    function buildSearchIndex(data) {
+      const items = [];
+
+      for (const p of data.persons || []) {
+        const name = [p.first_name, p.name].filter(Boolean).join(' ');
+        items.push({
+          id: p.id, type: 'person', typeLabel: 'Person',
+          name: name || '(unbekannt)', gender: p.gender || '',
+          dates: [p.start_date, p.end_date].filter(Boolean).join(' – '),
+          altLabels: (p.alternative_label || []).join(', '),
+          searchText: [name, p.gender, ...(p.alternative_label || [])].join(' ').toLowerCase(),
+          raw: p,
+        });
+      }
+
+      for (const pl of data.places || []) {
+        items.push({
+          id: pl.id, type: 'place', typeLabel: 'Ort',
+          name: pl.label || '(unbekannt)', placeType: pl.type || '',
+          lat: pl.lat, lng: pl.lng, dates: '',
+          altLabels: (pl.alternative_label || []).join(', '),
+          searchText: [pl.label, pl.type, ...(pl.alternative_label || [])].join(' ').toLowerCase(),
+          raw: pl,
+        });
+      }
+
+      for (const f of data.functions || []) {
+        items.push({
+          id: f.id, type: 'function', typeLabel: 'Funktion',
+          name: f.name || '(unbekannt)',
+          dates: [f.start_date, f.end_date].filter(Boolean).join(' – '),
+          altLabels: (f.alternative_label || []).join(', '),
+          searchText: [f.name, ...(f.alternative_label || [])].join(' ').toLowerCase(),
+          raw: f,
+        });
+      }
+
+      for (const inst of data.institutions || []) {
+        items.push({
+          id: inst.id, type: 'institution', typeLabel: 'Institution',
+          name: inst.name || '(unbekannt)', instType: inst.type || '',
+          dates: [inst.start_date, inst.end_date].filter(Boolean).join(' – '),
+          altLabels: (inst.alternative_label || []).join(', '),
+          searchText: [inst.name, inst.type, ...(inst.alternative_label || [])].join(' ').toLowerCase(),
+          raw: inst,
+        });
+      }
+
+      return items;
+    }
+
+    function getFiltered() {
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      let filtered = allItems;
+
+      if (query) {
+        filtered = filtered.filter(item => item.searchText.includes(query) || item.name.toLowerCase().includes(query));
+      }
+      if (activeFilters.type.size > 0) {
+        filtered = filtered.filter(item => activeFilters.type.has(item.type));
+      }
+      if (activeFilters.gender.size > 0) {
+        filtered = filtered.filter(item => item.type === 'person' && activeFilters.gender.has(item.gender));
+      }
+      if (activeFilters.function.size > 0) {
+        filtered = filtered.filter(item => {
+          if (item.type !== 'function') return false;
+          const base = item.name.split(/\s+(?:von|zu|des|der|in|am|auf|bei|im)\s+/i)[0].trim();
+          return activeFilters.function.has(base);
+        });
+      }
+      if (activeFilters.placetype.size > 0) {
+        filtered = filtered.filter(item => item.type === 'place' && activeFilters.placetype.has(item.placeType));
+      }
+
+      return filtered;
+    }
+
+    function renderFacets(items) {
+      const typeCounts = {};
+      items.forEach(i => { typeCounts[i.type] = (typeCounts[i.type] || 0) + 1; });
+      const typeLabels = { person: 'Person', place: 'Ort', function: 'Funktion', institution: 'Institution' };
+      document.getElementById('facet-type').innerHTML = Object.entries(typeLabels).map(([key, label]) => {
+        const count = typeCounts[key] || 0;
+        const checked = activeFilters.type.has(key) ? 'checked' : '';
+        return `<label class="facet-option"><input type="checkbox" data-facet="type" value="${key}" ${checked}> ${label} <span class="facet-count">${count}</span></label>`;
+      }).join('');
+
+      const genderCounts = {};
+      items.filter(i => i.type === 'person').forEach(i => {
+        const g = i.gender || 'unbekannt';
+        genderCounts[g] = (genderCounts[g] || 0) + 1;
+      });
+      document.getElementById('facet-gender').innerHTML = Object.entries(genderCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([g, count]) => {
+          const checked = activeFilters.gender.has(g) ? 'checked' : '';
+          return `<label class="facet-option"><input type="checkbox" data-facet="gender" value="${g}" ${checked}> ${g} <span class="facet-count">${count}</span></label>`;
+        }).join('');
+
+      // Function facet (Top 15 by base type)
+      const fnBaseCounts = {};
+      const fnBaseToNames = {};
+      items.filter(i => i.type === 'function').forEach(i => {
+        const base = i.name.split(/\s+(?:von|zu|des|der|in|am|auf|bei|im)\s+/i)[0].trim();
+        fnBaseCounts[base] = (fnBaseCounts[base] || 0) + 1;
+        if (!fnBaseToNames[base]) fnBaseToNames[base] = [];
+        fnBaseToNames[base].push(i.name);
+      });
+      document.getElementById('facet-function').innerHTML = Object.entries(fnBaseCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 15)
+        .map(([fn, count]) => {
+          const checked = activeFilters.function.has(fn) ? 'checked' : '';
+          return `<label class="facet-option"><input type="checkbox" data-facet="function" value="${fn}" ${checked}> ${fn} <span class="facet-count">${count}</span></label>`;
+        }).join('');
+
+      const ptCounts = {};
+      items.filter(i => i.type === 'place' && i.placeType).forEach(i => {
+        ptCounts[i.placeType] = (ptCounts[i.placeType] || 0) + 1;
+      });
+      document.getElementById('facet-placetype').innerHTML = Object.entries(ptCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([pt, count]) => {
+          const checked = activeFilters.placetype.has(pt) ? 'checked' : '';
+          return `<label class="facet-option"><input type="checkbox" data-facet="placetype" value="${pt}" ${checked}> ${pt} <span class="facet-count">${count}</span></label>`;
+        }).join('');
+    }
+
+    function renderResults(items) {
+      const container = document.getElementById('results-container');
+      document.getElementById('result-count').textContent = `${formatNumber(items.length)} Ergebnisse`;
+
+      const page = items.slice(0, 100);
+      const more = items.length > 100 ? `<div class="small text-body-secondary p-3">… und ${formatNumber(items.length - 100)} weitere Ergebnisse. Verfeinern Sie Ihre Suche.</div>` : '';
+
+      container.innerHTML = page.map(item => {
+        const typeClass = `entity entity--${item.type}`;
+        const meta = [item.dates, item.gender, item.placeType, item.instType, item.altLabels].filter(Boolean).join(' · ');
+        return `<div class="result-item" data-type="${item.type}" data-id="${item.id}">
+          <div class="result-item__name"><span class="${typeClass}" style="font-size:0.6875rem;margin-right:0.375rem">${item.typeLabel}</span> ${escapeHTML(item.name)}</div>
+          ${meta ? `<div class="result-item__meta">${escapeHTML(meta)}</div>` : ''}
+        </div>`;
+      }).join('') + more;
+
+      container.querySelectorAll('.result-item').forEach(el => {
+        el.addEventListener('click', () => showDetail(el.dataset.type, parseInt(el.dataset.id)));
+      });
+    }
+
+    function showDetail(type, id) {
+      const item = allItems.find(i => i.type === type && i.id === id);
+      if (!item) return;
+
+      const panel = document.getElementById('detail-panel');
+      panel.style.display = 'block';
+      document.getElementById('detail-name').textContent = item.name;
+
+      let html = `<div class="detail-panel__field"><span class="detail-panel__label">Typ</span><span class="entity entity--${item.type}">${item.typeLabel}</span></div>`;
+
+      if (item.dates) html += `<div class="detail-panel__field"><span class="detail-panel__label">Datierung</span>${escapeHTML(item.dates)}</div>`;
+      if (item.gender) html += `<div class="detail-panel__field"><span class="detail-panel__label">Geschlecht</span>${escapeHTML(item.gender)}</div>`;
+      if (item.placeType) html += `<div class="detail-panel__field"><span class="detail-panel__label">Ortstyp</span>${escapeHTML(item.placeType)}</div>`;
+      if (item.lat && item.lng) html += `<div class="detail-panel__field"><span class="detail-panel__label">Koordinaten</span>${item.lat}, ${item.lng}</div>`;
+      if (item.altLabels) html += `<div class="detail-panel__field"><span class="detail-panel__label">Namensvarianten</span>${escapeHTML(item.altLabels)}</div>`;
+
+      html += `<div class="mt-2 d-flex gap-2 flex-wrap">`;
+      html += `<a href="network.html?highlight=${id}" class="btn btn-outline-accent btn-sm">Im Netzwerk zeigen</a>`;
+      if (item.type === 'person') {
+        html += `<a href="viewer.html?doc=11328300" class="btn btn-outline-secondary btn-sm">In Transkription suchen</a>`;
+      }
+      html += `</div>`;
+
+      document.getElementById('detail-content').innerHTML = html;
+    }
+
+    function update() {
+      const filtered = getFiltered();
+      renderFacets(filtered);
+      renderResults(filtered);
+    }
+
+    document.getElementById('search-input').addEventListener('input', debounce(update, 200));
+    document.addEventListener('change', (e) => {
+      if (e.target.dataset.facet) {
+        const facet = e.target.dataset.facet;
+        if (e.target.checked) {
+          activeFilters[facet].add(e.target.value);
+        } else {
+          activeFilters[facet].delete(e.target.value);
+        }
+        update();
+      }
+    });
+    document.getElementById('clear-filters').addEventListener('click', () => {
+      Object.values(activeFilters).forEach(s => s.clear());
+      document.getElementById('search-input').value = '';
+      update();
+    });
+
+    async function init() {
+      try {
+        const data = await loadAll({
+          persons: 'data/persons.json',
+          places: 'data/places.json',
+          functions: 'data/functions.json',
+          institutions: 'data/institutions.json',
+        });
+        allItems = buildSearchIndex(data);
+        update();
+
+        const params = getParams();
+        if (params.q) {
+          document.getElementById('search-input').value = params.q;
+          update();
+        }
+      } catch (err) {
+        document.getElementById('results-container').innerHTML = `<div class="loading text-body-secondary">Fehler beim Laden: ${err.message}</div>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

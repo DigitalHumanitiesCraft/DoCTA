@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipeline-Demo | DoCTA</title>
+  <meta name="description" content="Pipeline-Demo: Vom handschriftlichen Inventar zum Beziehungsnetzwerk in 5 Schritten. HTR, NER, Relationsextraktion an echtem Material.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    #cy-mini { height: 400px; border: 1px solid var(--border-light); border-radius: 6px; background: #fff; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4">
+    <h1>Pipeline-Demo</h1>
+    <p class="text-body-secondary mb-4">Von der handschriftlichen Quelle zum Beziehungsnetzwerk - am Beispiel des Inventars von Schloss Thaur (1471)</p>
+
+    <div class="pipeline-steps mb-4" id="pipeline-nav">
+      <div class="pipeline-step" data-step="1">
+        <span class="pipeline-step__number">Schritt 1</span>
+        <span class="pipeline-step__label">Quelle</span>
+      </div>
+      <div class="pipeline-step" data-step="2">
+        <span class="pipeline-step__number">Schritt 2</span>
+        <span class="pipeline-step__label">HTR</span>
+      </div>
+      <div class="pipeline-step" data-step="3">
+        <span class="pipeline-step__number">Schritt 3</span>
+        <span class="pipeline-step__label">NER</span>
+      </div>
+      <div class="pipeline-step" data-step="4">
+        <span class="pipeline-step__number">Schritt 4</span>
+        <span class="pipeline-step__label">Relationen</span>
+      </div>
+      <div class="pipeline-step" data-step="5">
+        <span class="pipeline-step__number">Schritt 5</span>
+        <span class="pipeline-step__label">Netzwerk</span>
+      </div>
+    </div>
+
+    <div class="pipeline-content" id="pipeline-content">
+      <!-- Step 1: Source -->
+      <section class="pipeline-content__section" data-step="1">
+        <h2>Schritt 1: Die Quelle</h2>
+        <p class="small text-body-secondary mb-3">Inventar des Schlosses Thaur, 1471 - AT-TLA/BBÄ MIB - Inventare A 049.1</p>
+        <img class="img-fluid border rounded" id="source-image"
+             src="https://files.transkribus.eu/iiif/2/EUMSRNPRFDGNNBBJVELBDIVJ/full/800,/0/default.jpg"
+             alt="Inventar Schloss Thaur, fol. 1r (1471), Kurrentschrift auf Papier"
+             loading="lazy">
+        <div class="bg-light rounded p-3 mt-3 small">
+          <strong style="color:var(--accent)">Was sehen wir?</strong> Eine handschriftliche Inventarliste aus dem 15. Jahrhundert in frühneuhochdeutscher Kurrentschrift.
+          Das Dokument listet den Hausrat auf, der dem Burggrafen Burkhart von Knöringen auf Schloss Thaur übergeben wurde.
+          Die sprachlichen Herausforderungen - Abkürzungen, regionale Varianten, Kurrentschrift - machen eine automatische Verarbeitung anspruchsvoll.
+          <br><br>
+          <strong style="color:var(--accent)">Quelle:</strong> Tiroler Landesarchiv, Abt. BBÄ MIB, Inventare A 049.1 (4 Seiten, Papier).
+          Digitalisiert via Transkribus (Collection 2197991, Doc-ID 11328300).
+          <br><br>
+          <a href="viewer.html?doc=11328300" class="btn btn-outline-accent btn-sm">Im Quellen-Explorer öffnen</a>
+        </div>
+      </section>
+
+      <!-- Step 2: HTR -->
+      <section class="pipeline-content__section" data-step="2">
+        <h2>Schritt 2: Handwritten Text Recognition (HTR)</h2>
+        <p class="small text-body-secondary mb-3">Automatische Transkription der Kurrentschrift - 189 Zeilen, 753 Wörter</p>
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="transcription" id="transcription-text"></div>
+          </div>
+        </div>
+        <div class="bg-light rounded p-3 mt-3 small">
+          <strong style="color:var(--accent)">Was passiert hier?</strong> Ein trainiertes HTR-Modell (Transkribus) erkennt die Handschrift und erzeugt maschinenlesbaren Text.
+          Die Transkription behält die Zeilenstruktur des Originals bei.
+          Typische Herausforderungen: Abkürzungszeichen (ũ, ẽ), regionale Schreibweisen (hawsrat, sloss, dekhen), lateinische Datumsformeln.
+          <br><br>
+          <strong style="color:var(--accent)">Status:</strong> Diese Transkription wurde in Transkribus als DONE markiert (Inventaria-Projekt). Für die 26 Raitbücher (8.561 Seiten) steht die HTR noch aus.
+          <br><br>
+          <a href="viewer.html?doc=11328300" class="btn btn-outline-accent btn-sm">Im Quellen-Explorer öffnen</a>
+        </div>
+      </section>
+
+      <!-- Step 3: NER -->
+      <section class="pipeline-content__section" data-step="3">
+        <h2>Schritt 3: Named Entity Recognition (NER)</h2>
+        <p class="small text-body-secondary mb-3">Erkennung von Personen, Orten, Objekten und Zeitangaben im Transkriptionstext</p>
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+          <div class="mini-legend">
+            <span><span class="dot" style="background:var(--ent-person)"></span> Person</span>
+            <span><span class="dot" style="background:var(--ent-place)"></span> Ort</span>
+            <span><span class="dot" style="background:var(--ent-object)"></span> Objekt</span>
+            <span><span class="dot" style="background:var(--ent-time)"></span> Zeit</span>
+          </div>
+          <div class="conf-legend">
+            <span><span class="conf-line conf-line--high"></span> sicher</span>
+            <span><span class="conf-line conf-line--medium"></span> prüfenswert</span>
+            <span><span class="conf-line conf-line--low"></span> problematisch</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="transcription" id="ner-text"></div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-2">
+          <div class="col-6 col-md-3">
+            <div class="card text-center">
+              <div class="card-body py-2">
+                <div class="stat-value" style="color:var(--ent-person)" id="ner-persons">–</div>
+                <div class="stat-label">Personen</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card text-center">
+              <div class="card-body py-2">
+                <div class="stat-value" style="color:var(--ent-place)" id="ner-places">–</div>
+                <div class="stat-label">Orte</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card text-center">
+              <div class="card-body py-2">
+                <div class="stat-value" style="color:var(--ent-object)" id="ner-objects">–</div>
+                <div class="stat-label">Objekte</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card text-center">
+              <div class="card-body py-2">
+                <div class="stat-value" style="color:var(--ent-time)" id="ner-times">–</div>
+                <div class="stat-label">Zeitangaben</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="small text-body-secondary text-center" id="ner-confidence-stats"></div>
+          </div>
+        </div>
+
+        <div class="bg-light rounded p-3 mt-3 small">
+          <strong style="color:var(--accent)">Was passiert hier?</strong> Ein LLM (Claude) extrahiert benannte Entitäten aus dem frühneuhochdeutschen Text.
+          Die Herausforderung: historische Namensvarianten (Burkharten von Knoringen → Burkhart von Knöringen),
+          veraltete Objektbezeichnungen (strosakh → Strohsack, dekhen → Decken), und implizite Ortsreferenzen (hoff → Innsbrucker Hof).
+          <br><br>
+          <strong style="color:var(--accent)">Methode:</strong> Diese Extraktion wurde mit Claude als LLM-Prototyping-Werkzeug erstellt. Im Vollprojekt wird jede Extraktion durch die Fachwissenschaftlerin validiert (Expert-in-the-Loop).
+          Die Konfidenz wird kategoriell angezeigt: <span class="entity entity--person">sicher</span> / <span style="background:var(--conf-medium-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">prüfenswert</span> / <span style="background:var(--conf-low-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">problematisch</span>.
+        </div>
+      </section>
+
+      <!-- Step 4: Relations -->
+      <section class="pipeline-content__section" data-step="4">
+        <h2>Schritt 4: Relationsextraktion</h2>
+        <p class="small text-body-secondary mb-3">Erkennung von Beziehungen zwischen den extrahierten Entitäten</p>
+        <div class="table-responsive">
+          <table class="table table-hover table-sm" id="relations-table">
+            <thead class="table-light">
+              <tr>
+                <th>Subjekt</th>
+                <th>Relation</th>
+                <th>Objekt</th>
+                <th>Typ</th>
+                <th>Konfidenz</th>
+                <th>Beleg</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="bg-light rounded p-3 mt-3 small">
+          <strong style="color:var(--accent)">Was passiert hier?</strong> Aus den erkannten Entitäten werden Beziehungen extrahiert: Wer macht was, wo, mit wem?
+          Dieses Inventar zeigt typische höfische Praktiken: Übergabe von Amtsgut (Inventarisierung), Zeugnis durch Hofbeamte,
+          Pferdeausrüstung für den Burggrafen, Besitzverhältnisse am Schloss.
+          <br><br>
+          <strong style="color:var(--accent)">Beobachtung:</strong> Aus nur 4 Seiten Inventartext können 13 Relationen zwischen 16 Personen und 4 Orten extrahiert werden.
+          Die 7.800 Seiten Raitbücher werden diese Datenbasis um Größenordnungen erweitern.
+        </div>
+      </section>
+
+      <!-- Step 5: Network -->
+      <section class="pipeline-content__section" data-step="5">
+        <h2>Schritt 5: Netzwerk</h2>
+        <p class="small text-body-secondary mb-3">Visualisierung der extrahierten Beziehungen als interaktiver Graph</p>
+        <div class="mini-legend mb-2">
+          <span><span class="dot" style="background:var(--ent-person)"></span> Person</span>
+          <span><span class="dot" style="background:var(--accent)"></span> Landesfürst</span>
+          <span><span class="dot" style="background:var(--ent-place)"></span> Ort</span>
+        </div>
+        <div id="cy-mini"></div>
+        <div class="bg-light rounded p-3 mt-3 small">
+          <strong style="color:var(--accent)">Was sehen wir?</strong> Das Beziehungsnetzwerk eines einzigen Inventardokuments (4 Seiten).
+          Schloss Thaur steht im Zentrum - hier kreuzen sich Besitz (Knöringen), Verwaltung (Randorffer als Hauskämmerer),
+          Zeugnis (Bürger aus Hall) und höfische Hierarchie (Sigmund als Landesfürst).
+          <br><br>
+          <strong style="color:var(--accent)">Skalierung:</strong> Der <a href="network.html">Netzwerk-Explorer</a> zeigt das vollständige SiCProD-Netzwerk mit 6.288 Personen und 42.893 Relationen.
+          Jedes verarbeitete Quelldokument reichert dieses Netzwerk mit neuen Verbindungen an.
+        </div>
+      </section>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button class="btn btn-outline-secondary" id="btn-prev" disabled>← Zurück</button>
+      <button class="btn btn-accent" id="btn-next">Weiter →</button>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+    import { loadJSON } from './js/data-loader.js';
+    import { getParams, setParams, escapeHTML } from './js/utils.js';
+
+    initNav('pipeline');
+    initBanner();
+
+    let currentStep = 1;
+    const totalSteps = 5;
+    let transcriptionData = null;
+    let entitiesData = null;
+    let relationsData = null;
+    let networkData = null;
+    let cyInstance = null;
+
+    function setStep(step) {
+      step = Math.max(1, Math.min(totalSteps, step));
+      currentStep = step;
+      setParams({ step: String(step) });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Update nav
+      document.querySelectorAll('.pipeline-step').forEach(el => {
+        const s = parseInt(el.dataset.step);
+        el.classList.remove('pipeline-step--active', 'pipeline-step--completed');
+        if (s === step) el.classList.add('pipeline-step--active');
+        else if (s < step) el.classList.add('pipeline-step--completed');
+      });
+
+      // Update content
+      document.querySelectorAll('.pipeline-content__section').forEach(el => {
+        el.classList.toggle('pipeline-content__section--active', parseInt(el.dataset.step) === step);
+      });
+
+      // Update buttons
+      document.getElementById('btn-prev').disabled = step === 1;
+      const nextBtn = document.getElementById('btn-next');
+      if (step === totalSteps) {
+        nextBtn.textContent = 'Zum Netzwerk-Explorer →';
+        nextBtn.onclick = () => { window.location.href = 'network.html'; };
+      } else {
+        nextBtn.textContent = 'Weiter →';
+        nextBtn.onclick = () => setStep(step + 1);
+      }
+
+      // Load step-specific content
+      if (step === 2 && transcriptionData) renderTranscription();
+      if (step === 3 && transcriptionData && entitiesData) renderNER();
+      if (step === 4 && relationsData) renderRelations();
+      if (step === 5 && networkData) renderNetwork();
+    }
+
+    function renderTranscription() {
+      const container = document.getElementById('transcription-text');
+      if (container.children.length > 0) return;
+      let lineNr = 0;
+      let html = '';
+      for (const page of transcriptionData.pages) {
+        html += `<div style="margin-bottom:1rem;font-weight:600;color:var(--text-muted-custom)">- Seite ${page.pageNr} -</div>`;
+        for (const region of page.regions) {
+          for (const line of region.lines) {
+            lineNr++;
+            html += `<div class="transcription__line"><span class="transcription__line-nr">${lineNr}</span><span>${escapeHTML(line.text)}</span></div>`;
+          }
+        }
+      }
+      container.innerHTML = html;
+    }
+
+    function renderNER() {
+      const container = document.getElementById('ner-text');
+      if (container.children.length > 0) return;
+
+      const confLabels = { high: 'sicher', medium: 'prüfenswert', low: 'problematisch' };
+      const entityMap = new Map();
+      for (const ent of entitiesData.entities) {
+        if (ent.type !== 'object') {
+          entityMap.set(ent.text.toLowerCase(), ent);
+        }
+      }
+      const objectHighlights = ['armbrost', 'hantpuchsen', 'hakgenpuchsen', 'harnasch', 'pratspise', 'kessel', 'phannen'];
+      for (const oh of objectHighlights) {
+        const ent = entitiesData.entities.find(e => e.text.toLowerCase() === oh);
+        if (ent) entityMap.set(oh, ent);
+      }
+
+      let lineNr = 0;
+      let html = '';
+      for (const page of transcriptionData.pages) {
+        html += `<div style="margin-bottom:1rem;font-weight:600;color:var(--text-muted-custom)">- Seite ${page.pageNr} -</div>`;
+        for (const region of page.regions) {
+          for (const line of region.lines) {
+            lineNr++;
+            let text = escapeHTML(line.text);
+            for (const [key, ent] of entityMap) {
+              const conf = ent.confidence || 'high';
+              const regex = new RegExp(`(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+              text = text.replace(regex, `<span class="entity entity--${ent.type}" data-conf="${conf}" title="${escapeHTML(ent.normalized || ent.text)} (${ent.type}, ${confLabels[conf]})">$1</span>`);
+            }
+            html += `<div class="transcription__line"><span class="transcription__line-nr">${lineNr}</span><span>${text}</span></div>`;
+          }
+        }
+      }
+      container.innerHTML = html;
+
+      const stats = entitiesData.statistics.byType;
+      document.getElementById('ner-persons').textContent = stats.person;
+      document.getElementById('ner-places').textContent = stats.place;
+      document.getElementById('ner-objects').textContent = stats.object;
+      document.getElementById('ner-times').textContent = stats.time;
+
+      const byConf = entitiesData.statistics.byConfidence;
+      if (byConf) {
+        document.getElementById('ner-confidence-stats').innerHTML =
+          `Konfidenz: <span class="conf-badge conf-badge--high">${byConf.high} sicher</span> ` +
+          `<span class="conf-badge conf-badge--medium">${byConf.medium} prüfenswert</span> ` +
+          `<span class="conf-badge conf-badge--low">${byConf.low} problematisch</span>`;
+      }
+    }
+
+    function renderRelations() {
+      const tbody = document.querySelector('#relations-table tbody');
+      if (tbody.children.length > 0) return;
+      const confLabels = { high: 'sicher', medium: 'prüfenswert', low: 'problematisch' };
+      tbody.innerHTML = relationsData.relations.map(r => {
+        const conf = r.confidence || 'high';
+        return `<tr>
+        <td><span class="entity entity--person">${escapeHTML(r.subjectLabel)}</span></td>
+        <td>${escapeHTML(r.predicate)}</td>
+        <td><span class="entity entity--${r.objectLabel.includes('Thaur') || r.objectLabel.includes('Hall') || r.objectLabel.includes('Hof') ? 'place' : 'person'}">${escapeHTML(r.objectLabel)}</span></td>
+        <td class="small text-body-secondary">${escapeHTML(r.predicateType)}</td>
+        <td><span class="conf-badge conf-badge--${conf}">${confLabels[conf]}</span></td>
+        <td class="small font-monospace" style="max-width:300px;overflow:hidden;text-overflow:ellipsis">${escapeHTML(r.evidence)}</td>
+      </tr>`;
+      }).join('');
+    }
+
+    async function renderNetwork() {
+      if (cyInstance) return;
+      const container = document.getElementById('cy-mini');
+      if (!container || container.children.length > 0) return;
+
+      try {
+        const cytoscapeModule = await import('./lib/cytoscape.esm.min.mjs');
+        const cytoscape = cytoscapeModule.default;
+
+        const elements = [];
+        for (const node of networkData.nodes) {
+          elements.push({
+            data: { id: node.id, label: node.label, type: node.type, role: node.role || '' },
+          });
+        }
+        for (const edge of networkData.edges) {
+          elements.push({
+            data: { source: edge.source, target: edge.target, label: edge.label, type: edge.type },
+          });
+        }
+
+        cyInstance = cytoscape({
+          container: container,
+          elements: elements,
+          style: [
+            {
+              selector: 'node',
+              style: {
+                'label': 'data(label)', 'text-valign': 'bottom', 'text-halign': 'center',
+                'font-size': '10px', 'font-family': '-apple-system, BlinkMacSystemFont, sans-serif',
+                'text-margin-y': 6, 'width': 20, 'height': 20,
+              },
+            },
+            { selector: 'node[type="person"]', style: { 'background-color': '#1565c0' } },
+            { selector: 'node[type="place"]', style: { 'background-color': '#2e7d32', 'shape': 'diamond', 'width': 25, 'height': 25 } },
+            { selector: 'node[id="sigmund"]', style: { 'background-color': '#8b5e3c', 'width': 30, 'height': 30, 'font-weight': 'bold' } },
+            { selector: 'node[id="pl1"]', style: { 'width': 30, 'height': 30, 'font-weight': 'bold' } },
+            {
+              selector: 'edge',
+              style: {
+                'width': 1.5, 'line-color': '#d4cfc6', 'target-arrow-color': '#d4cfc6',
+                'target-arrow-shape': 'triangle', 'curve-style': 'bezier', 'arrow-scale': 0.8,
+              },
+            },
+          ],
+          layout: { name: 'cose', animate: false, nodeRepulsion: 8000, idealEdgeLength: 80, gravity: 0.5 },
+        });
+
+        cyInstance.on('tap', 'node', function(evt) {
+          const node = evt.target;
+          const role = node.data('role');
+          alert(`${node.data('label')}${role ? '\n' + role : ''}`);
+        });
+      } catch (err) {
+        container.innerHTML = `<div class="loading text-body-secondary">Cytoscape.js konnte nicht geladen werden: ${err.message}</div>`;
+      }
+    }
+
+    // Navigation
+    document.getElementById('btn-prev').addEventListener('click', () => setStep(currentStep - 1));
+    document.querySelectorAll('.pipeline-step').forEach(el => {
+      el.addEventListener('click', () => setStep(parseInt(el.dataset.step)));
+    });
+
+    // Init
+    async function init() {
+      try {
+        [transcriptionData, entitiesData, relationsData, networkData] = await Promise.all([
+          loadJSON('data/transcriptions/11328300.json'),
+          loadJSON('data/demo/thaur_entities.json'),
+          loadJSON('data/demo/thaur_relations.json'),
+          loadJSON('data/demo/thaur_network.json'),
+        ]);
+      } catch (err) {
+        console.error('Failed to load pipeline data:', err);
+      }
+
+      const params = getParams();
+      const startStep = parseInt(params.step) || 1;
+      setStep(startStep);
+    }
+
+    init();
+  </script>
+</body>
+</html>

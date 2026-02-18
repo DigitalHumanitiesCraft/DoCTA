@@ -1,0 +1,178 @@
+{
+ "docId": 11328300,
+ "description": "Extrahierte Relationen aus dem Inventar Thaur A 49.1 (1471). Zeigt die Beziehungen zwischen Personen, Orten und Objekten.",
+ "confidenceLevels": {
+  "high": {"label": "sicher", "description": "Explizite Aussage im Quelltext"},
+  "medium": {"label": "prüfenswert", "description": "Implizite Ableitung oder interpretationsbedürftig"},
+  "low": {"label": "problematisch", "description": "Unsichere Zuordnung, manuelle Prüfung nötig"}
+ },
+ "relations": [
+  {
+   "id": "rel1",
+   "subject": "p1",
+   "subjectLabel": "Hans Ramung",
+   "predicate": "erstellt Inventar für",
+   "predicateType": "inventarisierung",
+   "object": "p2",
+   "objectLabel": "Burkhart von Knöringen",
+   "confidence": "high",
+   "evidence": "Inventori etlichs hawsrats durch Hannsen Ramung, Burkharten von Knoringen"
+  },
+  {
+   "id": "rel2",
+   "subject": "p2",
+   "subjectLabel": "Burkhart von Knöringen",
+   "predicate": "ist Inhaber von",
+   "predicateType": "besitz",
+   "object": "pl1",
+   "objectLabel": "Schloss Thaur",
+   "confidence": "high",
+   "evidence": "auf dem sloss Thawr"
+  },
+  {
+   "id": "rel3",
+   "subject": "p2",
+   "subjectLabel": "Burkhart von Knöringen",
+   "predicate": "übergibt Inventar an",
+   "predicateType": "übergabe",
+   "object": "p11",
+   "objectLabel": "Martin Schintel",
+   "confidence": "high",
+   "evidence": "Ich Burkhart von Knŏringen hab diss abgeschriben hawsrat allen Martin Schintel ... geantwurdt"
+  },
+  {
+   "id": "rel4",
+   "subject": "p4",
+   "subjectLabel": "Beatrix",
+   "predicate": "besitzt Güter in",
+   "predicateType": "besitz",
+   "object": "pl1",
+   "objectLabel": "Schloss Thaur",
+   "confidence": "medium",
+   "evidence": "Vermerkht der Beatrix gut"
+  },
+  {
+   "id": "rel5",
+   "subject": "p5",
+   "subjectLabel": "Jörg Randorffer",
+   "predicate": "ist Hauskämmerer von",
+   "predicateType": "funktion",
+   "object": "pl1",
+   "objectLabel": "Schloss Thaur / Landesfürst",
+   "confidence": "high",
+   "evidence": "Jörg Randorffer meins gnedigen herrn hawskamrer"
+  },
+  {
+   "id": "rel6",
+   "subject": "p6",
+   "subjectLabel": "Hans Wyser",
+   "predicate": "ist Sekretär",
+   "predicateType": "funktion",
+   "object": null,
+   "objectLabel": "Landesfürst (Sigmund)",
+   "confidence": "high",
+   "evidence": "Hanns Wÿser secretari"
+  },
+  {
+   "id": "rel7",
+   "subject": "p13",
+   "subjectLabel": "Wolfgang Sumer",
+   "predicate": "ist Kammerschreiber",
+   "predicateType": "funktion",
+   "object": null,
+   "objectLabel": "Landesfürst (Sigmund)",
+   "confidence": "high",
+   "evidence": "Wolfgangen Sumer kamerschraÿbers"
+  },
+  {
+   "id": "rel8",
+   "subject": "p7",
+   "subjectLabel": "Jakob Hausmann",
+   "predicate": "ist Bürger von",
+   "predicateType": "herkunft",
+   "object": "pl2",
+   "objectLabel": "Hall in Tirol",
+   "confidence": "high",
+   "evidence": "Jacob Hawsman ... bede birger zu Hall"
+  },
+  {
+   "id": "rel9",
+   "subject": "p8",
+   "subjectLabel": "Michel Auer",
+   "predicate": "ist Bürger von",
+   "predicateType": "herkunft",
+   "object": "pl2",
+   "objectLabel": "Hall in Tirol",
+   "confidence": "high",
+   "evidence": "Michel Awer bede birger zu Hall"
+  },
+  {
+   "id": "rel10",
+   "subject": "p14",
+   "subjectLabel": "Knöringer",
+   "predicate": "nimmt mit",
+   "predicateType": "objekttransfer",
+   "object": "o_komat",
+   "objectLabel": "XV Komate zu den Rossen + III Zäume",
+   "confidence": "medium",
+   "evidence": "Item X V komat zun rossen hat der Kneringer hin. Item III zam hat der kneringer hin."
+  },
+  {
+   "id": "rel11",
+   "subject": "p16",
+   "subjectLabel": "Polinger",
+   "predicate": "erhält",
+   "predicateType": "objekttransfer",
+   "object": "o_bettzeug",
+   "objectLabel": "IIII Betten, IIII Polster, VII Kissen, I Paar Leintücher",
+   "confidence": "medium",
+   "evidence": "dem Polinger hab ich geben IIII pett und IIII polsteren, und VII kchũs und ain par leilach"
+  },
+  {
+   "id": "rel12",
+   "subject": "p3",
+   "subjectLabel": "Christoph Velberger",
+   "predicate": "bewohnt Erker in",
+   "predicateType": "bewohnung",
+   "object": "pl1",
+   "objectLabel": "Schloss Thaur",
+   "confidence": "medium",
+   "evidence": "In Velbergers erkger"
+  },
+  {
+   "id": "rel13",
+   "subject": "p5",
+   "subjectLabel": "Jörg Randorffer",
+   "predicate": "ist Zeuge bei Inventarisierung",
+   "predicateType": "zeugnis",
+   "object": "pl1",
+   "objectLabel": "Schloss Thaur",
+   "confidence": "high",
+   "evidence": "Bey solcher invetari sind gewesen: Jörg Randorffer"
+  }
+ ],
+ "predicateTypes": {
+  "inventarisierung": "Erstellung/Durchführung eines Inventars",
+  "besitz": "Besitz oder Inhaberschaft",
+  "übergabe": "Übergabe von Gütern oder Dokumenten",
+  "funktion": "Hofamt oder Funktion",
+  "herkunft": "Herkunft oder Bürgerrecht",
+  "objekttransfer": "Transfer von Objekten",
+  "bewohnung": "Bewohnung eines Raums/Gebäudes",
+  "zeugnis": "Anwesenheit als Zeuge"
+ },
+ "statistics": {
+  "totalRelations": 13,
+  "byType": {
+   "funktion": 3,
+   "besitz": 2,
+   "herkunft": 2,
+   "objekttransfer": 2,
+   "inventarisierung": 1,
+   "übergabe": 1,
+   "bewohnung": 1,
+   "zeugnis": 1
+  },
+  "byConfidence": {"high": 9, "medium": 4, "low": 0}
+ }
+}

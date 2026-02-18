@@ -1,0 +1,76 @@
+{
+ "docId": 11328300,
+ "title": "Thaur_TLA Inventare A 49.1_1471",
+ "description": "NER-Annotationen des Burgeninventars von Schloss Thaur (1471), erstellt mit Claude als LLM-Prototyping-Werkzeug.",
+ "entityTypes": {
+  "person": {"label": "Person", "color": "#1565c0"},
+  "place": {"label": "Ort", "color": "#2e7d32"},
+  "object": {"label": "Objekt/Sache", "color": "#e65100"},
+  "time": {"label": "Zeit", "color": "#6a1b9a"}
+ },
+ "confidenceLevels": {
+  "high": {"label": "sicher", "description": "Hohe Übereinstimmung, eindeutig identifizierbar"},
+  "medium": {"label": "prüfenswert", "description": "Plausibel, aber Ambiguität möglich"},
+  "low": {"label": "problematisch", "description": "Niedrige Konfidenz, manuelle Korrektur empfohlen"}
+ },
+ "entities": [
+  {"id": "p1", "text": "Hannsen Ramung", "normalized": "Hans Ramung", "type": "person", "confidence": "high", "pageNr": 1, "lineId": "r2l2", "role": "Inventarersteller"},
+  {"id": "p2", "text": "Burkharten von Knoringen", "normalized": "Burkhart von Knöringen", "type": "person", "confidence": "high", "pageNr": 1, "lineId": "r2l3", "role": "Inhaber/Burggraf", "sicprodCandidate": true},
+  {"id": "p3", "text": "Velbergers", "normalized": "Christoph Velberger", "type": "person", "confidence": "medium", "pageNr": 1, "lineId": "r3l26", "role": "Bewohner"},
+  {"id": "p4", "text": "Beatrix", "normalized": "Beatrix", "type": "person", "confidence": "medium", "pageNr": 2, "lineId": null, "role": "Güterbesitzerin"},
+  {"id": "p5", "text": "Jörg Randorffer", "normalized": "Jörg Randorffer", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Hauskämmerer"},
+  {"id": "p6", "text": "Hanns Wÿser", "normalized": "Hans Wyser", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Sekretär"},
+  {"id": "p7", "text": "Jacob Hawsman", "normalized": "Jakob Hausmann", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Bürger zu Hall"},
+  {"id": "p8", "text": "Michel Awer", "normalized": "Michel Auer", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Bürger zu Hall"},
+  {"id": "p9", "text": "Jorg Bubenhofer", "normalized": "Jörg Bubenhofer", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Zeuge"},
+  {"id": "p10", "text": "Christopf Velberger", "normalized": "Christoph Velberger", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Zeuge"},
+  {"id": "p11", "text": "Martin Schintel", "normalized": "Martin Schintel", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Empfänger"},
+  {"id": "p12", "text": "Hannsen von Elsp", "normalized": "Hans von Elsp", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Zeuge"},
+  {"id": "p13", "text": "Wolfgangen Sumer", "normalized": "Wolfgang Sumer", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Kammerschreiber"},
+  {"id": "p14", "text": "Kneringer", "normalized": "Knöringer", "type": "person", "confidence": "medium", "pageNr": 2, "lineId": null, "role": "Empfänger von Pferdeausrüstung"},
+  {"id": "p15", "text": "Leupolt Spies", "normalized": "Leopold Spies", "type": "person", "confidence": "high", "pageNr": 3, "lineId": null, "role": "Auftraggeber"},
+  {"id": "p16", "text": "Polinger", "normalized": "Polinger", "type": "person", "confidence": "medium", "pageNr": 3, "lineId": null, "role": "Empfänger von Bettzeug"},
+
+  {"id": "pl1", "text": "Thawr", "normalized": "Thaur (Schloss)", "type": "place", "confidence": "high", "pageNr": 1, "lineId": "r2l4"},
+  {"id": "pl2", "text": "Hall", "normalized": "Hall in Tirol", "type": "place", "confidence": "high", "pageNr": 3, "lineId": null},
+  {"id": "pl3", "text": "hoff", "normalized": "Hof (Innsbruck)", "type": "place", "confidence": "medium", "pageNr": 2, "lineId": null},
+  {"id": "pl4", "text": "albem", "normalized": "Alm", "type": "place", "confidence": "low", "pageNr": 3, "lineId": null},
+
+  {"id": "t1", "text": "Sand Michels tag", "normalized": "Michaelstag (29. September)", "type": "time", "confidence": "high", "pageNr": 1, "lineId": "r2l6", "isoDate": "1471-09-29"},
+  {"id": "t2", "text": "anno Domini etc. LXXImo", "normalized": "1471", "type": "time", "confidence": "high", "pageNr": 1, "lineId": "r2l7", "isoDate": "1471"},
+  {"id": "t3", "text": "unnser frawen tag nativitatis", "normalized": "Mariä Geburt (8. September)", "type": "time", "confidence": "high", "pageNr": 3, "lineId": null, "isoDate": "1472-09-08"},
+  {"id": "t4", "text": "LXX secundo", "normalized": "1472", "type": "time", "confidence": "high", "pageNr": 3, "lineId": null, "isoDate": "1472"},
+
+  {"id": "o1", "text": "pett", "normalized": "Bett", "type": "object", "confidence": "high", "count": 18, "category": "Textilien/Möbel"},
+  {"id": "o2", "text": "polster", "normalized": "Polster", "type": "object", "confidence": "high", "count": 14, "category": "Textilien/Möbel"},
+  {"id": "o3", "text": "dekhen", "normalized": "Decke", "type": "object", "confidence": "high", "count": 15, "category": "Textilien/Möbel"},
+  {"id": "o4", "text": "kuss", "normalized": "Kissen", "type": "object", "confidence": "medium", "count": 12, "category": "Textilien/Möbel"},
+  {"id": "o5", "text": "armbrost", "normalized": "Armbrust", "type": "object", "confidence": "high", "count": 20, "category": "Waffen"},
+  {"id": "o6", "text": "hantpuchsen", "normalized": "Handfeuerwaffe", "type": "object", "confidence": "medium", "count": 19, "category": "Waffen"},
+  {"id": "o7", "text": "hakgenpuchsen", "normalized": "Hakenbüchse", "type": "object", "confidence": "medium", "count": 4, "category": "Waffen"},
+  {"id": "o8", "text": "harnasch", "normalized": "Harnisch/Rüstung", "type": "object", "confidence": "high", "category": "Waffen"},
+  {"id": "o9", "text": "kessel", "normalized": "Kessel", "type": "object", "confidence": "high", "count": 6, "category": "Küche"},
+  {"id": "o10", "text": "phannen", "normalized": "Pfanne", "type": "object", "confidence": "high", "count": 11, "category": "Küche"},
+  {"id": "o11", "text": "pratspise", "normalized": "Bratspieß", "type": "object", "confidence": "medium", "count": 2, "category": "Küche"},
+  {"id": "o12", "text": "leÿlach", "normalized": "Leintuch", "type": "object", "confidence": "high", "count": 12, "category": "Textilien"},
+  {"id": "o13", "text": "tischtũcher", "normalized": "Tischtuch", "type": "object", "confidence": "high", "count": 16, "category": "Textilien"},
+  {"id": "o14", "text": "kandeln", "normalized": "Kanne", "type": "object", "confidence": "high", "count": 12, "category": "Tafelgeschirr"},
+  {"id": "o15", "text": "zinen schusselen", "normalized": "Zinnschüssel", "type": "object", "confidence": "high", "count": 19, "category": "Tafelgeschirr"},
+  {"id": "o16", "text": "zÿnen teller", "normalized": "Zinnteller", "type": "object", "confidence": "high", "count": 12, "category": "Tafelgeschirr"},
+  {"id": "o17", "text": "wagen", "normalized": "Wagen", "type": "object", "confidence": "high", "count": 1, "category": "Landwirtschaft"},
+  {"id": "o18", "text": "phlũg", "normalized": "Pflug", "type": "object", "confidence": "high", "count": 2, "category": "Landwirtschaft"}
+ ],
+ "statistics": {
+  "totalEntities": 38,
+  "byType": {"person": 16, "place": 4, "object": 18, "time": 4},
+  "byConfidence": {"high": 28, "medium": 9, "low": 1},
+  "objectCategories": {
+   "Textilien/Möbel": 4,
+   "Waffen": 4,
+   "Küche": 3,
+   "Textilien": 2,
+   "Tafelgeschirr": 3,
+   "Landwirtschaft": 2
+  }
+ }
+}

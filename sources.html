@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quellenübersicht | DoCTA</title>
+  <meta name="description" content="312 Quellen aus dem Tiroler Landesarchiv: Raitbücher, Inventare, Kopialbücher, Hofordnungen. Filterbar und sortierbar.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4">
+    <h1>Quellenübersicht</h1>
+    <p class="text-body-secondary mb-4">312 Quellen aus dem Tiroler Landesarchiv - Rechnungen, Inventare, Kopialbücher, Hofordnungen</p>
+
+    <div class="row g-2 mb-3 align-items-center">
+      <div class="col-md-5">
+        <input type="search" class="form-control" id="search-input" placeholder="Signatur, Titel oder Datierung suchen..." aria-label="Quellensuche">
+      </div>
+      <div class="col-md-3">
+        <select class="form-select" id="filter-kategorie" aria-label="Kategorie filtern">
+          <option value="">Alle Kategorien</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select class="form-select" id="filter-tier" aria-label="Verfügbarkeit filtern">
+          <option value="">Alle Tiers</option>
+          <option value="1">Tier 1: Transkription</option>
+          <option value="2">Tier 2: Digitalisiert</option>
+          <option value="3">Tier 3: Im Archiv</option>
+        </select>
+      </div>
+      <div class="col-md-2 text-end">
+        <span class="small text-body-secondary" id="result-count"></span>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover table-sm" id="sources-table" aria-label="Quellenübersicht">
+        <thead class="table-light">
+          <tr>
+            <th data-sort="kategorie">Kategorie <span class="sort-icon">↕</span></th>
+            <th data-sort="signatur">Signatur <span class="sort-icon">↕</span></th>
+            <th data-sort="titel">Titel <span class="sort-icon">↕</span></th>
+            <th data-sort="datierung">Datierung <span class="sort-icon">↕</span></th>
+            <th data-sort="seiten">Seiten <span class="sort-icon">↕</span></th>
+            <th data-sort="tier">Status <span class="sort-icon">↕</span></th>
+            <th>Aktion</th>
+          </tr>
+        </thead>
+        <tbody id="sources-body">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+    import { loadJSON } from './js/data-loader.js';
+    import { escapeHTML, tierBadge, formatDate, debounce } from './js/utils.js';
+
+    initNav('sources');
+    initBanner();
+
+    let allSources = [];
+    let sortKey = 'signatur';
+    let sortDir = 1;
+
+    function renderTable(sources) {
+      const tbody = document.getElementById('sources-body');
+      document.getElementById('result-count').textContent = `${sources.length.toLocaleString('de-AT')} Quellen`;
+
+      if (sources.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="text-body-secondary text-center py-4">Keine Quellen gefunden</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = sources.map(s => {
+        let action = '';
+        if (s.transkribus && s.transkribus.has_text) {
+          action = `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Öffnen</a>`;
+        } else if (s.tier === 1 || s.tier === 2) {
+          action = `<span class="small text-body-secondary">Nur Digitalisat</span>`;
+        }
+        return `<tr>
+          <td>${escapeHTML(s.kategorie)}</td>
+          <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
+          <td>${escapeHTML(s.titel)}</td>
+          <td class="small">${escapeHTML(formatDate(s.datierung))}</td>
+          <td class="small">${s.seiten != null ? s.seiten : '–'}</td>
+          <td>${tierBadge(s.tier)}</td>
+          <td>${action}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    function getFilteredSources() {
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      const katFilter = document.getElementById('filter-kategorie').value;
+      const tierFilter = document.getElementById('filter-tier').value;
+
+      let filtered = allSources;
+
+      if (query) {
+        filtered = filtered.filter(s =>
+          s.signatur.toLowerCase().includes(query) ||
+          s.titel.toLowerCase().includes(query) ||
+          (s.datierung.raw || '').toLowerCase().includes(query)
+        );
+      }
+
+      if (katFilter) {
+        filtered = filtered.filter(s => s.kategorie === katFilter);
+      }
+
+      if (tierFilter) {
+        filtered = filtered.filter(s => s.tier === parseInt(tierFilter));
+      }
+
+      filtered.sort((a, b) => {
+        let va = a[sortKey];
+        let vb = b[sortKey];
+        if (sortKey === 'datierung') {
+          va = a.datierung.start || 0;
+          vb = b.datierung.start || 0;
+        }
+        if (sortKey === 'seiten') {
+          va = va || 0;
+          vb = vb || 0;
+        }
+        if (typeof va === 'string') {
+          return va.localeCompare(vb, 'de', { numeric: true }) * sortDir;
+        }
+        return ((va || 0) - (vb || 0)) * sortDir;
+      });
+
+      return filtered;
+    }
+
+    function update() {
+      renderTable(getFilteredSources());
+    }
+
+    document.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => {
+        const key = th.dataset.sort;
+        if (sortKey === key) {
+          sortDir *= -1;
+        } else {
+          sortKey = key;
+          sortDir = 1;
+        }
+        document.querySelectorAll('th').forEach(h => h.classList.remove('sorted'));
+        th.classList.add('sorted');
+        update();
+      });
+    });
+
+    document.getElementById('search-input').addEventListener('input', debounce(update, 200));
+    document.getElementById('filter-kategorie').addEventListener('change', update);
+    document.getElementById('filter-tier').addEventListener('change', update);
+
+    async function init() {
+      try {
+        allSources = await loadJSON('data/sources.json');
+
+        const categories = [...new Set(allSources.map(s => s.kategorie))].sort();
+        const katSelect = document.getElementById('filter-kategorie');
+        categories.forEach(cat => {
+          const opt = document.createElement('option');
+          opt.value = cat;
+          opt.textContent = `${cat} (${allSources.filter(s => s.kategorie === cat).length})`;
+          katSelect.appendChild(opt);
+        });
+
+        update();
+      } catch (err) {
+        document.getElementById('sources-body').innerHTML =
+          `<tr><td colspan="7" class="text-body-secondary text-center py-4">Fehler beim Laden: ${err.message}</td></tr>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
