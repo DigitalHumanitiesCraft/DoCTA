@@ -27,9 +27,13 @@
     <div class="network-page">
       <div class="network-header">
         <h1 class="h5 mb-0">Netzwerk-Explorer</h1>
-        <p class="small mb-0 text-body-secondary">Interaktiver Beziehungsgraph basierend auf SiCProD-Daten (Top-200 nach Vernetzungsgrad)</p>
+        <p class="small mb-0 text-body-secondary" id="network-subtitle">Interaktiver Beziehungsgraph basierend auf SiCProD-Daten</p>
       </div>
       <div class="network-toolbar">
+        <div class="btn-group btn-group-sm" role="group" aria-label="Netzwerkmodus">
+          <button class="btn btn-outline-accent active" id="btn-ego" data-mode="ego">Ego-Netzwerk</button>
+          <button class="btn btn-outline-accent" id="btn-full" data-mode="full">Gesamtnetzwerk</button>
+        </div>
         <input type="search" id="node-search" placeholder="Person suchen..." aria-label="Knotensuche">
         <select id="filter-reltype" aria-label="Relationstyp filtern">
           <option value="">Alle Relationstypen</option>
@@ -46,6 +50,7 @@
         <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e65100"></span> Institution</div>
         <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6a1b9a"></span> Funktion</div>
         <div style="margin-top:4px;color:var(--text-muted-custom);font-size:0.6875rem">Knotengröße = Anzahl Verbindungen</div>
+        <div style="color:var(--text-muted-custom);font-size:0.6875rem">Klick auf Knoten = Erkunden</div>
       </div>
 
       <!-- Detail sidebar -->
@@ -66,15 +71,290 @@
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner, formatNumber } from './js/app.js';
-    import { loadAll, loadJSON } from './js/data-loader.js';
+    import { loadAll } from './js/data-loader.js';
     import { getParams, debounce, escapeHTML } from './js/utils.js';
 
     initNav('network');
     initBanner();
 
+    const DEFAULT_CENTER = 'person-18'; // Sigmund von Tirol
+    const EGO_MAX_NEIGHBORS = 50;
+    const FULL_MAX_NODES = 75;
+
     let cy = null;
-    let allPersons = {};
+    let cytoscape = null;
+    let entityIndex = {};
+    let degree = {};
     let allRelations = [];
+    let currentMode = 'ego';
+    let currentCenter = DEFAULT_CENTER;
+
+    const cyStyles = [
+      {
+        selector: 'node',
+        style: {
+          'label': 'data(label)', 'text-valign': 'bottom', 'text-halign': 'center',
+          'font-size': '9px', 'font-family': '-apple-system, sans-serif',
+          'text-margin-y': 5, 'text-max-width': '90px', 'text-wrap': 'ellipsis',
+        },
+      },
+      {
+        selector: 'node[type="person"]',
+        style: {
+          'background-color': '#1565c0',
+          'width': 'mapData(degree, 1, 200, 12, 40)',
+          'height': 'mapData(degree, 1, 200, 12, 40)',
+        },
+      },
+      {
+        selector: 'node[type="place"]',
+        style: {
+          'background-color': '#2e7d32', 'shape': 'diamond',
+          'width': 'mapData(degree, 1, 200, 14, 35)',
+          'height': 'mapData(degree, 1, 200, 14, 35)',
+        },
+      },
+      {
+        selector: 'node[type="institution"]',
+        style: {
+          'background-color': '#e65100', 'shape': 'round-rectangle',
+          'width': 'mapData(degree, 1, 200, 14, 35)',
+          'height': 'mapData(degree, 1, 200, 14, 35)',
+        },
+      },
+      {
+        selector: 'node[type="function"]',
+        style: {
+          'background-color': '#6a1b9a', 'shape': 'ellipse',
+          'width': 'mapData(degree, 1, 200, 10, 30)',
+          'height': 'mapData(degree, 1, 200, 10, 30)',
+        },
+      },
+      {
+        selector: 'node[isCenter="yes"]',
+        style: {
+          'border-width': 3, 'border-color': '#8b5e3c',
+          'width': 50, 'height': 50,
+          'font-size': '11px', 'font-weight': 'bold',
+          'text-max-width': '130px',
+        },
+      },
+      {
+        selector: 'edge',
+        style: {
+          'width': 0.5, 'line-color': '#d4cfc6', 'target-arrow-shape': 'none',
+          'curve-style': 'haystack', 'opacity': 0.35,
+        },
+      },
+      { selector: ':selected', style: { 'border-width': 2, 'border-color': '#8b5e3c' } },
+      { selector: '.highlighted', style: { 'background-color': '#c62828', 'border-width': 3, 'border-color': '#c62828', 'z-index': 100 } },
+      { selector: '.neighbor', style: { 'opacity': 1, 'z-index': 50 } },
+      { selector: '.faded', style: { 'opacity': 0.1 } },
+    ];
+
+    function buildEgoElements(centerKey) {
+      const neighbors = new Map();
+
+      for (const r of allRelations) {
+        const srcKey = `${r.subj_type}-${r.subj_id}`;
+        const tgtKey = `${r.obj_type}-${r.obj_id}`;
+
+        if (srcKey === centerKey && entityIndex[tgtKey]) {
+          if (!neighbors.has(tgtKey)) neighbors.set(tgtKey, new Set());
+          neighbors.get(tgtKey).add(r.relation_type);
+        }
+        if (tgtKey === centerKey && entityIndex[srcKey]) {
+          if (!neighbors.has(srcKey)) neighbors.set(srcKey, new Set());
+          neighbors.get(srcKey).add(r.relation_type);
+        }
+      }
+
+      // Top N neighbors by degree
+      const sorted = [...neighbors.keys()]
+        .sort((a, b) => (degree[b] || 0) - (degree[a] || 0))
+        .slice(0, EGO_MAX_NEIGHBORS);
+
+      const addedNodes = new Set();
+      const elements = [];
+      const relTypeCounts = {};
+
+      // Center node
+      const ce = entityIndex[centerKey];
+      if (!ce) return { elements: [], relTypeCounts: {} };
+      elements.push({ data: { id: centerKey, label: ce.name, type: ce.type, degree: degree[centerKey] || 0, isCenter: 'yes' } });
+      addedNodes.add(centerKey);
+
+      // Neighbor nodes
+      for (const key of sorted) {
+        const e = entityIndex[key];
+        if (!e) continue;
+        elements.push({ data: { id: key, label: e.name, type: e.type, degree: degree[key] || 0 } });
+        addedNodes.add(key);
+      }
+
+      // Edges only between actually-added nodes
+      for (const r of allRelations) {
+        const src = `${r.subj_type}-${r.subj_id}`;
+        const tgt = `${r.obj_type}-${r.obj_id}`;
+        if (addedNodes.has(src) && addedNodes.has(tgt)) {
+          elements.push({ data: { source: src, target: tgt, relType: r.relation_type } });
+          relTypeCounts[r.relation_type] = (relTypeCounts[r.relation_type] || 0) + 1;
+        }
+      }
+
+      return { elements, relTypeCounts };
+    }
+
+    function buildFullElements() {
+      const topNodes = Object.entries(degree)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, FULL_MAX_NODES)
+        .map(([key]) => key);
+
+      const addedNodes = new Set();
+      const elements = [];
+      const relTypeCounts = {};
+
+      for (const key of topNodes) {
+        const e = entityIndex[key];
+        if (!e) continue;
+        elements.push({ data: { id: key, label: e.name, type: e.type, degree: degree[key] || 0 } });
+        addedNodes.add(key);
+      }
+
+      // Edges only between actually-added nodes
+      for (const r of allRelations) {
+        const src = `${r.subj_type}-${r.subj_id}`;
+        const tgt = `${r.obj_type}-${r.obj_id}`;
+        if (addedNodes.has(src) && addedNodes.has(tgt)) {
+          elements.push({ data: { source: src, target: tgt, relType: r.relation_type } });
+          relTypeCounts[r.relation_type] = (relTypeCounts[r.relation_type] || 0) + 1;
+        }
+      }
+
+      return { elements, relTypeCounts };
+    }
+
+    function renderGraph(elements, relTypeCounts, layoutName) {
+      if (cy) cy.destroy();
+
+      const nodeCount = elements.filter(e => !e.data.source).length;
+      const edgeCount = elements.filter(e => e.data.source).length;
+      const info = document.getElementById('network-info');
+
+      const layout = layoutName === 'concentric'
+        ? {
+            name: 'concentric',
+            concentric: node => node.data('isCenter') === 'yes' ? 100 : 1,
+            levelWidth: () => 1,
+            animate: false,
+            minNodeSpacing: 25,
+          }
+        : {
+            name: 'cose',
+            animate: false,
+            nodeRepulsion: 18000,
+            idealEdgeLength: 80,
+            gravity: 0.25,
+            numIter: 400,
+          };
+
+      cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: elements,
+        style: cyStyles,
+        layout: layout,
+      });
+
+      // Update info
+      if (currentMode === 'ego') {
+        const centerName = entityIndex[currentCenter]?.name || currentCenter;
+        info.textContent = `Ego-Netzwerk: ${nodeCount} Knoten, ${formatNumber(edgeCount)} Kanten um ${centerName}`;
+        document.getElementById('network-subtitle').textContent = `Direktes Beziehungsnetzwerk um ${centerName}`;
+      } else {
+        info.textContent = `${nodeCount} Knoten, ${formatNumber(edgeCount)} Kanten (Top-${FULL_MAX_NODES} nach Vernetzungsgrad)`;
+        document.getElementById('network-subtitle').textContent = `Top-${FULL_MAX_NODES} vernetzte Entitäten aus der SiCProD-Datenbank`;
+      }
+
+      // Update relation type filter
+      const relSelect = document.getElementById('filter-reltype');
+      relSelect.innerHTML = '<option value="">Alle Relationstypen</option>';
+      Object.entries(relTypeCounts)
+        .sort((a, b) => b[1] - a[1])
+        .forEach(([type, count]) => {
+          const opt = document.createElement('option');
+          opt.value = type;
+          opt.textContent = `${type} (${count})`;
+          relSelect.appendChild(opt);
+        });
+
+      // Node click
+      cy.on('tap', 'node', function(evt) {
+        showNodeDetail(evt.target);
+      });
+
+      // Background click
+      cy.on('tap', function(evt) {
+        if (evt.target === cy) {
+          document.getElementById('detail-sidebar').style.display = 'none';
+          cy.elements().removeClass('highlighted neighbor faded');
+        }
+      });
+    }
+
+    function showNodeDetail(node) {
+      cy.elements().removeClass('highlighted neighbor faded').addClass('faded');
+      node.removeClass('faded').addClass('highlighted');
+      const neighborhood = node.neighborhood();
+      neighborhood.removeClass('faded').addClass('neighbor');
+
+      const sidebar = document.getElementById('detail-sidebar');
+      sidebar.style.display = 'block';
+      document.getElementById('sidebar-name').textContent = node.data('label');
+
+      const connections = neighborhood.nodes().map(n => ({
+        name: n.data('label'), type: n.data('type'),
+      })).sort((a, b) => a.name.localeCompare(b.name));
+
+      let html = `<div class="detail-panel__field"><span class="detail-panel__label">Typ</span><span class="entity entity--${node.data('type')}">${node.data('type')}</span></div>`;
+      html += `<div class="detail-panel__field"><span class="detail-panel__label">Verbindungen</span>${node.data('degree')} gesamt</div>`;
+      html += `<div class="detail-panel__field"><span class="detail-panel__label">Nachbarn (${connections.length})</span>`;
+      html += connections.slice(0, 20).map(c =>
+        `<div class="small"><span class="entity entity--${c.type}" style="font-size:0.6rem">${c.type}</span> ${escapeHTML(c.name)}</div>`
+      ).join('');
+      if (connections.length > 20) html += `<div class="small text-body-secondary">… und ${connections.length - 20} weitere</div>`;
+      html += '</div>';
+
+      html += `<div class="mt-2 d-flex flex-column gap-1">`;
+      // "Explore this person's network" button
+      const nodeId = node.data('id');
+      if (nodeId !== currentCenter || currentMode !== 'ego') {
+        html += `<button class="btn btn-outline-accent btn-sm" onclick="document.dispatchEvent(new CustomEvent('explore-node', {detail:'${nodeId}'}))">Netzwerk erkunden</button>`;
+      }
+      html += `<a href="search.html?q=${encodeURIComponent(node.data('label'))}" class="btn btn-outline-secondary btn-sm">In Suche öffnen</a>`;
+      html += `</div>`;
+
+      document.getElementById('sidebar-content').innerHTML = html;
+    }
+
+    function switchMode(mode, centerKey) {
+      currentMode = mode;
+      document.getElementById('btn-ego').classList.toggle('active', mode === 'ego');
+      document.getElementById('btn-full').classList.toggle('active', mode === 'full');
+
+      document.getElementById('detail-sidebar').style.display = 'none';
+      document.getElementById('node-search').value = '';
+      document.getElementById('filter-reltype').value = '';
+
+      if (mode === 'ego') {
+        if (centerKey) currentCenter = centerKey;
+        const { elements, relTypeCounts } = buildEgoElements(currentCenter);
+        renderGraph(elements, relTypeCounts, 'concentric');
+      } else {
+        const { elements, relTypeCounts } = buildFullElements();
+        renderGraph(elements, relTypeCounts, 'cose');
+      }
+    }
 
     async function init() {
       const info = document.getElementById('network-info');
@@ -91,18 +371,13 @@
             functions: 'data/functions.json',
           });
         } catch {
-          info.textContent = 'SiCProD-Daten nicht verfügbar. Führen Sie scripts/fetch_sicprod.py aus.';
+          info.textContent = 'SiCProD-Daten nicht verfügbar.';
           return;
         }
 
         info.textContent = 'Netzwerk wird aufgebaut...';
 
-        for (const p of data.persons) {
-          const name = [p.first_name, p.name].filter(Boolean).join(' ');
-          allPersons[p.id] = { ...p, displayName: name || '(unbekannt)' };
-        }
-
-        const entityIndex = {};
+        // Build entity index
         for (const p of data.persons) entityIndex[`person-${p.id}`] = { name: [p.first_name, p.name].filter(Boolean).join(' ') || '(unbekannt)', type: 'person' };
         for (const pl of data.places) entityIndex[`place-${pl.id}`] = { name: pl.label, type: 'place' };
         for (const inst of data.institutions) entityIndex[`institution-${inst.id}`] = { name: inst.name, type: 'institution' };
@@ -110,131 +385,29 @@
 
         allRelations = data.relations;
 
-        const degree = {};
+        // Build degree map
         for (const r of allRelations) {
           if (r.subj_id) degree[`${r.subj_type}-${r.subj_id}`] = (degree[`${r.subj_type}-${r.subj_id}`] || 0) + 1;
           if (r.obj_id) degree[`${r.obj_type}-${r.obj_id}`] = (degree[`${r.obj_type}-${r.obj_id}`] || 0) + 1;
         }
 
-        const topNodes = Object.entries(degree)
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 200)
-          .map(([key]) => key);
-
-        const topNodeSet = new Set(topNodes);
-
-        const elements = [];
-        const addedNodes = new Set();
-
-        for (const nodeKey of topNodes) {
-          const entity = entityIndex[nodeKey];
-          if (!entity) continue;
-          elements.push({
-            data: { id: nodeKey, label: entity.name, type: entity.type, degree: degree[nodeKey] || 0 },
-          });
-          addedNodes.add(nodeKey);
-        }
-
-        const relTypeCounts = {};
-        for (const r of allRelations) {
-          const srcKey = `${r.subj_type}-${r.subj_id}`;
-          const tgtKey = `${r.obj_type}-${r.obj_id}`;
-          if (addedNodes.has(srcKey) && addedNodes.has(tgtKey)) {
-            elements.push({
-              data: { source: srcKey, target: tgtKey, relType: r.relation_type },
-            });
-            relTypeCounts[r.relation_type] = (relTypeCounts[r.relation_type] || 0) + 1;
-          }
-        }
-
-        const relSelect = document.getElementById('filter-reltype');
-        Object.entries(relTypeCounts)
-          .sort((a, b) => b[1] - a[1])
-          .forEach(([type, count]) => {
-            const opt = document.createElement('option');
-            opt.value = type;
-            opt.textContent = `${type} (${count})`;
-            relSelect.appendChild(opt);
-          });
-
-        info.textContent = `${formatNumber(addedNodes.size)} Knoten, ${formatNumber(elements.filter(e => e.data.source).length)} Kanten (Top-200 nach Vernetzungsgrad)`;
-
+        // Load Cytoscape
         const cytoscapeModule = await import('./lib/cytoscape.esm.min.mjs');
-        const cytoscape = cytoscapeModule.default;
+        cytoscape = cytoscapeModule.default;
 
-        cy = cytoscape({
-          container: document.getElementById('cy'),
-          elements: elements,
-          style: [
-            {
-              selector: 'node',
-              style: {
-                'label': 'data(label)', 'text-valign': 'bottom', 'text-halign': 'center',
-                'font-size': '8px', 'font-family': '-apple-system, sans-serif',
-                'text-margin-y': 5, 'text-max-width': '80px', 'text-wrap': 'ellipsis',
-                'min-zoomed-font-size': 8,
-              },
-            },
-            {
-              selector: 'node[type="person"]',
-              style: {
-                'background-color': '#1565c0',
-                'width': 'mapData(degree, 1, 100, 10, 40)',
-                'height': 'mapData(degree, 1, 100, 10, 40)',
-              },
-            },
-            {
-              selector: 'node[type="place"]',
-              style: {
-                'background-color': '#2e7d32', 'shape': 'diamond',
-                'width': 'mapData(degree, 1, 100, 12, 35)',
-                'height': 'mapData(degree, 1, 100, 12, 35)',
-              },
-            },
-            {
-              selector: 'node[type="institution"]',
-              style: {
-                'background-color': '#e65100', 'shape': 'round-rectangle',
-                'width': 'mapData(degree, 1, 100, 12, 35)',
-                'height': 'mapData(degree, 1, 100, 12, 35)',
-              },
-            },
-            {
-              selector: 'node[type="function"]',
-              style: {
-                'background-color': '#6a1b9a', 'shape': 'ellipse',
-                'width': 'mapData(degree, 1, 100, 8, 30)',
-                'height': 'mapData(degree, 1, 100, 8, 30)',
-              },
-            },
-            {
-              selector: 'edge',
-              style: {
-                'width': 0.5, 'line-color': '#d4cfc6', 'target-arrow-shape': 'none',
-                'curve-style': 'haystack', 'opacity': 0.4,
-              },
-            },
-            { selector: ':selected', style: { 'border-width': 2, 'border-color': '#8b5e3c' } },
-            { selector: '.highlighted', style: { 'background-color': '#c62828', 'border-width': 3, 'border-color': '#c62828', 'z-index': 100 } },
-            { selector: '.neighbor', style: { 'opacity': 1, 'z-index': 50 } },
-            { selector: '.faded', style: { 'opacity': 0.1 } },
-          ],
-          layout: {
-            name: 'cose', animate: false, nodeRepulsion: 12000,
-            idealEdgeLength: 60, gravity: 0.3, numIter: 300,
-          },
-        });
+        // Check URL params - fall back to Sigmund if person not found
+        const params = getParams();
+        if (params.highlight) {
+          const highlightKey = `person-${params.highlight}`;
+          currentCenter = entityIndex[highlightKey] ? highlightKey : DEFAULT_CENTER;
+        }
 
-        cy.on('tap', 'node', function(evt) {
-          showNodeDetail(evt.target);
-        });
+        // Default: ego network
+        switchMode('ego', currentCenter);
 
-        cy.on('tap', function(evt) {
-          if (evt.target === cy) {
-            document.getElementById('detail-sidebar').style.display = 'none';
-            cy.elements().removeClass('highlighted neighbor faded');
-          }
-        });
+        // Event listeners
+        document.getElementById('btn-ego').addEventListener('click', () => switchMode('ego', currentCenter));
+        document.getElementById('btn-full').addEventListener('click', () => switchMode('full'));
 
         document.getElementById('node-search').addEventListener('input', debounce((e) => {
           const q = e.target.value.toLowerCase().trim();
@@ -259,11 +432,7 @@
         });
 
         document.getElementById('btn-reset').addEventListener('click', () => {
-          cy.elements().removeClass('highlighted neighbor faded').style('display', 'element');
-          cy.fit(undefined, 50);
-          document.getElementById('node-search').value = '';
-          document.getElementById('filter-reltype').value = '';
-          document.getElementById('detail-sidebar').style.display = 'none';
+          switchMode(currentMode, currentMode === 'ego' ? DEFAULT_CENTER : undefined);
         });
 
         document.getElementById('btn-close-sidebar').addEventListener('click', () => {
@@ -271,48 +440,15 @@
           cy.elements().removeClass('highlighted neighbor faded');
         });
 
-        const params = getParams();
-        if (params.highlight) {
-          const node = cy.getElementById(`person-${params.highlight}`);
-          if (node.length) {
-            showNodeDetail(node);
-            cy.center(node);
-          }
-        }
+        // Custom event for "explore node" button in sidebar
+        document.addEventListener('explore-node', (e) => {
+          switchMode('ego', e.detail);
+        });
 
       } catch (err) {
-        info.textContent = `Fehler: ${err.message}`;
+        info.textContent = `Fehler beim Laden des Netzwerks.`;
         console.error(err);
       }
-    }
-
-    function showNodeDetail(node) {
-      cy.elements().removeClass('highlighted neighbor faded').addClass('faded');
-      node.removeClass('faded').addClass('highlighted');
-      const neighborhood = node.neighborhood();
-      neighborhood.removeClass('faded').addClass('neighbor');
-
-      const sidebar = document.getElementById('detail-sidebar');
-      sidebar.style.display = 'block';
-      document.getElementById('sidebar-name').textContent = node.data('label');
-
-      const connections = neighborhood.nodes().map(n => ({
-        name: n.data('label'), type: n.data('type'),
-      })).sort((a, b) => a.name.localeCompare(b.name));
-
-      let html = `<div class="detail-panel__field"><span class="detail-panel__label">Typ</span><span class="entity entity--${node.data('type')}">${node.data('type')}</span></div>`;
-      html += `<div class="detail-panel__field"><span class="detail-panel__label">Verbindungen</span>${node.data('degree')}</div>`;
-      html += `<div class="detail-panel__field"><span class="detail-panel__label">Nachbarn (${connections.length})</span>`;
-      html += connections.slice(0, 20).map(c =>
-        `<div class="small"><span class="entity entity--${c.type}" style="font-size:0.6rem">${c.type}</span> ${escapeHTML(c.name)}</div>`
-      ).join('');
-      if (connections.length > 20) html += `<div class="small text-body-secondary">… und ${connections.length - 20} weitere</div>`;
-      html += '</div>';
-      html += `<div class="mt-2">`;
-      html += `<a href="search.html?q=${encodeURIComponent(node.data('label'))}" class="btn btn-outline-accent btn-sm">In Suche öffnen</a>`;
-      html += `</div>`;
-
-      document.getElementById('sidebar-content').innerHTML = html;
     }
 
     init();
