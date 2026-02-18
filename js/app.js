@@ -42,7 +42,7 @@ export function initBanner() {
     <span class="wip-badge">BETA</span>
     <span>Work in Progress – Developed with <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a></span>
     <span class="wip-right">
-      <a href="https://github.com/DigitalHumanitiesCraft" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
       <button class="wip-close" aria-label="Schließen">×</button>
     </span>
   `;
