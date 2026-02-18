@@ -138,8 +138,7 @@ LLMs als Prototyping-Instrumente, deren Outputs systematisch durch Fachexpertise
 
 | Ressource | URL |
 |-----------|-----|
-| SiCPAS-Modell (Slides) | https://docs.google.com/presentation/d/1OiJhxiprbhPafpI0nCIPZ1eYCuQ-3sGv |
-| GitHub DoCTA | https://github.com/DigitalHumanitiesCraft/docta-prototype |
+| GitHub DoCTA | https://github.com/DigitalHumanitiesCraft/DoCTA |
 | SiCProD API | https://sicprod.acdh-dev.oeaw.ac.at/apis/api |
 | BeNASch | https://dhbern.github.io/BeNASch/ |
 | Inventaria | https://www.inventaria.at |

@@ -21,3 +21,6 @@ scripts/.env
 
 # Raw research inputs (contain sensitive reviewer reports)
 sources/
+
+# Internal working documents
+temp/

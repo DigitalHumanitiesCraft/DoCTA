@@ -39,6 +39,15 @@
 
       <div id="cy"></div>
 
+      <!-- Legend -->
+      <div style="position:absolute;bottom:40px;left:12px;background:rgba(255,255,255,0.95);border:1px solid var(--border-light);border-radius:6px;padding:8px 12px;font-size:0.75rem;z-index:10;line-height:1.8">
+        <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1565c0"></span> Person</div>
+        <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2e7d32"></span> Ort</div>
+        <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e65100"></span> Institution</div>
+        <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6a1b9a"></span> Funktion</div>
+        <div style="margin-top:4px;color:var(--text-muted-custom);font-size:0.6875rem">Knotengröße = Anzahl Verbindungen</div>
+      </div>
+
       <!-- Detail sidebar -->
       <div class="network-sidebar" id="detail-sidebar" style="display:none">
         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -299,9 +308,8 @@
       ).join('');
       if (connections.length > 20) html += `<div class="small text-body-secondary">… und ${connections.length - 20} weitere</div>`;
       html += '</div>';
-      html += `<div class="mt-2 d-flex gap-2 flex-wrap">`;
+      html += `<div class="mt-2">`;
       html += `<a href="search.html?q=${encodeURIComponent(node.data('label'))}" class="btn btn-outline-accent btn-sm">In Suche öffnen</a>`;
-      html += `<a href="viewer.html?doc=11328300" class="btn btn-outline-secondary btn-sm">In Transkription suchen</a>`;
       html += `</div>`;
 
       document.getElementById('sidebar-content').innerHTML = html;

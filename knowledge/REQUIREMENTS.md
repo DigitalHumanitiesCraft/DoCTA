@@ -7,9 +7,7 @@
 | Projekt | DoCTA (Doing Court in the Tyrolean Alps) |
 | Projektleitung | Dr. Barbara Denicolò, Universität Salzburg |
 | DH-Komponente | Digital Humanities Craft OG (Christopher Pollin, Christian Steiner) |
-| Budget DH | 100 Arbeitsstunden / 15.000 € brutto |
-| Phasen | 1: Promptotyping (30h) → 2: Workflow (30h) → 3: Web-App (30h) → 4: Training (10h) |
-| Phase-1-Sequenzierung | 8h Datenmodell → 12h LLM-Extraktion → 6h Validierungs-Wireframe → 4h Puffer |
+| Phasen | 1: Promptotyping → 2: Workflow → 3: Web-App → 4: Training |
 | Deadline | ÖAW-Antrag März 2026, FWF-Wiedereinreichung ASAP |
 
 ## Barbaras Anforderungen (Originalstimme)
@@ -52,35 +50,24 @@
 
 ## Gutachten-Antworten (10 Kritikpunkte → Prototyp)
 
-FWF APART-GSK: 26/40 Punkte. Empfehlung: Ablehnung in vorliegender Fassung.
+Ersteinreichung FWF APART-GSK: Ablehnung in vorliegender Fassung. Gutachten bezog sich primär auf den DH-Teil.
 
-| Kriterium | Punkte |
-|-----------|--------|
-| Wissenschaftliche Originalität | 6/10 |
-| State of Research | 7/10 |
-| Forschungsfragen und Methoden | 7/10 |
-| Arbeitsschritte und Zeitplan | 6/10 |
+### Die 10 Kritikpunkte (paraphrasiert)
 
-Gutachter: "Ich kann nur den DH-Teil des Projektantrages angemessen beurteilen."
-
-### Die 10 Kritikpunkte
-
-| # | Kritik (Zitat) | Prototyp adressiert durch | Ebene |
-|---|----------------|--------------------------|-------|
-| 1 | "Die computationellen Methoden beschränken sich auf ein Repertoire, das inzwischen zum Standard gehört." | Zeigen, dass Standard-Methoden auf DIESEN Quellen funktionieren. Innovation = Anwendung, nicht Methode. | Code |
-| 2 | "Ein 'Digital X' ist nicht wirklich originell und möglicherweise nicht relevant genug." | Framing entschärfen: DH-Methoden als Werkzeuge für Court Studies, nicht Feldgründung. Landing Page betont Forschungsfragen. | Text |
-| 3 | "Aktuell im Fokus stehende Ansätze mittels LLM werden leider nicht diskutiert." | Pipeline-Demo zeigt LLM-Integration. coOCR/HTR als Referenz. Epistemische Asymmetrie als konzeptueller Rahmen. | Code |
-| 4 | "Verpasst wurde die Chance, auf die sprachlichen Herausforderungen einzugehen." | Quellen-Explorer zeigt Frühneuhochdeutsch mit Kurrentschrift, Abkürzungen, regionalen Varianten. | Code |
-| 5 | "Ich vermisse die Rezeption von Forschungsarbeiten der historischen Linguistik." | Nicht im Prototyp adressierbar. Verweis auf Frühneuhochdeutsch-Forschung im Antragstext. | Text |
-| 6 | "Insgesamt sind die Quellen nicht ausreichend charakterisiert." | Quellenübersicht mit 316 Einträgen, kategorisiert, filterbar, sortierbar. | Code |
-| 7 | "Dies wäre besser zu beurteilen gewesen, wenn Quellenauszüge beispielhaft dargestellt worden wären." | Prototyp IST das Quellenbeispiel. Echte Raitbuch-Seiten mit Transkription und Entitäten. | Code |
-| 8 | "Der Projektplan ist sehr generisch aufgebaut, leider ohne wirkliche Adaption auf die konkreten Aufgabenstellungen." | Funktionierender Prototyp IST der spezifische Plan. Pipeline-Demo zeigt jeden Schritt an konkretem Material. | Code |
-| 9 | "Evaluation der technischen Verfahren wird zu wenig thematisiert." | CER-Anzeige für HTR, Konfidenz-Kategorien (sicher/prüfenswert/problematisch), Extraktionsstatistiken. | Code |
-| 10 | "Bei einem Hypothesen-geleiteten Ansatz sollte festgestellt werden, nach welchen Kriterien man die Hypothese als erfüllt ansieht." | Dashboard: # Personen, # Relationen, # Praktiken, Relationsabdeckung (%), Quellen-Coverage (%), Netzwerk-Metriken. | Code |
+| # | Kritik | Prototyp adressiert durch | Ebene |
+|---|--------|--------------------------|-------|
+| 1 | Computationelle Methoden als Standard, kein Innovationsnachweis | Zeigen, dass Standard-Methoden auf DIESEN Quellen funktionieren. Innovation = Anwendung auf frühneuhochdeutsche Quellen. | Code |
+| 2 | "Digital X" nicht originell genug, Relevanzfrage | Framing: DH-Methoden als Werkzeuge für Court Studies, nicht Feldgründung. Landing Page betont Forschungsfragen. | Text |
+| 3 | LLM-Ansätze nicht diskutiert | Pipeline-Demo zeigt LLM-Integration. coOCR/HTR als Referenz. Epistemische Asymmetrie als konzeptueller Rahmen. | Code |
+| 4 | Sprachliche Herausforderungen nicht adressiert | Quellen-Explorer zeigt Frühneuhochdeutsch mit Kurrentschrift, Abkürzungen, regionalen Varianten. | Code |
+| 5 | Historische Linguistik fehlt | Nicht im Prototyp adressierbar. Verweis auf Frühneuhochdeutsch-Forschung im Antragstext. | Text |
+| 6 | Quellen nicht ausreichend charakterisiert | Quellenübersicht mit 312 Einträgen, kategorisiert, filterbar, sortierbar. | Code |
+| 7 | Keine beispielhaften Quellenauszüge | Prototyp IST das Quellenbeispiel. Echte Inventarseiten mit Transkription und Entitäten. | Code |
+| 8 | Projektplan zu generisch | Funktionierender Prototyp IST der spezifische Plan. Pipeline-Demo zeigt jeden Schritt an konkretem Material. | Code |
+| 9 | Evaluation technischer Verfahren fehlt | CER-Anzeige für HTR, Konfidenz-Kategorien (sicher/prüfenswert/problematisch), Extraktionsstatistiken. | Code |
+| 10 | Keine Erfüllungskriterien für Hypothesen | Dashboard: # Personen, # Relationen, # Praktiken, Relationsabdeckung (%), Quellen-Coverage (%), Netzwerk-Metriken. | Code |
 
 **8 von 10 durch Code adressierbar. Punkte 2 und 5 erfordern Antragstext.**
-
-**Stärkstes Argument:** Gutachter sagt selbst: "Aus der Anwendung dieser Verfahren auf das Quellenkorpus können neue, höchst innovative fachliche Forschungsergebnisse und historische Erkenntnisse heraus erwachsen."
 
 ## Erfolgskriterien für den Prototyp
 

@@ -29,7 +29,7 @@
 
     <div class="row g-2 mb-4 align-items-center">
       <div class="col-md-9">
-        <input type="search" class="form-control" id="search-input" placeholder="Name, Ort oder Funktion suchen..." aria-label="Freitextsuche">
+        <input type="search" class="form-control" id="search-input" placeholder="Name, Ort, Funktion oder Institution suchen..." aria-label="Freitextsuche">
       </div>
       <div class="col-md-3 text-end">
         <span class="small text-body-secondary" id="result-count"></span>
@@ -251,6 +251,7 @@
 
       const panel = document.getElementById('detail-panel');
       panel.style.display = 'block';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       document.getElementById('detail-name').textContent = item.name;
 
       let html = `<div class="detail-panel__field"><span class="detail-panel__label">Typ</span><span class="entity entity--${item.type}">${item.typeLabel}</span></div>`;
@@ -261,11 +262,8 @@
       if (item.lat && item.lng) html += `<div class="detail-panel__field"><span class="detail-panel__label">Koordinaten</span>${item.lat}, ${item.lng}</div>`;
       if (item.altLabels) html += `<div class="detail-panel__field"><span class="detail-panel__label">Namensvarianten</span>${escapeHTML(item.altLabels)}</div>`;
 
-      html += `<div class="mt-2 d-flex gap-2 flex-wrap">`;
+      html += `<div class="mt-2">`;
       html += `<a href="network.html?highlight=${id}" class="btn btn-outline-accent btn-sm">Im Netzwerk zeigen</a>`;
-      if (item.type === 'person') {
-        html += `<a href="viewer.html?doc=11328300" class="btn btn-outline-secondary btn-sm">In Transkription suchen</a>`;
-      }
       html += `</div>`;
 
       document.getElementById('detail-content').innerHTML = html;

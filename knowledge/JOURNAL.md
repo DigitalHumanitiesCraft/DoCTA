@@ -80,7 +80,7 @@ Nur 55 von 315 Quellen sind transkribiert (17.5%), ausschließlich Burgeninventa
 
 - FWF-Bibliografie (~100 Referenzen)
 - WP-Details + GANTT (36 Monate)
-- Finanzielle Details (~370K Budget)
+- Finanzielle Details des Antrags
 
 ---
 

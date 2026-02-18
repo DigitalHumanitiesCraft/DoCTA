@@ -98,7 +98,7 @@ Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, R
 
 ---
 
-## 2. CSV-Quellenübersicht (316 Einträge)
+## 2. CSV-Quellenübersicht (312 Einträge)
 
 **Datei:** `sources/quellen-katalog.csv`
 
