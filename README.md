@@ -1,12 +1,12 @@
-# DoCTA — Doing Court in the Tyrolean Alps
+# DoCTA - Doing Court in the Tyrolean Alps
 
-A functional web prototype demonstrating Digital Humanities methods for analyzing 15th-century Tyrolean court records from the reign of Archduke Sigmund (1427--1496).
+A functional web prototype demonstrating Digital Humanities methods for analyzing 15th-century Tyrolean court records from the reign of Archduke Sigmund (1427-1496).
 
 **Live:** [dhcraft.org/DoCTA](https://dhcraft.org/DoCTA/)
 
 ## What This Is
 
-DoCTA is a methodological proof-of-concept for an FWF research grant resubmission (APART-GSK). It shows that a computational pipeline — from digitized manuscript to structured knowledge network — works on real Early New High German source material.
+DoCTA is a methodological proof-of-concept for an FWF research grant resubmission (APART-GSK). It shows that a computational pipeline -from digitized manuscript to structured knowledge network -works on real Early New High German source material.
 
 The prototype processes 6,288 historical persons, 42,893 relations, 312 archival sources, and 57 fully transcribed inventories from the Tyrolean State Archives. It is not a finished research tool but a demonstration that the proposed methods are viable.
 
@@ -25,9 +25,9 @@ The prototype processes 6,288 historical persons, 42,893 relations, 312 archival
 
 ## Data Sources
 
-- **[SiCProD](https://sicprod.acdh-dev.oeaw.ac.at/)** — Prosopographic database of Sigmund's court (ACDH-CH, Austrian Academy of Sciences)
-- **[Transkribus](https://app.transkribus.org/collection/2197991)** — Collection 2197991: 115 documents, 12,236 pages from the Tyrolean State Archives
-- **[Inventaria](https://www.inventaria.at)** — Castle inventory transcriptions (University of Salzburg/Innsbruck)
+- **[SiCProD](https://sicprod.acdh-dev.oeaw.ac.at/)** -Prosopographic database of Sigmund's court (ACDH-CH, Austrian Academy of Sciences)
+- **[Transkribus](https://app.transkribus.org/collection/2197991)** -Collection 2197991: 115 documents, 12,236 pages from the Tyrolean State Archives
+- **[Inventaria](https://www.inventaria.at)** -Castle inventory transcriptions (University of Salzburg/Innsbruck)
 
 ## Technology
 
@@ -41,10 +41,10 @@ The prototype processes 6,288 historical persons, 42,893 relations, 312 archival
 
 This prototype was built using [Promptotyping](https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin), a four-phase context engineering methodology for LLM-assisted research artifact development:
 
-1. **Preparation** — Gathering source documents and domain expertise
-2. **Exploration** — Testing APIs, analyzing data quality, mapping research questions to data structures
-3. **Distillation** — Compressing findings into optimized knowledge documents
-4. **Implementation** — Iterative code generation with continuous expert validation
+1. **Preparation** -Gathering source documents and domain expertise
+2. **Exploration** -Testing APIs, analyzing data quality, mapping research questions to data structures
+3. **Distillation** -Compressing findings into optimized knowledge documents
+4. **Implementation** -Iterative code generation with continuous expert validation
 
 The six documents in the Knowledge Vault (`knowledge/`) are the distilled output of this process. They serve as both human-readable documentation and structured context for LLM-assisted development.
 
@@ -57,7 +57,7 @@ Core principle: *Documents as Source of Truth, Code as Disposable Artifact.*
 | **Project** | DoCTA (Doing Court in the Tyrolean Alps) |
 | **PI** | Dr. Barbara Denicolò, University of Salzburg |
 | **DH Component** | [Digital Humanities Craft OG](https://dhcraft.org) (Christopher Pollin, Christian Steiner) |
-| **Related** | [coOCR/HTR](https://dhcraft.org/co-ocr-htr) — Sister project for OCR/HTR quality assessment |
+| **Related** | [coOCR/HTR](https://dhcraft.org/co-ocr-htr) -Sister project for OCR/HTR quality assessment |
 | **Funding context** | FWF APART-GSK resubmission, ÖAW application (2026) |
 
 ## Repository Structure
