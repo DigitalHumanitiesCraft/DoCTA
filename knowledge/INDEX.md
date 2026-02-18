@@ -41,8 +41,8 @@ Die Knowledge-Dateien destillieren diese Quelldokumente:
 | `sources/raitbuch-2-analyse.md` | Quellenanalyse (186 Zeilen) | Ja, in DATA.md |
 | `sources/coocr-htr-epistemologie.md` | Epistemologie-Argumentation (133 Zeilen) | Ja, Kernkonzepte in CONTEXT.md |
 | `sources/fwf-proposal-2025.md` | Abgelehnter FWF-Antrag (~900 Zeilen) | Teilweise -- Bibliografie und WP-Details nicht erfasst |
-| `sources/gutachten-denicolo.pdf` | Gutachten (26/40 Punkte) | Ja, in REQUIREMENTS.md |
-| `sources/quellen-katalog.csv` | Quellenübersicht (316 Einträge) | Ja, Analyse in DATA.md |
+| `sources/gutachten-denicolo.pdf` | FWF-Gutachten Ersteinreichung | Ja, in REQUIREMENTS.md |
+| `sources/quellen-katalog.csv` | Quellenübersicht (312 Einträge) | Ja, Analyse in DATA.md |
 | `sources/sicpas-modell.svg` | SiCPAS-Diagramm (742 KB SVG) | Textuell in CONTEXT.md |
 
 ## Exportierte Daten (`data/`)

@@ -68,6 +68,10 @@
     </div>
   </main>
 
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner, formatNumber } from './js/app.js';
@@ -211,26 +215,32 @@
         .slice(0, FULL_MAX_NODES)
         .map(([key]) => key);
 
-      const addedNodes = new Set();
-      const elements = [];
+      const addedNodes = new Set(topNodes);
+      const edges = [];
       const relTypeCounts = {};
-
-      for (const key of topNodes) {
-        const e = entityIndex[key];
-        if (!e) continue;
-        elements.push({ data: { id: key, label: e.name, type: e.type, degree: degree[key] || 0 } });
-        addedNodes.add(key);
-      }
+      const connectedNodes = new Set();
 
       // Edges only between actually-added nodes
       for (const r of allRelations) {
         const src = `${r.subj_type}-${r.subj_id}`;
         const tgt = `${r.obj_type}-${r.obj_id}`;
         if (addedNodes.has(src) && addedNodes.has(tgt)) {
-          elements.push({ data: { source: src, target: tgt, relType: r.relation_type } });
+          edges.push({ data: { source: src, target: tgt, relType: r.relation_type } });
           relTypeCounts[r.relation_type] = (relTypeCounts[r.relation_type] || 0) + 1;
+          connectedNodes.add(src);
+          connectedNodes.add(tgt);
         }
       }
+
+      // Only include nodes that have at least one visible edge
+      const elements = [];
+      for (const key of topNodes) {
+        if (!connectedNodes.has(key)) continue;
+        const e = entityIndex[key];
+        if (!e) continue;
+        elements.push({ data: { id: key, label: e.name, type: e.type, degree: degree[key] || 0 } });
+      }
+      elements.push(...edges);
 
       return { elements, relTypeCounts };
     }
@@ -395,11 +405,12 @@
         const cytoscapeModule = await import('./lib/cytoscape.esm.min.mjs');
         cytoscape = cytoscapeModule.default;
 
-        // Check URL params - fall back to Sigmund if person not found
+        // Check URL params - fall back to Sigmund if entity not found
         const params = getParams();
         let highlightFallback = false;
         if (params.highlight) {
-          const highlightKey = `person-${params.highlight}`;
+          const highlightType = params.type || 'person';
+          const highlightKey = `${highlightType}-${params.highlight}`;
           if (entityIndex[highlightKey]) {
             currentCenter = highlightKey;
           } else {
@@ -409,6 +420,17 @@
 
         // Default: ego network
         switchMode('ego', currentCenter);
+
+        // Show back-to-search link if navigated from search
+        if (params.highlight && !highlightFallback) {
+          const centerName = entityIndex[currentCenter]?.name || '';
+          const backLink = document.createElement('a');
+          backLink.href = `search.html?q=${encodeURIComponent(centerName)}`;
+          backLink.className = 'btn btn-outline-secondary btn-sm';
+          backLink.textContent = '← Zurück zur Suche';
+          backLink.style.marginLeft = '0.5rem';
+          document.querySelector('.network-toolbar').appendChild(backLink);
+        }
 
         if (highlightFallback) {
           const info = document.getElementById('network-info');

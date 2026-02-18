@@ -8,7 +8,7 @@
 | Projektleitung | Dr. Barbara Denicolò, Universität Salzburg |
 | DH-Komponente | Digital Humanities Craft OG (Christopher Pollin, Christian Steiner) |
 | Phasen | 1: Promptotyping → 2: Workflow → 3: Web-App → 4: Training |
-| Deadline | ÖAW-Antrag März 2026, FWF-Wiedereinreichung ASAP |
+| Deadline | FWF-Wiedereinreichung (APART-GSK) |
 
 ## Barbaras Anforderungen (Originalstimme)
 
@@ -25,7 +25,7 @@
 - Verknüpfung mit Normdaten (GND, Wikidata)
 
 **Quellenprioritäten:**
-1. Raitbücher (7.800 Seiten, 26 Bände)
+1. Raitbücher (8.561 Seiten, 26 Bände)
 2. Hofordnungen (inkl. Hs. 2466–2469: Hochzeitsdokumente 1484)
 3. Inventare
 4. Kopialbücher

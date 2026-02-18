@@ -26,8 +26,8 @@ GitHub Pages (statisch), Vanilla JS/ES6 Module, kein Build-Prozess, kein npm zur
 ### Performance-Strategie (6.288 Personen + 42.893 Relationen)
 
 1. Layout vorberechnen (Python/networkx) → x/y-Koordinaten in JSON
-2. Progressive Disclosure: Start mit Top-200 nach Zentralität
-3. "Nachbarschaft erweitern" bei Knoten-Click
+2. Progressive Disclosure: Start als Ego-Netzwerk (Top-50 Nachbarn um Sigmund)
+3. "Netzwerk erkunden" bei Knoten-Click, Toggle zum Gesamtnetzwerk (Top-75)
 4. WebGL-Renderer: `{ renderer: { name: 'webgl' } }`
 5. Labels nur bei Hover/Zoom
 
@@ -87,9 +87,11 @@ DoCTA/
 ├── index.html          # Landing + Navigation + Dashboard
 ├── network.html        # Netzwerk-Explorer (Cytoscape.js)
 ├── search.html         # Facettierte Suche
-├── sources.html        # Quellenübersicht (316 Einträge)
+├── sources.html        # Quellenübersicht (312 Einträge)
 ├── viewer.html         # Quellen-Explorer (OpenSeadragon + Transkription)
 ├── pipeline.html       # Pipeline-Demo (Schritt-für-Schritt)
+├── knowledge.html      # Knowledge Vault (Promptotyping-Wissensbasis)
+├── help.html           # Hilfe & Anleitung
 ├── css/styles.css      # Einheitliches Design
 ├── js/                 # ES6 Module
 │   ├── app.js          # Shared: Navigation, State

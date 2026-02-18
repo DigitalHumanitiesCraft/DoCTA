@@ -61,9 +61,9 @@
   {"id": "o18", "text": "phlũg", "normalized": "Pflug", "type": "object", "confidence": "high", "count": 2, "category": "Landwirtschaft"}
  ],
  "statistics": {
-  "totalEntities": 38,
+  "totalEntities": 42,
   "byType": {"person": 16, "place": 4, "object": 18, "time": 4},
-  "byConfidence": {"high": 28, "medium": 9, "low": 1},
+  "byConfidence": {"high": 32, "medium": 9, "low": 1},
   "objectCategories": {
    "Textilien/Möbel": 4,
    "Waffen": 4,

@@ -6,25 +6,32 @@
 const DB_NAME = 'docta-cache';
 const DB_VERSION = 1;
 const STORE_NAME = 'data';
-const DATA_VERSION = '2026-02-17'; // Bump when data files change
+const DATA_VERSION = '2026-02-18'; // Bump when data files change
 
 let dbPromise = null;
 
 function openDB() {
   if (dbPromise) return dbPromise;
-  dbPromise = new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME, DB_VERSION);
-    req.onupgradeneeded = () => {
-      const db = req.result;
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        db.createObjectStore(STORE_NAME);
-      }
-    };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => {
-      console.warn('IndexedDB unavailable, falling back to fetch-only');
+  dbPromise = new Promise((resolve) => {
+    try {
+      const req = indexedDB.open(DB_NAME, DB_VERSION);
+      // Timeout: fall back to fetch-only if IndexedDB doesn't respond
+      const timer = setTimeout(() => {
+        console.warn('IndexedDB timeout, falling back to fetch-only');
+        resolve(null);
+      }, 1500);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          db.createObjectStore(STORE_NAME);
+        }
+      };
+      req.onsuccess = () => { clearTimeout(timer); resolve(req.result); };
+      req.onerror = () => { clearTimeout(timer); resolve(null); };
+      req.onblocked = () => { clearTimeout(timer); resolve(null); };
+    } catch {
       resolve(null);
-    };
+    }
   });
   return dbPromise;
 }

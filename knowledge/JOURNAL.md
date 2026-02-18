@@ -64,7 +64,7 @@
 - Datumswert in Art-Spalte (Zeile 304)
 
 **Strukturelle Erkenntnis:**
-Nur 55 von 315 Quellen sind transkribiert (17.5%), ausschließlich Burgeninventare (Inventaria-Projekt). Kein Raitbuch transkribiert.
+57 von 312 Quellen sind transkribiert (18,3%), ausschließlich Burgeninventare (Inventaria-Projekt). Kein Raitbuch transkribiert.
 
 ### Dateiinventar: Abdeckungslücken (geschlossen)
 
@@ -93,7 +93,7 @@ Nur 55 von 315 Quellen sind transkribiert (17.5%), ausschließlich Burgeninventa
 | SiCProD Salaries für Finanzen | Keine Beträge, nur Links | Finanzielle Daten aus Raitbüchern |
 | SVG-Modelldiagramm lesen | 742 KB einzeilig | Inhalt textuell in CONTEXT.md |
 | PDF auf Windows lesen | pdftoppm nicht verfügbar | Agent-basierte Extraktion |
-| Transkribus Auth -- falsches PW | Erstes PW falsch → 401. Korrektes PW vom User erhalten | Immer PW direkt vom User übernehmen, nicht aus Gedächtnis |
+| Transkribus Auth | Initial-Authentifizierung fehlgeschlagen (401). Nach Korrektur der Credentials erfolgreich. | Credentials immer direkt vom User übernehmen |
 
 ---
 
@@ -103,7 +103,7 @@ Nur 55 von 315 Quellen sind transkribiert (17.5%), ausschließlich Burgeninventa
 
 | Was wir dachten | Was wir fanden | Konsequenz |
 |----------------|---------------|------------|
-| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.730 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig -- nach Zeilenanzahl filtern |
+| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.724 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig -- nach Zeilenanzahl filtern |
 | Raitbücher „nicht transkribiert" | **Bestätigt.** 26 Raitbücher, 8.561 Seiten, 0 Zeilen Text. Nr. 1–6 haben Layout-Analyse. | HTR muss vor Prototyp laufen (mindestens für RB2) |
 | Collection-Umfang unklar | **115 Dokumente, 12.236 Seiten.** 64 Inventare + 26 Raitbücher + 12 Kopialbücher + 13 Andere | Deutlich mehr Material als erwartet |
 | IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen -- kein Pre-Fetch für Bilder nötig |
@@ -133,7 +133,7 @@ Die Collection enthält Dokumente, die in der CSV-Quellenübersicht nicht expliz
 
 ### Wichtig für Antrag
 
-- [ ] Methodologischer Textbaustein (~1–2 Seiten) für ÖAW
+- [ ] Methodologischer Textbaustein (~1–2 Seiten) für FWF-Wiedereinreichung
 - [ ] Fallstudie finalisieren (A/B/C) -- inkl. Küchenmeister-Fund verifizieren (Barbara)
 - [ ] Practice↔BeNASch-Mapping (mit Bern)
 - [ ] Historische Linguistik-Literatur (Gutachten-Punkt 5)

@@ -118,12 +118,11 @@ Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, R
 
 ### Verfügbarkeitspyramide
 
-| Tier | Status | Anzahl | Seiten | Inhalt |
-|------|--------|--------|--------|--------|
-| **1** | Digitalisiert + Transkribiert | 55 | ~450 | NUR Burgeninventare (Inventaria-Projekt) |
-| **2** | Digitalisiert, DoCTA-Prio | 19 | ~1.865 | 11 Hofordnungen, 7 Personeninventare, 1 Rechnung |
-| **3** | Digitalisiert, SiCProD | 37 | ~10.888 | 25 Raitbücher + 12 Kopialbücher |
-| **4** | Nicht digitalisiert | 204 | unbekannt | Rest (65% des Katalogs) |
+| Tier | Status | Anzahl | Inhalt |
+|------|--------|--------|--------|
+| **1** | Digitalisiert + Transkribiert | 55 Einträge (57 Dokumente) | Burgeninventare (Inventaria-Projekt, Volltext in Transkribus). 2 Signaturen (A 125.3-4, A 142.1-2) decken je 2 Transkribus-Dokumente ab. |
+| **2** | Digitalisiert, nicht transkribiert | 56 | Raitbücher, Kopialbücher, Hofordnungen, Personeninventare |
+| **3** | Identifiziert, nicht digitalisiert | 201 | Rest (65% des Katalogs) |
 
 ### Kategorieverteilung
 
@@ -172,7 +171,7 @@ Darunter ein zusammenhängendes Cluster zur Hochzeit Sigmunds 1484:
 
 ### Für Prototyp nutzbar
 
-Sofort: **55 Burgeninventare** (Tier 1, finale Transkriptionen in Transkribus Collection 2197991).
+Sofort: **57 Burgeninventare** (Tier 1, finale Transkriptionen in Transkribus Collection 2197991).
 Mit Transkription: **Raitbuch 2** (123 Doppelseiten, Prototyp-Quelle, nicht transkribiert).
 Script-Output: `data/sources.json` -- CSV bereinigt und als JSON für `sources.html`.
 
@@ -188,15 +187,15 @@ Script-Output: `data/sources.json` -- CSV bereinigt und als JSON für `sources.h
 
 | Kategorie | Dokumente | Seiten | Mit Transkription |
 |-----------|-----------|--------|-------------------|
-| Burgeninventare | 64 | 569 | **57 ja** (8.979 Zeilen, 35.730 Wörter) |
+| Burgeninventare | 64 | 569 | **57 ja** (8.979 Zeilen, 35.724 Wörter) |
 | Raitbücher | 26 | 8.561 | **0** (nur Layout-Analyse oder leer) |
 | Kopialbücher | 12 | 2.224 | 0 |
 | Andere (Hofordnungen, Hss.) | 13 | 882 | 0 |
 
 ### Transkriptionsstatus-Realität
 
-**Erwartung (aus CSV):** 55 Burgeninventare mit "Inventaria" = finale Transkriptionen.
-**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen). Nur 3 davon Status "DONE", 54 zeigen "IN_PROGRESS" -- aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator.
+**Erwartung (aus CSV):** 55 Burgeninventare mit "Inventaria" in Transkribiert-Spalte.
+**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen, 35.724 Wörter). 2 davon fehlen in der CSV-Markierung (A 125.3-4, A 142.1-2 mit je 2 Transkribus-Doc-IDs). Nur 3 Status "DONE", 54 "IN_PROGRESS" -- aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator. Kanonischer Wert: **57 Inventare mit Volltext.**
 
 **Raitbücher:** 26 Bände digitalisiert, 6 (Nr. 1–6) haben Layout-Analyse (Baselines, Regionen), 20 (Nr. 7–26) Status "NEW". **Keines hat Transkriptionstext.**
 

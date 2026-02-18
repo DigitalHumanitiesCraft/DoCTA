@@ -132,7 +132,7 @@ Fachwissenschaftlerin validiert, nicht nur kontrolliert. Das Forschungstool unte
 
 ### Methodologische Positionierung
 
-LLMs als Prototyping-Instrumente, deren Outputs systematisch durch Fachexpertise validiert werden. Promptotyping als iterative, quellenkritisch kontrollierte Methode. Dieser Absatz muss als ~1–2 Seiten Textbaustein für den ÖAW-Antrag ausformuliert werden.
+LLMs als Prototyping-Instrumente, deren Outputs systematisch durch Fachexpertise validiert werden. Promptotyping als iterative, quellenkritisch kontrollierte Methode. Dieser Absatz muss als ~1–2 Seiten Textbaustein für die FWF-Wiedereinreichung ausformuliert werden.
 
 ## Ressourcen-URLs
 
