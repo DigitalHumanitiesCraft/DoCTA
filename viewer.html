@@ -165,8 +165,10 @@
         const startPage = parseInt(params.page || '1') - 1;
         setPage(startPage);
       } catch (err) {
-        document.getElementById('transcription-container').innerHTML =
-          `<div class="loading text-body-secondary">Dokument ${docId} konnte nicht geladen werden: ${err.message}</div>`;
+        const errEl = document.createElement('div');
+        errEl.className = 'loading text-body-secondary';
+        errEl.textContent = `Dokument ${docId} konnte nicht geladen werden: ${err.message}`;
+        document.getElementById('transcription-container').replaceChildren(errEl);
       }
     }
 

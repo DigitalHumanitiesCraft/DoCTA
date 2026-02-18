@@ -310,7 +310,10 @@
           update();
         }
       } catch (err) {
-        document.getElementById('results-container').innerHTML = `<div class="loading text-body-secondary">Fehler beim Laden: ${err.message}</div>`;
+        const errEl = document.createElement('div');
+        errEl.className = 'loading text-body-secondary';
+        errEl.textContent = `Fehler beim Laden: ${err.message}`;
+        document.getElementById('results-container').replaceChildren(errEl);
       }
     }
 

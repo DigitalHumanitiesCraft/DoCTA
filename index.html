@@ -107,7 +107,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-functions">–</div>
-              <div class="stat-label">Hofämter</div>
+              <div class="stat-label">Funktionen</div>
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@
           <a href="viewer.html" class="card card-clickable h-100">
             <div class="card-body">
               <h3 class="h6 mb-1">Quellen-Explorer</h3>
-              <p class="small text-body-secondary mb-0">Digitalisat neben Transkription. 57 Inventare mit Volltext</p>
+              <p class="small text-body-secondary mb-0">Digitalisat neben Transkription. 55 Inventare mit Volltext</p>
             </div>
           </a>
         </div>
@@ -208,7 +208,7 @@
         document.getElementById('stat-sources').textContent = formatNumber(sources.length);
         document.getElementById('stat-functions').textContent = formatNumber(functions.length);
 
-        const transcriptions = (mapping.matched || []).filter(m => m.has_text).length;
+        const transcriptions = new Set((mapping.matched || []).filter(m => m.has_text).map(m => m.csv_signatur)).size;
         document.getElementById('stat-transcriptions').textContent = formatNumber(transcriptions);
       } catch (err) {
         console.error('Failed to load stats:', err);

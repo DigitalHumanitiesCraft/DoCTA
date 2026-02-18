@@ -194,8 +194,13 @@
 
         update();
       } catch (err) {
-        document.getElementById('sources-body').innerHTML =
-          `<tr><td colspan="7" class="text-body-secondary text-center py-4">Fehler beim Laden: ${err.message}</td></tr>`;
+        const errTr = document.createElement('tr');
+        const errTd = document.createElement('td');
+        errTd.colSpan = 7;
+        errTd.className = 'text-body-secondary text-center py-4';
+        errTd.textContent = `Fehler beim Laden: ${err.message}`;
+        errTr.appendChild(errTd);
+        document.getElementById('sources-body').replaceChildren(errTr);
       }
     }
 

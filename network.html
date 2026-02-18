@@ -397,13 +397,26 @@
 
         // Check URL params - fall back to Sigmund if person not found
         const params = getParams();
+        let highlightFallback = false;
         if (params.highlight) {
           const highlightKey = `person-${params.highlight}`;
-          currentCenter = entityIndex[highlightKey] ? highlightKey : DEFAULT_CENTER;
+          if (entityIndex[highlightKey]) {
+            currentCenter = highlightKey;
+          } else {
+            highlightFallback = true;
+          }
         }
 
         // Default: ego network
         switchMode('ego', currentCenter);
+
+        if (highlightFallback) {
+          const info = document.getElementById('network-info');
+          const origText = info.textContent;
+          info.textContent = `Person nicht im Netzwerk gefunden. Zeige Standardansicht.`;
+          info.style.color = 'var(--conf-low, #c0392b)';
+          setTimeout(() => { info.textContent = origText; info.style.color = ''; }, 4000);
+        }
 
         // Event listeners
         document.getElementById('btn-ego').addEventListener('click', () => switchMode('ego', currentCenter));

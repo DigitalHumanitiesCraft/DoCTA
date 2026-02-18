@@ -190,7 +190,7 @@
           Pferdeausrüstung für den Burggrafen, Besitzverhältnisse am Schloss.
           <br><br>
           <strong style="color:var(--accent)">Beobachtung:</strong> Aus nur 4 Seiten Inventartext können 13 Relationen zwischen 16 Personen und 4 Orten extrahiert werden.
-          Die 7.800 Seiten Raitbücher werden diese Datenbasis um Größenordnungen erweitern.
+          Die 8.561 Seiten Raitbücher werden diese Datenbasis um Größenordnungen erweitern.
         </div>
       </section>
 
@@ -213,7 +213,7 @@
           Jedes verarbeitete Quelldokument reichert dieses Netzwerk mit neuen Verbindungen an.
           <br><br>
           <strong style="color:var(--accent)">Fazit:</strong> Aus 4 Seiten Handschrift entsteht ein analysierbares Beziehungsnetzwerk mit 16 Personen und 13 Relationen.
-          Die gleiche Pipeline ist auf die 7.800 Seiten Raitbücher skalierbar — das ist der Kern des Projektantrags.
+          Die gleiche Pipeline ist auf die 8.561 Seiten Raitbücher skalierbar — das ist der Kern des Projektantrags.
         </div>
       </section>
     </div>
@@ -421,7 +421,10 @@
           alert(`${node.data('label')}${role ? '\n' + role : ''}`);
         });
       } catch (err) {
-        container.innerHTML = `<div class="loading text-body-secondary">Cytoscape.js konnte nicht geladen werden: ${err.message}</div>`;
+        const errEl = document.createElement('div');
+        errEl.className = 'loading text-body-secondary';
+        errEl.textContent = `Cytoscape.js konnte nicht geladen werden: ${err.message}`;
+        container.replaceChildren(errEl);
       }
     }
 
