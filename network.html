@@ -43,14 +43,15 @@
 
       <div id="cy"></div>
 
-      <!-- Legend -->
-      <div style="position:absolute;bottom:40px;left:12px;background:rgba(255,255,255,0.95);border:1px solid var(--border-light);border-radius:6px;padding:8px 12px;font-size:0.75rem;z-index:10;line-height:1.8">
+      <!-- Legend + Info combined -->
+      <div class="network-legend" id="network-legend">
         <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#1565c0"></span> Person</div>
         <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2e7d32"></span> Ort</div>
         <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e65100"></span> Institution</div>
         <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6a1b9a"></span> Funktion</div>
         <div style="margin-top:4px;color:var(--text-muted-custom);font-size:0.6875rem">Knotengröße = Anzahl Verbindungen</div>
         <div style="color:var(--text-muted-custom);font-size:0.6875rem">Klick auf Knoten = Erkunden</div>
+        <div id="network-info" style="margin-top:6px;padding-top:6px;border-top:1px solid var(--border-light);font-size:0.75rem;color:var(--text-primary)">Laden...</div>
       </div>
 
       <!-- Detail sidebar -->
@@ -62,15 +63,8 @@
         <div id="sidebar-content"></div>
       </div>
 
-      <div class="network-info" id="network-info">
-        Laden...
-      </div>
     </div>
   </main>
-
-  <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
-  </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
@@ -220,11 +214,14 @@
       const relTypeCounts = {};
       const connectedNodes = new Set();
 
-      // Edges only between actually-added nodes
+      // Only keep top nodes that exist in entityIndex
+      const validNodes = new Set(topNodes.filter(k => entityIndex[k]));
+
+      // Edges only between valid, added nodes
       for (const r of allRelations) {
         const src = `${r.subj_type}-${r.subj_id}`;
         const tgt = `${r.obj_type}-${r.obj_id}`;
-        if (addedNodes.has(src) && addedNodes.has(tgt)) {
+        if (validNodes.has(src) && validNodes.has(tgt)) {
           edges.push({ data: { source: src, target: tgt, relType: r.relation_type } });
           relTypeCounts[r.relation_type] = (relTypeCounts[r.relation_type] || 0) + 1;
           connectedNodes.add(src);
@@ -234,10 +231,9 @@
 
       // Only include nodes that have at least one visible edge
       const elements = [];
-      for (const key of topNodes) {
+      for (const key of validNodes) {
         if (!connectedNodes.has(key)) continue;
         const e = entityIndex[key];
-        if (!e) continue;
         elements.push({ data: { id: key, label: e.name, type: e.type, degree: degree[key] || 0 } });
       }
       elements.push(...edges);
