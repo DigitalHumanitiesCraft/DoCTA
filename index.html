@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DoCTA | Digital Court Studies Prototype</title>
-  <meta name="description" content="DoCTA Prototyp: Digitale Erschließung höfischer Praktiken am Hof Sigmunds von Tirol (1427-1496). 6.288 Personen, 42.893 Relationen, 312 Quellen.">
+  <meta name="description" content="DoCTA Prototyp: Digitale Erschließung höfischer Praktiken am Hof Sigmunds von Tirol (1427–1496). 6.288 Personen, 42.893 Relationen, 312 Quellen.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -112,6 +112,7 @@
           </div>
         </div>
       </div>
+      <p class="small text-body-secondary mt-2 mb-0" id="stats-error"></p>
     </section>
 
     <!-- Navigation Cards -->
@@ -138,7 +139,7 @@
           <a href="search.html" class="card card-clickable h-100">
             <div class="card-body">
               <h3 class="h6 mb-1">Facettierte Suche</h3>
-              <p class="small text-body-secondary mb-0">6.288 Personen, 736 Orte, 1.613 Funktionen, 215 Institutionen - durchsuchbar mit Facetten</p>
+              <p class="small text-body-secondary mb-0">6.288 Personen, 736 Orte, 1.613 Funktionen, 215 Institutionen, durchsuchbar mit Facetten</p>
             </div>
           </a>
         </div>
@@ -165,7 +166,7 @@
     <section class="card">
       <div class="card-body">
         <h2 class="h5 mb-2">Für Gutachter</h2>
-        <p class="small">Dieser Prototyp demonstriert die methodische Machbarkeit des DoCTA-Projekts an konkretem Quellenmaterial. Er adressiert die Kritikpunkte des FWF-Gutachtens direkt:</p>
+        <p class="small">Dieser Prototyp demonstriert die methodische Machbarkeit des DoCTA-Projekts an konkretem Quellenmaterial. Er adressiert die Kritikpunkte des ÖAW-Gutachtens direkt:</p>
         <ul class="small">
           <li>Methoden funktionieren auf frühneuhochdeutschen Quellen (Kurrentschrift, Abkürzungen)</li>
           <li>LLM-Integration in der Pipeline sichtbar (Schritt 3–4)</li>
@@ -191,26 +192,21 @@
     initNav('dashboard');
     initBanner();
 
+    // Precomputed by scripts/build_stats.py (keeps the start page from
+    // downloading ~6.4 MB of JSON just to count entries).
+    const STAT_KEYS = ['persons', 'relations', 'places', 'sources', 'functions', 'transcriptions'];
+
     async function loadStats() {
       try {
-        const [persons, relations, places, sources, functions, mapping] = await Promise.all([
-          loadJSON('data/persons.json').catch(() => []),
-          loadJSON('data/relations.json').catch(() => []),
-          loadJSON('data/places.json').catch(() => []),
-          loadJSON('data/sources.json').catch(() => []),
-          loadJSON('data/functions.json').catch(() => []),
-          loadJSON('data/source_mapping.json').catch(() => ({ matched: [] })),
-        ]);
+        const stats = await loadJSON('data/stats.json');
+        const missing = STAT_KEYS.filter(key => typeof stats?.[key] !== 'number');
+        if (missing.length) throw new Error(`Unvollständige Kennzahlen: ${missing.join(', ')}`);
 
-        document.getElementById('stat-persons').textContent = formatNumber(persons.length);
-        document.getElementById('stat-relations').textContent = formatNumber(relations.length);
-        document.getElementById('stat-places').textContent = formatNumber(places.length);
-        document.getElementById('stat-sources').textContent = formatNumber(sources.length);
-        document.getElementById('stat-functions').textContent = formatNumber(functions.length);
-
-        const transcriptions = (mapping.matched || []).filter(m => m.has_text).length;
-        document.getElementById('stat-transcriptions').textContent = formatNumber(transcriptions);
+        STAT_KEYS.forEach(key => {
+          document.getElementById(`stat-${key}`).textContent = formatNumber(stats[key]);
+        });
       } catch (err) {
+        document.getElementById('stats-error').textContent = `Kennzahlen konnten nicht geladen werden: ${err.message}`;
         console.error('Failed to load stats:', err);
       }
     }

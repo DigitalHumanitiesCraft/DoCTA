@@ -8,6 +8,14 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Visible keyboard focus for the keyboard-operable result items (see role/tabindex below) */
+    .result-item:focus-visible {
+      outline: 3px solid var(--accent, #8b5e3c);
+      outline-offset: -3px;
+      background: var(--accent-light, #f5efe8);
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -102,7 +110,7 @@
         const name = [p.first_name, p.name].filter(Boolean).join(' ');
         items.push({
           id: p.id, type: 'person', typeLabel: 'Person',
-          name: name || '(unbekannt)', gender: p.gender || '',
+          name: name || '(unbekannt)', gender: p.gender || 'unbekannt',
           dates: [p.start_date, p.end_date].filter(Boolean).join(' – '),
           altLabels: (p.alternative_label || []).join(', '),
           searchText: [name, p.gender, ...(p.alternative_label || [])].join(' ').toLowerCase(),
@@ -234,14 +242,21 @@
       container.innerHTML = page.map(item => {
         const typeClass = `entity entity--${item.type}`;
         const meta = [item.dates, item.gender, item.placeType, item.instType, item.altLabels].filter(Boolean).join(' · ');
-        return `<div class="result-item" data-type="${item.type}" data-id="${item.id}">
+        return `<div class="result-item" role="button" tabindex="0" data-type="${item.type}" data-id="${item.id}">
           <div class="result-item__name"><span class="${typeClass}" style="font-size:0.6875rem;margin-right:0.375rem">${item.typeLabel}</span> ${escapeHTML(item.name)}</div>
           ${meta ? `<div class="result-item__meta">${escapeHTML(meta)}</div>` : ''}
         </div>`;
       }).join('') + more;
 
       container.querySelectorAll('.result-item').forEach(el => {
-        el.addEventListener('click', () => showDetail(el.dataset.type, parseInt(el.dataset.id)));
+        const open = () => showDetail(el.dataset.type, parseInt(el.dataset.id));
+        el.addEventListener('click', open);
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+            e.preventDefault();
+            open();
+          }
+        });
       });
     }
 

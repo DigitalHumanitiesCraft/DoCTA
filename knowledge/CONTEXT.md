@@ -1,4 +1,4 @@
-# CONTEXT -- Domänenwissen, Methoden, Epistemologie
+# CONTEXT: Domänenwissen, Methoden, Epistemologie
 
 ## Hypothese
 
@@ -23,16 +23,23 @@ Durch semantische Annotation und Ereignismodellierung lassen sich Handlungsmuste
 | **person** | Namen, Titel, Rollen. Agent oder Patient in Events. | ✓ |
 | **place** | Geographische Orte (Innsbruck, Sigmundsberg) | ✓ |
 | **space** | Funktionale Räume (Kammer, Küche, Stall, Frauenzimmer) | Zusammen mit place |
-| **thing** | Gegenstände: Alltag (Brot, Wein, Holz) + Wert (Gold, Seide, Schmuck). Attribute: size, number, material, category, quality, color, function. | ✓ |
+| **thing** | Gegenstände: Alltag (Brot, Wein, Holz) + Wert (Gold, Seide, Schmuck). Attribute: size, number, material, category, quality, color, function. | ✓ (als `object`) |
 | **time** | Datierungen und Zeitperioden | ✓ |
-| **practice** | Handlungen als Trigger-Verben (Prädikate/Verbformen) | ✓ |
+| **practice** | Handlungen als Trigger-Verben (Prädikate/Verbformen) | Nicht als Entitätstyp, siehe unten |
 | **group** | Institutionen (Rat, Kanzlei, Küchenteam) | Post-Prototyp |
 | **court** | Hofzugehörigkeit (social group, profession) | Post-Prototyp |
 | **source** | Quellengattung und Metadaten | Post-Prototyp |
 
-**Prototyp-Set:** 5 Entitäten (person, place, thing, time, practice). Die Feinunterscheidungen place/space und group/court werden im Antrag als geplante Erweiterung dargestellt.
+**Prototyp-Set: 4 Entitätstypen.** Die NER-Demo (`data/demo/thaur_entities.json`, Inventar Thaur A 49.1 von 1471) annotiert 42 Entitäten in vier Typen: `object` (18), `person` (16), `place` (4), `time` (4).
 
-**NER-Diskrepanz:** FWF-Proposal Table 2 definierte 6 Kategorien ("object", "organization"). SiCPAS differenziert feiner (9 Entitäten, "thing" statt "object", "group"/"court" statt "organization"). Das Prototyp-Set (5) ist ein pragmatischer Kompromiss.
+Zwei Abweichungen vom SiCPAS-Modell sind zu benennen, weil sie leicht als Nachlässigkeit gelesen werden:
+
+1. **`object` statt `thing`.** Die Demo verwendet die gröbere Bezeichnung, die SiCPAS bewusst hinter sich lässt (siehe NER-Diskrepanz gleich darunter). Das ist keine Modellentscheidung, sondern eine Altlast der ersten Annotationsrunde. Im Vollprojekt gilt `thing` mit den Attributen size, number, material, category, quality, color, function.
+2. **`practice` ist kein eigener Entitätstyp im Prototyp.** Praktiken erscheinen stattdessen als Prädikate der extrahierten Relationen (`data/demo/thaur_relations.json`: 13 Relationen, `predicateType` mit acht Klassen wie inventarisierung, besitz, übergabe, objekttransfer, bewohnung, zeugnis). Der Handlungsbezug ist also vorhanden, nur an der Kante statt am Knoten modelliert. Ob Praktiken eigenständige Knoten werden müssen, entscheidet sich am Practice↔BeNASch-Mapping.
+
+Die Feinunterscheidungen place/space und group/court sind im Prototyp nicht umgesetzt und werden im Antrag als geplante Erweiterung dargestellt.
+
+**NER-Diskrepanz:** Der ÖAW-Antrag definierte in Table 2 sechs Kategorien ("object", "organization"). SiCPAS differenziert feiner (9 Entitäten, "thing" statt "object", "group"/"court" statt "organization"). Das Prototyp-Set ist ein pragmatischer Kompromiss und liegt terminologisch noch beim Antragsstand.
 
 ### Relationen
 
@@ -51,7 +58,7 @@ Zwei Konzeptebenen:
 | Ebene | Definition | Beispiel | Wer annotiert |
 |-------|-----------|---------|---------------|
 | **Practice** | Einzelne Handlung, Trigger-Verb, Agent↔Patient | "kaufen", "schenken", "kochen" | LLM + Validierung |
-| **Event** | Cluster von Personen, Dingen, Praktiken -- benennbar | Hochzeit, Fest, Transaktion | **Nur Fachwissenschaftlerin** (interpretatorisch) |
+| **Event** | Cluster von Personen, Dingen, Praktiken, benennbar | Hochzeit, Fest, Transaktion | **Nur Fachwissenschaftlerin** (interpretatorisch) |
 
 Practice-Annotation folgt BeNASch-Schema. Event-Aggregation ist interpretatorische Leistung.
 
@@ -79,7 +86,7 @@ Modelliert Ereignisse formal: Trigger-Verb → Agent → Patient. Annotationspla
 
 | Fallstudie | Quellen | Status |
 |-----------|---------|--------|
-| **Hofküche** (empfohlen für Prototyp) | Raitbücher (Zahlungen), Inventare (Küchenausstattung) | Küchenmeister-Fund in Raitbuch 2 fol. 2r -- Verifizierung durch Barbara ausstehend |
+| **Hofküche** (empfohlen für Prototyp) | Raitbücher (Zahlungen), Inventare (Küchenausstattung) | Küchenmeister-Fund in Raitbuch 2 fol. 2r, Verifizierung durch Barbara ausstehend |
 | Herzogliche Privatgemächer | Inventare, Hofordnungen | Nicht begonnen |
 | Medizinalpersonen | Raitbücher, Raumanalyse | Nicht begonnen |
 | Luxuskonsum | Raitbücher, Inventare | Nicht begonnen |
@@ -92,9 +99,9 @@ Modelliert Ereignisse formal: Trigger-Verb → Agent → Patient. Annotationspla
 |----------------|----------------|-----------|
 | Person (6.288) | person | Direkt |
 | Place (736) | place | place/space-Unterscheidung fehlt in SiCProD |
-| Institution (215) | group / court | 207 ohne Typ -- Zuordnung unklar |
+| Institution (215) | group / court | 207 ohne Typ, Zuordnung unklar |
 | Function (1.613) | practice (Trigger) | Funktionen ≠ Praktiken, aber Brücke vorhanden |
-| Salary (2.906) | -- | Verknüpfung Person↔Funktion, keine Geldbeträge |
+| Salary (2.906) | kein Gegenstück | Verknüpfung Person↔Funktion, keine Geldbeträge |
 | Event (28) | event | Nur Großereignisse, keine Alltagspraktiken |
 | Relation (42.893) | Relationen | Relationstypen müssen auf SiCPAS gemappt werden |
 
@@ -132,7 +139,7 @@ Fachwissenschaftlerin validiert, nicht nur kontrolliert. Das Forschungstool unte
 
 ### Methodologische Positionierung
 
-LLMs als Prototyping-Instrumente, deren Outputs systematisch durch Fachexpertise validiert werden. Promptotyping als iterative, quellenkritisch kontrollierte Methode. Dieser Absatz muss als ~1–2 Seiten Textbaustein für die FWF-Wiedereinreichung ausformuliert werden.
+LLMs als Prototyping-Instrumente, deren Outputs systematisch durch Fachexpertise validiert werden. Promptotyping als iterative, quellenkritisch kontrollierte Methode. Dieser Absatz muss als ~1–2 Seiten Textbaustein für die geplante Wiedereinreichung bei der ÖAW ausformuliert werden.
 
 ## Ressourcen-URLs
 

@@ -83,6 +83,8 @@
     let cytoscape = null;
     let entityIndex = {};
     let degree = {};
+    // Relations whose both endpoints are representable entities (excludes salary/event).
+    let displayDegree = {};
     let allRelations = [];
     let currentMode = 'ego';
     let currentCenter = DEFAULT_CENTER;
@@ -203,6 +205,10 @@
       return { elements, relTypeCounts };
     }
 
+    // NOTE: FULL_MAX_NODES is an upper bound, not the rendered count. Two filters reduce it:
+    // (1) entity types without a data file (event, salary) have no entityIndex entry,
+    // (2) top nodes whose partners are all outside the top set have no visible edge.
+    // Labels in renderGraph() therefore report the actual rendered node count.
     function buildFullElements() {
       const topNodes = Object.entries(degree)
         .sort((a, b) => b[1] - a[1])
@@ -278,8 +284,8 @@
         info.textContent = `Ego-Netzwerk: ${nodeCount} Knoten, ${formatNumber(edgeCount)} Kanten um ${centerName}`;
         document.getElementById('network-subtitle').textContent = `Direktes Beziehungsnetzwerk um ${centerName}`;
       } else {
-        info.textContent = `${nodeCount} Knoten, ${formatNumber(edgeCount)} Kanten (Top-${FULL_MAX_NODES} nach Vernetzungsgrad)`;
-        document.getElementById('network-subtitle').textContent = `Top-${FULL_MAX_NODES} vernetzte Entitäten aus der SiCProD-Datenbank`;
+        info.textContent = `${nodeCount} Knoten, ${formatNumber(edgeCount)} Kanten (Ausschnitt stark vernetzter Entitäten)`;
+        document.getElementById('network-subtitle').textContent = `Ausschnitt aus der SiCProD-Datenbank: ${nodeCount} stark vernetzte Entitäten und ihre Verbindungen untereinander`;
       }
 
       // Update relation type filter
@@ -323,7 +329,12 @@
       })).sort((a, b) => a.name.localeCompare(b.name));
 
       let html = `<div class="detail-panel__field"><span class="detail-panel__label">Typ</span><span class="entity entity--${node.data('type')}">${node.data('type')}</span></div>`;
-      html += `<div class="detail-panel__field"><span class="detail-panel__label">Verbindungen</span>${node.data('degree')} gesamt</div>`;
+      const totalDegree = node.data('degree') || 0;
+      const shownDegree = displayDegree[node.data('id')] || 0;
+      const degreeText = totalDegree > shownDegree
+        ? `${shownDegree} darstellbar (${totalDegree} in den Daten, inklusive Sold- und Ereignisdaten)`
+        : `${shownDegree} darstellbar`;
+      html += `<div class="detail-panel__field"><span class="detail-panel__label">Verbindungen</span>${degreeText}</div>`;
       html += `<div class="detail-panel__field"><span class="detail-panel__label">Nachbarn (${connections.length})</span>`;
       html += connections.slice(0, 20).map(c =>
         `<div class="small"><span class="entity entity--${c.type}" style="font-size:0.6rem">${c.type}</span> ${escapeHTML(c.name)}</div>`
@@ -393,8 +404,15 @@
 
         // Build degree map
         for (const r of allRelations) {
-          if (r.subj_id) degree[`${r.subj_type}-${r.subj_id}`] = (degree[`${r.subj_type}-${r.subj_id}`] || 0) + 1;
-          if (r.obj_id) degree[`${r.obj_type}-${r.obj_id}`] = (degree[`${r.obj_type}-${r.obj_id}`] || 0) + 1;
+          const srcKey = `${r.subj_type}-${r.subj_id}`;
+          const tgtKey = `${r.obj_type}-${r.obj_id}`;
+          if (r.subj_id) degree[srcKey] = (degree[srcKey] || 0) + 1;
+          if (r.obj_id) degree[tgtKey] = (degree[tgtKey] || 0) + 1;
+          // Only relations between two representable entities can ever be drawn
+          if (r.subj_id && r.obj_id && entityIndex[srcKey] && entityIndex[tgtKey]) {
+            displayDegree[srcKey] = (displayDegree[srcKey] || 0) + 1;
+            displayDegree[tgtKey] = (displayDegree[tgtKey] || 0) + 1;
+          }
         }
 
         // Load Cytoscape
@@ -457,8 +475,18 @@
             cy.elements().style('display', 'element');
             return;
           }
+          // Hide non-matching edges and any node left without a visible edge
+          const keepIds = new Set();
           cy.edges().forEach(edge => {
-            edge.style('display', edge.data('relType') === type ? 'element' : 'none');
+            const visible = edge.data('relType') === type;
+            edge.style('display', visible ? 'element' : 'none');
+            if (visible) {
+              keepIds.add(edge.data('source'));
+              keepIds.add(edge.data('target'));
+            }
+          });
+          cy.nodes().forEach(node => {
+            node.style('display', keepIds.has(node.id()) ? 'element' : 'none');
           });
         });
 

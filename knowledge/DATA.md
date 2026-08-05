@@ -1,4 +1,4 @@
-# DATA -- Datenquellen, Struktur, Qualität
+# DATA: Datenquellen, Struktur, Qualität
 
 ## 1. SiCProD API
 
@@ -9,8 +9,8 @@
 
 | Typ | Endpunkt | Anzahl | Qualität |
 |-----|----------|--------|----------|
-| Person | `apis_ontology.person/` | 6.288 | Gut. Name, Daten, Geschlecht, Namensvarianten, Referenzen. `first_name` immer null, `status` immer leer. |
-| Ort | `apis_ontology.place/` | 736 | Mittel. Typ vorhanden (Stadt, Burg, Dorf). **Viele ohne lat/lng** -- Karte wird Lücken haben. |
+| Person | `apis_ontology.person/` | 6.288 | Gut. Name, Daten, Geschlecht, Namensvarianten, Referenzen. `first_name` bei 6.281 von 6.288 befüllt (7 leer), `status` durchgehend leer und daher nicht exportiert. |
+| Ort | `apis_ontology.place/` | 736 | Mittel. Typ vorhanden (Stadt, Burg, Dorf). **Viele ohne lat/lng**, die Karte wird Lücken haben. |
 | Institution | `apis_ontology.institution/` | 215 | **Schlecht. 207 von 215 ohne Typ.** Nur 5 Universität, 1 Kanzlei, 1 Küche, 1 Pfarrei typifiziert. |
 | Funktion | `apis_ontology.function/` | 1.613 | Gut. 79+ distinkte Hofämter. Mischung aus Hofpositionen und regionalen Ämtern. |
 | Gehalt | `apis_ontology.salary/` | 2.906 | **Keine Geldbeträge.** Nur Verknüpfungen Person↔Funktion. |
@@ -26,7 +26,7 @@
   "start_date_written": "1427-10-26",
   "end_date_written": "1496-03-04",
   "gender": "männlich",
-  "first_name": null,
+  "first_name": "",
   "status": "",
   "alternative_label": [
     "Sigismund", "Siegmund", "Sigmund der Münzreiche",
@@ -41,6 +41,8 @@
   ]
 }
 ```
+
+Sigmund ist einer der 7 Datensätze ohne Vornamen: `first_name` ist hier ein Leerstring, nicht null. Bei den übrigen 6.281 Personen steht ein Vorname darin, den Suche und Netzwerkansicht auch anzeigen. Der Export `data/persons.json` reduziert den Datensatz auf `id`, `name`, `first_name`, `gender`, `start_date`, `end_date`, `alternative_label`. `status` fällt weg, weil das Feld in allen 6.288 Datensätzen leer ist.
 
 ### Beispiel: Relation
 
@@ -89,12 +91,14 @@ Relationstypen (Auswahl): `nimmtteilan`, `wirdausgeuebtvon`, `istan`, `wirdausbe
 
 ### Kernwert und Grenzen
 
-**Hauptwert:** Personennetzwerk -- 6.288 Personen mit 42.893 Relationen.
+**Hauptwert:** Personennetzwerk aus 6.288 Personen mit 42.893 Relationen.
 **Grenzen:** Events fast leer (28), Salaries ohne Beträge, Institutionen untypisiert. Finanzielle und praxeologische Daten müssen aus den Raitbüchern kommen, nicht aus SiCProD.
 
 ### Pre-Fetch-Strategie
 
-Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, Relationen als Edge-Liste, Netzwerk-Layout vorberechnen (networkx). Output: `data/persons.json`, `data/places.json`, `data/relations.json`, `data/network.json`. Geschätzt: ~4–5 MB roh, ~1–1.5 MB gzipped.
+Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, Relationen als Edge-Liste. Output: `data/persons.json`, `data/places.json`, `data/institutions.json`, `data/functions.json`, `data/relations.json`. Geschätzt: ~4–5 MB roh, ~1–1.5 MB gzipped.
+
+Ein zweites Script (`scripts/compute_layout.py`) berechnet mit networkx ein Layout für die Top-200-Knoten vor und schreibt `data/network.json`. Diese Datei ist ein Explorationsartefakt: `network.html` legt das Layout inzwischen selbst im Browser (Cytoscape) und lädt `data/network.json` nicht.
 
 ---
 
@@ -126,22 +130,27 @@ Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, R
 
 ### Kategorieverteilung
 
-| Kategorie | Anzahl | % |
-|-----------|--------|---|
-| Burgeninventar | 84 | 26.7 |
-| Rechnungen | 56 | 17.8 |
-| Anderes | 43 | 13.7 |
-| Repertorium | 42 | 13.3 |
-| Kopialbuch | 37 | 11.7 |
-| Personeninventar | 18 | 5.7 |
-| Hof- und Speiseordnungen | 16 | 5.1 |
-| Literatur | 9 | 2.9 |
-| Kircheninventar | 6 | 1.9 |
-| Landtagsakten | 4 | 1.3 |
+Gemessen an `data/sources.json`, also nach der Bereinigung durch `scripts/transform_sources.py`. Das ist der Stand, den `sources.html` anzeigt.
+
+| Kategorie | Anzahl (bereinigt) | % | Rohzahl in der CSV |
+|-----------|--------|---|---|
+| Burgeninventar | 84 | 26.9 | 84 |
+| Rechnungen | 56 | 17.9 | 56 |
+| Anderes | 42 | 13.5 | 43 |
+| Repertorium | 41 | 13.1 | 42 |
+| Kopialbuch | 37 | 11.9 | 37 |
+| Personeninventar | 18 | 5.8 | 18 |
+| Hof- und Speiseordnungen | 16 | 5.1 | 16 |
+| Literatur | 9 | 2.9 | 9 |
+| Kircheninventar | 6 | 1.9 | 6 |
+| Landtagsakten | 3 | 1.0 | 4 |
+| **Summe** | **312** | 100 | 315 |
+
+Die drei Differenzen stammen aus den unten gelisteten Duplikaten und Cross-Listings: die Rohsumme der CSV liegt bei 315, die bereinigte bei 312.
 
 ### Bekannte Qualitätsprobleme
 
-1. 16 Geisterspalten (Spalte3–18) -- Excel-Export-Artefakte
+1. 16 Geisterspalten (Spalte3–18), Excel-Export-Artefakte
 2. Datumsformate: `YYYY`, `YYYY-YYYY`, `YYYY.MM.DD`, `ca.`, `15. Jh.`, offene Ranges (`-1564`, `1229-`)
 3. Repertorium-Sektion nutzt Unicode en-dash (–), Rest nutzt ASCII-Hyphen (-) → Parser-Falle
 4. Echtes Duplikat: Hs. 0041 (zwei identische Zeilen)
@@ -150,30 +159,42 @@ Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, R
 7. Zeitliche Ausreißer: 7 Quellen außerhalb Sigmunds Lebenszeit (1411–1645)
 8. Datumswert in Art-Spalte (Zeile 304: "1361-1848")
 
-### Raitbücher (25 Bände, SiCProD)
+### Raitbücher
 
-| Nr. | Datierung | Seiten | Anmerkung |
+**Kanonische Zählung: 26 Bände, 8.561 Seiten.** Diese Zahl stammt aus der Transkribus-Collection 2197991, also aus den tatsächlich vorhandenen Digitalisaten, und wird im Prototyp durchgängig verwendet (`pipeline.html`, REQUIREMENTS.md, JOURNAL.md).
+
+Die CSV-Quellenübersicht kommt auf andere Werte:
+
+| Zählung | Bände | Seiten | Herkunft |
+|---------|-------|--------|----------|
+| **Transkribus (kanonisch)** | **26** | **8.561** | Collection 2197991, gezählte Digitalisate |
+| CSV / `data/sources.json` | 25 | 8.750 | Katalogeinträge mit Seitenangabe aus der Digitalisiert-Spalte |
+
+Die CSV führt 25 Einträge (Nr. 00 bis 26, ohne 23 und 25, weil diese im Katalog als identisch mit 22 bzw. 26 vermerkt sind). Transkribus zählt die Bände einzeln und kommt daher auf 26. Die Seitenzahlen weichen ab, weil die CSV-Werte Katalogangaben sind und die Transkribus-Werte gezählte Scans. Wo eine belastbare Zahl gebraucht wird, gilt Transkribus.
+
+| Nr. | Datierung | Seiten (CSV) | Anmerkung |
 |-----|-----------|--------|-----------|
 | 00 | 1454–1457 | 241 | "Raitbuch von Konrad Vintler" |
 | 01 | 1460–1461 | 331 | |
 | **02** | **1462–1463** | **123** | **Prototyp-Quelle** |
 | 03 | 1463–1465 | 815 | Größter Band |
-| 04–26 | 1466–1490 | ~7.150 | Lücken: 1476, 1481. Doppelt: 1485. Identisch: 22=23, 26=25. |
-| **Gesamt** | 1454–1490 | **~8.660** | |
+| 04–26 | 1466–1490 | 7.240 | 21 Einträge. Lücken: 1476, 1481. Doppelt: 1485 (Nr. 18 und 19). Identisch und daher nicht separat gelistet: 23=22, 25=26. |
+| **Summe CSV** | 1454–1490 | **8.750** | |
 
 ### Hofordnungen (DoCTA-Projekt, 11 Einträge)
 
-Darunter ein zusammenhängendes Cluster zur Hochzeit Sigmunds 1484:
-- Hs. 2466: "Notl der hochzeit" -- Einladungsregister (60 S.)
-- Hs. 2467: "Rescribent der hochzeit" -- Verordnungen an Hofämter (100 S.)
-- Hs. 2468: "Fueterzetl" -- Festteilnehmer und Pferde (35 S.)
-- Hs. 2469: Register Hochzeit Sigmunds mit Katharina von Sachsen (140 S.)
+Darunter ein zusammenhängendes Cluster zur Hochzeit Sigmunds 1484. Die Seitenzahlen sind Katalogangaben aus der CSV; in Klammern steht die gezählte Scanzahl aus der Transkribus-Collection, die durchgehend niedriger liegt (siehe JOURNAL.md). Welche der beiden Zählungen den Band vollständig abbildet, ist ungeklärt.
+
+- Hs. 2466: "Notl der hochzeit", Einladungsregister, 60 S. laut CSV (33 Scans)
+- Hs. 2467: "Rescribent der hochzeit", Verordnungen an Hofämter, 100 S. laut CSV (58 Scans)
+- Hs. 2468: "Fueterzetl", Festteilnehmer und Pferde, 35 S. laut CSV (19 Scans)
+- Hs. 2469: Register Hochzeit Sigmunds mit Katharina von Sachsen, 140 S. laut CSV (54 Scans)
 
 ### Für Prototyp nutzbar
 
 Sofort: **57 Burgeninventare** (Tier 1, finale Transkriptionen in Transkribus Collection 2197991).
 Mit Transkription: **Raitbuch 2** (123 Doppelseiten, Prototyp-Quelle, nicht transkribiert).
-Script-Output: `data/sources.json` -- CSV bereinigt und als JSON für `sources.html`.
+Script-Output: `data/sources.json`, die CSV bereinigt und als JSON für `sources.html`.
 
 ---
 
@@ -195,7 +216,7 @@ Script-Output: `data/sources.json` -- CSV bereinigt und als JSON für `sources.h
 ### Transkriptionsstatus-Realität
 
 **Erwartung (aus CSV):** 55 Burgeninventare mit "Inventaria" in Transkribiert-Spalte.
-**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen, 35.724 Wörter). 2 davon fehlen in der CSV-Markierung (A 125.3-4, A 142.1-2 mit je 2 Transkribus-Doc-IDs). Nur 3 Status "DONE", 54 "IN_PROGRESS" -- aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator. Kanonischer Wert: **57 Inventare mit Volltext.**
+**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen, 35.724 Wörter). 2 davon fehlen in der CSV-Markierung (A 125.3-4, A 142.1-2 mit je 2 Transkribus-Doc-IDs). Nur 3 Status "DONE", 54 "IN_PROGRESS", die aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator. Kanonischer Wert: **57 Inventare mit Volltext.**
 
 **Raitbücher:** 26 Bände digitalisiert, 6 (Nr. 1–6) haben Layout-Analyse (Baselines, Regionen), 20 (Nr. 7–26) Status "NEW". **Keines hat Transkriptionstext.**
 
@@ -256,8 +277,8 @@ APIs für Desktop-Client konzipiert. `fetch()` auf PAGE-XML wird im Browser durc
 
 ### Pre-Fetch-Strategie
 
-Script (`scripts/fetch_transkribus.py`): OAuth2-Auth → `fulldoc` pro Dokument → PAGE-XML parsen → JSON mit Zeilen, Koordinaten, Text.
-Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Seiten mit IIIF-Keys)
+Script (`scripts/fetch_transcriptions.py`): OAuth2-Auth → `fulldoc` pro Dokument → PAGE-XML parsen → JSON mit Zeilen, Koordinaten, Text.
+Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Seiten mit IIIF-Keys). Die Seitenliste `data/raitbuch2_pages.json` ist ein Explorationsartefakt: keine Seite des Prototyps lädt sie. `viewer.html` nimmt die IIIF-URLs aus den Transkriptionsdateien selbst.
 
 ### Offene Punkte
 
@@ -265,8 +286,10 @@ Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Se
 - [x] ~~Transkribus-Credentials~~ → verifiziert (via env vars)
 - [x] ~~Document-IDs auflisten~~ → 115 Dokumente kartiert, `data/transkribus_collection.json`
 - [x] ~~IIIF-URLs ohne Auth testen~~ → **Funktioniert** (bestätigt)
-- [ ] Vollständigen PAGE-XML-Export der 57 transkribierten Inventare als JSON konvertieren
-- [ ] Mapping Transkribus-Titel → CSV-Signaturen herstellen
+- [x] ~~Vollständigen PAGE-XML-Export der 57 transkribierten Inventare als JSON konvertieren~~ → erledigt, 57 Dateien in `data/transcriptions/` (522 Seiten, 8.979 Zeilen, 35.724 Wörter)
+- [x] ~~Mapping Transkribus-Titel → CSV-Signaturen herstellen~~ → erledigt, 64/64 gematcht, in `data/source_mapping.json`
+
+Alle Punkte dieser Liste sind abgearbeitet. Die Collection-Metadaten `data/transkribus_collection.json` und `data/transkribus_status.json` sind Ergebnisse dieser Exploration und werden vom Prototyp nicht geladen.
 
 ---
 
@@ -279,7 +302,7 @@ Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Se
 | Umfang | 123 Doppelseiten (fol. 0v-1r bis fol. 122v-123r) |
 | Dateinamen | `OÖKAM Raitbuch 2, fol. {Xv-Yr}.jpg` |
 | Digitalisate | JPG via IIIF, ohne Auth ladbar |
-| Layout-Analyse | Ja (Baselines, Regionen) -- kein Text |
+| Layout-Analyse | Ja (Baselines, Regionen), kein Text |
 | Transkriptionsstatus | **Nicht transkribiert** (0 Zeilen, 0 Wörter) |
 | Datierung | 1462–1463 (Abgrenzung zu klären) |
 | IIIF-Beispiel (fol. 0v-1r) | `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/max/0/default.jpg` |
@@ -304,7 +327,7 @@ Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Se
 
 ### Erste Kategorie
 
-**"prussian vnd Solde aussserhalb Lanndes"** (Provision und Sold außerhalb Landes) -- Personalzahlungen jenseits Tirols. Möglicher Küchenmeister-Fund in Zeile 9, fol. 2r ("[?]kuncmeister" → "kuechenmeister"?). **Verifizierung durch Barbara ausstehend.**
+**"prussian vnd Solde aussserhalb Lanndes"** (Provision und Sold außerhalb Landes): Personalzahlungen jenseits Tirols. Möglicher Küchenmeister-Fund in Zeile 9, fol. 2r ("[?]kuncmeister" → "kuechenmeister"?). **Verifizierung durch Barbara ausstehend.**
 
 ### Sprachliche Herausforderungen
 

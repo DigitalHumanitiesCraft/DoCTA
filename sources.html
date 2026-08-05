@@ -25,7 +25,7 @@
 
   <main id="main" class="container py-4">
     <h1>Quellenübersicht</h1>
-    <p class="text-body-secondary mb-4">312 Quellen aus dem Tiroler Landesarchiv - Rechnungen, Inventare, Kopialbücher, Hofordnungen</p>
+    <p class="text-body-secondary mb-4">312 Quellen aus dem Tiroler Landesarchiv: Rechnungen, Inventare, Kopialbücher, Hofordnungen</p>
 
     <div class="row g-2 mb-3 align-items-center">
       <div class="col-md-5">
@@ -53,12 +53,12 @@
       <table class="table table-hover table-sm" id="sources-table" aria-label="Quellenübersicht">
         <thead class="table-light">
           <tr>
-            <th data-sort="kategorie">Kategorie <span class="sort-icon">↕</span></th>
-            <th data-sort="signatur">Signatur <span class="sort-icon">↕</span></th>
-            <th data-sort="titel">Titel <span class="sort-icon">↕</span></th>
-            <th data-sort="datierung">Datierung <span class="sort-icon">↕</span></th>
-            <th data-sort="seiten">Seiten <span class="sort-icon">↕</span></th>
-            <th data-sort="tier">Status <span class="sort-icon">↕</span></th>
+            <th data-sort="kategorie" tabindex="0" aria-sort="none">Kategorie <span class="sort-icon" aria-hidden="true">↕</span></th>
+            <th data-sort="signatur" tabindex="0" aria-sort="none">Signatur <span class="sort-icon" aria-hidden="true">↕</span></th>
+            <th data-sort="titel" tabindex="0" aria-sort="none">Titel <span class="sort-icon" aria-hidden="true">↕</span></th>
+            <th data-sort="datierung" tabindex="0" aria-sort="none">Datierung <span class="sort-icon" aria-hidden="true">↕</span></th>
+            <th data-sort="seiten" tabindex="0" aria-sort="none">Seiten <span class="sort-icon" aria-hidden="true">↕</span></th>
+            <th data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
             <th>Aktion</th>
           </tr>
         </thead>
@@ -160,18 +160,40 @@
       renderTable(getFilteredSources());
     }
 
-    document.querySelectorAll('th[data-sort]').forEach(th => {
-      th.addEventListener('click', () => {
-        const key = th.dataset.sort;
-        if (sortKey === key) {
-          sortDir *= -1;
+    function updateSortIndicators() {
+      document.querySelectorAll('th[data-sort]').forEach(h => {
+        const icon = h.querySelector('.sort-icon');
+        if (h.dataset.sort === sortKey) {
+          h.classList.add('sorted');
+          h.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+          if (icon) icon.textContent = sortDir === 1 ? '↑' : '↓';
         } else {
-          sortKey = key;
-          sortDir = 1;
+          h.classList.remove('sorted');
+          h.setAttribute('aria-sort', 'none');
+          if (icon) icon.textContent = '↕';
         }
-        document.querySelectorAll('th').forEach(h => h.classList.remove('sorted'));
-        th.classList.add('sorted');
-        update();
+      });
+    }
+
+    function sortBy(th) {
+      const key = th.dataset.sort;
+      if (sortKey === key) {
+        sortDir *= -1;
+      } else {
+        sortKey = key;
+        sortDir = 1;
+      }
+      updateSortIndicators();
+      update();
+    }
+
+    document.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => sortBy(th));
+      th.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          sortBy(th);
+        }
       });
     });
 
@@ -192,6 +214,7 @@
           katSelect.appendChild(opt);
         });
 
+        updateSortIndicators();
         update();
       } catch (err) {
         const errTr = document.createElement('tr');

@@ -28,7 +28,7 @@
 
   <main id="main" class="container py-4">
     <h1>Pipeline-Demo</h1>
-    <p class="text-body-secondary mb-4">Von der handschriftlichen Quelle zum Beziehungsnetzwerk - am Beispiel des Inventars von Schloss Thaur (1471)</p>
+    <p class="text-body-secondary mb-4">Von der handschriftlichen Quelle zum Beziehungsnetzwerk, am Beispiel des Inventars von Schloss Thaur (1471)</p>
 
     <div class="pipeline-steps mb-4" id="pipeline-nav">
       <div class="pipeline-step" data-step="1">
@@ -57,7 +57,7 @@
       <!-- Step 1: Source -->
       <section class="pipeline-content__section" data-step="1">
         <h2>Schritt 1: Die Quelle</h2>
-        <p class="small text-body-secondary mb-3">Inventar des Schlosses Thaur, 1471 - AT-TLA/BBÄ MIB - Inventare A 049.1</p>
+        <p class="small text-body-secondary mb-3">Inventar des Schlosses Thaur, 1471. AT-TLA/BBÄ MIB, Inventare A 049.1</p>
         <img class="img-fluid border rounded" id="source-image"
              src="https://files.transkribus.eu/iiif/2/EUMSRNPRFDGNNBBJVELBDIVJ/full/800,/0/default.jpg"
              alt="Inventar Schloss Thaur, fol. 1r (1471), Kurrentschrift auf Papier"
@@ -65,7 +65,7 @@
         <div class="bg-light rounded p-3 mt-3 small">
           <strong style="color:var(--accent)">Was sehen wir?</strong> Eine handschriftliche Inventarliste aus dem 15. Jahrhundert in frühneuhochdeutscher Kurrentschrift.
           Das Dokument listet den Hausrat auf, der dem Burggrafen Burkhart von Knöringen auf Schloss Thaur übergeben wurde.
-          Die sprachlichen Herausforderungen - Abkürzungen, regionale Varianten, Kurrentschrift - machen eine automatische Verarbeitung anspruchsvoll.
+          Die sprachlichen Herausforderungen (Abkürzungen, regionale Varianten, Kurrentschrift) machen eine automatische Verarbeitung anspruchsvoll.
           <br><br>
           <strong style="color:var(--accent)">Quelle:</strong> Tiroler Landesarchiv, Abt. BBÄ MIB, Inventare A 049.1 (4 Seiten, Papier).
           Digitalisiert via Transkribus (Collection 2197991, Doc-ID 11328300).
@@ -77,18 +77,20 @@
       <!-- Step 2: HTR -->
       <section class="pipeline-content__section" data-step="2">
         <h2>Schritt 2: Handwritten Text Recognition (HTR)</h2>
-        <p class="small text-body-secondary mb-3">Automatische Transkription der Kurrentschrift - 189 Zeilen, 753 Wörter</p>
+        <p class="small text-body-secondary mb-3">Das Zielformat der Texterkennung: 189 Zeilen, 753 Wörter, zeilengetreu zur Vorlage</p>
         <div class="card">
           <div class="card-body p-0">
             <div class="transcription" id="transcription-text"></div>
           </div>
         </div>
         <div class="bg-light rounded p-3 mt-3 small">
-          <strong style="color:var(--accent)">Was passiert hier?</strong> Ein trainiertes HTR-Modell (Transkribus) erkennt die Handschrift und erzeugt maschinenlesbaren Text.
-          Die Transkription behält die Zeilenstruktur des Originals bei.
-          Typische Herausforderungen: Abkürzungszeichen (ũ, ẽ), regionale Schreibweisen (hawsrat, sloss, dekhen), lateinische Datumsformeln.
+          <strong style="color:var(--accent)">Was sehen wir?</strong> Das Zielformat dieser Pipeline-Stufe: maschinenlesbarer Text, der die Zeilenstruktur des Originals beibehält und damit an das Digitalisat rückgebunden bleibt.
+          Die hier gezeigte Transkription stammt aus dem Inventaria-Projekt, ist also von Fachleuten erstellt und in Transkribus abgelegt worden. Sie ist kein Ergebnis eines HTR-Laufs, sondern der Maßstab, an dem sich die automatische Erkennung messen lassen muss.
           <br><br>
-          <strong style="color:var(--accent)">Status:</strong> Diese Transkription wurde in Transkribus als DONE markiert (Inventaria-Projekt). Für die 26 Raitbücher (8.561 Seiten) steht die HTR noch aus.
+          <strong style="color:var(--accent)">Was die HTR hier leisten muss:</strong> Abkürzungszeichen (ũ, ẽ), regionale Schreibweisen (hawsrat, sloss, dekhen), lateinische Datumsformeln.
+          <br><br>
+          <strong style="color:var(--accent)">Status:</strong> Für die 57 Burgeninventare des Inventaria-Projekts liegt der Volltext vor, dieses Inventar ist eines davon. Für die 26 Raitbücher (8.561 Seiten) existiert bisher keine Zeile Transkription: sechs Bände haben eine Layout-Analyse mit Baselines und Regionen, die Texterkennung selbst steht aus.
+          Ein HTR-Modell für diese Hände zu trainieren und zu evaluieren, ist genau die Arbeit, die das Projekt vorhat. Die Modellgüte lässt sich erst nach diesem Training beziffern.
           <br><br>
           <strong style="color:var(--accent)">Qualitätssicherung:</strong> Im Vollprojekt wird <a href="https://dhcraft.org/co-ocr-htr/" target="_blank" rel="noopener">coOCR/HTR</a> als Ergänzung zu Transkribus eingesetzt.
           Das Schwesterprojekt ermöglicht die systematische Validierung und Korrektur von HTR-Ergebnissen: Fachexpertinnen prüfen, korrigieren und bewerten die automatischen Transkriptionen in einem Editor-in-the-Loop-Workflow mit KI-gestützter Qualitätsbewertung (confident/uncertain/problematic).
@@ -165,7 +167,7 @@
           veraltete Objektbezeichnungen (strosakh → Strohsack, dekhen → Decken), und implizite Ortsreferenzen (hoff → Innsbrucker Hof).
           <br><br>
           <strong style="color:var(--accent)">Methode:</strong> Diese Extraktion wurde mit Claude als LLM-Prototyping-Werkzeug erstellt. Im Vollprojekt wird jede Extraktion durch die Fachwissenschaftlerin validiert (Expert-in-the-Loop).
-          Die Konfidenz wird kategoriell angezeigt: <span class="entity entity--person">sicher</span> / <span style="background:var(--conf-medium-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">prüfenswert</span> / <span style="background:var(--conf-low-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">problematisch</span>.
+          Die Konfidenz wird kategoriell angezeigt: <span style="background:var(--conf-high-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">sicher</span> / <span style="background:var(--conf-medium-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">prüfenswert</span> / <span style="background:var(--conf-low-bg);padding:0.0625rem 0.375rem;border-radius:4px;font-size:0.8125rem">problematisch</span>.
         </div>
       </section>
 
@@ -193,7 +195,8 @@
           Dieses Inventar zeigt typische höfische Praktiken: Übergabe von Amtsgut (Inventarisierung), Zeugnis durch Hofbeamte,
           Pferdeausrüstung für den Burggrafen, Besitzverhältnisse am Schloss.
           <br><br>
-          <strong style="color:var(--accent)">Beobachtung:</strong> Aus nur 4 Seiten Inventartext können 13 Relationen zwischen 16 Personen und 4 Orten extrahiert werden.
+          <strong style="color:var(--accent)">Beobachtung:</strong> Aus nur 4 Seiten Inventartext lassen sich 16 Personen, 3 Orte und 13 Relationen zwischen diesen Entitäten gewinnen.
+          Eine vierte Ortsangabe (albem, gelesen als Alm) ist als problematisch markiert und geht deshalb nicht in das Netzwerk in Schritt 5 ein.
           Die 8.561 Seiten Raitbücher werden diese Datenbasis um Größenordnungen erweitern.
         </div>
       </section>
@@ -210,14 +213,15 @@
         <div id="cy-mini"></div>
         <div class="bg-light rounded p-3 mt-3 small">
           <strong style="color:var(--accent)">Was sehen wir?</strong> Das Beziehungsnetzwerk eines einzigen Inventardokuments (4 Seiten).
-          Schloss Thaur steht im Zentrum - hier kreuzen sich Besitz (Knöringen), Verwaltung (Randorffer als Hauskämmerer),
+          Schloss Thaur steht im Zentrum: hier kreuzen sich Besitz (Knöringen), Verwaltung (Randorffer als Hauskämmerer),
           Zeugnis (Bürger aus Hall) und höfische Hierarchie (Sigmund als Landesfürst).
           <br><br>
           <strong style="color:var(--accent)">Skalierung:</strong> Der <a href="network.html">Netzwerk-Explorer</a> zeigt das vollständige SiCProD-Netzwerk mit 6.288 Personen und 42.893 Relationen.
           Jedes verarbeitete Quelldokument reichert dieses Netzwerk mit neuen Verbindungen an.
           <br><br>
-          <strong style="color:var(--accent)">Fazit:</strong> Aus 4 Seiten Handschrift entsteht ein analysierbares Beziehungsnetzwerk mit 16 Personen und 13 Relationen.
-          Die gleiche Pipeline ist auf die 8.561 Seiten Raitbücher skalierbar -- das ist der Kern des Projektantrags.
+          <strong style="color:var(--accent)">Fazit:</strong> Aus 4 Seiten Handschrift entsteht ein analysierbares Beziehungsnetzwerk mit 19 Knoten (16 Personen, 3 Orte) und 24 Verbindungen.
+          Die 24 Verbindungen sind mehr als die 13 Relationen aus Schritt 4, weil eine Relation mit mehreren Beteiligten im Graph zu mehreren Kanten wird.
+          Die gleiche Pipeline ist auf die 8.561 Seiten Raitbücher skalierbar. Das ist der Kern des Projektantrags.
         </div>
       </section>
     </div>
@@ -354,6 +358,17 @@
       }
     }
 
+    // Entity type of a relation's object: prefer the type recorded in the entity data,
+    // fall back to the predicate type for objects that have no entity record (e.g. o_komat).
+    function relationObjectType(rel) {
+      const ent = rel.object && entitiesData
+        ? entitiesData.entities.find(e => e.id === rel.object)
+        : null;
+      if (ent && ent.type) return ent.type;
+      if (rel.predicateType === 'objekttransfer') return 'object';
+      return 'person';
+    }
+
     function renderRelations() {
       const tbody = document.querySelector('#relations-table tbody');
       if (tbody.children.length > 0) return;
@@ -363,7 +378,7 @@
         return `<tr>
         <td><span class="entity entity--person">${escapeHTML(r.subjectLabel)}</span></td>
         <td>${escapeHTML(r.predicate)}</td>
-        <td><span class="entity entity--${r.objectLabel.includes('Thaur') || r.objectLabel.includes('Hall') || r.objectLabel.includes('Hof') ? 'place' : 'person'}">${escapeHTML(r.objectLabel)}</span></td>
+        <td><span class="entity entity--${relationObjectType(r)}">${escapeHTML(r.objectLabel)}</span></td>
         <td class="small text-body-secondary">${escapeHTML(r.predicateType)}</td>
         <td><span class="conf-badge conf-badge--${conf}">${confLabels[conf]}</span></td>
         <td class="small font-monospace" style="max-width:300px;overflow:hidden;text-overflow:ellipsis">${escapeHTML(r.evidence)}</td>

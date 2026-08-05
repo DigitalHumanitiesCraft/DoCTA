@@ -1,13 +1,13 @@
-# JOURNAL -- Entscheidungen, Exploration, offene Fragen
+# JOURNAL: Entscheidungen, Exploration, offene Fragen
 
-## Phasenstatus (17.02.2026)
+## Phasenstatus (Stand 19.02.2026)
 
 | Phase | Status | Ergebnis |
 |-------|--------|----------|
-| 1. Preparation | ✓ | Quelldokumente gesammelt (Root-Verzeichnis) |
+| 1. Preparation | ✓ | Quelldokumente gesammelt (projektintern, nicht im öffentlichen Repo) |
 | 2. Exploration | ✓ | SiCProD API geprobt, CSV analysiert, Transkribus Collection kartiert (115 Dok, 12.236 S.), IIIF verifiziert |
-| 3. Destillation | ✓ | 6 Knowledge-Dateien + IMPLEMENTATION.md |
-| 4. Implementation | In Arbeit | Phase A (Daten-Pipeline) gestartet |
+| 3. Destillation | ✓ | 6 Knowledge-Dateien plus ein projektinterner Implementierungsplan (`IMPLEMENTATION.md`, ebenfalls nicht im öffentlichen Repo) |
+| 4. Implementation | ✓ | Acht Seiten gebaut, Daten eingebunden, seit 19.02.2026 unter https://dhcraft.org/DoCTA/ öffentlich |
 
 ---
 
@@ -29,9 +29,21 @@
 | Frage | Optionen | Wer entscheidet |
 |-------|---------|----------------|
 | Fallstudie für Prototyp | A: Küchenkategorien in RB2 suchen, B: "Provision und Sold", C: Anderes Raitbuch | Barbara (Küchenmeister-Fund verifizieren) |
-| NER-Granularität | 5 Entitäten (Prototyp) vs. 9 (Vollprojekt) | Barbara + BeNASch-Team |
+| NER-Granularität | 4 Entitätstypen in der Demo (person, place, object, time) vs. 9 in SiCPAS | Barbara + BeNASch-Team |
 | Practice↔BeNASch-Mapping | Anhand von 5–10 Beispieleinträgen | Barbara + Berner Team |
 | coOCR/HTR Open-Source-Positionierung | Mail 04.02.2026 an Barbara | Barbara (Rückmeldung ausstehend) |
+
+---
+
+## Entscheidungen (18.–19.02.2026, Implementierungsphase)
+
+| Frage | Entscheidung | Begründung |
+|-------|-------------|------------|
+| Einstieg ins Netzwerk (Commit 86783f2, 18.02.) | Ego-Netzwerk als Standardansicht: Sigmund im Zentrum, bis zu 50 Nachbarn, Concentric-Layout. Klick auf einen Knoten öffnet dessen Ego-Netzwerk. Das Gesamtnetzwerk (Top-75 nach Grad, COSE) ist per Toggle erreichbar. | Der vorherige Einstieg über das Gesamtnetzwerk war eine Wolke ohne Aussage. Ein Ego-Netzwerk beantwortet sofort eine Frage („wer steht um diese Person?") und macht Exploration zur naheliegenden Handlung. |
+| Umgang mit fehlerhaften Knotentypen (Commit d89a58c, 19.02.) | Entitäten ohne Eintrag im Index (`event-*`) werden vor dem Zeichnen herausgefiltert. | Das Gesamtnetzwerk stürzte sonst ab. |
+| Positionierung von coOCR/HTR (Commits d89a58c und 25489aa, 19.02.) | coOCR/HTR wird an zwei Stellen explizit als Werkzeug benannt: im HTR-Schritt der Pipeline-Demo und im Gutachterabschnitt von `help.html`, jeweils als Editor-in-the-Loop für die Validierung und Korrektur der Transkribus-Ergebnisse. | Das Schwesterprojekt beantwortet Gutachten-Punkt 3 (LLM-Ansätze) konkret statt abstrakt und belegt, dass die Qualitätssicherung nicht erst noch erfunden werden muss. |
+| Datenzusagen gegenüber Gutachtern (Commit 25489aa, 19.02.) | `help.html` nennt zwei Zusagen für das Vollprojekt: Publikation aller Forschungsdaten nach den FAIR-Prinzipien und eine dokumentierte REST-API auf Personen, Relationen, Quellen und Transkriptionen, zusätzlich zum offenen GitHub-Repository. | Nachnutzbarkeit war im Antrag nur behauptet. Als benannte Zusage im Prototyp ist sie überprüfbar. |
+| Kennzahlen auf der Startseite | Sechs Rohzählungen (Personen, Relationen, Orte, Quellen, Transkriptionen, Funktionen), keine abgeleiteten Quoten. | Quoten wie „Relationsabdeckung in %" bräuchten einen definierten Nenner, den es methodisch noch nicht gibt. Eine ausgedachte Prozentzahl schadet mehr, als eine ehrliche Zählung nützt. |
 
 ---
 
@@ -46,7 +58,7 @@
 | Institutionen: 215 mit Typen | **207 ohne Typ.** | Institutionen-Filter im Prototyp wenig nützlich. |
 | Funktionen: "99 distinkte" | 79+ Hofämter, gute Vielfalt | Exzellent für facettierte Suche und Hofstruktur-Analyse. |
 | Orte: 736 mit Koordinaten | Viele ohne lat/lng | Karte wird Lücken haben. |
-| Personen: 6.288 | Gut dokumentiert, aber `first_name` null, `status` leer | Namensvarianten (`alternative_label`) vorhanden und nützlich. |
+| Personen: 6.288 | Gut dokumentiert. `first_name` ist bei 6.281 von 6.288 befüllt (nur 7 leer), `status` durchgehend leer. | Vorname wird in Suche und Netzwerk angezeigt, `status` gar nicht erst exportiert. Namensvarianten (`alternative_label`) vorhanden und nützlich. |
 
 ### CSV-Quellenübersicht: Qualitätsprobleme
 
@@ -68,7 +80,9 @@
 
 ### Dateiinventar: Abdeckungslücken (geschlossen)
 
-| Lücke | Quelldokument | Jetzt erfasst in |
+Die genannten Quelldokumente liegen projektintern und sind im öffentlichen Repository nicht enthalten (siehe INDEX.md).
+
+| Lücke | Quelldokument (projektintern) | Jetzt erfasst in |
 |-------|---------------|-----------------|
 | Epistemische Asymmetrie | `sources/coocr-htr-epistemologie.md` | CONTEXT.md |
 | Phase-1-Sequenzierung | `sources/strategische-planung.md` | REQUIREMENTS.md |
@@ -78,7 +92,7 @@
 
 ### Bewusst nicht erfasst (Antragsebene, nicht Code)
 
-- FWF-Bibliografie (~100 Referenzen)
+- Bibliografie des ÖAW-Antrags (~100 Referenzen)
 - WP-Details + GANTT (36 Monate)
 - Finanzielle Details des Antrags
 
@@ -99,14 +113,14 @@
 
 ## Explorationsergebnisse: Transkribus (17.02.2026)
 
-### Collection 2197991 -- Erwartung vs. Realität
+### Collection 2197991: Erwartung vs. Realität
 
 | Was wir dachten | Was wir fanden | Konsequenz |
 |----------------|---------------|------------|
-| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.724 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig -- nach Zeilenanzahl filtern |
+| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.724 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig, nach Zeilenanzahl filtern |
 | Raitbücher „nicht transkribiert" | **Bestätigt.** 26 Raitbücher, 8.561 Seiten, 0 Zeilen Text. Nr. 1–6 haben Layout-Analyse. | HTR muss vor Prototyp laufen (mindestens für RB2) |
 | Collection-Umfang unklar | **115 Dokumente, 12.236 Seiten.** 64 Inventare + 26 Raitbücher + 12 Kopialbücher + 13 Andere | Deutlich mehr Material als erwartet |
-| IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen -- kein Pre-Fetch für Bilder nötig |
+| IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen, kein Pre-Fetch für Bilder nötig |
 | PAGE-XML Format unbekannt | Strukturiert: Page → TextRegion (Coords) → TextLine (Coords, Baseline, Unicode) | Parser-Logik klar, Pre-Fetch-Script kann geschrieben werden |
 
 ### Zusätzliche Dokumente (nicht in CSV)
@@ -114,14 +128,14 @@
 Die Collection enthält Dokumente, die in der CSV-Quellenübersicht nicht explizit als „transkribiert" markiert sind:
 - 12 Kopialbücher (2.224 Seiten, nur Bilder)
 - Hof- und Regimentordnungen (TLA_HS_208.1 + 208.2, 149 Seiten)
-- Hochzeitscluster: Hs. 2466 (33p), 2467 (58p), 2468 (19p), 2469 (54p)
+- Hochzeitscluster: Hs. 2466 (33p), 2467 (58p), 2468 (19p), 2469 (54p). Die Seitenzahlen hier sind gezählte Scans aus Transkribus. Die CSV nennt für dieselben vier Bände 60/100/35/140 Seiten, also Katalogangaben. Beide Sätze sind real, welcher den Band vollständig abbildet, ist ungeklärt (siehe DATA.md, Hofordnungen).
 - Weitere Handschriften: Hs. 113 (133p), Hs. 324 (86p), Hs. 514 (16p), Hs. 792 (7p), Hs. 5087.1+2 (218p)
 
 ---
 
 ## Offene Punkte (konsolidiert)
 
-### Blockierend für Prototyp
+### War blockierend für den Prototyp (alles erledigt)
 
 - [x] ~~Transkribus-Credentials~~ → verifiziert (via env vars TRANSKRIBUS_USER/TRANSKRIBUS_PASS)
 - [x] ~~Collection-ID~~ → **2197991** (https://app.transkribus.org/collection/2197991)
@@ -133,8 +147,8 @@ Die Collection enthält Dokumente, die in der CSV-Quellenübersicht nicht expliz
 
 ### Wichtig für Antrag
 
-- [ ] Methodologischer Textbaustein (~1–2 Seiten) für FWF-Wiedereinreichung
-- [ ] Fallstudie finalisieren (A/B/C) -- inkl. Küchenmeister-Fund verifizieren (Barbara)
+- [ ] Methodologischer Textbaustein (~1–2 Seiten) für die geplante Wiedereinreichung bei der ÖAW
+- [ ] Fallstudie finalisieren (A/B/C), inkl. Küchenmeister-Fund verifizieren (Barbara)
 - [ ] Practice↔BeNASch-Mapping (mit Bern)
 - [ ] Historische Linguistik-Literatur (Gutachten-Punkt 5)
 

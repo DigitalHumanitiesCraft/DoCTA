@@ -85,7 +85,6 @@
       if (placeholder) placeholder.remove();
       viewer = OpenSeadragon({
         id: 'osd-viewer',
-        prefixUrl: 'lib/images/',
         showNavigator: false,
         showNavigationControl: false,
         minZoomLevel: 0.5,
@@ -162,11 +161,17 @@
       setParams({ doc: String(currentDoc.docId), page: String(pageNr + 1) });
     }
 
-    async function loadDocument(docId) {
+    // pageNr: 1-based start page. Omit to take it from the URL (deep link into a page).
+    async function loadDocument(docId, pageNr) {
       try {
         currentDoc = await loadJSON(`data/transcriptions/${docId}.json`);
-        const params = getParams();
-        const startPage = parseInt(params.page || '1') - 1;
+        let startPage;
+        if (pageNr !== undefined) {
+          startPage = pageNr - 1;
+        } else {
+          const parsed = parseInt(getParams().page || '1', 10);
+          startPage = Number.isFinite(parsed) ? parsed - 1 : 0;
+        }
         setPage(startPage);
       } catch (err) {
         const errEl = document.createElement('div');
@@ -180,7 +185,8 @@
     document.getElementById('btn-next-page').addEventListener('click', () => setPage(currentPage + 1));
 
     document.getElementById('doc-selector').addEventListener('change', (e) => {
-      if (e.target.value) loadDocument(e.target.value);
+      // Switching documents always starts at page 1, never at the previous document's page
+      if (e.target.value) loadDocument(e.target.value, 1);
     });
 
     async function init() {

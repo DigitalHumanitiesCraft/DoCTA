@@ -31,6 +31,10 @@
   --ent-object-bg: #fff3e0;
   --ent-time: #6a1b9a;
   --ent-time-bg: #f3e5f5;
+  --ent-institution: #e65100;
+  --ent-institution-bg: #fff3e0;
+  --ent-function: #6a1b9a;
+  --ent-function-bg: #f3e5f5;
 
   --tier-1: #2d7d46;
   --tier-2: #c68a00;
@@ -145,6 +149,8 @@ body {
 .entity--place { background: var(--ent-place-bg); color: var(--ent-place); border-bottom: 2px solid var(--ent-place); }
 .entity--object { background: var(--ent-object-bg); color: var(--ent-object); border-bottom: 2px solid var(--ent-object); }
 .entity--time { background: var(--ent-time-bg); color: var(--ent-time); border-bottom: 2px solid var(--ent-time); }
+.entity--institution { background: var(--ent-institution-bg); color: var(--ent-institution); border-bottom: 2px solid var(--ent-institution); }
+.entity--function { background: var(--ent-function-bg); color: var(--ent-function); border-bottom: 2px solid var(--ent-function); }
 
 /* Confidence indicators on entities */
 .entity[data-conf="medium"] { border-bottom-style: dashed; }
@@ -312,6 +318,7 @@ body {
 /* === Sortable Table Headers === */
 th[data-sort] { cursor: pointer; user-select: none; }
 th[data-sort]:hover { color: var(--accent); }
+th[data-sort]:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; color: var(--accent); }
 th .sort-icon { margin-left: 0.25rem; opacity: 0.4; }
 th.sorted .sort-icon { opacity: 1; }
 

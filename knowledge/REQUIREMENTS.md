@@ -1,4 +1,4 @@
-# REQUIREMENTS -- Ziele, Constraints, Erfolgskriterien
+# REQUIREMENTS: Ziele, Constraints, Erfolgskriterien
 
 ## Projektrahmen
 
@@ -8,7 +8,7 @@
 | Projektleitung | Dr. Barbara Denicolò, Universität Salzburg |
 | DH-Komponente | Digital Humanities Craft OG (Christopher Pollin, Christian Steiner) |
 | Phasen | 1: Promptotyping → 2: Workflow → 3: Web-App → 4: Training |
-| Deadline | FWF-Wiedereinreichung (APART-GSK) |
+| Zeitrahmen | Geplante Wiedereinreichung bei der ÖAW (APART-GSK) |
 
 ## Barbaras Anforderungen (Originalstimme)
 
@@ -50,7 +50,7 @@
 
 ## Gutachten-Antworten (10 Kritikpunkte → Prototyp)
 
-Ersteinreichung FWF APART-GSK: Ablehnung in vorliegender Fassung. Gutachten bezog sich primär auf den DH-Teil.
+Ersteinreichung ÖAW APART-GSK: Ablehnung in vorliegender Fassung. Das ÖAW-Gutachten bezog sich primär auf den DH-Teil.
 
 ### Die 10 Kritikpunkte (paraphrasiert)
 
@@ -64,10 +64,19 @@ Ersteinreichung FWF APART-GSK: Ablehnung in vorliegender Fassung. Gutachten bezo
 | 6 | Quellen nicht ausreichend charakterisiert | Quellenübersicht mit 312 Einträgen, kategorisiert, filterbar, sortierbar. | Code |
 | 7 | Keine beispielhaften Quellenauszüge | Prototyp IST das Quellenbeispiel. Echte Inventarseiten mit Transkription und Entitäten. | Code |
 | 8 | Projektplan zu generisch | Funktionierender Prototyp IST der spezifische Plan. Pipeline-Demo zeigt jeden Schritt an konkretem Material. | Code |
-| 9 | Evaluation technischer Verfahren fehlt | CER-Anzeige für HTR, Konfidenz-Kategorien (sicher/prüfenswert/problematisch), Extraktionsstatistiken. | Code |
-| 10 | Keine Erfüllungskriterien für Hypothesen | Dashboard: # Personen, # Relationen, # Praktiken, Relationsabdeckung (%), Quellen-Coverage (%), Netzwerk-Metriken. | Code |
+| 9 | Evaluation technischer Verfahren fehlt | Kategorielle Konfidenzstufen (sicher/prüfenswert/problematisch) an jeder extrahierten Entität und Relation, plus Extraktionsstatistik in der Pipeline-Demo (Verteilung nach Typ und nach Konfidenz). | Code |
+| 10 | Keine Erfüllungskriterien für Hypothesen | Dashboard auf der Startseite mit sechs Kennzahlen: Personen, Relationen, Orte, Quellen, Transkriptionen, Funktionen. | Code |
 
 **8 von 10 durch Code adressierbar. Punkte 2 und 5 erfordern Antragstext.**
+
+### Was der Prototyp bewusst NICHT zeigt
+
+Zwei naheliegende Evaluationsmaße fehlen, weil die Datengrundlage dafür fehlt:
+
+| Geplant, nicht im Prototyp | Grund |
+|---------------------------|-------|
+| CER/WER für HTR | Es existiert keine Ground Truth zu den Raitbüchern und kein HTR-Durchlauf, gegen den gemessen werden könnte. Eine CER-Zahl wäre erfunden. Vorgesehen für das Vollprojekt, sobald HTR auf Raitbuch 2 gelaufen ist. |
+| Abgeleitete Quoten (Relationsabdeckung, Quellen-Coverage, Netzwerk-Metriken) | Das Dashboard zeigt Rohzählungen. Quoten setzen einen definierten Nenner voraus (was gilt als vollständig abgedeckt?), der methodisch noch nicht festgelegt ist. |
 
 ## Erfolgskriterien für den Prototyp
 
@@ -75,11 +84,11 @@ Der Prototyp ist erfolgreich, wenn:
 1. Ein Gutachter die URL öffnet und in 5 Minuten versteht, was das Projekt methodisch leistet
 2. Barbara ihre Forschungsfragen an echten Daten explorieren kann (Personen, Relationen, Quellen)
 3. Die Pipeline-Demo zeigt: Quelle → HTR/VLM → Extraktion → Netzwerk (an echtem Material)
-4. Qualitätsmetriken sichtbar sind (CER, Konfidenz, Coverage)
+4. Qualitätsangaben sichtbar sind: kategorielle Konfidenz pro Entität und Relation, Extraktionsstatistik, Verfügbarkeitspyramide der Quellen. Numerische HTR-Metriken (CER) bleiben dem Vollprojekt vorbehalten, siehe oben.
 5. Die 8 Code-adressierbaren Gutachten-Kritikpunkte beantwortet sind
 
 ## Prototyp-Prioritäten (User-Entscheidung)
 
-1. **Pipeline-Demo** -- Schrittweise an echtem Quellenbeispiel
-2. **Facettierte Suche** -- SiCProD-Daten explorierbar
-3. **Quellenexploration** -- Bild + Transkription + Entitäten
+1. **Pipeline-Demo**: schrittweise an echtem Quellenbeispiel
+2. **Facettierte Suche**: SiCProD-Daten explorierbar
+3. **Quellenexploration**: Bild + Transkription + Entitäten
