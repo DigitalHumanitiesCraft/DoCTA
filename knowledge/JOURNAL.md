@@ -6,7 +6,7 @@
 |-------|--------|----------|
 | 1. Preparation | ✓ | Quelldokumente gesammelt (projektintern, nicht im öffentlichen Repo) |
 | 2. Exploration | ✓ | SiCProD API geprobt, CSV analysiert, Transkribus Collection kartiert (115 Dok, 12.236 S.), IIIF verifiziert |
-| 3. Destillation | ✓ | 6 Knowledge-Dateien plus ein projektinterner Implementierungsplan (`IMPLEMENTATION.md`, ebenfalls nicht im öffentlichen Repo) |
+| 3. Destillation | ✓ | 7 Knowledge-Dateien plus ein projektinterner Implementierungsplan (`IMPLEMENTATION.md`, ebenfalls nicht im öffentlichen Repo) |
 | 4. Implementation | ✓ | Acht Seiten gebaut, Daten eingebunden, seit 19.02.2026 unter https://dhcraft.org/DoCTA/ öffentlich |
 
 ---
@@ -108,6 +108,7 @@ Die genannten Quelldokumente liegen projektintern und sind im öffentlichen Repo
 | SVG-Modelldiagramm lesen | 742 KB einzeilig | Inhalt textuell in CONTEXT.md |
 | PDF auf Windows lesen | pdftoppm nicht verfügbar | Agent-basierte Extraktion |
 | Transkribus Auth | Initial-Authentifizierung fehlgeschlagen (401). Nach Korrektur der Credentials erfolgreich. | Credentials immer direkt vom User übernehmen |
+| "Korrektur" ÖAW zu FWF (18.02.2026) | Eine Review-Runde stufte die korrekten ÖAW-Referenzen als Fehler ein und ersetzte sie projektweit durch "FWF". Am 05.08.2026 zurückgenommen: APART-GSK ist ein Programm der ÖAW, das Gutachten der Ersteinreichung ein ÖAW-Gutachten. | Ein Review kann eine richtige Angabe zur falschen machen. Bei Eigennamen von Förderprogrammen und Institutionen gegen eine externe Quelle prüfen, nicht gegen die Mehrheit der Fundstellen im eigenen Repo. |
 
 ---
 

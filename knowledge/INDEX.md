@@ -8,7 +8,7 @@
 |-------|--------|
 | 1. Preparation | ✓ Quelldokumente in `sources/` (projektintern) |
 | 2. Exploration | ✓ SiCProD API, CSV, Transkribus Collection kartiert |
-| 3. Destillation | ✓ 6 Knowledge-Dateien, alle Daten exportiert |
+| 3. Destillation | ✓ 7 Knowledge-Dateien, alle Daten exportiert |
 | 4. Implementation | ✓ Acht Seiten gebaut, Daten eingebunden, deployed |
 
 ## Dateien nach Zweck
@@ -19,6 +19,7 @@
 | **REQUIREMENTS.md** | Ziele und Constraints | Barbaras Wünsche (Originalstimme), Gutachten 10 Kritikpunkte → Prototyp-Antworten, technische Constraints, Budget/Timeline, Erfolgskriterien, Prioritäten |
 | **CONTEXT.md** | Domänenwissen und Methoden | SiCPAS-Datenmodell, Praxeologie/Verbklassen, BeNASch-Schema, Forschungsfragen, Fallstudien, Kooperationspartner, epistemische Asymmetrie, coOCR/HTR-Konzepte |
 | **TECH.md** | Architektur und Implementierung | Libraries (Cytoscape.js, OpenSeadragon), Performance-Strategien, Projektstruktur, Design-System, Build-Time Scripts, coOCR/HTR als Referenz |
+| **DESIGN.md** | Gestaltung und Interaktion | Verworfene Architekturmuster mit Begründung, Netzwerk-Explorer (warum Ego-Netzwerk als Standard), kategorielle Konfidenz, verworfene Ansichten (Karte, Zeit-Slider), Farbsystem |
 | **JOURNAL.md** | Entscheidungen und Erkenntnisse | Chronologische Entscheidungen mit Begründung, Explorationsergebnisse, Sackgassen, offene Fragen, Phasentracking |
 
 ## Leseordnung für LLM-Context
@@ -28,7 +29,8 @@
 3. **DATA.md**: Welche Daten verfügbar sind und wo sie brechen
 4. **CONTEXT.md**: Domänenwissen für korrekte Interpretation
 5. **TECH.md**: Wie der Prototyp gebaut wurde
-6. **JOURNAL.md**: Entscheidungshistorie (optional, bei Bedarf)
+6. **DESIGN.md**: Warum er so aussieht und sich so verhält, und was verworfen wurde
+7. **JOURNAL.md**: Entscheidungshistorie (optional, bei Bedarf)
 
 ## Quelldokumente (`sources/`)
 

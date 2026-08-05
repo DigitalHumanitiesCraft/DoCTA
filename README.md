@@ -20,7 +20,7 @@ The prototype processes 6,288 historical persons, 42,893 relations, 312 archival
 | **Facettierte Suche** | Search across SiCProD persons, places, functions, institutions |
 | **Quellen-Explorer** | Side-by-side: IIIF manuscript image + transcription |
 | **Netzwerk-Explorer** | Interactive graph of the Sigmund court network |
-| **Knowledge Vault** | Promptotyping documentation (6 research documents) |
+| **Knowledge Vault** | Promptotyping documentation (7 research documents) |
 | **Hilfe** | User guide and project context |
 
 ## Data Sources
@@ -71,7 +71,7 @@ DoCTA/
 ├── data/               Pre-fetched JSON (SiCProD, Transkribus, computed layouts)
 │   ├── demo/           Pipeline demo data (Thaur A 49.1 entities, relations, network)
 │   └── transcriptions/ 57 inventory transcriptions from Transkribus
-├── knowledge/          Promptotyping documents (6 Markdown files)
+├── knowledge/          Promptotyping documents (7 Markdown files)
 └── scripts/            Python build-time scripts (data fetching, transformation)
 ```
 
