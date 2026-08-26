@@ -1,0 +1,223 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Vlreich Schutz",
+  "Nota Anno etc xx Julij Landschreip hat man",
+  "gerait mit Vlreich Schuetzen / vnd meins h(er)rn",
+  "gnad ist Im schuldig sein sold rain zwoamfarn .",
+  "zu dem nachu(e)rgangn Sannd Margreten tag",
+  "gerait —— lxxxvij rhgld",
+  "Die hat Im her Benedict Camermaist(e)r aufg(e)richt",
+  "vnd berzalt",
+  "3",
+  "Graf Hainreich",
+  "von luph(e)n",
+  "Nota die Anno etc lxxiiij^o die xvij mens(is) Junij hat",
+  "man mit Cunraten Stenner anstat Graf hainrich",
+  "von luphn gerait von der alten Schuld wegen von",
+  "welher herru(e)rend / damb vmb allerlay sold vnd zeru(n)g",
+  "Das alles bringt r(ei)n , auf heutigen tag xxiij^C vnd",
+  "xxvij rhgld",
+  "Daran sein Innemen",
+  "It(em) Daran hat er emphangen am ersten von herr Benedict",
+  "Camermayster die d(er)s(e)lb Camermayst(e)r gerait hat ij^C rhgld",
+  "It(em) Aber hat er von denselben Camermayster emphangn die",
+  "derselb Camermayst(e)r geraiten wirt j^C rhgld",
+  "It(em) vnd auf allerlay zerung , die d(e)r Camermayster ane",
+  "dranen wirt —— cxj rhgld",
+  "It(em) Auch hat er von herrn Jacoben Trappen emphangen an",
+  "der Schuld die her Jacob meins h(er)rn gnaden schuldig ist",
+  "iiij^C rhgld",
+  "Su(m)ma sein emphachens",
+  "vij^C xxxj rhgld",
+  "Darnach ist meins herrn gnad Graf Hainreichn schuld(i)g",
+  "xvj^C vnd xxvj rhgld / die hat Im der bemelt Camermayst(e)r",
+  "/ aufgericht , vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 2v",
+    "lines": [
+     {
+      "text": "Vlreich Schutz",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota Anno etc xx Julij Landschreip hat man",
+      "kind": "entry",
+      "uncertain": [
+       "xx",
+       "Julij",
+       "Landschreip"
+      ]
+     },
+     {
+      "text": "gerait mit Vlreich Schuetzen / vnd meins h(er)rn",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad ist Im schuldig sein sold rain zwoamfarn .",
+      "kind": "entry",
+      "uncertain": [
+       "zwoamfarn"
+      ]
+     },
+     {
+      "text": "zu dem nachu(e)rgangn Sannd Margreten tag",
+      "kind": "entry",
+      "uncertain": [
+       "nachu(e)rgangn"
+      ]
+     },
+     {
+      "text": "gerait —— lxxxvij rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Die hat Im her Benedict Camermaist(e)r aufg(e)richt",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd berzalt",
+      "kind": "entry"
+     }
+    ]
+   },
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation"
+     },
+     {
+      "text": "Graf Hainreich",
+      "kind": "rubric"
+     },
+     {
+      "text": "von luph(e)n",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota die Anno etc lxxiiij^o die xvij mens(is) Junij hat",
+      "kind": "entry",
+      "uncertain": [
+       "die",
+       "xvij"
+      ]
+     },
+     {
+      "text": "man mit Cunraten Stenner anstat Graf hainrich",
+      "kind": "entry"
+     },
+     {
+      "text": "von luphn gerait von der alten Schuld wegen von",
+      "kind": "entry"
+     },
+     {
+      "text": "welher herru(e)rend / damb vmb allerlay sold vnd zeru(n)g",
+      "kind": "entry",
+      "uncertain": [
+       "damb"
+      ]
+     },
+     {
+      "text": "Das alles bringt r(ei)n , auf heutigen tag xxiij^C vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "xxvij rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) Daran hat er emphangen am ersten von herr Benedict",
+      "kind": "entry"
+     },
+     {
+      "text": "Camermayster die d(er)s(e)lb Camermayst(e)r gerait hat ij^C rhgld",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) Aber hat er von denselben Camermayster emphangn die",
+      "kind": "entry"
+     },
+     {
+      "text": "derselb Camermayst(e)r geraiten wirt j^C rhgld",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) vnd auf allerlay zerung , die d(e)r Camermayster ane",
+      "kind": "entry",
+      "uncertain": [
+       "ane"
+      ]
+     },
+     {
+      "text": "dranen wirt —— cxj rhgld",
+      "kind": "amount",
+      "uncertain": [
+       "dranen"
+      ]
+     },
+     {
+      "text": "It(em) Auch hat er von herrn Jacoben Trappen emphangen an",
+      "kind": "entry"
+     },
+     {
+      "text": "der Schuld die her Jacob meins h(er)rn gnaden schuldig ist",
+      "kind": "entry"
+     },
+     {
+      "text": "iiij^C rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Su(m)ma sein emphachens",
+      "kind": "sum"
+     },
+     {
+      "text": "vij^C xxxj rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Darnach ist meins herrn gnad Graf Hainreichn schuld(i)g",
+      "kind": "entry"
+     },
+     {
+      "text": "xvj^C vnd xxvj rhgld / die hat Im der bemelt Camermayst(e)r",
+      "kind": "entry"
+     },
+     {
+      "text": "/ aufgericht , vnd bezalt",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p003",
+ "variant": "v2_structured",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 14.8,
+ "timestamp": "2026-08-26T19:32:44+00:00"
+}

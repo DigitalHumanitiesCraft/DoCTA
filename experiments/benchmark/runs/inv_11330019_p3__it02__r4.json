@@ -1,0 +1,85 @@
+{
+ "page": "inv_11330019_p3",
+ "iteration": "it02",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1030,
+    2754
+   ],
+   "sent_px": [
+    1030,
+    2754
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.3,
+ "timestamp": "2026-08-26T20:22:56+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Dorsum / Umschlag",
+    "lines": [
+     {
+      "text": "1478",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "(L. 109)",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "L: 109",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1478",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Starckenberg",
+      "kind": "rubric",
+      "uncertain": [
+       "Starckenberg"
+      ]
+     },
+     {
+      "text": "Klingnstain",
+      "kind": "entry",
+      "uncertain": [
+       "Klingnstain"
+      ]
+     },
+     {
+      "text": "Jnventar vber",
+      "kind": "entry",
+      "uncertain": [
+       "Jnventar",
+       "vber"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1478",
+  "(L. 109)",
+  "L: 109",
+  "1478",
+  "Starckenberg",
+  "Klingnstain",
+  "Jnventar vber"
+ ]
+}

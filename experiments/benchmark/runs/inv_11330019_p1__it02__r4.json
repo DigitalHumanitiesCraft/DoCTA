@@ -1,0 +1,343 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it02",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.3,
+ "timestamp": "2026-08-26T20:22:04+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Freinperg",
+      "kind": "rubric",
+      "uncertain": [
+       "Freinperg"
+      ]
+     },
+     {
+      "text": "Vermerckt die farunndhab",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "harws plund vnd anders auff",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Freinberg hannsen Hannser",
+      "kind": "rubric",
+      "uncertain": [
+       "Freinberg",
+       "Hannser"
+      ]
+     },
+     {
+      "text": "weillunnd pfleger da selbst zu-",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "gehörig So Joseph vlbrecht",
+      "kind": "rubric",
+      "uncertain": [
+       "Joseph",
+       "vlbrecht"
+      ]
+     },
+     {
+      "text": "an statt meines genedigen herren",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vngeschifft ingenom hett an",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Freitag nach Sant michelstag",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Anno lxxviij",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item Jnnm kasten ain kneipff iij",
+      "kind": "entry",
+      "uncertain": [
+       "kneipff"
+      ]
+     },
+     {
+      "text": "eysenhůt ij par hewtschůch iij",
+      "kind": "entry",
+      "uncertain": [
+       "hewtschůch"
+      ]
+     },
+     {
+      "text": "par armbrůst iij par waderr",
+      "kind": "entry",
+      "uncertain": [
+       "waderr"
+      ]
+     },
+     {
+      "text": "haws gwant ij hantt iij kraxl",
+      "kind": "entry",
+      "uncertain": [
+       "kraxl"
+      ]
+     },
+     {
+      "text": "mer ein armbrost iij schreczenpfeil",
+      "kind": "entry",
+      "uncertain": [
+       "schreczenpfeil"
+      ]
+     },
+     {
+      "text": "sind nit gewest",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item Jnn der stuben vnd kam(er) da",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ist ain heubtzüg j grosser pfann",
+      "kind": "entry",
+      "uncertain": [
+       "heubtzüg"
+      ]
+     },
+     {
+      "text": "darauff lig brenzeug vj hantt",
+      "kind": "entry",
+      "uncertain": [
+       "brenzeug"
+      ]
+     },
+     {
+      "text": "iiij hant rëygel j schmidpetk",
+      "kind": "entry",
+      "uncertain": [
+       "schmidpetk"
+      ]
+     },
+     {
+      "text": "ain gleser kleidt",
+      "kind": "entry",
+      "uncertain": [
+       "gleser"
+      ]
+     },
+     {
+      "text": "Item mer ain pettstatt darin lÿgt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain pett ain bolst(er) j kuss ij pauch",
+      "kind": "entry",
+      "uncertain": [
+       "pauch"
+      ]
+     },
+     {
+      "text": "polster iij rauch deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item mer ain messinj peck vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "messinj"
+      ]
+     },
+     {
+      "text": "messinj hantvass j teller puchß",
+      "kind": "entry",
+      "uncertain": [
+       "messinj",
+       "hantvass"
+      ]
+     },
+     {
+      "text": "darin sind xxv plaudl",
+      "kind": "entry",
+      "uncertain": [
+       "plaudl"
+      ]
+     },
+     {
+      "text": "Mer ligtt in aind petkürgdin viij",
+      "kind": "entry",
+      "uncertain": [
+       "petkürgdin"
+      ]
+     },
+     {
+      "text": "platt schlos vnd ain gros mals",
+      "kind": "entry",
+      "uncertain": [
+       "mals"
+      ]
+     },
+     {
+      "text": "schlos",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Mer vor der kuchj ain truchen",
+      "kind": "entry",
+      "uncertain": [
+       "truchen"
+      ]
+     },
+     {
+      "text": "vnd ain schafftratt ij pfannen",
+      "kind": "entry",
+      "uncertain": [
+       "schafftratt"
+      ]
+     },
+     {
+      "text": "drein häfen iij sitzkessel",
+      "kind": "entry",
+      "uncertain": [
+       "sitzkessel"
+      ]
+     },
+     {
+      "text": "Item ain armbrost mit aind wunden",
+      "kind": "entry",
+      "uncertain": [
+       "wunden"
+      ]
+     },
+     {
+      "text": "v gůt kenczley",
+      "kind": "entry",
+      "uncertain": [
+       "kenczley"
+      ]
+     },
+     {
+      "text": "Item auff der winden warttstett ain",
+      "kind": "entry",
+      "uncertain": [
+       "warttstett"
+      ]
+     },
+     {
+      "text": "{knecht} ain pettstatt dar Jnnj lÿgt",
+      "kind": "entry",
+      "uncertain": [
+       "knecht"
+      ]
+     },
+     {
+      "text": "ain pett ain bolstr ij leylach ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "rauch deck vnd ain gold",
+      "kind": "entry",
+      "uncertain": [
+       "gold"
+      ]
+     },
+     {
+      "text": "Inv. A 144 / 1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1478 Okt. 2.",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Freinperg",
+  "Vermerckt die farunndhab",
+  "harws plund vnd anders auff",
+  "Freinberg hannsen Hannser",
+  "weillunnd pfleger da selbst zu-",
+  "gehörig So Joseph vlbrecht",
+  "an statt meines genedigen herren",
+  "vngeschifft ingenom hett an",
+  "Freitag nach Sant michelstag",
+  "Anno lxxviij",
+  "Item Jnnm kasten ain kneipff iij",
+  "eysenhůt ij par hewtschůch iij",
+  "par armbrůst iij par waderr",
+  "haws gwant ij hantt iij kraxl",
+  "mer ein armbrost iij schreczenpfeil",
+  "sind nit gewest",
+  "Item Jnn der stuben vnd kam(er) da",
+  "ist ain heubtzüg j grosser pfann",
+  "darauff lig brenzeug vj hantt",
+  "iiij hant rëygel j schmidpetk",
+  "ain gleser kleidt",
+  "Item mer ain pettstatt darin lÿgt",
+  "ain pett ain bolst(er) j kuss ij pauch",
+  "polster iij rauch deck",
+  "Item mer ain messinj peck vnd ain",
+  "messinj hantvass j teller puchß",
+  "darin sind xxv plaudl",
+  "Mer ligtt in aind petkürgdin viij",
+  "platt schlos vnd ain gros mals",
+  "schlos",
+  "Mer vor der kuchj ain truchen",
+  "vnd ain schafftratt ij pfannen",
+  "drein häfen iij sitzkessel",
+  "Item ain armbrost mit aind wunden",
+  "v gůt kenczley",
+  "Item auff der winden warttstett ain",
+  "{knecht} ain pettstatt dar Jnnj lÿgt",
+  "ain pett ain bolstr ij leylach ain",
+  "rauch deck vnd ain gold",
+  "Inv. A 144 / 1",
+  "1478 Okt. 2."
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "page": "rb2_p076",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.8,
+ "timestamp": "2026-08-26T20:18:45+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Albrecht Seller",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) ead(em) die et p(ri)ncip(ium) pfeiff(er) — Yst gerait",
+      "kind": "entry",
+      "uncertain": [
+       "p(ri)ncip(ium)"
+      ]
+     },
+     {
+      "text": "worden mit Albrecht Seller vmb vns(er)n trunckhauff(ens)",
+      "kind": "entry",
+      "uncertain": [
+       "trunckhauff(ens)"
+      ]
+     },
+     {
+      "text": "vnd anders so man meins herrn vnd meins fraw(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gnad von Jm genommen hat sind(er) freytags vor",
+      "kind": "entry",
+      "uncertain": [
+       "sind(er)"
+      ]
+     },
+     {
+      "text": "Sannd Margreten tag des lxxiiij Jarz / vntz auf",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hewtign obgenant(en) tag / vnd man ist Jm vbr das",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so er von wlm Benedict dm alten Cam(er)maistr",
+      "kind": "entry",
+      "uncertain": [
+       "wlm",
+       "dm"
+      ]
+     },
+     {
+      "text": "vnd vbr die .v. lb meins darnach mit Peter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "scultcz wand —— xxxvj lb",
+      "kind": "entry",
+      "uncertain": [
+       "scultcz",
+       "wand"
+      ]
+     },
+     {
+      "text": "Die hat Jm Lienhart von weczenls Camerari(us)",
+      "kind": "entry",
+      "uncertain": [
+       "weczenls"
+      ]
+     },
+     {
+      "text": "ausgericht vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Conrat pützkler",
+      "kind": "rubric",
+      "uncertain": [
+       "pützkler"
+      ]
+     },
+     {
+      "text": "Jt(em) ead(em) die p(ri)ncip(ium) pfeiff(er) Yst gerait mit Conr(at)",
+      "kind": "entry",
+      "uncertain": [
+       "p(ri)ncip(ium)"
+      ]
+     },
+     {
+      "text": "pützkler wand ist bis vntz auf hewtign tag",
+      "kind": "entry",
+      "uncertain": [
+       "pützkler",
+       "wand"
+      ]
+     },
+     {
+      "text": "mit Rechnug schuldig worden vj mtr .vj. gl Bezalt",
+      "kind": "entry",
+      "uncertain": [
+       "mtr",
+       "gl"
+      ]
+     },
+     {
+      "text": "p(er) Lienhardum d(e) wecznezl expen(sis) p(ro)pt(er) Cam(er)ar(ium)",
+      "kind": "entry",
+      "uncertain": [
+       "wecznezl",
+       "expen(sis)",
+       "p(ro)pt(er)",
+       "Cam(er)ar(ium)"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "recto",
+    "lines": [
+     {
+      "text": "76",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Hannß Schwertfey",
+      "kind": "rubric",
+      "uncertain": [
+       "Schwertfey"
+      ]
+     },
+     {
+      "text": "Jt(em) an freytag nach d(i)visionis apl(or)um / Primo",
+      "kind": "entry",
+      "uncertain": [
+       "apl(or)um"
+      ]
+     },
+     {
+      "text": "dany in lxxiiij / p(ri)ncip(ium) pfeiff(er) . Yst gerait",
+      "kind": "entry",
+      "uncertain": [
+       "dany",
+       "p(ri)ncip(ium)"
+      ]
+     },
+     {
+      "text": "mit Hannsn Swertfeger / vmb alle arbait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so er meins herrn gnad geth vnd d(er)gleych(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hat sind(er) freytags nach Sand Markus tag",
+      "kind": "entry",
+      "uncertain": [
+       "sind(er)"
+      ]
+     },
+     {
+      "text": "am herbst im lxxij Jar / vntz auf hewtign",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "tag / vnd bringt in ain(er) sum(m) / nachzug",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "seins Register — v. mtr iiij tt .ij. gl",
+      "kind": "entry",
+      "uncertain": [
+       "mtr",
+       "tt",
+       "gl"
+      ]
+     },
+     {
+      "text": "Jt(em) Vnd hat er emphangn von herrn Benedict",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Pfarrer zu Drozsl als Cam(er)maistr x tt pw",
+      "kind": "entry",
+      "uncertain": [
+       "Drozsl",
+       "tt",
+       "pw"
+      ]
+     },
+     {
+      "text": "Darnach ist Jm meins herrn gnad schuldig",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iiij mtr .ij tt .ij gl",
+      "kind": "amount",
+      "uncertain": [
+       "mtr",
+       "tt",
+       "gl"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Albrecht Seller",
+  "Jt(em) ead(em) die et p(ri)ncip(ium) pfeiff(er) — Yst gerait",
+  "worden mit Albrecht Seller vmb vns(er)n trunckhauff(ens)",
+  "vnd anders so man meins herrn vnd meins fraw(en)",
+  "gnad von Jm genommen hat sind(er) freytags vor",
+  "Sannd Margreten tag des lxxiiij Jarz / vntz auf",
+  "hewtign obgenant(en) tag / vnd man ist Jm vbr das",
+  "so er von wlm Benedict dm alten Cam(er)maistr",
+  "vnd vbr die .v. lb meins darnach mit Peter",
+  "scultcz wand —— xxxvj lb",
+  "Die hat Jm Lienhart von weczenls Camerari(us)",
+  "ausgericht vnd bezalt",
+  "Conrat pützkler",
+  "Jt(em) ead(em) die p(ri)ncip(ium) pfeiff(er) Yst gerait mit Conr(at)",
+  "pützkler wand ist bis vntz auf hewtign tag",
+  "mit Rechnug schuldig worden vj mtr .vj. gl Bezalt",
+  "p(er) Lienhardum d(e) wecznezl expen(sis) p(ro)pt(er) Cam(er)ar(ium)",
+  "76",
+  "Hannß Schwertfey",
+  "Jt(em) an freytag nach d(i)visionis apl(or)um / Primo",
+  "dany in lxxiiij / p(ri)ncip(ium) pfeiff(er) . Yst gerait",
+  "mit Hannsn Swertfeger / vmb alle arbait",
+  "so er meins herrn gnad geth vnd d(er)gleych(en)",
+  "hat sind(er) freytags nach Sand Markus tag",
+  "am herbst im lxxij Jar / vntz auf hewtign",
+  "tag / vnd bringt in ain(er) sum(m) / nachzug",
+  "seins Register — v. mtr iiij tt .ij. gl",
+  "Jt(em) Vnd hat er emphangn von herrn Benedict",
+  "Pfarrer zu Drozsl als Cam(er)maistr x tt pw",
+  "Darnach ist Jm meins herrn gnad schuldig",
+  "iiij mtr .ij tt .ij gl"
+ ]
+}

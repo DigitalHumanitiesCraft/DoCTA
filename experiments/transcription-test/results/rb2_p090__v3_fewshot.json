@@ -1,0 +1,59 @@
+{
+ "raw_text": null,
+ "lines": [
+  "90"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (fol. 89v)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "rechts (fol. 90r)",
+    "lines": [
+     {
+      "text": "90",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    5420
+   ],
+   "sent_px": [
+    1191,
+    3500
+   ],
+   "crop": null,
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "fewshot_source": "fewshot_11327964_p2",
+ "item": "rb2_p090",
+ "variant": "v3_fewshot",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 8.4,
+ "timestamp": "2026-08-26T19:35:33+00:00"
+}

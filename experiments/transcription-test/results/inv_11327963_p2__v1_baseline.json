@@ -1,0 +1,64 @@
+{
+ "raw_text": "Auf dem klain Estrich\nvor der Stuben.\nAin grosser Speiskasten\n\nIn der Hell in der ersten Camer\nAin pettstat\nZwo rauch deckhen\nAin pett\nAin polster\nAin bwor\nAin Strohsakh\nAin par rüpffin leilach\n\nIn der andern Camer\nPettstatten . j .\nAin pett\nAin Strohsakh\nZwaij rüpffin leilach\nZwo rauch deckhen\nAin polster\n\nIn der parnbürger Cam(er)\nZwo pettstat\nZwaij pett\nZwein pölster\nAin bwor\nVier rauch deckhen\nVier werchin leilach\nZwein Strohsakh\n\nIn der andern Camer daran\nAin pettstat\nAin pett\nAin polster\nZwaij bwor\nAin Strohsakh\nAin rauch deckh\nAin bolster\n\nAuf dem grosen\nestrich das\nAin grosser harnasch Casten\nZwein fass ung",
+ "lines": [
+  "Auf dem klain Estrich",
+  "vor der Stuben.",
+  "Ain grosser Speiskasten",
+  "In der Hell in der ersten Camer",
+  "Ain pettstat",
+  "Zwo rauch deckhen",
+  "Ain pett",
+  "Ain polster",
+  "Ain bwor",
+  "Ain Strohsakh",
+  "Ain par rüpffin leilach",
+  "In der andern Camer",
+  "Pettstatten . j .",
+  "Ain pett",
+  "Ain Strohsakh",
+  "Zwaij rüpffin leilach",
+  "Zwo rauch deckhen",
+  "Ain polster",
+  "In der parnbürger Cam(er)",
+  "Zwo pettstat",
+  "Zwaij pett",
+  "Zwein pölster",
+  "Ain bwor",
+  "Vier rauch deckhen",
+  "Vier werchin leilach",
+  "Zwein Strohsakh",
+  "In der andern Camer daran",
+  "Ain pettstat",
+  "Ain pett",
+  "Ain polster",
+  "Zwaij bwor",
+  "Ain Strohsakh",
+  "Ain rauch deckh",
+  "Ain bolster",
+  "Auf dem grosen",
+  "estrich das",
+  "Ain grosser harnasch Casten",
+  "Zwein fass ung"
+ ],
+ "parsed": null,
+ "image_info": [
+  {
+   "source_px": [
+    931,
+    2418
+   ],
+   "sent_px": [
+    931,
+    2418
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "inv_11327963_p2",
+ "variant": "v1_baseline",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 7.4,
+ "timestamp": "2026-08-26T19:36:06+00:00"
+}

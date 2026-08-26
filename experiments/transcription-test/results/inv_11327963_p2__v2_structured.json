@@ -1,0 +1,249 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Auf dem klain Estrich",
+  "vor der Stuben.",
+  "Ain grosser Spißkasten",
+  "In der Hell in der ersten Camer",
+  "Ain pettstat",
+  "Zwo rauch deckhen",
+  "Ain pett",
+  "Ain polster",
+  "Ain fuer",
+  "Ain Strohsackh",
+  "Ain par fluchsini leilach",
+  "In der andern Camer",
+  "Pettstatten —— ij",
+  "Ain pett",
+  "Ain Strohsackh",
+  "Zwaij fluchsini leilach",
+  "Zwo rauch deckhen",
+  "Ain polster",
+  "In der Paurnknecht Cam(er)",
+  "Zwo pettstat",
+  "Zwaij pett",
+  "Zwaij polst(er)",
+  "Ain fuer",
+  "Vier rauch deckhen",
+  "Vier verweschne leilach",
+  "Zwen Strohsackh",
+  "In der andern Camer daran",
+  "Ain pettstat",
+  "Ain pett",
+  "Ain polst(er)",
+  "Zwaij fuer",
+  "Ain Strohsackh",
+  "Ain rauche deckh",
+  "Ain bolster",
+  "Auf dem Pressen",
+  "neben das",
+  "Ain grosser Harnasch Casten",
+  "Zwain pass tuech"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "Auf dem klain Estrich",
+      "kind": "rubric"
+     },
+     {
+      "text": "vor der Stuben.",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain grosser Spißkasten",
+      "kind": "entry"
+     },
+     {
+      "text": "In der Hell in der ersten Camer",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwo rauch deckhen",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain polster",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain fuer",
+      "kind": "entry",
+      "uncertain": [
+       "fuer"
+      ]
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain par fluchsini leilach",
+      "kind": "entry",
+      "uncertain": [
+       "fluchsini"
+      ]
+     },
+     {
+      "text": "In der andern Camer",
+      "kind": "rubric"
+     },
+     {
+      "text": "Pettstatten —— ij",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij fluchsini leilach",
+      "kind": "entry",
+      "uncertain": [
+       "fluchsini"
+      ]
+     },
+     {
+      "text": "Zwo rauch deckhen",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain polster",
+      "kind": "entry"
+     },
+     {
+      "text": "In der Paurnknecht Cam(er)",
+      "kind": "rubric"
+     },
+     {
+      "text": "Zwo pettstat",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij polst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain fuer",
+      "kind": "entry",
+      "uncertain": [
+       "fuer"
+      ]
+     },
+     {
+      "text": "Vier rauch deckhen",
+      "kind": "entry"
+     },
+     {
+      "text": "Vier verweschne leilach",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwen Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "In der andern Camer daran",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain polst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij fuer",
+      "kind": "entry",
+      "uncertain": [
+       "fuer"
+      ]
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain rauche deckh",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain bolster",
+      "kind": "entry"
+     },
+     {
+      "text": "Auf dem Pressen",
+      "kind": "rubric",
+      "uncertain": [
+       "Pressen"
+      ]
+     },
+     {
+      "text": "neben das",
+      "kind": "rubric",
+      "uncertain": [
+       "neben",
+       "das"
+      ]
+     },
+     {
+      "text": "Ain grosser Harnasch Casten",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwain pass tuech",
+      "kind": "entry",
+      "uncertain": [
+       "pass"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    931,
+    2418
+   ],
+   "sent_px": [
+    931,
+    2418
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "inv_11327963_p2",
+ "variant": "v2_structured",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 7.0,
+ "timestamp": "2026-08-26T19:36:13+00:00"
+}

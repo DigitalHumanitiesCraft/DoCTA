@@ -1,0 +1,573 @@
+{
+ "page": "inv_11328300_p2",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1865,
+    2704
+   ],
+   "sent_px": [
+    1865,
+    2704
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.6,
+ "timestamp": "2026-08-26T20:20:32+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1v",
+    "lines": [
+     {
+      "text": "It(em) j getrumbter kuse",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij dleckh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j pett mit weissem vberzogen in",
+      "kind": "entry"
+     },
+     {
+      "text": "der guet kam(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij gestrumbte polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) viij gestrumbte kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij kosselb(er)",
+      "kind": "entry",
+      "uncertain": [
+       "kosselb(er)"
+      ]
+     },
+     {
+      "text": "It(em) j pett fuer ain gestreimbtz zuechl",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) gestrumbte polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) füertuechl dlesst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij dleckh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j rauchs dleckh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j rauchs pett auf d(er) ebd ob d(er) tor",
+      "kind": "entry",
+      "uncertain": [
+       "ebd"
+      ]
+     },
+     {
+      "text": "It(em) j weissen polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij gestrumbte kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) vj dleckh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j rauchs dleckh oft mehr vor(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij praittpfecht vnd kuechin",
+      "kind": "entry",
+      "uncertain": [
+       "praittpfecht"
+      ]
+     },
+     {
+      "text": "It(em) dleckh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) desfsuech",
+      "kind": "entry",
+      "uncertain": [
+       "desfsuech"
+      ]
+     },
+     {
+      "text": "vj",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) cvij hampfuechen in d(er) Gemachte",
+      "kind": "entry"
+     },
+     {
+      "text": "kamer",
+      "kind": "entry"
+     },
+     {
+      "text": "xij",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) viij habempfuechen",
+      "kind": "entry"
+     },
+     {
+      "text": "vij",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) j miessle kupfren prießen",
+      "kind": "entry",
+      "uncertain": [
+       "miessle"
+      ]
+     },
+     {
+      "text": "20",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) xxiij eysinen vnd kupfren priessen",
+      "kind": "entry"
+     },
+     {
+      "text": "etlechs taler gezeuges",
+      "kind": "entry",
+      "uncertain": [
+       "taler",
+       "gezeuges"
+      ]
+     },
+     {
+      "text": "vij gen",
+      "kind": "marginal"
+     },
+     {
+      "text": "schueffuech",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) j alt kessl zuter ctz (a) xxij",
+      "kind": "entry",
+      "uncertain": [
+       "zuter",
+       "ctz",
+       "xxij"
+      ]
+     },
+     {
+      "text": "It(em) ij buffknecht",
+      "kind": "entry",
+      "uncertain": [
+       "buffknecht"
+      ]
+     },
+     {
+      "text": "Das hernachgeschriben Hausrat",
+      "kind": "rubric"
+     },
+     {
+      "text": "hat d(er) Andreas maining",
+      "kind": "rubric"
+     },
+     {
+      "text": "zue d(er) zubereitten gegeben",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) dryens damandas mit met",
+      "kind": "entry",
+      "uncertain": [
+       "dryens",
+       "damandas",
+       "met"
+      ]
+     },
+     {
+      "text": "It(em) ij haltzn",
+      "kind": "entry",
+      "uncertain": [
+       "haltzn"
+      ]
+     },
+     {
+      "text": "It(em) j eysen reckh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij heissiern unchgobeln",
+      "kind": "entry",
+      "uncertain": [
+       "unchgobeln"
+      ]
+     },
+     {
+      "text": "It(em) j tersafartschiser",
+      "kind": "entry",
+      "uncertain": [
+       "tersafartschiser"
+      ]
+     },
+     {
+      "text": "It(em) j salzgeschier",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j stromeister",
+      "kind": "entry",
+      "uncertain": [
+       "stromeister"
+      ]
+     },
+     {
+      "text": "It(em) pach trog",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j stormespritz",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation"
+     },
+     {
+      "text": "It(em) ij spannpett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij dickluechen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) strofsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iiij stuel",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) grosse melkkesten",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) futterkasten",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij spadorossmein",
+      "kind": "entry",
+      "uncertain": [
+       "spadorossmein"
+      ]
+     },
+     {
+      "text": "It(em) slituechen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij holzschliten",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) alte laupt",
+      "kind": "entry",
+      "uncertain": [
+       "laupt"
+      ]
+     },
+     {
+      "text": "It(em) j fliests puel",
+      "kind": "entry",
+      "uncertain": [
+       "fliests",
+       "puel"
+      ]
+     },
+     {
+      "text": "It(em) speiskasten",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) cvij hampepuerden",
+      "kind": "entry",
+      "uncertain": [
+       "hampepuerden"
+      ]
+     },
+     {
+      "text": "It(em) viij kessl klain vnd gross",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j pfaunnen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j dreij hulzern seigpfech",
+      "kind": "entry",
+      "uncertain": [
+       "seigpfech"
+      ]
+     },
+     {
+      "text": "It(em) j walbpat wassl",
+      "kind": "entry",
+      "uncertain": [
+       "walbpat",
+       "wassl"
+      ]
+     },
+     {
+      "text": "It(em) ij futer waunen",
+      "kind": "entry",
+      "uncertain": [
+       "waunen"
+      ]
+     },
+     {
+      "text": "It(em) j aflern villtuech",
+      "kind": "entry",
+      "uncertain": [
+       "aflern",
+       "villtuech"
+      ]
+     },
+     {
+      "text": "It(em) j de Conrat zuer kochen hat",
+      "kind": "entry"
+     },
+     {
+      "text": "der kuechin weeß",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) viij samsthat deckenschellt wie",
+      "kind": "entry",
+      "uncertain": [
+       "samsthat",
+       "deckenschellt"
+      ]
+     },
+     {
+      "text": "It(em) j ganzz wagen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij pflueg",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij kestl seind in de allern",
+      "kind": "entry"
+     },
+     {
+      "text": "Geruecht der",
+      "kind": "rubric",
+      "uncertain": [
+       "Geruecht"
+      ]
+     },
+     {
+      "text": "Traunig gen",
+      "kind": "rubric",
+      "uncertain": [
+       "Traunig",
+       "gen"
+      ]
+     },
+     {
+      "text": "It(em) viij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j strofsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) als viij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j strofsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij pettpolster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j leckhen spanberpfecht",
+      "kind": "entry",
+      "uncertain": [
+       "spanberpfecht"
+      ]
+     },
+     {
+      "text": "It(em) ij lyckhern spanssuech",
+      "kind": "entry",
+      "uncertain": [
+       "lyckhern",
+       "spanssuech"
+      ]
+     },
+     {
+      "text": "It(em) xv kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij dlessen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) viij schlagendessll in auf",
+      "kind": "entry",
+      "uncertain": [
+       "schlagendessll"
+      ]
+     },
+     {
+      "text": "furaff",
+      "kind": "entry",
+      "uncertain": [
+       "furaff"
+      ]
+     },
+     {
+      "text": "It(em) beh myclls heavbrots zueilen",
+      "kind": "entry",
+      "uncertain": [
+       "beh",
+       "myclls",
+       "heavbrots",
+       "zueilen"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(em) j getrumbter kuse",
+  "It(em) iij dleckh",
+  "It(em) j pett mit weissem vberzogen in",
+  "der guet kam(er)",
+  "It(em) ij gestrumbte polster",
+  "It(em) viij gestrumbte kuss",
+  "It(em) ij kosselb(er)",
+  "It(em) j pett fuer ain gestreimbtz zuechl",
+  "It(em) gestrumbte polster",
+  "It(em) füertuechl dlesst",
+  "It(em) ij dleckh",
+  "It(em) j rauchs dleckh",
+  "It(em) j rauchs pett auf d(er) ebd ob d(er) tor",
+  "It(em) j weissen polster",
+  "It(em) iij gestrumbte kuss",
+  "It(em) vj dleckh",
+  "It(em) j rauchs dleckh oft mehr vor(er)",
+  "It(em) ij praittpfecht vnd kuechin",
+  "It(em) dleckh",
+  "It(em) desfsuech",
+  "vj",
+  "It(em) cvij hampfuechen in d(er) Gemachte",
+  "kamer",
+  "xij",
+  "It(em) viij habempfuechen",
+  "vij",
+  "It(em) j miessle kupfren prießen",
+  "20",
+  "It(em) xxiij eysinen vnd kupfren priessen",
+  "etlechs taler gezeuges",
+  "vij gen",
+  "schueffuech",
+  "It(em) j alt kessl zuter ctz (a) xxij",
+  "It(em) ij buffknecht",
+  "Das hernachgeschriben Hausrat",
+  "hat d(er) Andreas maining",
+  "zue d(er) zubereitten gegeben",
+  "It(em) dryens damandas mit met",
+  "It(em) ij haltzn",
+  "It(em) j eysen reckh",
+  "It(em) iij heissiern unchgobeln",
+  "It(em) j tersafartschiser",
+  "It(em) j salzgeschier",
+  "It(em) j stromeister",
+  "It(em) pach trog",
+  "It(em) j stormespritz",
+  "2",
+  "It(em) ij spannpett",
+  "It(em) iij dickluechen",
+  "It(em) strofsackh",
+  "It(em) iiij stuel",
+  "It(em) grosse melkkesten",
+  "It(em) futterkasten",
+  "It(em) ij spadorossmein",
+  "It(em) slituechen",
+  "It(em) ij holzschliten",
+  "It(em) alte laupt",
+  "It(em) j fliests puel",
+  "It(em) speiskasten",
+  "It(em) cvij hampepuerden",
+  "It(em) viij kessl klain vnd gross",
+  "It(em) j pfaunnen",
+  "It(em) j dreij hulzern seigpfech",
+  "It(em) j walbpat wassl",
+  "It(em) ij futer waunen",
+  "It(em) j aflern villtuech",
+  "It(em) j de Conrat zuer kochen hat",
+  "der kuechin weeß",
+  "It(em) viij samsthat deckenschellt wie",
+  "It(em) j ganzz wagen",
+  "It(em) ij pflueg",
+  "It(em) ij kestl seind in de allern",
+  "Geruecht der",
+  "Traunig gen",
+  "It(em) viij pett",
+  "It(em) j strofsackh",
+  "It(em) als viij pett",
+  "It(em) j strofsackh",
+  "It(em) ij pettpolster",
+  "It(em) j leckhen spanberpfecht",
+  "It(em) ij lyckhern spanssuech",
+  "It(em) xv kuss",
+  "It(em) iij dlessen",
+  "It(em) viij schlagendessll in auf",
+  "furaff",
+  "It(em) beh myclls heavbrots zueilen"
+ ]
+}

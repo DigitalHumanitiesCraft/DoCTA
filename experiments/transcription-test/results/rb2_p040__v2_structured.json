@@ -1,0 +1,207 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Kastenn",
+  "vpschoferin",
+  "Nota Anno die xx purificacio(n)is marie Ist",
+  "berait mit der vpschoferin in gegemwirtikait",
+  "der vorgeschrib(e)n / vmb alle abgezaite ding",
+  "so sy mein(e)s herren gnad schuldig ist / Sider",
+  "irn nagesten vaiden / samlung vntz auf",
+  "heutigen tag / vnd belybt in ainer",
+  "Suma — iij^C xxxij m(a)rc(k) ——",
+  "Darann Ir Innemen",
+  "It(em) Die bemeltt vpschoferin {hat} von herrn Benedictn",
+  "Camermaister empfangen — ij^C xvij m(a)rc(k)",
+  "It(em) von Feurgarten pfleger haubtman hat sy",
+  "empfangen xx m(a)rc(k) die er auch von d(e)s Camermaist(er)s weg(e)n {hat aufge(ben)}",
+  "It(em) von dem schlosspfleger die viij m(a)rc(k) vij s(olidus) iiij d(enare) ij c(reutzer) vnd d(e)r [...]",
+  "die michaln so herrn mein(e)m herr(e)n schuldig was",
+  "Suma Irn Innemens huet",
+  "ij^C xlvij m(a)rc(k) vij s(olidus) iiij d(enare) ij c(reutzer)",
+  "40.",
+  "Liebhart Dertnawer",
+  "Der vorgemeltn vpschoferin Jnnemen",
+  "gegen Jrem Ausgeben gegeneinander gelegt",
+  "vnd abgetzogen / Dannoch ist sy mein(e)s herren",
+  "gnad schuldig —— lxxxv m(a)rc(k) ix s(olidus) viij d(enare) j c(reutzer)"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [
+     {
+      "text": "Kastenn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vpschoferin",
+      "kind": "rubric",
+      "uncertain": [
+       "vpschoferin"
+      ]
+     },
+     {
+      "text": "Nota Anno die xx purificacio(n)is marie Ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "berait mit der vpschoferin in gegemwirtikait",
+      "kind": "entry",
+      "uncertain": [
+       "gegemwirtikait"
+      ]
+     },
+     {
+      "text": "der vorgeschrib(e)n / vmb alle abgezaite ding",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so sy mein(e)s herren gnad schuldig ist / Sider",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "irn nagesten vaiden / samlung vntz auf",
+      "kind": "entry",
+      "uncertain": [
+       "vaiden",
+       "samlung"
+      ]
+     },
+     {
+      "text": "heutigen tag / vnd belybt in ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Suma — iij^C xxxij m(a)rc(k) ——",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Darann Ir Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Die bemeltt vpschoferin {hat} von herrn Benedictn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Camermaister empfangen — ij^C xvij m(a)rc(k)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) von Feurgarten pfleger haubtman hat sy",
+      "kind": "entry",
+      "uncertain": [
+       "Feurgarten"
+      ]
+     },
+     {
+      "text": "empfangen xx m(a)rc(k) die er auch von d(e)s Camermaist(er)s weg(e)n {hat aufge(ben)}",
+      "kind": "entry",
+      "uncertain": [
+       "aufge(ben)"
+      ]
+     },
+     {
+      "text": "It(em) von dem schlosspfleger die viij m(a)rc(k) vij s(olidus) iiij d(enare) ij c(reutzer) vnd d(e)r [...]",
+      "kind": "entry",
+      "uncertain": [
+       "schlosspfleger",
+       "[...]"
+      ]
+     },
+     {
+      "text": "die michaln so herrn mein(e)m herr(e)n schuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "michaln"
+      ]
+     },
+     {
+      "text": "Suma Irn Innemens huet",
+      "kind": "sum",
+      "uncertain": [
+       "huet"
+      ]
+     },
+     {
+      "text": "ij^C xlvij m(a)rc(k) vij s(olidus) iiij d(enare) ij c(reutzer)",
+      "kind": "amount",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "rechts (fol. 40r)",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Liebhart Dertnawer",
+      "kind": "rubric",
+      "uncertain": [
+       "Liebhart",
+       "Dertnawer"
+      ]
+     },
+     {
+      "text": "Der vorgemeltn vpschoferin Jnnemen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gegen Jrem Ausgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd abgetzogen / Dannoch ist sy mein(e)s herren",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gnad schuldig —— lxxxv m(a)rc(k) ix s(olidus) viij d(enare) j c(reutzer)",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Die untere Hälfte von fol. 40r ist unbeschrieben; die sichtbaren schwachen Schriftzüge rühren ausschließlich vom Durchscheinen (Bleed-through) der Folgeseite her."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p040",
+ "variant": "v2_structured",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 14.6,
+ "timestamp": "2026-08-26T19:34:11+00:00"
+}

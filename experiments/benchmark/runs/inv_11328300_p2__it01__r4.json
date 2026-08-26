@@ -1,0 +1,543 @@
+{
+ "page": "inv_11328300_p2",
+ "iteration": "it01",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1865,
+    2704
+   ],
+   "sent_px": [
+    1865,
+    2704
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.0,
+ "timestamp": "2026-08-26T20:20:34+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1v",
+    "lines": [
+     {
+      "text": "It(em) j gestrickter kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij klosst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j pett mit weissem vberzogen in",
+      "kind": "entry"
+     },
+     {
+      "text": "der g(ro)ss kam(e)r",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij gestrickt polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij gestrickte kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij krosseth",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j pett fur ain gestricktes zuecht",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) gestrickt polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j feyrroste khesst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij klosst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j rano gr khest",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j rosis pett auf d(er) [...] es ist d(er) tor",
+      "kind": "entry",
+      "uncertain": [
+       "d(er)",
+       "tor"
+      ]
+     },
+     {
+      "text": "It(em) j weissen polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij gestrickte kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij khesst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j rano gr khest oft mehr vorr",
+      "kind": "entry",
+      "uncertain": [
+       "vorr"
+      ]
+     },
+     {
+      "text": "It(em) ij prautpett und knechtin",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j klosst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) deßhalb",
+      "kind": "entry"
+     },
+     {
+      "text": "vj",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) cvij hamptwoelchen in d(er) harnasch-",
+      "kind": "entry"
+     },
+     {
+      "text": "camer",
+      "kind": "entry"
+     },
+     {
+      "text": "xij",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) iiij halphamptwoelchen",
+      "kind": "entry"
+     },
+     {
+      "text": "vj",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) j michel kupfern pfann",
+      "kind": "entry"
+     },
+     {
+      "text": "20",
+      "kind": "marginal"
+     },
+     {
+      "text": "It(em) xxij eysinen und kupfern pfann",
+      "kind": "entry"
+     },
+     {
+      "text": "xx pff",
+      "kind": "marginal"
+     },
+     {
+      "text": "Etlichs teler zechafels",
+      "kind": "entry",
+      "uncertain": [
+       "zechafels"
+      ]
+     },
+     {
+      "text": "pff kess",
+      "kind": "marginal",
+      "uncertain": [
+       "pff",
+       "kess"
+      ]
+     },
+     {
+      "text": "It(em) j alt kestl geht [...] cxx [...]",
+      "kind": "entry",
+      "uncertain": [
+       "geht",
+       "cxx"
+      ]
+     },
+     {
+      "text": "It(em) ij tischzeucht",
+      "kind": "entry"
+     },
+     {
+      "text": "Den hernachgeschriben hawsrat",
+      "kind": "rubric"
+     },
+     {
+      "text": "hat d(er) Endras mayring",
+      "kind": "entry"
+     },
+     {
+      "text": "ze h. Gebrechten gegeben",
+      "kind": "entry",
+      "uncertain": [
+       "Gebrechten"
+      ]
+     },
+     {
+      "text": "It(em) swans damandtes mit met",
+      "kind": "entry",
+      "uncertain": [
+       "swans",
+       "damandtes",
+       "met"
+      ]
+     },
+     {
+      "text": "It(em) ij haltzin",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j schin nockn",
+      "kind": "entry",
+      "uncertain": [
+       "nockn"
+      ]
+     },
+     {
+      "text": "It(em) iij schinen vnschalckn",
+      "kind": "entry",
+      "uncertain": [
+       "vnschalckn"
+      ]
+     },
+     {
+      "text": "It(em) j tischaufkheiffer",
+      "kind": "entry",
+      "uncertain": [
+       "tischaufkheiffer"
+      ]
+     },
+     {
+      "text": "It(em) j salzvasen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j stromesser",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) pach trog",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j schonwasser",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation"
+     },
+     {
+      "text": "It(em) ij spanpett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij dielbenckhe",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j strotsack",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij stuel",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j grosse melkchfass",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j futterkhesten",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij spadrohmen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j schittruchen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij holztligten",
+      "kind": "entry",
+      "uncertain": [
+       "holztligten"
+      ]
+     },
+     {
+      "text": "It(em) alte carpel",
+      "kind": "entry",
+      "uncertain": [
+       "carpel"
+      ]
+     },
+     {
+      "text": "It(em) j fleisch peel",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j spyßkhesten",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) cxvij haumptwoelcken",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) viij kessel klain und grosse",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j pffannen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) xxij halzen seycher pfenn",
+      "kind": "entry",
+      "uncertain": [
+       "seycher",
+       "pfenn"
+      ]
+     },
+     {
+      "text": "It(em) j walchpat waffel",
+      "kind": "entry",
+      "uncertain": [
+       "walchpat"
+      ]
+     },
+     {
+      "text": "It(em) ij fuder warnwein",
+      "kind": "entry",
+      "uncertain": [
+       "warnwein"
+      ]
+     },
+     {
+      "text": "It(em) j aftren welbeloch",
+      "kind": "entry",
+      "uncertain": [
+       "aftren",
+       "welbeloch"
+      ]
+     },
+     {
+      "text": "It(em) zwen [...] bomen zum pressen hat",
+      "kind": "entry"
+     },
+     {
+      "text": "der knecht aus",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij samthat dekenrockl mit",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j gantz wagenn",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij pflug",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij kestl sind in de selben",
+      "kind": "entry"
+     },
+     {
+      "text": "Gemecht dr",
+      "kind": "entry"
+     },
+     {
+      "text": "zusamen gert",
+      "kind": "entry",
+      "uncertain": [
+       "gert"
+      ]
+     },
+     {
+      "text": "It(em) iiij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j strotsack",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) als iiij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j strotsack",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij pettpolster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j lecken spanderpacht",
+      "kind": "entry",
+      "uncertain": [
+       "spanderpacht"
+      ]
+     },
+     {
+      "text": "It(em) ij lyckem spaultkestl",
+      "kind": "entry",
+      "uncertain": [
+       "lyckem",
+       "spaultkestl"
+      ]
+     },
+     {
+      "text": "It(em) xx. kuss",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iij deken",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) xvij beschlagen coffre in ain",
+      "kind": "entry"
+     },
+     {
+      "text": "futral",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) bet mytolls branbrots zwickes",
+      "kind": "entry",
+      "uncertain": [
+       "bet",
+       "mytolls",
+       "branbrots",
+       "zwickes"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(em) j gestrickter kuss",
+  "It(em) iij klosst",
+  "It(em) j pett mit weissem vberzogen in",
+  "der g(ro)ss kam(e)r",
+  "It(em) ij gestrickt polster",
+  "It(em) iij gestrickte kuss",
+  "It(em) ij krosseth",
+  "It(em) j pett fur ain gestricktes zuecht",
+  "It(em) gestrickt polster",
+  "It(em) j feyrroste khesst",
+  "It(em) ij klosst",
+  "It(em) j rano gr khest",
+  "It(em) j rosis pett auf d(er) [...] es ist d(er) tor",
+  "It(em) j weissen polster",
+  "It(em) iij gestrickte kuss",
+  "It(em) ij khesst",
+  "It(em) j rano gr khest oft mehr vorr",
+  "It(em) ij prautpett und knechtin",
+  "It(em) j klosst",
+  "It(em) deßhalb",
+  "vj",
+  "It(em) cvij hamptwoelchen in d(er) harnasch-",
+  "camer",
+  "xij",
+  "It(em) iiij halphamptwoelchen",
+  "vj",
+  "It(em) j michel kupfern pfann",
+  "20",
+  "It(em) xxij eysinen und kupfern pfann",
+  "xx pff",
+  "Etlichs teler zechafels",
+  "pff kess",
+  "It(em) j alt kestl geht [...] cxx [...]",
+  "It(em) ij tischzeucht",
+  "Den hernachgeschriben hawsrat",
+  "hat d(er) Endras mayring",
+  "ze h. Gebrechten gegeben",
+  "It(em) swans damandtes mit met",
+  "It(em) ij haltzin",
+  "It(em) j schin nockn",
+  "It(em) iij schinen vnschalckn",
+  "It(em) j tischaufkheiffer",
+  "It(em) j salzvasen",
+  "It(em) j stromesser",
+  "It(em) pach trog",
+  "It(em) j schonwasser",
+  "2",
+  "It(em) ij spanpett",
+  "It(em) ij dielbenckhe",
+  "It(em) j strotsack",
+  "It(em) iij stuel",
+  "It(em) j grosse melkchfass",
+  "It(em) j futterkhesten",
+  "It(em) ij spadrohmen",
+  "It(em) j schittruchen",
+  "It(em) ij holztligten",
+  "It(em) alte carpel",
+  "It(em) j fleisch peel",
+  "It(em) j spyßkhesten",
+  "It(em) cxvij haumptwoelcken",
+  "It(em) viij kessel klain und grosse",
+  "It(em) j pffannen",
+  "It(em) xxij halzen seycher pfenn",
+  "It(em) j walchpat waffel",
+  "It(em) ij fuder warnwein",
+  "It(em) j aftren welbeloch",
+  "It(em) zwen [...] bomen zum pressen hat",
+  "der knecht aus",
+  "It(em) iij samthat dekenrockl mit",
+  "It(em) j gantz wagenn",
+  "It(em) ij pflug",
+  "It(em) ij kestl sind in de selben",
+  "Gemecht dr",
+  "zusamen gert",
+  "It(em) iiij pett",
+  "It(em) j strotsack",
+  "It(em) als iiij pett",
+  "It(em) j strotsack",
+  "It(em) ij pettpolster",
+  "It(em) j lecken spanderpacht",
+  "It(em) ij lyckem spaultkestl",
+  "It(em) xx. kuss",
+  "It(em) iij deken",
+  "It(em) xvij beschlagen coffre in ain",
+  "futral",
+  "It(em) bet mytolls branbrots zwickes"
+ ]
+}

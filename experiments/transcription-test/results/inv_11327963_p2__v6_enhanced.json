@@ -1,0 +1,286 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Auf dem clain Estreich",
+  "vor der Stuben.",
+  "Ain grosser Spaiskasten",
+  "In der Hell in der ersten Camer",
+  "Ain pettstat",
+  "Zwo rauch deckhen",
+  "Ain pett",
+  "Ain polster",
+  "Ain khor",
+  "Ain Strofsackh",
+  "Ain par rüpffim leilach",
+  "In der andern Camer",
+  "Ain pettstatten .",
+  "Ain pett",
+  "Ain Strofsackh",
+  "Zwaj rüpffim leilach",
+  "Zwo rauch deckhen",
+  "Ain polster",
+  "In der paurnknechts Cam(er)",
+  "Zwo pettstat",
+  "Zwaj pett",
+  "Zwain polst(er)",
+  "Ain khor",
+  "Vier rauch deckhen",
+  "Vier werchins leilach",
+  "Zwai Strofsackh",
+  "In der andern Camer daran",
+  "Ain pettstat",
+  "Ain pett",
+  "Ain polst(er)",
+  "Zwai khor",
+  "Ain Strofsackh",
+  "Ain rauch deckh",
+  "Ain kolter",
+  "Auf dem Trosten",
+  "neben der",
+  "Ain grosser Harnasch Casten",
+  "Zwein passt trüeg"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "recto",
+    "lines": [
+     {
+      "text": "Auf dem clain Estreich",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vor der Stuben.",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain grosser Spaiskasten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der Hell in der ersten Camer",
+      "kind": "rubric",
+      "uncertain": [
+       "Hell"
+      ]
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo rauch deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain khor",
+      "kind": "entry",
+      "uncertain": [
+       "khor"
+      ]
+     },
+     {
+      "text": "Ain Strofsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par rüpffim leilach",
+      "kind": "entry",
+      "uncertain": [
+       "rüpffim"
+      ]
+     },
+     {
+      "text": "In der andern Camer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pettstatten .",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Strofsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaj rüpffim leilach",
+      "kind": "entry",
+      "uncertain": [
+       "rüpffim"
+      ]
+     },
+     {
+      "text": "Zwo rauch deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der paurnknechts Cam(er)",
+      "kind": "rubric",
+      "uncertain": [
+       "paurnknechts"
+      ]
+     },
+     {
+      "text": "Zwo pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaj pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwain polst(er)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain khor",
+      "kind": "entry",
+      "uncertain": [
+       "khor"
+      ]
+     },
+     {
+      "text": "Vier rauch deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier werchins leilach",
+      "kind": "entry",
+      "uncertain": [
+       "werchins"
+      ]
+     },
+     {
+      "text": "Zwai Strofsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der andern Camer daran",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polst(er)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai khor",
+      "kind": "entry",
+      "uncertain": [
+       "khor"
+      ]
+     },
+     {
+      "text": "Ain Strofsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain rauch deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain kolter",
+      "kind": "entry",
+      "uncertain": [
+       "kolter"
+      ]
+     },
+     {
+      "text": "Auf dem Trosten",
+      "kind": "rubric",
+      "uncertain": [
+       "Trosten"
+      ]
+     },
+     {
+      "text": "neben der",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain grosser Harnasch Casten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwein passt trüeg",
+      "kind": "entry",
+      "uncertain": [
+       "passt",
+       "trüeg"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    931,
+    2418
+   ],
+   "sent_px": [
+    931,
+    2418
+   ],
+   "crop": null,
+   "enhanced": true
+  }
+ ],
+ "item": "inv_11327963_p2",
+ "variant": "v6_enhanced",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 8.8,
+ "timestamp": "2026-08-26T19:36:45+00:00"
+}

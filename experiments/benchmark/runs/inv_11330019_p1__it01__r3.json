@@ -1,0 +1,293 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.9,
+ "timestamp": "2026-08-26T20:21:49+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation"
+     },
+     {
+      "text": "Fro(n)burg",
+      "kind": "rubric"
+     },
+     {
+      "text": "V(er)merckt die farundhab",
+      "kind": "entry"
+     },
+     {
+      "text": "Gerew pslunt vnd anders auff",
+      "kind": "entry"
+     },
+     {
+      "text": "Fronburg Hannsen Kam(er)r",
+      "kind": "entry"
+     },
+     {
+      "text": "maister vnd phleg(er) da selbs zu",
+      "kind": "entry"
+     },
+     {
+      "text": "gehörig So Joseph vbernu(m)b(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "an stat mein(e)s genedign herrn",
+      "kind": "entry"
+     },
+     {
+      "text": "vngefe(er)list ingeno(m)m(en) hatt an",
+      "kind": "entry",
+      "uncertain": [
+       "vngefe(er)list"
+      ]
+     },
+     {
+      "text": "freytag nach sant michelstag",
+      "kind": "entry"
+     },
+     {
+      "text": "Anno lxxviij",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) Ju(m) ersten ain kneußt ij",
+      "kind": "entry",
+      "uncertain": [
+       "kneußt"
+      ]
+     },
+     {
+      "text": "eysenhut ij par hentschuch ij",
+      "kind": "entry"
+     },
+     {
+      "text": "par armbzeug iij par wendenck",
+      "kind": "entry",
+      "uncertain": [
+       "wendenck"
+      ]
+     },
+     {
+      "text": "harnschgewand ij hantz viij kragn",
+      "kind": "entry",
+      "uncertain": [
+       "hantz"
+      ]
+     },
+     {
+      "text": "mor ain armbzeug iij pscheempurst",
+      "kind": "entry",
+      "uncertain": [
+       "pscheempurst"
+      ]
+     },
+     {
+      "text": "sind nit genast ——",
+      "kind": "entry",
+      "uncertain": [
+       "genast"
+      ]
+     },
+     {
+      "text": "It(em) Jn der stubn vnd kam(er) da",
+      "kind": "entry"
+     },
+     {
+      "text": "ist ain schrannckh j gstracke pschein",
+      "kind": "entry",
+      "uncertain": [
+       "gstracke",
+       "pschein"
+      ]
+     },
+     {
+      "text": "darauf lig 6 tund zeug viij hanntz",
+      "kind": "entry",
+      "uncertain": [
+       "6 tund zeug",
+       "hanntz"
+      ]
+     },
+     {
+      "text": "iiij han vögel j schnidfeill",
+      "kind": "entry",
+      "uncertain": [
+       "han vögel"
+      ]
+     },
+     {
+      "text": "ain gschlossen kloben",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) mor ain bettstatt darJn lyt",
+      "kind": "entry"
+     },
+     {
+      "text": "ain bett ain polst(er) j kuß ij haubt",
+      "kind": "entry"
+     },
+     {
+      "text": "polster iij rauch deck ——",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) mor ain messig becke vnd ain",
+      "kind": "entry"
+     },
+     {
+      "text": "tewtschy hantvass j teller buchs",
+      "kind": "entry",
+      "uncertain": [
+       "tewtschy"
+      ]
+     },
+     {
+      "text": "dar sind xxv plater",
+      "kind": "entry"
+     },
+     {
+      "text": "Mor ligt in and bettungen vij",
+      "kind": "entry",
+      "uncertain": [
+       "bettungen"
+      ]
+     },
+     {
+      "text": "blatt schloß vnd ain groß malo",
+      "kind": "entry",
+      "uncertain": [
+       "malo"
+      ]
+     },
+     {
+      "text": "roß",
+      "kind": "entry"
+     },
+     {
+      "text": "Mor vor der kuchj ain trankat",
+      "kind": "entry",
+      "uncertain": [
+       "trankat"
+      ]
+     },
+     {
+      "text": "vnd ain schaffrant ij pfanneng",
+      "kind": "entry",
+      "uncertain": [
+       "schaffrant",
+       "pfanneng"
+      ]
+     },
+     {
+      "text": "dreinn hafen viij fischkessel",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ain armbrost mit aind winden",
+      "kind": "entry"
+     },
+     {
+      "text": "gut trantschij",
+      "kind": "entry",
+      "uncertain": [
+       "trantschij"
+      ]
+     },
+     {
+      "text": "It(em) auff der vntern vor statt ain",
+      "kind": "entry"
+     },
+     {
+      "text": "truch ain bettstatt dar Jnj lyt",
+      "kind": "entry"
+     },
+     {
+      "text": "ain pett ain bolst(er) ij leylach ain",
+      "kind": "entry"
+     },
+     {
+      "text": "rauch deck vnd ain polst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "Jnv. A 144 / 1",
+      "kind": "marginal"
+     },
+     {
+      "text": "1478 Okt. 2.",
+      "kind": "marginal"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Fro(n)burg",
+  "V(er)merckt die farundhab",
+  "Gerew pslunt vnd anders auff",
+  "Fronburg Hannsen Kam(er)r",
+  "maister vnd phleg(er) da selbs zu",
+  "gehörig So Joseph vbernu(m)b(e)n",
+  "an stat mein(e)s genedign herrn",
+  "vngefe(er)list ingeno(m)m(en) hatt an",
+  "freytag nach sant michelstag",
+  "Anno lxxviij",
+  "It(em) Ju(m) ersten ain kneußt ij",
+  "eysenhut ij par hentschuch ij",
+  "par armbzeug iij par wendenck",
+  "harnschgewand ij hantz viij kragn",
+  "mor ain armbzeug iij pscheempurst",
+  "sind nit genast ——",
+  "It(em) Jn der stubn vnd kam(er) da",
+  "ist ain schrannckh j gstracke pschein",
+  "darauf lig 6 tund zeug viij hanntz",
+  "iiij han vögel j schnidfeill",
+  "ain gschlossen kloben",
+  "It(em) mor ain bettstatt darJn lyt",
+  "ain bett ain polst(er) j kuß ij haubt",
+  "polster iij rauch deck ——",
+  "It(em) mor ain messig becke vnd ain",
+  "tewtschy hantvass j teller buchs",
+  "dar sind xxv plater",
+  "Mor ligt in and bettungen vij",
+  "blatt schloß vnd ain groß malo",
+  "roß",
+  "Mor vor der kuchj ain trankat",
+  "vnd ain schaffrant ij pfanneng",
+  "dreinn hafen viij fischkessel",
+  "It(em) ain armbrost mit aind winden",
+  "gut trantschij",
+  "It(em) auff der vntern vor statt ain",
+  "truch ain bettstatt dar Jnj lyt",
+  "ain pett ain bolst(er) ij leylach ain",
+  "rauch deck vnd ain polst(er)",
+  "Jnv. A 144 / 1",
+  "1478 Okt. 2."
+ ]
+}

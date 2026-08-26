@@ -1,0 +1,181 @@
+{
+ "page": "rb2_p040",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.3,
+ "timestamp": "2026-08-26T20:18:00+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Kastenn",
+      "kind": "rubric"
+     },
+     {
+      "text": "vphofern",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota Anno die xx purificacio(n)is conu(er)siu(n)g . Ist",
+      "kind": "entry",
+      "uncertain": [
+       "conu(er)siu(n)g"
+      ]
+     },
+     {
+      "text": "Berait mit der vphofern in g(e)genwurt(i)g(keit)",
+      "kind": "entry"
+     },
+     {
+      "text": "der vorgestalt(e)n / vmb alle abgelaite deingt",
+      "kind": "entry",
+      "uncertain": [
+       "deingt"
+      ]
+     },
+     {
+      "text": "so sy mein(e)m herrn gnad schuldig ist / sid(e)r",
+      "kind": "entry"
+     },
+     {
+      "text": "her naehsten vnden stennd(e)n sum(m)a vncz auf",
+      "kind": "entry"
+     },
+     {
+      "text": "heuttigen tag / vnd brinngt in ainer",
+      "kind": "entry"
+     },
+     {
+      "text": "S(um)ma iij^C xxxiiij lb [...]",
+      "kind": "sum",
+      "uncertain": [
+       "xxxiiij lb [...]"
+      ]
+     },
+     {
+      "text": "Daraufs Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) Die bemeltt vphofrin {hat} von hern Benedictn",
+      "kind": "entry"
+     },
+     {
+      "text": "Cam(er)maister empfanngen ij^C xxvij lb",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) von Feurgarten stieber haubtman hat sy",
+      "kind": "entry",
+      "uncertain": [
+       "Feurgarten",
+       "stieber"
+      ]
+     },
+     {
+      "text": "emphang(e)n xx lb vmb die er auch vff d(e)s Cam(er)ers reeg(ist)r hat aufgeb(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "reeg(ist)r"
+      ]
+     },
+     {
+      "text": "It(em) v(on) [...] die viij lb viij ß iij d [...] die michaeln s(ein) g(nad) mein(em) herrn schuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "michaeln"
+      ]
+     },
+     {
+      "text": "S(um)ma Irz Innemens saat",
+      "kind": "sum"
+     },
+     {
+      "text": "ij^C xlvij lb viij ß iij d",
+      "kind": "amount",
+      "uncertain": [
+       "xlvij lb viij ß iij d"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation"
+     },
+     {
+      "text": "Liebhart Derinder",
+      "kind": "rubric",
+      "uncertain": [
+       "Liebhart",
+       "Derinder"
+      ]
+     },
+     {
+      "text": "Der vorgemeltn vphoferin Innemen",
+      "kind": "entry"
+     },
+     {
+      "text": "gegen Irem Aufgebenn gegeneinander glegt",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd abgetzogenn / Dannoch ist sy mein(e)m herrn",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad schuldig —— lxxxv lb iij ß viij d",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Kastenn",
+  "vphofern",
+  "Nota Anno die xx purificacio(n)is conu(er)siu(n)g . Ist",
+  "Berait mit der vphofern in g(e)genwurt(i)g(keit)",
+  "der vorgestalt(e)n / vmb alle abgelaite deingt",
+  "so sy mein(e)m herrn gnad schuldig ist / sid(e)r",
+  "her naehsten vnden stennd(e)n sum(m)a vncz auf",
+  "heuttigen tag / vnd brinngt in ainer",
+  "S(um)ma iij^C xxxiiij lb [...]",
+  "Daraufs Innemen",
+  "It(em) Die bemeltt vphofrin {hat} von hern Benedictn",
+  "Cam(er)maister empfanngen ij^C xxvij lb",
+  "It(em) von Feurgarten stieber haubtman hat sy",
+  "emphang(e)n xx lb vmb die er auch vff d(e)s Cam(er)ers reeg(ist)r hat aufgeb(e)n",
+  "It(em) v(on) [...] die viij lb viij ß iij d [...] die michaeln s(ein) g(nad) mein(em) herrn schuldig was",
+  "S(um)ma Irz Innemens saat",
+  "ij^C xlvij lb viij ß iij d",
+  "40.",
+  "Liebhart Derinder",
+  "Der vorgemeltn vphoferin Innemen",
+  "gegen Irem Aufgebenn gegeneinander glegt",
+  "vnd abgetzogenn / Dannoch ist sy mein(e)m herrn",
+  "gnad schuldig —— lxxxv lb iij ß viij d"
+ ]
+}

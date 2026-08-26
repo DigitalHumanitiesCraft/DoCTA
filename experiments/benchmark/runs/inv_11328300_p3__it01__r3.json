@@ -1,0 +1,352 @@
+{
+ "page": "inv_11328300_p3",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1880,
+    2718
+   ],
+   "sent_px": [
+    1880,
+    2718
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.8,
+ "timestamp": "2026-08-26T20:21:04+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation"
+     },
+     {
+      "text": "It(em) j pett in der volbrezo kamer",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j klapett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j deken mit seiden granat",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j gabe(r) mit grawen",
+      "kind": "entry",
+      "uncertain": [
+       "gabe(r)"
+      ]
+     },
+     {
+      "text": "It(em) varwer deken.",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ij. paar leylach in ainer tesch",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iiij paar pfauren",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij paar underpfauren",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) xxvj schnitztwecht",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ij kuest(en)türchen",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j pollstertuech",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .v. tischtüecher",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .viij. handtwaecher",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iiij wesscher pollster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) tij kuesen techer",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ty. frendle gross vnd klaine",
+      "kind": "entry"
+     },
+     {
+      "text": "weissandel d'haymerdl handl",
+      "kind": "entry",
+      "uncertain": [
+       "d'haymerdl",
+       "handl"
+      ]
+     },
+     {
+      "text": "vnd ains pletzlsandl",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ij. salznepffle",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) viij von estnstandl",
+      "kind": "entry",
+      "uncertain": [
+       "estnstandl"
+      ]
+     },
+     {
+      "text": "It(em) teyl zinen kempffl gross",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd klain",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j hultzen tellerputzer mit tellern",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ty. reiringle",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) iiij handtwecher",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) j kestel darin vil geriegt kauf-",
+      "kind": "entry"
+     },
+     {
+      "text": "sand vnd sonniger ding ligt",
+      "kind": "entry"
+     },
+     {
+      "text": "Bey solicher jnuetari sind ge-",
+      "kind": "entry"
+     },
+     {
+      "text": "wesen Jörg sandprecht meister",
+      "kind": "entry"
+     },
+     {
+      "text": "jorg hamstramer Jhannss",
+      "kind": "entry"
+     },
+     {
+      "text": "Wöser Secretarj Jacob harns-",
+      "kind": "entry"
+     },
+     {
+      "text": "mass Michel werb bode burger",
+      "kind": "entry"
+     },
+     {
+      "text": "zu hall Jorg dukensperger",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd Crysstoff wellenser",
+      "kind": "entry"
+     },
+     {
+      "text": "Jch Burckart von knöringen hab",
+      "kind": "entry"
+     },
+     {
+      "text": "ditz obgeschribn haussrat alles",
+      "kind": "entry"
+     },
+     {
+      "text": "darein bekumbt engegengenumen",
+      "kind": "entry"
+     },
+     {
+      "text": "statt hampn van zell vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "welche stueck hienachstrittert",
+      "kind": "entry",
+      "uncertain": [
+       "hienachstrittert"
+      ]
+     },
+     {
+      "text": "die das mit seiner aignen handt-",
+      "kind": "entry"
+     },
+     {
+      "text": "geschrifft gestaben han geant-",
+      "kind": "entry"
+     },
+     {
+      "text": "wurdt an antwurdt nach auss-",
+      "kind": "entry"
+     },
+     {
+      "text": "kumen ing Patiniti Anno 76",
+      "kind": "entry",
+      "uncertain": [
+       "Patiniti"
+      ]
+     },
+     {
+      "text": "bescheende",
+      "kind": "entry"
+     },
+     {
+      "text": "Jtem ich hab dem velldenperg geanwurt",
+      "kind": "entry"
+     },
+     {
+      "text": "ain pett vnd ain pollster nach geschäfft meins",
+      "kind": "entry"
+     },
+     {
+      "text": "g(nädigen) h(errn)",
+      "kind": "entry"
+     },
+     {
+      "text": "Jtem dem poling hab ich gean",
+      "kind": "entry"
+     },
+     {
+      "text": ".iij. pet vnd .iij. pollster",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd .xij. kraus trand",
+      "kind": "entry",
+      "uncertain": [
+       "trand"
+      ]
+     },
+     {
+      "text": "ain par leilach das hat",
+      "kind": "entry"
+     },
+     {
+      "text": "der krausskrann gefressfen",
+      "kind": "entry",
+      "uncertain": [
+       "krausskrann",
+       "gefressfen"
+      ]
+     },
+     {
+      "text": "vnd .d. leupolt spier",
+      "kind": "entry"
+     },
+     {
+      "text": "Jtem dem planck hat man",
+      "kind": "entry"
+     },
+     {
+      "text": "gen hoff geordint",
+      "kind": "entry"
+     },
+     {
+      "text": "Jtem .ij. trenckl vnd norgin",
+      "kind": "entry",
+      "uncertain": [
+       "trenckl",
+       "norgin"
+      ]
+     },
+     {
+      "text": "der albin",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "3",
+  "It(em) j pett in der volbrezo kamer",
+  "It(em) j klapett",
+  "It(em) j deken mit seiden granat",
+  "It(em) j gabe(r) mit grawen",
+  "It(em) varwer deken.",
+  "It(em) .ij. paar leylach in ainer tesch",
+  "It(em) iiij paar pfauren",
+  "It(em) ij paar underpfauren",
+  "It(em) xxvj schnitztwecht",
+  "It(em) ij kuest(en)türchen",
+  "It(em) j pollstertuech",
+  "It(em) .v. tischtüecher",
+  "It(em) .viij. handtwaecher",
+  "It(em) iiij wesscher pollster",
+  "It(em) tij kuesen techer",
+  "It(em) .ty. frendle gross vnd klaine",
+  "weissandel d'haymerdl handl",
+  "vnd ains pletzlsandl",
+  "It(em) .ij. salznepffle",
+  "It(em) viij von estnstandl",
+  "It(em) teyl zinen kempffl gross",
+  "vnd klain",
+  "It(em) j hultzen tellerputzer mit tellern",
+  "It(em) ty. reiringle",
+  "It(em) iiij handtwecher",
+  "It(em) j kestel darin vil geriegt kauf-",
+  "sand vnd sonniger ding ligt",
+  "Bey solicher jnuetari sind ge-",
+  "wesen Jörg sandprecht meister",
+  "jorg hamstramer Jhannss",
+  "Wöser Secretarj Jacob harns-",
+  "mass Michel werb bode burger",
+  "zu hall Jorg dukensperger",
+  "vnd Crysstoff wellenser",
+  "Jch Burckart von knöringen hab",
+  "ditz obgeschribn haussrat alles",
+  "darein bekumbt engegengenumen",
+  "statt hampn van zell vnd",
+  "welche stueck hienachstrittert",
+  "die das mit seiner aignen handt-",
+  "geschrifft gestaben han geant-",
+  "wurdt an antwurdt nach auss-",
+  "kumen ing Patiniti Anno 76",
+  "bescheende",
+  "Jtem ich hab dem velldenperg geanwurt",
+  "ain pett vnd ain pollster nach geschäfft meins",
+  "g(nädigen) h(errn)",
+  "Jtem dem poling hab ich gean",
+  ".iij. pet vnd .iij. pollster",
+  "vnd .xij. kraus trand",
+  "ain par leilach das hat",
+  "der krausskrann gefressfen",
+  "vnd .d. leupolt spier",
+  "Jtem dem planck hat man",
+  "gen hoff geordint",
+  "Jtem .ij. trenckl vnd norgin",
+  "der albin"
+ ]
+}

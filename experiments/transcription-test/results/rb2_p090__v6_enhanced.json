@@ -1,0 +1,46 @@
+{
+ "raw_text": null,
+ "lines": [
+  "90"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "rechts (fol. 90r)",
+    "lines": [
+     {
+      "text": "90",
+      "kind": "foliation"
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Die linke Seite ist leer (lediglich durchscheinender Text der Rückseite). Die rechte Seite ist bis auf die neuzeitliche Blattzählung '90' oben rechts ebenfalls unbeschrieben."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null,
+   "enhanced": true
+  }
+ ],
+ "item": "rb2_p090",
+ "variant": "v6_enhanced",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 6.5,
+ "timestamp": "2026-08-26T19:35:59+00:00"
+}

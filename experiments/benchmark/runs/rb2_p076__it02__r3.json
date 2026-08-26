@@ -1,0 +1,324 @@
+{
+ "page": "rb2_p076",
+ "iteration": "it02",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 15.7,
+ "timestamp": "2026-08-26T20:19:01+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. [v]",
+    "lines": [
+     {
+      "text": "Albrecht Seller",
+      "kind": "rubric",
+      "uncertain": [
+       "Albrecht",
+       "Seller"
+      ]
+     },
+     {
+      "text": "Nō eod[em] die et p[rese]ntib[us] p[re]sc[ri]pt[is] etc Jst gerait",
+      "kind": "entry"
+     },
+     {
+      "text": "worden mit Allbrecht Seller vmb nestlenn vnnd hawptpind",
+      "kind": "entry",
+      "uncertain": [
+       "Allbrecht",
+       "Seller",
+       "nestlenn",
+       "hawptpind"
+      ]
+     },
+     {
+      "text": "vnnd anders so man meins herrn vnnd meinr fraw",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad von Jm genomen hat sedz freytags vor",
+      "kind": "entry",
+      "uncertain": [
+       "sedz"
+      ]
+     },
+     {
+      "text": "Sannt Margreten tag des lxxiiij Jarss / vnnd auf",
+      "kind": "entry",
+      "uncertain": [
+       "Margreten"
+      ]
+     },
+     {
+      "text": "hewttigs chreucz tag / vnnd man jst jm vbir das",
+      "kind": "entry"
+     },
+     {
+      "text": "so er von Ernd Benedicte dm alten Camermaister",
+      "kind": "entry",
+      "uncertain": [
+       "Ernd",
+       "Benedicte"
+      ]
+     },
+     {
+      "text": "vnnd vber die ij m̄ minus daurnach mit parttey",
+      "kind": "entry"
+     },
+     {
+      "text": "schuldikz ward —— xxvj ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxvj",
+       "unit": "ß"
+      },
+      "uncertain": [
+       "schuldikz"
+      ]
+     },
+     {
+      "text": "Die hathm Lienhart von Rottennbg Camerari[us]",
+      "kind": "entry",
+      "uncertain": [
+       "hathm",
+       "Lienhart",
+       "Rottennbg"
+      ]
+     },
+     {
+      "text": "aussgericht vnd bezalt",
+      "kind": "entry"
+     },
+     {
+      "text": "Conrat pürkhler",
+      "kind": "rubric",
+      "uncertain": [
+       "Conrat",
+       "pürkhler"
+      ]
+     },
+     {
+      "text": "Nō eod[em] die p[rese]ntib[us] p[re]sc[ri]pt[is] Jst gerait mit Conr[at]",
+      "kind": "entry",
+      "uncertain": [
+       "Conr[at]"
+      ]
+     },
+     {
+      "text": "purckler vnd jst bis vntz auf heintign tag",
+      "kind": "entry",
+      "uncertain": [
+       "purckler"
+      ]
+     },
+     {
+      "text": "mit partteyen schuldig worden vij m̄ minus q[ua]rt[a] Jst bezalt",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "q[ua]rt[a]"
+      ]
+     },
+     {
+      "text": "p[er] Leonhardum d[er] czeingk engin Römeis",
+      "kind": "entry",
+      "uncertain": [
+       "Leonhardum",
+       "czeingk",
+       "engin",
+       "Römeis"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "76r",
+    "lines": [
+     {
+      "text": "76",
+      "kind": "foliation"
+     },
+     {
+      "text": "Hannß Schwertfey",
+      "kind": "rubric",
+      "uncertain": [
+       "Hannß",
+       "Schwertfey"
+      ]
+     },
+     {
+      "text": "Nõ an freytag nach Divisionis apostolorum Anno",
+      "kind": "entry",
+      "uncertain": [
+       "Divisionis",
+       "apostolorum"
+      ]
+     },
+     {
+      "text": "domini iiijc lxxvij / proxima pfingst . Yst gerait",
+      "kind": "entry",
+      "uncertain": [
+       "domini",
+       "proxima",
+       "pfingst",
+       "Yst",
+       "gerait"
+      ]
+     },
+     {
+      "text": "mit hannsn Swertfeyern / vmb alle arbait",
+      "kind": "entry",
+      "uncertain": [
+       "hannsn",
+       "Swertfeyern",
+       "arbait"
+      ]
+     },
+     {
+      "text": "so er meins herrn gnad geth vnd dargeben",
+      "kind": "entry"
+     },
+     {
+      "text": "hat sider fritags nach Sand Mattheistag",
+      "kind": "entry",
+      "uncertain": [
+       "Sand",
+       "Mattheistag"
+      ]
+     },
+     {
+      "text": "am herbst im lxxvj jar . vntz auf hewtign",
+      "kind": "entry"
+     },
+     {
+      "text": "tag / vnd bringt in ainer Summa / nach jnhalt",
+      "kind": "entry"
+     },
+     {
+      "text": "seins Registers / — x iiij lb iij ß ij d hl",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x iiij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Registers",
+       "hl"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Vnd hat er emphangn von herrn Bernd",
+      "kind": "entry",
+      "uncertain": [
+       "Bernd"
+      ]
+     },
+     {
+      "text": "pfarrär zu Bozen als Camerermaist / x lb pw",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Bozen",
+       "Camerermaist",
+       "pw"
+      ]
+     },
+     {
+      "text": "Darnach ist jm meins herrn gnad schuldig",
+      "kind": "entry"
+     },
+     {
+      "text": "iiij lb iij ß ij d hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iiij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "hl"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Albrecht Seller",
+  "Nō eod[em] die et p[rese]ntib[us] p[re]sc[ri]pt[is] etc Jst gerait",
+  "worden mit Allbrecht Seller vmb nestlenn vnnd hawptpind",
+  "vnnd anders so man meins herrn vnnd meinr fraw",
+  "gnad von Jm genomen hat sedz freytags vor",
+  "Sannt Margreten tag des lxxiiij Jarss / vnnd auf",
+  "hewttigs chreucz tag / vnnd man jst jm vbir das",
+  "so er von Ernd Benedicte dm alten Camermaister",
+  "vnnd vber die ij m̄ minus daurnach mit parttey",
+  "schuldikz ward —— xxvj ß",
+  "Die hathm Lienhart von Rottennbg Camerari[us]",
+  "aussgericht vnd bezalt",
+  "Conrat pürkhler",
+  "Nō eod[em] die p[rese]ntib[us] p[re]sc[ri]pt[is] Jst gerait mit Conr[at]",
+  "purckler vnd jst bis vntz auf heintign tag",
+  "mit partteyen schuldig worden vij m̄ minus q[ua]rt[a] Jst bezalt",
+  "p[er] Leonhardum d[er] czeingk engin Römeis",
+  "76",
+  "Hannß Schwertfey",
+  "Nõ an freytag nach Divisionis apostolorum Anno",
+  "domini iiijc lxxvij / proxima pfingst . Yst gerait",
+  "mit hannsn Swertfeyern / vmb alle arbait",
+  "so er meins herrn gnad geth vnd dargeben",
+  "hat sider fritags nach Sand Mattheistag",
+  "am herbst im lxxvj jar . vntz auf hewtign",
+  "tag / vnd bringt in ainer Summa / nach jnhalt",
+  "seins Registers / — x iiij lb iij ß ij d hl",
+  "Item",
+  "Vnd hat er emphangn von herrn Bernd",
+  "pfarrär zu Bozen als Camerermaist / x lb pw",
+  "Darnach ist jm meins herrn gnad schuldig",
+  "iiij lb iij ß ij d hl"
+ ]
+}

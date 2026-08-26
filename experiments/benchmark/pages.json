@@ -1,0 +1,30 @@
+{
+  "description": "Benchmark-Seitenset aus der visuellen Bestandssichtung 2026-08-26 (Kontaktbogen-Sichtung aller 123 Raitbuch-2-Doppelseiten plus Inventar-Stichprobe). IIIF-URLs werden zur Laufzeit aus data/raitbuch2_pages.json bzw. data/transcriptions/{docId}.json aufgeloest.",
+  "pages": [
+    {"id": "rb2_p003", "source": "raitbuch2", "pageNr": 3, "folio": "fol. 2v-3r", "phenomena": ["regelstruktur", "namensrubrik", "betraege", "summa", "beidseitig"], "gt": null},
+    {"id": "rb2_p028", "source": "raitbuch2", "pageNr": 28, "folio": "fol. 27v-28r", "phenomena": ["x-kassation", "unterstrichene-betraege", "zahlenkolonnen"], "gt": null},
+    {"id": "rb2_p040", "source": "raitbuch2", "pageNr": 40, "folio": "fol. 39v-40r", "phenomena": ["durchschlag-gemischt", "verblasste-rubrik", "waehrung-mark"], "gt": null},
+    {"id": "rb2_p061", "source": "raitbuch2", "pageNr": 61, "folio": "fol. 60v-61r", "phenomena": ["einlage-zettel", "siegel", "zwei-textebenen", "fremde-hand"], "gt": null},
+    {"id": "rb2_p076", "source": "raitbuch2", "pageNr": 76, "folio": "fol. 75v-76r", "phenomena": ["dicht-beidseitig", "erledigungsstrich", "zahlenkolonnen"], "gt": null},
+    {"id": "rb2_p090", "source": "raitbuch2", "pageNr": 90, "folio": "fol. 89v-90r", "phenomena": ["leer-negativkontrolle"], "gt": null},
+    {"id": "rb2_p099", "source": "raitbuch2", "pageNr": 99, "folio": "fol. 98v-99r", "phenomena": ["durchschlag-extrem", "verso-nur-geistertext", "handwechsel"], "gt": null},
+    {"id": "rb2_p113", "source": "raitbuch2", "pageNr": 113, "folio": "fol. 112v-113r", "phenomena": ["eingeheftetes-blatt", "ueberlagerte-schriftflaechen", "zwei-haende", "siegel"], "gt": null},
+    {"id": "inv_11328300_p1", "source": "inventar", "docId": "11328300", "pageNr": 1, "folio": "A 049.1 fol. 1r", "phenomena": ["rodel-streifen", "siegelrest", "blasse-tinte", "item-zeilen"], "gt": {"docId": "11328300", "pageNr": 1, "transkribus_status": "DONE"}},
+    {"id": "inv_11328300_p2", "source": "inventar", "docId": "11328300", "pageNr": 2, "folio": "A 049.1 fol. 1v", "phenomena": ["zweispaltig", "maximale-zeilendichte", "lesereihenfolge"], "gt": {"docId": "11328300", "pageNr": 2, "transkribus_status": "DONE"}},
+    {"id": "inv_11328300_p3", "source": "inventar", "docId": "11328300", "pageNr": 3, "folio": "A 049.1 S. 3", "phenomena": ["gt-anker"], "gt": {"docId": "11328300", "pageNr": 3, "transkribus_status": "DONE"}},
+    {"id": "inv_11328300_p4", "source": "inventar", "docId": "11328300", "pageNr": 4, "folio": "A 049.1 S. 4", "phenomena": ["gt-anker"], "gt": {"docId": "11328300", "pageNr": 4, "transkribus_status": "DONE"}},
+    {"id": "inv_11330019_p1", "source": "inventar", "docId": "11330019", "pageNr": 1, "folio": "A 144.1 S. 1 (Kronburg 1478)", "phenomena": ["gt-anker"], "gt": {"docId": "11330019", "pageNr": 1, "transkribus_status": "DONE"}},
+    {"id": "inv_11330019_p2", "source": "inventar", "docId": "11330019", "pageNr": 2, "folio": "A 144.1 S. 2 (zweispaltig)", "phenomena": ["gt-anker", "zweispaltig"], "gt": {"docId": "11330019", "pageNr": 2, "transkribus_status": "DONE"}},
+    {"id": "inv_11330019_p3", "source": "inventar", "docId": "11330019", "pageNr": 3, "folio": "A 144.1 S. 3", "phenomena": ["gt-anker"], "gt": {"docId": "11330019", "pageNr": 3, "transkribus_status": "DONE"}},
+    {"id": "inv_11330020_p1", "source": "inventar", "docId": "11330020", "pageNr": 1, "folio": "A 201.1 fol. 1r (Heinfels 1440)", "phenomena": ["aeltere-hand", "verblasste-blattzone", "archivvermerk"], "gt": {"docId": "11330020", "pageNr": 1, "transkribus_status": "DONE"}},
+    {"id": "inv_11330020_p2", "source": "inventar", "docId": "11330020", "pageNr": 2, "folio": "A 201.1 S. 2 (Heinfels 1440)", "phenomena": ["gt-anker", "aeltere-hand"], "gt": {"docId": "11330020", "pageNr": 2, "transkribus_status": "DONE"}},
+    {"id": "inv_11348659_p1", "source": "inventar", "docId": "11348659", "pageNr": 1, "folio": "A 273.7 fol. 1r", "phenomena": ["fliessprosa-gedraengt", "kleinster-schriftgrad", "ohne-gliederung"], "gt": null}
+  ],
+  "reserve": [
+    {"source": "raitbuch2", "pageNr": 23, "phenomena": ["zieruberschrift"]},
+    {"source": "raitbuch2", "pageNr": 122, "phenomena": ["gerissenes-blatt", "fremdes-papier"]},
+    {"source": "raitbuch2", "pageNr": 116, "phenomena": ["graublaues-papier", "eigene-hand"]},
+    {"source": "inventar", "docId_hint": "A 144.1 S.2", "phenomena": ["zweites-gt-bifolium"]},
+    {"source": "inventar", "docId_hint": "A 151.1 S.1", "phenomena": ["faltspuren"]}
+  ]
+}

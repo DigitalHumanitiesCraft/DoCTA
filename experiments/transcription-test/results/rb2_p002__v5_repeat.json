@@ -1,0 +1,204 @@
+{
+ "raw_text": null,
+ "lines": [
+  "2",
+  "prouision vnd Solde",
+  "ausserhalb lanndes",
+  "Sigmund von",
+  "kramndes",
+  "Nota an Sunntay Sannd Johanns tag Decollacio(n)is",
+  "Anno (etc) lxxj^o / Jn gegennwairtikait herr Benedictn kamerer",
+  "hansen kapsn khůchenmaister, Eberharts kluber hausskamr",
+  "vnd wolfgangs khuentzlen lanntschreiber hat ma(n) gerait",
+  "mit petern papus anstat Sigmundten van Bramndes",
+  "vmb Solde, vnd erczligen / auch zerrung vnd aller schuld:",
+  "so meins herrn gnad demselben van Bramndes aller sach(en) vntz",
+  "auf heuttigen tag ist schuldig worden /",
+  "meins herrn gnad ist demselben van Bramndes schuldig word(en)",
+  "nach Jnhald ains Schuldbrieffs / van Solde vnd erczlgelt",
+  "wegen so er zu bellued getan hat —— iij^C xlvij lb d gld vnd iij lb p(e)r",
+  "It(em) So ist Jm meins herrn gnad schuldig prouision van san(nd)",
+  "kattren tag des lxx Jars vntz auf Sand kattren tag des lxxj^o",
+  "Jars vnd hat damit den dienst aufgesagt —— cl lb d gld",
+  "It(em) Auch ist Jm meins herrn gnad schuldig alledag zerrung —— xj vn x d",
+  "Darzů hat er von herr Benedict kamerer empfangen jn",
+  "dreÿn malen die demselb kamerer nach behord zcuraiten",
+  "f lxxij lb d gld",
+  "Dannach ist man Jm alles Enndt schuldig —— iiij^C xxviij lb d gld",
+  "Die hat Jm d bemeltt kamerer aufgericht vnd beczalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1v",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation"
+     },
+     {
+      "text": "prouision vnd Solde",
+      "kind": "rubric"
+     },
+     {
+      "text": "ausserhalb lanndes",
+      "kind": "rubric"
+     },
+     {
+      "text": "Sigmund von",
+      "kind": "rubric"
+     },
+     {
+      "text": "kramndes",
+      "kind": "rubric",
+      "uncertain": [
+       "kramndes"
+      ]
+     },
+     {
+      "text": "Nota an Sunntay Sannd Johanns tag Decollacio(n)is",
+      "kind": "entry",
+      "uncertain": [
+       "Sunntay"
+      ]
+     },
+     {
+      "text": "Anno (etc) lxxj^o / Jn gegennwairtikait herr Benedictn kamerer",
+      "kind": "entry"
+     },
+     {
+      "text": "hansen kapsn khůchenmaister, Eberharts kluber hausskamr",
+      "kind": "entry",
+      "uncertain": [
+       "kluber",
+       "hausskamr"
+      ]
+     },
+     {
+      "text": "vnd wolfgangs khuentzlen lanntschreiber hat ma(n) gerait",
+      "kind": "entry"
+     },
+     {
+      "text": "mit petern papus anstat Sigmundten van Bramndes",
+      "kind": "entry",
+      "uncertain": [
+       "van",
+       "Bramndes"
+      ]
+     },
+     {
+      "text": "vmb Solde, vnd erczligen / auch zerrung vnd aller schuld:",
+      "kind": "entry",
+      "uncertain": [
+       "erczligen"
+      ]
+     },
+     {
+      "text": "so meins herrn gnad demselben van Bramndes aller sach(en) vntz",
+      "kind": "entry",
+      "uncertain": [
+       "Bramndes"
+      ]
+     },
+     {
+      "text": "auf heuttigen tag ist schuldig worden /",
+      "kind": "entry"
+     },
+     {
+      "text": "meins herrn gnad ist demselben van Bramndes schuldig word(en)",
+      "kind": "entry",
+      "uncertain": [
+       "Bramndes"
+      ]
+     },
+     {
+      "text": "nach Jnhald ains Schuldbrieffs / van Solde vnd erczlgelt",
+      "kind": "entry",
+      "uncertain": [
+       "erczlgelt"
+      ]
+     },
+     {
+      "text": "wegen so er zu bellued getan hat —— iij^C xlvij lb d gld vnd iij lb p(e)r",
+      "kind": "entry",
+      "uncertain": [
+       "bellued",
+       "p(e)r"
+      ]
+     },
+     {
+      "text": "It(em) So ist Jm meins herrn gnad schuldig prouision van san(nd)",
+      "kind": "entry"
+     },
+     {
+      "text": "kattren tag des lxx Jars vntz auf Sand kattren tag des lxxj^o",
+      "kind": "entry",
+      "uncertain": [
+       "kattren"
+      ]
+     },
+     {
+      "text": "Jars vnd hat damit den dienst aufgesagt —— cl lb d gld",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) Auch ist Jm meins herrn gnad schuldig alledag zerrung —— xj vn x d",
+      "kind": "entry",
+      "uncertain": [
+       "vn"
+      ]
+     },
+     {
+      "text": "Darzů hat er von herr Benedict kamerer empfangen jn",
+      "kind": "entry"
+     },
+     {
+      "text": "dreÿn malen die demselb kamerer nach behord zcuraiten",
+      "kind": "entry"
+     },
+     {
+      "text": "f lxxij lb d gld",
+      "kind": "amount",
+      "uncertain": [
+       "f"
+      ]
+     },
+     {
+      "text": "Dannach ist man Jm alles Enndt schuldig —— iiij^C xxviij lb d gld",
+      "kind": "sum"
+     },
+     {
+      "text": "Die hat Jm d bemeltt kamerer aufgericht vnd beczalt",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p002",
+ "variant": "v5_repeat",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 13.9,
+ "timestamp": "2026-08-26T19:32:01+00:00"
+}

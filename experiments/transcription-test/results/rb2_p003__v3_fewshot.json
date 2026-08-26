@@ -1,0 +1,251 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Vlreich Schütz",
+  "Nota Anno d(omi)ni etc lxxiiiito Pauli b(e)k(eh)r(un)g hat man",
+  "gerait mit Vlreich Schützen / vnd meinsh(e)r(e)n",
+  "gnad ist jm schuldig sein sold van zwain jarn.",
+  "zu dem nachstvergangn Sannd Annegreten tag",
+  "geraint —— lxxxvj {Rh}gld",
+  "Die hat jm her Benedict Camermaist(e)r aufg(e)richt",
+  "vnd bezalt",
+  "3",
+  "Graf Hainreich",
+  "von lupfen",
+  "Nota die Anno vt p(re)tib(us) quouis sup(r)a · hat",
+  "man mit Conraten Steinär anstat Graf hainrich",
+  "von lupfn gerait von der alten Schuld wegen von",
+  "veltkirch herrüerend / dartz vmb allerlay sold vnd zerung",
+  "Das alles bringt xxiiij, auf heuttigen tag xxiiij^C vnd",
+  "xcvij {Rh}gld",
+  "Daran sein Innemen",
+  "It(em) Daran hat er emphangen Am ersten van herr Benedict",
+  "Camermaist(e)r die d(er)s(e)lb Camermaister b(e)rait hat —— v^C Rhgld",
+  "It(em) Aber hat er von denselben Camermaister emphangn d(e)r",
+  "derselb Camermaister b(e)raiten w(e)rt —— v^C {Rh}gld",
+  "It(em) vnd auf allerlay zerung / die der Camermaist(e)r auch",
+  "dranen w(e)rt —— Cxj {Rh}gld",
+  "It(em) Auch hat er van hern Jacoben Trapen emphangen an",
+  "der Schuld die her Jacob mein(e)s hern gnaden schuldig ist",
+  "iiij^C {Rh}gld",
+  "Su(m)ma hijs emphabens",
+  "xv^C xj {Rh}gld",
+  "Demnach ist mein(e)s herrn gnad Graf hainreichen schuldig",
+  "ix^C lxxxvj {Rh}gld / die hat jm d(e)r bemeltt Cam(e)rmaist(e)r",
+  "/ aufgericht / vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (fol. 2v)",
+    "lines": [
+     {
+      "text": "Vlreich Schütz",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota Anno d(omi)ni etc lxxiiiito Pauli b(e)k(eh)r(un)g hat man",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gerait mit Vlreich Schützen / vnd meinsh(e)r(e)n",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gnad ist jm schuldig sein sold van zwain jarn.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zu dem nachstvergangn Sannd Annegreten tag",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "geraint —— lxxxvj {Rh}gld",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Die hat jm her Benedict Camermaist(e)r aufg(e)richt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "rechts (fol. 3r)",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Graf Hainreich",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "von lupfen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota die Anno vt p(re)tib(us) quouis sup(r)a · hat",
+      "kind": "entry",
+      "uncertain": [
+       "p(re)tib(us) quouis"
+      ]
+     },
+     {
+      "text": "man mit Conraten Steinär anstat Graf hainrich",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "von lupfn gerait von der alten Schuld wegen von",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "veltkirch herrüerend / dartz vmb allerlay sold vnd zerung",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Das alles bringt xxiiij, auf heuttigen tag xxiiij^C vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "xcvij {Rh}gld",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Daran hat er emphangen Am ersten van herr Benedict",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Camermaist(e)r die d(er)s(e)lb Camermaister b(e)rait hat —— v^C Rhgld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Aber hat er von denselben Camermaister emphangn d(e)r",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "derselb Camermaister b(e)raiten w(e)rt —— v^C {Rh}gld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) vnd auf allerlay zerung / die der Camermaist(e)r auch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dranen w(e)rt —— Cxj {Rh}gld",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Auch hat er van hern Jacoben Trapen emphangen an",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der Schuld die her Jacob mein(e)s hern gnaden schuldig ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iiij^C {Rh}gld",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Su(m)ma hijs emphabens",
+      "kind": "sum",
+      "uncertain": [
+       "hijs emphabens"
+      ]
+     },
+     {
+      "text": "xv^C xj {Rh}gld",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Demnach ist mein(e)s herrn gnad Graf hainreichen schuldig",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ix^C lxxxvj {Rh}gld / die hat jm d(e)r bemeltt Cam(e)rmaist(e)r",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "/ aufgericht / vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Rechnungsbucheinträge über Soldabrechnungen und Schulden (Ulrich Schütz, Graf Heinrich von Lupfen)."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    5420
+   ],
+   "sent_px": [
+    1191,
+    3500
+   ],
+   "crop": null,
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "fewshot_source": "fewshot_11327964_p2",
+ "item": "rb2_p003",
+ "variant": "v3_fewshot",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 11.6,
+ "timestamp": "2026-08-26T19:32:56+00:00"
+}

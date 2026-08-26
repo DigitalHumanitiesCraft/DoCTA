@@ -1,0 +1,294 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Auf dem klain Estreich",
+  "vor der stuben.",
+  "Ain grosser Spaiskasten",
+  "In der Hell in der ersten Camer",
+  "Ain pettstat",
+  "Zwo rauch deckhen",
+  "Ain pett",
+  "Ain polster",
+  "Ain khiss",
+  "Ain strosackh",
+  "Ain par rupffin leilach",
+  "In der andern Camer",
+  "Pettstatten .i.",
+  "Ain pett",
+  "Ain strosackh",
+  "Zwaij rupffin leilach",
+  "Zwo rauch deckhen",
+  "Ain polster",
+  "In der pancknecht Cam(er)",
+  "Zwo pettstat",
+  "Zwaij pett",
+  "Zwaij polst(er)",
+  "Ain khiss",
+  "Vier rauch deckhen",
+  "Vier werchins leilach",
+  "Zwain strosackh",
+  "In der andern Camer dran",
+  "Ain pettstat",
+  "Ain pett",
+  "Ain polst(er)",
+  "Zwaij khiss",
+  "Ain strosackh",
+  "Ain rauche deckh",
+  "Ain Golter",
+  "Auf dem Trepffen",
+  "obwein dal",
+  "Ain grosser Harnasch Casten",
+  "Zwain fass essig"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "Auf dem klain Estreich",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vor der stuben.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain grosser Spaiskasten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der Hell in der ersten Camer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo rauch deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain khiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par rupffin leilach",
+      "kind": "entry",
+      "uncertain": [
+       "rupffin"
+      ]
+     },
+     {
+      "text": "In der andern Camer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Pettstatten .i.",
+      "kind": "entry",
+      "uncertain": [
+       ".i."
+      ]
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij rupffin leilach",
+      "kind": "entry",
+      "uncertain": [
+       "rupffin"
+      ]
+     },
+     {
+      "text": "Zwo rauch deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der pancknecht Cam(er)",
+      "kind": "entry",
+      "uncertain": [
+       "pancknecht"
+      ]
+     },
+     {
+      "text": "Zwo pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij polst(er)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain khiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier rauch deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier werchins leilach",
+      "kind": "entry",
+      "uncertain": [
+       "werchins"
+      ]
+     },
+     {
+      "text": "Zwain strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der andern Camer dran",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polst(er)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij khiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain rauche deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Golter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Auf dem Trepffen",
+      "kind": "entry",
+      "uncertain": [
+       "Trepffen"
+      ]
+     },
+     {
+      "text": "obwein dal",
+      "kind": "entry",
+      "uncertain": [
+       "obwein",
+       "dal"
+      ]
+     },
+     {
+      "text": "Ain grosser Harnasch Casten",
+      "kind": "entry",
+      "uncertain": [
+       "Harnasch"
+      ]
+     },
+     {
+      "text": "Zwain fass essig",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Inventarliste mit Raum- und Kammeraufstellungen."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    5420
+   ],
+   "sent_px": [
+    1191,
+    3500
+   ],
+   "crop": null,
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    931,
+    2418
+   ],
+   "sent_px": [
+    931,
+    2418
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "fewshot_source": "fewshot_11327964_p2",
+ "item": "inv_11327963_p2",
+ "variant": "v3_fewshot",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 8.8,
+ "timestamp": "2026-08-26T19:36:22+00:00"
+}

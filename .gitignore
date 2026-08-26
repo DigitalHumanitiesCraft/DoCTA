@@ -30,3 +30,8 @@ docs/screenshots/
 node_modules/
 package.json
 package-lock.json
+
+# HTR experiments: cached IIIF images are re-obtainable and must never be committed (TLA/Transkribus image rights)
+experiments/transcription-test/images/
+experiments/benchmark/images/
+experiments/**/*.tmp*

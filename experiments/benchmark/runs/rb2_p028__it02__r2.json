@@ -1,0 +1,402 @@
+{
+ "page": "rb2_p028",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 14.9,
+ "timestamp": "2026-08-26T20:17:51+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. [1]v",
+    "lines": [
+     {
+      "text": "Andre von matrai",
+      "kind": "rubric",
+      "uncertain": [
+       "matrai"
+      ]
+     },
+     {
+      "text": "Nota am freitag vor vnser lieben frawen",
+      "kind": "entry",
+      "uncertain": [
+       "lieben",
+       "frawen"
+      ]
+     },
+     {
+      "text": "tag Annunciacio Anno domini etc lxxij in gegen",
+      "kind": "entry",
+      "uncertain": [
+       "Annunciacio",
+       "lxxij"
+      ]
+     },
+     {
+      "text": "wurtikait Hanns Camrmayster Thomas do alts",
+      "kind": "entry",
+      "uncertain": [
+       "Hanns",
+       "Thomas"
+      ]
+     },
+     {
+      "text": "Puchmayster Burckhart Pawlr Hans Paur",
+      "kind": "entry",
+      "uncertain": [
+       "Burckhart",
+       "Pawlr",
+       "Paur"
+      ]
+     },
+     {
+      "text": "vnd Wolfgangs Stumlbl Camrschreiber Ist",
+      "kind": "entry",
+      "uncertain": [
+       "Wolfgangs",
+       "Stumlbl"
+      ]
+     },
+     {
+      "text": "mit Andren ditzhalb Raitung beschehen",
+      "kind": "entry",
+      "uncertain": [
+       "Andren"
+      ]
+     },
+     {
+      "text": "der churtzn von Hoffenfar wenn phinztag",
+      "kind": "entry",
+      "uncertain": [
+       "churtzn",
+       "Hoffenfar"
+      ]
+     },
+     {
+      "text": "nach des heyligen Creutzs tag Exaltacionis",
+      "kind": "entry",
+      "uncertain": [
+       "Exaltacionis"
+      ]
+     },
+     {
+      "text": "des vergange lxxj Jars vntz auf heutign tag",
+      "kind": "entry",
+      "uncertain": [
+       "lxxj",
+       "heutign"
+      ]
+     },
+     {
+      "text": "gefurt hat her gen Jnstpruck in meins gned",
+      "kind": "entry",
+      "uncertain": [
+       "Jnstpruck"
+      ]
+     },
+     {
+      "text": "herrn Pchamrlzkchorn /",
+      "kind": "entry",
+      "uncertain": [
+       "Pchamrlzkchorn"
+      ]
+     },
+     {
+      "text": "Bringt das er herauf gefurt hat iiij C lxxxxviij",
+      "kind": "entry",
+      "uncertain": [
+       "iiij C lxxxxviij"
+      ]
+     },
+     {
+      "text": "fubl / von yedem fůbl xij d pringt d xj lb iiij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xj",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "fubl",
+       "fůbl"
+      ]
+     },
+     {
+      "text": "Darzů von gnaden hat man jm zu geffencz",
+      "kind": "entry",
+      "uncertain": [
+       "geffencz"
+      ]
+     },
+     {
+      "text": "glegt vtt d / das alles in ainer Summa",
+      "kind": "entry",
+      "uncertain": [
+       "vtt"
+      ]
+     },
+     {
+      "text": "pringt —— d x lb",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "d x lb"
+      ]
+     },
+     {
+      "text": "Summa",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Es hat der Camrmaystr / Stumlbl vnd Andre",
+      "kind": "entry",
+      "uncertain": [
+       "Stumlbl",
+       "Andre"
+      ]
+     },
+     {
+      "text": "zu jm veraint / als man meins Gnedigen herrn allerlay",
+      "kind": "entry",
+      "uncertain": [
+       "Gnedigen"
+      ]
+     },
+     {
+      "text": "herauf gefurt hat —— viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "viij d"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "28r",
+    "lines": [
+     {
+      "text": "28",
+      "kind": "foliation"
+     },
+     {
+      "text": "Daran sein Jnnemen",
+      "kind": "rubric",
+      "uncertain": [
+       "Jnnemen"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von meinem herrn Camrermeyster hat er",
+      "kind": "entry",
+      "uncertain": [
+       "meinem",
+       "Camrermeyster"
+      ]
+     },
+     {
+      "text": "emphangen die desselb Camrermeyster dͬrauf",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermeyster",
+       "dͬrauf"
+      ]
+     },
+     {
+      "text": "hat —— xxviij m̄ xiij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "hat"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Oswolthalten Salzmar hat er",
+      "kind": "entry",
+      "uncertain": [
+       "Oswolthalten",
+       "Salzmar"
+      ]
+     },
+     {
+      "text": "emphangen —— lxx m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxx",
+       "unit": "m̄"
+      }
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von zallnär am lueg hat er emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "zallnär",
+       "lueg"
+      ]
+     },
+     {
+      "text": "—— xxxvij m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxvij",
+       "unit": "m̄"
+      }
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Steffan Bethsen dazumal Kellnär an",
+      "kind": "entry",
+      "uncertain": [
+       "Steffan",
+       "Bethsen",
+       "Kellnär"
+      ]
+     },
+     {
+      "text": "Metzan xvcix viij fuder j fuder für xx m̄",
+      "kind": "entry",
+      "uncertain": [
+       "Metzan",
+       "xvcix",
+       "fuder"
+      ]
+     },
+     {
+      "text": "die desselb Bethsad in begerhyrs meins hern",
+      "kind": "entry",
+      "uncertain": [
+       "Bethsad",
+       "begerhyrs"
+      ]
+     },
+     {
+      "text": "gnaden ubegelten hat",
+      "kind": "entry",
+      "uncertain": [
+       "ubegelten"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Lorentzen Brantstner iij m̄ iij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "Lorentzen",
+       "Brantstner"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Andre von matrai",
+  "Nota am freitag vor vnser lieben frawen",
+  "tag Annunciacio Anno domini etc lxxij in gegen",
+  "wurtikait Hanns Camrmayster Thomas do alts",
+  "Puchmayster Burckhart Pawlr Hans Paur",
+  "vnd Wolfgangs Stumlbl Camrschreiber Ist",
+  "mit Andren ditzhalb Raitung beschehen",
+  "der churtzn von Hoffenfar wenn phinztag",
+  "nach des heyligen Creutzs tag Exaltacionis",
+  "des vergange lxxj Jars vntz auf heutign tag",
+  "gefurt hat her gen Jnstpruck in meins gned",
+  "herrn Pchamrlzkchorn /",
+  "Bringt das er herauf gefurt hat iiij C lxxxxviij",
+  "fubl / von yedem fůbl xij d pringt d xj lb iiij d",
+  "Darzů von gnaden hat man jm zu geffencz",
+  "glegt vtt d / das alles in ainer Summa",
+  "pringt —— d x lb",
+  "Summa",
+  "Es hat der Camrmaystr / Stumlbl vnd Andre",
+  "zu jm veraint / als man meins Gnedigen herrn allerlay",
+  "herauf gefurt hat —— viij d",
+  "28",
+  "Daran sein Jnnemen",
+  "Item",
+  "von meinem herrn Camrermeyster hat er",
+  "emphangen die desselb Camrermeyster dͬrauf",
+  "hat —— xxviij m̄ xiij ß",
+  "Item",
+  "von Oswolthalten Salzmar hat er",
+  "emphangen —— lxx m̄",
+  "Item",
+  "von zallnär am lueg hat er emphangen",
+  "—— xxxvij m̄",
+  "Item",
+  "von Steffan Bethsen dazumal Kellnär an",
+  "Metzan xvcix viij fuder j fuder für xx m̄",
+  "die desselb Bethsad in begerhyrs meins hern",
+  "gnaden ubegelten hat",
+  "Item",
+  "von Lorentzen Brantstner iij m̄ iij ß"
+ ]
+}

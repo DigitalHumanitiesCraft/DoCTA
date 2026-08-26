@@ -1,0 +1,181 @@
+{
+ "raw_text": null,
+ "lines": [
+  "2",
+  "prouision vnd Solde",
+  "ausserhalb lanndes",
+  "Sigmund von",
+  "Brandiss",
+  "Nota an Sūntay Sannd Johanns tag Decollacio(nis)",
+  "Anno (et)c lxxj° / in gegenwürtikait herr(e)n Benedictn kamer(er)s",
+  "hannsn kaysr kuch(e)nmaists / Lienharts klueber hauskam(er)s",
+  "vnd wolfgangs thumblicher kanczlschreibr / hat ma(n) gerait",
+  "mit petern papus anstat Sigmundn von Brandes",
+  "vmb Solde / vnd darleyhen / auch zerung vnd all schulde",
+  "so meins herr(e)n gnad demselben von Brandes / aller sachenn",
+  "auf heutigen tag ist schuldig word(e)n /",
+  "meins herren gnad ist demselben von Brandes schuldig word(e)n",
+  "nach jnnhald ains Schuldbrieffs / von Soldt vnd darleyens",
+  "wegen so er zu Velkierch getan hat —— iij^c l·xl· gld vnd iij lb p(e)n",
+  "It(em) So ist jm meins herrn gnad schuldig prouision vom sannd",
+  "katrein tag des lxxj Jars vncz auf sand katrein tag des lxxij",
+  "Jars vnd hat damit den dienst aufgesagt —— cl l·xl· gld",
+  "It(em) Auch ist jm meins herr(e)n gnad schuldig allerlay zerung —— vj lb iiii ß v d",
+  "Darauf hat er von herr(e)n Benedickte kamer(er) empfangen zu",
+  "dreyn maln / die derselbe kamerer nach bestend zeuenten",
+  "—— l·lxxij l·xl· gld",
+  "Darnach ist man jm alles Gu(e)t schuldig —— iij^c l·xxvj l·xl· gld",
+  "Die hat jm d(er) bemelt kamer(er) aufgericht vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation"
+     },
+     {
+      "text": "prouision vnd Solde",
+      "kind": "rubric"
+     },
+     {
+      "text": "ausserhalb lanndes",
+      "kind": "rubric"
+     },
+     {
+      "text": "Sigmund von",
+      "kind": "rubric"
+     },
+     {
+      "text": "Brandiss",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota an Sūntay Sannd Johanns tag Decollacio(nis)",
+      "kind": "entry"
+     },
+     {
+      "text": "Anno (et)c lxxj° / in gegenwürtikait herr(e)n Benedictn kamer(er)s",
+      "kind": "entry"
+     },
+     {
+      "text": "hannsn kaysr kuch(e)nmaists / Lienharts klueber hauskam(er)s",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd wolfgangs thumblicher kanczlschreibr / hat ma(n) gerait",
+      "kind": "entry"
+     },
+     {
+      "text": "mit petern papus anstat Sigmundn von Brandes",
+      "kind": "entry"
+     },
+     {
+      "text": "vmb Solde / vnd darleyhen / auch zerung vnd all schulde",
+      "kind": "entry"
+     },
+     {
+      "text": "so meins herr(e)n gnad demselben von Brandes / aller sachenn",
+      "kind": "entry"
+     },
+     {
+      "text": "auf heutigen tag ist schuldig word(e)n /",
+      "kind": "entry"
+     },
+     {
+      "text": "meins herren gnad ist demselben von Brandes schuldig word(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "nach jnnhald ains Schuldbrieffs / von Soldt vnd darleyens",
+      "kind": "entry"
+     },
+     {
+      "text": "wegen so er zu Velkierch getan hat —— iij^c l·xl· gld vnd iij lb p(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) So ist jm meins herrn gnad schuldig prouision vom sannd",
+      "kind": "entry"
+     },
+     {
+      "text": "katrein tag des lxxj Jars vncz auf sand katrein tag des lxxij",
+      "kind": "entry"
+     },
+     {
+      "text": "Jars vnd hat damit den dienst aufgesagt —— cl l·xl· gld",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) Auch ist jm meins herr(e)n gnad schuldig allerlay zerung —— vj lb iiii ß v d",
+      "kind": "entry"
+     },
+     {
+      "text": "Darauf hat er von herr(e)n Benedickte kamer(er) empfangen zu",
+      "kind": "entry"
+     },
+     {
+      "text": "dreyn maln / die derselbe kamerer nach bestend zeuenten",
+      "kind": "entry",
+      "uncertain": [
+       "zeuenten"
+      ]
+     },
+     {
+      "text": "—— l·lxxij l·xl· gld",
+      "kind": "amount"
+     },
+     {
+      "text": "Darnach ist man jm alles Gu(e)t schuldig —— iij^c l·xxvj l·xl· gld",
+      "kind": "sum"
+     },
+     {
+      "text": "Die hat jm d(er) bemelt kamer(er) aufgericht vnd bezalt",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Die Seite ist leer; die sichtbaren Schriftzüge stammen ausschließlich vom Durchscheinen (Bleed-Through) der nachfolgenden Recto-Seite. | Folio 2r: Abrechnung mit Peter Papus stellvertretend für Sigmund von Brandis über Sold, Darlehen, Zehrung und Pension/Provision außerhalb des Landes."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1906,
+    2622
+   ],
+   "crop": "left",
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1907,
+    2622
+   ],
+   "crop": "right",
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p002",
+ "variant": "v4_split",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 18.2,
+ "timestamp": "2026-08-26T19:31:47+00:00"
+}

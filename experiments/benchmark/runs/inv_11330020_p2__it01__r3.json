@@ -1,0 +1,332 @@
+{
+ "page": "inv_11330020_p2",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1075,
+    2727
+   ],
+   "sent_px": [
+    1075,
+    2727
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 13.1,
+ "timestamp": "2026-08-26T20:23:33+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "recto",
+    "lines": [
+     {
+      "text": "It(e)m In der partnerer kamer ist ain pêtt .iiij.",
+      "kind": "entry",
+      "uncertain": [
+       "partnerer",
+       "pêtt"
+      ]
+     },
+     {
+      "text": "rauch deckh die alt sein ij renchene leilach",
+      "kind": "entry",
+      "uncertain": [
+       "renchene"
+      ]
+     },
+     {
+      "text": "j polster j panpart",
+      "kind": "entry",
+      "uncertain": [
+       "panpart"
+      ]
+     },
+     {
+      "text": "It(e)m In der kamer bey der aus ladung sein vier",
+      "kind": "entry",
+      "uncertain": [
+       "aus ladung"
+      ]
+     },
+     {
+      "text": "pett zwen polster zway chrüse zway poze",
+      "kind": "entry",
+      "uncertain": [
+       "chrüse",
+       "poze"
+      ]
+     },
+     {
+      "text": "leilach Sechs schaffene deckh alt vnd new ain",
+      "kind": "entry"
+     },
+     {
+      "text": "gamßene deckh zwen spanpart zwo renchen",
+      "kind": "entry",
+      "uncertain": [
+       "gamßene",
+       "renchen"
+      ]
+     },
+     {
+      "text": "mit gestreichten pfechn",
+      "kind": "entry",
+      "uncertain": [
+       "gestreichten",
+       "pfechn"
+      ]
+     },
+     {
+      "text": "It(e)m Im stüblein da bey sein zway pett zway",
+      "kind": "entry"
+     },
+     {
+      "text": "poze leilach ain polster ain chrüse drey",
+      "kind": "entry",
+      "uncertain": [
+       "poze",
+       "chrüse"
+      ]
+     },
+     {
+      "text": "schäffene deckh ain gamßß deckh ain spanpart",
+      "kind": "entry",
+      "uncertain": [
+       "gamßß"
+      ]
+     },
+     {
+      "text": "It(e)m In dem obern ärgker ist zway pett zway",
+      "kind": "entry"
+     },
+     {
+      "text": "leilach ain polster ain chrüs drey schäffin",
+      "kind": "entry",
+      "uncertain": [
+       "chrüs"
+      ]
+     },
+     {
+      "text": "deckh zwo lembrein gut deckh",
+      "kind": "entry",
+      "uncertain": [
+       "lembrein"
+      ]
+     },
+     {
+      "text": "It(e)m In der dritt kamer ist {ain} ~~zway~~ pett ain polst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "zway renchene leilach ain pöser polster",
+      "kind": "entry",
+      "uncertain": [
+       "renchene"
+      ]
+     },
+     {
+      "text": "anen zuech mer ain rauche deckh zway",
+      "kind": "entry",
+      "uncertain": [
+       "anen zuech"
+      ]
+     },
+     {
+      "text": "pöse deckhles gestreift",
+      "kind": "entry",
+      "uncertain": [
+       "deckhles"
+      ]
+     },
+     {
+      "text": "It(e)m Darnach In der naechstn kamer vnd",
+      "kind": "entry",
+      "uncertain": [
+       "naechstn"
+      ]
+     },
+     {
+      "text": "sunst allenthalbn sein xxj kessl grosn",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd klain guet vnd pöz vnd ain klain",
+      "kind": "entry"
+     },
+     {
+      "text": "kesslein zu dem öl mer iiij par pöze kessl",
+      "kind": "entry"
+     },
+     {
+      "text": "zwelf erden hafenn grose vnd klain ain",
+      "kind": "entry",
+      "uncertain": [
+       "hafenn"
+      ]
+     },
+     {
+      "text": "guete lanctsten da man fisch In macht",
+      "kind": "entry",
+      "uncertain": [
+       "lanctsten"
+      ]
+     },
+     {
+      "text": "iij mörser zwen stössl mer xxij mittage",
+      "kind": "entry",
+      "uncertain": [
+       "mittage"
+      ]
+     },
+     {
+      "text": "vnd klaine zünenschiessl vnd ain zimplau",
+      "kind": "entry",
+      "uncertain": [
+       "zünenschiessl",
+       "zimplau"
+      ]
+     },
+     {
+      "text": "vier pöze messene pekh vnd ain messens",
+      "kind": "entry",
+      "uncertain": [
+       "pekh"
+      ]
+     },
+     {
+      "text": "gieffelkandl vnd zway kupfferene pekh",
+      "kind": "entry",
+      "uncertain": [
+       "gieffelkandl",
+       "pekh"
+      ]
+     },
+     {
+      "text": "mer xxxij part stagnis p gros vnd klain",
+      "kind": "entry",
+      "uncertain": [
+       "stagnis p"
+      ]
+     },
+     {
+      "text": "mer pfunf hultzne täler vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "täler"
+      ]
+     },
+     {
+      "text": "tisch Im fleysch gadm vnd vier frain",
+      "kind": "entry",
+      "uncertain": [
+       "frain"
+      ]
+     },
+     {
+      "text": "purden loden v elln vnd ain vnetail",
+      "kind": "entry",
+      "uncertain": [
+       "purden",
+       "vnetail"
+      ]
+     },
+     {
+      "text": "mer Im fleyschgadm vnd dritt kamer",
+      "kind": "entry"
+     },
+     {
+      "text": "iiij tauchf vnd gewandt",
+      "kind": "entry",
+      "uncertain": [
+       "tauchf"
+      ]
+     },
+     {
+      "text": "It(e)m In dir kuch(e)l iij prantröst x pfann",
+      "kind": "entry"
+     },
+     {
+      "text": "iij pfaffnpfan iij häln zwen pfann",
+      "kind": "entry",
+      "uncertain": [
+       "pfaffnpfan",
+       "häln"
+      ]
+     },
+     {
+      "text": "cost iij praetspiß vnd ain gaust ain",
+      "kind": "entry",
+      "uncertain": [
+       "gaust"
+      ]
+     },
+     {
+      "text": "cyffzang ain rübeyssn funf miltz",
+      "kind": "entry",
+      "uncertain": [
+       "cyffzang",
+       "miltz"
+      ]
+     },
+     {
+      "text": "sessle zway stößl ain masssatzg",
+      "kind": "entry",
+      "uncertain": [
+       "sessle",
+       "masssatzg"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(e)m In der partnerer kamer ist ain pêtt .iiij.",
+  "rauch deckh die alt sein ij renchene leilach",
+  "j polster j panpart",
+  "It(e)m In der kamer bey der aus ladung sein vier",
+  "pett zwen polster zway chrüse zway poze",
+  "leilach Sechs schaffene deckh alt vnd new ain",
+  "gamßene deckh zwen spanpart zwo renchen",
+  "mit gestreichten pfechn",
+  "It(e)m Im stüblein da bey sein zway pett zway",
+  "poze leilach ain polster ain chrüse drey",
+  "schäffene deckh ain gamßß deckh ain spanpart",
+  "It(e)m In dem obern ärgker ist zway pett zway",
+  "leilach ain polster ain chrüs drey schäffin",
+  "deckh zwo lembrein gut deckh",
+  "It(e)m In der dritt kamer ist {ain} ~~zway~~ pett ain polst(er)",
+  "zway renchene leilach ain pöser polster",
+  "anen zuech mer ain rauche deckh zway",
+  "pöse deckhles gestreift",
+  "It(e)m Darnach In der naechstn kamer vnd",
+  "sunst allenthalbn sein xxj kessl grosn",
+  "vnd klain guet vnd pöz vnd ain klain",
+  "kesslein zu dem öl mer iiij par pöze kessl",
+  "zwelf erden hafenn grose vnd klain ain",
+  "guete lanctsten da man fisch In macht",
+  "iij mörser zwen stössl mer xxij mittage",
+  "vnd klaine zünenschiessl vnd ain zimplau",
+  "vier pöze messene pekh vnd ain messens",
+  "gieffelkandl vnd zway kupfferene pekh",
+  "mer xxxij part stagnis p gros vnd klain",
+  "mer pfunf hultzne täler vnd ain",
+  "tisch Im fleysch gadm vnd vier frain",
+  "purden loden v elln vnd ain vnetail",
+  "mer Im fleyschgadm vnd dritt kamer",
+  "iiij tauchf vnd gewandt",
+  "It(e)m In dir kuch(e)l iij prantröst x pfann",
+  "iij pfaffnpfan iij häln zwen pfann",
+  "cost iij praetspiß vnd ain gaust ain",
+  "cyffzang ain rübeyssn funf miltz",
+  "sessle zway stößl ain masssatzg"
+ ]
+}

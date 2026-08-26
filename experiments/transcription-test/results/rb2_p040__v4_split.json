@@ -1,0 +1,210 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Kasten",
+  "vphoferin",
+  "Nota Anno die et p(re)s(ent)ib(us) cui(us) s(upr)a · Jst",
+  "berait mit der vphoferin in gegennw(e)rtikait",
+  "der vorgeschrib(e)n / vmb alle abgeraitte dingk",
+  "so sy meins herren gnad schuldig ist / sunder",
+  "ir nachsten vnden stantt(e)ntz / vntz auf",
+  "heuttigen tag / vnd dringt in ainer",
+  "S(u)ma —— ij^C xlij iij^t viij d vj hler",
+  "Daran Jr Jnnemen",
+  "Jt(em) Die bemeltt vphoferin {hat} von H(er)rn Benedicte",
+  "Cam(e)rmaister empfangen —— ij^C xvij iij^t",
+  "Jt(em) Von Teügarten fliczen haubtsum hat sy",
+  "empfang(e)n xx iij^t die er auch in der Camern vorg(e)b(e)n {hat auffg(e)b(e)n}",
+  "Jt(em) Von dem valckenp(er)ger die viij iij^t iij tl iiij s cxvij d",
+  "die vo(e)rthaln so Gin / mein(e)m h(er)rn schuldig was",
+  "S(u)ma irs Jnnemens steet",
+  "—— ij^C xlvij iij^t iij tl iiij s cxvij d",
+  "40.",
+  "D(er) vorgemelt(e)n vnkhosten(n) summen",
+  "gegen(n)dann auffsatztu(n)g gegeneinander gleych",
+  "vnd abgetzogen, Dannach ist Ir mein(e)s herrn",
+  "gnad schuldig —— lxxxv m(a)r(k) ix lb viij hl"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "recto",
+    "lines": [
+     {
+      "text": "Kasten",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vphoferin",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota Anno die et p(re)s(ent)ib(us) cui(us) s(upr)a · Jst",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "berait mit der vphoferin in gegennw(e)rtikait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der vorgeschrib(e)n / vmb alle abgeraitte dingk",
+      "kind": "entry",
+      "uncertain": [
+       "dingk"
+      ]
+     },
+     {
+      "text": "so sy meins herren gnad schuldig ist / sunder",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ir nachsten vnden stantt(e)ntz / vntz auf",
+      "kind": "entry",
+      "uncertain": [
+       "stantt(e)ntz"
+      ]
+     },
+     {
+      "text": "heuttigen tag / vnd dringt in ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "S(u)ma —— ij^C xlij iij^t viij d vj hler",
+      "kind": "sum",
+      "uncertain": [
+       "viij d vj hler"
+      ]
+     },
+     {
+      "text": "Daran Jr Jnnemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) Die bemeltt vphoferin {hat} von H(er)rn Benedicte",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Cam(e)rmaister empfangen —— ij^C xvij iij^t",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) Von Teügarten fliczen haubtsum hat sy",
+      "kind": "entry",
+      "uncertain": [
+       "Teügarten",
+       "fliczen"
+      ]
+     },
+     {
+      "text": "empfang(e)n xx iij^t die er auch in der Camern vorg(e)b(e)n {hat auffg(e)b(e)n}",
+      "kind": "entry",
+      "uncertain": [
+       "vorg(e)b(e)n"
+      ]
+     },
+     {
+      "text": "Jt(em) Von dem valckenp(er)ger die viij iij^t iij tl iiij s cxvij d",
+      "kind": "entry",
+      "uncertain": [
+       "valckenp(er)ger"
+      ]
+     },
+     {
+      "text": "die vo(e)rthaln so Gin / mein(e)m h(er)rn schuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "vo(e)rthaln",
+       "Gin"
+      ]
+     },
+     {
+      "text": "S(u)ma irs Jnnemens steet",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "—— ij^C xlvij iij^t iij tl iiij s cxvij d",
+      "kind": "amount",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation"
+     },
+     {
+      "text": "D(er) vorgemelt(e)n vnkhosten(n) summen",
+      "kind": "entry",
+      "uncertain": [
+       "vnkhosten(n)"
+      ]
+     },
+     {
+      "text": "gegen(n)dann auffsatztu(n)g gegeneinander gleych",
+      "kind": "entry",
+      "uncertain": [
+       "gegen(n)dann",
+       "auffsatztu(n)g"
+      ]
+     },
+     {
+      "text": "vnd abgetzogen, Dannach ist Ir mein(e)s herrn",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad schuldig —— lxxxv m(a)r(k) ix lb viij hl",
+      "kind": "sum"
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Abrechnung/Inventar mit der Uphoferin (Kastenamt). | Auf der Seite ist starker Bleed-Through (Durchscheinen des Textes von fol. 40v) sichtbar, der gemäß Regel 7 nicht transkribiert wurde."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left",
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right",
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p040",
+ "variant": "v4_split",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 25.4,
+ "timestamp": "2026-08-26T19:34:50+00:00"
+}

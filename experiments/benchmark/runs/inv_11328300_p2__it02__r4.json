@@ -1,0 +1,671 @@
+{
+ "page": "inv_11328300_p2",
+ "iteration": "it02",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1865,
+    2704
+   ],
+   "sent_px": [
+    1865,
+    2704
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.0,
+ "timestamp": "2026-08-26T20:20:54+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1v / Seite 1 (links)",
+    "lines": [
+     {
+      "text": "Item j getreumbte cůss",
+      "kind": "entry",
+      "uncertain": [
+       "getreumbte",
+       "cůss"
+      ]
+     },
+     {
+      "text": "Item ij kůss",
+      "kind": "entry",
+      "uncertain": [
+       "kůss"
+      ]
+     },
+     {
+      "text": "Item j pett mit weissem ůberzogen in",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der gnd frawen",
+      "kind": "entry",
+      "uncertain": [
+       "gnd"
+      ]
+     },
+     {
+      "text": "Item ij gestraimbte polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbte"
+      ]
+     },
+     {
+      "text": "Item iiij gestraimbte kůss",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbte",
+       "kůss"
+      ]
+     },
+     {
+      "text": "Item ij kůssell",
+      "kind": "entry",
+      "uncertain": [
+       "kůssell"
+      ]
+     },
+     {
+      "text": "Item j pett furr ain gestraimbts zueg(e)l",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbts",
+       "zueg(e)l"
+      ]
+     },
+     {
+      "text": "Item j gestraimbt polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbt"
+      ]
+     },
+     {
+      "text": "Item j fůrtracht deck(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "fůrtracht",
+       "deck(e)n"
+      ]
+     },
+     {
+      "text": "Item ij kůss",
+      "kind": "entry",
+      "uncertain": [
+       "kůss"
+      ]
+     },
+     {
+      "text": "Item j rauche deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j weis pett auf l h bs ob d tor",
+      "kind": "entry",
+      "uncertain": [
+       "l h bs ob d tor"
+      ]
+     },
+     {
+      "text": "Item j weissen polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij gestraimbte kůss",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbte",
+       "kůss"
+      ]
+     },
+     {
+      "text": "Item ij deck(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "deck(e)n"
+      ]
+     },
+     {
+      "text": "Item j rauche deck ist mecht vorr",
+      "kind": "entry",
+      "uncertain": [
+       "mecht"
+      ]
+     },
+     {
+      "text": "Item ij pratschaff in d kuckin",
+      "kind": "entry",
+      "uncertain": [
+       "pratschaff",
+       "kuckin"
+      ]
+     },
+     {
+      "text": "Item j traug",
+      "kind": "entry",
+      "uncertain": [
+       "traug"
+      ]
+     },
+     {
+      "text": "Item desselbs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item vj hampruestlen in d harnasch",
+      "kind": "entry",
+      "uncertain": [
+       "hampruestlen"
+      ]
+     },
+     {
+      "text": "camer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item iiij habernpruestlen",
+      "kind": "entry",
+      "uncertain": [
+       "habernpruestlen"
+      ]
+     },
+     {
+      "text": "Item ij michtle kupfern puechsen",
+      "kind": "entry",
+      "uncertain": [
+       "michtle",
+       "puechsen"
+      ]
+     },
+     {
+      "text": "Item viij eysnein und kupfern puechsn",
+      "kind": "entry",
+      "uncertain": [
+       "puechsn"
+      ]
+     },
+     {
+      "text": "ettlich taler gachascz",
+      "kind": "entry",
+      "uncertain": [
+       "gachascz"
+      ]
+     },
+     {
+      "text": "Item j alt kessl zehent czeer lb sw",
+      "kind": "entry",
+      "uncertain": [
+       "czeer"
+      ]
+     },
+     {
+      "text": "Item ij kesslgreiff",
+      "kind": "entry",
+      "uncertain": [
+       "kesslgreiff"
+      ]
+     },
+     {
+      "text": "Den harnasch in d stuben harnascat",
+      "kind": "entry",
+      "uncertain": [
+       "harnascat"
+      ]
+     },
+     {
+      "text": "hat d Endras mairin",
+      "kind": "entry",
+      "uncertain": [
+       "Endras",
+       "mairin"
+      ]
+     },
+     {
+      "text": "ze h zubereiten gegeben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item Segans damandas mit inet",
+      "kind": "entry",
+      "uncertain": [
+       "Segans",
+       "damandas",
+       "inet"
+      ]
+     },
+     {
+      "text": "Item ij haltzin",
+      "kind": "entry",
+      "uncertain": [
+       "haltzin"
+      ]
+     },
+     {
+      "text": "Item j ysnin rockh",
+      "kind": "entry",
+      "uncertain": [
+       "ysnin",
+       "rockh"
+      ]
+     },
+     {
+      "text": "Item iij eysnein ruffgabeln",
+      "kind": "entry",
+      "uncertain": [
+       "eysnein",
+       "ruffgabeln"
+      ]
+     },
+     {
+      "text": "Item j tolschafeisen",
+      "kind": "entry",
+      "uncertain": [
+       "tolschafeisen"
+      ]
+     },
+     {
+      "text": "Item j salzgassen",
+      "kind": "entry",
+      "uncertain": [
+       "salzgassen"
+      ]
+     },
+     {
+      "text": "Item j stromesser",
+      "kind": "entry",
+      "uncertain": [
+       "stromesser"
+      ]
+     },
+     {
+      "text": "Item packtrog",
+      "kind": "entry",
+      "uncertain": [
+       "packtrog"
+      ]
+     },
+     {
+      "text": "Item j thormatrat",
+      "kind": "entry",
+      "uncertain": [
+       "thormatrat"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 2r / Seite 2 (rechts)",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij spanpett",
+      "kind": "entry",
+      "uncertain": [
+       "spanpett"
+      ]
+     },
+     {
+      "text": "Item iij fůdttruchen",
+      "kind": "entry",
+      "uncertain": [
+       "fůdttruchen"
+      ]
+     },
+     {
+      "text": "Item j strosack",
+      "kind": "entry",
+      "uncertain": [
+       "strosack"
+      ]
+     },
+     {
+      "text": "Item iij stůel",
+      "kind": "entry",
+      "uncertain": [
+       "stůel"
+      ]
+     },
+     {
+      "text": "Item j grosse melkasten",
+      "kind": "entry",
+      "uncertain": [
+       "melkasten"
+      ]
+     },
+     {
+      "text": "Item j fůlberkasten",
+      "kind": "entry",
+      "uncertain": [
+       "fůlberkasten"
+      ]
+     },
+     {
+      "text": "Item ij spadröhrlein",
+      "kind": "entry",
+      "uncertain": [
+       "spadröhrlein"
+      ]
+     },
+     {
+      "text": "Item j flitterofen",
+      "kind": "entry",
+      "uncertain": [
+       "flitterofen"
+      ]
+     },
+     {
+      "text": "Item ij holtzslyten",
+      "kind": "entry",
+      "uncertain": [
+       "holtzslyten"
+      ]
+     },
+     {
+      "text": "Item alte layrl",
+      "kind": "entry",
+      "uncertain": [
+       "layrl"
+      ]
+     },
+     {
+      "text": "Item j fleischtriel",
+      "kind": "entry",
+      "uncertain": [
+       "fleischtriel"
+      ]
+     },
+     {
+      "text": "Item j speiskasten",
+      "kind": "entry",
+      "uncertain": [
+       "speiskasten"
+      ]
+     },
+     {
+      "text": "Item xxxv branpuerden",
+      "kind": "entry",
+      "uncertain": [
+       "branpuerden"
+      ]
+     },
+     {
+      "text": "Item iiij kessel clain und gross",
+      "kind": "entry",
+      "uncertain": [
+       "clain"
+      ]
+     },
+     {
+      "text": "Item j phannen",
+      "kind": "entry",
+      "uncertain": [
+       "phannen"
+      ]
+     },
+     {
+      "text": "Item xij hiltzin schůssell",
+      "kind": "entry",
+      "uncertain": [
+       "hiltzin",
+       "schůssell"
+      ]
+     },
+     {
+      "text": "Item j werckstat waffel",
+      "kind": "entry",
+      "uncertain": [
+       "werckstat",
+       "waffel"
+      ]
+     },
+     {
+      "text": "Item ij fueder werckwein",
+      "kind": "entry",
+      "uncertain": [
+       "werckwein"
+      ]
+     },
+     {
+      "text": "Item j altes willekocb",
+      "kind": "entry",
+      "uncertain": [
+       "willekocb"
+      ]
+     },
+     {
+      "text": "Item in der camer zum kesten hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der knecht ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item iiij harnischat dindnerstal [...]",
+      "kind": "entry",
+      "uncertain": [
+       "harnischat",
+       "dindnerstal"
+      ]
+     },
+     {
+      "text": "Item j gantzy wagen",
+      "kind": "entry",
+      "uncertain": [
+       "gantzy"
+      ]
+     },
+     {
+      "text": "Item j pflůug",
+      "kind": "entry",
+      "uncertain": [
+       "pflůug"
+      ]
+     },
+     {
+      "text": "Item ij kessel sind in de alben",
+      "kind": "entry",
+      "uncertain": [
+       "alben"
+      ]
+     },
+     {
+      "text": "Gemacht der",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwamig gen",
+      "kind": "entry",
+      "uncertain": [
+       "Zwamig"
+      ]
+     },
+     {
+      "text": "Item iiij pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j strosack",
+      "kind": "entry",
+      "uncertain": [
+       "strosack"
+      ]
+     },
+     {
+      "text": "Item als iiij pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j strosack",
+      "kind": "entry",
+      "uncertain": [
+       "strosack"
+      ]
+     },
+     {
+      "text": "Item ij per polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j lecken spanbepackh",
+      "kind": "entry",
+      "uncertain": [
+       "spanbepackh"
+      ]
+     },
+     {
+      "text": "Item ij lecken spanbleche",
+      "kind": "entry",
+      "uncertain": [
+       "spanbleche"
+      ]
+     },
+     {
+      "text": "Item xx kůss",
+      "kind": "entry",
+      "uncertain": [
+       "kůss"
+      ]
+     },
+     {
+      "text": "Item iiij lecken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxxvij beschlagen effel in ain",
+      "kind": "entry",
+      "uncertain": [
+       "effel"
+      ]
+     },
+     {
+      "text": "futrat",
+      "kind": "entry",
+      "uncertain": [
+       "futrat"
+      ]
+     },
+     {
+      "text": "Item lvj muellt beerbaer hailer",
+      "kind": "entry",
+      "uncertain": [
+       "muellt",
+       "beerbaer",
+       "hailer"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Item j getreumbte cůss",
+  "Item ij kůss",
+  "Item j pett mit weissem ůberzogen in",
+  "der gnd frawen",
+  "Item ij gestraimbte polster",
+  "Item iiij gestraimbte kůss",
+  "Item ij kůssell",
+  "Item j pett furr ain gestraimbts zueg(e)l",
+  "Item j gestraimbt polster",
+  "Item j fůrtracht deck(e)n",
+  "Item ij kůss",
+  "Item j rauche deck",
+  "Item j weis pett auf l h bs ob d tor",
+  "Item j weissen polster",
+  "Item ij gestraimbte kůss",
+  "Item ij deck(e)n",
+  "Item j rauche deck ist mecht vorr",
+  "Item ij pratschaff in d kuckin",
+  "Item j traug",
+  "Item desselbs",
+  "Item vj hampruestlen in d harnasch",
+  "camer",
+  "Item iiij habernpruestlen",
+  "Item ij michtle kupfern puechsen",
+  "Item viij eysnein und kupfern puechsn",
+  "ettlich taler gachascz",
+  "Item j alt kessl zehent czeer lb sw",
+  "Item ij kesslgreiff",
+  "Den harnasch in d stuben harnascat",
+  "hat d Endras mairin",
+  "ze h zubereiten gegeben",
+  "Item Segans damandas mit inet",
+  "Item ij haltzin",
+  "Item j ysnin rockh",
+  "Item iij eysnein ruffgabeln",
+  "Item j tolschafeisen",
+  "Item j salzgassen",
+  "Item j stromesser",
+  "Item packtrog",
+  "Item j thormatrat",
+  "2",
+  "Item ij spanpett",
+  "Item iij fůdttruchen",
+  "Item j strosack",
+  "Item iij stůel",
+  "Item j grosse melkasten",
+  "Item j fůlberkasten",
+  "Item ij spadröhrlein",
+  "Item j flitterofen",
+  "Item ij holtzslyten",
+  "Item alte layrl",
+  "Item j fleischtriel",
+  "Item j speiskasten",
+  "Item xxxv branpuerden",
+  "Item iiij kessel clain und gross",
+  "Item j phannen",
+  "Item xij hiltzin schůssell",
+  "Item j werckstat waffel",
+  "Item ij fueder werckwein",
+  "Item j altes willekocb",
+  "Item in der camer zum kesten hat",
+  "der knecht ain",
+  "Item iiij harnischat dindnerstal [...]",
+  "Item j gantzy wagen",
+  "Item j pflůug",
+  "Item ij kessel sind in de alben",
+  "Gemacht der",
+  "Zwamig gen",
+  "Item iiij pett",
+  "Item j strosack",
+  "Item als iiij pett",
+  "Item j strosack",
+  "Item ij per polster",
+  "Item j lecken spanbepackh",
+  "Item ij lecken spanbleche",
+  "Item xx kůss",
+  "Item iiij lecken",
+  "Item xxxvij beschlagen effel in ain",
+  "futrat",
+  "Item lvj muellt beerbaer hailer"
+ ]
+}

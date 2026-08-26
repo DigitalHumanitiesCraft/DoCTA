@@ -1,0 +1,370 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.8,
+ "timestamp": "2026-08-26T20:20:00+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Jnventarj ettlichs hauszrats",
+      "kind": "rubric",
+      "uncertain": [
+       "Jnventarj",
+       "ettlichs",
+       "hauszrats"
+      ]
+     },
+     {
+      "text": "Jnn abt Gamppen Kammer",
+      "kind": "entry",
+      "uncertain": [
+       "abt",
+       "Gamppen"
+      ]
+     },
+     {
+      "text": "Burckhartt von knoringen",
+      "kind": "entry",
+      "uncertain": [
+       "Burckhartt",
+       "knoringen"
+      ]
+     },
+     {
+      "text": "auff dem slosz Tzenon vber-",
+      "kind": "entry",
+      "uncertain": [
+       "Tzenon"
+      ]
+     },
+     {
+      "text": "geantwurt Jan mitwochen",
+      "kind": "entry",
+      "uncertain": [
+       "Jan"
+      ]
+     },
+     {
+      "text": "vor Sand Vygilj tag",
+      "kind": "entry",
+      "uncertain": [
+       "Vygilj"
+      ]
+     },
+     {
+      "text": "Anno d(omi)ni u(nd) lxxxvj^to",
+      "kind": "entry",
+      "uncertain": [
+       "lxxxvj^to"
+      ]
+     },
+     {
+      "text": "Jtem in meins g(nädigen) hern kamer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) . j . pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) . j . polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) . ij . deckhen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) . j . pfol Strohsaks .",
+      "kind": "entry",
+      "uncertain": [
+       "pfol",
+       "Strohsaks"
+      ]
+     },
+     {
+      "text": "Jt(em) ij pett in der vordristen stuben",
+      "kind": "entry",
+      "uncertain": [
+       "vordristen"
+      ]
+     },
+     {
+      "text": "ob der grossen stuben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) Strohsaks",
+      "kind": "entry",
+      "uncertain": [
+       "Strohsaks"
+      ]
+     },
+     {
+      "text": "Jt(em) ij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) ij rawsche deckh",
+      "kind": "entry",
+      "uncertain": [
+       "rawsche"
+      ]
+     },
+     {
+      "text": "Jt(em) viij pett in dem andern stubl",
+      "kind": "entry",
+      "uncertain": [
+       "stubl"
+      ]
+     },
+     {
+      "text": "Jt(em) vij strohsak",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) viij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) funf kyst",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) j rawesze deck",
+      "kind": "entry",
+      "uncertain": [
+       "rawesze"
+      ]
+     },
+     {
+      "text": "Jt(em) iij decken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) j pett mit pargant vberzogen",
+      "kind": "entry",
+      "uncertain": [
+       "pargant"
+      ]
+     },
+     {
+      "text": "in derselbigen stuben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) j kyst",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) j polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) iij decken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) ij armbrost darumb sind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwey staelflein",
+      "kind": "entry",
+      "uncertain": [
+       "staelflein"
+      ]
+     },
+     {
+      "text": "Jt(em) iiij rotweisse pett in dem vntern stall",
+      "kind": "entry",
+      "uncertain": [
+       "rotweisse",
+       "vntern",
+       "stall"
+      ]
+     },
+     {
+      "text": "Jt(em) iiij gstriembte pett",
+      "kind": "entry",
+      "uncertain": [
+       "gstriembte"
+      ]
+     },
+     {
+      "text": "Jt(em) iiij polster mit rottem zuegk",
+      "kind": "entry",
+      "uncertain": [
+       "rottem",
+       "zuegk"
+      ]
+     },
+     {
+      "text": "Jt(em) eyn küss mit rottem zuegk",
+      "kind": "entry",
+      "uncertain": [
+       "küss",
+       "rottem",
+       "zuegk"
+      ]
+     },
+     {
+      "text": "die vier vbrigen sind",
+      "kind": "entry",
+      "uncertain": [
+       "vier",
+       "vbrigen"
+      ]
+     },
+     {
+      "text": "Jt(em) iiij gstriembte polster",
+      "kind": "entry",
+      "uncertain": [
+       "gstriembte"
+      ]
+     },
+     {
+      "text": "Jt(em) v deckt",
+      "kind": "entry",
+      "uncertain": [
+       "deckt"
+      ]
+     },
+     {
+      "text": "Jt(em) iij deckt die nit vffgemacht sind",
+      "kind": "entry",
+      "uncertain": [
+       "deckt",
+       "vffgemacht"
+      ]
+     },
+     {
+      "text": "Jt(em) j gestriembts küss",
+      "kind": "entry",
+      "uncertain": [
+       "gestriembts",
+       "küss"
+      ]
+     },
+     {
+      "text": "Jt(em) j pett mit rauchem vberzug in",
+      "kind": "entry",
+      "uncertain": [
+       "rauchem"
+      ]
+     },
+     {
+      "text": "der wagstell",
+      "kind": "entry",
+      "uncertain": [
+       "wagstell"
+      ]
+     },
+     {
+      "text": "Jt(em) j gestriembt polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestriembt"
+      ]
+     },
+     {
+      "text": "Jt(em) j rothes küss",
+      "kind": "entry",
+      "uncertain": [
+       "rothes",
+       "küss"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Jnventarj ettlichs hauszrats",
+  "Jnn abt Gamppen Kammer",
+  "Burckhartt von knoringen",
+  "auff dem slosz Tzenon vber-",
+  "geantwurt Jan mitwochen",
+  "vor Sand Vygilj tag",
+  "Anno d(omi)ni u(nd) lxxxvj^to",
+  "Jtem in meins g(nädigen) hern kamer",
+  "Jt(em) . j . pett",
+  "Jt(em) . j . polster",
+  "Jt(em) . ij . deckhen",
+  "Jt(em) . j . pfol Strohsaks .",
+  "Jt(em) ij pett in der vordristen stuben",
+  "ob der grossen stuben",
+  "Jt(em) Strohsaks",
+  "Jt(em) ij polster",
+  "Jt(em) ij rawsche deckh",
+  "Jt(em) viij pett in dem andern stubl",
+  "Jt(em) vij strohsak",
+  "Jt(em) viij polster",
+  "Jt(em) funf kyst",
+  "Jt(em) j rawesze deck",
+  "Jt(em) iij decken",
+  "Jt(em) j pett mit pargant vberzogen",
+  "in derselbigen stuben",
+  "Jt(em) j kyst",
+  "Jt(em) j polster",
+  "Jt(em) iij decken",
+  "Jt(em) ij armbrost darumb sind",
+  "zwey staelflein",
+  "Jt(em) iiij rotweisse pett in dem vntern stall",
+  "Jt(em) iiij gstriembte pett",
+  "Jt(em) iiij polster mit rottem zuegk",
+  "Jt(em) eyn küss mit rottem zuegk",
+  "die vier vbrigen sind",
+  "Jt(em) iiij gstriembte polster",
+  "Jt(em) v deckt",
+  "Jt(em) iij deckt die nit vffgemacht sind",
+  "Jt(em) j gestriembts küss",
+  "Jt(em) j pett mit rauchem vberzug in",
+  "der wagstell",
+  "Jt(em) j gestriembt polster",
+  "Jt(em) j rothes küss"
+ ]
+}

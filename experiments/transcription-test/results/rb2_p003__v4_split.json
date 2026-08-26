@@ -1,0 +1,252 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Vlreich Schütz",
+  "Nota Anno die vt p(ro)x(im)o Lamb(er)tsig hat man",
+  "gerait mit Vlreichn Schützen / vnd meinis h(er)rn",
+  "gnad ist Im schuldig sein Solld von zwaim jarn",
+  "zu dem nachstuergangn Sannd margreten tag",
+  "gerait —— lxxxvij gld",
+  "Die hat Im her Benedict Camermayst(er) außgeb(e)n",
+  "vnd bezalt ——",
+  "3",
+  "Graf Hainreich",
+  "von lupfen",
+  "Nota die d(omi)nico xx sept(em)b(ri)s quor(um) sup(ra) · hat",
+  "man mit Conraten stainär anstat Graf hainrij",
+  "von lupfen gerait von der alten Schuld wegen von",
+  "velkchircher herrenreid / Auch vmb allerlay Gelt vnd Zeurung",
+  "Das alles bringt nuz auf heuttigen tag xxiiij^C vnd",
+  "xxvij fl(oren) rh(enisch)",
+  "daran sein Innemen",
+  "It(em)",
+  "Daran hat er emphangen Im ersten von hern Vnderc(amerer)",
+  "Cam(er)maister die d(er)s(e)lb Cam(er)maister gerait hat L fl(oren) rh(enisch)",
+  "It(em)",
+  "Aber hat er von denselben Cam(er)maister emphang(en) die",
+  "derselb Cam(er)maister v(er)zaiten wirt L fl(oren) rh(enisch)",
+  "It(em) vnd auf allerlay Zeurung / die d(e)r Cam(er)maister auch",
+  "v(er)zaiten wirt xxv fl(oren) rh(enisch)",
+  "It(em)",
+  "Auch hat er von hern Jacoben Trapen emphangen an",
+  "der Schuld die her Jacob mein(e)s hern gnaden schuldig ist",
+  "iiij^C fl(oren) rh(enisch)",
+  "Sum(m)a hie emphabens",
+  "v^C xxv fl(oren) rh(enisch)",
+  "Darnach ist meinis herrn gnad Graf hainreichen schuldig",
+  "xix^C vnd ij fl(oren) rh(enisch) / die hat jm d(e)r bemelt Cam(er)maist(er)",
+  "/ außgericht / vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [
+     {
+      "text": "Vlreich Schütz",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota Anno die vt p(ro)x(im)o Lamb(er)tsig hat man",
+      "kind": "entry",
+      "uncertain": [
+       "p(ro)x(im)o",
+       "Lamb(er)tsig"
+      ]
+     },
+     {
+      "text": "gerait mit Vlreichn Schützen / vnd meinis h(er)rn",
+      "kind": "entry",
+      "uncertain": [
+       "meinis"
+      ]
+     },
+     {
+      "text": "gnad ist Im schuldig sein Solld von zwaim jarn",
+      "kind": "entry",
+      "uncertain": [
+       "zwaim jarn"
+      ]
+     },
+     {
+      "text": "zu dem nachstuergangn Sannd margreten tag",
+      "kind": "entry"
+     },
+     {
+      "text": "gerait —— lxxxvij gld",
+      "kind": "entry"
+     },
+     {
+      "text": "Die hat Im her Benedict Camermayst(er) außgeb(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "Camermayst(er)"
+      ]
+     },
+     {
+      "text": "vnd bezalt ——",
+      "kind": "entry"
+     }
+    ]
+   },
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation"
+     },
+     {
+      "text": "Graf Hainreich",
+      "kind": "rubric"
+     },
+     {
+      "text": "von lupfen",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota die d(omi)nico xx sept(em)b(ri)s quor(um) sup(ra) · hat",
+      "kind": "entry",
+      "uncertain": [
+       "sept(em)b(ri)s",
+       "quor(um)"
+      ]
+     },
+     {
+      "text": "man mit Conraten stainär anstat Graf hainrij",
+      "kind": "entry"
+     },
+     {
+      "text": "von lupfen gerait von der alten Schuld wegen von",
+      "kind": "entry"
+     },
+     {
+      "text": "velkchircher herrenreid / Auch vmb allerlay Gelt vnd Zeurung",
+      "kind": "entry",
+      "uncertain": [
+       "velkchircher",
+       "herrenreid"
+      ]
+     },
+     {
+      "text": "Das alles bringt nuz auf heuttigen tag xxiiij^C vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "xxvij fl(oren) rh(enisch)",
+      "kind": "amount"
+     },
+     {
+      "text": "daran sein Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "Daran hat er emphangen Im ersten von hern Vnderc(amerer)",
+      "kind": "entry",
+      "uncertain": [
+       "Vnderc(amerer)"
+      ]
+     },
+     {
+      "text": "Cam(er)maister die d(er)s(e)lb Cam(er)maister gerait hat L fl(oren) rh(enisch)",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "Aber hat er von denselben Cam(er)maister emphang(en) die",
+      "kind": "entry"
+     },
+     {
+      "text": "derselb Cam(er)maister v(er)zaiten wirt L fl(oren) rh(enisch)",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) vnd auf allerlay Zeurung / die d(e)r Cam(er)maister auch",
+      "kind": "entry"
+     },
+     {
+      "text": "v(er)zaiten wirt xxv fl(oren) rh(enisch)",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "Auch hat er von hern Jacoben Trapen emphangen an",
+      "kind": "entry"
+     },
+     {
+      "text": "der Schuld die her Jacob mein(e)s hern gnaden schuldig ist",
+      "kind": "entry"
+     },
+     {
+      "text": "iiij^C fl(oren) rh(enisch)",
+      "kind": "amount"
+     },
+     {
+      "text": "Sum(m)a hie emphabens",
+      "kind": "sum"
+     },
+     {
+      "text": "v^C xxv fl(oren) rh(enisch)",
+      "kind": "sum"
+     },
+     {
+      "text": "Darnach ist meinis herrn gnad Graf hainreichen schuldig",
+      "kind": "entry"
+     },
+     {
+      "text": "xix^C vnd ij fl(oren) rh(enisch) / die hat jm d(e)r bemelt Cam(er)maist(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "/ außgericht / vnd bezalt",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": " | "
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1906,
+    2622
+   ],
+   "crop": "left",
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1907,
+    2622
+   ],
+   "crop": "right",
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p003",
+ "variant": "v4_split",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 18.0,
+ "timestamp": "2026-08-26T19:33:14+00:00"
+}

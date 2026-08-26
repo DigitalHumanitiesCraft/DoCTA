@@ -1,0 +1,195 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Kaſtenn",
+  "vphoſern",
+  "Nota Anno die xx prima decembris / Iſt",
+  "berait mit der vphoſern in gegewartikayt",
+  "der vorgeſchrib(e)n / vmb alle abgeraite dencgk",
+  "ſo ſy meine(m) herren gnad ſchuldig iſt / vntz",
+  "an naegeſten veiden ſambſtag vnnd auf",
+  "heutigen tag / vnd bleyt in ainer",
+  "S(um)ma ij^C lxxiiij iij [...]",
+  "Daran(n) ir Jnnemen",
+  "It(em) Die berürt vphoſern {hat} von herr Benedicten",
+  "camermäiſter empfangen ij^C xxvij iij",
+  "It(em) von Feurgarten ſtieber haubtman hat ſy",
+  "emphang(e)n xx iij die er aug in des camerm(ai)st(er) reg(ister) hat aufge-",
+  "It(em) [...] die viij iij vj d iij q(uart) /",
+  "die michelsen h(er)rn mein(er) herren ſchuldig was",
+  "S(um)ma irs Jnnemens hat",
+  "ij^C xlvij iij vj d iij q(uart)",
+  "40.",
+  "Liechtgart Dechantez",
+  "Der vorge(melten) vphoſernn jnnemen",
+  "gegen jrem Aufgebenn gegeneinander gelegt",
+  "vnd abgetragenn / Darnach iſt ſy mein(er) herren",
+  "gnad ſchuldig —— lxxxiij iij xj d viij hl"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [
+     {
+      "text": "Kaſtenn",
+      "kind": "rubric"
+     },
+     {
+      "text": "vphoſern",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota Anno die xx prima decembris / Iſt",
+      "kind": "entry"
+     },
+     {
+      "text": "berait mit der vphoſern in gegewartikayt",
+      "kind": "entry",
+      "uncertain": [
+       "gegewartikayt"
+      ]
+     },
+     {
+      "text": "der vorgeſchrib(e)n / vmb alle abgeraite dencgk",
+      "kind": "entry",
+      "uncertain": [
+       "dencgk"
+      ]
+     },
+     {
+      "text": "ſo ſy meine(m) herren gnad ſchuldig iſt / vntz",
+      "kind": "entry"
+     },
+     {
+      "text": "an naegeſten veiden ſambſtag vnnd auf",
+      "kind": "entry",
+      "uncertain": [
+       "naegeſten",
+       "veiden"
+      ]
+     },
+     {
+      "text": "heutigen tag / vnd bleyt in ainer",
+      "kind": "entry"
+     },
+     {
+      "text": "S(um)ma ij^C lxxiiij iij [...]",
+      "kind": "sum",
+      "uncertain": [
+       "lxxiiij iij [...]"
+      ]
+     },
+     {
+      "text": "Daran(n) ir Jnnemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) Die berürt vphoſern {hat} von herr Benedicten",
+      "kind": "entry"
+     },
+     {
+      "text": "camermäiſter empfangen ij^C xxvij iij",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) von Feurgarten ſtieber haubtman hat ſy",
+      "kind": "entry",
+      "uncertain": [
+       "Feurgarten",
+       "ſtieber"
+      ]
+     },
+     {
+      "text": "emphang(e)n xx iij die er aug in des camerm(ai)st(er) reg(ister) hat aufge-",
+      "kind": "entry",
+      "uncertain": [
+       "aug"
+      ]
+     },
+     {
+      "text": "It(em) [...] die viij iij vj d iij q(uart) /",
+      "kind": "entry",
+      "uncertain": [
+       "iij q(uart)"
+      ]
+     },
+     {
+      "text": "die michelsen h(er)rn mein(er) herren ſchuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "michelsen"
+      ]
+     },
+     {
+      "text": "S(um)ma irs Jnnemens hat",
+      "kind": "sum"
+     },
+     {
+      "text": "ij^C xlvij iij vj d iij q(uart)",
+      "kind": "amount",
+      "uncertain": [
+       "xlvij iij vj d iij q(uart)"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "fol. 40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation"
+     },
+     {
+      "text": "Liechtgart Dechantez",
+      "kind": "rubric",
+      "uncertain": [
+       "Liechtgart",
+       "Dechantez"
+      ]
+     },
+     {
+      "text": "Der vorge(melten) vphoſernn jnnemen",
+      "kind": "entry"
+     },
+     {
+      "text": "gegen jrem Aufgebenn gegeneinander gelegt",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd abgetragenn / Darnach iſt ſy mein(er) herren",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad ſchuldig —— lxxxiij iij xj d viij hl",
+      "kind": "amount",
+      "uncertain": [
+       "lxxxiij iij xj d viij hl"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p040",
+ "variant": "v5_repeat",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 11.7,
+ "timestamp": "2026-08-26T19:35:02+00:00"
+}

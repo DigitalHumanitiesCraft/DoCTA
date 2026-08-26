@@ -1,0 +1,256 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Auf dem klain Estreich",
+  "vor der Stuben.",
+  "Ain grosser Spisskasten",
+  "In der Hell in der erstn Camer",
+  "Ain pettstat",
+  "Zwo rauch deckhn",
+  "Ain pett",
+  "Ain polstir",
+  "Ain khör",
+  "Ain Strohsackh",
+  "Ain par tuechhin leilach",
+  "In der andern Camer",
+  "Pettstatten . j .",
+  "Ain pett",
+  "Ain Strohsackh",
+  "Zwaij tuechhin leilach",
+  "Zwo rauch deckhn",
+  "Ain polstir",
+  "In der pawrnknecht Cam(er)",
+  "Zwo pettstat",
+  "Zwaij pett",
+  "Zwaij pölst(er)",
+  "Ain khör",
+  "Vier rauch deckhn",
+  "Vier werchins leilach",
+  "Zwen Strohsackh",
+  "In der andern Camer daran",
+  "Ain pettstat",
+  "Ain pett",
+  "Ain polst(er)",
+  "Zwaij khör",
+  "Ain Strohsackh",
+  "Ain rauche deckh",
+  "Ain kolter",
+  "Auf dem trapp(e)n",
+  "neben sal",
+  "Ain grosser Harnasch Cast(e)n",
+  "Zwen pass tisch"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "Auf dem klain Estreich",
+      "kind": "rubric"
+     },
+     {
+      "text": "vor der Stuben.",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain grosser Spisskasten",
+      "kind": "entry"
+     },
+     {
+      "text": "In der Hell in der erstn Camer",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwo rauch deckhn",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain polstir",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain khör",
+      "kind": "entry",
+      "uncertain": [
+       "khör"
+      ]
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain par tuechhin leilach",
+      "kind": "entry",
+      "uncertain": [
+       "tuechhin"
+      ]
+     },
+     {
+      "text": "In der andern Camer",
+      "kind": "rubric"
+     },
+     {
+      "text": "Pettstatten . j .",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij tuechhin leilach",
+      "kind": "entry",
+      "uncertain": [
+       "tuechhin"
+      ]
+     },
+     {
+      "text": "Zwo rauch deckhn",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain polstir",
+      "kind": "entry"
+     },
+     {
+      "text": "In der pawrnknecht Cam(er)",
+      "kind": "rubric",
+      "uncertain": [
+       "pawrnknecht"
+      ]
+     },
+     {
+      "text": "Zwo pettstat",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij pölst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain khör",
+      "kind": "entry",
+      "uncertain": [
+       "khör"
+      ]
+     },
+     {
+      "text": "Vier rauch deckhn",
+      "kind": "entry"
+     },
+     {
+      "text": "Vier werchins leilach",
+      "kind": "entry",
+      "uncertain": [
+       "werchins"
+      ]
+     },
+     {
+      "text": "Zwen Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "In der andern Camer daran",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain polst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwaij khör",
+      "kind": "entry",
+      "uncertain": [
+       "khör"
+      ]
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain rauche deckh",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain kolter",
+      "kind": "entry",
+      "uncertain": [
+       "kolter"
+      ]
+     },
+     {
+      "text": "Auf dem trapp(e)n",
+      "kind": "rubric",
+      "uncertain": [
+       "trapp(e)n"
+      ]
+     },
+     {
+      "text": "neben sal",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain grosser Harnasch Cast(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "Zwen pass tisch",
+      "kind": "entry",
+      "uncertain": [
+       "pass"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Inventarliste von Einrichtungs- und Bettzeug-Gegenständen in verschiedenen Kammern."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    931,
+    2418
+   ],
+   "sent_px": [
+    931,
+    2418
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "inv_11327963_p2",
+ "variant": "v5_repeat",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 6.4,
+ "timestamp": "2026-08-26T19:36:36+00:00"
+}

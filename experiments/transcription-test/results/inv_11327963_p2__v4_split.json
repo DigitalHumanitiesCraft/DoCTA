@@ -1,0 +1,268 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Auf dem clain Eßtrich",
+  "vor der Stuben.",
+  "Ain grosser Spüchastn",
+  "In der Hell in der erstn Camer",
+  "Ain pettstat",
+  "Zwo rauch deckhn",
+  "Ain pett",
+  "Ain polstr",
+  "Ain phul",
+  "Ain Strohsackh",
+  "Ain par teppichin leilach",
+  "In der andern Camer",
+  "Pettstatten . j .",
+  "Ain pett",
+  "Ain Strohsackh",
+  "Zwaij teppichins Leilach",
+  "Zwo rauch deckhn",
+  "Ain polstr",
+  "In der Parntweiner Cam(er)",
+  "Zwo pettstat",
+  "Zwaij pett",
+  "Zwaie pölstr",
+  "Ain phul",
+  "Vier rauch deckhn",
+  "Vier weissins Leilach",
+  "Zwen Strohsackh",
+  "In der andern Camer daran",
+  "Ain pettstat",
+  "Ain pett",
+  "Ain polstr",
+  "Zwaij phul",
+  "Ain Strohsackh",
+  "Ain rauche deckh",
+  "Ain belter",
+  "Auf dem Treppn",
+  "neben der Sal",
+  "Ain grosser Harnasch Castn",
+  "Zwen faß eyssig"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "Auf dem clain Eßtrich",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vor der Stuben.",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain grosser Spüchastn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der Hell in der erstn Camer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo rauch deckhn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polstr",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain phul",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par teppichin leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der andern Camer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Pettstatten . j .",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij teppichins Leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo rauch deckhn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polstr",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der Parntweiner Cam(er)",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaie pölstr",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain phul",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier rauch deckhn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier weissins Leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen Strohsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der andern Camer daran",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pettstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain polstr",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwaij phul",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Strohsackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain rauche deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain belter",
+      "kind": "entry",
+      "uncertain": [
+       "belter"
+      ]
+     },
+     {
+      "text": "Auf dem Treppn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "neben der Sal",
+      "kind": "rubric",
+      "uncertain": [
+       "Sal"
+      ]
+     },
+     {
+      "text": "Ain grosser Harnasch Castn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen faß eyssig",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Inventar von Raumausstattungen (Betten, Pfühl, Polster, Decken, Schränke) auf dem Estrich, in verschiedenen Kammern sowie auf der Treppe."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    931,
+    2418
+   ],
+   "sent_px": [
+    931,
+    2418
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "inv_11327963_p2",
+ "variant": "v4_split",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 7.4,
+ "timestamp": "2026-08-26T19:36:29+00:00"
+}

@@ -1,0 +1,208 @@
+{
+ "raw_text": null,
+ "lines": [
+  "2",
+  "Prouision vnd Solde",
+  "ausserhalb lanndes",
+  "Sygmund von",
+  "Krambass",
+  "Nota an Sūntay Sannd Johannstag Decollacio",
+  "Anno etc lxxij° in gegenwertikait herrn Benedictn kamerer",
+  "hannsn lapsn kuchenmayster, lienharts kluber hausknecht",
+  "vnd wolffgangs wim(m)leins kamerchreiber hat ma(n) gerait",
+  "mit petern papus anstat Sygmunnden von Krambass",
+  "vmb Solde, vnd zerung auch zerung vnd aller schuld",
+  "so meins herrn gnad demselben von Krambass aller sach(en)",
+  "auf heutigen tag ist schuldig worden.",
+  "Meins herrn gnad ist demselben von Krambass schuldig word(en)",
+  "nach Innhald ains Schuldbrieffs van Solde vnd and(er)nguett(en)",
+  "wegen so er zu belkret getan hat —— iij^C l lb gld vnd iij lb per",
+  "It(em) So ist Im meins herrn gnad schuldig prouision vom sannt",
+  "katrein tag des lxx jars vnz auf sand katrein tag des lxxij",
+  "Jars vnd hat dammit den dienst aufgesagt —— cl lb gld",
+  "It(em) Auch ist Im meins herrn gnad schuldig allertay zerung —— vj lb viij ß d",
+  "Darauf hat er von herr(n) Benedicte kamerer empfanngen Zu",
+  "dreyn malen die derselb kamerer nach behord zcuraiten",
+  "fl lxxij ß viij d",
+  "Darnach ist man Im aller Sach schuldig —— ist iij^C lxxiij lb vj ß d",
+  "Die hat Im d(er) bemeltt kamerer aufgericht vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "rechts (fol. 2r)",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Prouision vnd Solde",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ausserhalb lanndes",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Sygmund von",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Krambass",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota an Sūntay Sannd Johannstag Decollacio",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Anno etc lxxij° in gegenwertikait herrn Benedictn kamerer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hannsn lapsn kuchenmayster, lienharts kluber hausknecht",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd wolffgangs wim(m)leins kamerchreiber hat ma(n) gerait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "mit petern papus anstat Sygmunnden von Krambass",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vmb Solde, vnd zerung auch zerung vnd aller schuld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so meins herrn gnad demselben von Krambass aller sach(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "auf heutigen tag ist schuldig worden.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Meins herrn gnad ist demselben von Krambass schuldig word(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "nach Innhald ains Schuldbrieffs van Solde vnd and(er)nguett(en)",
+      "kind": "entry",
+      "uncertain": [
+       "and(er)nguett(en)"
+      ]
+     },
+     {
+      "text": "wegen so er zu belkret getan hat —— iij^C l lb gld vnd iij lb per",
+      "kind": "entry",
+      "uncertain": [
+       "belkret"
+      ]
+     },
+     {
+      "text": "It(em) So ist Im meins herrn gnad schuldig prouision vom sannt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "katrein tag des lxx jars vnz auf sand katrein tag des lxxij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jars vnd hat dammit den dienst aufgesagt —— cl lb gld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Auch ist Im meins herrn gnad schuldig allertay zerung —— vj lb viij ß d",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Darauf hat er von herr(n) Benedicte kamerer empfanngen Zu",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dreyn malen die derselb kamerer nach behord zcuraiten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "fl lxxij ß viij d",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Darnach ist man Im aller Sach schuldig —— ist iij^C lxxiij lb vj ß d",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Die hat Im d(er) bemeltt kamerer aufgericht vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Diplomatische Transkription zu fol. 2r (Tiroler Rechnungsbuch, 1472)."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    5420
+   ],
+   "sent_px": [
+    1191,
+    3500
+   ],
+   "crop": null,
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "fewshot_source": "fewshot_11327964_p2",
+ "item": "rb2_p002",
+ "variant": "v3_fewshot",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 9.5,
+ "timestamp": "2026-08-26T19:31:29+00:00"
+}

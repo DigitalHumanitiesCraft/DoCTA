@@ -1,0 +1,245 @@
+{
+ "page": "rb2_p003",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.8,
+ "timestamp": "2026-08-26T20:17:20+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 2v",
+    "lines": [
+     {
+      "text": "Vlreich Schutz",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota anno die xx octobris Laubschieß hat man",
+      "kind": "entry",
+      "uncertain": [
+       "Laubschieß"
+      ]
+     },
+     {
+      "text": "gerait mit Vlreich Schützen / vnd meins herrn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gnad ist jm schuldig sein sold sein zream farn",
+      "kind": "entry",
+      "uncertain": [
+       "zream"
+      ]
+     },
+     {
+      "text": "zu dem nachschwergangn dann darnach anregaten tag",
+      "kind": "entry",
+      "uncertain": [
+       "nachschwergangn",
+       "anregaten"
+      ]
+     },
+     {
+      "text": "geerndt —— lxxxvj fl gld",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Die hat jm her Benedict Camermaist(er) aufgericht",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Graf Hainreich",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "von lupfen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota die d(omi)n(i)co xx octob(ris) quorund(am) sum(p)t(uum) hat",
+      "kind": "entry",
+      "uncertain": [
+       "quorund(am) sum(p)t(uum)"
+      ]
+     },
+     {
+      "text": "man mit Cunraten Sternär anstat Graf hainrich",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "von lupfn gerait von der alten Schuld wegen von",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "velben herriürend / dartz vmb allerlay sold vnd zeurung",
+      "kind": "entry",
+      "uncertain": [
+       "velben"
+      ]
+     },
+     {
+      "text": "das alles bringt vncz auf heuttigen tag xxiiij^m[il] vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "xxvij {fl gld}",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Daran hat er emphangen jnn ersten van hern Benedict",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Camermaister die d(er)s(e)lb Camermaister gerait hat x {fl gld}",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Aber hat er von denselben Camermaister emphangn die",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "derselb Camermaister geraiten vmb x {fl gld}",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) vnd auf allerlay zeurng / die der Camermaister ane",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "v(er)tretn wirt —— xvij {fl gld}",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Auch hat er van hern Jacoben Trapen emphangen an",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der Schuld die her Jacob meins hern gnaden schuld(ig) ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iiij {fl gld}",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Su(m)ma seins emphähens",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "xlj {fl gld}",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Darnach ist meinis herrn gnad Graf Hainreichn schuld(ig)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iij {m[il]?} vnd xvij {fl gld} / die hat jm d(e)r bemeltt Camermaist(er)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "/ aufgericht / vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vlreich Schutz",
+  "Nota anno die xx octobris Laubschieß hat man",
+  "gerait mit Vlreich Schützen / vnd meins herrn",
+  "gnad ist jm schuldig sein sold sein zream farn",
+  "zu dem nachschwergangn dann darnach anregaten tag",
+  "geerndt —— lxxxvj fl gld",
+  "Die hat jm her Benedict Camermaist(er) aufgericht",
+  "vnd bezalt",
+  "3",
+  "Graf Hainreich",
+  "von lupfen",
+  "Nota die d(omi)n(i)co xx octob(ris) quorund(am) sum(p)t(uum) hat",
+  "man mit Cunraten Sternär anstat Graf hainrich",
+  "von lupfn gerait von der alten Schuld wegen von",
+  "velben herriürend / dartz vmb allerlay sold vnd zeurung",
+  "das alles bringt vncz auf heuttigen tag xxiiij^m[il] vnd",
+  "xxvij {fl gld}",
+  "Daran sein Innemen",
+  "It(em) Daran hat er emphangen jnn ersten van hern Benedict",
+  "Camermaister die d(er)s(e)lb Camermaister gerait hat x {fl gld}",
+  "It(em) Aber hat er von denselben Camermaister emphangn die",
+  "derselb Camermaister geraiten vmb x {fl gld}",
+  "It(em) vnd auf allerlay zeurng / die der Camermaister ane",
+  "v(er)tretn wirt —— xvij {fl gld}",
+  "It(em) Auch hat er van hern Jacoben Trapen emphangen an",
+  "der Schuld die her Jacob meins hern gnaden schuld(ig) ist",
+  "iiij {fl gld}",
+  "Su(m)ma seins emphähens",
+  "xlj {fl gld}",
+  "Darnach ist meinis herrn gnad Graf Hainreichn schuld(ig)",
+  "iij {m[il]?} vnd xvij {fl gld} / die hat jm d(e)r bemeltt Camermaist(er)",
+  "/ aufgericht / vnd bezalt"
+ ]
+}

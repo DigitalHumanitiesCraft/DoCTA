@@ -1,0 +1,81 @@
+{
+ "page": "inv_11330019_p3",
+ "iteration": "it01",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1030,
+    2754
+   ],
+   "sent_px": [
+    1030,
+    2754
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.5,
+ "timestamp": "2026-08-26T20:22:47+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "dorse",
+    "lines": [
+     {
+      "text": "1478",
+      "kind": "marginal"
+     },
+     {
+      "text": "( L. 109 )",
+      "kind": "marginal"
+     },
+     {
+      "text": "L: 109.",
+      "kind": "marginal"
+     },
+     {
+      "text": "1478",
+      "kind": "rubric"
+     },
+     {
+      "text": "Starnberg",
+      "kind": "entry",
+      "uncertain": [
+       "Starnberg"
+      ]
+     },
+     {
+      "text": "Ingwirt",
+      "kind": "entry",
+      "uncertain": [
+       "Ingwirt"
+      ]
+     },
+     {
+      "text": "Jorg Toll } Inventar",
+      "kind": "entry",
+      "uncertain": [
+       "Jorg",
+       "Toll",
+       "Inventar"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "1478",
+  "( L. 109 )",
+  "L: 109.",
+  "1478",
+  "Starnberg",
+  "Ingwirt",
+  "Jorg Toll } Inventar"
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "raw_text": "[Linke Seite leer]\n\n[Rechte Seite]\n90\n[Rest der Seite leer]",
+ "lines": [
+  "[Linke Seite leer]",
+  "[Rechte Seite]",
+  "90",
+  "[Rest der Seite leer]"
+ ],
+ "parsed": null,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p090",
+ "variant": "v1_baseline",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 6.3,
+ "timestamp": "2026-08-26T19:35:18+00:00"
+}

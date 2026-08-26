@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoCTA VLM-Transkriptionstest – Bild-Text-Synopse</title>
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<header class="app">
+  <h1>VLM-Transkriptionstest Raitbuch 2 / Inventare</h1>
+  <nav class="pager" aria-label="Quellennavigation">
+    <button id="prev" type="button" aria-label="Vorherige Quelle">◀</button>
+    <select id="item-select" aria-label="Testbild wählen"></select>
+    <button id="next" type="button" aria-label="Nächste Quelle">▶</button>
+  </nav>
+  <span class="meta" id="generated"></span>
+</header>
+<div id="metrics" aria-live="polite"></div>
+<main>
+  <section id="facsimile" aria-label="Faksimile">
+    <div id="zoombar">
+      <button id="zoom-out" type="button" aria-label="Verkleinern">−</button>
+      <button id="zoom-fit" type="button" aria-label="Einpassen">Fit</button>
+      <button id="zoom-in" type="button" aria-label="Vergrößern">+</button>
+    </div>
+    <div id="osd" aria-label="Faksimile, zoom- und verschiebbar"></div>
+  </section>
+  <section id="panel" aria-label="Transkriptionen">
+    <div id="tabs" role="tablist" aria-label="Variante wählen"></div>
+    <div id="transcript" role="tabpanel"></div>
+  </section>
+</main>
+<script src="../../lib/openseadragon.min.js"></script>
+<script src="results.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>

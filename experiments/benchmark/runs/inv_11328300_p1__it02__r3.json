@@ -1,0 +1,413 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it02",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.6,
+ "timestamp": "2026-08-26T20:20:17+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "Jnuentarij ettlichs hausratts",
+      "kind": "rubric",
+      "uncertain": [
+       "Jnuentarij",
+       "hausratts"
+      ]
+     },
+     {
+      "text": "dwass Bernthen kammerer",
+      "kind": "rubric",
+      "uncertain": [
+       "dwass",
+       "Bernthen",
+       "kammerer"
+      ]
+     },
+     {
+      "text": "Beglechenn hat pro tempore",
+      "kind": "rubric",
+      "uncertain": [
+       "Beglechenn",
+       "tempore"
+      ]
+     },
+     {
+      "text": "auff dem slosß Tgaras vber-",
+      "kind": "rubric",
+      "uncertain": [
+       "Tgaras"
+      ]
+     },
+     {
+      "text": "gnantwurt an mitwochen",
+      "kind": "rubric",
+      "uncertain": [
+       "gnantwurt"
+      ]
+     },
+     {
+      "text": "vor Sandt virgilij tag",
+      "kind": "rubric",
+      "uncertain": [
+       "virgilij"
+      ]
+     },
+     {
+      "text": "Anno dn̄i xc vijmo",
+      "kind": "rubric",
+      "uncertain": [
+       "xc",
+       "vijmo"
+      ]
+     },
+     {
+      "text": "Item in meines g. hern kamer",
+      "kind": "rubric",
+      "uncertain": [
+       "g.",
+       "hern"
+      ]
+     },
+     {
+      "text": "it. j pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it. ij polster",
+      "kind": "entry",
+      "uncertain": [
+       "polster"
+      ]
+     },
+     {
+      "text": "it. ij küssn",
+      "kind": "entry",
+      "uncertain": [
+       "küssn"
+      ]
+     },
+     {
+      "text": "it. j roch deck",
+      "kind": "entry",
+      "uncertain": [
+       "roch"
+      ]
+     },
+     {
+      "text": "it. ij strosackz",
+      "kind": "entry",
+      "uncertain": [
+       "strosackz"
+      ]
+     },
+     {
+      "text": "it. iij pett in der vordristen seld",
+      "kind": "entry",
+      "uncertain": [
+       "vordristen",
+       "seld"
+      ]
+     },
+     {
+      "text": "ob der grossen stuben",
+      "kind": "entry",
+      "uncertain": [
+       "grossen",
+       "stuben"
+      ]
+     },
+     {
+      "text": "it. ij strosackz",
+      "kind": "entry",
+      "uncertain": [
+       "strosackz"
+      ]
+     },
+     {
+      "text": "it. ij polster",
+      "kind": "entry",
+      "uncertain": [
+       "polster"
+      ]
+     },
+     {
+      "text": "it. iij rauch deck",
+      "kind": "entry",
+      "uncertain": [
+       "rauch"
+      ]
+     },
+     {
+      "text": "it. iiij pett in ain andri seld",
+      "kind": "entry",
+      "uncertain": [
+       "andri",
+       "seld"
+      ]
+     },
+     {
+      "text": "it. ij strosackz",
+      "kind": "entry",
+      "uncertain": [
+       "strosackz"
+      ]
+     },
+     {
+      "text": "it. iij polster",
+      "kind": "entry",
+      "uncertain": [
+       "polster"
+      ]
+     },
+     {
+      "text": "it. füff küss",
+      "kind": "entry",
+      "uncertain": [
+       "füff",
+       "küss"
+      ]
+     },
+     {
+      "text": "it. ij rauche deck",
+      "kind": "entry",
+      "uncertain": [
+       "rauche"
+      ]
+     },
+     {
+      "text": "it. iiij tisch",
+      "kind": "entry",
+      "uncertain": [
+       "tisch"
+      ]
+     },
+     {
+      "text": "it. j pett mit gantzen volzogñ",
+      "kind": "entry",
+      "uncertain": [
+       "gantzen",
+       "volzogñ"
+      ]
+     },
+     {
+      "text": "in derselbigen seld",
+      "kind": "entry",
+      "uncertain": [
+       "derselbigen",
+       "seld"
+      ]
+     },
+     {
+      "text": "it. j kuss",
+      "kind": "entry",
+      "uncertain": [
+       "kuss"
+      ]
+     },
+     {
+      "text": "it. j polster",
+      "kind": "entry",
+      "uncertain": [
+       "polster"
+      ]
+     },
+     {
+      "text": "it. iiij deck",
+      "kind": "entry",
+      "uncertain": [
+       "deck"
+      ]
+     },
+     {
+      "text": "it. vj armbrost darund seind",
+      "kind": "entry",
+      "uncertain": [
+       "armbrost",
+       "darund"
+      ]
+     },
+     {
+      "text": "zwäy stechlein",
+      "kind": "entry",
+      "uncertain": [
+       "zwäy",
+       "stechlein"
+      ]
+     },
+     {
+      "text": "it. iij roesse pett in d trincken hell",
+      "kind": "entry",
+      "uncertain": [
+       "roesse",
+       "trincken",
+       "hell"
+      ]
+     },
+     {
+      "text": "it. iij gesteumbte pett",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbte"
+      ]
+     },
+     {
+      "text": "it. iij polster mit royssen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "polster",
+       "royssen",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "it. ein küst mit royssen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "küst",
+       "royssen",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "die nür vbezogñ sind",
+      "kind": "entry",
+      "uncertain": [
+       "nür",
+       "vbezogñ"
+      ]
+     },
+     {
+      "text": "it. iij gesteumbte polster",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbte",
+       "polster"
+      ]
+     },
+     {
+      "text": "it. v deck",
+      "kind": "entry",
+      "uncertain": [
+       "deck"
+      ]
+     },
+     {
+      "text": "it. iij deck die nit vberczt sind",
+      "kind": "entry",
+      "uncertain": [
+       "deck",
+       "vberczt"
+      ]
+     },
+     {
+      "text": "it. viij gesteumbte küst",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbte",
+       "küst"
+      ]
+     },
+     {
+      "text": "it. j pett mit raussen vbezogñ in",
+      "kind": "entry",
+      "uncertain": [
+       "raussen",
+       "vbezogñ"
+      ]
+     },
+     {
+      "text": "der traghell",
+      "kind": "entry",
+      "uncertain": [
+       "traghell"
+      ]
+     },
+     {
+      "text": "it. j gesteumbt polster",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbt",
+       "polster"
+      ]
+     },
+     {
+      "text": "it. j royss küst",
+      "kind": "entry",
+      "uncertain": [
+       "royss",
+       "küst"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Jnuentarij ettlichs hausratts",
+  "dwass Bernthen kammerer",
+  "Beglechenn hat pro tempore",
+  "auff dem slosß Tgaras vber-",
+  "gnantwurt an mitwochen",
+  "vor Sandt virgilij tag",
+  "Anno dn̄i xc vijmo",
+  "Item in meines g. hern kamer",
+  "it. j pett",
+  "it. ij polster",
+  "it. ij küssn",
+  "it. j roch deck",
+  "it. ij strosackz",
+  "it. iij pett in der vordristen seld",
+  "ob der grossen stuben",
+  "it. ij strosackz",
+  "it. ij polster",
+  "it. iij rauch deck",
+  "it. iiij pett in ain andri seld",
+  "it. ij strosackz",
+  "it. iij polster",
+  "it. füff küss",
+  "it. ij rauche deck",
+  "it. iiij tisch",
+  "it. j pett mit gantzen volzogñ",
+  "in derselbigen seld",
+  "it. j kuss",
+  "it. j polster",
+  "it. iiij deck",
+  "it. vj armbrost darund seind",
+  "zwäy stechlein",
+  "it. iij roesse pett in d trincken hell",
+  "it. iij gesteumbte pett",
+  "it. iij polster mit royssen zwiech",
+  "it. ein küst mit royssen zwiech",
+  "die nür vbezogñ sind",
+  "it. iij gesteumbte polster",
+  "it. v deck",
+  "it. iij deck die nit vberczt sind",
+  "it. viij gesteumbte küst",
+  "it. j pett mit raussen vbezogñ in",
+  "der traghell",
+  "it. j gesteumbt polster",
+  "it. j royss küst"
+ ]
+}

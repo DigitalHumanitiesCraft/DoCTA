@@ -1,0 +1,369 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 14.5,
+ "timestamp": "2026-08-26T20:20:22+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "Inuentari etlicher hausrath",
+      "kind": "rubric",
+      "uncertain": [
+       "hausrath"
+      ]
+     },
+     {
+      "text": "dwab [...] kamer",
+      "kind": "rubric",
+      "uncertain": [
+       "dwab",
+       "[...]"
+      ]
+     },
+     {
+      "text": "Applgartspan knoringen",
+      "kind": "rubric",
+      "uncertain": [
+       "Applgartspan",
+       "knoringen"
+      ]
+     },
+     {
+      "text": "auf dem sloss tgarev vber-",
+      "kind": "rubric",
+      "uncertain": [
+       "sloss",
+       "tgarev"
+      ]
+     },
+     {
+      "text": "geantwortet / an mittichen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vor Sand viygils tag",
+      "kind": "rubric",
+      "uncertain": [
+       "viygils"
+      ]
+     },
+     {
+      "text": "Anno dñi etc lxxxj",
+      "kind": "rubric",
+      "uncertain": [
+       "dñi",
+       "lxxxj"
+      ]
+     },
+     {
+      "text": "Item in meinis g̃ herr̃ kamer",
+      "kind": "rubric",
+      "uncertain": [
+       "meinis",
+       "g̃",
+       "herr̃"
+      ]
+     },
+     {
+      "text": "It̃ .j. pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ .j. polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ ij khus̃n",
+      "kind": "entry",
+      "uncertain": [
+       "khus̃n"
+      ]
+     },
+     {
+      "text": "It̃ j rosser strosackh",
+      "kind": "entry",
+      "uncertain": [
+       "rosser"
+      ]
+     },
+     {
+      "text": "It̃ iij pett in der vorderisten seld",
+      "kind": "entry",
+      "uncertain": [
+       "vorderisten",
+       "seld"
+      ]
+     },
+     {
+      "text": "ob der grossen stuben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ iij strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ iij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ iij rauche deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ viij pett in den andern seld",
+      "kind": "entry",
+      "uncertain": [
+       "seld"
+      ]
+     },
+     {
+      "text": "It̃ viij strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ viij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ funf khust",
+      "kind": "entry",
+      "uncertain": [
+       "khust"
+      ]
+     },
+     {
+      "text": "It̃ .x. rauche deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in alsem",
+      "kind": "entry",
+      "uncertain": [
+       "in alsem"
+      ]
+     },
+     {
+      "text": "It̃ .j. pett mit parchent vberzogen",
+      "kind": "entry",
+      "uncertain": [
+       "parchent"
+      ]
+     },
+     {
+      "text": "in der selben seld",
+      "kind": "entry",
+      "uncertain": [
+       "seld"
+      ]
+     },
+     {
+      "text": "It̃ cust",
+      "kind": "entry",
+      "uncertain": [
+       "cust"
+      ]
+     },
+     {
+      "text": "It̃ polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ ij rauch deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ ehte armbrost darund sind",
+      "kind": "entry",
+      "uncertain": [
+       "ehte",
+       "darund"
+      ]
+     },
+     {
+      "text": "zway stoechlein",
+      "kind": "entry",
+      "uncertain": [
+       "stoechlein"
+      ]
+     },
+     {
+      "text": "It̃ iiij roeyse pett in d̃ gmainen hell",
+      "kind": "entry",
+      "uncertain": [
+       "roeyse",
+       "gmainen",
+       "hell"
+      ]
+     },
+     {
+      "text": "It̃ iiij gestickhmalte pett",
+      "kind": "entry",
+      "uncertain": [
+       "gestickhmalte"
+      ]
+     },
+     {
+      "text": "It̃ iiij polster mit roessen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "roessen",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "It̃ viij khust mit roessen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "khust",
+       "roessen",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "die nur vberzogñ sind",
+      "kind": "entry",
+      "uncertain": [
+       "vberzogñ"
+      ]
+     },
+     {
+      "text": "It̃ iiij gestickhmalte polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestickhmalte"
+      ]
+     },
+     {
+      "text": "It̃ viij deckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It̃ iij deckh die nit aussgemacht sind",
+      "kind": "entry",
+      "uncertain": [
+       "aussgemacht"
+      ]
+     },
+     {
+      "text": "It̃ viij gestrickhmalte khust",
+      "kind": "entry",
+      "uncertain": [
+       "gestrickhmalte",
+       "khust"
+      ]
+     },
+     {
+      "text": "It̃ pett mit roessem vberzogen in",
+      "kind": "entry",
+      "uncertain": [
+       "roessem"
+      ]
+     },
+     {
+      "text": "der waaghell",
+      "kind": "entry",
+      "uncertain": [
+       "waaghell"
+      ]
+     },
+     {
+      "text": "It̃ gestrickhmalts polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestrickhmalts"
+      ]
+     },
+     {
+      "text": "It̃ j roeysst khust",
+      "kind": "entry",
+      "uncertain": [
+       "roeysst",
+       "khust"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Inuentari etlicher hausrath",
+  "dwab [...] kamer",
+  "Applgartspan knoringen",
+  "auf dem sloss tgarev vber-",
+  "geantwortet / an mittichen",
+  "vor Sand viygils tag",
+  "Anno dñi etc lxxxj",
+  "Item in meinis g̃ herr̃ kamer",
+  "It̃ .j. pett",
+  "It̃ .j. polster",
+  "It̃ ij khus̃n",
+  "It̃ j rosser strosackh",
+  "It̃ iij pett in der vorderisten seld",
+  "ob der grossen stuben",
+  "It̃ iij strosackh",
+  "It̃ iij polster",
+  "It̃ iij rauche deckh",
+  "It̃ viij pett in den andern seld",
+  "It̃ viij strosackh",
+  "It̃ viij polster",
+  "It̃ funf khust",
+  "It̃ .x. rauche deckh",
+  "in alsem",
+  "It̃ .j. pett mit parchent vberzogen",
+  "in der selben seld",
+  "It̃ cust",
+  "It̃ polster",
+  "It̃ ij rauch deckh",
+  "It̃ ehte armbrost darund sind",
+  "zway stoechlein",
+  "It̃ iiij roeyse pett in d̃ gmainen hell",
+  "It̃ iiij gestickhmalte pett",
+  "It̃ iiij polster mit roessen zwiech",
+  "It̃ viij khust mit roessen zwiech",
+  "die nur vberzogñ sind",
+  "It̃ iiij gestickhmalte polster",
+  "It̃ viij deckh",
+  "It̃ iij deckh die nit aussgemacht sind",
+  "It̃ viij gestrickhmalte khust",
+  "It̃ pett mit roessem vberzogen in",
+  "der waaghell",
+  "It̃ gestrickhmalts polster",
+  "It̃ j roeysst khust"
+ ]
+}

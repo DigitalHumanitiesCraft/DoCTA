@@ -1,0 +1,363 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.3,
+ "timestamp": "2026-08-26T20:20:07+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation"
+     },
+     {
+      "text": "Inventari etlichs hausrocz",
+      "kind": "rubric",
+      "uncertain": [
+       "hausrocz"
+      ]
+     },
+     {
+      "text": "Swab Hannsen Camrers vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Swab",
+       "Camrers"
+      ]
+     },
+     {
+      "text": "Engelharts von Cnoeringen",
+      "kind": "entry",
+      "uncertain": [
+       "Cnoeringen"
+      ]
+     },
+     {
+      "text": "auf dem sloss Tgawer vber-",
+      "kind": "entry",
+      "uncertain": [
+       "Tgawer"
+      ]
+     },
+     {
+      "text": "geantwurt an mittwochen",
+      "kind": "entry"
+     },
+     {
+      "text": "vor Sand Vygilstag",
+      "kind": "entry",
+      "uncertain": [
+       "Vygilstag"
+      ]
+     },
+     {
+      "text": "Anno d(omi)ni rc lxxj^mo",
+      "kind": "entry"
+     },
+     {
+      "text": "Item in meins g(nädigen) h(errn) Camer",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .i. pett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .j. polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ij. dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "It(em) .j. ~~pett~~ strosaks",
+      "kind": "entry",
+      "uncertain": [
+       "strosaks"
+      ]
+     },
+     {
+      "text": "It(em) .ij. pett in der vordristen selb",
+      "kind": "entry",
+      "uncertain": [
+       "vordristen",
+       "selb"
+      ]
+     },
+     {
+      "text": "ob der grossen stuben",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .iij. strosack",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ij. polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ij. weysse dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. pett in dem andern selb",
+      "kind": "entry",
+      "uncertain": [
+       "selb"
+      ]
+     },
+     {
+      "text": "It(em) .ij. strosack",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .ij. polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .v. dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "It(em) .j. weyss dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "iiij dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "It(em) .j. pett mit parchent vberzogen",
+      "kind": "entry",
+      "uncertain": [
+       "parchent"
+      ]
+     },
+     {
+      "text": "in derselbigen selb",
+      "kind": "entry",
+      "uncertain": [
+       "selb"
+      ]
+     },
+     {
+      "text": "It(em) .j. cust",
+      "kind": "entry",
+      "uncertain": [
+       "cust"
+      ]
+     },
+     {
+      "text": "It(em) .j. polster",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) .iij. dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "It(em) .iij. armbrost darund sind",
+      "kind": "entry",
+      "uncertain": [
+       "armbrost"
+      ]
+     },
+     {
+      "text": "zwey stechelein",
+      "kind": "entry",
+      "uncertain": [
+       "stechelein"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. roewffele pett in der vntern hell",
+      "kind": "entry",
+      "uncertain": [
+       "roewffele",
+       "hell"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. gestickmüsz pett",
+      "kind": "entry",
+      "uncertain": [
+       "gestickmüsz"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. polster mit roeffen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "roeffen",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "It(em) .ein cust mit roeffen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "cust",
+       "roeffen",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "die nün obrigen stück",
+      "kind": "entry",
+      "uncertain": [
+       "obrigen"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. gestrümbt polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestrümbt"
+      ]
+     },
+     {
+      "text": "It(em) .v. dfecht",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht"
+      ]
+     },
+     {
+      "text": "It(em) .iij. dfecht die nit nüyfe recht sind",
+      "kind": "entry",
+      "uncertain": [
+       "dfecht",
+       "nüyfe",
+       "recht"
+      ]
+     },
+     {
+      "text": "It(em) .v. gestrümbt cust",
+      "kind": "entry",
+      "uncertain": [
+       "gestrümbt",
+       "cust"
+      ]
+     },
+     {
+      "text": "It(em) .j. pett mit roeffem vberzoch in",
+      "kind": "entry",
+      "uncertain": [
+       "roeffem",
+       "vberzoch"
+      ]
+     },
+     {
+      "text": "der waighell",
+      "kind": "entry",
+      "uncertain": [
+       "waighell"
+      ]
+     },
+     {
+      "text": "It(em) .j. gestrümbt polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestrümbt"
+      ]
+     },
+     {
+      "text": "It(em) .j. roefft cust",
+      "kind": "entry",
+      "uncertain": [
+       "roefft",
+       "cust"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Inventari etlichs hausrocz",
+  "Swab Hannsen Camrers vnd",
+  "Engelharts von Cnoeringen",
+  "auf dem sloss Tgawer vber-",
+  "geantwurt an mittwochen",
+  "vor Sand Vygilstag",
+  "Anno d(omi)ni rc lxxj^mo",
+  "Item in meins g(nädigen) h(errn) Camer",
+  "It(em) .i. pett",
+  "It(em) .j. polster",
+  "It(em) .ij. dfecht",
+  "It(em) .j. ~~pett~~ strosaks",
+  "It(em) .ij. pett in der vordristen selb",
+  "ob der grossen stuben",
+  "It(em) .iij. strosack",
+  "It(em) .ij. polster",
+  "It(em) .ij. weysse dfecht",
+  "It(em) .iiij. pett in dem andern selb",
+  "It(em) .ij. strosack",
+  "It(em) .ij. polster",
+  "It(em) .v. dfecht",
+  "It(em) .j. weyss dfecht",
+  "iiij dfecht",
+  "It(em) .j. pett mit parchent vberzogen",
+  "in derselbigen selb",
+  "It(em) .j. cust",
+  "It(em) .j. polster",
+  "It(em) .iij. dfecht",
+  "It(em) .iij. armbrost darund sind",
+  "zwey stechelein",
+  "It(em) .iiij. roewffele pett in der vntern hell",
+  "It(em) .iiij. gestickmüsz pett",
+  "It(em) .iiij. polster mit roeffen zwiech",
+  "It(em) .ein cust mit roeffen zwiech",
+  "die nün obrigen stück",
+  "It(em) .iiij. gestrümbt polster",
+  "It(em) .v. dfecht",
+  "It(em) .iij. dfecht die nit nüyfe recht sind",
+  "It(em) .v. gestrümbt cust",
+  "It(em) .j. pett mit roeffem vberzoch in",
+  "der waighell",
+  "It(em) .j. gestrümbt polster",
+  "It(em) .j. roefft cust"
+ ]
+}

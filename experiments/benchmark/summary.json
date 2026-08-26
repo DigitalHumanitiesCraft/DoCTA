@@ -1,0 +1,952 @@
+{
+ "generated": "2026-08-26T20:24:39+00:00",
+ "model": "gemini-3.7-flash",
+ "pages": {
+  "rb2_p003": {
+   "folio": "fol. 2v-3r",
+   "phenomena": [
+    "regelstruktur",
+    "namensrubrik",
+    "betraege",
+    "summa",
+    "beidseitig"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      32,
+      32,
+      32
+     ],
+     "uncertain": [
+      8,
+      6,
+      12
+     ],
+     "consistency_words": 0.684,
+     "consistency_numbers": 0.357
+    },
+    "it02": {
+     "k": 2,
+     "lines": [
+      32,
+      35
+     ],
+     "uncertain": [
+      74,
+      31
+     ],
+     "consistency_words": 0.722,
+     "consistency_numbers": 0.8
+    }
+   }
+  },
+  "rb2_p028": {
+   "folio": "fol. 27v-28r",
+   "phenomena": [
+    "x-kassation",
+    "unterstrichene-betraege",
+    "zahlenkolonnen"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      35,
+      35,
+      35
+     ],
+     "uncertain": [
+      15,
+      20,
+      16
+     ],
+     "consistency_words": 0.515,
+     "consistency_numbers": 0.478
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      41,
+      40,
+      40
+     ],
+     "uncertain": [
+      50,
+      51,
+      73
+     ],
+     "consistency_words": 0.61,
+     "consistency_numbers": 0.78
+    }
+   }
+  },
+  "rb2_p040": {
+   "folio": "fol. 39v-40r",
+   "phenomena": [
+    "durchschlag-gemischt",
+    "verblasste-rubrik",
+    "waehrung-mark"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      24,
+      23,
+      24
+     ],
+     "uncertain": [
+      7,
+      10,
+      15
+     ],
+     "consistency_words": 0.521,
+     "consistency_numbers": 0.611
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      24,
+      24,
+      24
+     ],
+     "uncertain": [
+      46,
+      43,
+      32
+     ],
+     "consistency_words": 0.561,
+     "consistency_numbers": 0.753
+    }
+   }
+  },
+  "rb2_p061": {
+   "folio": "fol. 60v-61r",
+   "phenomena": [
+    "einlage-zettel",
+    "siegel",
+    "zwei-textebenen",
+    "fremde-hand"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      48,
+      45,
+      45
+     ],
+     "uncertain": [
+      27,
+      19,
+      12
+     ],
+     "consistency_words": 0.646,
+     "consistency_numbers": 0.482
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      48,
+      48,
+      48
+     ],
+     "uncertain": [
+      73,
+      102,
+      48
+     ],
+     "consistency_words": 0.668,
+     "consistency_numbers": 0.599
+    }
+   }
+  },
+  "rb2_p076": {
+   "folio": "fol. 75v-76r",
+   "phenomena": [
+    "dicht-beidseitig",
+    "erledigungsstrich",
+    "zahlenkolonnen"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      32,
+      31,
+      31
+     ],
+     "uncertain": [
+      19,
+      32,
+      19
+     ],
+     "consistency_words": 0.631,
+     "consistency_numbers": 0.54
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      32,
+      32,
+      32
+     ],
+     "uncertain": [
+      67,
+      65,
+      44
+     ],
+     "consistency_words": 0.675,
+     "consistency_numbers": 0.781
+    }
+   }
+  },
+  "rb2_p090": {
+   "folio": "fol. 89v-90r",
+   "phenomena": [
+    "leer-negativkontrolle"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      1,
+      1,
+      1
+     ],
+     "uncertain": [
+      0,
+      0,
+      0
+     ],
+     "consistency_words": 0.0,
+     "consistency_numbers": 1.0
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      1,
+      1,
+      1
+     ],
+     "uncertain": [
+      0,
+      0,
+      0
+     ],
+     "consistency_words": 0.0,
+     "consistency_numbers": 1.0
+    }
+   }
+  },
+  "rb2_p099": {
+   "folio": "fol. 98v-99r",
+   "phenomena": [
+    "durchschlag-extrem",
+    "verso-nur-geistertext",
+    "handwechsel"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      24,
+      26,
+      24
+     ],
+     "uncertain": [
+      13,
+      18,
+      16
+     ],
+     "consistency_words": 0.457,
+     "consistency_numbers": 0.167
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      26,
+      26,
+      26
+     ],
+     "uncertain": [
+      28,
+      45,
+      30
+     ],
+     "consistency_words": 0.522,
+     "consistency_numbers": 0.6
+    }
+   }
+  },
+  "rb2_p113": {
+   "folio": "fol. 112v-113r",
+   "phenomena": [
+    "eingeheftetes-blatt",
+    "ueberlagerte-schriftflaechen",
+    "zwei-haende",
+    "siegel"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 3,
+     "lines": [
+      75,
+      74,
+      74
+     ],
+     "uncertain": [
+      30,
+      29,
+      8
+     ],
+     "consistency_words": 0.413,
+     "consistency_numbers": 0.581
+    },
+    "it02": {
+     "k": 3,
+     "lines": [
+      76,
+      75,
+      76
+     ],
+     "uncertain": [
+      141,
+      123,
+      94
+     ],
+     "consistency_words": 0.51,
+     "consistency_numbers": 0.543
+    }
+   }
+  },
+  "inv_11328300_p1": {
+   "folio": "A 049.1 fol. 1r",
+   "phenomena": [
+    "rodel-streifen",
+    "siegelrest",
+    "blasse-tinte",
+    "item-zeilen"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      44,
+      44,
+      44,
+      43,
+      44
+     ],
+     "uncertain": [
+      20,
+      42,
+      43,
+      28,
+      39
+     ],
+     "cer_fair": {
+      "mean": 0.2419,
+      "min": 0.2306,
+      "max": 0.2465
+     },
+     "cer_strict": {
+      "mean": 0.4512,
+      "min": 0.429,
+      "max": 0.4798
+     },
+     "consistency_words": 0.567,
+     "consistency_numbers": 0.691
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      44,
+      43,
+      44,
+      43,
+      45
+     ],
+     "uncertain": [
+      41,
+      45,
+      70,
+      63,
+      21
+     ],
+     "cer_fair": {
+      "mean": 0.3101,
+      "min": 0.2982,
+      "max": 0.325
+     },
+     "cer_strict": {
+      "mean": 0.4157,
+      "min": 0.3781,
+      "max": 0.4453
+     },
+     "consistency_words": 0.561,
+     "consistency_numbers": 0.547
+    }
+   }
+  },
+  "inv_11328300_p2": {
+   "folio": "A 049.1 fol. 1v",
+   "phenomena": [
+    "zweispaltig",
+    "maximale-zeilendichte",
+    "lesereihenfolge"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      85,
+      86,
+      86,
+      86,
+      85
+     ],
+     "uncertain": [
+      71,
+      43,
+      45,
+      31,
+      53
+     ],
+     "cer_fair": {
+      "mean": 0.3157,
+      "min": 0.3083,
+      "max": 0.3224
+     },
+     "cer_strict": {
+      "mean": 0.485,
+      "min": 0.477,
+      "max": 0.4974
+     },
+     "consistency_words": 0.494,
+     "consistency_numbers": 0.79
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      85,
+      85,
+      85,
+      80,
+      80
+     ],
+     "uncertain": [
+      48,
+      125,
+      138,
+      83,
+      144
+     ],
+     "cer_fair": {
+      "mean": 0.3005,
+      "min": 0.287,
+      "max": 0.3137
+     },
+     "cer_strict": {
+      "mean": 0.4263,
+      "min": 0.383,
+      "max": 0.4666
+     },
+     "consistency_words": 0.482,
+     "consistency_numbers": 0.691
+    }
+   }
+  },
+  "inv_11328300_p3": {
+   "folio": "A 049.1 S. 3",
+   "phenomena": [
+    "gt-anker"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      58,
+      58,
+      58,
+      58,
+      58
+     ],
+     "uncertain": [
+      48,
+      60,
+      11,
+      35,
+      43
+     ],
+     "cer_fair": {
+      "mean": 0.3155,
+      "min": 0.2806,
+      "max": 0.4159
+     },
+     "cer_strict": {
+      "mean": 0.434,
+      "min": 0.3978,
+      "max": 0.5238
+     },
+     "consistency_words": 0.473,
+     "consistency_numbers": 0.573
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      58,
+      58,
+      58,
+      58,
+      58
+     ],
+     "uncertain": [
+      49,
+      62,
+      43,
+      45,
+      65
+     ],
+     "cer_fair": {
+      "mean": 0.3029,
+      "min": 0.2766,
+      "max": 0.3349
+     },
+     "cer_strict": {
+      "mean": 0.398,
+      "min": 0.3743,
+      "max": 0.4415
+     },
+     "consistency_words": 0.461,
+     "consistency_numbers": 0.463
+    }
+   }
+  },
+  "inv_11328300_p4": {
+   "folio": "A 049.1 S. 4",
+   "phenomena": [
+    "gt-anker"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      6,
+      5,
+      6,
+      6,
+      5
+     ],
+     "uncertain": [
+      4,
+      5,
+      2,
+      4,
+      2
+     ],
+     "cer_fair": {
+      "mean": 1.0133,
+      "min": 0.9,
+      "max": 1.1
+     },
+     "cer_strict": {
+      "mean": 1.4134,
+      "min": 1.2667,
+      "max": 1.5667
+     },
+     "consistency_words": 0.703,
+     "consistency_numbers": 0.9
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      5,
+      6,
+      6,
+      5,
+      6
+     ],
+     "uncertain": [
+      4,
+      4,
+      9,
+      5,
+      6
+     ],
+     "cer_fair": {
+      "mean": 0.98,
+      "min": 0.9,
+      "max": 1.1
+     },
+     "cer_strict": {
+      "mean": 1.3533,
+      "min": 1.2667,
+      "max": 1.4333
+     },
+     "consistency_words": 0.814,
+     "consistency_numbers": 0.775
+    }
+   }
+  },
+  "inv_11330019_p1": {
+   "folio": "A 144.1 S. 1 (Kronburg 1478)",
+   "phenomena": [
+    "gt-anker"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      42,
+      42,
+      42,
+      41,
+      42
+     ],
+     "uncertain": [
+      7,
+      16,
+      18,
+      20,
+      25
+     ],
+     "cer_fair": {
+      "mean": 0.2044,
+      "min": 0.1949,
+      "max": 0.214
+     },
+     "cer_strict": {
+      "mean": 0.3267,
+      "min": 0.3155,
+      "max": 0.3462
+     },
+     "consistency_words": 0.593,
+     "consistency_numbers": 0.832
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      42,
+      42,
+      42,
+      42,
+      42
+     ],
+     "uncertain": [
+      68,
+      37,
+      70,
+      29,
+      49
+     ],
+     "cer_fair": {
+      "mean": 0.2062,
+      "min": 0.194,
+      "max": 0.2259
+     },
+     "cer_strict": {
+      "mean": 0.3161,
+      "min": 0.3094,
+      "max": 0.3208
+     },
+     "consistency_words": 0.617,
+     "consistency_numbers": 0.806
+    }
+   }
+  },
+  "inv_11330019_p2": {
+   "folio": "A 144.1 S. 2 (zweispaltig)",
+   "phenomena": [
+    "gt-anker",
+    "zweispaltig"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      67,
+      67,
+      67,
+      67,
+      67
+     ],
+     "uncertain": [
+      31,
+      49,
+      49,
+      32,
+      48
+     ],
+     "cer_fair": {
+      "mean": 0.2437,
+      "min": 0.231,
+      "max": 0.2558
+     },
+     "cer_strict": {
+      "mean": 0.3853,
+      "min": 0.3746,
+      "max": 0.3991
+     },
+     "consistency_words": 0.529,
+     "consistency_numbers": 0.695
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      67,
+      67,
+      67,
+      67,
+      67
+     ],
+     "uncertain": [
+      60,
+      70,
+      74,
+      84,
+      75
+     ],
+     "cer_fair": {
+      "mean": 0.2488,
+      "min": 0.231,
+      "max": 0.2711
+     },
+     "cer_strict": {
+      "mean": 0.3569,
+      "min": 0.3348,
+      "max": 0.3894
+     },
+     "consistency_words": 0.541,
+     "consistency_numbers": 0.708
+    }
+   }
+  },
+  "inv_11330019_p3": {
+   "folio": "A 144.1 S. 3",
+   "phenomena": [
+    "gt-anker"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      7,
+      8,
+      8,
+      7,
+      8
+     ],
+     "uncertain": [
+      0,
+      3,
+      5,
+      5,
+      4
+     ],
+     "cer_fair": {
+      "mean": 1.1579,
+      "min": 1.0,
+      "max": 1.3158
+     },
+     "cer_strict": {
+      "mean": 1.379,
+      "min": 1.2105,
+      "max": 1.6053
+     },
+     "consistency_words": 0.135,
+     "consistency_numbers": 0.933
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      8,
+      7,
+      7,
+      7,
+      7
+     ],
+     "uncertain": [
+      3,
+      3,
+      4,
+      4,
+      4
+     ],
+     "cer_fair": {
+      "mean": 1.0474,
+      "min": 0.8421,
+      "max": 1.2895
+     },
+     "cer_strict": {
+      "mean": 1.2158,
+      "min": 0.9474,
+      "max": 1.4211
+     },
+     "consistency_words": 0.365,
+     "consistency_numbers": 1.0
+    }
+   }
+  },
+  "inv_11330020_p1": {
+   "folio": "A 201.1 fol. 1r (Heinfels 1440)",
+   "phenomena": [
+    "aeltere-hand",
+    "verblasste-blattzone",
+    "archivvermerk"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      47,
+      47,
+      47,
+      47,
+      47
+     ],
+     "uncertain": [
+      21,
+      23,
+      22,
+      14,
+      21
+     ],
+     "cer_fair": {
+      "mean": 0.1732,
+      "min": 0.1672,
+      "max": 0.1782
+     },
+     "cer_strict": {
+      "mean": 0.284,
+      "min": 0.2747,
+      "max": 0.2943
+     },
+     "consistency_words": 0.652,
+     "consistency_numbers": 0.851
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      47,
+      47,
+      47,
+      47,
+      47
+     ],
+     "uncertain": [
+      21,
+      11,
+      20,
+      46,
+      15
+     ],
+     "cer_fair": {
+      "mean": 0.1593,
+      "min": 0.1462,
+      "max": 0.1666
+     },
+     "cer_strict": {
+      "mean": 0.2562,
+      "min": 0.2483,
+      "max": 0.2679
+     },
+     "consistency_words": 0.705,
+     "consistency_numbers": 0.853
+    }
+   }
+  },
+  "inv_11330020_p2": {
+   "folio": "A 201.1 S. 2 (Heinfels 1440)",
+   "phenomena": [
+    "gt-anker",
+    "aeltere-hand"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 5,
+     "lines": [
+      39,
+      39,
+      39,
+      39,
+      39
+     ],
+     "uncertain": [
+      15,
+      14,
+      41,
+      16,
+      40
+     ],
+     "cer_fair": {
+      "mean": 0.1458,
+      "min": 0.134,
+      "max": 0.1618
+     },
+     "cer_strict": {
+      "mean": 0.2453,
+      "min": 0.235,
+      "max": 0.2561
+     },
+     "consistency_words": 0.641,
+     "consistency_numbers": 0.786
+    },
+    "it02": {
+     "k": 5,
+     "lines": [
+      39,
+      39,
+      39,
+      39,
+      39
+     ],
+     "uncertain": [
+      43,
+      29,
+      22,
+      53,
+      50
+     ],
+     "cer_fair": {
+      "mean": 0.1327,
+      "min": 0.124,
+      "max": 0.1379
+     },
+     "cer_strict": {
+      "mean": 0.2325,
+      "min": 0.2183,
+      "max": 0.2465
+     },
+     "consistency_words": 0.701,
+     "consistency_numbers": 0.692
+    }
+   }
+  },
+  "inv_11348659_p1": {
+   "folio": "A 273.7 fol. 1r",
+   "phenomena": [
+    "fliessprosa-gedraengt",
+    "kleinster-schriftgrad",
+    "ohne-gliederung"
+   ],
+   "iterations": {
+    "it01": {
+     "k": 2,
+     "lines": [
+      63,
+      63
+     ],
+     "uncertain": [
+      50,
+      0
+     ],
+     "consistency_words": 0.706,
+     "consistency_numbers": 0.875
+    }
+   }
+  }
+ }
+}

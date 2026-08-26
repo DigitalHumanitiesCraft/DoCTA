@@ -1,0 +1,199 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Kastner",
+  "vphoferin",
+  "Nota Anno etc. xc primo Cunctzburg ist",
+  "berait mit der vphoferin in geg(en)wertikait",
+  "der vorgestalt(e)n / vmb alle abgeraitte dingt",
+  "so sy mein(e)m herrn gnad schuldig ist / f(ur)der",
+  "ir nachst(e)n paiden sennen ferner zins auf",
+  "heuttigen tag / vnd bringt in ainer",
+  "Su(m)ma —— ij^C lxxiiij m(a)r(k) [...]",
+  "Daran jr Innemen",
+  "It(em) Die bemelte vphoferin hat von herr(e)n Benedictn",
+  "Cam(er)maist(e)r empfangen —— ij^C xvij m(a)r(k)",
+  "It(em) von Feistritzn stiffter haubtsu(m)m hat sy",
+  "empfang(e)n xx m(a)r(k) die er auch in der Cam(er)maist(er) rach(ung) hat aufgeb(e)n",
+  "N Vnd ist vnvergoltn die viij m(a)r(k) iiij ß iij d in ß c lxxvj d",
+  "die michaln s(ei)n sun mein herr schuldig was",
+  "Su(m)ma irs Innemens seint",
+  "—— ij^C xlvij m(a)r(k) iiij ß iij d [...]",
+  "40.",
+  "Liebhart Dermaer",
+  "Der vorgemelt(e)n vphoferin(n) Innemen",
+  "gegen jrem Aufgeb(e)n gegeneinander glegt",
+  "vnd abgetragn / Dannach ist sy mein(e)s herrn",
+  "gnad schuldig —— lxxxv m(a)r(k) ix ß viij d rl"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (verso)",
+    "lines": [
+     {
+      "text": "Kastner",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vphoferin",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota Anno etc. xc primo Cunctzburg ist",
+      "kind": "entry",
+      "uncertain": [
+       "Cunctzburg"
+      ]
+     },
+     {
+      "text": "berait mit der vphoferin in geg(en)wertikait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der vorgestalt(e)n / vmb alle abgeraitte dingt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so sy mein(e)m herrn gnad schuldig ist / f(ur)der",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ir nachst(e)n paiden sennen ferner zins auf",
+      "kind": "entry",
+      "uncertain": [
+       "sennen",
+       "ferner",
+       "zins"
+      ]
+     },
+     {
+      "text": "heuttigen tag / vnd bringt in ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Su(m)ma —— ij^C lxxiiij m(a)r(k) [...]",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Daran jr Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Die bemelte vphoferin hat von herr(e)n Benedictn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Cam(er)maist(e)r empfangen —— ij^C xvij m(a)r(k)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) von Feistritzn stiffter haubtsu(m)m hat sy",
+      "kind": "entry",
+      "uncertain": [
+       "Feistritzn",
+       "stiffter"
+      ]
+     },
+     {
+      "text": "empfang(e)n xx m(a)r(k) die er auch in der Cam(er)maist(er) rach(ung) hat aufgeb(e)n",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "N Vnd ist vnvergoltn die viij m(a)r(k) iiij ß iij d in ß c lxxvj d",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "die michaln s(ei)n sun mein herr schuldig was",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Su(m)ma irs Innemens seint",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "—— ij^C xlvij m(a)r(k) iiij ß iij d [...]",
+      "kind": "amount",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Liebhart Dermaer",
+      "kind": "rubric",
+      "uncertain": [
+       "Dermaer"
+      ]
+     },
+     {
+      "text": "Der vorgemelt(e)n vphoferin(n) Innemen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gegen jrem Aufgeb(e)n gegeneinander glegt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd abgetragn / Dannach ist sy mein(e)s herrn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gnad schuldig —— lxxxv m(a)r(k) ix ß viij d rl",
+      "kind": "entry",
+      "uncertain": [
+       "rl"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Auf fol. 40r befinden sich im unteren Bereich stark verblasste, kaum lesbare bzw. durchscheinende Reste früherer Entwürfe/Notizen."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null,
+   "enhanced": true
+  }
+ ],
+ "item": "rb2_p040",
+ "variant": "v6_enhanced",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 10.2,
+ "timestamp": "2026-08-26T19:35:12+00:00"
+}

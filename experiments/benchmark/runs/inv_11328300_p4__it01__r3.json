@@ -1,0 +1,76 @@
+{
+ "page": "inv_11328300_p4",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2719
+   ],
+   "sent_px": [
+    965,
+    2719
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 3.7,
+ "timestamp": "2026-08-26T20:21:29+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "recto",
+    "lines": [
+     {
+      "text": "Jnuentarij zedel",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "yren thannr.",
+      "kind": "rubric",
+      "uncertain": [
+       "yren thannr."
+      ]
+     },
+     {
+      "text": "1471",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "[...]",
+      "kind": "marginal",
+      "uncertain": [
+       "[...]"
+      ]
+     },
+     {
+      "text": "Lad. 22. lit. r. 8.",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Inv. 749/11",
+      "kind": "marginal",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Jnuentarij zedel",
+  "yren thannr.",
+  "1471",
+  "[...]",
+  "Lad. 22. lit. r. 8.",
+  "Inv. 749/11"
+ ]
+}

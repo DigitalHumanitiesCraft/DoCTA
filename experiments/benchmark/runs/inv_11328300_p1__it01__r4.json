@@ -1,0 +1,341 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it01",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.6,
+ "timestamp": "2026-08-26T20:20:08+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "Inventari etlichs hausraths",
+      "kind": "rubric",
+      "uncertain": [
+       "Inventari",
+       "hausraths"
+      ]
+     },
+     {
+      "text": "knab Hainrichen Kamrers",
+      "kind": "rubric",
+      "uncertain": [
+       "knab",
+       "Kamrers"
+      ]
+     },
+     {
+      "text": "Engelhartsporn knoringer",
+      "kind": "rubric",
+      "uncertain": [
+       "Engelhartsporn",
+       "knoringer"
+      ]
+     },
+     {
+      "text": "auf dem sloss Tgaraur vber-",
+      "kind": "rubric",
+      "uncertain": [
+       "Tgaraur"
+      ]
+     },
+     {
+      "text": "geantwurt an mitwochen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vor Sand virgilij tag",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Anno d(omi)ni u(nd) lxxxj^m",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item in meins h(er)rn herrn kamer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .j. pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. ~~polst~~ Strohsack",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. pett in der vordristen selb(er)",
+      "kind": "entry",
+      "uncertain": [
+       "vordristen",
+       "selb(er)"
+      ]
+     },
+     {
+      "text": "ob der grossen stubn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. Strohsack",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .ij. weisse pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it(em) .iij. pett in dem and(er)n selb",
+      "kind": "entry",
+      "uncertain": [
+       "selb"
+      ]
+     },
+     {
+      "text": "It(em) .iij. strohsack",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .iij. polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .fünf pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .j. weisse pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": ".iiij. pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .j. pett mit parchent vberzogen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in derselbign selb(er)",
+      "kind": "entry",
+      "uncertain": [
+       "selbign",
+       "selb(er)"
+      ]
+     },
+     {
+      "text": "It(em) .j. küst",
+      "kind": "entry",
+      "uncertain": [
+       "küst"
+      ]
+     },
+     {
+      "text": "It(em) .j. polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .iiij. pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .j. armbrost darumb sind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwey straifflein",
+      "kind": "entry",
+      "uncertain": [
+       "straifflein"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. rothe pett in d(er) truncken hell",
+      "kind": "entry",
+      "uncertain": [
+       "truncken hell"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. gestraiffte pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .iiij. polster mit rothem zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "zwiech"
+      ]
+     },
+     {
+      "text": "It(em) .ein küss mit rothem zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "küss",
+       "zwiech"
+      ]
+     },
+     {
+      "text": "die nun obengemelt sind",
+      "kind": "entry",
+      "uncertain": [
+       "nun",
+       "obengemelt"
+      ]
+     },
+     {
+      "text": "It(em) .iiij. gestraimter polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimter"
+      ]
+     },
+     {
+      "text": "It(em) .x. pfahel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) .iij. pfahel die nit vfferrat sind",
+      "kind": "entry",
+      "uncertain": [
+       "vfferrat"
+      ]
+     },
+     {
+      "text": "It(em) .j. gestraimbt küss",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbt",
+       "küss"
+      ]
+     },
+     {
+      "text": "It(em) .j. pett mit rothem vberzogen in",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der wachtell",
+      "kind": "entry",
+      "uncertain": [
+       "wachtell"
+      ]
+     },
+     {
+      "text": "It(em) .j. gestraimbt polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestraimbt"
+      ]
+     },
+     {
+      "text": "It(em) .j. roths küss",
+      "kind": "entry",
+      "uncertain": [
+       "roths",
+       "küss"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Inventari etlichs hausraths",
+  "knab Hainrichen Kamrers",
+  "Engelhartsporn knoringer",
+  "auf dem sloss Tgaraur vber-",
+  "geantwurt an mitwochen",
+  "vor Sand virgilij tag",
+  "Anno d(omi)ni u(nd) lxxxj^m",
+  "Item in meins h(er)rn herrn kamer",
+  "It(em) .j. pett",
+  "It(em) .ij. polster",
+  "It(em) .ij. pfahel",
+  "It(em) .ij. ~~polst~~ Strohsack",
+  "It(em) .ij. pett in der vordristen selb(er)",
+  "ob der grossen stubn",
+  "It(em) .ij. Strohsack",
+  "It(em) .ij. polster",
+  "It(em) .ij. weisse pfahel",
+  "it(em) .iij. pett in dem and(er)n selb",
+  "It(em) .iij. strohsack",
+  "It(em) .iij. polster",
+  "It(em) .fünf pfahel",
+  "It(em) .j. weisse pfahel",
+  ".iiij. pfahel",
+  "It(em) .j. pett mit parchent vberzogen",
+  "in derselbign selb(er)",
+  "It(em) .j. küst",
+  "It(em) .j. polster",
+  "It(em) .iiij. pfahel",
+  "It(em) .j. armbrost darumb sind",
+  "zwey straifflein",
+  "It(em) .iiij. rothe pett in d(er) truncken hell",
+  "It(em) .iiij. gestraiffte pett",
+  "It(em) .iiij. polster mit rothem zwiech",
+  "It(em) .ein küss mit rothem zwiech",
+  "die nun obengemelt sind",
+  "It(em) .iiij. gestraimter polster",
+  "It(em) .x. pfahel",
+  "It(em) .iij. pfahel die nit vfferrat sind",
+  "It(em) .j. gestraimbt küss",
+  "It(em) .j. pett mit rothem vberzogen in",
+  "der wachtell",
+  "It(em) .j. gestraimbt polster",
+  "It(em) .j. roths küss"
+ ]
+}

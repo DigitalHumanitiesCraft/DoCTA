@@ -1,0 +1,363 @@
+{
+ "page": "rb2_p076",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 18.7,
+ "timestamp": "2026-08-26T20:18:59+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Albrecht Sesler",
+      "kind": "rubric",
+      "uncertain": [
+       "Albrecht",
+       "Sesler"
+      ]
+     },
+     {
+      "text": "Nõ ead die et pñtibz ph̃lipt etc Ist gerait",
+      "kind": "entry",
+      "uncertain": [
+       "pñtibz",
+       "ph̃lipt"
+      ]
+     },
+     {
+      "text": "worden mit Albrecht Sesler vmb nestig Smirhaupptuech",
+      "kind": "entry",
+      "uncertain": [
+       "Albrecht",
+       "Sesler",
+       "nestig",
+       "Smirhaupptuech"
+      ]
+     },
+     {
+      "text": "vnd anders so man meins herrn vnd meins fraw",
+      "kind": "entry",
+      "uncertain": [
+       "meins",
+       "fraw"
+      ]
+     },
+     {
+      "text": "gnad von Jm genomen hat sedz fretags vor",
+      "kind": "entry",
+      "uncertain": [
+       "sedz",
+       "fretags"
+      ]
+     },
+     {
+      "text": "Sannt Margreten tag des lxiiij Jars / vnnd auf",
+      "kind": "entry",
+      "uncertain": [
+       "Sannt",
+       "Margreten",
+       "lxiiij"
+      ]
+     },
+     {
+      "text": "hewtigen obgenant tag / vnnd man ist Jm vber das",
+      "kind": "entry",
+      "uncertain": [
+       "obgenant"
+      ]
+     },
+     {
+      "text": "so er von Vrsen Benedicten des alten Camermaister",
+      "kind": "entry",
+      "uncertain": [
+       "Vrsen",
+       "Benedicten",
+       "Camermaister"
+      ]
+     },
+     {
+      "text": "vnd vber die ij m̃r rains dennach mit Parttigs",
+      "kind": "entry",
+      "uncertain": [
+       "rains",
+       "Parttigs"
+      ]
+     },
+     {
+      "text": "schuldig worden —— xxvj lb",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxvj",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "xxvj",
+       "lb"
+      ]
+     },
+     {
+      "text": "Die hat Jm Leonhart von Rottenburg Camrair",
+      "kind": "entry",
+      "uncertain": [
+       "Leonhart",
+       "Rottenburg",
+       "Camrair"
+      ]
+     },
+     {
+      "text": "ausgericht vnd bezalt",
+      "kind": "entry",
+      "uncertain": [
+       "ausgericht",
+       "bezalt"
+      ]
+     },
+     {
+      "text": "Conrat Pürkhler",
+      "kind": "rubric",
+      "uncertain": [
+       "Conrat",
+       "Pürkhler"
+      ]
+     },
+     {
+      "text": "Nõ ead die pñtibz ph̃lipt etc Ist gerait mit Conr̃",
+      "kind": "entry",
+      "uncertain": [
+       "pñtibz",
+       "ph̃lipt",
+       "Conr̃"
+      ]
+     },
+     {
+      "text": "pürckler vnd ist bis vntz auf hewtigen tag",
+      "kind": "entry",
+      "uncertain": [
+       "pürckler",
+       "vntz"
+      ]
+     },
+     {
+      "text": "mit Parttigs schuldig worden vij m̃r ist bezalt",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij",
+       "unit": "m̃r"
+      },
+      "uncertain": [
+       "Parttigs",
+       "vij",
+       "m̃r"
+      ]
+     },
+     {
+      "text": "p Leonhardum d creingk engenier ztomesi",
+      "kind": "entry",
+      "uncertain": [
+       "Leonhardum",
+       "creingk",
+       "engenier",
+       "ztomesi"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "76r",
+    "lines": [
+     {
+      "text": "76",
+      "kind": "foliation"
+     },
+     {
+      "text": "Hannß Schwertfeger",
+      "kind": "rubric",
+      "uncertain": [
+       "Hannß",
+       "Schwertfeger"
+      ]
+     },
+     {
+      "text": "No an freytag nach Diuisionis apostolorum Anno",
+      "kind": "entry",
+      "uncertain": [
+       "Diuisionis",
+       "apostolorum"
+      ]
+     },
+     {
+      "text": "domini etc lxxij / petrus pfintzing / Ist gerait",
+      "kind": "entry",
+      "uncertain": [
+       "petrus",
+       "pfintzing"
+      ]
+     },
+     {
+      "text": "mit hannsen Swertfeger / vmb alle arbait",
+      "kind": "entry",
+      "uncertain": [
+       "hannsen",
+       "Swertfeger",
+       "arbait"
+      ]
+     },
+     {
+      "text": "so er meins herrn gnad geth vnd dargeben",
+      "kind": "entry",
+      "uncertain": [
+       "geth",
+       "dargeben"
+      ]
+     },
+     {
+      "text": "hat / sider freytags nach sand Martinstag",
+      "kind": "entry",
+      "uncertain": [
+       "sider",
+       "freytags",
+       "Martinstag"
+      ]
+     },
+     {
+      "text": "am herbst / im lxx jar / vntz auf hewtigen",
+      "kind": "entry",
+      "uncertain": [
+       "herbst",
+       "hewtigen"
+      ]
+     },
+     {
+      "text": "tag / vnd bringt in ainer Summa / nach außweysung",
+      "kind": "entry",
+      "uncertain": [
+       "außweysung"
+      ]
+     },
+     {
+      "text": "seins Registers / — x iiij lb ij ß ij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xiiij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Registers"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Vnd hat er emphangen von herrn vbennd",
+      "kind": "entry",
+      "uncertain": [
+       "emphangen",
+       "vbennd"
+      ]
+     },
+     {
+      "text": "pfarrer zu Terzel als Camerrath x lb pn",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Terzel",
+       "Camerrath",
+       "pn"
+      ]
+     },
+     {
+      "text": "Darnach ist im meins herrngnad schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "herrngnad",
+       "schuldig"
+      ]
+     },
+     {
+      "text": "iiij lb ij ß ij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iiij",
+       "unit": "lb"
+      }
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Albrecht Sesler",
+  "Nõ ead die et pñtibz ph̃lipt etc Ist gerait",
+  "worden mit Albrecht Sesler vmb nestig Smirhaupptuech",
+  "vnd anders so man meins herrn vnd meins fraw",
+  "gnad von Jm genomen hat sedz fretags vor",
+  "Sannt Margreten tag des lxiiij Jars / vnnd auf",
+  "hewtigen obgenant tag / vnnd man ist Jm vber das",
+  "so er von Vrsen Benedicten des alten Camermaister",
+  "vnd vber die ij m̃r rains dennach mit Parttigs",
+  "schuldig worden —— xxvj lb",
+  "Die hat Jm Leonhart von Rottenburg Camrair",
+  "ausgericht vnd bezalt",
+  "Conrat Pürkhler",
+  "Nõ ead die pñtibz ph̃lipt etc Ist gerait mit Conr̃",
+  "pürckler vnd ist bis vntz auf hewtigen tag",
+  "mit Parttigs schuldig worden vij m̃r ist bezalt",
+  "p Leonhardum d creingk engenier ztomesi",
+  "76",
+  "Hannß Schwertfeger",
+  "No an freytag nach Diuisionis apostolorum Anno",
+  "domini etc lxxij / petrus pfintzing / Ist gerait",
+  "mit hannsen Swertfeger / vmb alle arbait",
+  "so er meins herrn gnad geth vnd dargeben",
+  "hat / sider freytags nach sand Martinstag",
+  "am herbst / im lxx jar / vntz auf hewtigen",
+  "tag / vnd bringt in ainer Summa / nach außweysung",
+  "seins Registers / — x iiij lb ij ß ij d",
+  "Item",
+  "Vnd hat er emphangen von herrn vbennd",
+  "pfarrer zu Terzel als Camerrath x lb pn",
+  "Darnach ist im meins herrngnad schuldig",
+  "iiij lb ij ß ij d"
+ ]
+}

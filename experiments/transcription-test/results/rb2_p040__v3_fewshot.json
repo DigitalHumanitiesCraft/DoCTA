@@ -1,0 +1,200 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Kastem",
+  "vphoferin",
+  "Nota Anno die vt purificac(i)o(n)is v(ir)g(in)is Ist",
+  "berait mit der vphoferin in gegennwirtikait",
+  "der vorgeschrib(e)n vmb alle abgeraitte dörfft",
+  "so sy mein(e)s her(e)n gnad schuldig ist / sider",
+  "der nagsten baiden samstag vnnd auf",
+  "heuttigen tag / vnd bleygt in ainer",
+  "Sum(m)a —— ij^C lxxxvij mur(ner)",
+  "Darauff Innemen",
+  "It(em) Die berait vphoferin hat von hern Benedictn",
+  "Cam(er)maister empfangen —— ij^C xxij mur(ner)",
+  "It(em) von Feurgarten stewr haubtsum hat sy",
+  "emphangen xx mur(ner) die er auch in d(er) Camermaister rait(un)g hat aufgeb(e)n",
+  "It(em) von vnkosten auffzeleg(e)n die viij mur(ner) ij ß iiij d in d(er) dörfft",
+  "die Michaln sein son meinem her(e)n schuldig was",
+  "Sum(m)a irs Innemens hat",
+  "ij^C xlvij mur(ner) ij ß iiij d",
+  "40.",
+  "Der vorgemelten vphoferin Innemen",
+  "gegen Irem Aussgeben gegeneinander gelegt",
+  "vnd abgetzoggen, Dannoch ist sy meins her(e)n",
+  "gnad schuldig —— lxxxv mur(ner) ix ß viij hl"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 39v",
+    "lines": [
+     {
+      "text": "Kastem",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vphoferin",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota Anno die vt purificac(i)o(n)is v(ir)g(in)is Ist",
+      "kind": "entry",
+      "uncertain": [
+       "v(ir)g(in)is"
+      ]
+     },
+     {
+      "text": "berait mit der vphoferin in gegennwirtikait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der vorgeschrib(e)n vmb alle abgeraitte dörfft",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so sy mein(e)s her(e)n gnad schuldig ist / sider",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der nagsten baiden samstag vnnd auf",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "heuttigen tag / vnd bleygt in ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Sum(m)a —— ij^C lxxxvij mur(ner)",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Darauff Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Die berait vphoferin hat von hern Benedictn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Cam(er)maister empfangen —— ij^C xxij mur(ner)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) von Feurgarten stewr haubtsum hat sy",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "emphangen xx mur(ner) die er auch in d(er) Camermaister rait(un)g hat aufgeb(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "rait(un)g",
+       "aufgeb(e)n"
+      ]
+     },
+     {
+      "text": "It(em) von vnkosten auffzeleg(e)n die viij mur(ner) ij ß iiij d in d(er) dörfft",
+      "kind": "entry",
+      "uncertain": [
+       "auffzeleg(e)n"
+      ]
+     },
+     {
+      "text": "die Michaln sein son meinem her(e)n schuldig was",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Sum(m)a irs Innemens hat",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "ij^C xlvij mur(ner) ij ß iiij d",
+      "kind": "amount",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Der vorgemelten vphoferin Innemen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gegen Irem Aussgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd abgetzoggen, Dannoch ist sy meins her(e)n",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gnad schuldig —— lxxxv mur(ner) ix ß viij hl",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Diplomatische Transkription von fol. 39v und 40r (Abrechnung mit der Uphoferin)."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    5420
+   ],
+   "sent_px": [
+    1191,
+    3500
+   ],
+   "crop": null,
+   "enhanced": false
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "fewshot_source": "fewshot_11327964_p2",
+ "item": "rb2_p040",
+ "variant": "v3_fewshot",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 13.4,
+ "timestamp": "2026-08-26T19:34:25+00:00"
+}

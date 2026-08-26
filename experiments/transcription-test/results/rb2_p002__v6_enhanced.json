@@ -1,0 +1,213 @@
+{
+ "raw_text": null,
+ "lines": [
+  "2",
+  "Prouision vnd Solde",
+  "ausserhalb lanndes",
+  "Sigmund von",
+  "Framnoes",
+  "Nota an Sontag Sannd Johannstag Decollacionis",
+  "Anno etc lxxvij^o In gegenwirtikait hern Benedictn Camerers",
+  "Hannsn Caspis huntntmaysters, Eberharts Klueber baußlaytt",
+  "vnd Wolffgangs Würmbecker lanndtschreibers hat ma(n) gerait",
+  "mit Petern papus anstat Sigmundts vonn Framners",
+  "vmb Solde, vnd erczligen auch zerrung vnd aller schuld:",
+  "so meins hern gnad demselben vonn Framnoes aller sachenn",
+  "auf heuttigen tag ist schuldigk worden: /",
+  "Meins herrn gnad ist demselben vonn Framners schuldigk word",
+  "nach Innhald ains Schuldbrieffs van Solde vnd erczganns",
+  "wegen so er zu Bellrecz geton hat —— iij^C lxx gld vnd iij^C lb p(fenning)",
+  "It(em) So ist Im meins hern gnad schuldig prouision vom sannd",
+  "Patrein tag des lxxvj Jars vnz auf Sannd Patrein tag des lxxvij",
+  "Jars vnd hat damit den dienst aufgesagt —— cl gld",
+  "It(em) Auch ist Ihm meins hern gnad schuldig allerdlay zerrung —— xj lb viij ß d",
+  "Daraff hat er von hern Benedict Camerair empfanngen In",
+  "dreien maln die demselbn Camerair nach Bestimbt Zoueraitten",
+  "I lxxvj lb d",
+  "Dannach ist man Im aller Sach schuldigk —— ij^C lxxxv lb vj d",
+  "Die hat Im d bemeltt Camerair außgericht vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (fol. 1v)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "rechts (fol. 2r)",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Prouision vnd Solde",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ausserhalb lanndes",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Sigmund von",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Framnoes",
+      "kind": "rubric",
+      "uncertain": [
+       "Framnoes"
+      ]
+     },
+     {
+      "text": "Nota an Sontag Sannd Johannstag Decollacionis",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Anno etc lxxvij^o In gegenwirtikait hern Benedictn Camerers",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Hannsn Caspis huntntmaysters, Eberharts Klueber baußlaytt",
+      "kind": "entry",
+      "uncertain": [
+       "baußlaytt"
+      ]
+     },
+     {
+      "text": "vnd Wolffgangs Würmbecker lanndtschreibers hat ma(n) gerait",
+      "kind": "entry",
+      "uncertain": [
+       "Würmbecker"
+      ]
+     },
+     {
+      "text": "mit Petern papus anstat Sigmundts vonn Framners",
+      "kind": "entry",
+      "uncertain": [
+       "papus",
+       "Framners"
+      ]
+     },
+     {
+      "text": "vmb Solde, vnd erczligen auch zerrung vnd aller schuld:",
+      "kind": "entry",
+      "uncertain": [
+       "erczligen"
+      ]
+     },
+     {
+      "text": "so meins hern gnad demselben vonn Framnoes aller sachenn",
+      "kind": "entry",
+      "uncertain": [
+       "Framnoes"
+      ]
+     },
+     {
+      "text": "auf heuttigen tag ist schuldigk worden: /",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Meins herrn gnad ist demselben vonn Framners schuldigk word",
+      "kind": "entry",
+      "uncertain": [
+       "Framners"
+      ]
+     },
+     {
+      "text": "nach Innhald ains Schuldbrieffs van Solde vnd erczganns",
+      "kind": "entry",
+      "uncertain": [
+       "erczganns"
+      ]
+     },
+     {
+      "text": "wegen so er zu Bellrecz geton hat —— iij^C lxx gld vnd iij^C lb p(fenning)",
+      "kind": "entry",
+      "uncertain": [
+       "Bellrecz",
+       "lxx"
+      ]
+     },
+     {
+      "text": "It(em) So ist Im meins hern gnad schuldig prouision vom sannd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Patrein tag des lxxvj Jars vnz auf Sannd Patrein tag des lxxvij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jars vnd hat damit den dienst aufgesagt —— cl gld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Auch ist Ihm meins hern gnad schuldig allerdlay zerrung —— xj lb viij ß d",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Daraff hat er von hern Benedict Camerair empfanngen In",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dreien maln die demselbn Camerair nach Bestimbt Zoueraitten",
+      "kind": "entry",
+      "uncertain": [
+       "Zoueraitten"
+      ]
+     },
+     {
+      "text": "I lxxvj lb d",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Dannach ist man Im aller Sach schuldigk —— ij^C lxxxv lb vj d",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Die hat Im d bemeltt Camerair außgericht vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "fol. 1v ist leer (kein eigener Text, nur Durchscheinen). fol. 2r enthält eine Abrechnung von Sold und Provision für Sigmund von Framnoes/Framners aus dem Jahr 1477."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": true
+  }
+ ],
+ "item": "rb2_p002",
+ "variant": "v6_enhanced",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 10.3,
+ "timestamp": "2026-08-26T19:32:12+00:00"
+}

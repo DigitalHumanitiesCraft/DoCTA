@@ -1,0 +1,47 @@
+{
+ "raw_text": null,
+ "lines": [
+  "90"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (fol. 89v)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "rechts (fol. 90r)",
+    "lines": [
+     {
+      "text": "90",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Auf der linken Seite scheint Schrift der Rückseite durch (Bleed-Through), die Seite selbst ist unbeschrieben. Die rechte Seite ist bis auf die Foliierungszählung '90' oben rechts ebenfalls unbeschrieben."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p090",
+ "variant": "v5_repeat",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 7.0,
+ "timestamp": "2026-08-26T19:35:52+00:00"
+}

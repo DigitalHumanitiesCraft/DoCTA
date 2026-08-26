@@ -1,0 +1,58 @@
+{
+ "page": "rb2_p090",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1888,
+    2646
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1889,
+    2646
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 2.1,
+ "timestamp": "2026-08-26T20:19:03+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 90r",
+    "lines": [
+     {
+      "text": "90",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "90"
+ ]
+}

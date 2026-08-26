@@ -1,0 +1,494 @@
+{
+ "page": "rb2_p113",
+ "iteration": "it01",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 15.7,
+ "timestamp": "2026-08-26T20:19:33+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "112v",
+    "lines": [
+     {
+      "text": "It(em) Desselben vorgeschrib(e)n ij f(e)rnd l iij {gld} ist er",
+      "kind": "entry"
+     },
+     {
+      "text": "nachmals bezalt / mit namen von herrn",
+      "kind": "entry"
+     },
+     {
+      "text": "Benediten pharr(e)r zů Tiers dazůmal farnz=",
+      "kind": "entry"
+     },
+     {
+      "text": "mayster hat er empfang(e)n l p(e)r m(i)r",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) So hat Lienhart von reymel cam(e)rmayst(e)r",
+      "kind": "entry"
+     },
+     {
+      "text": "herrn Jacobn Trapp(e)n vogt zů Bregentz",
+      "kind": "entry"
+     },
+     {
+      "text": "von fagamermayst(e)r weng aufgericht",
+      "kind": "entry",
+      "uncertain": [
+       "fagamermayst(e)r",
+       "weng"
+      ]
+     },
+     {
+      "text": "ij lb iij ß",
+      "kind": "amount"
+     }
+    ]
+   },
+   {
+    "label": "113r",
+    "lines": [
+     {
+      "text": "113",
+      "kind": "foliation"
+     },
+     {
+      "text": "D(er)weyl was man mir dannach",
+      "kind": "entry"
+     },
+     {
+      "text": "All(e)s von hoff schuld(i)g ist",
+      "kind": "entry"
+     },
+     {
+      "text": "worden als man hz d(e)r",
+      "kind": "entry"
+     },
+     {
+      "text": "weynacht mit mir abgrait",
+      "kind": "entry"
+     },
+     {
+      "text": "hat an s(an)nd veith tag Im lxv^o",
+      "kind": "entry"
+     },
+     {
+      "text": "Am erst(e)n hat d Bramb(e)rg w(e)rcklewt",
+      "kind": "entry"
+     },
+     {
+      "text": "zů mir d(e)rzelt xx lb zů sinden(n)d(e)",
+      "kind": "entry",
+      "uncertain": [
+       "sinden(n)d(e)"
+      ]
+     },
+     {
+      "text": "stůfft d weynacht/",
+      "kind": "entry"
+     },
+     {
+      "text": "Demnach hat tschard vnd zwirent",
+      "kind": "entry",
+      "uncertain": [
+       "zwirent"
+      ]
+     },
+     {
+      "text": "d(e)rzelt xxiiij lb am pfingst tag",
+      "kind": "entry"
+     },
+     {
+      "text": "pey Junck l(e)r d(e)rckh d weynacht/",
+      "kind": "entry"
+     },
+     {
+      "text": "geschafft wurd",
+      "kind": "entry"
+     },
+     {
+      "text": "Aber hat tschard d(e)rzelt xx lb ff vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "w(e)rckmayster hat d weynacht/",
+      "kind": "entry"
+     },
+     {
+      "text": "vber sich genome(n)",
+      "kind": "entry"
+     },
+     {
+      "text": "Hanns henslin am rort w fenden hat",
+      "kind": "entry",
+      "uncertain": [
+       "rort",
+       "fenden"
+      ]
+     },
+     {
+      "text": "d(e)rzelt viij ß in g(e)l(t) abgrait an",
+      "kind": "entry"
+     },
+     {
+      "text": "sand peters kett(e)nfeir stůfft leber",
+      "kind": "entry"
+     },
+     {
+      "text": "Mez hat Jngh(e)rd erngnart von sind",
+      "kind": "entry",
+      "uncertain": [
+       "Jngh(e)rd",
+       "erngnart"
+      ]
+     },
+     {
+      "text": "henns d(e)rzelt xxviij lb d ij gld mit",
+      "kind": "entry"
+     },
+     {
+      "text": "m(i)r abgrait am pfingst woch lg(e)r d(e)rz",
+      "kind": "entry"
+     },
+     {
+      "text": "Julr(e)r p(e)r stůfft weynacht selbs",
+      "kind": "entry",
+      "uncertain": [
+       "Julr(e)r"
+      ]
+     },
+     {
+      "text": "Aber hat tschard d(e)rzelt xxiij lb an",
+      "kind": "entry"
+     },
+     {
+      "text": "s(an)nd f(e)mayst nach augustin/ Mez viij lb",
+      "kind": "entry",
+      "uncertain": [
+       "f(e)mayst"
+      ]
+     },
+     {
+      "text": "an gld am pfingst nach eimff am",
+      "kind": "entry",
+      "uncertain": [
+       "eimff"
+      ]
+     },
+     {
+      "text": "herbst stůfft leber",
+      "kind": "entry"
+     },
+     {
+      "text": "Demnach hat vlreich dreyen d(e)rzelt",
+      "kind": "entry"
+     },
+     {
+      "text": "v me iiij lb xj ß j ff abgrait an",
+      "kind": "entry"
+     },
+     {
+      "text": "f(e)r(e)itag vor Elisabeth stůfft weynacht/",
+      "kind": "entry"
+     },
+     {
+      "text": "Noc hat dapper farn w sting d(e)rzelt",
+      "kind": "entry",
+      "uncertain": [
+       "dapper",
+       "sting"
+      ]
+     },
+     {
+      "text": "j ff am mittwoc aller heylg(e)n tag /",
+      "kind": "entry"
+     },
+     {
+      "text": "stůfft sandmayst",
+      "kind": "entry"
+     },
+     {
+      "text": "So hat b(e)r dyetreich w fambling selb",
+      "kind": "entry",
+      "uncertain": [
+       "fambling"
+      ]
+     },
+     {
+      "text": "drent d(e)rzelt lxxvij lb viij gld",
+      "kind": "entry",
+      "uncertain": [
+       "drent"
+      ]
+     },
+     {
+      "text": "hat selbs leynung abgrait zun sand",
+      "kind": "entry"
+     },
+     {
+      "text": "Joh(ann)es tag zu weyhnacht(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "Aber Jst man mir schuldig xij me glt",
+      "kind": "entry"
+     },
+     {
+      "text": "ain d(e)r phlannckert(e)n wag(e)n als",
+      "kind": "entry",
+      "uncertain": [
+       "phlannckert(e)n"
+      ]
+     },
+     {
+      "text": "man den Junckh(e)r(e)n vnd sein gsind",
+      "kind": "entry"
+     },
+     {
+      "text": "f(e)rr nach ostret hat land hat Jůst",
+      "kind": "entry",
+      "uncertain": [
+       "ostret",
+       "Jůst"
+      ]
+     },
+     {
+      "text": "famben abgrait vnd hz hoff",
+      "kind": "entry",
+      "uncertain": [
+       "famben"
+      ]
+     },
+     {
+      "text": "heffend auf phrayt(e)n",
+      "kind": "entry"
+     }
+    ]
+   },
+   {
+    "label": "114r",
+    "lines": [
+     {
+      "text": "114",
+      "kind": "foliation"
+     },
+     {
+      "text": "Tratzperg",
+      "kind": "rubric"
+     },
+     {
+      "text": "gebreytzar ·",
+      "kind": "rubric"
+     },
+     {
+      "text": "Zcawrayczer ist gerait am",
+      "kind": "entry",
+      "uncertain": [
+       "Zcawrayczer"
+      ]
+     },
+     {
+      "text": "so er am bekh(e)n Traup(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "vermugs nach den heylig(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "drey comz auf heintz(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "comz",
+       "heintz(e)n"
+      ]
+     },
+     {
+      "text": "v tun dno domj xc",
+      "kind": "entry"
+     },
+     {
+      "text": "daz vergessencz",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] i gemanet vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] baut · dan",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] vor v(e)rberant",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] sz warn Othm(e)ren",
+      "kind": "entry"
+     },
+     {
+      "text": "hewdt ij fr vund iij",
+      "kind": "entry"
+     },
+     {
+      "text": "j mit gemalte stub(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "nit weyh g(e)d(e)ckt /",
+      "kind": "entry"
+     },
+     {
+      "text": "zbar nit vorr(e)schidt(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "vorr(e)schidt(e)n"
+      ]
+     },
+     {
+      "text": "{i} vorunscht. vtam",
+      "kind": "entry",
+      "uncertain": [
+       "vorunscht",
+       "vtam"
+      ]
+     },
+     {
+      "text": "zwelff feudt,nye vmb",
+      "kind": "entry",
+      "uncertain": [
+       "feudt"
+      ]
+     },
+     {
+      "text": "nit ladt gentzk / Glas",
+      "kind": "entry",
+      "uncertain": [
+       "ladt",
+       "gentzk"
+      ]
+     },
+     {
+      "text": "wo zway finlen l(e)st vnd",
+      "kind": "entry",
+      "uncertain": [
+       "finlen"
+      ]
+     },
+     {
+      "text": "Drait markt zinden",
+      "kind": "entry",
+      "uncertain": [
+       "Drait"
+      ]
+     },
+     {
+      "text": "v seinb k(e)y(e)s(e)r lxxxxij m(i)r gld",
+      "kind": "entry"
+     },
+     {
+      "text": "iiij^c gld",
+      "kind": "amount"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "It(em) Desselben vorgeschrib(e)n ij f(e)rnd l iij {gld} ist er",
+  "nachmals bezalt / mit namen von herrn",
+  "Benediten pharr(e)r zů Tiers dazůmal farnz=",
+  "mayster hat er empfang(e)n l p(e)r m(i)r",
+  "It(em) So hat Lienhart von reymel cam(e)rmayst(e)r",
+  "herrn Jacobn Trapp(e)n vogt zů Bregentz",
+  "von fagamermayst(e)r weng aufgericht",
+  "ij lb iij ß",
+  "113",
+  "D(er)weyl was man mir dannach",
+  "All(e)s von hoff schuld(i)g ist",
+  "worden als man hz d(e)r",
+  "weynacht mit mir abgrait",
+  "hat an s(an)nd veith tag Im lxv^o",
+  "Am erst(e)n hat d Bramb(e)rg w(e)rcklewt",
+  "zů mir d(e)rzelt xx lb zů sinden(n)d(e)",
+  "stůfft d weynacht/",
+  "Demnach hat tschard vnd zwirent",
+  "d(e)rzelt xxiiij lb am pfingst tag",
+  "pey Junck l(e)r d(e)rckh d weynacht/",
+  "geschafft wurd",
+  "Aber hat tschard d(e)rzelt xx lb ff vnd",
+  "w(e)rckmayster hat d weynacht/",
+  "vber sich genome(n)",
+  "Hanns henslin am rort w fenden hat",
+  "d(e)rzelt viij ß in g(e)l(t) abgrait an",
+  "sand peters kett(e)nfeir stůfft leber",
+  "Mez hat Jngh(e)rd erngnart von sind",
+  "henns d(e)rzelt xxviij lb d ij gld mit",
+  "m(i)r abgrait am pfingst woch lg(e)r d(e)rz",
+  "Julr(e)r p(e)r stůfft weynacht selbs",
+  "Aber hat tschard d(e)rzelt xxiij lb an",
+  "s(an)nd f(e)mayst nach augustin/ Mez viij lb",
+  "an gld am pfingst nach eimff am",
+  "herbst stůfft leber",
+  "Demnach hat vlreich dreyen d(e)rzelt",
+  "v me iiij lb xj ß j ff abgrait an",
+  "f(e)r(e)itag vor Elisabeth stůfft weynacht/",
+  "Noc hat dapper farn w sting d(e)rzelt",
+  "j ff am mittwoc aller heylg(e)n tag /",
+  "stůfft sandmayst",
+  "So hat b(e)r dyetreich w fambling selb",
+  "drent d(e)rzelt lxxvij lb viij gld",
+  "hat selbs leynung abgrait zun sand",
+  "Joh(ann)es tag zu weyhnacht(e)n",
+  "Aber Jst man mir schuldig xij me glt",
+  "ain d(e)r phlannckert(e)n wag(e)n als",
+  "man den Junckh(e)r(e)n vnd sein gsind",
+  "f(e)rr nach ostret hat land hat Jůst",
+  "famben abgrait vnd hz hoff",
+  "heffend auf phrayt(e)n",
+  "114",
+  "Tratzperg",
+  "gebreytzar ·",
+  "Zcawrayczer ist gerait am",
+  "so er am bekh(e)n Traup(e)n",
+  "vermugs nach den heylig(e)n",
+  "drey comz auf heintz(e)n",
+  "v tun dno domj xc",
+  "daz vergessencz",
+  "[...] i gemanet vnd",
+  "[...] baut · dan",
+  "[...] vor v(e)rberant",
+  "[...] sz warn Othm(e)ren",
+  "hewdt ij fr vund iij",
+  "j mit gemalte stub(e)n",
+  "nit weyh g(e)d(e)ckt /",
+  "zbar nit vorr(e)schidt(e)n",
+  "{i} vorunscht. vtam",
+  "zwelff feudt,nye vmb",
+  "nit ladt gentzk / Glas",
+  "wo zway finlen l(e)st vnd",
+  "Drait markt zinden",
+  "v seinb k(e)y(e)s(e)r lxxxxij m(i)r gld",
+  "iiij^c gld"
+ ]
+}

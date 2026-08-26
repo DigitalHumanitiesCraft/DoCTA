@@ -1,0 +1,211 @@
+{
+ "raw_text": null,
+ "lines": [
+  "2",
+  "prouision vnd Solde",
+  "aussershalb lanndes",
+  "Oszmund von",
+  "Bramdes",
+  "Nota an Sūntay Sannd Johannis tag Decollacio(n)is",
+  "Anno etc lxxj° in gegenwertikait herrn Benedictn kamerer",
+  "hannsn Capsn kuchẽmayst(er) / Lienharts Clieb(er) hausslayt",
+  "vnd wolfgangs cluombeler lanczschreib(er)s hat ma(n) gerait",
+  "mit petern papus anstat Oszmunden van Bramdes",
+  "vmb Solde / vnd ze[r]ung / auch zerung vnd alle schuld",
+  "so meins hern gnad demselben van Bramdes aller sach(e)nn",
+  "auf heuttigen tag ist schuldigk worde(n) :",
+  "meins heren gnad ist demselben van Bramdes schuldig word(en)",
+  "nach Innhald ains Schuldbrieffs / van Solde vnd andergeng",
+  "wegen so er zu bellrad geton hat —— iij^C l xvj gld vnd ij s p(er)n",
+  "It(em) So ist Im meins hern gnad schuldig prouision van san(nd)",
+  "lattrein tag des lxx jars vnz auf sand lattrein tag ds lxxj",
+  "jars vnd hat damit den dienst aufgesagt —— Cl {x} gld",
+  "It(em) Auch ist Im meins hern gnad schuldig alledag zerung —— vj {vj} jm v d",
+  "Darvmb hat er von herrn Benedictn kamerer empfangen jn",
+  "dreyn malen die derselb kamerer nach behurd zeuraitten",
+  "F lxxxvj sß l d",
+  "Darnach ist man Im aller Sach schuldigk ist Clxxvj fl v sß",
+  "Die hat Im d bemelte kamerer aufgericht vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1v (links)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 2r (rechts)",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "prouision vnd Solde",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "aussershalb lanndes",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Oszmund von",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Bramdes",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota an Sūntay Sannd Johannis tag Decollacio(n)is",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Anno etc lxxj° in gegenwertikait herrn Benedictn kamerer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hannsn Capsn kuchẽmayst(er) / Lienharts Clieb(er) hausslayt",
+      "kind": "entry",
+      "uncertain": [
+       "Clieb(er)"
+      ]
+     },
+     {
+      "text": "vnd wolfgangs cluombeler lanczschreib(er)s hat ma(n) gerait",
+      "kind": "entry",
+      "uncertain": [
+       "cluombeler"
+      ]
+     },
+     {
+      "text": "mit petern papus anstat Oszmunden van Bramdes",
+      "kind": "entry",
+      "uncertain": [
+       "papus"
+      ]
+     },
+     {
+      "text": "vmb Solde / vnd ze[r]ung / auch zerung vnd alle schuld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "so meins hern gnad demselben van Bramdes aller sach(e)nn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "auf heuttigen tag ist schuldigk worde(n) :",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "meins heren gnad ist demselben van Bramdes schuldig word(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "nach Innhald ains Schuldbrieffs / van Solde vnd andergeng",
+      "kind": "entry",
+      "uncertain": [
+       "andergeng"
+      ]
+     },
+     {
+      "text": "wegen so er zu bellrad geton hat —— iij^C l xvj gld vnd ij s p(er)n",
+      "kind": "entry",
+      "uncertain": [
+       "bellrad"
+      ]
+     },
+     {
+      "text": "It(em) So ist Im meins hern gnad schuldig prouision van san(nd)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "lattrein tag des lxx jars vnz auf sand lattrein tag ds lxxj",
+      "kind": "entry",
+      "uncertain": [
+       "lattrein",
+       "lattrein"
+      ]
+     },
+     {
+      "text": "jars vnd hat damit den dienst aufgesagt —— Cl {x} gld",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Auch ist Im meins hern gnad schuldig alledag zerung —— vj {vj} jm v d",
+      "kind": "entry",
+      "uncertain": [
+       "alledag",
+       "{vj} jm v d"
+      ]
+     },
+     {
+      "text": "Darvmb hat er von herrn Benedictn kamerer empfangen jn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dreyn malen die derselb kamerer nach behurd zeuraitten",
+      "kind": "entry",
+      "uncertain": [
+       "behurd"
+      ]
+     },
+     {
+      "text": "F lxxxvj sß l d",
+      "kind": "entry",
+      "uncertain": [
+       "F lxxxvj sß l d"
+      ]
+     },
+     {
+      "text": "Darnach ist man Im aller Sach schuldigk ist Clxxvj fl v sß",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Die hat Im d bemelte kamerer aufgericht vnd bezalt",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ],
+  "notes": "Eintrag zur Abrechnung des Soldes und der Provision Osmunds von Bramdes für das Jahr 1471 (lxxj), verhandelt durch Peter Papus vor dem Kämmerer Benedikt, Küchenmeister Hans Caps, Hausleite Lienhart Clieber und Landschreiber Wolfgang Cluombeler."
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p002",
+ "variant": "v2_structured",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 10.0,
+ "timestamp": "2026-08-26T19:31:20+00:00"
+}

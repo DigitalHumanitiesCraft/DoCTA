@@ -1,0 +1,370 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.0,
+ "timestamp": "2026-08-26T20:20:12+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Inuentari etlichs hawsrats",
+      "kind": "rubric",
+      "uncertain": [
+       "Inuentari",
+       "etlichs"
+      ]
+     },
+     {
+      "text": "dwab Balthasen Kammerer",
+      "kind": "rubric",
+      "uncertain": [
+       "dwab",
+       "Balthasen",
+       "Kammerer"
+      ]
+     },
+     {
+      "text": "Balthasarn Knorring̃",
+      "kind": "rubric",
+      "uncertain": [
+       "Balthasarn",
+       "Knorring̃"
+      ]
+     },
+     {
+      "text": "auff dem slos tzgayr vber-",
+      "kind": "rubric",
+      "uncertain": [
+       "tzgayr"
+      ]
+     },
+     {
+      "text": "geantwurt an mitwochen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vor Sand Virgils tag",
+      "kind": "rubric",
+      "uncertain": [
+       "Virgils"
+      ]
+     },
+     {
+      "text": "Anno dñi zc̃ lxxij°",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item in meins g̃ h(er)rn kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ I pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ I polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ ij khúss",
+      "kind": "entry",
+      "uncertain": [
+       "khúss"
+      ]
+     },
+     {
+      "text": "it̃ I roffs strosaks",
+      "kind": "entry",
+      "uncertain": [
+       "roffs",
+       "strosaks"
+      ]
+     },
+     {
+      "text": "it̃ ij pett in der vordristen selbl",
+      "kind": "entry",
+      "uncertain": [
+       "vordristen",
+       "selbl"
+      ]
+     },
+     {
+      "text": "ob der grossen stuben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ ij strosaks",
+      "kind": "entry",
+      "uncertain": [
+       "strosaks"
+      ]
+     },
+     {
+      "text": "it̃ ij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ ij rauche deck̃",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ iiij pett in dem andern selbl",
+      "kind": "entry",
+      "uncertain": [
+       "selbl"
+      ]
+     },
+     {
+      "text": "it̃ ij strosaks",
+      "kind": "entry",
+      "uncertain": [
+       "strosaks"
+      ]
+     },
+     {
+      "text": "it̃ ij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ I fül küss",
+      "kind": "entry",
+      "uncertain": [
+       "fül"
+      ]
+     },
+     {
+      "text": "it̃ I rauche deck̃",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iij ablen",
+      "kind": "entry",
+      "uncertain": [
+       "ablen"
+      ]
+     },
+     {
+      "text": "it̃ I pett mit parchem vberzogn",
+      "kind": "entry",
+      "uncertain": [
+       "parchem",
+       "vberzogn"
+      ]
+     },
+     {
+      "text": "in derselbigñ selbl",
+      "kind": "entry",
+      "uncertain": [
+       "selbl"
+      ]
+     },
+     {
+      "text": "it̃ I küss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ I polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ iiij deck̃",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ I armbrost darumb sind",
+      "kind": "entry",
+      "uncertain": [
+       "armbrost"
+      ]
+     },
+     {
+      "text": "zwey streyfflein",
+      "kind": "entry",
+      "uncertain": [
+       "streyfflein"
+      ]
+     },
+     {
+      "text": "it̃ iij roess pett in d(er) truncken hell",
+      "kind": "entry",
+      "uncertain": [
+       "roess",
+       "truncken",
+       "hell"
+      ]
+     },
+     {
+      "text": "it̃ iij gesticknute pett",
+      "kind": "entry",
+      "uncertain": [
+       "gesticknute"
+      ]
+     },
+     {
+      "text": "it̃ iij polster mit roeffen zwig̃k",
+      "kind": "entry",
+      "uncertain": [
+       "roeffen",
+       "zwig̃k"
+      ]
+     },
+     {
+      "text": "it̃ ein küss mit roeffen zwig̃k",
+      "kind": "entry",
+      "uncertain": [
+       "roeffen",
+       "zwig̃k"
+      ]
+     },
+     {
+      "text": "die nun obrigen sind",
+      "kind": "entry",
+      "uncertain": [
+       "obrigen"
+      ]
+     },
+     {
+      "text": "it̃ iij gestrickmiter polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestrickmiter"
+      ]
+     },
+     {
+      "text": "it̃ viij deck̃",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "it̃ iij deck̃ die nit vff g̃nait sind",
+      "kind": "entry",
+      "uncertain": [
+       "g̃nait"
+      ]
+     },
+     {
+      "text": "it̃ I gestrickmibt küss",
+      "kind": "entry",
+      "uncertain": [
+       "gestrickmibt"
+      ]
+     },
+     {
+      "text": "it̃ I pett mit rauffem vberzogn in",
+      "kind": "entry",
+      "uncertain": [
+       "rauffem",
+       "vberzogn"
+      ]
+     },
+     {
+      "text": "der wagholl",
+      "kind": "entry",
+      "uncertain": [
+       "wagholl"
+      ]
+     },
+     {
+      "text": "it̃ I gestrickmiter polster",
+      "kind": "entry",
+      "uncertain": [
+       "gestrickmiter"
+      ]
+     },
+     {
+      "text": "it̃ I roeffs küss",
+      "kind": "entry",
+      "uncertain": [
+       "roeffs"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Inuentari etlichs hawsrats",
+  "dwab Balthasen Kammerer",
+  "Balthasarn Knorring̃",
+  "auff dem slos tzgayr vber-",
+  "geantwurt an mitwochen",
+  "vor Sand Virgils tag",
+  "Anno dñi zc̃ lxxij°",
+  "Item in meins g̃ h(er)rn kamer",
+  "it̃ I pett",
+  "it̃ I polster",
+  "it̃ ij khúss",
+  "it̃ I roffs strosaks",
+  "it̃ ij pett in der vordristen selbl",
+  "ob der grossen stuben",
+  "it̃ ij strosaks",
+  "it̃ ij polster",
+  "it̃ ij rauche deck̃",
+  "it̃ iiij pett in dem andern selbl",
+  "it̃ ij strosaks",
+  "it̃ ij polster",
+  "it̃ I fül küss",
+  "it̃ I rauche deck̃",
+  "iij ablen",
+  "it̃ I pett mit parchem vberzogn",
+  "in derselbigñ selbl",
+  "it̃ I küss",
+  "it̃ I polster",
+  "it̃ iiij deck̃",
+  "it̃ I armbrost darumb sind",
+  "zwey streyfflein",
+  "it̃ iij roess pett in d(er) truncken hell",
+  "it̃ iij gesticknute pett",
+  "it̃ iij polster mit roeffen zwig̃k",
+  "it̃ ein küss mit roeffen zwig̃k",
+  "die nun obrigen sind",
+  "it̃ iij gestrickmiter polster",
+  "it̃ viij deck̃",
+  "it̃ iij deck̃ die nit vff g̃nait sind",
+  "it̃ I gestrickmibt küss",
+  "it̃ I pett mit rauffem vberzogn in",
+  "der wagholl",
+  "it̃ I gestrickmiter polster",
+  "it̃ I roeffs küss"
+ ]
+}

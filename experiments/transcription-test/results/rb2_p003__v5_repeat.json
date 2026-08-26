@@ -1,0 +1,234 @@
+{
+ "raw_text": null,
+ "lines": [
+  "Vlreich Schuͤtz",
+  "Nota Anno die etc xviij kalendas octobris hat man",
+  "gerait mit Vlreich Schuͤtzen / vnd meins h(er)r(e)n",
+  "gnad ist Im schuldig sein soldt rain zwoam farn",
+  "zu dem nachschweiga(n)gn Sannd margreten tag",
+  "gerait —— lxxxxvij Rhgld",
+  "Die hat Im h(er)r Benedict Camermaist(er) aufgericht",
+  "vnd bezalt ——",
+  "3",
+  "Graf Hainreich",
+  "von luph(e)n",
+  "Nota die Anno etc xviij kalendas octobris sup(r)a· hat",
+  "man mit Cunraten Stenär anstat Graf hainrich",
+  "von luph(e)n gerait von der alten Schuld wegen waz",
+  "velde(n)z herrenvnd(er)tuchs vmb allerlay sold vnd zeugk",
+  "Das alles bringt vntz auf hewtigen tag xviij^C vnd",
+  "xxvij Rhgld",
+  "Daran sein Innemen",
+  "It(em) Daran hat er emphangen Am ersten van h(er)rn Benedict",
+  "Cam(er)maist(er) die d(er)s(e)lb Cam(er)maist(er) gerait hat x Rhgld",
+  "It(em) Aber hat er von demselben Cam(er)maist(er) emphangn die",
+  "derselb Cam(er)maist(er) g(e)raitten vmb x Rhgld",
+  "It(em) vnd auf allerlay zeugg / die der Cam(er)maist(er) ane",
+  "frauen wirt —— cxij Rhgld",
+  "It(em) Auch hat er van h(er)rn Jacoben Trappen emphangen an",
+  "der Schuld die h(er)r Jacob meins h(er)rn gnaden schuld(i)g ist",
+  "iiij^C Rhgld",
+  "Su(m)ma seins emphachens",
+  "vj^C xxij Rhgld",
+  "Darnach ist meins herrn gnad Graf hainrich(e)n schuld(i)g",
+  "ij^M com(m)t v Rhgld / die hat Im d(e)r bemelt Cam(er)maist(er)",
+  "/ aufgericht / vnd bezalt"
+ ],
+ "parsed": {
+  "pages": [
+   {
+    "label": "links (fol. 2v)",
+    "lines": [
+     {
+      "text": "Vlreich Schuͤtz",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota Anno die etc xviij kalendas octobris hat man",
+      "kind": "entry",
+      "uncertain": [
+       "xviij kalendas octobris"
+      ]
+     },
+     {
+      "text": "gerait mit Vlreich Schuͤtzen / vnd meins h(er)r(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad ist Im schuldig sein soldt rain zwoam farn",
+      "kind": "entry",
+      "uncertain": [
+       "zwoam farn"
+      ]
+     },
+     {
+      "text": "zu dem nachschweiga(n)gn Sannd margreten tag",
+      "kind": "entry",
+      "uncertain": [
+       "nachschweiga(n)gn"
+      ]
+     },
+     {
+      "text": "gerait —— lxxxxvij Rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Die hat Im h(er)r Benedict Camermaist(er) aufgericht",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd bezalt ——",
+      "kind": "entry"
+     }
+    ]
+   },
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation"
+     },
+     {
+      "text": "Graf Hainreich",
+      "kind": "rubric"
+     },
+     {
+      "text": "von luph(e)n",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota die Anno etc xviij kalendas octobris sup(r)a· hat",
+      "kind": "entry",
+      "uncertain": [
+       "xviij kalendas octobris sup(r)a"
+      ]
+     },
+     {
+      "text": "man mit Cunraten Stenär anstat Graf hainrich",
+      "kind": "entry",
+      "uncertain": [
+       "Stenär"
+      ]
+     },
+     {
+      "text": "von luph(e)n gerait von der alten Schuld wegen waz",
+      "kind": "entry"
+     },
+     {
+      "text": "velde(n)z herrenvnd(er)tuchs vmb allerlay sold vnd zeugk",
+      "kind": "entry",
+      "uncertain": [
+       "velde(n)z",
+       "herrenvnd(er)tuchs",
+       "zeugk"
+      ]
+     },
+     {
+      "text": "Das alles bringt vntz auf hewtigen tag xviij^C vnd",
+      "kind": "entry",
+      "uncertain": [
+       "xviij^C"
+      ]
+     },
+     {
+      "text": "xxvij Rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) Daran hat er emphangen Am ersten van h(er)rn Benedict",
+      "kind": "entry"
+     },
+     {
+      "text": "Cam(er)maist(er) die d(er)s(e)lb Cam(er)maist(er) gerait hat x Rhgld",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) Aber hat er von demselben Cam(er)maist(er) emphangn die",
+      "kind": "entry"
+     },
+     {
+      "text": "derselb Cam(er)maist(er) g(e)raitten vmb x Rhgld",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) vnd auf allerlay zeugg / die der Cam(er)maist(er) ane",
+      "kind": "entry",
+      "uncertain": [
+       "zeugg"
+      ]
+     },
+     {
+      "text": "frauen wirt —— cxij Rhgld",
+      "kind": "amount",
+      "uncertain": [
+       "frauen"
+      ]
+     },
+     {
+      "text": "It(em) Auch hat er van h(er)rn Jacoben Trappen emphangen an",
+      "kind": "entry"
+     },
+     {
+      "text": "der Schuld die h(er)r Jacob meins h(er)rn gnaden schuld(i)g ist",
+      "kind": "entry"
+     },
+     {
+      "text": "iiij^C Rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Su(m)ma seins emphachens",
+      "kind": "sum",
+      "uncertain": [
+       "emphachens"
+      ]
+     },
+     {
+      "text": "vj^C xxij Rhgld",
+      "kind": "amount"
+     },
+     {
+      "text": "Darnach ist meins herrn gnad Graf hainrich(e)n schuld(i)g",
+      "kind": "entry"
+     },
+     {
+      "text": "ij^M com(m)t v Rhgld / die hat Im d(e)r bemelt Cam(er)maist(er)",
+      "kind": "entry",
+      "uncertain": [
+       "ij^M com(m)t v"
+      ]
+     },
+     {
+      "text": "/ aufgericht / vnd bezalt",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    3500,
+    2407
+   ],
+   "crop": null,
+   "enhanced": false
+  }
+ ],
+ "item": "rb2_p003",
+ "variant": "v5_repeat",
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "duration_s": 11.9,
+ "timestamp": "2026-08-26T19:33:25+00:00"
+}

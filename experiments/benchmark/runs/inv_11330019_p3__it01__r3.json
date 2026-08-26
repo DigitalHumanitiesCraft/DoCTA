@@ -1,0 +1,93 @@
+{
+ "page": "inv_11330019_p3",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1030,
+    2754
+   ],
+   "sent_px": [
+    1030,
+    2754
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.0,
+ "timestamp": "2026-08-26T20:22:46+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1478",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "( L. 109 )",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "L: 109",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1478",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Prawnberg",
+      "kind": "entry",
+      "uncertain": [
+       "Prawnberg"
+      ]
+     },
+     {
+      "text": "Kunigunt",
+      "kind": "entry",
+      "uncertain": [
+       "Kunigunt"
+      ]
+     },
+     {
+      "text": "Jungfraw Ros[...]",
+      "kind": "entry",
+      "uncertain": [
+       "Jungfraw",
+       "Ros[...]"
+      ]
+     },
+     {
+      "text": "Inventar",
+      "kind": "entry",
+      "uncertain": [
+       "Inventar"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1478",
+  "( L. 109 )",
+  "L: 109",
+  "1478",
+  "Prawnberg",
+  "Kunigunt",
+  "Jungfraw Ros[...]",
+  "Inventar"
+ ]
+}
