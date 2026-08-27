@@ -59,12 +59,17 @@ def test_line_counts_match_the_export() -> None:
 def test_folio_marks_became_milestones() -> None:
     built = _built()
     for doc_id, xml in built.items():
-        expected = [bt.FOLIO_LINE.match(t) for t in _export_lines(doc_id)]
-        folios = [m.group(1) for m in expected if m]
+        expected = []
+        for t in _export_lines(doc_id):
+            if m := bt.FOLIO_LINE.match(t):
+                expected.append(("folio", m.group(1)))
+            elif m := bt.COVER_LINE.match(t):
+                expected.append(("cover", m.group(1)))
         root = ElementTree.fromstring(xml)
-        encoded = [m.get("n") for m in root.iter(f"{TEI}milestone")]
-        assert all(m.get("unit") == "folio" for m in root.iter(f"{TEI}milestone"))
-        assert encoded == folios, f"folio milestones differ in {doc_id}"
+        encoded = [(m.get("unit"), m.get("n"))
+                   for m in root.iter(f"{TEI}milestone")]
+        assert all(u in ("folio", "cover") for u, _ in encoded)
+        assert encoded == expected, f"folio milestones differ in {doc_id}"
         text = "".join(root.find(f"{TEI}text").itertext())
         assert not re.search(r"\[fol\.\s*\d+[rv]?\]", text), \
             f"folio mark left in the text of {doc_id}"
