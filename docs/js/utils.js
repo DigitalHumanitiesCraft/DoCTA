@@ -56,6 +56,16 @@ export function escapeHTML(str) {
 }
 
 /**
+ * Escape a string for use inside a double-quoted HTML attribute.
+ * escapeHTML alone leaves quotes intact and would break out of the attribute.
+ * @param {string} str
+ * @returns {string}
+ */
+export function escapeAttr(str) {
+  return escapeHTML(str).replace(/"/g, '&quot;');
+}
+
+/**
  * Format a date object from sources.json.
  * @param {{ raw: string, start: number|null, end: number|null, circa: boolean }} date
  * @returns {string}

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="viewer-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-3">
@@ -27,13 +27,45 @@
     <h1 class="visually-hidden">Source explorer: facsimile and transcription</h1>
     <div class="viewer-layout">
       <!-- Image Panel -->
-      <div class="viewer-panel">
+      <div class="viewer-panel" id="facsimile-panel">
         <div class="viewer-panel__header">
-          <span><a href="index.html#sources" class="text-body-secondary text-decoration-none fw-normal">&larr; Sources</a> &middot; Facsimile</span>
-          <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-outline-secondary btn-sm" id="btn-prev-page" disabled aria-label="Previous page">←</button>
-            <span id="page-indicator" class="small">Page 1/1</span>
-            <button class="btn btn-outline-secondary btn-sm" id="btn-next-page" disabled aria-label="Next page">→</button>
+          <a href="index.html#sources" class="viewer-back">&larr; Sources</a>
+          <span class="viewer-bar-sep" aria-hidden="true"></span>
+          <span class="viewer-panel__title">Facsimile</span>
+
+          <div class="viewer-tools" role="group" aria-label="Facsimile controls">
+            <button type="button" class="vt-btn" id="btn-zoom-out" aria-label="Zoom out" title="Zoom out (-)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="6.75" cy="6.75" r="4.75"/><path d="M10.4 10.4 14 14M4.5 6.75h4.5"/></svg>
+            </button>
+            <button type="button" class="vt-btn" id="btn-zoom-in" aria-label="Zoom in" title="Zoom in (+)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="6.75" cy="6.75" r="4.75"/><path d="M10.4 10.4 14 14M4.5 6.75h4.5M6.75 4.5v4.5"/></svg>
+            </button>
+            <button type="button" class="vt-btn" id="btn-zoom-fit" aria-label="Fit image to panel" title="Fit to panel (0)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.75V2h3.75M10.25 2H14v3.75M14 10.25V14h-3.75M5.75 14H2v-3.75"/></svg>
+            </button>
+            <span class="viewer-bar-sep" aria-hidden="true"></span>
+            <button type="button" class="vt-btn" id="btn-rotate-left" aria-label="Rotate 90 degrees counter-clockwise" title="Rotate left">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5h5.25A4.75 4.75 0 1 1 3 10.25"/><path d="M5 2.75 2.5 5.5 5 8.25"/></svg>
+            </button>
+            <button type="button" class="vt-btn" id="btn-rotate-right" aria-label="Rotate 90 degrees clockwise" title="Rotate right (r)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 5.5H8.25A4.75 4.75 0 1 0 13 10.25"/><path d="M11 2.75 13.5 5.5 11 8.25"/></svg>
+            </button>
+            <button type="button" class="vt-btn" id="btn-fullscreen" aria-label="Toggle fullscreen facsimile" aria-pressed="false" title="Fullscreen facsimile">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2H2v4M14 6V2h-4M10 14h4v-4M2 10v4h4"/></svg>
+            </button>
+          </div>
+
+          <span class="viewer-bar-sep" aria-hidden="true"></span>
+          <div class="viewer-pager">
+            <button type="button" class="vt-btn" id="btn-prev-page" disabled aria-label="Previous page" title="Previous page (Arrow left)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.75 3.5 5.25 8l4.5 4.5"/></svg>
+            </button>
+            <input type="number" class="viewer-pager__input" id="page-input" min="1" value="1" step="1"
+                   aria-label="Page number, enter to jump" title="Jump to page">
+            <span class="viewer-pager__total" id="page-total">/ 1</span>
+            <button type="button" class="vt-btn" id="btn-next-page" disabled aria-label="Next page" title="Next page (Arrow right)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.25 3.5 10.75 8l-4.5 4.5"/></svg>
+            </button>
           </div>
         </div>
         <div class="osd-container" id="osd-viewer">
@@ -46,12 +78,12 @@
       <!-- Transcription Panel -->
       <div class="viewer-panel">
         <div class="viewer-panel__header">
-          <span>Transcription</span>
+          <span class="viewer-panel__title">Transcription</span>
           <select class="form-select form-select-sm doc-selector" id="doc-selector" aria-label="Select document">
             <option value="">Choose a document...</option>
           </select>
         </div>
-        <div id="doc-meta" class="doc-meta small text-body-secondary" hidden></div>
+        <div id="doc-meta" class="doc-meta" hidden></div>
         <div id="transcription-container">
           <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
         </div>
@@ -68,7 +100,7 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML } from './js/utils.js';
+    import { getParams, setParams, escapeHTML, escapeAttr } from './js/utils.js';
 
     initNav('viewer');
     initBanner();
@@ -76,8 +108,11 @@
     let viewer = null;
     let currentDoc = null;
     let currentPage = 0;
+    let rotation = 0;
     let entitiesData = null;
     let sourceByDocId = new Map();
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     loadJSON('data/demo/thaur_entities.json').then(data => {
       entitiesData = data;
@@ -97,14 +132,14 @@
       const s = sourceByDocId.get(Number(docId));
       if (!s) { el.hidden = true; return; }
       const parts = [
-        `<span class="font-monospace">${escapeHTML(s.signatur)}</span>`,
-        escapeHTML(s.titel),
+        `<span class="doc-meta__shelfmark">${escapeHTML(s.signatur)}</span>`,
+        `<span class="doc-meta__title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`,
         s.datierung?.raw ? escapeHTML(s.datierung.raw) : null,
         s.seiten != null ? `${s.seiten} pages` : null,
-        CATEGORY_EN[s.kategorie] || escapeHTML(s.kategorie),
+        escapeHTML(CATEGORY_EN[s.kategorie] || s.kategorie),
         'Tyrolean State Archives',
       ].filter(Boolean);
-      el.innerHTML = parts.join(' · ');
+      el.innerHTML = parts.join('<span class="doc-meta__sep" aria-hidden="true">·</span>');
       el.hidden = false;
     }
 
@@ -118,6 +153,7 @@
         minZoomLevel: 0.5,
         maxZoomLevel: 5,
         defaultZoomLevel: 0.9,
+        animationTime: reduceMotion ? 0 : 1.2,
         gestureSettingsMouse: { clickToZoom: false, dblClickToZoom: true },
       });
     }
@@ -126,13 +162,51 @@
       if (!viewer) initOSD();
       viewer.open({ type: 'image', url: iiifUrl });
       document.getElementById('osd-viewer').classList.add('osd-active');
+      // A new page starts upright; rotation is a per-page inspection aid
+      rotation = 0;
+      viewer.viewport.setRotation(0, true);
     }
+
+    function zoomBy(factor) {
+      if (!viewer) return;
+      viewer.viewport.zoomBy(factor);
+      viewer.viewport.applyConstraints();
+    }
+
+    function rotateBy(delta) {
+      if (!viewer) return;
+      rotation = (rotation + delta + 360) % 360;
+      viewer.viewport.setRotation(rotation, reduceMotion);
+    }
+
+    function fitView() {
+      if (!viewer) return;
+      viewer.viewport.goHome(reduceMotion);
+    }
+
+    const panel = document.getElementById('facsimile-panel');
+    const btnFullscreen = document.getElementById('btn-fullscreen');
+
+    function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else if (panel.requestFullscreen) {
+        panel.requestFullscreen().catch(() => { if (viewer) viewer.setFullScreen(true); });
+      } else if (viewer) {
+        viewer.setFullScreen(true);
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      btnFullscreen.setAttribute('aria-pressed', String(document.fullscreenElement === panel));
+    });
 
     function renderTranscription(doc, pageNr) {
       const container = document.getElementById('transcription-container');
       const page = doc.pages.find(p => p.pageNr === pageNr);
       if (!page) {
         container.innerHTML = '<div class="loading text-body-secondary">No transcription for this page</div>';
+        container.scrollTop = 0;
         return;
       }
 
@@ -171,6 +245,7 @@
       }
       html += '</div>';
       container.innerHTML = html;
+      container.scrollTop = 0;
     }
 
     function setPage(pageNr) {
@@ -182,7 +257,10 @@
       loadImage(page.iiif);
       renderTranscription(currentDoc, page.pageNr);
 
-      document.getElementById('page-indicator').textContent = `Page ${pageNr + 1}/${currentDoc.pages.length}`;
+      const pageInput = document.getElementById('page-input');
+      pageInput.value = String(pageNr + 1);
+      pageInput.max = String(currentDoc.pages.length);
+      document.getElementById('page-total').textContent = `/ ${currentDoc.pages.length}`;
       document.getElementById('btn-prev-page').disabled = pageNr === 0;
       document.getElementById('btn-next-page').disabled = pageNr === currentDoc.pages.length - 1;
 
@@ -212,6 +290,42 @@
 
     document.getElementById('btn-prev-page').addEventListener('click', () => setPage(currentPage - 1));
     document.getElementById('btn-next-page').addEventListener('click', () => setPage(currentPage + 1));
+    document.getElementById('btn-zoom-in').addEventListener('click', () => zoomBy(1.4));
+    document.getElementById('btn-zoom-out').addEventListener('click', () => zoomBy(1 / 1.4));
+    document.getElementById('btn-zoom-fit').addEventListener('click', fitView);
+    document.getElementById('btn-rotate-left').addEventListener('click', () => rotateBy(-90));
+    document.getElementById('btn-rotate-right').addEventListener('click', () => rotateBy(90));
+    btnFullscreen.addEventListener('click', toggleFullscreen);
+
+    const pageInput = document.getElementById('page-input');
+    function commitPageInput() {
+      if (!currentDoc) return;
+      const n = parseInt(pageInput.value, 10);
+      if (Number.isFinite(n)) setPage(n - 1);
+      else pageInput.value = String(currentPage + 1);
+    }
+    pageInput.addEventListener('change', commitPageInput);
+    pageInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); commitPageInput(); }
+    });
+
+    // Shortcuts are documented on the buttons via title/aria-label
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target;
+      if (t instanceof HTMLElement &&
+          (t.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName))) return;
+      switch (e.key) {
+        case 'ArrowLeft': setPage(currentPage - 1); break;
+        case 'ArrowRight': setPage(currentPage + 1); break;
+        case '+': case '=': zoomBy(1.4); break;
+        case '-': zoomBy(1 / 1.4); break;
+        case '0': fitView(); break;
+        case 'r': case 'R': rotateBy(90); break;
+        default: return;
+      }
+      e.preventDefault();
+    });
 
     document.getElementById('doc-selector').addEventListener('change', (e) => {
       // Switching documents always starts at page 1, never at the previous document's page
