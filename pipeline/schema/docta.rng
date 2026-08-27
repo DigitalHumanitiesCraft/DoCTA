@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DoCTA project schema: the encoding contract of docs/data/tei/*.xml.
+
+  Hand-written and derived from pipeline/build_tei.py. It admits exactly the
+  elements, attributes and structures that generator emits, so a file that
+  validates here was produced by the DoCTA pipeline and carries nothing beyond
+  it. TEI conformance is the separate first stage against tei_all.rng; this
+  grammar is deliberately narrower than TEI and is not a substitute for it.
+
+  Two things it is meant to make impossible. A certainty claim about the source
+  (no @cert anywhere, no <certainty>, no @precision), because the confidence a
+  model reports is a self-assessment and not evidence. And a responsibility or
+  status value outside the closed lists of the pipeline, because a free value
+  would let a work step be asserted that never ran.
+
+  Free text content and values that legitimately vary (titles, prose, dates,
+  zone points, URLs) stay unconstrained or loosely patterned.
+-->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:tei="http://www.tei-c.org/ns/1.0"
+         ns="http://www.tei-c.org/ns/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+  <!-- Identifier shapes emitted by the generator. -->
+  <define name="docta.id">
+    <data type="token"><param name="pattern">docta-[0-9]+</param></data>
+  </define>
+  <define name="surface.id">
+    <data type="token"><param name="pattern">surface-[0-9]+-[0-9]+</param></data>
+  </define>
+  <define name="zone.id">
+    <data type="token"><param name="pattern">zone-[0-9]+-[0-9]+-[A-Za-z0-9_.:-]+</param></data>
+  </define>
+  <define name="ab.id">
+    <data type="token"><param name="pattern">ab-[0-9]+-[0-9]+-[A-Za-z0-9_.:-]+</param></data>
+  </define>
+  <define name="surface.ref">
+    <data type="token"><param name="pattern">#surface-[0-9]+-[0-9]+</param></data>
+  </define>
+  <define name="zone.ref">
+    <data type="token"><param name="pattern">#zone-[0-9]+-[0-9]+-[A-Za-z0-9_.:-]+</param></data>
+  </define>
+  <define name="page.nr">
+    <data type="token"><param name="pattern">[0-9]+</param></data>
+  </define>
+  <define name="url">
+    <data type="token"><param name="pattern">https?://[^\s]+</param></data>
+  </define>
+
+  <!-- The closed list of work steps a file may declare a responsibility for. -->
+  <define name="resp.id">
+    <choice>
+      <value>resp-transkribus-layer</value>
+      <value>resp-tei-generation</value>
+      <value>resp-entity-llm</value>
+      <value>resp-expert-verification</value>
+    </choice>
+  </define>
+
+  <start>
+    <element name="TEI">
+      <attribute name="xml:id"><ref name="docta.id"/></attribute>
+      <ref name="teiHeader"/>
+      <optional><ref name="facsimile"/></optional>
+      <ref name="text"/>
+    </element>
+  </start>
+
+  <!-- ================================ header ============================= -->
+
+  <define name="teiHeader">
+    <element name="teiHeader">
+      <element name="fileDesc">
+        <element name="titleStmt">
+          <optional>
+            <element name="title">
+              <attribute name="type"><value>main</value></attribute>
+              <text/>
+            </element>
+          </optional>
+          <element name="title">
+            <attribute name="type"><value>shelfmark</value></attribute>
+            <text/>
+          </element>
+          <oneOrMore>
+            <element name="respStmt">
+              <attribute name="xml:id"><ref name="resp.id"/></attribute>
+              <element name="resp"><text/></element>
+              <element name="name"><text/></element>
+            </element>
+          </oneOrMore>
+        </element>
+        <element name="publicationStmt">
+          <element name="publisher"><text/></element>
+          <element name="date">
+            <attribute name="when"><text/></attribute>
+            <text/>
+          </element>
+          <element name="availability">
+            <attribute name="status"><value>free</value></attribute>
+            <element name="licence">
+              <attribute name="target"><ref name="url"/></attribute>
+              <text/>
+            </element>
+            <element name="p"><text/></element>
+          </element>
+        </element>
+        <element name="sourceDesc">
+          <element name="msDesc">
+            <ref name="msIdentifier"/>
+            <optional>
+              <element name="history">
+                <element name="origin"><ref name="origDate"/></element>
+              </element>
+            </optional>
+          </element>
+        </element>
+      </element>
+      <ref name="encodingDesc"/>
+      <ref name="profileDesc"/>
+      <ref name="revisionDesc"/>
+    </element>
+  </define>
+
+  <define name="msIdentifier">
+    <element name="msIdentifier">
+      <element name="repository"><text/></element>
+      <optional><element name="collection"><text/></element></optional>
+      <element name="idno"><text/></element>
+      <element name="altIdentifier">
+        <attribute name="type"><value>transkribus</value></attribute>
+        <element name="idno"><data type="integer"/></element>
+      </element>
+    </element>
+  </define>
+
+  <!-- The raw archival dating stays the content; the normalisation is as
+       precise as the raw value allowed, so the attribute groups are exclusive. -->
+  <define name="origDate">
+    <element name="origDate">
+      <choice>
+        <attribute name="when"><text/></attribute>
+        <group>
+          <attribute name="from"><text/></attribute>
+          <attribute name="to"><text/></attribute>
+        </group>
+        <group>
+          <optional><attribute name="notBefore"><text/></attribute></optional>
+          <optional><attribute name="notAfter"><text/></attribute></optional>
+        </group>
+      </choice>
+      <text/>
+    </element>
+  </define>
+
+  <define name="encodingDesc">
+    <element name="encodingDesc">
+      <element name="projectDesc">
+        <element name="p"><text/></element>
+      </element>
+      <element name="editorialDecl">
+        <!-- state paragraph, plus the review and the entity paragraph where
+             those layers exist -->
+        <element name="p"><text/></element>
+        <optional><element name="p"><text/></element></optional>
+        <optional><element name="p"><text/></element></optional>
+      </element>
+      <optional>
+        <element name="classDecl">
+          <element name="taxonomy">
+            <attribute name="xml:id"><value>docta-category</value></attribute>
+            <element name="desc"><text/></element>
+          </element>
+        </element>
+      </optional>
+    </element>
+  </define>
+
+  <define name="profileDesc">
+    <element name="profileDesc">
+      <element name="langUsage">
+        <element name="language">
+          <attribute name="ident"><value>gmh</value></attribute>
+          <text/>
+        </element>
+      </element>
+      <optional>
+        <element name="textClass">
+          <element name="keywords">
+            <attribute name="scheme"><value>#docta-category</value></attribute>
+            <element name="term"><text/></element>
+          </element>
+        </element>
+      </optional>
+    </element>
+  </define>
+
+  <!-- One generation entry, one entry per reviewed page, one summary entry per
+       stream. Every status value is enumerated per stream. -->
+  <define name="revisionDesc">
+    <element name="revisionDesc">
+      <element name="change">
+        <attribute name="when"><text/></attribute>
+        <attribute name="who"><value>#resp-tei-generation</value></attribute>
+        <text/>
+      </element>
+      <zeroOrMore>
+        <element name="change">
+          <optional><attribute name="when"><text/></attribute></optional>
+          <attribute name="who"><value>#resp-expert-verification</value></attribute>
+          <attribute name="n"><value>review</value></attribute>
+          <text/>
+        </element>
+      </zeroOrMore>
+      <element name="change">
+        <attribute name="n"><value>transcription-summary</value></attribute>
+        <attribute name="status">
+          <choice>
+            <value>human-corrected</value>
+            <value>partly-corrected</value>
+            <value>machine-unrevised</value>
+            <value>partly-reviewed</value>
+            <value>approved</value>
+          </choice>
+        </attribute>
+        <text/>
+      </element>
+      <element name="change">
+        <attribute name="n"><value>tei-summary</value></attribute>
+        <attribute name="status"><value>machine-generated</value></attribute>
+        <text/>
+      </element>
+    </element>
+  </define>
+
+  <!-- =============================== facsimile =========================== -->
+
+  <define name="facsimile">
+    <element name="facsimile">
+      <oneOrMore>
+        <element name="surface">
+          <attribute name="xml:id"><ref name="surface.id"/></attribute>
+          <attribute name="n"><ref name="page.nr"/></attribute>
+          <element name="graphic">
+            <attribute name="url"><ref name="url"/></attribute>
+            <empty/>
+          </element>
+          <zeroOrMore>
+            <element name="zone">
+              <attribute name="xml:id"><ref name="zone.id"/></attribute>
+              <!-- polygon of the layout analysis, verbatim from the export -->
+              <attribute name="points"><text/></attribute>
+              <empty/>
+            </element>
+          </zeroOrMore>
+        </element>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <!-- ================================= text ============================== -->
+
+  <define name="text">
+    <element name="text">
+      <attribute name="xml:lang"><value>gmh</value></attribute>
+      <element name="body">
+        <element name="div">
+          <attribute name="type"><value>transcription</value></attribute>
+          <zeroOrMore>
+            <group>
+              <element name="pb">
+                <attribute name="n"><ref name="page.nr"/></attribute>
+                <optional>
+                  <attribute name="facs"><ref name="surface.ref"/></attribute>
+                </optional>
+                <empty/>
+              </element>
+              <zeroOrMore>
+                <element name="ab">
+                  <attribute name="xml:id"><ref name="ab.id"/></attribute>
+                  <ref name="ab.content"/>
+                </element>
+              </zeroOrMore>
+            </group>
+          </zeroOrMore>
+        </element>
+      </element>
+    </element>
+  </define>
+
+  <define name="ab.content">
+    <interleave>
+      <text/>
+      <zeroOrMore>
+        <choice>
+          <ref name="milestone"/>
+          <element name="lb">
+            <optional>
+              <attribute name="facs"><ref name="zone.ref"/></attribute>
+            </optional>
+            <empty/>
+          </element>
+          <ref name="entity"/>
+        </choice>
+      </zeroOrMore>
+    </interleave>
+  </define>
+
+  <!-- A folio mark of the transcription, never a read line; the two units carry
+       the two id shapes the corpus knows. -->
+  <define name="milestone">
+    <element name="milestone">
+      <choice>
+        <group>
+          <attribute name="unit"><value>folio</value></attribute>
+          <attribute name="n">
+            <data type="token"><param name="pattern">[0-9]+[rv]?</param></data>
+          </attribute>
+        </group>
+        <group>
+          <attribute name="unit"><value>cover</value></attribute>
+          <attribute name="n">
+            <data type="token"><param name="pattern">us_[a-z]+_[rv]</param></data>
+          </attribute>
+        </group>
+      </choice>
+      <empty/>
+    </element>
+  </define>
+
+  <!-- An entity carries its responsibility and its normalised form and nothing
+       else. No @cert, no @certainty, no @precision, no nesting. -->
+  <define name="entity">
+    <element>
+      <choice>
+        <name>persName</name>
+        <name>placeName</name>
+        <name>objectName</name>
+      </choice>
+      <attribute name="resp"><value>#resp-entity-llm</value></attribute>
+      <attribute name="key"><text/></attribute>
+      <text/>
+    </element>
+  </define>
+
+</grammar>

@@ -116,6 +116,31 @@ python build_tei.py --register DIR   # read the register elsewhere
 python test_build_tei.py             # or: pytest pipeline/test_build_tei.py
 ```
 
+## Quality gates
+
+Two gates stand between the generators and a commit, and both are run before every commit.
+
+### The two schemas
+
+`validate_tei.py` validates the generated TEI in two stages and reports them separately, because they answer different questions. Stage one is TEI conformance against the vendored `schema/tei_all.rng`, a pinned TEI P5 release. Stage two is the DoCTA encoding contract against `schema/docta.rng`, a hand-written RelaxNG derived from `build_tei.py` that admits exactly the elements, attributes and structures the generator emits and nothing else. The responsibility ids, the stream statuses, the milestone units and the entity elements are enumerated there as closed lists, the identifiers of surface, zone and `ab` are pinned as patterns, and free text and legitimately varying values stay unconstrained. A certainty claim is impossible by construction, since `@cert`, `@certainty` and `<certainty>` are not in the grammar, so a file carrying one fails stage two even though it is valid TEI. `--schema PATH` runs a single stage against one schema. Provenance and upgrade path of both schemas are in `schema/SOURCES.md`.
+
+```
+python validate_tei.py                            # both stages
+python validate_tei.py --schema schema/docta.rng  # one schema only
+```
+
+### The healthcheck
+
+`check_pipeline.py` is one run over the contracts that hold between the pipeline scripts and that no single script can verify on its own. It checks the register against the export and against its own vocabularies, the three document sets against each other, the entity files, review exports and evaluation runs against their contracts, the provenance rules that keep a model's self-assessment out of the edition data, the resolution of every cross-reference, the value ranges of the evaluation summaries, both schema stages, and finally the generators against themselves by rebuilding register and TEI into a temporary directory and comparing byte for byte.
+
+A finding is FAIL or INFO and carries the id of the check that raised it. INFO is a fact worth seeing that is not a defect, such as a page whose reference transcription is degenerate, a repeat pair whose line counts diverge far enough to want a third run, or a document that sits in one set and not in another for a reason already settled in the data. Only FAIL decides the exit code.
+
+```
+python check_pipeline.py             # every check, exit 0 only when clean
+python check_pipeline.py --list      # the check ids
+python test_check_pipeline.py        # or: pytest pipeline/test_check_pipeline.py
+```
+
 ## Known gaps in the input data
 
 The CSV-to-Transkribus matcher in `docs/data/source_mapping.json` covers the inventories only, so Raitbuch 2 is paired with its archival entry in the builder itself, matched on title and page count. Documents that are matched but have no export yet get a page list without IIIF URLs, because the page images are only known from the export.

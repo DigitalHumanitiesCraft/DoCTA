@@ -1,9 +1,15 @@
-"""Validate the generated TEI files against the vendored TEI P5 RelaxNG schema.
+"""Validate the generated TEI files in two stages.
+
+Stage 1 is TEI conformance against the vendored TEI P5 RelaxNG (`tei_all.rng`), stage 2 the
+DoCTA encoding contract against the hand-written project schema (`docta.rng`). The two
+answer different questions, so they are reported separately per stage: a file may be
+perfectly good TEI and still carry something the pipeline never emits.
 
 Usage:
-    python pipeline/validate_tei.py [--tei-dir DIR] [--schema PATH] [--max-errors N]
+    python pipeline/validate_tei.py [--tei-dir DIR] [--max-errors N]
+    python pipeline/validate_tei.py --schema PATH      # single-schema run
 
-Exit code 0 only when every file parses and validates.
+Exit code 0 only when every file parses and validates in every stage that ran.
 
 Requires lxml (pinned in this environment: lxml 5.3.0, libxml2 2.11.7). Without lxml the
 script falls back to the `jing` CLI if it is on PATH, and otherwise exits with a message
@@ -18,9 +24,14 @@ import subprocess
 import sys
 from pathlib import Path
 
+SCHEMA_DIR = Path(__file__).resolve().parent / "schema"
 DEFAULT_TEI_DIR = Path(__file__).resolve().parent.parent / "docs" / "data" / "tei"
-DEFAULT_SCHEMA = Path(__file__).resolve().parent / "schema" / "tei_all.rng"
+TEI_SCHEMA = SCHEMA_DIR / "tei_all.rng"
+DOCTA_SCHEMA = SCHEMA_DIR / "docta.rng"
 DEFAULT_MAX_ERRORS = 3
+
+# Stage label to schema; the label is what the report and the healthcheck name.
+STAGES = (("TEI conformance", TEI_SCHEMA), ("DoCTA contract", DOCTA_SCHEMA))
 
 MISSING_TOOLS_MESSAGE = (
     "No RelaxNG validator available. Install lxml (`pip install lxml`) or put the "
@@ -31,7 +42,8 @@ MISSING_TOOLS_MESSAGE = (
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tei-dir", type=Path, default=DEFAULT_TEI_DIR)
-    parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA)
+    parser.add_argument("--schema", type=Path, default=None,
+                        help="validate against this schema only, instead of both stages")
     parser.add_argument("--max-errors", type=int, default=DEFAULT_MAX_ERRORS,
                         help="errors reported per invalid file")
     return parser.parse_args(argv)
@@ -82,12 +94,35 @@ def validate_with_jing(files: list[Path], schema_path: Path, max_errors: int) ->
     return invalid
 
 
+def _validator():
+    """The available RelaxNG validator, or None when neither lxml nor jing is there."""
+    try:
+        import lxml  # noqa: F401
+    except ImportError:
+        return validate_with_jing if shutil.which("jing") else None
+    return validate_with_lxml
+
+
+def run_stage(label: str, files: list[Path], schema_path: Path,
+              max_errors: int) -> list[Path]:
+    """One validation stage, reported on its own line. Returns the invalid files."""
+    validate = _validator()
+    if validate is None:  # pragma: no cover - guarded in main
+        raise RuntimeError(MISSING_TOOLS_MESSAGE)
+    invalid = validate(files, schema_path, max_errors)
+    print(f"{label}: {len(files) - len(invalid)}/{len(files)} files valid"
+          f" against {schema_path.name}")
+    return invalid
+
+
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
 
-    if not args.schema.is_file():
-        print(f"Schema not found: {args.schema}", file=sys.stderr)
-        return 2
+    stages = [("Schema", args.schema)] if args.schema else list(STAGES)
+    for _, schema in stages:
+        if not schema.is_file():
+            print(f"Schema not found: {schema}", file=sys.stderr)
+            return 2
     if not args.tei_dir.is_dir():
         print(f"TEI directory not found: {args.tei_dir}", file=sys.stderr)
         return 2
@@ -97,18 +132,14 @@ def main(argv: list[str] | None = None) -> int:
         print(f"No TEI files found in {args.tei_dir}", file=sys.stderr)
         return 2
 
-    try:
-        import lxml  # noqa: F401
-    except ImportError:
-        if shutil.which("jing") is None:
-            print(MISSING_TOOLS_MESSAGE, file=sys.stderr)
-            return 2
-        invalid = validate_with_jing(files, args.schema, args.max_errors)
-    else:
-        invalid = validate_with_lxml(files, args.schema, args.max_errors)
+    if _validator() is None:
+        print(MISSING_TOOLS_MESSAGE, file=sys.stderr)
+        return 2
 
-    print(f"{len(files) - len(invalid)}/{len(files)} files valid against {args.schema.name}")
-    return 1 if invalid else 0
+    failed = 0
+    for label, schema in stages:
+        failed += len(run_stage(label, files, schema, args.max_errors))
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
