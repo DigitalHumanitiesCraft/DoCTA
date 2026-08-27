@@ -88,6 +88,22 @@
     initNav('dashboard');
     initBanner();
 
+    // Archival titles and shelfmarks stay in their original German; the closed
+    // category vocabulary gets an English display label with the source term.
+    const CATEGORY_EN = {
+      'Anderes': 'Other',
+      'Burgeninventar': 'Castle inventory',
+      'Hof- und Speiseordnungen': 'Court and table ordinances',
+      'Kircheninventar': 'Church inventory',
+      'Kopialbuch': 'Copybook',
+      'Landtagsakten': 'Diet records',
+      'Literatur': 'Literature',
+      'Personeninventar': 'Personal inventory',
+      'Rechnungen': 'Accounts',
+      'Repertorium': 'Repertory',
+    };
+    const catLabel = (kat) => CATEGORY_EN[kat] || kat;
+
     let allSources = [];
     let sortKey = 'signatur';
     let sortDir = 1;
@@ -107,7 +123,7 @@
           ? `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Open</a>`
           : '';
         return `<tr>
-          <td>${escapeHTML(s.kategorie)}</td>
+          <td>${escapeHTML(catLabel(s.kategorie))}</td>
           <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
           <td>${escapeHTML(s.titel)}</td>
           <td class="small">${escapeHTML(formatDate(s.datierung))}</td>
@@ -144,6 +160,10 @@
       filtered.sort((a, b) => {
         let va = a[sortKey];
         let vb = b[sortKey];
+        if (sortKey === 'kategorie') {
+          va = catLabel(va);
+          vb = catLabel(vb);
+        }
         if (sortKey === 'datierung') {
           va = a.datierung.start || 0;
           vb = b.datierung.start || 0;
@@ -215,7 +235,7 @@
         categories.forEach(cat => {
           const opt = document.createElement('option');
           opt.value = cat;
-          opt.textContent = `${cat} (${allSources.filter(s => s.kategorie === cat).length})`;
+          opt.textContent = `${catLabel(cat)} (${allSources.filter(s => s.kategorie === cat).length})`;
           katSelect.appendChild(opt);
         });
 
