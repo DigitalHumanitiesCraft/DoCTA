@@ -32,13 +32,22 @@
     <section class="mb-4" id="sources">
       <h2 class="h5 mb-3">Sources</h2>
 
-      <div class="row g-2 mb-3 align-items-center">
+      <div class="progress-block mb-4">
+        <div class="progress-stack" id="progress-bar" role="img" aria-label="Editorial progress"></div>
+        <ul class="progress-legend" id="progress-legend"></ul>
+      </div>
+
+      <div class="row g-2 mb-2 align-items-center">
         <div class="col-md-5">
           <input type="search" class="form-control" id="search-input" placeholder="Search shelfmark, title or date..." aria-label="Source search">
         </div>
         <div class="col-md-3">
-          <select class="form-select" id="filter-kategorie" aria-label="Filter by category">
-            <option value="">All categories</option>
+          <select class="form-select" id="sort-select" aria-label="Sort sources">
+            <option value="signatur">Sort by shelfmark</option>
+            <option value="titel">Sort by title</option>
+            <option value="datierung">Sort by date</option>
+            <option value="seiten">Sort by pages</option>
+            <option value="tier">Sort by progress</option>
           </select>
         </div>
         <div class="col-md-2">
@@ -49,29 +58,14 @@
             <option value="3">Archive only</option>
           </select>
         </div>
-        <div class="col-md-2 text-end">
+        <div class="col-md-2 text-md-end">
           <span class="small text-body-secondary" id="result-count" role="status" aria-live="polite"></span>
         </div>
       </div>
 
-      <div class="table-responsive table-sticky" tabindex="0" role="region" aria-label="Source overview, scrollable table">
-        <table class="table table-hover table-sm align-middle" id="sources-table">
-          <thead>
-            <tr>
-              <th scope="col"><span class="visually-hidden">Facsimile thumbnail</span></th>
-              <th scope="col" data-sort="kategorie" tabindex="0" aria-sort="none">Category <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="signatur" tabindex="0" aria-sort="none">Shelfmark <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="datierung" tabindex="0" aria-sort="none">Date <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="seiten" tabindex="0" aria-sort="none" class="text-end text-nowrap">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="tier" tabindex="0" aria-sort="none">Progress <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody id="sources-body">
-          </tbody>
-        </table>
-      </div>
+      <div class="chip-row mb-3" id="category-chips" role="group" aria-label="Filter by category"></div>
+
+      <ul class="src-list" id="sources-list"></ul>
     </section>
 
   </main>
@@ -122,49 +116,66 @@
     let allSources = [];
     let thumbByDocId = new Map();
     let sortKey = 'signatur';
-    let sortDir = 1;
+    let katFilter = '';
+
+    const num = (n) => n.toLocaleString('en-GB');
+    const hasText = (s) => !!(s.transkribus && s.transkribus.has_text);
+
+    // Availability groups the list before any user-chosen sort: full text, then
+    // digitized facsimile, then sources known only from the finding aid.
+    const availRank = (s) => (hasText(s) ? 0 : s.tier === 2 ? 1 : 2);
 
     // Scaled IIIF variant of the first written page; the image stays external.
-    function thumbCell(s) {
+    // The thumbnail is presentational, the title link carries the row target.
+    function thumbMarkup(s) {
       const docId = s.transkribus?.doc_id;
       const t = docId ? thumbByDocId.get(Number(docId)) : null;
-      if (!t) return '';
-      const src = t.thumb.replace('/full/max/', '/full/,120/');
-      return `<a href="viewer.html?doc=${docId}&page=${t.thumb_page}" class="thumb-link"
-        aria-label="Open ${escapeAttr(s.signatur)} in the viewer">
-        <img src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async"></a>`;
+      if (t) {
+        const src = t.thumb.replace('/full/max/', '/full/,120/');
+        return `<img class="src-thumb" src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async">`;
+      }
+      const initial = (catLabel(s.kategorie) || '?').trim().charAt(0).toUpperCase();
+      return `<span class="src-thumb src-thumb--empty" aria-hidden="true">${escapeHTML(initial)}</span>`;
     }
 
-    function renderTable(sources) {
-      const tbody = document.getElementById('sources-body');
-      document.getElementById('result-count').textContent = `${sources.length.toLocaleString('en-GB')} sources`;
+    function rowMarkup(s) {
+      const pages = s.seiten != null ? `${num(s.seiten)} page${s.seiten === 1 ? '' : 's'}` : '';
+      const meta = [
+        `<span class="src-sig">${escapeHTML(s.signatur)}</span>`,
+        `<span>${escapeHTML(formatDate(s.datierung))}</span>`,
+        pages ? `<span class="tnum">${pages}</span>` : '',
+      ].filter(Boolean).join('<span class="src-meta__sep" aria-hidden="true">·</span>');
+      const title = hasText(s)
+        ? `<a class="src-title" href="viewer.html?doc=${s.transkribus.doc_id}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
+        : `<span class="src-title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`;
+      return `<li class="src-row">
+        ${thumbMarkup(s)}
+        <div class="src-main">${title}<div class="src-meta">${meta}</div></div>
+        <div class="src-cat">${escapeHTML(catLabel(s.kategorie))}</div>
+        <div class="src-stages">${stageIcons(s)}</div>
+      </li>`;
+    }
+
+    function renderList(sources) {
+      const list = document.getElementById('sources-list');
+      document.getElementById('result-count').textContent = `${num(sources.length)} sources`;
 
       if (sources.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="8" class="text-body-secondary text-center py-4">No sources found</td></tr>';
+        list.innerHTML = '<li class="src-empty text-body-secondary">No sources found</li>';
         return;
       }
+      list.innerHTML = sources.map(rowMarkup).join('');
+    }
 
-      tbody.innerHTML = sources.map(s => {
-        // Only full-text sources get an action; availability is already the Status column
-        const action = s.transkribus && s.transkribus.has_text
-          ? `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Open</a>`
-          : '';
-        return `<tr>
-          <td class="thumb-cell">${thumbCell(s)}</td>
-          <td class="cell-cat">${escapeHTML(catLabel(s.kategorie))}</td>
-          <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
-          <td><span class="cell-truncate" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span></td>
-          <td class="small">${escapeHTML(formatDate(s.datierung))}</td>
-          <td class="small num">${s.seiten != null ? s.seiten : '–'}</td>
-          <td>${stageIcons(s)}</td>
-          <td>${action}</td>
-        </tr>`;
-      }).join('');
+    function sortValue(s, key) {
+      if (key === 'datierung') return s.datierung.start || 0;
+      if (key === 'seiten') return s.seiten || 0;
+      if (key === 'tier') return s.tier;
+      return s[key];
     }
 
     function getFilteredSources() {
       const query = document.getElementById('search-input').value.toLowerCase().trim();
-      const katFilter = document.getElementById('filter-kategorie').value;
       const tierFilter = document.getElementById('filter-tier').value;
 
       let filtered = allSources;
@@ -185,74 +196,91 @@
         filtered = filtered.filter(s => s.tier === parseInt(tierFilter));
       }
 
-      filtered.sort((a, b) => {
-        let va = a[sortKey];
-        let vb = b[sortKey];
-        if (sortKey === 'kategorie') {
-          va = catLabel(va);
-          vb = catLabel(vb);
-        }
-        if (sortKey === 'datierung') {
-          va = a.datierung.start || 0;
-          vb = b.datierung.start || 0;
-        }
-        if (sortKey === 'seiten') {
-          va = va || 0;
-          vb = vb || 0;
-        }
-        if (typeof va === 'string') {
-          return va.localeCompare(vb, 'de', { numeric: true }) * sortDir;
-        }
-        return ((va || 0) - (vb || 0)) * sortDir;
+      return [...filtered].sort((a, b) => {
+        const rank = availRank(a) - availRank(b);
+        if (rank !== 0) return rank;
+        const va = sortValue(a, sortKey);
+        const vb = sortValue(b, sortKey);
+        const cmp = typeof va === 'string'
+          ? va.localeCompare(vb, 'de', { numeric: true })
+          : (va || 0) - (vb || 0);
+        if (cmp !== 0) return cmp;
+        return a.signatur.localeCompare(b.signatur, 'de', { numeric: true });
       });
-
-      return filtered;
     }
 
     function update() {
-      renderTable(getFilteredSources());
+      renderList(getFilteredSources());
     }
 
-    function updateSortIndicators() {
-      document.querySelectorAll('th[data-sort]').forEach(h => {
-        const icon = h.querySelector('.sort-icon');
-        if (h.dataset.sort === sortKey) {
-          h.classList.add('sorted');
-          h.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
-          if (icon) icon.textContent = sortDir === 1 ? '↑' : '↓';
-        } else {
-          h.classList.remove('sorted');
-          h.setAttribute('aria-sort', 'none');
-          if (icon) icon.textContent = '↕';
-        }
-      });
-    }
-
-    function sortBy(th) {
-      const key = th.dataset.sort;
-      if (sortKey === key) {
-        sortDir *= -1;
-      } else {
-        sortKey = key;
-        sortDir = 1;
+    // Corpus-wide editorial progress over pages. Verification counts come from the
+    // register, pages of sources outside the register count as untranscribed.
+    function renderProgress(sources, register) {
+      const totalPages = sources.reduce((acc, s) => acc + (s.seiten || 0), 0);
+      const docIds = new Set(sources.filter(s => s.transkribus).map(s => Number(s.transkribus.doc_id)));
+      const v = { abgenommen: 0, gesichtet: 0, maschinell: 0 };
+      let pagesWithText = 0;
+      if (register) {
+        register.documents
+          .filter(d => docIds.has(Number(d.docId)))
+          .forEach(d => {
+            pagesWithText += d.pages_with_text || 0;
+            Object.keys(v).forEach(k => { v[k] += (d.verification && d.verification[k]) || 0; });
+          });
       }
-      updateSortIndicators();
+      const verified = v.abgenommen + v.gesichtet + v.maschinell;
+      const segments = [
+        { cls: 'approved', label: 'approved', n: v.abgenommen },
+        { cls: 'reviewed', label: 'reviewed', n: v.gesichtet },
+        { cls: 'machine', label: 'machine-checked', n: v.maschinell },
+        { cls: 'text', label: 'pages with machine text', n: Math.max(0, pagesWithText - verified) },
+        { cls: 'none', label: 'not yet transcribed', n: Math.max(0, totalPages - pagesWithText) },
+      ].filter(seg => seg.n > 0);
+
+      const bar = document.getElementById('progress-bar');
+      const pct = (n) => totalPages > 0 ? (n / totalPages) * 100 : 0;
+      bar.innerHTML = segments.map(seg =>
+        `<span class="progress-seg progress-seg--${seg.cls}" style="width:${pct(seg.n).toFixed(3)}%"></span>`
+      ).join('');
+      const summary = segments.map(seg => `${num(seg.n)} ${seg.label}`).join(', ');
+      bar.setAttribute('aria-label', `Editorial progress over ${num(totalPages)} corpus pages: ${summary}`);
+
+      document.getElementById('progress-legend').innerHTML = segments.map(seg =>
+        `<li class="progress-legend__item"><span class="progress-swatch progress-seg--${seg.cls}" aria-hidden="true"></span><span class="tnum">${num(seg.n)}</span> ${escapeHTML(seg.label)}</li>`
+      ).join('');
+    }
+
+    function renderChips(sources) {
+      const counts = new Map();
+      sources.forEach(s => counts.set(s.kategorie, (counts.get(s.kategorie) || 0) + 1));
+      const chips = [{ value: '', label: 'All', n: sources.length }].concat(
+        [...counts.keys()].sort((a, b) => catLabel(a).localeCompare(catLabel(b), 'en'))
+          .map(k => ({ value: k, label: catLabel(k), n: counts.get(k) }))
+      );
+      const row = document.getElementById('category-chips');
+      row.innerHTML = chips.map(c =>
+        `<button type="button" class="chip" data-kat="${escapeAttr(c.value)}" aria-pressed="${c.value === katFilter}">${escapeHTML(c.label)}<span class="chip__count tnum">${num(c.n)}</span></button>`
+      ).join('');
+    }
+
+    function setCategory(value) {
+      katFilter = value;
+      document.querySelectorAll('#category-chips .chip').forEach(btn => {
+        btn.setAttribute('aria-pressed', String(btn.dataset.kat === katFilter));
+      });
       update();
     }
 
-    document.querySelectorAll('th[data-sort]').forEach(th => {
-      th.addEventListener('click', () => sortBy(th));
-      th.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
-          e.preventDefault();
-          sortBy(th);
-        }
-      });
-    });
-
     document.getElementById('search-input').addEventListener('input', debounce(update, 200));
-    document.getElementById('filter-kategorie').addEventListener('change', update);
     document.getElementById('filter-tier').addEventListener('change', update);
+    document.getElementById('sort-select').addEventListener('change', (e) => {
+      sortKey = e.target.value;
+      update();
+    });
+    document.getElementById('category-chips').addEventListener('click', (e) => {
+      const btn = e.target.closest('.chip');
+      if (btn) setCategory(btn.dataset.kat);
+    });
 
     async function initSources() {
       try {
@@ -267,25 +295,14 @@
             .map(d => [d.docId, { thumb: d.thumb, thumb_page: d.thumb_page }]));
         }
 
-        const categories = [...new Set(allSources.map(s => s.kategorie))].sort();
-        const katSelect = document.getElementById('filter-kategorie');
-        categories.forEach(cat => {
-          const opt = document.createElement('option');
-          opt.value = cat;
-          opt.textContent = `${catLabel(cat)} (${allSources.filter(s => s.kategorie === cat).length})`;
-          katSelect.appendChild(opt);
-        });
-
-        updateSortIndicators();
+        renderProgress(allSources, register);
+        renderChips(allSources);
         update();
       } catch (err) {
-        const errTr = document.createElement('tr');
-        const errTd = document.createElement('td');
-        errTd.colSpan = 8;
-        errTd.className = 'text-body-secondary text-center py-4';
-        errTd.textContent = `Loading failed: ${err.message}`;
-        errTr.appendChild(errTd);
-        document.getElementById('sources-body').replaceChildren(errTr);
+        const li = document.createElement('li');
+        li.className = 'src-empty text-body-secondary';
+        li.textContent = `Loading failed: ${err.message}`;
+        document.getElementById('sources-list').replaceChildren(li);
       }
     }
 
