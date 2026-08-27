@@ -28,36 +28,6 @@
       <h1>Doing Court in the Tyrolean Alps</h1>
     </header>
 
-    <!-- Pipeline Overview -->
-    <section class="card mb-4">
-      <div class="card-body">
-        <h2 class="h5 mb-2">Edition pipeline</h2>
-        <p class="small text-body-secondary mb-3">Every stage is versioned and verifiable. Scholarly review by the project team produces ground truth, improves the measurement base, and directly advances the edition. All machine output is clearly marked as unrevised until a scholar has approved it.</p>
-        <div class="pipeline-steps">
-          <a href="#sources" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Stage 1</span>
-            <span class="pipeline-step__label">Sources</span>
-          </a>
-          <a href="benchmark.html" class="pipeline-step pipeline-step--active">
-            <span class="pipeline-step__number">Stage 2</span>
-            <span class="pipeline-step__label">VLM transcription</span>
-          </a>
-          <a href="viewer.html" class="pipeline-step pipeline-step--active">
-            <span class="pipeline-step__number">Stage 3</span>
-            <span class="pipeline-step__label">Validation &amp; ground truth</span>
-          </a>
-          <a href="knowledge.html" class="pipeline-step">
-            <span class="pipeline-step__number">Stage 4</span>
-            <span class="pipeline-step__label">TEI &amp; research data</span>
-          </a>
-          <a href="knowledge.html" class="pipeline-step">
-            <span class="pipeline-step__number">Stage 5</span>
-            <span class="pipeline-step__label">Edition</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- Sources with integrated search -->
     <section class="mb-4" id="sources">
       <h2 class="h5 mb-3">Sources</h2>
@@ -92,7 +62,7 @@
               <th scope="col" data-sort="signatur" tabindex="0" aria-sort="none">Shelfmark <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="datierung" tabindex="0" aria-sort="none">Date <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="seiten" tabindex="0" aria-sort="none" class="text-end">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="seiten" tabindex="0" aria-sort="none" class="text-end text-nowrap">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col">Action</th>
             </tr>
@@ -132,12 +102,10 @@
       }
 
       tbody.innerHTML = sources.map(s => {
-        let action = '';
-        if (s.transkribus && s.transkribus.has_text) {
-          action = `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Open</a>`;
-        } else if (s.tier === 1 || s.tier === 2) {
-          action = `<span class="small text-body-secondary">Facsimile only</span>`;
-        }
+        // Only full-text sources get an action; availability is already the Status column
+        const action = s.transkribus && s.transkribus.has_text
+          ? `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Open</a>`
+          : '';
         return `<tr>
           <td>${escapeHTML(s.kategorie)}</td>
           <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
