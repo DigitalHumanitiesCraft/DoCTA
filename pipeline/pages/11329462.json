@@ -1,0 +1,97 @@
+{
+ "docId": 11329462,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/LLQULJVOWTGXMSZKCNKUVMSO/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "Vermerckt den gezŭg so juncker",
+      "Cristoff Rentlÿ juncker Josseppen",
+      "U̇berriner in geantwurt haut zů",
+      "Sigmundsegg am mitwochen an",
+      "dem Cotember in der Vasten im LXXXV.",
+      "Item vier möschÿ hagenbu̇chssen.",
+      "Sechs hantbu̇chssen.",
+      "Ain halbs väsly mit pulffer.",
+      "Sechs armbrust.",
+      "Drÿ winden.",
+      "Ain lagil mit pfilen.",
+      "Ain schafrait.",
+      "Ain betstat.",
+      "Zwo pfannen.",
+      "Zwo rotschu̇schlen.",
+      "Ain lang schwert.",
+      "Ain gros horn.",
+      "Ain stuck blÿ.",
+      "Ain lang zugsail.",
+      "Ain spis truchen.",
+      "Ain vancknus ÿsen.",
+      "Zwo seges sen.",
+      "Ain häll.",
+      "Ain rost.",
+      "Ain drÿfůs.",
+      "Item Leo Schmid zů Pfuns ist schuldig",
+      "m(einem) g(nädigen) h(erren) drÿ eÿssenplech, zwaÿ",
+      "wagen reder kosten XXVI gl. sol",
+      "er weschlachen, haut dar an hin",
+      "ain r(einischer) gulden ist verrait m(einem) g(nädigen) h(erren).",
+      "Drÿ hu̇bsch strithacken.",
+      "Zwen schwin spies.",
+      "Ain eren spies mit aim schwȃrtzen schaft.",
+      "Vier märter howen.",
+      "Drÿ bickel.",
+      "Vier eẏssen schuflen.",
+      "Zwo holtz hacken.",
+      "Ain piel.",
+      "Neúw eẏssenplech.",
+      "Vier lad eÿssen."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/CPZTJUEPCSNCCKHWNOXUWXMY/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]",
+      "Inventȃri von Sigmundseckg",
+      "geantwurt durch den Uberener."
+     ]
+    }
+   ]
+  }
+ ]
+}

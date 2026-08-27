@@ -1,0 +1,132 @@
+{
+ "docId": 11329279,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/LWENGKIHCJRXGSZXQHTIAQFT/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/XDFVNJLMZDATRGZIQPDFJBDK/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]",
+      "It(em) in dem undtern staingaden",
+      "1/2 läg(e)l pfeil.",
+      "It(em) ain fueter kăstel im undt(er)n staing[---].",
+      "It(em) in meins h(er)ren stuben vier scht[---]",
+      "tisch, der viert in d(er) ander(e)n stubn.",
+      "It(e)m in dem ergkar gen d(er) Schãrnitz",
+      "ain tȃrispũchß(en).",
+      "It(em) in dem arckãr gen Seveld wertz",
+      "fúnff clotz(e)n puchsen.",
+      "It(em) mer daselbs III hagk(e)n püchsen",
+      "und ain claine pũchsen.",
+      "It(em) ain metz(e)n puxenpulver.",
+      "It(em) in d(er) kuchen ain alte speistruhen",
+      "und ain speis käst(e)l.",
+      "It(em) in dem hinter kraut keller ain",
+      "mȯrser.",
+      "It(em) alle pettstat new und alt",
+      "nach ausfart des Clam(m)ers",
+      "sind alle der Burckhartin von",
+      "Hausen, hat sÿ im gschloß",
+      "gelassen wer ir das bezalt.",
+      "It(em) ain eÿsne häl ob dem herd",
+      "ist auch der Purckhartin vo(n)",
+      "Hausen."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 3,
+   "iiif": "https://files.transkribus.eu/iiif/2/LVUVDJDGHTZQSGVQDIPVBORF/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 4,
+   "iiif": "https://files.transkribus.eu/iiif/2/LWIFIGMWCVAEKKIWWRGNTRSR/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2v]",
+      "Inventari was Pangracz(e)n",
+      "Hanen auf Slosperg",
+      "ingeantwurt ist."
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "docId": 11329061,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/GTHVUFOYEWEGYPBAOFFRZJWD/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "So ist zu wissen mit diser offen inventuari zetel das auf bevelch des",
+      "durchleȗchtigen hochgebornen fȗrsten und herrn herrn Sigmunds erz¬",
+      "herzog ze Õsterreich und grave zu Tÿrol etc. meines gnădigisten herrn",
+      "der edel und vest Wilhelm von Phiert durch sein dienner Balthasar Tũbing",
+      "dem edlen und vesten Wilhelm wer das gschloss Hertenberg an hewt",
+      "sambstag nach Mauriti anno etc. LXXX nono eingeantburt hat",
+      "in beÿ wesen der edlen und vesten Vigilÿ Gnewssen und",
+      "von Hohenburg, auch der erberen weysen Blásÿ Sau̇rbein zu Flaur¬",
+      "ling, Erharten Stadelwiser, Jõrgen Knăbel, Martein Wipfen zu Telfs",
+      "und annder.",
+      "Ist daselben im gschloss funden nachlaut der alten inventuarizetl",
+      "das dem bemelten meinem gnadigisten herrn zu gehõrt.",
+      "Am ersten in der oberen kamer ain tũrgkischer sãbel, vier helleparten,",
+      "zwo streit hagken und ain grosser kolb zu paÿden hennden.",
+      "Ain pũttrich mit ettwievil scharnagelen.",
+      "Dreÿ eÿsnein stainpuxen und zwo lenger eÿsnein pũchsen.",
+      "Des alten zewgs XVI armbrost und zwen pogen zu pangkarmbrosten.",
+      "In dreÿen laglen põß alt pfeÿl, ain wenig schwĕbel",
+      "und in ainem klain săckel ain wenig pũchsen pulver.",
+      "Ettlich fewr kuglen und ettlich stainein pũxen kugelen.",
+      "Ain kambp rad zu ainer hanntmŭl, zwen mũlstain, ain rũtlscheib.",
+      "Zwen tisch, zwo vorpenck, zwen seßel, vier pettstett.",
+      "In der oberen kuchen ain kȃstel und vor der stuben ains.",
+      "Ain raÿss panck, ain hãl, ain beschlagne drischel beÿ dem",
+      "toer zu ainer wẽr.",
+      "Siben eÿsnen rorpuxen, ain pew̃tel kasten, zwen koren oder mel kãsten.",
+      "Holz zu dem paw gehorend, fewchtein und lărchein pãm auß¬",
+      "geschniten in die vierung LXXXXVI.",
+      "Und ungeschnittnen pãm lãrchein hundert und XXVII.",
+      "Schintelkasten im gschloss angevarde beÿ IC und XXIIII kasten",
+      "unnder der schupffen beÿ dem prunnen angevarde IIII schintel",
+      "kasten."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/WBRYGBZSJPKGKUPJDBHTAWEB/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]",
+      "Inventuari Hertenberg."
+     ]
+    }
+   ]
+  }
+ ]
+}

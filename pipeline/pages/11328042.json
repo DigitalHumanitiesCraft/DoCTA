@@ -1,0 +1,597 @@
+{
+ "docId": 11328042,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/UGPVZOWQZRZULCDHASMWZPYD/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "Am montag nach dem Palmtag",
+      "anno etc. LXXXVIIIt(en) ist Hildprand",
+      "von Gles d(e)s sloss Thaŭr abtret(en)",
+      "und h(errn)n Sig(munden) von Welssp(er)g",
+      "ingeant(wurt) auf bevelch uns(er)s g(nedigen) h(er)rn",
+      "von Est(erreich), in geg(enwart) v(on) Rudolf(en)",
+      "Hauscam(er)s und Pet(er)n Herb(ers), Clem(en)t(en)",
+      "Wolfsegk(er) und Hanns Ubelh(er).",
+      "Am erst(en) in d(er) stub(e)n da",
+      "ain pfleg(er) in ist.",
+      "Zwen tisch.",
+      "Ain verdeckts gutschnpet(e)l bei(m) of(en).",
+      "Ain giesvaskast(e)l.",
+      "Ain giesvass.",
+      "Ain peck.",
+      "In d(er) cam(er) daran.",
+      "Zwai spanpet.",
+      "Zwei pett.",
+      "I golt(er).",
+      "I rauhe deck.",
+      "I p(er) leilach und I leilach.",
+      "II polst(er).",
+      "II kŭß.",
+      "Ain strosack.",
+      "Ain truh(e)n.",
+      "It(em) darin V werchene leilach.",
+      "II zbilchin tischtŭch.",
+      "Ain alt(er) tisch.",
+      "It(em) ein schachzabl(er)."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/EIVADUQUXEQQXOYXCYVPVQEL/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]",
+      "It(em) in dem clainen kame(r)l in derß cam(er).",
+      "It(em) V grosse zin.",
+      "It(em) V mitere zin.",
+      "It(em) noch clain(er) IIII.",
+      "It(em) noch clain(er) V.",
+      "It(em) groß sals(e)n schussl(e)n V.",
+      "Essich schussl(e)n V.",
+      "It(em) ain mess(e)n peck.",
+      "It(em) ain mess(e)n ring tischring.",
+      "It(em) X zinnen tĕll(er).",
+      "It(em) VI messin leucht(er) clein vnd gross.",
+      "Auf dem clein(en) estrich vor",
+      "d(e)r stub(e)n.",
+      "It(em) ain grosser cast(e)n.",
+      "In d(er) hell in d(er) erst(en) cam(er).",
+      "It(em) I petstat.",
+      "II rauchdeck(e)n.",
+      "Ai(n) pot.",
+      "I polst(er).",
+      "I kis.",
+      "I strosack.",
+      "I p(ar) rupfen leilach."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 3,
+   "iiif": "https://files.transkribus.eu/iiif/2/OYGLNFBOZIXIVQHJPMMXLBPD/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2r]",
+      "In d(er) and(er) cam(er).",
+      "V petstat(e)n.",
+      "It(em) I pet.",
+      "I strosack.",
+      "II rupfen leilach.",
+      "II rauch deck(e)n,",
+      "I polst(er).",
+      "In des pauknecht kam(er).",
+      "It(em) II petstat.",
+      "II pett.",
+      "II polst(er).",
+      "I kŭss.",
+      "IIII rauch deck(e)n.",
+      "IIII werchine leilach.",
+      "II stroseck.",
+      "In d(er) and(er) cam(er).",
+      "I petstat.",
+      "I pet.",
+      "I polst(er).",
+      "II kis.",
+      "I strosack.",
+      "I rahe deck.",
+      "I golt(er)."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 4,
+   "iiif": "https://files.transkribus.eu/iiif/2/GPTSPXNOAHKMLFEFVYOCWGWT/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2v]",
+      "It(em) auf dem gross(e)n neu(e)n sal.",
+      "I gross(er) harnasch cast(e)n.",
+      "II poss(er) tisch.",
+      "In d(er) chuch(e)n.",
+      "It(em) VIIII pfann(en) gros und clein  [- - -] gr",
+      "pos und gut.",
+      "V kes(e)l gros u(nd) cl(ein).",
+      "V erin haf(e)n.",
+      "I hăl.",
+      "II prantrait(e)n.",
+      "II drifus.",
+      "II pratspis.",
+      "II heincz(e)n.",
+      "II eysin kell(e)n.",
+      "XII hulczin schissl(en) gar clein.",
+      "XVI tell(er) holcz.",
+      "I gacz(e)n.",
+      "II krautmess(er).",
+      "II kuchinmess(er).",
+      "Im marstal.",
+      "I neu(er) fut(er) cast(e)n.",
+      "In der pfist(er).",
+      "I knet trog.",
+      "I werch taf(e)l.",
+      "IIII pret(er).",
+      "I stăr."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 5,
+   "iiif": "https://files.transkribus.eu/iiif/2/GETPJIREOADIDWHLXNJRBJOL/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.3r]",
+      "Im zergad(e)n speisgad(e)n.",
+      "Ain mecz(er)s ram.",
+      "I fleisch panck.",
+      "Ain mel kasten.",
+      "Ain peut(el) vaß.",
+      "Ain gross(er) pad zub(er).",
+      "V ster.",
+      "Item kraut cam(er).",
+      "Erstlich hulcz(ei)n krautprent(e)n.",
+      "It(em) VI prenten mit gut(en) kraut.",
+      "It(em) VI prent(en) mit saukraut.",
+      "It(em) vor derselb(e)n cam(er).",
+      "II hackpret(er).",
+      "I sleifstein.",
+      "Ain",
+      "It(em) in d(er)m und(ern) zercast(e)n.",
+      "Zwo meltruh(e)n.",
+      "Ain pos(er) tisch.",
+      "Vorm wein kell(er).",
+      "Ain handmŭl mit ir(er) zugehor(ung).",
+      "Im kell(er).",
+      "VIII kand(e)l klei(n) und gross.",
+      "I sturczine flasch(en).",
+      "II zwo mess(e)n pipp(e)n.",
+      "I gros vass."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 6,
+   "iiif": "https://files.transkribus.eu/iiif/2/LGRVJZISUPDJNFEWLIPTSELO/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.3v]",
+      "In d(er) harnasch kam(er).",
+      "It(em) bei d(er) kuch(e)n XIII lancz(e)n scheft.",
+      "XIIII armbrust.",
+      "VI hak(e)n puchs(en).",
+      "X ha(n)dpuchs(en).",
+      "XIIII alt ha(n)dpuchs(en).",
+      "I alt(er) zugkat(er) spieß bei den tir.",
+      "It(em) hernach harnasch als in d(em) alt(e)n",
+      "inventari",
+      "im turm wesen.",
+      "In meins g(nädigen) h(errn) gmach(e)n.",
+      "In der silb(er) stub(e)n I bȏs tisch.",
+      "In d(er) cam(er) dran I petstat.",
+      "In d(er) and(er)n cam(er) dann I petstat.",
+      "In d(er) ob(er)n stub(e) m(eins) g(nädigen) h(errn).",
+      "II tisch.",
+      "I kredencz tisch.",
+      "I gmalts tuch mit etl(e)n landschaft(e)n.",
+      "In d(er) cam(er) dran.",
+      "I verdeckts spanpet mit e(in) kariol.",
+      "Ain sidltruh(e)n daran.",
+      "I strosack.",
+      "I pet.",
+      "I polst(er).",
+      "I kis."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 7,
+   "iiif": "https://files.transkribus.eu/iiif/2/WYUFEPIVIESLALKPWFWGWQER/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.4r]",
+      "I weis(er) golt(er).",
+      "I seidner golt(er).",
+      "II p(er) leilach.",
+      "II tischtuch.",
+      "II umbsleg.",
+      "III handtuch(er).",
+      "I schweinspies.",
+      "I gl weczstein.",
+      "In d(er) nahst(en) cam(er) daran.",
+      "I spanpet.",
+      "In d(er) cam(er) geg(en) d(en) hof.",
+      "I spanpet.",
+      "In d(er) capell wie for.",
+      "Im stad(e)l.",
+      "II kue.",
+      "It(em) II wagenros mit ir(em) gschirr.",
+      "und sonst wie for.",
+      "Rechen etlich z(er)proch(e)n.",
+      "It(em) IIII tischtiech(er) fir das gsind",
+      "III handtuech(er)."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 8,
+   "iiif": "https://files.transkribus.eu/iiif/2/MABCJTGVWEFILXFRPRQOSEMS/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.4v]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 9,
+   "iiif": "https://files.transkribus.eu/iiif/2/ZVKHCMTLMRCBKBHZAWHDLDTH/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.5r]",
+      "Essends das im speisgad(en).",
+      "I pŭntzles smalcz.",
+      "II halb tes(e)n zig(er).",
+      "XX ster mel.",
+      "In dem and(er)n speiscast(en).",
+      "III sweins gancz pach(en).",
+      "It(em) etlich XXV zentring rindfleisch.",
+      "It(em) etlich pf(un)d unslit.",
+      "It(em) VIII kăss.",
+      "It(em) etlich pitschol(en), arbais und",
+      "gemŭess.",
+      "It(em) II [- - -]",
+      "It(em) ain naig wein im kell(er).",
+      "It(em) XIX III hen(er).",
+      "VIIII cappeun.",
+      "IX kuo hut in g(nädigen) h(errn) d(eren) gens(er)",
+      "geschriben was sih h(er) Sig(mund) perschibet [..] [..]",
+      "ern datus.",
+      "Auf dem cast(e)n.",
+      "XXXVI stăr rock(e)n.",
+      "ICXIX st(er) fuet(er).",
+      "ICIII st(er) gerst(en)."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 10,
+   "iiif": "https://files.transkribus.eu/iiif/2/ZEWEHLKKUKPLMEXLZQSVCABA/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.5v]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 11,
+   "iiif": "https://files.transkribus.eu/iiif/2/CGSRVZBZLNSQPJPQKROLWHPA/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.6r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 12,
+   "iiif": "https://files.transkribus.eu/iiif/2/GZOGJAPLNPAEGRSJBZSIIVUB/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.6v]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 13,
+   "iiif": "https://files.transkribus.eu/iiif/2/OBATPAGEGLUPMSOPGNRKLIFA/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.7r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 14,
+   "iiif": "https://files.transkribus.eu/iiif/2/NWQLKOHWUQGCDJPXEFELFDET/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.7v]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 15,
+   "iiif": "https://files.transkribus.eu/iiif/2/CUFOBOPSHTERGLGPEDWOSUZF/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.8r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 16,
+   "iiif": "https://files.transkribus.eu/iiif/2/ZYECHZCHQWOARSMJROTVDTIS/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.8v]"
+     ]
+    }
+   ]
+  }
+ ]
+}

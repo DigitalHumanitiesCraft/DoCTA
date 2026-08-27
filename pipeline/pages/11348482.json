@@ -1,0 +1,140 @@
+{
+ "docId": 11348482,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/CQXUVLEJWLXRPPETCOVYNFRR/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "Vermerckt was herr Hainraich von",
+      "Mersperck dem Ulreich Eÿsenreich an",
+      "stat herr Wignloýs Gradner von plat",
+      "harnasch, ringharnasch poß und gutz,",
+      "puxenpulver, salitter, swebel, pfeil geschifft",
+      "und ungeschifft und targen auff das",
+      "geschloß Perzin geantwurt hat. Actum",
+      "an an sannd Urbans tag anno Domini",
+      "millesimo quadringentesimo etc. XLVIII.",
+      "Item von ersten VIII ganz platen und",
+      "ain halbe platten.",
+      "Item IIII eÿsenhŭt.",
+      "Item VII helmelin.",
+      "Item XII eÿsnenpanzir.",
+      "Item zwaÿ gollir.",
+      "Item huntzchappen IX.",
+      "Item prustplech V.",
+      "Item spangerŏl und mawseÿsen X.",
+      "Item armzeug XXVII minus ain armror.",
+      "Item hantschŭch III par.",
+      "Item paingewant V par minus I rŏr.",
+      "Item targen XVI.",
+      "Item puxenpulver IIIICXXXII lb.",
+      "chlaingewicht.",
+      "Item salitter XV lb.",
+      "Item swebel VC.",
+      "Item pfeil geschifft und ungeschifft VIM.",
+      "Item stain puxen VII.",
+      "Item tarespuxen III.",
+      "Item hagkenpuxen III.",
+      "Item hantpuxen zerbrochen und",
+      "ganzer beÿ XXXII.",
+      "Item gossenstainpuxen II und",
+      "ain chlaine gossen stainpuxen.",
+      "Item ain grosse eÿsnen stain púxen."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/CMMOPTYXZQQSSLRGXRAGTEFA/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 3,
+   "iiif": "https://files.transkribus.eu/iiif/2/BLLNAKTWPWSMAUUMAOHYPXBU/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 4,
+   "iiif": "https://files.transkribus.eu/iiif/2/IPSRQWRGDYCOESEGHMNBVBYU/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2v]"
+     ]
+    }
+   ]
+  }
+ ]
+}

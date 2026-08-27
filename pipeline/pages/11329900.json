@@ -1,0 +1,83 @@
+{
+ "docId": 11329900,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/THBOXGXQUAFUAFGPGZVGSLCI/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "Vermerckt den zeúg zw̆",
+      "Sigmȗdsegk so ich Chŭnradt",
+      "Metz geantwúrtt hab junnckherren",
+      "Dÿettrichen von Cappell in gegen¬",
+      "würtickhait des Oswalden",
+      "Sawrweins richter und ampt¬",
+      "mann zŭ Pfu̇ns.",
+      "Item zŭ dem ersten vier messein hagckhen¬",
+      "pŭchsenn.",
+      "Item sechs hantpüchsenn.",
+      "Item ain fässlein mit guettem püchsenn pülver",
+      "hat y̑n peÿ LX oder LXX phündenn.",
+      "Item sëchs armprŭsst.",
+      "Item dreÿ wÿn̑den.",
+      "Item vierhundert pfeill und ain lägell",
+      "mit pfeẏllen.",
+      "Item ain schaffraÿt und ain schreynn",
+      "und ain pettstat und zwo phannen,",
+      "zwo rodtschusslen ist meins gnädign",
+      "herrn nit an geschlagen und kost",
+      "XX lb.",
+      "Item ain langes schwert.",
+      "Item ain groß hornn.",
+      "Item ain platten pleÿ.",
+      "Item XIIII eÿsen plech.",
+      "Item langs zügsaill.",
+      "Item ain spey̑s truchen.",
+      "Item ain kästlein in der stüben."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/OWKGTKUHWRGRQDQMNXALISDG/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]"
+     ]
+    }
+   ]
+  }
+ ]
+}

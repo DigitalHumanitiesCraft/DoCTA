@@ -1,0 +1,75 @@
+{
+ "docId": 11330219,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/TVYEEIBQPKOCJOILCTQAAWXS/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "Vermergkt was ich Katerina weylannd Gabein Kŭnigls sălge gelassne wittib",
+      "auf der pfleg und schloss Schonegk lase als ich abgeczogen pin ausserhalb",
+      "der alten inventăry dy̆ zu dem schloss Schŏnegk gehŏrt anno 1492",
+      "jar am montag nach Sannd Katrein tag etc.",
+      "It(em) am erst(e)n im keller I haber ster, ain resch ster und ain halb resch ster.",
+      "It(em) ain grosse truhen gehŏrt zu salcz und zu kăß.",
+      "It(em) ain ler truhen mit dreyen klŏster(e)n, ain ŏl stain.",
+      "It(em) ain grosse luter(e)n da man fley̆sch in henngt.",
+      "It(em) ain gross hackpret daman kraut auf hagkt.",
+      "It(em) in der pfister stub(e)n ain wurgk taf(e)l und dy̆ preter dar zue.",
+      "It(em) ain peÿtl kast(e)n, ain knet zuber, ain mel ster, mer ain zuber gehort zu mel.",
+      "It(em) ain potichen zu kleyen und ain trŭh(e)l.",
+      "It(em) in der kuchen ain truhen und ain tisch, in der spey̆s kamer I truhen.",
+      "It(em) im zimmer ain mel truhen und sŭnst ain klayne truh(e)n.",
+      "It(em) in der kamer auch im zimmer ain versperte truh(e)n.",
+      "It(em) in der stubn III tisch und dy̆pengk dar zue und ain schrey̆b taf(e)l.",
+      "It(em) in den zway̆en stell(e)n in iegklichem ain fuetertruhen.",
+      "It(em) V alt spies pey̆ dem tor, mer ain hals eis(e)n mit der ket(e)n, mer ain armbrust.",
+      "It(em) ain eysn puchsen ist nit eingefast, mer XII spanpet pŏs und guet.",
+      "It(em) dÿ ket(e)n zu dem prun und der zigk(e)l dar zue."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/YVEZRWFLAQSVXANFUBIQGSIS/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]"
+     ]
+    }
+   ]
+  }
+ ]
+}

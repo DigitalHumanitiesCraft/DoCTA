@@ -1,0 +1,139 @@
+{
+ "docId": 11329460,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/MZELGBGKJPRZPUKZXTLKXXEO/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1r]",
+      "Nota haw̆srat was dem",
+      "Frechen im hauß beleibt und daz",
+      "wid(er) darumb widerumb der Frech antwurt(e)n sol",
+      "und dalassen soll. Beschechen am phincz",
+      "d(er) Zwelff Potenschidung anno D(o)m(ini) etc. LXIIo.",
+      "It(em) XXVII petstett(e)n und span pet hulczein.",
+      "It(em) X tisch.",
+      "It(em) und XII fũr penkh.",
+      "It(em) II eysein schaufflen.",
+      "It(em) I eysn schlegl.",
+      "It(em) III eysn stek(e)n.",
+      "It(em) II pikel.",
+      "It(em) I grossen ingemawrt(e)n kessel.",
+      "It(em) I eysnein ofen plech.",
+      "It(em) I morser und ain eisnein stõssl.",
+      "It(em) IIII bar schnee raiff.",
+      "It(em) II visch gern.",
+      "It(em) II jag scháfft.",
+      "It(em) I har hăchl.",
+      "It(em) I vass mit hepf wein pei XII ũrn",
+      "ungevarlich.",
+      "It(em) I vássl mit essich im zergad(e)n und",
+      "vássl in der undern stub(e)n ist ungevarlich",
+      "bey I1/2 ũrn.",
+      "It(em) I beschlagens ster maß.",
+      "It(em) etlich prent(e)n kraút.",
+      "It(em) III schef auf dem see zu Sigmu(n)dsp(ur)g",
+      "purg.",
+      "It(em) I kupfrins gelŏcherts kraut pekh.",
+      "It(em) habern zu verfuedern LVI streÿmas."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 2,
+   "iiif": "https://files.transkribus.eu/iiif/2/SKTEEOIKYZHEHLYXNNTHAGVW/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.1v]",
+      "It(em) kappaw̃n XXXIIII.",
+      "It(em) hanen I.",
+      "I(tem) henen XXV.",
+      "It(em) hun(er) junge XVII."
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 3,
+   "iiif": "https://files.transkribus.eu/iiif/2/NUQXKMFOLEFIDSZVLZRVGUBG/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2r]"
+     ]
+    }
+   ]
+  },
+  {
+   "pageNr": 4,
+   "iiif": "https://files.transkribus.eu/iiif/2/ZFFAQIZAZCXAKHDIDBXAMGDQ/full/max/0/default.jpg",
+   "content_class": "text",
+   "empty_evidence": null,
+   "verification": {
+    "status": "unbearbeitet"
+   },
+   "runs": [
+    {
+     "id": "transkribus",
+     "source": "transkribus",
+     "model": null,
+     "prompt": null,
+     "prompt_hash": null,
+     "repeat": null,
+     "date": null,
+     "empty": null,
+     "empty_parts": null,
+     "lines": [
+      "[fol.2v]"
+     ]
+    }
+   ]
+  }
+ ]
+}
