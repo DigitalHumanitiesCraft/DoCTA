@@ -84,8 +84,13 @@
                     title="Facsimile beside the transcription, page by page">Synopsis</button>
             <button type="button" class="view-toggle__btn" id="btn-view-reading" aria-pressed="false"
                     title="Continuous text of the whole document">Reading</button>
+            <button type="button" class="view-toggle__btn" id="btn-view-tei" aria-pressed="false"
+                    title="TEI P5 encoding of the whole document">TEI</button>
           </div>
           <span class="badge text-bg-warning" id="draft-badge" hidden>Unrevised draft</span>
+          <a class="tei-download" id="tei-download" href="data/tei/" download hidden>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.75 7.25 8 10.5l3.25-3.25M2.5 13h11"/></svg>
+            Download XML</a>
           <select class="form-select form-select-sm doc-selector" id="doc-selector" aria-label="Select document">
             <option value="">Choose a document...</option>
           </select>
@@ -135,19 +140,40 @@
       'Repertorium': 'Repertory',
     };
 
+    const metaIcon = (paths) =>
+      `<svg class="doc-meta__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"` +
+      ` stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+
+    const META_ICONS = {
+      shelfmark: metaIcon('<path d="M4 2.5h8v11l-4-3-4 3z"/>'),
+      title: metaIcon('<path d="M4 2h5l3 3v9H4z"/><path d="M9 2v3h3"/>'),
+      date: metaIcon('<path d="M2.5 4h11v9.5h-11z"/><path d="M2.5 6.75h11M5.5 2.5V4M10.5 2.5V4"/>'),
+      pages: metaIcon('<path d="M5.5 2.5h8v9h-8z"/><path d="M3.5 5v8.5H11"/>'),
+      category: metaIcon('<path d="M2 3.5h4l1.5 2H14v8H2z"/>'),
+      institution: metaIcon('<path d="M2 6.5 8 3l6 3.5"/><path d="M3.5 7v5.5M6.5 7v5.5M9.5 7v5.5M12.5 7v5.5M2 13.5h12"/>'),
+    };
+
+    // field: what the tooltip names, tip: appended to it where the value is truncated
+    function metaItem(field, label, value, valueClass = '', tip = '') {
+      return `<span class="doc-meta__item" title="${escapeAttr(label + tip)}"` +
+             ` aria-label="${escapeAttr(`${label}: ${value}`)}">${META_ICONS[field]}` +
+             `<span${valueClass ? ` class="${valueClass}"` : ''}>${escapeHTML(value)}</span></span>`;
+    }
+
     function renderDocMeta(docId) {
       const el = document.getElementById('doc-meta');
       const s = sourceByDocId.get(Number(docId));
       if (!s) { el.hidden = true; return; }
       const parts = [
-        `<span class="doc-meta__shelfmark">${escapeHTML(s.signatur)}</span>`,
-        `<span class="doc-meta__title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`,
-        s.datierung?.raw ? escapeHTML(s.datierung.raw) : null,
-        s.seiten != null ? `${s.seiten} pages` : null,
-        escapeHTML(CATEGORY_EN[s.kategorie] || s.kategorie),
-        'Tyrolean State Archives',
+        metaItem('shelfmark', 'Shelfmark', s.signatur, 'doc-meta__shelfmark'),
+        // The archival title is truncated in the strip, so the tooltip carries it in full
+        metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
+        s.datierung?.raw ? metaItem('date', 'Date of origin', s.datierung.raw) : null,
+        s.seiten != null ? metaItem('pages', 'Page count', `${s.seiten} pages`) : null,
+        metaItem('category', 'Source category', CATEGORY_EN[s.kategorie] || s.kategorie),
+        metaItem('institution', 'Holding institution', 'Tyrolean State Archives'),
       ].filter(Boolean);
-      el.innerHTML = parts.join('<span class="doc-meta__sep" aria-hidden="true">·</span>');
+      el.innerHTML = parts.join('');
       el.hidden = false;
     }
 
@@ -295,6 +321,50 @@
       container.scrollTop = 0;
     }
 
+    // TEI mode: the encoded document as source text. Escape first, then colour
+    // only inside the escaped tag spans, so no source content can become markup.
+    function highlightTEI(xml) {
+      return escapeHTML(xml).replace(/&lt;[\s\S]*?&gt;/g, (tag) => {
+        if (tag.startsWith('&lt;?') || tag.startsWith('&lt;!')) {
+          return `<span class="tei-decl">${tag}</span>`;
+        }
+        return tag
+          .replace(/([\w:.-]+)=("[^"]*")/g,
+                   '<span class="tei-attr">$1</span>=<span class="tei-val">$2</span>')
+          .replace(/^(&lt;\/?)([\w:.-]+)/, '$1<span class="tei-tag">$2</span>');
+      });
+    }
+
+    const teiCache = new Map();
+    let teiRequest = 0;
+
+    async function renderTEI(docId) {
+      const container = document.getElementById('transcription-container');
+      const token = ++teiRequest;
+      const cached = teiCache.get(String(docId));
+      if (cached === undefined) {
+        container.innerHTML = '<div class="loading"><div class="loading__spinner"></div>Loading TEI</div>';
+      }
+      let xml = cached;
+      if (xml === undefined) {
+        try {
+          const res = await fetch(`data/tei/${docId}.xml`);
+          if (!res.ok) throw new Error(String(res.status));
+          xml = await res.text();
+          teiCache.set(String(docId), xml);
+        } catch {
+          xml = null;
+          teiCache.set(String(docId), null);
+        }
+      }
+      // A later document or view switch wins over a slow response
+      if (token !== teiRequest || viewMode !== 'tei') return;
+      container.innerHTML = xml === null
+        ? '<div class="loading text-body-secondary">No TEI for this document.</div>'
+        : `<pre class="tei-source">${highlightTEI(xml)}</pre>`;
+      container.scrollTop = 0;
+    }
+
     function clampPage(n) {
       return Math.max(0, Math.min(currentDoc.pages.length - 1, n));
     }
@@ -312,7 +382,7 @@
       setParams({
         doc: String(currentDoc.docId),
         page: String(currentPage + 1),
-        view: viewMode === 'reading' ? 'reading' : '',
+        view: viewMode === 'synopsis' ? '' : viewMode,
       });
     }
 
@@ -321,35 +391,48 @@
       currentPage = clampPage(pageNr);
       updatePager();
       syncParams();
-      if (viewMode === 'reading') return;
+      if (viewMode !== 'synopsis') return;
 
       const page = currentDoc.pages[currentPage];
       loadImage(page.iiif);
       renderTranscription(currentDoc, page.pageNr);
     }
 
+    // Renders whatever the current mode shows, from the page the mode still holds
+    function renderCurrentView() {
+      if (!currentDoc) return;
+      if (viewMode === 'synopsis') { setPage(currentPage); return; }
+      updatePager();
+      syncParams();
+      if (viewMode === 'reading') renderReading(currentDoc);
+      else renderTEI(currentDoc.docId);
+    }
+
+    const VIEWS = ['synopsis', 'reading', 'tei'];
+
     // pageNr: optional 0-based page to land on when returning to the synopsis
     function setView(mode, pageNr) {
-      viewMode = mode === 'reading' ? 'reading' : 'synopsis';
-      const isReading = viewMode === 'reading';
+      viewMode = VIEWS.includes(mode) ? mode : 'synopsis';
+      const isSynopsis = viewMode === 'synopsis';
       document.body.dataset.view = viewMode;
-      document.getElementById('facsimile-panel').setAttribute('aria-hidden', String(isReading));
-      document.getElementById('btn-view-synopsis').setAttribute('aria-pressed', String(!isReading));
-      document.getElementById('btn-view-reading').setAttribute('aria-pressed', String(isReading));
-      document.getElementById('draft-badge').hidden = !isReading;
+      document.getElementById('facsimile-panel').setAttribute('aria-hidden', String(!isSynopsis));
+      for (const v of VIEWS) {
+        document.getElementById(`btn-view-${v}`).setAttribute('aria-pressed', String(v === viewMode));
+      }
+      document.getElementById('draft-badge').hidden = isSynopsis;
+      const dl = document.getElementById('tei-download');
+      dl.hidden = viewMode !== 'tei';
+      if (currentDoc) {
+        dl.href = `data/tei/${currentDoc.docId}.xml`;
+        dl.setAttribute('download', `${currentDoc.docId}.xml`);
+      }
 
       if (!currentDoc) {
-        setParams({ view: isReading ? 'reading' : '' });
+        setParams({ view: isSynopsis ? '' : viewMode });
         return;
       }
       if (pageNr !== undefined) currentPage = clampPage(pageNr);
-      if (isReading) {
-        renderReading(currentDoc);
-        updatePager();
-        syncParams();
-      } else {
-        setPage(currentPage);
-      }
+      renderCurrentView();
     }
 
     // pageNr: 1-based start page. Omit to take it from the URL (deep link into a page).
@@ -364,15 +447,12 @@
           startPage = Number.isFinite(parsed) ? parsed - 1 : 0;
         }
         renderDocMeta(docId);
-        if (viewMode === 'reading') {
-          // A document switch keeps the current view
-          currentPage = clampPage(startPage);
-          renderReading(currentDoc);
-          updatePager();
-          syncParams();
-        } else {
-          setPage(startPage);
-        }
+        const dl = document.getElementById('tei-download');
+        dl.href = `data/tei/${docId}.xml`;
+        dl.setAttribute('download', `${docId}.xml`);
+        // A document switch keeps the current view
+        currentPage = clampPage(startPage);
+        renderCurrentView();
       } catch (err) {
         const errEl = document.createElement('div');
         errEl.className = 'loading text-body-secondary';
@@ -391,6 +471,7 @@
     btnFullscreen.addEventListener('click', toggleFullscreen);
     document.getElementById('btn-view-synopsis').addEventListener('click', () => setView('synopsis'));
     document.getElementById('btn-view-reading').addEventListener('click', () => setView('reading'));
+    document.getElementById('btn-view-tei').addEventListener('click', () => setView('tei'));
 
     // The page mark in the reading text is the way back to the facsimile
     document.getElementById('transcription-container').addEventListener('click', (e) => {
@@ -416,8 +497,8 @@
       const t = e.target;
       if (t instanceof HTMLElement &&
           (t.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName))) return;
-      // Reading mode has no facsimile and no page unit; the arrows scroll the text
-      if (viewMode === 'reading') return;
+      // Reading and TEI have no facsimile and no page unit; the arrows scroll the text
+      if (viewMode !== 'synopsis') return;
       switch (e.key) {
         case 'ArrowLeft': setPage(currentPage - 1); break;
         case 'ArrowRight': setPage(currentPage + 1); break;
@@ -466,7 +547,7 @@
         }
 
         const params = getParams();
-        setView(params.view === 'reading' ? 'reading' : 'synopsis');
+        setView(params.view);
         if (params.doc) {
           selector.value = params.doc;
           loadDocument(params.doc);

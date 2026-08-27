@@ -46,6 +46,11 @@
 
   --osd-backdrop: #1a1a1a;
 
+  /* XML syntax colours, all AA on the page background */
+  --tei-tag: #6a1b9a;
+  --tei-attr: #1565c0;
+  --tei-val: #2e7d32;
+
   --font-source: 'Courier New', 'Consolas', monospace;
   --nav-height: 56px;
   --viewer-bar-height: 2.5rem;
@@ -445,19 +450,34 @@ th.sorted .sort-icon { opacity: 1; }
   overflow-y: auto;
 }
 
-/* Document metadata strip under the transcription header */
+/* Document metadata strip under the transcription header. The icons group the
+   parts, so no separator characters are set between them. */
 .doc-meta {
   flex: 0 0 auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-xs) var(--space-sm);
+  align-items: center;
+  gap: var(--space-xs) var(--space-lg);
   padding: var(--space-xs) var(--space-md);
   border-bottom: 1px solid var(--border-light);
   background: var(--surface);
   font-size: var(--text-2xs);
   color: var(--text-muted-custom);
   line-height: 1.5;
+}
+
+.doc-meta__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  min-width: 0;
+}
+
+.doc-meta__icon {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  color: var(--text-muted-custom);
 }
 
 .doc-meta__shelfmark {
@@ -471,11 +491,6 @@ th.sorted .sort-icon { opacity: 1; }
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--text-primary);
-}
-
-.doc-meta__sep {
-  color: var(--border-custom);
-  user-select: none;
 }
 
 /* === Knowledge Vault === */
@@ -631,11 +646,13 @@ th.sorted .sort-icon { opacity: 1; }
 .stage--done { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
 .stage--todo { color: var(--text-muted-custom); background: transparent; }
 
-/* === Reading mode in the viewer === */
-/* The facsimile pane folds away and the transcription becomes one continuous
-   text of the whole document. */
-.viewer-page[data-view="reading"] #facsimile-panel { display: none; }
-.viewer-page[data-view="reading"] .viewer-layout {
+/* === Reading and TEI mode in the viewer === */
+/* Both fold the facsimile pane away and give the text the full panel width. */
+.viewer-page[data-view="reading"] #facsimile-panel,
+.viewer-page[data-view="tei"] #facsimile-panel { display: none; }
+
+.viewer-page[data-view="reading"] .viewer-layout,
+.viewer-page[data-view="tei"] .viewer-layout {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
@@ -666,10 +683,42 @@ th.sorted .sort-icon { opacity: 1; }
 }
 
 .view-toggle__btn:focus-visible,
-.reading-page__mark:focus-visible {
+.reading-page__mark:focus-visible,
+.tei-download:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
+
+.tei-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-muted-custom);
+  font-size: var(--text-2xs);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tei-download:hover { color: var(--accent); }
+.tei-download svg { width: 13px; height: 13px; }
+
+/* Raw TEI of the whole document, escaped and lightly coloured */
+.tei-source {
+  margin: 0;
+  padding: var(--space-lg) var(--space-md) 4rem;
+  font-family: var(--font-source);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  tab-size: 2;
+}
+
+.tei-tag { color: var(--tei-tag); }
+.tei-attr { color: var(--tei-attr); }
+.tei-val { color: var(--tei-val); }
+.tei-decl { color: var(--text-muted-custom); }
 
 .reading-text {
   max-width: 65ch;
