@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="exp-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-3">
@@ -23,29 +23,26 @@
     </div>
   </nav>
 
-  <main id="main" class="container py-4">
-    <header class="mb-4">
-      <h1>Exploration</h1>
-    </header>
+  <main id="main">
+    <h1 class="visually-hidden">Exploration workbench</h1>
+    <div class="exp-layout" id="exp-layout">
+      <aside class="exp-sidebar" id="exp-sidebar">
+        <div class="exp-views" role="tablist" aria-orientation="vertical" aria-label="Views" id="exp-views"></div>
 
-    <section class="card mb-4">
-      <div class="card-body">
-        <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-2">
-          <h2 class="h5 mb-0">Thaur A 49.1 (1471)</h2>
-          <a class="small" href="viewer.html?doc=11328300">Open the source in the viewer</a>
+        <div class="exp-block exp-scope">
+          <span class="exp-scope__title">Thaur A 49.1 (1471)</span>
+          <a href="viewer.html?doc=11328300">Open the source in the viewer</a>
         </div>
-        <div id="cy-wrap">
-          <div id="cy" role="img" aria-label="Relation network of the Thaur inventory: persons and places connected by attested relations"></div>
-        </div>
-        <p class="small mb-1" id="net-legend">
-          <span class="legend-dot legend-person" aria-hidden="true"></span> person &nbsp;
-          <span class="legend-dot legend-place" aria-hidden="true"></span> place &nbsp;
-          <span class="text-body-secondary">Node size follows the number of attested relations; edge labels name the relation type from the source.</span>
-        </p>
-        <p class="small text-body-secondary mb-0" id="net-detail" aria-live="polite">Select a node to see its role in the source.</p>
-      </div>
-    </section>
 
+        <div class="exp-block exp-context" id="exp-context"></div>
+      </aside>
+
+      <section class="exp-main" id="exp-main-area">
+        <button type="button" class="vt-btn exp-sidebar-toggle d-lg-none" id="btn-sidebar" aria-controls="exp-sidebar" aria-expanded="false" aria-label="Toggle the view sidebar" title="Toggle the view sidebar">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4h11M2.5 8h11M2.5 12h11"/></svg>
+        </button>
+      </section>
+    </div>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
@@ -56,12 +53,112 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
-    import { escapeHTML } from './js/utils.js';
+    import { getParams, setParams, escapeHTML } from './js/utils.js';
 
     initNav('exploration');
     initBanner();
 
-    async function init() {
+    const NODE_HINT = 'Select a node to see its role in the source.';
+    const TYPE_LABEL = { person: 'person', place: 'place', object: 'object', time: 'time' };
+
+    function typeLegend(types) {
+      return types.map(t => `<span class="entity entity--${t}">${TYPE_LABEL[t]}</span>`).join(' ');
+    }
+
+    /* One registration per view: an entry here plus its render function. */
+    const VIEWS = [
+      {
+        id: 'network',
+        label: 'Network',
+        context: () => `<p class="mb-2" id="net-detail" aria-live="polite">${NODE_HINT}</p>` +
+          '<p class="mb-0"><span class="legend-dot legend-person" aria-hidden="true"></span> person &nbsp;' +
+          '<span class="legend-dot legend-place" aria-hidden="true"></span> place<br>' +
+          'Node size follows the number of attested relations; edge labels name the relation type from the source.</p>',
+        render: renderNetwork,
+      },
+      {
+        id: 'entities',
+        label: 'Entities',
+        context: () => `<p class="mb-0">${typeLegend(['person', 'place', 'object', 'time'])}<br>` +
+          '<span class="conf--high">high</span> · <span class="conf--medium">medium</span> · <span class="conf--low">low</span> confidence</p>',
+        render: renderEntities,
+      },
+    ];
+
+    const layout = document.getElementById('exp-layout');
+    const tablist = document.getElementById('exp-views');
+    const mainArea = document.getElementById('exp-main-area');
+    const context = document.getElementById('exp-context');
+
+    for (const view of VIEWS) {
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'exp-view-btn';
+      tab.id = `tab-${view.id}`;
+      tab.setAttribute('role', 'tab');
+      tab.textContent = view.label;
+      tab.setAttribute('aria-controls', `panel-${view.id}`);
+      tab.setAttribute('aria-selected', 'false');
+      tab.tabIndex = -1;
+      tab.addEventListener('click', () => activate(view.id));
+      tablist.appendChild(tab);
+
+      const panel = document.createElement('div');
+      panel.className = 'exp-panel';
+      panel.id = `panel-${view.id}`;
+      panel.setAttribute('role', 'tabpanel');
+      panel.tabIndex = 0;
+      panel.setAttribute('aria-labelledby', tab.id);
+      mainArea.appendChild(panel);
+
+      view.tab = tab;
+      view.panel = panel;
+      view.ready = false;
+    }
+
+    tablist.addEventListener('keydown', evt => {
+      const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+      const i = VIEWS.findIndex(v => v.tab === document.activeElement);
+      if (i < 0) return;
+      let next = null;
+      if (evt.key in keys) next = (i + keys[evt.key] + VIEWS.length) % VIEWS.length;
+      else if (evt.key === 'Home') next = 0;
+      else if (evt.key === 'End') next = VIEWS.length - 1;
+      if (next === null) return;
+      evt.preventDefault();
+      activate(VIEWS[next].id);
+      VIEWS[next].tab.focus();
+    });
+
+    function activate(id) {
+      const view = VIEWS.find(v => v.id === id) || VIEWS[0];
+      for (const v of VIEWS) {
+        const on = v === view;
+        v.tab.setAttribute('aria-selected', String(on));
+        v.tab.tabIndex = on ? 0 : -1;
+        v.panel.classList.toggle('is-active', on);
+      }
+      context.innerHTML = view.context();
+      setParams({ view: view.id });
+      layout.classList.remove('exp-layout--sidebar-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      if (!view.ready) {
+        view.ready = true;
+        view.render(view.panel).catch(err => {
+          view.panel.innerHTML = `<p class="p-3 mb-0">${escapeHTML(view.label)} could not be loaded: ${escapeHTML(err.message)}</p>`;
+        });
+      } else if (view.onShow) {
+        view.onShow();
+      }
+    }
+
+    const toggleBtn = document.getElementById('btn-sidebar');
+    toggleBtn.addEventListener('click', () => {
+      const open = layout.classList.toggle('exp-layout--sidebar-open');
+      toggleBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    async function renderNetwork(panel) {
       const data = await loadJSON('data/demo/thaur_network.json');
       const degree = {};
       for (const e of data.edges) {
@@ -73,9 +170,24 @@
         ...data.edges.map(e => ({ data: e })),
       ];
 
+      const cyEl = document.createElement('div');
+      cyEl.id = 'cy';
+      cyEl.setAttribute('role', 'img');
+      cyEl.setAttribute('aria-label', 'Relation network of the Thaur inventory: persons and places connected by attested relations');
+      panel.appendChild(cyEl);
+
+      const tools = document.createElement('div');
+      tools.className = 'exp-tools';
+      tools.innerHTML = '<button type="button" class="vt-btn" id="btn-net-fit" aria-label="Fit the network to the view" title="Fit to view">' +
+        '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.75V2h3.75M10.25 2H14v3.75M14 10.25V14h-3.75M5.75 14H2v-3.75"/></svg></button>';
+      panel.appendChild(tools);
+
+      const css = getComputedStyle(document.documentElement);
+      const token = name => css.getPropertyValue(name).trim();
+
       const { default: cytoscape } = await import('./lib/cytoscape.esm.min.mjs');
       const cy = cytoscape({
-        container: document.getElementById('cy'),
+        container: cyEl,
         elements,
         layout: { name: 'cose', animate: false, padding: 30 },
         style: [
@@ -84,34 +196,108 @@
               'font-size': '10px', 'text-margin-y': 5, 'text-max-width': '110px', 'text-wrap': 'ellipsis',
               'width': 'mapData(degree, 1, 8, 14, 34)', 'height': 'mapData(degree, 1, 8, 14, 34)',
           } },
-          { selector: 'node[type="person"]', style: { 'background-color': '#1565c0' } },
-          { selector: 'node[type="place"]', style: { 'background-color': '#2e7d32', 'shape': 'diamond' } },
+          { selector: 'node[type="person"]', style: { 'background-color': token('--ent-person') } },
+          { selector: 'node[type="place"]', style: { 'background-color': token('--ent-place'), 'shape': 'diamond' } },
           { selector: 'edge', style: {
-              'width': 1.5, 'line-color': '#b8afa1', 'curve-style': 'bezier',
-              'target-arrow-shape': 'triangle', 'target-arrow-color': '#b8afa1', 'arrow-scale': 0.8,
-              'label': 'data(label)', 'font-size': '7px', 'color': '#6d6252',
-              'text-rotation': 'autorotate', 'text-background-color': '#faf8f5',
+              'width': 1.5, 'line-color': token('--border-custom'), 'curve-style': 'bezier',
+              'target-arrow-shape': 'triangle', 'target-arrow-color': token('--border-custom'), 'arrow-scale': 0.8,
+              'label': 'data(label)', 'font-size': '7px', 'color': token('--text-muted-custom'),
+              'text-rotation': 'autorotate', 'text-background-color': token('--bg-primary'),
               'text-background-opacity': 0.85, 'text-background-padding': '1px',
           } },
-          { selector: 'node:selected', style: { 'border-width': 3, 'border-color': '#8b5e3c' } },
+          { selector: 'node:selected', style: { 'border-width': 3, 'border-color': token('--accent') } },
         ],
       });
 
-      const detail = document.getElementById('net-detail');
       cy.on('tap', 'node', evt => {
         const d = evt.target.data();
+        const detail = document.getElementById('net-detail');
+        if (!detail) return;
         detail.innerHTML = `<strong>${escapeHTML(d.label)}</strong> (${escapeHTML(d.type)})` +
           (d.role ? ` · ${escapeHTML(d.role)}` : '') +
           ` · ${degree[d.id] || 0} attested relations in Thaur A 49.1`;
       });
       cy.on('tap', evt => {
-        if (evt.target === cy) detail.textContent = 'Select a node to see its role in the source.';
+        if (evt.target !== cy) return;
+        const detail = document.getElementById('net-detail');
+        if (detail) detail.textContent = NODE_HINT;
       });
+
+      const fit = () => { cy.resize(); cy.fit(undefined, 30); };
+      document.getElementById('btn-net-fit').addEventListener('click', fit);
+      VIEWS.find(v => v.id === 'network').onShow = fit;
     }
 
-    init().catch(err => {
-      document.getElementById('net-detail').textContent = `Network could not be loaded: ${err.message}`;
-    });
+    async function renderEntities(panel) {
+      const data = await loadJSON('data/demo/thaur_entities.json');
+      const rows = data.entities.map(e => ({
+        text: e.text || '',
+        normalized: e.normalized || '',
+        type: e.type || '',
+        confidence: e.confidence || '',
+        count: typeof e.count === 'number' ? e.count : null,
+        page: typeof e.pageNr === 'number' ? e.pageNr : null,
+        detail: e.role || e.category || e.isoDate || '',
+      }));
+
+      const CONF_RANK = { high: 3, medium: 2, low: 1 };
+      const COLUMNS = [
+        { key: 'text', label: 'Source form', cell: r => `<span class="exp-src">${escapeHTML(r.text)}</span>` },
+        { key: 'normalized', label: 'Normalized', cell: r => escapeHTML(r.normalized) },
+        { key: 'type', label: 'Type', cell: r => r.type ? `<span class="entity entity--${escapeHTML(r.type)}">${escapeHTML(TYPE_LABEL[r.type] || r.type)}</span>` : '' },
+        { key: 'confidence', label: 'Confidence', num: true, sort: r => CONF_RANK[r.confidence] || 0,
+          cell: r => `<span class="conf--${escapeHTML(r.confidence)}">${escapeHTML(r.confidence)}</span>` },
+        { key: 'count', label: 'Occurrences', num: true, cell: r => r.count === null ? '' : String(r.count) },
+        { key: 'page', label: 'Page', num: true, cell: r => r.page === null ? '' : String(r.page) },
+        { key: 'detail', label: 'Role or category', cell: r => escapeHTML(r.detail) },
+      ];
+
+      const wrap = document.createElement('div');
+      wrap.className = 'exp-table-wrap';
+      wrap.tabIndex = 0;
+      wrap.innerHTML = '<table class="exp-table"><thead><tr>' +
+        COLUMNS.map(c => `<th scope="col" data-key="${c.key}" aria-sort="none">` +
+          `<button type="button" class="exp-sort" data-key="${c.key}">${c.label} <span class="exp-sort__mark" aria-hidden="true"></span></button></th>`).join('') +
+        '</tr></thead><tbody id="ent-rows"></tbody></table>';
+      panel.appendChild(wrap);
+
+      const body = wrap.querySelector('#ent-rows');
+      let sortKey = 'type';
+      let dir = 1;
+
+      function draw() {
+        const col = COLUMNS.find(c => c.key === sortKey);
+        const value = col.sort || (r => r[sortKey]);
+        const sorted = rows.slice().sort((a, b) => {
+          const va = value(a);
+          const vb = value(b);
+          if (va === null || va === '') return 1;
+          if (vb === null || vb === '') return -1;
+          if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * dir;
+          return String(va).localeCompare(String(vb), 'de') * dir;
+        });
+        body.innerHTML = sorted.map(r => '<tr>' +
+          COLUMNS.map(c => `<td${c.num ? ' class="num"' : ''}>${c.cell(r)}</td>`).join('') + '</tr>').join('');
+        for (const th of wrap.querySelectorAll('thead th')) {
+          const on = th.dataset.key === sortKey;
+          th.setAttribute('aria-sort', on ? (dir === 1 ? 'ascending' : 'descending') : 'none');
+          th.querySelector('.exp-sort__mark').textContent = on ? (dir === 1 ? '▲' : '▼') : '';
+        }
+      }
+
+      wrap.querySelector('thead').addEventListener('click', evt => {
+        const btn = evt.target.closest('.exp-sort');
+        if (!btn) return;
+        if (btn.dataset.key === sortKey) dir = -dir;
+        else { sortKey = btn.dataset.key; dir = 1; }
+        draw();
+      });
+
+      draw();
+    }
+
+    const requested = getParams().view;
+    activate(VIEWS.some(v => v.id === requested) ? requested : VIEWS[0].id);
   </script>
 </body>
 </html>

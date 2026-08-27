@@ -264,6 +264,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 /* The facsimile bar carries the archival identity once a document is loaded */
 #facs-title {
+  flex: 1 1 auto;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -273,16 +274,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--text-secondary);
 }
 
-.viewer-back {
-  color: var(--text-muted-custom);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.viewer-back:hover,
-.viewer-back:focus-visible { color: var(--accent); }
-
-/* Thin rule that keeps back link, tools and pager reading as one bar */
+/* Thin rule that keeps tools and pager reading as one bar */
 .viewer-bar-sep {
   width: 1px;
   align-self: stretch;
@@ -515,10 +507,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   .kv-sidebar { min-height: 0; }
 }
 
-/* Two panels side by side leave the facsimile bar too little room for a label */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  #facsimile-panel .viewer-panel__title { display: none; }
-}
 
 /* === Reduced Motion === */
 @media (prefers-reduced-motion: reduce) {
@@ -530,14 +518,197 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   }
 }
 
-/* Exploration: content-layer network (exploration.html) */
-#cy-wrap {
-  border: 1px solid var(--border-custom);
-  border-radius: 6px;
-  background: var(--bg-primary);
+/* === Exploration Workbench (exploration.html) === */
+/* Same full-viewport regime as the viewer: sidebar and view area own the
+   remaining height, only their inner regions scroll. */
+.exp-page {
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-#cy { height: 520px; }
+
+.exp-page > main {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.exp-page > .navbar,
+.exp-page > footer { flex: 0 0 auto; }
+
+.exp-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  height: 100%;
+}
+
+.exp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-md);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-custom);
+}
+
+.exp-views {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.exp-view-btn {
+  text-align: left;
+  padding: 0.375rem var(--space-md);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.exp-view-btn:hover { background: var(--accent-light); color: var(--accent); }
+
+.exp-view-btn[aria-selected="true"] {
+  background: var(--surface);
+  border-color: var(--border-custom);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.exp-block {
+  border-top: 1px solid var(--border-custom);
+  padding-top: var(--space-md);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.exp-scope__title {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.exp-context__row { margin-bottom: var(--space-xs); }
+.exp-context__label { color: var(--text-muted-custom); }
+
+.exp-main {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+}
+
+.exp-panel {
+  display: none;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.exp-panel.is-active { display: flex; flex-direction: column; }
+
+#cy {
+  flex: 1 1 auto;
+  min-height: 0;
+  background: var(--bg-primary);
+}
+
+.exp-tools {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 2;
+  display: flex;
+  gap: 2px;
+  padding: 1px;
+  background: var(--surface);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-sm);
+}
+
+.exp-sidebar-toggle {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 3;
+  background: var(--surface);
+  border-color: var(--border-custom);
+}
+
+.exp-table-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+
+.exp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+}
+
+.exp-table th,
+.exp-table td {
+  padding: 0.375rem 0.625rem;
+  border-bottom: 1px solid var(--border-light);
+  text-align: left;
+  vertical-align: top;
+}
+
+.exp-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-custom);
+  white-space: nowrap;
+}
+
+.exp-table tbody tr:hover { background: var(--accent-light); }
+
+.exp-sort {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.exp-sort:hover { color: var(--accent); }
+.exp-sort__mark { color: var(--text-muted-custom); font-size: var(--text-2xs); }
+
+.exp-src { font-family: var(--font-source); }
+
+.conf--high { color: var(--conf-high); }
+.conf--medium { color: var(--conf-medium-dark); }
+.conf--low { color: var(--conf-low); }
+
+/* Below lg the sidebar overlays the view area on demand. The block sits here
+   rather than in the Responsive section because those rules precede these and
+   a media query adds no specificity. */
+@media (max-width: 991.98px) {
+  .exp-layout { grid-template-columns: 1fr; }
+  .exp-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    width: 270px;
+    max-width: 85%;
+    padding-top: 2.75rem;
+    background: var(--surface);
+  }
+  .exp-layout--sidebar-open .exp-sidebar { display: flex; }
+  .exp-sidebar-toggle { z-index: 6; }
+}
+
 .legend-dot {
   display: inline-block;
   width: 0.7em;
