@@ -1,0 +1,3379 @@
+{
+ "tool": "check_amounts",
+ "run_glob": "*rb2*.json",
+ "runs": [
+  {
+   "run": "pilot_rb2_p002__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p002",
+   "page": "pilot_rb2_p002",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "2r",
+     "head_text": "Dannach ist man Im alles Gancz schuldigk — ijc lxxv lb viij d",
+     "head_line": 23,
+     "item_lines": [
+      15,
+      18,
+      19,
+      22
+     ],
+     "item_texts": [
+      "wegen so er zu Bellueth getan hat — iiij C l lb gld vnd iij lb viij d",
+      "Jars vnd hat damit den dienst aufgesagt — Cl lb gld",
+      "It Auch ist Im meins herrn gnad schuldig allerlay zerung — vj lb v ß",
+      "— C lxxij Rhgld"
+     ],
+     "total_texts": [
+      "Dannach ist man Im alles Gancz schuldigk — ijc lxxv lb viij d"
+     ],
+     "items_total": {
+      "?": 611,
+      "gld": 172,
+      "lb": 11
+     },
+     "sum_total": {
+      "lb": 283
+     },
+     "unparsed": [
+      "..."
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [
+    "..."
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p002__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p002",
+   "page": "pilot_rb2_p002",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "2r",
+     "head_text": "Darnach ist man jm alles Gueth schuldigt —— iij C lxxxv Rhgld",
+     "head_line": 23,
+     "item_lines": [
+      15,
+      18,
+      19,
+      22
+     ],
+     "item_texts": [
+      "wegen so er zu Velkierch getan hat —— iij C f lx gld vnd iij lb j d",
+      "jars vnd hat damit den dienst aufgesagt —— Cl Rhgld",
+      "It(em) Auch ist jm meins hern gnad schuldig allerlay Zcering —— viij m viij ß",
+      "—— f lxxxij Rhgld"
+     ],
+     "total_texts": [
+      "Darnach ist man jm alles Gueth schuldigt —— iij C lxxxv Rhgld"
+     ],
+     "items_total": {
+      "?": 364,
+      "gld": 232,
+      "ß": 16
+     },
+     "sum_total": {
+      "gld": 385
+     },
+     "unparsed": [
+      "f"
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [
+    "f"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p003__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p003",
+   "page": "pilot_rb2_p003",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "3r",
+     "head_text": "Sm̃a hs emphabens",
+     "head_line": 23,
+     "item_lines": [
+      12,
+      15,
+      18,
+      22
+     ],
+     "item_texts": [
+      "kammermeister die deß kammermeister drait hat —— x Rhgld",
+      "derselb kammermeister drauten wirt —— x Rhgld",
+      "drauten wirt —— xxj Rhgld",
+      "iiij Rhgld"
+     ],
+     "total_texts": [
+      "xj lb xxj Rhgld"
+     ],
+     "items_total": {
+      "gld": 45
+     },
+     "sum_total": {
+      "?": 32
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "no named denomination on one side"
+    }
+   ],
+   "unclosed_amount_runs": 3,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p003__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p003",
+   "page": "pilot_rb2_p003",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. 3r",
+     "head_text": "Suma seins emphabens",
+     "head_line": 19,
+     "item_lines": [
+      11,
+      13,
+      15,
+      18
+     ],
+     "item_texts": [
+      "Camrermaister die diß Camrermaister gerait hat —— x Rhgld",
+      "derselb Camrermaister vraiten wirt —— x Rhgld",
+      "vraiten wirt —— lvij Rhgld",
+      "iiij Rhgld"
+     ],
+     "total_texts": [
+      "ij c lxxvij Rhgld"
+     ],
+     "items_total": {
+      "gld": 81
+     },
+     "sum_total": {
+      "gld": 200
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    }
+   ],
+   "unclosed_amount_runs": 3,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p004__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p004",
+   "page": "pilot_rb2_p004",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Zedl viij C lxxxxiij Rh gld xiij ß vj d",
+     "head_line": 11,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "Zedl viij C lxxxxiij Rh gld xiij ß vj d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "gld": 893
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p004__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p004",
+   "page": "pilot_rb2_p004",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. verso",
+     "head_text": "Zedl —— viijc lxxxxiiij Rh gld xiij ß x d",
+     "head_line": 11,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "Zedl —— viijc lxxxxiiij Rh gld xiij ß x d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "gld": 894
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p005__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p005",
+   "page": "pilot_rb2_p005",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "5r",
+     "head_text": "Sm̃a der bemelten schuld",
+     "head_line": 8,
+     "item_lines": [
+      4,
+      7
+     ],
+     "item_texts": [
+      "—— iij C ij Rh gld",
+      "—— xl Rh gld"
+     ],
+     "total_texts": [
+      "—— iij C xlij Rh gld"
+     ],
+     "items_total": {
+      "gld": 342
+     },
+     "sum_total": {
+      "gld": 342
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    },
+    {
+     "page_label": "5r",
+     "head_text": "Sm̃a des Innemens hat",
+     "head_line": 20,
+     "item_lines": [
+      13,
+      15,
+      17,
+      19
+     ],
+     "item_texts": [
+      "emphangen An ersten l Rh gld",
+      "Darnach —— l Rh gld",
+      "Aber —— xx Rh gld",
+      "Aber —— vij Rh gld"
+     ],
+     "total_texts": [
+      "—— j C xxvij gld"
+     ],
+     "items_total": {
+      "gld": 127
+     },
+     "sum_total": {
+      "gld": 127
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 2,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p005__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p005",
+   "page": "pilot_rb2_p005",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "5r",
+     "head_text": "Suma der bemelten Schuld",
+     "head_line": 7,
+     "item_lines": [
+      3,
+      6
+     ],
+     "item_texts": [
+      "—— iij C ij Rh gld",
+      "—— xl Rh gld"
+     ],
+     "total_texts": [
+      "iij C xlij Rh gld"
+     ],
+     "items_total": {
+      "gld": 342
+     },
+     "sum_total": {
+      "gld": 342
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    },
+    {
+     "page_label": "5r",
+     "head_text": "Suma des Innemens hat",
+     "head_line": 18,
+     "item_lines": [
+      11,
+      13,
+      15,
+      17
+     ],
+     "item_texts": [
+      "empfangen Am ersten l Rh gld",
+      "Darnach —— l Rh gld",
+      "Aber —— xx Rh gld",
+      "Aber —— vij Rh gld"
+     ],
+     "total_texts": [
+      "j C xxvij gld"
+     ],
+     "items_total": {
+      "gld": 127
+     },
+     "sum_total": {
+      "gld": 127
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 2,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p006__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p006",
+   "page": "pilot_rb2_p006",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [
+    "dreizehn"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p006__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p006",
+   "page": "pilot_rb2_p006",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [
+    "dreizehn"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p007__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p007",
+   "page": "pilot_rb2_p007",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p007__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p007",
+   "page": "pilot_rb2_p007",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p008__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p008",
+   "page": "pilot_rb2_p008",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p008__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p008",
+   "page": "pilot_rb2_p008",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p009__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p009",
+   "page": "pilot_rb2_p009",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p009__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p009",
+   "page": "pilot_rb2_p009",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p010__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p010",
+   "page": "pilot_rb2_p010",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p010__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p010",
+   "page": "pilot_rb2_p010",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p011__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p011",
+   "page": "pilot_rb2_p011",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p011__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p011",
+   "page": "pilot_rb2_p011",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p012__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p012",
+   "page": "pilot_rb2_p012",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p012__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p012",
+   "page": "pilot_rb2_p012",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p013__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p013",
+   "page": "pilot_rb2_p013",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "13r",
+     "head_text": "Vnd haissent meins facit",
+     "head_line": 18,
+     "item_lines": [
+      8,
+      12,
+      17
+     ],
+     "item_texts": [
+      "geendt hat bx Rhguld facit —— xxiij Cmr",
+      "sol —— xiij lb grz facit v Cmr vj d",
+      "hat —— iij Cmr j ß"
+     ],
+     "total_texts": [
+      "viij Cmr iiij d"
+     ],
+     "items_total": {
+      "?": 31
+     },
+     "sum_total": {
+      "?": 8
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "no named denomination on one side"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p013__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p013",
+   "page": "pilot_rb2_p013",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "13r",
+     "head_text": "Vnd hat Innemeint facit",
+     "head_line": 18,
+     "item_lines": [
+      8,
+      12,
+      17
+     ],
+     "item_texts": [
+      "geenndt hat lx Rhgld facit —— xxiij mr",
+      "sol —— viij lb gld facit v mr vj d",
+      "hat —— iij mr ij ß"
+     ],
+     "total_texts": [
+      "viij mr iiij d"
+     ],
+     "items_total": {
+      "lb": 8,
+      "m": 26
+     },
+     "sum_total": {
+      "m": 8
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p014__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p014",
+   "page": "pilot_rb2_p014",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "14r",
+     "head_text": "Summa his so man Im schuldig",
+     "head_line": 17,
+     "item_lines": [
+      12,
+      16
+     ],
+     "item_texts": [
+      "j phärd xx gld gerait. Tut — iij^c lx gld Rhgld",
+      "—— xxiiij Rhgld"
+     ],
+     "total_texts": [
+      "ist tut iij^c lxxxiiij Rhgld"
+     ],
+     "items_total": {
+      "gld": 384
+     },
+     "sum_total": {
+      "gld": 384
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 1,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p014__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p014",
+   "page": "pilot_rb2_p014",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "14r",
+     "head_text": "Sm̄a des so man jm schuldig",
+     "head_line": 19,
+     "item_lines": [
+      13,
+      18
+     ],
+     "item_texts": [
+      "j phärd xx gld zerait — hat iij C lx gld & c lxxiiij d",
+      "—— xxiiij Rhgld"
+     ],
+     "total_texts": [
+      "jst hat iij C lxxxiiij Rhgld"
+     ],
+     "items_total": {
+      "gld": 384
+     },
+     "sum_total": {
+      "gld": 384
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 1,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p015__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p015",
+   "page": "pilot_rb2_p015",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Summa sein emphabens",
+     "head_line": 10,
+     "item_lines": [
+      6,
+      9
+     ],
+     "item_texts": [
+      "hat iij^c lxxviij Rhgld",
+      "hat er emphang —— xij Rhgld"
+     ],
+     "total_texts": [
+      "lxxxx Rhgld"
+     ],
+     "items_total": {
+      "gld": 390
+     },
+     "sum_total": {
+      "gld": 90
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p015__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p015",
+   "page": "pilot_rb2_p015",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Summa sein emphabens",
+     "head_line": 10,
+     "item_lines": [
+      6,
+      9
+     ],
+     "item_texts": [
+      "hat ———— iij^c lxxiiij Rhgld",
+      "hat er emphang ———— xij Rhgld"
+     ],
+     "total_texts": [
+      "lxxxvj Rhgld"
+     ],
+     "items_total": {
+      "gld": 386
+     },
+     "sum_total": {
+      "gld": 86
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p016__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p016",
+   "page": "pilot_rb2_p016",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. [1]v",
+     "head_text": "Summa das seinss gehalts",
+     "head_line": 15,
+     "item_lines": [
+      8,
+      9,
+      10,
+      13,
+      14
+     ],
+     "item_texts": [
+      "Jars, bringt iij Jarsoldt, ydes Jars xxiiij gld",
+      "Samt lxxij tl gld, Bringt in múncz",
+      "xxxviij lb iiij ß",
+      "vordern raittung schuldig xlij tl gld, bringt",
+      "in múncz —— xxij lb iiij ß"
+     ],
+     "total_texts": [
+      "hat lx lb viij ß"
+     ],
+     "items_total": {
+      "gld": 138,
+      "lb": 60
+     },
+     "sum_total": {
+      "lb": 60
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    },
+    {
+     "page_label": "16r",
+     "head_text": "Sm̄a ha seins Jnnemens",
+     "head_line": 6,
+     "item_lines": [
+      3,
+      5
+     ],
+     "item_texts": [
+      "emphfangen xiij Rhgld fat —— iij m̄ ij lb",
+      "xviij Rhgld fat —— iiij m̄ ij lb"
+     ],
+     "total_texts": [
+      "facit —— vij m̄ iiij lb"
+     ],
+     "items_total": {
+      "?": 11
+     },
+     "sum_total": {
+      "?": 11
+     },
+     "unparsed": [
+      "..."
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [
+    "..."
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p016__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p016",
+   "page": "pilot_rb2_p016",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. 1v",
+     "head_text": "Suma ka seinir genad",
+     "head_line": 15,
+     "item_lines": [
+      8,
+      9,
+      10,
+      13,
+      14
+     ],
+     "item_texts": [
+      "Jars, bringt iij JarSoldt, yeds Jars xxiiij gld",
+      "Saintt kerrer vj Rh gld, Bringt in münntz",
+      "—— xxxviij lb iiij ß",
+      "vordern raitung schuldig xvj Rh gld, bringt",
+      "in münntz —— xxj lb iiij ß"
+     ],
+     "total_texts": [
+      "hat lx lb viij d"
+     ],
+     "items_total": {
+      "gld": 46,
+      "lb": 59
+     },
+     "sum_total": {
+      "lb": 60
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    },
+    {
+     "page_label": "16r",
+     "head_text": "Sm̅a ha sein empfahens",
+     "head_line": 6,
+     "item_lines": [
+      3,
+      5
+     ],
+     "item_texts": [
+      "emphangen xviij Rhgld facit —— iij m̅ ij lb",
+      "xxviij Rhgld facit —— xij m̅ ij lb"
+     ],
+     "total_texts": [
+      "facit xvj m̅ iiij lb"
+     ],
+     "items_total": {
+      "?": 15
+     },
+     "sum_total": {
+      "?": 16
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "no named denomination on one side"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p017__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p017",
+   "page": "pilot_rb2_p017",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. [1]v",
+     "head_text": "schuldig viij m̃ iiij ß x d ist durch mich",
+     "head_line": 15,
+     "item_lines": [
+      10,
+      11,
+      13
+     ],
+     "item_texts": [
+      "geendtt haben yeds Jar — xij Rh gld facit",
+      "xxiiij Rh gld thuet in muencz — xj m̃ iiij ß viij d",
+      "Cammermaister emphangen iij gld"
+     ],
+     "total_texts": [
+      "schuldig viij m̃ iiij ß x d ist durch mich"
+     ],
+     "items_total": {
+      "gld": 15,
+      "m": 11
+     },
+     "sum_total": {
+      "m": 8
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    },
+    {
+     "page_label": "17r",
+     "head_text": "Sm̃a bis seins salds und darglichen",
+     "head_line": 16,
+     "item_lines": [
+      8,
+      9,
+      12
+     ],
+     "item_texts": [
+      "all jar xxj ℔ gld facit — — jᶜ lxviij ℔ Bringt",
+      "in mūncz jᶜ iij ℔ — xliiij mr viij d",
+      "schuldig lxxv ducatn und ungrischen gld, die er sein"
+     ],
+     "total_texts": [
+      "gelts facit lxxx ungrisch gld und xliiij mr",
+      "und viij d pr̃"
+     ],
+     "items_total": {
+      "gld": 75,
+      "lb": 271
+     },
+     "sum_total": {
+      "d": 8,
+      "gld": 80
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p017__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p017",
+   "page": "pilot_rb2_p017",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "xxvj Rh gld thůtt in müncz xj m iiij ß viij d",
+     "head_line": 11,
+     "item_lines": [
+      10
+     ],
+     "item_texts": [
+      "geendtt haben, ieds Jars xiij Rh gld, facit"
+     ],
+     "total_texts": [
+      "xxvj Rh gld thůtt in müncz xj m iiij ß viij d"
+     ],
+     "items_total": {
+      "gld": 13
+     },
+     "sum_total": {
+      "gld": 26
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    },
+    {
+     "page_label": "17r",
+     "head_text": "Suma bis seins sallds und dargelehens",
+     "head_line": 16,
+     "item_lines": [
+      8,
+      9
+     ],
+     "item_texts": [
+      "all Jar xxij lb gld facit c liiij lb gld Bringt",
+      "in nummer j c liiij lb —— xliiij mr viij d"
+     ],
+     "total_texts": [
+      "gelts facit lxxx ducatn xxvj rhgld und xliiij mr",
+      "und viij d gld"
+     ],
+     "items_total": {
+      "?": 360
+     },
+     "sum_total": {
+      "?": 158
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "no named denomination on one side"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p018__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p018",
+   "page": "pilot_rb2_p018",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "18r",
+     "head_text": "Sūma ho seins saldo facit mith",
+     "head_line": 18,
+     "item_lines": [
+      13,
+      17
+     ],
+     "item_texts": [
+      "vj vñditz  xxxviiij iiij̄ iiij lb",
+      "——  iiij iiij viij lb"
+     ],
+     "total_texts": [
+      "dem phānd xlvij viii ij lb"
+     ],
+     "items_total": {
+      "lb": 59
+     },
+     "sum_total": {
+      "lb": 57
+     },
+     "unparsed": [
+      "iiij̄"
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [
+    "iiij̄"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p018__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p018",
+   "page": "pilot_rb2_p018",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "18r",
+     "head_text": "Suma ho[c] seins saldo facit mit",
+     "head_line": 18,
+     "item_lines": [
+      11,
+      12,
+      16,
+      17
+     ],
+     "item_texts": [
+      "Jar xij Rh gld fat betregt lxxij Rh gld phenning",
+      "iij vntrübes —— xxxviij lb iiij ß iij d",
+      "stal da Jm genommen hat — xij Rh gld fat",
+      "—— iij lb iiij ß viij d"
+     ],
+     "total_texts": [
+      "dem phärd xlj lb viij ß xj d"
+     ],
+     "items_total": {
+      "?": 11,
+      "gld": 84,
+      "lb": 41,
+      "ß": 8
+     },
+     "sum_total": {
+      "?": 11,
+      "lb": 41,
+      "ß": 8
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p019__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p019",
+   "page": "pilot_rb2_p019",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. verso",
+     "head_text": "aller Parting —— xxviij m̅",
+     "head_line": 6,
+     "item_lines": [
+      4
+     ],
+     "item_texts": [
+      "zu zwaim maln —— xv m̅ ij lb"
+     ],
+     "total_texts": [
+      "aller Parting —— xxviij m̅"
+     ],
+     "items_total": {
+      "?": 17
+     },
+     "sum_total": {
+      "m": 28
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p019__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p019",
+   "page": "pilot_rb2_p019",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [
+    "ÿ"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p020__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p020",
+   "page": "pilot_rb2_p020",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Suma seins vorgeschriben emphangenn",
+     "head_line": 14,
+     "item_lines": [
+      3,
+      7,
+      13
+     ],
+     "item_texts": [
+      "Camermeister geschafft j liij mr",
+      "so er von Baldriechs wegen schuldig was lxiiij mr",
+      "stellen worden hat er emphangen lx mr"
+     ],
+     "total_texts": [
+      "hat ij xxviiij mr xiij lb pw"
+     ],
+     "items_total": {
+      "m": 277
+     },
+     "sum_total": {
+      "m": 229
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p020__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p020",
+   "page": "pilot_rb2_p020",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Sūma seins vorgeschriben emphangns",
+     "head_line": 11,
+     "item_lines": [
+      2,
+      5,
+      10
+     ],
+     "item_texts": [
+      "camermeisters gestrafft —— liij m̄",
+      "er von Baldtuefs wegen schuldig was —— lxiij m̄",
+      "stellen worden hat er emphangen —— lx m̄"
+     ],
+     "total_texts": [
+      "hat —— ijᶜ xxviiij m̄ viij lb pw"
+     ],
+     "items_total": {
+      "m": 176
+     },
+     "sum_total": {
+      "?": 229
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "no named denomination on one side"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p021__it02__r1.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p021",
+   "page": "pilot_rb2_p021",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot_rb2_p021__it02__r2.json",
+   "cohort": "pilot",
+   "docId": "pilot_rb2_p021",
+   "page": "pilot_rb2_p021",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p022__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p022",
+   "page": "pilot2_rb2_p022",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p022__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p022",
+   "page": "pilot2_rb2_p022",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p023__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p023",
+   "page": "pilot2_rb2_p023",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "23r",
+     "head_text": "Sum(m)a des Innemens facit ——",
+     "head_line": 22,
+     "item_lines": [
+      17,
+      18,
+      21
+     ],
+     "item_texts": [
+      "stain emphangen vij m̄ iij lb iij s gl",
+      "Facit in Gold —— viij Rhgld xxvij ß ij d gl",
+      "hat er emphangen vij m̄ iij lb iij s gl"
+     ],
+     "total_texts": [
+      "xviij Rhgld xxvij ß xiij d Rhgld"
+     ],
+     "items_total": {
+      "gld": 22
+     },
+     "sum_total": {
+      "gld": 18
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p023__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p023",
+   "page": "pilot2_rb2_p023",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "23r",
+     "head_text": "Summa des Innemens facit",
+     "head_line": 20,
+     "item_lines": [
+      16,
+      17,
+      19
+     ],
+     "item_texts": [
+      "stain emphangen vij mr iij ß iiij gl",
+      "facit in Gold viij Rhgld xvij ß ij gl",
+      "hat er emphangen vij mr iij ß iiij gl"
+     ],
+     "total_texts": [
+      "xvij Rhgld xvij ß viij gl"
+     ],
+     "items_total": {
+      "?": 8,
+      "gld": 8,
+      "m": 14,
+      "ß": 6
+     },
+     "sum_total": {
+      "gld": 17
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p024__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p024",
+   "page": "pilot2_rb2_p024",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "24",
+     "head_text": "Suma dicz aussgebens facit",
+     "head_line": 6,
+     "item_lines": [
+      2,
+      5
+     ],
+     "item_texts": [
+      "brawtman ausgebn hat — ij lb xij d",
+      "geb(e)n — iiij gld"
+     ],
+     "total_texts": [
+      "xiijC lxxvj Rhgld x ß x d"
+     ],
+     "items_total": {
+      "gld": 4,
+      "lb": 2
+     },
+     "sum_total": {
+      "gld": 1300
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p024__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p024",
+   "page": "pilot2_rb2_p024",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "24",
+     "head_text": "Sm̄a dicz ausgebens facit",
+     "head_line": 6,
+     "item_lines": [
+      2,
+      5
+     ],
+     "item_texts": [
+      "Brandman ausgeben hat vj lb xv d",
+      "geben —— iiij gld"
+     ],
+     "total_texts": [
+      "xiij c lxxvj Rhgld x ß d"
+     ],
+     "items_total": {
+      "gld": 4,
+      "lb": 6
+     },
+     "sum_total": {
+      "gld": 1376
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p025__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p025",
+   "page": "pilot2_rb2_p025",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Summa des Innemen thüt",
+     "head_line": 20,
+     "item_lines": [
+      15,
+      17,
+      19
+     ],
+     "item_texts": [
+      "ijm Rhgld",
+      "vijc Rhgld",
+      "vjc lxxxiiij Rhgld j"
+     ],
+     "total_texts": [
+      "iijm iijc lxxxiiij Rhgld j"
+     ],
+     "items_total": {
+      "gld": 1384,
+      "m": 2
+     },
+     "sum_total": {
+      "gld": 3384
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    },
+    {
+     "page_label": "25r",
+     "head_text": "Suma ditz aufgebens fazt",
+     "head_line": 15,
+     "item_lines": [
+      6,
+      10,
+      14
+     ],
+     "item_texts": [
+      "—— viij lb x ß gld",
+      "xiij lb xvij ß iiij d ij d [...]",
+      "etwas an irem Sold etc 4 xxxvij gld ij lb iij d"
+     ],
+     "total_texts": [
+      "· m · iiij lb xxxvij Rhguld",
+      "viij d"
+     ],
+     "items_total": {
+      "?": 3,
+      "d": 6,
+      "gld": 37,
+      "lb": 23,
+      "ß": 27
+     },
+     "sum_total": {
+      "?": 37,
+      "d": 8,
+      "m": 4
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [
+    "funfzehn"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p025__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p025",
+   "page": "pilot2_rb2_p025",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Summa des Innemen fant",
+     "head_line": 23,
+     "item_lines": [
+      16,
+      19,
+      22
+     ],
+     "item_texts": [
+      "iij C Rhgld",
+      "vij C Rhgld",
+      "vj C lxxxxiiij Rhgld j"
+     ],
+     "total_texts": [
+      "m . vj C lxxxxiiij Rhgld j"
+     ],
+     "items_total": {
+      "gld": 1694
+     },
+     "sum_total": {
+      "gld": 1694
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    },
+    {
+     "page_label": "fol. 25r",
+     "head_text": "Suma dis aufgebens fait",
+     "head_line": 15,
+     "item_lines": [
+      6,
+      10,
+      14
+     ],
+     "item_texts": [
+      "—— viij tt Rh gld",
+      "xiiij tt xxvj Rh gld ij d viij hl",
+      "etwas an irem Sold tat t xxxiiij gld ij d iij hl"
+     ],
+     "total_texts": [
+      "—— w . iiij tt xxxiiij Rh guld",
+      "viij hl"
+     ],
+     "items_total": {
+      "gld": 82
+     },
+     "sum_total": {
+      "gld": 38,
+      "hl": 8
+     },
+     "unparsed": [
+      "t",
+      "tt",
+      "w"
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [
+    "t",
+    "tt",
+    "w"
+   ],
+   "counts": {
+    "exact-match": 1,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p026__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p026",
+   "page": "pilot2_rb2_p026",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p026__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p026",
+   "page": "pilot2_rb2_p026",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p027__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p027",
+   "page": "pilot2_rb2_p027",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Sma Summarj aller vorgeschriben",
+     "head_line": 10,
+     "item_lines": [
+      9
+     ],
+     "item_texts": [
+      "· m · iiij · c · x · lb · viij ß · vnd viij d"
+     ],
+     "total_texts": [],
+     "items_total": {
+      "?": 8,
+      "lb": 4110,
+      "ß": 8
+     },
+     "sum_total": {},
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa line carries no readable amount"
+    },
+    {
+     "page_label": "verso",
+     "head_text": "facit ij · m · iiij · c · xlvij lb iiij ß j d vnd viij d",
+     "head_line": 15,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "facit ij · m · iiij · c · xlvij lb iiij ß j d vnd viij d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "?": 8,
+      "d": 1,
+      "lb": 2447,
+      "ß": 4
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    },
+    {
+     "page_label": "verso",
+     "head_text": "vnd vij hl d gld",
+     "head_line": 16,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "vnd vij hl d gld"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "?": 7
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 3,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p027__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p027",
+   "page": "pilot2_rb2_p027",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Summa Summarum aller vorgeschriben",
+     "head_line": 10,
+     "item_lines": [
+      9
+     ],
+     "item_texts": [
+      "· iij · C · x · iiij · lb · xxij · d · vnd · viij · hl"
+     ],
+     "total_texts": [],
+     "items_total": {
+      "?": 8,
+      "d": 22,
+      "lb": 314
+     },
+     "sum_total": {},
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa line carries no readable amount"
+    },
+    {
+     "page_label": "verso",
+     "head_text": "facit ij m · iij · C · xlvij lb · iij · ß · x d vnd x hl",
+     "head_line": 15,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "facit ij m · iij · C · xlvij lb · iij · ß · x d vnd x hl"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "?": 10,
+      "d": 10,
+      "lb": 2347,
+      "ß": 3
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p028__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p028",
+   "page": "pilot2_rb2_p028",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "recto",
+     "head_text": "bringt —— lb x m",
+     "head_line": 16,
+     "item_lines": [
+      13,
+      15
+     ],
+     "item_texts": [
+      "fubl von yedem fůbl xxij gr bringt — lb xiij m iiij d",
+      "glegt xxxvj lb d das alles in ainer Summa"
+     ],
+     "total_texts": [
+      "bringt —— lb x m"
+     ],
+     "items_total": {
+      "?": 4,
+      "lb": 36,
+      "m": 13
+     },
+     "sum_total": {
+      "m": 10
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    },
+    {
+     "page_label": "recto",
+     "head_text": "Smha",
+     "head_line": 17,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "herab gefürt hat —— viij d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "d": 8
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p028__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p028",
+   "page": "pilot2_rb2_p028",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "bringt —— d x lb iiij d",
+     "head_line": 16,
+     "item_lines": [
+      13,
+      15
+     ],
+     "item_texts": [
+      "füder / von yedem füder xxij d bringt d viij lb iiij d",
+      "gebnt xxxviij d / das alles in ainer Summa"
+     ],
+     "total_texts": [
+      "bringt —— d x lb iiij d"
+     ],
+     "items_total": {
+      "d": 38,
+      "lb": 8
+     },
+     "sum_total": {
+      "lb": 10
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "denominations differ, an unknown conversion could explain it"
+    },
+    {
+     "page_label": "verso",
+     "head_text": "Summa",
+     "head_line": 17,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [],
+     "items_total": {},
+     "sum_total": {},
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa line carries no readable amount"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p029__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p029",
+   "page": "pilot2_rb2_p029",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Suma ho seins empfahens",
+     "head_line": 1,
+     "item_lines": [
+      0
+     ],
+     "item_texts": [
+      "von Berchten Potenstain vj mr"
+     ],
+     "total_texts": [
+      "seint —— lxxxxiiij mr j lb"
+     ],
+     "items_total": {
+      "m": 6
+     },
+     "sum_total": {
+      "m": 94
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p029__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p029",
+   "page": "pilot2_rb2_p029",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "~~Sūma baĩs seins empfahens~~",
+     "head_line": 2,
+     "item_lines": [
+      1
+     ],
+     "item_texts": [
+      "~~von Berchtolden rotenstain vj m̄~~"
+     ],
+     "total_texts": [
+      "~~tůt — lxxxx iij m̄ j d~~"
+     ],
+     "items_total": {
+      "m": 6
+     },
+     "sum_total": {
+      "m": 93
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p030__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p030",
+   "page": "pilot2_rb2_p030",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "30r",
+     "head_text": "xij C lxxxvij duc j ß x d j hl",
+     "head_line": 23,
+     "item_lines": [
+      18,
+      19,
+      21
+     ],
+     "item_texts": [
+      "seins Registers in ainer Sum̃a xij C xx duc",
+      "vnd munz c l iiij duc viij ß x d j hl berait",
+      "lxvij duc j ß x d j hl"
+     ],
+     "total_texts": [
+      "xij C lxxxvij duc j ß x d j hl"
+     ],
+     "items_total": {
+      "duc": 1441
+     },
+     "sum_total": {
+      "duc": 1287
+     },
+     "unparsed": [],
+     "verdict": "mismatch",
+     "subset_exact": [
+      18,
+      21
+     ]
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 1
+   }
+  },
+  {
+   "run": "pilot2_rb2_p030__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p030",
+   "page": "pilot2_rb2_p030",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "30r",
+     "head_text": "xiij m lxxvijj dut j lb c xxxvij s c",
+     "head_line": 23,
+     "item_lines": [
+      18,
+      19,
+      20,
+      21
+     ],
+     "item_texts": [
+      "seins Registers in ainer Summa xiij m xlviij dut",
+      "vnd nunmro xlviij lb viij d e xl viij s e Berait",
+      "dieses muncz in dukaten vje vj lb , svir x dukatl",
+      "lxviij dut j lb xxxvij s c"
+     ],
+     "total_texts": [
+      "xiij m lxxvijj dut j lb c xxxvij s c"
+     ],
+     "items_total": {
+      "?": 48,
+      "duc": 68,
+      "lb": 54,
+      "m": 13
+     },
+     "sum_total": {
+      "?": 78,
+      "m": 13
+     },
+     "unparsed": [
+      "vje"
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [
+    "vje"
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p031__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p031",
+   "page": "pilot2_rb2_p031",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. verso",
+     "head_text": "Suma baider silberer der iiij stukch",
+     "head_line": 15,
+     "item_lines": [
+      7,
+      14
+     ],
+     "item_texts": [
+      "vnd xj gros in auro pringt ijC lxxj duc xj gros",
+      "xj gros facit ijC xliiij duc iij gros"
+     ],
+     "total_texts": [],
+     "items_total": {
+      "duc": 515
+     },
+     "sum_total": {},
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa line carries no readable amount"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p031__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p031",
+   "page": "pilot2_rb2_p031",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. verso",
+     "head_text": "Sm̃a dis silbers der iiij stukh",
+     "head_line": 15,
+     "item_lines": [
+      7,
+      14
+     ],
+     "item_texts": [
+      "vnd xj groß in auro bringt ijC lxxj duc xj groſ",
+      "xvij groſ facit c xliiij duc iij groſ"
+     ],
+     "total_texts": [],
+     "items_total": {
+      "duc": 415
+     },
+     "sum_total": {},
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa line carries no readable amount"
+    },
+    {
+     "page_label": "31r",
+     "head_text": "vnnsers herrn gnadn schuldig —— xxvj ducat mia vj s lj d",
+     "head_line": 3,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "vnnsers herrn gnadn schuldig —— xxvj ducat mia vj s lj d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "duc": 26
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p032__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p032",
+   "page": "pilot2_rb2_p032",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p032__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p032",
+   "page": "pilot2_rb2_p032",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p033__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p033",
+   "page": "pilot2_rb2_p033",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p033__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p033",
+   "page": "pilot2_rb2_p033",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p034__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p034",
+   "page": "pilot2_rb2_p034",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p034__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p034",
+   "page": "pilot2_rb2_p034",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p035__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p035",
+   "page": "pilot2_rb2_p035",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p035__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p035",
+   "page": "pilot2_rb2_p035",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p036__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p036",
+   "page": "pilot2_rb2_p036",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p036__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p036",
+   "page": "pilot2_rb2_p036",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p037__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p037",
+   "page": "pilot2_rb2_p037",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "37r",
+     "head_text": "Suma des waz hainrich kapellan",
+     "head_line": 5,
+     "item_lines": [
+      4
+     ],
+     "item_texts": [
+      "dafur gerait —— xiij m̄"
+     ],
+     "total_texts": [
+      "+ xliij m̄ j lb xviij d vj hl"
+     ],
+     "items_total": {
+      "m": 13
+     },
+     "sum_total": {
+      "m": 43
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p037__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p037",
+   "page": "pilot2_rb2_p037",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "37r",
+     "head_text": "Suma wz was hainreich kapellan",
+     "head_line": 4,
+     "item_lines": [
+      3
+     ],
+     "item_texts": [
+      "dafür gerait —— xiij mr"
+     ],
+     "total_texts": [
+      "+ xliij mr j lb xviij d vj hl"
+     ],
+     "items_total": {
+      "m": 13
+     },
+     "sum_total": {
+      "?": 6,
+      "d": 18,
+      "lb": 1,
+      "m": 43
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p038__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p038",
+   "page": "pilot2_rb2_p038",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. verso",
+     "head_text": "tag / vnd bringt alles in ainer Summa xx m iij [...]",
+     "head_line": 5,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "tag / vnd bringt alles in ainer Summa xx m iij [...]"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "m": 20
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    },
+    {
+     "page_label": "38r",
+     "head_text": "Suma —— xxviij lb viij ß vj d",
+     "head_line": 6,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "Suma —— xxviij lb viij ß vj d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "lb": 28
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 2,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p038__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p038",
+   "page": "pilot2_rb2_p038",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "tag vnnd bringt alles in ainer Sūma xx m̄ iiij lb",
+     "head_line": 5,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "tag vnnd bringt alles in ainer Sūma xx m̄ iiij lb"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "?": 4,
+      "m": 20
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    },
+    {
+     "page_label": "verso",
+     "head_text": "herrn gnaden schuldig xxvij lb",
+     "head_line": 13,
+     "item_lines": [
+      10
+     ],
+     "item_texts": [
+      "viij füder ij vm viij per weins fur xx iij m̄"
+     ],
+     "total_texts": [
+      "herrn gnaden schuldig xxvij lb"
+     ],
+     "items_total": {
+      "m": 23
+     },
+     "sum_total": {
+      "lb": 27
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "single item, arithmetic is trivial"
+    },
+    {
+     "page_label": "38r",
+     "head_text": "Sm̃a —— xxviij lb iiij ß vj d",
+     "head_line": 6,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "Sm̃a —— xxviij lb iiij ß vj d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "?": 38
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 3,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p039__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p039",
+   "page": "pilot2_rb2_p039",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. [1]v",
+     "head_text": "Sum̃a des was man dem yphöſer ſchuldig",
+     "head_line": 15,
+     "item_lines": [
+      10,
+      14
+     ],
+     "item_texts": [
+      "—— lxxxxiiij lb iij ß vj d",
+      "einer ſum̃a lxxviij lb x ß iij d"
+     ],
+     "total_texts": [
+      "bleibt hat C lxxij lb xiij ß ix d"
+     ],
+     "items_total": {
+      "lb": 172
+     },
+     "sum_total": {
+      "lb": 172
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    },
+    {
+     "page_label": "39r",
+     "head_text": "Sm̄a ho seinis emphadens",
+     "head_line": 13,
+     "item_lines": [
+      4,
+      5,
+      6,
+      9,
+      12
+     ],
+     "item_texts": [
+      "herrn gnad in schuldtweiss hat ubergeben viij",
+      "sunder wenn fur xxiiij m̄ vnd xlviij lb d",
+      "sint xxviij m̄ vnd j lb d",
+      "hat xxviij m̄",
+      "lxxvj m̄ xlj d"
+     ],
+     "total_texts": [
+      "sint C xxxij m̄ j d [...]"
+     ],
+     "items_total": {
+      "?": 226,
+      "m": 28
+     },
+     "sum_total": {
+      "?": 133
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "no named denomination on one side"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 1,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p039__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p039",
+   "page": "pilot2_rb2_p039",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Suma zu was man dem yphofer ſchuldig",
+     "head_line": 15,
+     "item_lines": [
+      10,
+      14
+     ],
+     "item_texts": [
+      "lxxxxiiij lb iij cr vj d hl",
+      "einer Suma lxxvij lb x cr iij hl"
+     ],
+     "total_texts": [
+      "bleibt hat C xxij lb viij cr vj d"
+     ],
+     "items_total": {
+      "lb": 171
+     },
+     "sum_total": {
+      "lb": 122
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    },
+    {
+     "page_label": "39r",
+     "head_text": "Sm̅a hie seins emphachens",
+     "head_line": 13,
+     "item_lines": [
+      6,
+      9,
+      12
+     ],
+     "item_texts": [
+      "sunt xxviij mr und j lb pd",
+      "hat xxviij mr",
+      "lxxvij mr xvij d"
+     ],
+     "total_texts": [
+      "sunt C xxxiij mr j lb pd xvij d"
+     ],
+     "items_total": {
+      "m": 133
+     },
+     "sum_total": {
+      "m": 133
+     },
+     "unparsed": [],
+     "verdict": "exact-match"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 1,
+    "mismatch": 1,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p040__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p040",
+   "page": "pilot2_rb2_p040",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "verso",
+     "head_text": "Suma ij c xxxij mr xix d j hl",
+     "head_line": 8,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "Suma ij c xxxij mr xix d j hl"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "m": 252
+     },
+     "unparsed": [
+      "..."
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    },
+    {
+     "page_label": "verso",
+     "head_text": "Suma jrs Jnnemens ſtat",
+     "head_line": 16,
+     "item_lines": [
+      11,
+      13,
+      14
+     ],
+     "item_texts": [
+      "Camermaiſter empfangen ij c xviij mr",
+      "empfangen xx mr die er auch in der Cameram mag ſtat auffgen",
+      "It(em) Von dem weinpecherzorn die viij mr vij ß iiij d, xxvij ß"
+     ],
+     "total_texts": [
+      "ij c xlvij mr iij ß iij d j hl"
+     ],
+     "items_total": {
+      "m": 284
+     },
+     "sum_total": {
+      "m": 254
+     },
+     "unparsed": [
+      "..."
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [
+    "..."
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p040__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p040",
+   "page": "pilot2_rb2_p040",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "fol. verso",
+     "head_text": "Suma iij c xxxiiij mr – xxviij mr d",
+     "head_line": 8,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "Suma iij c xxxiiij mr – xxviij mr d"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "m": 300
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    },
+    {
+     "page_label": "fol. verso",
+     "head_text": "Suma Irz Jnnemens ſtat",
+     "head_line": 19,
+     "item_lines": [
+      12,
+      15,
+      17
+     ],
+     "item_texts": [
+      "camermaiſter empfangen ij c xviij mr",
+      "empfangẽ xx mr die er auch In dy camer zalt vncz hat auffgeb(en)",
+      "von der cambelpergerin die viij mr vij ß iiij d, excep(tis)"
+     ],
+     "total_texts": [
+      "ij c xlvj mr vij ß iiij d"
+     ],
+     "items_total": {
+      "m": 228
+     },
+     "sum_total": {
+      "m": 200
+     },
+     "unparsed": [],
+     "verdict": "mismatch"
+    },
+    {
+     "page_label": "fol. 40r",
+     "head_text": "gnad schuldig —— lxxxv m̄ ix ß viij d hl",
+     "head_line": 5,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "gnad schuldig —— lxxxv m̄ ix ß viij d hl"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "?": 102
+     },
+     "unparsed": [
+      "..."
+     ],
+     "verdict": "unverifiable",
+     "reason": "unparsed token in the block"
+    }
+   ],
+   "unclosed_amount_runs": 0,
+   "unparsed_tokens": [
+    "..."
+   ],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 1,
+    "unverifiable": 2,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p041__it02__r1.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p041",
+   "page": "pilot2_rb2_p041",
+   "repeat": 1,
+   "iteration": "it02",
+   "blocks": [
+    {
+     "page_label": "41r",
+     "head_text": "tag / vnd bringt in ainer Suma ij C lviij lb",
+     "head_line": 12,
+     "item_lines": [],
+     "item_texts": [],
+     "total_texts": [
+      "tag / vnd bringt in ainer Suma ij C lviij lb"
+     ],
+     "items_total": {},
+     "sum_total": {
+      "lb": 258
+     },
+     "unparsed": [],
+     "verdict": "unverifiable",
+     "reason": "Summa without preceding item amounts"
+    }
+   ],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 1,
+    "subset-only": 0
+   }
+  },
+  {
+   "run": "pilot2_rb2_p041__it02__r2.json",
+   "cohort": "pilot2",
+   "docId": "pilot2_rb2_p041",
+   "page": "pilot2_rb2_p041",
+   "repeat": 2,
+   "iteration": "it02",
+   "blocks": [],
+   "unclosed_amount_runs": 1,
+   "unparsed_tokens": [],
+   "counts": {
+    "exact-match": 0,
+    "mismatch": 0,
+    "unverifiable": 0,
+    "subset-only": 0
+   }
+  }
+ ],
+ "aggregate": {
+  "cohorts": {
+   "pilot": {
+    "runs": 40,
+    "blocks": 29,
+    "exact-match": 6,
+    "mismatch": 4,
+    "unverifiable": 19,
+    "subset-only": 0,
+    "unclosed_amount_runs": 29
+   },
+   "pilot2": {
+    "runs": 40,
+    "blocks": 41,
+    "exact-match": 3,
+    "mismatch": 4,
+    "unverifiable": 34,
+    "subset-only": 1,
+    "unclosed_amount_runs": 25
+   }
+  },
+  "pages": {
+   "pilot2_rb2_p022": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p023": {
+    "r1": "mismatch",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p024": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p025": {
+    "r1": "unverifiable",
+    "r2": "clean"
+   },
+   "pilot2_rb2_p026": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p027": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p028": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p029": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p030": {
+    "r1": "clean",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p031": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p032": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p033": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p034": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p035": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p036": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p037": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p038": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot2_rb2_p039": {
+    "r1": "clean",
+    "r2": "mismatch"
+   },
+   "pilot2_rb2_p040": {
+    "r1": "unverifiable",
+    "r2": "mismatch"
+   },
+   "pilot2_rb2_p041": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p002": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p003": {
+    "r1": "unverifiable",
+    "r2": "mismatch"
+   },
+   "pilot_rb2_p004": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p005": {
+    "r1": "clean",
+    "r2": "clean"
+   },
+   "pilot_rb2_p006": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p007": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p008": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p009": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p010": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p011": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p012": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p013": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p014": {
+    "r1": "clean",
+    "r2": "clean"
+   },
+   "pilot_rb2_p015": {
+    "r1": "mismatch",
+    "r2": "mismatch"
+   },
+   "pilot_rb2_p016": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p017": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p018": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p019": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p020": {
+    "r1": "mismatch",
+    "r2": "unverifiable"
+   },
+   "pilot_rb2_p021": {
+    "r1": "unverifiable",
+    "r2": "unverifiable"
+   }
+  },
+  "sighting_candidates": [
+   "pilot2_rb2_p025",
+   "pilot2_rb2_p030",
+   "pilot2_rb2_p039"
+  ],
+  "both_repeats_mismatch": [
+   "pilot_rb2_p015"
+  ],
+  "unverifiable_reasons": {
+   "Summa without preceding item amounts": 13,
+   "denominations differ, an unknown conversion could explain it": 13,
+   "unparsed token in the block": 9,
+   "single item, arithmetic is trivial": 7,
+   "no named denomination on one side": 6,
+   "Summa line carries no readable amount": 5
+  },
+  "unparsed_tokens": {
+   "...": 4,
+   "dreizehn": 2,
+   "f": 1,
+   "funfzehn": 1,
+   "iiij̄": 1,
+   "t": 1,
+   "tt": 1,
+   "vje": 1,
+   "w": 1,
+   "ÿ": 1
+  }
+ }
+}
