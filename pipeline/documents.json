@@ -13,7 +13,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11327964,
@@ -29,7 +33,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11327987,
@@ -45,7 +53,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328042,
@@ -61,7 +73,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 16
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328043,
@@ -77,7 +93,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328279,
@@ -93,7 +113,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 10
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328280,
@@ -109,7 +133,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 16
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328281,
@@ -125,7 +153,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328299,
@@ -141,7 +173,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328300,
@@ -157,7 +193,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "DONE": 4
+  },
+  "done_pages": 4
  },
  {
   "docId": 11328660,
@@ -173,7 +213,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 6
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328661,
@@ -189,7 +233,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328720,
@@ -205,7 +253,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328721,
@@ -221,7 +273,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328722,
@@ -237,7 +293,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328727,
@@ -253,7 +313,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 32
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328739,
@@ -269,7 +333,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 15
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328742,
@@ -285,7 +353,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328744,
@@ -301,7 +373,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328745,
@@ -317,7 +393,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328746,
@@ -333,7 +413,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11328999,
@@ -349,7 +433,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 5
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329059,
@@ -365,7 +453,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329060,
@@ -381,7 +473,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329061,
@@ -397,7 +493,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 2
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329062,
@@ -413,7 +513,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329279,
@@ -429,7 +533,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329281,
@@ -445,7 +553,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 16
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329339,
@@ -461,7 +573,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329419,
@@ -477,7 +593,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329439,
@@ -493,7 +613,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 16
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329459,
@@ -509,7 +633,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 20
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329460,
@@ -525,7 +653,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329461,
@@ -541,7 +673,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329462,
@@ -557,7 +693,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 2
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329479,
@@ -573,7 +713,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 16
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329621,
@@ -589,7 +733,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329900,
@@ -605,7 +753,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 2
+  },
+  "done_pages": 0
  },
  {
   "docId": 11329901,
@@ -621,7 +773,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 2
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330019,
@@ -637,7 +793,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "DONE": 3
+  },
+  "done_pages": 3
  },
  {
   "docId": 11330020,
@@ -653,7 +813,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "DONE": 2
+  },
+  "done_pages": 2
  },
  {
   "docId": 11330022,
@@ -669,7 +833,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330060,
@@ -685,7 +853,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330119,
@@ -701,7 +873,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 5
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330219,
@@ -717,7 +893,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 2
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330560,
@@ -733,7 +913,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 40
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330561,
@@ -749,7 +933,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 30
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330759,
@@ -765,7 +953,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11330760,
@@ -781,7 +973,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 12
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348480,
@@ -797,7 +993,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348481,
@@ -813,7 +1013,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 16
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348482,
@@ -829,7 +1033,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348540,
@@ -845,7 +1053,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348659,
@@ -861,7 +1073,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348660,
@@ -877,7 +1093,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 8
+  },
+  "done_pages": 0
  },
  {
   "docId": 11348799,
@@ -893,7 +1113,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 11797015,
@@ -909,7 +1133,11 @@
   "tier": 1,
   "has_text": true,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 4
+  },
+  "done_pages": 0
  },
  {
   "docId": 12514730,
@@ -925,7 +1153,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "IN_PROGRESS": 123
+  },
+  "done_pages": 0
  },
  {
   "docId": 12593367,
@@ -941,7 +1173,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 10
+  },
+  "done_pages": 0
  },
  {
   "docId": 12593387,
@@ -957,7 +1193,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 5
+  },
+  "done_pages": 0
  },
  {
   "docId": 12593428,
@@ -973,7 +1213,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 5
+  },
+  "done_pages": 0
  },
  {
   "docId": 12593449,
@@ -989,7 +1233,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 13
+  },
+  "done_pages": 0
  },
  {
   "docId": 12593450,
@@ -1005,7 +1253,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 1
+  },
+  "done_pages": 0
  },
  {
   "docId": 12647153,
@@ -1021,7 +1273,11 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 6
+  },
+  "done_pages": 0
  },
  {
   "docId": 12647270,
@@ -1037,6 +1293,10 @@
   "tier": 2,
   "has_text": false,
   "provenance": "transkribus",
-  "attribution": null
+  "attribution": null,
+  "transkribus_statuses": {
+   "NEW": 7
+  },
+  "done_pages": 0
  }
 ]

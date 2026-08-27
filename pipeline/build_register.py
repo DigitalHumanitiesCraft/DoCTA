@@ -119,6 +119,9 @@ def _documents() -> list[dict]:
     mapping = _load(DATA / "source_mapping.json")["matched"]
     sources = _load(DATA / "sources.json")
     by_signatur = {s["signatur"]: s for s in sources}
+    # Per-document page-status distribution from the Transkribus collection;
+    # DONE pages are human-corrected, everything else is machine layer.
+    status_by_id = {d["id"]: d for d in _load(DATA / "transkribus_status.json")}
 
     docs: list[dict] = []
     for entry in mapping:
@@ -126,16 +129,18 @@ def _documents() -> list[dict]:
                               by_signatur.get(entry["csv_signatur"]),
                               entry["csv_signatur"],
                               entry.get("pages") or 0,
-                              bool(entry.get("has_text"))))
+                              bool(entry.get("has_text")),
+                              status_by_id.get(entry["transkribus_id"])))
     rb2 = by_signatur.get(RAITBUCH2_SIGNATUR)
     docs.append(_document(RAITBUCH2_DOC, rb2, RAITBUCH2_SIGNATUR,
-                          len(_load(DATA / "raitbuch2_pages.json")), False))
+                          len(_load(DATA / "raitbuch2_pages.json")), False,
+                          status_by_id.get(RAITBUCH2_DOC)))
     docs.sort(key=lambda d: d["docId"])
     return docs
 
 
 def _document(doc_id: int, source: dict | None, signatur: str,
-              pages: int, has_text: bool) -> dict:
+              pages: int, has_text: bool, status: dict | None = None) -> dict:
     dating = (source or {}).get("datierung") or {}
     return {
         "docId": doc_id,
@@ -153,6 +158,10 @@ def _document(doc_id: int, source: dict | None, signatur: str,
         "provenance": "transkribus",
         # reserved for "inventaria" once the published edition list is available
         "attribution": None,
+        # Page-status distribution in Transkribus (DONE = human-corrected);
+        # per-page assignment needs the authenticated status fetch.
+        "transkribus_statuses": (status or {}).get("statuses"),
+        "done_pages": (status or {}).get("done_pages"),
     }
 
 
@@ -255,6 +264,7 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
             "verification": {s: status.get(s, 0) for s in VERIFICATION_STATUS},
             "thumb": first_text["iiif"] if first_text else None,
             "thumb_page": first_text["pageNr"] if first_text else None,
+            "done_pages": doc.get("done_pages"),
         })
     payload = {"documents": summary}
     _write(out_path, payload)
