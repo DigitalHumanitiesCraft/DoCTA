@@ -43,10 +43,10 @@
         </div>
         <div class="col-md-2">
           <select class="form-select" id="filter-tier" aria-label="Filter by availability">
-            <option value="">All tiers</option>
-            <option value="1">Tier 1: Transcribed</option>
-            <option value="2">Tier 2: Digitized</option>
-            <option value="3">Tier 3: Archive only</option>
+            <option value="">Any progress</option>
+            <option value="1">Has HTR text</option>
+            <option value="2">Digitized</option>
+            <option value="3">Archive only</option>
           </select>
         </div>
         <div class="col-md-2 text-end">
@@ -63,7 +63,7 @@
               <th scope="col" data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="datierung" tabindex="0" aria-sort="none">Date <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="seiten" tabindex="0" aria-sort="none" class="text-end text-nowrap">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th scope="col" data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="tier" tabindex="0" aria-sort="none">Progress <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -83,7 +83,7 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
-    import { escapeHTML, tierBadge, formatDate, debounce } from './js/utils.js';
+    import { escapeHTML, formatDate, debounce } from './js/utils.js';
 
     initNav('dashboard');
     initBanner();
@@ -103,6 +103,20 @@
       'Repertorium': 'Repertory',
     };
     const catLabel = (kat) => CATEGORY_EN[kat] || kat;
+
+    // Pipeline progress per source: filled = reached, outline = pending.
+    // TEI and Edited are pending for the whole corpus until those stages ship.
+    function stageIcons(s) {
+      const stages = [
+        { key: 'F', label: 'Facsimile', done: s.tier === 1 || s.tier === 2 },
+        { key: 'H', label: 'HTR text', done: !!(s.transkribus && s.transkribus.has_text) },
+        { key: 'T', label: 'TEI', done: false },
+        { key: 'E', label: 'Edited', done: false },
+      ];
+      return `<span class="stages">` + stages.map(st =>
+        `<span class="stage ${st.done ? 'stage--done' : 'stage--todo'}" title="${st.label}${st.done ? '' : ': pending'}">${st.key}<span class="visually-hidden"> ${st.label}${st.done ? ' done' : ' pending'}</span></span>`
+      ).join('') + `</span>`;
+    }
 
     let allSources = [];
     let sortKey = 'signatur';
@@ -128,7 +142,7 @@
           <td>${escapeHTML(s.titel)}</td>
           <td class="small">${escapeHTML(formatDate(s.datierung))}</td>
           <td class="small num">${s.seiten != null ? s.seiten : '–'}</td>
-          <td>${tierBadge(s.tier)}</td>
+          <td>${stageIcons(s)}</td>
           <td>${action}</td>
         </tr>`;
       }).join('');

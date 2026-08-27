@@ -6,10 +6,11 @@
 const NAV_ITEMS = [
   { href: 'index.html', label: 'Home', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
-  { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
+  { href: 'edition.html', label: 'Edition', id: 'edition' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
-  { href: 'knowledge.html', label: 'Knowledge', id: 'knowledge' },
-  { href: 'about.html', label: 'About', id: 'about' },
+  { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
+  // Knowledge stays reachable via About and direct URL; About sits flush right.
+  { href: 'about.html', label: 'About', id: 'about', end: true },
 ];
 
 /**
@@ -20,9 +21,10 @@ export function initNav(activeId) {
   const nav = document.getElementById('main-nav');
   if (!nav) return;
 
+  nav.classList.add('w-100');
   nav.innerHTML = NAV_ITEMS.map(item => {
     const isActive = item.id === activeId;
-    return `<li class="nav-item"><a class="nav-link${isActive ? ' active' : ''}" href="${item.href}"${isActive ? ' aria-current="page"' : ''}>${item.label}</a></li>`;
+    return `<li class="nav-item${item.end ? ' ms-lg-auto' : ''}"><a class="nav-link${isActive ? ' active' : ''}" href="${item.href}"${isActive ? ' aria-current="page"' : ''}>${item.label}</a></li>`;
   }).join('');
 
   initFooter(activeId);
@@ -39,7 +41,9 @@ export function initBanner() {
   badge.className = 'beta-badge';
   badge.textContent = 'BETA';
   badge.title = 'Work in progress';
-  brand.after(badge);
+  const navbar = document.querySelector('.navbar');
+  navbar?.classList.add('position-relative');
+  (navbar || brand.parentElement).appendChild(badge);
 }
 
 /* Official GitHub mark (octicon mark-github, MIT-licensed path data). */

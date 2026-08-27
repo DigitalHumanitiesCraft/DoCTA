@@ -394,8 +394,13 @@ th.sorted .sort-icon { opacity: 1; }
   border: 1px solid var(--accent);
   border-radius: 4px;
   padding: 1px 5px;
-  margin-left: 2px;
-  align-self: center;
+}
+@media (min-width: 992px) {
+  /* Centered in the navbar on wide screens, out of the flow */
+  .beta-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+}
+@media (max-width: 991.98px) {
+  .beta-badge { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); }
 }
 
 /* Shared footer */
@@ -410,4 +415,31 @@ th.sorted .sort-icon { opacity: 1; }
   padding: 6px 16px;
   border-bottom: 1px solid var(--border-light);
   background: var(--surface);
+}
+
+/* Pipeline progress cells on the sources table */
+.stages { display: inline-flex; gap: 3px; }
+.stage {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.35rem; height: 1.35rem;
+  border-radius: 4px;
+  font-size: 0.68rem; font-weight: 700;
+  border: 1px solid var(--border-custom);
+}
+.stage--done { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+.stage--todo { color: var(--text-muted-custom); background: transparent; }
+
+/* Edition reading view */
+.edition-text { max-width: 46rem; }
+.edition-page { margin-bottom: 2rem; }
+.edition-page__head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 0.8rem; font-weight: 600; color: var(--text-muted-custom);
+  text-transform: uppercase; letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0.5rem; padding-bottom: 2px;
+}
+.edition-line {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.02rem; line-height: 1.6;
 }
