@@ -262,6 +262,17 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   white-space: nowrap;
 }
 
+/* The facsimile bar carries the archival identity once a document is loaded */
+#facs-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: var(--text-xs);
+  font-family: var(--font-source);
+  color: var(--text-secondary);
+}
+
 .viewer-back {
   color: var(--text-muted-custom);
   text-decoration: none;
@@ -378,9 +389,10 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .doc-meta {
   flex: 0 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: var(--space-xs) var(--space-lg);
+  overflow: hidden;
+  gap: var(--space-xs) var(--space-md);
   padding: var(--space-xs) var(--space-md);
   border-bottom: 1px solid var(--border-light);
   background: var(--surface);
@@ -403,13 +415,17 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--text-muted-custom);
 }
 
-.doc-meta__shelfmark {
-  font-family: var(--font-source);
-  color: var(--text-secondary);
+.doc-meta__cat {
+  flex: 0 0 auto;
+  padding: 0.0625rem var(--space-sm);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+  white-space: nowrap;
 }
 
 .doc-meta__title {
-  max-width: 24ch;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

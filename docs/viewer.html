@@ -31,7 +31,7 @@
         <div class="viewer-panel__header">
           <a href="index.html#sources" class="viewer-back">&larr; Sources</a>
           <span class="viewer-bar-sep" aria-hidden="true"></span>
-          <span class="viewer-panel__title">Facsimile</span>
+          <span class="viewer-panel__title" id="facs-title">Facsimile</span>
 
           <div class="viewer-tools" role="group" aria-label="Facsimile controls">
             <button type="button" class="vt-btn" id="btn-zoom-out" aria-label="Zoom out" title="Zoom out (-)">
@@ -145,12 +145,7 @@
       ` stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 
     const META_ICONS = {
-      shelfmark: metaIcon('<path d="M4 2.5h8v11l-4-3-4 3z"/>'),
       title: metaIcon('<path d="M4 2h5l3 3v9H4z"/><path d="M9 2v3h3"/>'),
-      date: metaIcon('<path d="M2.5 4h11v9.5h-11z"/><path d="M2.5 6.75h11M5.5 2.5V4M10.5 2.5V4"/>'),
-      pages: metaIcon('<path d="M5.5 2.5h8v9h-8z"/><path d="M3.5 5v8.5H11"/>'),
-      category: metaIcon('<path d="M2 3.5h4l1.5 2H14v8H2z"/>'),
-      institution: metaIcon('<path d="M2 6.5 8 3l6 3.5"/><path d="M3.5 7v5.5M6.5 7v5.5M9.5 7v5.5M12.5 7v5.5M2 13.5h12"/>'),
     };
 
     // field: what the tooltip names, tip: appended to it where the value is truncated
@@ -163,16 +158,24 @@
     function renderDocMeta(docId) {
       const el = document.getElementById('doc-meta');
       const s = sourceByDocId.get(Number(docId));
-      if (!s) { el.hidden = true; return; }
+      const facsTitle = document.getElementById('facs-title');
+      if (!s) {
+        el.hidden = true;
+        facsTitle.textContent = 'Facsimile';
+        facsTitle.removeAttribute('title');
+        return;
+      }
+      // Archival identity lives in the facsimile bar: shelfmark, date, holding.
+      const identity = [s.signatur, s.datierung?.raw, 'Tyrolean State Archives']
+        .filter(Boolean).join(' · ');
+      facsTitle.textContent = identity;
+      facsTitle.title = identity;
+      // The strip stays one line: archival title plus the category as quiet chip.
+      // Page count is omitted, the pager already shows it.
       const parts = [
-        metaItem('shelfmark', 'Shelfmark', s.signatur, 'doc-meta__shelfmark'),
-        // The archival title is truncated in the strip, so the tooltip carries it in full
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
-        s.datierung?.raw ? metaItem('date', 'Date of origin', s.datierung.raw) : null,
-        s.seiten != null ? metaItem('pages', 'Page count', `${s.seiten} pages`) : null,
-        metaItem('category', 'Source category', CATEGORY_EN[s.kategorie] || s.kategorie),
-        metaItem('institution', 'Holding institution', 'Tyrolean State Archives'),
-      ].filter(Boolean);
+        `<span class="doc-meta__cat" title="Source category">${escapeHTML(CATEGORY_EN[s.kategorie] || s.kategorie)}</span>`,
+      ];
       el.innerHTML = parts.join('');
       el.hidden = false;
     }
