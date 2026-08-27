@@ -238,6 +238,10 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
     for doc in docs:
         pages = pages_by_doc[doc["docId"]]
         status = Counter(p["verification"]["status"] for p in pages)
+        # First written page as the document's thumbnail source; the site
+        # requests a scaled IIIF variant at runtime, no image enters the repo.
+        first_text = next(
+            (p for p in pages if p["content_class"] == "text" and p["iiif"]), None)
         summary.append({
             "docId": doc["docId"],
             "shelfmark": doc["shelfmark"],
@@ -249,6 +253,8 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
             "pages_with_empty_evidence": sum(
                 1 for p in pages if p["empty_evidence"]),
             "verification": {s: status.get(s, 0) for s in VERIFICATION_STATUS},
+            "thumb": first_text["iiif"] if first_text else None,
+            "thumb_page": first_text["pageNr"] if first_text else None,
         })
     payload = {"documents": summary}
     _write(out_path, payload)

@@ -58,6 +58,7 @@
         <table class="table table-hover table-sm align-middle" id="sources-table">
           <thead>
             <tr>
+              <th scope="col"><span class="visually-hidden">Facsimile thumbnail</span></th>
               <th scope="col" data-sort="kategorie" tabindex="0" aria-sort="none">Category <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="signatur" tabindex="0" aria-sort="none">Shelfmark <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th scope="col" data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
@@ -119,15 +120,27 @@
     }
 
     let allSources = [];
+    let thumbByDocId = new Map();
     let sortKey = 'signatur';
     let sortDir = 1;
+
+    // Scaled IIIF variant of the first written page; the image stays external.
+    function thumbCell(s) {
+      const docId = s.transkribus?.doc_id;
+      const t = docId ? thumbByDocId.get(Number(docId)) : null;
+      if (!t) return '';
+      const src = t.thumb.replace('/full/max/', '/full/,120/');
+      return `<a href="viewer.html?doc=${docId}&page=${t.thumb_page}" class="thumb-link"
+        aria-label="Open ${escapeAttr(s.signatur)} in the viewer">
+        <img src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async"></a>`;
+    }
 
     function renderTable(sources) {
       const tbody = document.getElementById('sources-body');
       document.getElementById('result-count').textContent = `${sources.length.toLocaleString('en-GB')} sources`;
 
       if (sources.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" class="text-body-secondary text-center py-4">No sources found</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="8" class="text-body-secondary text-center py-4">No sources found</td></tr>';
         return;
       }
 
@@ -137,6 +150,7 @@
           ? `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Open</a>`
           : '';
         return `<tr>
+          <td class="thumb-cell">${thumbCell(s)}</td>
           <td class="cell-cat">${escapeHTML(catLabel(s.kategorie))}</td>
           <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
           <td><span class="cell-truncate" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span></td>
@@ -242,7 +256,16 @@
 
     async function initSources() {
       try {
-        allSources = await loadJSON('data/sources.json');
+        const [sources, register] = await Promise.all([
+          loadJSON('data/sources.json'),
+          loadJSON('data/pipeline/register_summary.json').catch(() => null),
+        ]);
+        allSources = sources;
+        if (register) {
+          thumbByDocId = new Map(register.documents
+            .filter(d => d.thumb)
+            .map(d => [d.docId, { thumb: d.thumb, thumb_page: d.thumb_page }]));
+        }
 
         const categories = [...new Set(allSources.map(s => s.kategorie))].sort();
         const katSelect = document.getElementById('filter-kategorie');
@@ -258,7 +281,7 @@
       } catch (err) {
         const errTr = document.createElement('tr');
         const errTd = document.createElement('td');
-        errTd.colSpan = 7;
+        errTd.colSpan = 8;
         errTd.className = 'text-body-secondary text-center py-4';
         errTd.textContent = `Loading failed: ${err.message}`;
         errTr.appendChild(errTd);

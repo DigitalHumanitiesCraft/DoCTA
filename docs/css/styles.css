@@ -213,6 +213,34 @@ th.sorted .sort-icon { opacity: 1; }
   color: var(--text-muted-custom);
 }
 
+/* Facsimile thumbnail of the first written page; fixed crop keeps rows even. */
+.thumb-cell {
+  width: 42px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.thumb-link {
+  display: inline-block;
+  line-height: 0;
+  border-radius: var(--radius-sm);
+}
+
+.thumb-link img {
+  width: 34px;
+  height: 46px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+}
+
+.thumb-link:hover img,
+.thumb-link:focus-visible img {
+  border-color: var(--accent);
+}
+
 /* Sticky header for the sources table. Sticky positioning needs the viewport as
    scroll context, so the horizontal-scroll wrapper is only kept below lg where
    the table cannot fit anyway. */
