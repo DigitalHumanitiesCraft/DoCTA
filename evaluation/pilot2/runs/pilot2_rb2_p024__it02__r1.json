@@ -1,0 +1,401 @@
+{
+ "page": "pilot2_rb2_p024",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 30.4,
+ "timestamp": "2026-08-27T10:28:13+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Außgeben",
+      "kind": "rubric",
+      "uncertain": [
+       "Außgeben"
+      ]
+     },
+     {
+      "text": "Item Der benant Rannstar hat auf die vorgenant",
+      "kind": "entry",
+      "uncertain": [
+       "Rannstar",
+       "vorgenant"
+      ]
+     },
+     {
+      "text": "hundert und l Soldner ausgebe(n) in der",
+      "kind": "entry",
+      "uncertain": [
+       "hundert",
+       "Soldner"
+      ]
+     },
+     {
+      "text": "vorgenan zeit / iede(m) Soldnar j monad ij gld",
+      "kind": "entry",
+      "uncertain": [
+       "vorgenan",
+       "Soldnar",
+       "monad"
+      ]
+     },
+     {
+      "text": "bringt iede(m) die iij monad vj guld. und",
+      "kind": "entry",
+      "uncertain": [
+       "bringt",
+       "monad"
+      ]
+     },
+     {
+      "text": "zwain Soldnern etwas merer Fart auff die",
+      "kind": "entry",
+      "uncertain": [
+       "Soldnern",
+       "merer",
+       "Fart"
+      ]
+     },
+     {
+      "text": "benant Soldner —— viijC liij guld ij ß v d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij liij",
+       "unit": "guld"
+      },
+      "uncertain": [
+       "benant",
+       "Soldner"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Da hat er für etwas schadens ausgebe(n) für",
+      "kind": "entry",
+      "uncertain": [
+       "schadens"
+      ]
+     },
+     {
+      "text": "·iiij· dienbrieff purcaw helmparten und dustler",
+      "kind": "entry",
+      "uncertain": [
+       "dienbrieff",
+       "purcaw",
+       "helmparten",
+       "dustler"
+      ]
+     },
+     {
+      "text": "—— xj guld viij xr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xj",
+       "unit": "guld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dem puechpasten hat er ausgebe(n) zu heben",
+      "kind": "entry",
+      "uncertain": [
+       "puechpasten",
+       "heben"
+      ]
+     },
+     {
+      "text": "steten —— iij gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "steten"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dem peter Scherützer zu hebensten ij guld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "guld"
+      },
+      "uncertain": [
+       "peter",
+       "Scherützer",
+       "hebensten"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "diesem peter und für wagenschmar und ain",
+      "kind": "entry",
+      "uncertain": [
+       "peter",
+       "wagenschmar"
+      ]
+     },
+     {
+      "text": "Gsemb und zerung zu mayenpach zu schniders",
+      "kind": "entry",
+      "uncertain": [
+       "Gsemb",
+       "zerung",
+       "mayenpach",
+       "schniders"
+      ]
+     },
+     {
+      "text": "hauffen und für ain solich anmorn varrn aines",
+      "kind": "entry",
+      "uncertain": [
+       "hauffen",
+       "solich",
+       "anmorn",
+       "varrn"
+      ]
+     },
+     {
+      "text": "j gld für heinrichs zerung fa —— viij gld j xr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "heinrichs",
+       "zerung",
+       "fa"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "24",
+    "lines": [
+     {
+      "text": "24",
+      "kind": "foliation"
+     },
+     {
+      "text": "Item Sein brawtman hat er aufgericht die d(er)",
+      "kind": "entry",
+      "uncertain": [
+       "Sein",
+       "brawtman",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "brawtman ausgebn hat — ij lb xij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "brawtman",
+       "ausgebn"
+      ]
+     },
+     {
+      "text": "Item So mant d(er) Pamir er hab abgang in seind",
+      "kind": "entry",
+      "uncertain": [
+       "Pamir",
+       "abgang",
+       "seind"
+      ]
+     },
+     {
+      "text": "raittung / darumb hat man jm zu pessung",
+      "kind": "entry",
+      "uncertain": [
+       "raittung",
+       "pessung"
+      ]
+     },
+     {
+      "text": "geb(e)n — iiij gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iiij",
+       "unit": "gld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Suma dicz aussgebens facit",
+      "kind": "sum",
+      "uncertain": [
+       "dicz",
+       "aussgebens"
+      ]
+     },
+     {
+      "text": "xiijC lxxvj Rhgld x ß x d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "xiijC",
+       "lxxvj"
+      ]
+     },
+     {
+      "text": "Innemen und aussgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "gegeneinander",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "und abgezogen. Dannoch ist meins hern",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogen",
+       "Dannoch",
+       "meins",
+       "hern"
+      ]
+     },
+     {
+      "text": "gnad dem Pamite mitsambt d(e)r pessung",
+      "kind": "entry",
+      "uncertain": [
+       "gnad",
+       "Pamite",
+       "mitsambt",
+       "pessung"
+      ]
+     },
+     {
+      "text": "schuldig — xx Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "schuldig"
+      ]
+     },
+     {
+      "text": "Die hat jm d(e)r Reinhart aussgericht und",
+      "kind": "entry",
+      "uncertain": [
+       "Reinhart",
+       "aussgericht"
+      ]
+     },
+     {
+      "text": "bezalt.",
+      "kind": "entry",
+      "uncertain": [
+       "bezalt"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Außgeben",
+  "Item Der benant Rannstar hat auf die vorgenant",
+  "hundert und l Soldner ausgebe(n) in der",
+  "vorgenan zeit / iede(m) Soldnar j monad ij gld",
+  "bringt iede(m) die iij monad vj guld. und",
+  "zwain Soldnern etwas merer Fart auff die",
+  "benant Soldner —— viijC liij guld ij ß v d",
+  "Item",
+  "Da hat er für etwas schadens ausgebe(n) für",
+  "·iiij· dienbrieff purcaw helmparten und dustler",
+  "—— xj guld viij xr",
+  "Item",
+  "Dem puechpasten hat er ausgebe(n) zu heben",
+  "steten —— iij gld",
+  "Item",
+  "Dem peter Scherützer zu hebensten ij guld",
+  "Item",
+  "diesem peter und für wagenschmar und ain",
+  "Gsemb und zerung zu mayenpach zu schniders",
+  "hauffen und für ain solich anmorn varrn aines",
+  "j gld für heinrichs zerung fa —— viij gld j xr",
+  "24",
+  "Item Sein brawtman hat er aufgericht die d(er)",
+  "brawtman ausgebn hat — ij lb xij d",
+  "Item So mant d(er) Pamir er hab abgang in seind",
+  "raittung / darumb hat man jm zu pessung",
+  "geb(e)n — iiij gld",
+  "Suma dicz aussgebens facit",
+  "xiijC lxxvj Rhgld x ß x d",
+  "Innemen und aussgeben gegeneinander gelegt",
+  "und abgezogen. Dannoch ist meins hern",
+  "gnad dem Pamite mitsambt d(e)r pessung",
+  "schuldig — xx Rhgld",
+  "Die hat jm d(e)r Reinhart aussgericht und",
+  "bezalt."
+ ]
+}

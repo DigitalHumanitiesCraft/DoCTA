@@ -1,0 +1,34 @@
+{
+ "page": "pilot2_inv_11348481_p12",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1162,
+    3376
+   ],
+   "sent_px": [
+    1162,
+    3376
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 5.5,
+ "timestamp": "2026-08-27T10:26:13+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [],
+    "empty": true
+   }
+  ]
+ },
+ "lines": []
+}

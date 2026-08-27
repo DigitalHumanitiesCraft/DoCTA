@@ -1,0 +1,182 @@
+{
+ "page": "pilot2_inv_11330759_p5",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1193,
+    3465
+   ],
+   "sent_px": [
+    1193,
+    3465
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 16.4,
+ "timestamp": "2026-08-27T10:26:57+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "3",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Ain traght",
+      "kind": "entry",
+      "uncertain": [
+       "traght"
+      ]
+     },
+     {
+      "text": "Ain par hanndtschuͤch",
+      "kind": "entry",
+      "uncertain": [
+       "par"
+      ]
+     },
+     {
+      "text": "Ain par armpösn",
+      "kind": "entry",
+      "uncertain": [
+       "par",
+       "armpösn"
+      ]
+     },
+     {
+      "text": "Ain helm partn",
+      "kind": "entry",
+      "uncertain": [
+       "helm",
+       "partn"
+      ]
+     },
+     {
+      "text": "Ain rosen spiss",
+      "kind": "entry",
+      "uncertain": [
+       "rosen",
+       "spiss"
+      ]
+     },
+     {
+      "text": "Zehen zynein schuͤssl clain vnd gross",
+      "kind": "entry",
+      "uncertain": [
+       "gross"
+      ]
+     },
+     {
+      "text": "Sechtzehen zynein taler",
+      "kind": "entry",
+      "uncertain": [
+       "taler"
+      ]
+     },
+     {
+      "text": "In dem obern gadn bey",
+      "kind": "rubric",
+      "uncertain": [
+       "obern",
+       "bey"
+      ]
+     },
+     {
+      "text": "der wer",
+      "kind": "rubric",
+      "uncertain": [
+       "wer"
+      ]
+     },
+     {
+      "text": "Zwein vnd gloczspeysi zusamn ganntz",
+      "kind": "entry",
+      "uncertain": [
+       "gloczspeysi",
+       "zusamn"
+      ]
+     },
+     {
+      "text": "Zweni gloczspeysi zerbrochn zusamn",
+      "kind": "entry",
+      "uncertain": [
+       "gloczspeysi",
+       "zerbrochn",
+       "zusamn"
+      ]
+     },
+     {
+      "text": "Ain lützei hiltzei sidtl darinn",
+      "kind": "entry",
+      "uncertain": [
+       "lützei",
+       "hiltzei",
+       "sidtl",
+       "darinn"
+      ]
+     },
+     {
+      "text": "funff loͤffl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain kupfrein wasser gaitzn",
+      "kind": "entry",
+      "uncertain": [
+       "wasser",
+       "gaitzn"
+      ]
+     },
+     {
+      "text": "Sechshundertt hiltzen taler new",
+      "kind": "entry",
+      "uncertain": [
+       "taler",
+       "new"
+      ]
+     },
+     {
+      "text": "Ain grosser prathspeysi lanczts",
+      "kind": "entry",
+      "uncertain": [
+       "grosser",
+       "prathspeysi",
+       "lanczts"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "3",
+  "Ain traght",
+  "Ain par hanndtschuͤch",
+  "Ain par armpösn",
+  "Ain helm partn",
+  "Ain rosen spiss",
+  "Zehen zynein schuͤssl clain vnd gross",
+  "Sechtzehen zynein taler",
+  "In dem obern gadn bey",
+  "der wer",
+  "Zwein vnd gloczspeysi zusamn ganntz",
+  "Zweni gloczspeysi zerbrochn zusamn",
+  "Ain lützei hiltzei sidtl darinn",
+  "funff loͤffl",
+  "Ain kupfrein wasser gaitzn",
+  "Sechshundertt hiltzen taler new",
+  "Ain grosser prathspeysi lanczts"
+ ]
+}

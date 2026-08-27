@@ -47,6 +47,90 @@
       "zugehŏrung.",
       "Zwen alt zẙnen leuchter."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p1__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:32+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1487",
+      "1",
+      "Jnventari hernach die Hab",
+      "zeugk vnd Guet auff der",
+      "munndtkron Cristoffen von",
+      "Wolckenstain phleger daselbs",
+      "Hin vnd vbergeantwurt",
+      "auffgeschriben zü Semini am",
+      "sandt als angenedem phleger",
+      "am phintztag nach vnser frawen",
+      "tag Assumpcionis Anno etc",
+      "Octuagesimo Septimo Jnge-",
+      "genwertikait Johannsen Elling",
+      "Johannsen Cunniglän Notarij",
+      "pürger zü Botzen vnd and(er)",
+      "Ain erstens hat man gefunden",
+      "in Sand Vlrichs stockh an",
+      "Gelt v lb viij s j d",
+      "Noc hat man Ime geantwurt",
+      "von Sand Blisjen knaben",
+      "wegn xxiiij lb v s j d",
+      "In Sand Vlrichs Capelln",
+      "Ain slecht alt messgewandt",
+      "mit alm vnd ander sein",
+      "zugehörung",
+      "Zwai alt zynen leuchter",
+      "Inv. A 225/1"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p1__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:32+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1487",
+      "1",
+      "Inventur hernach die hab",
+      "zeüg vnd guet auf der",
+      "mündtkron Cristoffen von",
+      "Wolckenstain pfleger daselbs",
+      "hin vnd vbergeantwurt",
+      "aufgeschriben zu Semini an",
+      "sandt als angewendten pfleger",
+      "an pfinztag nach vnser fraun",
+      "tag Assumpcionis Anno etc",
+      "Octuagesimo Septimo Jecz",
+      "gegenwirtig Hannsen Kling",
+      "Hannsen einmützer Notari",
+      "Burger zu Botzen vnd and(er)",
+      "Im erstens hat man gefunden",
+      "in sand vlreichs stock an",
+      "Gelt v lb viij ß j d",
+      "Mer hat man Im geantwurt",
+      "von sand Felixen kirchen",
+      "wegn xxiiij lb v ß j d",
+      "In sand vlreichskapelln",
+      "Ain slecht alt messgewandt",
+      "mit alb vnd ander sein",
+      "zugehörung",
+      "Zwai alt zinen leuchter",
+      "Inv. A 225/1"
+     ]
     }
    ]
   },
@@ -96,6 +180,84 @@
       "nicht nach deṁ cestenn.",
       "Ain ŏl stain."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p2__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:31+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "In Sand Blasy",
+      "Capellenn",
+      "Ain suͤlbrein kelch mit sein paten",
+      "unverguͤlt scheint Sand blaess",
+      "kelch.",
+      "Aber zwen suͤlbrein kelch mit den",
+      "paten ain groͤsser vnd ain clain",
+      "alles verguͤlt vnd mit drey cor",
+      "poraltuͤchlen",
+      "Ain plab samateis messgewandt",
+      "mit alben vnd annder seiner",
+      "zugehörungt",
+      "Ain grien damastein messgewandt",
+      "auch mit alben vnd annder sein",
+      "zugehörung von mein gnedigstn",
+      "herrn von Osterreich herreichent",
+      "Aber ain slecht alt messgewandt",
+      "mit sein zugehörungt",
+      "Zway messbuͤecher vnd ain psalter",
+      "Zwen zynein leuchter",
+      "Ain wachsprunnkessl",
+      "Auff geschribenn altar sein altartuͤch",
+      "merct nach dem cappenn",
+      "Ain öl pann"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p2__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:37+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "In Sand Blasii",
+      "Capellenn",
+      "Ain Sůlbrein kelch mit sein paten",
+      "vbergult scheint Sand blaiss",
+      "kelch .",
+      "Aber zwen Sůlbrein kelch mit den",
+      "paten ain grosser vnd ain clain",
+      "alles vergult vnd mit stainen",
+      "poraltaplen",
+      "Ain plab Sametes messgewandt",
+      "mit stul vnd annder seiner",
+      "zůgehörungt",
+      "Ain greins Samatischs messgewandt",
+      "auch mit stul vnd annder sein",
+      "zugehörung von mein gnedigstn",
+      "herrn von Osterreych herreichund",
+      "Aber ain slecht alt messgewandt",
+      "mit sein zùgehörungt",
+      "Zway messbůecher vnd ain pistl",
+      "Zwen zynein lauchter",
+      "Ain wassprunbkestl",
+      "Auff geschossens altar sein altartůch",
+      "nicht mer auff dem capelln",
+      "Ain öl pain"
+     ]
     }
    ]
   },
@@ -140,6 +302,76 @@
       "Ain pachzeůg mit seiner zugeho̊rung.",
       "Ain schuss wag."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p3__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:40+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "2",
+      "Fünff Swäytzer krennckn",
+      "Zway guldin Rocken hab auch von",
+      "mein gnedigisten herrn von Osterreich",
+      "bechumen vnd geben .",
+      "In ainer Truhen daselbs in Sand",
+      "Vlrichen kirchen xvij par laylach",
+      "Zwelffen vnd annder boß vnd guet",
+      "Syben handtwoell vnd ain vmbschleg",
+      "Syben tyschtuech boß vnd guet",
+      "Aber an gelt Sand Sebastian zu",
+      "gebawend iiij lb vj d",
+      "In dem alten gebawes",
+      "In der Stuben",
+      "Drey Schlecht Tysch",
+      "Ain Swartze kriegs Tafl",
+      "Ain klain Esses vässl",
+      "Ain preet Spill",
+      "Ain partheysn mit sein Zugehörung",
+      "Ain schues khorb"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p3__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:44+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "2",
+      "Fünff Swäytzer kranckhn",
+      "Zweyj guldin kuckenschab auch von",
+      "mein gnedigsten herrn von Osterreich",
+      "bekummen und geben .",
+      "In ainer truchen daselbs in Sand",
+      "Zelgen kirchen xij par leylach",
+      "Zwolechen und annder böß und guet",
+      "Syben hawndtwöll und ain umbhack",
+      "Syben tyschtuech böß und guet",
+      "Aber an gelt Sand Sebastian zu",
+      "gebawnd ij lb x d",
+      "In dem alten gebawes",
+      "In der Stuben",
+      "Drey Schlecht Tysch",
+      "Ain Swartze kreges Tafl",
+      "Ain clain Ehles vässl",
+      "Ain prett Spil",
+      "Ain partheysen mit sein Zugehörung",
+      "Ain schuss Wagn"
+     ]
     }
    ]
   },
@@ -178,6 +410,64 @@
       "Ain par ley̆lach.",
       "Ain eyseṅhůet.",
       "Ain panṅtzer."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p4__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:41+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vnnder dem dach zü oberst",
+      "Vier rugein pettenn",
+      "Vier fedrein khestebet",
+      "Aczehn par zwelchein laylach niett gut",
+      "Sechs polster dray kiss",
+      "Syben zerrissenn deckhenn",
+      "In der kamer darinn mais-",
+      "hanns gelegenn ist",
+      "Dreyzehen bet bös vnd guet",
+      "Syben polster acht kiss",
+      "Neün deckhen bös vnd guet",
+      "Ain par leylach",
+      "Ain beschribnet",
+      "Ain pannitzer"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p4__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:47+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vnder dem dach zu oberst",
+      "Vier ruginen pettenn",
+      "Vier fedrein pholster",
+      "Acht par zwerichen leylach nicht gut",
+      "Sechs polster zway kiss",
+      "Syben zerrissenn deckhenn",
+      "In der kamer darinn maist",
+      "hanns gelegenn ist",
+      "Dreyzehen pet bös vnd guet",
+      "Syben polster Acht kiss",
+      "Neun deckenn bös vnd guet",
+      "Ain par leylach",
+      "Ain beschribner",
+      "Ain panntzer"
      ]
     }
    ]
@@ -220,6 +510,70 @@
       "Sechsunddreissig hůltzen tåler neẘ.",
       "Ain grosser glockhspeysen lavetsch."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p5__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:57+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "3",
+      "Ain traght",
+      "Ain par hanndtschuͤch",
+      "Ain par armpösn",
+      "Ain helm partn",
+      "Ain rosen spiss",
+      "Zehen zynein schuͤssl clain vnd gross",
+      "Sechtzehen zynein taler",
+      "In dem obern gadn bey",
+      "der wer",
+      "Zwein vnd gloczspeysi zusamn ganntz",
+      "Zweni gloczspeysi zerbrochn zusamn",
+      "Ain lützei hiltzei sidtl darinn",
+      "funff loͤffl",
+      "Ain kupfrein wasser gaitzn",
+      "Sechshundertt hiltzen taler new",
+      "Ain grosser prathspeysi lanczts"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p5__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:53+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "3",
+      "Ain trågsl",
+      "Ain pare hanndtschůech",
+      "Ain pare armiphrůn",
+      "Ain heln partn",
+      "Ain rosen sprüzz",
+      "Zehen zynen schůssl clain vnd gross",
+      "Sechtzehen zynen taler",
+      "Im drosz gadn bey",
+      "der mor",
+      "Zwein und glockhspeysi häfenn ganz",
+      "Zwai glockhspeysi zerbrochn hafenn",
+      "Ain lytzn hültzn fedrl darinn",
+      "fünff löffl",
+      "Ain kupfern wasser gatzen",
+      "Sechshundertacht hültzen taler new",
+      "Ain grosser prackhenspis lanckhs"
+     ]
     }
    ]
   },
@@ -260,6 +614,66 @@
       "Zwen gross ereṅ håfenn.",
       "Syben smer låb in ainer tru̇hen."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p6__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:52+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Ain mörser glockhspeyss mit seyn",
+      "eysnein stempfl",
+      "drey beyrein kellerin",
+      "drey pfannen",
+      "zwai kessl",
+      "drey hafen deckhein",
+      "· Item messingspeckh vnd ain grossen",
+      "messingspeckh",
+      "Ain öl pann",
+      "Ain smaltz kübl",
+      "Zway prochen hanndtgwassfaß",
+      "Ain brochen messinkandl",
+      "Im protgadein",
+      "Zwai gross traitfassen",
+      "Syben zimer laib in ainer truchen"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p6__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:59+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Ain moͤrser gloͤckhspeisin mit sein",
+      "eysnein stempfl",
+      "drei beymein kelleinn",
+      "Acht pfannenn",
+      "Zwai kyff",
+      "drei hafen deckhenn",
+      "·:· Zwen messingspeckh vnd ain grosen",
+      "messingspeckh",
+      "Ain Oͤl pann",
+      "Ain smaltz kübl",
+      "Zway brochenn hanndtgiesvaß",
+      "Ain brochenn messincanndl",
+      "Im Brotgadenn",
+      "Zwai gross krauthafann",
+      "Syben diner laib in ainer trubn"
+     ]
     }
    ]
   },
@@ -298,6 +712,66 @@
       "Maister Hanṅsen Thuren.",
       "Drey zẙneṅ plån.",
       "Acht zyneṅ mitterschůssel."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p7__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:05+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "4",
+      "Drei kheller",
+      "Zwelff pettgewand",
+      "Aindleff ster mel in drey sekchn",
+      "In der Püchßerei",
+      "Die werckhzeug vngerichtet",
+      "In güßhauss",
+      "Zwo viertail güßstain",
+      "Ain klainyes güßstain auff",
+      "zwain redern",
+      "Drei handtpüchsen",
+      "In dem newen thurn genant",
+      "mayster Hannsen thurn",
+      "Drey hyren gclain",
+      "Acht hyren vngericht"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p7__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:07+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "4",
+      "Drei kheller",
+      "Zwelff pettgwant",
+      "Ainleff ster mel in drey sekhen",
+      "In der Phÿstrann",
+      "Die werchzeug vngeriecht",
+      "In gußpüchsnn",
+      "Zwo viertail guspuchsnn",
+      "Ain klanngen guspuchsnn auff",
+      "zwain redern",
+      "Drei handtpuchsnn",
+      "In dem newen thuren genant",
+      "mayster hannsen thurn",
+      "Drey hÿmel polain",
+      "Acht hÿmel vnderpett"
      ]
     }
    ]
@@ -341,6 +815,70 @@
       "Und etlich traid, korn, fueter, gerstenn",
       "ungeverlichenṅ bey LX ster."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p8__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:04+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vier gross masspüchß",
+      "Sechs clain zynnen Salffnnipüchs",
+      "Sechs zynnen taler",
+      "Vier pfannen",
+      "Drei clainer kessl",
+      "Zwen gross kessl",
+      "Zwen zynnen häfn",
+      "Etlich verprennts tzschmigeschirr Solchs",
+      "mayster Hannsen zugeschriben",
+      "Vier pundtenn tzschin",
+      "vnd etlichs plech bei theun vnd traletz",
+      "von tzschin",
+      "Ain gross tzugsail",
+      "In ainer clainen lagl bei zehen kaylen",
+      "guessen strützen",
+      "vnd etlichs wand korn fust gstanden",
+      "ungverclossen bey ix star"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p8__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:08+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vier gross malspuͤsse",
+      "Sechs clain zinen Salsenischiͤssle",
+      "Sechs zinen tåler",
+      "Drei pfannen",
+      "Ain clainer kessl",
+      "Zwen gross kessl",
+      "Item zwen haͤff",
+      "Etlich verbrennd geschirrgestueckhalle",
+      "maister Hannsen zugehoͤrenn",
+      "Vier pundani hefenn",
+      "Vnd etlich plech zu rorn vnd waͤltschi",
+      "von hefenn",
+      "Ain gross dugspail",
+      "In ainer clainen lage zu heben raytsen",
+      "guͤssen pintzen",
+      "vnd etlich raid kern samt pfeffernn",
+      "vngewaschenn bey lx stuc"
+     ]
     }
    ]
   },
@@ -379,6 +917,64 @@
       "Ain pranndtraid.",
       "Ain dreẙfůes."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p9__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:15+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "5",
+      "In meins gnedigen h(er)rn",
+      "von Osterreich zÿmer",
+      "Oben in der Camer",
+      "Zway pet vnd {ain} ~~zway~~ kůss",
+      "Zwo deckhein",
+      "In der kuchl",
+      "Zwo pfannn",
+      "Ain fayrin kellern",
+      "Zwo feyrstöal",
+      "Ain clamer dÿnt plan",
+      "Ain grosz speysskasten",
+      "Ain pranndtrand",
+      "Ain dreyfůss"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p9__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:11+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "5",
+      "In meins gnedigen h(er)rn",
+      "von Osterreich zymer",
+      "Oben in der Camer",
+      "Zway pet vnd {ain} ~~zway~~ kůss",
+      "Zwo deckhein",
+      "In der Kuchl",
+      "Zwo pfanne",
+      "Ain fayin khellern",
+      "Zwo persttal",
+      "Ain clamer dyent plat",
+      "Ain gros speisspenchasten",
+      "Ain prantkand",
+      "Ain dreyfues"
+     ]
     }
    ]
   },
@@ -411,6 +1007,52 @@
       "Zwo trinckhenkandel.",
       "In der grosseṅ stubenṅ.",
       "Sechs gemain tisch."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p10__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:13+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Ain clain vessl",
+      "Der grossen keller",
+      "Drey maßkandl",
+      "Zwo dreymießig kandl",
+      "Ain drantranckelkandl",
+      "Zwo ranckelkandl",
+      "In der grossen stubenn",
+      "Sechs gemain tisch"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p10__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:13+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Ain clain fessl",
+      "Der grossenn keller",
+      "dree masskandl",
+      "Zwo dreymessig kandl",
+      "Ain drantaubenkandl",
+      "Zwo taubenkandl",
+      "In der grossen stubenn",
+      "Sechs gemaint tisch"
      ]
     }
    ]
@@ -452,6 +1094,68 @@
       "Fůnff hŭltzen schůsslen.",
       "Ain tåler půchsenn mit XVI tåler."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p11__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:29+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "6",
+      "In dem clainen Stüblin",
+      "Ain gemainer tisch",
+      "Xviij stuckh püchseni dar",
+      "vnder vier hagksen püchseni",
+      "Dreinunddreissig helmparten",
+      "Hienachuolgt was der herr",
+      "Inngabt vnd dem gemelten",
+      "pfleger vbergeantwurt hat",
+      "Ain wasserfass",
+      "Ain feyrpeyl",
+      "Zwo hafenpfanen",
+      "Zway hanndkübl",
+      "Zwen glockspeyshafen",
+      "Fünff hültzeri schüslen",
+      "Ain taler püchseni mit dry taler"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p11__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:20+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "6",
+      "In dem clainen Stüblin",
+      "Ain gemainer tysch",
+      "Achtzehen Stuckh puechseni dar",
+      "under vier haytzen puechseni",
+      "Dreinunddreissig khelupfeten",
+      "Hiernachvolgt was der herr",
+      "Junggabt und dem genannten",
+      "pfleger übergeanntwurt hat",
+      "Ain wasserschaff",
+      "Ain fechtpeyl",
+      "Zwo hafenplattenn",
+      "Zway hanndtfeüer",
+      "Zwen gleser streichstain",
+      "Fünff hültzen pfeiffen",
+      "Ain taler puechseni mit lxx taler"
+     ]
     }
    ]
   },
@@ -483,6 +1187,56 @@
       "Ain grosse eysne kellenn.",
       "Ain holtzhackhenṅ.",
       "Ain helemparten."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p12__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:20+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Droschian löffl",
+      "~~Vierundzwaintzig halbe Taler herinn~~",
+      "Ain grosse hangende kannde",
+      "Ain Tranckheinlkanndel",
+      "Ain grosse byrn kellen",
+      "Ain holtzhackhan",
+      "Ain lietinckan",
+      "1",
+      "Sigmundts Cranische",
+      "Inventur."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330759_p12__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:21+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Dreyzehen löffl",
+      "~~vierundtzwantzig halbe Thaler stainin~~",
+      "Ain grosse hangende kannde",
+      "Ain trunckhkanndel",
+      "Ain grosse copre kellen",
+      "Ain holtzhackenn",
+      "Ain birtcardn",
+      "1",
+      "Sigmundts Cronische",
+      "Inventur."
      ]
     }
    ]

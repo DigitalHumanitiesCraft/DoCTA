@@ -1,0 +1,268 @@
+{
+ "page": "pilot2_inv_11348481_p3",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1122,
+    3292
+   ],
+   "sent_px": [
+    1122,
+    3292
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 13.4,
+ "timestamp": "2026-08-27T10:25:32+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation"
+     },
+     {
+      "text": "Register als her nach geschriben stet",
+      "kind": "rubric"
+     },
+     {
+      "text": "des besloss persen:",
+      "kind": "rubric",
+      "uncertain": [
+       "besloss",
+       "persen"
+      ]
+     },
+     {
+      "text": "Hie nach ist vermerkt alles das ich",
+      "kind": "entry"
+     },
+     {
+      "text": "hainreich von awersperg in dem besloss",
+      "kind": "entry",
+      "uncertain": [
+       "hainreich",
+       "awersperg",
+       "besloss"
+      ]
+     },
+     {
+      "text": "persen gefunden hab. Vnd mir von",
+      "kind": "entry",
+      "uncertain": [
+       "persen"
+      ]
+     },
+     {
+      "text": "der ku(e)ngspergerin nach abgang herrn",
+      "kind": "entry",
+      "uncertain": [
+       "ku(e)ngspergerin"
+      ]
+     },
+     {
+      "text": "von ku(e)ngsperg Irs gemahels seligen",
+      "kind": "entry",
+      "uncertain": [
+       "ku(e)ngsperg"
+      ]
+     },
+     {
+      "text": "ist eingeantwurt / Als das dem durleuch-",
+      "kind": "entry"
+     },
+     {
+      "text": "tigen hochgeborn fursten Hertzog Sig-",
+      "kind": "entry",
+      "uncertain": [
+       "Sig-"
+      ]
+     },
+     {
+      "text": "munden hertzogen ze osterreich vnd",
+      "kind": "entry",
+      "uncertain": [
+       "munden",
+       "osterreich"
+      ]
+     },
+     {
+      "text": "Grauen ze Tyrol etc meinem gnedigen",
+      "kind": "entry",
+      "uncertain": [
+       "Tyrol"
+      ]
+     },
+     {
+      "text": "herrn zu(e)geho(e)rt. Dasselb beslos mir sein",
+      "kind": "entry",
+      "uncertain": [
+       "beslos"
+      ]
+     },
+     {
+      "text": "gnad hat eingeantwurt in phlegs weyse",
+      "kind": "entry"
+     },
+     {
+      "text": "seinen gnaden getrewlich damit warten sein",
+      "kind": "entry"
+     },
+     {
+      "text": "Vnd hab also das berut besloss eingenomen",
+      "kind": "entry",
+      "uncertain": [
+       "berut",
+       "besloss"
+      ]
+     },
+     {
+      "text": "an dem montag dreyzehen tag in dem",
+      "kind": "entry"
+     },
+     {
+      "text": "Monet Junio In der Iarzal nach cristi ge-",
+      "kind": "entry",
+      "uncertain": [
+       "Junio"
+      ]
+     },
+     {
+      "text": "purt Tausent vierhundert vnd in dem",
+      "kind": "entry"
+     },
+     {
+      "text": "sechs vnd vierczigisten Iare Daselbs stet",
+      "kind": "entry"
+     },
+     {
+      "text": "vriedel vnd vil ander erber leut bey gewest",
+      "kind": "entry",
+      "uncertain": [
+       "vriedel"
+      ]
+     },
+     {
+      "text": "seind / mit namen Her markabrun von",
+      "kind": "entry",
+      "uncertain": [
+       "markabrun"
+      ]
+     },
+     {
+      "text": "Rofein Her Antoni von Terlay doctor / aygiss",
+      "kind": "entry",
+      "uncertain": [
+       "Rofein",
+       "Antoni",
+       "Terlay",
+       "aygiss"
+      ]
+     },
+     {
+      "text": "lucas massar ze triendt / lienhart vom salez",
+      "kind": "entry",
+      "uncertain": [
+       "lucas",
+       "massar",
+       "triendt",
+       "lienhart",
+       "salez"
+      ]
+     },
+     {
+      "text": "Cunrat zoller gansser zolln am Nefeys /",
+      "kind": "entry",
+      "uncertain": [
+       "Cunrat",
+       "zoller",
+       "gansser",
+       "Nefeys"
+      ]
+     },
+     {
+      "text": "Hainreich von Castell zolln ze triendt",
+      "kind": "entry",
+      "uncertain": [
+       "Hainreich",
+       "Castell",
+       "triendt"
+      ]
+     },
+     {
+      "text": "hans stampher noter Hainreich wirt zu(e)",
+      "kind": "entry",
+      "uncertain": [
+       "hans",
+       "stampher",
+       "Hainreich"
+      ]
+     },
+     {
+      "text": "dem o(e)rtsch ze triendt / vnd sunst vil",
+      "kind": "entry",
+      "uncertain": [
+       "o(e)rtsch",
+       "triendt"
+      ]
+     },
+     {
+      "text": "ander erber leut Vnd was mir geantwurt",
+      "kind": "entry"
+     },
+     {
+      "text": "ist worden das haben die obgnanten gesehen",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd beschawet.",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Register als her nach geschriben stet",
+  "des besloss persen:",
+  "Hie nach ist vermerkt alles das ich",
+  "hainreich von awersperg in dem besloss",
+  "persen gefunden hab. Vnd mir von",
+  "der ku(e)ngspergerin nach abgang herrn",
+  "von ku(e)ngsperg Irs gemahels seligen",
+  "ist eingeantwurt / Als das dem durleuch-",
+  "tigen hochgeborn fursten Hertzog Sig-",
+  "munden hertzogen ze osterreich vnd",
+  "Grauen ze Tyrol etc meinem gnedigen",
+  "herrn zu(e)geho(e)rt. Dasselb beslos mir sein",
+  "gnad hat eingeantwurt in phlegs weyse",
+  "seinen gnaden getrewlich damit warten sein",
+  "Vnd hab also das berut besloss eingenomen",
+  "an dem montag dreyzehen tag in dem",
+  "Monet Junio In der Iarzal nach cristi ge-",
+  "purt Tausent vierhundert vnd in dem",
+  "sechs vnd vierczigisten Iare Daselbs stet",
+  "vriedel vnd vil ander erber leut bey gewest",
+  "seind / mit namen Her markabrun von",
+  "Rofein Her Antoni von Terlay doctor / aygiss",
+  "lucas massar ze triendt / lienhart vom salez",
+  "Cunrat zoller gansser zolln am Nefeys /",
+  "Hainreich von Castell zolln ze triendt",
+  "hans stampher noter Hainreich wirt zu(e)",
+  "dem o(e)rtsch ze triendt / vnd sunst vil",
+  "ander erber leut Vnd was mir geantwurt",
+  "ist worden das haben die obgnanten gesehen",
+  "vnd beschawet."
+ ]
+}

@@ -1,0 +1,430 @@
+{
+ "page": "pilot2_rb2_p025",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 19.8,
+ "timestamp": "2026-08-27T10:28:19+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Heinreich von Rotenstain",
+      "kind": "rubric",
+      "uncertain": [
+       "Heinreich von Rotenstain"
+      ]
+     },
+     {
+      "text": "raitung",
+      "kind": "rubric",
+      "uncertain": [
+       "raitung"
+      ]
+     },
+     {
+      "text": "Nota Heinreich von Rotenstain hat in gege-",
+      "kind": "entry",
+      "uncertain": [
+       "Heinreich von Rotenstain"
+      ]
+     },
+     {
+      "text": "nwurtikait der vorgeschriben / raitung geton",
+      "kind": "entry",
+      "uncertain": [
+       "vorgeschriben"
+      ]
+     },
+     {
+      "text": "von seinem Innemen vnd außgeben auff die",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iijc vnd xxv c Söldnern, do er von meins",
+      "kind": "entry",
+      "uncertain": [
+       "xxv c"
+      ]
+     },
+     {
+      "text": "gnadigen herren etc wegen gen Payrn in",
+      "kind": "entry",
+      "uncertain": [
+       "Payrn"
+      ]
+     },
+     {
+      "text": "kriey gefüret hat drey monad die sich zu",
+      "kind": "entry",
+      "uncertain": [
+       "kriey"
+      ]
+     },
+     {
+      "text": "Weinnachten naechstvergangen geendt haben",
+      "kind": "entry",
+      "uncertain": [
+       "Weinnachten"
+      ]
+     },
+     {
+      "text": "facta ratio am Montag nach Sand Dorothee",
+      "kind": "entry",
+      "uncertain": [
+       "Sand Dorothee"
+      ]
+     },
+     {
+      "text": "tag lxxxj°",
+      "kind": "entry",
+      "uncertain": [
+       "lxxxj°"
+      ]
+     },
+     {
+      "text": "Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item Der benant Rotenstain hat von herrn Benedictn",
+      "kind": "entry",
+      "uncertain": [
+       "Rotenstain",
+       "Benedictn"
+      ]
+     },
+     {
+      "text": "cammermeister zu ausrichtung deselben Söldnern",
+      "kind": "entry",
+      "uncertain": [
+       "cammermeister"
+      ]
+     },
+     {
+      "text": "emphangen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ijm Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "ij",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item von fraw Steffann von laubenberg hat er enpfangen",
+      "kind": "entry",
+      "uncertain": [
+       "Steffann",
+       "laubenberg"
+      ]
+     },
+     {
+      "text": "vijc Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "vij",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item von Lienharten Flucher kaufmann hat er emphangn",
+      "kind": "entry",
+      "uncertain": [
+       "Lienharten",
+       "Flucher"
+      ]
+     },
+     {
+      "text": "vjc lxxxiiij Rhgld j",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "vjc lxxxiiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "j"
+      ]
+     },
+     {
+      "text": "Summa des Innemen thüt",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "iijm iijc lxxxiiij Rhgld j",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "iijm iijc lxxxiiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "j"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "25r",
+    "lines": [
+     {
+      "text": "25",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Aufgeben",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dantgegen hat der vorgenant Kærnstan",
+      "kind": "entry",
+      "uncertain": [
+       "Kærnstan"
+      ]
+     },
+     {
+      "text": "aufgeben 'den festen kurchtagen Zinshus",
+      "kind": "entry",
+      "uncertain": [
+       "kurchtagen",
+       "Zinshus"
+      ]
+     },
+     {
+      "text": "zu bezalung auf 4 xlvij Geldner mit nam",
+      "kind": "entry",
+      "uncertain": [
+       "Geldner"
+      ]
+     },
+     {
+      "text": "—— viij lb x ß gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij lb x ß",
+       "unit": "gld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Pawln kainttlern hat er auf seine Czinns",
+      "kind": "entry",
+      "uncertain": [
+       "Pawln",
+       "kainttlern",
+       "Czinns"
+      ]
+     },
+     {
+      "text": "hycantrent auf bezalung der andern Geldner",
+      "kind": "entry",
+      "uncertain": [
+       "hycantrent",
+       "Geldner"
+      ]
+     },
+     {
+      "text": "xiij lb xvij ß iiij d ij d [...]",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xiij lb xvij ß iiij d ij d",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "ij d [...]"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "So hat er aufgeben auf zerung zu Jngolstat",
+      "kind": "entry",
+      "uncertain": [
+       "Jngolstat"
+      ]
+     },
+     {
+      "text": "lanndingen, knöflet, müsamb etcetera, knöchle",
+      "kind": "entry",
+      "uncertain": [
+       "lanndingen",
+       "knöflet",
+       "müsamb",
+       "knöchle"
+      ]
+     },
+     {
+      "text": "etwas an irem Sold etc 4 xxxvij gld ij lb iij d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxvij gld ij lb iij",
+       "unit": "d"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Suma ditz aufgebens fazt",
+      "kind": "sum",
+      "uncertain": [
+       "fazt"
+      ]
+     },
+     {
+      "text": "· m · iiij lb xxxvij Rhguld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "iiij lb xxxvij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "m"
+      ]
+     },
+     {
+      "text": "viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Jnnemen und aufgeben gegeneinander gelegt und",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "abgezogen Darnach ist dz Kærnstain meinß herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Kærnstain"
+      ]
+     },
+     {
+      "text": "gnaden schuldig funfzehn reinisch gld X die sullen",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "funfzehn",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Jm an seinem Sold abgezogen werden",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Heinreich von Rotenstain",
+  "raitung",
+  "Nota Heinreich von Rotenstain hat in gege-",
+  "nwurtikait der vorgeschriben / raitung geton",
+  "von seinem Innemen vnd außgeben auff die",
+  "iijc vnd xxv c Söldnern, do er von meins",
+  "gnadigen herren etc wegen gen Payrn in",
+  "kriey gefüret hat drey monad die sich zu",
+  "Weinnachten naechstvergangen geendt haben",
+  "facta ratio am Montag nach Sand Dorothee",
+  "tag lxxxj°",
+  "Innemen",
+  "Item Der benant Rotenstain hat von herrn Benedictn",
+  "cammermeister zu ausrichtung deselben Söldnern",
+  "emphangen",
+  "ijm Rhgld",
+  "Item von fraw Steffann von laubenberg hat er enpfangen",
+  "vijc Rhgld",
+  "Item von Lienharten Flucher kaufmann hat er emphangn",
+  "vjc lxxxiiij Rhgld j",
+  "Summa des Innemen thüt",
+  "iijm iijc lxxxiiij Rhgld j",
+  "25",
+  "Aufgeben",
+  "Item",
+  "Dantgegen hat der vorgenant Kærnstan",
+  "aufgeben 'den festen kurchtagen Zinshus",
+  "zu bezalung auf 4 xlvij Geldner mit nam",
+  "—— viij lb x ß gld",
+  "Item",
+  "Pawln kainttlern hat er auf seine Czinns",
+  "hycantrent auf bezalung der andern Geldner",
+  "xiij lb xvij ß iiij d ij d [...]",
+  "Item",
+  "So hat er aufgeben auf zerung zu Jngolstat",
+  "lanndingen, knöflet, müsamb etcetera, knöchle",
+  "etwas an irem Sold etc 4 xxxvij gld ij lb iij d",
+  "Suma ditz aufgebens fazt",
+  "· m · iiij lb xxxvij Rhguld",
+  "viij d",
+  "Jnnemen und aufgeben gegeneinander gelegt und",
+  "abgezogen Darnach ist dz Kærnstain meinß herrn",
+  "gnaden schuldig funfzehn reinisch gld X die sullen",
+  "Jm an seinem Sold abgezogen werden"
+ ]
+}

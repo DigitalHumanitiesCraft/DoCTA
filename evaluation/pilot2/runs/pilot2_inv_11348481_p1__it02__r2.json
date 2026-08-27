@@ -1,0 +1,114 @@
+{
+ "page": "pilot2_inv_11348481_p1",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1184,
+    3243
+   ],
+   "sent_px": [
+    1184,
+    3243
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.4,
+ "timestamp": "2026-08-27T10:25:23+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Umschlag",
+    "lines": [
+     {
+      "text": "1446 Juni 13",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Persen",
+      "kind": "rubric",
+      "uncertain": [
+       "Persen"
+      ]
+     },
+     {
+      "text": "1434",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "46",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "48",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "C: 109.",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Jnuentari vnd schadenguet",
+      "kind": "rubric",
+      "uncertain": [
+       "Jnuentari"
+      ]
+     },
+     {
+      "text": "etliches varende hab",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vber dy pfleger",
+      "kind": "entry",
+      "uncertain": [
+       "vber"
+      ]
+     },
+     {
+      "text": "Inventar",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "(früher: Sch. A. 7590)",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Inv. A 273/5",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1446 Juni 13",
+  "Persen",
+  "1434",
+  "46",
+  "48",
+  "C: 109.",
+  "Jnuentari vnd schadenguet",
+  "etliches varende hab",
+  "vber dy pfleger",
+  "Inventar",
+  "(früher: Sch. A. 7590)",
+  "Inv. A 273/5"
+ ]
+}

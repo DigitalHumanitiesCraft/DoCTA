@@ -1,0 +1,186 @@
+{
+ "page": "pilot2_rb2_p037",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 28.4,
+ "timestamp": "2026-08-27T10:30:16+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "37r",
+    "lines": [
+     {
+      "text": "37",
+      "kind": "foliation",
+      "uncertain": [
+       "37"
+      ]
+     },
+     {
+      "text": "It(em) von Berwein stetenstain phleger zu behermaws",
+      "kind": "entry",
+      "uncertain": [
+       "Berwein",
+       "stetenstain",
+       "behermaws"
+      ]
+     },
+     {
+      "text": "hat er emphangen dz alt kaplan ro fridr. nanius",
+      "kind": "entry",
+      "uncertain": [
+       "alt",
+       "kaplan",
+       "ro",
+       "fridr.",
+       "nanius"
+      ]
+     },
+     {
+      "text": "dafür gerait —— xiij mr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xiij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "dafür",
+       "gerait"
+      ]
+     },
+     {
+      "text": "Suma wz was hainreich kapellan",
+      "kind": "sum",
+      "uncertain": [
+       "wz",
+       "was",
+       "hainreich",
+       "kapellan"
+      ]
+     },
+     {
+      "text": "daran emphangen hat facit",
+      "kind": "sum",
+      "uncertain": [
+       "daran",
+       "facit"
+      ]
+     },
+     {
+      "text": "+ xliij mr j lb xviij d vj hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "+ xliij mr j lb xviij d vj",
+       "unit": "hl"
+      },
+      "uncertain": [
+       "+"
+      ]
+     },
+     {
+      "text": "Des voergemelten koppellers darlegen auf",
+      "kind": "entry",
+      "uncertain": [
+       "voergemelten",
+       "koppellers",
+       "darlegen"
+      ]
+     },
+     {
+      "text": "abgeraite recnug / vnd dezing / vnd darut",
+      "kind": "entry",
+      "uncertain": [
+       "abgeraite",
+       "recnug",
+       "dezing",
+       "darut"
+      ]
+     },
+     {
+      "text": "gegen sein jnnemen gegeneinander gelegt vnd",
+      "kind": "entry",
+      "uncertain": [
+       "sein",
+       "jnnemen",
+       "gegeneinander",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "abgezogen / Darnach ist jm nuriñ betengual",
+      "kind": "entry",
+      "uncertain": [
+       "Darnach",
+       "jm",
+       "nuriñ",
+       "betengual"
+      ]
+     },
+     {
+      "text": "schuldig —— ij C lj mr vij lb xviij d iij hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "ij C lj mr vij lb xviij d iij",
+       "unit": "hl"
+      },
+      "uncertain": [
+       "schuldig",
+       "ij",
+       "lj"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "37",
+  "It(em) von Berwein stetenstain phleger zu behermaws",
+  "hat er emphangen dz alt kaplan ro fridr. nanius",
+  "dafür gerait —— xiij mr",
+  "Suma wz was hainreich kapellan",
+  "daran emphangen hat facit",
+  "+ xliij mr j lb xviij d vj hl",
+  "Des voergemelten koppellers darlegen auf",
+  "abgeraite recnug / vnd dezing / vnd darut",
+  "gegen sein jnnemen gegeneinander gelegt vnd",
+  "abgezogen / Darnach ist jm nuriñ betengual",
+  "schuldig —— ij C lj mr vij lb xviij d iij hl"
+ ]
+}

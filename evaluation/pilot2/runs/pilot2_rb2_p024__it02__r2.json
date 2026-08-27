@@ -1,0 +1,426 @@
+{
+ "page": "pilot2_rb2_p024",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.1,
+ "timestamp": "2026-08-27T10:28:03+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Ausgeben",
+      "kind": "rubric",
+      "uncertain": [
+       "Ausgeben"
+      ]
+     },
+     {
+      "text": "Item Der benant Pawntschat hat auf die vorgenant",
+      "kind": "entry",
+      "uncertain": [
+       "Pawntschat",
+       "vorgenant"
+      ]
+     },
+     {
+      "text": "hundert und he Soldner ausgegeben in der",
+      "kind": "entry",
+      "uncertain": [
+       "he",
+       "Soldner",
+       "ausgegeben"
+      ]
+     },
+     {
+      "text": "vorgenant zeit / iedem Soldner j monad ij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "vorgenant",
+       "zeit",
+       "iedem",
+       "Soldner",
+       "monad"
+      ]
+     },
+     {
+      "text": "bringt iedem die iij monad vj gld. und",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vj",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "bringt",
+       "iedem",
+       "monad"
+      ]
+     },
+     {
+      "text": "zwain Soldnern etwas merer Fart auf die",
+      "kind": "entry",
+      "uncertain": [
+       "zwain",
+       "Soldnern",
+       "merer",
+       "Fart"
+      ]
+     },
+     {
+      "text": "benant Soldner xxiiij C liij gld ij ß j d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xxiiij C liij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "benant",
+       "Soldner",
+       "xxiiij C liij"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Da hat er für etwas Schaden ausgegeben für",
+      "kind": "entry",
+      "uncertain": [
+       "Schaden",
+       "ausgegeben"
+      ]
+     },
+     {
+      "text": "ein Armbrost purcurs helmbarten und anders",
+      "kind": "entry",
+      "uncertain": [
+       "Armbrost",
+       "purcurs",
+       "helmbarten",
+       "anders"
+      ]
+     },
+     {
+      "text": "xvij gld viij gr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "viij gr"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dem puchkasten hat er ausgegeben zu hoben",
+      "kind": "entry",
+      "uncertain": [
+       "puchkasten",
+       "ausgegeben",
+       "hoben"
+      ]
+     },
+     {
+      "text": "steckn iij gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "steckn"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dem peter Schrüczen zu Hohenstein ij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "peter",
+       "Schrüczen",
+       "Hohenstein"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Lürem peter und für wagnschmat und ain",
+      "kind": "entry",
+      "uncertain": [
+       "Lürem",
+       "peter",
+       "wagnschmat"
+      ]
+     },
+     {
+      "text": "Gspind und zerung zu mayenpach zu schnidens",
+      "kind": "entry",
+      "uncertain": [
+       "Gspind",
+       "zerung",
+       "mayenpach",
+       "schnidens"
+      ]
+     },
+     {
+      "text": "haufes / und für ain solich armen Narrn aines",
+      "kind": "entry",
+      "uncertain": [
+       "haufes",
+       "solich",
+       "armen",
+       "Narrn",
+       "aines"
+      ]
+     },
+     {
+      "text": "j gld für Lienharts zerung facit viij gld j gl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "Lienharts",
+       "zerung",
+       "facit",
+       "j gl"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "24",
+    "lines": [
+     {
+      "text": "24",
+      "kind": "foliation"
+     },
+     {
+      "text": "Jte Rein Brandman hat er aufgericht die d",
+      "kind": "entry",
+      "uncertain": [
+       "Rein",
+       "Brandman",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "Brandman ausgeben hat vj lb xv d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vj",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Brandman",
+       "xv"
+      ]
+     },
+     {
+      "text": "Jte Do maint d' Tannre er hab abgang in seind",
+      "kind": "entry",
+      "uncertain": [
+       "d'",
+       "Tannre",
+       "abgang",
+       "seind"
+      ]
+     },
+     {
+      "text": "raitung / Darumb hat man jm zu pessrung",
+      "kind": "entry",
+      "uncertain": [
+       "pessrung"
+      ]
+     },
+     {
+      "text": "geben —— iiij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iiij",
+       "unit": "gld"
+      }
+     },
+     {
+      "text": "Sm̄a dicz ausgebens facit",
+      "kind": "sum",
+      "uncertain": [
+       "dicz"
+      ]
+     },
+     {
+      "text": "xiij c lxxvj Rhgld x ß d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "xiij c lxxvj",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "xiij",
+       "lxxvj",
+       "x",
+       "ß",
+       "d"
+      ]
+     },
+     {
+      "text": "Einnemen vnd aufgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "Einnemen",
+       "aufgeben",
+       "gegeneinander",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "vnd abgezogen . Darnach yt merers schuld",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogen",
+       "yt",
+       "merers",
+       "schuld"
+      ]
+     },
+     {
+      "text": "gnad dem Tannre msambt der pessrung",
+      "kind": "entry",
+      "uncertain": [
+       "gnad",
+       "Tannre",
+       "msambt",
+       "pessrung"
+      ]
+     },
+     {
+      "text": "schuldig —— xx Rhgld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "schuldig"
+      ]
+     },
+     {
+      "text": "Die hat jm der Reinhart aufgericht vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Reinhart",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "bezalt",
+      "kind": "entry",
+      "uncertain": [
+       "bezalt"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Ausgeben",
+  "Item Der benant Pawntschat hat auf die vorgenant",
+  "hundert und he Soldner ausgegeben in der",
+  "vorgenant zeit / iedem Soldner j monad ij gld",
+  "bringt iedem die iij monad vj gld. und",
+  "zwain Soldnern etwas merer Fart auf die",
+  "benant Soldner xxiiij C liij gld ij ß j d",
+  "Item",
+  "Da hat er für etwas Schaden ausgegeben für",
+  "ein Armbrost purcurs helmbarten und anders",
+  "xvij gld viij gr",
+  "Item",
+  "Dem puchkasten hat er ausgegeben zu hoben",
+  "steckn iij gld",
+  "Item",
+  "Dem peter Schrüczen zu Hohenstein ij gld",
+  "Item",
+  "Lürem peter und für wagnschmat und ain",
+  "Gspind und zerung zu mayenpach zu schnidens",
+  "haufes / und für ain solich armen Narrn aines",
+  "j gld für Lienharts zerung facit viij gld j gl",
+  "24",
+  "Jte Rein Brandman hat er aufgericht die d",
+  "Brandman ausgeben hat vj lb xv d",
+  "Jte Do maint d' Tannre er hab abgang in seind",
+  "raitung / Darumb hat man jm zu pessrung",
+  "geben —— iiij gld",
+  "Sm̄a dicz ausgebens facit",
+  "xiij c lxxvj Rhgld x ß d",
+  "Einnemen vnd aufgeben gegeneinander gelegt",
+  "vnd abgezogen . Darnach yt merers schuld",
+  "gnad dem Tannre msambt der pessrung",
+  "schuldig —— xx Rhgld",
+  "Die hat jm der Reinhart aufgericht vnd",
+  "bezalt"
+ ]
+}

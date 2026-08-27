@@ -1,0 +1,148 @@
+{
+ "page": "pilot2_inv_11330759_p7",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1176,
+    3452
+   ],
+   "sent_px": [
+    1176,
+    3452
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 13.8,
+ "timestamp": "2026-08-27T10:27:07+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "4r",
+    "lines": [
+     {
+      "text": "4",
+      "kind": "foliation"
+     },
+     {
+      "text": "Drei kheller",
+      "kind": "entry",
+      "uncertain": [
+       "kheller"
+      ]
+     },
+     {
+      "text": "Zwelff pettgwant",
+      "kind": "entry"
+     },
+     {
+      "text": "Ainleff ster mel in drey sekhen",
+      "kind": "entry",
+      "uncertain": [
+       "ster"
+      ]
+     },
+     {
+      "text": "In der Phÿstrann",
+      "kind": "rubric",
+      "uncertain": [
+       "Phÿstrann"
+      ]
+     },
+     {
+      "text": "Die werchzeug vngeriecht",
+      "kind": "entry",
+      "uncertain": [
+       "vngeriecht"
+      ]
+     },
+     {
+      "text": "In gußpüchsnn",
+      "kind": "rubric",
+      "uncertain": [
+       "gußpüchsnn"
+      ]
+     },
+     {
+      "text": "Zwo viertail guspuchsnn",
+      "kind": "entry",
+      "uncertain": [
+       "guspuchsnn"
+      ]
+     },
+     {
+      "text": "Ain klanngen guspuchsnn auff",
+      "kind": "entry",
+      "uncertain": [
+       "klanngen",
+       "guspuchsnn"
+      ]
+     },
+     {
+      "text": "zwain redern",
+      "kind": "entry"
+     },
+     {
+      "text": "Drei handtpuchsnn",
+      "kind": "entry",
+      "uncertain": [
+       "handtpuchsnn"
+      ]
+     },
+     {
+      "text": "In dem newen thuren genant",
+      "kind": "rubric"
+     },
+     {
+      "text": "mayster hannsen thurn",
+      "kind": "rubric",
+      "uncertain": [
+       "mayster",
+       "hannsen"
+      ]
+     },
+     {
+      "text": "Drey hÿmel polain",
+      "kind": "entry",
+      "uncertain": [
+       "hÿmel",
+       "polain"
+      ]
+     },
+     {
+      "text": "Acht hÿmel vnderpett",
+      "kind": "entry",
+      "uncertain": [
+       "hÿmel",
+       "vnderpett"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "4",
+  "Drei kheller",
+  "Zwelff pettgwant",
+  "Ainleff ster mel in drey sekhen",
+  "In der Phÿstrann",
+  "Die werchzeug vngeriecht",
+  "In gußpüchsnn",
+  "Zwo viertail guspuchsnn",
+  "Ain klanngen guspuchsnn auff",
+  "zwain redern",
+  "Drei handtpuchsnn",
+  "In dem newen thuren genant",
+  "mayster hannsen thurn",
+  "Drey hÿmel polain",
+  "Acht hÿmel vnderpett"
+ ]
+}

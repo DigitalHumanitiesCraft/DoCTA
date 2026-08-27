@@ -12,6 +12,7 @@ Data flow (repo-local only, no network):
   docs/data/raitbuch2_pages.json     page list of Raitbuch 2 (no export yet)
   evaluation/benchmark/runs/*.json   VLM runs on the benchmark page set
   evaluation/pilot/runs/*.json       VLM runs on the pilot cohorts
+  evaluation/pilot2/runs/*.json      VLM runs on the pilot-2 cohorts
 
 Writes:
   pipeline/documents.json            one entry per document
@@ -44,6 +45,7 @@ REPO = ROOT.parent
 DATA = REPO / "docs" / "data"
 BENCHMARK_RUNS = REPO / "evaluation" / "benchmark" / "runs"
 PILOT_RUNS = REPO / "evaluation" / "pilot" / "runs"
+PILOT2_RUNS = REPO / "evaluation" / "pilot2" / "runs"
 
 RAITBUCH2_DOC = 12514730  # "Raitbuch 2"; the CSV/Transkribus matcher covers only
 RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"  # the inventories, so this pair is set here
@@ -52,7 +54,7 @@ RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"  # the inventories, so this pair is set h
 CONTENT_CLASSES = ("text", "leer", "kassiert", "einlage", "unknown")
 VERIFICATION_STATUS = ("unbearbeitet", "maschinell", "gesichtet", "abgenommen")
 
-RUN_ID = re.compile(r"^(?:pilot_)?(?:inv_(?P<doc>\d+)|(?P<book>rb2))_p(?P<page>\d+)$")
+RUN_ID = re.compile(r"^(?:pilot2?_)?(?:inv_(?P<doc>\d+)|(?P<book>rb2))_p(?P<page>\d+)$")
 
 
 def _load(path: Path) -> Any:
@@ -78,7 +80,8 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
     """Collect VLM runs from both evaluation cohorts, keyed by (docId, pageNr)."""
     runs: dict[tuple[int, int], list[dict]] = {}
     skipped: list[str] = []
-    for cohort, folder in (("benchmark", BENCHMARK_RUNS), ("pilot", PILOT_RUNS)):
+    for cohort, folder in (("benchmark", BENCHMARK_RUNS), ("pilot", PILOT_RUNS),
+                           ("pilot2", PILOT2_RUNS)):
         if not folder.is_dir():
             continue
         for f in sorted(folder.glob("*.json")):

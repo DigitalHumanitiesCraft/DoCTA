@@ -1,0 +1,298 @@
+{
+ "page": "pilot2_rb2_p040",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.0,
+ "timestamp": "2026-08-27T10:30:39+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Pastem",
+      "kind": "rubric",
+      "uncertain": [
+       "Pastem"
+      ]
+     },
+     {
+      "text": "vphoferin",
+      "kind": "rubric",
+      "uncertain": [
+       "vphoferin"
+      ]
+     },
+     {
+      "text": "Nota Anno die et puribus cunctis suprascriptis · Jst",
+      "kind": "entry",
+      "uncertain": [
+       "puribus",
+       "cunctis",
+       "suprascriptis"
+      ]
+     },
+     {
+      "text": "berait mit der vphoferin In gegenwurtikait",
+      "kind": "entry",
+      "uncertain": [
+       "vphoferin"
+      ]
+     },
+     {
+      "text": "der vorgeſchriben / vmb alle abgeraite zeung",
+      "kind": "entry",
+      "uncertain": [
+       "abgeraite",
+       "zeung"
+      ]
+     },
+     {
+      "text": "ſo ſy meinẽ herrn gnad ſchuldig iſt / ſunder",
+      "kind": "entry"
+     },
+     {
+      "text": "Jſt nachgelaſsen worden ſamnung vncz auf",
+      "kind": "entry",
+      "uncertain": [
+       "ſamnung"
+      ]
+     },
+     {
+      "text": "heuttigen tag / vnd bringt In ainer",
+      "kind": "entry"
+     },
+     {
+      "text": "Suma iij c xxxiiij mr – xxviij mr d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "iij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "xxviij",
+       "mr"
+      ]
+     },
+     {
+      "text": "Daran Jr Jnnemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "Jt(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "Die bemelt vphoferin {hat} von hern Benedictn",
+      "kind": "entry",
+      "uncertain": [
+       "vphoferin",
+       "Benedictn"
+      ]
+     },
+     {
+      "text": "camermaiſter empfangen ij c xviij mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij",
+       "unit": "mr"
+      }
+     },
+     {
+      "text": "Jt(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Pengarten flecker haubſum hat sy",
+      "kind": "entry",
+      "uncertain": [
+       "Pengarten",
+       "flecker",
+       "haubſum"
+      ]
+     },
+     {
+      "text": "empfangẽ xx mr die er auch In dy camer zalt vncz hat auffgeb(en)",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "auffgeb(en)"
+      ]
+     },
+     {
+      "text": "Jt(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "von der cambelpergerin die viij mr vij ß iiij d, excep(tis)",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "cambelpergerin",
+       "excep(tis)"
+      ]
+     },
+     {
+      "text": "die michaln Jr Sun meinẽ hern ſchuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "michaln"
+      ]
+     },
+     {
+      "text": "Suma Irz Jnnemens ſtat",
+      "kind": "sum"
+     },
+     {
+      "text": "ij c xlvj mr vij ß iiij d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "xlvj",
+       "vij",
+       "iiij"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Lienhart Perntner",
+      "kind": "rubric",
+      "uncertain": [
+       "Lienhart",
+       "Perntner"
+      ]
+     },
+     {
+      "text": "Der vorgemelten geschriben summen",
+      "kind": "entry",
+      "uncertain": [
+       "vorgemelten",
+       "geschriben",
+       "summen"
+      ]
+     },
+     {
+      "text": "gegentan aufgetan gegeneinander gleich",
+      "kind": "entry",
+      "uncertain": [
+       "gegentan",
+       "aufgetan",
+       "gegeneinander",
+       "gleich"
+      ]
+     },
+     {
+      "text": "und abgetzogen Dannach ist Ir meins herrn",
+      "kind": "entry",
+      "uncertain": [
+       "abgetzogen",
+       "Dannach",
+       "meins",
+       "herrn"
+      ]
+     },
+     {
+      "text": "gnad schuldig —— lxxxv m̄ ix ß viij d hl",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxv ... ix ... viij",
+       "unit": "m̄ / ß / d hl"
+      },
+      "uncertain": [
+       "gnad",
+       "schuldig",
+       "lxxxv",
+       "m̄",
+       "ix",
+       "viij",
+       "hl"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Pastem",
+  "vphoferin",
+  "Nota Anno die et puribus cunctis suprascriptis · Jst",
+  "berait mit der vphoferin In gegenwurtikait",
+  "der vorgeſchriben / vmb alle abgeraite zeung",
+  "ſo ſy meinẽ herrn gnad ſchuldig iſt / ſunder",
+  "Jſt nachgelaſsen worden ſamnung vncz auf",
+  "heuttigen tag / vnd bringt In ainer",
+  "Suma iij c xxxiiij mr – xxviij mr d",
+  "Daran Jr Jnnemen",
+  "Jt(em)",
+  "Die bemelt vphoferin {hat} von hern Benedictn",
+  "camermaiſter empfangen ij c xviij mr",
+  "Jt(em)",
+  "von Pengarten flecker haubſum hat sy",
+  "empfangẽ xx mr die er auch In dy camer zalt vncz hat auffgeb(en)",
+  "Jt(em)",
+  "von der cambelpergerin die viij mr vij ß iiij d, excep(tis)",
+  "die michaln Jr Sun meinẽ hern ſchuldig was",
+  "Suma Irz Jnnemens ſtat",
+  "ij c xlvj mr vij ß iiij d",
+  "40.",
+  "Lienhart Perntner",
+  "Der vorgemelten geschriben summen",
+  "gegentan aufgetan gegeneinander gleich",
+  "und abgetzogen Dannach ist Ir meins herrn",
+  "gnad schuldig —— lxxxv m̄ ix ß viij d hl"
+ ]
+}

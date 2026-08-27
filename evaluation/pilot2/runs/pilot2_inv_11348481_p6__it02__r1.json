@@ -1,0 +1,246 @@
+{
+ "page": "pilot2_inv_11348481_p6",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1135,
+    3327
+   ],
+   "sent_px": [
+    1135,
+    3327
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.6,
+ "timestamp": "2026-08-27T10:25:45+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "In dem obern staingaden",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain altes pet mit aind alten parchant",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ziechen vberzogen vnd ain alter seiden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "golter grun vnd gel zerissen vnd abschatz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ain alt polster mit aind kölmischen",
+      "kind": "entry",
+      "uncertain": [
+       "kölmischen"
+      ]
+     },
+     {
+      "text": "ziechen auch zerissen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item in derselben kamer ain altes petlein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in ainem cariol mit aind parchanten ziechin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vberzogen auch klaines schatzwerck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der Jungfrawen kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain pet mit aind zwilchin ziechin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vberzogen geflickt vnd ist von zwayn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "personen vnd in derselben kamer aber",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain altes pet von aind person",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der herren kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "bey dem stüblein",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain altes pett zerissen mit aind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "parchantn ziech vberzogen vnd j",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "polster mit aind zwilchin ziech vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain pet in dem cariol alt vnd geflickt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ist auch von aind person",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem aparstal",
+      "kind": "rubric",
+      "uncertain": [
+       "aparstal"
+      ]
+     },
+     {
+      "text": "Item ain klaines altes petlein von",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "aind person vnd ist auch mit ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwilchin ziechen vberzogen vnd ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "abschatz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem kol ergger",
+      "kind": "rubric",
+      "uncertain": [
+       "kol ergger"
+      ]
+     },
+     {
+      "text": "Item ain altes poses petlein mit aind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwilchin ziechen vberzogen vnd ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "auch geflickt vnd von aind person",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem hohen turn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item darinn sind ij pet nicht vast",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gut vnd mit zwilchin ziechen vberzogn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd von zwayen personen",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "In dem obern staingaden",
+  "Item ain altes pet mit aind alten parchant",
+  "ziechen vberzogen vnd ain alter seiden",
+  "golter grun vnd gel zerissen vnd abschatz",
+  "vnd ain alt polster mit aind kölmischen",
+  "ziechen auch zerissen",
+  "Item in derselben kamer ain altes petlein",
+  "in ainem cariol mit aind parchanten ziechin",
+  "vberzogen auch klaines schatzwerck",
+  "In der Jungfrawen kamer",
+  "Item ain pet mit aind zwilchin ziechin",
+  "vberzogen geflickt vnd ist von zwayn",
+  "personen vnd in derselben kamer aber",
+  "ain altes pet von aind person",
+  "In der herren kamer",
+  "bey dem stüblein",
+  "Item ain altes pett zerissen mit aind",
+  "parchantn ziech vberzogen vnd j",
+  "polster mit aind zwilchin ziech vnd",
+  "ain pet in dem cariol alt vnd geflickt",
+  "vnd ist auch von aind person",
+  "In dem aparstal",
+  "Item ain klaines altes petlein von",
+  "aind person vnd ist auch mit ainer",
+  "zwilchin ziechen vberzogen vnd ist",
+  "abschatz",
+  "In dem kol ergger",
+  "Item ain altes poses petlein mit aind",
+  "zwilchin ziechen vberzogen vnd ist",
+  "auch geflickt vnd von aind person",
+  "In dem hohen turn",
+  "Item darinn sind ij pet nicht vast",
+  "gut vnd mit zwilchin ziechen vberzogn",
+  "vnd von zwayen personen"
+ ]
+}

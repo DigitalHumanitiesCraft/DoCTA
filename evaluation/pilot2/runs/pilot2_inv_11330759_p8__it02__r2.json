@@ -1,0 +1,181 @@
+{
+ "page": "pilot2_inv_11330759_p8",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1225,
+    3465
+   ],
+   "sent_px": [
+    1225,
+    3465
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.6,
+ "timestamp": "2026-08-27T10:27:08+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Vier gross malspuͤsse",
+      "kind": "entry",
+      "uncertain": [
+       "malspuͤsse"
+      ]
+     },
+     {
+      "text": "Sechs clain zinen Salsenischiͤssle",
+      "kind": "entry",
+      "uncertain": [
+       "Salsenischiͤssle"
+      ]
+     },
+     {
+      "text": "Sechs zinen tåler",
+      "kind": "entry",
+      "uncertain": [
+       "tåler"
+      ]
+     },
+     {
+      "text": "Drei pfannen",
+      "kind": "entry",
+      "uncertain": [
+       "Drei",
+       "pfannen"
+      ]
+     },
+     {
+      "text": "Ain clainer kessl",
+      "kind": "entry",
+      "uncertain": [
+       "kessl"
+      ]
+     },
+     {
+      "text": "Zwen gross kessl",
+      "kind": "entry",
+      "uncertain": [
+       "kessl"
+      ]
+     },
+     {
+      "text": "Item zwen haͤff",
+      "kind": "entry",
+      "uncertain": [
+       "haͤff"
+      ]
+     },
+     {
+      "text": "Etlich verbrennd geschirrgestueckhalle",
+      "kind": "entry",
+      "uncertain": [
+       "geschirrgestueckhalle"
+      ]
+     },
+     {
+      "text": "maister Hannsen zugehoͤrenn",
+      "kind": "entry",
+      "uncertain": [
+       "maister",
+       "Hannsen"
+      ]
+     },
+     {
+      "text": "Vier pundani hefenn",
+      "kind": "entry",
+      "uncertain": [
+       "pundani",
+       "hefenn"
+      ]
+     },
+     {
+      "text": "Vnd etlich plech zu rorn vnd waͤltschi",
+      "kind": "entry",
+      "uncertain": [
+       "rorn",
+       "waͤltschi"
+      ]
+     },
+     {
+      "text": "von hefenn",
+      "kind": "entry",
+      "uncertain": [
+       "hefenn"
+      ]
+     },
+     {
+      "text": "Ain gross dugspail",
+      "kind": "entry",
+      "uncertain": [
+       "dugspail"
+      ]
+     },
+     {
+      "text": "In ainer clainen lage zu heben raytsen",
+      "kind": "entry",
+      "uncertain": [
+       "lage",
+       "raytsen"
+      ]
+     },
+     {
+      "text": "guͤssen pintzen",
+      "kind": "entry",
+      "uncertain": [
+       "guͤssen",
+       "pintzen"
+      ]
+     },
+     {
+      "text": "vnd etlich raid kern samt pfeffernn",
+      "kind": "entry",
+      "uncertain": [
+       "raid",
+       "kern",
+       "pfeffernn"
+      ]
+     },
+     {
+      "text": "vngewaschenn bey lx stuc",
+      "kind": "entry",
+      "uncertain": [
+       "vngewaschenn",
+       "stuc"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vier gross malspuͤsse",
+  "Sechs clain zinen Salsenischiͤssle",
+  "Sechs zinen tåler",
+  "Drei pfannen",
+  "Ain clainer kessl",
+  "Zwen gross kessl",
+  "Item zwen haͤff",
+  "Etlich verbrennd geschirrgestueckhalle",
+  "maister Hannsen zugehoͤrenn",
+  "Vier pundani hefenn",
+  "Vnd etlich plech zu rorn vnd waͤltschi",
+  "von hefenn",
+  "Ain gross dugspail",
+  "In ainer clainen lage zu heben raytsen",
+  "guͤssen pintzen",
+  "vnd etlich raid kern samt pfeffernn",
+  "vngewaschenn bey lx stuc"
+ ]
+}

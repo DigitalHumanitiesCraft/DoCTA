@@ -1,0 +1,225 @@
+{
+ "page": "pilot2_inv_11330759_p2",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1251,
+    3501
+   ],
+   "sent_px": [
+    1251,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.2,
+ "timestamp": "2026-08-27T10:26:37+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "In Sand Blasii",
+      "kind": "rubric",
+      "uncertain": [
+       "Sand",
+       "Blasii"
+      ]
+     },
+     {
+      "text": "Capellenn",
+      "kind": "rubric",
+      "uncertain": [
+       "Capellenn"
+      ]
+     },
+     {
+      "text": "Ain Sůlbrein kelch mit sein paten",
+      "kind": "entry",
+      "uncertain": [
+       "Sůlbrein"
+      ]
+     },
+     {
+      "text": "vbergult scheint Sand blaiss",
+      "kind": "entry",
+      "uncertain": [
+       "scheint",
+       "Sand",
+       "blaiss"
+      ]
+     },
+     {
+      "text": "kelch .",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Aber zwen Sůlbrein kelch mit den",
+      "kind": "entry",
+      "uncertain": [
+       "Sůlbrein"
+      ]
+     },
+     {
+      "text": "paten ain grosser vnd ain clain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "alles vergult vnd mit stainen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "poraltaplen",
+      "kind": "entry",
+      "uncertain": [
+       "poraltaplen"
+      ]
+     },
+     {
+      "text": "Ain plab Sametes messgewandt",
+      "kind": "entry",
+      "uncertain": [
+       "plab",
+       "Sametes"
+      ]
+     },
+     {
+      "text": "mit stul vnd annder seiner",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zůgehörungt",
+      "kind": "entry",
+      "uncertain": [
+       "zůgehörungt"
+      ]
+     },
+     {
+      "text": "Ain greins Samatischs messgewandt",
+      "kind": "entry",
+      "uncertain": [
+       "greins",
+       "Samatischs"
+      ]
+     },
+     {
+      "text": "auch mit stul vnd annder sein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zugehörung von mein gnedigstn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "herrn von Osterreych herreichund",
+      "kind": "entry",
+      "uncertain": [
+       "Osterreych",
+       "herreichund"
+      ]
+     },
+     {
+      "text": "Aber ain slecht alt messgewandt",
+      "kind": "entry",
+      "uncertain": [
+       "slecht"
+      ]
+     },
+     {
+      "text": "mit sein zùgehörungt",
+      "kind": "entry",
+      "uncertain": [
+       "zùgehörungt"
+      ]
+     },
+     {
+      "text": "Zway messbůecher vnd ain pistl",
+      "kind": "entry",
+      "uncertain": [
+       "messbůecher",
+       "pistl"
+      ]
+     },
+     {
+      "text": "Zwen zynein lauchter",
+      "kind": "entry",
+      "uncertain": [
+       "zynein",
+       "lauchter"
+      ]
+     },
+     {
+      "text": "Ain wassprunbkestl",
+      "kind": "entry",
+      "uncertain": [
+       "wassprunbkestl"
+      ]
+     },
+     {
+      "text": "Auff geschossens altar sein altartůch",
+      "kind": "entry",
+      "uncertain": [
+       "geschossens",
+       "altartůch"
+      ]
+     },
+     {
+      "text": "nicht mer auff dem capelln",
+      "kind": "entry",
+      "uncertain": [
+       "capelln"
+      ]
+     },
+     {
+      "text": "Ain öl pain",
+      "kind": "entry",
+      "uncertain": [
+       "öl pain"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "In Sand Blasii",
+  "Capellenn",
+  "Ain Sůlbrein kelch mit sein paten",
+  "vbergult scheint Sand blaiss",
+  "kelch .",
+  "Aber zwen Sůlbrein kelch mit den",
+  "paten ain grosser vnd ain clain",
+  "alles vergult vnd mit stainen",
+  "poraltaplen",
+  "Ain plab Sametes messgewandt",
+  "mit stul vnd annder seiner",
+  "zůgehörungt",
+  "Ain greins Samatischs messgewandt",
+  "auch mit stul vnd annder sein",
+  "zugehörung von mein gnedigstn",
+  "herrn von Osterreych herreichund",
+  "Aber ain slecht alt messgewandt",
+  "mit sein zùgehörungt",
+  "Zway messbůecher vnd ain pistl",
+  "Zwen zynein lauchter",
+  "Ain wassprunbkestl",
+  "Auff geschossens altar sein altartůch",
+  "nicht mer auff dem capelln",
+  "Ain öl pain"
+ ]
+}

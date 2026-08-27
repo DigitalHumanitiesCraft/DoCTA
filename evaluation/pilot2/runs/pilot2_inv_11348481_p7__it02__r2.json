@@ -1,0 +1,246 @@
+{
+ "page": "pilot2_inv_11348481_p7",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1104,
+    3327
+   ],
+   "sent_px": [
+    1104,
+    3327
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.9,
+ "timestamp": "2026-08-27T10:25:54+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "3",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "In dem turn ob der physterey",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item darinn ist ain altes pet von zwayen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "personen vnd ist geflicket",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem Vorhof",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item da der vischer leyt ist ain pet alt vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "halb lere mit ainem zwilchin ziech vberzogen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ist abschatz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem turn ob der porten",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "in dem vorhof",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item darinn seind zway pet mit zwilchin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ziechen vberzogen vnd seind zegůtermas",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In des Clingen harnasch",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "maisters Eryker",
+      "kind": "rubric",
+      "uncertain": [
+       "Eryker"
+      ]
+     },
+     {
+      "text": "Item ain claines altes pet mit ain zwilchin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ziech vberzogen vnd ist halbe lere",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem mitteln eryger in",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "dem vorhof",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item darinn ain klaines petlein von ain person",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ist mit ain zwilichin ziechen vberzogen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "auch abschatz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem valschen tůrnlein",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item darinn ain claines altes poses petlein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "von zway personen vnd ist halbe lere",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem Eryker lamparten",
+      "kind": "rubric",
+      "uncertain": [
+       "Eryker"
+      ]
+     },
+     {
+      "text": "Item darinn ist ain klaines petlein mit ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "leynin ziechen von ain person vnd ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "nicht vast gut Sma der pet xxvij",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Darnach die polster vnd kůssen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "die ich in dem haws funden hab",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item xiiij alt vnd zerissen polster vnd ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "kůssin vnd seind gar abschatz als die",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "obgnennten ebn leut wol vnd aigentlichen",
+      "kind": "entry",
+      "uncertain": [
+       "obgnennten"
+      ]
+     },
+     {
+      "text": "gesehen vnd beschawet habn",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "3",
+  "In dem turn ob der physterey",
+  "Item darinn ist ain altes pet von zwayen",
+  "personen vnd ist geflicket",
+  "In dem Vorhof",
+  "Item da der vischer leyt ist ain pet alt vnd",
+  "halb lere mit ainem zwilchin ziech vberzogen",
+  "vnd ist abschatz",
+  "In dem turn ob der porten",
+  "in dem vorhof",
+  "Item darinn seind zway pet mit zwilchin",
+  "ziechen vberzogen vnd seind zegůtermas",
+  "In des Clingen harnasch",
+  "maisters Eryker",
+  "Item ain claines altes pet mit ain zwilchin",
+  "ziech vberzogen vnd ist halbe lere",
+  "In dem mitteln eryger in",
+  "dem vorhof",
+  "Item darinn ain klaines petlein von ain person",
+  "vnd ist mit ain zwilichin ziechen vberzogen",
+  "auch abschatz",
+  "In dem valschen tůrnlein",
+  "Item darinn ain claines altes poses petlein",
+  "von zway personen vnd ist halbe lere",
+  "In dem Eryker lamparten",
+  "Item darinn ist ain klaines petlein mit ain",
+  "leynin ziechen von ain person vnd ist",
+  "nicht vast gut Sma der pet xxvij",
+  "Darnach die polster vnd kůssen",
+  "die ich in dem haws funden hab",
+  "Item xiiij alt vnd zerissen polster vnd ain",
+  "kůssin vnd seind gar abschatz als die",
+  "obgnennten ebn leut wol vnd aigentlichen",
+  "gesehen vnd beschawet habn"
+ ]
+}

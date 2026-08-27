@@ -1,0 +1,92 @@
+{
+ "page": "pilot2_inv_11330759_p10",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1247,
+    3505
+   ],
+   "sent_px": [
+    1245,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.0,
+ "timestamp": "2026-08-27T10:27:13+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "Ain clain vessl",
+      "kind": "entry",
+      "uncertain": [
+       "vessl"
+      ]
+     },
+     {
+      "text": "Der grossen keller",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Drey maßkandl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo dreymießig kandl",
+      "kind": "entry",
+      "uncertain": [
+       "dreymießig"
+      ]
+     },
+     {
+      "text": "Ain drantranckelkandl",
+      "kind": "entry",
+      "uncertain": [
+       "drantranckelkandl"
+      ]
+     },
+     {
+      "text": "Zwo ranckelkandl",
+      "kind": "entry",
+      "uncertain": [
+       "ranckelkandl"
+      ]
+     },
+     {
+      "text": "In der grossen stubenn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Sechs gemain tisch",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Ain clain vessl",
+  "Der grossen keller",
+  "Drey maßkandl",
+  "Zwo dreymießig kandl",
+  "Ain drantranckelkandl",
+  "Zwo ranckelkandl",
+  "In der grossen stubenn",
+  "Sechs gemain tisch"
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "page": "pilot2_inv_11330219_p2",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1652,
+    1100
+   ],
+   "sent_px": [
+    1652,
+    1100
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 15.7,
+ "timestamp": "2026-08-27T10:27:38+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "Pfondz, Inventari",
+      "kind": "rubric",
+      "uncertain": [
+       "Pfondz,",
+       "Inventari"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Pfondz, Inventari"
+ ]
+}

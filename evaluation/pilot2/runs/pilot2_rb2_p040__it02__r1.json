@@ -1,0 +1,277 @@
+{
+ "page": "pilot2_rb2_p040",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.6,
+ "timestamp": "2026-08-27T10:30:39+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Kaſtnern",
+      "kind": "rubric",
+      "uncertain": [
+       "Kaſtnern"
+      ]
+     },
+     {
+      "text": "vphoſern",
+      "kind": "rubric",
+      "uncertain": [
+       "vphoſern"
+      ]
+     },
+     {
+      "text": "Nota Anno die vt supra eademque die Jſt",
+      "kind": "entry",
+      "uncertain": [
+       "eademque"
+      ]
+     },
+     {
+      "text": "berait mit der vphoſern in gegenwurtikait",
+      "kind": "entry",
+      "uncertain": [
+       "vphoſern"
+      ]
+     },
+     {
+      "text": "der vorgeſchriben / vmb alle abgeraitte zeugz",
+      "kind": "entry",
+      "uncertain": [
+       "abgeraitte",
+       "zeugz"
+      ]
+     },
+     {
+      "text": "ſo ſy mein herrn gnad ſchuldig iſt / ſund(er)",
+      "kind": "entry",
+      "uncertain": [
+       "ſund(er)"
+      ]
+     },
+     {
+      "text": "ſyr naruſten von den ſatztung vntz auf",
+      "kind": "entry",
+      "uncertain": [
+       "ſyr",
+       "naruſten",
+       "ſatztung"
+      ]
+     },
+     {
+      "text": "heutigen tag / vnd dringt in ains",
+      "kind": "entry",
+      "uncertain": [
+       "dringt"
+      ]
+     },
+     {
+      "text": "Suma ij c xxxij mr xix d j hl",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij c xxxij ... xix ... j",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "xix",
+       "j hl"
+      ]
+     },
+     {
+      "text": "Daran jr Jnnemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) Die bemelt vphoſern {hat} von herrn Benedictn",
+      "kind": "entry",
+      "uncertain": [
+       "vphoſern",
+       "Benedictn"
+      ]
+     },
+     {
+      "text": "Camermaiſter empfangen ij c xviij mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij c xviij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "Camermaiſter"
+      ]
+     },
+     {
+      "text": "It(em) Von Pengarten pharrer haubtſum hat ſy",
+      "kind": "entry",
+      "uncertain": [
+       "Pengarten"
+      ]
+     },
+     {
+      "text": "empfangen xx mr die er auch in der Cameram mag ſtat auffgen",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "Cameram",
+       "auffgen"
+      ]
+     },
+     {
+      "text": "It(em) Von dem weinpecherzorn die viij mr vij ß iiij d, xxvij ß",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij ... vij ... iiij ... xxvij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "weinpecherzorn"
+      ]
+     },
+     {
+      "text": "die vnczoſten ſo Er mein herrn ſchuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "vnczoſten"
+      ]
+     },
+     {
+      "text": "Suma jrs Jnnemens ſtat",
+      "kind": "sum"
+     },
+     {
+      "text": "ij c xlvij mr iij ß iij d j hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij c xlvij ... iij ... iij ... j",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "iij d",
+       "j hl"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation"
+     },
+     {
+      "text": "Lienhart Deuringer",
+      "kind": "rubric",
+      "uncertain": [
+       "Lienhart",
+       "Deuringer"
+      ]
+     },
+     {
+      "text": "Der vorgemelten geschriften summen",
+      "kind": "entry",
+      "uncertain": [
+       "vorgemelten",
+       "geschriften"
+      ]
+     },
+     {
+      "text": "gegen dam aufseczen gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "dam",
+       "aufseczen",
+       "gegeneinander"
+      ]
+     },
+     {
+      "text": "und abgezogen, Darnach ist Er meins herren",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogen",
+       "herren"
+      ]
+     },
+     {
+      "text": "gnad schuldig —— lxxxv m̄ ix ß viij hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxv m̄ ix ß viij",
+       "unit": "hl"
+      },
+      "uncertain": [
+       "schuldig"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Kaſtnern",
+  "vphoſern",
+  "Nota Anno die vt supra eademque die Jſt",
+  "berait mit der vphoſern in gegenwurtikait",
+  "der vorgeſchriben / vmb alle abgeraitte zeugz",
+  "ſo ſy mein herrn gnad ſchuldig iſt / ſund(er)",
+  "ſyr naruſten von den ſatztung vntz auf",
+  "heutigen tag / vnd dringt in ains",
+  "Suma ij c xxxij mr xix d j hl",
+  "Daran jr Jnnemen",
+  "It(em) Die bemelt vphoſern {hat} von herrn Benedictn",
+  "Camermaiſter empfangen ij c xviij mr",
+  "It(em) Von Pengarten pharrer haubtſum hat ſy",
+  "empfangen xx mr die er auch in der Cameram mag ſtat auffgen",
+  "It(em) Von dem weinpecherzorn die viij mr vij ß iiij d, xxvij ß",
+  "die vnczoſten ſo Er mein herrn ſchuldig was",
+  "Suma jrs Jnnemens ſtat",
+  "ij c xlvij mr iij ß iij d j hl",
+  "40.",
+  "Lienhart Deuringer",
+  "Der vorgemelten geschriften summen",
+  "gegen dam aufseczen gegeneinander gelegt",
+  "und abgezogen, Darnach ist Er meins herren",
+  "gnad schuldig —— lxxxv m̄ ix ß viij hl"
+ ]
+}

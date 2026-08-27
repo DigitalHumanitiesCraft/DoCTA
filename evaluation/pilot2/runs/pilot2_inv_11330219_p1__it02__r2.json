@@ -1,0 +1,209 @@
+{
+ "page": "pilot2_inv_11330219_p1",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1721,
+    1285
+   ],
+   "sent_px": [
+    1721,
+    1285
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.0,
+ "timestamp": "2026-08-27T10:27:32+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1492.",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "11. XIII 251",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Hss. A 185/1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Daz vermerckt was ich Caterina weyland Baben Rungels selige gelaßne wittib",
+      "kind": "entry",
+      "uncertain": [
+       "Caterina",
+       "Baben",
+       "Rungels"
+      ]
+     },
+     {
+      "text": "auff der pfleg vnd Schloß Schöneckh last als ich abgeczogen pin ausserhalb",
+      "kind": "entry",
+      "uncertain": [
+       "Schöneckh"
+      ]
+     },
+     {
+      "text": "der alten Innuentary dy zu dem Schloß Schöneckh gehörend Anno . 1492",
+      "kind": "entry",
+      "uncertain": [
+       "Innuentary",
+       "Schöneckh"
+      ]
+     },
+     {
+      "text": "Iar an montag nach Sannd Lucien tag zc.",
+      "kind": "entry",
+      "uncertain": [
+       "Lucien"
+      ]
+     },
+     {
+      "text": "Item In dem keller . j . haber stex ain terff stex vnd ain halb terff stex",
+      "kind": "entry",
+      "uncertain": [
+       "haber",
+       "stex",
+       "terff"
+      ]
+     },
+     {
+      "text": "Item ain grosse trugen gehört zu holtz vnd zu kaß",
+      "kind": "entry",
+      "uncertain": [
+       "trugen"
+      ]
+     },
+     {
+      "text": "Item ain leer trugen mit dreyen löchern / ain öl trainn",
+      "kind": "entry",
+      "uncertain": [
+       "trainn"
+      ]
+     },
+     {
+      "text": "Item ain grosse trugen da man fleisch In henget",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain groß hackpret darauf man kraut auf hackt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der phister stubn ain vorrefft tafel vnd dy preten dar zue",
+      "kind": "entry",
+      "uncertain": [
+       "vorrefft"
+      ]
+     },
+     {
+      "text": "Item ain paerl fass ain knet zuber ain saue stex / mer ain zuber gebrochen mer",
+      "kind": "entry",
+      "uncertain": [
+       "paerl",
+       "saue",
+       "stex"
+      ]
+     },
+     {
+      "text": "Item ain schötzen zu tragen vnd ain truche",
+      "kind": "entry",
+      "uncertain": [
+       "schötzen"
+      ]
+     },
+     {
+      "text": "Item In der kuchen ain trugen vnd ain tysch / In der speys kamer . j . trugen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item Im zymmer ain . mel trugen vnd sonst ain clainne trugen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der kamir auch Im zimmer j ain versperte trugen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item An der stubn iij tysch vnd dy pengk dar zue vnd ain steyrertafel",
+      "kind": "entry",
+      "uncertain": [
+       "steyrertafel"
+      ]
+     },
+     {
+      "text": "Item In den zwayen stelen In iegleichem ain fueter truchen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item v alt spies pey dem tor / mer ain halb fass mit der ketn / mer ain armbrust",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain feste putzpn ryt in lingefaßt / mer . iiij . spanpet pös vnd guet",
+      "kind": "entry",
+      "uncertain": [
+       "putzpn",
+       "ryt",
+       "spanpet"
+      ]
+     },
+     {
+      "text": "Item dy ketn zu dem prunn vnd der zygel dar zue /",
+      "kind": "entry",
+      "uncertain": [
+       "zygel"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1492.",
+  "11. XIII 251",
+  "Hss. A 185/1",
+  "Daz vermerckt was ich Caterina weyland Baben Rungels selige gelaßne wittib",
+  "auff der pfleg vnd Schloß Schöneckh last als ich abgeczogen pin ausserhalb",
+  "der alten Innuentary dy zu dem Schloß Schöneckh gehörend Anno . 1492",
+  "Iar an montag nach Sannd Lucien tag zc.",
+  "Item In dem keller . j . haber stex ain terff stex vnd ain halb terff stex",
+  "Item ain grosse trugen gehört zu holtz vnd zu kaß",
+  "Item ain leer trugen mit dreyen löchern / ain öl trainn",
+  "Item ain grosse trugen da man fleisch In henget",
+  "Item ain groß hackpret darauf man kraut auf hackt",
+  "Item In der phister stubn ain vorrefft tafel vnd dy preten dar zue",
+  "Item ain paerl fass ain knet zuber ain saue stex / mer ain zuber gebrochen mer",
+  "Item ain schötzen zu tragen vnd ain truche",
+  "Item In der kuchen ain trugen vnd ain tysch / In der speys kamer . j . trugen",
+  "Item Im zymmer ain . mel trugen vnd sonst ain clainne trugen",
+  "Item In der kamir auch Im zimmer j ain versperte trugen",
+  "Item An der stubn iij tysch vnd dy pengk dar zue vnd ain steyrertafel",
+  "Item In den zwayen stelen In iegleichem ain fueter truchen",
+  "Item v alt spies pey dem tor / mer ain halb fass mit der ketn / mer ain armbrust",
+  "Item ain feste putzpn ryt in lingefaßt / mer . iiij . spanpet pös vnd guet",
+  "Item dy ketn zu dem prunn vnd der zygel dar zue /"
+ ]
+}

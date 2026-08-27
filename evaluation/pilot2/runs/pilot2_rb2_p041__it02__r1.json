@@ -1,0 +1,205 @@
+{
+ "page": "pilot2_rb2_p041",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 15.1,
+ "timestamp": "2026-08-27T10:30:47+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "41r",
+    "lines": [
+     {
+      "text": "41",
+      "kind": "foliation"
+     },
+     {
+      "text": "Lienhart Dermyger",
+      "kind": "rubric",
+      "uncertain": [
+       "Dermyger"
+      ]
+     },
+     {
+      "text": "Not(a) mit Lienharten Deringer gerait am",
+      "kind": "entry",
+      "uncertain": [
+       "Lienharten",
+       "Deringer"
+      ]
+     },
+     {
+      "text": "montag nach Diuisionis Aplor[um] Anno domini",
+      "kind": "entry",
+      "uncertain": [
+       "Diuisionis",
+       "Aplor[um]"
+      ]
+     },
+     {
+      "text": "iiij C lxiiij / in gegenwurtikait herren Benedict",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict"
+      ]
+     },
+     {
+      "text": "pharrer zu Tyrol der alte Camermeister",
+      "kind": "entry",
+      "uncertain": [
+       "Tyrol"
+      ]
+     },
+     {
+      "text": "Lienharts von Vels Camermeisters vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Lienharts",
+       "Vels"
+      ]
+     },
+     {
+      "text": "Wolfgang Stumbler Camerscribs vnnd abgerait",
+      "kind": "entry",
+      "uncertain": [
+       "Wolfgang",
+       "Stumbler"
+      ]
+     },
+     {
+      "text": "zerung",
+      "kind": "entry"
+     },
+     {
+      "text": "Item meins herren gnad ist demselben Lienhart wernot",
+      "kind": "entry",
+      "uncertain": [
+       "Lienhart",
+       "wernot"
+      ]
+     },
+     {
+      "text": "schuldic für abgerait zerung von sand Marttin",
+      "kind": "entry",
+      "uncertain": [
+       "Marttin"
+      ]
+     },
+     {
+      "text": "tag d[es] lxj jars vntz auf hewtigen obgenant",
+      "kind": "entry"
+     },
+     {
+      "text": "tag / vnd bringt in ainer Suma ij C lviij lb",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "ij C lviij",
+       "unit": "lb"
+      }
+     },
+     {
+      "text": "vnd viij ß xj d ob liiij s d",
+      "kind": "amount",
+      "uncertain": [
+       "ob"
+      ]
+     },
+     {
+      "text": "Item Dises hat er emphangen vnd am ersten",
+      "kind": "entry"
+     },
+     {
+      "text": "von crumpffmarckten auf meins gnedigen herren",
+      "kind": "entry",
+      "uncertain": [
+       "crumpffmarckten"
+      ]
+     },
+     {
+      "text": "gescheftikait —— lxxxiiij lb",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxiiij",
+       "unit": "lb"
+      }
+     },
+     {
+      "text": "Item von meinem herren herrn Benedict pharrer zu",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Tyrol als Camermeister lxxiiij lb",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxiiij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Tyrol"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "41",
+  "Lienhart Dermyger",
+  "Not(a) mit Lienharten Deringer gerait am",
+  "montag nach Diuisionis Aplor[um] Anno domini",
+  "iiij C lxiiij / in gegenwurtikait herren Benedict",
+  "pharrer zu Tyrol der alte Camermeister",
+  "Lienharts von Vels Camermeisters vnd",
+  "Wolfgang Stumbler Camerscribs vnnd abgerait",
+  "zerung",
+  "Item meins herren gnad ist demselben Lienhart wernot",
+  "schuldic für abgerait zerung von sand Marttin",
+  "tag d[es] lxj jars vntz auf hewtigen obgenant",
+  "tag / vnd bringt in ainer Suma ij C lviij lb",
+  "vnd viij ß xj d ob liiij s d",
+  "Item Dises hat er emphangen vnd am ersten",
+  "von crumpffmarckten auf meins gnedigen herren",
+  "gescheftikait —— lxxxiiij lb",
+  "Item von meinem herren herrn Benedict pharrer zu",
+  "Tyrol als Camermeister lxxiiij lb"
+ ]
+}

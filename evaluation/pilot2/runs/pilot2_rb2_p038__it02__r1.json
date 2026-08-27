@@ -1,0 +1,357 @@
+{
+ "page": "pilot2_rb2_p038",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.8,
+ "timestamp": "2026-08-27T10:30:18+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Vlreich Genger",
+      "kind": "rubric",
+      "uncertain": [
+       "Vlreich",
+       "Genger"
+      ]
+     },
+     {
+      "text": "Nöta mit Vlreichen Gengen ist gerait an freytag",
+      "kind": "entry",
+      "uncertain": [
+       "Gengen",
+       "freytag"
+      ]
+     },
+     {
+      "text": "nach Pauli Anno domini etc lxxxxvij in pnca phlegers",
+      "kind": "entry",
+      "uncertain": [
+       "Pauli",
+       "pnca",
+       "phlegers"
+      ]
+     },
+     {
+      "text": "vmb allerlay iarnung abgeraitt / sölcz seiner",
+      "kind": "entry",
+      "uncertain": [
+       "iarnung",
+       "sölcz"
+      ]
+     },
+     {
+      "text": "naehsten vntern raitung / vntz auf hewtign",
+      "kind": "entry",
+      "uncertain": [
+       "hewtign"
+      ]
+     },
+     {
+      "text": "tag / vnd bringt alles in ainer Summa xx m iij [...]",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "xx",
+       "unit": "m"
+      },
+      "uncertain": [
+       "Summa",
+       "[...]"
+      ]
+     },
+     {
+      "text": "Jnnemen",
+      "kind": "rubric",
+      "uncertain": [
+       "Jnnemen"
+      ]
+     },
+     {
+      "text": "It[em] Daran hat er emphangen von Vlreichn",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreichn"
+      ]
+     },
+     {
+      "text": "Berhtoltn kellner zu Tirol salian die er meins",
+      "kind": "entry",
+      "uncertain": [
+       "Berhtoltn",
+       "Tirol",
+       "salian"
+      ]
+     },
+     {
+      "text": "herrn gnaden in schuldweys hat vbergeben",
+      "kind": "entry",
+      "uncertain": [
+       "schuldweys"
+      ]
+     },
+     {
+      "text": "xvij fuder vj ymren vij yms weins / fur xxiiij m [...]",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "xxiiij",
+       "unit": "m"
+      },
+      "uncertain": [
+       "ymren",
+       "yms",
+       "[...]"
+      ]
+     },
+     {
+      "text": "Jnnemen vnd ausgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "gegeneinander"
+      ]
+     },
+     {
+      "text": "vnd aufgehört / Darnach ist der bej Vlreich meins",
+      "kind": "entry",
+      "uncertain": [
+       "aufgehört",
+       "bej",
+       "Vlreich"
+      ]
+     },
+     {
+      "text": "herrn gnaden schuldig —— xxviij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "schuldig"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "38r",
+    "lines": [
+     {
+      "text": "38",
+      "kind": "foliation",
+      "uncertain": [
+       "38"
+      ]
+     },
+     {
+      "text": "Heinrich Dorn",
+      "kind": "rubric",
+      "uncertain": [
+       "Heinrich Dorn"
+      ]
+     },
+     {
+      "text": "Nota eadem die et in presencia quibussupra, Ist",
+      "kind": "entry",
+      "uncertain": [
+       "eadem",
+       "die",
+       "in",
+       "presencia",
+       "quibussupra"
+      ]
+     },
+     {
+      "text": "gerait mit Heinrich Dorn vmb alle",
+      "kind": "entry",
+      "uncertain": [
+       "Heinrich Dorn",
+       "alle"
+      ]
+     },
+     {
+      "text": "abgeraitte zerung fuͤr seine neaste Rait=",
+      "kind": "entry",
+      "uncertain": [
+       "seine",
+       "neaste"
+      ]
+     },
+     {
+      "text": "tung auf heutigen tag, vnd bringt jm am",
+      "kind": "entry",
+      "uncertain": [
+       "heutigen",
+       "tag"
+      ]
+     },
+     {
+      "text": "Suma —— xxviij lb viij ß vj d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "xxviij",
+       "viij",
+       "vj"
+      ]
+     },
+     {
+      "text": "Daran hat er emphangn",
+      "kind": "rubric",
+      "uncertain": [
+       "emphangn"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Von Niclasn Piescher kellnaͤr an roten",
+      "kind": "entry",
+      "uncertain": [
+       "Niclasn",
+       "Piescher",
+       "kellnaͤr",
+       "roten"
+      ]
+     },
+     {
+      "text": "hat er emphangen, die er meins herrn gnaden",
+      "kind": "entry",
+      "uncertain": [
+       "emphangen",
+       "herrn",
+       "gnaden"
+      ]
+     },
+     {
+      "text": "in schuldtweys hat vbergeben an rotin vnd",
+      "kind": "entry",
+      "uncertain": [
+       "schuldtweys",
+       "vbergeben",
+       "rotin"
+      ]
+     },
+     {
+      "text": "brot —— xxx lb viij ß vj d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxx",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "brot",
+       "xxx",
+       "viij",
+       "vj"
+      ]
+     },
+     {
+      "text": "Aufgeben vnd Innemen gegeneinander",
+      "kind": "entry",
+      "uncertain": [
+       "Aufgeben",
+       "Innemen",
+       "gegeneinander"
+      ]
+     },
+     {
+      "text": "gelegt vnd abgetzogen. Darnach ist derselb",
+      "kind": "entry",
+      "uncertain": [
+       "abgetzogen",
+       "derselb"
+      ]
+     },
+     {
+      "text": "Dorn meins herrn gnaden schuldig ij lb",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Dorn",
+       "herrn",
+       "gnaden",
+       "ij"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vlreich Genger",
+  "Nöta mit Vlreichen Gengen ist gerait an freytag",
+  "nach Pauli Anno domini etc lxxxxvij in pnca phlegers",
+  "vmb allerlay iarnung abgeraitt / sölcz seiner",
+  "naehsten vntern raitung / vntz auf hewtign",
+  "tag / vnd bringt alles in ainer Summa xx m iij [...]",
+  "Jnnemen",
+  "It[em] Daran hat er emphangen von Vlreichn",
+  "Berhtoltn kellner zu Tirol salian die er meins",
+  "herrn gnaden in schuldweys hat vbergeben",
+  "xvij fuder vj ymren vij yms weins / fur xxiiij m [...]",
+  "Jnnemen vnd ausgeben gegeneinander gelegt",
+  "vnd aufgehört / Darnach ist der bej Vlreich meins",
+  "herrn gnaden schuldig —— xxviij lb",
+  "38",
+  "Heinrich Dorn",
+  "Nota eadem die et in presencia quibussupra, Ist",
+  "gerait mit Heinrich Dorn vmb alle",
+  "abgeraitte zerung fuͤr seine neaste Rait=",
+  "tung auf heutigen tag, vnd bringt jm am",
+  "Suma —— xxviij lb viij ß vj d",
+  "Daran hat er emphangn",
+  "Item",
+  "Von Niclasn Piescher kellnaͤr an roten",
+  "hat er emphangen, die er meins herrn gnaden",
+  "in schuldtweys hat vbergeben an rotin vnd",
+  "brot —— xxx lb viij ß vj d",
+  "Aufgeben vnd Innemen gegeneinander",
+  "gelegt vnd abgetzogen. Darnach ist derselb",
+  "Dorn meins herrn gnaden schuldig ij lb"
+ ]
+}

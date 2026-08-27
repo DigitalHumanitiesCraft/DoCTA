@@ -1,0 +1,404 @@
+{
+ "page": "pilot2_rb2_p028",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.3,
+ "timestamp": "2026-08-27T10:28:41+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "recto",
+    "lines": [
+     {
+      "text": "Andre von matran",
+      "kind": "rubric",
+      "uncertain": [
+       "Andre",
+       "matran"
+      ]
+     },
+     {
+      "text": "Nota am freytag vor unnse[r] lieben frawen",
+      "kind": "entry",
+      "uncertain": [
+       "unnse[r]"
+      ]
+     },
+     {
+      "text": "tag Annunciacionis Anno domini etc lxxiiij in gegen-",
+      "kind": "entry",
+      "uncertain": [
+       "Annunciacionis",
+       "lxxiiij"
+      ]
+     },
+     {
+      "text": "wurtikait Hannsen Camrermaisters Tomasen des alten",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "Tomasen"
+      ]
+     },
+     {
+      "text": "Kammermeisters Burghartt Pauler Hanss Camrer",
+      "kind": "entry",
+      "uncertain": [
+       "Burghartt",
+       "Pauler",
+       "Hanss"
+      ]
+     },
+     {
+      "text": "und Wolfgangs Stummel Camrerscherer Ist",
+      "kind": "entry",
+      "uncertain": [
+       "Wolfgangs",
+       "Stummel"
+      ]
+     },
+     {
+      "text": "mit Andren dinstknecht Raitung beschehen",
+      "kind": "entry",
+      "uncertain": [
+       "Andren"
+      ]
+     },
+     {
+      "text": "der durstner von Gossensass von phinztag",
+      "kind": "entry",
+      "uncertain": [
+       "durstner",
+       "Gossensass"
+      ]
+     },
+     {
+      "text": "nach des heyligen kreüczs tag Exaltacionis",
+      "kind": "entry",
+      "uncertain": [
+       "kreüczs",
+       "Exaltacionis"
+      ]
+     },
+     {
+      "text": "des vergangen lxxij Jars uncz auf hewtigen tag",
+      "kind": "entry",
+      "uncertain": [
+       "lxxij"
+      ]
+     },
+     {
+      "text": "gefurt hat her gen Ynnspruck in mein gnedigs",
+      "kind": "entry",
+      "uncertain": [
+       "Ynnspruck"
+      ]
+     },
+     {
+      "text": "herrn Camerkasten",
+      "kind": "entry"
+     },
+     {
+      "text": "Bringt das er herab gefürt hat iiij C lxxxxviij",
+      "kind": "entry",
+      "uncertain": [
+       "iiij C lxxxxviij"
+      ]
+     },
+     {
+      "text": "fubl von yedem fůbl xxij gr bringt — lb xiij m iiij d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xiij m iiij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "fubl",
+       "fůbl",
+       "gr"
+      ]
+     },
+     {
+      "text": "Darzů von gnaden hat man im zu phenning",
+      "kind": "entry"
+     },
+     {
+      "text": "glegt xxxvj lb d das alles in ainer Summa",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxvj",
+       "unit": "lb"
+      }
+     },
+     {
+      "text": "bringt —— lb x m",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x m",
+       "unit": "lb"
+      }
+     },
+     {
+      "text": "Smha",
+      "kind": "sum"
+     },
+     {
+      "text": "Item hat der Kammermeister Stümmbel und andre",
+      "kind": "entry",
+      "uncertain": [
+       "Stümmbel"
+      ]
+     },
+     {
+      "text": "zu Im wagent als man meins Gnedigen herrn allkeller",
+      "kind": "entry",
+      "uncertain": [
+       "allkeller"
+      ]
+     },
+     {
+      "text": "herab gefürt hat —— viij d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      }
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "28r",
+    "lines": [
+     {
+      "text": "28",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "von meinem herren Camrermaister hat er",
+      "kind": "entry",
+      "uncertain": [
+       "meinem",
+       "Camrermaister"
+      ]
+     },
+     {
+      "text": "emphangen die desselb Camrermaister dravff",
+      "kind": "entry",
+      "uncertain": [
+       "desselb",
+       "dravff"
+      ]
+     },
+     {
+      "text": "ze —— xxviij mr xiij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "ze"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "von Otwegkhaten Salczmair hat er",
+      "kind": "entry",
+      "uncertain": [
+       "Otwegkhaten",
+       "Salczmair"
+      ]
+     },
+     {
+      "text": "emphangen —— lxx mr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxx",
+       "unit": "mr"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "von Hallnär am Ing hat er emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "Hallnär",
+       "Ing"
+      ]
+     },
+     {
+      "text": "—— xxxxvij mr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxxvij",
+       "unit": "mr"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "von Vlreichen Berfvoͤd dazumal Kellnär an",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreichen",
+       "Berfvoͤd",
+       "Kellnär"
+      ]
+     },
+     {
+      "text": "Meran xxciij mr fuder j muth fuͤr xx mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "Meran",
+       "xxciij",
+       "fuder",
+       "muth"
+      ]
+     },
+     {
+      "text": "die desselb Berfvoͤd in bezalung meins herren",
+      "kind": "entry",
+      "uncertain": [
+       "desselb",
+       "Berfvoͤd",
+       "bezalung"
+      ]
+     },
+     {
+      "text": "gnaden vbergeben hat",
+      "kind": "entry",
+      "uncertain": [
+       "vbergeben"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "von Bernharten Braunsinn iij mr iij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "Bernharten",
+       "Braunsinn"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Andre von matran",
+  "Nota am freytag vor unnse[r] lieben frawen",
+  "tag Annunciacionis Anno domini etc lxxiiij in gegen-",
+  "wurtikait Hannsen Camrermaisters Tomasen des alten",
+  "Kammermeisters Burghartt Pauler Hanss Camrer",
+  "und Wolfgangs Stummel Camrerscherer Ist",
+  "mit Andren dinstknecht Raitung beschehen",
+  "der durstner von Gossensass von phinztag",
+  "nach des heyligen kreüczs tag Exaltacionis",
+  "des vergangen lxxij Jars uncz auf hewtigen tag",
+  "gefurt hat her gen Ynnspruck in mein gnedigs",
+  "herrn Camerkasten",
+  "Bringt das er herab gefürt hat iiij C lxxxxviij",
+  "fubl von yedem fůbl xxij gr bringt — lb xiij m iiij d",
+  "Darzů von gnaden hat man im zu phenning",
+  "glegt xxxvj lb d das alles in ainer Summa",
+  "bringt —— lb x m",
+  "Smha",
+  "Item hat der Kammermeister Stümmbel und andre",
+  "zu Im wagent als man meins Gnedigen herrn allkeller",
+  "herab gefürt hat —— viij d",
+  "28",
+  "Daran sein Innemen",
+  "Item",
+  "von meinem herren Camrermaister hat er",
+  "emphangen die desselb Camrermaister dravff",
+  "ze —— xxviij mr xiij d",
+  "Item",
+  "von Otwegkhaten Salczmair hat er",
+  "emphangen —— lxx mr",
+  "Item",
+  "von Hallnär am Ing hat er emphangen",
+  "—— xxxxvij mr",
+  "Item",
+  "von Vlreichen Berfvoͤd dazumal Kellnär an",
+  "Meran xxciij mr fuder j muth fuͤr xx mr",
+  "die desselb Berfvoͤd in bezalung meins herren",
+  "gnaden vbergeben hat",
+  "Item",
+  "von Bernharten Braunsinn iij mr iij d"
+ ]
+}

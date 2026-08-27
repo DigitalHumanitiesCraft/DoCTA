@@ -1,0 +1,229 @@
+{
+ "page": "pilot2_inv_11330759_p1",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1193,
+    3501
+   ],
+   "sent_px": [
+    1193,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.6,
+ "timestamp": "2026-08-27T10:26:32+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1487",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Inventur hernach die hab",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zeüg vnd guet auf der",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "mündtkron Cristoffen von",
+      "kind": "entry",
+      "uncertain": [
+       "mündtkron",
+       "Cristoffen"
+      ]
+     },
+     {
+      "text": "Wolckenstain pfleger daselbs",
+      "kind": "entry",
+      "uncertain": [
+       "Wolckenstain"
+      ]
+     },
+     {
+      "text": "hin vnd vbergeantwurt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "aufgeschriben zu Semini an",
+      "kind": "entry",
+      "uncertain": [
+       "Semini"
+      ]
+     },
+     {
+      "text": "sandt als angewendten pfleger",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "an pfinztag nach vnser fraun",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "tag Assumpcionis Anno etc",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Octuagesimo Septimo Jecz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gegenwirtig Hannsen Kling",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "Kling"
+      ]
+     },
+     {
+      "text": "Hannsen einmützer Notari",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "einmützer",
+       "Notari"
+      ]
+     },
+     {
+      "text": "Burger zu Botzen vnd and(er)",
+      "kind": "entry",
+      "uncertain": [
+       "Botzen"
+      ]
+     },
+     {
+      "text": "Im erstens hat man gefunden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in sand vlreichs stock an",
+      "kind": "entry",
+      "uncertain": [
+       "vlreichs"
+      ]
+     },
+     {
+      "text": "Gelt v lb viij ß j d",
+      "kind": "amount",
+      "amount": {
+       "numeral": "v lb viij ß j d"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Mer hat man Im geantwurt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "von sand Felixen kirchen",
+      "kind": "entry",
+      "uncertain": [
+       "Felixen"
+      ]
+     },
+     {
+      "text": "wegn xxiiij lb v ß j d",
+      "kind": "amount",
+      "amount": {
+       "numeral": "xxiiij lb v ß j d"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "In sand vlreichskapelln",
+      "kind": "rubric",
+      "uncertain": [
+       "vlreichskapelln"
+      ]
+     },
+     {
+      "text": "Ain slecht alt messgewandt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "mit alb vnd ander sein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zugehörung",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai alt zinen leuchter",
+      "kind": "entry",
+      "uncertain": [
+       "zinen",
+       "leuchter"
+      ]
+     },
+     {
+      "text": "Inv. A 225/1",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1487",
+  "1",
+  "Inventur hernach die hab",
+  "zeüg vnd guet auf der",
+  "mündtkron Cristoffen von",
+  "Wolckenstain pfleger daselbs",
+  "hin vnd vbergeantwurt",
+  "aufgeschriben zu Semini an",
+  "sandt als angewendten pfleger",
+  "an pfinztag nach vnser fraun",
+  "tag Assumpcionis Anno etc",
+  "Octuagesimo Septimo Jecz",
+  "gegenwirtig Hannsen Kling",
+  "Hannsen einmützer Notari",
+  "Burger zu Botzen vnd and(er)",
+  "Im erstens hat man gefunden",
+  "in sand vlreichs stock an",
+  "Gelt v lb viij ß j d",
+  "Mer hat man Im geantwurt",
+  "von sand Felixen kirchen",
+  "wegn xxiiij lb v ß j d",
+  "In sand vlreichskapelln",
+  "Ain slecht alt messgewandt",
+  "mit alb vnd ander sein",
+  "zugehörung",
+  "Zwai alt zinen leuchter",
+  "Inv. A 225/1"
+ ]
+}

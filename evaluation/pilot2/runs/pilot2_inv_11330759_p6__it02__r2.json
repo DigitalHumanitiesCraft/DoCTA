@@ -1,0 +1,146 @@
+{
+ "page": "pilot2_inv_11330759_p6",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1256,
+    3568
+   ],
+   "sent_px": [
+    1232,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.8,
+ "timestamp": "2026-08-27T10:26:59+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "Ain moͤrser gloͤckhspeisin mit sein",
+      "kind": "entry",
+      "uncertain": [
+       "gloͤckhspeisin"
+      ]
+     },
+     {
+      "text": "eysnein stempfl",
+      "kind": "entry",
+      "uncertain": [
+       "eysnein"
+      ]
+     },
+     {
+      "text": "drei beymein kelleinn",
+      "kind": "entry",
+      "uncertain": [
+       "beymein",
+       "kelleinn"
+      ]
+     },
+     {
+      "text": "Acht pfannenn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai kyff",
+      "kind": "entry",
+      "uncertain": [
+       "kyff"
+      ]
+     },
+     {
+      "text": "drei hafen deckhenn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "·:· Zwen messingspeckh vnd ain grosen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "messingspeckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Oͤl pann",
+      "kind": "entry",
+      "uncertain": [
+       "pann"
+      ]
+     },
+     {
+      "text": "Ain smaltz kübl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zway brochenn hanndtgiesvaß",
+      "kind": "entry",
+      "uncertain": [
+       "hanndtgiesvaß"
+      ]
+     },
+     {
+      "text": "Ain brochenn messincanndl",
+      "kind": "entry",
+      "uncertain": [
+       "messincanndl"
+      ]
+     },
+     {
+      "text": "Im Brotgadenn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai gross krauthafann",
+      "kind": "entry",
+      "uncertain": [
+       "krauthafann"
+      ]
+     },
+     {
+      "text": "Syben diner laib in ainer trubn",
+      "kind": "entry",
+      "uncertain": [
+       "diner",
+       "trubn"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Ain moͤrser gloͤckhspeisin mit sein",
+  "eysnein stempfl",
+  "drei beymein kelleinn",
+  "Acht pfannenn",
+  "Zwai kyff",
+  "drei hafen deckhenn",
+  "·:· Zwen messingspeckh vnd ain grosen",
+  "messingspeckh",
+  "Ain Oͤl pann",
+  "Ain smaltz kübl",
+  "Zway brochenn hanndtgiesvaß",
+  "Ain brochenn messincanndl",
+  "Im Brotgadenn",
+  "Zwai gross krauthafann",
+  "Syben diner laib in ainer trubn"
+ ]
+}

@@ -1,0 +1,287 @@
+{
+ "page": "pilot2_inv_11348481_p9",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1220,
+    3238
+   ],
+   "sent_px": [
+    1220,
+    3238
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.9,
+ "timestamp": "2026-08-27T10:26:05+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "4r",
+    "lines": [
+     {
+      "text": "4",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerckht in der kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "da die monicon jnn leyt",
+      "kind": "rubric",
+      "uncertain": [
+       "monicon"
+      ]
+     },
+     {
+      "text": "Item fúnfundfúnfczig armprost vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "eyben gút vnd pös",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item sibenundtzwainczig alt verdeckt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "platen pös vnd gútt ain tail zerprochen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht welisch spanngürtel zú den eybn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht köcher vnd ij eysenstöfflyn",
+      "kind": "entry",
+      "uncertain": [
+       "eysenstöfflyn"
+      ]
+     },
+     {
+      "text": "Item ain erer hafen zerbrochen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain lancztsth zerprochen",
+      "kind": "entry",
+      "uncertain": [
+       "lancztsth"
+      ]
+     },
+     {
+      "text": "Item zehen lageln mit pheylen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain vässlen mit puluer ain viij gross",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item aber ain klaines vessleyn mit puluer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain lagel mit fackel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain vessleyn mit salniter von ij viij gros",
+      "kind": "entry",
+      "uncertain": [
+       "salniter"
+      ]
+     },
+     {
+      "text": "Item viij feúrpheyl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain trúckleyn mit welschen pheylen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item viij púrd vnd vij stangen eysens",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerckht auf dem pal",
+      "kind": "rubric",
+      "uncertain": [
+       "pal"
+      ]
+     },
+     {
+      "text": "Item ain messin púchs scheúst ain stain von",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zehen phunden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zwoú lang kupfrein púchs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item achtzehen eysen púchsen gross vnd klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item bey targen vnd sechstle gut vnd pos",
+      "kind": "entry",
+      "uncertain": [
+       "bey",
+       "targen",
+       "sechstle"
+      ]
+     },
+     {
+      "text": "Item ain gross kupfrein púchs bey der mitteln",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "porten auf zway rädern dabey ain eysen púchs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij spanseil ij senn ain seckling",
+      "kind": "entry",
+      "uncertain": [
+       "spanseil",
+       "senn",
+       "seckling"
+      ]
+     },
+     {
+      "text": "Item ij spenpanch",
+      "kind": "entry",
+      "uncertain": [
+       "spenpanch"
+      ]
+     },
+     {
+      "text": "Vermerckht in der kuchen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij lanczetschen seind zerprochen",
+      "kind": "entry",
+      "uncertain": [
+       "lanczetschen"
+      ]
+     },
+     {
+      "text": "Item j gantzer lancztsth",
+      "kind": "entry",
+      "uncertain": [
+       "lancztsth"
+      ]
+     },
+     {
+      "text": "Item iij hälckhy vnd j prantrauch",
+      "kind": "entry",
+      "uncertain": [
+       "hälckhy",
+       "prantrauch"
+      ]
+     },
+     {
+      "text": "Item j pratrost vnd .j. dreifus",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j feúr haucken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j kessel von zway gyegel wasser",
+      "kind": "entry",
+      "uncertain": [
+       "gyegel"
+      ]
+     },
+     {
+      "text": "Item j erer hafen",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "4",
+  "Vermerckht in der kamer",
+  "da die monicon jnn leyt",
+  "Item fúnfundfúnfczig armprost vnd",
+  "eyben gút vnd pös",
+  "Item sibenundtzwainczig alt verdeckt",
+  "platen pös vnd gútt ain tail zerprochen",
+  "Item acht welisch spanngürtel zú den eybn",
+  "Item acht köcher vnd ij eysenstöfflyn",
+  "Item ain erer hafen zerbrochen",
+  "Item ain lancztsth zerprochen",
+  "Item zehen lageln mit pheylen",
+  "Item ain vässlen mit puluer ain viij gross",
+  "Item aber ain klaines vessleyn mit puluer",
+  "Item ain lagel mit fackel",
+  "Item ain vessleyn mit salniter von ij viij gros",
+  "Item viij feúrpheyl",
+  "Item ain trúckleyn mit welschen pheylen",
+  "Item viij púrd vnd vij stangen eysens",
+  "Vermerckht auf dem pal",
+  "Item ain messin púchs scheúst ain stain von",
+  "zehen phunden",
+  "Item zwoú lang kupfrein púchs",
+  "Item achtzehen eysen púchsen gross vnd klain",
+  "Item bey targen vnd sechstle gut vnd pos",
+  "Item ain gross kupfrein púchs bey der mitteln",
+  "porten auf zway rädern dabey ain eysen púchs",
+  "Item ij spanseil ij senn ain seckling",
+  "Item ij spenpanch",
+  "Vermerckht in der kuchen",
+  "Item ij lanczetschen seind zerprochen",
+  "Item j gantzer lancztsth",
+  "Item iij hälckhy vnd j prantrauch",
+  "Item j pratrost vnd .j. dreifus",
+  "Item j feúr haucken",
+  "Item j kessel von zway gyegel wasser",
+  "Item j erer hafen"
+ ]
+}

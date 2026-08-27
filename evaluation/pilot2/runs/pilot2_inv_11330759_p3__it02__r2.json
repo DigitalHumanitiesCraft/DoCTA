@@ -1,0 +1,210 @@
+{
+ "page": "pilot2_inv_11330759_p3",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1238,
+    3505
+   ],
+   "sent_px": [
+    1236,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.0,
+ "timestamp": "2026-08-27T10:26:44+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "2",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Fünff Swäytzer kranckhn",
+      "kind": "entry",
+      "uncertain": [
+       "Swäytzer",
+       "kranckhn"
+      ]
+     },
+     {
+      "text": "Zweyj guldin kuckenschab auch von",
+      "kind": "entry",
+      "uncertain": [
+       "kuckenschab"
+      ]
+     },
+     {
+      "text": "mein gnedigsten herrn von Osterreich",
+      "kind": "entry",
+      "uncertain": [
+       "gnedigsten",
+       "Osterreich"
+      ]
+     },
+     {
+      "text": "bekummen und geben .",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In ainer truchen daselbs in Sand",
+      "kind": "entry",
+      "uncertain": [
+       "truchen",
+       "Sand"
+      ]
+     },
+     {
+      "text": "Zelgen kirchen xij par leylach",
+      "kind": "entry",
+      "uncertain": [
+       "Zelgen",
+       "kirchen",
+       "par",
+       "leylach"
+      ]
+     },
+     {
+      "text": "Zwolechen und annder böß und guet",
+      "kind": "entry",
+      "uncertain": [
+       "Zwolechen"
+      ]
+     },
+     {
+      "text": "Syben hawndtwöll und ain umbhack",
+      "kind": "entry",
+      "uncertain": [
+       "hawndtwöll",
+       "umbhack"
+      ]
+     },
+     {
+      "text": "Syben tyschtuech böß und guet",
+      "kind": "entry",
+      "uncertain": [
+       "tyschtuech"
+      ]
+     },
+     {
+      "text": "Aber an gelt Sand Sebastian zu",
+      "kind": "entry",
+      "uncertain": [
+       "Aber",
+       "Sebastian"
+      ]
+     },
+     {
+      "text": "gebawnd ij lb x d",
+      "kind": "amount",
+      "amount": {
+       "numeral": "ij / x",
+       "unit": "lb / d"
+      },
+      "uncertain": [
+       "gebawnd"
+      ]
+     },
+     {
+      "text": "In dem alten gebawes",
+      "kind": "rubric",
+      "uncertain": [
+       "gebawes"
+      ]
+     },
+     {
+      "text": "In der Stuben",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Drey Schlecht Tysch",
+      "kind": "entry",
+      "uncertain": [
+       "Schlecht",
+       "Tysch"
+      ]
+     },
+     {
+      "text": "Ain Swartze kreges Tafl",
+      "kind": "entry",
+      "uncertain": [
+       "Swartze",
+       "kreges",
+       "Tafl"
+      ]
+     },
+     {
+      "text": "Ain clain Ehles vässl",
+      "kind": "entry",
+      "uncertain": [
+       "clain",
+       "Ehles",
+       "vässl"
+      ]
+     },
+     {
+      "text": "Ain prett Spil",
+      "kind": "entry",
+      "uncertain": [
+       "prett",
+       "Spil"
+      ]
+     },
+     {
+      "text": "Ain partheysen mit sein Zugehörung",
+      "kind": "entry",
+      "uncertain": [
+       "partheysen",
+       "Zugehörung"
+      ]
+     },
+     {
+      "text": "Ain schuss Wagn",
+      "kind": "entry",
+      "uncertain": [
+       "schuss",
+       "Wagn"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "2",
+  "Fünff Swäytzer kranckhn",
+  "Zweyj guldin kuckenschab auch von",
+  "mein gnedigsten herrn von Osterreich",
+  "bekummen und geben .",
+  "In ainer truchen daselbs in Sand",
+  "Zelgen kirchen xij par leylach",
+  "Zwolechen und annder böß und guet",
+  "Syben hawndtwöll und ain umbhack",
+  "Syben tyschtuech böß und guet",
+  "Aber an gelt Sand Sebastian zu",
+  "gebawnd ij lb x d",
+  "In dem alten gebawes",
+  "In der Stuben",
+  "Drey Schlecht Tysch",
+  "Ain Swartze kreges Tafl",
+  "Ain clain Ehles vässl",
+  "Ain prett Spil",
+  "Ain partheysen mit sein Zugehörung",
+  "Ain schuss Wagn"
+ ]
+}

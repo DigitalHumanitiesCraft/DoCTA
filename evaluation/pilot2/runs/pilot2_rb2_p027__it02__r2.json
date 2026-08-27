@@ -1,0 +1,231 @@
+{
+ "page": "pilot2_rb2_p027",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 16.5,
+ "timestamp": "2026-08-27T10:28:36+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Als man dann am xxiijten tag vor sand",
+      "kind": "entry",
+      "uncertain": [
+       "xxiijten",
+       "sand"
+      ]
+     },
+     {
+      "text": "micheltag der vorgenanten lxiij jare in",
+      "kind": "entry",
+      "uncertain": [
+       "micheltag",
+       "lxiij",
+       "jare"
+      ]
+     },
+     {
+      "text": "gegenwurtikait der bemelten pauls pantler ,",
+      "kind": "entry",
+      "uncertain": [
+       "pauls",
+       "pantler"
+      ]
+     },
+     {
+      "text": "Tomasn plammair , Conrat paumgartners",
+      "kind": "entry",
+      "uncertain": [
+       "Tomasn",
+       "plammair",
+       "Conrat",
+       "paumgartners"
+      ]
+     },
+     {
+      "text": "gerait hat mit denselben Seldnern umb",
+      "kind": "entry",
+      "uncertain": [
+       "Seldnern"
+      ]
+     },
+     {
+      "text": "alles das so man jn nach den obgeschriben",
+      "kind": "entry",
+      "uncertain": [
+       "obgeschriben"
+      ]
+     },
+     {
+      "text": "beczalunge , so sie umb sold getrackt vnd",
+      "kind": "entry",
+      "uncertain": [
+       "beczalunge",
+       "getrackt"
+      ]
+     },
+     {
+      "text": "knadelt mitsambt den beraissern , schuldward",
+      "kind": "entry",
+      "uncertain": [
+       "knadelt",
+       "beraissern",
+       "schuldward"
+      ]
+     },
+     {
+      "text": "bringt in ainer Summa zu gantzir biczaling",
+      "kind": "entry",
+      "uncertain": [
+       "gantzir",
+       "biczaling"
+      ]
+     },
+     {
+      "text": "· iij · C · x · iiij · lb · xxij · d · vnd · viij · hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij C xiiij lb xxij d viij",
+       "unit": "hl"
+      },
+      "uncertain": [
+       "xxij",
+       "d",
+       "viij",
+       "hl"
+      ]
+     },
+     {
+      "text": "Summa Summarum aller vorgeschriben",
+      "kind": "rubric",
+      "uncertain": [
+       "Summa",
+       "Summarum"
+      ]
+     },
+     {
+      "text": "Ausgebens so der bemelt Camrermaister",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermaister"
+      ]
+     },
+     {
+      "text": "dem benanten Pantls zu aufraittung",
+      "kind": "entry",
+      "uncertain": [
+       "Pantls",
+       "aufraittung"
+      ]
+     },
+     {
+      "text": "derselben Seldnern in vorgeschribner",
+      "kind": "entry",
+      "uncertain": [
+       "Seldnern"
+      ]
+     },
+     {
+      "text": "zeit saußgericht vnd gantzcz biczalt hat",
+      "kind": "entry",
+      "uncertain": [
+       "saußgericht",
+       "gantzcz",
+       "biczalt"
+      ]
+     },
+     {
+      "text": "facit ij m · iij · C · xlvij lb · iij · ß · x d vnd x hl",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "ij m iij C xlvij lb iij ß x d x",
+       "unit": "hl"
+      },
+      "uncertain": [
+       "xlvij",
+       "iij",
+       "x",
+       "hl"
+      ]
+     },
+     {
+      "text": "vnd vij tl gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "tl",
+       "gld"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "27r",
+    "lines": [
+     {
+      "text": "27",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Als man dann am xxiijten tag vor sand",
+  "micheltag der vorgenanten lxiij jare in",
+  "gegenwurtikait der bemelten pauls pantler ,",
+  "Tomasn plammair , Conrat paumgartners",
+  "gerait hat mit denselben Seldnern umb",
+  "alles das so man jn nach den obgeschriben",
+  "beczalunge , so sie umb sold getrackt vnd",
+  "knadelt mitsambt den beraissern , schuldward",
+  "bringt in ainer Summa zu gantzir biczaling",
+  "· iij · C · x · iiij · lb · xxij · d · vnd · viij · hl",
+  "Summa Summarum aller vorgeschriben",
+  "Ausgebens so der bemelt Camrermaister",
+  "dem benanten Pantls zu aufraittung",
+  "derselben Seldnern in vorgeschribner",
+  "zeit saußgericht vnd gantzcz biczalt hat",
+  "facit ij m · iij · C · xlvij lb · iij · ß · x d vnd x hl",
+  "vnd vij tl gld",
+  "27"
+ ]
+}

@@ -1,0 +1,248 @@
+{
+ "page": "pilot2_rb2_p023",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 16.3,
+ "timestamp": "2026-08-27T10:27:56+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "23r",
+    "lines": [
+     {
+      "text": "23",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Raitung Extraordinarie",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Lennczl",
+      "kind": "rubric",
+      "uncertain": [
+       "Lennczl"
+      ]
+     },
+     {
+      "text": "Nõ am mantag Sannd pauls tag con-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "versiõis etc / In gegenwurtikait hern bernhartn",
+      "kind": "entry",
+      "uncertain": [
+       "bernhartn"
+      ]
+     },
+     {
+      "text": "camermaister Conrats des alten kuckenmaists",
+      "kind": "entry",
+      "uncertain": [
+       "Conrats",
+       "kuckenmaists"
+      ]
+     },
+     {
+      "text": "Reinhart flueers hawsknecht / und Wolfgangs",
+      "kind": "entry",
+      "uncertain": [
+       "Reinhart",
+       "flueers",
+       "Wolfgangs"
+      ]
+     },
+     {
+      "text": "Stainlleins kammerschreibers / Hat paul",
+      "kind": "entry",
+      "uncertain": [
+       "Stainlleins",
+       "paul"
+      ]
+     },
+     {
+      "text": "lenncz Raitung getann von seinenn Innemen",
+      "kind": "entry",
+      "uncertain": [
+       "lenncz"
+      ]
+     },
+     {
+      "text": "und aussgeben auf die hundert und sechzig",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "valldiser / die er von meins gnadigen herren we-",
+      "kind": "entry",
+      "uncertain": [
+       "valldiser"
+      ]
+     },
+     {
+      "text": "wegen gen gann in berg gefüert hat / in drein",
+      "kind": "entry",
+      "uncertain": [
+       "gann"
+      ]
+     },
+     {
+      "text": "monaden / die sich am weichnachtetag verganngs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "geenndt haben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Der benant panncz hat von Hannsen Peryken",
+      "kind": "entry",
+      "uncertain": [
+       "panncz",
+       "Hannsen",
+       "Peryken"
+      ]
+     },
+     {
+      "text": "stain emphangen vij m̄ iij lb iij s gl",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "m̄",
+       "numeral": "vij",
+       "unit": "gl"
+      },
+      "uncertain": [
+       "stain"
+      ]
+     },
+     {
+      "text": "Facit in Gold —— viij Rhgld xxvij ß ij d gl",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Und von Hannsen Trautmans knecht zu lanndeck",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "Trautmans",
+       "lanndeck"
+      ]
+     },
+     {
+      "text": "hat er emphangen vij m̄ iij lb iij s gl",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "m̄",
+       "numeral": "vij",
+       "unit": "gl"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Sum(m)a des Innemens facit ——",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "xviij Rhgld xxvij ß xiij d Rhgld",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xviij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "xviij"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "23",
+  "Raitung Extraordinarie",
+  "Lennczl",
+  "Nõ am mantag Sannd pauls tag con-",
+  "versiõis etc / In gegenwurtikait hern bernhartn",
+  "camermaister Conrats des alten kuckenmaists",
+  "Reinhart flueers hawsknecht / und Wolfgangs",
+  "Stainlleins kammerschreibers / Hat paul",
+  "lenncz Raitung getann von seinenn Innemen",
+  "und aussgeben auf die hundert und sechzig",
+  "valldiser / die er von meins gnadigen herren we-",
+  "wegen gen gann in berg gefüert hat / in drein",
+  "monaden / die sich am weichnachtetag verganngs",
+  "geenndt haben",
+  "Innemen",
+  "Item",
+  "Der benant panncz hat von Hannsen Peryken",
+  "stain emphangen vij m̄ iij lb iij s gl",
+  "Facit in Gold —— viij Rhgld xxvij ß ij d gl",
+  "Item",
+  "Und von Hannsen Trautmans knecht zu lanndeck",
+  "hat er emphangen vij m̄ iij lb iij s gl",
+  "Sum(m)a des Innemens facit ——",
+  "xviij Rhgld xxvij ß xiij d Rhgld"
+ ]
+}

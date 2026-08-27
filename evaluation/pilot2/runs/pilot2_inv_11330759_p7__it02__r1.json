@@ -1,0 +1,156 @@
+{
+ "page": "pilot2_inv_11330759_p7",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1176,
+    3452
+   ],
+   "sent_px": [
+    1176,
+    3452
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.8,
+ "timestamp": "2026-08-27T10:27:05+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "4",
+    "lines": [
+     {
+      "text": "4",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Drei kheller",
+      "kind": "entry",
+      "uncertain": [
+       "kheller"
+      ]
+     },
+     {
+      "text": "Zwelff pettgewand",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Aindleff ster mel in drey sekchn",
+      "kind": "entry",
+      "uncertain": [
+       "Aindleff",
+       "sekchn"
+      ]
+     },
+     {
+      "text": "In der Püchßerei",
+      "kind": "rubric",
+      "uncertain": [
+       "Püchßerei"
+      ]
+     },
+     {
+      "text": "Die werckhzeug vngerichtet",
+      "kind": "entry",
+      "uncertain": [
+       "werckhzeug",
+       "vngerichtet"
+      ]
+     },
+     {
+      "text": "In güßhauss",
+      "kind": "rubric",
+      "uncertain": [
+       "güßhauss"
+      ]
+     },
+     {
+      "text": "Zwo viertail güßstain",
+      "kind": "entry",
+      "uncertain": [
+       "güßstain"
+      ]
+     },
+     {
+      "text": "Ain klainyes güßstain auff",
+      "kind": "entry",
+      "uncertain": [
+       "klainyes",
+       "güßstain"
+      ]
+     },
+     {
+      "text": "zwain redern",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Drei handtpüchsen",
+      "kind": "entry",
+      "uncertain": [
+       "handtpüchsen"
+      ]
+     },
+     {
+      "text": "In dem newen thurn genant",
+      "kind": "rubric",
+      "uncertain": [
+       "thurn"
+      ]
+     },
+     {
+      "text": "mayster Hannsen thurn",
+      "kind": "rubric",
+      "uncertain": [
+       "Hannsen",
+       "thurn"
+      ]
+     },
+     {
+      "text": "Drey hyren gclain",
+      "kind": "entry",
+      "uncertain": [
+       "hyren",
+       "gclain"
+      ]
+     },
+     {
+      "text": "Acht hyren vngericht",
+      "kind": "entry",
+      "uncertain": [
+       "hyren",
+       "vngericht"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "4",
+  "Drei kheller",
+  "Zwelff pettgewand",
+  "Aindleff ster mel in drey sekchn",
+  "In der Püchßerei",
+  "Die werckhzeug vngerichtet",
+  "In güßhauss",
+  "Zwo viertail güßstain",
+  "Ain klainyes güßstain auff",
+  "zwain redern",
+  "Drei handtpüchsen",
+  "In dem newen thurn genant",
+  "mayster Hannsen thurn",
+  "Drey hyren gclain",
+  "Acht hyren vngericht"
+ ]
+}

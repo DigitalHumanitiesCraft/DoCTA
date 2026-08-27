@@ -1,0 +1,144 @@
+{
+ "page": "pilot2_rb2_p029",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.3,
+ "timestamp": "2026-08-27T10:28:55+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "~~Item~~",
+      "kind": "marginal",
+      "uncertain": [
+       "Item"
+      ]
+     },
+     {
+      "text": "~~von Berchtolden rotenstain vj m̄~~",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vj",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "Berchtolden",
+       "rotenstain"
+      ]
+     },
+     {
+      "text": "~~Sūma baĩs seins empfahens~~",
+      "kind": "sum",
+      "uncertain": [
+       "baĩs"
+      ]
+     },
+     {
+      "text": "~~tůt — lxxxx iij m̄ j d~~",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxx iij",
+       "unit": "m̄"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "~~Jnnemen vnd aufgeben gegeneinander gelegt~~",
+      "kind": "entry",
+      "uncertain": [
+       "Jnnemen",
+       "aufgeben",
+       "gegeneinander",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "~~vnd abgeczogen Dannoch ist meins herren~~",
+      "kind": "entry",
+      "uncertain": [
+       "abgeczogen",
+       "Dannoch",
+       "meins",
+       "herren"
+      ]
+     },
+     {
+      "text": "~~gnad demselben hindern mit spartung schuldg~~",
+      "kind": "entry",
+      "uncertain": [
+       "hindern",
+       "spartung",
+       "schuldg"
+      ]
+     },
+     {
+      "text": "~~worden — xvij m̄ viij d~~",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "worden"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 29r",
+    "lines": [
+     {
+      "text": "29",
+      "kind": "foliation"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "~~Item~~",
+  "~~von Berchtolden rotenstain vj m̄~~",
+  "~~Sūma baĩs seins empfahens~~",
+  "~~tůt — lxxxx iij m̄ j d~~",
+  "~~Jnnemen vnd aufgeben gegeneinander gelegt~~",
+  "~~vnd abgeczogen Dannoch ist meins herren~~",
+  "~~gnad demselben hindern mit spartung schuldg~~",
+  "~~worden — xvij m̄ viij d~~",
+  "29"
+ ]
+}

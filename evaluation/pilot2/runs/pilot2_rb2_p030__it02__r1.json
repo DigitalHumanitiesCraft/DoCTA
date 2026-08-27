@@ -1,0 +1,266 @@
+{
+ "page": "pilot2_rb2_p030",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 13.7,
+ "timestamp": "2026-08-27T10:28:57+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "30r",
+    "lines": [
+     {
+      "text": "30",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Hannß Elsspambm zu Botzn",
+      "kind": "rubric",
+      "uncertain": [
+       "Hannß",
+       "Elsspambm",
+       "Botzn"
+      ]
+     },
+     {
+      "text": "Nō Berait ist mit Hannsen von Elsspambmar",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "Elsspambmar"
+      ]
+     },
+     {
+      "text": "zu Botzn in presenntia herrn Benedicts des altn Camerers",
+      "kind": "entry",
+      "uncertain": [
+       "Botzn",
+       "Benedicts",
+       "Camerers"
+      ]
+     },
+     {
+      "text": "Jorg do alss huszmaister / Ruperti Pletz haubtman et",
+      "kind": "entry",
+      "uncertain": [
+       "Jorg",
+       "Ruperti",
+       "Pletz"
+      ]
+     },
+     {
+      "text": "Herman Römspinner pecknmaister vnd mathies",
+      "kind": "entry",
+      "uncertain": [
+       "Herman",
+       "Römspinner",
+       "mathies"
+      ]
+     },
+     {
+      "text": "dinnclss samelstrich an mittich nach Viti lxxxvij",
+      "kind": "entry",
+      "uncertain": [
+       "dinnclss",
+       "samelstrich",
+       "Viti"
+      ]
+     },
+     {
+      "text": "vmb allerlay samat seyden Zwillich Specerey fuͤr",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ex cc meines herrn gnad von venedig bracht hat",
+      "kind": "entry",
+      "uncertain": [
+       "venedig"
+      ]
+     },
+     {
+      "text": "vnd was das yester durch darnahenzog vnd er dara",
+      "kind": "entry",
+      "uncertain": [
+       "yester",
+       "darnahenzog"
+      ]
+     },
+     {
+      "text": "empfangen hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ausgebn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item Des bemelte hanns von Elssp hat meines herrn",
+      "kind": "entry",
+      "uncertain": [
+       "hanns",
+       "Elssp"
+      ]
+     },
+     {
+      "text": "gnad in zu venedig gekaufft scharlach vnd ladinwarg",
+      "kind": "entry",
+      "uncertain": [
+       "venedig",
+       "ladinwarg"
+      ]
+     },
+     {
+      "text": "samat damaßk Seyden Atlas et knuͤpffwerck",
+      "kind": "entry",
+      "uncertain": [
+       "knuͤpffwerck"
+      ]
+     },
+     {
+      "text": "Zandal Drimmuͤther Zolter hanff vergiß drechselmahir",
+      "kind": "entry",
+      "uncertain": [
+       "Zandal",
+       "Drimmuͤther",
+       "Zolter",
+       "vergiß",
+       "drechselmahir"
+      ]
+     },
+     {
+      "text": "allerlay Gewuͤrz vnd Specerey yester alles mitsampt",
+      "kind": "entry",
+      "uncertain": [
+       "yester"
+      ]
+     },
+     {
+      "text": "zerung wagen fuͤrloer vnd anders nach Jnnhald",
+      "kind": "entry",
+      "uncertain": [
+       "fuͤrloer"
+      ]
+     },
+     {
+      "text": "seins Registers in ainer Sum̃a xij C xx duc",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xij C xx",
+       "unit": "duc"
+      },
+      "uncertain": [
+       "duc"
+      ]
+     },
+     {
+      "text": "vnd munz c l iiij duc viij ß x d j hl berait",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "c l iiij",
+       "unit": "duc"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "dieses muͤncz in ducatn pr xxvij sͤ fuͤr j ducat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "lxvij duc j ß x d j hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxvij",
+       "unit": "duc"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "vnd also bringt die ganncz Suma in ducatn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "xij C lxxxvij duc j ß x d j hl",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xij C lxxxvij",
+       "unit": "duc"
+      },
+      "uncertain": [
+       "duc"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "30",
+  "Hannß Elsspambm zu Botzn",
+  "Nō Berait ist mit Hannsen von Elsspambmar",
+  "zu Botzn in presenntia herrn Benedicts des altn Camerers",
+  "Jorg do alss huszmaister / Ruperti Pletz haubtman et",
+  "Herman Römspinner pecknmaister vnd mathies",
+  "dinnclss samelstrich an mittich nach Viti lxxxvij",
+  "vmb allerlay samat seyden Zwillich Specerey fuͤr",
+  "ex cc meines herrn gnad von venedig bracht hat",
+  "vnd was das yester durch darnahenzog vnd er dara",
+  "empfangen hat",
+  "Ausgebn",
+  "Item Des bemelte hanns von Elssp hat meines herrn",
+  "gnad in zu venedig gekaufft scharlach vnd ladinwarg",
+  "samat damaßk Seyden Atlas et knuͤpffwerck",
+  "Zandal Drimmuͤther Zolter hanff vergiß drechselmahir",
+  "allerlay Gewuͤrz vnd Specerey yester alles mitsampt",
+  "zerung wagen fuͤrloer vnd anders nach Jnnhald",
+  "seins Registers in ainer Sum̃a xij C xx duc",
+  "vnd munz c l iiij duc viij ß x d j hl berait",
+  "dieses muͤncz in ducatn pr xxvij sͤ fuͤr j ducat",
+  "lxvij duc j ß x d j hl",
+  "vnd also bringt die ganncz Suma in ducatn",
+  "xij C lxxxvij duc j ß x d j hl"
+ ]
+}

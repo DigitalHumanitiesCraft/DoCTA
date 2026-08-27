@@ -1,0 +1,42 @@
+{
+ "page": "pilot2_inv_11348481_p15",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1158,
+    3296
+   ],
+   "sent_px": [
+    1158,
+    3296
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 7.3,
+ "timestamp": "2026-08-27T10:26:25+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "7",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "7"
+ ]
+}

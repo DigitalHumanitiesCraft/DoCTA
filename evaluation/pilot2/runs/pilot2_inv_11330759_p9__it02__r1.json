@@ -1,0 +1,153 @@
+{
+ "page": "pilot2_inv_11330759_p9",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1229,
+    3461
+   ],
+   "sent_px": [
+    1229,
+    3461
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.0,
+ "timestamp": "2026-08-27T10:27:15+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "5",
+    "lines": [
+     {
+      "text": "5",
+      "kind": "foliation"
+     },
+     {
+      "text": "In meins gnedigen h(er)rn",
+      "kind": "rubric",
+      "uncertain": [
+       "gnedigen",
+       "h(er)rn"
+      ]
+     },
+     {
+      "text": "von Osterreich zÿmer",
+      "kind": "rubric",
+      "uncertain": [
+       "Osterreich",
+       "zÿmer"
+      ]
+     },
+     {
+      "text": "Oben in der Camer",
+      "kind": "rubric",
+      "uncertain": [
+       "Camer"
+      ]
+     },
+     {
+      "text": "Zway pet vnd {ain} ~~zway~~ kůss",
+      "kind": "entry",
+      "uncertain": [
+       "Zway",
+       "pet",
+       "kůss"
+      ]
+     },
+     {
+      "text": "Zwo deckhein",
+      "kind": "entry",
+      "uncertain": [
+       "deckhein"
+      ]
+     },
+     {
+      "text": "In der kuchl",
+      "kind": "rubric",
+      "uncertain": [
+       "kuchl"
+      ]
+     },
+     {
+      "text": "Zwo pfannn",
+      "kind": "entry",
+      "uncertain": [
+       "pfannn"
+      ]
+     },
+     {
+      "text": "Ain fayrin kellern",
+      "kind": "entry",
+      "uncertain": [
+       "fayrin",
+       "kellern"
+      ]
+     },
+     {
+      "text": "Zwo feyrstöal",
+      "kind": "entry",
+      "uncertain": [
+       "feyrstöal"
+      ]
+     },
+     {
+      "text": "Ain clamer dÿnt plan",
+      "kind": "entry",
+      "uncertain": [
+       "clamer",
+       "dÿnt",
+       "plan"
+      ]
+     },
+     {
+      "text": "Ain grosz speysskasten",
+      "kind": "entry",
+      "uncertain": [
+       "grosz",
+       "speysskasten"
+      ]
+     },
+     {
+      "text": "Ain pranndtrand",
+      "kind": "entry",
+      "uncertain": [
+       "pranndtrand"
+      ]
+     },
+     {
+      "text": "Ain dreyfůss",
+      "kind": "entry",
+      "uncertain": [
+       "dreyfůss"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "5",
+  "In meins gnedigen h(er)rn",
+  "von Osterreich zÿmer",
+  "Oben in der Camer",
+  "Zway pet vnd {ain} ~~zway~~ kůss",
+  "Zwo deckhein",
+  "In der kuchl",
+  "Zwo pfannn",
+  "Ain fayrin kellern",
+  "Zwo feyrstöal",
+  "Ain clamer dÿnt plan",
+  "Ain grosz speysskasten",
+  "Ain pranndtrand",
+  "Ain dreyfůss"
+ ]
+}

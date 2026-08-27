@@ -1,0 +1,57 @@
+{
+ "page": "pilot2_rb2_p022",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 10.3,
+ "timestamp": "2026-08-27T10:27:43+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 22r",
+    "lines": [
+     {
+      "text": "22",
+      "kind": "foliation"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "22"
+ ]
+}

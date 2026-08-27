@@ -1,0 +1,188 @@
+{
+ "page": "pilot2_rb2_p037",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.3,
+ "timestamp": "2026-08-27T10:30:05+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "37r",
+    "lines": [
+     {
+      "text": "37",
+      "kind": "foliation"
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Berntwein stetenstain phleger zu Salturnn",
+      "kind": "entry",
+      "uncertain": [
+       "Berntwein",
+       "stetenstain",
+       "phleger",
+       "Salturnn"
+      ]
+     },
+     {
+      "text": "hat er emphange dz alt kaplan w̃ furder naruñ",
+      "kind": "entry",
+      "uncertain": [
+       "emphange",
+       "alt",
+       "kaplan",
+       "furder",
+       "naruñ"
+      ]
+     },
+     {
+      "text": "dafur gerait —— xiij m̄",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xiij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "gerait"
+      ]
+     },
+     {
+      "text": "Suma des waz hainrich kapellan",
+      "kind": "sum",
+      "uncertain": [
+       "Suma",
+       "des",
+       "waz",
+       "hainrich",
+       "kapellan"
+      ]
+     },
+     {
+      "text": "daran emphangen hat saut",
+      "kind": "sum",
+      "uncertain": [
+       "daran",
+       "emphangen",
+       "saut"
+      ]
+     },
+     {
+      "text": "+ xliij m̄ j lb xviij d vj hl",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xliij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "+"
+      ]
+     },
+     {
+      "text": "Des vorgenelten keppellers darlegen auf",
+      "kind": "entry",
+      "uncertain": [
+       "vorgenelten",
+       "keppellers",
+       "darlegen"
+      ]
+     },
+     {
+      "text": "abgeraite rechning / vnd dezum̃ / vnd darut",
+      "kind": "entry",
+      "uncertain": [
+       "abgeraite",
+       "rechning",
+       "dezum̃",
+       "darut"
+      ]
+     },
+     {
+      "text": "gegen sein jnnemen gegeneinander gelegt vnd",
+      "kind": "entry",
+      "uncertain": [
+       "jnnemen",
+       "gegeneinander",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "abgezogen , Dannoch ist jm meinich heten gnad",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogen",
+       "Dannoch",
+       "meinich",
+       "heten",
+       "gnad"
+      ]
+     },
+     {
+      "text": "schuldig —— ij {c} lj lb iiij ß xvij d iij hl",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij {c} lj",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "schuldig"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "37",
+  "Item",
+  "von Berntwein stetenstain phleger zu Salturnn",
+  "hat er emphange dz alt kaplan w̃ furder naruñ",
+  "dafur gerait —— xiij m̄",
+  "Suma des waz hainrich kapellan",
+  "daran emphangen hat saut",
+  "+ xliij m̄ j lb xviij d vj hl",
+  "Des vorgenelten keppellers darlegen auf",
+  "abgeraite rechning / vnd dezum̃ / vnd darut",
+  "gegen sein jnnemen gegeneinander gelegt vnd",
+  "abgezogen , Dannoch ist jm meinich heten gnad",
+  "schuldig —— ij {c} lj lb iiij ß xvij d iij hl"
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "page": "pilot2_inv_11330759_p9",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1229,
+    3461
+   ],
+   "sent_px": [
+    1229,
+    3461
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.7,
+ "timestamp": "2026-08-27T10:27:11+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "5r",
+    "lines": [
+     {
+      "text": "5",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "In meins gnedigen h(er)rn",
+      "kind": "rubric",
+      "uncertain": [
+       "gnedigen",
+       "h(er)rn"
+      ]
+     },
+     {
+      "text": "von Osterreich zymer",
+      "kind": "rubric",
+      "uncertain": [
+       "Osterreich",
+       "zymer"
+      ]
+     },
+     {
+      "text": "Oben in der Camer",
+      "kind": "rubric",
+      "uncertain": [
+       "Camer"
+      ]
+     },
+     {
+      "text": "Zway pet vnd {ain} ~~zway~~ kůss",
+      "kind": "entry",
+      "uncertain": [
+       "kůss"
+      ]
+     },
+     {
+      "text": "Zwo deckhein",
+      "kind": "entry",
+      "uncertain": [
+       "deckhein"
+      ]
+     },
+     {
+      "text": "In der Kuchl",
+      "kind": "rubric",
+      "uncertain": [
+       "Kuchl"
+      ]
+     },
+     {
+      "text": "Zwo pfanne",
+      "kind": "entry",
+      "uncertain": [
+       "pfanne"
+      ]
+     },
+     {
+      "text": "Ain fayin khellern",
+      "kind": "entry",
+      "uncertain": [
+       "fayin",
+       "khellern"
+      ]
+     },
+     {
+      "text": "Zwo persttal",
+      "kind": "entry",
+      "uncertain": [
+       "persttal"
+      ]
+     },
+     {
+      "text": "Ain clamer dyent plat",
+      "kind": "entry",
+      "uncertain": [
+       "clamer",
+       "dyent",
+       "plat"
+      ]
+     },
+     {
+      "text": "Ain gros speisspenchasten",
+      "kind": "entry",
+      "uncertain": [
+       "speisspenchasten"
+      ]
+     },
+     {
+      "text": "Ain prantkand",
+      "kind": "entry",
+      "uncertain": [
+       "prantkand"
+      ]
+     },
+     {
+      "text": "Ain dreyfues",
+      "kind": "entry",
+      "uncertain": [
+       "dreyfues"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "5",
+  "In meins gnedigen h(er)rn",
+  "von Osterreich zymer",
+  "Oben in der Camer",
+  "Zway pet vnd {ain} ~~zway~~ kůss",
+  "Zwo deckhein",
+  "In der Kuchl",
+  "Zwo pfanne",
+  "Ain fayin khellern",
+  "Zwo persttal",
+  "Ain clamer dyent plat",
+  "Ain gros speisspenchasten",
+  "Ain prantkand",
+  "Ain dreyfues"
+ ]
+}

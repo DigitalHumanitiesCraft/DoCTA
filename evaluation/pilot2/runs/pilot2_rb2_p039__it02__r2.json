@@ -1,0 +1,413 @@
+{
+ "page": "pilot2_rb2_p039",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.3,
+ "timestamp": "2026-08-27T10:30:37+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Wilhalm ÿphoſer",
+      "kind": "rubric",
+      "uncertain": [
+       "Wilhalm",
+       "ÿphoſer"
+      ]
+     },
+     {
+      "text": "Nota mit Wilhalmen ÿphoſer iſt gerait",
+      "kind": "entry",
+      "uncertain": [
+       "Wilhalmen",
+       "ÿphoſer",
+       "gerait"
+      ]
+     },
+     {
+      "text": "vnd er in gegenwurtikait herrn Benedict",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Camermayſters · Cůnratz des alten buchsennmeysters",
+      "kind": "entry",
+      "uncertain": [
+       "Camermayſters",
+       "Cůnratz",
+       "buchsennmeysters"
+      ]
+     },
+     {
+      "text": "vnd mathiſen Clemmetſen ſampt vmb alls",
+      "kind": "entry",
+      "uncertain": [
+       "mathiſen",
+       "Clemmetſen"
+      ]
+     },
+     {
+      "text": "abgeraitte Zeerung ſo man Im von meines gnedigen",
+      "kind": "entry",
+      "uncertain": [
+       "abgeraitte",
+       "Zeerung"
+      ]
+     },
+     {
+      "text": "herrn ſuͤld ſeiner nexſten Paitung iſt ſchuldig",
+      "kind": "entry",
+      "uncertain": [
+       "ſuͤld",
+       "Paitung"
+      ]
+     },
+     {
+      "text": "worden vntz auf hewtigen tag",
+      "kind": "entry",
+      "uncertain": [
+       "vntz",
+       "hewtigen"
+      ]
+     },
+     {
+      "text": "An erſten iſt Im mein herre gnad ſchuldig",
+      "kind": "entry",
+      "uncertain": [
+       "erſten"
+      ]
+     },
+     {
+      "text": "worden in ſeiner nexſten vorſcheidigen Paitung",
+      "kind": "entry",
+      "uncertain": [
+       "vorſcheidigen",
+       "Paitung"
+      ]
+     },
+     {
+      "text": "lxxxxiiij lb iij cr vj d hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxxiiij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "lb",
+       "cr",
+       "d",
+       "hl"
+      ]
+     },
+     {
+      "text": "Item iſt man demſelben Wilhalmen ſchuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Wilhalmen"
+      ]
+     },
+     {
+      "text": "von allerlay Zeerung ſultz deß vorſcheidigen",
+      "kind": "entry",
+      "uncertain": [
+       "Zeerung",
+       "ſultz",
+       "vorſcheidigen"
+      ]
+     },
+     {
+      "text": "Paitungtz vntz auf hewtigen tag bringt in",
+      "kind": "entry",
+      "uncertain": [
+       "Paitungtz",
+       "hewtigen"
+      ]
+     },
+     {
+      "text": "einer Suma lxxvij lb x cr iij hl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxvij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Suma",
+       "lxxvij",
+       "lb",
+       "cr",
+       "hl"
+      ]
+     },
+     {
+      "text": "Suma zu was man dem yphofer ſchuldig",
+      "kind": "sum",
+      "uncertain": [
+       "yphofer"
+      ]
+     },
+     {
+      "text": "bleibt hat C xxij lb viij cr vj d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xxij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "C",
+       "xxij",
+       "lb",
+       "cr",
+       "d"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "39r",
+    "lines": [
+     {
+      "text": "39",
+      "kind": "foliation"
+     },
+     {
+      "text": "Daentgegen des yphofers ynnemen",
+      "kind": "rubric",
+      "uncertain": [
+       "yphofers",
+       "ynnemen"
+      ]
+     },
+     {
+      "text": "Der bemelt wilhalm hat von Niclasn Prawfas",
+      "kind": "entry",
+      "uncertain": [
+       "wilhalm",
+       "Niclasn",
+       "Prawfas"
+      ]
+     },
+     {
+      "text": "kellner an axram emphangen / die er meins",
+      "kind": "entry",
+      "uncertain": [
+       "axram",
+       "emphangen"
+      ]
+     },
+     {
+      "text": "herrn gnad in schuldweys hat ubergeben viij",
+      "kind": "entry",
+      "uncertain": [
+       "schuldweys"
+      ]
+     },
+     {
+      "text": "fuder weins fur xxiiij mr / und xlvj lb pd",
+      "kind": "entry",
+      "uncertain": [
+       "fuder"
+      ]
+     },
+     {
+      "text": "sunt xxviij mr und j lb pd",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "sunt"
+      ]
+     },
+     {
+      "text": "Item Auch hat er von herrn benedicten camerer",
+      "kind": "entry",
+      "uncertain": [
+       "benedicten",
+       "camerer"
+      ]
+     },
+     {
+      "text": "emphangen / die desselb camermaister verwalt",
+      "kind": "entry",
+      "uncertain": [
+       "camermaister",
+       "verwalt"
+      ]
+     },
+     {
+      "text": "hat xxviij mr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "mr"
+      }
+     },
+     {
+      "text": "Item Aber hat er von dems camermaister emphangn",
+      "kind": "entry",
+      "uncertain": [
+       "camermaister",
+       "emphangn"
+      ]
+     },
+     {
+      "text": "die deß camermasters nach verwalten wird sant",
+      "kind": "entry",
+      "uncertain": [
+       "camermasters",
+       "verwalten",
+       "sant"
+      ]
+     },
+     {
+      "text": "lxxvij mr xvij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxvij",
+       "unit": "mr"
+      }
+     },
+     {
+      "text": "Sm̅a hie seins emphachens",
+      "kind": "sum",
+      "uncertain": [
+       "emphachens"
+      ]
+     },
+     {
+      "text": "sunt C xxxiij mr j lb pd xvij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xxxiij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "sunt"
+      ]
+     },
+     {
+      "text": "Außgeben und ynnemen gegeneinander gleicht",
+      "kind": "entry",
+      "uncertain": [
+       "Außgeben",
+       "ynnemen",
+       "gleicht"
+      ]
+     },
+     {
+      "text": "und abgeczogen / dannoch ist der yphofer meins",
+      "kind": "entry",
+      "uncertain": [
+       "abgeczogen",
+       "dannoch",
+       "yphofer"
+      ]
+     },
+     {
+      "text": "herrn gnaden schuldig viij mr iij d iiij hl",
+      "kind": "entry",
+      "uncertain": [
+       "schuldig"
+      ]
+     },
+     {
+      "text": "Die sind in der hernachgesezten seiner anheber",
+      "kind": "entry",
+      "uncertain": [
+       "hernachgesezten",
+       "anheber"
+      ]
+     },
+     {
+      "text": "raitung abgeczogen",
+      "kind": "entry",
+      "uncertain": [
+       "raitung",
+       "abgeczogen"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Wilhalm ÿphoſer",
+  "Nota mit Wilhalmen ÿphoſer iſt gerait",
+  "vnd er in gegenwurtikait herrn Benedict",
+  "Camermayſters · Cůnratz des alten buchsennmeysters",
+  "vnd mathiſen Clemmetſen ſampt vmb alls",
+  "abgeraitte Zeerung ſo man Im von meines gnedigen",
+  "herrn ſuͤld ſeiner nexſten Paitung iſt ſchuldig",
+  "worden vntz auf hewtigen tag",
+  "An erſten iſt Im mein herre gnad ſchuldig",
+  "worden in ſeiner nexſten vorſcheidigen Paitung",
+  "lxxxxiiij lb iij cr vj d hl",
+  "Item iſt man demſelben Wilhalmen ſchuldig",
+  "von allerlay Zeerung ſultz deß vorſcheidigen",
+  "Paitungtz vntz auf hewtigen tag bringt in",
+  "einer Suma lxxvij lb x cr iij hl",
+  "Suma zu was man dem yphofer ſchuldig",
+  "bleibt hat C xxij lb viij cr vj d",
+  "39",
+  "Daentgegen des yphofers ynnemen",
+  "Der bemelt wilhalm hat von Niclasn Prawfas",
+  "kellner an axram emphangen / die er meins",
+  "herrn gnad in schuldweys hat ubergeben viij",
+  "fuder weins fur xxiiij mr / und xlvj lb pd",
+  "sunt xxviij mr und j lb pd",
+  "Item Auch hat er von herrn benedicten camerer",
+  "emphangen / die desselb camermaister verwalt",
+  "hat xxviij mr",
+  "Item Aber hat er von dems camermaister emphangn",
+  "die deß camermasters nach verwalten wird sant",
+  "lxxvij mr xvij d",
+  "Sm̅a hie seins emphachens",
+  "sunt C xxxiij mr j lb pd xvij d",
+  "Außgeben und ynnemen gegeneinander gleicht",
+  "und abgeczogen / dannoch ist der yphofer meins",
+  "herrn gnaden schuldig viij mr iij d iiij hl",
+  "Die sind in der hernachgesezten seiner anheber",
+  "raitung abgeczogen"
+ ]
+}

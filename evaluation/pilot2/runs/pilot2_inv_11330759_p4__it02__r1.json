@@ -1,0 +1,136 @@
+{
+ "page": "pilot2_inv_11330759_p4",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1207,
+    3488
+   ],
+   "sent_px": [
+    1207,
+    3488
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.3,
+ "timestamp": "2026-08-27T10:26:41+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "Vnnder dem dach zü oberst",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Vier rugein pettenn",
+      "kind": "entry",
+      "uncertain": [
+       "rugein"
+      ]
+     },
+     {
+      "text": "Vier fedrein khestebet",
+      "kind": "entry",
+      "uncertain": [
+       "fedrein",
+       "khestebet"
+      ]
+     },
+     {
+      "text": "Aczehn par zwelchein laylach niett gut",
+      "kind": "entry",
+      "uncertain": [
+       "Aczehn",
+       "zwelchein"
+      ]
+     },
+     {
+      "text": "Sechs polster dray kiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Syben zerrissenn deckhenn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der kamer darinn mais-",
+      "kind": "rubric",
+      "uncertain": [
+       "maishanns"
+      ]
+     },
+     {
+      "text": "hanns gelegenn ist",
+      "kind": "rubric",
+      "uncertain": [
+       "maishanns"
+      ]
+     },
+     {
+      "text": "Dreyzehen bet bös vnd guet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Syben polster acht kiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Neün deckhen bös vnd guet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par leylach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain beschribnet",
+      "kind": "entry",
+      "uncertain": [
+       "beschribnet"
+      ]
+     },
+     {
+      "text": "Ain pannitzer",
+      "kind": "entry",
+      "uncertain": [
+       "pannitzer"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vnnder dem dach zü oberst",
+  "Vier rugein pettenn",
+  "Vier fedrein khestebet",
+  "Aczehn par zwelchein laylach niett gut",
+  "Sechs polster dray kiss",
+  "Syben zerrissenn deckhenn",
+  "In der kamer darinn mais-",
+  "hanns gelegenn ist",
+  "Dreyzehen bet bös vnd guet",
+  "Syben polster acht kiss",
+  "Neün deckhen bös vnd guet",
+  "Ain par leylach",
+  "Ain beschribnet",
+  "Ain pannitzer"
+ ]
+}

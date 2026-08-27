@@ -1,0 +1,262 @@
+{
+ "page": "pilot2_inv_11348481_p5",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1140,
+    3283
+   ],
+   "sent_px": [
+    1140,
+    3283
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.8,
+ "timestamp": "2026-08-27T10:25:44+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "2",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Auf dem palast",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Hie ist vermerkht am ersten was auf",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dem palast ist von peten als ichs gefunden han",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item in dem ergger da der keller ist gelegen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "darinn ist ain pet mit ainer zwilchin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ziech unden und oben zerrissen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item aber auf dem palast da die palaster",
+      "kind": "entry",
+      "uncertain": [
+       "palaster"
+      ]
+     },
+     {
+      "text": "gelegen sind ist ain pet von aind person",
+      "kind": "entry",
+      "uncertain": [
+       "aind"
+      ]
+     },
+     {
+      "text": "mit ainer alten zwilchin ziechen auch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zerrissen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item aber auf dem palast in des hauptmans",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ergger ain pet mit ainer zwilchin ziech",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "überzogen ist auch nicht vast gut",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item aber auf dem palast ain pet in aind",
+      "kind": "entry",
+      "uncertain": [
+       "aind"
+      ]
+     },
+     {
+      "text": "kamer mit ainer zwilchin ziechen über-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zogen und ist alt und so zerrissen auch",
+      "kind": "entry",
+      "uncertain": [
+       "so"
+      ]
+     },
+     {
+      "text": "ist in derselbn kam ain lere petstat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item aber auf dem palast ain klaines pose",
+      "kind": "entry",
+      "uncertain": [
+       "pose"
+      ]
+     },
+     {
+      "text": "petlein von aind person und ist auch",
+      "kind": "entry",
+      "uncertain": [
+       "aind"
+      ]
+     },
+     {
+      "text": "zerrissen und klaines schutzwert",
+      "kind": "entry",
+      "uncertain": [
+       "schutzwert"
+      ]
+     },
+     {
+      "text": "Item aber auf dem palast in den ergger",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "da der los inn gelegen ist ain gut pett",
+      "kind": "entry",
+      "uncertain": [
+       "los"
+      ]
+     },
+     {
+      "text": "von zwayen person auch mit ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwilchin ziech überzogen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In des Caplans kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "~~bey der styeg~~",
+      "kind": "rubric",
+      "uncertain": [
+       "styeg"
+      ]
+     },
+     {
+      "text": "Item ain klaines petlein von zwayen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "personen mit ainer zwilchin ziechen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "überzogen clains schutzwert",
+      "kind": "entry",
+      "uncertain": [
+       "schutzwert"
+      ]
+     },
+     {
+      "text": "In des kochs kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain klaines altes petlein vast zer-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "rissen mit ainr zwilchin ziech überzogen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "und ist auch abschatz",
+      "kind": "entry",
+      "uncertain": [
+       "abschatz"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "2",
+  "Auf dem palast",
+  "Hie ist vermerkht am ersten was auf",
+  "dem palast ist von peten als ichs gefunden han",
+  "Item in dem ergger da der keller ist gelegen",
+  "darinn ist ain pet mit ainer zwilchin",
+  "ziech unden und oben zerrissen",
+  "Item aber auf dem palast da die palaster",
+  "gelegen sind ist ain pet von aind person",
+  "mit ainer alten zwilchin ziechen auch",
+  "zerrissen",
+  "Item aber auf dem palast in des hauptmans",
+  "ergger ain pet mit ainer zwilchin ziech",
+  "überzogen ist auch nicht vast gut",
+  "Item aber auf dem palast ain pet in aind",
+  "kamer mit ainer zwilchin ziechen über-",
+  "zogen und ist alt und so zerrissen auch",
+  "ist in derselbn kam ain lere petstat",
+  "Item aber auf dem palast ain klaines pose",
+  "petlein von aind person und ist auch",
+  "zerrissen und klaines schutzwert",
+  "Item aber auf dem palast in den ergger",
+  "da der los inn gelegen ist ain gut pett",
+  "von zwayen person auch mit ainer",
+  "zwilchin ziech überzogen",
+  "In des Caplans kamer",
+  "~~bey der styeg~~",
+  "Item ain klaines petlein von zwayen",
+  "personen mit ainer zwilchin ziechen",
+  "überzogen clains schutzwert",
+  "In des kochs kamer",
+  "Item ain klaines altes petlein vast zer-",
+  "rissen mit ainr zwilchin ziech überzogen",
+  "und ist auch abschatz"
+ ]
+}

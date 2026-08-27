@@ -1,0 +1,319 @@
+{
+ "page": "pilot2_rb2_p026",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 16.0,
+ "timestamp": "2026-08-27T10:28:29+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 26r",
+    "lines": [
+     {
+      "text": "26",
+      "kind": "foliation"
+     },
+     {
+      "text": "Pantleins Sautters von",
+      "kind": "rubric",
+      "uncertain": [
+       "Pantleins",
+       "Sautters"
+      ]
+     },
+     {
+      "text": "der Söldner wegen",
+      "kind": "rubric",
+      "uncertain": [
+       "Söldner"
+      ]
+     },
+     {
+      "text": "Nota mit pauln Samnt c als mit",
+      "kind": "entry",
+      "uncertain": [
+       "pauln",
+       "Samnt"
+      ]
+     },
+     {
+      "text": "ainem haubtman meins gnadign",
+      "kind": "entry",
+      "uncertain": [
+       "haubtman",
+       "gnadign"
+      ]
+     },
+     {
+      "text": "herrn Soldnär zu Bayrn Ist gerait vmb",
+      "kind": "entry",
+      "uncertain": [
+       "Soldnär",
+       "Bayrn",
+       "gerait"
+      ]
+     },
+     {
+      "text": "was her Benedict Camrermaister denselben",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict",
+       "Camrermaister"
+      ]
+     },
+     {
+      "text": "Soldnern durch denselben Samnt c ausgegebn",
+      "kind": "entry",
+      "uncertain": [
+       "Soldnern",
+       "Samnt",
+       "ausgegebn"
+      ]
+     },
+     {
+      "text": "hat von Sannd Julian tag des naechsten",
+      "kind": "entry",
+      "uncertain": [
+       "Julian",
+       "naechsten"
+      ]
+     },
+     {
+      "text": "ganngen lxxij Jars / vnntz auf den erintag",
+      "kind": "entry",
+      "uncertain": [
+       "ganngen",
+       "vnntz",
+       "erintag"
+      ]
+     },
+     {
+      "text": "in der quatember nach Jacobi dess lxxij",
+      "kind": "entry",
+      "uncertain": [
+       "quatember",
+       "Jacobi"
+      ]
+     },
+     {
+      "text": "Jars / in gega[...] des bemelten herrn Benedict",
+      "kind": "entry",
+      "uncertain": [
+       "gega[...]",
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Camrermaisters Item ernvests des edlen herrn Simon v",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermaisters",
+       "ernvests",
+       "Simon"
+      ]
+     },
+     {
+      "text": "Hannsn Crippn Pügrmmaister Christanns slider",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsn",
+       "Crippn",
+       "Pügrmmaister",
+       "Christanns",
+       "slider"
+      ]
+     },
+     {
+      "text": "Hannslans c vnd wolfganngs c Chnittlers Sampt",
+      "kind": "entry",
+      "uncertain": [
+       "Hannslans",
+       "wolfganngs",
+       "Chnittlers",
+       "Sampt"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Der bemelt Camrermaister hat meins gnad",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermaister",
+       "gnad"
+      ]
+     },
+     {
+      "text": "herrn iij C Soldnern durchhundert zu Bayrn /",
+      "kind": "entry",
+      "uncertain": [
+       "Soldnern",
+       "durchhundert",
+       "Bayrn"
+      ]
+     },
+     {
+      "text": "durschnitts p pauln Samnt Item haubtman",
+      "kind": "entry",
+      "uncertain": [
+       "durschnitts",
+       "pauln",
+       "Samnt",
+       "haubtman"
+      ]
+     },
+     {
+      "text": "mitsambt etleichen Pssölldn die man aufgericht",
+      "kind": "entry",
+      "uncertain": [
+       "Pssölldn",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "hat . Auch mit etleichen damit man in sundtkait",
+      "kind": "entry",
+      "uncertain": [
+       "sundtkait"
+      ]
+     },
+     {
+      "text": "abgesprochen hat von Sand Julian tag des lxxij",
+      "kind": "entry",
+      "uncertain": [
+       "Julian"
+      ]
+     },
+     {
+      "text": "Jars auf erintag nach Bartholomey dess Jars",
+      "kind": "entry",
+      "uncertain": [
+       "erintag",
+       "Bartholomey"
+      ]
+     },
+     {
+      "text": "hat in münntz . viij C . ij lb . xvj ß iiij d gld .",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij C . ij lb . xvj ß iiij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "münntz"
+      ]
+     },
+     {
+      "text": "vnd iiij C . L . Rhgld vnder dess Sma gld hat Er",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iiij C . L",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Rhgld",
+       "Sma"
+      ]
+     },
+     {
+      "text": "iiij C xxvj gld erkauft Darauf ist aufuentzl",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iiij C xxvj",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "erkauft",
+       "aufuentzl"
+      ]
+     },
+     {
+      "text": "ganngt xxj mv iij lb gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxj mv iij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "ganngt",
+       "mv"
+      ]
+     },
+     {
+      "text": "verte",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "26",
+  "Pantleins Sautters von",
+  "der Söldner wegen",
+  "Nota mit pauln Samnt c als mit",
+  "ainem haubtman meins gnadign",
+  "herrn Soldnär zu Bayrn Ist gerait vmb",
+  "was her Benedict Camrermaister denselben",
+  "Soldnern durch denselben Samnt c ausgegebn",
+  "hat von Sannd Julian tag des naechsten",
+  "ganngen lxxij Jars / vnntz auf den erintag",
+  "in der quatember nach Jacobi dess lxxij",
+  "Jars / in gega[...] des bemelten herrn Benedict",
+  "Camrermaisters Item ernvests des edlen herrn Simon v",
+  "Hannsn Crippn Pügrmmaister Christanns slider",
+  "Hannslans c vnd wolfganngs c Chnittlers Sampt",
+  "Item",
+  "Der bemelt Camrermaister hat meins gnad",
+  "herrn iij C Soldnern durchhundert zu Bayrn /",
+  "durschnitts p pauln Samnt Item haubtman",
+  "mitsambt etleichen Pssölldn die man aufgericht",
+  "hat . Auch mit etleichen damit man in sundtkait",
+  "abgesprochen hat von Sand Julian tag des lxxij",
+  "Jars auf erintag nach Bartholomey dess Jars",
+  "hat in münntz . viij C . ij lb . xvj ß iiij d gld .",
+  "vnd iiij C . L . Rhgld vnder dess Sma gld hat Er",
+  "iiij C xxvj gld erkauft Darauf ist aufuentzl",
+  "ganngt xxj mv iij lb gld",
+  "verte"
+ ]
+}

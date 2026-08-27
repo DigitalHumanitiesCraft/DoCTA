@@ -1,0 +1,244 @@
+{
+ "page": "pilot2_rb2_p023",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 16.0,
+ "timestamp": "2026-08-27T10:27:56+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "23r",
+    "lines": [
+     {
+      "text": "23",
+      "kind": "foliation"
+     },
+     {
+      "text": "Raitung Extraordinarie",
+      "kind": "rubric",
+      "uncertain": [
+       "Extraordinarie"
+      ]
+     },
+     {
+      "text": "Tenntl",
+      "kind": "rubric",
+      "uncertain": [
+       "Tenntl"
+      ]
+     },
+     {
+      "text": "Nõ am montag Sannd pauls tag con=",
+      "kind": "entry",
+      "uncertain": [
+       "Sannd",
+       "pauls"
+      ]
+     },
+     {
+      "text": "versõnis / in gegenwurtikait herr bernharten",
+      "kind": "entry",
+      "uncertain": [
+       "versõnis",
+       "bernharten"
+      ]
+     },
+     {
+      "text": "Camermayster / Conrats des alten Kuchnmaysters",
+      "kind": "entry",
+      "uncertain": [
+       "Conrats",
+       "Kuchnmaysters"
+      ]
+     },
+     {
+      "text": "Leenhart flukers hawsstatiers / vnd Wolfgangs",
+      "kind": "entry",
+      "uncertain": [
+       "Leenhart",
+       "flukers",
+       "hawsstatiers",
+       "Wolfgangs"
+      ]
+     },
+     {
+      "text": "Stöckhleins Camerschreibers / Hat paul",
+      "kind": "entry",
+      "uncertain": [
+       "Stöckhleins",
+       "Camerschreibers",
+       "paul"
+      ]
+     },
+     {
+      "text": "Tenntl / raitung geton von seinens Innemen",
+      "kind": "entry",
+      "uncertain": [
+       "Tenntl",
+       "seinens"
+      ]
+     },
+     {
+      "text": "vnd aufgeben auf die hunder vnd sechzig",
+      "kind": "entry",
+      "uncertain": [
+       "hunder"
+      ]
+     },
+     {
+      "text": "Pelliczer / die er von meins gnadigen herren we=",
+      "kind": "entry",
+      "uncertain": [
+       "Pelliczer"
+      ]
+     },
+     {
+      "text": "wegen gen peren in krieg gefurt hat / in drein",
+      "kind": "entry",
+      "uncertain": [
+       "peren"
+      ]
+     },
+     {
+      "text": "monaden / die sich am weichnechten vergangen",
+      "kind": "entry",
+      "uncertain": [
+       "monaden",
+       "weichnechten"
+      ]
+     },
+     {
+      "text": "geennt haben",
+      "kind": "entry"
+     },
+     {
+      "text": "Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "Item Der benant panntl hat von Hannsen Potygken",
+      "kind": "entry",
+      "uncertain": [
+       "panntl",
+       "Hannsen",
+       "Potygken"
+      ]
+     },
+     {
+      "text": "stain emphangen vij mr iij ß iiij gl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij mr iij ß iiij",
+       "unit": "gl"
+      },
+      "uncertain": [
+       "stain"
+      ]
+     },
+     {
+      "text": "facit in Gold viij Rhgld xvij ß ij gl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "Item Vnd von Hannsen Trautmans Richter zu Landeckh",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "Trautmans",
+       "Landeckh"
+      ]
+     },
+     {
+      "text": "hat er emphangen vij mr iij ß iiij gl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij mr iij ß iiij",
+       "unit": "gl"
+      }
+     },
+     {
+      "text": "Summa des Innemens facit",
+      "kind": "sum"
+     },
+     {
+      "text": "xvij Rhgld xvij ß viij gl",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "xvij",
+       "xvij"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "23",
+  "Raitung Extraordinarie",
+  "Tenntl",
+  "Nõ am montag Sannd pauls tag con=",
+  "versõnis / in gegenwurtikait herr bernharten",
+  "Camermayster / Conrats des alten Kuchnmaysters",
+  "Leenhart flukers hawsstatiers / vnd Wolfgangs",
+  "Stöckhleins Camerschreibers / Hat paul",
+  "Tenntl / raitung geton von seinens Innemen",
+  "vnd aufgeben auf die hunder vnd sechzig",
+  "Pelliczer / die er von meins gnadigen herren we=",
+  "wegen gen peren in krieg gefurt hat / in drein",
+  "monaden / die sich am weichnechten vergangen",
+  "geennt haben",
+  "Innemen",
+  "Item Der benant panntl hat von Hannsen Potygken",
+  "stain emphangen vij mr iij ß iiij gl",
+  "facit in Gold viij Rhgld xvij ß ij gl",
+  "Item Vnd von Hannsen Trautmans Richter zu Landeckh",
+  "hat er emphangen vij mr iij ß iiij gl",
+  "Summa des Innemens facit",
+  "xvij Rhgld xvij ß viij gl"
+ ]
+}

@@ -1933,21 +1933,143 @@
    "pageNr": 22,
    "iiif": "https://files.transkribus.eu/iiif/2/YGVKPMSJWHGQOGYFMJPXCOMB/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p022__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:41+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "22"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p022__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:43+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "22"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 23,
    "iiif": "https://files.transkribus.eu/iiif/2/YIIVGAXDKYGYNSLEMDSQNPYI/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p023__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:56+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "23",
+      "Raitung Extraordinarie",
+      "Lennczl",
+      "Nõ am mantag Sannd pauls tag con-",
+      "versiõis etc / In gegenwurtikait hern bernhartn",
+      "camermaister Conrats des alten kuckenmaists",
+      "Reinhart flueers hawsknecht / und Wolfgangs",
+      "Stainlleins kammerschreibers / Hat paul",
+      "lenncz Raitung getann von seinenn Innemen",
+      "und aussgeben auf die hundert und sechzig",
+      "valldiser / die er von meins gnadigen herren we-",
+      "wegen gen gann in berg gefüert hat / in drein",
+      "monaden / die sich am weichnachtetag verganngs",
+      "geenndt haben",
+      "Innemen",
+      "Item",
+      "Der benant panncz hat von Hannsen Peryken",
+      "stain emphangen vij m̄ iij lb iij s gl",
+      "Facit in Gold —— viij Rhgld xxvij ß ij d gl",
+      "Item",
+      "Und von Hannsen Trautmans knecht zu lanndeck",
+      "hat er emphangen vij m̄ iij lb iij s gl",
+      "Sum(m)a des Innemens facit ——",
+      "xviij Rhgld xxvij ß xiij d Rhgld"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p023__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:56+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "23",
+      "Raitung Extraordinarie",
+      "Tenntl",
+      "Nõ am montag Sannd pauls tag con=",
+      "versõnis / in gegenwurtikait herr bernharten",
+      "Camermayster / Conrats des alten Kuchnmaysters",
+      "Leenhart flukers hawsstatiers / vnd Wolfgangs",
+      "Stöckhleins Camerschreibers / Hat paul",
+      "Tenntl / raitung geton von seinens Innemen",
+      "vnd aufgeben auf die hunder vnd sechzig",
+      "Pelliczer / die er von meins gnadigen herren we=",
+      "wegen gen peren in krieg gefurt hat / in drein",
+      "monaden / die sich am weichnechten vergangen",
+      "geennt haben",
+      "Innemen",
+      "Item Der benant panntl hat von Hannsen Potygken",
+      "stain emphangen vij mr iij ß iiij gl",
+      "facit in Gold viij Rhgld xvij ß ij gl",
+      "Item Vnd von Hannsen Trautmans Richter zu Landeckh",
+      "hat er emphangen vij mr iij ß iiij gl",
+      "Summa des Innemens facit",
+      "xvij Rhgld xvij ß viij gl"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 24,
@@ -1957,7 +2079,110 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p024__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:28:13+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Außgeben",
+      "Item Der benant Rannstar hat auf die vorgenant",
+      "hundert und l Soldner ausgebe(n) in der",
+      "vorgenan zeit / iede(m) Soldnar j monad ij gld",
+      "bringt iede(m) die iij monad vj guld. und",
+      "zwain Soldnern etwas merer Fart auff die",
+      "benant Soldner —— viijC liij guld ij ß v d",
+      "Item",
+      "Da hat er für etwas schadens ausgebe(n) für",
+      "·iiij· dienbrieff purcaw helmparten und dustler",
+      "—— xj guld viij xr",
+      "Item",
+      "Dem puechpasten hat er ausgebe(n) zu heben",
+      "steten —— iij gld",
+      "Item",
+      "Dem peter Scherützer zu hebensten ij guld",
+      "Item",
+      "diesem peter und für wagenschmar und ain",
+      "Gsemb und zerung zu mayenpach zu schniders",
+      "hauffen und für ain solich anmorn varrn aines",
+      "j gld für heinrichs zerung fa —— viij gld j xr",
+      "24",
+      "Item Sein brawtman hat er aufgericht die d(er)",
+      "brawtman ausgebn hat — ij lb xij d",
+      "Item So mant d(er) Pamir er hab abgang in seind",
+      "raittung / darumb hat man jm zu pessung",
+      "geb(e)n — iiij gld",
+      "Suma dicz aussgebens facit",
+      "xiijC lxxvj Rhgld x ß x d",
+      "Innemen und aussgeben gegeneinander gelegt",
+      "und abgezogen. Dannoch ist meins hern",
+      "gnad dem Pamite mitsambt d(e)r pessung",
+      "schuldig — xx Rhgld",
+      "Die hat jm d(e)r Reinhart aussgericht und",
+      "bezalt."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p024__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:28:03+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Ausgeben",
+      "Item Der benant Pawntschat hat auf die vorgenant",
+      "hundert und he Soldner ausgegeben in der",
+      "vorgenant zeit / iedem Soldner j monad ij gld",
+      "bringt iedem die iij monad vj gld. und",
+      "zwain Soldnern etwas merer Fart auf die",
+      "benant Soldner xxiiij C liij gld ij ß j d",
+      "Item",
+      "Da hat er für etwas Schaden ausgegeben für",
+      "ein Armbrost purcurs helmbarten und anders",
+      "xvij gld viij gr",
+      "Item",
+      "Dem puchkasten hat er ausgegeben zu hoben",
+      "steckn iij gld",
+      "Item",
+      "Dem peter Schrüczen zu Hohenstein ij gld",
+      "Item",
+      "Lürem peter und für wagnschmat und ain",
+      "Gspind und zerung zu mayenpach zu schnidens",
+      "haufes / und für ain solich armen Narrn aines",
+      "j gld für Lienharts zerung facit viij gld j gl",
+      "24",
+      "Jte Rein Brandman hat er aufgericht die d",
+      "Brandman ausgeben hat vj lb xv d",
+      "Jte Do maint d' Tannre er hab abgang in seind",
+      "raitung / Darumb hat man jm zu pessrung",
+      "geben —— iiij gld",
+      "Sm̄a dicz ausgebens facit",
+      "xiij c lxxvj Rhgld x ß d",
+      "Einnemen vnd aufgeben gegeneinander gelegt",
+      "vnd abgezogen . Darnach yt merers schuld",
+      "gnad dem Tannre msambt der pessrung",
+      "schuldig —— xx Rhgld",
+      "Die hat jm der Reinhart aufgericht vnd",
+      "bezalt"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 25,
@@ -1967,17 +2192,234 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p025__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:28:19+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Heinreich von Rotenstain",
+      "raitung",
+      "Nota Heinreich von Rotenstain hat in gege-",
+      "nwurtikait der vorgeschriben / raitung geton",
+      "von seinem Innemen vnd außgeben auff die",
+      "iijc vnd xxv c Söldnern, do er von meins",
+      "gnadigen herren etc wegen gen Payrn in",
+      "kriey gefüret hat drey monad die sich zu",
+      "Weinnachten naechstvergangen geendt haben",
+      "facta ratio am Montag nach Sand Dorothee",
+      "tag lxxxj°",
+      "Innemen",
+      "Item Der benant Rotenstain hat von herrn Benedictn",
+      "cammermeister zu ausrichtung deselben Söldnern",
+      "emphangen",
+      "ijm Rhgld",
+      "Item von fraw Steffann von laubenberg hat er enpfangen",
+      "vijc Rhgld",
+      "Item von Lienharten Flucher kaufmann hat er emphangn",
+      "vjc lxxxiiij Rhgld j",
+      "Summa des Innemen thüt",
+      "iijm iijc lxxxiiij Rhgld j",
+      "25",
+      "Aufgeben",
+      "Item",
+      "Dantgegen hat der vorgenant Kærnstan",
+      "aufgeben 'den festen kurchtagen Zinshus",
+      "zu bezalung auf 4 xlvij Geldner mit nam",
+      "—— viij lb x ß gld",
+      "Item",
+      "Pawln kainttlern hat er auf seine Czinns",
+      "hycantrent auf bezalung der andern Geldner",
+      "xiij lb xvij ß iiij d ij d [...]",
+      "Item",
+      "So hat er aufgeben auf zerung zu Jngolstat",
+      "lanndingen, knöflet, müsamb etcetera, knöchle",
+      "etwas an irem Sold etc 4 xxxvij gld ij lb iij d",
+      "Suma ditz aufgebens fazt",
+      "· m · iiij lb xxxvij Rhguld",
+      "viij d",
+      "Jnnemen und aufgeben gegeneinander gelegt und",
+      "abgezogen Darnach ist dz Kærnstain meinß herrn",
+      "gnaden schuldig funfzehn reinisch gld X die sullen",
+      "Jm an seinem Sold abgezogen werden"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p025__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:28:15+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Heinreich von Rotenstain",
+      "Raitung",
+      "Nota Heinreich von Rotenstain hat in gegẽ-",
+      "wurtikait der vorgeschriben / Raitung geton",
+      "von seinem Innemen und aufgeben auf die",
+      "iij C und xxvij C Söldnern, do er von meins",
+      "gnadigen herrn etc wegen gen Payrn in",
+      "krieg gefürt hat drey monad die sich zu",
+      "Weinnachten nachstvergangen geent haben",
+      "fatta fato am montag nach Sannd Dorotheẽ",
+      "tag lxxxij",
+      "Innemen",
+      "Item",
+      "Der benant Rotenstain hat von herrn Benedictn",
+      "Camrermaister zu aufrechnung desselben Söldnern",
+      "emphangen",
+      "iij C Rhgld",
+      "Item",
+      "von Cristoffarn von Lanndenberg hat er enpfangen",
+      "vij C Rhgld",
+      "Item",
+      "von Linharten Phifer kaufmann hat er emphangẽ",
+      "vj C lxxxxiiij Rhgld j",
+      "Summa des Innemen fant",
+      "m . vj C lxxxxiiij Rhgld j",
+      "25",
+      "Aufgeben",
+      "Item",
+      "Daintyegen hat der vorgenant Krenstain",
+      "aufgeben dem vesten Purchharten Truchsess",
+      "zu bezalung auf t xlvij Guldiner mit nam",
+      "—— viij tt Rh gld",
+      "Item",
+      "Pawln Sainturn hat er auf seine Cumpnye",
+      "Tycantriner auf bezalung der andern Guldiner",
+      "xiiij tt xxvj Rh gld ij d viij hl",
+      "Item",
+      "So hat er ausgegeben auf zerung zu Ingolstat",
+      "Lantsingen, Straublet / missambt etlicher knechte",
+      "etwas an irem Sold tat t xxxiiij gld ij d iij hl",
+      "Suma dis aufgebens fait",
+      "—— w . iiij tt xxxiiij Rh guld",
+      "viij hl",
+      "Innemen und aufgeben gegeneinander gelegt und",
+      "abgezogen darnach ist der Krenstain meinss herrn",
+      "gnaden schuldig funfzehen Reinsche gld X die sullen",
+      "Jm an seinem Sold abgezogen werden"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 26,
    "iiif": "https://files.transkribus.eu/iiif/2/MQFLHZPKWDKSCXBKDOBHIUIW/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p026__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:28:23+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "26",
+      "Pantlems Sautus von",
+      "der Sölldner wegen",
+      "Nota mit pauln Sammt & als mit",
+      "ainem haubtman meins gnadign",
+      "herrn Söldnar zu Payrn Ist gerait vmb",
+      "was hÿr Benedict Camrermaister denselben",
+      "Söldnern durch denselben Sammt & aussgeb",
+      "hat von Sannd Julian tag des neüchsten",
+      "ganngen lxxj Jars / vnntz auf den erntag",
+      "in die quatember nach Jacobi dess lxxij",
+      "Jars / in gnad des bemelten herrn Benedict",
+      "Camrermaisters & amacht des alten hinkhümers",
+      "hannsn feÿrn fingenmaisters / Jeronimús phister",
+      "hannslains / vnd wolfgangs Steinleins Sammt",
+      "Item",
+      "Der bemelt Camrermaister hat meins gnad",
+      "herrn xiij Söldnern durchhundert zu Payrn /",
+      "dussegericht p pauln Sammt & Irem haubtman",
+      "mitsambt etlichen bssoltn die man aufgericht",
+      "hat . Auch mit etlichen damit man in fündtnus",
+      "abgesprochen hat . von Sand Julian tag des lxxj",
+      "vntz auf erntag nach Bartholomeÿ dess lxxij",
+      "Jars in münnz . vij m . ij c . xv lb iiij ß j d qu .",
+      "vnd iij c . l . Rhgld vnder dess Gma gul hat Er",
+      "in xxxvij gld erkauft Darauf ist aufmünzzt",
+      "ganngt xxj mvc iij lb qu",
+      "verte"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p026__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:28:29+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "26",
+      "Pantleins Sautters von",
+      "der Söldner wegen",
+      "Nota mit pauln Samnt c als mit",
+      "ainem haubtman meins gnadign",
+      "herrn Soldnär zu Bayrn Ist gerait vmb",
+      "was her Benedict Camrermaister denselben",
+      "Soldnern durch denselben Samnt c ausgegebn",
+      "hat von Sannd Julian tag des naechsten",
+      "ganngen lxxij Jars / vnntz auf den erintag",
+      "in der quatember nach Jacobi dess lxxij",
+      "Jars / in gega[...] des bemelten herrn Benedict",
+      "Camrermaisters Item ernvests des edlen herrn Simon v",
+      "Hannsn Crippn Pügrmmaister Christanns slider",
+      "Hannslans c vnd wolfganngs c Chnittlers Sampt",
+      "Item",
+      "Der bemelt Camrermaister hat meins gnad",
+      "herrn iij C Soldnern durchhundert zu Bayrn /",
+      "durschnitts p pauln Samnt Item haubtman",
+      "mitsambt etleichen Pssölldn die man aufgericht",
+      "hat . Auch mit etleichen damit man in sundtkait",
+      "abgesprochen hat von Sand Julian tag des lxxij",
+      "Jars auf erintag nach Bartholomey dess Jars",
+      "hat in münntz . viij C . ij lb . xvj ß iiij d gld .",
+      "vnd iiij C . L . Rhgld vnder dess Sma gld hat Er",
+      "iiij C xxvj gld erkauft Darauf ist aufuentzl",
+      "ganngt xxj mv iij lb gld",
+      "verte"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 27,
@@ -1987,7 +2429,76 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p027__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:28:38+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Item Als man dann am xxiij Septembr' vor Sand",
+      "michels tag der vorgeschriben lxxij jare in",
+      "gegenwurtikait der bemelten pauls pantls /",
+      "Thoman plammars Cunrat paumgartners",
+      "gerait hat mit denselben Soldnern umb",
+      "alles das so man jn nach den obgeschriben",
+      "beczalunge; so fer umb Sold Gewant und",
+      "Knechtgelt mitsambt den schraiffgen, schuldig ward",
+      "bringt in ainer Summa zu gantzir bezaling",
+      "· m · iiij · c · x · lb · viij ß · vnd viij d",
+      "Sma Summarj aller vorgeschriben",
+      "Ausgebens so der bemelt Camrermaist /",
+      "dem benanten Pantl zu aufrichtung",
+      "derselben Soldnern in vorgeschribner",
+      "zeit saußgericht und gantz bezalt hat",
+      "facit ij · m · iiij · c · xlvij lb iiij ß j d vnd viij d",
+      "vnd vij hl d gld",
+      "27"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p027__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:28:36+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Als man dann am xxiijten tag vor sand",
+      "micheltag der vorgenanten lxiij jare in",
+      "gegenwurtikait der bemelten pauls pantler ,",
+      "Tomasn plammair , Conrat paumgartners",
+      "gerait hat mit denselben Seldnern umb",
+      "alles das so man jn nach den obgeschriben",
+      "beczalunge , so sie umb sold getrackt vnd",
+      "knadelt mitsambt den beraissern , schuldward",
+      "bringt in ainer Summa zu gantzir biczaling",
+      "· iij · C · x · iiij · lb · xxij · d · vnd · viij · hl",
+      "Summa Summarum aller vorgeschriben",
+      "Ausgebens so der bemelt Camrermaister",
+      "dem benanten Pantls zu aufraittung",
+      "derselben Seldnern in vorgeschribner",
+      "zeit saußgericht vnd gantzcz biczalt hat",
+      "facit ij m · iij · C · xlvij lb · iij · ß · x d vnd x hl",
+      "vnd vij tl gld",
+      "27"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 28,
@@ -2319,6 +2830,119 @@
       "It(em)",
       "von Lorentzen Krawnssnn iij m̃ iij ß"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p028__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:28:41+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Andre von matran",
+      "Nota am freytag vor unnse[r] lieben frawen",
+      "tag Annunciacionis Anno domini etc lxxiiij in gegen-",
+      "wurtikait Hannsen Camrermaisters Tomasen des alten",
+      "Kammermeisters Burghartt Pauler Hanss Camrer",
+      "und Wolfgangs Stummel Camrerscherer Ist",
+      "mit Andren dinstknecht Raitung beschehen",
+      "der durstner von Gossensass von phinztag",
+      "nach des heyligen kreüczs tag Exaltacionis",
+      "des vergangen lxxij Jars uncz auf hewtigen tag",
+      "gefurt hat her gen Ynnspruck in mein gnedigs",
+      "herrn Camerkasten",
+      "Bringt das er herab gefürt hat iiij C lxxxxviij",
+      "fubl von yedem fůbl xxij gr bringt — lb xiij m iiij d",
+      "Darzů von gnaden hat man im zu phenning",
+      "glegt xxxvj lb d das alles in ainer Summa",
+      "bringt —— lb x m",
+      "Smha",
+      "Item hat der Kammermeister Stümmbel und andre",
+      "zu Im wagent als man meins Gnedigen herrn allkeller",
+      "herab gefürt hat —— viij d",
+      "28",
+      "Daran sein Innemen",
+      "Item",
+      "von meinem herren Camrermaister hat er",
+      "emphangen die desselb Camrermaister dravff",
+      "ze —— xxviij mr xiij d",
+      "Item",
+      "von Otwegkhaten Salczmair hat er",
+      "emphangen —— lxx mr",
+      "Item",
+      "von Hallnär am Ing hat er emphangen",
+      "—— xxxxvij mr",
+      "Item",
+      "von Vlreichen Berfvoͤd dazumal Kellnär an",
+      "Meran xxciij mr fuder j muth fuͤr xx mr",
+      "die desselb Berfvoͤd in bezalung meins herren",
+      "gnaden vbergeben hat",
+      "Item",
+      "von Bernharten Braunsinn iij mr iij d"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p028__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:28:49+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Andre von Matrai",
+      "Nota am freytag vor unnser lieben frawen",
+      "tag Annunciacioñ Anno domini etc lxxiiij in gegen",
+      "haid bened Camenmaisters Tomas Waldner",
+      "Kornmaisters Chunrats Pauls Hanns Kamrer",
+      "vnd Wolfgangs Stümpfels Camerknecht . Ist",
+      "mit Andren dinkofer Raitung beschriben",
+      "der durstner von Possenfar von pfinztag",
+      "nach des heyligen kreücz tag Exaltacionis",
+      "des vergangen lxxj Jars vntz auf heutign tag",
+      "gefurt rantz etcz per Juffent in memoynal",
+      "herrn Camerknechten /",
+      "Brinngt das er heraus gefurt hat iiij C lxxxxviij",
+      "füder / von yedem füder xxij d bringt d viij lb iiij d",
+      "Darzu von gnaden hat man jm zu pfenning",
+      "gebnt xxxviij d / das alles in ainer Summa",
+      "bringt —— d x lb iiij d",
+      "Summa",
+      "Item",
+      "Es hat der Camenmaister / Stümpfel vnd andre",
+      "zu jm wägent / als man meins Gnedigen herrn allerlay",
+      "heraus gefürt hat —— viij d",
+      "28",
+      "Daran sein Jnnemen",
+      "It",
+      "von meinem herren Chammermeister hat er",
+      "emphangen die desselb Chammermeister vffrait",
+      "hat ————— xxviij m̄ xiij d",
+      "It",
+      "von Gewreychatten Saltzmair hat er",
+      "emphangen ————— j C m̄",
+      "It",
+      "von Zellnär am Lycz hat er emphangen",
+      "———————— xxxviij m̄",
+      "It",
+      "von Vlreichen Kercher dazumal Kellnär an",
+      "wein viij fuder j ymn fur xx m̄",
+      "die desselb Kercher in beqwälikayt meins hern",
+      "gnaden vbergeben hat",
+      "It",
+      "von Leonharten Prantsner iij m̄ ij d"
+     ]
     }
    ]
   },
@@ -2330,17 +2954,170 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p029__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:04+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "von Berchten Potenstain vj mr",
+      "Suma ho seins empfahens",
+      "seint —— lxxxxiiij mr j lb",
+      "Jnnamen vnd ausgeben gegeneinander gelegt",
+      "vnd abgeczogen Dannoch ist meins herren",
+      "gnad demselben Juden mit partung schuld",
+      "worden —— xvij mr viij lb",
+      "29",
+      "Hannß Apponntner zu Bozen",
+      "Nota [...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "Ausgeben",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]",
+      "[...]"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p029__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:28:55+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "~~Item~~",
+      "~~von Berchtolden rotenstain vj m̄~~",
+      "~~Sūma baĩs seins empfahens~~",
+      "~~tůt — lxxxx iij m̄ j d~~",
+      "~~Jnnemen vnd aufgeben gegeneinander gelegt~~",
+      "~~vnd abgeczogen Dannoch ist meins herren~~",
+      "~~gnad demselben hindern mit spartung schuldg~~",
+      "~~worden — xvij m̄ viij d~~",
+      "29"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 30,
    "iiif": "https://files.transkribus.eu/iiif/2/EOFEFPGTKIILQQUJTGPHFMRV/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p030__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:28:57+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "30",
+      "Hannß Elsspambm zu Botzn",
+      "Nō Berait ist mit Hannsen von Elsspambmar",
+      "zu Botzn in presenntia herrn Benedicts des altn Camerers",
+      "Jorg do alss huszmaister / Ruperti Pletz haubtman et",
+      "Herman Römspinner pecknmaister vnd mathies",
+      "dinnclss samelstrich an mittich nach Viti lxxxvij",
+      "vmb allerlay samat seyden Zwillich Specerey fuͤr",
+      "ex cc meines herrn gnad von venedig bracht hat",
+      "vnd was das yester durch darnahenzog vnd er dara",
+      "empfangen hat",
+      "Ausgebn",
+      "Item Des bemelte hanns von Elssp hat meines herrn",
+      "gnad in zu venedig gekaufft scharlach vnd ladinwarg",
+      "samat damaßk Seyden Atlas et knuͤpffwerck",
+      "Zandal Drimmuͤther Zolter hanff vergiß drechselmahir",
+      "allerlay Gewuͤrz vnd Specerey yester alles mitsampt",
+      "zerung wagen fuͤrloer vnd anders nach Jnnhald",
+      "seins Registers in ainer Sum̃a xij C xx duc",
+      "vnd munz c l iiij duc viij ß x d j hl berait",
+      "dieses muͤncz in ducatn pr xxvij sͤ fuͤr j ducat",
+      "lxvij duc j ß x d j hl",
+      "vnd also bringt die ganncz Suma in ducatn",
+      "xij C lxxxvij duc j ß x d j hl"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p030__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:29:17+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "30",
+      "Hanns Elsspembm zu Botzn",
+      "No Berait ist mit Hannsen von Elsspembman",
+      "zu Botzn / in presencia herrn Benedicts des alte Camerers",
+      "Georij do alas kinczenmaisters / Ruedigers Pletlz hawbtmanns",
+      "Hermann Pranndstetter peckennmaister vnd Wolfgang",
+      "Gwinner camerschriber an mitich nach Viti lxxijo",
+      "vmb allerlay Samat Seydin Pruch Specerey fvir",
+      "ext ex meins herrn gnad von venedig berait hay",
+      "vnd wais das yeder sunst darczwgen von ex dara",
+      "empfangn hat",
+      "Ausgebn",
+      "Item Es beweist hanns von Elsp hat meins herrn",
+      "gnad vnz zu venedig gekaufft saten vnd ledrwercz",
+      "Samat Damast Seydin Atlas et Rumpfferel",
+      "Zendel Diminuter Balter kanss vergy weltmasir",
+      "allerlay Specerey vnd Specerey vester alles misfrvng",
+      "zeczwng dayen svirler vnd anders nach Innhald",
+      "seins Registers in ainer Summa xiij m xlviij dut",
+      "vnd nunmro xlviij lb viij d e xl viij s e Berait",
+      "dieses muncz in dukaten vje vj lb , svir x dukatl",
+      "lxviij dut j lb xxxvij s c",
+      "vnd also bringt die gancz Summa in dukaten",
+      "xiij m lxxvijj dut j lb c xxxvij s c"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 31,
@@ -2350,67 +3127,405 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p031__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:19+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Daenjgegen sein jnnemen",
+      "J der vorgemelt hanns liss hat anczogen",
+      "emphangen ij stukch silber habn gewegen",
+      "clj mrk vj lot wremischs gewicht",
+      "Die hat er verkauft zu Venedig vnd habn",
+      "daselbs gewegen clxxvij mrk viij lot vj mrcz",
+      "venedigischs gewicht vnd ein mrk fur viij duc",
+      "vnd xj gros in auro pringt ijC lxxj duc xj gros",
+      "Item Darnach hat her Jacob paumgartner hincz",
+      "geantwortet ij stukch silber habnd gewegen",
+      "C lxxxviij mrk xj lot wremischs gewichts",
+      "Die habnd gewegen zu venedig ijC lxxxviij",
+      "mrk vj mrcz venedigischs gewichts Die hat er",
+      "verkauft das marks venedigischs p viij duc",
+      "xj gros facit ijC xliiij duc iij gros",
+      "Suma baider silberer der iiij stukch",
+      "wremischs facit cccc xxv mrk j lot",
+      "wremischs gewicht, pringt venedigischs",
+      "gewicht cccc lxv mrk xij mrcz",
+      "facit in auro vC xvj duc v gros in auro",
+      "31",
+      "Innemen vnd außgeben des Liennczer hampfes bißher",
+      "gegeneinander gelegt vnd aufgericht / Darnach ist er",
+      "vnsers herrn gnadn schuldig xxvj ducatn vnd xj s vj d"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p031__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:29:19+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Daenigegen sein jnnemen",
+      "It(em) Der vorvͦgemelt Hanns tisch hat antzogken",
+      "emphangen ij stukh silber habn gewigt",
+      "lxiij mrk vj lot wremischs gewicht",
+      "Die hat er verkauft zu Venedig vnd habn",
+      "daselbs gewigt lxxij vñ vnd vj vnz",
+      "wenedischs gewicht vnd j mrk vñ v ducht",
+      "vnd xj groß in auro bringt ijC lxxj duc xj groſ",
+      "It(em) Darnach hat hr Jacobs parmgartnar hinein",
+      "geantwort ij stukh silber habnd gewigt",
+      "lxxxxiiij mrk xij lot wremischs gewichts",
+      "Die habnd gewigt zu Venedig lxxxxviij",
+      "mrk vj vnz wenedischs gewichts Die hat er",
+      "verkauft das marks wenedischs p ij duc",
+      "xvij groſ facit c xliiij duc iij groſ",
+      "Sm̃a dis silbers der iiij stukh",
+      "reniert facit c lxx mrk ij lot",
+      "wremischs gewicht / bringt wenedischs",
+      "gewicht c lxxj mrk xij vnz",
+      "facit in duc cccc xxvij duc x groſ in auro",
+      "31",
+      "Jnnemen vnd aufgebain des Liennharts hawssers lifer",
+      "gegeneinander gelegt vnd aufgericht / Dannoch jst er",
+      "vnnsers herrn gnadn schuldig —— xxvj ducat mia vj s lj d"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 32,
    "iiif": "https://files.transkribus.eu/iiif/2/QDBASRAZJCLICTNSETSQDYPM/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p032__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:33+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "32"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p032__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:29:32+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "32"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 33,
    "iiif": "https://files.transkribus.eu/iiif/2/HHUYAEGYDWWMCMDEDVONZAEY/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p033__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:36+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "33"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p033__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:29:33+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "33"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 34,
    "iiif": "https://files.transkribus.eu/iiif/2/PQHDSHAKHDCPCQDRWGTKZEEL/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p034__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:44+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "34"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p034__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:29:43+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "34"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 35,
    "iiif": "https://files.transkribus.eu/iiif/2/URSWRDBMRWUAVSJZYAAJEOVJ/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p035__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:46+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "35"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p035__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:29:47+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "35"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 36,
    "iiif": "https://files.transkribus.eu/iiif/2/XMJWQVQKMWRSCMGSOXPOHPUX/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p036__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:29:55+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "36"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p036__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:30:01+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "36"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 37,
    "iiif": "https://files.transkribus.eu/iiif/2/ONJNUXBSPFRPMRJLZBIDOVBY/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p037__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:30:05+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "37",
+      "Item",
+      "von Berntwein stetenstain phleger zu Salturnn",
+      "hat er emphange dz alt kaplan w̃ furder naruñ",
+      "dafur gerait —— xiij m̄",
+      "Suma des waz hainrich kapellan",
+      "daran emphangen hat saut",
+      "+ xliij m̄ j lb xviij d vj hl",
+      "Des vorgenelten keppellers darlegen auf",
+      "abgeraite rechning / vnd dezum̃ / vnd darut",
+      "gegen sein jnnemen gegeneinander gelegt vnd",
+      "abgezogen , Dannoch ist jm meinich heten gnad",
+      "schuldig —— ij {c} lj lb iiij ß xvij d iij hl"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p037__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:30:16+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "37",
+      "It(em) von Berwein stetenstain phleger zu behermaws",
+      "hat er emphangen dz alt kaplan ro fridr. nanius",
+      "dafür gerait —— xiij mr",
+      "Suma wz was hainreich kapellan",
+      "daran emphangen hat facit",
+      "+ xliij mr j lb xviij d vj hl",
+      "Des voergemelten koppellers darlegen auf",
+      "abgeraite recnug / vnd dezing / vnd darut",
+      "gegen sein jnnemen gegeneinander gelegt vnd",
+      "abgezogen / Darnach ist jm nuriñ betengual",
+      "schuldig —— ij C lj mr vij lb xviij d iij hl"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 38,
@@ -2420,7 +3535,99 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p038__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:30:18+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Vlreich Genger",
+      "Nöta mit Vlreichen Gengen ist gerait an freytag",
+      "nach Pauli Anno domini etc lxxxxvij in pnca phlegers",
+      "vmb allerlay iarnung abgeraitt / sölcz seiner",
+      "naehsten vntern raitung / vntz auf hewtign",
+      "tag / vnd bringt alles in ainer Summa xx m iij [...]",
+      "Jnnemen",
+      "It[em] Daran hat er emphangen von Vlreichn",
+      "Berhtoltn kellner zu Tirol salian die er meins",
+      "herrn gnaden in schuldweys hat vbergeben",
+      "xvij fuder vj ymren vij yms weins / fur xxiiij m [...]",
+      "Jnnemen vnd ausgeben gegeneinander gelegt",
+      "vnd aufgehört / Darnach ist der bej Vlreich meins",
+      "herrn gnaden schuldig —— xxviij lb",
+      "38",
+      "Heinrich Dorn",
+      "Nota eadem die et in presencia quibussupra, Ist",
+      "gerait mit Heinrich Dorn vmb alle",
+      "abgeraitte zerung fuͤr seine neaste Rait=",
+      "tung auf heutigen tag, vnd bringt jm am",
+      "Suma —— xxviij lb viij ß vj d",
+      "Daran hat er emphangn",
+      "Item",
+      "Von Niclasn Piescher kellnaͤr an roten",
+      "hat er emphangen, die er meins herrn gnaden",
+      "in schuldtweys hat vbergeben an rotin vnd",
+      "brot —— xxx lb viij ß vj d",
+      "Aufgeben vnd Innemen gegeneinander",
+      "gelegt vnd abgetzogen. Darnach ist derselb",
+      "Dorn meins herrn gnaden schuldig ij lb"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p038__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:30:22+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Vlreich Genger",
+      "Nō mit Vlreichen Berger ist gerait an freytag",
+      "nach Pauli Anno domini etc lviij in praesentia pflegers",
+      "vmb allerlay rechnung abgerait, seicz seiner",
+      "nechsten vorern Raitung, vncz auf hewtign",
+      "tag vnnd bringt alles in ainer Sūma xx m̄ iiij lb",
+      "Jnnemen",
+      "It(em) Daran hat er emphangen von Vlreichn",
+      "Berstader kellerer zu Turolfstein die er meins",
+      "herrn gnaden in schuldtweys hat übergeben",
+      "viij füder ij vm viij per weins fur xx iij m̄",
+      "Jnnemen vnd ausgeben gegeneinander gesetzt",
+      "vnd aufgebent, Darnach ist der bemelte Vlreich meins",
+      "herrn gnaden schuldig xxvij lb",
+      "38",
+      "Heinrich Dorn",
+      "Nota ead(em) die et in p(re)s(enti)a quibus sup(ra) . Ist",
+      "gerait mit Heinrich Dorn vmb alle",
+      "abgeraitte zeerung fůr sein neweste rait-",
+      "ung auf heutigen tag . vnd bringt jm aind",
+      "Sm̃a —— xxviij lb iiij ß vj d",
+      "Daran hat er emphangen",
+      "Item von Niclasn Pfeffers kellner an wein",
+      "hat er emphangen . die er meins herrn gnad(en)",
+      "in schuldweys hat půrgkhern an wein . vnd",
+      "Gelt —— xxx lb viij ß ij d",
+      "Aufgeben vnd innemen gegeneinander",
+      "gelegt vnd abgetzogen . Darnach ist derselb",
+      "Dorn meins herrn gnaden schuldig xlvij ß"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 39,
@@ -2430,7 +3637,114 @@
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p039__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:30:28+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Wilhalm Yphöſer",
+      "Nota mit Wilhalmen ÿphöſer iſt gerait",
+      "vnd er in gegennwurtikait herrn Benedict",
+      "Camermayſters . Chunrats des alten finckhenmusters",
+      "vnd mathſyan Clementwerſch kamerknecht / vmb alle",
+      "außgerichtt Zeerung ſo man Jm von meins gnad",
+      "herrn fůder ſeiner nexſten Paitung iſt ſchuldig",
+      "worden / vnd auf hewtigen tag",
+      "An erſten iſt Jm meins herrn gnad ſchuldig",
+      "worden in ſeiner nexſten vorſchaidigen Paitung",
+      "—— lxxxxiiij lb iij ß vj d",
+      "Jtem iſt man demſelben Wilhalmen ſchuldig",
+      "von allerlay Zeerung ſeider diß vorſchaidigen",
+      "Paitung vnd auf hewtigen tag bringt in",
+      "einer ſum̃a lxxviij lb x ß iij d",
+      "Sum̃a des was man dem yphöſer ſchuldig",
+      "bleibt hat C lxxij lb xiij ß ix d",
+      "39",
+      "Daentgegen des yphofers jnnemen",
+      "Der bemelt wilhalm hat von Nicolasn Praitfus",
+      "kellner an axtan empfangen / die er meins",
+      "herrn gnad in schuldtweiss hat ubergeben viij",
+      "sunder wenn fur xxiiij m̄ vnd xlviij lb d",
+      "sint xxviij m̄ vnd j lb d",
+      "It(em) Auch hat er von herrn benedicten Camerer",
+      "empfangen / die desselb Camermayster verrait",
+      "hat xxviij m̄",
+      "It(em) Aber hat er von dems Camermayster empfangen",
+      "die dess Camermayster noch verraiten wirt sant",
+      "lxxvj m̄ xlj d",
+      "Sm̄a ho seinis emphadens",
+      "sint C xxxij m̄ j d [...]",
+      "Ausgeben vnd jnnemen gegeneinander gleicht",
+      "vnd abgezogen / dannoch ist der yphofer meins",
+      "herrn gnaden schuldig viij m̄ iij d iiij hl",
+      "Die sind in der hernachgysten seiner andern",
+      "raittung abgezogen"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p039__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:30:37+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Wilhalm ÿphoſer",
+      "Nota mit Wilhalmen ÿphoſer iſt gerait",
+      "vnd er in gegenwurtikait herrn Benedict",
+      "Camermayſters · Cůnratz des alten buchsennmeysters",
+      "vnd mathiſen Clemmetſen ſampt vmb alls",
+      "abgeraitte Zeerung ſo man Im von meines gnedigen",
+      "herrn ſuͤld ſeiner nexſten Paitung iſt ſchuldig",
+      "worden vntz auf hewtigen tag",
+      "An erſten iſt Im mein herre gnad ſchuldig",
+      "worden in ſeiner nexſten vorſcheidigen Paitung",
+      "lxxxxiiij lb iij cr vj d hl",
+      "Item iſt man demſelben Wilhalmen ſchuldig",
+      "von allerlay Zeerung ſultz deß vorſcheidigen",
+      "Paitungtz vntz auf hewtigen tag bringt in",
+      "einer Suma lxxvij lb x cr iij hl",
+      "Suma zu was man dem yphofer ſchuldig",
+      "bleibt hat C xxij lb viij cr vj d",
+      "39",
+      "Daentgegen des yphofers ynnemen",
+      "Der bemelt wilhalm hat von Niclasn Prawfas",
+      "kellner an axram emphangen / die er meins",
+      "herrn gnad in schuldweys hat ubergeben viij",
+      "fuder weins fur xxiiij mr / und xlvj lb pd",
+      "sunt xxviij mr und j lb pd",
+      "Item Auch hat er von herrn benedicten camerer",
+      "emphangen / die desselb camermaister verwalt",
+      "hat xxviij mr",
+      "Item Aber hat er von dems camermaister emphangn",
+      "die deß camermasters nach verwalten wird sant",
+      "lxxvij mr xvij d",
+      "Sm̅a hie seins emphachens",
+      "sunt C xxxiij mr j lb pd xvij d",
+      "Außgeben und ynnemen gegeneinander gleicht",
+      "und abgeczogen / dannoch ist der yphofer meins",
+      "herrn gnaden schuldig viij mr iij d iiij hl",
+      "Die sind in der hernachgesezten seiner anheber",
+      "raitung abgeczogen"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 40,
@@ -2679,6 +3993,89 @@
       "und abgeczogen, Dannach ist sy meins herren",
       "gnad schuldig —— lxxxv m̄ iij ß viij hl"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p040__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:30:39+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Kaſtnern",
+      "vphoſern",
+      "Nota Anno die vt supra eademque die Jſt",
+      "berait mit der vphoſern in gegenwurtikait",
+      "der vorgeſchriben / vmb alle abgeraitte zeugz",
+      "ſo ſy mein herrn gnad ſchuldig iſt / ſund(er)",
+      "ſyr naruſten von den ſatztung vntz auf",
+      "heutigen tag / vnd dringt in ains",
+      "Suma ij c xxxij mr xix d j hl",
+      "Daran jr Jnnemen",
+      "It(em) Die bemelt vphoſern {hat} von herrn Benedictn",
+      "Camermaiſter empfangen ij c xviij mr",
+      "It(em) Von Pengarten pharrer haubtſum hat ſy",
+      "empfangen xx mr die er auch in der Cameram mag ſtat auffgen",
+      "It(em) Von dem weinpecherzorn die viij mr vij ß iiij d, xxvij ß",
+      "die vnczoſten ſo Er mein herrn ſchuldig was",
+      "Suma jrs Jnnemens ſtat",
+      "ij c xlvij mr iij ß iij d j hl",
+      "40.",
+      "Lienhart Deuringer",
+      "Der vorgemelten geschriften summen",
+      "gegen dam aufseczen gegeneinander gelegt",
+      "und abgezogen, Darnach ist Er meins herren",
+      "gnad schuldig —— lxxxv m̄ ix ß viij hl"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p040__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:30:39+00:00",
+     "empty": false,
+     "empty_parts": [
+      false,
+      false
+     ],
+     "lines": [
+      "Pastem",
+      "vphoferin",
+      "Nota Anno die et puribus cunctis suprascriptis · Jst",
+      "berait mit der vphoferin In gegenwurtikait",
+      "der vorgeſchriben / vmb alle abgeraite zeung",
+      "ſo ſy meinẽ herrn gnad ſchuldig iſt / ſunder",
+      "Jſt nachgelaſsen worden ſamnung vncz auf",
+      "heuttigen tag / vnd bringt In ainer",
+      "Suma iij c xxxiiij mr – xxviij mr d",
+      "Daran Jr Jnnemen",
+      "Jt(em)",
+      "Die bemelt vphoferin {hat} von hern Benedictn",
+      "camermaiſter empfangen ij c xviij mr",
+      "Jt(em)",
+      "von Pengarten flecker haubſum hat sy",
+      "empfangẽ xx mr die er auch In dy camer zalt vncz hat auffgeb(en)",
+      "Jt(em)",
+      "von der cambelpergerin die viij mr vij ß iiij d, excep(tis)",
+      "die michaln Jr Sun meinẽ hern ſchuldig was",
+      "Suma Irz Jnnemens ſtat",
+      "ij c xlvj mr vij ß iiij d",
+      "40.",
+      "Lienhart Perntner",
+      "Der vorgemelten geschriben summen",
+      "gegentan aufgetan gegeneinander gleich",
+      "und abgetzogen Dannach ist Ir meins herrn",
+      "gnad schuldig —— lxxxv m̄ ix ß viij d hl"
+     ]
     }
    ]
   },
@@ -2686,11 +4083,89 @@
    "pageNr": 41,
    "iiif": "https://files.transkribus.eu/iiif/2/QLTHMPJPKOSXMZTOGWXBBWLU/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "pilot2:pilot2_rb2_p041__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 1,
+     "date": "2026-08-27T10:30:47+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "41",
+      "Lienhart Dermyger",
+      "Not(a) mit Lienharten Deringer gerait am",
+      "montag nach Diuisionis Aplor[um] Anno domini",
+      "iiij C lxiiij / in gegenwurtikait herren Benedict",
+      "pharrer zu Tyrol der alte Camermeister",
+      "Lienharts von Vels Camermeisters vnd",
+      "Wolfgang Stumbler Camerscribs vnnd abgerait",
+      "zerung",
+      "Item meins herren gnad ist demselben Lienhart wernot",
+      "schuldic für abgerait zerung von sand Marttin",
+      "tag d[es] lxj jars vntz auf hewtigen obgenant",
+      "tag / vnd bringt in ainer Suma ij C lviij lb",
+      "vnd viij ß xj d ob liiij s d",
+      "Item Dises hat er emphangen vnd am ersten",
+      "von crumpffmarckten auf meins gnedigen herren",
+      "gescheftikait —— lxxxiiij lb",
+      "Item von meinem herren herrn Benedict pharrer zu",
+      "Tyrol als Camermeister lxxiiij lb"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_rb2_p041__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "12b40e81caca73a3",
+     "repeat": 2,
+     "date": "2026-08-27T10:30:52+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      "41",
+      "Lienhart Deringer",
+      "No mit Lienharten Deringer gerait am",
+      "montag nach Diuisionis aplo[rum] Anno domini",
+      "xciiij / in gegenwurtikait herren Benedicti",
+      "pharrer zu Tyrol des altn Camermaister",
+      "Lienharts von Vels Camermaister vnd",
+      "Balthasar Stinckl Camrschreiber vnnd abgerait",
+      "zeung",
+      "It[em]",
+      "Meins herren gnad ist demselben Lienhart wernot",
+      "schuldig fur abgeraitt zeung / von Sand Martin",
+      "tag des lxxxj Jars / vntz auf hewtigen obgenantn",
+      "tag / vnnd bringt in ainer Summa ij C lxxiiij m",
+      "vnd viij d xvij hl mj s l",
+      "Dinstha",
+      "It[em] Daraff hat er emphangn vnd am erstn",
+      "von Aninspruckhern auf meins gnedign herrn",
+      "gescheftikait —— lxxx iiij",
+      "It[em]",
+      "von meinem herren herrn Benedict pharrer zu",
+      "Tyrol als Camermaister lxx iiij"
+     ]
+    }
+   ]
   },
   {
    "pageNr": 42,

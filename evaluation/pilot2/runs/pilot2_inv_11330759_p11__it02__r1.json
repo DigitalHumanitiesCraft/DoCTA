@@ -1,0 +1,165 @@
+{
+ "page": "pilot2_inv_11330759_p11",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1211,
+    3443
+   ],
+   "sent_px": [
+    1211,
+    3443
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 17.6,
+ "timestamp": "2026-08-27T10:27:29+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 6r",
+    "lines": [
+     {
+      "text": "6",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "In dem clainen Stüblin",
+      "kind": "rubric",
+      "uncertain": [
+       "Stüblin"
+      ]
+     },
+     {
+      "text": "Ain gemainer tisch",
+      "kind": "entry",
+      "uncertain": [
+       "tisch"
+      ]
+     },
+     {
+      "text": "Xviij stuckh püchseni dar",
+      "kind": "entry",
+      "uncertain": [
+       "Xviij",
+       "püchseni"
+      ]
+     },
+     {
+      "text": "vnder vier hagksen püchseni",
+      "kind": "entry",
+      "uncertain": [
+       "hagksen",
+       "püchseni"
+      ]
+     },
+     {
+      "text": "Dreinunddreissig helmparten",
+      "kind": "entry",
+      "uncertain": [
+       "helmparten"
+      ]
+     },
+     {
+      "text": "Hienachuolgt was der herr",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Inngabt vnd dem gemelten",
+      "kind": "rubric",
+      "uncertain": [
+       "Inngabt"
+      ]
+     },
+     {
+      "text": "pfleger vbergeantwurt hat",
+      "kind": "rubric",
+      "uncertain": [
+       "pfleger"
+      ]
+     },
+     {
+      "text": "Ain wasserfass",
+      "kind": "entry",
+      "uncertain": [
+       "wasserfass"
+      ]
+     },
+     {
+      "text": "Ain feyrpeyl",
+      "kind": "entry",
+      "uncertain": [
+       "feyrpeyl"
+      ]
+     },
+     {
+      "text": "Zwo hafenpfanen",
+      "kind": "entry",
+      "uncertain": [
+       "hafenpfanen"
+      ]
+     },
+     {
+      "text": "Zway hanndkübl",
+      "kind": "entry",
+      "uncertain": [
+       "hanndkübl"
+      ]
+     },
+     {
+      "text": "Zwen glockspeyshafen",
+      "kind": "entry",
+      "uncertain": [
+       "glockspeyshafen"
+      ]
+     },
+     {
+      "text": "Fünff hültzeri schüslen",
+      "kind": "entry",
+      "uncertain": [
+       "hültzeri",
+       "schüslen"
+      ]
+     },
+     {
+      "text": "Ain taler püchseni mit dry taler",
+      "kind": "entry",
+      "uncertain": [
+       "taler",
+       "püchseni",
+       "dry"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "6",
+  "In dem clainen Stüblin",
+  "Ain gemainer tisch",
+  "Xviij stuckh püchseni dar",
+  "vnder vier hagksen püchseni",
+  "Dreinunddreissig helmparten",
+  "Hienachuolgt was der herr",
+  "Inngabt vnd dem gemelten",
+  "pfleger vbergeantwurt hat",
+  "Ain wasserfass",
+  "Ain feyrpeyl",
+  "Zwo hafenpfanen",
+  "Zway hanndkübl",
+  "Zwen glockspeyshafen",
+  "Fünff hültzeri schüslen",
+  "Ain taler püchseni mit dry taler"
+ ]
+}

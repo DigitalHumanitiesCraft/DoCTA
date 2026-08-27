@@ -1,0 +1,314 @@
+{
+ "page": "pilot2_rb2_p030",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 27.7,
+ "timestamp": "2026-08-27T10:29:17+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "30r",
+    "lines": [
+     {
+      "text": "30",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Hanns Elsspembm zu Botzn",
+      "kind": "rubric",
+      "uncertain": [
+       "Elsspembm",
+       "Botzn"
+      ]
+     },
+     {
+      "text": "No Berait ist mit Hannsen von Elsspembman",
+      "kind": "entry",
+      "uncertain": [
+       "No",
+       "Elsspembman"
+      ]
+     },
+     {
+      "text": "zu Botzn / in presencia herrn Benedicts des alte Camerers",
+      "kind": "entry",
+      "uncertain": [
+       "Botzn",
+       "presencia",
+       "Benedicts",
+       "alte",
+       "Camerers"
+      ]
+     },
+     {
+      "text": "Georij do alas kinczenmaisters / Ruedigers Pletlz hawbtmanns",
+      "kind": "entry",
+      "uncertain": [
+       "Georij",
+       "alas",
+       "kinczenmaisters",
+       "Ruedigers",
+       "Pletlz",
+       "hawbtmanns"
+      ]
+     },
+     {
+      "text": "Hermann Pranndstetter peckennmaister vnd Wolfgang",
+      "kind": "entry",
+      "uncertain": [
+       "Hermann",
+       "Pranndstetter",
+       "peckennmaister",
+       "Wolfgang"
+      ]
+     },
+     {
+      "text": "Gwinner camerschriber an mitich nach Viti lxxijo",
+      "kind": "entry",
+      "uncertain": [
+       "Gwinner",
+       "camerschriber",
+       "Viti",
+       "lxxijo"
+      ]
+     },
+     {
+      "text": "vmb allerlay Samat Seydin Pruch Specerey fvir",
+      "kind": "entry",
+      "uncertain": [
+       "Samat",
+       "Seydin",
+       "Pruch",
+       "Specerey",
+       "fvir"
+      ]
+     },
+     {
+      "text": "ext ex meins herrn gnad von venedig berait hay",
+      "kind": "entry",
+      "uncertain": [
+       "ext",
+       "ex",
+       "venedig",
+       "berait",
+       "hay"
+      ]
+     },
+     {
+      "text": "vnd wais das yeder sunst darczwgen von ex dara",
+      "kind": "entry",
+      "uncertain": [
+       "yeder",
+       "sunst",
+       "darczwgen",
+       "dara"
+      ]
+     },
+     {
+      "text": "empfangn hat",
+      "kind": "entry",
+      "uncertain": [
+       "empfangn"
+      ]
+     },
+     {
+      "text": "Ausgebn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item Es beweist hanns von Elsp hat meins herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Elsp"
+      ]
+     },
+     {
+      "text": "gnad vnz zu venedig gekaufft saten vnd ledrwercz",
+      "kind": "entry",
+      "uncertain": [
+       "venedig",
+       "saten",
+       "ledrwercz"
+      ]
+     },
+     {
+      "text": "Samat Damast Seydin Atlas et Rumpfferel",
+      "kind": "entry",
+      "uncertain": [
+       "Samat",
+       "Damast",
+       "Seydin",
+       "Atlas",
+       "Rumpfferel"
+      ]
+     },
+     {
+      "text": "Zendel Diminuter Balter kanss vergy weltmasir",
+      "kind": "entry",
+      "uncertain": [
+       "Zendel",
+       "Diminuter",
+       "Balter",
+       "kanss",
+       "vergy",
+       "weltmasir"
+      ]
+     },
+     {
+      "text": "allerlay Specerey vnd Specerey vester alles misfrvng",
+      "kind": "entry",
+      "uncertain": [
+       "Specerey",
+       "vester",
+       "misfrvng"
+      ]
+     },
+     {
+      "text": "zeczwng dayen svirler vnd anders nach Innhald",
+      "kind": "entry",
+      "uncertain": [
+       "zeczwng",
+       "dayen",
+       "svirler",
+       "Innhald"
+      ]
+     },
+     {
+      "text": "seins Registers in ainer Summa xiij m xlviij dut",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "xiij m xlviij",
+       "unit": "dut"
+      },
+      "uncertain": [
+       "Registers",
+       "dut"
+      ]
+     },
+     {
+      "text": "vnd nunmro xlviij lb viij d e xl viij s e Berait",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xlviij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "nunmro",
+       "Berait"
+      ]
+     },
+     {
+      "text": "dieses muncz in dukaten vje vj lb , svir x dukatl",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vje vj",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "muncz",
+       "dukatn",
+       "dukatl"
+      ]
+     },
+     {
+      "text": "lxviij dut j lb xxxvij s c",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxviij",
+       "unit": "dut"
+      },
+      "uncertain": [
+       "dut"
+      ]
+     },
+     {
+      "text": "vnd also bringt die gancz Summa in dukaten",
+      "kind": "entry",
+      "uncertain": [
+       "gancz",
+       "dukaten"
+      ]
+     },
+     {
+      "text": "xiij m lxxvijj dut j lb c xxxvij s c",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "xiij m lxxvijj",
+       "unit": "dut"
+      },
+      "uncertain": [
+       "dut"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "30",
+  "Hanns Elsspembm zu Botzn",
+  "No Berait ist mit Hannsen von Elsspembman",
+  "zu Botzn / in presencia herrn Benedicts des alte Camerers",
+  "Georij do alas kinczenmaisters / Ruedigers Pletlz hawbtmanns",
+  "Hermann Pranndstetter peckennmaister vnd Wolfgang",
+  "Gwinner camerschriber an mitich nach Viti lxxijo",
+  "vmb allerlay Samat Seydin Pruch Specerey fvir",
+  "ext ex meins herrn gnad von venedig berait hay",
+  "vnd wais das yeder sunst darczwgen von ex dara",
+  "empfangn hat",
+  "Ausgebn",
+  "Item Es beweist hanns von Elsp hat meins herrn",
+  "gnad vnz zu venedig gekaufft saten vnd ledrwercz",
+  "Samat Damast Seydin Atlas et Rumpfferel",
+  "Zendel Diminuter Balter kanss vergy weltmasir",
+  "allerlay Specerey vnd Specerey vester alles misfrvng",
+  "zeczwng dayen svirler vnd anders nach Innhald",
+  "seins Registers in ainer Summa xiij m xlviij dut",
+  "vnd nunmro xlviij lb viij d e xl viij s e Berait",
+  "dieses muncz in dukaten vje vj lb , svir x dukatl",
+  "lxviij dut j lb xxxvij s c",
+  "vnd also bringt die gancz Summa in dukaten",
+  "xiij m lxxvijj dut j lb c xxxvij s c"
+ ]
+}

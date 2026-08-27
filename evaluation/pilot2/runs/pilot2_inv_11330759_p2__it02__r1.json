@@ -1,0 +1,196 @@
+{
+ "page": "pilot2_inv_11330759_p2",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1251,
+    3501
+   ],
+   "sent_px": [
+    1251,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.5,
+ "timestamp": "2026-08-27T10:26:31+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "In Sand Blasy",
+      "kind": "rubric",
+      "uncertain": [
+       "Sand Blasy"
+      ]
+     },
+     {
+      "text": "Capellenn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain suͤlbrein kelch mit sein paten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "unverguͤlt scheint Sand blaess",
+      "kind": "entry",
+      "uncertain": [
+       "Sand blaess"
+      ]
+     },
+     {
+      "text": "kelch.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Aber zwen suͤlbrein kelch mit den",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "paten ain groͤsser vnd ain clain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "alles verguͤlt vnd mit drey cor",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "poraltuͤchlen",
+      "kind": "entry",
+      "uncertain": [
+       "poraltuͤchlen"
+      ]
+     },
+     {
+      "text": "Ain plab samateis messgewandt",
+      "kind": "entry",
+      "uncertain": [
+       "samateis"
+      ]
+     },
+     {
+      "text": "mit alben vnd annder seiner",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zugehörungt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain grien damastein messgewandt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "auch mit alben vnd annder sein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zugehörung von mein gnedigstn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "herrn von Osterreich herreichent",
+      "kind": "entry",
+      "uncertain": [
+       "Osterreich"
+      ]
+     },
+     {
+      "text": "Aber ain slecht alt messgewandt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "mit sein zugehörungt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zway messbuͤecher vnd ain psalter",
+      "kind": "entry",
+      "uncertain": [
+       "psalter"
+      ]
+     },
+     {
+      "text": "Zwen zynein leuchter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain wachsprunnkessl",
+      "kind": "entry",
+      "uncertain": [
+       "wachsprunnkessl"
+      ]
+     },
+     {
+      "text": "Auff geschribenn altar sein altartuͤch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "merct nach dem cappenn",
+      "kind": "entry",
+      "uncertain": [
+       "cappenn"
+      ]
+     },
+     {
+      "text": "Ain öl pann",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "In Sand Blasy",
+  "Capellenn",
+  "Ain suͤlbrein kelch mit sein paten",
+  "unverguͤlt scheint Sand blaess",
+  "kelch.",
+  "Aber zwen suͤlbrein kelch mit den",
+  "paten ain groͤsser vnd ain clain",
+  "alles verguͤlt vnd mit drey cor",
+  "poraltuͤchlen",
+  "Ain plab samateis messgewandt",
+  "mit alben vnd annder seiner",
+  "zugehörungt",
+  "Ain grien damastein messgewandt",
+  "auch mit alben vnd annder sein",
+  "zugehörung von mein gnedigstn",
+  "herrn von Osterreich herreichent",
+  "Aber ain slecht alt messgewandt",
+  "mit sein zugehörungt",
+  "Zway messbuͤecher vnd ain psalter",
+  "Zwen zynein leuchter",
+  "Ain wachsprunnkessl",
+  "Auff geschribenn altar sein altartuͤch",
+  "merct nach dem cappenn",
+  "Ain öl pann"
+ ]
+}

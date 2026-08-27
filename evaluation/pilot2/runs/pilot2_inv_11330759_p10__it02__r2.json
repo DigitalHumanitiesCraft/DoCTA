@@ -1,0 +1,102 @@
+{
+ "page": "pilot2_inv_11330759_p10",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1247,
+    3505
+   ],
+   "sent_px": [
+    1245,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 5.2,
+ "timestamp": "2026-08-27T10:27:13+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Ain clain fessl",
+      "kind": "entry",
+      "uncertain": [
+       "fessl"
+      ]
+     },
+     {
+      "text": "Der grossenn keller",
+      "kind": "rubric",
+      "uncertain": [
+       "grossenn"
+      ]
+     },
+     {
+      "text": "dree masskandl",
+      "kind": "entry",
+      "uncertain": [
+       "dree",
+       "masskandl"
+      ]
+     },
+     {
+      "text": "Zwo dreymessig kandl",
+      "kind": "entry",
+      "uncertain": [
+       "dreymessig"
+      ]
+     },
+     {
+      "text": "Ain drantaubenkandl",
+      "kind": "entry",
+      "uncertain": [
+       "drantaubenkandl"
+      ]
+     },
+     {
+      "text": "Zwo taubenkandl",
+      "kind": "entry",
+      "uncertain": [
+       "taubenkandl"
+      ]
+     },
+     {
+      "text": "In der grossen stubenn",
+      "kind": "rubric",
+      "uncertain": [
+       "grossen",
+       "stubenn"
+      ]
+     },
+     {
+      "text": "Sechs gemaint tisch",
+      "kind": "entry",
+      "uncertain": [
+       "gemaint"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Ain clain fessl",
+  "Der grossenn keller",
+  "dree masskandl",
+  "Zwo dreymessig kandl",
+  "Ain drantaubenkandl",
+  "Zwo taubenkandl",
+  "In der grossen stubenn",
+  "Sechs gemaint tisch"
+ ]
+}

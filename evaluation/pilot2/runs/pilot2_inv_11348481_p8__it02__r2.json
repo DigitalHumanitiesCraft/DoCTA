@@ -1,0 +1,246 @@
+{
+ "page": "pilot2_inv_11348481_p8",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1122,
+    3318
+   ],
+   "sent_px": [
+    1122,
+    3318
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.8,
+ "timestamp": "2026-08-27T10:25:57+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "Vermerkht leylach",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item vier leylach von groben zwirich die",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "seind nicht vast gut Vnd aber drew par",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "alter pöser leylach vnd zerrissen vnd iij par",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "warn nicht zennuczen",
+      "kind": "entry",
+      "uncertain": [
+       "warn nicht zennuczen"
+      ]
+     },
+     {
+      "text": "Vermerkht rauch castron dekh",
+      "kind": "rubric",
+      "uncertain": [
+       "castron dekh"
+      ]
+     },
+     {
+      "text": "Item zehen rauch dekh die seind nicht vbrigs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gut Vnd aber zwo dekh gar zernichten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerkht der harnasch in",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "der harnasch kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht gemaine panzer.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain huntzcappen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item siben hauben mit geheng",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain ledigs geheng an ain haubn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item funf hauben one geheng",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zwo englisch haubn mit geheng.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zway helmlin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item vier eysenhüte",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item sechs zschaladn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item newn prustplatn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain mailendysche platen",
+      "kind": "entry",
+      "uncertain": [
+       "mailendysche"
+      ]
+     },
+     {
+      "text": "Item aber ain halbe leuchte platen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item vier gannze payngwant",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item drew par vnderpayngewand",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item vier spangerdel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zehen par armczeüg",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ainlif par plechhanczschůch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht visier",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxiiij kupfrein hantpüxen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j lederin hut",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxxvij schaiben snogarn",
+      "kind": "entry",
+      "uncertain": [
+       "snogarn"
+      ]
+     },
+     {
+      "text": "Item vnd zway fassol sind lere",
+      "kind": "entry",
+      "uncertain": [
+       "fassol"
+      ]
+     },
+     {
+      "text": "Item aber .l.",
+      "kind": "entry",
+      "uncertain": [
+       ".l."
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vermerkht leylach",
+  "Item vier leylach von groben zwirich die",
+  "seind nicht vast gut Vnd aber drew par",
+  "alter pöser leylach vnd zerrissen vnd iij par",
+  "warn nicht zennuczen",
+  "Vermerkht rauch castron dekh",
+  "Item zehen rauch dekh die seind nicht vbrigs",
+  "gut Vnd aber zwo dekh gar zernichten",
+  "Vermerkht der harnasch in",
+  "der harnasch kamer",
+  "Item acht gemaine panzer.",
+  "Item ain huntzcappen",
+  "Item siben hauben mit geheng",
+  "Item ain ledigs geheng an ain haubn",
+  "Item funf hauben one geheng",
+  "Item zwo englisch haubn mit geheng.",
+  "Item zway helmlin",
+  "Item vier eysenhüte",
+  "Item sechs zschaladn",
+  "Item newn prustplatn",
+  "Item ain mailendysche platen",
+  "Item aber ain halbe leuchte platen",
+  "Item vier gannze payngwant",
+  "Item drew par vnderpayngewand",
+  "Item vier spangerdel",
+  "Item zehen par armczeüg",
+  "Item ainlif par plechhanczschůch",
+  "Item acht visier",
+  "Item xxiiij kupfrein hantpüxen",
+  "Item j lederin hut",
+  "Item xxxvij schaiben snogarn",
+  "Item vnd zway fassol sind lere",
+  "Item aber .l."
+ ]
+}

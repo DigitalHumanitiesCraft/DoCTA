@@ -1,0 +1,279 @@
+{
+ "page": "pilot2_inv_11348481_p8",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1122,
+    3318
+   ],
+   "sent_px": [
+    1122,
+    3318
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.6,
+ "timestamp": "2026-08-27T10:25:58+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "Vermerckh leylach",
+      "kind": "rubric",
+      "uncertain": [
+       "Vermerckh"
+      ]
+     },
+     {
+      "text": "Item vier leylach von groben zwirich die",
+      "kind": "entry",
+      "uncertain": [
+       "zwirich"
+      ]
+     },
+     {
+      "text": "seind nicht vast gůt Vnd aber drew par",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "alter pöser leylach vnd zerrissen vnd iij par",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "wern nicht zenuczen",
+      "kind": "entry",
+      "uncertain": [
+       "wern"
+      ]
+     },
+     {
+      "text": "Vermerckht Rauch Castron dekh",
+      "kind": "rubric",
+      "uncertain": [
+       "Vermerckht",
+       "Castron"
+      ]
+     },
+     {
+      "text": "Item zehen rauch dekh die seind nicht vbrigs",
+      "kind": "entry",
+      "uncertain": [
+       "vbrigs"
+      ]
+     },
+     {
+      "text": "gůt Vnd aber zwo dekh gar zenichten",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerckht der harnasch in",
+      "kind": "rubric",
+      "uncertain": [
+       "Vermerckht"
+      ]
+     },
+     {
+      "text": "der harnasch kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht gemaine panzer.",
+      "kind": "entry",
+      "uncertain": [
+       "panzer."
+      ]
+     },
+     {
+      "text": "Item ain huntscappen",
+      "kind": "entry",
+      "uncertain": [
+       "huntscappen"
+      ]
+     },
+     {
+      "text": "Item siben hauben mit geheng",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain ledigs geheng an ain haubn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item fúnif hauben one geheng",
+      "kind": "entry",
+      "uncertain": [
+       "fúnif"
+      ]
+     },
+     {
+      "text": "Item zwo englisch haubn mit geheng",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zway helmlein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item vier eisenhůte",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item sechs zschaladn",
+      "kind": "entry",
+      "uncertain": [
+       "zschaladn"
+      ]
+     },
+     {
+      "text": "Item newn prustplath",
+      "kind": "entry",
+      "uncertain": [
+       "prustplath"
+      ]
+     },
+     {
+      "text": "Item ain mailendische platn",
+      "kind": "entry",
+      "uncertain": [
+       "mailendische"
+      ]
+     },
+     {
+      "text": "Item aber ain halbe leichte platten",
+      "kind": "entry",
+      "uncertain": [
+       "leichte"
+      ]
+     },
+     {
+      "text": "Item vier gancze payngwant",
+      "kind": "entry",
+      "uncertain": [
+       "payngwant"
+      ]
+     },
+     {
+      "text": "Item drew par vnderpayngewand",
+      "kind": "entry",
+      "uncertain": [
+       "vnderpayngewand"
+      ]
+     },
+     {
+      "text": "Item vier spangerůl",
+      "kind": "entry",
+      "uncertain": [
+       "spangerůl"
+      ]
+     },
+     {
+      "text": "Item zehen par armzeug",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ainlif par plechhentschůch",
+      "kind": "entry",
+      "uncertain": [
+       "ainlif",
+       "plechhentschůch"
+      ]
+     },
+     {
+      "text": "Item acht visier",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxiiij kupfrein hantpůxen",
+      "kind": "entry",
+      "uncertain": [
+       "kupfrein",
+       "hantpůxen"
+      ]
+     },
+     {
+      "text": "Item j ledrein hůt",
+      "kind": "entry",
+      "uncertain": [
+       "ledrein"
+      ]
+     },
+     {
+      "text": "Item xxxvij schaiben snoggarn",
+      "kind": "entry",
+      "uncertain": [
+       "snoggarn"
+      ]
+     },
+     {
+      "text": "Item vnd zway kariol sind ler",
+      "kind": "entry",
+      "uncertain": [
+       "kariol"
+      ]
+     },
+     {
+      "text": "Item aber . [...]",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vermerckh leylach",
+  "Item vier leylach von groben zwirich die",
+  "seind nicht vast gůt Vnd aber drew par",
+  "alter pöser leylach vnd zerrissen vnd iij par",
+  "wern nicht zenuczen",
+  "Vermerckht Rauch Castron dekh",
+  "Item zehen rauch dekh die seind nicht vbrigs",
+  "gůt Vnd aber zwo dekh gar zenichten",
+  "Vermerckht der harnasch in",
+  "der harnasch kamer",
+  "Item acht gemaine panzer.",
+  "Item ain huntscappen",
+  "Item siben hauben mit geheng",
+  "Item ain ledigs geheng an ain haubn",
+  "Item fúnif hauben one geheng",
+  "Item zwo englisch haubn mit geheng",
+  "Item zway helmlein",
+  "Item vier eisenhůte",
+  "Item sechs zschaladn",
+  "Item newn prustplath",
+  "Item ain mailendische platn",
+  "Item aber ain halbe leichte platten",
+  "Item vier gancze payngwant",
+  "Item drew par vnderpayngewand",
+  "Item vier spangerůl",
+  "Item zehen par armzeug",
+  "Item ainlif par plechhentschůch",
+  "Item acht visier",
+  "Item xxiiij kupfrein hantpůxen",
+  "Item j ledrein hůt",
+  "Item xxxvij schaiben snoggarn",
+  "Item vnd zway kariol sind ler",
+  "Item aber . [...]"
+ ]
+}

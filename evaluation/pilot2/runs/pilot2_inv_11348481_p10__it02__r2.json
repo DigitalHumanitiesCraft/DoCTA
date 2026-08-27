@@ -1,0 +1,251 @@
+{
+ "page": "pilot2_inv_11348481_p10",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1220,
+    3327
+   ],
+   "sent_px": [
+    1220,
+    3327
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.9,
+ "timestamp": "2026-08-27T10:26:07+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Vermerkht in dem keler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht hulzen gefften gut vnd pos",
+      "kind": "entry",
+      "uncertain": [
+       "gefften"
+      ]
+     },
+     {
+      "text": "Item ain flaischparten vnd j kemichseul",
+      "kind": "entry",
+      "uncertain": [
+       "kemichseul"
+      ]
+     },
+     {
+      "text": "Item ain vasssail mit ij eysen hancken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain pamschab vnd iij trachter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij pressschuf vnd ij weinschuf",
+      "kind": "entry",
+      "uncertain": [
+       "pressschuf",
+       "weinschuf"
+      ]
+     },
+     {
+      "text": "Item liiij weinvass gross vnd klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxj kestladen gut vnd pos",
+      "kind": "entry",
+      "uncertain": [
+       "kestladen"
+      ]
+     },
+     {
+      "text": "Item vnd . x . potigen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij krautfas und x krautpotigen von hültzn vassen",
+      "kind": "entry",
+      "uncertain": [
+       "hültzn"
+      ]
+     },
+     {
+      "text": "Item in der padstuben ain kessel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item in der pfisterey ain kessel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain fuervaß mit salcz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item bey ainer prentzn honig in aine vaß",
+      "kind": "entry",
+      "uncertain": [
+       "prentzn"
+      ]
+     },
+     {
+      "text": "Item vor dem keler in dem stain ij mut öl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerkht in dem speyßgaden",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ob dem keler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item C xv lb weysses unschlit das sind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "drey knollen vnd xxvj lb swarcz unschlit",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "an ainem knollen vnd x schmerlaib",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerkht in der Capell",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain altarstain ain messgwand",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain kelch vnd j papirin messpuch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij opferkentlein vnd iiij altartuecher",
+      "kind": "entry",
+      "uncertain": [
+       "opferkentlein"
+      ]
+     },
+     {
+      "text": "Vermerkht der wein in dem",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "keler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item vierundfunfczig füder hab ich",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "empfangen allerlay wein rot vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "weyss als sy in den keler seind kumen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ist alles gewesen lx füder vnd ain halbs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "und ist der abgang angeschlagen vj füder 1/2",
+      "kind": "entry",
+      "uncertain": [
+       "1/2"
+      ]
+     },
+     {
+      "text": "Item in dem aussern keler ain gross",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "eysen puchß hinder der tür",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vermerkht in dem keler",
+  "Item acht hulzen gefften gut vnd pos",
+  "Item ain flaischparten vnd j kemichseul",
+  "Item ain vasssail mit ij eysen hancken",
+  "Item ain pamschab vnd iij trachter",
+  "Item ij pressschuf vnd ij weinschuf",
+  "Item liiij weinvass gross vnd klain",
+  "Item xxj kestladen gut vnd pos",
+  "Item vnd . x . potigen",
+  "Item ij krautfas und x krautpotigen von hültzn vassen",
+  "Item in der padstuben ain kessel",
+  "Item in der pfisterey ain kessel",
+  "Item ain fuervaß mit salcz",
+  "Item bey ainer prentzn honig in aine vaß",
+  "Item vor dem keler in dem stain ij mut öl",
+  "Vermerkht in dem speyßgaden",
+  "ob dem keler",
+  "Item C xv lb weysses unschlit das sind",
+  "drey knollen vnd xxvj lb swarcz unschlit",
+  "an ainem knollen vnd x schmerlaib",
+  "Vermerkht in der Capell",
+  "Item ain altarstain ain messgwand",
+  "Item ain kelch vnd j papirin messpuch",
+  "Item ij opferkentlein vnd iiij altartuecher",
+  "Vermerkht der wein in dem",
+  "keler",
+  "Item vierundfunfczig füder hab ich",
+  "empfangen allerlay wein rot vnd",
+  "weyss als sy in den keler seind kumen",
+  "vnd ist alles gewesen lx füder vnd ain halbs",
+  "und ist der abgang angeschlagen vj füder 1/2",
+  "Item in dem aussern keler ain gross",
+  "eysen puchß hinder der tür"
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "page": "pilot2_inv_11330759_p12",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1238,
+    3479
+   ],
+   "sent_px": [
+    1238,
+    3479
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.7,
+ "timestamp": "2026-08-27T10:27:21+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "Dreyzehen löffl",
+      "kind": "entry",
+      "uncertain": [
+       "Dreyzehen"
+      ]
+     },
+     {
+      "text": "~~vierundtzwantzig halbe Thaler stainin~~",
+      "kind": "entry",
+      "uncertain": [
+       "stainin"
+      ]
+     },
+     {
+      "text": "Ain grosse hangende kannde",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain trunckhkanndel",
+      "kind": "entry",
+      "uncertain": [
+       "trunckhkanndel"
+      ]
+     },
+     {
+      "text": "Ain grosse copre kellen",
+      "kind": "entry",
+      "uncertain": [
+       "copre"
+      ]
+     },
+     {
+      "text": "Ain holtzhackenn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain birtcardn",
+      "kind": "entry",
+      "uncertain": [
+       "birtcardn"
+      ]
+     },
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Sigmundts Cronische",
+      "kind": "rubric",
+      "uncertain": [
+       "Sigmundts",
+       "Cronische"
+      ]
+     },
+     {
+      "text": "Inventur.",
+      "kind": "rubric",
+      "uncertain": [
+       "Inventur."
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Dreyzehen löffl",
+  "~~vierundtzwantzig halbe Thaler stainin~~",
+  "Ain grosse hangende kannde",
+  "Ain trunckhkanndel",
+  "Ain grosse copre kellen",
+  "Ain holtzhackenn",
+  "Ain birtcardn",
+  "1",
+  "Sigmundts Cronische",
+  "Inventur."
+ ]
+}

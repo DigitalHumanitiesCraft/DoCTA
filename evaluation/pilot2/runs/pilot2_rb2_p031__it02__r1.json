@@ -1,0 +1,275 @@
+{
+ "page": "pilot2_rb2_p031",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 21.4,
+ "timestamp": "2026-08-27T10:29:19+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Daenjgegen sein jnnemen",
+      "kind": "rubric",
+      "uncertain": [
+       "Daenjgegen"
+      ]
+     },
+     {
+      "text": "J der vorgemelt hanns liss hat anczogen",
+      "kind": "entry",
+      "uncertain": [
+       "hanns",
+       "liss",
+       "anczogen"
+      ]
+     },
+     {
+      "text": "emphangen ij stukch silber habn gewegen",
+      "kind": "entry",
+      "uncertain": [
+       "stukch"
+      ]
+     },
+     {
+      "text": "clj mrk vj lot wremischs gewicht",
+      "kind": "entry",
+      "uncertain": [
+       "wremischs"
+      ]
+     },
+     {
+      "text": "Die hat er verkauft zu Venedig vnd habn",
+      "kind": "entry",
+      "uncertain": [
+       "Venedig"
+      ]
+     },
+     {
+      "text": "daselbs gewegen clxxvij mrk viij lot vj mrcz",
+      "kind": "entry",
+      "uncertain": [
+       "mrcz"
+      ]
+     },
+     {
+      "text": "venedigischs gewicht vnd ein mrk fur viij duc",
+      "kind": "entry",
+      "uncertain": [
+       "venedigischs",
+       "duc"
+      ]
+     },
+     {
+      "text": "vnd xj gros in auro pringt ijC lxxj duc xj gros",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "ijC lxxj",
+       "unit": "duc"
+      },
+      "uncertain": [
+       "duc",
+       "gros"
+      ]
+     },
+     {
+      "text": "Item Darnach hat her Jacob paumgartner hincz",
+      "kind": "entry",
+      "uncertain": [
+       "Jacob",
+       "paumgartner",
+       "hincz"
+      ]
+     },
+     {
+      "text": "geantwortet ij stukch silber habnd gewegen",
+      "kind": "entry",
+      "uncertain": [
+       "stukch"
+      ]
+     },
+     {
+      "text": "C lxxxviij mrk xj lot wremischs gewichts",
+      "kind": "entry",
+      "uncertain": [
+       "wremischs"
+      ]
+     },
+     {
+      "text": "Die habnd gewegen zu venedig ijC lxxxviij",
+      "kind": "entry",
+      "uncertain": [
+       "venedig"
+      ]
+     },
+     {
+      "text": "mrk vj mrcz venedigischs gewichts Die hat er",
+      "kind": "entry",
+      "uncertain": [
+       "mrcz",
+       "venedigischs"
+      ]
+     },
+     {
+      "text": "verkauft das marks venedigischs p viij duc",
+      "kind": "entry",
+      "uncertain": [
+       "marks",
+       "duc"
+      ]
+     },
+     {
+      "text": "xj gros facit ijC xliiij duc iij gros",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "ijC xliiij",
+       "unit": "duc"
+      },
+      "uncertain": [
+       "duc",
+       "gros"
+      ]
+     },
+     {
+      "text": "Suma baider silberer der iiij stukch",
+      "kind": "sum",
+      "uncertain": [
+       "stukch"
+      ]
+     },
+     {
+      "text": "wremischs facit cccc xxv mrk j lot",
+      "kind": "sum",
+      "uncertain": [
+       "wremischs"
+      ]
+     },
+     {
+      "text": "wremischs gewicht, pringt venedigischs",
+      "kind": "sum",
+      "uncertain": [
+       "wremischs",
+       "venedigischs"
+      ]
+     },
+     {
+      "text": "gewicht cccc lxv mrk xij mrcz",
+      "kind": "sum",
+      "uncertain": [
+       "mrcz"
+      ]
+     },
+     {
+      "text": "facit in auro vC xvj duc v gros in auro",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "vC xvj",
+       "unit": "duc"
+      },
+      "uncertain": [
+       "duc",
+       "gros"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "31r",
+    "lines": [
+     {
+      "text": "31",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Innemen vnd außgeben des Liennczer hampfes bißher",
+      "kind": "entry",
+      "uncertain": [
+       "Liennczer",
+       "hampfes",
+       "bißher"
+      ]
+     },
+     {
+      "text": "gegeneinander gelegt vnd aufgericht / Darnach ist er",
+      "kind": "entry",
+      "uncertain": [
+       "gegeneinander"
+      ]
+     },
+     {
+      "text": "vnsers herrn gnadn schuldig xxvj ducatn vnd xj s vj d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxvj / xj / vj",
+       "unit": "ducatn / s / d"
+      },
+      "uncertain": [
+       "ducatn",
+       "schuldig"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Daenjgegen sein jnnemen",
+  "J der vorgemelt hanns liss hat anczogen",
+  "emphangen ij stukch silber habn gewegen",
+  "clj mrk vj lot wremischs gewicht",
+  "Die hat er verkauft zu Venedig vnd habn",
+  "daselbs gewegen clxxvij mrk viij lot vj mrcz",
+  "venedigischs gewicht vnd ein mrk fur viij duc",
+  "vnd xj gros in auro pringt ijC lxxj duc xj gros",
+  "Item Darnach hat her Jacob paumgartner hincz",
+  "geantwortet ij stukch silber habnd gewegen",
+  "C lxxxviij mrk xj lot wremischs gewichts",
+  "Die habnd gewegen zu venedig ijC lxxxviij",
+  "mrk vj mrcz venedigischs gewichts Die hat er",
+  "verkauft das marks venedigischs p viij duc",
+  "xj gros facit ijC xliiij duc iij gros",
+  "Suma baider silberer der iiij stukch",
+  "wremischs facit cccc xxv mrk j lot",
+  "wremischs gewicht, pringt venedigischs",
+  "gewicht cccc lxv mrk xij mrcz",
+  "facit in auro vC xvj duc v gros in auro",
+  "31",
+  "Innemen vnd außgeben des Liennczer hampfes bißher",
+  "gegeneinander gelegt vnd aufgericht / Darnach ist er",
+  "vnsers herrn gnadn schuldig xxvj ducatn vnd xj s vj d"
+ ]
+}

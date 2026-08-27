@@ -1,0 +1,237 @@
+{
+ "page": "pilot2_rb2_p029",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 26.5,
+ "timestamp": "2026-08-27T10:29:04+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "von Berchten Potenstain vj mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vj",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "Berchten",
+       "Potenstain"
+      ]
+     },
+     {
+      "text": "Suma ho seins empfahens",
+      "kind": "sum",
+      "uncertain": [
+       "ho",
+       "seins",
+       "empfahens"
+      ]
+     },
+     {
+      "text": "seint —— lxxxxiiij mr j lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxxiiij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "lxxxxiiij",
+       "j lb"
+      ]
+     },
+     {
+      "text": "Jnnamen vnd ausgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "Jnnamen",
+       "gegeneinander"
+      ]
+     },
+     {
+      "text": "vnd abgeczogen Dannoch ist meins herren",
+      "kind": "entry",
+      "uncertain": [
+       "abgeczogen",
+       "Dannoch"
+      ]
+     },
+     {
+      "text": "gnad demselben Juden mit partung schuld",
+      "kind": "entry",
+      "uncertain": [
+       "Juden",
+       "partung"
+      ]
+     },
+     {
+      "text": "worden —— xvij mr viij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "xvij",
+       "viij lb"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "29r",
+    "lines": [
+     {
+      "text": "29",
+      "kind": "foliation"
+     },
+     {
+      "text": "Hannß Apponntner zu Bozen",
+      "kind": "rubric",
+      "uncertain": [
+       "Hannß",
+       "Apponntner",
+       "zu",
+       "Bozen"
+      ]
+     },
+     {
+      "text": "Nota [...]",
+      "kind": "entry",
+      "uncertain": [
+       "Nota"
+      ]
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "Ausgeben",
+      "kind": "rubric",
+      "uncertain": [
+       "Ausgeben"
+      ]
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "von Berchten Potenstain vj mr",
+  "Suma ho seins empfahens",
+  "seint —— lxxxxiiij mr j lb",
+  "Jnnamen vnd ausgeben gegeneinander gelegt",
+  "vnd abgeczogen Dannoch ist meins herren",
+  "gnad demselben Juden mit partung schuld",
+  "worden —— xvij mr viij lb",
+  "29",
+  "Hannß Apponntner zu Bozen",
+  "Nota [...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "Ausgeben",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]",
+  "[...]"
+ ]
+}

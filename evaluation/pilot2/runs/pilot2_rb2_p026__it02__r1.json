@@ -1,0 +1,332 @@
+{
+ "page": "pilot2_rb2_p026",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.9,
+ "timestamp": "2026-08-27T10:28:23+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "26r",
+    "lines": [
+     {
+      "text": "26",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Pantlems Sautus von",
+      "kind": "rubric",
+      "uncertain": [
+       "Pantlems",
+       "Sautus"
+      ]
+     },
+     {
+      "text": "der Sölldner wegen",
+      "kind": "rubric",
+      "uncertain": [
+       "Sölldner"
+      ]
+     },
+     {
+      "text": "Nota mit pauln Sammt & als mit",
+      "kind": "entry",
+      "uncertain": [
+       "pauln",
+       "Sammt"
+      ]
+     },
+     {
+      "text": "ainem haubtman meins gnadign",
+      "kind": "entry",
+      "uncertain": [
+       "haubtman",
+       "gnadign"
+      ]
+     },
+     {
+      "text": "herrn Söldnar zu Payrn Ist gerait vmb",
+      "kind": "entry",
+      "uncertain": [
+       "Söldnar",
+       "Payrn",
+       "gerait"
+      ]
+     },
+     {
+      "text": "was hÿr Benedict Camrermaister denselben",
+      "kind": "entry",
+      "uncertain": [
+       "hÿr",
+       "Benedict",
+       "Camrermaister"
+      ]
+     },
+     {
+      "text": "Söldnern durch denselben Sammt & aussgeb",
+      "kind": "entry",
+      "uncertain": [
+       "Söldnern",
+       "Sammt",
+       "aussgeb"
+      ]
+     },
+     {
+      "text": "hat von Sannd Julian tag des neüchsten",
+      "kind": "entry",
+      "uncertain": [
+       "Sannd",
+       "Julian",
+       "neüchsten"
+      ]
+     },
+     {
+      "text": "ganngen lxxj Jars / vnntz auf den erntag",
+      "kind": "entry",
+      "uncertain": [
+       "ganngen",
+       "lxxj",
+       "erntag"
+      ]
+     },
+     {
+      "text": "in die quatember nach Jacobi dess lxxij",
+      "kind": "entry",
+      "uncertain": [
+       "quatember",
+       "Jacobi",
+       "lxxij"
+      ]
+     },
+     {
+      "text": "Jars / in gnad des bemelten herrn Benedict",
+      "kind": "entry",
+      "uncertain": [
+       "gnad",
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Camrermaisters & amacht des alten hinkhümers",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermaisters",
+       "amacht",
+       "hinkhümers"
+      ]
+     },
+     {
+      "text": "hannsn feÿrn fingenmaisters / Jeronimús phister",
+      "kind": "entry",
+      "uncertain": [
+       "hannsn",
+       "feÿrn",
+       "fingenmaisters",
+       "Jeronimús",
+       "phister"
+      ]
+     },
+     {
+      "text": "hannslains / vnd wolfgangs Steinleins Sammt",
+      "kind": "entry",
+      "uncertain": [
+       "hannslains",
+       "wolfgangs",
+       "Steinleins",
+       "Sammt"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Der bemelt Camrermaister hat meins gnad",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermaister",
+       "gnad"
+      ]
+     },
+     {
+      "text": "herrn xiij Söldnern durchhundert zu Payrn /",
+      "kind": "entry",
+      "uncertain": [
+       "xiij",
+       "Söldnern",
+       "durchhundert",
+       "Payrn"
+      ]
+     },
+     {
+      "text": "dussegericht p pauln Sammt & Irem haubtman",
+      "kind": "entry",
+      "uncertain": [
+       "dussegericht",
+       "pauln",
+       "Sammt",
+       "Irem",
+       "haubtman"
+      ]
+     },
+     {
+      "text": "mitsambt etlichen bssoltn die man aufgericht",
+      "kind": "entry",
+      "uncertain": [
+       "bssoltn",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "hat . Auch mit etlichen damit man in fündtnus",
+      "kind": "entry",
+      "uncertain": [
+       "fündtnus"
+      ]
+     },
+     {
+      "text": "abgesprochen hat . von Sand Julian tag des lxxj",
+      "kind": "entry",
+      "uncertain": [
+       "Sand",
+       "Julian",
+       "lxxj"
+      ]
+     },
+     {
+      "text": "vntz auf erntag nach Bartholomeÿ dess lxxij",
+      "kind": "entry",
+      "uncertain": [
+       "erntag",
+       "Bartholomeÿ",
+       "lxxij"
+      ]
+     },
+     {
+      "text": "Jars in münnz . vij m . ij c . xv lb iiij ß j d qu .",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "vij m ij c xv",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "münnz",
+       "qu"
+      ]
+     },
+     {
+      "text": "vnd iij c . l . Rhgld vnder dess Gma gul hat Er",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "iij c l",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Gma",
+       "gul"
+      ]
+     },
+     {
+      "text": "in xxxvij gld erkauft Darauf ist aufmünzzt",
+      "kind": "entry",
+      "uncertain": [
+       "xxxvij",
+       "gld",
+       "erkauft",
+       "aufmünzzt"
+      ]
+     },
+     {
+      "text": "ganngt xxj mvc iij lb qu",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "xxj mvc iij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "ganngt",
+       "mvc",
+       "qu"
+      ]
+     },
+     {
+      "text": "verte",
+      "kind": "entry",
+      "uncertain": [
+       "verte"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "26",
+  "Pantlems Sautus von",
+  "der Sölldner wegen",
+  "Nota mit pauln Sammt & als mit",
+  "ainem haubtman meins gnadign",
+  "herrn Söldnar zu Payrn Ist gerait vmb",
+  "was hÿr Benedict Camrermaister denselben",
+  "Söldnern durch denselben Sammt & aussgeb",
+  "hat von Sannd Julian tag des neüchsten",
+  "ganngen lxxj Jars / vnntz auf den erntag",
+  "in die quatember nach Jacobi dess lxxij",
+  "Jars / in gnad des bemelten herrn Benedict",
+  "Camrermaisters & amacht des alten hinkhümers",
+  "hannsn feÿrn fingenmaisters / Jeronimús phister",
+  "hannslains / vnd wolfgangs Steinleins Sammt",
+  "Item",
+  "Der bemelt Camrermaister hat meins gnad",
+  "herrn xiij Söldnern durchhundert zu Payrn /",
+  "dussegericht p pauln Sammt & Irem haubtman",
+  "mitsambt etlichen bssoltn die man aufgericht",
+  "hat . Auch mit etlichen damit man in fündtnus",
+  "abgesprochen hat . von Sand Julian tag des lxxj",
+  "vntz auf erntag nach Bartholomeÿ dess lxxij",
+  "Jars in münnz . vij m . ij c . xv lb iiij ß j d qu .",
+  "vnd iij c . l . Rhgld vnder dess Gma gul hat Er",
+  "in xxxvij gld erkauft Darauf ist aufmünzzt",
+  "ganngt xxj mvc iij lb qu",
+  "verte"
+ ]
+}

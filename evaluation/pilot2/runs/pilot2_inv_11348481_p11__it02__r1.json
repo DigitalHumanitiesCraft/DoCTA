@@ -1,0 +1,192 @@
+{
+ "page": "pilot2_inv_11348481_p11",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1202,
+    3394
+   ],
+   "sent_px": [
+    1202,
+    3394
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.8,
+ "timestamp": "2026-08-27T10:26:14+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "5",
+    "lines": [
+     {
+      "text": "5",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerkt mel waicz rockn",
+      "kind": "rubric",
+      "uncertain": [
+       "waicz",
+       "rockn"
+      ]
+     },
+     {
+      "text": "vnd sunst ander getraide als",
+      "kind": "rubric",
+      "uncertain": [
+       "sunst"
+      ]
+     },
+     {
+      "text": "ichs in dem haus gefunden hab",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "auf dem palast vnd in den kasten",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item mel ijc vnd lxxxx star",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item waicz .c. iij lxxxx star",
+      "kind": "entry",
+      "uncertain": [
+       "iij"
+      ]
+     },
+     {
+      "text": "Item Rocken ijc vnd l star",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item hirß viijc vnd xlvij star",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item gerst xxxiiij star",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item pon xxxviij st",
+      "kind": "entry",
+      "uncertain": [
+       "pon",
+       "st"
+      ]
+     },
+     {
+      "text": "Item türckh xxv st",
+      "kind": "entry",
+      "uncertain": [
+       "türckh",
+       "st"
+      ]
+     },
+     {
+      "text": "Item panisth xv st",
+      "kind": "entry",
+      "uncertain": [
+       "panisth",
+       "st"
+      ]
+     },
+     {
+      "text": "Item arbais x star",
+      "kind": "entry",
+      "uncertain": [
+       "arbais"
+      ]
+     },
+     {
+      "text": "Suma facit ijml viijc",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "vnd xlvij star.",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerkt der czeug in der",
+      "kind": "rubric",
+      "uncertain": [
+       "czeug"
+      ]
+     },
+     {
+      "text": "smitten",
+      "kind": "rubric",
+      "uncertain": [
+       "smitten"
+      ]
+     },
+     {
+      "text": "Item ain anposs vnd ain hornanposs",
+      "kind": "entry",
+      "uncertain": [
+       "anposs",
+       "hornanposs"
+      ]
+     },
+     {
+      "text": "iiij hemer x czangen ain schrot=",
+      "kind": "entry",
+      "uncertain": [
+       "hemer",
+       "czangen"
+      ]
+     },
+     {
+      "text": "maißel vnd ij plauffpelg",
+      "kind": "entry",
+      "uncertain": [
+       "plauffpelg"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "5",
+  "Vermerkt mel waicz rockn",
+  "vnd sunst ander getraide als",
+  "ichs in dem haus gefunden hab",
+  "auf dem palast vnd in den kasten",
+  "Item mel ijc vnd lxxxx star",
+  "Item waicz .c. iij lxxxx star",
+  "Item Rocken ijc vnd l star",
+  "Item hirß viijc vnd xlvij star",
+  "Item gerst xxxiiij star",
+  "Item pon xxxviij st",
+  "Item türckh xxv st",
+  "Item panisth xv st",
+  "Item arbais x star",
+  "Suma facit ijml viijc",
+  "vnd xlvij star.",
+  "Vermerkt der czeug in der",
+  "smitten",
+  "Item ain anposs vnd ain hornanposs",
+  "iiij hemer x czangen ain schrot=",
+  "maißel vnd ij plauffpelg"
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "page": "pilot2_inv_11330759_p6",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1256,
+    3568
+   ],
+   "sent_px": [
+    1232,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 7.7,
+ "timestamp": "2026-08-27T10:26:52+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Ain mörser glockhspeyss mit seyn",
+      "kind": "entry",
+      "uncertain": [
+       "glockhspeyss"
+      ]
+     },
+     {
+      "text": "eysnein stempfl",
+      "kind": "entry",
+      "uncertain": [
+       "eysnein"
+      ]
+     },
+     {
+      "text": "drey beyrein kellerin",
+      "kind": "entry",
+      "uncertain": [
+       "beyrein",
+       "kellerin"
+      ]
+     },
+     {
+      "text": "drey pfannen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwai kessl",
+      "kind": "entry",
+      "uncertain": [
+       "kessl"
+      ]
+     },
+     {
+      "text": "drey hafen deckhein",
+      "kind": "entry",
+      "uncertain": [
+       "deckhein"
+      ]
+     },
+     {
+      "text": "· Item messingspeckh vnd ain grossen",
+      "kind": "entry",
+      "uncertain": [
+       "messingspeckh"
+      ]
+     },
+     {
+      "text": "messingspeckh",
+      "kind": "entry",
+      "uncertain": [
+       "messingspeckh"
+      ]
+     },
+     {
+      "text": "Ain öl pann",
+      "kind": "entry",
+      "uncertain": [
+       "pann"
+      ]
+     },
+     {
+      "text": "Ain smaltz kübl",
+      "kind": "entry",
+      "uncertain": [
+       "smaltz",
+       "kübl"
+      ]
+     },
+     {
+      "text": "Zway prochen hanndtgwassfaß",
+      "kind": "entry",
+      "uncertain": [
+       "hanndtgwassfaß"
+      ]
+     },
+     {
+      "text": "Ain brochen messinkandl",
+      "kind": "entry",
+      "uncertain": [
+       "messinkandl"
+      ]
+     },
+     {
+      "text": "Im protgadein",
+      "kind": "rubric",
+      "uncertain": [
+       "protgadein"
+      ]
+     },
+     {
+      "text": "Zwai gross traitfassen",
+      "kind": "entry",
+      "uncertain": [
+       "traitfassen"
+      ]
+     },
+     {
+      "text": "Syben zimer laib in ainer truchen",
+      "kind": "entry",
+      "uncertain": [
+       "zimer",
+       "laib"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Ain mörser glockhspeyss mit seyn",
+  "eysnein stempfl",
+  "drey beyrein kellerin",
+  "drey pfannen",
+  "zwai kessl",
+  "drey hafen deckhein",
+  "· Item messingspeckh vnd ain grossen",
+  "messingspeckh",
+  "Ain öl pann",
+  "Ain smaltz kübl",
+  "Zway prochen hanndtgwassfaß",
+  "Ain brochen messinkandl",
+  "Im protgadein",
+  "Zwai gross traitfassen",
+  "Syben zimer laib in ainer truchen"
+ ]
+}

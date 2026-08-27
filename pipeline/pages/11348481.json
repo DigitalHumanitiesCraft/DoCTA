@@ -31,6 +31,59 @@
       "und zewg der hewser.",
       "[.]w[..]t."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p1__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:22+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1446 Juni 13",
+      "Persen.",
+      "1434",
+      "46",
+      "48",
+      "l: 109.",
+      "Schloss vnd bawer gut",
+      "ettliches varende hab",
+      "Wolff der phleger",
+      "(früher: Sch. A. 7590)",
+      "Inv. A 273/5"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p1__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:23+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1446 Juni 13",
+      "Persen",
+      "1434",
+      "46",
+      "48",
+      "C: 109.",
+      "Jnuentari vnd schadenguet",
+      "etliches varende hab",
+      "vber dy pfleger",
+      "Inventar",
+      "(früher: Sch. A. 7590)",
+      "Inv. A 273/5"
+     ]
     }
    ]
   },
@@ -38,7 +91,11 @@
    "pageNr": 2,
    "iiif": "https://files.transkribus.eu/iiif/2/HFAJFAAWATGPZGDAXYRDTQLZ/full/max/0/default.jpg",
    "content_class": "text",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "full"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
@@ -56,6 +113,34 @@
      "lines": [
       "[us_vorne_v]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p2__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:18+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p2__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:19+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
     }
    ]
   },
@@ -111,6 +196,98 @@
       "ist worden daz haben die obgenanten gesehen",
       "und beschaẇet."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p3__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:30+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1",
+      "Register als her nach geschriben stet",
+      "des Schloss persen :",
+      "Hie nach ist vermerkt alles das so ich",
+      "hainreich von axspperg in dem Schloss",
+      "persen gefunden hab . Vnd mir von",
+      "der küngspergerin nach abgang hrnsch",
+      "von küngsperg Irs gemahels seligen",
+      "ist eingeanttwürt / Als das dem durleüch =",
+      "tigen hochgeborn fürsten Hertzog Sig =",
+      "munden hertzogen ze Österreich vnd",
+      "Grauen ze Tyrol rc meine gnedigen",
+      "hern zügehört . Dasselb Schloss mir sein",
+      "gnad hat eingeanttwürt in phlegs weyse",
+      "seinen gnaden getrewlich darmit wartten sein",
+      "vnd hab also das hint Schloss eingenomen",
+      "an dem montag dreyzehen tag in dem",
+      "Monet Junio In der Jartzal nach crstige =",
+      "purde Tausent virhundert vnd in dem",
+      "sechsundvierczigisten Jare Dasselbs sas",
+      "vriedel vnd vil ander erber leüt bey gewest",
+      "seind / mit namen Her marckabrun von",
+      "Ristein Her antoni von terlay Doctor / agiss",
+      "lucas massar ze triendt / lienhart vom saler",
+      "Cunrat goller ganser zolln am Neseys",
+      "Hainnrich von Castell zolln ze triendt",
+      "hans stampher noder Hainnrich wirt zu",
+      "dem ochsn ze triendt / vnd sunst vil",
+      "ander erber leüt Vnd was mir geantwürt",
+      "ist worden das habn die obgnten gesehen",
+      "vnd beschawet /"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p3__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:32+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1",
+      "Register als her nach geschriben stet",
+      "des besloss persen:",
+      "Hie nach ist vermerkt alles das ich",
+      "hainreich von awersperg in dem besloss",
+      "persen gefunden hab. Vnd mir von",
+      "der ku(e)ngspergerin nach abgang herrn",
+      "von ku(e)ngsperg Irs gemahels seligen",
+      "ist eingeantwurt / Als das dem durleuch-",
+      "tigen hochgeborn fursten Hertzog Sig-",
+      "munden hertzogen ze osterreich vnd",
+      "Grauen ze Tyrol etc meinem gnedigen",
+      "herrn zu(e)geho(e)rt. Dasselb beslos mir sein",
+      "gnad hat eingeantwurt in phlegs weyse",
+      "seinen gnaden getrewlich damit warten sein",
+      "Vnd hab also das berut besloss eingenomen",
+      "an dem montag dreyzehen tag in dem",
+      "Monet Junio In der Iarzal nach cristi ge-",
+      "purt Tausent vierhundert vnd in dem",
+      "sechs vnd vierczigisten Iare Daselbs stet",
+      "vriedel vnd vil ander erber leut bey gewest",
+      "seind / mit namen Her markabrun von",
+      "Rofein Her Antoni von Terlay doctor / aygiss",
+      "lucas massar ze triendt / lienhart vom salez",
+      "Cunrat zoller gansser zolln am Nefeys /",
+      "Hainreich von Castell zolln ze triendt",
+      "hans stampher noter Hainreich wirt zu(e)",
+      "dem o(e)rtsch ze triendt / vnd sunst vil",
+      "ander erber leut Vnd was mir geantwurt",
+      "ist worden das haben die obgnanten gesehen",
+      "vnd beschawet."
+     ]
     }
    ]
   },
@@ -118,7 +295,11 @@
    "pageNr": 4,
    "iiif": "https://files.transkribus.eu/iiif/2/TJPRFYTHLLUWAIVDQSZCASGB/full/max/0/default.jpg",
    "content_class": "text",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "full"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
@@ -136,6 +317,34 @@
      "lines": [
       "[fol.1v]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p4__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:29+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p4__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:28+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
     }
    ]
   },
@@ -193,6 +402,104 @@
       "Item ain klaines altes petlein vast zer¬",
       "rissen mit ainer zwilchen ziech überzogen",
       "und ist auch abschatz."
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p5__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:42+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "2",
+      "Auf dem palaft",
+      "Hie ist vermerkht am ersten was auf",
+      "dem palaft ist von peten als ichs gefundn han",
+      "Item in dem ergger da der keller ist gelegen",
+      "darinn ist ain pet mit ainer zwilchin",
+      "ziech unden und oben zerissen",
+      "Item aber auf dem palaft da die palafter",
+      "gelegen sind ist ain pet von aind person",
+      "mit ainer alten zwilchin ziechen auch",
+      "zerissen",
+      "Item aber auf dem palaft in des haupcmans",
+      "ergger ain pet mit ainer zwilchin ziech",
+      "uberzogen ist auch nicht vast gut",
+      "Item aber auf dem palaft ain pet in aind",
+      "kamer mit ainer zwilchin ziechen uber",
+      "zogen und ist alt und v[ast] zerissen auch",
+      "ist in derselbn kam ain lere petstat",
+      "Item aber auf dem palaft ain klaines poss",
+      "petlein von aind pson und ist auch",
+      "zerissen und klaines schutzwert",
+      "Item aber auf dem palaft in den ergger",
+      "do der leo jnn gelegen ist ain gut pett",
+      "von zwayen person auch mit ainer",
+      "zwilchin ziech uberzogen",
+      "In des caplans kamer",
+      "~~bey der ewig~~",
+      "Item ain klaines petlein von zwayen",
+      "personen mit ainer zwilchin ziechen",
+      "uberzogen claines schutzwert",
+      "In des kochs kamer",
+      "Item ain klaines altes petlein vast zer",
+      "rissen mit aind zwilchin ziech uberzogen",
+      "und ist auch abschatz"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p5__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:44+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "2",
+      "Auf dem palast",
+      "Hie ist vermerkht am ersten was auf",
+      "dem palast ist von peten als ichs gefunden han",
+      "Item in dem ergger da der keller ist gelegen",
+      "darinn ist ain pet mit ainer zwilchin",
+      "ziech unden und oben zerrissen",
+      "Item aber auf dem palast da die palaster",
+      "gelegen sind ist ain pet von aind person",
+      "mit ainer alten zwilchin ziechen auch",
+      "zerrissen",
+      "Item aber auf dem palast in des hauptmans",
+      "ergger ain pet mit ainer zwilchin ziech",
+      "überzogen ist auch nicht vast gut",
+      "Item aber auf dem palast ain pet in aind",
+      "kamer mit ainer zwilchin ziechen über-",
+      "zogen und ist alt und so zerrissen auch",
+      "ist in derselbn kam ain lere petstat",
+      "Item aber auf dem palast ain klaines pose",
+      "petlein von aind person und ist auch",
+      "zerrissen und klaines schutzwert",
+      "Item aber auf dem palast in den ergger",
+      "da der los inn gelegen ist ain gut pett",
+      "von zwayen person auch mit ainer",
+      "zwilchin ziech überzogen",
+      "In des Caplans kamer",
+      "~~bey der styeg~~",
+      "Item ain klaines petlein von zwayen",
+      "personen mit ainer zwilchin ziechen",
+      "überzogen clains schutzwert",
+      "In des kochs kamer",
+      "Item ain klaines altes petlein vast zer-",
+      "rissen mit ainr zwilchin ziech überzogen",
+      "und ist auch abschatz"
      ]
     }
    ]
@@ -253,6 +560,104 @@
       "gůt und mit zwilchin ziechen uberzogen",
       "und von zwaÿen personen."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p6__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:45+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "In dem obern staingaden",
+      "Item ain altes pet mit aind alten parchant",
+      "ziechen vberzogen vnd ain alter seiden",
+      "golter grun vnd gel zerissen vnd abschatz",
+      "vnd ain alt polster mit aind kölmischen",
+      "ziechen auch zerissen",
+      "Item in derselben kamer ain altes petlein",
+      "in ainem cariol mit aind parchanten ziechin",
+      "vberzogen auch klaines schatzwerck",
+      "In der Jungfrawen kamer",
+      "Item ain pet mit aind zwilchin ziechin",
+      "vberzogen geflickt vnd ist von zwayn",
+      "personen vnd in derselben kamer aber",
+      "ain altes pet von aind person",
+      "In der herren kamer",
+      "bey dem stüblein",
+      "Item ain altes pett zerissen mit aind",
+      "parchantn ziech vberzogen vnd j",
+      "polster mit aind zwilchin ziech vnd",
+      "ain pet in dem cariol alt vnd geflickt",
+      "vnd ist auch von aind person",
+      "In dem aparstal",
+      "Item ain klaines altes petlein von",
+      "aind person vnd ist auch mit ainer",
+      "zwilchin ziechen vberzogen vnd ist",
+      "abschatz",
+      "In dem kol ergger",
+      "Item ain altes poses petlein mit aind",
+      "zwilchin ziechen vberzogen vnd ist",
+      "auch geflickt vnd von aind person",
+      "In dem hohen turn",
+      "Item darinn sind ij pet nicht vast",
+      "gut vnd mit zwilchin ziechen vberzogn",
+      "vnd von zwayen personen"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p6__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:47+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Indem obrn staingaden",
+      "Item ain altes pet mit ainn alten parchant",
+      "ziechen vberzogen vnd ainn alter seiden",
+      "golter grun vnd gel zerrißen vnd abschatz",
+      "vnd ain alt polster mit ainn kölnischen",
+      "ziechen auch zerrißn",
+      "Item in derselben kamer ain altes petlein",
+      "in ainem kariol mit ainn parchanden ziechn",
+      "vberzogen auch klaines schatzwerc",
+      "In der Jungfrawen kamer",
+      "Item ain pet mit ainn zwilchin ziechin",
+      "vberzogen geflickt vnd ist von zwayen",
+      "personen vnd in derselben kamer aber",
+      "ain altes pet von ainn person",
+      "In der herren kamer",
+      "bey dem stüblein",
+      "Item ain altes pett zerrißen mit ainn",
+      "parchandin ziech vberzogen vnd j",
+      "polster mit ainn zwilchin ziech vnd",
+      "ain pet in dem cariol alt vnd geflickt",
+      "vnd ist auch von ainn person",
+      "Indem apristal",
+      "Item ain klaines altes petlein von",
+      "ainn person vnd ist auch mit ainer",
+      "zwilchin ziechen vberzogen vnd ist",
+      "abschatz",
+      "In dem kol ergger",
+      "Item ain altes poses petlein mit ainn",
+      "zwilchin ziechen vberzogen vnd ist",
+      "auch geflickt vnd von ainn person",
+      "In dem hohen turn",
+      "Item darinn sind ij pet nicht vast",
+      "gut vnd mit zwilchin ziechen vberzogen",
+      "vnd von zwayen personen"
+     ]
     }
    ]
   },
@@ -312,6 +717,104 @@
       "obgenanten erbern leüt wol und aigenlichen",
       "gesehan und beschawet haben."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p7__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:55+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "3",
+      "In dem turn ob der phistrey",
+      "Item darinn ist ain altes pet von zwayen",
+      "personen vnd ist geflickt",
+      "In dem vorhof",
+      "Item da der vischer leyt ist ain pet alt vnd",
+      "halb lere mit ainem zwilchin ziech vberzogen",
+      "vnd ist abschatz",
+      "In dem turn ob der porten",
+      "in dem vorhof",
+      "Item darinn seind zway pet mit zwilchin",
+      "ziechen vberzogen vnd seind zegůtermas",
+      "In des Iungen harnasch",
+      "maisters Ergker",
+      "Item ain claines altes pet mit aim zwilchin",
+      "ziech vberzogen vnd ist halbe lere",
+      "In dem miteln ergger in",
+      "dem vorhof",
+      "Item darinn ain klaines petlein von ain person",
+      "vnd ist mit aim zwilichin ziechen vberzogen",
+      "auch abschatz",
+      "In dem valschen türnlein",
+      "Item darinn ain claines altes pöses petlein",
+      "von zway personen vnd ist halbe lere",
+      "In dem Ergker lamparten",
+      "Item darinn ist ain klaines petlein mit aim",
+      "leynin ziechen von ain person vnd ist",
+      "nicht vast gut Suma der pet xxvij",
+      "Dannach die polster vnd küssen",
+      "die ich in dem haws funden hab",
+      "Item xiiij alt vnd zerissen polster vnd ain",
+      "küssein vnd seind gar abschatz als die",
+      "obgenanten erbern leut wol vnd aigentlichen",
+      "gesehen vnd beschawet habn"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p7__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:54+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "3",
+      "In dem turn ob der physterey",
+      "Item darinn ist ain altes pet von zwayen",
+      "personen vnd ist geflicket",
+      "In dem Vorhof",
+      "Item da der vischer leyt ist ain pet alt vnd",
+      "halb lere mit ainem zwilchin ziech vberzogen",
+      "vnd ist abschatz",
+      "In dem turn ob der porten",
+      "in dem vorhof",
+      "Item darinn seind zway pet mit zwilchin",
+      "ziechen vberzogen vnd seind zegůtermas",
+      "In des Clingen harnasch",
+      "maisters Eryker",
+      "Item ain claines altes pet mit ain zwilchin",
+      "ziech vberzogen vnd ist halbe lere",
+      "In dem mitteln eryger in",
+      "dem vorhof",
+      "Item darinn ain klaines petlein von ain person",
+      "vnd ist mit ain zwilichin ziechen vberzogen",
+      "auch abschatz",
+      "In dem valschen tůrnlein",
+      "Item darinn ain claines altes poses petlein",
+      "von zway personen vnd ist halbe lere",
+      "In dem Eryker lamparten",
+      "Item darinn ist ain klaines petlein mit ain",
+      "leynin ziechen von ain person vnd ist",
+      "nicht vast gut Sma der pet xxvij",
+      "Darnach die polster vnd kůssen",
+      "die ich in dem haws funden hab",
+      "Item xiiij alt vnd zerissen polster vnd ain",
+      "kůssin vnd seind gar abschatz als die",
+      "obgnennten ebn leut wol vnd aigentlichen",
+      "gesehen vnd beschawet habn"
+     ]
     }
    ]
   },
@@ -369,6 +872,102 @@
       "Item XXXVIII scheiben senogarn.",
       "Item und zwaÿ kariol sind lere.",
       "Item aber"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p8__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:25:58+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vermerckh leylach",
+      "Item vier leylach von groben zwirich die",
+      "seind nicht vast gůt Vnd aber drew par",
+      "alter pöser leylach vnd zerrissen vnd iij par",
+      "wern nicht zenuczen",
+      "Vermerckht Rauch Castron dekh",
+      "Item zehen rauch dekh die seind nicht vbrigs",
+      "gůt Vnd aber zwo dekh gar zenichten",
+      "Vermerckht der harnasch in",
+      "der harnasch kamer",
+      "Item acht gemaine panzer.",
+      "Item ain huntscappen",
+      "Item siben hauben mit geheng",
+      "Item ain ledigs geheng an ain haubn",
+      "Item fúnif hauben one geheng",
+      "Item zwo englisch haubn mit geheng",
+      "Item zway helmlein",
+      "Item vier eisenhůte",
+      "Item sechs zschaladn",
+      "Item newn prustplath",
+      "Item ain mailendische platn",
+      "Item aber ain halbe leichte platten",
+      "Item vier gancze payngwant",
+      "Item drew par vnderpayngewand",
+      "Item vier spangerůl",
+      "Item zehen par armzeug",
+      "Item ainlif par plechhentschůch",
+      "Item acht visier",
+      "Item xxiiij kupfrein hantpůxen",
+      "Item j ledrein hůt",
+      "Item xxxvij schaiben snoggarn",
+      "Item vnd zway kariol sind ler",
+      "Item aber . [...]"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p8__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:25:57+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vermerkht leylach",
+      "Item vier leylach von groben zwirich die",
+      "seind nicht vast gut Vnd aber drew par",
+      "alter pöser leylach vnd zerrissen vnd iij par",
+      "warn nicht zennuczen",
+      "Vermerkht rauch castron dekh",
+      "Item zehen rauch dekh die seind nicht vbrigs",
+      "gut Vnd aber zwo dekh gar zernichten",
+      "Vermerkht der harnasch in",
+      "der harnasch kamer",
+      "Item acht gemaine panzer.",
+      "Item ain huntzcappen",
+      "Item siben hauben mit geheng",
+      "Item ain ledigs geheng an ain haubn",
+      "Item funf hauben one geheng",
+      "Item zwo englisch haubn mit geheng.",
+      "Item zway helmlin",
+      "Item vier eysenhüte",
+      "Item sechs zschaladn",
+      "Item newn prustplatn",
+      "Item ain mailendysche platen",
+      "Item aber ain halbe leuchte platen",
+      "Item vier gannze payngwant",
+      "Item drew par vnderpayngewand",
+      "Item vier spangerdel",
+      "Item zehen par armczeüg",
+      "Item ainlif par plechhanczschůch",
+      "Item acht visier",
+      "Item xxiiij kupfrein hantpüxen",
+      "Item j lederin hut",
+      "Item xxxvij schaiben snogarn",
+      "Item vnd zway fassol sind lere",
+      "Item aber .l."
      ]
     }
    ]
@@ -431,6 +1030,110 @@
       "Item I kessel von zwaẏ ziggel wasser.",
       "Item I eren hafen."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p9__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:05+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "4",
+      "Vermerckht in der kamer",
+      "da die monicon jnn leyt",
+      "Item fúnfundfúnfczig armprost vnd",
+      "eyben gút vnd pös",
+      "Item sibenundtzwainczig alt verdeckt",
+      "platen pös vnd gútt ain tail zerprochen",
+      "Item acht welisch spanngürtel zú den eybn",
+      "Item acht köcher vnd ij eysenstöfflyn",
+      "Item ain erer hafen zerbrochen",
+      "Item ain lancztsth zerprochen",
+      "Item zehen lageln mit pheylen",
+      "Item ain vässlen mit puluer ain viij gross",
+      "Item aber ain klaines vessleyn mit puluer",
+      "Item ain lagel mit fackel",
+      "Item ain vessleyn mit salniter von ij viij gros",
+      "Item viij feúrpheyl",
+      "Item ain trúckleyn mit welschen pheylen",
+      "Item viij púrd vnd vij stangen eysens",
+      "Vermerckht auf dem pal",
+      "Item ain messin púchs scheúst ain stain von",
+      "zehen phunden",
+      "Item zwoú lang kupfrein púchs",
+      "Item achtzehen eysen púchsen gross vnd klain",
+      "Item bey targen vnd sechstle gut vnd pos",
+      "Item ain gross kupfrein púchs bey der mitteln",
+      "porten auf zway rädern dabey ain eysen púchs",
+      "Item ij spanseil ij senn ain seckling",
+      "Item ij spenpanch",
+      "Vermerckht in der kuchen",
+      "Item ij lanczetschen seind zerprochen",
+      "Item j gantzer lancztsth",
+      "Item iij hälckhy vnd j prantrauch",
+      "Item j pratrost vnd .j. dreifus",
+      "Item j feúr haucken",
+      "Item j kessel von zway gyegel wasser",
+      "Item j erer hafen"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p9__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:08+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "4",
+      "Vermerckht in der kamer",
+      "da die moniczen jnn leyt",
+      "Item fünfundfünfczig armproste und",
+      "eyben gůt und pös",
+      "Item sibenundczwainczig alt verdeckt",
+      "platen pös und gůtt ain tail zerprochen",
+      "Item acht welisch spanngürtel zu den eyben",
+      "Item acht köcker und ij eysenflätschl",
+      "Item ain erer hafen zerbrochen",
+      "Item ain lanczsch zerprochen",
+      "Item zehen lageln mit pheylen",
+      "Item ain vässlen mit pulver ain viij gross",
+      "Item aber ain klaines vesslein mit pulver",
+      "Item ain lagel mit fackel",
+      "Item ain vesslein mit salniter von ij viij gros",
+      "Item viij feürpheyl",
+      "Item ain trüchlein mit welschen pheylen",
+      "Item viij purd und viij stangen eysens",
+      "Vermerckht auf dem pal",
+      "Item ain messin půchs scheüst ain stain von",
+      "zehen phunden",
+      "Item zwoů lang kuphrein půchs",
+      "Item achtzehen eysen půchsen gross und klain",
+      "Item bey torgen und scheftleitle gůt und pös",
+      "Item ain gross kuphrein půchs bey der miteln",
+      "porten auf zwain redern dabey ain eysen půchs",
+      "Item ij spansül ij feür ain stöckling",
+      "Item ij spenpanck",
+      "Vermerckht in der kuchen",
+      "Item ij lanczschen seind zerprochen",
+      "Item j gantzer lanczsch",
+      "Item iij hälchlin und j prantranck",
+      "Item j pratrost und .j. dreifus",
+      "Item j feür hanken",
+      "Item j kessel von zwain giggel wasser",
+      "Item j eren hafen"
+     ]
     }
    ]
   },
@@ -489,6 +1192,102 @@
       "Item in dem aussern keler ain grosse",
       "eÿsen püchs hinnder der tür."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p10__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:06+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vermerkht in dem keler",
+      "Item acht hulzen gafften gůt vnd pös",
+      "Item ain flaischparten vnd j kemichseul",
+      "Item ain vasssail mit ij eysen hancken",
+      "Item ain paumschaub vnd iij trachter",
+      "Item ij presstůch vnd ij weinstůch",
+      "Item liiij weinvass gross vnd klain",
+      "Item xxij kastlädn gůt vnd pös",
+      "Item aind .v. pottigen",
+      "Item ij krautfas vnd x krautpottigen von hilzln vassen",
+      "Item in der badstuben ain kessel",
+      "Item in der pfistery ain kessel",
+      "Item ain fůrvaß mit salz",
+      "Item bey ainer prentzn honig in aim vaß",
+      "Item vor dem keler in dem stain ij mitt öl",
+      "Vermerkht in dem speyßgaden",
+      "ob dem keler",
+      "Item C xv lb weyßes vnschlit des sind",
+      "drey knollen vnd xxvj lb swartz vnschlit",
+      "an ainẽ knollen vnd x schmerlaib",
+      "Vermerkht in der Capell",
+      "Item ain altarstain, ain messgwand",
+      "Item ain kelch vnd j papirin messpůch",
+      "Item ij opferkentlein vnd iiij altartůcher",
+      "Vermerkht der wein in dem",
+      "keler",
+      "Item vierundfunftzig fuder hab ich",
+      "enpfangen allerlay wein rot vnd",
+      "weyß als sy in den keler seind kumen",
+      "vnd ist alles gewesen lx fuder vnd ain halbs",
+      "vnd ist der abgang angeslagen vj fuder 1/2",
+      "Item in dem aussern keler ain gross",
+      "eysen půchß hinder der tůr"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p10__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:07+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Vermerkht in dem keler",
+      "Item acht hulzen gefften gut vnd pos",
+      "Item ain flaischparten vnd j kemichseul",
+      "Item ain vasssail mit ij eysen hancken",
+      "Item ain pamschab vnd iij trachter",
+      "Item ij pressschuf vnd ij weinschuf",
+      "Item liiij weinvass gross vnd klain",
+      "Item xxj kestladen gut vnd pos",
+      "Item vnd . x . potigen",
+      "Item ij krautfas und x krautpotigen von hültzn vassen",
+      "Item in der padstuben ain kessel",
+      "Item in der pfisterey ain kessel",
+      "Item ain fuervaß mit salcz",
+      "Item bey ainer prentzn honig in aine vaß",
+      "Item vor dem keler in dem stain ij mut öl",
+      "Vermerkht in dem speyßgaden",
+      "ob dem keler",
+      "Item C xv lb weysses unschlit das sind",
+      "drey knollen vnd xxvj lb swarcz unschlit",
+      "an ainem knollen vnd x schmerlaib",
+      "Vermerkht in der Capell",
+      "Item ain altarstain ain messgwand",
+      "Item ain kelch vnd j papirin messpuch",
+      "Item ij opferkentlein vnd iiij altartuecher",
+      "Vermerkht der wein in dem",
+      "keler",
+      "Item vierundfunfczig füder hab ich",
+      "empfangen allerlay wein rot vnd",
+      "weyss als sy in den keler seind kumen",
+      "vnd ist alles gewesen lx füder vnd ain halbs",
+      "und ist der abgang angeschlagen vj füder 1/2",
+      "Item in dem aussern keler ain gross",
+      "eysen puchß hinder der tür"
+     ]
     }
    ]
   },
@@ -534,6 +1333,78 @@
       "IIII hammer, X zangen, ain schrot¬",
       "maissel und II plausspelg."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p11__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:14+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "5",
+      "Vermerkt mel waicz rockn",
+      "vnd sunst ander getraide als",
+      "ichs in dem haus gefunden hab",
+      "auf dem palast vnd in den kasten",
+      "Item mel ijc vnd lxxxx star",
+      "Item waicz .c. iij lxxxx star",
+      "Item Rocken ijc vnd l star",
+      "Item hirß viijc vnd xlvij star",
+      "Item gerst xxxiiij star",
+      "Item pon xxxviij st",
+      "Item türckh xxv st",
+      "Item panisth xv st",
+      "Item arbais x star",
+      "Suma facit ijml viijc",
+      "vnd xlvij star.",
+      "Vermerkt der czeug in der",
+      "smitten",
+      "Item ain anposs vnd ain hornanposs",
+      "iiij hemer x czangen ain schrot=",
+      "maißel vnd ij plauffpelg"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p11__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:12+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "5",
+      "Vermerckt mel waig rockn",
+      "vnd sunst ander getraide als",
+      "ichs in dem haws gefunden hab",
+      "auf dem palast vnd in den kasten",
+      "Item mel ijc vnd lxxxx star",
+      "Item waigczen . iij hoppen star",
+      "Item Rocken ijc vnd l star",
+      "Item hirsz viijc vnd xliiij star",
+      "Item Gerst xxxiiij star",
+      "Item pon xxxviij star",
+      "Item fůnch xxv star",
+      "Item panestz xv star",
+      "Item arbais x star",
+      "Suma facit ij M viijc",
+      "vnd xlvj star .",
+      "Vermerckt der czeug in der",
+      "smitten",
+      "Item ain anposs vnd ain hornanposs",
+      "iiij hamer x czangen ain schrot-",
+      "maissel vnd ij plauffpelg"
+     ]
     }
    ]
   },
@@ -541,7 +1412,11 @@
    "pageNr": 12,
    "iiif": "https://files.transkribus.eu/iiif/2/MVHKBBTTZCXSNUYVQFPZSUKB/full/max/0/default.jpg",
    "content_class": "text",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "full"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
@@ -559,6 +1434,34 @@
      "lines": [
       "[fol.5v]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p12__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:13+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p12__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:13+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
     }
    ]
   },
@@ -584,6 +1487,38 @@
      "lines": [
       "[fol.6r]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p13__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:18+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "6"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p13__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:17+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "6"
+     ]
     }
    ]
   },
@@ -591,7 +1526,11 @@
    "pageNr": 14,
    "iiif": "https://files.transkribus.eu/iiif/2/ODVVLBGXFGGZDVWGRCRHJNXN/full/max/0/default.jpg",
    "content_class": "text",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "full"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
@@ -609,6 +1548,34 @@
      "lines": [
       "[fol.6v]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p14__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:18+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p14__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:17+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
     }
    ]
   },
@@ -634,6 +1601,38 @@
      "lines": [
       "[us_hinten_r]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p15__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:22+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "7"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p15__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:25+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "7"
+     ]
     }
    ]
   },
@@ -641,7 +1640,11 @@
    "pageNr": 16,
    "iiif": "https://files.transkribus.eu/iiif/2/XUIJLNSJWKAIUPQVBQKPPTTP/full/max/0/default.jpg",
    "content_class": "text",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 2,
+    "scope": "full"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
@@ -659,6 +1662,34 @@
      "lines": [
       "[us_hinten_v]"
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p16__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:26:22+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
+    },
+    {
+     "id": "pilot2:pilot2_inv_11348481_p16__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:26:22+00:00",
+     "empty": true,
+     "empty_parts": [
+      true
+     ],
+     "lines": []
     }
    ]
   }

@@ -1,0 +1,435 @@
+{
+ "page": "pilot2_rb2_p028",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.2,
+ "timestamp": "2026-08-27T10:28:49+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Andre von Matrai",
+      "kind": "rubric",
+      "uncertain": [
+       "Andre",
+       "Matrai"
+      ]
+     },
+     {
+      "text": "Nota am freytag vor unnser lieben frawen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "tag Annunciacioñ Anno domini etc lxxiiij in gegen",
+      "kind": "entry",
+      "uncertain": [
+       "Annunciacioñ"
+      ]
+     },
+     {
+      "text": "haid bened Camenmaisters Tomas Waldner",
+      "kind": "entry",
+      "uncertain": [
+       "bened",
+       "Tomas",
+       "Waldner"
+      ]
+     },
+     {
+      "text": "Kornmaisters Chunrats Pauls Hanns Kamrer",
+      "kind": "entry",
+      "uncertain": [
+       "Chunrats",
+       "Pauls",
+       "Hanns",
+       "Kamrer"
+      ]
+     },
+     {
+      "text": "vnd Wolfgangs Stümpfels Camerknecht . Ist",
+      "kind": "entry",
+      "uncertain": [
+       "Wolfgangs",
+       "Stümpfels"
+      ]
+     },
+     {
+      "text": "mit Andren dinkofer Raitung beschriben",
+      "kind": "entry",
+      "uncertain": [
+       "Andren",
+       "dinkofer"
+      ]
+     },
+     {
+      "text": "der durstner von Possenfar von pfinztag",
+      "kind": "entry",
+      "uncertain": [
+       "durstner",
+       "Possenfar"
+      ]
+     },
+     {
+      "text": "nach des heyligen kreücz tag Exaltacionis",
+      "kind": "entry",
+      "uncertain": [
+       "Exaltacionis"
+      ]
+     },
+     {
+      "text": "des vergangen lxxj Jars vntz auf heutign tag",
+      "kind": "entry",
+      "uncertain": [
+       "heutign"
+      ]
+     },
+     {
+      "text": "gefurt rantz etcz per Juffent in memoynal",
+      "kind": "entry",
+      "uncertain": [
+       "rantz",
+       "etcz",
+       "Juffent",
+       "memoynal"
+      ]
+     },
+     {
+      "text": "herrn Camerknechten /",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Brinngt das er heraus gefurt hat iiij C lxxxxviij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "füder / von yedem füder xxij d bringt d viij lb iiij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "viij",
+       "iiij"
+      ]
+     },
+     {
+      "text": "Darzu von gnaden hat man jm zu pfenning",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gebnt xxxviij d / das alles in ainer Summa",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "gebnt"
+      ]
+     },
+     {
+      "text": "bringt —— d x lb iiij d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "x"
+      ]
+     },
+     {
+      "text": "Summa",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Es hat der Camenmaister / Stümpfel vnd andre",
+      "kind": "entry",
+      "uncertain": [
+       "Stümpfel"
+      ]
+     },
+     {
+      "text": "zu jm wägent / als man meins Gnedigen herrn allerlay",
+      "kind": "entry",
+      "uncertain": [
+       "wägent"
+      ]
+     },
+     {
+      "text": "heraus gefürt hat —— viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "viij"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "28r",
+    "lines": [
+     {
+      "text": "28",
+      "kind": "foliation"
+     },
+     {
+      "text": "Daran sein Jnnemen",
+      "kind": "rubric",
+      "uncertain": [
+       "sein",
+       "Jnnemen"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": [
+       "It"
+      ]
+     },
+     {
+      "text": "von meinem herren Chammermeister hat er",
+      "kind": "entry",
+      "uncertain": [
+       "Chammermeister"
+      ]
+     },
+     {
+      "text": "emphangen die desselb Chammermeister vffrait",
+      "kind": "entry",
+      "uncertain": [
+       "Chammermeister",
+       "vffrait"
+      ]
+     },
+     {
+      "text": "hat ————— xxviij m̄ xiij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "m̄"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": [
+       "It"
+      ]
+     },
+     {
+      "text": "von Gewreychatten Saltzmair hat er",
+      "kind": "entry",
+      "uncertain": [
+       "Gewreychatten",
+       "Saltzmair"
+      ]
+     },
+     {
+      "text": "emphangen ————— j C m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "j",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "m̄"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": [
+       "It"
+      ]
+     },
+     {
+      "text": "von Zellnär am Lycz hat er emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "Zellnär",
+       "Lycz"
+      ]
+     },
+     {
+      "text": "———————— xxxviij m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "m̄"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": [
+       "It"
+      ]
+     },
+     {
+      "text": "von Vlreichen Kercher dazumal Kellnär an",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreichen",
+       "Kercher",
+       "Kellnär"
+      ]
+     },
+     {
+      "text": "wein viij fuder j ymn fur xx m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "fuder",
+       "ymn",
+       "m̄"
+      ]
+     },
+     {
+      "text": "die desselb Kercher in beqwälikayt meins hern",
+      "kind": "entry",
+      "uncertain": [
+       "Kercher",
+       "beqwälikayt"
+      ]
+     },
+     {
+      "text": "gnaden vbergeben hat",
+      "kind": "entry",
+      "uncertain": [
+       "vbergeben"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": [
+       "It"
+      ]
+     },
+     {
+      "text": "von Leonharten Prantsner iij m̄ ij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "Leonharten",
+       "Prantsner",
+       "m̄"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Andre von Matrai",
+  "Nota am freytag vor unnser lieben frawen",
+  "tag Annunciacioñ Anno domini etc lxxiiij in gegen",
+  "haid bened Camenmaisters Tomas Waldner",
+  "Kornmaisters Chunrats Pauls Hanns Kamrer",
+  "vnd Wolfgangs Stümpfels Camerknecht . Ist",
+  "mit Andren dinkofer Raitung beschriben",
+  "der durstner von Possenfar von pfinztag",
+  "nach des heyligen kreücz tag Exaltacionis",
+  "des vergangen lxxj Jars vntz auf heutign tag",
+  "gefurt rantz etcz per Juffent in memoynal",
+  "herrn Camerknechten /",
+  "Brinngt das er heraus gefurt hat iiij C lxxxxviij",
+  "füder / von yedem füder xxij d bringt d viij lb iiij d",
+  "Darzu von gnaden hat man jm zu pfenning",
+  "gebnt xxxviij d / das alles in ainer Summa",
+  "bringt —— d x lb iiij d",
+  "Summa",
+  "Item",
+  "Es hat der Camenmaister / Stümpfel vnd andre",
+  "zu jm wägent / als man meins Gnedigen herrn allerlay",
+  "heraus gefürt hat —— viij d",
+  "28",
+  "Daran sein Jnnemen",
+  "It",
+  "von meinem herren Chammermeister hat er",
+  "emphangen die desselb Chammermeister vffrait",
+  "hat ————— xxviij m̄ xiij d",
+  "It",
+  "von Gewreychatten Saltzmair hat er",
+  "emphangen ————— j C m̄",
+  "It",
+  "von Zellnär am Lycz hat er emphangen",
+  "———————— xxxviij m̄",
+  "It",
+  "von Vlreichen Kercher dazumal Kellnär an",
+  "wein viij fuder j ymn fur xx m̄",
+  "die desselb Kercher in beqwälikayt meins hern",
+  "gnaden vbergeben hat",
+  "It",
+  "von Leonharten Prantsner iij m̄ ij d"
+ ]
+}

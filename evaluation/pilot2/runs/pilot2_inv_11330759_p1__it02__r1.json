@@ -1,0 +1,230 @@
+{
+ "page": "pilot2_inv_11330759_p1",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1193,
+    3501
+   ],
+   "sent_px": [
+    1193,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.7,
+ "timestamp": "2026-08-27T10:26:32+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Fol. 1r",
+    "lines": [
+     {
+      "text": "1487",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Jnventari hernach die Hab",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "zeugk vnd Guet auff der",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "munndtkron Cristoffen von",
+      "kind": "entry",
+      "uncertain": [
+       "munndtkron",
+       "Cristoffen"
+      ]
+     },
+     {
+      "text": "Wolckenstain phleger daselbs",
+      "kind": "entry",
+      "uncertain": [
+       "Wolckenstain"
+      ]
+     },
+     {
+      "text": "Hin vnd vbergeantwurt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "auffgeschriben zü Semini am",
+      "kind": "entry",
+      "uncertain": [
+       "Semini"
+      ]
+     },
+     {
+      "text": "sandt als angenedem phleger",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "am phintztag nach vnser frawen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "tag Assumpcionis Anno etc",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Octuagesimo Septimo Jnge-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "genwertikait Johannsen Elling",
+      "kind": "entry",
+      "uncertain": [
+       "Elling"
+      ]
+     },
+     {
+      "text": "Johannsen Cunniglän Notarij",
+      "kind": "entry",
+      "uncertain": [
+       "Cunniglän"
+      ]
+     },
+     {
+      "text": "pürger zü Botzen vnd and(er)",
+      "kind": "entry",
+      "uncertain": [
+       "Botzen"
+      ]
+     },
+     {
+      "text": "Ain erstens hat man gefunden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in Sand Vlrichs stockh an",
+      "kind": "entry",
+      "uncertain": [
+       "Vlrichs"
+      ]
+     },
+     {
+      "text": "Gelt v lb viij s j d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "1",
+       "numeral": "v lb viij s j d",
+       "unit": "Pfund, Schilling, Pfennig"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Noc hat man Ime geantwurt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "von Sand Blisjen knaben",
+      "kind": "entry",
+      "uncertain": [
+       "Blisjen"
+      ]
+     },
+     {
+      "text": "wegn xxiiij lb v s j d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "1",
+       "numeral": "xxiiij lb v s j d",
+       "unit": "Pfund, Schilling, Pfennig"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "In Sand Vlrichs Capelln",
+      "kind": "rubric",
+      "uncertain": [
+       "Vlrichs"
+      ]
+     },
+     {
+      "text": "Ain slecht alt messgewandt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "mit alm vnd ander sein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zugehörung",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai alt zynen leuchter",
+      "kind": "entry",
+      "uncertain": [
+       "zynen",
+       "leuchter"
+      ]
+     },
+     {
+      "text": "Inv. A 225/1",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1487",
+  "1",
+  "Jnventari hernach die Hab",
+  "zeugk vnd Guet auff der",
+  "munndtkron Cristoffen von",
+  "Wolckenstain phleger daselbs",
+  "Hin vnd vbergeantwurt",
+  "auffgeschriben zü Semini am",
+  "sandt als angenedem phleger",
+  "am phintztag nach vnser frawen",
+  "tag Assumpcionis Anno etc",
+  "Octuagesimo Septimo Jnge-",
+  "genwertikait Johannsen Elling",
+  "Johannsen Cunniglän Notarij",
+  "pürger zü Botzen vnd and(er)",
+  "Ain erstens hat man gefunden",
+  "in Sand Vlrichs stockh an",
+  "Gelt v lb viij s j d",
+  "Noc hat man Ime geantwurt",
+  "von Sand Blisjen knaben",
+  "wegn xxiiij lb v s j d",
+  "In Sand Vlrichs Capelln",
+  "Ain slecht alt messgewandt",
+  "mit alm vnd ander sein",
+  "zugehörung",
+  "Zwai alt zynen leuchter",
+  "Inv. A 225/1"
+ ]
+}

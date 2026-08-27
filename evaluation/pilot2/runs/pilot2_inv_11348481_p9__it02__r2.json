@@ -1,0 +1,285 @@
+{
+ "page": "pilot2_inv_11348481_p9",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1220,
+    3238
+   ],
+   "sent_px": [
+    1220,
+    3238
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.6,
+ "timestamp": "2026-08-27T10:26:08+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "4r",
+    "lines": [
+     {
+      "text": "4",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerckht in der kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "da die moniczen jnn leyt",
+      "kind": "rubric",
+      "uncertain": [
+       "moniczen"
+      ]
+     },
+     {
+      "text": "Item fünfundfünfczig armproste und",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "eyben gůt und pös",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item sibenundczwainczig alt verdeckt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "platen pös und gůtt ain tail zerprochen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht welisch spanngürtel zu den eyben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht köcker und ij eysenflätschl",
+      "kind": "entry",
+      "uncertain": [
+       "eysenflätschl"
+      ]
+     },
+     {
+      "text": "Item ain erer hafen zerbrochen",
+      "kind": "entry",
+      "uncertain": [
+       "erer"
+      ]
+     },
+     {
+      "text": "Item ain lanczsch zerprochen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zehen lageln mit pheylen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain vässlen mit pulver ain viij gross",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item aber ain klaines vesslein mit pulver",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain lagel mit fackel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain vesslein mit salniter von ij viij gros",
+      "kind": "entry",
+      "uncertain": [
+       "salniter"
+      ]
+     },
+     {
+      "text": "Item viij feürpheyl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain trüchlein mit welschen pheylen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item viij purd und viij stangen eysens",
+      "kind": "entry",
+      "uncertain": [
+       "purd"
+      ]
+     },
+     {
+      "text": "Vermerckht auf dem pal",
+      "kind": "rubric",
+      "uncertain": [
+       "pal"
+      ]
+     },
+     {
+      "text": "Item ain messin půchs scheüst ain stain von",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zehen phunden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zwoů lang kuphrein půchs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item achtzehen eysen půchsen gross und klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item bey torgen und scheftleitle gůt und pös",
+      "kind": "entry",
+      "uncertain": [
+       "torgen",
+       "scheftleitle"
+      ]
+     },
+     {
+      "text": "Item ain gross kuphrein půchs bey der miteln",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "porten auf zwain redern dabey ain eysen půchs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij spansül ij feür ain stöckling",
+      "kind": "entry",
+      "uncertain": [
+       "spansül",
+       "stöckling"
+      ]
+     },
+     {
+      "text": "Item ij spenpanck",
+      "kind": "entry",
+      "uncertain": [
+       "spenpanck"
+      ]
+     },
+     {
+      "text": "Vermerckht in der kuchen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ij lanczschen seind zerprochen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j gantzer lanczsch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item iij hälchlin und j prantranck",
+      "kind": "entry",
+      "uncertain": [
+       "hälchlin",
+       "prantranck"
+      ]
+     },
+     {
+      "text": "Item j pratrost und .j. dreifus",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item j feür hanken",
+      "kind": "entry",
+      "uncertain": [
+       "hanken"
+      ]
+     },
+     {
+      "text": "Item j kessel von zwain giggel wasser",
+      "kind": "entry",
+      "uncertain": [
+       "giggel"
+      ]
+     },
+     {
+      "text": "Item j eren hafen",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "4",
+  "Vermerckht in der kamer",
+  "da die moniczen jnn leyt",
+  "Item fünfundfünfczig armproste und",
+  "eyben gůt und pös",
+  "Item sibenundczwainczig alt verdeckt",
+  "platen pös und gůtt ain tail zerprochen",
+  "Item acht welisch spanngürtel zu den eyben",
+  "Item acht köcker und ij eysenflätschl",
+  "Item ain erer hafen zerbrochen",
+  "Item ain lanczsch zerprochen",
+  "Item zehen lageln mit pheylen",
+  "Item ain vässlen mit pulver ain viij gross",
+  "Item aber ain klaines vesslein mit pulver",
+  "Item ain lagel mit fackel",
+  "Item ain vesslein mit salniter von ij viij gros",
+  "Item viij feürpheyl",
+  "Item ain trüchlein mit welschen pheylen",
+  "Item viij purd und viij stangen eysens",
+  "Vermerckht auf dem pal",
+  "Item ain messin půchs scheüst ain stain von",
+  "zehen phunden",
+  "Item zwoů lang kuphrein půchs",
+  "Item achtzehen eysen půchsen gross und klain",
+  "Item bey torgen und scheftleitle gůt und pös",
+  "Item ain gross kuphrein půchs bey der miteln",
+  "porten auf zwain redern dabey ain eysen půchs",
+  "Item ij spansül ij feür ain stöckling",
+  "Item ij spenpanck",
+  "Vermerckht in der kuchen",
+  "Item ij lanczschen seind zerprochen",
+  "Item j gantzer lanczsch",
+  "Item iij hälchlin und j prantranck",
+  "Item j pratrost und .j. dreifus",
+  "Item j feür hanken",
+  "Item j kessel von zwain giggel wasser",
+  "Item j eren hafen"
+ ]
+}

@@ -1,0 +1,271 @@
+{
+ "page": "pilot2_inv_11348481_p10",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1220,
+    3327
+   ],
+   "sent_px": [
+    1220,
+    3327
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.2,
+ "timestamp": "2026-08-27T10:26:06+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Vermerkht in dem keler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item acht hulzen gafften gůt vnd pös",
+      "kind": "entry",
+      "uncertain": [
+       "gafften"
+      ]
+     },
+     {
+      "text": "Item ain flaischparten vnd j kemichseul",
+      "kind": "entry",
+      "uncertain": [
+       "flaischparten",
+       "kemichseul"
+      ]
+     },
+     {
+      "text": "Item ain vasssail mit ij eysen hancken",
+      "kind": "entry",
+      "uncertain": [
+       "vasssail",
+       "hancken"
+      ]
+     },
+     {
+      "text": "Item ain paumschaub vnd iij trachter",
+      "kind": "entry",
+      "uncertain": [
+       "paumschaub",
+       "trachter"
+      ]
+     },
+     {
+      "text": "Item ij presstůch vnd ij weinstůch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item liiij weinvass gross vnd klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxij kastlädn gůt vnd pös",
+      "kind": "entry",
+      "uncertain": [
+       "kastlädn"
+      ]
+     },
+     {
+      "text": "Item aind .v. pottigen",
+      "kind": "entry",
+      "uncertain": [
+       "aind",
+       "pottigen"
+      ]
+     },
+     {
+      "text": "Item ij krautfas vnd x krautpottigen von hilzln vassen",
+      "kind": "entry",
+      "uncertain": [
+       "krautpottigen",
+       "hilzln"
+      ]
+     },
+     {
+      "text": "Item in der badstuben ain kessel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item in der pfistery ain kessel",
+      "kind": "entry",
+      "uncertain": [
+       "pfistery"
+      ]
+     },
+     {
+      "text": "Item ain fůrvaß mit salz",
+      "kind": "entry",
+      "uncertain": [
+       "fůrvaß"
+      ]
+     },
+     {
+      "text": "Item bey ainer prentzn honig in aim vaß",
+      "kind": "entry",
+      "uncertain": [
+       "prentzn"
+      ]
+     },
+     {
+      "text": "Item vor dem keler in dem stain ij mitt öl",
+      "kind": "entry",
+      "uncertain": [
+       "stain"
+      ]
+     },
+     {
+      "text": "Vermerkht in dem speyßgaden",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ob dem keler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item C xv lb weyßes vnschlit des sind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "drey knollen vnd xxvj lb swartz vnschlit",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "an ainẽ knollen vnd x schmerlaib",
+      "kind": "entry",
+      "uncertain": [
+       "ainẽ"
+      ]
+     },
+     {
+      "text": "Vermerkht in der Capell",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain altarstain, ain messgwand",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain kelch vnd j papirin messpůch",
+      "kind": "entry",
+      "uncertain": [
+       "papirin"
+      ]
+     },
+     {
+      "text": "Item ij opferkentlein vnd iiij altartůcher",
+      "kind": "entry",
+      "uncertain": [
+       "opferkentlein"
+      ]
+     },
+     {
+      "text": "Vermerkht der wein in dem",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "keler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item vierundfunftzig fuder hab ich",
+      "kind": "entry",
+      "uncertain": [
+       "vierundfunftzig"
+      ]
+     },
+     {
+      "text": "enpfangen allerlay wein rot vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "weyß als sy in den keler seind kumen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ist alles gewesen lx fuder vnd ain halbs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ist der abgang angeslagen vj fuder 1/2",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item in dem aussern keler ain gross",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "eysen půchß hinder der tůr",
+      "kind": "entry",
+      "uncertain": [
+       "půchß"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vermerkht in dem keler",
+  "Item acht hulzen gafften gůt vnd pös",
+  "Item ain flaischparten vnd j kemichseul",
+  "Item ain vasssail mit ij eysen hancken",
+  "Item ain paumschaub vnd iij trachter",
+  "Item ij presstůch vnd ij weinstůch",
+  "Item liiij weinvass gross vnd klain",
+  "Item xxij kastlädn gůt vnd pös",
+  "Item aind .v. pottigen",
+  "Item ij krautfas vnd x krautpottigen von hilzln vassen",
+  "Item in der badstuben ain kessel",
+  "Item in der pfistery ain kessel",
+  "Item ain fůrvaß mit salz",
+  "Item bey ainer prentzn honig in aim vaß",
+  "Item vor dem keler in dem stain ij mitt öl",
+  "Vermerkht in dem speyßgaden",
+  "ob dem keler",
+  "Item C xv lb weyßes vnschlit des sind",
+  "drey knollen vnd xxvj lb swartz vnschlit",
+  "an ainẽ knollen vnd x schmerlaib",
+  "Vermerkht in der Capell",
+  "Item ain altarstain, ain messgwand",
+  "Item ain kelch vnd j papirin messpůch",
+  "Item ij opferkentlein vnd iiij altartůcher",
+  "Vermerkht der wein in dem",
+  "keler",
+  "Item vierundfunftzig fuder hab ich",
+  "enpfangen allerlay wein rot vnd",
+  "weyß als sy in den keler seind kumen",
+  "vnd ist alles gewesen lx fuder vnd ain halbs",
+  "vnd ist der abgang angeslagen vj fuder 1/2",
+  "Item in dem aussern keler ain gross",
+  "eysen půchß hinder der tůr"
+ ]
+}

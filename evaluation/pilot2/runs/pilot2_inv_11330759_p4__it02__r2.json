@@ -1,0 +1,131 @@
+{
+ "page": "pilot2_inv_11330759_p4",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1207,
+    3488
+   ],
+   "sent_px": [
+    1207,
+    3488
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.7,
+ "timestamp": "2026-08-27T10:26:47+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Vnder dem dach zu oberst",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Vier ruginen pettenn",
+      "kind": "entry",
+      "uncertain": [
+       "ruginen"
+      ]
+     },
+     {
+      "text": "Vier fedrein pholster",
+      "kind": "entry",
+      "uncertain": [
+       "fedrein",
+       "pholster"
+      ]
+     },
+     {
+      "text": "Acht par zwerichen leylach nicht gut",
+      "kind": "entry",
+      "uncertain": [
+       "zwerichen"
+      ]
+     },
+     {
+      "text": "Sechs polster zway kiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Syben zerrissenn deckhenn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In der kamer darinn maist",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "hanns gelegenn ist",
+      "kind": "rubric",
+      "uncertain": [
+       "hanns"
+      ]
+     },
+     {
+      "text": "Dreyzehen pet bös vnd guet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Syben polster Acht kiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Neun deckenn bös vnd guet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par leylach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain beschribner",
+      "kind": "entry",
+      "uncertain": [
+       "beschribner"
+      ]
+     },
+     {
+      "text": "Ain panntzer",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vnder dem dach zu oberst",
+  "Vier ruginen pettenn",
+  "Vier fedrein pholster",
+  "Acht par zwerichen leylach nicht gut",
+  "Sechs polster zway kiss",
+  "Syben zerrissenn deckhenn",
+  "In der kamer darinn maist",
+  "hanns gelegenn ist",
+  "Dreyzehen pet bös vnd guet",
+  "Syben polster Acht kiss",
+  "Neun deckenn bös vnd guet",
+  "Ain par leylach",
+  "Ain beschribner",
+  "Ain panntzer"
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "page": "pilot2_inv_11330759_p11",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1211,
+    3443
+   ],
+   "sent_px": [
+    1211,
+    3443
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.9,
+ "timestamp": "2026-08-27T10:27:20+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "6",
+    "lines": [
+     {
+      "text": "6",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "In dem clainen Stüblin",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain gemainer tysch",
+      "kind": "entry",
+      "uncertain": [
+       "tysch"
+      ]
+     },
+     {
+      "text": "Achtzehen Stuckh puechseni dar",
+      "kind": "entry",
+      "uncertain": [
+       "puechseni"
+      ]
+     },
+     {
+      "text": "under vier haytzen puechseni",
+      "kind": "entry",
+      "uncertain": [
+       "haytzen",
+       "puechseni"
+      ]
+     },
+     {
+      "text": "Dreinunddreissig khelupfeten",
+      "kind": "entry",
+      "uncertain": [
+       "khelupfeten"
+      ]
+     },
+     {
+      "text": "Hiernachvolgt was der herr",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Junggabt und dem genannten",
+      "kind": "rubric",
+      "uncertain": [
+       "Junggabt"
+      ]
+     },
+     {
+      "text": "pfleger übergeanntwurt hat",
+      "kind": "rubric",
+      "uncertain": [
+       "übergeanntwurt"
+      ]
+     },
+     {
+      "text": "Ain wasserschaff",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain fechtpeyl",
+      "kind": "entry",
+      "uncertain": [
+       "fechtpeyl"
+      ]
+     },
+     {
+      "text": "Zwo hafenplattenn",
+      "kind": "entry",
+      "uncertain": [
+       "hafenplattenn"
+      ]
+     },
+     {
+      "text": "Zway hanndtfeüer",
+      "kind": "entry",
+      "uncertain": [
+       "hanndtfeüer"
+      ]
+     },
+     {
+      "text": "Zwen gleser streichstain",
+      "kind": "entry",
+      "uncertain": [
+       "gleser",
+       "streichstain"
+      ]
+     },
+     {
+      "text": "Fünff hültzen pfeiffen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain taler puechseni mit lxx taler",
+      "kind": "entry",
+      "uncertain": [
+       "puechseni"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "6",
+  "In dem clainen Stüblin",
+  "Ain gemainer tysch",
+  "Achtzehen Stuckh puechseni dar",
+  "under vier haytzen puechseni",
+  "Dreinunddreissig khelupfeten",
+  "Hiernachvolgt was der herr",
+  "Junggabt und dem genannten",
+  "pfleger übergeanntwurt hat",
+  "Ain wasserschaff",
+  "Ain fechtpeyl",
+  "Zwo hafenplattenn",
+  "Zway hanndtfeüer",
+  "Zwen gleser streichstain",
+  "Fünff hültzen pfeiffen",
+  "Ain taler puechseni mit lxx taler"
+ ]
+}

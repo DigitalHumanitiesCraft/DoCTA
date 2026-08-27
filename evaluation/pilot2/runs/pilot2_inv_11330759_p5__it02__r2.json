@@ -1,0 +1,187 @@
+{
+ "page": "pilot2_inv_11330759_p5",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1193,
+    3465
+   ],
+   "sent_px": [
+    1193,
+    3465
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.0,
+ "timestamp": "2026-08-27T10:26:53+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "3",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation"
+     },
+     {
+      "text": "Ain trågsl",
+      "kind": "entry",
+      "uncertain": [
+       "trågsl"
+      ]
+     },
+     {
+      "text": "Ain pare hanndtschůech",
+      "kind": "entry",
+      "uncertain": [
+       "hanndtschůech"
+      ]
+     },
+     {
+      "text": "Ain pare armiphrůn",
+      "kind": "entry",
+      "uncertain": [
+       "armiphrůn"
+      ]
+     },
+     {
+      "text": "Ain heln partn",
+      "kind": "entry",
+      "uncertain": [
+       "heln partn"
+      ]
+     },
+     {
+      "text": "Ain rosen sprüzz",
+      "kind": "entry",
+      "uncertain": [
+       "rosen",
+       "sprüzz"
+      ]
+     },
+     {
+      "text": "Zehen zynen schůssl clain vnd gross",
+      "kind": "entry",
+      "uncertain": [
+       "zynen",
+       "schůssl"
+      ]
+     },
+     {
+      "text": "Sechtzehen zynen taler",
+      "kind": "entry",
+      "uncertain": [
+       "zynen",
+       "taler"
+      ]
+     },
+     {
+      "text": "Im drosz gadn bey",
+      "kind": "rubric",
+      "uncertain": [
+       "Im",
+       "drosz",
+       "gadn"
+      ]
+     },
+     {
+      "text": "der mor",
+      "kind": "rubric",
+      "uncertain": [
+       "mor"
+      ]
+     },
+     {
+      "text": "Zwein und glockhspeysi häfenn ganz",
+      "kind": "entry",
+      "uncertain": [
+       "Zwein",
+       "glockhspeysi",
+       "häfenn"
+      ]
+     },
+     {
+      "text": "Zwai glockhspeysi zerbrochn hafenn",
+      "kind": "entry",
+      "uncertain": [
+       "glockhspeysi",
+       "zerbrochn",
+       "hafenn"
+      ]
+     },
+     {
+      "text": "Ain lytzn hültzn fedrl darinn",
+      "kind": "entry",
+      "uncertain": [
+       "lytzn",
+       "hültzn",
+       "fedrl"
+      ]
+     },
+     {
+      "text": "fünff löffl",
+      "kind": "entry",
+      "uncertain": [
+       "fünff",
+       "löffl"
+      ]
+     },
+     {
+      "text": "Ain kupfern wasser gatzen",
+      "kind": "entry",
+      "uncertain": [
+       "kupfern",
+       "wasser",
+       "gatzen"
+      ]
+     },
+     {
+      "text": "Sechshundertacht hültzen taler new",
+      "kind": "entry",
+      "uncertain": [
+       "Sechshundertacht",
+       "hültzen",
+       "taler",
+       "new"
+      ]
+     },
+     {
+      "text": "Ain grosser prackhenspis lanckhs",
+      "kind": "entry",
+      "uncertain": [
+       "prackhenspis",
+       "lanckhs"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "3",
+  "Ain trågsl",
+  "Ain pare hanndtschůech",
+  "Ain pare armiphrůn",
+  "Ain heln partn",
+  "Ain rosen sprüzz",
+  "Zehen zynen schůssl clain vnd gross",
+  "Sechtzehen zynen taler",
+  "Im drosz gadn bey",
+  "der mor",
+  "Zwein und glockhspeysi häfenn ganz",
+  "Zwai glockhspeysi zerbrochn hafenn",
+  "Ain lytzn hültzn fedrl darinn",
+  "fünff löffl",
+  "Ain kupfern wasser gatzen",
+  "Sechshundertacht hültzen taler new",
+  "Ain grosser prackhenspis lanckhs"
+ ]
+}

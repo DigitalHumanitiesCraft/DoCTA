@@ -1,0 +1,254 @@
+{
+ "page": "pilot2_rb2_p041",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 15.4,
+ "timestamp": "2026-08-27T10:30:52+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "41r",
+    "lines": [
+     {
+      "text": "41",
+      "kind": "foliation"
+     },
+     {
+      "text": "Lienhart Deringer",
+      "kind": "rubric",
+      "uncertain": [
+       "Lienhart",
+       "Deringer"
+      ]
+     },
+     {
+      "text": "No mit Lienharten Deringer gerait am",
+      "kind": "entry",
+      "uncertain": [
+       "No",
+       "Lienharten",
+       "Deringer",
+       "gerait"
+      ]
+     },
+     {
+      "text": "montag nach Diuisionis aplo[rum] Anno domini",
+      "kind": "entry",
+      "uncertain": [
+       "Diuisionis",
+       "aplo[rum]"
+      ]
+     },
+     {
+      "text": "xciiij / in gegenwurtikait herren Benedicti",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicti"
+      ]
+     },
+     {
+      "text": "pharrer zu Tyrol des altn Camermaister",
+      "kind": "entry",
+      "uncertain": [
+       "Tyrol",
+       "Camermaister"
+      ]
+     },
+     {
+      "text": "Lienharts von Vels Camermaister vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Lienharts",
+       "Vels",
+       "Camermaister"
+      ]
+     },
+     {
+      "text": "Balthasar Stinckl Camrschreiber vnnd abgerait",
+      "kind": "entry",
+      "uncertain": [
+       "Balthasar",
+       "Stinckl",
+       "Camrschreiber"
+      ]
+     },
+     {
+      "text": "zeung",
+      "kind": "entry",
+      "uncertain": [
+       "zeung"
+      ]
+     },
+     {
+      "text": "It[em]",
+      "kind": "marginal"
+     },
+     {
+      "text": "Meins herren gnad ist demselben Lienhart wernot",
+      "kind": "entry",
+      "uncertain": [
+       "Lienhart",
+       "wernot"
+      ]
+     },
+     {
+      "text": "schuldig fur abgeraitt zeung / von Sand Martin",
+      "kind": "entry",
+      "uncertain": [
+       "zeung",
+       "Sand",
+       "Martin"
+      ]
+     },
+     {
+      "text": "tag des lxxxj Jars / vntz auf hewtigen obgenantn",
+      "kind": "entry"
+     },
+     {
+      "text": "tag / vnnd bringt in ainer Summa ij C lxxiiij m",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "ij C lxxiiij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "Summa",
+       "m̄"
+      ]
+     },
+     {
+      "text": "vnd viij d xvij hl mj s l",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "hl",
+       "mj s l"
+      ]
+     },
+     {
+      "text": "Dinstha",
+      "kind": "entry",
+      "uncertain": [
+       "Dinstha"
+      ]
+     },
+     {
+      "text": "It[em] Daraff hat er emphangn vnd am erstn",
+      "kind": "entry",
+      "uncertain": [
+       "Daraff"
+      ]
+     },
+     {
+      "text": "von Aninspruckhern auf meins gnedign herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Aninspruckhern"
+      ]
+     },
+     {
+      "text": "gescheftikait —— lxxx iiij",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxx iiij",
+       "unit": ""
+      },
+      "uncertain": [
+       "gescheftikait",
+       "lxxx iiij"
+      ]
+     },
+     {
+      "text": "It[em]",
+      "kind": "marginal"
+     },
+     {
+      "text": "von meinem herren herrn Benedict pharrer zu",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Tyrol als Camermaister lxx iiij",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxx iiij",
+       "unit": ""
+      },
+      "uncertain": [
+       "Tyrol",
+       "Camermaister",
+       "lxx iiij"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "41",
+  "Lienhart Deringer",
+  "No mit Lienharten Deringer gerait am",
+  "montag nach Diuisionis aplo[rum] Anno domini",
+  "xciiij / in gegenwurtikait herren Benedicti",
+  "pharrer zu Tyrol des altn Camermaister",
+  "Lienharts von Vels Camermaister vnd",
+  "Balthasar Stinckl Camrschreiber vnnd abgerait",
+  "zeung",
+  "It[em]",
+  "Meins herren gnad ist demselben Lienhart wernot",
+  "schuldig fur abgeraitt zeung / von Sand Martin",
+  "tag des lxxxj Jars / vntz auf hewtigen obgenantn",
+  "tag / vnnd bringt in ainer Summa ij C lxxiiij m",
+  "vnd viij d xvij hl mj s l",
+  "Dinstha",
+  "It[em] Daraff hat er emphangn vnd am erstn",
+  "von Aninspruckhern auf meins gnedign herrn",
+  "gescheftikait —— lxxx iiij",
+  "It[em]",
+  "von meinem herren herrn Benedict pharrer zu",
+  "Tyrol als Camermaister lxx iiij"
+ ]
+}

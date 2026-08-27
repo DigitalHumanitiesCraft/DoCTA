@@ -1,0 +1,170 @@
+{
+ "page": "pilot2_inv_11330759_p8",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1225,
+    3465
+   ],
+   "sent_px": [
+    1225,
+    3465
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.6,
+ "timestamp": "2026-08-27T10:27:04+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "Vier gross masspüchß",
+      "kind": "entry",
+      "uncertain": [
+       "masspüchß"
+      ]
+     },
+     {
+      "text": "Sechs clain zynnen Salffnnipüchs",
+      "kind": "entry",
+      "uncertain": [
+       "Salffnnipüchs"
+      ]
+     },
+     {
+      "text": "Sechs zynnen taler",
+      "kind": "entry",
+      "uncertain": [
+       "taler"
+      ]
+     },
+     {
+      "text": "Vier pfannen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Drei clainer kessl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen gross kessl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen zynnen häfn",
+      "kind": "entry",
+      "uncertain": [
+       "häfn"
+      ]
+     },
+     {
+      "text": "Etlich verprennts tzschmigeschirr Solchs",
+      "kind": "entry",
+      "uncertain": [
+       "tzschmigeschirr"
+      ]
+     },
+     {
+      "text": "mayster Hannsen zugeschriben",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen"
+      ]
+     },
+     {
+      "text": "Vier pundtenn tzschin",
+      "kind": "entry",
+      "uncertain": [
+       "pundtenn",
+       "tzschin"
+      ]
+     },
+     {
+      "text": "vnd etlichs plech bei theun vnd traletz",
+      "kind": "entry",
+      "uncertain": [
+       "theun",
+       "traletz"
+      ]
+     },
+     {
+      "text": "von tzschin",
+      "kind": "entry",
+      "uncertain": [
+       "tzschin"
+      ]
+     },
+     {
+      "text": "Ain gross tzugsail",
+      "kind": "entry",
+      "uncertain": [
+       "tzugsail"
+      ]
+     },
+     {
+      "text": "In ainer clainen lagl bei zehen kaylen",
+      "kind": "entry",
+      "uncertain": [
+       "kaylen"
+      ]
+     },
+     {
+      "text": "guessen strützen",
+      "kind": "entry",
+      "uncertain": [
+       "strützen"
+      ]
+     },
+     {
+      "text": "vnd etlichs wand korn fust gstanden",
+      "kind": "entry",
+      "uncertain": [
+       "wand",
+       "fust"
+      ]
+     },
+     {
+      "text": "ungverclossen bey ix star",
+      "kind": "entry",
+      "uncertain": [
+       "ungverclossen",
+       "star"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vier gross masspüchß",
+  "Sechs clain zynnen Salffnnipüchs",
+  "Sechs zynnen taler",
+  "Vier pfannen",
+  "Drei clainer kessl",
+  "Zwen gross kessl",
+  "Zwen zynnen häfn",
+  "Etlich verprennts tzschmigeschirr Solchs",
+  "mayster Hannsen zugeschriben",
+  "Vier pundtenn tzschin",
+  "vnd etlichs plech bei theun vnd traletz",
+  "von tzschin",
+  "Ain gross tzugsail",
+  "In ainer clainen lagl bei zehen kaylen",
+  "guessen strützen",
+  "vnd etlichs wand korn fust gstanden",
+  "ungverclossen bey ix star"
+ ]
+}

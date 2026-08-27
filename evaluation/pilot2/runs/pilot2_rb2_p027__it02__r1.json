@@ -1,0 +1,222 @@
+{
+ "page": "pilot2_rb2_p027",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.2,
+ "timestamp": "2026-08-27T10:28:38+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Item Als man dann am xxiij Septembr' vor Sand",
+      "kind": "entry",
+      "uncertain": [
+       "Septembr'"
+      ]
+     },
+     {
+      "text": "michels tag der vorgeschriben lxxij jare in",
+      "kind": "entry",
+      "uncertain": [
+       "lxxij",
+       "jare"
+      ]
+     },
+     {
+      "text": "gegenwurtikait der bemelten pauls pantls /",
+      "kind": "entry",
+      "uncertain": [
+       "pauls",
+       "pantls"
+      ]
+     },
+     {
+      "text": "Thoman plammars Cunrat paumgartners",
+      "kind": "entry",
+      "uncertain": [
+       "Thoman",
+       "plammars",
+       "Cunrat",
+       "paumgartners"
+      ]
+     },
+     {
+      "text": "gerait hat mit denselben Soldnern umb",
+      "kind": "entry",
+      "uncertain": [
+       "Soldnern"
+      ]
+     },
+     {
+      "text": "alles das so man jn nach den obgeschriben",
+      "kind": "entry",
+      "uncertain": [
+       "obgeschriben"
+      ]
+     },
+     {
+      "text": "beczalunge; so fer umb Sold Gewant und",
+      "kind": "entry",
+      "uncertain": [
+       "beczalunge;"
+      ]
+     },
+     {
+      "text": "Knechtgelt mitsambt den schraiffgen, schuldig ward",
+      "kind": "entry",
+      "uncertain": [
+       "schraiffgen"
+      ]
+     },
+     {
+      "text": "bringt in ainer Summa zu gantzir bezaling",
+      "kind": "entry",
+      "uncertain": [
+       "bezaling"
+      ]
+     },
+     {
+      "text": "· m · iiij · c · x · lb · viij ß · vnd viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m / c",
+       "numeral": "iiij c x lb viij ß viij",
+       "unit": "lb, ß, d"
+      },
+      "uncertain": [
+       "m"
+      ]
+     },
+     {
+      "text": "Sma Summarj aller vorgeschriben",
+      "kind": "rubric",
+      "uncertain": [
+       "Sma",
+       "Summarj"
+      ]
+     },
+     {
+      "text": "Ausgebens so der bemelt Camrermaist /",
+      "kind": "entry",
+      "uncertain": [
+       "Camrermaist"
+      ]
+     },
+     {
+      "text": "dem benanten Pantl zu aufrichtung",
+      "kind": "entry",
+      "uncertain": [
+       "Pantl",
+       "aufrichtung"
+      ]
+     },
+     {
+      "text": "derselben Soldnern in vorgeschribner",
+      "kind": "entry",
+      "uncertain": [
+       "Soldnern",
+       "vorgeschribner"
+      ]
+     },
+     {
+      "text": "zeit saußgericht und gantz bezalt hat",
+      "kind": "entry",
+      "uncertain": [
+       "saußgericht"
+      ]
+     },
+     {
+      "text": "facit ij · m · iiij · c · xlvij lb iiij ß j d vnd viij d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "m / c",
+       "numeral": "ij m iiij c xlvij lb iiij ß j d viij",
+       "unit": "lb, ß, d"
+      },
+      "uncertain": [
+       "facit",
+       "ij",
+       "iiij",
+       "j",
+       "viij"
+      ]
+     },
+     {
+      "text": "vnd vij hl d gld",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij",
+       "unit": "hl, d, gld"
+      },
+      "uncertain": [
+       "hl",
+       "gld"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "fol. 27r",
+    "lines": [
+     {
+      "text": "27",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Item Als man dann am xxiij Septembr' vor Sand",
+  "michels tag der vorgeschriben lxxij jare in",
+  "gegenwurtikait der bemelten pauls pantls /",
+  "Thoman plammars Cunrat paumgartners",
+  "gerait hat mit denselben Soldnern umb",
+  "alles das so man jn nach den obgeschriben",
+  "beczalunge; so fer umb Sold Gewant und",
+  "Knechtgelt mitsambt den schraiffgen, schuldig ward",
+  "bringt in ainer Summa zu gantzir bezaling",
+  "· m · iiij · c · x · lb · viij ß · vnd viij d",
+  "Sma Summarj aller vorgeschriben",
+  "Ausgebens so der bemelt Camrermaist /",
+  "dem benanten Pantl zu aufrichtung",
+  "derselben Soldnern in vorgeschribner",
+  "zeit saußgericht und gantz bezalt hat",
+  "facit ij · m · iiij · c · xlvij lb iiij ß j d vnd viij d",
+  "vnd vij hl d gld",
+  "27"
+ ]
+}

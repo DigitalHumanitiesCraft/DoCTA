@@ -43,6 +43,82 @@
       "It(em) ain eysn puchsen ist nit eingefast, mer XII spanpet pŏs und guet.",
       "It(em) dÿ ket(e)n zu dem prun und der zigk(e)l dar zue."
      ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330219_p1__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:30+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1492.",
+      "(11. XIII 251)",
+      "Ums. A 185/1",
+      "Vermerckt was Ich katreina weylandt baben kungls selge gelaßne wittib",
+      "auf der pfleg vnd Schloß Schöneckh laß als Ich abgezogen pin ausserhalb",
+      "der alten Inuentarj dy zu dem Schloß Schöneckh gehort Anno . 1492",
+      "Jar an montag nach Sannd Katrein tag zcũ",
+      "Item erstu Im keller j haber sterck ain gers sterck vnd ain halb gers sterck",
+      "It(em) ain grosse tengen gehort zu holtz vnd zu laß",
+      "It(em) ain zier tengen mit dreyen rohern / ain öl trainn",
+      "It(em) ain grosse zucken da man fleysch In henngt",
+      "It(em) ain groß trachtset daman kraut auf hackt",
+      "It(em) In der pfister stubn ain vorricht tafe vnd dy preten dar zue",
+      "It(em) ain speisl fassn ain fur zuber ain sanc sterck / mer ain zuber gebrochen mer",
+      "It(em) ain föttigen zu klagen vnd ain teufl",
+      "It(em) In der kucken ain tengen vnd ain tisch / In der speys kamer j tengen",
+      "It(em) Im zimmer ain mel tengen vnd sunst ain klain tengen",
+      "It(em) In der kamir auch Im zimmer j ain versperte trugn",
+      "It(em) An der stubn ij tisch vnd dy pengk dar zue vnd ain steyrertafe",
+      "It(em) In den zwayen stelen In iegleichem ain fueter truhen",
+      "It(em) v alt spies pey dem tor / mer ain halb fasn mit der fetn / mer ain armbrust",
+      "It(em) ain vest putzfen Ist in eingefaßt / mer xij pampet pos vnd gutt",
+      "It(em) dy ketn zu dem prunn vnd der zigel dar zue //"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330219_p1__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:32+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "1492.",
+      "11. XIII 251",
+      "Hss. A 185/1",
+      "Daz vermerckt was ich Caterina weyland Baben Rungels selige gelaßne wittib",
+      "auff der pfleg vnd Schloß Schöneckh last als ich abgeczogen pin ausserhalb",
+      "der alten Innuentary dy zu dem Schloß Schöneckh gehörend Anno . 1492",
+      "Iar an montag nach Sannd Lucien tag zc.",
+      "Item In dem keller . j . haber stex ain terff stex vnd ain halb terff stex",
+      "Item ain grosse trugen gehört zu holtz vnd zu kaß",
+      "Item ain leer trugen mit dreyen löchern / ain öl trainn",
+      "Item ain grosse trugen da man fleisch In henget",
+      "Item ain groß hackpret darauf man kraut auf hackt",
+      "Item In der phister stubn ain vorrefft tafel vnd dy preten dar zue",
+      "Item ain paerl fass ain knet zuber ain saue stex / mer ain zuber gebrochen mer",
+      "Item ain schötzen zu tragen vnd ain truche",
+      "Item In der kuchen ain trugen vnd ain tysch / In der speys kamer . j . trugen",
+      "Item Im zymmer ain . mel trugen vnd sonst ain clainne trugen",
+      "Item In der kamir auch Im zimmer j ain versperte trugen",
+      "Item An der stubn iij tysch vnd dy pengk dar zue vnd ain steyrertafel",
+      "Item In den zwayen stelen In iegleichem ain fueter truchen",
+      "Item v alt spies pey dem tor / mer ain halb fass mit der ketn / mer ain armbrust",
+      "Item ain feste putzpn ryt in lingefaßt / mer . iiij . spanpet pös vnd guet",
+      "Item dy ketn zu dem prunn vnd der zygel dar zue /"
+     ]
     }
    ]
   },
@@ -67,6 +143,38 @@
      "empty_parts": null,
      "lines": [
       "[fol.1v]"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330219_p2__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-27T10:27:38+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Pfondz, Inventari"
+     ]
+    },
+    {
+     "id": "pilot2:pilot2_inv_11330219_p2__it02__r2",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 2,
+     "date": "2026-08-27T10:27:40+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      "Pfonds, Cameral"
      ]
     }
    ]

@@ -1,0 +1,204 @@
+{
+ "page": "pilot2_inv_11330759_p3",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1238,
+    3505
+   ],
+   "sent_px": [
+    1236,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.6,
+ "timestamp": "2026-08-27T10:26:40+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "2",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation"
+     },
+     {
+      "text": "Fünff Swäytzer krennckn",
+      "kind": "entry",
+      "uncertain": [
+       "krennckn"
+      ]
+     },
+     {
+      "text": "Zway guldin Rocken hab auch von",
+      "kind": "entry",
+      "uncertain": [
+       "Zway",
+       "Rocken"
+      ]
+     },
+     {
+      "text": "mein gnedigisten herrn von Osterreich",
+      "kind": "entry",
+      "uncertain": [
+       "gnedigisten",
+       "Osterreich"
+      ]
+     },
+     {
+      "text": "bechumen vnd geben .",
+      "kind": "entry",
+      "uncertain": [
+       "bechumen"
+      ]
+     },
+     {
+      "text": "In ainer Truhen daselbs in Sand",
+      "kind": "entry",
+      "uncertain": [
+       "Sand"
+      ]
+     },
+     {
+      "text": "Vlrichen kirchen xvij par laylach",
+      "kind": "entry",
+      "uncertain": [
+       "Vlrichen",
+       "kirchen"
+      ]
+     },
+     {
+      "text": "Zwelffen vnd annder boß vnd guet",
+      "kind": "entry",
+      "uncertain": [
+       "Zwelffen"
+      ]
+     },
+     {
+      "text": "Syben handtwoell vnd ain vmbschleg",
+      "kind": "entry",
+      "uncertain": [
+       "handtwoell",
+       "vmbschleg"
+      ]
+     },
+     {
+      "text": "Syben tyschtuech boß vnd guet",
+      "kind": "entry",
+      "uncertain": [
+       "tyschtuech"
+      ]
+     },
+     {
+      "text": "Aber an gelt Sand Sebastian zu",
+      "kind": "entry",
+      "uncertain": [
+       "Sand",
+       "Sebastian"
+      ]
+     },
+     {
+      "text": "gebawend iiij lb vj d",
+      "kind": "amount",
+      "amount": {
+       "numeral": "iiij ... vj",
+       "unit": "lb ... d"
+      },
+      "uncertain": [
+       "iiij lb vj d"
+      ]
+     },
+     {
+      "text": "In dem alten gebawes",
+      "kind": "rubric",
+      "uncertain": [
+       "gebawes"
+      ]
+     },
+     {
+      "text": "In der Stuben",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Drey Schlecht Tysch",
+      "kind": "entry",
+      "uncertain": [
+       "Schlecht"
+      ]
+     },
+     {
+      "text": "Ain Swartze kriegs Tafl",
+      "kind": "entry",
+      "uncertain": [
+       "Swartze",
+       "kriegs"
+      ]
+     },
+     {
+      "text": "Ain klain Esses vässl",
+      "kind": "entry",
+      "uncertain": [
+       "Esses",
+       "vässl"
+      ]
+     },
+     {
+      "text": "Ain preet Spill",
+      "kind": "entry",
+      "uncertain": [
+       "preet",
+       "Spill"
+      ]
+     },
+     {
+      "text": "Ain partheysn mit sein Zugehörung",
+      "kind": "entry",
+      "uncertain": [
+       "partheysn",
+       "Zugehörung"
+      ]
+     },
+     {
+      "text": "Ain schues khorb",
+      "kind": "entry",
+      "uncertain": [
+       "schues",
+       "khorb"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "2",
+  "Fünff Swäytzer krennckn",
+  "Zway guldin Rocken hab auch von",
+  "mein gnedigisten herrn von Osterreich",
+  "bechumen vnd geben .",
+  "In ainer Truhen daselbs in Sand",
+  "Vlrichen kirchen xvij par laylach",
+  "Zwelffen vnd annder boß vnd guet",
+  "Syben handtwoell vnd ain vmbschleg",
+  "Syben tyschtuech boß vnd guet",
+  "Aber an gelt Sand Sebastian zu",
+  "gebawend iiij lb vj d",
+  "In dem alten gebawes",
+  "In der Stuben",
+  "Drey Schlecht Tysch",
+  "Ain Swartze kriegs Tafl",
+  "Ain klain Esses vässl",
+  "Ain preet Spill",
+  "Ain partheysn mit sein Zugehörung",
+  "Ain schues khorb"
+ ]
+}

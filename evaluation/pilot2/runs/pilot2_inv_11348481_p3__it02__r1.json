@@ -1,0 +1,260 @@
+{
+ "page": "pilot2_inv_11348481_p3",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1122,
+    3292
+   ],
+   "sent_px": [
+    1122,
+    3292
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.5,
+ "timestamp": "2026-08-27T10:25:30+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation"
+     },
+     {
+      "text": "Register als her nach geschriben stet",
+      "kind": "rubric"
+     },
+     {
+      "text": "des Schloss persen :",
+      "kind": "rubric",
+      "uncertain": [
+       "persen"
+      ]
+     },
+     {
+      "text": "Hie nach ist vermerkt alles das so ich",
+      "kind": "entry"
+     },
+     {
+      "text": "hainreich von axspperg in dem Schloss",
+      "kind": "entry",
+      "uncertain": [
+       "hainreich",
+       "axspperg"
+      ]
+     },
+     {
+      "text": "persen gefunden hab . Vnd mir von",
+      "kind": "entry",
+      "uncertain": [
+       "persen"
+      ]
+     },
+     {
+      "text": "der küngspergerin nach abgang hrnsch",
+      "kind": "entry",
+      "uncertain": [
+       "küngspergerin",
+       "hrnsch"
+      ]
+     },
+     {
+      "text": "von küngsperg Irs gemahels seligen",
+      "kind": "entry",
+      "uncertain": [
+       "küngsperg"
+      ]
+     },
+     {
+      "text": "ist eingeanttwürt / Als das dem durleüch =",
+      "kind": "entry"
+     },
+     {
+      "text": "tigen hochgeborn fürsten Hertzog Sig =",
+      "kind": "entry",
+      "uncertain": [
+       "Sig"
+      ]
+     },
+     {
+      "text": "munden hertzogen ze Österreich vnd",
+      "kind": "entry",
+      "uncertain": [
+       "munden",
+       "Österreich"
+      ]
+     },
+     {
+      "text": "Grauen ze Tyrol rc meine gnedigen",
+      "kind": "entry",
+      "uncertain": [
+       "Tyrol"
+      ]
+     },
+     {
+      "text": "hern zügehört . Dasselb Schloss mir sein",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad hat eingeanttwürt in phlegs weyse",
+      "kind": "entry"
+     },
+     {
+      "text": "seinen gnaden getrewlich darmit wartten sein",
+      "kind": "entry",
+      "uncertain": [
+       "wartten"
+      ]
+     },
+     {
+      "text": "vnd hab also das hint Schloss eingenomen",
+      "kind": "entry",
+      "uncertain": [
+       "hint"
+      ]
+     },
+     {
+      "text": "an dem montag dreyzehen tag in dem",
+      "kind": "entry"
+     },
+     {
+      "text": "Monet Junio In der Jartzal nach crstige =",
+      "kind": "entry"
+     },
+     {
+      "text": "purde Tausent virhundert vnd in dem",
+      "kind": "entry"
+     },
+     {
+      "text": "sechsundvierczigisten Jare Dasselbs sas",
+      "kind": "entry",
+      "uncertain": [
+       "sas"
+      ]
+     },
+     {
+      "text": "vriedel vnd vil ander erber leüt bey gewest",
+      "kind": "entry",
+      "uncertain": [
+       "vriedel"
+      ]
+     },
+     {
+      "text": "seind / mit namen Her marckabrun von",
+      "kind": "entry",
+      "uncertain": [
+       "marckabrun"
+      ]
+     },
+     {
+      "text": "Ristein Her antoni von terlay Doctor / agiss",
+      "kind": "entry",
+      "uncertain": [
+       "Ristein",
+       "terlay",
+       "agiss"
+      ]
+     },
+     {
+      "text": "lucas massar ze triendt / lienhart vom saler",
+      "kind": "entry",
+      "uncertain": [
+       "massar",
+       "triendt",
+       "saler"
+      ]
+     },
+     {
+      "text": "Cunrat goller ganser zolln am Neseys",
+      "kind": "entry",
+      "uncertain": [
+       "Cunrat",
+       "goller",
+       "ganser",
+       "Neseys"
+      ]
+     },
+     {
+      "text": "Hainnrich von Castell zolln ze triendt",
+      "kind": "entry",
+      "uncertain": [
+       "Castell",
+       "triendt"
+      ]
+     },
+     {
+      "text": "hans stampher noder Hainnrich wirt zu",
+      "kind": "entry",
+      "uncertain": [
+       "stampher",
+       "noder"
+      ]
+     },
+     {
+      "text": "dem ochsn ze triendt / vnd sunst vil",
+      "kind": "entry",
+      "uncertain": [
+       "triendt"
+      ]
+     },
+     {
+      "text": "ander erber leüt Vnd was mir geantwürt",
+      "kind": "entry"
+     },
+     {
+      "text": "ist worden das habn die obgnten gesehen",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd beschawet /",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Register als her nach geschriben stet",
+  "des Schloss persen :",
+  "Hie nach ist vermerkt alles das so ich",
+  "hainreich von axspperg in dem Schloss",
+  "persen gefunden hab . Vnd mir von",
+  "der küngspergerin nach abgang hrnsch",
+  "von küngsperg Irs gemahels seligen",
+  "ist eingeanttwürt / Als das dem durleüch =",
+  "tigen hochgeborn fürsten Hertzog Sig =",
+  "munden hertzogen ze Österreich vnd",
+  "Grauen ze Tyrol rc meine gnedigen",
+  "hern zügehört . Dasselb Schloss mir sein",
+  "gnad hat eingeanttwürt in phlegs weyse",
+  "seinen gnaden getrewlich darmit wartten sein",
+  "vnd hab also das hint Schloss eingenomen",
+  "an dem montag dreyzehen tag in dem",
+  "Monet Junio In der Jartzal nach crstige =",
+  "purde Tausent virhundert vnd in dem",
+  "sechsundvierczigisten Jare Dasselbs sas",
+  "vriedel vnd vil ander erber leüt bey gewest",
+  "seind / mit namen Her marckabrun von",
+  "Ristein Her antoni von terlay Doctor / agiss",
+  "lucas massar ze triendt / lienhart vom saler",
+  "Cunrat goller ganser zolln am Neseys",
+  "Hainnrich von Castell zolln ze triendt",
+  "hans stampher noder Hainnrich wirt zu",
+  "dem ochsn ze triendt / vnd sunst vil",
+  "ander erber leüt Vnd was mir geantwürt",
+  "ist worden das habn die obgnten gesehen",
+  "vnd beschawet /"
+ ]
+}
