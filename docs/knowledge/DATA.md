@@ -192,8 +192,8 @@ Darunter ein zusammenhängendes Cluster zur Hochzeit Sigmunds 1484. Die Seitenza
 
 ### Für Prototyp nutzbar
 
-Sofort: **57 Burgeninventare** (Tier 1, finale Transkriptionen in Transkribus Collection 2197991).
-Mit Transkription: **Raitbuch 2** (123 Doppelseiten, Prototyp-Quelle, nicht transkribiert).
+**57 Burgeninventare** mit Arbeitstranskriptionen sind sofort verfügbar. Sie besitzen keinen dokumentierten formalen Ground-Truth-Status und folgen zwei Transkriptionskonventionen.
+**Raitbuch 2** mit 123 Doppelseiten ist als Bild- und Layoutquelle verfügbar. In Transkribus liegt noch kein Text vor. Experimentelle VLM-Ausgaben für vier Seiten sind seit 26.08.2026 vorhanden.
 Script-Output: `data/sources.json`, die CSV bereinigt und als JSON für `sources.html`.
 
 ---
@@ -213,12 +213,14 @@ Script-Output: `data/sources.json`, die CSV bereinigt und als JSON für `sources
 | Kopialbücher | 12 | 2.224 | 0 |
 | Andere (Hofordnungen, Hss.) | 13 | 882 | 0 |
 
-### Transkriptionsstatus-Realität
+### Textbestand und Referenzstatus
 
 **Erwartung (aus CSV):** 55 Burgeninventare mit "Inventaria" in Transkribiert-Spalte.
-**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen, 35.724 Wörter). 2 davon fehlen in der CSV-Markierung (A 125.3-4, A 142.1-2 mit je 2 Transkribus-Doc-IDs). Nur 3 Status "DONE", 54 "IN_PROGRESS", die aber **enthalten trotzdem vollständigen Transkriptionstext**. Status-Feld ist unzuverlässig als Qualitätsindikator. Kanonischer Wert: **57 Inventare mit Volltext.**
+**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen, 35.724 Wörter). Zwei davon fehlen in der CSV-Markierung (A 125.3-4, A 142.1-2 mit je zwei Transkribus-Doc-IDs). Drei Dokumente tragen den Workflow-Status `DONE`, 54 den Status `IN_PROGRESS`. Keines besitzt im Projekt einen dokumentierten formalen Ground-Truth-Status. Der kanonische Bestandswert lautet daher **57 Inventare mit Arbeitstranskription**.
 
-**Raitbücher:** 26 Bände digitalisiert, 6 (Nr. 1–6) haben Layout-Analyse (Baselines, Regionen), 20 (Nr. 7–26) Status "NEW". **Keines hat Transkriptionstext.**
+Im Bestand wurden zwei Transkriptionskonventionen festgestellt. Ein Vergleich über alle Dokumente benötigt eine Konventionspartitionierung und einen versionierten Adapter auf den DoCTA-Datenvertrag. Der Status `DONE` darf nicht als Ersatz für eine fachliche Abnahme verwendet werden. Referenzklassen und Evaluationsregeln stehen in `HTR-EVALUATION.md`.
+
+**Raitbücher.** 26 Bände sind digitalisiert. Sechs Bände (Nr. 1–6) haben eine Layout-Analyse mit Baselines und Regionen. Zwanzig Bände (Nr. 7–26) tragen den Status `NEW`. In der Transkribus-Collection besitzt keiner der Bände Transkriptionstext. Die VLM-Testausgaben liegen getrennt unter `experiments/transcription-test/`.
 
 ### Raitbücher in der Collection
 
@@ -324,6 +326,12 @@ Alle Punkte dieser Liste sind abgearbeitet. Die Collection-Metadaten `data/trans
 | Sigmund von Brandis | fol. 2r | Lesbar |
 | Graf Heinrich von Lupfen | fol. 3r | Lesbar |
 | [Name] | fol. 2v | Unsicher |
+
+### VLM-Transkriptionstest vom 26.08.2026
+
+Vier Raitbuch-Doppelseiten und eine Inventarseite wurden mit sechs Varianten von `gemini-3.7-flash` verarbeitet. Das Modell erkennt Leerseiten, Seitenaufteilung und grobe Eintragsstruktur. Die Varianten unterscheiden sich bei Personennamen, Datierungen und Geldbeträgen deutlich. Die beste Flash-Variante auf dem Inventar-Referenzkandidaten war V3 Few-Shot mit 17,1 Prozent strikter CER und 7,9 Prozent fairer CER. Dieser Einzelwert lässt sich wegen Textsortenunterschied und ungeklärtem Referenzstatus nicht auf Raitbuch 2 übertragen.
+
+Die Ergebnisse begründen einen Pilot für Kategorienübersicht und Adjudikation. Diplomatische Transkription und Betragserschließung benötigen einen direkten Vergleich mit spezialisiertem HTR sowie fachlich geprüfte Raitbuch-Referenzen. Details stehen in `HTR-EVALUATION.md`.
 
 ### Erste Kategorie
 

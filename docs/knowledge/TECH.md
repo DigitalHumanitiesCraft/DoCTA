@@ -124,7 +124,7 @@ Konsistent mit coOCR/HTR (externes Referenzprojekt, entwickelt von DHCraft):
 | Aspekt | Umsetzung |
 |--------|-----------|
 | Farbschema | Warm, hell |
-| Konfidenz | Grün (sicher), Gelb (prüfenswert), Rot (problematisch), kategorisch statt numerisch |
+| Prüfstatus | Grün (sicher), Gelb (prüfenswert), Rot (problematisch), an Regeln oder fachliche Entscheidung gebunden |
 | HTML | Semantisch, ARIA-Labels |
 | Layout | Desktop-First, responsiv (kein Mobile-Fokus) |
 | Typografie | Monospace für Quellentext, Sans-Serif für UI |
@@ -150,4 +150,4 @@ Browserbasierte VLM-Transkriptionsworkbench. **Externes Projekt**, nicht Teil de
 | Repo | https://github.com/DigitalHumanitiesCraft/co-ocr-htr |
 | Stack | Vanilla JS/ES6, OpenSeadragon, kein Build-Prozess |
 
-DoCTA übernimmt von coOCR/HTR: Farbschema, kategorielle Konfidenz, Design-Sprache. Nicht den Code.
+DoCTA übernimmt die visuelle Design-Sprache von coOCR/HTR. Die frühere kategorielle Konfidenz wird als regelgebundener Prüfstatus weitergeführt. Der Code wird nicht übernommen.

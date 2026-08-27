@@ -1,13 +1,38 @@
 # JOURNAL: Entscheidungen, Exploration, offene Fragen
 
-## Phasenstatus (Stand 19.02.2026)
+## Phasenstatus (Stand 26.08.2026)
 
 | Phase | Status | Ergebnis |
 |-------|--------|----------|
 | 1. Preparation | ✓ | Quelldokumente gesammelt (projektintern, nicht im öffentlichen Repo) |
 | 2. Exploration | ✓ | SiCProD API geprobt, CSV analysiert, Transkribus Collection kartiert (115 Dok, 12.236 S.), IIIF verifiziert |
-| 3. Destillation | ✓ | 7 Knowledge-Dateien plus ein projektinterner Implementierungsplan (`IMPLEMENTATION.md`, ebenfalls nicht im öffentlichen Repo) |
+| 3. Destillation | ✓ | 8 Knowledge-Dateien plus ein projektinterner Implementierungsplan (`IMPLEMENTATION.md`, ebenfalls nicht im öffentlichen Repo) |
 | 4. Implementation | ✓ | Acht Seiten gebaut, Daten eingebunden, seit 19.02.2026 unter https://dhcraft.org/DoCTA/ öffentlich |
+| HTR-Iteration | ◐ | Fünf Testbilder mit sechs Flash-Varianten ausgewertet; Spezial-HTR-Vergleich und fachliche Raitbuch-Referenz offen |
+
+---
+
+## Promptotyping-Iteration (26.08.2026)
+
+### VLM-Transkriptionstest
+
+Der Test verarbeitet vier Doppelseiten aus Raitbuch 2 und eine Inventarseite mit sechs Varianten von `gemini-3.7-flash`. Rohoutputs, Metriken und Synopse-Viewer liegen unter `experiments/transcription-test/`. Die technische Funktion wurde beobachtet. Fachliche Prüfung und Nutzerabnahme stehen aus.
+
+| Befund | Konsequenz |
+|--------|------------|
+| V3 Few-Shot erreicht auf dem Inventar-Referenzkandidaten die beste strikte und faire CER | V3 wird als aktuelle Flash-Entwicklungskonfiguration weitergeführt |
+| V6 Bildverbesserung erreicht die höchste Wortüberlappung und die zweitbeste faire CER | V6 bleibt Vergleichskandidat für schwer lesbare Seiten |
+| V4 Seitenteilung verschlechtert die Inventarwerte | Ausschnitte werden nur gezielt für schwierige Regionen eingesetzt |
+| Raitbuch-Ausgaben variieren bei Namen, Jahreszahlen und Beträgen | Flash eignet sich derzeit für Struktur- und Kategoriensichtung; Forschungsdaten benötigen Adjudikation |
+| Die leere Testseite wird von allen strukturierten Varianten korrekt erkannt | Leerseiten- und Layout-Triage kann in den Bandlauf übernommen werden |
+
+### Korrektur des Referenzbegriffs
+
+Die 57 Inventare enthalten Arbeitstranskriptionen. Drei Dokumente tragen in Transkribus den Status `DONE`, 54 den Status `IN_PROGRESS`. Keines besitzt einen im Projekt dokumentierten formalen Ground-Truth-Status. Zusätzlich liegen zwei Transkriptionskonventionen vor. Der Viewer-Begriff „Ground Truth“ wird methodisch als **Inventar-Referenzkandidat** interpretiert, bis Konvention und fachliche Abnahme dokumentiert sind.
+
+### Methodische Entscheidung
+
+Die Produktionsentscheidung wird aufgabenspezifisch getroffen. Kategorienübersicht, diplomatische Transkription und Betragserschließung erhalten getrennte Prüfungen. Der nächste Modellvergleich verwendet denselben gesperrten Raitbuch-Satz für Flash, ein stärkeres Vision-Language-Modell und ein spezialisiertes Transkribus-Modell. Divergenzen werden mit Bildausschnitten zur fachlichen Adjudikation vorgelegt. Der vollständige Prüfvertrag steht in `HTR-EVALUATION.md`.
 
 ---
 
@@ -112,14 +137,14 @@ Die genannten Quelldokumente liegen projektintern und sind im öffentlichen Repo
 
 ---
 
-## Explorationsergebnisse: Transkribus (17.02.2026)
+## Explorationsergebnisse Transkribus (17.02.2026, aktualisiert 26.08.2026)
 
 ### Collection 2197991: Erwartung vs. Realität
 
 | Was wir dachten | Was wir fanden | Konsequenz |
 |----------------|---------------|------------|
-| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.724 Wörter). 3× DONE, 54× IN_PROGRESS. | Status-Feld unzuverlässig, nach Zeilenanzahl filtern |
-| Raitbücher „nicht transkribiert" | **Bestätigt.** 26 Raitbücher, 8.561 Seiten, 0 Zeilen Text. Nr. 1–6 haben Layout-Analyse. | HTR muss vor Prototyp laufen (mindestens für RB2) |
+| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.724 Wörter). 3× DONE, 54× IN_PROGRESS, kein dokumentierter formaler GT-Status. | Als Arbeitstranskriptionen führen und nach Konvention partitionieren |
+| Raitbücher „nicht transkribiert" | **Für Transkribus bestätigt.** 26 Raitbücher, 8.561 Seiten, 0 Zeilen Text. Nr. 1–6 haben Layout-Analyse. Seit 26.08.2026 liegen experimentelle VLM-Ausgaben für vier RB2-Seiten vor. | Spezialisiertes HTR und fachlich geprüfte Raitbuch-Referenz vergleichen |
 | Collection-Umfang unklar | **115 Dokumente, 12.236 Seiten.** 64 Inventare + 26 Raitbücher + 12 Kopialbücher + 13 Andere | Deutlich mehr Material als erwartet |
 | IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen, kein Pre-Fetch für Bilder nötig |
 | PAGE-XML Format unbekannt | Strukturiert: Page → TextRegion (Coords) → TextLine (Coords, Baseline, Unicode) | Parser-Logik klar, Pre-Fetch-Script kann geschrieben werden |

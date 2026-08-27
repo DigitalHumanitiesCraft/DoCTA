@@ -26,7 +26,7 @@ zurücknimmt, kippt die Konsequenz für alle anderen.
 | Muster | Umgesetzt in | Anmerkung |
 |---|---|---|
 | Knowledge Vault als eigene Seite | `knowledge.html` | Sidebar plus Markdown-Rendering über marked.js, Hash-Routing |
-| Kategorielle Konfidenz statt Prozentwerten | Pipeline-Demo, CSS-Tokens | Siehe Abschnitt 4 |
+| Regelgebundener Prüfstatus statt Prozentwerten | Pipeline-Demo, CSS-Tokens | Siehe Abschnitt 4 |
 | CSS Custom Properties als Design Tokens | `css/styles.css` | Farben, Abstände, Typografie, Radien |
 | IndexedDB-Caching | `js/data-loader.js` | Mit Timeout, `onblocked`-Behandlung und Fallback |
 | Warme Archiv-Palette | `css/styles.css` | Hintergrund `#faf8f5` identisch zu coOCR/HTR, Akzent `#8b5e3c` statt Gold |
@@ -51,18 +51,18 @@ weniger Knoten als die Obergrenze, weil Knoten ohne Index-Eintrag und ohne sicht
 herausfallen. Die Beschriftung nennt deshalb die tatsächliche Zahl. Und die Relationstypen `salary`
 und `event` sind in dieser Darstellung prinzipiell nicht abbildbar.
 
-## 4. Konfidenz: kategoriell statt numerisch
+## 4. Regelgebundener Prüfstatus
 
-Extrahierte Entitäten und Relationen tragen `sicher`, `prüfenswert` oder `problematisch` statt
-Prozentwerten.
+Extrahierte Entitäten und Relationen tragen `sicher`, `prüfenswert` oder `problematisch`. Der aktuelle
+Prototyp übernimmt diese Einstufung noch aus dem Modelloutput. Diese Implementierung besitzt keine
+eigene epistemische Geltung.
 
-Der Grund ist epistemologisch, nicht ästhetisch: Ein Sprachmodell, das seine eigene Ausgabe mit
-"87 % Konfidenz" bewertet, erzeugt eine Scheingenauigkeit, die zu Automation Bias einlädt. Eine
-dreistufige Skala macht sichtbar, dass es sich um eine Einschätzung handelt, die fachliche Prüfung
-nicht ersetzt. Siehe CONTEXT.md zur epistemischen Asymmetrie.
-
-Die Einschränkung bleibt bestehen und ist keine Gestaltungsfrage: auch die kategorielle Einstufung
-stammt vom Modell selbst.
+Die nächste Iteration bindet die Darstellung an dokumentierte Workflow-Status. `sicher` setzt eine
+deterministische Prüfung oder eine fachliche Verifikation voraus. `prüfenswert` bezeichnet einen
+offenen Bild- oder Quellenabgleich. `problematisch` markiert einen erkannten Widerspruch, eine starke
+Modelldivergenz oder eine verletzte Regel. Prozentuale Selbsteinschätzungen eines Sprachmodells
+werden nicht angezeigt. Siehe CONTEXT.md zur epistemischen Asymmetrie und HTR-EVALUATION.md zum
+Prüfvertrag.
 
 ## 5. Verworfen und offen
 

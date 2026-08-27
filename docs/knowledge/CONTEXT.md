@@ -124,18 +124,23 @@ Modelliert Ereignisse formal: Trigger-Verb → Agent → Patient. Annotationspla
 
 LLMs liefern keine verlässliche Selbsteinschätzung ihrer Outputs. Das ist eine **architektonische Eigenschaft**, kein temporäres Defizit. Referenzen: Zheng et al. 2023 (systematische Biases), Wang et al. 2024 (Position Bias), Ye et al. 2024 (Authority Bias).
 
-**Konsequenz für den Prototyp:** Numerische Konfidenzwerte (0.87, 0.93) sind irreführend. Stattdessen **kategorielle Konfidenz**: sicher / prüfenswert / problematisch.
+**Konsequenz für den Prototyp:** Numerische Selbsteinschätzungen eines Modells (0.87, 0.93) sind irreführend. Die Kategorien sicher, prüfenswert und problematisch müssen an beobachtbare Prüfregeln oder eine menschliche Entscheidung gebunden sein. Eine Modellaussage über eigene Unsicherheit dient ausschließlich der Triage.
 
 ### Critical Expert in the Loop
 
-Fachwissenschaftlerin validiert, nicht nur kontrolliert. Das Forschungstool unterstützt menschliche Expertise, ersetzt sie nicht. Die Aggregation von Practices zu Events ist eine interpretatorische Leistung, die nicht automatisiert werden kann.
+Die Fachwissenschaftlerin übernimmt die Geltungsentscheidung. Das Forschungstool liefert Faksimile, konkurrierende Lesarten, Provenienz und Prüfsignale. Die Aggregation von Practices zu Events bleibt eine interpretatorische Leistung mit dokumentierter fachlicher Verantwortung.
 
-### Hybride Validierung (aus coOCR/HTR)
+### Hybride Prüfung (aus coOCR/HTR)
 
-| Schicht | Methode | Beispiel |
-|---------|---------|---------|
-| 1: Deterministisch | Regelbasiert | Datumsformate, Währungsangaben, Tabellenstruktur |
-| 2: Optional | LLM-as-Judge (4 Perspektiven) | Paläographisch, linguistisch, strukturell, domänenspezifisch |
+| Status | Methode | Geltung |
+|--------|---------|---------|
+| Erzeugt | HTR oder Vision-Language-Modell | Modellvorschlag mit vollständiger Provenienz |
+| Automatisch geprüft | Regeln, Schemata, Summen und Modellvergleich | Markierte Konsistenz oder Divergenz |
+| Agentisch geprüft | Paläographische, linguistische, strukturelle und domänenspezifische Kritik | Begründeter Prüfhinweis |
+| Am Faksimile verifiziert | Menschlicher Bild-Text-Abgleich | Verifizierte Referenz |
+| Fachlich akzeptiert | Projektleitung oder benannte Fachexpertise | Freigegebene Forschungsdaten |
+
+Ein LLM-as-Judge kann Widersprüche und auffällige Stellen priorisieren. Es verleiht einem Output keinen Wahrheits- oder Freigabestatus. Für die Transkription gelten die Referenzklassen und Kennzahlen aus `HTR-EVALUATION.md`.
 
 ### Methodologische Positionierung
 
