@@ -29,8 +29,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const PAGES = ['index.html', 'pipeline.html', 'sources.html', 'search.html',
-               'viewer.html', 'network.html', 'knowledge.html', 'help.html'];
+const PAGES = ['index.html', 'viewer.html', 'benchmark.html',
+               'knowledge.html', 'about.html'];
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
 const browser = await chromium.launch();

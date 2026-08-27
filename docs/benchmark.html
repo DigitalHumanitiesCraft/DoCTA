@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTR-Benchmark | DoCTA</title>
-  <meta name="description" content="Versioniertes Benchmark der VLM-Transkription: Prompt-Iterationen, CER gegen Referenzseiten, Bild-Text-Synopse zur Adjudikation.">
+  <meta name="description" content="Versioniertes Benchmark der VLM-Transkription: Prompt-Iterationen, CER gegen Referenzseiten, Konsistenz wiederholter Läufe.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/benchmark.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -24,62 +23,50 @@
     </div>
   </nav>
 
-  <main id="main" class="container-fluid py-4 px-3">
-    <header class="mb-3">
-      <h1 class="h3">HTR-Benchmark</h1>
-      <p class="text-body-secondary mb-0">Versionierte Prompt-Iterationen der VLM-Transkription, gemessen an Referenzseiten und an der Stabilit&auml;t wiederholter L&auml;ufe. Jede best&auml;tigte oder korrigierte Seite wird Ground Truth und zugleich ein St&uuml;ck Edition.</p>
+  <main id="main" class="container py-4">
+    <header class="mb-4">
+      <h1>HTR-Benchmark</h1>
+      <p class="text-body-secondary mb-0">Versionierte Prompt-Iterationen der VLM-Transkription, gemessen an Referenzseiten und an der Stabilität wiederholter Läufe. Die Seitenansicht mit Bild-Text-Synopse liegt im <a href="viewer.html">Viewer</a>.</p>
     </header>
 
-    <section class="card mb-3">
+    <section class="card mb-4">
       <div class="card-body py-3">
         <div class="row g-3" id="agg-cards"></div>
         <p class="small text-body-secondary mt-2 mb-0" id="agg-note"></p>
       </div>
     </section>
 
-    <section class="bench-app card" aria-label="Bild-Text-Synopse">
-      <div class="bench-toolbar border-bottom">
-        <span class="pager">
-          <button id="prev" type="button" class="btn btn-sm btn-outline-secondary" aria-label="Vorherige Seite">&#8592;</button>
-          <select id="item-select" class="form-select form-select-sm d-inline-block w-auto" aria-label="Seite w&auml;hlen"></select>
-          <button id="next" type="button" class="btn btn-sm btn-outline-secondary" aria-label="N&auml;chste Seite">&#8594;</button>
-        </span>
-        <span class="small text-body-secondary" id="page-meta"></span>
-      </div>
-      <div id="metrics" class="border-bottom" aria-label="Metriken"></div>
-      <div class="bench-main">
-        <section id="facsimile" aria-label="Faksimile">
-          <div id="zoombar">
-            <button id="zoom-out" type="button" class="btn btn-sm btn-light" aria-label="Verkleinern">&#8722;</button>
-            <button id="zoom-fit" type="button" class="btn btn-sm btn-light" aria-label="Einpassen">Fit</button>
-            <button id="zoom-in" type="button" class="btn btn-sm btn-light" aria-label="Vergr&ouml;&szlig;ern">+</button>
-          </div>
-          <div id="osd"></div>
-        </section>
-        <section id="panel" aria-label="Transkriptionen">
-          <div id="tabs" role="tablist" aria-label="Iterationen"></div>
-          <div id="repeats"></div>
-          <div id="transcript" role="tabpanel"></div>
-        </section>
+    <section class="mb-4">
+      <h2 class="h5 mb-2">Referenzseiten</h2>
+      <p class="small text-body-secondary mb-2">Inventarseiten mit Transkribus-Referenz (Status DONE). Zeichenfehlerrate (CER) als Mittel mit Spannweite über die Wiederholungen; fair = symmetrisch normalisiert.</p>
+      <div class="table-responsive">
+        <table class="table table-sm table-hover" id="ref-table"></table>
       </div>
     </section>
 
-    <section class="card mt-3">
+    <section class="mb-4">
+      <h2 class="h5 mb-2">Phänomenseiten ohne Referenz</h2>
+      <p class="small text-body-secondary mb-2">Raitbuch- und Inventarseiten, ausgewählt nach Schrift- und Layoutphänomenen. Gemessen wird die Übereinstimmung der Wiederholungen untereinander, getrennt nach Wort- und Zahltokens.</p>
+      <div class="table-responsive">
+        <table class="table table-sm table-hover" id="cons-table"></table>
+      </div>
+    </section>
+
+    <section class="card">
       <div class="card-body">
         <h2 class="h5 mb-2">Protokoll</h2>
-        <p class="small mb-2">Prompts sind versioniert und nach ihrem ersten Lauf eingefroren; jede &Auml;nderung ist eine neue Iteration mit dokumentierter Begr&uuml;ndung. Jede Bedingung l&auml;uft mehrfach, weil identische Anfragen auch bei Temperatur 0 streuen; eine Rangfolge aus Einzell&auml;ufen w&auml;re Rauschen. Auf Seiten mit Transkribus-Referenz wird die Zeichenfehlerrate (CER) gemessen, auf allen anderen die &Uuml;bereinstimmung der Wiederholungen untereinander, getrennt nach Wort- und Zahltokens.</p>
-        <p class="small mb-2">Die Referenzen sind selbst Gegenstand der Pr&uuml;fung: Der Transkribus-Status DONE belegt keine fachliche Abnahme, zwei Referenzseiten haben sich als fast leer erwiesen und fallen aus der Messung. Bekannte Fehlermechanismen des Modells sind der Modernisierungs-Prior, gegl&auml;ttete, arithmetisch stimmige, aber falsche Bilanzen und stiller Zeilenausfall.</p>
+        <p class="small mb-2">Prompts sind versioniert und nach ihrem ersten Lauf eingefroren; jede Änderung ist eine neue Iteration mit dokumentierter Begründung. Jede Bedingung läuft mehrfach, weil identische Anfragen auch bei Temperatur 0 streuen; eine Rangfolge aus Einzelläufen wäre Rauschen.</p>
+        <p class="small mb-2">Die Referenzen sind selbst Gegenstand der Prüfung: Der Transkribus-Status DONE belegt keine fachliche Abnahme, zwei Referenzseiten haben sich als fast leer erwiesen und fallen aus der Messung. Bekannte Fehlermechanismen des Modells sind der Modernisierungs-Prior, geglättete, arithmetisch stimmige, aber falsche Bilanzen und stiller Zeilenausfall.</p>
         <p class="small mb-0">Rohdaten, Prompts und Runner: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/experiments/benchmark" target="_blank" rel="noopener">experiments/benchmark</a> im Repositorium. Referenzklassen und Freigabeprotokoll: <a href="knowledge.html">Knowledge Vault</a>, HTR-EVALUATION.</p>
       </div>
     </section>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Impressum</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
-  <script src="lib/openseadragon.min.js"></script>
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     initNav('benchmark');

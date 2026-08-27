@@ -91,24 +91,25 @@ Erwartete Ladezeit: ~1–3 Sekunden (1–1.5 MB gzipped über GitHub Pages CDN).
 ## Projektstruktur
 
 ```
-DoCTA/
-├── index.html          # Landing + Navigation + Dashboard
-├── network.html        # Netzwerk-Explorer (Cytoscape.js)
-├── search.html         # Facettierte Suche
-├── sources.html        # Quellenübersicht (312 Einträge)
-├── viewer.html         # Quellen-Explorer (OpenSeadragon + Transkription)
-├── pipeline.html       # Pipeline-Demo (Schritt-für-Schritt)
+DoCTA/docs/             # Published site (GitHub Pages serves docs/ on main)
+├── index.html          # Start: Dashboard + Quellenübersicht mit Suche und Filtern
+├── viewer.html         # Quellen-Explorer (OpenSeadragon + Transkription), Ort der Kuration
+├── benchmark.html      # HTR-Benchmark: Ergebnisse der Prompt-Iterationen
 ├── knowledge.html      # Knowledge Vault (Promptotyping-Wissensbasis)
-├── help.html           # Hilfe & Anleitung
+├── about.html          # About, Bedienung, Datenquellen, Impressum
 ├── css/styles.css      # Einheitliches Design
 ├── js/                 # ES6 Module, nur was mehrere Seiten teilen
 │   ├── app.js          # Navigation, Beta-Banner, Footer
+│   ├── benchmark.js    # Benchmark-Tabellen aus data/benchmark/summary.json
 │   ├── data-loader.js  # Fetch JSON, IndexedDB-Cache
 │   └── utils.js        # Formatierung, Sortierung, Escaping
 ├── data/               # Pre-processed JSON (git-tracked)
-│   └── demo/           # NER-Demo-Daten für pipeline.html und viewer.html
+│   ├── benchmark/      # Export des HTR-Benchmarks (summary + runs)
+│   └── demo/           # NER-Demo-Daten
 ├── lib/                # Vendored: bootstrap, cytoscape.esm.min.mjs,
 │                       #   openseadragon.min.js, marked.min.js
+DoCTA/
+├── experiments/        # VLM-Transkriptionstest und Prompt-Benchmark (Labor)
 ├── scripts/            # Python Build-Time Scripts
 └── knowledge/          # Promptotyping-Dokumentation
 ```

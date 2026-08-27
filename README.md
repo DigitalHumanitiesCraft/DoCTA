@@ -65,7 +65,7 @@ Core principle: *Documents as Source of Truth, Code as Disposable Artifact.*
 ```
 DoCTA/
 ├── docs/               Published site (GitHub Pages serves this folder)
-│   ├── *.html          8 pages (index, pipeline, sources, search, viewer, network, knowledge, help)
+│   ├── *.html          5 pages (index with sources+search, viewer, benchmark, knowledge, about)
 │   ├── css/styles.css  Design system (CSS custom properties, entity/confidence colors)
 │   ├── js/             ES6 modules (app.js, data-loader.js, utils.js)
 │   ├── lib/            Vendored dependencies

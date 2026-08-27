@@ -4,15 +4,11 @@
  */
 
 const NAV_ITEMS = [
-  { href: 'index.html', label: 'Dashboard', id: 'dashboard' },
-  { href: 'pipeline.html', label: 'Pipeline', id: 'pipeline' },
-  { href: 'sources.html', label: 'Quellen', id: 'sources' },
-  { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
-  { href: 'search.html', label: 'Suche', id: 'search' },
+  { href: 'index.html', label: 'Start', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
-  { href: 'network.html', label: 'Netzwerk', id: 'network' },
+  { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
   { href: 'knowledge.html', label: 'Knowledge', id: 'knowledge' },
-  { href: 'help.html', label: 'Hilfe', id: 'help' },
+  { href: 'about.html', label: 'About', id: 'about' },
 ];
 
 /**

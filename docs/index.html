@@ -35,7 +35,7 @@
         <h2 class="h5 mb-2">Editionspipeline</h2>
         <p class="small text-body-secondary mb-3">Jede Stufe ist versioniert und überprüfbar; die fachliche Abnahme durch die Projektleitung erzeugt Ground Truth, verbessert die Messbasis und ist zugleich Editionsfortschritt.</p>
         <div class="pipeline-steps">
-          <a href="sources.html" class="pipeline-step pipeline-step--completed">
+          <a href="#quellen" class="pipeline-step pipeline-step--completed">
             <span class="pipeline-step__number">Stufe 1</span>
             <span class="pipeline-step__label">Quellen</span>
           </a>
@@ -43,7 +43,7 @@
             <span class="pipeline-step__number">Stufe 2</span>
             <span class="pipeline-step__label">VLM-Transkription</span>
           </a>
-          <a href="benchmark.html" class="pipeline-step pipeline-step--active">
+          <a href="viewer.html" class="pipeline-step pipeline-step--active">
             <span class="pipeline-step__number">Stufe 3</span>
             <span class="pipeline-step__label">Validierung &amp; Ground Truth</span>
           </a>
@@ -61,32 +61,7 @@
 
     <!-- Stats Dashboard -->
     <section class="mb-4">
-      <h2 class="h5 mb-3">Datenbasis</h2>
       <div class="row g-3" id="stats-grid">
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-persons">–</div>
-              <div class="stat-label">Personen (SiCProD)</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-relations">–</div>
-              <div class="stat-label">Relationen</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-places">–</div>
-              <div class="stat-label">Orte</div>
-            </div>
-          </div>
-        </div>
         <div class="col-6 col-md-4 col-lg-2">
           <div class="card text-center">
             <div class="card-body py-3">
@@ -106,6 +81,30 @@
         <div class="col-6 col-md-4 col-lg-2">
           <div class="card text-center">
             <div class="card-body py-3">
+              <div class="stat-value" id="stat-persons">–</div>
+              <div class="stat-label">Personen (SiCProD)</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-places">–</div>
+              <div class="stat-label">Orte</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
+              <div class="stat-value" id="stat-relations">–</div>
+              <div class="stat-label">Relationen</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center">
+            <div class="card-body py-3">
               <div class="stat-value" id="stat-functions">–</div>
               <div class="stat-label">Funktionen</div>
             </div>
@@ -115,50 +114,49 @@
       <p class="small text-body-secondary mt-2 mb-0" id="stats-error"></p>
     </section>
 
-    <!-- Navigation Cards -->
-    <section class="mb-4">
-      <h2 class="h5 mb-3">Bereiche erkunden</h2>
-      <div class="row g-3">
-        <div class="col-md-6 col-lg-4">
-          <a href="benchmark.html" class="card card-clickable h-100">
-            <div class="card-body">
-              <h3 class="h6 mb-1">HTR-Benchmark</h3>
-              <p class="small text-body-secondary mb-0">Versionierte Prompt-Iterationen der VLM-Transkription, Bild-Text-Synopse zur fachlichen Abnahme</p>
-            </div>
-          </a>
+    <!-- Sources with integrated search -->
+    <section class="mb-4" id="quellen">
+      <h2 class="h5 mb-2">Quellen</h2>
+      <p class="small text-body-secondary mb-3">Rechnungen, Inventare, Kopialbücher und Hofordnungen aus dem Tiroler Landesarchiv. Quellen mit Volltext öffnen die Synopse aus Digitalisat und Transkription im Viewer.</p>
+
+      <div class="row g-2 mb-3 align-items-center">
+        <div class="col-md-5">
+          <input type="search" class="form-control" id="search-input" placeholder="Signatur, Titel oder Datierung suchen..." aria-label="Quellensuche">
         </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="sources.html" class="card card-clickable h-100">
-            <div class="card-body">
-              <h3 class="h6 mb-1">Quellenübersicht</h3>
-              <p class="small text-body-secondary mb-0">Raitbücher, Inventare, Kopialbücher, Hofordnungen. Filterbar und sortierbar</p>
-            </div>
-          </a>
+        <div class="col-md-3">
+          <select class="form-select" id="filter-kategorie" aria-label="Kategorie filtern">
+            <option value="">Alle Kategorien</option>
+          </select>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="viewer.html" class="card card-clickable h-100">
-            <div class="card-body">
-              <h3 class="h6 mb-1">Quellen-Explorer</h3>
-              <p class="small text-body-secondary mb-0">Digitalisat neben Transkription für die Inventare mit Volltext</p>
-            </div>
-          </a>
+        <div class="col-md-2">
+          <select class="form-select" id="filter-tier" aria-label="Verfügbarkeit filtern">
+            <option value="">Alle Tiers</option>
+            <option value="1">Tier 1: Transkription</option>
+            <option value="2">Tier 2: Digitalisiert</option>
+            <option value="3">Tier 3: Im Archiv</option>
+          </select>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="pipeline.html" class="card card-clickable h-100">
-            <div class="card-body">
-              <h3 class="h6 mb-1">Pipeline-Demo</h3>
-              <p class="small text-body-secondary mb-0">Quelle → Transkription → Entitäten → Relationen → Netzwerk am Beispiel des Inventars von Schloss Thaur</p>
-            </div>
-          </a>
+        <div class="col-md-2 text-end">
+          <span class="small text-body-secondary" id="result-count"></span>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="knowledge.html" class="card card-clickable h-100">
-            <div class="card-body">
-              <h3 class="h6 mb-1">Knowledge Vault</h3>
-              <p class="small text-body-secondary mb-0">Promptotyping-Dokumente: Anforderungen, Daten, Entscheidungen, Evaluationsprotokoll</p>
-            </div>
-          </a>
-        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover table-sm" id="sources-table" aria-label="Quellenübersicht">
+          <thead class="table-light">
+            <tr>
+              <th data-sort="kategorie" tabindex="0" aria-sort="none">Kategorie <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="signatur" tabindex="0" aria-sort="none">Signatur <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="titel" tabindex="0" aria-sort="none">Titel <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="datierung" tabindex="0" aria-sort="none">Datierung <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="seiten" tabindex="0" aria-sort="none">Seiten <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th>Aktion</th>
+            </tr>
+          </thead>
+          <tbody id="sources-body">
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -166,20 +164,21 @@
     <section class="card">
       <div class="card-body">
         <h2 class="h5 mb-2">Methode</h2>
-        <p class="small mb-2">DoCTA überführt die Digitalisate der Transkribus-Collection in Forschungsdaten und eine digitale Edition. Vision-Language-Modelle transkribieren, versionierte Prompts mit messbarer Qualität steuern die Erkennung, und die fachliche Abnahme bleibt bei der Projektleitung: jede geprüfte Seite wird Ground Truth und zugleich Teil der Edition. Der gesamte Weg ist als <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>-Fallstudie im <a href="knowledge.html">Knowledge Vault</a> dokumentiert.</p>
+        <p class="small mb-2">DoCTA überführt die Digitalisate der Transkribus-Collection in Forschungsdaten und eine digitale Edition. Vision-Language-Modelle transkribieren, versionierte Prompts mit messbarer Qualität steuern die Erkennung (<a href="benchmark.html">Benchmark</a>), und die fachliche Abnahme bleibt bei der Projektleitung: jede geprüfte Seite wird Ground Truth und zugleich Teil der Edition (<a href="viewer.html">Viewer</a>). Der gesamte Weg ist als <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>-Fallstudie im <a href="knowledge.html">Knowledge Vault</a> dokumentiert.</p>
         <p class="small text-body-secondary mb-0">Datenquellen: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW), Transkribus (READ-COOP), Tiroler Landesarchiv.</p>
       </div>
     </section>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Impressum</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner, formatNumber } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
+    import { escapeHTML, tierBadge, formatDate, debounce } from './js/utils.js';
 
     initNav('dashboard');
     initBanner();
@@ -203,7 +202,154 @@
       }
     }
 
+    let allSources = [];
+    let sortKey = 'signatur';
+    let sortDir = 1;
+
+    function renderTable(sources) {
+      const tbody = document.getElementById('sources-body');
+      document.getElementById('result-count').textContent = `${sources.length.toLocaleString('de-AT')} Quellen`;
+
+      if (sources.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="text-body-secondary text-center py-4">Keine Quellen gefunden</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = sources.map(s => {
+        let action = '';
+        if (s.transkribus && s.transkribus.has_text) {
+          action = `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Öffnen</a>`;
+        } else if (s.tier === 1 || s.tier === 2) {
+          action = `<span class="small text-body-secondary">Nur Digitalisat</span>`;
+        }
+        return `<tr>
+          <td>${escapeHTML(s.kategorie)}</td>
+          <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
+          <td>${escapeHTML(s.titel)}</td>
+          <td class="small">${escapeHTML(formatDate(s.datierung))}</td>
+          <td class="small">${s.seiten != null ? s.seiten : '–'}</td>
+          <td>${tierBadge(s.tier)}</td>
+          <td>${action}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    function getFilteredSources() {
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      const katFilter = document.getElementById('filter-kategorie').value;
+      const tierFilter = document.getElementById('filter-tier').value;
+
+      let filtered = allSources;
+
+      if (query) {
+        filtered = filtered.filter(s =>
+          s.signatur.toLowerCase().includes(query) ||
+          s.titel.toLowerCase().includes(query) ||
+          (s.datierung.raw || '').toLowerCase().includes(query)
+        );
+      }
+
+      if (katFilter) {
+        filtered = filtered.filter(s => s.kategorie === katFilter);
+      }
+
+      if (tierFilter) {
+        filtered = filtered.filter(s => s.tier === parseInt(tierFilter));
+      }
+
+      filtered.sort((a, b) => {
+        let va = a[sortKey];
+        let vb = b[sortKey];
+        if (sortKey === 'datierung') {
+          va = a.datierung.start || 0;
+          vb = b.datierung.start || 0;
+        }
+        if (sortKey === 'seiten') {
+          va = va || 0;
+          vb = vb || 0;
+        }
+        if (typeof va === 'string') {
+          return va.localeCompare(vb, 'de', { numeric: true }) * sortDir;
+        }
+        return ((va || 0) - (vb || 0)) * sortDir;
+      });
+
+      return filtered;
+    }
+
+    function update() {
+      renderTable(getFilteredSources());
+    }
+
+    function updateSortIndicators() {
+      document.querySelectorAll('th[data-sort]').forEach(h => {
+        const icon = h.querySelector('.sort-icon');
+        if (h.dataset.sort === sortKey) {
+          h.classList.add('sorted');
+          h.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+          if (icon) icon.textContent = sortDir === 1 ? '↑' : '↓';
+        } else {
+          h.classList.remove('sorted');
+          h.setAttribute('aria-sort', 'none');
+          if (icon) icon.textContent = '↕';
+        }
+      });
+    }
+
+    function sortBy(th) {
+      const key = th.dataset.sort;
+      if (sortKey === key) {
+        sortDir *= -1;
+      } else {
+        sortKey = key;
+        sortDir = 1;
+      }
+      updateSortIndicators();
+      update();
+    }
+
+    document.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => sortBy(th));
+      th.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          sortBy(th);
+        }
+      });
+    });
+
+    document.getElementById('search-input').addEventListener('input', debounce(update, 200));
+    document.getElementById('filter-kategorie').addEventListener('change', update);
+    document.getElementById('filter-tier').addEventListener('change', update);
+
+    async function initSources() {
+      try {
+        allSources = await loadJSON('data/sources.json');
+
+        const categories = [...new Set(allSources.map(s => s.kategorie))].sort();
+        const katSelect = document.getElementById('filter-kategorie');
+        categories.forEach(cat => {
+          const opt = document.createElement('option');
+          opt.value = cat;
+          opt.textContent = `${cat} (${allSources.filter(s => s.kategorie === cat).length})`;
+          katSelect.appendChild(opt);
+        });
+
+        updateSortIndicators();
+        update();
+      } catch (err) {
+        const errTr = document.createElement('tr');
+        const errTd = document.createElement('td');
+        errTd.colSpan = 7;
+        errTd.className = 'text-body-secondary text-center py-4';
+        errTd.textContent = `Fehler beim Laden: ${err.message}`;
+        errTr.appendChild(errTd);
+        document.getElementById('sources-body').replaceChildren(errTr);
+      }
+    }
+
     loadStats();
+    initSources();
   </script>
 </body>
 </html>

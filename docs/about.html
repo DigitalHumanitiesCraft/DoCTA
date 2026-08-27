@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | DoCTA</title>
+  <meta name="description" content="Über DoCTA: Projekt, Bedienung, Datenquellen, Lizenz und Impressum.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4">
+    <h1>About</h1>
+
+    <section class="card mb-3">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Projekt</h2>
+        <p class="small mb-2">DoCTA (Doing Court in the Tyrolean Alps) erschließt höfische Praktiken am Hof Sigmunds von Tirol (1427–1496) aus Rechnungen, Inventaren, Kopialbüchern und Hofordnungen des Tiroler Landesarchivs. Diese Site ist die DH-Komponente des Projekts: eine agentische Editionspipeline, die die Transkribus-Digitalisate in verlässliche Forschungsdaten und eine digitale Edition überführt.</p>
+        <p class="small mb-0">Projektleitung: Universität Salzburg. Digitale Umsetzung: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a>. Der Entwicklungsweg ist als <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>-Fallstudie im <a href="knowledge.html">Knowledge Vault</a> dokumentiert.</p>
+      </div>
+    </section>
+
+    <section class="card mb-3">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Bedienung</h2>
+        <ul class="small mb-0">
+          <li>Die <a href="index.html">Startseite</a> zeigt alle Quellen mit Suche und Filtern; Quellen mit Volltext öffnen die Synopse aus Digitalisat und Transkription im <a href="viewer.html">Viewer</a>.</li>
+          <li>Der Viewer stellt Digitalisat und Transkription nebeneinander; hier findet die fachliche Prüfung und Korrektur statt.</li>
+          <li>Das <a href="benchmark.html">Benchmark</a> dokumentiert die Qualität der VLM-Transkription über versionierte Prompt-Iterationen.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card mb-3">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Datenquellen und Rechte</h2>
+        <p class="small mb-2">Prosopographische Daten: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW). Digitalisate und Transkriptionen: Transkribus (READ-COOP). Das historische Quellenmaterial ist Eigentum des Tiroler Landesarchivs; die IIIF-Bilder werden von Transkribus ausgeliefert.</p>
+        <p class="small mb-0">Lizenz: Quellcode MIT, Forschungsdaten und Wissensdokumente CC BY 4.0. Repositorium: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">github.com/DigitalHumanitiesCraft/DoCTA</a>.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Impressum</h2>
+        <p class="small mb-0">Digital Humanities Craft OG<br>
+        Web: <a href="https://dhcraft.org" target="_blank" rel="noopener">dhcraft.org</a><br>
+        E-Mail: <a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+    initNav('about');
+    initBanner();
+  </script>
+</body>
+</html>
