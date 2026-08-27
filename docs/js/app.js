@@ -6,7 +6,6 @@
 const NAV_ITEMS = [
   { href: 'index.html', label: 'Home', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
-  { href: 'edition.html', label: 'Edition', id: 'edition' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
   // Knowledge stays reachable via About and direct URL; About sits flush right.
@@ -20,6 +19,16 @@ const NAV_ITEMS = [
 export function initNav(activeId) {
   const nav = document.getElementById('main-nav');
   if (!nav) return;
+
+  // The sticky table header offsets by --nav-height; measure the real navbar
+  // instead of trusting the token's guess, or rows peek through the gap.
+  const navbar = document.querySelector('.navbar');
+  if (navbar && 'ResizeObserver' in window) {
+    const setNavHeight = () =>
+      document.documentElement.style.setProperty('--nav-height', `${navbar.offsetHeight}px`);
+    setNavHeight();
+    new ResizeObserver(setNavHeight).observe(navbar);
+  }
 
   nav.classList.add('w-100');
   nav.innerHTML = NAV_ITEMS.map(item => {

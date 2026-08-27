@@ -60,6 +60,7 @@ The next iteration binds the display to documented workflow states. Secure presu
 | A period filter as a slider | Not built | The datings in SiCProD are too heterogeneous for a continuous axis |
 | A German and English bilingual site | Resolved by the August 2026 refactor | The site and the knowledge base are English throughout; German remains for shelfmarks, source titles and quoted source text |
 | A line overlay in the viewer, coupling image and transcription | Open | The coordinates are ready in `data/transcriptions/*.json` under `regions[].lines[].coords` |
+| A separate edition page | Folded into the viewer, 2026-08-27 | The page duplicated the viewer while no approved edition text exists. The viewer now carries a reading mode over the whole document text; a dedicated edition page returns once approved TEI text is available |
 
 ## 6. Colour system
 

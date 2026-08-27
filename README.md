@@ -21,7 +21,7 @@ The digital instruments are heuristic tools in service of historical research qu
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, edition, exploration, benchmark, knowledge, about
+│   ├── *.html              index, viewer, exploration, benchmark, knowledge, about
 │   ├── css/, js/, lib/     Design tokens, shared ES6 modules, vendored dependencies
 │   ├── data/               Pre-processed JSON read by the site
 │   └── knowledge/          The Promptotyping knowledge base, rendered by knowledge.html

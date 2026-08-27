@@ -20,8 +20,7 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 | Page | Purpose |
 |------|---------|
 | `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
-| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source |
-| `edition.html` | The edition view over sources that have passed validation |
+| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source, plus a reading mode over the whole document text |
 | `exploration.html` | The relation network extracted from a validated transcription |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `knowledge.html` | Knowledge vault, rendering these Markdown documents |
@@ -97,7 +96,7 @@ IndexedDB is optional. If the database does not open within one and a half secon
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, edition, exploration, benchmark, knowledge, about
+│   ├── *.html              index, viewer, exploration, benchmark, knowledge, about
 │   ├── css/styles.css      Design tokens as CSS custom properties
 │   ├── js/                 ES6 modules shared by several pages
 │   │   ├── app.js          Navigation, banner, footer

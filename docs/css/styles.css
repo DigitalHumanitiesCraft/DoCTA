@@ -603,17 +603,87 @@ th.sorted .sort-icon { opacity: 1; }
 .stage--done { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
 .stage--todo { color: var(--text-muted-custom); background: transparent; }
 
-/* Edition reading view */
-.edition-text { max-width: 46rem; }
-.edition-page { margin-bottom: 2rem; }
-.edition-page__head {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 0.8rem; font-weight: 600; color: var(--text-muted-custom);
-  text-transform: uppercase; letter-spacing: 0.04em;
-  border-bottom: 1px solid var(--border-light);
-  margin-bottom: 0.5rem; padding-bottom: 2px;
+/* === Reading mode in the viewer === */
+/* The facsimile pane folds away and the transcription becomes one continuous
+   text of the whole document. */
+.viewer-page[data-view="reading"] #facsimile-panel { display: none; }
+.viewer-page[data-view="reading"] .viewer-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
-.edition-line {
+
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.view-toggle__btn {
+  height: 1.75rem;
+  padding: 0 var(--space-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--text-2xs);
+  white-space: nowrap;
+}
+
+.view-toggle__btn + .view-toggle__btn { border-left: 1px solid var(--border-custom); }
+.view-toggle__btn:hover { background: var(--bg-secondary); color: var(--accent); }
+.view-toggle__btn[aria-pressed="true"] {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.view-toggle__btn:focus-visible,
+.reading-page__mark:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.reading-text {
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) 4rem;
+}
+
+.reading-page { margin-bottom: 2rem; }
+
+.reading-page__mark {
+  display: block;
+  width: fit-content;
+  margin: 0 0 var(--space-xs) auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted-custom);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.reading-page__mark:hover { color: var(--accent); }
+
+.reading-line {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.02rem; line-height: 1.6;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* Folio marks are structure, not source text, in either view */
+.folio-mark {
+  margin-top: var(--space-md);
+  font-family: var(--font-source);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  color: var(--text-muted-custom);
+}
+
+.transcription__line--folio {
+  margin-top: var(--space-sm);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  color: var(--text-muted-custom);
 }

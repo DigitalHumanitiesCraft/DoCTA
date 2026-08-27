@@ -79,6 +79,13 @@
       <div class="viewer-panel">
         <div class="viewer-panel__header">
           <span class="viewer-panel__title">Transcription</span>
+          <div class="view-toggle" role="group" aria-label="Transcription view">
+            <button type="button" class="view-toggle__btn" id="btn-view-synopsis" aria-pressed="true"
+                    title="Facsimile beside the transcription, page by page">Synopsis</button>
+            <button type="button" class="view-toggle__btn" id="btn-view-reading" aria-pressed="false"
+                    title="Continuous text of the whole document">Reading</button>
+          </div>
+          <span class="badge text-bg-warning" id="draft-badge" hidden>Unrevised draft</span>
           <select class="form-select form-select-sm doc-selector" id="doc-selector" aria-label="Select document">
             <option value="">Choose a document...</option>
           </select>
@@ -108,6 +115,7 @@
     let viewer = null;
     let currentDoc = null;
     let currentPage = 0;
+    let viewMode = 'synopsis';
     let rotation = 0;
     let entitiesData = null;
     let sourceByDocId = new Map();
@@ -201,6 +209,14 @@
       btnFullscreen.setAttribute('aria-pressed', String(document.fullscreenElement === panel));
     });
 
+    // Lines like "[fol.2r]" or "[fol. 12v]" are structure, not source text
+    const FOLIO_RE = /^\[fol\.\s*([^\]]+)\]$/i;
+
+    function folioLabel(text) {
+      const m = FOLIO_RE.exec(text.trim());
+      return m ? `fol. ${m[1].trim()}` : null;
+    }
+
     function renderTranscription(doc, pageNr) {
       const container = document.getElementById('transcription-container');
       const page = doc.pages.find(p => p.pageNr === pageNr);
@@ -231,6 +247,13 @@
       for (const region of page.regions) {
         for (const line of region.lines) {
           lineNr++;
+          const fol = folioLabel(line.text);
+          if (fol) {
+            html += `<div class="transcription__line transcription__line--folio">` +
+                    `<span class="transcription__line-nr">${lineNr}</span>` +
+                    `<span>${escapeHTML(line.text)}</span></div>`;
+            continue;
+          }
           let text = escapeHTML(line.text);
           if (isDemo) {
             const confLabels = { high: 'confident', medium: 'check', low: 'problematic' };
@@ -248,23 +271,85 @@
       container.scrollTop = 0;
     }
 
-    function setPage(pageNr) {
-      if (!currentDoc) return;
-      pageNr = Math.max(0, Math.min(currentDoc.pages.length - 1, pageNr));
-      currentPage = pageNr;
+    // Reading mode: the whole document as one text, without line numbers
+    function renderReading(doc) {
+      const container = document.getElementById('transcription-container');
+      const out = [];
+      doc.pages.forEach((page, idx) => {
+        const lines = page.regions.flatMap(r => r.lines.map(l => l.text));
+        if (!lines.length) return;
+        out.push('<section class="reading-page">');
+        out.push(`<button type="button" class="reading-page__mark" data-index="${idx}"` +
+                 ` title="Open page ${page.pageNr} beside the facsimile">p. ${page.pageNr}</button>`);
+        for (const text of lines) {
+          const fol = folioLabel(text);
+          out.push(fol
+            ? `<div class="folio-mark">${escapeHTML(fol)}</div>`
+            : `<div class="reading-line">${escapeHTML(text)}</div>`);
+        }
+        out.push('</section>');
+      });
+      container.innerHTML = out.length
+        ? `<div class="reading-text">${out.join('')}</div>`
+        : '<div class="loading text-body-secondary">No transcription text for this document</div>';
+      container.scrollTop = 0;
+    }
 
-      const page = currentDoc.pages[pageNr];
-      loadImage(page.iiif);
-      renderTranscription(currentDoc, page.pageNr);
+    function clampPage(n) {
+      return Math.max(0, Math.min(currentDoc.pages.length - 1, n));
+    }
 
+    function updatePager() {
       const pageInput = document.getElementById('page-input');
-      pageInput.value = String(pageNr + 1);
+      pageInput.value = String(currentPage + 1);
       pageInput.max = String(currentDoc.pages.length);
       document.getElementById('page-total').textContent = `/ ${currentDoc.pages.length}`;
-      document.getElementById('btn-prev-page').disabled = pageNr === 0;
-      document.getElementById('btn-next-page').disabled = pageNr === currentDoc.pages.length - 1;
+      document.getElementById('btn-prev-page').disabled = currentPage === 0;
+      document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
+    }
 
-      setParams({ doc: String(currentDoc.docId), page: String(pageNr + 1) });
+    function syncParams() {
+      setParams({
+        doc: String(currentDoc.docId),
+        page: String(currentPage + 1),
+        view: viewMode === 'reading' ? 'reading' : '',
+      });
+    }
+
+    function setPage(pageNr) {
+      if (!currentDoc) return;
+      currentPage = clampPage(pageNr);
+      updatePager();
+      syncParams();
+      if (viewMode === 'reading') return;
+
+      const page = currentDoc.pages[currentPage];
+      loadImage(page.iiif);
+      renderTranscription(currentDoc, page.pageNr);
+    }
+
+    // pageNr: optional 0-based page to land on when returning to the synopsis
+    function setView(mode, pageNr) {
+      viewMode = mode === 'reading' ? 'reading' : 'synopsis';
+      const isReading = viewMode === 'reading';
+      document.body.dataset.view = viewMode;
+      document.getElementById('facsimile-panel').setAttribute('aria-hidden', String(isReading));
+      document.getElementById('btn-view-synopsis').setAttribute('aria-pressed', String(!isReading));
+      document.getElementById('btn-view-reading').setAttribute('aria-pressed', String(isReading));
+      document.getElementById('draft-badge').hidden = !isReading;
+
+      if (!currentDoc) {
+        setParams({ view: isReading ? 'reading' : '' });
+        return;
+      }
+      if (pageNr !== undefined) currentPage = clampPage(pageNr);
+      if (isReading) {
+        renderReading(currentDoc);
+        updatePager();
+        syncParams();
+      } else {
+        setPage(currentPage);
+      }
     }
 
     // pageNr: 1-based start page. Omit to take it from the URL (deep link into a page).
@@ -278,8 +363,16 @@
           const parsed = parseInt(getParams().page || '1', 10);
           startPage = Number.isFinite(parsed) ? parsed - 1 : 0;
         }
-        setPage(startPage);
         renderDocMeta(docId);
+        if (viewMode === 'reading') {
+          // A document switch keeps the current view
+          currentPage = clampPage(startPage);
+          renderReading(currentDoc);
+          updatePager();
+          syncParams();
+        } else {
+          setPage(startPage);
+        }
       } catch (err) {
         const errEl = document.createElement('div');
         errEl.className = 'loading text-body-secondary';
@@ -296,6 +389,14 @@
     document.getElementById('btn-rotate-left').addEventListener('click', () => rotateBy(-90));
     document.getElementById('btn-rotate-right').addEventListener('click', () => rotateBy(90));
     btnFullscreen.addEventListener('click', toggleFullscreen);
+    document.getElementById('btn-view-synopsis').addEventListener('click', () => setView('synopsis'));
+    document.getElementById('btn-view-reading').addEventListener('click', () => setView('reading'));
+
+    // The page mark in the reading text is the way back to the facsimile
+    document.getElementById('transcription-container').addEventListener('click', (e) => {
+      const mark = e.target.closest('.reading-page__mark');
+      if (mark) setView('synopsis', Number(mark.dataset.index));
+    });
 
     const pageInput = document.getElementById('page-input');
     function commitPageInput() {
@@ -315,6 +416,8 @@
       const t = e.target;
       if (t instanceof HTMLElement &&
           (t.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName))) return;
+      // Reading mode has no facsimile and no page unit; the arrows scroll the text
+      if (viewMode === 'reading') return;
       switch (e.key) {
         case 'ArrowLeft': setPage(currentPage - 1); break;
         case 'ArrowRight': setPage(currentPage + 1); break;
@@ -363,6 +466,7 @@
         }
 
         const params = getParams();
+        setView(params.view === 'reading' ? 'reading' : 'synopsis');
         if (params.doc) {
           selector.value = params.doc;
           loadDocument(params.doc);
