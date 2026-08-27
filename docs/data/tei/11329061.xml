@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329061">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Hörtenberg (bei Pfaffenhofen, neuer Inhaber Wilhelm Awer)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 131.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 131.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329061</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1489-09-26">1489.09.26</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329061-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/GTHVUFOYEWEGYPBAOFFRZJWD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329061-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/WBRYGBZSJPKGKUPJDBHTAWEB/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329061-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>So ist zu wissen mit diser offen inventuari zetel das auf bevelch des
+          <lb/>durchleȗchtigen hochgebornen fȗrsten und herrn herrn Sigmunds erz¬
+          <lb/>herzog ze Õsterreich und grave zu Tÿrol etc. meines gnădigisten herrn
+          <lb/>der edel und vest Wilhelm von Phiert durch sein dienner Balthasar Tũbing
+          <lb/>dem edlen und vesten Wilhelm wer das gschloss Hertenberg an hewt
+          <lb/>sambstag nach Mauriti anno etc. LXXX nono eingeantburt hat
+          <lb/>in beÿ wesen der edlen und vesten Vigilÿ Gnewssen und
+          <lb/>von Hohenburg, auch der erberen weysen Blásÿ Sau̇rbein zu Flaur¬
+          <lb/>ling, Erharten Stadelwiser, Jõrgen Knăbel, Martein Wipfen zu Telfs
+          <lb/>und annder.
+          <lb/>Ist daselben im gschloss funden nachlaut der alten inventuarizetl
+          <lb/>das dem bemelten meinem gnadigisten herrn zu gehõrt.
+          <lb/>Am ersten in der oberen kamer ain tũrgkischer sãbel, vier helleparten,
+          <lb/>zwo streit hagken und ain grosser kolb zu paÿden hennden.
+          <lb/>Ain pũttrich mit ettwievil scharnagelen.
+          <lb/>Dreÿ eÿsnein stainpuxen und zwo lenger eÿsnein pũchsen.
+          <lb/>Des alten zewgs XVI armbrost und zwen pogen zu pangkarmbrosten.
+          <lb/>In dreÿen laglen põß alt pfeÿl, ain wenig schwĕbel
+          <lb/>und in ainem klain săckel ain wenig pũchsen pulver.
+          <lb/>Ettlich fewr kuglen und ettlich stainein pũxen kugelen.
+          <lb/>Ain kambp rad zu ainer hanntmŭl, zwen mũlstain, ain rũtlscheib.
+          <lb/>Zwen tisch, zwo vorpenck, zwen seßel, vier pettstett.
+          <lb/>In der oberen kuchen ain kȃstel und vor der stuben ains.
+          <lb/>Ain raÿss panck, ain hãl, ain beschlagne drischel beÿ dem
+          <lb/>toer zu ainer wẽr.
+          <lb/>Siben eÿsnen rorpuxen, ain pew̃tel kasten, zwen koren oder mel kãsten.
+          <lb/>Holz zu dem paw gehorend, fewchtein und lărchein pãm auß¬
+          <lb/>geschniten in die vierung LXXXXVI.
+          <lb/>Und ungeschnittnen pãm lãrchein hundert und XXVII.
+          <lb/>Schintelkasten im gschloss angevarde beÿ IC und XXIIII kasten
+          <lb/>unnder der schupffen beÿ dem prunnen angevarde IIII schintel
+          <lb/>kasten.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329061-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Inventuari Hertenberg.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328281">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses und der Pflege Thaur (Inhaber Jakob von Spaur)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 049.3</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 049.3</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328281</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1484-02-16">1484.02.16</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328281-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/TLGZWWBDKHPDTCOPRYHULUEC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/MRQQRUZJNAWPDPOHRWORQYDR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/ROGKQNFVFDTNNQHFTCUPVDYR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/XTIABNJBDVLRZJXKCUZASZTM/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/NOCDPACOCPVQNGMDMKEVXMWG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/GGXHNVOOLKGPCNKAWAYFRNNQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/UVCLKDCTWGEGHPVGMDQCZUOF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328281-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/LYMIXKSTXLWMTYJEQFSMVRXX/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328281-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Inventuari zu Thaur
+          <lb/>An mantag nach Sannd Valentins
+          <lb/>tag anno etc. im LXXXIIIIten jar ist
+          <lb/>herr Jacob von Spaur die phleg Thaur
+          <lb/>durch herr Melchioren von Hay̆menhofen
+          <lb/>mitsambt der hienachgeschrieben hab
+          <lb/>und gut darzū gehŏrend yngeantwurt.
+          <lb/>In meins gnedigen herrn gemăchen
+          <lb/>in der oberen stuben.
+          <lb/>Drey tisch.
+          <lb/>Ain kredenz tischel.
+          <lb/>Ain schachprett.
+          <lb/>Ain gemalts tuech mit etlichen landschaften.
+          <lb/>In meins gnedign herrn camr daran.
+          <lb/>Ain verdeckts spanpet mitsambt
+          <lb/>ainem cariol und ainer sidltruhen.
+          <lb/>Ain sweinspiess.
+          <lb/>Ain wezstain an ainem nagel.
+          <lb/>Funff gesliffen pfeil.
+          <lb/>In der nac̆hsten camr darnach.
+          <lb/>Ain spanpet.
+          <lb/>In der stuben daran.
+          <lb/>Ain alter pŏser tisch.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328281-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>In der cammer gegen dem hof.
+          <lb/>Zway̆ sponpet.
+          <lb/>In dem underen gemach in der
+          <lb/>stuben gegen dem thor.
+          <lb/>Ain tisch.
+          <lb/>In ainer camer daran.
+          <lb/>Ain petstat.
+          <lb/>In der andern cameren daneben.
+          <lb/>Zwo petstatten.
+          <lb/>In der melkammer.
+          <lb/>Ain melkasten.
+          <lb/>Ain pewtlfass.
+          <lb/>Ain beslagner eymer zů ainer zysteren.
+          <lb/>In dem keller.
+          <lb/>Ain alter tisch.
+          <lb/>Vor demselben keller.
+          <lb/>Ain handtmŭl mit irer zůgehorung.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328281-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>In der harnaschkamer.
+          <lb/>Eysenhuĕt, tschălăren liecht, swarz,
+          <lb/>rostig und ungeschaffen
+          <lb/>XV.
+          <lb/>Alte prustplech X.
+          <lb/>Ain alts rugel.
+          <lb/>Zwo alt groß lanng schoß.
+          <lb/>Ain hinders und vorderteil von ainem schoß.
+          <lb/>Etlich armzeug.
+          <lb/>Etlich paingwandt.
+          <lb/>Und sunst etlicher alter harnasch.
+          <lb/>Ain haŭfniz puchsen.
+          <lb/>Vier kurz tarraspuchsen sind alt.
+          <lb/>Vier alt puchsen mit holz gefast.
+          <lb/>Drew̆ văssel darinn etlich puchsenpulfer.
+          <lb/>Ain văssel darinn etlich pfeil.
+          <lb/>Ain alts spanbett.
+          <lb/>Ain plătel play.
+          <lb/>Im hof unden.
+          <lb/>Ain alter schlifstain.
+          <lb/>Auf dem estrich.
+          <lb/>Newnzehen lannzen.
+          <lb/>XV armbrust und II stachel hat
+          <lb/>Wolfel Jağer genomen und ist ains
+          <lb/>zerprochen.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328281-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Hagenpuc̆hsen VI.
+          <lb/>Hanndpuchsen X.
+          <lb/>Alt hanndpuchsen XIIII.
+          <lb/>Ain alter zuggater spieß.
+          <lb/>In der stuben da ain phleger
+          <lb/>innen ist.
+          <lb/>Zwen tisch.
+          <lb/>Auf dem estrich davor.
+          <lb/>Ain speiskasten.
+          <lb/>Im thuren.
+          <lb/>Ain alte truhen mit hauspfeilen.
+          <lb/>XV lăgel mit hauspfeilen, etlich sind
+          <lb/>gar voll, die anderen halb, aber uber
+          <lb/>das halb teil.
+          <lb/>Ain halbs vassel saliter.
+          <lb/>Ain vierteil von ainer lagel swebel.
+          <lb/>Ain zugsail daran man die leut martert.
+          <lb/>In der knecht stuben.
+          <lb/>Zwo armpoyen mit ketten.
+          <lb/>Zwen painpoyen mit ketten.
+          <lb/>Vier malenschlosser.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328281-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Oben auf derselben stuben.
+          <lb/>Vier petstaten.
+          <lb/>Im speisgaden.
+          <lb/>Ain alter tisch.
+          <lb/>Zwo speistruchen.
+          <lb/>In der hell.
+          <lb/>VII spanpet.
+          <lb/>In der kuchen.
+          <lb/>Ain hăl.
+          <lb/>Zwo prantrayten.
+          <lb/>Im marstal.
+          <lb/>Ain fueterkasten.
+          <lb/>Ain alts kastel.
+          <lb/>Ain alts fleischpail hat XII phleger ausgewert.
+          <lb/>In der pfister stuben.
+          <lb/>Ain welpanck.
+          <lb/>Ain hefel truhen trog.
+          <lb/>V protprett.
+          <lb/>Im stall.
+          <lb/>Ain kŭe.
+          <lb/>Zwo kalbel.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328281-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>In der capellen.
+          <lb/>Ain graws damaskens mesgwand
+          <lb/>und sunst auch ain mesgwand.
+          <lb/>Zwen kelch, der ain kupfrein, der ander
+          <lb/>silbrein mit zwayen pateen vergult.
+          <lb/>Ain mespŭch.
+          <lb/>Leuchter, glogken und sunst aller ding
+          <lb/>was in ain capellen und zŭ zwayen
+          <lb/>priestern gehort.
+          <lb/>Bey dem aufschreiben sind gewesen
+          <lb/>Hanns Ubelher canzelschreiber, Clement
+          <lb/>Wolfsegker anwald zu Thaur, Lienhard
+          <lb/>am mayrhoff, Hanns Keller, Jorg
+          <lb/>Lini und Hanns Walther.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328281-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328281-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

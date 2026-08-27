@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11348659">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Persen</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 273.7</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 273.7</idno>
+            <altIdentifier type="transkribus">
+              <idno>11348659</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1466-05-03">1466.05.03</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11348659-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/UBQBBACJTFOUVHZQJPHMLSKA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348659-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZULVFVOGFIUBWWGZUVQHWZCJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348659-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/NNJAIYEBHSYAGWUVPNZUIHVO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348659-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/UFSOJAVNZYXNDXYAHNFEOVKD/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11348659-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Ich Balthasar Liechtenstainer phleger zu Bisein, ich Hainrich Ainch phleger zu Yfan
+          <lb/>bekennen auf brieflich bevelhnŭss des durleuchtigen hochgeboren fũrsten und herrn
+          <lb/>hern Sigmund hertzog zu Osterreich und grafe zu Tirol unnser gnediger herr
+          <lb/>als der edel und vest Linhart von Meinekg dem edln vesten Mertt Neydegker zu
+          <lb/>Persen alle hab und gut die dem benantten unnserm gnedigen herrn auf dasselb seiner
+          <lb/>gnaden gsloss Bersen zugehŏrt die durch uns besehen und alles vorhannden ist als
+          <lb/>hernach geschriben steet.
+          <lb/>Item am ersten waytzen zwayhundert funffundviertzikg
+          <lb/>stãr. Item rokgen zwayhundert dreissigk star. Item gersten dreytzehen stãr. Item
+          <lb/>pŏnn ainleff stăr. Item haber zwayhundert funfftzehen star. Item phenich
+          <lb/>hundert und new̃n stãr, hirsch zwayhundert zway star. Item rokhen mel zway¬
+          <lb/>hundert dreytzehen star. Item gedigen rindfleisch sechsunddreissigk centten und
+          <lb/>sechtzehen pfunt. Item vier zentten grŭn fleisch. Item zwen lebentig ochssen. Item
+          <lb/>schweynen gedigen fleisch viertzehen zenntten zwayunddreissikg phunt. Item dreissikg
+          <lb/>sweynen schulter. Item wein achtundsibentzigk fuder und funff prenntten wein
+          <lb/>Passauner, zwo ŭrn essigk, ain văsslen mit pŏsem essikg. Item ŭnslig siben zentten
+          <lb/>und new̃ntzehen phunt. Item smer ain zentten sechsunddreissigk pfunt. Item smaltz
+          <lb/>ain zentten und achtzigk pfunt. Item kess zwen zenttenn und ainsundviertzigk
+          <lb/>pfunt. Item pett new̆nundtzwaintzikg pŏss und gůts. Item zwaintzikg pŏlster.
+          <lb/>Item sibentzehen kůss. Item zwaintzigk par leilach. Item funffunddreissigk
+          <lb/>rauch dekgen. Item achtzehen slasin. Item new̃n golter. Item drewtzehen
+          <lb/>tisch tůcher. Item vier hanndzwehl alles pŏs und gůt. Item drew̃ fũrvass
+          <lb/>saltz. Item am allten eysen drey zentten funffundsibentzigk pfunt mitsambt
+          <lb/>dem gayßfŭess. Item zwen eysnen rechen. Item vierhundert gar lanng eysen
+          <lb/>nãgel. Item sechs ganntz pleyen platten. Item ain fisch seg und allter netz.
+          <lb/>Item ain hauffnitz puchssen. Item zwo virtail puchssen. Item drey gross
+          <lb/>eysen puchssen, sein aus den zwain morsern gemacht und ist die ain vorhanden.
+          <lb/>Item vier kuppfern stainpuchssen. Item ainleff kupfferen tarrass puchssen
+          <lb/>und ain zebrochne. Item syben kupffern hagken puchssen. Item ain puchssen
+          <lb/>mit syben kugel. Item vier eysen tarrass puchssen. Item dreytzehen eysen
+          <lb/>stainpuchssen, ist aus der ainen ain mõrser gemacht. Item dreyundsibentzigk
+          <lb/>hanndpuchssen und sechs zebrochen. Item fũnfftzigk targen. Item drew
+          <lb/>vaslen und ain halbs mit puchssen pulver. Item ain văslen mit geleũtterten
+          <lb/>salitter von zwayn ũren. Item aber ain văslen mit gelew̃tterten salitter von ainer
+          <lb/>ũren. Item aber im in zwain lăgel gelew̃tterten salitter. Item zway vaslen mit
+          <lb/>swebel ains halbs das annder umb ain spann lẽr. Item aber in ainem
+          <lb/>prentlen bey ainem stăr swebl. Item sibentzehen gũtter merblin mŏdl zu tarrass,
+          <lb/>hanndpuchssen und hagken puchssen. Item syben alt mõdel, bey ainem halben centten
+          <lb/>pleyen kugl zu den obgenanten puchssen. Item zwoundtzwaintzigk lãgel
+          <lb/>hauss geschoss ungevãrlich. Item funff truhen mit hawss geschoss. Item
+          <lb/>ain hauffen mit grossen pheylen zu pankh armbrost. Item zwayundzwaintzigk
+          <lb/>allte armbrost. Item harnasch acht kuriss. Item zwen halb kuriss. Item
+          <lb/>ainleff par payn gewanndt. Item zehen spanyerol. Item newn helmlin. Item
+          <lb/>zwo knye pukhl. Item viertzehen engelisch hauben. Item zwayundzwaintzikg
+          <lb/>prustplech. Item viertzigk par arm rõr. Item zwen ganntz arem zew̃g. Item
+          <lb/>ain krebiss. Item funff schaladen. Item new̃nundtzwaintzigk par
+          <lb/>plech hanndschuch põss und gutt. Item achtzehen pantzer. Item zway goller.
+          <lb/>Item funff par mew̃seysen. Item achtzehen eysen hůt, ettlich alt zenicht pregadin.
+          <lb/>Item vier ungrisch tarschen. Item acht swert. Item vier degen. Item ain
+          <lb/>mordaxt. Item ain stainpogen mit seinem zerff. Item zwen partt. Item drey
+          <lb/>pullver sekh. Item newn huntzkappen. Item viertzehen umbhengk von harnasch
+          <lb/>ringen. Item in ainer truhen allerlay few̃r zewg. Item ain eysnen zanngen damit
+          <lb/>man auf hebt. Item ain ziegl zew̃g. Item ain giess vas. Item zwo zynen kandl.
+          <lb/>Item sechs handwergk sayl. Item ain sayl von zehen klaffter. Item zwo slingen.
+          <lb/>Item zway lannge grosse zũg sayl. Item ain papiren meß puch. Item ain kelch
+          <lb/>mit seiner zugehorung. Item ain mess gewandt. Item ain new̃e alben. Item
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11348659-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>ain umbral, ain gũrttl. Item vier õppfer kãnndl. Item ain kessel zu dem weyh¬
+          <lb/>wasser. Item ain rauch vaß. Item drew altar tŭcher. Item ain schreibtisch,
+          <lb/>ain gyeßvas und ain pekh. Item sechs zefften klain und gross. Item sechs
+          <lb/>wein pũttrich pŏss und gut. Item ain protkorb. Item zwen zynen trachter.
+          <lb/>Item zway wein schăffl. Item kuchl geschirr. Item zwo klain lavetzschen. Item
+          <lb/>sibentzehen kessl klain und gross, põss und gut. Item ain mõrser mit dem
+          <lb/>stŏssl. Item funff eren hãfen klain und gross. Item zwen dryfũss. Item drey rõst.
+          <lb/>Item drey pratspiss. Item vier hakhenn, funff phannen. Item ain fleisch
+          <lb/>messer. Item ain fleisch partten. Item sechs kraut messer. Item sibentzehen
+          <lb/>hũltzen schũssl. Item new̆nundzwaintzigk tĕller. Item schŭr eysen. Item zwo
+          <lb/>wachterkutten. Item zway par filtzschuch. Item in der smitten. Item ain grossen
+          <lb/>anposs. Item zwen new̃ plas pelg. Item ain slosser zewg als durch den
+          <lb/>Weinegker kaufft ist. Item zwen plaspelg. Item drey anposs klain und
+          <lb/>gross. Item syben zanngen. Item vier hanndt hãmer. Item ainen grossen
+          <lb/>auffslag hamer. Item vier schrot meŭssl. Item ain markh eysen. Item vier
+          <lb/>schrot eysen. Item ain beslagzew̃g. Item drey mõdl zu hagken. Item ain sliffstain.
+          <lb/>Item die leger vaß und andrew vasser und potting so zu dem gsloss gehorden.
+          <lb/>Item ettwevil eyssen so der Weinegker kaufft hat daraus man hellenpartten
+          <lb/>gemacht hat und noch macht. Item viertzigk eysen plech. Item drey
+          <lb/>zwispitz. Item ain slegl. Item ain schelhamer. Item vier eysen keyll zum stain
+          <lb/>prechen. Item acht lãgl mit pigl.
+          <lb/>Nota vermerkht was maister Ludwig der
+          <lb/>puchssenmaister von Trient gen Bersen geschikht hat von zew̆g.
+          <lb/>Item
+          <lb/>ain vãslen puchssen pulver. Item zehen hagken puchssen. Item zehen
+          <lb/>hannd puchssen. Item ain pleyen platten. Item ain krieg mitsambt dem sayl.
+          <lb/>Item vermerkht was von vãrender hab, pettgewannd, kuchengeschirr und
+          <lb/>annders von Trient gen Persen komen ist.
+          <lb/>Item acht pett. Item sibenthalbs
+          <lb/>par leylach zerissen. Item syben rauch dekhen. Item drey slasin. Item fŭnff
+          <lb/>pŏss dekhen. Item sechs pŏlster. Item zwey kŭss. Item zwen kessl und
+          <lb/>ain klains. Item funff pfannen. Item drey eren hãfen. Item drey lavetzschen.
+          <lb/>Item zwo hŭltzen zefften. Item drey kanndl. Item ain dryfŭss. Item zwen
+          <lb/>pratstŏckh. Item zwen pratspiss. Item drey hẽlen. Item zwo hacken. Item
+          <lb/>eysnen keyll. Item drey pley platten.
+          <lb/>Item aller obgeschribner sach
+          <lb/>sein drey gleich zedl worden gemacht under unnserm vorbemelten Liechstainer
+          <lb/>und Anich aufgedruckhtten pettschafften die ain zedl dem obgenantten unnserm
+          <lb/>gnedigen herrn, die annder Mertten Neydegker, die dritt Linhartten Weinegker.
+          <lb/>Beschehen auf Bersen an des Heiligen krew̃tztag invencion anno Domini et.
+          <lb/>im sechsundsechtzigisten jare.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11348659-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11348659-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

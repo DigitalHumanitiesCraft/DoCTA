@@ -55,6 +55,24 @@ The builder reads only files already in the repository and makes no network call
 
 The projection at `docs/data/pipeline/register_summary.json` is the compact view for the site: per document the identity fields plus page counts by state, small enough to load in one fetch. It is generated output and never edited by hand.
 
+## TEI baseline
+
+`build_tei.py` writes one TEI P5 file per document with a Transkribus export to `docs/data/tei/<docId>.xml`. The text in these files is unrevised machine transcription and no reading has been checked by an editor, which the `editorialDecl` of every file states in plain words. The files are a working substrate for the edition; a citable edition text needs the editorial pass that has still to happen.
+
+The encoding is diplomatic and follows the page and the line. Each page contributes one `<ab>` opened by a `<pb>` whose `@facs` points at a `<surface>` in the `<facsimile>` section, and that surface carries the IIIF URL of the scan as a `<graphic>`. Images are referenced and never copied into the repository. Every transcribed line becomes an `<lb/>` followed by its text, so the line count of a TEI file equals the line count of the export, which the test suite checks. A line that consists only of a folio mark such as `[fol.3v]` is a reference point of the transcription rather than text of the source and becomes `<milestone unit="folio" n="3v"/>`.
+
+Structure beyond the page is not asserted. The body holds a single `<div type="transcription">` with `<ab>` blocks, because the export gives no paragraph or section boundaries that an unread transcription could justify. Transkribus text regions are flattened into the reading order of the export; encoding one `<ab>` per region is the upgrade path once region types are curated.
+
+The header carries only what the source register actually holds, which is the archival title and shelfmark, the repository, the collection and item number parsed from the shelfmark, the Transkribus doc id as an `altIdentifier`, and the archival dating as an `origDate` that keeps the raw string as its content and normalises it into `@when`, `@from`/`@to` or `@notBefore`/`@notAfter` according to its precision. An element whose data is missing is omitted instead of filled with a placeholder. The text is tagged `xml:lang="gmh"`; ISO 639-3 registers no code for Frühneuhochdeutsch, so the Middle High German code serves as the nearest registered approximation and `langUsage` says so.
+
+The generation date comes from `--date` and never from the clock, so a rebuild without input changes produces byte-identical files and leaves no diff. Every document is re-parsed before it is written, so a malformed result fails the run rather than reaching the disk.
+
+```
+python build_tei.py                  # write docs/data/tei/
+python build_tei.py --date 2026-09-01
+python test_build_tei.py             # or: pytest pipeline/test_build_tei.py
+```
+
 ## Known gaps in the input data
 
 The CSV-to-Transkribus matcher in `docs/data/source_mapping.json` covers the inventories only, so Raitbuch 2 is paired with its archival entry in the builder itself, matched on title and page count. Documents that are matched but have no export yet get a page list without IIIF URLs, because the page images are only known from the export.

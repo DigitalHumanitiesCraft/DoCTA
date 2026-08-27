@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329062">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des von Schloss Sigmundsburg am Fernstein nach Innsbruck überführten Hausrats</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.8</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.8</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329062</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1462-07-15">1462.07.15</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329062-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZBNESPVDXSDQGKSCNQMVFQWD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329062-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/PNIRMOYYNLJLTLAHXGHCNKBH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329062-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/FIAGCXLAUZWFGOHDPJQYEQLU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329062-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/MWTKNCZVMJPPFOOPODFDZHLY/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329062-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Nota was man(n) gen Innsprugk
+          <lb/>hinab gefuert hat am phincztag
+          <lb/>nach Sant Margrethen tag.
+          <lb/>It(em) der zynnsskaẽs C und XXVI.
+          <lb/>It(em) ŭnslitt.
+          <lb/>It(em) II schmerlãb.
+          <lb/>Wagen geschir(r).
+          <lb/>It(em) IIII alte kamat.
+          <lb/>It(em) III sílhalsen.
+          <lb/>It(em) III afftersiln.
+          <lb/>It(em) I lannge news sail.
+          <lb/>It(em) VII newe silstrickh.
+          <lb/>It(em) II lidrein stuckh(e)n.
+          <lb/>It(em) III alte hew sail.
+          <lb/>It(em) II lidrein pulgen.
+          <lb/>It(em) II ochsn joch mit riemen.
+          <lb/>It(em) IIIII glaidierten wan.
+          <lb/>It(em) I phlueg mit sein(er) zugehŏrung(e)n.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329062-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Nota speiß.
+          <lb/>It(em) VI seitt(e)n schweínen fleisch.
+          <lb/>It(em) gedigen fleisch CCC zentring
+          <lb/>und LIIII hat man geben dem visch(er).
+          <lb/>It(em) und von denn obgeschrib(e)n VI seit(e)n
+          <lb/>schweinen fleisch hatma(n) geben
+          <lb/>dem visch(er) I seiten.
+          <lb/>It(em) II smer laib.
+          <lb/>It(em) 1/2 gŏsen unslitt.
+          <lb/>No(ta) bet und petgwa(n)t.
+          <lb/>It(em) X pet mit weyssen ziechen.
+          <lb/>It(em) X rauch schāffen degk(e)n.
+          <lb/>It(em) V par herbein leyllach.
+          <lb/>It(em) II par vẽrhein leilach.
+          <lb/>It(em) II harbain tisch túch(er).
+          <lb/>It(em) II wirchein tisch tüch(er).
+          <lb/>It(em) IIII harbein hantsweh(e)l.
+          <lb/>It(em) II alt zwílhein segk.
+          <lb/>It(em) III deklach.
+          <lb/>It(em) II strosek.
+          <lb/>It(em) V hackhen.
+          <lb/>It(em) I giessphännd(e)l.
+          <lb/>It(em) I leym phẽnnd(e)l.
+          <lb/>It(em) II schlitt schẽrr(e)n.
+          <lb/>It(em) II wagen schărr(e)n.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329062-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>It(em) II hawen.
+          <lb/>It(em) I ragkaw(e)n.
+          <lb/>It(em) I straiffmess(e)r.
+          <lb/>It(em) II eysen keyl mit ring(en).
+          <lb/>It(em) V sengs(e)n.
+          <lb/>It(em) III kumpf mit III weczstaín.
+          <lb/>It(em) III teng(e)l geschir(r).
+          <lb/>It(em) V werp zu sengs(e)n.
+          <lb/>It(em) II smalcz wag.
+          <lb/>It(em) II meczg messer in ainer schayd(e)n.
+          <lb/>It(em) I fleisch partt(e)n.
+          <lb/>It(em) I fleisch peil.
+          <lb/>It(em) VIII hebeysen.
+          <lb/>It(em) XXVII eysn stang(en).
+          <lb/>Item) II hãckel peil.
+          <lb/>It(em) III eysne mistgabl(e)n.
+          <lb/>It(em) XVI par schuch.
+          <lb/>It(em) I viert(e)l von ain(er) hant proch(e)n led(e)n.
+          <lb/>It(em) so hatma(n) dem Truchsĕn phleg(er) zu
+          <lb/>Sigmundspurg v(er)kaufft umb VI m(a)rkh
+          <lb/>mẽl und smalcz, das sol im an sein(er)
+          <lb/>burgkhȗt abzog(en) werd(e)n.
+          <lb/>It(em) so hatma(n) dȇm Gȇwein v(er)kaufft VI
+          <lb/>kŭe, I stíer und hew umb XVI m(ar)k und
+          <lb/>dar(en) sol er meins h(er)n gnad schleg
+          <lb/>ochsn geb(e)n am herbst.
+          <lb/>It(em) meins h(er)rn visch(e)r hat man(n) geben
+          <lb/>ain(n) seitten schweinen fleisch.
+          <lb/>It(em) dem Frechen I vass weíns von XII [---].
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329062-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

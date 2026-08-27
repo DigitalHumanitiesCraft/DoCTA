@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330561">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Runkelstein bei Bozen (bisheriger Pfleger Hans von Leuchtenburg, neuer Cyprian Sarteiner, neuer Unterpfleger Christoph Stain(ck)-Falck)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 223.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 223.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330561</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1493-11-02">1493.11.02</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330561-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/GOZTYLPYDRSMCYDCUXFMNVPZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/DTVPKJIBQVKTZPJVVEFKRXBN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/ADNUAJHLSNZMPNYYAUSNXCCS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/LEABBMHWQJDTNIONANMHWYLS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/RFGCJOEFFLGBBNEDJLTRNYOH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/LGOKQJHXUJCMGZIMZXYWMZIR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/LJOCCWPTSLCLXCLDFXWRKYCX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/VECMRHOQTAKNQWJWVGLQZCWQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/BRNIRGOPQSBYNUCVZBOJGOSH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/VRGZGVLNNJMBUMLCWZIZRYYI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/QNSTULXLQVEKGIXEFVQTZEYI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/EJHKJNDJLLEGSHPCPIWIUSSP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-13" n="13">
+      <graphic url="https://files.transkribus.eu/iiif/2/IERHRLKRQKZPNJVNFVQGBDBR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-14" n="14">
+      <graphic url="https://files.transkribus.eu/iiif/2/FXXSKLOUCZKMNXKXOIQLHIMB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-15" n="15">
+      <graphic url="https://files.transkribus.eu/iiif/2/BSMLRYVLZFZEUUGCSRPFACGR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-16" n="16">
+      <graphic url="https://files.transkribus.eu/iiif/2/TBZWHUHHUSTZUOKQKHECWRCS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-17" n="17">
+      <graphic url="https://files.transkribus.eu/iiif/2/FHASEIYQAVJISEASNDKYJHLM/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-18" n="18">
+      <graphic url="https://files.transkribus.eu/iiif/2/RGPMESVHSUKMTQERWIWPKINT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-19" n="19">
+      <graphic url="https://files.transkribus.eu/iiif/2/AHQASHZEDIRSPUUULCBVJCTC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-20" n="20">
+      <graphic url="https://files.transkribus.eu/iiif/2/VJHMIQRWUXGOUPZMVWZGRYAE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-21" n="21">
+      <graphic url="https://files.transkribus.eu/iiif/2/GOPNTGQOQDAXQPPJCYEFVVVE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-22" n="22">
+      <graphic url="https://files.transkribus.eu/iiif/2/DRGASJXSMDWTDSBPXWUZNWOV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-23" n="23">
+      <graphic url="https://files.transkribus.eu/iiif/2/LHYOTQSSAKHCTKWKYCBGPIPK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-24" n="24">
+      <graphic url="https://files.transkribus.eu/iiif/2/XBIXYNSJEYRHKEYKLSQJBHCF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-25" n="25">
+      <graphic url="https://files.transkribus.eu/iiif/2/MNSINXPXWMORUVAQXPVKJQGR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-26" n="26">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZFKVVEYJEMVANSUMHWZMVNVD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-27" n="27">
+      <graphic url="https://files.transkribus.eu/iiif/2/CBUMDCIIAGFSBRFGUBWDLMSA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-28" n="28">
+      <graphic url="https://files.transkribus.eu/iiif/2/LZWRKNAGZEWGPYYGFBAKAWGA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-29" n="29">
+      <graphic url="https://files.transkribus.eu/iiif/2/GWEVDKMTOGKSVQGLEZPRBNEV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330561-30" n="30">
+      <graphic url="https://files.transkribus.eu/iiif/2/TQNYZLVVNXGXPFDGLHHPCWCA/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330561-1"/>
+          <lb/>Mein gar willig freuntlich diennst bevoran lieber her der Hawser nach dem und ain
+          <lb/>kŭnigklich geschăft auf mich außganngen ist zwo invitări auf den Rungkelstain zůmachen,
+          <lb/>aine inn die cannzley̆ ze schickhenn, die annder Cy̆prian Sărnteiners pfleger antwurtten.
+          <lb/>Allso schickh ich euch hiemit verpetschaft ain invitări waß Hanns von Leŭchtenbŭrg
+          <lb/>ŭber geantwurt hat auch ein ingelegte zetl unter seinem petschaft waß nach lawtt
+          <lb/>der alltenn invitari im ŭber geantwurdt manglt und abgeet und die silbren vergŭlt
+          <lb/>monnstranzen mit ainer ingefasten grossn parillen darinn vier dŏrn von unnsers herren
+          <lb/>cron hat herr Michel meines genădigisten herren caplan y̆etz hingefŭert so im Hanns
+          <lb/>von Leŭchtenburg geantwurt hat. Lieber herr sŏlliches wist ir ob es not sein wil meine
+          <lb/>genadige herrn stathalter wol zeberichten hiemit schaft und piett. Geben zů Botzenn
+          <lb/>an Sannd Marteins tag anno Domini etc. nonagesimo tertio.
+          <lb/>Hanns Abennstorffer
+          <lb/>ambtman zů Botzen.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330561-2"/>
+          <lb/>Dem vesten Oswolten von Haussen
+          <lb/>kŭnigklicher secretarȳ meinem be¬
+          <lb/>sunderen guetten herren und freundt etc.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330561-3"/>
+          <lb/>[us_vorne_r]
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330561-4"/>
+          <lb/>[us_vorne_v]
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11330561-5"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt hienach
+          <lb/>meines allergenadig¬
+          <lb/>isten herrn zewg und
+          <lb/>varende hab auf dem
+          <lb/>Runggelstain auf ge¬
+          <lb/>schriben auf seiner
+          <lb/>kunigklichen maiestat
+          <lb/>briefliche geschäfft
+          <lb/>und bevelh durch
+          <lb/>Hannsen Abennstorffer
+          <lb/>ambtman zů Bozenn
+          <lb/>durch Hannsen von
+          <lb/>Leŭchtenburg als pfleger
+          <lb/>ŭber geantwurt Cÿ¬
+          <lb/>prian Sărntĕiner kŭ¬
+          <lb/>nigklicher secretari
+          <lb/>als pfleger Cristoffen
+          <lb/>Stainckfalckh seinem
+          <lb/>unterpfleger zu gagen¬
+          <lb/>wirttekait Johannsn
+          <lb/>Wienner gegenschrei¬
+          <lb/>ber und  Ciprians Sä¬
+          <lb/>renteiners dienner
+          <lb/>und ander mer und
+          <lb/>der invitări zetln
+          <lb/>sind zwo in geleichem
+          <lb/>lawtt, aine in die kü¬
+          <lb/>nigklich cannzlei
+          <lb/>geen Insprugg ge¬
+          <lb/>antwurt, die ander
+          <lb/>Ciprian Sărnteiners
+          <lb/>unterpfleger Cristoffen
+          <lb/>Stainvalckh geantburt.
+          <lb/>Beschehen an Aller
+          <lb/>Selentag im LXXXXIIImo.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11330561-6"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>In der grossenn
+          <lb/>newen stuben.
+          <lb/>Zwenn schlecht tisch.
+          <lb/>Ain fŭrpannckli.
+          <lb/>In dem clainenn
+          <lb/>stüblen daneben.
+          <lb/>Ain schlechter tisch.
+          <lb/>Zwo fürpennckh.
+          <lb/>In der chamer
+          <lb/>nebenn stüblen.
+          <lb/>Ain schlechte petstatt.
+          <lb/>In der chamer auf
+          <lb/>der grossen stuben.
+          <lb/>Ain grosse betstatt mit
+          <lb/>ainem hÿmel und ainer
+          <lb/>vortruchenn.
+          <lb/>Ain schlechte betstatt
+          <lb/>auch mit ainer truchen.
+          <lb/>Ain cariŏl.
+          <lb/>Ain fŭrpannckh.
+          <lb/>Ain schlechter castenn
+          <lb/>mit zwaien clŏsternn.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11330561-7"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>In der turny̆r camer.
+          <lb/>Drey̆ schlecht betstatt.
+          <lb/>Drey̆ fŭrpennckh.
+          <lb/>Im thuren mittenn
+          <lb/>dar inn.
+          <lb/>Ain schlechte pŏse betstatt.
+          <lb/>Im turn im an
+          <lb/>am obristn gmach.
+          <lb/>Ain harnasch fegpannckh.
+          <lb/>Zu aller ŏbrist im turen.
+          <lb/>Fŭnnf wălsch schlanngen
+          <lb/>darunder aine zerbrochen
+          <lb/>mit iren chanierner.
+          <lb/>Ain gloggenn.
+          <lb/>Auff der undristen
+          <lb/>wĕr.
+          <lb/>Vier stainpŭchssen mit
+          <lb/>iren gevăssen.
+          <lb/>Ain pannckh zu drey̆enn
+          <lb/>clay̆n pŭchsslen an pŭchssen.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11330561-8"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Auff der obern wĕr.
+          <lb/>Drey̆ miter stainpŭchsen
+          <lb/>mit irem gevăß.
+          <lb/>Im gemach genant
+          <lb/>das Swietal.
+          <lb/>Drey̆ alt pettstattenn.
+          <lb/>Ain alte vennster ram.
+          <lb/>Im stŭblen daneben.
+          <lb/>Zehenn spanngŭrtel.
+          <lb/>Acht hŭrnen armbrost an
+          <lb/>sennen.
+          <lb/>Zwelf ey̆ben armbrost.
+          <lb/>Ain clain stainpŭchssl mit
+          <lb/>seinem gevăss.
+          <lb/>Ain alter kõcher.
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11330561-9"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Auff Parennzis sal.
+          <lb/>Ain pannckh doman armbrost
+          <lb/>anspannt an ir zůgehŏr.
+          <lb/>Auff dem ganng vor
+          <lb/>der harnasch chamer.
+          <lb/>Ain lannge pannckh.
+          <lb/>In der harnasch kamer
+          <lb/>genanndt Nĕythart.
+          <lb/>Hundert und zwo wălsch
+          <lb/>tschaleren.
+          <lb/>Zwelff teŭtsch tschaleren.
+          <lb/>Fŭnff ey̆sennhŭet nach der
+          <lb/>altenn welt.
+          <lb/>Fŭnff schifftung und părt.
+          <lb/>Sy̆benn ennglisch stech
+          <lb/>helm mit kappenn.
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11330561-10"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Zwelff ennglisch stechhelm(en)
+          <lb/>an kappenn.
+          <lb/>Zwen helm(en) zu crŏndl stechen.
+          <lb/>Zwen waffenn helm(en).
+          <lb/>Acht swarz walsch tschaleren.
+          <lb/>Vier stech kŭris.
+          <lb/>Achtundzwanzig kŭris.
+          <lb/>Drey̆ krebs.
+          <lb/>Drey̆ prŭst.
+          <lb/>Ain halbs rŭggl.
+          <lb/>Zway ross gstieren.
+          <lb/>New̆nzehen par arm rŏr.
+          <lb/>Aindliff achselen unnd
+          <lb/>spanerŏl.
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11330561-11"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>Vier par clain achselen.
+          <lb/>Zwen stechhelm(en) an gestiren
+          <lb/>oder hauben zů dem trackhenn.
+          <lb/>Vier sweb scheibenn.
+          <lb/>Vierzehen par gannze
+          <lb/>pain gewanndt.
+          <lb/>Drew par schinpain.
+          <lb/>Zway̆ par schuechgwandt.
+          <lb/>Sechsthalb par hanndtschuech.
+          <lb/>Ain drŭml zů ainem gliger.
+          <lb/>Sechs stŭckh zů arm rŏr.
+          <lb/>Ain untertail zu ainem kŭris.
+          <lb/>Fŭnff kny̆e pŭckl.
+          <lb/>Sibenn pannzer an prŭech.
+          <lb/>Ain gollerer.
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11330561-12"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Ain schŭrz fleckh.
+          <lb/>Zwo hunnds kappenn.
+          <lb/>Ain kragel.
+          <lb/>Ain kappen unter ain helmelin.
+          <lb/>Ain pannzer erbel.
+          <lb/>Zway̆ par lidren arm rŏr.
+          <lb/>Zway̆ par hullf zů pogen.
+          <lb/>Drey̆undzwaintzig hawen.
+          <lb/>Zwen pickel.
+          <lb/>Zway̆unddrey̆ssig stuckh grŭst
+          <lb/>zů kŭriß.
+          <lb/>Drewhundert zwenundachzig
+          <lb/>phey̆l.
+        </ab>
+        <ab>
+          <pb n="13" facs="#surface-11330561-13"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>Hundert ainsundsechzig
+          <lb/>alspies.
+          <lb/>Zwounddreissig helmparten.
+          <lb/>Fŭnffzehen morthăckl.
+          <lb/>Ain peren spies.
+          <lb/>Ain vỹrgaulspies.
+          <lb/>Fŭnff wurffpeil.
+          <lb/>Hunndert ainsundsibenzig
+          <lb/>gschliffen pfey̆l.
+          <lb/>Ain stockh doman harnasch
+          <lb/>auf legt.
+          <lb/>In hertzog Wilhalm(m)
+          <lb/>chamer.
+          <lb/>Zway̆hunndert zwaiundsibentzig
+          <lb/>tartschenn grosser und clainer.
+        </ab>
+        <ab>
+          <pb n="14" facs="#surface-11330561-14"/>
+          <milestone unit="folio" n="5v"/>
+          <lb/>Sechs sez tartschenn.
+          <lb/>Sechs schey̆ben tartschenn.
+          <lb/>Zwo schilttartschenn.
+          <lb/>Fŭnff străpȗchssen mit
+          <lb/>newnzehen stuckhenn.
+          <lb/>New̆n ey̆sen pŭchsen stuckh
+          <lb/>ungefast.
+          <lb/>Zway̆ gloggspey̆senn stuckh
+          <lb/>ungefast.
+          <lb/>Ain haggen pŭchssen gevast
+          <lb/>und zerprochenn.
+          <lb/>Ainsundzwainzig wălsch haggen¬
+          <lb/>pŭchssen und ȃnder darundter
+          <lb/>ain zerprochen.
+          <lb/>Sechzehen new haggen pŭchsen
+          <lb/>teŭtsch.
+          <lb/>Ainsunddrey̆ssig gross messing
+          <lb/>haggenn pŭchssenn.
+          <lb/>Zwenn pŏckh zů haggen pŭchsen.
+        </ab>
+        <ab>
+          <pb n="15" facs="#surface-11330561-15"/>
+          <milestone unit="folio" n="6r"/>
+          <lb/>Sy̑benundzwainzȋg ĕysnen
+          <lb/>gefast haggen pŭchssenn.
+          <lb/>In ainem trŭchlenn.
+          <lb/>Sy̆benn gross mărblenn
+          <lb/>mŏdl zů pŭchssn kugel.
+          <lb/>Vierzehen clain mărblen mŏdel.
+          <lb/>Sechzehen eingefast clain und
+          <lb/>grŏsser mŏdl, stain und ander.
+          <lb/>Zwen mĕssen ungefast mŏdel.
+          <lb/>New̆nundzwainzig ladung.
+          <lb/>Vier gross pley̆ kuchel zů
+          <lb/>schlangenn.
+          <lb/>Etwenil kugel pley̆enn zů hand
+          <lb/>und haggen pŭchssenn.
+          <lb/>Hunndert und acht warfues
+          <lb/>ey̆senn.
+          <lb/>New̆n gross stay̆nen mŏdl
+          <lb/>zů den wĕlschenn slanngenn
+          <lb/>und haggen pŭchssen.
+        </ab>
+        <ab>
+          <pb n="16" facs="#surface-11330561-16"/>
+          <milestone unit="folio" n="6v"/>
+          <lb/>Ain grosser stŭbich vol mit
+          <lb/>phey̆l.
+          <lb/>Ain miter stŭbich mit phey̆l
+          <lb/>nicht gar vol.
+          <lb/>Sĕchs lagel mit phey̆l
+          <lb/>unnd frizenn.
+          <lb/>Mer ain stŭbich mit ge¬
+          <lb/>vastenn und ungevastenn
+          <lb/>phey̆lenn.
+          <lb/>Zway̆ săckl dar inn etwevil kugel.
+          <lb/>Drey̆ wălsch windenn.
+          <lb/>New̆n pullver taschenn.
+          <lb/>Zwo hanndt pŭchssenn.
+          <lb/>Dabĕy new̆n sătl darauff
+          <lb/>man pŭchssen fuĕrt mit gŭrten
+          <lb/>unnd taschenn.
+          <lb/>Ain clains văssl mit etlichen
+          <lb/>kuglen darinn, nicht gar vol.
+          <lb/>Vier arm poy̆enn und fŭes
+          <lb/>poy̆enn.
+          <lb/>Ain fueteral zů sy̆lber schalen.
+        </ab>
+        <ab>
+          <pb n="17" facs="#surface-11330561-17"/>
+          <milestone unit="folio" n="7r"/>
+          <lb/>Ain ladung zu ainer stain¬
+          <lb/>pŭchssenn.
+          <lb/>In dem chămerl
+          <lb/>auff der kuchll.
+          <lb/>Ain pettstatt.
+          <lb/>Zwo fŭrpennckh.
+          <lb/>Ain tisch.
+          <lb/>In meines gnedigisten
+          <lb/>herrn stŭbl.
+          <lb/>Ain schreib tisch mit
+          <lb/>ainem schloss.
+          <lb/>In mein(e)s gnedigisten
+          <lb/>herrn chamer.
+          <lb/>Ain petstat mit ainem hymel.
+          <lb/>Mer ain petstat an ainen hymel.
+          <lb/>Ain grosser fladrer casten.
+          <lb/>Mer ain beslossen truchen.
+        </ab>
+        <ab>
+          <pb n="18" facs="#surface-11330561-18"/>
+          <milestone unit="folio" n="7v"/>
+          <lb/>Ain prochenn positiff mit seinen
+          <lb/>plaspălgenn.
+          <lb/>Ain Virgawler spies.
+          <lb/>Drey̆ fŭrpennckh fŭe die
+          <lb/>petstatenn.
+          <lb/>Auff dem kheller.
+          <lb/>Ain peŭtl chastenn.
+          <lb/>Ain meltruchenn.
+          <lb/>Ain fanncknŭs stockh.
+          <lb/>Ain trag truchenn.
+          <lb/>Im sumerhaw̆s in
+          <lb/>Wigeles sal.
+          <lb/>Ain schies täfel mit irer
+          <lb/>deckhenn, acht gloggspey̆ssen
+          <lb/>und fŭnff hŭltzen stay̆nen.
+          <lb/>Ain kamer zů ainer wălschen
+          <lb/>pŭchssenn.
+          <lb/>Ain fŭrpannckh.
+          <lb/>Ain rott stay̆ner tisch an
+          <lb/>ainen fues.
+        </ab>
+        <ab>
+          <pb n="19" facs="#surface-11330561-19"/>
+          <milestone unit="folio" n="8r"/>
+          <lb/>Ain wey̆s stainer tisch
+          <lb/>mit ainem fuess.
+          <lb/>Ain gross horen.
+          <lb/>Ain clainer eysenn schraŭfen
+          <lb/>zů ainer puchssenn.
+          <lb/>In der cappellenn.
+          <lb/>Ain vergŭlter kelch, nicht way̆s
+          <lb/>man ob er sŭlbrenn oder messing
+          <lb/>sey̆, mitsambt seiner paten
+          <lb/>auch vergŭlt.
+          <lb/>Ain grŭn damaschgenn
+          <lb/>corporal taschen mit dem
+          <lb/>corporal.
+          <lb/>Ain rott damaschgen mess¬
+          <lb/>gwanndt mit seiner zůgehor¬
+          <lb/>ung und ornamenten und ain
+          <lb/>schŏnes creŭtz.
+          <lb/>Mer ain alts schlechts sey̆den
+          <lb/>mesgwanndt mit seiner zugehŏr.
+          <lb/>Ain pŏs plabs mĕsgwanndt
+          <lb/>mit der Vintler wappenn.
+          <lb/>Ain mĕspuech Rŏmer.
+          <lb/>Zwen messenn lew̆chter.
+          <lb/>Zwen zy̆nen ley̆chterer.
+        </ab>
+        <ab>
+          <pb n="20" facs="#surface-11330561-20"/>
+          <milestone unit="folio" n="8v"/>
+          <lb/>Ain hŭltzener ley̆chter.
+          <lb/>Ain schŏne vergŭlte tafel dar i
+          <lb/>inn Sannd Anthoni, Sannd
+          <lb/>Cathrein und Sannd Crisstoffl
+          <lb/>pilder alle vergŭlt.
+          <lb/>Fŭnff altertŭecher bŏs und gůt.
+          <lb/>Ain frey̆ pild Sannd Anna.
+          <lb/>Mer ain alts pildl Unnser Fraw.
+          <lb/>Zwen vergŭlt kerzenn stăb.
+          <lb/>Ain verglasŭrter ŏlkrueg.
+          <lb/>Ain chupfrenn kessl zum
+          <lb/>weichprunen.
+          <lb/>Ain wanndl glŏggl.
+          <lb/>Inn dem stall.
+          <lb/>Acht truchen mit phey̆l.
+          <lb/>Ain truchen mit altem ey̆¬
+          <lb/>senn zewg.
+          <lb/>Ain lagl mit ain wenig
+          <lb/>pĕch und lŏrgat.
+          <lb/>Zwo allt truchen.
+          <lb/>Ain stockh zů ainer grossen
+          <lb/>pŭchssenn.
+        </ab>
+        <ab>
+          <pb n="21" facs="#surface-11330561-21"/>
+          <milestone unit="folio" n="9r"/>
+          <lb/>Auff dem chastenn.
+          <lb/>Zwen mŭlstain mit zwo try̆ben.
+          <lb/>Ain khorn chastenn mit zwain
+          <lb/>clŏstern.
+          <lb/>In der pŭchsen camer.
+          <lb/>Zwoundfŭnffzig fewrer werff kugel.
+          <lb/>Zwelff gannz pley̆ platten.
+          <lb/>New̆nzehen tschăkhenn.
+          <lb/>Zwo truchen mit phey̆len.
+          <lb/>Ain grosse glas truchen mit
+          <lb/>fewer phey̆len.
+          <lb/>Ain văssl mit pĕch, nit vil.
+          <lb/>Ain văssl mer dann halbs
+          <lb/>vol mit werffenden fewer py̆ren.
+          <lb/>Ain gemalte lăre truchen.
+          <lb/>Ain allte trŭchen mit allten
+          <lb/>pŏgenn.
+          <lb/>Ain harnasch chastenn dar inn
+          <lb/>zwo hundskappenn.
+          <lb/>Ain kŏcher.
+        </ab>
+        <ab>
+          <pb n="22" facs="#surface-11330561-22"/>
+          <milestone unit="folio" n="9v"/>
+          <lb/>Im thuren daselbs.
+          <lb/>Zwĕlff văssl claine mit pŭchsen
+          <lb/>pullver vol.
+          <lb/>Vier grosse văssl auch vol mit
+          <lb/>pŭchsenn pullver.
+          <lb/>Und zů ŏbrist an ainer stangen
+          <lb/>etwevil spangŭrtl.
+          <lb/>In der krawt kramer.
+          <lb/>Etwevil gross stainen pŭchsen,
+          <lb/>stain  und gfãss zů pŭchsenn.
+          <lb/>Imm pad.
+          <lb/>Fŭnff stainpŭchsel.
+          <lb/>Ain alter lannger tisch.
+          <lb/>Im gwelb bey̆ der porten.
+          <lb/>Drewundzwainzig pŭchssenn
+          <lb/>charren reder.
+          <lb/>New̆n mŏrser pŭchssenn.
+          <lb/>Fŭnffunddreissig chamern zů
+          <lb/>pŭchsen.
+          <lb/>Ain ey̆snen grosse slanngen
+          <lb/>pŭchsen.
+        </ab>
+        <ab>
+          <pb n="23" facs="#surface-11330561-23"/>
+          <milestone unit="folio" n="10r"/>
+          <lb/>Ainsundzwainzig wălsch
+          <lb/>schlanngen und charrnn
+          <lb/>pŭchsen.
+          <lb/>Ain chlain stainpŭchsel.
+          <lb/>Imm hof
+          <lb/>bey der portenn.
+          <lb/>Vier hellen partten.
+          <lb/>Drey̆ allspies.
+          <lb/>Drey̆ alt tschalăren.
+          <lb/>Ain stainpŭchsen ungefast.
+          <lb/>Ain grosser torggelstain.
+          <lb/>Zwo pafesenn.
+          <lb/>So ist hinauf chomen von
+          <lb/>Hannsen Abennstorffer ambt¬
+          <lb/>man zů Bozen ob den hundert
+          <lb/>centen pŭchsenpullver
+          <lb/>ungefărlichen, nicht vil mer
+          <lb/>oder mynder.
+        </ab>
+        <ab>
+          <pb n="24" facs="#surface-11330561-24"/>
+          <milestone unit="folio" n="10v"/>
+        </ab>
+        <ab>
+          <pb n="25" facs="#surface-11330561-25"/>
+          <milestone unit="folio" n="11r"/>
+          <lb/>Vermerckt hienach meines
+          <lb/>allergenadigisten herrn
+          <lb/>zew und farunde hab auff
+          <lb/>dem schloss Runggelstain,
+          <lb/>so von Hanns von Leŭchtenburg
+          <lb/>auff kunigklich geschäft Hann¬
+          <lb/>sen Abennstorffer ambman
+          <lb/>zů Bozen nach laut ainer in¬
+          <lb/>vitari zetl mir ŭber geant¬
+          <lb/>wurt durch Hannsen Runcker
+          <lb/>notari und ander dar inn
+          <lb/>manglt etlicher zewg hienach
+          <lb/>begreffenn und der zettln sind
+          <lb/>zwo ingeleichem laut hab
+          <lb/>ich mir unter seinem pett¬
+          <lb/>schaft, die ander im geant¬
+          <lb/>wurdt unter meinem pett¬
+          <lb/>schaft beschehen an Aller
+          <lb/>Seelentag im LXXXXIII jare.
+          <lb/>Am erstenn ain sŭlbrenn
+          <lb/>ŭbergŭlte monnstranzenn
+          <lb/>mit mer ingevasten grossen
+          <lb/>parillen, dar inn vier dŏrn
+          <lb/>von unnsers herrn kron.
+          <lb/>Drey̆zehen pullver taschenn.
+          <lb/>Drey̆zehenn zŭnter ring.
+          <lb/>Drew lăre fŭervas sind
+          <lb/>von Kaltern chomenn.
+          <lb/>Ain grosse pley̆enne plăten
+          <lb/>wigt ungevărlichen claine
+          <lb/>wag ainen centen acht¬
+          <lb/>undzwainzig phunndt.
+        </ab>
+        <ab>
+          <pb n="26" facs="#surface-11330561-26"/>
+          <milestone unit="folio" n="11v"/>
+          <lb/>Ain aser mit saliter.
+          <lb/>Sy̆benn ey̆senn auf die
+          <lb/>wăgn darauf man die
+          <lb/>schlangenn pŭchsen legt.
+          <lb/>Sy̆benn Sweizer lannzen
+          <lb/>darunter vier gevast.
+          <lb/>Zwen alspies.
+          <lb/>Fŭnfundzwainzig hawen.
+          <lb/>Sybenzehen pickl.
+          <lb/>Fŭnf hellenparten.
+        </ab>
+        <ab>
+          <pb n="27" facs="#surface-11330561-27"/>
+          <milestone unit="folio" n="12r"/>
+        </ab>
+        <ab>
+          <pb n="28" facs="#surface-11330561-28"/>
+          <milestone unit="folio" n="12v"/>
+        </ab>
+        <ab>
+          <pb n="29" facs="#surface-11330561-29"/>
+          <lb/>[us_hinten_r]
+        </ab>
+        <ab>
+          <pb n="30" facs="#surface-11330561-30"/>
+          <lb/>[us_hinten_v]
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

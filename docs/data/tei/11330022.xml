@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330022">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Greifenstein (neuer Inhaber Chunradit von Guell, Ritter)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 215.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 215.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330022</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1452-08-25">1452.08.25</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330022-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/MFCLUHCHPUYLQEHLGFFWMSEE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330022-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/GGAYNXMODTAYRASZNJWXDVFJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330022-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/KXKOGYQIFDIQESCNXEGTSZNI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330022-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/KNHKMAXZHRRGDWTJSWWWLLRN/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330022-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Nota hie nach ist vermerkt die
+          <lb/>speiss zewg und varind hab
+          <lb/>so auf Greiffenstain noch
+          <lb/>vorhanndn ist und das herrn
+          <lb/>Chunradten von Guell ritter
+          <lb/>ist ingeanttw(u)rtet als man
+          <lb/>im Greiffenstain von meins
+          <lb/>gnädigen herrn hertczog Sigmunds etc.
+          <lb/>wegen empholhen und inge¬
+          <lb/>anttw(u)rt hab am vreitag
+          <lb/>nach Sand Bartholomeus
+          <lb/>tag anno Domini etc. quinqua¬
+          <lb/>gesimosecundo etc.
+          <lb/>Item czwain vass wein, darunder
+          <lb/>ist das aine vol und hat
+          <lb/>peẏ X ürn, ausdem andern
+          <lb/>ist gespeiset und ist noch
+          <lb/>darinn als peẏ VI ürn.
+          <lb/>Item ain kasten voller melbs
+          <lb/>dar indem kelder stet.
+          <lb/>Item zwo lageln vol smalcz.
+          <lb/>Item ain new̑ kubel vol mit öl.
+          <lb/>Item salcz czehen stãr.
+          <lb/>Item waitczein mel ain stär.
+          <lb/>Item vier par leÿnlach.
+          <lb/>Item pleẏ peẏ VII1/2 czenttnn.
+          <lb/>Item puxenpulver czwo lägeln,
+          <lb/>ist yde umb ain twerch hant
+          <lb/>lẽr.
+          <lb/>Item pheill czwo lagelnn.
+          <lb/>Item czwelf hantpŭxen.
+          <lb/>Item czwo phanne.
+          <lb/>Item vier hulczein plaÿ.
+          <lb/>Item funf theller.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330022-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item ain erey̑ner haven.
+          <lb/>Item XVIII hulczein weiss
+          <lb/>klaÿne schusselnn die von
+          <lb/>Eppan komen sind.
+          <lb/>Item ain altarstain daraŭf
+          <lb/>man mėss halt.
+          <lb/>Item ain kelch an ain patenn
+          <lb/>und ain corperal.
+          <lb/>Item vier opherkanndle(n).
+          <lb/>Item drey glokle(n).
+          <lb/>Item vier palleÿsen und
+          <lb/>ettleich ledigeÿsen und
+          <lb/>alteysen.
+          <lb/>Item sechs smidzangen gross
+          <lb/>und klaÿn.
+          <lb/>Item ain pöser anposs.
+          <lb/>Item vier lärchein und feuchtenn
+          <lb/>vass im kelder.
+          <lb/>Item ain pewtelvass aufdem
+          <lb/>kelder.
+          <lb/>Item ain lagel mit püxen¬
+          <lb/>pulver, ist kawm das drittail.
+          <lb/>Item in ain(er) lägel ist ain
+          <lb/>wenig swebel.
+          <lb/>Item ain halb lageln(n) mit
+          <lb/>pigel.
+          <lb/>Item czwo gross lidrein stuchknn
+          <lb/>czum czewg.
+          <lb/>Item czwo lageln mit pheilln.
+          <lb/>Item funf pett.
+          <lb/>Item czwaý messgewant mit
+          <lb/>irer zugehorung(en).
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330022-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item ain messpüch.
+          <lb/>Item drew pücher und altar¬
+          <lb/>tücher.
+          <lb/>Item aber ain püchel.
+          <lb/>Item sechs targen güt und
+          <lb/>pöse.
+          <lb/>Item ain spannpanchk.
+          <lb/>Item ain plaspalg und ain
+          <lb/>hantsagt.
+          <lb/>Item czwen sliffstain.
+          <lb/>Item siben messein hänt¬
+          <lb/>puxen gestilt.
+          <lb/>Item funf pöse alte armbrũst
+          <lb/>und ain alte eÿben und
+          <lb/>ain spannpanchk.
+          <lb/>Item ain nuspawmen
+          <lb/>truhen.
+          <lb/>Item fünf alte pöse eÿsen¬
+          <lb/>püxen klain gestilt.
+          <lb/>Item ain grosser kossȯl.
+          <lb/>Item ain lavetsch.
+          <lb/>Item dreẏ glokspeisein haṽen
+          <lb/>und ain czerbrochen hav̆en.
+          <lb/>Item ain pöse phann.
+          <lb/>Item ain röst.
+          <lb/>Item ain drifüss.
+          <lb/>Item czwo hȧlen.
+          <lb/>Item ain morser.
+          <lb/>Item ain prȧttspiss.
+          <lb/>Item czwo tarȃrspuxen
+          <lb/>mit ainer lad(ung).
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330022-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Item ain alte eysnein püxen
+          <lb/>ist czerbrochnn.
+          <lb/>Item ain alte stechplattnn.
+          <lb/>Item drėy czÿnein kanndln.
+          <lb/>Item der harnäsch in der
+          <lb/>stuben ist nicht vast güt
+          <lb/>und ain armzewg und ain
+          <lb/>scharfflir.
+          <lb/>Item dreÿ bullen mit
+          <lb/>anhangenndn insigelnn.
+          <lb/>Item ain näbiger.
+          <lb/>Item ain schleghachknn.
+          <lb/>Item ain alte hawenn.
+          <lb/>Item zwelf maÿlanisch(e)
+          <lb/>panċzėr, darunder ain eysnein
+          <lb/>panczer ist.
+          <lb/>Item ain newer stochk zu
+          <lb/>gevange[.] [..]ttn.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

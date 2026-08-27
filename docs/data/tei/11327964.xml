@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11327964">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Thaur (Inhaber Hildebrand von Cles)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 049.5</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 049.5</idno>
+            <altIdentifier type="transkribus">
+              <idno>11327964</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1487-01-31">1487.01.31</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11327964-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/QOXOCUPZISQZESERBRITSWOU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/XQXZDINYJKWKQALHGZBQQNLO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/GATIMGSGFCPOMWRPPYEURZKV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/YWTAHVHHHBTDWZALUDMYVCRV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/KMYDTPVZAGTPBEJTJDHUOXXX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/WUOSLNNJTBFAYYQXWZQWTEJG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/JGESBWVNFMEHFHJNSJZLMNUE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/QCYPTCATGEHGXLZCJIFJKAJF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZDSKCWTNCUESVAWWTVLHOSTI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/BNOEJTPGYAFRZGZNMOXNYMLB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/LLSTFVIUWIAZJMREKGUFRTVT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11327964-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/WENPVZOVIKXPQOBONLSXPUGB/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11327964-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Anno etc. LXXXVIIten an mitich(e)n vor
+          <lb/>Purificacionis Mater Marie ist Hildprant von
+          <lb/>Gles das Slos Taur mit s(einer) zusach(en)
+          <lb/>von ander hab es so hernach geschr(ieben) ders(elbe) so (der)
+          <lb/>selb(er) geantwurt Peteren, Hansen Ubelhers
+          <lb/>[- - -] gelist(en) [- - -] [- - -] [- - -]
+          <lb/>[- - -]von [- - -] [- - -] [- - -].
+          <lb/>In der grossen herrn stubenn als vor.
+          <lb/>In der camer daran ausn und inen.
+          <lb/>I pet.
+          <lb/>I polster.
+          <lb/>I kuss.
+          <lb/>I weisser golter.
+          <lb/>I seidiner golter.
+          <lb/>I per leilach.
+          <lb/>Item in allen ganz isst sich.
+          <lb/>In der melkamer auch vor.
+          <lb/>Item ein vassel mit poten [- - -].
+          <lb/>Item LVI XXV ster mel rigken dazu.
+          <lb/>Item LVI VIII ster klays.
+          <lb/>Item ein wag und gwichten dazu.
+          <lb/>Item ain sturzenni flaschen.
+          <lb/>Item III schauflen an stil.
+          <lb/>Item ein fleisch stock.
+          <lb/>Item ein fleischpeil.
+          <lb/>Item ein kupfreiner hafen zu ŏl.
+          <lb/>Item ein morser mit sein sto̊se).
+          <lb/>Item an dem fenst(er) [- - -] etlich [- - -].
+          <lb/>Item so muss es [- - -] [- - -].
+          <lb/>I stŭ[.].
+          <lb/>VI [- - -].
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11327964-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item in d(er) [- - -] I grosess peck.
+          <lb/>Item in der camer da ein pfleger inn ist
+          <lb/>als vor.
+          <lb/>Item ein pet.
+          <lb/>I polster.
+          <lb/>I kiss.
+          <lb/>I strosack.
+          <lb/>II deck(en).
+          <lb/>I truhen.
+          <lb/>Item in der hel als vor.
+          <lb/>I pet.
+          <lb/>III polster.
+          <lb/>II kis.
+          <lb/>II rauch decken.
+          <lb/>I golter.
+          <lb/>I p(er) leilach.
+          <lb/>II stroseck.
+          <lb/>In der andern kamer.
+          <lb/>I pet.
+          <lb/>I polster.
+          <lb/>I rauche deck.
+          <lb/>I per leilach.
+          <lb/>I strosack.
+          <lb/>In der knecht stuben als vor
+          <lb/>II tisch.
+          <lb/>I slosser in(er).
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11327964-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item allen auf d(er) strall in der pawknecht kamer.
+          <lb/>I pet.
+          <lb/>I strosack.
+          <lb/>II kiss.
+          <lb/>II rauche deck.
+          <lb/>II lailach.
+          <lb/>I petstat pos.
+          <lb/>Item in der ander knecht kamer.
+          <lb/>I pet.
+          <lb/>I polster.
+          <lb/>I strosack.
+          <lb/>I p(er) lailach.
+          <lb/>II rauch decken.
+          <lb/>I pl[.]se petstat.
+          <lb/>Item aber in der drit(en) kamer.
+          <lb/>II petstat.
+          <lb/>I pet.
+          <lb/>I polster.
+          <lb/>I per leilach.
+          <lb/>I strosack.
+          <lb/>II deck rauch.
+          <lb/>Item im speisgaden.
+          <lb/>VIIII pachen halb.
+          <lb/>LVI fleisch LVI [- - -].
+          <lb/>Item VIII groß speiskes.
+          <lb/>II ziger tes(en).
+          <lb/>I vasel vol unzerlassen unslit.
+          <lb/>I [- - -].
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11327964-4"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Vor(e)m speisgaden.
+          <lb/>I schlifstein.
+          <lb/>II kraut hackhpenck.
+          <lb/>In der kuchen.
+          <lb/>VII pfannen gros und clein.
+          <lb/>V kessel gris und clein.
+          <lb/>V erein hafen.
+          <lb/>I hal.
+          <lb/>II prantrait.
+          <lb/>II drifues.
+          <lb/>II pratspiss.
+          <lb/>II heinzen.
+          <lb/>IIII eysenn kellen.
+          <lb/>IIII eysin hefen decken.
+          <lb/>XX milch schusslen.
+          <lb/>XII hulzin schusslen V new XVI teller.
+          <lb/>Ain gatz(en).
+          <lb/>IIII krautmesser.
+          <lb/>II kuchenmesser.
+          <lb/>XXIX zin schissl gros clein.
+          <lb/>X zinnen teller.
+          <lb/>VI messen leuchter.
+          <lb/>Vi kendlen klein gros.
+          <lb/>II pippen.
+          <lb/>[- - -]
+          <lb/>Item II hantuech.
+          <lb/>II tisch tuecher.
+          <lb/>I umbleg.
+          <lb/>Fŭr m(eins) h(errn) g(naden).
+          <lb/>IIIII tischtuecher.
+          <lb/>VI handtuecher.
+          <lb/>I umbleg.
+          <lb/>Fur das gesind.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11327964-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>X kŭe.
+          <lb/>[- - -].
+          <lb/>II wagenross mit irem gschir.
+          <lb/>III wagen minder I rads, ist der I ganz new̆.
+          <lb/>I holzsliten.
+          <lb/>I pflueg.
+          <lb/>Item IIII per leilach fŭr das hausfolck.
+          <lb/>Item ein messiger ring auf dem tisch.
+          <lb/>Item ein messens giespeck.
+          <lb/>Item II tengel gschir.
+          <lb/>III new segensen.
+          <lb/>Etlich alt segensen.
+          <lb/>VI rechen pos und gut.
+          <lb/>V gabeln hew̆.
+          <lb/>III new mistgabeln.
+          <lb/>III [.]alt.
+          <lb/>I mistkral.
+          <lb/>III holzhacken.
+          <lb/>IIII [- - -].
+          <lb/>IIII comat.
+          <lb/>It(em) V capaun.
+          <lb/>[- - -].
+          <lb/>XIX hennen.
+          <lb/>I han.
+          <lb/>Item holz hew̆ und strew̆ sol ansteen
+          <lb/>[- - -].
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11327964-6"/>
+          <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11327964-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11327964-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11327964-9"/>
+          <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11327964-10"/>
+          <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11327964-11"/>
+          <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11327964-12"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329901">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Ehrenberg, Inhaber Jörg Gossenbrot</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 158.1-2</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 158.1-2</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329901</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1477-05-14">1477.05.14</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329901-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/QBVDLVNNBXMHGWYTEZGJMZZZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329901-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/JQVDJZBCZIPDDQYBFISTYRKF/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329901-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermircktt was ich Jörgg Gossennbrott von dem vesten Caspar
+          <lb/>Frechenn an statt meins gnädigen herren in dem schloss Erenberg
+          <lb/>uff mittwuchen den Heiligen Auffartt abentt anno etc. LXXVII
+          <lb/>emphannigen hab.
+          <lb/>Item zun ersten dreẅ bettli sind aus neẅn bösen gannz errissen
+          <lb/>bettlen zusamen prachtt alles blos und aus vier bösse pólsteren
+          <lb/>und VII küssenn die gar tzu nichte sein gewesen nach ausweý¬
+          <lb/>sung der zedl die ich von herren Kasparen von Laubenberg han.
+          <lb/>Item ain tarras bũchs ist sibenn spann lang schüst ain stain als ain
+          <lb/>aÿ.
+          <lb/>Item vier hanmdbȗchsen geschifftt. Item ain lágell und ain klains
+          <lb/>vȃsßlin mitt büchsenbullver ist aus baiden genommen.
+          <lb/>Item ain stain bȗchs angeschăfftt.
+          <lb/>Item ain tarrans búchs ist sechs schůch lang hatt Österreÿch an
+          <lb/>baiden seÿtten. Mer ain tarrans büchs in ainer lad.
+          <lb/>Item zwaÿ armprust und vier läglen mitt pfey̑llen ist aus ainer genomen.
+          <lb/>Item ain platt mitt pleÿ de ist abgenomen.
+          <lb/>Item fünff erhȃffenn, ain kessell in dem bad offenn gewesen leÿtt
+          <lb/>ÿetz im speÿs gaden und tzway̑ allte böse beck.
+          <lb/>Item ain prattphann und ain kestin pfann, ain brantt raÿtt
+          <lb/>und ain feẅrhagken, ain hächell zu der kúchin und ain rost.
+          <lb/>Item ain ambos und ain horn anbos, ain tzang, ainen eÿsen schlegl.
+          <lb/>Item ain eÿsen ketten an der zisteren.
+          <lb/>Item siben tisch und ain tzÿm giesßfaß in der stuben.
+          <lb/>Item zwaỹ lãgenle mitt eẏsen peschlagen.
+          <lb/>Item zwaÿ plech, ains vor der badstuben das ander hört uff die küchin.
+          <lb/>Item ain eýsentürlin gehȏrtt fȗr das büchsenbullver.
+          <lb/>Item zwaÿ ketten darin man die gefangen legtt.
+          <lb/>Item neẅn schloss angeschlagen überall umbher an die gemãch.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329901-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item ain schloss an kastenn, ain schloss an marstall, ain
+          <lb/>schloss am stüblin beý dem marstall.
+          <lb/>Item ain gewanntt kastenn in dem alten fraw̃en zinner
+          <lb/>und dritthalb hundertt glasscheiben sindtt verglast in dem
+          <lb/>newen paw ainen kertzen trog, ain kestlin da man gleser einheng.
+          <lb/>Item ain streitt kolb mit ainen hilltzin stil.
+          <lb/>Inventari zedl gen
+          <lb/>Eremberg.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

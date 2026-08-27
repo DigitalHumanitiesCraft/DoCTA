@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11348799">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare der Schlösser Telvana und Petersberg (S.Pietro), bisheriger Inhaber Joachim von Montani, neuer Jacob Trapp</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 277.2-3</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 277.2-3</idno>
+            <altIdentifier type="transkribus">
+              <idno>11348799</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1456-10-28">1456.10.28</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11348799-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/JCBKABWREGXEEWOZOHCTTINP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348799-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/NJERAMKLHPWBCYHNVDLMENNT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348799-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/DMCJYKHLEXZWKGEUBPSZXBND/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348799-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/RKUHWLNMBRRLOKRHUCWELMLU/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11348799-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Item anno Domini etc. quinquagesimosexto
+          <lb/>an Sand Sÿmon und Sand Judas tag ist vermerckt und
+          <lb/>angeschriben worden die varund hab so auf den gslossen
+          <lb/>Telphan und Peters Perg gewesen und herren Jacoben
+          <lb/>Trappen dienner, genant Otten Honiger, geantwurt worden ist
+          <lb/>als dan derselben gslos Joachim von Montani nach geschäfft
+          <lb/>meins gnadgen herren von Triennt dem benantten Otten
+          <lb/>Höniger abgetretten und ingeantwurt hat.
+          <lb/>Item von getraid und melb hat Jochim von Montani geanttwurtt.
+          <lb/>Item LXXXXIX ster hirss. Item LXXXIII ster pon. Item XXIII ster fenich. Item
+          <lb/>LXIII ster rogken. Item XLIII ster waitz. Item gemalns mel IIIICII ster.
+          <lb/>Item auf Sand Peterspergen gemalns getraid XXX ster.
+          <lb/>Item aller wein so gen Delphan gehort ist daselbs bliben
+          <lb/>ausgenomen vier fuder hat Jochim von Montani von danen
+          <lb/>gefurt, dÿe hat er auch dargelichen gehabt auf Delphan
+          <lb/>und Sannd Peterspergen.
+          <lb/>Item XVIII p[..].
+          <lb/>Item II par laylachen.
+          <lb/>Item XX raundeckhen.
+          <lb/>Item XII haubtpolster.
+          <lb/>Item IIII khüssen.
+          <lb/>Item VI khoczen.
+          <lb/>Item II lederlach.
+          <lb/>Item III schermpuchsen.
+          <lb/>Item III staïnpuchsen.
+          <lb/>Item XIIII häntpŭchsen.
+          <lb/>Item VI armbrost.
+          <lb/>Item IIII khürus.
+          <lb/>Inventari zu Delphan
+          <lb/>und Sand Peters Perg.
+          <lb/>1456
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11348799-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item V pantczer.
+          <lb/>Item VIIII tschäladen.
+          <lb/>Item V hellem.
+          <lb/>Item II spiess.
+          <lb/>Item ein wenig puchsenpulver.
+          <lb/>Item II star silitter.
+          <lb/>Item IIII lagelln mit pheil
+          <lb/>und ander ledig pheil.
+          <lb/>Item IIII stuckh pleÿ.
+          <lb/>Item ain fleisch portten.
+          <lb/>Item III khëssellen.
+          <lb/>Item XV hulczen schüssellen.
+          <lb/>Item IIII gross zynnen schussellen.
+          <lb/>Item III klain zynnen schussellen.
+          <lb/>Item XXVIII plandel.
+          <lb/>Item V hullen.
+          <lb/>Item II pratspiss.
+          <lb/>Item IIII phannen mit der kestenphanen.
+          <lb/>Item IIII lavetschen gross und klain.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11348799-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item ain halbs vass salcz.
+          <lb/>Item IIII glockspeissen hafn.
+          <lb/>Item ain wag.
+          <lb/>Auff Sand Petersperg
+          <lb/>die varendn hab.
+          <lb/>Item IIII peth.
+          <lb/>Item VII leÿlachen.
+          <lb/>Item II haubtpölster.
+          <lb/>Item III khotczen.
+          <lb/>Item ain khüss(en).
+          <lb/>Item IIII rauchdeckhen.
+          <lb/>Item III hantpuchsen.
+          <lb/>Item III khessëllen.
+          <lb/>Item II lavetschen.
+          <lb/>Item ain phannen.
+          <lb/>Item ain drifuess.
+          <lb/>Item II feurhund.
+          <lb/>Item ain hällen.
+          <lb/>Item ain rost.
+          <lb/>Item ain pratspiss.
+          <lb/>Item VIIII hulcznschussellen.
+          <lb/>Item VIII plandel.
+          <lb/>Item II hackhn.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11348799-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Item hienach sind vermerckt die zinss so Joachim von Montani
+          <lb/>ingenomen hat und all ander zinss besteen vor.
+          <lb/>Item am ersten hat er ingenomen von
+          <lb/>Mathee Bennegnn XLVIIII marcketten.
+          <lb/>Item Andre Rïncker von Runczemer perg X ster hirs.
+          <lb/>Item von demselben Andre III 1/2 ster waitz.
+          <lb/>Item von demselben Andre XIII ster rogcken.
+          <lb/>Item von des Donä hoff
+          <lb/>an der Maẅt III ster hirs.
+          <lb/>Item vom Urban Pecken X ster rocken.
+          <lb/>Item die brobst auß der burgen
+          <lb/>haben an der collecten außgericht LXXXV lb. per X gl. I lb.
+          <lb/>Item auch hat Joachim von Montani ingenomen all zoll in der burgen
+          <lb/>alslang er die gslos ingehabt hat untz auf den nachst
+          <lb/>vergangen montag vor Sỹmonis et Jude und den lemper¬
+          <lb/>zehennt und den zinss von zwain alben Casse und Vall
+          <lb/>Solar. Auch vorbesteet dem Joachim von Montani das
+          <lb/>hew auf dem perg Cassapendula. Beÿ disem inventari
+          <lb/>und zedl zemachen sind gewesen Franczischk Kastelalter, Hainrich
+          <lb/>von Jauffen, Jacob Cariol richter zu Ivan und Lienhart von
+          <lb/>Montavall richter in der burgen und vil annder verpetschafft
+          <lb/>und versigelt mit Joachims von Montani, des benantten Castel¬
+          <lb/>alter, Hainrichs von Jauffen und Otten Honiger aufgedruckten
+          <lb/>pethschafth der zedel in gleicher laẅt drey(e) gemacht seien.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329462">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundsegg (Finstermünz), bisheriger Inhaber Christoff Renthly, neuer Jossepp Überriner</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 151.2</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 151.2</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329462</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1485-02-23">1485.02.23</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329462-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/LLQULJVOWTGXMSZKCNKUVMSO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329462-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/CPZTJUEPCSNCCKHWNOXUWXMY/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329462-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt den gezŭg so juncker
+          <lb/>Cristoff Rentlÿ juncker Josseppen
+          <lb/>U̇berriner in geantwurt haut zů
+          <lb/>Sigmundsegg am mitwochen an
+          <lb/>dem Cotember in der Vasten im LXXXV.
+          <lb/>Item vier möschÿ hagenbu̇chssen.
+          <lb/>Sechs hantbu̇chssen.
+          <lb/>Ain halbs väsly mit pulffer.
+          <lb/>Sechs armbrust.
+          <lb/>Drÿ winden.
+          <lb/>Ain lagil mit pfilen.
+          <lb/>Ain schafrait.
+          <lb/>Ain betstat.
+          <lb/>Zwo pfannen.
+          <lb/>Zwo rotschu̇schlen.
+          <lb/>Ain lang schwert.
+          <lb/>Ain gros horn.
+          <lb/>Ain stuck blÿ.
+          <lb/>Ain lang zugsail.
+          <lb/>Ain spis truchen.
+          <lb/>Ain vancknus ÿsen.
+          <lb/>Zwo seges sen.
+          <lb/>Ain häll.
+          <lb/>Ain rost.
+          <lb/>Ain drÿfůs.
+          <lb/>Item Leo Schmid zů Pfuns ist schuldig
+          <lb/>m(einem) g(nädigen) h(erren) drÿ eÿssenplech, zwaÿ
+          <lb/>wagen reder kosten XXVI gl. sol
+          <lb/>er weschlachen, haut dar an hin
+          <lb/>ain r(einischer) gulden ist verrait m(einem) g(nädigen) h(erren).
+          <lb/>Drÿ hu̇bsch strithacken.
+          <lb/>Zwen schwin spies.
+          <lb/>Ain eren spies mit aim schwȃrtzen schaft.
+          <lb/>Vier märter howen.
+          <lb/>Drÿ bickel.
+          <lb/>Vier eẏssen schuflen.
+          <lb/>Zwo holtz hacken.
+          <lb/>Ain piel.
+          <lb/>Neúw eẏssenplech.
+          <lb/>Vier lad eÿssen.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329462-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Inventȃri von Sigmundseckg
+          <lb/>geantwurt durch den Uberener.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

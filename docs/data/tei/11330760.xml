@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330760">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Turmes zu Mals (Inhaber Kaspar Übel)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 249.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 249.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330760</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1479">1479</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330760-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/SNOZROIRJUSCWNTMUIRFSAZJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZIGEDBOFGMBCNRDNKOEWJCCQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/TZWMUIEPJXHTJRUYTKYOKCCK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/VFEZUXGZQVSHFZYNGQJFSADK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/EZIVSRAFMCXWOUWHRYVKLATU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/GBXSZLWJVCVRJFFEIOGOPIME/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/CRCVOXBXADDQEEJKOPWQPMEX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/SLALAEIBLPTFCSGULZCWGTAD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/EPJKOIZZSEBOVGHYYFDUSDER/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/IDBBBISLLBUPZMLBKRKDOJNS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/SDQFTBLRACYYGDXJCCPQBALM/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330760-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/EYCSQRWVYMFGYBLUWCMWHPUP/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330760-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerkt waz dy Pŭcherin
+          <lb/>zŭ irer notdurfft mit ir
+          <lb/>auß dem turen genomen
+          <lb/>hatt von petgewant und
+          <lb/>andre masserey durch
+          <lb/>Caspern Ŭbel die zeit verweser
+          <lb/>im turen ir geantwurt.
+          <lb/>Item II pett mit kõllischer ziechen.
+          <lb/>Item I pett mit ainer leynen ziechen.
+          <lb/>Item I klains degk pett.
+          <lb/>Item II põlster mit kõllischer ziechen.
+          <lb/>Item I klains kũss.
+          <lb/>Item I rawche fũxine degk
+          <lb/>von swãnzen.
+          <lb/>Item I fũxine rũgkine schawben.
+          <lb/>Item III lõdene degken von pãllãtsch.
+          <lb/>Item III par leynlachen.
+          <lb/>Item IIII tisch tũcher.
+          <lb/>Item III handzwehel.
+          <lb/>Item III kũssen.
+          <lb/>Item II rauche degken.
+          <lb/>Item I zesarig degken.
+          <lb/>Item I geschnittne degk.
+          <lb/>Item II klain zynnen kantlein
+          <lb/>von ain halbs tringken.
+          <lb/>Item II messin peck.
+          <lb/>Item II zynnen salz vãßlen.
+          <lb/>Item II flãdrin kõphel.
+          <lb/>Item I klains painen trũchli.
+          <lb/>Item I mass kantten.
+          <lb/>Item V gross zynnen schũssel.
+          <lb/>Item VIIII klaine zynne schũssel.
+          <lb/>Item I zynnen senffschũssel.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330760-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item ain messen gieß vãsel.
+          <lb/>Item mer I maß kantten.
+          <lb/>Item ain klaine slechte truhen.
+          <lb/>Item I klain erin hafen.
+          <lb/>Item II phannen.
+          <lb/>Vermerkt dy masserey
+          <lb/>und hawsplunder so
+          <lb/>der Pŭcher im turen
+          <lb/>gelassen hat, daz nit
+          <lb/>in den verpettschafften
+          <lb/>gemãchlen verslossen ist.
+          <lb/>Von ersten pett und pettgewant.
+          <lb/>Item in der kamer vor der newen
+          <lb/>stuben sind III pett.
+          <lb/>Item I schãffene degk und I strosack.
+          <lb/>Item in dem vorder staingadem III pet.
+          <lb/>Item III põlster mit leynen ziechen.
+          <lb/>Item II kũsse mit gstreifften ziechen.
+          <lb/>Item VI leinlach.
+          <lb/>Item I plaber gollter.
+          <lb/>Item IIII rauch degken.
+          <lb/>Item III pälãtsch degken under dy petten.
+          <lb/>Item mer ain polster mit ainer leynen ziechen.
+          <lb/>Item I küssen mit köllischer ziechen.
+          <lb/>Item mer IIII schaffene degken.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330760-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item I swarzer gollter.
+          <lb/>Item I par leynlach.
+          <lb/>Item mer III pãllãtschen degken, ist
+          <lb/>dy ain mit schãffin underzogen.
+          <lb/>Item II new̃e kupphren kessel.
+          <lb/>Item I kupphren haffen.
+          <lb/>Item IIII tisch tũecher und III hant
+          <lb/>zwehel sind herfornen gelassen,
+          <lb/>daz nicht ain gespert ist tãglich
+          <lb/>ze prauchen.
+          <lb/>Item in dez pũxenmaisters ãrcker
+          <lb/>ist I pett.
+          <lb/>Item I pŏlster.
+          <lb/>Item I kũss.
+          <lb/>Item I ziechen.
+          <lb/>Item I swarzer gollter.
+          <lb/>Item I pellz.
+          <lb/>Item II leynlachen.
+          <lb/>Item I pȯlãcken.
+          <lb/>Item mer I leynlach.
+          <lb/>Item mer I ziechen.
+          <lb/>Harnasch in der gsellen stuben.
+          <lb/>Item II rucken krebs.
+          <lb/>Item V krebs.
+          <lb/>Item I eysen hüt.
+          <lb/>Item I part.
+          <lb/>Item I par meũsel.
+          <lb/>Item I par straiff tãschen.
+          <lb/>Item IIII par hentschůch.
+          <lb/>Manglt II par
+          <lb/>hat der Ubeli
+          <lb/>und [.]fili.
+          <lb/>Item III winden.
+          <lb/>Item III arm brost und I kocher.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330760-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Von zynen gschyer.
+          <lb/>Item VII zynen schũssel,
+          <lb/>II plann,
+          <lb/>VIII klaine zynen schũssel,
+          <lb/>I mõrser,
+          <lb/>I stõssel,
+          <lb/>I zynnes gÿeßvass,
+          <lb/>I kupphren giesvãsspegk,
+          <lb/>II messen lew̃chter,
+          <lb/>I spilprett,
+          <lb/>III zwymassige kanten,
+          <lb/>II maß kantten,
+          <lb/>I maß trincken kannten ist daz lid
+          <lb/>darab prochen.
+          <lb/>Item in der hell ist pei II1/2 z[..]st[...]
+          <lb/>oxen an tigen flaisch,
+          <lb/>I zenten ũnslid allez ungefarlich.
+          <lb/>Item sweine flaysch von IIII swein
+          <lb/>und ain viertail.
+          <lb/>Item III gãrbte hew̑t,
+          <lb/>VI gãrbte kälb fel,
+          <lb/>XXXV roche schaff fel,
+          <lb/>X par schŭech.
+          <lb/>Item in dem korn gadem
+          <lb/>ain visch segen.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11330760-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Item in dem speysgadem
+          <lb/>I vaß mit mel nit gar vol,
+          <lb/>I pottich darinn etwev̆il mel,
+          <lb/>I hew̆ strick,
+          <lb/>IIII pelg,
+          <lb/>X käss,
+          <lb/>III melpew̃tel.
+          <lb/>Item in dem milch keller
+          <lb/>II kŭbel mit smaltz,
+          <lb/>II1/2 knollen roch smaltz,
+          <lb/>ain hawffen mit ungehachelter
+          <lb/>hanff und har.
+          <lb/>Item in dem wein keller ligen
+          <lb/>V fũer vãsser, in dem ain
+          <lb/>vaß leÿt Trämynner und
+          <lb/>ist dý wĕn vornen an der
+          <lb/>spangen gesnitten, in dem
+          <lb/>ander vaß ist pei II ȗren
+          <lb/>speiß wein.
+          <lb/>Item III klaine văsel, in dem
+          <lb/>ain văssl ist pei IIII uren
+          <lb/>alter rotter wein, und
+          <lb/>III smerlayb.
+          <lb/>Item in der knecht arker sind
+          <lb/>II knecht pett,
+          <lb/>I polster,
+          <lb/>I kũsse,
+          <lb/>IIII leynlachen,
+          <lb/>IIII põse decken.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11330760-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Item in dem gang ligen
+          <lb/>VIII lãre fũer vãsß.
+          <lb/>Kuchen gschyer.
+          <lb/>Item in der kuchen sind V erin haffen
+          <lb/>klain und groß,
+          <lb/>III laffetsch kessel klain und groß,
+          <lb/>VI eysen kellen põß und gŭt,
+          <lb/>XII phannen klain und groß,
+          <lb/>II pratt spiß,
+          <lb/>II drey̆ fuss,
+          <lb/>II hälen,
+          <lb/>I prant traitt,
+          <lb/>ain rost,
+          <lb/>ain kuchn gãbel.
+          <lb/>Paw stadel.
+          <lb/>Item im pawstadel ist hew̃, grŭmat,
+          <lb/>koren, waiz und stro, gedroschens
+          <lb/>und ungedroschen.
+          <lb/>Item II wannen,
+          <lb/>I mut,
+          <lb/>I wagen mit IIII reder
+          <lb/>sünsten II reder,
+          <lb/>II unbeslagen reder,
+          <lb/>I roche oxen hawt,
+          <lb/>II hew̃ strick.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11330760-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>Item II holz strick,
+          <lb/>I prozen,
+          <lb/>V hew̃ gabel,
+          <lb/>II phlũg,
+          <lb/>II wagensen,
+          <lb/>I kădenãtsch,
+          <lb/>III kammat,
+          <lb/>I ziech joch mit seinem zeũg,
+          <lb/>IIII hawgen, põzz und gŭt,
+          <lb/>II zappawen,
+          <lb/>III scheitthacken.
+          <lb/>Vĭch.
+          <lb/>Item II ziech oxen,
+          <lb/>IIII kũe,
+          <lb/>III schaff,
+          <lb/>II lămper,
+          <lb/>I kalb.
+          <lb/>Item V klaine mest swein,
+          <lb/>I swein mŭter,
+          <lb/>II junge swein.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11330760-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11330760-9"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>Vermerkt meins gnadigen
+          <lb/>herrn zeȗg von pŭxen,
+          <lb/>armbrost und tartschen
+          <lb/>im turen ze Mals.
+          <lb/>Item in dem vorder staingaden ligen
+          <lb/>XI hagken pȗxen,
+          <lb/>I tarrass pũxen,
+          <lb/>XLVIII hanntpŭxen,
+          <lb/>XXI lidrein pulfer tãschen, die
+          <lb/>zŭ dy̅ obgemeltten puxen gehoren,
+          <lb/>XVIII zŭntt ring zū pŭxen.
+          <lb/>Item VIII allte armbrost.
+          <lb/>Item auff dem sal hangen VIII tãrtschen.
+          <lb/>Item in dem grossen turen sind
+          <lb/>II lagel mit pũxen pulfer,
+          <lb/>I lagel mit hawß pheyl,
+          <lb/>II vãsli mit sallitter.
+          <lb/>Item mer ligen im turen XII pofesen,
+          <lb/>V hanndt tartschen hat der
+          <lb/>Grũenepach mit im von Slanders
+          <lb/>her auff pracht im turen.
+          <lb/>Item II hacken pux sind gelihen
+          <lb/>auff Liechntenberg gelihen dy
+          <lb/>gehõren auch im turen.
+          <lb/>Item I panzer krãgl, hanntschŭch
+          <lb/>und anders etc. hat Casper Ŭbeli
+          <lb/>und sein sun hin gefirt und
+          <lb/>nit angeschriben etc.
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11330760-10"/>
+          <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11330760-11"/>
+          <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11330760-12"/>
+          <milestone unit="folio" n="6v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

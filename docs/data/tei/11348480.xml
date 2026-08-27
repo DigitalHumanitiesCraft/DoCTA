@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11348480">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Lichtenberg im Vintschgau (Pfleger Gottfrid Nillas)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 253.3</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 253.3</idno>
+            <altIdentifier type="transkribus">
+              <idno>11348480</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1450">1450</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11348480-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/MGRFIQVAMREWBNYTVNYJUWYR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348480-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/MPEMMRZXFHVCKKFTGUEIAOFY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348480-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/VSHAOTYJEJQFAMVYHEMGWHKV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348480-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/RYCETATDIDVOJYYKVEWMIKYR/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11348480-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Nota vermerkcht die varende
+          <lb/>hab die mir der Valentein
+          <lb/>von Montãny auff Lichten¬
+          <lb/>bergk geantwũrtet hat als
+          <lb/>er mir Lichtenberg hat uber¬
+          <lb/>geben und ich ingenomenn
+          <lb/>hab ingegenwirtikaÿt der
+          <lb/>erbern lew̆t die her nach
+          <lb/>geschribenn stendt etc.
+          <lb/>Item am ersten ain eysnene pũchss
+          <lb/>die schŭst ain stain als gross als
+          <lb/>ain klaine veltkŭegel.
+          <lb/>Item und zwaÿ pfund púchsen pũlver.
+          <lb/>Item und XXXX hauss pfey̆ll.
+          <lb/>Item ain tisch in der stũebenn.
+          <lb/>Item dreÿ new schintlein kästen die
+          <lb/>hat der Peter Kobolt die zwen
+          <lb/>gen Malls gefŭrt an mein
+          <lb/>willen und wissen und sprach
+          <lb/>er wolts zú dem turen und
+          <lb/>mein hern der hauptman und
+          <lb/>mein hern her Wigloys hettens mit
+          <lb/>im geschaffenn.
+          <lb/>Item zwën fleỹsch stokch.
+          <lb/>Item zwaÿ halbvass.
+          <lb/>Item ain newe hërdt.
+          <lb/>Item ain hŭndert new̑ schintlen.
+          <lb/>Item VI fŭrpẽnkch.
+          <lb/>Item ain knẽttrog.
+          <lb/>Item ain wũrchtavel zü dem prot.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11348480-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item fier protprëtter.
+          <lb/>Item zwwo leỹtter und ain leẏn.
+          <lb/>Item ain wasser zuber inder küchenn.
+          <lb/>Item ain richtavel inder kũchenn.
+          <lb/>Item dreÿ new kas stelenn.
+          <lb/>Item und wol peÿ X gewant stangen.
+          <lb/>Item ain vass in dem tawlen tũren.
+          <lb/>Item und peÿ der antwúrtung ist
+          <lb/>gewësen auff Liechtenberg Felix
+          <lb/>Ratgeb, Peter Kobolt die zeÿt
+          <lb/>richter zü Glũrns, Asim von
+          <lb/>Steten pfleger auff Kastelbeld,
+          <lb/>Hanns Harem von Schanzenn,
+          <lb/>Jöst Wirt von Tärss und Peter
+          <lb/>Laymershofer von Slannderss
+          <lb/>und ander lawt mer vonn
+          <lb/>Lichtenbergk genŭg etc.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11348480-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11348480-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

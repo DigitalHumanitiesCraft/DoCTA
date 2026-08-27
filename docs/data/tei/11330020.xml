@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330020">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Hewnfels (Heunfels)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 201.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 201.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330020</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1440">1440</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330020-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/MEJFQOTLLIGQXVKUCERNSPHH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330020-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/HFAIHNGOTNQXNGWWJOWBYHOM/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330020-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Zemerkchen die hab und güet so auf dem
+          <lb/>gsloß Hewnfels aus dem geschäft meins gnädgen grafn
+          <lb/>H(einrich) von Görtz und durch den geistlichen
+          <lb/>herren, herren Peteren Plangkhen techant
+          <lb/>zu Innchingen, auch den Chunratt Goltstain
+          <lb/>und Georien Hew̃ssen auf den hewtigen tag
+          <lb/>dato der zödel aigenntlich besicht und beschawt
+          <lb/>ist worden.
+          <lb/>Item in der kamer bey der stuben V pett,
+          <lb/>ain dekhpëtt, zwen hauptpölster, VI
+          <lb/>hauptkuss, ain pangkpolster, II pangkh
+          <lb/>chüss, VII lembrein degkh, alt und new̃,
+          <lb/>X schäffen dëkch, II spanpett, ain kariolen,
+          <lb/>XXIII leylach guete und pöze gezaichent
+          <lb/>und drey truchen, II alte degklach, ain
+          <lb/>padphaitel, ain raucher liechtplabs rökel,
+          <lb/>III tischtücher, IX handttücher gute und
+          <lb/>põse, vier plosse arm(bro)st, ain vadertail,
+          <lb/>II handtschuch, ain eysenhut, i tärthschel
+          <lb/>und ain gambssayl und ain kŏcher.
+          <lb/>Item in meins gnädigen f(ürsten) zimer ist IIII pett, IIII
+          <lb/>hauptpölster, VII hauptküss und ain
+          <lb/>truchen ist verslagen, III spanpett, zwo
+          <lb/>kariolen, III tisch.
+          <lb/>Item in des richters kamer ain pëtt, II
+          <lb/>leylach, ain rauhe dekch, ain polster,
+          <lb/>II chŭss, ain dekchpett, ain altz ge
+          <lb/>streufcz dëgkel, II spanpett, I tisch.
+          <lb/>Item in der harrnasch kamer ist beschawt
+          <lb/>worden und gefunden IIII pett mit
+          <lb/>pösen ziechen, drey pöz hauptpolster,
+          <lb/>VIII hauptkuss gut und ergere, XVIII
+          <lb/>schaffein dekch alt und new, zwo guet
+          <lb/>lembrein dekch, ain wolfs dekch, ain
+          <lb/>gestükelts degklachen, IIII spanpett und
+          <lb/>edtlich alter harnasch.
+          <lb/>Item in der nachsten kamer darnach sein
+          <lb/>drew miterre pëtt, IIII poz hauptpolster
+          <lb/>und ain pöz pëttel, ain chüss und
+          <lb/>vier alt rauch dëkchen und drew
+          <lb/>gantz zerissne dekhlach und vier spanpëtt.
+          <lb/>Item in der wachterkamer I pöz pëttel, I polster,
+          <lb/>zwai pöse küssn, wirchane leilach, zwo
+          <lb/>pöz dëkh, ain lodeins dekhel, ain lidereiner
+          <lb/>polster und zwo gar alte dekhen, ain spanpett.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330020-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item in dez partners kamer ist ain pëtt, IIII
+          <lb/>rauch dekh die alt sein, II wirchane leilach,
+          <lb/>I polster, I spanpett.
+          <lb/>Item in der kamer bey der ander ladung sein vier
+          <lb/>pëtt, zwen polster, zwai chüss, zwai pöze
+          <lb/>leilach, sechs schaffein dekh alt und new, ain
+          <lb/>gambseine dekh, drew spanpett, zwo truchen
+          <lb/>mit geschisten pheylen.
+          <lb/>Item im stublein da bey sein zwai pett, zwai
+          <lb/>poze leilach, ain polster, ain chüss, drey
+          <lb/>schäffein dekh, ain gambss dekch, ain spanpett.
+          <lb/>Item in dem oberen ärgker ist zwai pëtt, zwai
+          <lb/>leilach, ain polster, ain chũß, drei schaffein
+          <lb/>dekch, zwo lembrein gut dekch.
+          <lb/>Item in der dirnn kamer ist zwai ain pëttel, ain polster,
+          <lb/>zwai wirchene leilach, ain pöser polster
+          <lb/>anein ziech, mer ain rauche dekch, zwai
+          <lb/>pöse degkhel gestreift.
+          <lb/>Item darnach in der nachsten kamer und
+          <lb/>sunst allenthalben sein XVI kessel gross
+          <lb/>und klain, guet und pöz und ain klain
+          <lb/>kessel zu dem öl. Mer IIII gar pöze kessel
+          <lb/>zwel erden hafein gross und klain, ain
+          <lb/>gueter laüetschen da man kertzen in macht,
+          <lb/>III mörser, zwen stössel, mer XXII mittere
+          <lb/>und klaine zinenschüssel und ain zinphan,
+          <lb/>vier pöze messene pekh und ain messene
+          <lb/>giess kandel und zwai kupfferene pekh.
+          <lb/>Mer XXXI pott schussel gros und klain.
+          <lb/>Mer XLVIIIl hulczene täler und ain
+          <lb/>tisch im fleisch gadem und vier swein
+          <lb/>pachen loden V ellen und ain virtail.
+          <lb/>Mer im fleischgadem und dirnn kamer
+          <lb/>IIII truhen und grändt.
+          <lb/>Item in der kuchel III prantrött, X phann,
+          <lb/>III pheffer phan, III hälen, zwen phankn¬
+          <lb/>echt, III pratspiss und ain hainczt, ain
+          <lb/>eysenzang, ain ribeysen, funf milch
+          <lb/>schüssel, zwai stötzel, ain wasser gatzen.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330119">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Wiesberg und der dortigen Schlosskapelle</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 153.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 153.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330119</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1486">1486</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330119-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/ONNEYSIVJZYTDSNQWDGRXOKX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330119-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/WLACWGOGDCDSJXDROMBZHYKY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330119-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/MOURSQWAQMZFMPPHHVDSBAKZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330119-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/NKMPMVAJXXLHMXDKYLSBZIWB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330119-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/NCDCVYZABWGABCJXSGFVNWXN/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330119-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermergkht was Antoni Schengkh
+          <lb/>in dem Schloß Wisberg gefunden
+          <lb/>hat, im durch Hannsen Keren gerhab
+          <lb/>weiland Hansen Wisers verlasner
+          <lb/>kinder und Florian Paldaũff als
+          <lb/>nachster frew̃nt der selben kinder
+          <lb/>und als beistand geantwũrt ist.
+          <lb/>Item zwoe laglen mit pulver y̆ede nũr halb.
+          <lb/>Item etlich kũgell mit pũlver.
+          <lb/>Item zway̆ klaine săgkhel mit salitter.
+          <lb/>Item schwebel in ainem sagkh.
+          <lb/>Item ain hafen vol pũlver.
+          <lb/>Item ain kũbell mit ey̆senschroten.
+          <lb/>Item ain wenig salitter in ainer lagel.
+          <lb/>Item in ainem karnier ain wenig pũxenpulver.
+          <lb/>Item zechen feŭrkũgell.
+          <lb/>Item in ainer lagell etlich kũgell.
+          <lb/>Item in ainem sagkh ist lidrein etlich
+          <lb/>kŭgell.
+          <lb/>Item anderhalb pleiplaten.
+          <lb/>Item zwoe kũpffrine stainpũxen.
+          <lb/>Item drey̆ eisen stainpũxen mit irem
+          <lb/>gerũst.
+          <lb/>Item drey̆ eisen alt klotzpũxen.
+          <lb/>Item vier lagel mit pheilen.
+          <lb/>Item new̃n alte bõse armbrũst an senden.
+          <lb/>Item drey̆ eben.
+          <lb/>Item im Schnegklen ain grosser haũff
+          <lb/>mit pheilen.
+          <lb/>Item fũnff alt kupffrine hantpũxen.
+          <lb/>Item ain zũgsaill.
+          <lb/>Item zechen new̃ armbrũst.
+          <lb/>Item ain spanpangkh.
+          <lb/>Item ain korenkast.
+          <lb/>Item ain trŭch ze kãsen.
+          <lb/>Item zwaỹ mesgwant mit der zũgehõr.
+          <lb/>Item ain kupffrin kelch mit der paten.
+          <lb/>Item ain silbrein vergũlter kelch.
+          <lb/>Item vier alter tŭcher.
+          <lb/>Item zweỹ õpferkãndel.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330119-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item ain mesbũch.
+          <lb/>Item zwoe gesangpũchel.
+          <lb/>Item ain klains pargameins psalterli.
+          <lb/>Item ain altz gesangpũchel.
+          <lb/>Item ain altz pargameins mespũchel.
+          <lb/>Item mer etliche alte pũcher.
+          <lb/>Item ain haŭßmũll mit aller zŭgehŏr.
+          <lb/>Item beỹ allen vorgeschriben sachen
+          <lb/>sind gwesen Hanns Paw̃r pergkhrichter
+          <lb/>ze Umbst, Jos Hew̃gel gerichtschreiber
+          <lb/>daselbs und Marx Erb wonhaft
+          <lb/>ze Landegkh, verpetschaft durch
+          <lb/>Cristan Fras richter ze Landegkh.
+          <lb/>Actum an mitich nach Ambrosi
+          <lb/>anno Domini etc. octũagesimosexto.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330119-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330119-4"/>
+          <lb/>Inventuari zedl gen Wysperg wie
+          <lb/>dasselb sloss Anthonien Schencken
+          <lb/>durch Hannsen Keren weylend Hannsen
+          <lb/>Wysers verlassen erben gerhaben ist
+          <lb/>eingeantwurt worden.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11330119-5"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

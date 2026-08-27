@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328720">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundslust bei Vomp (Pfleger zu Freundsberg und Sigmundslust Sigmund Maxelrayner)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 070.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 070.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328720</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1488-09-16">1488.09.16</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328720-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/VOCZEZJZKLUIGANOPXYAWCYU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328720-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/TDQNJTWKVILRRDVOWGSEQXCY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328720-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZFMSBQWLXPHXNMIDKDCBZFEJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328720-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/LWHAQBSJJODTJTCUWZPLFDER/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328720-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt die inventuari czettl des
+          <lb/>hausplonder und massaria auff
+          <lb/>Sigmunds Lust meinem gnãdigisten
+          <lb/>herrenn czugehorendt so Sigmunden
+          <lb/>Mãxelraỹner, pfleger ze Frũnttsperg
+          <lb/>und Sigmunds Lust von Linhardt
+          <lb/>Langseỹss geanttwurtt ist und hie
+          <lb/>innen auff geschribenn in gegen¬
+          <lb/>wũrtigkaitt und bey wesen der
+          <lb/>erberen Ludwig Haugen und Clauss
+          <lb/>Vingkh cze Swatz. Geschechen am
+          <lb/>ertag nach Exalta(tio) Cruc(is) anno etc.
+          <lb/>octuagesimo octavo.
+          <lb/>Item in der kamer bey̑ der obrenn stuben.
+          <lb/>VI par hărbin leỹlacher.
+          <lb/>II tysch tuecher.
+          <lb/>III umblegen oder hantt zwechel.
+          <lb/>XI genãtt decklachenn.
+          <lb/>I raỹsschwertt, I prattspỹss.
+          <lb/>I stroe huett.
+          <lb/>VIII bett, VIII põlster, IIII kw̃ss.
+          <lb/>V stroeseckh.
+          <lb/>I messynn kandell, I messynn peckh.
+          <lb/>V messing law̃chter gross und klain.
+          <lb/>III eysnynn uberzintt leũchter.
+          <lb/>I czỹneỹn gỹesfass.
+          <lb/>III saltz fãssell.
+          <lb/>VIII pfannen klainer und grõsser,
+          <lb/>guett und põser.
+          <lb/>XV erdein hȃffenn klayn und gross.
+          <lb/>VI haffenplattenn, I rybeysenn.
+          <lb/>II hackh messer, II brattspyss.
+          <lb/>I roscht, III fewrhuntt, I dryfuess.
+          <lb/>II dryfuess czum bratten.
+          <lb/>II mass kandel, I zwỹmassig kandel.
+          <lb/>I hang(e)nd kandell, I drincken kăndell.
+          <lb/>VIIII zinschũssell, I plan, IIII salsen schũssel.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328720-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item II wein zefftenn, I kwbell.
+          <lb/>VI wasser schãffer, I spuelschaff.
+          <lb/>V kessell klainer und grõsser.
+          <lb/>I mel trõgell, I melkũbl, I prottschaff.
+          <lb/>VIII messing haggen pũxsenn.
+          <lb/>IIII eysnyn haggen pũxsenn.
+          <lb/>IIII messing hantt pũxsenn.
+          <lb/>I vãssell mitt pulver.
+          <lb/>I grosser hŭltzĭner weinkopff.
+          <lb/>III schreib tysch, IIII schlecht týsch.
+          <lb/>I credentz tysch.
+          <lb/>I tyschell mitt ainem spilbrett.
+          <lb/>III gross spanpett, II radelbett.
+          <lb/>I fuestruchen, I czwifacher gwanttkast.
+          <lb/>II truchen, I pett stuell.
+          <lb/>V vorpenckh, III wein lãgell.
+          <lb/>I essich vãssell.
+          <lb/>Durchleuchtiger hochgeborner
+          <lb/>furst gnådigister herr, ich
+          <lb/>hab mich befragt und erkundt
+          <lb/>und kãnn kain andre inventuari
+          <lb/>zettell erfragen dann die mir
+          <lb/>der Langseysen furbracht hatt
+          <lb/>wie im die massaria und
+          <lb/>ander von Ludwig Haugen
+          <lb/>ein geanttwurtt und auff
+          <lb/>geschriben sei, dabei Ludwig
+          <lb/>Hawg ỹtzuntt auch gewesen
+          <lb/>ist, der sagt im sei kain
+          <lb/>gegen inventuari czettell ge¬
+          <lb/>anttwurtt, aber er wiß kain
+          <lb/>mangell der da sei wann
+          <lb/>das es dem Langseysen also
+          <lb/>geanttwurtt seȋ.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328720-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328720-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Inventari Sigmundslust
+          <lb/>Sig(mund) Mexlrainers.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

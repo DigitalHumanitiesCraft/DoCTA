@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329460">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Hausrats, der von Schloss Sigmundsburg am Fernstein (Inhaber Caspar Frech)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.5</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.5</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329460</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1462-07-15">1462.07.15</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329460-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/MZELGBGKJPRZPUKZXTLKXXEO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329460-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/SKTEEOIKYZHEHLYXNNTHAGVW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329460-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/NUQXKMFOLEFIDSZVLZRVGUBG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329460-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZFFAQIZAZCXAKHDIDBXAMGDQ/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329460-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Nota haw̆srat was dem
+          <lb/>Frechen im hauß beleibt und daz
+          <lb/>wid(er) darumb widerumb der Frech antwurt(e)n sol
+          <lb/>und dalassen soll. Beschechen am phincz
+          <lb/>d(er) Zwelff Potenschidung anno D(o)m(ini) etc. LXIIo.
+          <lb/>It(em) XXVII petstett(e)n und span pet hulczein.
+          <lb/>It(em) X tisch.
+          <lb/>It(em) und XII fũr penkh.
+          <lb/>It(em) II eysein schaufflen.
+          <lb/>It(em) I eysn schlegl.
+          <lb/>It(em) III eysn stek(e)n.
+          <lb/>It(em) II pikel.
+          <lb/>It(em) I grossen ingemawrt(e)n kessel.
+          <lb/>It(em) I eysnein ofen plech.
+          <lb/>It(em) I morser und ain eisnein stõssl.
+          <lb/>It(em) IIII bar schnee raiff.
+          <lb/>It(em) II visch gern.
+          <lb/>It(em) II jag scháfft.
+          <lb/>It(em) I har hăchl.
+          <lb/>It(em) I vass mit hepf wein pei XII ũrn
+          <lb/>ungevarlich.
+          <lb/>It(em) I vássl mit essich im zergad(e)n und
+          <lb/>vássl in der undern stub(e)n ist ungevarlich
+          <lb/>bey I1/2 ũrn.
+          <lb/>It(em) I beschlagens ster maß.
+          <lb/>It(em) etlich prent(e)n kraút.
+          <lb/>It(em) III schef auf dem see zu Sigmu(n)dsp(ur)g
+          <lb/>purg.
+          <lb/>It(em) I kupfrins gelŏcherts kraut pekh.
+          <lb/>It(em) habern zu verfuedern LVI streÿmas.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329460-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) kappaw̃n XXXIIII.
+          <lb/>It(em) hanen I.
+          <lb/>I(tem) henen XXV.
+          <lb/>It(em) hun(er) junge XVII.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329460-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329460-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

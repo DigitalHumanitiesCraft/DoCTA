@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11348540">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Persen</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 273.8</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 273.8</idno>
+            <altIdentifier type="transkribus">
+              <idno>11348540</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1486">1486</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11348540-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/JAUCPQRLTGSPKSRHWRYVNNXI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/LISNDIEXNUMGTQOFFRSJNKQC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/NZQPGEZLHJRNBYCQGOGRESAL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/TTMXULOXSVIVQASVTCMQPGOF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/NSSZEDARNFAUKFOTHRCNIBSL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/GERYOBFJBEUDVYASLFLCUHSO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/UZEFFUHFDJJZQUHLTEMZISTV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348540-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/YXFHPXGJFMXUKEDWGMSKSBNH/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11348540-1"/>
+          <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11348540-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Vermerkht die hab so Ruoprecht
+          <lb/>von Grey̆ffenstain ausser halb der
+          <lb/>verpettschafften in ventarÿ kawfft
+          <lb/>hat von Mërtein von Neÿdegck.
+          <lb/>Item am ersten für XXXIII ster waitz,
+          <lb/>I ster umb XX gl., facit V1/2 marckh.
+          <lb/>Item II Co und XXI ster rocken, I ster
+          <lb/>umb XV gl., facit XXVII marckh
+          <lb/>VI lb. III gl.
+          <lb/>Item gersten VII ster, I ster umb
+          <lb/>I lb., facit VII lb. perner.
+          <lb/>Item ponn XXVII ster, I ster umb
+          <lb/>XV gl., facit XXXIII lb. perner IX gl.
+          <lb/>Item pÿzollen III ster, I ster umb
+          <lb/>XV gl., facit III lb. perner IX gl.
+          <lb/>Item surich XXXVIII ster, I ster
+          <lb/>umb VII gl., facit XXII lb. II gl.
+          <lb/>Item pfenich I Co und XI ster, I ster
+          <lb/>umb I lb., facit XI marckh I lb.
+          <lb/>Item wein XLVI fuoder, I fuoder
+          <lb/>umb XVII1/2 lb., facit LXXV marckh
+          <lb/>IX lb. perner.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11348540-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item für XXXV lb. schmaltz, das
+          <lb/>lb. umb III gl., facit VIII lb. IX gl.
+          <lb/>Item für öll V r(einische) gulden.
+          <lb/>Item LXXV ster roken mël, I ster
+          <lb/>umb XV gl., facit IX marckh III
+          <lb/>lb IX gl.
+          <lb/>Item III ster waÿtzen mel, I ster
+          <lb/>umb XX gl., facit V lb. perner.
+          <lb/>Item LII ster grüschen, I ster umb
+          <lb/>IIII gl., facit XVII lb. IIII gl.
+          <lb/>Item für XXVIIII rauch degcken
+          <lb/>genütz geschätz von herren XXV
+          <lb/>r(einische) gulden.
+          <lb/>Item VIII küe, tzwen stÿer ain
+          <lb/>grösser und ain klainer,I kälbel
+          <lb/>geschätz XXV marckh.
+          <lb/>Item XX schwein darunder seindt
+          <lb/>IIII züocht müoter, aine mit
+          <lb/>VII junge geschätz XVII marckh.
+          <lb/>Item ain wagen und was dar
+          <lb/>zẅ gehörtt II strÿken, I joch,
+          <lb/>I anplitz, I zunckel, II scheff, I
+          <lb/>segen alles umb XV r(einische) gulden.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11348540-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Item V pëtt, VI polster, VI küß, IIII
+          <lb/>par leÿlach, I strosagck und XII
+          <lb/>degcken, geschätz XVI marckh.
+          <lb/>Item zinen schüssel und ander
+          <lb/>zin geschir wigt I Co und VI lb.,
+          <lb/>geschätz umb V marckh, peckh,
+          <lb/>gießfas, leüchter.
+          <lb/>Item I kessel, I kupfran kraẅt
+          <lb/>sẏb wigt XXVII lb. groß gewicht.
+          <lb/>Item II haffen wegen XLII lb., ist
+          <lb/>geschätz IIII r(einische) gulden.
+          <lb/>Summa sumarum II Co und
+          <lb/>XXVI marckh VII lb. IX gl.
+          <lb/>Vermerckt was Martein von Neÿdegk
+          <lb/>Ruoprechten von Greÿffn stain
+          <lb/>schuldig ist als herr nach folgt
+          <lb/>und dem Neÿdegker an seiner
+          <lb/>sume so man im schu̇ldig ist
+          <lb/>und er dar auf betzaldt wierdt
+          <lb/>alß das von stuck zw stuck
+          <lb/>herr nach stett.
+          <lb/>Item am erstn XXXI Co und LXVI
+          <lb/>lb. rindt fleÿsch gedigens, II lb
+          <lb/>umb III gl., facit LXXVIIII r(einische) gulden
+          <lb/>IIII gl. II1/2 fl.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11348540-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Item IIII Co gruenss fleÿsch, I lb. umb
+          <lb/>I gl., facit XXXIII lb. perner IIII gl.
+          <lb/>Item schweine fley̆sch VIIII Co und
+          <lb/>XXII lb., I lb. umb III gl., facit
+          <lb/>XLVI r(einische) gulden III lb. perner.
+          <lb/>Item schmër LV lb., I lb. umb II gl.,
+          <lb/>facit IX lb. perner II gl.
+          <lb/>Item käß I Co und LI lb., I lb. umb
+          <lb/>VII fl., facit XVIII lb. perner.
+          <lb/>Item XXX schultern, aine fúr VI gl.,
+          <lb/>facit III r(einische) gulden.
+          <lb/>Item für L ster saltz II1/2 marckh.
+          <lb/>Summa LXXXI marckh
+          <lb/>III lb. X gl. II1/2 fl.
+          <lb/>Dÿse sum wurdt abgezogen
+          <lb/>dem Ney̑degker an der vor
+          <lb/>gedachten sum II Co und XXVI
+          <lb/>marckh VII lb. perner IX gl.,
+          <lb/>beleẏbt man noch dem Neÿdeker
+          <lb/>schuldig I Co und XLV marckh
+          <lb/>III lb. V1/2 gl. peÿ dem
+          <lb/>ambtman zw Botzen in halt
+          <lb/>meins gnädigisten herren
+          <lb/>geschäfft.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11348540-6"/>
+          <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11348540-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11348540-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

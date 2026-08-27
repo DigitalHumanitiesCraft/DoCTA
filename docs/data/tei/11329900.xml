@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329900">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundsegg (Finstermünz), bisheriger Inhaber Chunradt Metz, neuer Dyettrich von Cappell</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 151.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 151.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329900</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1478">1478</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329900-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/THBOXGXQUAFUAFGPGZVGSLCI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329900-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/OWKGTKUHWRGRQDQMNXALISDG/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329900-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt den zeúg zw̆
+          <lb/>Sigmȗdsegk so ich Chŭnradt
+          <lb/>Metz geantwúrtt hab junnckherren
+          <lb/>Dÿettrichen von Cappell in gegen¬
+          <lb/>würtickhait des Oswalden
+          <lb/>Sawrweins richter und ampt¬
+          <lb/>mann zŭ Pfu̇ns.
+          <lb/>Item zŭ dem ersten vier messein hagckhen¬
+          <lb/>pŭchsenn.
+          <lb/>Item sechs hantpüchsenn.
+          <lb/>Item ain fässlein mit guettem püchsenn pülver
+          <lb/>hat y̑n peÿ LX oder LXX phündenn.
+          <lb/>Item sëchs armprŭsst.
+          <lb/>Item dreÿ wÿn̑den.
+          <lb/>Item vierhundert pfeill und ain lägell
+          <lb/>mit pfeẏllen.
+          <lb/>Item ain schaffraÿt und ain schreynn
+          <lb/>und ain pettstat und zwo phannen,
+          <lb/>zwo rodtschusslen ist meins gnädign
+          <lb/>herrn nit an geschlagen und kost
+          <lb/>XX lb.
+          <lb/>Item ain langes schwert.
+          <lb/>Item ain groß hornn.
+          <lb/>Item ain platten pleÿ.
+          <lb/>Item XIIII eÿsen plech.
+          <lb/>Item langs zügsaill.
+          <lb/>Item ain spey̑s truchen.
+          <lb/>Item ain kästlein in der stüben.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329900-2"/>
+          <milestone unit="folio" n="1r"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

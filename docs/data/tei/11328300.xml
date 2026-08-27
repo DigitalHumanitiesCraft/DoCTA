@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328300">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Thaur (Inhaber Burkhart von Knöringen)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 049.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 049.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328300</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1471-09-25">1471.09.25</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328300-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/EUMSRNPRFDGNNBBJVELBDIVJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328300-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/BGZMCIJJXSDNUGIRLDTNVSLO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328300-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/XQVAYIVKNFWKDBDXBLPKGNEH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328300-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/IDGBALZNDBVSDMQHGLXHBGSK/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328300-1"/>
+          <lb/>[1r]
+          <lb/>Inventori etlichs hawsrats
+          <lb/>durch Hannsen Ramung,
+          <lb/>Burkharten von Knoringen
+          <lb/>auf dem sloss Thawr ũber
+          <lb/>geantwurt an mitichen
+          <lb/>vor Sand Michels tag
+          <lb/>anno Domini etc. LXXImo
+          <lb/>Item in meins gnedigen hern kamer
+          <lb/>I pett.
+          <lb/>Item I polster.
+          <lb/>Item II dekhen.
+          <lb/>Item II polster strosekh.
+          <lb/>Item II pett in dem vordristen erkger
+          <lb/>ob der grossen stuben.
+          <lb/>Item I strosakh.
+          <lb/>Item II polster.
+          <lb/>Item I rawhe dekhen.
+          <lb/>Item IIII pott in dem andern erkger.
+          <lb/>Item II strosekh.
+          <lb/>Item II polster.
+          <lb/>Item III kuss.
+          <lb/>Item I rawhe dekhen.
+          <lb/>Item IIII dekhen.
+          <lb/>Item I pett mit parchant uberzogen.
+          <lb/>In Velbergers erkger.
+          <lb/>Item I kuss.
+          <lb/>Item I polster.
+          <lb/>Item IIII dekhen.
+          <lb/>Item XX armbrost darunder sind
+          <lb/>zweÿ stãhlein.
+          <lb/>Item IIII weÿsse pett in der ynnren hall.
+          <lb/>Item III gestreimbte pett.
+          <lb/>Item III polster mit weissen ziechen.
+          <lb/>Item XIII kuss mit weyssen ziechen
+          <lb/>die nit uberczogen sind.
+          <lb/>Item IIII gestreimbte polster.
+          <lb/>Item VI dekhen.
+          <lb/>Item III dekhen, die nit iii fl wart sind.
+          <lb/>Item V gestreimbt kuss.
+          <lb/>Item I pett mit weissem uberzogen in
+          <lb/>der vorhell.
+          <lb/>Item I gestreimbter polster.
+          <lb/>Item I weiss kuss.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328300-2"/>
+          <lb/>[1v]
+          <lb/>Item I gestreimbts kũss.
+          <lb/>Item II dekhen.
+          <lb/>Item I pott mit weissem uberzogen in
+          <lb/>der hern kamer.
+          <lb/>Item II gestreimbt polster.
+          <lb/>Item IIII gestreimbt kũss.
+          <lb/>Item II strosekh.
+          <lb/>Item I pett mit ainem gestreimbten ziechen.
+          <lb/>Item I gestreimbt polster.
+          <lb/>Item II weisse kuss.
+          <lb/>Item II dekhen.
+          <lb/>Item I rawhe dekhen.
+          <lb/>Item I weis pett auf dem erkger ob dem tor.
+          <lb/>Item I weissen polster.
+          <lb/>Item II gestreimbte kuss.
+          <lb/>Item III dekhen.
+          <lb/>Item I rawhe dekhen ist nichts wert.
+          <lb/>Item II pratspise in der kuchin.
+          <lb/>Item I rost.
+          <lb/>Item I drÿfuss.
+          <lb/>Ist item XIX hantpuchsen in der harnasch
+          <lb/>kamer.
+          <lb/>Ist item IIII hakgenpuchsen.
+          <lb/>Ist item I michle, kũphren pũchsen.
+          <lb/>Ist item VII eÿsnnen und kuphren puchsen.
+          <lb/>Item etleicher alter harnasch.
+          <lb/>Item I õllkessel gestet XXVI lb perner
+          <lb/>ist gen
+          <lb/>hoff komen.
+          <lb/>Item II kussziechen.
+          <lb/>Den hienachgeschriben hawsrat
+          <lb/>hat der burkraff meinem
+          <lb/>gnedigen herrn zekawffen gegeben.
+          <lb/>Item I segens daman das mit mẽt.
+          <lb/>Item III hakhen.
+          <lb/>Item I eÿsnen wekg.
+          <lb/>Item III eÿsnen mistgabelen.
+          <lb/>Item I temgelgeschier.
+          <lb/>Item I rakgawn.
+          <lb/>Item I stromesser.
+          <lb/>Item I pachtrog.
+          <lb/>Item I wurchpret.
+          <lb/>2[r]
+          <lb/>Item II spanpett.
+          <lb/>Item II sÿdeltruhen.
+          <lb/>Item I strosakh.
+          <lb/>Item III stũel.
+          <lb/>Item I grosser melkasten.
+          <lb/>Item I futerkasten.
+          <lb/>Item II padwannen.
+          <lb/>Item I slittruhen.
+          <lb/>Item II holzslÿten.
+          <lb/>Item I alte lagel.
+          <lb/>Item I fleÿsch peÿl.
+          <lb/>Item I speÿskasten.
+          <lb/>Item XIX krawtprenten.
+          <lb/>Item IIII kessel, klain und gross.
+          <lb/>Item XI phannen.
+          <lb/>Item XVII hulzen schusselen.
+          <lb/>Item I wiltpret vãssel.
+          <lb/>Item II futer wannen.
+          <lb/>Item I alten tẽllerkorb.
+          <lb/>Item X V komat zun rossen hat
+          <lb/>der Kneringer hin.
+          <lb/>Item III zam hat der kneringer hin.
+          <lb/>Item I ganzen wagen.
+          <lb/>Item II phlũg.
+          <lb/>Item II kessel sind in dr albon.
+          <lb/>Vermerkht der
+          <lb/>Beatrix gut.
+          <lb/>Item III pett.
+          <lb/>Item I strosakh.
+          <lb/>Item aber III pett.
+          <lb/>Item I strosakh.
+          <lb/>Item II pettpõlster.
+          <lb/>Item II lydren pankhpolster.
+          <lb/>Item III lydrein pankhkuss.
+          <lb/>Item VI kuss.
+          <lb/>Item III dekhen.
+          <lb/>Item XIIII beslagen loffel in ainem
+          <lb/>futral.
+          <lb/>Item beÿ IIII ellen swãbischer zwilch.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328300-3"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Item I pett in des Velbergers kamer.
+          <lb/>Item I dekh pett.
+          <lb/>Item I dekhen mit sÿdn genant.
+          <lb/>Item I sakh mit garen.
+          <lb/>Item I rawhe dekhen.
+          <lb/>Item XII par leÿlach in ainer truhen.
+          <lb/>Item IIII1/2 padphaiten.
+          <lb/>Item VI underphaiten.
+          <lb/>Item V schũrliz.
+          <lb/>Item II kusstziechen.
+          <lb/>Item I polstertziechen.
+          <lb/>Item V tischtũcher.
+          <lb/>Item VIIII hannttũcher.
+          <lb/>Item IIII messen padpekh.
+          <lb/>Item XII zÿnen teller.
+          <lb/>Item XII kandeln gross und klain,
+          <lb/>mitsambt der hangenden kandl
+          <lb/>und ainer plechflachen.
+          <lb/>Item I salzvassel.
+          <lb/>Item I messen gieskãndl.
+          <lb/>Item XIX zinen schusselen gross
+          <lb/>und klain.
+          <lb/>Item I hulczen tellerpuchsen mit telleren.
+          <lb/>Item XII tischtũcher.
+          <lb/>Item IIII hanttucher.
+          <lb/>Item I trũhel darin vil zenicht brief
+          <lb/>und ander zenicht ding ligt.
+          <lb/>Bey solcher invetari sind ge
+          <lb/>wesen: Jörg Randorffer meins
+          <lb/>gnedigen herrn hawskamrer, Hanns
+          <lb/>Wÿser secretari, Jacob Haws
+          <lb/>man, Michel Awer bede birger
+          <lb/>zu Hall, Jorg Bubenhofer
+          <lb/>und Christopf Velberger
+          <lb/>Ich Burkhart von Knŏringen hab
+          <lb/>diss abgeschriben hawsrat allen
+          <lb/>Martin Schintel in gegenwũrtti¬
+          <lb/>khait Hannsen von Elsp und
+          <lb/>Wolfgangen Sumer kamerschraÿbers
+          <lb/>der daz mit seiner aÿgnen hand¬
+          <lb/>geschrifft geschriben hat geantt¬
+          <lb/>wurdt an mittwoch nach unnser
+          <lb/>frawen tag nativitatis anno etc.
+          <lb/>LXX secundo.
+          <lb/>Item ich hab dem Velldenberger geanburt
+          <lb/>ein pett und ein polster nach geschäft meines
+          <lb/>gnedigen herrn.
+          <milestone unit="folio" n="3r"/>
+          <lb/>Item dem Polinger hab ich geben
+          <lb/>IIII pett und IIII polsteren,
+          <lb/>und VII kchũs und
+          <lb/>ain par leilach, das hät
+          <lb/>der hawskchamrer geschaffen
+          <lb/>und der Leupolt Spies.
+          <lb/>Item ain olcrũeg hat mann
+          <lb/>gen hoff gnommen.
+          <lb/>Item II kraesel sind noch in
+          <lb/>der albem.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328300-4"/>
+          <lb/>Inventari zedel
+          <lb/>gen Thawr
+          <lb/>1471
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

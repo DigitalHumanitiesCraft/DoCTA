@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330759">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundskron bei Bozen (neuer Inhaber Christoph von Hohenburg)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 225.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 225.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330759</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1487-08-16">1487.08.16</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330759-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZZEKOPMRPHLKRTIZQLVBSCAW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/NMPDFBZXCDGTWWTTOHYEYHJO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/GUBKYPGDCQXMOLQFAXKHACAZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/VAQJKXBDGAFIAMJTKTNNMGEL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/YDBAVULXJGKVAGMSHIZPPSCV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/IEAOZFOUCFPZRCFHUEBYUPOF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/UVCRJFQNEBZTHSXRJJLALCAQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/NFLTUOVNDHKHRUPCQQLKZFZH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/OVYXWVDAWRTQIYMTJCZOQFPC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/VTJNAHBARYRJHHYZVZQVSXGZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/YYVOMFPOXVWWYJVZLMREJTIU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330759-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/MJOUBRCPCGGCNOGRVBUEMINR/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330759-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckht hienach die hab,
+          <lb/>zeůg und gueṫ auff Sig¬
+          <lb/>mundskroṅ Cristoffen von
+          <lb/>Hohenburg phleger daselbs
+          <lb/>ain und ubergeantwurt
+          <lb/>aufgeschriben zu seineṁ aṅ¬
+          <lb/>standt als angeendent phleger
+          <lb/>an pfintstag nach Unnser Frauen
+          <lb/>tag assumpcionis anno etc.
+          <lb/>octuagesimo septimo in ge¬
+          <lb/>genwurtikait Johannsen Ellinger,
+          <lb/>Johannsen Runngkår notari
+          <lb/>burger zü Botzenn und ander.
+          <lb/>Am erstënn hat man gefunden
+          <lb/>in Sand Ulrichs stöckh an
+          <lb/>gelt VI lb. VIII g. I f.
+          <lb/>Mer hat man inn geantwurt
+          <lb/>von Sand Blasen kirchenn
+          <lb/>wegen XXIII lb. II g. I f.
+          <lb/>In Sand Ulrichscapellen.
+          <lb/>Ain slecht alt mesgwanndt
+          <lb/>mit alem und annder seiner
+          <lb/>zugehŏrung.
+          <lb/>Zwen alt zẙnen leuchter.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330759-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>In Sand Blåseṅ
+          <lb/>capellenn.
+          <lb/>Ain sůlbreṅ kelch mit seiner pateṅ
+          <lb/>unvergůlt geṅant Sand Ulrichs
+          <lb/>kelch.
+          <lb/>Mer zwen sůlbreǹ kelch mit iren
+          <lb/>pateṅ, ain gro̊sser und ain clainer,
+          <lb/>alles vergůlt und mit ireṅ cor¬
+          <lb/>poral taschen.
+          <lb/>Ain plab sameten mesgwanndt
+          <lb/>mit alem und annder seiner
+          <lb/>zugeho̊rung.
+          <lb/>Ain grůn damaschgen mesgwandt
+          <lb/>auch mit alem und annder seiner
+          <lb/>zugeho̊rung von meinem gnedigisten
+          <lb/>herrn von Osterreich herrůrnnd.
+          <lb/>Aber ain slecht alt mesgwandt
+          <lb/>mit seiner zugeho̊rung.
+          <lb/>Zway mesbŭecher und ain psalter.
+          <lb/>Zwen zynen leichter.
+          <lb/>Ain weichprunṅkessel.
+          <lb/>Auff yegelichem altar sen altertůch
+          <lb/>nicht nach deṁ cestenn.
+          <lb/>Ain ŏl stain.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330759-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Fůnff sweẙtzer lanntzen.
+          <lb/>Zwen guldeṅ kertzen ståb auch von
+          <lb/>meinem nedigisteṅ hern von Osterreich
+          <lb/>herrůrnnd und gebeṅ.
+          <lb/>In ainer truheṅ daselbs in Sand
+          <lb/>Blasen kirchenn XVII par leylach
+          <lb/>zwilchen und annder, boß und gŭet.
+          <lb/>Sybeṅ hanndswell und ain umbleg.
+          <lb/>Syben tischtůecher bŏs und guet.
+          <lb/>Aber an gelt Sand Sebastian zu
+          <lb/>geho̊rennd II lb. V g.
+          <lb/>Iṁ oberenalteṅ gehew̆ss
+          <lb/>in der stubeṅ.
+          <lb/>Drey schlecht tisch.
+          <lb/>Ain swartze schreyb tafel.
+          <lb/>Ain clain essich våssel.
+          <lb/>Ain pret spil.
+          <lb/>Ain pachzeůg mit seiner zugeho̊rung.
+          <lb/>Ain schuss wag.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330759-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Unnter deṁ dach zu o̊brist.
+          <lb/>Vier sweẙnen pachenn.
+          <lb/>Vier fedren slechte bet.
+          <lb/>Drew par zwilcheṅ leylach nicht gut.
+          <lb/>Sechs po̊lster, zway kůss.
+          <lb/>Zeheṅ zerrissenṅ deckhenṅ.
+          <lb/>In der kamer darinn maister
+          <lb/>Hanns gelegenn ist.
+          <lb/>Dreyzeheṅ bet bo̊s und guet.
+          <lb/>Syben po̊lster, acht kůss.
+          <lb/>Neẘn deckhen bo̊s und guet.
+          <lb/>Ain par ley̆lach.
+          <lb/>Ain eyseṅhůet.
+          <lb/>Ain panṅtzer.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11330759-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Ain crăgel.
+          <lb/>Ain par hanndtschŭech.
+          <lb/>Ain par armschin.
+          <lb/>Ain helem parten.
+          <lb/>Ain peren spiess.
+          <lb/>Zeheṅ zyneṅ schŭssel clain und gross.
+          <lb/>Sechzeheṅ zyneṅ tåler.
+          <lb/>Im speyss gaden bey
+          <lb/>der wer.
+          <lb/>Zwen mitter glockspeyseṅ håfenn gantz.
+          <lb/>Zweṅ glockhspeyseṅ zerbrochen håfenṅ.
+          <lb/>Ain ligen hultzen futeral darinṅ
+          <lb/>fŭnff lo̊ffl.
+          <lb/>Ain kuphren wasser gatzen.
+          <lb/>Sechsunddreissig hůltzen tåler neẘ.
+          <lb/>Ain grosser glockhspeysen lavetsch.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11330759-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Ain mŏrser glochkspeysenṅ mit seinem
+          <lb/>eysneṅ stemphel.
+          <lb/>Vier eyseṅ kellenṅ.
+          <lb/>Drey phannen.
+          <lb/>Zwei kessel.
+          <lb/>Vier hafen deckhenn.
+          <lb/>Drew messingpeckh und ain prochen
+          <lb/>messingpeckh.
+          <lb/>Ain o̊l stain.
+          <lb/>Ain smaltzkŭbel.
+          <lb/>Zway brocheṅ hanndtgiessfaß.
+          <lb/>Ain brochen messenkandel.
+          <lb/>Im brotgadenn.
+          <lb/>Zwen gross ereṅ håfenn.
+          <lb/>Syben smer låb in ainer tru̇hen.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11330759-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>Im kheller.
+          <lb/>Zwelff pottigenn.
+          <lb/>Aindliff ster mel in drey seckhen.
+          <lb/>In der smẙttenṅ.
+          <lb/>Ir werchzeůg ungev̇erlichen.
+          <lb/>Im půchsenhaw̆s.
+          <lb/>Zwo viertail půchsenṅ.
+          <lb/>Ain slanngen půchsenn auff
+          <lb/>zwain redern.
+          <lb/>Ain haubtstuckh.
+          <lb/>In deṁ neẘen thuren genant
+          <lb/>Maister Hanṅsen Thuren.
+          <lb/>Drey zẙneṅ plån.
+          <lb/>Acht zyneṅ mitterschůssel.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11330759-8"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Vier gross malschůssel.
+          <lb/>Sechs clain zyneṅ salsenṅschůssel.
+          <lb/>Sechs zyneṅ tåler.
+          <lb/>Vier phannen.
+          <lb/>Ain clåiner kessel.
+          <lb/>Zweṅ gross kessel.
+          <lb/>Drew eysneṅ gătter.
+          <lb/>Etlich verbrúnene eysenṅgeschirr sulle
+          <lb/>måister Hanṅseṅ zugehŏrenn.
+          <lb/>Vier purdenṅ eysenṅ.
+          <lb/>Und etlich plech zu thuren und walckhen
+          <lb/>von eysenṅ.
+          <lb/>Ain gross zugsåil.
+          <lb/>In ainer clainen lagel zu zehen hagkhen
+          <lb/>půchsenn schůtzenn.
+          <lb/>Und etlich traid, korn, fueter, gerstenn
+          <lb/>ungeverlichenṅ bey LX ster.
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11330759-9"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>In meins gnedgi̊sten hern
+          <lb/>von Osterreich zy̆mmer.
+          <lb/>Oben in der kamer.
+          <lb/>Zwaẙ bet und zway ain kŭss.
+          <lb/>Zwo deckhenṅ.
+          <lb/>In der kuchel.
+          <lb/>Zwo phannen.
+          <lb/>Ain fay̆m kellenṅ.
+          <lb/>Zwo fleischkrăl.
+          <lb/>Ain clainer zyner plan.
+          <lb/>Ain glockhspeysenṅ hafenn.
+          <lb/>Ain pranndtraid.
+          <lb/>Ain dreẙfůes.
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11330759-10"/>
+          <milestone unit="folio" n="5v"/>
+          <lb/>Ain clainer kessel.
+          <lb/>Im grossenn keller.
+          <lb/>Vier maskanndel.
+          <lb/>Zwo zwymåessigkandel.
+          <lb/>Ain dreẘtrinckhenkandel.
+          <lb/>Zwo trinckhenkandel.
+          <lb/>In der grosseṅ stubenṅ.
+          <lb/>Sechs gemain tisch.
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11330759-11"/>
+          <milestone unit="folio" n="6r"/>
+          <lb/>In dem clainen stůbleṅ.
+          <lb/>Ain gemai̊ner tisch.
+          <lb/>Achzeheṅ stuckh puchsenṅ dar
+          <lb/>unnder vier hagkheṅ pŭchsenṅ.
+          <lb/>Dreẘunddreĭssig helemparten.
+          <lb/>Hienachvolgt was der zolner
+          <lb/>inngehabt und dem genanten
+          <lb/>phleger ȗbergeantwurthat.
+          <lb/>Ain wasserschaff.
+          <lb/>Ain fleyschpeẙl.
+          <lb/>Zwo hafenplatenṅ.
+          <lb/>Zway hanndtkŭbel.
+          <lb/>Zwen glockhspeyseṅ håfenn.
+          <lb/>Fůnff hŭltzen schůsslen.
+          <lb/>Ain tåler půchsenn mit XVI tåler.
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11330759-12"/>
+          <milestone unit="folio" n="6v"/>
+          <lb/>Sechzehen lo̊ffel.
+          <lb/>Vierundzwainzig hůlzen tåler gemain.
+          <lb/>Ain grosse hangende kanndel.
+          <lb/>Ain trinckheṅkanndel.
+          <lb/>Ain grosse eysne kellenn.
+          <lb/>Ain holtzhackhenṅ.
+          <lb/>Ain helemparten.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

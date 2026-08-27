@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328739">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare der Burg Hasegg in Hall</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 051.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 051.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328739</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate from="1480" to="1490">1480-1490</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328739-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/TPQKVWHEBLZYSYLSHVAMKGKC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/FAZZBDXZQYJKSODWFVOTFEFY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/YXKVEPEQEZJANAYJJNWYTSUR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/IGUSQNXWIEUUQXQLJOPYHXPM/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/PQKSZWUUBAFYAWVVHBFWOUJG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/DDYGXTZZIJZPPIDWROPUAMMN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/MIPEKVGPGDSHUMLDRIOWDOJC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/VUWNRJRKCIPMUMMYZCTFNUIW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/IXHVAEKTZGVGDOOYSYFVDQSE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/HOJIOFEGWFIYBXLHMQLJHCKZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/HQZEKIYNDSKLRURPMUMTMCSP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/XQKQFEMCJHQMFUTPQDRZIKOK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-13" n="13">
+      <graphic url="https://files.transkribus.eu/iiif/2/JXYXLYOMFDOUNREFTNQYJFZC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-14" n="14">
+      <graphic url="https://files.transkribus.eu/iiif/2/HQNOKTWWYQYKVRFGBRMZZWRJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328739-15" n="15">
+      <graphic url="https://files.transkribus.eu/iiif/2/OXAMKOTGNMLTODDDVGUAVHQZ/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328739-1"/>
+          <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328739-2"/>
+          <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328739-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328739-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328739-5"/>
+          <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328739-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Am erst(e)n in dem hind(er)n stub(e)l in des
+          <lb/>torwart(e)ls haus ain tisch mit
+          <lb/>ainer furpanck.
+          <lb/>It(em) ain verdeckts spanpet darauf
+          <lb/>ain strosack, ain ledren(er) polst(er)
+          <lb/>und ain ledrens kuß mit ain(em)
+          <lb/>waissen leynin(en) umbhang.
+          <lb/>It(em) in d(er) camer darhind(er) ain tisch.
+          <lb/>Ain spanbet mitßt ainem kariol(er).
+          <lb/>Ain sidltruch(e)n.
+          <lb/>Ain pett.
+          <lb/>Ain polst(er).
+          <lb/>It(em) ain kast(e)n darinn etlich zingeschirr,
+          <lb/>messingeschirr, kand(e)ln, schussl(e)n,
+          <lb/>tăller, peck, leucht(er) und ain
+          <lb/>langß mess(er) und ist verpetsch(aft).
+          <lb/>It(em) ain hoche pfefferpŭchs.
+          <lb/>It(em) ain lange sideltruh(e)n nichz darin.
+          <lb/>Ain hocher kast(e)n nichtz darinn.
+          <lb/>Ain klaine beslagne truh(e)n nichtz darin.
+          <lb/>Im stub(e)l im sneck(e)n.
+          <lb/>It(em) ain tisch mit ain(em) pretspil und
+          <lb/>schachzag(e)l.
+          <lb/>It(em) ain gutschenpetl spanpet(e)l darauf
+          <lb/>ain ledrein polster, ain ledreins kuß.
+          <lb/>It(em) in der cam(er) ob dem schnegk(e)n.
+          <lb/>Ain tisch mit ain(em) schachzag(e)l.
+          <lb/>Ain eysein later(e)n.
+          <lb/>Ain kariol darauf ain pet¬
+          <lb/>polst(er) und ain [..]golter.
+          <lb/>Ain versperte truh(e)n.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328739-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>It(em) ob(e)n in der kamer auf d(em) sneckh(e)n ain versperte
+          <lb/>truh(e)n.
+          <lb/>It(em) ain lĕre petstadt.
+          <lb/>It(em) acht eyseine gewicht.
+          <lb/>Ain klains versperts truch(e)l.
+          <lb/>Zu Hasegk in d(er) oberen stuben.
+          <lb/>It(em) zwai truh(e)l hat d(er) saltzmair lasß(e)n mach(e)n.
+          <lb/>It(em) ain tisch mit ain(em) spilpret.
+          <lb/>It(em) [.]drei tisch.
+          <lb/>It(em) zwen stŭl auf yed(en) ain lidrei(n)s kuß.
+          <lb/>It(em) zwo vorpenck.
+          <lb/>It(em) ain credenz tisch(e)l und ain
+          <lb/>stŭl davor.
+          <lb/>It(em) ain eyse(ner) schach.
+          <lb/>It(em) in d(er) stub(e)n ain truh(e)n mit darin
+          <lb/>etlich zinen geslag(e)n flasch(e)n, kandl(e)n,
+          <lb/>leucht(er), gießkand(e)l, spruz(e)n,
+          <lb/>windpend(er) und and(ers) und ist
+          <lb/>versecretirt.
+          <lb/>It(em) in ainer klain(en) kam(er) daran
+          <lb/>ain truh(e)n darinn etlich zinnen
+          <lb/>platt(e)n, kandl(e)n, zwen mors(er),
+          <lb/>messing leucht(er) auf ain alt(er)
+          <lb/>und hultzin plan.
+          <lb/>It(em) ain petstat darin ain pet,
+          <lb/>ain polst(er), ain kuß, ain golt(er).
+          <lb/>Ain alt(er) sessel.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328739-8"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>It(em) in d(er) grossen kamer ain kurze truh(e)n
+          <lb/>darin etl(ich) golt(er), etlich par messer.
+          <lb/>Ain kast(en) m(eines) g(nädigen) h(er)rn.
+          <lb/>It(em) aber ain kurze truh(e)n darin
+          <lb/>etlich zinen platt(en), flasch(e)n, wag(e)n,
+          <lb/>tasch(e)n, irch, pergamen, ain hor(e)n
+          <lb/>mit silber beslag(e)n, ain silber(er)
+          <lb/>pecher, drei beslag(en) loff(e)l, ain
+          <lb/>agstain(er) pa(ter) n(oster) und ain gralli(ner)
+          <lb/>pa(ter) n(oster), ain guldn(er) ring, etlich
+          <lb/>seck(e)l und nest(e)l.
+          <lb/>It(em) in ain(er) fuestruch(e)n etlich leilach
+          <lb/>un(d) pfait(e)n.
+          <lb/>It(em) ain truh(e)n darin etlich kopf,
+          <lb/>hulzin schusl(e)n, flasch(e)n, tallerpichs(e)n
+          <lb/>un(d) zinen plăn.
+          <lb/>It(em) XXIIII ar(e)mbrust.
+          <lb/>Etliche geschos und pfeil.
+          <lb/>Ain sess(e)l.
+          <lb/>Zwo lang hulzin pfeff(er) pichs(en).
+          <lb/>Ain sid(e)ltruh(e)n darin ain stuck
+          <lb/>zbilich, ain stuck(e)l galschen,
+          <lb/>ledreine leilach und etliche tischtuech(er).
+          <lb/>Ain kast(e)n nichtz darin, ab(er) darauf
+          <lb/>etlich groß hulzeine schuss(len).
+          <lb/>Ain spanpet mit ain(em) seidn(e)n
+          <lb/>umbhang darin I pett, I polst(er),
+          <lb/>II kuß.
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11328739-9"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>It(em) ain kast(en) mit werchzeug
+          <lb/>darauf zwen golt(er).
+          <lb/>It(em) ain spanpet darin ain pet,
+          <lb/>ain polst(er), II kuß, ain golt(er),
+          <lb/>ain lidrin deck.
+          <lb/>It(em) vier alte schwert.
+          <lb/>It(em) VII hell(e)nparten und morhack(e)n.
+          <lb/>Etlich alt leicht(er).
+          <lb/>V messin peck.
+          <lb/>Ain lant(er)n.
+          <lb/>Ain grŭen(er) schw(ei)n spieß.
+          <lb/>It(em) im kleinen stub(e)l ist ein
+          <lb/>spilpret.
+          <lb/>It(em) pet, zwey polst(er), II kuß, ain deck.
+          <lb/>It(em) in d(er) kamer auf d(er) stiegen
+          <lb/>drei petstat, drei pet mit strosech,
+          <lb/>V pol kuß, zwen polst(er), drei deck.
+          <lb/>It(em) in d(er) silberkamer zwei petstat,
+          <lb/>pet darin mit ir(er) zugehor.
+          <lb/>In der sideltruhen tischtuech(er), handzwechen.
+          <lb/>Ain kast(en) nichtz darin.
+          <lb/>Die kam(er) ist auch v(er)petsch(aft).
+          <lb/>It(em) in kell(er) VI kandl(e)n.
+          <lb/>Ain stand(er).
+          <lb/>Ain lars văss(e)l.
+          <lb/>Zu der capellen hat d(er) Kalb ain meßpuch.
+          <lb/>Ain mesgwand mit s(ein)er zugehor.
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11328739-10"/>
+          <milestone unit="folio" n="5v"/>
+          <lb/>It(em) in d(er) kuch(e)l etlich zingeschir,
+          <lb/>hultzin schussl(e)n, etlich kotin hăfen,
+          <lb/>kell(e)n und pfann(e)n, kess(e)l und and(er)s
+          <lb/>und ist v(er)petsch(aft).
+          <lb/>It(em) in d(er) kam(er) hind(er) d(er) kochstub(e)n
+          <lb/>ain spanpet, I pet, ain polst(er),
+          <lb/>ain kuß, ain sidltruch(en).
+          <lb/>It(em) in d(er) cam(er) daran zwai spanpet.
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11328739-11"/>
+          <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11328739-12"/>
+          <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab>
+          <pb n="13" facs="#surface-11328739-13"/>
+          <milestone unit="folio" n="7r"/>
+        </ab>
+        <ab>
+          <pb n="14" facs="#surface-11328739-14"/>
+          <milestone unit="folio" n="7v"/>
+        </ab>
+        <ab>
+          <pb n="15" facs="#surface-11328739-15"/>
+          <milestone unit="folio" n="8r"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

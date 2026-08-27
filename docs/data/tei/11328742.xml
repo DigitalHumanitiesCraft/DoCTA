@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328742">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Fragenstein bei Zirl (neuer Inhaber Friedrich Wingkentaler)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 125.6</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 125.6</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328742</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1488-02-17">1488.02.17</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328742-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/YOEQAPSZDAIXPOOXLATAFTQJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/RDACDIAKWXYPIGCZRMHBKKER/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/QTDFVSVDHLUHUGLBUGXGDJQX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/SWIUYIVSTRBMJYVIITSDNHZN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/DXWMZPRCWUFMCUJBXPCAPTTW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/UEJKQAYJMMTXYCIGRZMVKIMW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/VJVOINUNKVQBJGSMWDLXRXUP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328742-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/WCMRQKSGSKKRPRNCUABQPORM/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328742-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>An suntag Estomichi des
+          <lb/>achtundachczigisten jars ist
+          <lb/>Fridrichen Wingkentaler die
+          <lb/>phleg Fragenstain mitsambt
+          <lb/>der hernachgeschriben varenden
+          <lb/>hab und mẽsserey y̆nngeantwŭrt
+          <lb/>in beywesen Hannsen Zollners zŭ
+          <lb/>Zirl, Stephan Pegken, Ŭlrichen
+          <lb/>Schůsters, Josen Meczggers und
+          <lb/>Lienharden Ledrers, gerichts¬
+          <lb/>leŭten daselbs.
+          <lb/>Am ersten hanndtpũchsen XI.
+          <lb/>Haggenpŭchsen gross XX.
+          <lb/>Karrenpůchsen IIII.
+          <lb/>II karrenpuchsen auf der were.
+          <lb/>Ein grosse pŭchsen.
+          <lb/>Sweinspiess VII.
+          <lb/>Hellenparten XVII.
+          <lb/>Streythakhen IIII.
+          <lb/>I1/2 văssl mit pulver.
+          <lb/>Lĕgl mit pfey̆l I1/2.
+          <lb/>Zway alte armbrust.
+          <lb/>Ettlich pley platten und pŭchsenkugeln.
+          <lb/>Ein pŭchsen model zu pŭchsen.
+          <lb/>Ein alte schilt tartschen.
+          <lb/>Ein klainer mŏrser im pawstadel.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328742-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>In der capell.
+          <lb/>Ein tavel auf dem altar darin(n)
+          <lb/>sind die XII poten.
+          <lb/>Ein silbriner kelch ubergŭlt.
+          <lb/>Ein stiftbrief.
+          <lb/>Ein ordnat mit seiner zŭgehŏrung.
+          <lb/>Ein spetial.
+          <lb/>Zway plawe messgewant
+          <lb/>mit irer zŭgehŏrung.
+          <lb/>Ain rots sammatins mess¬
+          <lb/>gewanndt mit seiner zugehŏrung.
+          <lb/>Messin leŭchter II.
+          <lb/>Zinen leŭchter II.
+          <lb/>Zway opffer kăndl.
+          <lb/>Drew̆ alter tŭch.
+          <lb/>Ain alter dekh.
+          <lb/>Ain tŭechel darauf ein crucifix
+          <lb/>mitsambt ettlichen heiligen dar¬
+          <lb/>auf gemalt.
+          <lb/>Ein hülczine tafel daneben.
+          <lb/>Ain weichkessel.
+          <lb/>Zwo glogken.
+          <lb/>Ain klains glŏgkl.
+          <lb/>In den zway̆en ărgkern.
+          <lb/>In yedem ain spanpett und in
+          <lb/>dem ein ur.
+          <lb/>Auf dem sal.
+          <lb/>Ein harnasch kasten.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328742-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Im der grossen obern stuben.
+          <lb/>Czwen schŏn tisch mit edlem holcz.
+          <lb/>Ain slechter tisch.
+          <lb/>Ain gutschen pett.
+          <lb/>Ein këstl.
+          <lb/>In m(eines) g(nedigen) h(errn) kamer
+          <lb/>neben der stuben.
+          <lb/>Ain verdegkts spanpett.
+          <lb/>In der kamrer camer.
+          <lb/>II spanpett.
+          <lb/>Ain sideltruhen.
+          <lb/>In der kamer im frawen
+          <lb/>ein S zymmer.
+          <lb/>Ein spanpett.
+          <lb/>Im schreibstȗbl.
+          <lb/>Ein schreibtisch.
+          <lb/>Darob in einer kamer ein new̆e
+          <lb/>pettstatt mit ainer himelczen.
+          <lb/>Im stublin ob dem brunn(en).
+          <lb/>In der kamer bey dem brunnen.
+          <lb/>Spanpett III.
+          <lb/>Ain kasten.
+          <lb/>Czway gemalte himeltŭch.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328742-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>In der silber kamer.
+          <lb/>Ein slechter tisch.
+          <lb/>Ein lange truhen mit II slossern.
+          <lb/>VII sprŭczen.
+          <lb/>In der kamer darob.
+          <lb/>IIII new̆e spanpett.
+          <lb/>II rădl pett.
+          <lb/>In der grossen stuben.
+          <lb/>Ein spanpet.
+          <lb/>Ein gießvass.
+          <lb/>Zwen tisch.
+          <lb/>Ein sideltruhen.
+          <lb/>In der camer vor dem
+          <lb/>gwelb an der stuben.
+          <lb/>III hoch beslagen kăsten.
+          <lb/>III spanpett.
+          <lb/>Im gwelb.
+          <lb/>Ein beslagner kasten.
+          <lb/>III malen slŏsser.
+          <lb/>II beslagen kästen bey der
+          <lb/>tŭr im gwelb.
+          <lb/>Ein pettstat mit ainer sideltruhen.
+          <lb/>Ein klaine pettstatt.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328742-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Pettgewanndt.
+          <lb/>XII pett gŭt und pŏs.
+          <lb/>XI pŏlster.
+          <lb/>VII kŭss.
+          <lb/>Zwen seydin gŏlter.
+          <lb/>VI dekhen.
+          <lb/>III wirchin gŏlter.
+          <lb/>Vier leylach m(einem) g(nedigen) h(errn)
+          <lb/>zůgeho̊rend.
+          <lb/>Und sŭst auch III par.
+          <lb/>Kuchengeschirr.
+          <lb/>In der kuchin ein speyskasten.
+          <lb/>II pranntrait.
+          <lb/>Ein kupfriner wasserhafen.
+          <lb/>Ein rost.
+          <lb/>Ein pratspis.
+          <lb/>Ein dryfŭss.
+          <lb/>II hakhmesser.
+          <lb/>Ein eysenkellen.
+          <lb/>Ein eingemaurter kessl im sloss
+          <lb/>desgleichen ainer im pawstadel.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328742-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Im paw̆stadl.
+          <lb/>Czwen proczen mitsambt irn
+          <lb/>ketten und redern.
+          <lb/>Ein pflŭg und ein egken.
+          <lb/>Ain klainer wagen.
+          <lb/>III segenssen.
+          <lb/>II kumpf.
+          <lb/>Ein weczstain.
+          <lb/>Ain wagenketten.
+          <lb/>II hew̆gabeln.
+          <lb/>Ein fŭrslag mit ainem
+          <lb/>zugkscheit.
+          <lb/>X haubt vich.
+          <lb/>XVIIII hennen.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328742-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328742-8"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Invėntuari zedel
+          <lb/>Fragenstain.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

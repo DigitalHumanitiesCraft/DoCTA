@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329281">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des von Schloss Sigmundsburg am Fernstein (bisheriger Inhaber Ulrich Ramung)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.10</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.10</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329281</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1478-08-25">1478.08.25</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329281-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/GJDEASMMUOEZWKYZFBVUKEFC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/QHSILZLPRXLHHVSSMARTDWZR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/GGOJBZCPGMMCQIEGOVEKCQMZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/WNVNNPKHZWMNNFFDOINKNMAS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/XBQIXXWLQLYSLUSSEXKBSWVF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/PEUFXRKDQMQYYUDTNMVRAHJN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/KNOIXTQZUIKYYTZNSIEKJOKO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZWASRNAIBQFJECLYZDBYHEGE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/UVLTCXNUJSNSIONADCZXDWQK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/KFRPHLRKEPTMRGUONWEGEOHQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/FCGENVMILAOZGXYFSZJKQIAZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/LMTRPYEINICDERKFTVTMRSAP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-13" n="13">
+      <graphic url="https://files.transkribus.eu/iiif/2/KCKVKHFUVBCGPGAYJYZZCSPB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-14" n="14">
+      <graphic url="https://files.transkribus.eu/iiif/2/DAUBHHKGDYZADMXFOZMRYFDW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-15" n="15">
+      <graphic url="https://files.transkribus.eu/iiif/2/JSJQXRPJJZQXJIKJCVQPMVZW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329281-16" n="16">
+      <graphic url="https://files.transkribus.eu/iiif/2/UHOQSRMASUJCPNAUWVUCDVUC/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329281-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Inventari in p(raese)ncia(rum) Walther
+          <lb/>Hendlin, Hainrich Stenger und
+          <lb/>ander mer erber leẃt von
+          <lb/>Úmbst und Nazareit des U̇lrich
+          <lb/>Ramung abziechen beru̇rend.
+          <lb/>Act(um) an eritag nach Bartho¬
+          <lb/>lomei anno D(omi)ni etc. LXXVIIIten.
+          <lb/>Zu Sigmundspurg im sloss.
+          <lb/>It(em) ain vessel halb vol mit hauss¬
+          <lb/>pfeil.
+          <lb/>It(em) fúnff púchsen mod(e)l klain
+          <lb/>und gros.
+          <lb/>It(em) ain vess(e)l halb mit pfeil(e)n.
+          <lb/>It(em) ain lag(e)l halb mit hauspf¬
+          <lb/>eil(e)n.
+          <lb/>It(em) ain vess(e)l auf ain pazeid(e)n
+          <lb/>mit pȗchs(e)nkug(e)ln.
+          <lb/>It(em) ain vess(e)l beỹ ain(er) halben
+          <lb/>úrn mit púchs(e)n pulv(er).
+          <lb/>It(em) ain lýdrin sackh zind pulv(er).
+          <lb/>It(em) ain halb pazeid(e)n mit púchs(e)n
+          <lb/>kugeln.
+          <lb/>It(em) III zÿnd(er) hagken.
+          <lb/>It(em) ain eÿsin zapfn zwn zug.
+          <lb/>It(em) II mert(e)l hawen.
+          <lb/>It(em) I eÿsin nagel.
+          <lb/>It(em) etlich ramen zú venst(er)n
+          <lb/>XV.
+          <lb/>It(em) ain ledig eȳsen get(er) fúr ain
+          <lb/>venster.
+          <lb/>It(em) II spanpett.
+          <lb/>It(em) II spicz eÿsen.
+          <lb/>It(em) IIII eỹsin mod(e)l zú tach
+          <lb/>ziegel.
+          <lb/>It(em) III mod(e)l zú stain zieg(e)l.
+          <lb/>It(em) ain ungefeilt sagplat.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329281-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) V hobl gros und klain.
+          <lb/>It(em) ain spanpet.
+          <lb/>It(em) etlich unbeslag(e)n pfeil
+          <lb/>schefft.
+          <lb/>It(em) II alte grose zugsail.
+          <lb/>It(em) I klain zug sail.
+          <lb/>It(em) I petstat.
+          <lb/>It(em) ain raispanck zu armbrost.
+          <lb/>It(em) I tisch.
+          <lb/>It(em) VIII lancz(e)n, III haben kein
+          <lb/>eÿsen.
+          <lb/>It(em) I lag(e)l mit pfeil.
+          <lb/>It(em) III panck armbrost.
+          <lb/>It(em) VIIII zilige hausarmbrost.
+          <lb/>It(em) XIII hacken púchsen.
+          <lb/>It(em) XIX handpŭchsen.
+          <lb/>It(em) III pernspieseÿsen.
+          <lb/>It(em) II krendlin.
+          <lb/>It(em) I hellenpart an ain stil.
+          <lb/>It(em) ain glesin horn.
+          <lb/>It(em) III fledrin kópf.
+          <lb/>It(em) ain sloss mit aim túrangl.
+          <lb/>It(em) I spanpet.
+          <lb/>It(em) I kasten.
+          <lb/>It(em) I gwand trȗhel.
+          <lb/>It(em) I petstat.
+          <lb/>It(em) II tisch.
+          <lb/>It(em) ain wetstain an ain(er) kett(e)n.
+          <lb/>It(em) I hoher tisch.
+          <lb/>It(em) III hirsskȗrn.
+          <lb/>It(em) II wasser lag(e)l.
+          <lb/>It(em) II spanpett.
+          <lb/>It(em) III alte trŭhlin.
+          <lb/>It(em) ain schrein.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329281-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>It(em) I melkast.
+          <lb/>It(em) II prantschrag(e)n.
+          <lb/>It(em) II spiczeȳsen.
+          <lb/>It(em) etlich eÿsen zū zu̇gen.
+          <lb/>It(em) ain arbis kolben.
+          <lb/>It(em) I petstat.
+          <lb/>It(em) I unúberzog(e)n petlin.
+          <lb/>It(em) I hauslodin deck(e)n.
+          <lb/>It(em) ain plat(e)n un(d) I stuck pleÿ.
+          <lb/>It(em) I stuckh zÿnn.
+          <lb/>It(em) I pratspiss.
+          <lb/>It(em) I eÿsin ofengab(e)l.
+          <lb/>It(em) II alt eÿsin schauf(e)l.
+          <lb/>It(em) I drÿfȗss.
+          <lb/>It(em) I panckschabeÿsen.
+          <lb/>It(em) I hehel.
+          <lb/>It(em) I lavetschlin.
+          <lb/>It(em) III1/2 fůss eÿsen.
+          <lb/>It(em) I hawshorn.
+          <lb/>It(em) II mortkolben.
+          <lb/>It(em) ain vess(e)l mit fũss ang(e)l.
+          <lb/>It(em) ain melkestlin.
+          <lb/>It(em) ain fleisch ram.
+          <lb/>It(em) in der und(er)n hind(er)n stub(e)n
+          <lb/>ain tisch.
+          <lb/>It(em) auf dem sal II tisch.
+          <lb/>It(em) in der grosen turnicz
+          <lb/>ain tisch.
+          <lb/>Im seehews(e)l, in der
+          <lb/>schmid, under der zÿm(er)
+          <lb/>hũt(e)n.
+          <lb/>It(em) I tisch.
+          <lb/>It(em) VI petstat(e)n.
+          <lb/>It(em) I rolpet(e)l.
+          <lb/>It(em) I eÿsin nag(e)l zum zug.
+          <lb/>It(em) XIII spies stang(e)n.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329281-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>In der schmidt(e)n.
+          <lb/>It(em) ain ampos.
+          <lb/>It(em) ain grosen schliffstain.
+          <lb/>It(em) II plaspelg.
+          <lb/>Und(er) der holczhút(e)n.
+          <lb/>It(em) XVIII stuckh stain von
+          <lb/>Mittenwald.
+          <lb/>It(em) etlich tach zieg(e)l.
+          <lb/>It(em) VIIII lerch(e)n pod(e)n lad(e)n.
+          <lb/>It(em) V klain lad(e)n.
+          <lb/>It(em) LX pem gezÿmert un¬
+          <lb/>gevarlich(e)n.
+          <lb/>Im haws under
+          <lb/>Sigmundspurg.
+          <lb/>It(em) ain gros pett mit ain(er)
+          <lb/>plab(e)n ziehen.
+          <lb/>It(em) I kŭss mit ain(er) weissen zieh(e)n
+          <lb/>und ains an ziehen.
+          <lb/>It(em) I polster mit plab.
+          <lb/>It(em) I parchati polster.
+          <lb/>It(em) I plab geneti decken mit
+          <lb/>seiden.
+          <lb/>It(em) I alter strosackh.
+          <lb/>It(em) I alts gestreifft pett.
+          <lb/>It(em) I polster mit ainer gestrei¬
+          <lb/>fft(e)n ziehen.
+          <lb/>It(em) ain neẇ(e)n strosackh.
+          <lb/>It(em) ain alts gestreiffts pett.
+          <lb/>It(em) I span pett.
+          <lb/>It(em) I kariol pet(e)l.
+          <lb/>It(em) I truch.
+          <lb/>It(em) I sessel.
+          <lb/>It(em) I hirskŭrn.
+          <lb/>In stuba princip(is).
+          <lb/>It(em) II tisch.
+          <lb/>It(em) III hirsskúrn.
+          <lb/>It(em) I tisch vor der stub(e)n.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11329281-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>It(em) I petstat mit ain(er) hobel.
+          <lb/>It(em) I fůtral mit VIII messern.
+          <lb/>It(em) XII zÿn schȗss(e)l.
+          <lb/>It(em) II klain zerrissen schúss(e)l.
+          <lb/>It(em) I zỹn plan.
+          <lb/>It(em) I alte plech flasch(e)n.
+          <lb/>It(em) III alt pip(e)n.
+          <lb/>It(em) I zwomássig kand(e)l.
+          <lb/>It(em) I ainmassig kand(e)l.
+          <lb/>It(em) I drincken kand(e)l.
+          <lb/>It(em) I alte zerprochne kand(e)l.
+          <lb/>It(em) IIII senff schússel.
+          <lb/>It(em) II alt eÿsin leúcht(er).
+          <lb/>It(em) V milhkarlin.
+          <lb/>It(em) V mal schúss(e)l.
+          <lb/>Harnasch kam(e)r.
+          <lb/>It(em) I gestreift alts petlin.
+          <lb/>It(em) I weiss póss petlin.
+          <lb/>It(em) I alt(er) stro sackh.
+          <lb/>It(em) I pet mit weiss(er) leinwat.
+          <lb/>It(em) I gestreifft(er) polster.
+          <lb/>It(em) II gestreiffte kũss.
+          <lb/>It(em) I alter stro sackh.
+          <lb/>It(em) I gestreifts alts petlin.
+          <lb/>It(em) I stro sackh.
+          <lb/>It(em) I alt(er) gestreifft(er) polst(er).
+          <lb/>It(em) II gestreiffte kȗss.
+          <lb/>It(em) I weiß klain petlin.
+          <lb/>It(em) I strosackh.
+          <lb/>It(em) III spanpett.
+          <lb/>It(em) I spanpet mit aim hob(e)l.
+          <lb/>It(em) XI rauch scheffin deck(e)n.
+          <lb/>It(em) gemsin zerrissen decken.
+          <lb/>It(em) I scheffin zerriss(e)n deck(e)n.
+          <lb/>It(em) II alt genet gŏlter.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11329281-6"/>
+          <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11329281-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11329281-8"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>It(em) II hauslodin decken.
+          <lb/>It(em) II schalawn decken.
+          <lb/>It(em) I polster an ziehen.
+          <lb/>It(em) I alt(er) gestreifft(er) polst(er).
+          <lb/>It(em) X helmlin.
+          <lb/>It(em) X eýsenhüt alt.
+          <lb/>It(em) XIX pancz(er).
+          <lb/>It(em) wer mit IIII hacken.
+          <lb/>It(em) swert alz ain trischel.
+          <lb/>It(em) II mordaxen.
+          <lb/>It(em) I eÿsin pŭchslin.
+          <lb/>It(em) II puckler.
+          <lb/>It(em) II eýsin kolb(e)n.
+          <lb/>It(em) II wurfhack(e)n.
+          <lb/>It(em) I gros gassen swert.
+          <lb/>It(em) I armbrost mit ain(er)
+          <lb/>winden.
+          <lb/>It(em) I kocher mit VII wasser
+          <lb/>poltz(e)n.
+          <lb/>It(em) I hellenpart.
+          <lb/>It(em) II zwilhin handtŭch.
+          <lb/>It(em) II wirchin hand túch.
+          <lb/>It(em) II par alte henfine
+          <lb/>leilach.
+          <lb/>It(em) IIII par alt wirchine
+          <lb/>leinlach.
+          <lb/>It(em) XI klaine zerrissne alte
+          <lb/>leinlach.
+          <lb/>It(em) III wirchine tischtúch.
+          <lb/>It(em) I zwilhe alt tischtŭch.
+          <lb/>It(em) I schreinlin.
+          <lb/>It(em) III petstat.
+          <lb/>It(em) II petstat.
+          <lb/>It(em) II tisch.
+          <lb/>It(em) II alte spanpett.
+          <lb/>It(em) I zerrissen strosackh.
+          <lb/>It(em) IIII spanpett.
+          <lb/>It(em) I alte truh.
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11329281-9"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>It(em) III wirchine pettlin.
+          <lb/>It(em) I zwilhin pettlin.
+          <lb/>It(em) I petlin mit ainer hauslodin
+          <lb/>decken.
+          <lb/>It(em) III polst(er) mit leinwat úber
+          <lb/>zog(e)n.
+          <lb/>It(em) I polst(er) an ziehen.
+          <lb/>It(em) I zerrissen unúberzog(e)n
+          <lb/>petlin.
+          <lb/>It(em) II gestreifft polster.
+          <lb/>It(em) II gestreifft kȗss.
+          <lb/>It(em) I kȗss an úberzug.
+          <lb/>It(em) II petlin an ziehen.
+          <lb/>It(em) I alte deck mit enden.
+          <lb/>It(em) I hawslodin decken gestreifft.
+          <lb/>It(em) I weissen golter.
+          <lb/>It(em) I schalawn zerrissen.
+          <lb/>It(em) under dem tach
+          <lb/>V spanpett.
+          <lb/>It(em) XXI hỹlczin scheib(e)n.
+          <lb/>It(em) I petstat.
+          <lb/>It(em) II tisch.
+          <lb/>It(em) I alt(er) gieskess(e)l und
+          <lb/>ain kupferin peckh.
+          <lb/>It(em) IIII erin hefen auf
+          <lb/>dreÿ fuessen, hat der ain
+          <lb/>ain fŭss verlor(e)n.
+          <lb/>It(em) I erin lavetsch(e)n.
+          <lb/>It(em) I kupferin zerrissen sÿb.
+          <lb/>It(em) X kessel klain und gros.
+          <lb/>It(em) I zerrissen kessel.
+          <lb/>It(em) I mersel und stóssel.
+          <lb/>It(em) II pratschragen.
+          <lb/>It(em) IIII pfannen gros und
+          <lb/>klain.
+          <lb/>It(em) I kesten pfendlin.
+          <lb/>It(em) I glůtpfannen.
+          <lb/>It(em) II eÿsin póss kell(e)n.
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11329281-10"/>
+          <milestone unit="folio" n="5v"/>
+          <lb/>It(em) I messin ketzlin.
+          <lb/>It(em) I pratspiss zú hirsleb(er)n.
+          <lb/>It(em) II gros pratspiss.
+          <lb/>It(em) I eÿsin gabl damit man
+          <lb/>fleisch auf henckt.
+          <lb/>It(em) Iu̇tzschern.
+          <lb/>It(em) I feẃrkreel.
+          <lb/>It(em) IIII alt hafendecken.
+          <lb/>It(em) II prantschragen.
+          <lb/>It(em) I hehel.
+          <lb/>It(em) III ketin hefen.
+          <lb/>It(em) I rÿbeÿsen.
+          <lb/>It(em) II krawtmesser.
+          <lb/>It(em) I alt hackmesser.
+          <lb/>It(em) I rŭbscherr(e)n.
+          <lb/>It(em) XXX hÿltzin teller.
+          <lb/>It(em) I panckschab, ist zerproch(e)n.
+          <lb/>It(em) I kupferin sỹb.
+          <lb/>It(em) I drÿfŭss.
+          <lb/>It(em) I pewt(e)lfass.
+          <lb/>It(em) I fleisch zuber.
+          <lb/>It(em) I kessel.
+          <lb/>It(em) I pazeid(e)n.
+          <lb/>It(em) I alter tisch.
+          <lb/>It(em) ain kŭffkar.
+          <lb/>It(em) I speis truhen.
+          <lb/>It(em) I alt streihmass.
+          <lb/>It(em) II lang winting.
+          <lb/>It(em) I leffing(er).
+          <lb/>It(em) III hebeÿsen.
+          <lb/>It(em) II alte schnaiteÿsen.
+          <lb/>It(em) II nagel eÿsen.
+          <lb/>It(em) ain horn ampos.
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11329281-11"/>
+          <milestone unit="folio" n="6r"/>
+          <lb/>It(em) II feẃr zangen.
+          <lb/>It(em) II span ring.
+          <lb/>It(em) I werch ham(er).
+          <lb/>It(em) I vor schlag.
+          <lb/>It(em) I ebenschlag.
+          <lb/>It(em) I mawrhamer.
+          <lb/>It(em) ain zwaȳ spitz.
+          <lb/>It(em) ain gegenham(e)r.
+          <lb/>It(em) ain protpancklin.
+          <lb/>It(em) I alter tisch.
+          <lb/>It(em) I prot hang(e)n.
+          <lb/>It(em) I kurtz(e)nket(e)n an zug.
+          <lb/>It(em) II eÿsen an zug.
+          <lb/>It(em) II alt zerproch(e)n schaufl(e)n.
+          <lb/>It(em) II alt mert(e)lhawen.
+          <lb/>It(em) I eỹsin schleg(e)l.
+          <lb/>It(em) II werchhawen.
+          <lb/>It(em) ain zwaÿspicz.
+          <lb/>It(em) ain rennstang(e)n.
+          <lb/>It(em) II eÿsin stecken.
+          <lb/>It(em) ain welhawen.
+          <lb/>It(em) ain eỹsin stang(e)n
+          <lb/>zum schliffstain.
+          <lb/>It(em) etlich mer eÿsin geschir
+          <lb/>zú der sag.
+          <lb/>It(em) ain holczhacken.
+          <lb/>It(em) I ainspitz.
+          <lb/>It(em) ain alter haiden.
+          <lb/>It(em) ain mert(e)l kellen.
+          <lb/>It(em) ain hawen.
+          <lb/>It(em) ain protschaff.
+          <lb/>It(em) VIIII púsch(e)l lannczen
+          <lb/>schafft.
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11329281-12"/>
+          <milestone unit="folio" n="6v"/>
+          <lb/>It(em) V púsch(e)l rũder.
+          <lb/>It(em) ain alts zug sail.
+          <lb/>It(em) ain eingemawrt(e)n kessel.
+          <lb/>It(em) ain groser pad zuber.
+          <lb/>It(em) etlich úrn, scheffer,
+          <lb/>zȗber im alten keller.
+          <lb/>It(em) ain milh tisch.
+          <lb/>It(em) ain kornpŭchss mit aim
+          <lb/>komet und geschirr.
+          <lb/>It(em) ain eÿsin zang da
+          <lb/>man stain mit auf zeúcht.
+          <lb/>It(em) ain alt(e)n tisch.
+          <lb/>It(em) ain alt spanpett.
+          <lb/>Ecclesia.
+          <lb/>It(em) ain swartz samatin
+          <lb/>messgwand mit grunem
+          <lb/>zend(e)l underzog(e)n und
+          <lb/>ain swarcz(e)n tasch zum
+          <lb/>corporal mit sein(er) zúge¬
+          <lb/>horung.
+          <lb/>It(em) ain gruen zendlin
+          <lb/>messgwand mit sein(er)
+          <lb/>zugehórung.
+          <lb/>It(em) ain weiß leinwat
+          <lb/>messgwand mit sein(er)
+          <lb/>zȗgehórung.
+          <lb/>It(em) ain weiss gúts
+          <lb/>altar tũch.
+          <lb/>It(em) ain gantz weiß
+          <lb/>altar tüch.
+          <lb/>It(em) ain weiss altar tüch
+          <lb/>mit plaben leisten.
+        </ab>
+        <ab>
+          <pb n="13" facs="#surface-11329281-13"/>
+          <milestone unit="folio" n="7r"/>
+          <lb/>It(em) ain messpūch.
+          <lb/>It(em) ain rochfass.
+          <lb/>It(em) II opfer kand(e)l.
+          <lb/>It(em) V lb. wax unge¬
+          <lb/>varlich.
+          <lb/>It(em) III messig leẃcht(er)
+          <lb/>klain und gros.
+          <lb/>It(em) ain glockh.
+          <lb/>It(em) ain weỹhkessel.
+          <lb/>It(em) ain alter leúcht(er).
+          <lb/>It(em) ain glockh und ain
+          <lb/>ur auf dem tor.
+        </ab>
+        <ab>
+          <pb n="14" facs="#surface-11329281-14"/>
+          <milestone unit="folio" n="7v"/>
+        </ab>
+        <ab>
+          <pb n="15" facs="#surface-11329281-15"/>
+          <milestone unit="folio" n="8r"/>
+        </ab>
+        <ab>
+          <pb n="16" facs="#surface-11329281-16"/>
+          <milestone unit="folio" n="8v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

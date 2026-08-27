@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329339">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundsfreud bei Barwies, Inhaber Wolf Schilling</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 133.2</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 133.2</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329339</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1481-01-21">1481.01.21</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329339-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/WMBMGEPQBQREOHXWGMAUOVRN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/GHOMLQZGFXDIZCSYZMDTJFDT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/NKBLWPVGIKDYNBHPNMDAPYRG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/OSFBZVMIOZQRYLHEMVHZHAYL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZYKKISMCHUIDFBUXGCHTHJJA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/NEHJJWZHHIZVUXHNXOLSJMMX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/UBFWFMQHZCHPMGFQUATLWCID/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329339-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/LOYTIUGIFUQCQEDNXXBPCKBK/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329339-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Nota als dann mein gnediger herr mit
+          <lb/>mir Hannsen Dÿeperskircher
+          <lb/>geschaffen hat mich gen Sig¬
+          <lb/>mundsfrew̆d zufůgen, Casparen
+          <lb/>Frechen und Kristoffen Fragen¬
+          <lb/>stainer zu mir zenemen als
+          <lb/>des seiner gnaden geschẽfft aus¬
+          <lb/>weysen alle varende hab, hausrat
+          <lb/>und anders so im von dem
+          <lb/>bemelten Caspar Frechen auch
+          <lb/>was im darnach von seĩnen
+          <lb/>gnaden geantwurt worden ist das
+          <lb/>alles lassen aufschreiben, sein
+          <lb/>gnad darnach wisse zuberichten
+          <lb/>was sein gnad da hab und ain
+          <lb/>invitari zedl darumb zu machen.
+          <lb/>Beschehen an sannd Agnesentag
+          <lb/>anno domini etc. LXXX primo.
+          <lb/>Wolf Schilling.
+          <lb/>Petgwant.
+          <lb/>Item am ersten dreẅ pett mit
+          <lb/>kollischen ziechen.
+          <lb/>Item mer mit weissen ziechen
+          <lb/>zwaẏ pett.
+          <lb/>Item drey polster mit kollischen
+          <lb/>ziechen.
+          <lb/>Item mer VIII ku̇ss on ziechen.
+          <lb/>Item mer IIII alt slecht gŏlter.
+          <lb/>Item mer sind dagwesen zehen
+          <lb/>slechte leilach herwein daran
+          <lb/>sind noch vorhanden VIII.
+          <lb/>Item mer ain tischtŭch.
+          <lb/>Item XIII hantŭcher.
+          <lb/>Item mer sind vorhanden gevesen
+          <lb/>VI prottŭcher da mangl ains.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329339-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Zyngschĭrr.
+          <lb/>Item mer zwaintzigk zy̆nschusslen
+          <lb/>gross und klain sind vorhanden
+          <lb/>gwesen, sind noch da XVII.
+          <lb/>Item mer drey zy̆nein plãn.
+          <lb/>Item mer ist vorhanden gwesen
+          <lb/>XVIII zy̆nein tăller, sind noch
+          <lb/>vorhanden XVI.
+          <lb/>Item mer ist vorhannden zwo
+          <lb/>zwymăssig kandlen.
+          <lb/>Item drey maskandlen.
+          <lb/>Item ain halbs trincken kandli.
+          <lb/>Item drey̆ saltzfăssli.
+          <lb/>Item mer ist vorhannden gwesen
+          <lb/>V pley̆ein pecher, sind noch
+          <lb/>zween da.
+          <lb/>Item mer ain zy̆neĭns gĭesfas.
+          <lb/>Item ain messeins peck und
+          <lb/>ain giesfas dary̆nn.
+          <lb/>Item V messein leŭchter mit
+          <lb/>ainem ror.
+          <lb/>Item ain messeĭner leŭchter
+          <lb/>mit dreyen rõren.
+          <lb/>Item ain hȧngender messeiner
+          <lb/>leŭchter mit V roren.
+          <lb/>Item ain zyneiner leu̇chter mit
+          <lb/>drey̆en roren.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329339-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Kuchengschȋrr.
+          <lb/>Item mer sind vorhannden gwesen
+          <lb/>IIII kessl, gehõrt der ain zu
+          <lb/>der padstuben umb ainen ist
+          <lb/>prung.
+          <lb/>Item ain gatzen.
+          <lb/>Item ain pfefferpfann.
+          <lb/>Item V eysnein phannen
+          <lb/>gross und klain.
+          <lb/>Item ain kessl hat der Gnapp
+          <lb/>geantwurt bey zwaý schaff
+          <lb/>wasser.
+          <lb/>Item ain drỹfũss.
+          <lb/>Item ain prannträid.
+          <lb/>Item ain pãl.
+          <lb/>Item ain pratspĩs.
+          <lb/>Item ain rost.
+          <lb/>Item III eysnein kochlŏffl.
+          <lb/>Kasten, petstaten und
+          <lb/>ander holtzgschĭrr.
+          <lb/>Item ain guter beslagner kasten.
+          <lb/>Item in dem keller ain klainer
+          <lb/>kasten.
+          <lb/>Item ain verglastes padfass ist
+          <lb/>zu klain.
+          <lb/>Item ain wannen.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329339-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Item zwo petstȧten fũr mein
+          <lb/>gnedigen herren.
+          <lb/>Item ain sidltruhen.
+          <lb/>Item VIII gemãiner petstaten.
+          <lb/>Item mer zwen new tisch.
+          <lb/>Item ain alts weinfas.
+          <lb/>Item ain padzuber, ist zubrochen.
+          <lb/>Item VI schaffer gross und klain.
+          <lb/>Item ain mŏrtter schaf.
+          <lb/>Item ain seichnappf.
+          <lb/>Item zwen smaltzkŭbl.
+          <lb/>Item ain sechzuber.
+          <lb/>Item ain peũtlfas.
+          <lb/>Item ain milchkasten.
+          <lb/>Item ain prothanngen.
+          <lb/>Item ain futerkasten.
+          <lb/>Item ain schrotpret.
+          <lb/>Item ain vischtruch.
+          <lb/>Item ain protkorb.
+          <lb/>Item zween knetzŭber.
+          <lb/>Item ain molteren.
+          <lb/>Item ain prottaflen.
+          <lb/>Item zwo ramen.
+          <lb/>Item ain schusslkorb.
+          <lb/>Item ain stăr und ain mẽsli.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11329339-5"/>
+          <lb/>Mein gȧr willig dĩnst zuvor lieber herr Caspẽr Frech hat mich
+          <lb/>angestrenngt umb die inventarizedl so ich in gegenwu̇rtïgkeit
+          <lb/>Hannsen Dieperskirchers und sein auf gesch(eft) meins gnedigen herren dabey
+          <lb/>dann Frech auch gewesen ist Sigmundsfreẃd berȗrnd gemacht
+          <lb/>hab im die selb zedl zu antwu̇rten, also send ich eu̇ch dieselb
+          <lb/>zedl hierỹnne beslozzen darẏnn ir wol verrer wisset zu hanndlen
+          <lb/>und wory̆nn ich euch zugfollen werden mag bin ich willig. Geben
+          <lb/>zu Klam an pfintztag nach sand Michelstag anno etc. LXXXII.
+          <lb/>Fragenstainer.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11329339-6"/>
+          <lb/>Dem ersam hernn maister
+          <lb/>Ulrichen Knew̃ssl meins
+          <lb/>gnedigen herrn von Osterreich etc. kantzler
+          <lb/>meinem lieben herrnn
+          <lb/>ad manum.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11329339-7"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Wagengschĩrr.
+          <lb/>Item ain beslagner wagen mit
+          <lb/>IIII rederen und sylscheĩt.
+          <lb/>Item ain pflũg mit seĭner zugehorung.
+          <lb/>Item zwaý gũte beslagne redasten.
+          <lb/>Ausglichen und nit da.
+          <lb/>Item zwen protzen an reder.
+          <lb/>Item mer sind vorhanden gwesen
+          <lb/>VII schaufflen und ain ofen
+          <lb/>schaufflen, sind noch dreý
+          <lb/>verhänden, die anderen sind
+          <lb/>zuprochen.
+          <lb/>Item mer ist da gwesen XVIII hawen
+          <lb/>groß und klain, sind noch vor¬
+          <lb/>handen zwo hawen und ain
+          <lb/>pickl.
+          <lb/>Item ain eysneinr slogel.
+          <lb/>Item mer ist da gwesen IIII
+          <lb/>eysnein keyl, ist kaĭne da.
+          <lb/>Item ain eẏsnstecken.
+          <lb/>Item zwo rennckstanngen.
+          <lb/>Item zwaý newe plechsloss.
+          <lb/>Item ain mistgabl.
+          <lb/>Item ain vass wein hat man
+          <lb/>von Casparen Schuster von
+          <lb/>Mals genomen, hat mein gnediger herr
+          <lb/>ausgetruncken und ander seiner
+          <lb/>gnaden dĭener.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11329339-8"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Item in meĭns gnedigen herrn kȧmer
+          <lb/>ain armbrost.
+          <lb/>Item ain zugsail.
+          <lb/>Und darnach hat mein gnediger herr
+          <lb/>ain messer und ain wellischen
+          <lb/>ragkauen da gelassen.
+          <lb/>Item mir hat mein gnediger herr ain
+          <lb/>liğl mit pfeil dahin geben.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

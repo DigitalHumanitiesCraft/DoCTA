@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329479">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des von Schloss Sigmundsburg am Fernstein (bisheriger Inhaber Caspar Frech, neuer Ulrich Ramung)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.9</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.9</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329479</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1478-02-20">1478.02.20</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329479-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/UTLORVBNXWVKHCYIEVCFLVTO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/UNVJWRPIIPTRYNJFHBWSLBMI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/JBWPYSGWKNFVXZFIOOJKYUHH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/GBMIVPBDDZAXAFOWPLTRBKKC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/RUNBUEWXTTQTVHOXALIWXYJR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/NYZCWKPLNCZNLPKZUSQKZKNW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/QEFLMJKJQBHTQZTRZKJQUNDL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/FWCGLWJDLHOBQGZWIJVCSCYZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/STCLVLLXDOPMOHFXSALBOOIL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/PNFTQDTUFEUUUQCSJEJHRYSW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/HRSZJUFMEWXRKNYIPJFVTZVE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/TBQOUFUJZZBEDVVLIDAOBRPQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-13" n="13">
+      <graphic url="https://files.transkribus.eu/iiif/2/STOYSVYXDLRGLQLKQVTXYJEQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-14" n="14">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZMNZBMNDFZBWAGYOMPMTRUUH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-15" n="15">
+      <graphic url="https://files.transkribus.eu/iiif/2/JZHKSNGRGMBERGLMDESDNYRU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329479-16" n="16">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZQVIPIKBESQPNRWFCMYAQMVO/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329479-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Inventuary zedeln inp(raese)nci(arum) den
+          <lb/>Nicolesch(e)n Haug(er) und and(er) mer
+          <lb/>erb(er) leut(en) von Umbst und Nassereid
+          <lb/>der Frech(e)n abzieh(e)n berurend.
+          <lb/>Actum an freistag vor Oculi
+          <lb/>anno D(o)m(ini) etc. 1478.
+          <lb/>Zu Sigmundspurg im
+          <lb/>slozz.
+          <lb/>It(em) ein vessl halb vol mit pheyln.
+          <lb/>It(em) funff puchsn modl klain und grozz.
+          <lb/>It(em) ein vessl halb mit hawspheyln.
+          <lb/>It(em) ein lagl halb mit hauspheyl(e)n.
+          <lb/>It(em) ein klains vessl auf ein paczeyd(e)n
+          <lb/>mit puchsn kůgln.
+          <lb/>It(em) ein vessl bey ein(er) halbn urn puchsnpullv(er).
+          <lb/>It(em) in einem lydern sagkh zuntpullver.
+          <lb/>It(em) ein halb patzeydn puchsn kugln.
+          <lb/>It(em) drey zynndhagkn.
+          <lb/>It(em) ein eysne zapffn zum zw̆g.
+          <lb/>It(em) zway̆ mortt(er) haw̆n.
+          <lb/>It(em) ein eysny nagl.
+          <lb/>It(em) ein eysl.
+          <lb/>It(em) ettlich ramen zu vennst(e)rn.
+          <lb/>It(em) ein ledig(en) eysngett(er) fur ein vennst(er).
+          <lb/>It(em) zway spanpet.
+          <lb/>Zway zwayspitz eysen.
+          <lb/>It(em) vier eysny modl zu tachziegln.
+          <lb/>It(em) drey modl zu stainzie̊gl.
+          <lb/>It(em) ain ungefeicheltss sagplat.
+          <lb/>It(em) ein spanpet.
+          <lb/>It(em) ettlich unbeschlag(en) pheilschifft.
+          <lb/>It(em) zway gros alt zugsaÿl.
+          <lb/>It(em) ein klains zugsayl.
+          <lb/>It(em) ein petstat.
+          <lb/>It(em) ein rayspankh zu armbrũst.
+          <lb/>It(em) ein tisch.
+          <lb/>It(em) acht lanncz(e)n, hab(e)n drey dhain eẏs(e)n.
+          <lb/>It(em) ein legl mit pheyln.
+          <lb/>It(em) drew pannkh armbrũst.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329479-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) VIIII zilg(en), armbrust, hawsarmbrŭst.
+          <lb/>It(em) XVIIII hantpuchsn.
+          <lb/>It(em) XIII hag(e)npuchs(e)n klain und gros.
+          <lb/>It(em) III spur eysn.
+          <lb/>It(em) II krondl.
+          <lb/>It(em) ein helmpartn an stil.
+          <lb/>It(em) ein prantglisers hor(e)n.
+          <lb/>It(em) drey alt fledry kopf.
+          <lb/>It(em) ein slozz mit ein tŭrängl.
+          <lb/>It(em) ein spanpet.
+          <lb/>It(em) ein casten.
+          <lb/>It(em) ein gwandt trůchl.
+          <lb/>It(em) ein petstat.
+          <lb/>It(em) zwen tisch.
+          <lb/>It(em) ein wecstain an ain(er) kettn.
+          <lb/>It(em) ein tisch.
+          <lb/>It(em) drew̆ hirschkŭrn(er).
+          <lb/>It(em) II legl.
+          <lb/>It(em) II spanpet.
+          <lb/>It(em) drey alty truchly.
+          <lb/>It(em) ein schrainly.
+          <lb/>It(em) ein melb cast(e)n.
+          <lb/>It(em) II prantschrag(e)n.
+          <lb/>It(em) II zwayspitz eys(e)n.
+          <lb/>It(em) ettlich eys(e)n zu zw̆g(e)n.
+          <lb/>It(em) ein arbis kolbn.
+          <lb/>It(em) ein petstat.
+          <lb/>It(em) ein unnb(e)czogn(e)s petl.
+          <lb/>It(em) ein hauslodn tegkh(e)n.
+          <lb/>It(em) ein plat(e)n und stugkly pley.
+          <lb/>It(em) ein stugkly zẙn.
+          <lb/>It(em) ein pratspis.
+          <lb/>It(em) ein offngabl.
+          <lb/>It(em) II alt schawffln.
+          <lb/>It(em) ein tryfŭss.
+          <lb/>It(em) ein pannkhschabey̆s(e)n.
+          <lb/>It(em) ein hel.
+          <lb/>It(em) ein lavetschl.
+          <lb/>It(em) III1/2 par fusey̆s(e)n.
+          <lb/>It(em) ein haushor(e)n.
+          <lb/>It(em) II mordkolb(e)n.
+          <lb/>It(em) ein văssl mit fuss kugl(e)n.
+          <lb/>It(em) ein melbkestl.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329479-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Im seehew̆sl, in d(er) schmitt(e)n
+          <lb/>und unnd(er) holczhŭtt(e)n.
+          <lb/>It(em) VI petstatt(e)n.
+          <lb/>It(em) I rolpetl.
+          <lb/>It(em) I tisch.
+          <lb/>It(em) ein eysny̆nagl zum zŭg.
+          <lb/>It(em) XIII spies stanng(en).
+          <lb/>It(em) XVII stůgkh stain von Mittnwald.
+          <lb/>It(em) ein anpos.
+          <lb/>It(em) ein grozz(e)n schlifstain.
+          <lb/>It(em) zwen plaspelg.
+          <lb/>It(em) ettlich tach ziegl.
+          <lb/>It(em) VIIII lerchy podn lad(e)n.
+          <lb/>It(em) V klain ladn.
+          <lb/>It(em) LX st. pĕm gezymert unge[..]lichter.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329479-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11329479-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Im haws und(er) Vernstain
+          <lb/>Sigmundspurg.
+          <lb/>It(em) ein pet mit ain(er) plabn ziech(e)n.
+          <lb/>It(em) II kus mit wey̆s leinbat.
+          <lb/>It(em) ein polst(er) mit plab.
+          <lb/>It(em) ein parkaty polst(er).
+          <lb/>It(em) ein plab genety dekh(e)n mit seyd(e)n.
+          <lb/>It(em) ein neẘ par leylach.
+          <lb/>It(em) ein alt(er)ns inriss(e)n par leilach.
+          <lb/>It(em) ein alter strosach.
+          <lb/>It(em) ab(er) ein alty gestrayffty dekh(e)n pet,
+          <lb/>ein polst(er) mit ain(er) gestreifft(e)n ziech(e)n.
+          <lb/>It(em) ein new(e)n strosach.
+          <lb/>It(em) ein spanpet und cario̊l.
+          <lb/>It(em) ein truch(e)n.
+          <lb/>It(em) ein sessl.
+          <lb/>It(em) ein hirschkurner.
+          <lb/>In stub(e)n p[.]d t(en).
+          <lb/>It(em) II tisch.
+          <lb/>It(em) II hirschkurn(er).
+          <lb/>It(em) I tisch und(er) stŭb(e)n.
+          <lb/>It(em) ein pestat mit ein(er) hebl.
+          <lb/>It(em) II alt schrein.
+          <lb/>It(em) ein futrall mit acht mess(er)n.
+          <lb/>It(em) XII zyny schŭssl.
+          <lb/>It(em) II klain zuriss(e)n schussl.
+          <lb/>It(em) ein zynn plan.
+          <lb/>It(em) ein alty plegk flasch(e)n.
+          <lb/>It(em) III alt pipp(e)n.
+          <lb/>It(em) ein zwy messig zyn kandl.
+          <lb/>It(em) ein mesig zyn kandl.
+          <lb/>It(em) ein alts dringkh(e)n kenndl.
+          <lb/>It(em) ein mass kanndl z(er)proch(e)n.
+          <lb/>It(em) IIII sennff schussl.
+          <lb/>It(em) II alt eysny leŭcht(er).
+          <lb/>It(em) V milchkerl.
+          <lb/>It(em) VI mal schŭssl.
+          <lb/>It(em) IIII proch(e)n schuss(e)ln.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11329479-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Harnaschkam(er).
+          <lb/>It(em) ein gestreyfft petl.
+          <lb/>It(em) ein weyss pos petl.
+          <lb/>It(em) ein alt(er) strosach.
+          <lb/>It(em) ein pet mit weys(er) leinbat.
+          <lb/>It(em) II kus gestreyfft.
+          <lb/>It(em) ein alt(er) strosachk.
+          <lb/>It(em) ein gestreyfft alts petl.
+          <lb/>It(em) ein strosach.
+          <lb/>It(em) ein alt(er) gestreyfft(er) polst(er).
+          <lb/>It(em) II gestreyfft kŭs.
+          <lb/>It(em) ein weyss klains petl.
+          <lb/>It(em) ein strosachk.
+          <lb/>It(em) III spanpet.
+          <lb/>It(em) ain spanpet mit aine(r) hobl.
+          <lb/>It(em) XI rauch schefy dekh(e)n.
+          <lb/>It(em) ein gemsy zuriss(e)n dekh(e)n.
+          <lb/>It(em) I schẽfy zuriss(e)n dekh(e)n.
+          <lb/>It(em) II alt geneet golt(er).
+          <lb/>It(em) II hauslody gestreyfft dekh(e)n.
+          <lb/>It(em) II schalawn dekh(e)n.
+          <lb/>It(em ein polster an ziech(e)n.
+          <lb/>It(em) ein alt(er) gestreyfft(er) polst(er).
+          <lb/>It(em) X helmly̆n.
+          <lb/>It(em) X eysnhŭt
+          <lb/>der altnwelt.
+          <lb/>It(em) XVIIII panncz(er).
+          <lb/>It(em) ein wer mit IIII hagg(e)n.
+          <lb/>It(em) ein swert als ein trischl.
+          <lb/>It(em) II mordax(e)n.
+          <lb/>It(em) ein eysny pŭchs(e)n.
+          <lb/>It(em) II pugklĕr.
+          <lb/>It(em) II ey̆sny̆ kolb(e)n.
+          <lb/>It(em) II wurffhagkh(e)n mit spitz(e)n.
+          <lb/>It(em) I gross gass(e)n swert.
+          <lb/>It(em) ein armbrust mit d(er) wy̆nnd(en).
+          <lb/>It(em) ein koch(er) mit VII wasserpolcz(e)n.
+          <lb/>It(em) ein alty hẽchl.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11329479-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>It(em) II zwilchy alt hanttuch.
+          <lb/>It(em) II wirchy alt hanttuch(er).
+          <lb/>It(em) II par alty he(n)ffy leilach(er).
+          <lb/>It(em) I lerbis leylach.
+          <lb/>It(em) IIII par alt wirchy leĭlach(er).
+          <lb/>It(em) XI klain zuriss(e)n leich(er)lach(er), darund(er)
+          <lb/>ist eins herly.
+          <lb/>It(em) III wirchy tischtuch(er).
+          <lb/>It(em) I zwilchy alts tischtŭch.
+          <lb/>It(em) I tischtuch mit and(er) hantzwechl.
+          <lb/>It(em) I schrein.
+          <lb/>It(em) I alts schreinly.
+          <lb/>It(em) III petstat.
+          <lb/>It(em) II petstat.
+          <lb/>It(em) II tisch.
+          <lb/>It(em) II alt spanpet.
+          <lb/>It(em) II alt zuriss(e)n strosegkh.
+          <lb/>It(em) IIII spannpet.
+          <lb/>It(em) I alty truch(e)n.
+          <lb/>It(em) III wyrchyy petl.
+          <lb/>It(em) ein zwilch petl.
+          <lb/>It(em) ein petly mit ain(er) hauslody ziech(e)n.
+          <lb/>It(em) III polst(er) mit layny ub(er)tzog(en).
+          <lb/>It(em) ein polst(er)ly an ziech(e)n.
+          <lb/>It(em) ein alts zuriss(e)n unn(er)btzog(en) polst(er)ly.
+          <lb/>It(em) II gestreyft polst(er).
+          <lb/>It(em) II gestreyft kůss.
+          <lb/>It(em) ein zuriss(e)n kuss ain ub(er)zug.
+          <lb/>It(em) II petl an ziech(e)n.
+          <lb/>It(em) ein alty dekh(e)n mit ennd(e)n.
+          <lb/>It(em) ein hauslody gestreyfft dekh(e)n.
+          <lb/>It(em) ein weyss(er) golt(er).
+          <lb/>It(em) ein zuriss(en) schalawn.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11329479-8"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Under dem tach.
+          <lb/>It(em) V spanpet.
+          <lb/>It(em) XXI scheyb(e)n zum zůg.
+          <lb/>It(em) I petstat.
+          <lb/>It(em) II tisch.
+          <lb/>It(em) I alt(er) giesskessl und ein pekh daczu.
+          <lb/>It(em) IIII eryn heff(e)n auf III fuss(e)n.
+          <lb/>It(em) I ery lavetsch(e)n.
+          <lb/>It(em) I kupfery zuriss(e)n sẙb.
+          <lb/>It(em) X vessl klain und grozz.
+          <lb/>It(em) ein zuriss(er) kessl.
+          <lb/>It(em) ein morss(er) und stossl.
+          <lb/>It(em) II pratschrag(en).
+          <lb/>It(em) IIII phannen gros und klain.
+          <lb/>It(em) I kestn phenndly.
+          <lb/>It(em) I glut phannen.
+          <lb/>It(em) II eys(e)n pos kell(e)n.
+          <lb/>It(em) I messing getzl.
+          <lb/>It(em) ein pratspis zu hirschlab(e)rn.
+          <lb/>It(em) II gross pratspis.
+          <lb/>It(em) ein eysny gabl da ma(n) fleisch auf[---].
+          <lb/>It(em) ein lutscher(e)n.
+          <lb/>It(em) ein feŭrkrel.
+          <lb/>It(em) IIII alt hafndegkg(e)n.
+          <lb/>It(em) II prantschrag(en).
+          <lb/>It(em) I hel.
+          <lb/>It(em) III kotty hef(e)n.
+          <lb/>It(em) I rybey̆s(e)n.
+          <lb/>It(em) II kraut mess(er).
+          <lb/>It(em) I alt hakhmess(er).
+          <lb/>It(em) ein reibscherr(e)n.
+          <lb/>It(em) XXX hulcy tell(er).
+          <lb/>It(em) I pannkhschab.
+          <lb/>It(em) I [..]cz kupfery sy̆b.
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11329479-9"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>It(em) ein trifŭss.
+          <lb/>It(em) ein petstat.
+          <lb/>It(em) ein pewtlfazz.
+          <lb/>It(em) ein fleischzwb(er).
+          <lb/>It(em) ein kessl.
+          <lb/>It(em) ein patzeyd(e)n.
+          <lb/>It(em) ein alt(er) tisch.
+          <lb/>It(em) ein kŭfkar.
+          <lb/>It(em) ein speis truch(e)n.
+          <lb/>It(em) ein alt schreichmazz.
+          <lb/>It(em) II lanng wynndtig.
+          <lb/>It(em) ein lewffing(er).
+          <lb/>It(em) III heb eyss(e)n.
+          <lb/>It(em) II alt schnatt eyssn.
+          <lb/>It(em) II nagl eys(e)n.
+          <lb/>It(em) ein hornampos.
+          <lb/>It(em) I1/2 fuzzanng(el).
+          <lb/>It(em) II span ring.
+          <lb/>It(em) ein werchham(er).
+          <lb/>It(em) IIII alty hakhmess(er).
+          <lb/>It(em) ein vorslag.
+          <lb/>It(em) ein nebnslag.
+          <lb/>It(em) ein mawrham(er).
+          <lb/>It(em) I zwyspitz.
+          <lb/>It(em) I geg(e)n ham(er).
+          <lb/>It(em) ein protpennkhl.
+          <lb/>It(em) ein alt(er) tisch.
+          <lb/>It(em) ein prathanng.
+          <lb/>It(em) I kurtz kett(e)n an zug.
+          <lb/>It(em) II eys(e)n an zug.
+          <lb/>It(em) II alt zerproch(e)n schawffl(e)n.
+          <lb/>It(em) II mortt(er) haw(e)n.
+          <lb/>It(em) ein eysny slegl.
+          <lb/>It(em) II werchhaw(e)n.
+          <lb/>It(em) I zwayspitz.
+          <lb/>It(em) I rennstanng(en).
+          <lb/>It(em) II eysnstegkh(e)n.
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11329479-10"/>
+          <milestone unit="folio" n="5v"/>
+          <lb/>It(em) ein welhaw(e)n.
+          <lb/>It(em) I eysny stanng(en) zum schlifstain.
+          <lb/>It(em) ettlich m(er) geschir eysny zu d(er) sag.
+          <lb/>It(em) II holtz hakh(e)n hagg(e)n.
+          <lb/>It(em) I einspitz.
+          <lb/>It(em) I alt(er) hayd(e)n.
+          <lb/>It(em) I morter kell(e)n.
+          <lb/>It(em) I haw(e)n.
+          <lb/>It(em) I alts eys(e)n.
+          <lb/>It(em) I protschaff.
+          <lb/>It(em) XIII puschl lanntz(e)n schefft.
+          <lb/>It(em) VII puschl feucht(en) rŭd(er).
+          <lb/>It(em) ein gross alts zugsayl.
+          <lb/>It(em) I ynngemaurt(er) padkessl.
+          <lb/>It(em) I gross(er) padzub(er).
+          <lb/>It(em) etlich ur(e)n, scheffer, zub(er) im alt(e)n kell(er).
+          <lb/>It(em) ein milch tisch.
+          <lb/>It(em) ein karr(e)npuchs(e)n mit I komet und gschir.
+          <lb/>It(em) ein ysny zanng dama(n) stain aufzicht.
+          <lb/>It(em) I alt(e)n tisch.
+          <lb/>It(em) I alt petstat.
+          <lb/>It(em) ein swartz samat mesgwant mit
+          <lb/>item allm rot und grŭn zendl und
+          <lb/>zog(en).
+          <lb/>It(em) ein swarcz tasch(e)n.
+          <lb/>It(em) ein grun zendly messgwant mit
+          <lb/>item sein(er) zugehorung.
+          <lb/>It(em) ein weyss messgwant mit se(iner)
+          <lb/>item zugehorung.
+          <lb/>It(em) ein weyss genetz alt(er)tuch.
+          <lb/>It(em) ein gantz weyss alt(er) tuch.
+          <lb/>It(em) ein wyss alt(er) tuch mit plab(e)n
+          <lb/>leyst(e)n.
+          <lb/>It(em) ein mespuch.
+          <lb/>It(em) ein rauchfass.
+          <lb/>It(em) II opf(er)kenndl.
+          <lb/>It(em) VIIII lb. wachss.
+          <lb/>It(em) messing leucht(er) klain und
+          <lb/>gross.
+          <lb/>It(em) ein glogl.
+          <lb/>It(em) ein weich kessel.
+          <lb/>It(em) ein alt(er) leucht(er).
+          <lb/>It(em) ein glogkh(e)n.
+          <lb/>It(em) ein ur besund(er).
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11329479-11"/>
+          <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11329479-12"/>
+          <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab>
+          <pb n="13" facs="#surface-11329479-13"/>
+          <milestone unit="folio" n="7r"/>
+        </ab>
+        <ab>
+          <pb n="14" facs="#surface-11329479-14"/>
+          <milestone unit="folio" n="7v"/>
+        </ab>
+        <ab>
+          <pb n="15" facs="#surface-11329479-15"/>
+          <milestone unit="folio" n="8r"/>
+        </ab>
+        <ab>
+          <pb n="16" facs="#surface-11329479-16"/>
+          <milestone unit="folio" n="8v"/>
+          <lb/>Inventari zu Sigmundspurg
+          <lb/>der Ulrich Ramung
+          <lb/>auch aine hat als im
+          <lb/>das sloss vom Frech(e)n
+          <lb/>ynngeantwurt ist.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

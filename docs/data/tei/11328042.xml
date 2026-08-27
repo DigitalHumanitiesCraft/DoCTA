@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328042">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare der Pflege Thaur (Inhaber Sigmund von Welsberg)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 049.7</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 049.7</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328042</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1488-03-31">1488.03.31</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328042-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/UGPVZOWQZRZULCDHASMWZPYD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/EIVADUQUXEQQXOYXCYVPVQEL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/OYGLNFBOZIXIVQHJPMMXLBPD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/GPTSPXNOAHKMLFEFVYOCWGWT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/GETPJIREOADIDWHLXNJRBJOL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/LGRVJZISUPDJNFEWLIPTSELO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/WYUFEPIVIESLALKPWFWGWQER/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/MABCJTGVWEFILXFRPRQOSEMS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZVKHCMTLMRCBKBHZAWHDLDTH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZEWEHLKKUKPLMEXLZQSVCABA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/CGSRVZBZLNSQPJPQKROLWHPA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/GZOGJAPLNPAEGRSJBZSIIVUB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-13" n="13">
+      <graphic url="https://files.transkribus.eu/iiif/2/OBATPAGEGLUPMSOPGNRKLIFA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-14" n="14">
+      <graphic url="https://files.transkribus.eu/iiif/2/NWQLKOHWUQGCDJPXEFELFDET/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-15" n="15">
+      <graphic url="https://files.transkribus.eu/iiif/2/CUFOBOPSHTERGLGPEDWOSUZF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328042-16" n="16">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZYECHZCHQWOARSMJROTVDTIS/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328042-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Am montag nach dem Palmtag
+          <lb/>anno etc. LXXXVIIIt(en) ist Hildprand
+          <lb/>von Gles d(e)s sloss Thaŭr abtret(en)
+          <lb/>und h(errn)n Sig(munden) von Welssp(er)g
+          <lb/>ingeant(wurt) auf bevelch uns(er)s g(nedigen) h(er)rn
+          <lb/>von Est(erreich), in geg(enwart) v(on) Rudolf(en)
+          <lb/>Hauscam(er)s und Pet(er)n Herb(ers), Clem(en)t(en)
+          <lb/>Wolfsegk(er) und Hanns Ubelh(er).
+          <lb/>Am erst(en) in d(er) stub(e)n da
+          <lb/>ain pfleg(er) in ist.
+          <lb/>Zwen tisch.
+          <lb/>Ain verdeckts gutschnpet(e)l bei(m) of(en).
+          <lb/>Ain giesvaskast(e)l.
+          <lb/>Ain giesvass.
+          <lb/>Ain peck.
+          <lb/>In d(er) cam(er) daran.
+          <lb/>Zwai spanpet.
+          <lb/>Zwei pett.
+          <lb/>I golt(er).
+          <lb/>I rauhe deck.
+          <lb/>I p(er) leilach und I leilach.
+          <lb/>II polst(er).
+          <lb/>II kŭß.
+          <lb/>Ain strosack.
+          <lb/>Ain truh(e)n.
+          <lb/>It(em) darin V werchene leilach.
+          <lb/>II zbilchin tischtŭch.
+          <lb/>Ain alt(er) tisch.
+          <lb/>It(em) ein schachzabl(er).
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328042-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) in dem clainen kame(r)l in derß cam(er).
+          <lb/>It(em) V grosse zin.
+          <lb/>It(em) V mitere zin.
+          <lb/>It(em) noch clain(er) IIII.
+          <lb/>It(em) noch clain(er) V.
+          <lb/>It(em) groß sals(e)n schussl(e)n V.
+          <lb/>Essich schussl(e)n V.
+          <lb/>It(em) ain mess(e)n peck.
+          <lb/>It(em) ain mess(e)n ring tischring.
+          <lb/>It(em) X zinnen tĕll(er).
+          <lb/>It(em) VI messin leucht(er) clein vnd gross.
+          <lb/>Auf dem clein(en) estrich vor
+          <lb/>d(e)r stub(e)n.
+          <lb/>It(em) ain grosser cast(e)n.
+          <lb/>In d(er) hell in d(er) erst(en) cam(er).
+          <lb/>It(em) I petstat.
+          <lb/>II rauchdeck(e)n.
+          <lb/>Ai(n) pot.
+          <lb/>I polst(er).
+          <lb/>I kis.
+          <lb/>I strosack.
+          <lb/>I p(ar) rupfen leilach.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328042-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>In d(er) and(er) cam(er).
+          <lb/>V petstat(e)n.
+          <lb/>It(em) I pet.
+          <lb/>I strosack.
+          <lb/>II rupfen leilach.
+          <lb/>II rauch deck(e)n,
+          <lb/>I polst(er).
+          <lb/>In des pauknecht kam(er).
+          <lb/>It(em) II petstat.
+          <lb/>II pett.
+          <lb/>II polst(er).
+          <lb/>I kŭss.
+          <lb/>IIII rauch deck(e)n.
+          <lb/>IIII werchine leilach.
+          <lb/>II stroseck.
+          <lb/>In d(er) and(er) cam(er).
+          <lb/>I petstat.
+          <lb/>I pet.
+          <lb/>I polst(er).
+          <lb/>II kis.
+          <lb/>I strosack.
+          <lb/>I rahe deck.
+          <lb/>I golt(er).
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328042-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>It(em) auf dem gross(e)n neu(e)n sal.
+          <lb/>I gross(er) harnasch cast(e)n.
+          <lb/>II poss(er) tisch.
+          <lb/>In d(er) chuch(e)n.
+          <lb/>It(em) VIIII pfann(en) gros und clein  [- - -] gr
+          <lb/>pos und gut.
+          <lb/>V kes(e)l gros u(nd) cl(ein).
+          <lb/>V erin haf(e)n.
+          <lb/>I hăl.
+          <lb/>II prantrait(e)n.
+          <lb/>II drifus.
+          <lb/>II pratspis.
+          <lb/>II heincz(e)n.
+          <lb/>II eysin kell(e)n.
+          <lb/>XII hulczin schissl(en) gar clein.
+          <lb/>XVI tell(er) holcz.
+          <lb/>I gacz(e)n.
+          <lb/>II krautmess(er).
+          <lb/>II kuchinmess(er).
+          <lb/>Im marstal.
+          <lb/>I neu(er) fut(er) cast(e)n.
+          <lb/>In der pfist(er).
+          <lb/>I knet trog.
+          <lb/>I werch taf(e)l.
+          <lb/>IIII pret(er).
+          <lb/>I stăr.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328042-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Im zergad(e)n speisgad(e)n.
+          <lb/>Ain mecz(er)s ram.
+          <lb/>I fleisch panck.
+          <lb/>Ain mel kasten.
+          <lb/>Ain peut(el) vaß.
+          <lb/>Ain gross(er) pad zub(er).
+          <lb/>V ster.
+          <lb/>Item kraut cam(er).
+          <lb/>Erstlich hulcz(ei)n krautprent(e)n.
+          <lb/>It(em) VI prenten mit gut(en) kraut.
+          <lb/>It(em) VI prent(en) mit saukraut.
+          <lb/>It(em) vor derselb(e)n cam(er).
+          <lb/>II hackpret(er).
+          <lb/>I sleifstein.
+          <lb/>Ain
+          <lb/>It(em) in d(er)m und(ern) zercast(e)n.
+          <lb/>Zwo meltruh(e)n.
+          <lb/>Ain pos(er) tisch.
+          <lb/>Vorm wein kell(er).
+          <lb/>Ain handmŭl mit ir(er) zugehor(ung).
+          <lb/>Im kell(er).
+          <lb/>VIII kand(e)l klei(n) und gross.
+          <lb/>I sturczine flasch(en).
+          <lb/>II zwo mess(e)n pipp(e)n.
+          <lb/>I gros vass.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328042-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>In d(er) harnasch kam(er).
+          <lb/>It(em) bei d(er) kuch(e)n XIII lancz(e)n scheft.
+          <lb/>XIIII armbrust.
+          <lb/>VI hak(e)n puchs(en).
+          <lb/>X ha(n)dpuchs(en).
+          <lb/>XIIII alt ha(n)dpuchs(en).
+          <lb/>I alt(er) zugkat(er) spieß bei den tir.
+          <lb/>It(em) hernach harnasch als in d(em) alt(e)n
+          <lb/>inventari
+          <lb/>im turm wesen.
+          <lb/>In meins g(nädigen) h(errn) gmach(e)n.
+          <lb/>In der silb(er) stub(e)n I bȏs tisch.
+          <lb/>In d(er) cam(er) dran I petstat.
+          <lb/>In d(er) and(er)n cam(er) dann I petstat.
+          <lb/>In d(er) ob(er)n stub(e) m(eins) g(nädigen) h(errn).
+          <lb/>II tisch.
+          <lb/>I kredencz tisch.
+          <lb/>I gmalts tuch mit etl(e)n landschaft(e)n.
+          <lb/>In d(er) cam(er) dran.
+          <lb/>I verdeckts spanpet mit e(in) kariol.
+          <lb/>Ain sidltruh(e)n daran.
+          <lb/>I strosack.
+          <lb/>I pet.
+          <lb/>I polst(er).
+          <lb/>I kis.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328042-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>I weis(er) golt(er).
+          <lb/>I seidner golt(er).
+          <lb/>II p(er) leilach.
+          <lb/>II tischtuch.
+          <lb/>II umbsleg.
+          <lb/>III handtuch(er).
+          <lb/>I schweinspies.
+          <lb/>I gl weczstein.
+          <lb/>In d(er) nahst(en) cam(er) daran.
+          <lb/>I spanpet.
+          <lb/>In d(er) cam(er) geg(en) d(en) hof.
+          <lb/>I spanpet.
+          <lb/>In d(er) capell wie for.
+          <lb/>Im stad(e)l.
+          <lb/>II kue.
+          <lb/>It(em) II wagenros mit ir(em) gschirr.
+          <lb/>und sonst wie for.
+          <lb/>Rechen etlich z(er)proch(e)n.
+          <lb/>It(em) IIII tischtiech(er) fir das gsind
+          <lb/>III handtuech(er).
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328042-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11328042-9"/>
+          <milestone unit="folio" n="5r"/>
+          <lb/>Essends das im speisgad(en).
+          <lb/>I pŭntzles smalcz.
+          <lb/>II halb tes(e)n zig(er).
+          <lb/>XX ster mel.
+          <lb/>In dem and(er)n speiscast(en).
+          <lb/>III sweins gancz pach(en).
+          <lb/>It(em) etlich XXV zentring rindfleisch.
+          <lb/>It(em) etlich pf(un)d unslit.
+          <lb/>It(em) VIII kăss.
+          <lb/>It(em) etlich pitschol(en), arbais und
+          <lb/>gemŭess.
+          <lb/>It(em) II [- - -]
+          <lb/>It(em) ain naig wein im kell(er).
+          <lb/>It(em) XIX III hen(er).
+          <lb/>VIIII cappeun.
+          <lb/>IX kuo hut in g(nädigen) h(errn) d(eren) gens(er)
+          <lb/>geschriben was sih h(er) Sig(mund) perschibet [..] [..]
+          <lb/>ern datus.
+          <lb/>Auf dem cast(e)n.
+          <lb/>XXXVI stăr rock(e)n.
+          <lb/>ICXIX st(er) fuet(er).
+          <lb/>ICIII st(er) gerst(en).
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11328042-10"/>
+          <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11328042-11"/>
+          <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11328042-12"/>
+          <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab>
+          <pb n="13" facs="#surface-11328042-13"/>
+          <milestone unit="folio" n="7r"/>
+        </ab>
+        <ab>
+          <pb n="14" facs="#surface-11328042-14"/>
+          <milestone unit="folio" n="7v"/>
+        </ab>
+        <ab>
+          <pb n="15" facs="#surface-11328042-15"/>
+          <milestone unit="folio" n="8r"/>
+        </ab>
+        <ab>
+          <pb n="16" facs="#surface-11328042-16"/>
+          <milestone unit="folio" n="8v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

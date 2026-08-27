@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11348660">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare der Schlösser Telvana und St. Petersberg (S.Pietro bei Telvana)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 277.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 277.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11348660</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1450">1450</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11348660-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZWHPLSPEGRKMZHOZYVMJUAPE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/WCJYOKSHAHOZTDCVHFEFLPBR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/DXBFZAAGSVASQTWBSNGVWHOW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/CNFIYTMSIZDLNPQIZUJHZUCQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/HENJOGHJLDQAPAGAMBSJCIAB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/NRPQIAFABPUPLAHSRIHGVUAY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/VHNXMNIWVONJSKXOAAKHENFB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348660-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/WFSARKBEYDGTDIJQVHFARTUQ/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11348660-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Verzaichnũs und inṽentari
+          <lb/>was anno 1450 aũf beeden
+          <lb/>schlössern Telphan und Sanct
+          <lb/>Petersperg an wein, getraidt
+          <lb/>und prov̈iant aũch mũnition
+          <lb/>und varender haab verhanden
+          <lb/>gewesen wie hernach volgt.
+          <lb/>Vermerckht waß ich Heinrich Compũner
+          <lb/>hab ich eingeantwũrt anstat meines herrn
+          <lb/>Degen Fũchs Ulrichen Eisenreich dem Jũngern
+          <lb/>underhaũbtman aũf Ÿfan anstat herrn Bern¬
+          <lb/>harden Gradner an pfinztag nach Sant Merten
+          <lb/>tag im fũnffzigisten jar in gegenwirtigchait
+          <lb/>der edl vest Godhart Fürmianer, Leonhard
+          <lb/>noder von Monte Wello, Christoff richter zũ
+          <lb/>Telffan, Jacob Kăriol richter zũ Ÿffan und
+          <lb/>ander leüth mer und hofgsünd von Ÿfan
+          <lb/>und Telffan.
+          <lb/>Item am ersten hab ich im eingeantwũrt
+          <lb/>an Sanct Merten tag Telfan und Sanct
+          <lb/>Petersperg.
+          <lb/>Item was meins herrn genad zũgehört von
+          <lb/>haũsswer aũf Sand Petersperg.
+          <lb/>Item II eisenstainpũchsen, II hantpũchsen,
+          <lb/>IIII targan und ain verschlagens trüchl mit
+          <lb/>pfeilen.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11348660-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item vermerckht was meines herrn gnad
+          <lb/>zũgehört von haũßwer aũf Telffan.
+          <lb/>Item am ersten XIII targan, XXVI eisen¬
+          <lb/>püchsen klain und groß und ain tarraspũchsen
+          <lb/>XXIII handtpũchsen.
+          <lb/>Item in dem gewelb zũ Telphan VI lägln und
+          <lb/>ain trũchen darinnen ist pfeil, schwebl, pũlṽer
+          <lb/>und saliter.
+          <lb/>Item die obgenanten heüser hat der Joachim
+          <lb/>dem Degen Fũchs gelassen aũf ain ansprũch
+          <lb/>die hab dem Eisenreich also ingeantwũrt.
+          <lb/>Item ich han im geben von ferdigen wein und
+          <lb/>traidt aũf beeden heüsern XI fũeder II prenten,
+          <lb/>darũnder sein II fũeder weiß weins in ainem
+          <lb/>vass und I fũeder össich ain ürn.
+          <lb/>Item das kohen mehl aũf beeden heüsern benent¬
+          <lb/>lich VC und  L stär.
+          <lb/>Item waizen V stär und LXX stär roggen.
+          <lb/>Item hirß IIC und LXII stär.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11348660-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item ponen XI stär.
+          <lb/>Item fenig LXVIII stär.
+          <lb/>Item habern LXXXIIII stär.
+          <lb/>Item und haidenwaiz X stär.
+          <lb/>Item XLVII stär salz Trientner mass.
+          <lb/>Item schmalz IIIIC lb. teütsch gewicht.
+          <lb/>Item XXIIII 1/2 seiten schweines fleisch
+          <lb/>die wegent VC LXXV lb. teütsch wag.
+          <lb/>Item rindfleisch digens IIC und XL lb.
+          <lb/>Item LXI lb. unzerlassens ÿnsslid.
+          <lb/>Item laũter unsslit IC und LI 1/2 lb.
+          <lb/>Item schmer LXXVI 1/2 lb.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11348660-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Item XXXV ochsen klain und gross, die sein
+          <lb/>geschäzt worden umb hũndert und fũnffzig
+          <lb/>dũcaten.
+          <lb/>Item XVIII haũbtvich, khüe und stier
+          <lb/>dũrcheinandt, die sein geschäzt worden
+          <lb/>umb XLIII dũcaten.
+          <lb/>Item XIII facchell klain und gross
+          <lb/>darũnder ist ain mũeter und ain per
+          <lb/>die sein geschäzt worden umb X dũcaten.
+          <lb/>Item XXIII pet aũf beeden heüsern mit
+          <lb/>irer zũegehörũng böß und gũet, die sein ge¬
+          <lb/>schäzt worden umb hũndert und ain dũcaten.
+          <lb/>Item tischtũecher und handtzweehl aũf beeden
+          <lb/>heüsern sein geschazt worden umb XV lb. Perner.
+          <lb/>Item ain new̃er wachtpelz umb V pfũndt.
+          <lb/>Item VII teütsch häfen gloggspeisen chlain
+          <lb/>und gross, pöß und gũet aũf beeden heüsern,
+          <lb/>die wegen LXXII lb.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11348660-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Item VII kessel khlain und gross pöß und
+          <lb/>gũet aũf beeden heüsern, die wegen
+          <lb/>LXXIII lb. mit eisn metal.
+          <lb/>Item III welsch laṽetsch aũf Telphan, die
+          <lb/>wegen XXV lb.
+          <lb/>Item ain kessel vermaũret in der pfister.
+          <lb/>Item vermerckhet das geschazt ist worden
+          <lb/>aũf beeden heüsern pranträt, häl, pratspiss,
+          <lb/>rosst, schüssel, täller und pfannen, drÿfũeß,
+          <lb/>ribeissen, hackhen, pfannen, schaũfln, haw̃en,
+          <lb/>khraũtmesser, fleisch parten, eÿsen källen
+          <lb/>umb XXVI lb. Perner.
+          <lb/>Item und das alles steet zũ baiden herrn
+          <lb/>ob in das gefall.
+          <lb/>Item aũf Casa Pendolo ist noch ain stadl
+          <lb/>mit hew̃ des XLVIIII jare, der ist nit aũs¬
+          <lb/>gesprochen.
+          <lb/>Item umb fleiß und hũner jũng und alt
+          <lb/>ist angeschlagen umb VII lb. II gr.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11348660-6"/>
+          <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11348660-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11348660-8"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Abschrüfft.
+          <lb/>Inṽentarii oder verzaich¬
+          <lb/>nũs aller dern in beeden
+          <lb/>schlössern anno 1450 befũnd¬
+          <lb/>nen proṽiant, mũnition,
+          <lb/>anderer mer alda zũ Telffan
+          <lb/>und Sanct Petersperg ver¬
+          <lb/>handen gewester mobilien,
+          <lb/>vich und varnũssen.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

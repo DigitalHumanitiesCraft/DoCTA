@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330560">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des brixnerischen Schlosses Lamprechtsburg bei Bruneck</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 194.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 194.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330560</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate from="1481" to="1685">1481-1685</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330560-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/GPWJOBBAMHYVKJPLGVVEAMII/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/VTXIMMTRFOANULPKXUQCJCUT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/UKWKYZNPBAICYLITYHYKOPJU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/JLMXWLJCDZPPSLLIMWFCGROH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/FFJGEJCWYZZKBTLRNLOWPMLD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/CEIMSOXUNSHQSEBRUCLVECSF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/JFCYQZHZAVOAIYOUWXPTATJF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/KEBJUQULFUNDKPFZFQVGRHUU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/MGRFNLVOGSJVPRRNTLQNAGQA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/AKJLEVKYRFPDOMNGKCPDYSYR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-11" n="11">
+      <graphic url="https://files.transkribus.eu/iiif/2/AJWHTXQGKDVTEJOFVCJLDQNU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-12" n="12">
+      <graphic url="https://files.transkribus.eu/iiif/2/KCIABZVVZUBWZAOCVZWOWCRJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-13" n="13">
+      <graphic url="https://files.transkribus.eu/iiif/2/DYAJGLUCEGSWNDMFNXUWWQZZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-14" n="14">
+      <graphic url="https://files.transkribus.eu/iiif/2/ONZUNHAQWUNMXGBBFVSQRGVD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-15" n="15">
+      <graphic url="https://files.transkribus.eu/iiif/2/NEWISGTOJVRBVKFDAUZMWSGB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-16" n="16">
+      <graphic url="https://files.transkribus.eu/iiif/2/HHQRUSNUJQSHMQLMAQKOLOQX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-17" n="17">
+      <graphic url="https://files.transkribus.eu/iiif/2/UEKEAKIFDLGFAQYOWTKNCTTO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-18" n="18">
+      <graphic url="https://files.transkribus.eu/iiif/2/QTULANSVUPQULEWWFLEWHDYA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-19" n="19">
+      <graphic url="https://files.transkribus.eu/iiif/2/EMCHSLBYUPNLZMQBXFHHHZPB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-20" n="20">
+      <graphic url="https://files.transkribus.eu/iiif/2/TKAGBVGEZNKZQJUKOJSMDGXY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-21" n="21">
+      <graphic url="https://files.transkribus.eu/iiif/2/OIWXTMIBMWAEUKMGQOLGZXFR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-22" n="22">
+      <graphic url="https://files.transkribus.eu/iiif/2/HUBFIXCRCAAGLPHQNNSNDERS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-23" n="23">
+      <graphic url="https://files.transkribus.eu/iiif/2/REXXMFOMXFKMDTPICGEWTLKL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-24" n="24">
+      <graphic url="https://files.transkribus.eu/iiif/2/QQNDPZCURKYDVTFWKRAWSUGN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-25" n="25">
+      <graphic url="https://files.transkribus.eu/iiif/2/ODVQWMKKIKVIGNPNLIATGYYQ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-26" n="26">
+      <graphic url="https://files.transkribus.eu/iiif/2/WEUDHMVXMUJJJRMMAAWFTYPH/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-27" n="27">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZAMMNMMKFEOJVXNBUKBEXZIS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-28" n="28">
+      <graphic url="https://files.transkribus.eu/iiif/2/AMOTPEQUQMQZSFWAVCUAWIEP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-29" n="29">
+      <graphic url="https://files.transkribus.eu/iiif/2/ACRTEXIPDMZLERFWCXANPSHW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-30" n="30">
+      <graphic url="https://files.transkribus.eu/iiif/2/OSNKZUBCYHBUCCYXVVBQHAGT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-31" n="31">
+      <graphic url="https://files.transkribus.eu/iiif/2/UMWNBNONDLBEJTUXPHMNEZZL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-32" n="32">
+      <graphic url="https://files.transkribus.eu/iiif/2/FNSYQRBZSWFEMWJTXRYIJRQC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-33" n="33">
+      <graphic url="https://files.transkribus.eu/iiif/2/KKQUXEWJACDGEEVQNWEZMMTO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-34" n="34">
+      <graphic url="https://files.transkribus.eu/iiif/2/HUJHWBRUGZJXDZHDWTFNWFPL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-35" n="35">
+      <graphic url="https://files.transkribus.eu/iiif/2/TZELGIWWMNHFCHCEOTJUAYZK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-36" n="36">
+      <graphic url="https://files.transkribus.eu/iiif/2/IZUZBXQFBLNKVOMIOEMBBDOA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-37" n="37">
+      <graphic url="https://files.transkribus.eu/iiif/2/WXJNRWEHDDEOLLFIWCMTLPJC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-38" n="38">
+      <graphic url="https://files.transkribus.eu/iiif/2/LFIYLHKBQLZAVGJOKEPQIXQT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-39" n="39">
+      <graphic url="https://files.transkribus.eu/iiif/2/MRLYTLPHUPKRPQCGPVVCLNLE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330560-40" n="40">
+      <graphic url="https://files.transkribus.eu/iiif/2/QXUDZUBEZNPEDRQYELPJRXKA/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330560-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Hie ist vermerkt zeug und hausge¬
+          <lb/>rat den ich Hanns von Welsperg dem
+          <lb/>edlen Wolfgangen Hannen auff dem
+          <lb/>gslos Lamperspurg in geantwurt
+          <lb/>hab als ich abgezogen pin des
+          <lb/>sambztag nach Jeori im ains und
+          <lb/>achzigisten jar in peÿ wesen der
+          <lb/>eren vest und streng ritter herr Walta¬
+          <lb/>sar von Welsperg und die fürsichti¬
+          <lb/>gen und weÿs Oswalt Staudinger,
+          <lb/>Peter Hofstetter, Caspar Mentelberger
+          <lb/>und Hans Hämnöder notarÿ.
+          <lb/>Item am in der cappellen.
+          <lb/>Item ein nwes mesgewant mit
+          <lb/>seiner zugehörung daran mengt
+          <lb/>ein stoll.
+          <lb/>Aber zwaÿ allte mesgewant
+          <lb/>mit irer zugehörung.
+          <lb/>Ain mespuech.
+          <lb/>Aber ein néws mespuech.
+          <lb/>Ain tagzeitt puech.
+          <lb/>Ain newes gesankchpuechel.
+          <lb/>Vier allte klaine puechel.
+          <lb/>Siben altar tuecher guet und
+          <lb/>pös.
+          <lb/>Ain silbrein kelch,
+          <lb/>ain kupfrein kelch sind
+          <lb/>paÿde über gült.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330560-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Ain I kupfreins kreÿz auch über¬
+          <lb/>gült.
+          <lb/>Ain kor rokch.
+          <lb/>Ain lädlein mit heÿltum
+          <lb/>und mit prieffen.
+          <lb/>Und ein hunger tuech.
+          <lb/>Ain newe umbleÿ ist peÿ
+          <lb/>dem newen mesgewant.
+          <lb/>Ain newes alltar tuech.
+          <lb/>Mer ein newes allter tuech.
+          <lb/>Ain weÿssen seÿden fan.
+          <lb/>Ain genätte hantzwehel an
+          <lb/>ein altar tuech genätt.
+          <lb/>Im geschloss.
+          <lb/>Item fünff eÿsnen hakchen püxsen
+          <lb/>und zwen messing mödel darzu.
+          <lb/>Ain eÿsnen hantpüxsen.
+          <lb/>Ain messinge hant püxsen.
+          <lb/>Item zwaÿ väslen mit püxsen
+          <lb/>pulfer, etwas mÿnder dan
+          <lb/>ein zentten.
+          <lb/>Item anderhalbe lagell mit pheÿllen.
+          <lb/>Ain armprust.
+          <lb/>Item vier targen.
+          <lb/>Item ain speÿs truhen
+          <lb/>und vier truhen guet und pös.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330560-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item vier tisch guet und pös.
+          <lb/>Item acht spanpet guet und pös.
+          <lb/>Ain öllstain.
+          <lb/>Ain pachschaff.
+          <lb/>Ain fewr huet obder phisterstuben.
+          <lb/>Item ein koren kasten und ein mel
+          <lb/>kasten.
+          <lb/>Item ain glöklen ob dem tor.
+          <lb/>Sölcher inventäri zedel sind zwo
+          <lb/>in geleÿchem laut gemacht mit
+          <lb/>ŭnsser paÿder petschafft für
+          <lb/>gedrukt und yedlichen taÿll
+          <lb/>ainer gegeben.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330560-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11330560-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Vermerkt den zewg und hausratt
+          <lb/>so ich Wolffganng Han von Hanberg
+          <lb/>auff dem gschloss Lamprechtzpurg
+          <lb/>gefunden und mir der edel und vest
+          <lb/>Hanns von Velsperg geanttburt hatt
+          <lb/>und ich hab die vesten zu sambt dem
+          <lb/>hernachgeschriben hausratt also in¬
+          <lb/>genomm und emphangen an samztag
+          <lb/>nach Sannd Geõrgen tag des ainsund¬
+          <lb/>achzigisten jars da pey̑ und mit sind
+          <lb/>gebesen der edl, streng und eren vesst ritter her
+          <lb/>Balthasar von Belsperg die zey̆t haubt¬
+          <lb/>man auff Braunegk an stat meins gnadi¬
+          <lb/>gen herrn von Brigsen und mir die benant
+          <lb/>vesten ingeanttburt und Oswald Stau¬
+          <lb/>dinger, Peter Hofstetter, Caspar Mentelberger
+          <lb/>und Hanns Haĩnõder notari.
+          <lb/>Item in der cappellen ain newes mess¬
+          <lb/>gebannt mit seiner zuegehõrung, dar¬
+          <lb/>an mengelt ain stol.
+          <lb/>Aber zbaÿ alte messgebant mit irer
+          <lb/>zuegehõrung.
+          <lb/>Ain messpuech, mer ain newes
+          <lb/>messgebannt messpuech, ain tagzeit¬
+          <lb/>puech, ain newes gesannkpũechel.
+          <lb/>Vier alte klaine pŭechel, siben altar¬
+          <lb/>tũecher guet und pŏss.
+          <lb/>Ain silbrein kelch und ain
+          <lb/>kchupphren kelch payde ũbergult.
+          <lb/>Ain kchuphreins kreũtzs vergult.
+          <lb/>Ain kchorrokch.
+          <lb/>Ain lãdlein mit heÿltung unnd
+          <lb/>prieffen.
+          <lb/>Ain hungertuech.
+          <lb/>Ain newe umbleg ist peÿ dem
+          <lb/>newen messgebannt.
+          <lb/>Ain news altartuech, mer ain
+          <lb/>news altartuech.
+          <lb/>Ain weissen seÿden fan.
+          <lb/>Ain genãtte hántzwẽhel an ain
+          <lb/>altartuech genãt.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11330560-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Im gschloss.
+          <lb/>Item fũnff eẏsnen hagken pugsen und
+          <lb/>zben messein mõdel dar zue.
+          <lb/>Ain eÿsnen hantpũgsen.
+          <lb/>Ain messen hantpũgsen.
+          <lb/>Item zbaÿ vãssel mit pugsen pulver
+          <lb/>ettwas my̆nder dann ain centen.
+          <lb/>Item anderhalb lăgel mit pheillen.
+          <lb/>Item ain armprust.
+          <lb/>Item vier targen.
+          <lb/>Item ain speiss truhen und vier
+          <lb/>tru̇hen guet und põss.
+          <lb/>Item vier tisch guet und põss.
+          <lb/>Item acht spanpet guet und pŏs.
+          <lb/>Item ain õllstain.
+          <lb/>Item ain pachschȧff.
+          <lb/>Item ain fewr huet ob der phisterstuben.
+          <lb/>Item ain kchoren kchassten und ain
+          <lb/>melkchassten.
+          <lb/>Item ain glokel ob dem tor.
+          <lb/>Sõlhes wie oben begriffen hab ich bemelter
+          <lb/>Wolffgang Han von dem benanten Hansen von
+          <lb/>Belsperg emphangen und des zu urkunt hab
+          <lb/>ich mein aigen petschafft zu ennd deß ynventari
+          <lb/>zettel gedrukt.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11330560-7"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11330560-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11330560-9"/>
+          <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11330560-10"/>
+          <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab>
+          <pb n="11" facs="#surface-11330560-11"/>
+          <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab>
+          <pb n="12" facs="#surface-11330560-12"/>
+          <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab>
+          <pb n="13" facs="#surface-11330560-13"/>
+          <milestone unit="folio" n="7r"/>
+        </ab>
+        <ab>
+          <pb n="14" facs="#surface-11330560-14"/>
+          <milestone unit="folio" n="7v"/>
+          <lb/>Was Lamperspůrg fŭr stůckh
+          <lb/>unnd gůetter hat.
+        </ab>
+        <ab>
+          <pb n="15" facs="#surface-11330560-15"/>
+          <milestone unit="folio" n="8r"/>
+        </ab>
+        <ab>
+          <pb n="16" facs="#surface-11330560-16"/>
+          <milestone unit="folio" n="8v"/>
+          <lb/>Lamprechtspurg
+        </ab>
+        <ab>
+          <pb n="17" facs="#surface-11330560-17"/>
+          <milestone unit="folio" n="9r"/>
+          <lb/>1547
+          <lb/>Annõ domini.
+          <lb/>Inṽentarỹ der ṽestn
+          <lb/>Lamprechtspũrg.
+        </ab>
+        <ab>
+          <pb n="18" facs="#surface-11330560-18"/>
+          <milestone unit="folio" n="9v"/>
+        </ab>
+        <ab>
+          <pb n="19" facs="#surface-11330560-19"/>
+          <milestone unit="folio" n="10r"/>
+          <lb/>Am XX tag maỹ im
+          <lb/>fȗnffzechenhŭndert
+          <lb/>und im sỹbenŭndtvier¬
+          <lb/>tzigisten jar etc.
+          <lb/>ist dȗrch die edln und
+          <lb/>vestn Hannß von Rost zŭ
+          <lb/>Aȗfhofn pfleger zȗ Uett¬
+          <lb/>nhaÿm und Balthaȗsser
+          <lb/>Scheggn ambtmãn zȗ
+          <lb/>Braŭnĕggn, baid als
+          <lb/>dȗrch fȗrstliche befelh
+          <lb/>von obrigkait wegn hier¬
+          <lb/>zȗe verorderte zwischen
+          <lb/>den edln und vestn Lam¬
+          <lb/>prechtn Han von Hanperg
+          <lb/>und Jacobn Han seinem
+          <lb/>vettern von wegen abtret¬
+          <lb/>tȗng der vesten Lam¬
+          <lb/>prechtspȗrg gehandlt
+          <lb/>und gedachtn Jacobn Han
+          <lb/>aȗf erstervente befehlh
+          <lb/>eruents schloß Lamprechts¬
+          <lb/>pȗrg sambt der selbn va¬
+          <lb/>renden hab, ligenden
+          <lb/>stȗckhen, waldȗngen und
+        </ab>
+        <ab>
+          <pb n="20" facs="#surface-11330560-20"/>
+          <milestone unit="folio" n="10v"/>
+          <lb/>lăpnŭssen, einkhomenß
+          <lb/>der kirchen, brieflich
+          <lb/>gerechtigkhaittn anheȗt
+          <lb/>aigentlichn bschribn und
+          <lb/>inv̑entiert worden. Aȗch
+          <lb/>gedachtn Jacobn Hann
+          <lb/>von Hanperg als kȗnfftigen
+          <lb/>inhaber und pflẽger
+          <lb/>des schloß Lamprechtspȗrg
+          <lb/>schloß und schlissl sambt
+          <lb/>derselbn zŭegehŏrŭng zŭe¬
+          <lb/>gestelt und ũberant¬
+          <lb/>wȗrdt die er zŭ seiner
+          <lb/>zeit zŭ seinem abtzȗg
+          <lb/>dermassn widerh bei dem
+          <lb/>schloß Lamprechtspȗrg
+          <lb/>lassn und antwũrttn soll
+          <lb/>zwo gleichlaȗttent inv̑en¬
+          <lb/>tari gschribn und jeder thaill
+          <lb/>ainen zȗ handen empfangen.
+          <lb/>Dise uberantwŭrttung ist
+          <lb/>beschechn in bei sein der fȗr¬
+          <lb/>nemen weisn Lienharten Sell,
+          <lb/>Gabrieln Morn und Marxn
+          <lb/>Pŭelln, al drei burger zŭ Braŭ¬
+          <lb/>nȇggn. Bschribn wie von
+          <lb/>post zŭ post hernach volgt.
+        </ab>
+        <ab>
+          <pb n="21" facs="#surface-11330560-21"/>
+          <milestone unit="folio" n="11r"/>
+          <lb/>In der kĩrchen.
+          <lb/>Ain plabs mesßgwant
+          <lb/>aerissen mit gȗlden stern
+          <lb/>und mit ainem grossn kreȗz
+          <lb/>sambt derselbn seiner zȗge¬
+          <lb/>horȗng ist abschleissig und
+          <lb/>alt.
+          <lb/>Ittem mer ain alts mesß¬
+          <lb/>gwandt gew̑elter zwilh
+          <lb/>mit ainem alten gȗlden kreŭz
+          <lb/>mit seiner zȗgehorȗng.
+          <lb/>Ittem mer ain alte abschlei¬
+          <lb/>ssige albm mit altn sa¬
+          <lb/>matten schilten.
+          <lb/>Ittem mer ain zÿmblih
+          <lb/>gŭette albm.
+          <lb/>Ittem ain guẽtter korrokh.
+        </ab>
+        <ab>
+          <pb n="22" facs="#surface-11330560-22"/>
+          <milestone unit="folio" n="11v"/>
+          <lb/>Sÿben altar tũecher
+          <lb/>pe̊sser und peser.
+          <lb/>Ain gȗetter rotter tebich
+          <lb/>aȗff dem altar.
+          <lb/>Ain gȗett gedrȗckht miss¬
+          <lb/>sall pŭech.
+          <lb/>Ain gȗets groß parga¬
+          <lb/>mennen mĕsspŭech.
+          <lb/>Ain alts pargamennen
+          <lb/>gsang pȗech.
+          <lb/>Ain alts pargamenen
+          <lb/>psalter pŭech.
+        </ab>
+        <ab>
+          <pb n="23" facs="#surface-11330560-23"/>
+          <milestone unit="folio" n="12r"/>
+          <lb/>Mer ain alts pargamenen
+          <lb/>psalter, klainß pȗechl.
+          <lb/>Ain alts pargamenen
+          <lb/>gradȗall mit weiss
+          <lb/>hilzn copãrt.
+          <lb/>Mer ain alts znichts
+          <lb/>pargamenen pȗech.
+          <lb/>Ain sÿlbrenner vergȗlter
+          <lb/>kelch mit sambt der paten
+          <lb/>und corporall.
+          <lb/>Zwaÿ zÿnnen opfer kăndln.
+          <lb/>Zwen messing leȗchter
+          <lb/>aȗf den altar.
+        </ab>
+        <ab>
+          <pb n="24" facs="#surface-11330560-24"/>
+          <milestone unit="folio" n="12v"/>
+          <lb/>Mer ain alter messinger
+          <lb/>leichter.
+          <lb/>Ain alter eÿseiner leichter.
+          <lb/>Ain alts kȗpfrens ũber¬
+          <lb/>gilts kreȗz.
+          <lb/>Sechß klaine stall kerzn.
+          <lb/>Zwo stall kerzn aȗf den
+          <lb/>altar.
+          <lb/>Ain alts kupfrennss
+          <lb/>spreng kessell.
+        </ab>
+        <ab>
+          <pb n="25" facs="#surface-11330560-25"/>
+          <milestone unit="folio" n="13r"/>
+          <lb/>Ain alts raȗch fass.
+          <lb/>Dreÿ alte wandlstãngen.
+          <lb/>Zwo gloggen aȗff der
+          <lb/>kirchen.
+          <lb/>Ain hilzenner casten
+          <lb/>dar innen der obgemelt
+          <lb/>zeȗg ligt.
+          <lb/>Ain alter eÿsenner
+          <lb/>feȗer hũet.
+          <lb/>Ain ȏllstain im hoff
+          <lb/>an ain lũckh.
+        </ab>
+        <ab>
+          <pb n="26" facs="#surface-11330560-26"/>
+          <milestone unit="folio" n="13v"/>
+          <lb/>In dem kãmerlen
+          <lb/>aȗff dem stall.
+          <lb/>Zwo alte pethstatten gar
+          <lb/>nichts werth.
+          <lb/>Im mellgaden.
+          <lb/>Ain alter tisch.
+          <lb/>Ain gar alts znichts trȗchl.
+          <lb/>Ain alter korn kastn
+          <lb/>und ain alter mel casten
+          <lb/>sein die pretter darv̑on
+          <lb/>khŭmen.
+        </ab>
+        <ab>
+          <pb n="27" facs="#surface-11330560-27"/>
+          <milestone unit="folio" n="14r"/>
+          <lb/>Im sãllelen.
+          <lb/>Zwo alte pethstattn.
+          <lb/>Ain alte trȗchen
+          <lb/>an schloß und pant.
+          <lb/>Im speisgaden.
+          <lb/>Zwo alte trũchn.
+          <lb/>Im keller.
+          <lb/>Ain znichtiger alter tisch.
+        </ab>
+        <ab>
+          <pb n="28" facs="#surface-11330560-28"/>
+          <milestone unit="folio" n="14v"/>
+          <lb/>In der diẽrn kãmerl.
+          <lb/>Ain alts niders rãdl
+          <lb/>peth stăttl.
+          <lb/>In der knecht camer.
+          <lb/>Ain zimblich gȗette
+          <lb/>pethstatt.
+          <lb/>In der altn stũbn.
+          <lb/>Ain tisch ain alter.
+        </ab>
+        <ab>
+          <pb n="29" facs="#surface-11330560-29"/>
+          <milestone unit="folio" n="15r"/>
+          <lb/>Ain alte pethstatt.
+          <lb/>Im thũrnn.
+          <lb/>Zwo lagll mit
+          <lb/>etlichen pfeilln.
+        </ab>
+        <ab>
+          <pb n="30" facs="#surface-11330560-30"/>
+          <milestone unit="folio" n="15v"/>
+        </ab>
+        <ab>
+          <pb n="31" facs="#surface-11330560-31"/>
+          <milestone unit="folio" n="16r"/>
+        </ab>
+        <ab>
+          <pb n="32" facs="#surface-11330560-32"/>
+          <milestone unit="folio" n="16v"/>
+        </ab>
+        <ab>
+          <pb n="33" facs="#surface-11330560-33"/>
+          <milestone unit="folio" n="17r"/>
+        </ab>
+        <ab>
+          <pb n="34" facs="#surface-11330560-34"/>
+          <milestone unit="folio" n="17v"/>
+        </ab>
+        <ab>
+          <pb n="35" facs="#surface-11330560-35"/>
+          <milestone unit="folio" n="18r"/>
+        </ab>
+        <ab>
+          <pb n="36" facs="#surface-11330560-36"/>
+          <milestone unit="folio" n="18v"/>
+        </ab>
+        <ab>
+          <pb n="37" facs="#surface-11330560-37"/>
+          <milestone unit="folio" n="19r"/>
+        </ab>
+        <ab>
+          <pb n="38" facs="#surface-11330560-38"/>
+          <milestone unit="folio" n="19v"/>
+        </ab>
+        <ab>
+          <pb n="39" facs="#surface-11330560-39"/>
+          <milestone unit="folio" n="20r"/>
+        </ab>
+        <ab>
+          <pb n="40" facs="#surface-11330560-40"/>
+          <milestone unit="folio" n="20v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329419">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Hausrats, der von Schloss Sigmundsburg am Fernstein nach Schloss Hörtenberg überführt wurde.</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.4</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.4</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329419</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1462-07-12">1462.07.12</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329419-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/WDKZJJCHIFCNDXGJDINNKFSI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329419-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZBVPAHPHLNUDZSSRKXWPIHUW/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329419-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/EPCDXYSHRSSZPBCKCYMFEICA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329419-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/NUNIOOEHOQIPZQIXLUAEHNLM/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329419-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermĕrkt an sant Margreten
+          <lb/>tag anno Domini etc. LXII ist
+          <lb/>gẽn Hẽrtemberg geantwurt
+          <lb/>word(e)n von dem hawsrat
+          <lb/>des und(er)n haw̆ß zu Sigm(un)dsp(ur)g
+          <lb/>alles das so dan(n) hȋenach
+          <lb/>ȋst berŭrt das der Mang Steger
+          <lb/>als selbss auf die haus Hertenberg
+          <lb/>enpfangen hat.
+          <lb/>It(em) am erst(e)n IIII pët mit gestreift(e)n
+          <lb/>ziech(e)n.
+          <lb/>I(tem) und III pŏlster mit gestreift(e)n
+          <lb/>ziech(e)n.
+          <lb/>I(tem) II küß mit gestreȋften ziech(e)n.
+          <lb/>I(tem) IIII pŏlster mit weissen zwȋlchin
+          <lb/>zȋechen.
+          <lb/>I(tem) und aȋn pĕt mit ain(er) zwilcheȋn
+          <lb/>ziech(e)n.
+          <lb/>I(tem) VI par hẽrbeȋn leilach.
+          <lb/>I(tem) VI rauch dẽkenn schãffeȋn.
+          <lb/>I(tem) II ungrisch kocz(e)n.
+          <lb/>I(tem) II gestŭkte deklach.
+          <lb/>I(tem) centrȋng gedigen fleȋsch
+          <lb/>rindfleisch, IC zentring.
+          <lb/>I(tem) zinskeß L.
+          <lb/>I(tem) arbais und ponen VI stẽr.
+          <lb/>I(tem) I vaß vol mit rogkein mel.
+          <lb/>I(tem) I vaß mit [....]
+          <lb/>ro[..]ter gerst XXVII.
+          <lb/>I(tem) XII ster rogk(e)n.
+          <lb/>I(tem) II zȋneȋn leŭchter.
+          <lb/>I(tem) I eisneȋn lutschẽrn.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329419-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>I(tem) aȋn vȋer mássig zinnkăndl.
+          <lb/>I(tem) aȋn zwomässig zinkandl.
+          <lb/>I(tem) I măssl kandl.
+          <lb/>I(tem) I seidl kăndli.
+          <lb/>I(tem) II herbeȋn tȋschtŭcher.
+          <lb/>I(tem) II herbeȋn hantzwech(e)ln.
+          <lb/>I(tem) dȋe aȋn grosser eisneȋn
+          <lb/>flasch(e)n.
+          <lb/>I(tem) II lägl kirneȋn mĕl.
+          <lb/>I(tem) V sweȋn ham(m)en.
+          <lb/>I(tem) das klainer kŭpfrín gȋeskessl.
+          <lb/>I(tem) II seit(e)n sweȋneȋn fleisch.
+          <lb/>It(em) II vaß darinn man aller¬
+          <lb/>laÿ hau̇srat inngeschlag(en) hat.
+          <lb/>It(em) I fŭdĕr(er)wan(n).
+          <lb/>I(tem) IIII rotschŭss(e)ln.
+          <lb/>I(tem) VI klaȋn hausschȗss(e)ln.
+          <lb/>I(tem) I kůpfrȋn phan(n).
+          <lb/>I(tem) I kůpfrín gacz(e)n.
+          <lb/>It(em) ain eisneȋn kochkell(e)n.
+          <lb/>It(em) und aȋn gelŏchert kell(e)n.
+          <lb/>I(tem) II klaȋn phẽnndlȋn.
+          <lb/>I(tem) II klaȋn hŭlczeȋn siblein.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329419-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>I(tem) aȋn gross(e)n glokspeiseȋn
+          <lb/>haf(e)n mit III fůssen.
+          <lb/>I(tem) und aȋn klaȋnern glokspeisein
+          <lb/>haf(e)n mit III fůssen.
+          <lb/>I(tem) III glokspeȋseȋn lafasch(e)n.
+          <lb/>I(tem) II eisen phann.
+          <lb/>I(tem) I kŭpfrin pheff(er) phann.
+          <lb/>I(tem) I gelŏcherte kest(e)n phann.
+          <lb/>I(tem) XX hŭlczein teller.
+          <lb/>I(tem) II kŭpfrin kessl aȋn
+          <lb/>gross(e)n und ain klaȋnern.
+          <lb/>I(tem) I văssl pei XIII ŭrn
+          <lb/>můsmel.
+          <lb/>I(tem) I wasser schăffl mit smalcz
+          <lb/>zerlass(e)n.
+          <lb/>I(tem) VIIIIC ünslit kercz(e)n.
+          <lb/>I(tem) ain stocz(e)n ünslit.
+          <lb/>I(tem) aĭn sweȋneȋn smẽrlaȋb.
+          <lb/>I(tem) II eȋsneȋn schauf(e)ln.
+          <lb/>So ist vorhand(e)n XVI swein,
+          <lb/>VII kŭe, stier, schlegochs(e)n,
+          <lb/>kapaw̆n, henn, hüner, heẅ
+          <lb/>und strob und trischl narr.
+          <lb/>No(ta) smidzeŭg, hak(e)n, harnasch
+          <lb/>und allerlai eis(e)n werch.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329419-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

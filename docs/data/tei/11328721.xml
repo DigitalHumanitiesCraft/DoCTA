@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328721">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Fragenstein bei Zirl (bisheriger Inhaber Hans Lantz, neuer Gotthard Hartlieb)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 125.2</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 125.2</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328721</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1478-01-15">1478.01.15</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328721-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/GBCUXUMIPSEKGSKLPBIZFNPE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328721-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/SRHMCKPGJUQPNIOCBXPCMHBO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328721-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/ABWXHWWCNTZSOFYQOBUZGVXT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328721-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/BIAMZBDZSUHWFYCWLNPLZQDK/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328721-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Ingegenwurtigkait m(eines) g(nedigen) h(errn)
+          <lb/>he(rr)n Ludwigen von Masminster
+          <lb/>hofmarschalck, Walth(er)en von
+          <lb/>Stadion seiner gnaden rate, Stef¬
+          <lb/>fan Harder forstmaister, Heurling
+          <lb/>seiner g(naden) thurhŭtter, Conraden
+          <lb/>Metzner und Hannsen Liechten¬
+          <lb/>staren canczlschreiber, ist Got¬
+          <lb/>hardten seiner gnaden ka¬
+          <lb/>merknecht das sloss Fragen¬
+          <lb/>stain mit aller seiner zůgeho¬
+          <lb/>rung enngeben worden an
+          <lb/>phincztag vor Anthoni anno
+          <lb/>etc. LXX octavo.
+          <lb/>Und ist dise massarey in de(m)
+          <lb/>sloss als hernach stet funden
+          <lb/>worden.
+          <lb/>Item hanntpuchsen IIII.
+          <lb/>Hackenpuchensen gross IIII.
+          <lb/>Hackenpuchsen klain XXIII.
+          <lb/>Karrenpuchsen IIII.
+          <lb/>Und ain klain stainpuchsen.
+          <lb/>Und ain grosse puchsen.
+          <lb/>I1/2 vaslein mit pulver.
+          <lb/>I1/2 lagl mit pheyl.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328721-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Zwo pulver taschen.
+          <lb/>II alte armst.
+          <lb/>V pley platten.
+          <lb/>Ain pŭchsen model
+          <lb/>zŭ puchsen.
+          <lb/>Ain hehel in der kuchen.
+          <lb/>Ain kessel in der padstŭben.
+          <lb/>I alte schilt tartschen.
+          <lb/>Zwo karren puchsen auf
+          <lb/>der wȇre.
+          <lb/>Ain tafel auf de(m) altar
+          <lb/>mit dem XII poten.
+          <lb/>Ain silbrein kelch ŭbergũlt.
+          <lb/>Ain stifftbrief.
+          <lb/>Ain ornat mit seiner
+          <lb/>zŭgehoru̇ng.
+          <lb/>Ain spetial.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328721-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Ain glocken.
+          <lb/>Und I klaine darŭnder.
+          <lb/>Der zetel sind zwo gleich
+          <lb/>in ainem laut, hat gethan
+          <lb/>aine und m(eines) g(nedigen) h(errn) cancz¬
+          <lb/>ley aine die ander.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328721-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Inventari auf Fragenstain
+          <lb/>als das Gotharten Hartlieb
+          <lb/>vom nach dem Hannsen
+          <lb/>Lanngen ynngeantwurt ist.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

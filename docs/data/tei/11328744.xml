@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328744">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundsburg am Fernstein (Inhaber Hainrich Truchsaß)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.1-2</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.1-2</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328744</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate notBefore="1462" notAfter="1462">1462 (ca.)</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328744-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/BXYJMMXZWLCEPRCTQNLVQVAC/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/MPBKNXMNFNZWNXXZXIVFDZCJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/TIQLZVRPTFYKHHBHTCEKLMJN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/YXIIGCEDTHKDVTBBEAQSBDHZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/AZTJRBSVUAFHIPCOTLODTKVY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/AEOKKWAGYSTZDSLKPUKQSQCJ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/PUZXJCCMZPNQBWZGOMKVGEZU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328744-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/HBVVSBIWVFPKASGCLMOVKKKG/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328744-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermérkt was ich Hainrích
+          <lb/>Trůchsaß alz ich das schloß
+          <lb/>Sigmundspurg inngenom(en) emphan¬
+          <lb/>gen hab an haw̆srat und an
+          <lb/>and(er)n ding(en) und das meim gne¬
+          <lb/>dig(e)n herr(e)n herczoge Sigmŭnd etc.
+          <lb/>zugehórt.
+          <lb/>It(em) des ersten XLVII spieß¬
+          <lb/>eisann, davon sind zechen zu
+          <lb/>Sigm(un)dspŭrg bliben und die
+          <lb/>and(er)n durch den Frĕch(e)n genn
+          <lb/>Innsprŭgk geantwŭrt word(en).
+          <lb/>It(em) III par füseis(e(n.
+          <lb/>It(em) etwevil gezog(e)ns pley und sŭnst.
+          <lb/>It(em) ain zim(m)er knopf auf kappell(e)n.
+          <lb/>It(em) ain trůch(e)n mit glasscheib(e)n.
+          <lb/>It(em) LXXXII spiesstanngen und da¬
+          <lb/>von sind LXXII durch den Frẽchen
+          <lb/>gẽn Insprŭgk geantwurt word(e)n
+          <lb/>und sind X spiestanng(en) zu Sig¬
+          <lb/>mȗndspurg belib(e)n.
+          <lb/>It(em) VI hirßgehȗr(e)n.
+          <lb/>It(em) etwevil geschnitens holcz zutisch(e)n.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328744-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) LXXIIII trinkgleser klain
+          <lb/>und groß.
+          <lb/>I(tem) ain glesrein kopf.
+          <lb/>I(tem) II krůeg.
+          <lb/>I(tem) II glesrein hõrn.
+          <lb/>I(tem) I pĕchmischen trinkhkrŭeg.
+          <lb/>I(tem) VII platschloß.
+          <lb/>I(tem) III handtleŭchter.
+          <lb/>I(tem) IIII fiechtein kŏpf.
+          <lb/>I(tem) VIIII erdein schŭsselin klain
+          <lb/>und groß.
+          <lb/>I(tem) III erdein gemalt tĕll(er).
+          <lb/>I(tem) ain erdein antlůcz.
+          <lb/>I(tem) ain erdein leŭchter.
+          <lb/>I(tem) II erdein gemalt krŭeg(e)l.
+          <lb/>I(tem) V alte zŭgsail.
+          <lb/>I(tem) III gŭte zŭgsail und ist
+          <lb/>das ain im zȗg.
+          <lb/>I(tem) ain spannpankh.
+          <lb/>I(tem) III mẽssing zůgscheib(e)n.
+          <lb/>I(tem) ain trȗch(e)n mit pog(e)nzeŭg.
+          <lb/>I(tem) III pĕt.
+          <lb/>I(tem) III põlster.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328744-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>I(tem) II par herbein leilach.
+          <lb/>I(tem) und I par rŭpfheins.
+          <lb/>I(tem) VI schäffin rauch dek(e)n.
+          <lb/>I(tem) VI strosekh.
+          <lb/>I(tem) VI span(n)pett.
+          <lb/>I(tem) II feūchtein tisch.
+          <lb/>I(tem) und II ahornein tisch.
+          <lb/>I(tem) III furpĕnnkh.
+          <lb/>I(tem) III hell(e)npart(e)n.
+          <lb/>I(tem) I pĕrnspies.
+          <lb/>I(tem) I morthak(e)n.
+          <lb/>I(tem) II tischtŭch(er).
+          <lb/>I(tem) II handtzwĕhl(e)n.
+          <lb/>I(tem) VIII hŭlczein schŭßeln.
+          <lb/>I(tem) XII tĕller.
+          <lb/>I(tem) X lōffel.
+          <lb/>I(tem) zinein kandl I maßkandl.
+          <lb/>I(tem) I seidlkãndeli.
+          <lb/>I(tem) II wasserschaf.
+          <lb/>I(tem) I kessel.
+          <lb/>I(tem) II phannen.
+          <lb/>I(tem) I hẽln.
+          <lb/>I(tem) I drifŭs.
+          <lb/>I(tem) II hůlczin teŭfling.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328744-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>It(em) XLI hŭlczein zůgscheib(e)n
+          <lb/>underm dach.
+          <lb/>Schießzŭg.
+          <lb/>I(tem) zum erst(e)n II lãgl hauspheil.
+          <lb/>It(em) ain lăgl mit VC m(inus) XI
+          <lb/>pheil(e)n stȃchlein.
+          <lb/>It(em) ain vássl langhawspheil
+          <lb/>auf die lang(e)n armbrŭst
+          <lb/>bei IIIIC.
+          <lb/>It(em) V scheiblig handtpŭchs(e)n.
+          <lb/>It(em) XII armbrŭst.
+          <lb/>It(em) IIII windenn.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328744-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Nota was mir Hainrich(e)n
+          <lb/>Druchsãß der Reichart
+          <lb/>am phintztag nach Mar¬
+          <lb/>garethe auf das schloß
+          <lb/>von eisenn und eisenwerch
+          <lb/>geantwurt hat anno etc. LXIIo.
+          <lb/>I(tem) X stukh stachl ungevar¬
+          <lb/>lich ỹeds ain(er) span(n) lang.
+          <lb/>I(tem) XII haw(e)n und pikhel.
+          <lb/>I(tem) II sagplatt.
+          <lb/>I(tem) V rŭreisenn zu(m) zieglstadl.
+          <lb/>I(tem) VIII eisen schauflen.
+          <lb/>I(tem) V windting.
+          <lb/>I(tem) III schindeis(e)n zu holcz.
+          <lb/>I(tem) V përeisen zu(m) ziegl.
+          <lb/>I(tem) III eisnȇn zieglmödl.
+          <lb/>I(tem) V stȗkh lew̑mischeis(e)n.
+          <lb/>I(tem) IIII par füeseis(e)n.
+          <lb/>I(tem) I straifeis(e)n.
+          <lb/>I(tem) XXX pikl die den maw̆r(er)n
+          <lb/>zugehŏrn klain und groß.
+          <lb/>I(tem) IIII mortterkell(e)n.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328744-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>It(em) II groß eisennschleg(e)l.
+          <lb/>I(tem) VIII eisenn wekh(e)n stain zeprech(e)n.
+          <lb/>I(tem) I schloß und ain rig(e)l zu(m) tor.
+          <lb/>I(tem) II schabeisen zu mẽrbelstain.
+          <lb/>I(tem) II stȃchlin feil(e)n zu der sagmŭl.
+          <lb/>I(tem) sunst allerlaÿ eisenn wẽrch
+          <lb/>zum wag(e)n und and(er)n ding(e)n.
+          <lb/>I(tem) IIII holczhak(e)n.
+          <lb/>I(tem) II ragkhaw̃n.
+          <lb/>Item) I trŭch(e)n mit zind(er)zeŭg.
+          <lb/>I(tem) hobl und ain schaf mit
+          <lb/>tischlerleȋm.
+          <lb/>I(tem) I schlifstain und darinn
+          <lb/>eisenn stang(e)n.
+          <lb/>I(tem) ain trŭch(e)n mit richtscheitt(er)n
+          <lb/>und brettern daz den mawrern
+          <lb/>zugehõrt.
+          <lb/>It(em) etwevil zin(n) und pleiplecher.
+          <lb/>It(em) smaltz zŭber und văssl lägel.
+          <lb/>I(tem) XX pesẽm.
+          <lb/>I(tem) ain ur mit der stund glokh(e)n
+          <lb/>die von Ŭmbst ist kom(m).
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328744-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>It(em) ain zwai lãgl mit pŭchsen pŭlver
+          <lb/>von Insprugk.
+          <lb/>I(tem) II mẽssin hakh(e)n pŭchsenn.
+          <lb/>I(tem) und II mödl darzu darinn
+          <lb/>man die kŭgel geŭsset.
+          <lb/>Zŭ(m) gezeŭgknŭs aller
+          <lb/>v̑orgeschriben sache so hab
+          <lb/>ich vorgen(anter) Drŭchsázz mein
+          <lb/>aigenn insigl hie inn fũr¬
+          <lb/>gĕdrŭckt.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328744-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

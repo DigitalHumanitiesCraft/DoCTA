@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11348482">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Persen (Inhaber Wignloys Gradner)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 273.6</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 273.6</idno>
+            <altIdentifier type="transkribus">
+              <idno>11348482</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1448-05-25">1448.05.25</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11348482-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/CQXUVLEJWLXRPPETCOVYNFRR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348482-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/CMMOPTYXZQQSSLRGXRAGTEFA/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348482-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/BLLNAKTWPWSMAUUMAOHYPXBU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11348482-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/IPSRQWRGDYCOESEGHMNBVBYU/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11348482-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt was herr Hainraich von
+          <lb/>Mersperck dem Ulreich Eÿsenreich an
+          <lb/>stat herr Wignloýs Gradner von plat
+          <lb/>harnasch, ringharnasch poß und gutz,
+          <lb/>puxenpulver, salitter, swebel, pfeil geschifft
+          <lb/>und ungeschifft und targen auff das
+          <lb/>geschloß Perzin geantwurt hat. Actum
+          <lb/>an an sannd Urbans tag anno Domini
+          <lb/>millesimo quadringentesimo etc. XLVIII.
+          <lb/>Item von ersten VIII ganz platen und
+          <lb/>ain halbe platten.
+          <lb/>Item IIII eÿsenhŭt.
+          <lb/>Item VII helmelin.
+          <lb/>Item XII eÿsnenpanzir.
+          <lb/>Item zwaÿ gollir.
+          <lb/>Item huntzchappen IX.
+          <lb/>Item prustplech V.
+          <lb/>Item spangerŏl und mawseÿsen X.
+          <lb/>Item armzeug XXVII minus ain armror.
+          <lb/>Item hantschŭch III par.
+          <lb/>Item paingewant V par minus I rŏr.
+          <lb/>Item targen XVI.
+          <lb/>Item puxenpulver IIIICXXXII lb.
+          <lb/>chlaingewicht.
+          <lb/>Item salitter XV lb.
+          <lb/>Item swebel VC.
+          <lb/>Item pfeil geschifft und ungeschifft VIM.
+          <lb/>Item stain puxen VII.
+          <lb/>Item tarespuxen III.
+          <lb/>Item hagkenpuxen III.
+          <lb/>Item hantpuxen zerbrochen und
+          <lb/>ganzer beÿ XXXII.
+          <lb/>Item gossenstainpuxen II und
+          <lb/>ain chlaine gossen stainpuxen.
+          <lb/>Item ain grosse eÿsnen stain púxen.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11348482-2"/>
+          <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11348482-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11348482-4"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11797015">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Ehrenberg</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 158.3</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 158.3</idno>
+            <altIdentifier type="transkribus">
+              <idno>11797015</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1525">1525</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11797015-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/GRNQJZFPOEINDLYGXBFDQRFF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11797015-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/WFTBAUDRBGLSPCCELCCEOBOK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11797015-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/MAXUQSUDFDXWAUMAWTVMABEN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11797015-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/PDOVQJJGCEDCZVISJIUQNECB/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11797015-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Zȗwissen sey̑ wenigklich mit disem inv̑entari und offen spanczedel das aȗf heȗt seiner dato
+          <lb/>aȗf m(einer) fȗrstlicher dȗrchleȗchtigkait meines genedigisten herren aȗsgegangen bev̑elch der
+          <lb/>edel und vest Eberhard von Frey̑berg zȗm Ey̑semberg phleger zȗ Erenberg von dem erbern
+          <lb/>Petern Wittnig an Erenberger claȗsen wonhëfftig in seinem abczŭg dieselb claȗsen mit
+          <lb/>sampt behaȗssȗng, khorn kasßten, aller innhab und zȗgehorȗng aȗch die zoll so dann obedachter
+          <lb/>f(ȗrstlicher) d(ȗrchleȗchtigkait) zȗgehörig ist nicht aȗsgenomen dem edlen und vesten Jheronimen Banholcz von
+          <lb/>Wald inhalt seiner erlanngten f(ȗrstlichen) d(ȗrchleȗchtigkait) verley̑chbrief dasselb zoll und claȗsner ampt mit
+          <lb/>allen dingen wie der gebraȗch und allt herkomen ist innenczȗhaben, zuv̑erwesen und vor
+          <lb/>schaden getreȗlich zuv̑erwaren bev̑olchen und eingegeben hatt. Als das er soliches alles
+          <lb/>inhalt f(ȗrstlicher) d(ȗrchleȗchtigkait) gegeben verleichbriefs solich zöll und claȗsner ambt in gȗtten wirden wesen¬
+          <lb/>lich halten und darinnen nichcz uncziechen lassen sol in crafft seiner gethanen pflicht und
+          <lb/>daraȗf ist im genanten Jheronimen Banholcz in bemelter claȗsen zȗbewaren uberant¬
+          <lb/>wȗrt worden.
+          <lb/>Nemlich erstmals in drey̑en trȗchen sechs hȗndert und drey̑czehen
+          <lb/>aȗsgemachter ey̑bmėn hanndtpógen. Mer neŭnundfierczig pfeil zŭm gembsen schiessn.
+          <lb/>Item achczehen dŭllmesser mit schaiden. Mer sechs par fůßey̑sen. Item ain trȗchen darinn
+          <lb/>ligen acht uberczogen und vierczehen ploß y̑agschëfft. Item drey̑haȗffen raȗch viraŭfgemacht
+          <lb/>gekloben ey̑ben daraȗs man ey̆ben hanndtpogen machen mag. Item hȗndert und fŭnff¬
+          <lb/>ŭndneŭczig gros ey̑sen kůglen zȗ den scharfen mẽczen. Item zehen khorn pranndten. Zway̑
+          <lb/>beschlagen Innsprȗgger stẽr. Ain Fȗesser meczen. Zway̑ zȗgsail und ain kharren zȗ den
+          <lb/>seckhen.
+          <lb/>Des zȗ urkhund und gȗetter gedechtnȗs sind diser zedel zwen gleichlaȗttend
+          <lb/>mit ainer hanndgeschriben gemacht und aŭs ainanndern geschnitten, der ainer obemelter
+          <lb/>f(ȗrstlicher) d(ȗrchleȗchtigkait) aȗf ir tirolisch raitcamer zȗ Y̑nnsprȗgg uberantwȗrt und der annder bedachtem
+          <lb/>Banholcz gegeben ist. Beschehen an.
+          <lb/>Eberhart von Fre[.]berg
+          <lb/>f(ȗrstlicher) d(ȗrchleȗchtigkait) phleger zu Erenberg.
+          <lb/>Sebastian Tescher gerichtsch(reiber)
+          <lb/>zu Erenberg manu propria.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11797015-2"/>
+          <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11797015-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Mein frŭntlich gŭetwillig diennst zuv̇or gŭnstig lieb herrn
+          <lb/>unnd frŭndt, ich schick eŭch hiemit die innfentari der
+          <lb/>claŭsen unnd wirczhaŭs Ernnberg wie ir mir dann
+          <lb/>vomals darŭmb geschriben habt.
+          <lb/>Aŭch wie ir mir verschriben habt wie ir mit
+          <lb/>dem Maldicz fŭrderlich hanndlen wolt, desshalb
+          <lb/>ich personnlich zŭ Ernnberg verziehen sol. Dieweil
+          <lb/>wir aber etliche geschefft daran mir gelegen ist
+          <lb/>mich zŭ mey̆nem gnedigisten herrn zŭverfŭegen
+          <lb/>desshalb ich ainzeitt lanng nit anhaim sein wirdt
+          <lb/>des ich dann dem Maldicz zŭegeschriben hab ich
+          <lb/>meiner nottŭrfft halb nit erlassen kan wirt
+          <lb/>er als ich acht ettlich zeitt vor Sand Bartlmestag
+          <lb/>heraus verfŭegen unnd soferr mir von mein
+          <lb/>gnedigisten herrn oder eŭch der abtretŭng halb
+          <lb/>bev̆elich kŭmbt wird ich dem selbigen statt
+          <lb/>thŭen darinnen pitt ich aŭch wellet ordnŭng
+          <lb/>geben der brofanndt halben so ich aŭf ein ansy̑nen
+          <lb/>aŭf das schloss verordnet und kaůft hab aŭch
+          <lb/>annder mein aŭßgeben und schũld so man mir
+          <lb/>pey̑ der abtrettŭng bezallen schŭldig ist damit
+          <lb/>euch wo ich kan frŭntlichen gŭetwilligen diennst
+          <lb/>way̆s zŭbewey̆sen bin ich alzeitt willig. Datum
+          <lb/>Ernnberg den letzten tag julli anno etc. XXVtn.
+          <lb/>Ichhab p[...] die drit
+          <lb/>Ulrĭche hie aussen [.]altiß
+          <lb/>gene[..]tet.
+          <lb/>Eberhart [...] Freiberg
+          <lb/>f(ŭrstlicher) g(naden) pfleger zu Erenberg.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11797015-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>1525
+          <lb/>Der fŭrstlichen dŭrchleŭchtigkait
+          <lb/>meins gnedigisten herren rãtte
+          <lb/>der oberŏsterreichischen raitkamer
+          <lb/>seiner gŭnstigen herren unnd
+          <lb/>gŭeten frŭnden.
+          <lb/>Eberhart von Freÿberg
+          <lb/>claus innvitarium
+          <lb/>abtrettŭng Ernberg.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

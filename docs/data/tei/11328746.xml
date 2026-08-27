@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328746">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Sigmundsburg am Fernstein (Inhaber Hainrich Truchsaß)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 142.1-2</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 142.1-2</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328746</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate notBefore="1462" notAfter="1462">1462 (ca.)</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328746-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/CDIUJJIDUTVTHYNKRCZYLVSZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/HOHCNNZYWFHCTYEROJCJYDVB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/MDIXBGKEKRXZTTTWLRIYYTLL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/EKCFUCRYYPFQGDAWEUXIFAXV/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/GPZTGHXWDDYJKEYEPKCJYMQG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/TLOCFSLBEFQEKYYFHQRRJDJT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/MXQWFGSLJQKTPYRXSUOOTBCF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328746-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/AERMQUJPCPGDXNQZVEUDYAXT/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328746-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt was ich Hainrich Truchsăz
+          <lb/>als ich das schlozz Sigmundspurg in
+          <lb/>genomen emphang(e)n hab an hawß¬
+          <lb/>rat und an and(er)n ding(e)n und das mei(ne)m
+          <lb/>genedigen h(er)rn herczog Sigmund(e)n etc.
+          <lb/>zugehórt.
+          <lb/>It(em) des ersten XLVII spieß eysnenn,
+          <lb/>davon sind zehen zu Sigmund¬
+          <lb/>spurg beliben und die and(er)n durch
+          <lb/>den Frech(e)n gen Insprugk geant¬
+          <lb/>w(er)t worden.
+          <lb/>It(em) III par fūsseysen.
+          <lb/>It(em) ettwevil getzogns pley und sūnst.
+          <lb/>It(em) ain zynner knoppf auf kappellen.
+          <lb/>It(em) ain truhen mit glascheyb(e)n.
+          <lb/>It(em) LXXXII spiesstanng(e)n und davo(n)
+          <lb/>sind LXXII durch den Frech(en) gen
+          <lb/>Innsprugk geantw(er)t word(e)n und
+          <lb/>sind X spiesstanng zu Sigmund¬
+          <lb/>spurg beliben.
+          <lb/>It(em) VI hirß gehu̇rn(er).
+          <lb/>It(em) ettwevil geschniczens holcz
+          <lb/>zu tisch(e)n.
+          <lb/>It(em) LXXIIII trinckhgleser klain
+          <lb/>und groß.
+          <lb/>It(em) ain glesrein kopf.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328746-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) II krúeg.
+          <lb/>It(em) II glesrein horen.
+          <lb/>It(em) ain pehemisch(e)n trinckhkrueg.
+          <lb/>It(em) VII platschloss.
+          <lb/>It(em) III hanndleücht(er).
+          <lb/>It(em) IIII fiechtein kopfh.
+          <lb/>It(em) VIIII erden schȗssel(e)n klain und groß.
+          <lb/>It(em) III erdein gemalt tallér.
+          <lb/>It(em) I erdein antlŭcz.
+          <lb/>It(em) I erdein leücht(er).
+          <lb/>It(em) II erdein gemalt krŭeg(e)l.
+          <lb/>It(em) V alte zugsail.
+          <lb/>It(em) III gute zugsail und ist das
+          <lb/>ain im zug.
+          <lb/>It(em) ain spanpanckh.
+          <lb/>It(em) III messing zugscheyb(e)n.
+          <lb/>It(em) ain truhen mit pogen zeug.
+          <lb/>It(em) III pett.
+          <lb/>It(em) III pólster.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328746-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>It(em) II par habein(er) leillach.
+          <lb/>It(em) und ain par rupheins.
+          <lb/>It(em) VI schaffein rauch degk(e)n.
+          <lb/>It(em) VI strosegkh.
+          <lb/>It(em) VI spannpett.
+          <lb/>It(em) II feuchten tisch.
+          <lb/>It(em) II ahornein tisch.
+          <lb/>It(em) III fŭrpenkg.
+          <lb/>It(em) III helmpart(e)n.
+          <lb/>It(em) ain pernspieß.
+          <lb/>It(em) ain morthack(e)n.
+          <lb/>It(em) II tischtŭch(er).
+          <lb/>It(em) II handzwehl(e)n.
+          <lb/>It(em) VIII húlczein schüssel(e)n.
+          <lb/>It(em) XII téll(er).
+          <lb/>It(em) X lõff(e)l.
+          <lb/>It(em) ain zyn(e)n maßkannd(e)l.
+          <lb/>It(em) ain seydlkănnd(e)l.
+          <lb/>It(em) II wasserschaff.
+          <lb/>It(em) I kossel.
+          <lb/>It(em) II phan(e)n.
+          <lb/>It(em) ain hēlln.
+          <lb/>It(em) ain drifus.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328746-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>It(em) II hulczin teufling.
+          <lb/>It(em) XLI hulczein zugscheyb(e)n
+          <lb/>underm dach.
+          <lb/>Schiesszewg.
+          <lb/>It(em) zum erst(e)n II lág(e)l hauspheẏl.
+          <lb/>It(em) ain lag(e)l mit VC mi(nus) XI
+          <lb/>stáchlein pheyln.
+          <lb/>It(em) ain vāssel lang hawspheyl(e)n
+          <lb/>auf die lang(e)n armbrost bei
+          <lb/>IIIIC.
+          <lb/>It(em) V scheyblig hantbŭchs(e)n.
+          <lb/>It(em) XII armbrost.
+          <lb/>It(em) IIII windten.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328746-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Nota was mir Hainrich(e)n
+          <lb/>Druchsaz der Reichart am
+          <lb/>phincztag nach Margrete
+          <lb/>auf das slozz von eysen und
+          <lb/>eysnwerch geantw(er)t hat anno etc.
+          <lb/>LXII s(e)c(un)do.
+          <lb/>It(em) X stuckh stãch(e)l ungevarlich
+          <lb/>yeds ain(er) spann lang.
+          <lb/>It(em) XII hawen und pikh(e)l.
+          <lb/>It(em) II sagplatt.
+          <lb/>It(em) V rureys(e)n zum zieglstad(e)l.
+          <lb/>It(em) VIII eysn schauffl(e)n.
+          <lb/>It(em) V windting.
+          <lb/>It(em) III schnideis(e)n zu holcz.
+          <lb/>It(em) V per eys(e)n zum zieg(e)l.
+          <lb/>It(em) III eysnein zieglmodel(e)n.
+          <lb/>It(em) V stuck lewmischeýs(e)n.
+          <lb/>It(em) IIII par fueßeys(e)n.
+          <lb/>It(em) ain straifeÿs(e)n.
+          <lb/>It(em) XXX pik(e)l die den mawr(er)n zu¬
+          <lb/>gehórn klain und groß.
+          <lb/>It(em) IIII morterkell(e)n.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328746-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>I(tem) II groß eysnschleg(e)l.
+          <lb/>It(em) VIII eysen wekhen stain ze
+          <lb/>prechen.
+          <lb/>It(em) ain schlozz und ain rig(e)l zum tor.
+          <lb/>It(em) II schabeysen zum márblstain.
+          <lb/>It(em) II stéchlin veyln zu d(er) sagmūl.
+          <lb/>It(em) súnst allerlay eysnw(er)ch zum wag(e)n
+          <lb/>und and(er)n ding(e)n.
+          <lb/>It(em) IIII holczhagk(e)n.
+          <lb/>It(em) II ragkaw(e)n.
+          <lb/>It(em) I truh(e)n mit zym(er)zewg.
+          <lb/>It(em) hobel und ain schaff mit tischl(er)
+          <lb/>leym.
+          <lb/>It(em) ain schliffstain und darinn
+          <lb/>eysn stanng(e)n.
+          <lb/>It(em) ain truhen mit richtscheitt(er)n
+          <lb/>und prett(er)n das den maw(rer)n zugeh¬
+          <lb/>órt.
+          <lb/>It(em) ettwevil zynn und pleplech(er).
+          <lb/>It(em) smalcz zub(er) und váss(e)l lagel(e)n.
+          <lb/>It(em) XX pesem.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328746-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>It(em) ain ur mit der stund glok(e)n
+          <lb/>die von Úmbst ist kom(m)en.
+          <lb/>It(em) zwai lāgel mit buchsnpũlv(er)
+          <lb/>von Innsprugk.
+          <lb/>It(em) II messein hack(e)n pũchsen.
+          <lb/>It(em) und II mōdel datzu darinn
+          <lb/>man die kug(e)l gewst.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328746-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

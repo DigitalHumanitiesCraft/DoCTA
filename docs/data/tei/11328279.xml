@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328279">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare der Pflege Thaur (Inhaber Jakob von Spaur)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 049.4</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 049.4</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328279</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1484">1484</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328279-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/SWMIJFWHWJEHJUNQBMNCXKVX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/JSLDKQIYOBXWDNPYMGLFZCPN/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/HFPTTAYHNDYTJKAGIUSSAFXP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/EJFVRQFQDJLKMXJNOIFUIREP/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/HYDJNUHFZHHHWJMKVQOFSBWO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/AFZGVQPWKMICXCJVCRTIOVDU/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/CVPMDMQNMANVEQEDIMNOACZE/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/RTAVMGVSWJAFGAIBJPTLPYOR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-9" n="9">
+      <graphic url="https://files.transkribus.eu/iiif/2/GRRVKUZXSDLFNVNZKRWUUIUO/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328279-10" n="10">
+      <graphic url="https://files.transkribus.eu/iiif/2/FMAYGISKUUAUCENVZFSRZSMJ/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328279-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerckt die hab und guĕt so
+          <lb/>herr Melchior von Heymenhofen
+          <lb/>als er ab der phleg Thaur gezogen
+          <lb/>ist, herren Jacoben von Spaur ze
+          <lb/>kauffen geben hat und ist also
+          <lb/>betewrt und angeslagen.
+          <lb/>Von erst etlichs hew̆, davon sol ain
+          <lb/>fuederle mit zwain rossen gefuĕrt
+          <lb/>werden, und etlich stro pro
+          <lb/>XXIIII gld.
+          <lb/>XXXIIII stăr koren und 1/2 stăr ist
+          <lb/>darein gelassen, ain star pro I lb.,
+          <lb/>facit
+          <lb/>III mr̃. IIII lb.
+          <lb/>XLVI stăr gersten, I stăr pro X k.,
+          <lb/>facit
+          <lb/>III mr̃. VIII lb. IIII k.
+          <lb/>Zwo groß swăbisch kandeln.
+          <lb/>Ain zwo måssige kandel, drey maß
+          <lb/>kandl, ain trinckn kandel, drey
+          <lb/>zynein schŭseln, ain saltzfas, ain
+          <lb/>gyesfas. Ist alles geschătzt pro
+          <lb/>X lb.
+          <lb/>VII pfannen klein und groß
+          <lb/>und ain pfefferpfannen pro
+          <lb/>III lb.
+          <lb/>XXIIII kŏtin hăfen klein und groß
+          <lb/>pro II lb. VI k.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328279-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Drey kessl klein und groß und
+          <lb/>ain rebeysen pro VII lb.
+          <lb/>Ain rost, alte hackmesser, ain kuechl
+          <lb/>spiß, ain pawmschab, ain hafendeck
+          <lb/>pro II lb.
+          <lb/>Etlich milich năpf, schŭsseln,
+          <lb/>tăller, zway slegkubel, zwen
+          <lb/>smaltzkubel und etliche schăffer pro
+          <lb/>I gld.
+          <lb/>Zwen padzuber und ain sechteren
+          <lb/>pro IIII lb.
+          <lb/>Ain grosse vischpfannen und
+          <lb/>ain nudlpfannen pro II lb.
+          <lb/>Ain speiskasten in der kuchen pro
+          <lb/>IIII lb.
+          <lb/>Ain harnaschkasten und ain
+          <lb/>gutschenspanpet mit ainem
+          <lb/>himel in der stuben pro VI lb.
+          <lb/>Zwo sidltruhen und ain kastel
+          <lb/>zů ainem gyesfas in der stuben
+          <lb/>hat er im darein gelassen.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328279-3"/>
+          <lb/>Item auf Tawr hat das groser vas
+          <lb/>zehen ürn, dar an get ab dreÿ pazeiden
+          <lb/>und das chlainer vas hat dreÿ urn
+          <lb/>daran get ab ain pazeiden.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328279-4"/>
+          <lb/>Etschwein X urn minus III pazeiden, I urn pro XI
+          <lb/>lb., facit XI mr̃. Daran gend die III pazeiden
+          <lb/>herab.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328279-5"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Zehen swein klein und groß
+          <lb/>pro V gld. II lb.
+          <lb/>Zwen wăgen, ain pflueg
+          <lb/>mit iren zugehorungen pro
+          <lb/>VI gld.
+          <lb/>Ain karr pro III lb.
+          <lb/>Ain vaß swabisch wein, I uren
+          <lb/>pro VIII lb., sol das vaß gefisert
+          <lb/>und darnach was das bringt
+          <lb/>bezalt werden und hat innen
+          <lb/>III uren minus I paceiden.
+          <lb/>Ain vaß etschwein, sol auch
+          <lb/>gefisert und was das bringt
+          <lb/>albeg ain uren pro XI lb. bezalt
+          <lb/>werden und hat innen X uren
+          <lb/>minus III paceiden.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11328279-6"/>
+          <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11328279-7"/>
+          <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11328279-8"/>
+          <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab>
+          <pb n="9" facs="#surface-11328279-9"/>
+          <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab>
+          <pb n="10" facs="#surface-11328279-10"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

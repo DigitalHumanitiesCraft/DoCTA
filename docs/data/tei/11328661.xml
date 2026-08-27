@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328661">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Freundsheim (Sigmundsfreud) bei Barwies, bisheriger Inhaber Leonhard Melkhaimer, neuer Caspar Frech</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 133.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 133.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328661</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1476-01-28">1476.01.28</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328661-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/TUSKCCUZBDUGCAAKFOQUZZUD/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328661-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/KABBTRPODFQOYKWJKQONTLDK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328661-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/SHAIUSTJFYXHWMJUFRQGTPQS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328661-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/TDQHTNQXOTIETSWQXSTJVGBJ/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328661-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Item vermerkt den hausplunder
+          <lb/>so Caspar Frech zw Frewndshaim
+          <lb/>von Leonhart Melkhaimer an
+          <lb/>suntag vor unnser liebem
+          <lb/>Frawen tag zw Liechtmessen
+          <lb/>im LXXVI jar emphanngen
+          <lb/>hat auf geschefft meins
+          <lb/>genedigen herren in gegen¬
+          <lb/>burtigkait herren Hannsen
+          <lb/>Schlosser pharrer im Myemigen,
+          <lb/>herrn Andre Hagenawr
+          <lb/>meins genedigen herrn caplan, herrn
+          <lb/>Ulrichen Pauchsŏder gesellen
+          <lb/>zw Umbst, Hannsen Tewffen¬
+          <lb/>brünn richter zu Umbst,
+          <lb/>Oswalden Schneider zw Ober¬
+          <lb/>myemingen, Hannsen Prokhen
+          <lb/>zw Schnekhnhausn, Marttan
+          <lb/>Ranndolff und ander nacht¬
+          <lb/>pauren mer.
+          <lb/>Item am ersten ain schliefstain.
+          <lb/>Ain keslin.
+          <lb/>Ain badzuber.
+          <lb/>IIII schãffer.
+          <lb/>Ain protkorb.
+          <lb/>II newe beschlagne reder.
+          <lb/>Zwen knettzuber.
+          <lb/>Ain mölchteren.
+          <lb/>Ain prottafel.
+          <lb/>Zwo ramen zw prot.
+          <lb/>Ain schuselkrett.
+          <lb/>Ain vischputtrich.
+          <lb/>Ain grossen kasten.
+          <lb/>Ain klain kasten.
+          <lb/>Ain padvas verglast.
+          <lb/>Ain wannen.
+          <lb/>Ain dreÿfus.
+          <lb/>Aind prandrädpell.
+          <lb/>Ain gross pettstatt
+          <lb/>fur mein genedigen herren
+          <lb/>und da bei ain klaine
+          <lb/>pettstat.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328661-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item im zymmer ain bestatt
+          <lb/>und ain pflug mit
+          <lb/>seiner zuegehorung.
+          <lb/>Ain gutten beschlagen wagen
+          <lb/>mit aller zugehorung.
+          <lb/>Ain peitelfas.
+          <lb/>Ain milchkasten.
+          <lb/>Ain prothanngen.
+          <lb/>Ain futterkasten.
+          <lb/>Ain schrodtpret.
+          <lb/>Ain lers weinvass.
+          <lb/>Ain beschlagne vischtruhen.
+          <lb/>Item V pett mit kollischen ziechen.
+          <lb/>III polster.
+          <lb/>VIII kuss vier an ziechen.
+          <lb/>IIII schlecht gŏlter.
+          <lb/>IX rauch tegkhen.
+          <lb/>X par leylachen schlecht
+          <lb/>herrwein.
+          <lb/>XX zynen schusel gross
+          <lb/>und klain [.]III plan.
+          <lb/>XVIII zynen täler in
+          <lb/>ainer hultzen puchsen.
+          <lb/>Zwo zwymãssig kandel.
+          <lb/>Drey masskandel.
+          <lb/>Ain seidel kändel.
+          <lb/>III saltzvas.
+          <lb/>Ain giesvas.
+          <lb/>VI pleyen pecher.
+          <lb/>Ain messein leichter.
+          <lb/>Ain messein giespekkh.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328661-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Ain messein gieskanndel.
+          <lb/>V messein leichter
+          <lb/>mit aim ror.
+          <lb/>Ain messein leichter
+          <lb/>mit dreyen roren.
+          <lb/>Ain eyssen verzintten
+          <lb/>leuchter mit dreyen
+          <lb/>roren.
+          <lb/>Zwen kessel.
+          <lb/>Ain gatzen.
+          <lb/>Ain pfeffer phanen.
+          <lb/>V gros und klainer
+          <lb/>eyssneÿn pfeffer phanen.
+          <lb/>Ain tischtuch.
+          <lb/>XIII hanndtucher.
+          <lb/>VI prottücher.
+          <lb/>Und auf geschãfft des
+          <lb/>benantten meins genedigen
+          <lb/>herrn von Osterreich etc.
+          <lb/>hab ich Caspar Frech
+          <lb/>auf dise inventari zetel
+          <lb/>zw ennd diser geschrifft
+          <lb/>mein aigen petschafft
+          <lb/>gedrukht.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328661-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>In die cantzlei. Inv̊entari
+          <lb/>zedlen von Freuntshaim
+          <lb/>anno etc. LXXVI.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

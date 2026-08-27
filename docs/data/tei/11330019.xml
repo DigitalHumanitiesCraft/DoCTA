@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330019">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Kronburg bei Landeck (bisheriger Pfleger Hans Clamer)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 144.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 144.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330019</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1478-10-02">1478.10.02</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330019-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/BCXWOLWUFVQMQZDZWPLJQNVS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330019-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/UXFZBFLSWEFOMYMCSZYAPZYS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330019-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/NEYETSCLFESBVBQAZLBMBLOW/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330019-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Kronburg
+          <lb/>Vermerkt die farund hab,
+          <lb/>haws plunder und anders auff
+          <lb/>Kronburg, Hannsen Clamer,
+          <lb/>weÿlund phleger, da selbs zu
+          <lb/>gehörig so Joseph Überriner
+          <lb/>an sant meins genedigen herren etc.
+          <lb/>in geschrifft ingenomen hatt an
+          <lb/>freÿtag nach sant Michelstag
+          <lb/>anno LXXVIII.
+          <lb/>Item zum ersten aim kürüss, III
+          <lb/>eÿsenhüt, II par hentschůch, III
+          <lb/>par arm zewg, III par wndere
+          <lb/>bain gwand, II bants, III kragel,
+          <lb/>mer ain armzewg, III schweinspies
+          <lb/>sind nit gevast.
+          <lb/>Item in der stuben und kamer da
+          <lb/>ist ain schribtisch, I grosser schrein,
+          <lb/>darunter lig smid zeug, VI zangen,
+          <lb/>IIII hämer, I veÿhel, I schmidsteck,
+          <lb/>ain schlosser kloben.
+          <lb/>Item mer ain bettstatt darinn ligt
+          <lb/>ain bett, ain bolster, I kuss, II banck
+          <lb/>bolster, III rauch deck.
+          <lb/>Item mer ain messin beck und ain
+          <lb/>messin hantvass, I taller būchß,
+          <lb/>dar sind XXV plandl.
+          <lb/>Mer ligen in ainer bettruchen VII
+          <lb/>blatt schlos und ain gross malen
+          <lb/>sloss.
+          <lb/>Mer vor der kuchin ain trucken
+          <lb/>und ain schaffraitt, II pfannen,
+          <lb/>V erin hafen, III fischkessel.
+          <lb/>Item ain armbrost mit ainer winden
+          <lb/>hat kain sen.
+          <lb/>Item auff der untern wer stett ain
+          <lb/>truch, ain betstatt, dar inn ligt
+          <lb/>ain bett, ain bolster, II leylach, ain
+          <lb/>rauch deck und ain golter.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330019-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item oben im turen ligen VIII
+          <lb/>raissättel gůtt und böst.
+          <lb/>Item wnten in dem gewelem
+          <lb/>sind zwo bettstatt dar inn
+          <lb/>XI bett, ain deckbett, IIII
+          <lb/>bolster, II kuss, III sargen
+          <lb/>und ain golter.
+          <lb/>Item mer im dem selben ge¬
+          <lb/>weltem sind VII gebaist wolf
+          <lb/>hüt, XIIII fr fuschs belg
+          <lb/>mer VII stricken, lanng und
+          <lb/>kurtz.
+          <lb/>Item XIIII zini schisseln, klain
+          <lb/>und grosß, ain zini plan
+          <lb/>und III kessel.
+          <lb/>Item mer in dem selben gewelten
+          <lb/>sind zwo truchen dar inn
+          <lb/>ligt allerlaÿ plunder und māsser¬
+          <lb/>reÿ sind ver bettschafft. Mer
+          <lb/>zuo truchen sind lär. Zwai
+          <lb/>klaine schreinel, II kandelier,
+          <lb/>II tangelgeschiere, III scherren,
+          <lb/>ain gartt gabel, III bratspis,
+          <lb/>zuo sicheln, XV rosseyssen, ochsen
+          <lb/>und esel eyssen.
+          <lb/>Item XXV veld unslit, hültzi
+          <lb/>schisslen klain und gross
+          <lb/>XVI, taller XXVI, zwen bachen
+          <lb/>schweinflaisch, ungeverlich
+          <lb/>zwen spiss gedigen flaisch.
+          <lb/>Item mer III hächelen, ain rüch.
+          <lb/>Mer im untern keller sind IIII
+          <lb/>hawen, II furschleg, V alt gabe-
+          <lb/>len, VI heÿgablen, IIII kessel
+          <lb/>ain czini flaschen und ain
+          <lb/>buttrich.
+          <lb/>Item mer in dem selben keller
+          <lb/>ist ain vass vein, X1/2 uren,
+          <lb/>ist die wenn dar auff gesnitten.
+          <milestone unit="folio" n="2r"/>
+          <lb/>Item V kanndelen, klain und
+          <lb/>gross.
+          <lb/>Item so ist wntten im vorhoff
+          <lb/>VI küe, zwo kalbelen, zwai
+          <lb/>stierel, ain schwein und ain
+          <lb/>verndzogene kalb, ain
+          <lb/>wagen ross.
+          <lb/>Item mer da selbs III bett, I bolster
+          <lb/>und III eysenstecken.
+          <lb/>Item so hatt der obgemelt Jo¬
+          <lb/>seph auff Kornburg funden
+          <lb/>das meines gnädigen herrn zů siner gnaden
+          <lb/>gslos gehortt.
+          <lb/>Item hagkenpüchsen VIII.
+          <lb/>Mer hagkenpüchsen XXII.
+          <lb/>Mer hagkenpuchsen, sind nit gevast, II.
+          <lb/>Item erin hafen II.
+          <lb/>Item mer handpuchsen, sind nit
+          <lb/>gevast, II.
+          <lb/>Item drÿ legelen mit pfeilen ligen.
+          <lb/>Item gwelem, zwai klaine tarschel.
+          <lb/>Item mer III gross morser puchsen.
+          <lb/>Mer funff morser buchsen und
+          <lb/>III klaine.
+          <lb/>Item der alten armprost ain
+          <lb/>senen XI.
+          <lb/>Item zway vässlÿ mit pulver.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330019-3"/>
+          <lb/>Inventari zedel
+          <lb/>Kronburg
+          <lb/>Cronburg
+          <lb/>1478
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

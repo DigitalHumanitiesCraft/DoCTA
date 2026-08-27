@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330219">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare der Pflege und des Schlosses Schöneck (bisheriger Inhaber Gabein Künigl)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 185.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 185.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330219</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1492-11-26">1492.11.26</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330219-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/TVYEEIBQPKOCJOILCTQAAWXS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330219-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/YVEZRWFLAQSVXANFUBIQGSIS/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330219-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermergkt was ich Katerina weylannd Gabein Kŭnigls sălge gelassne wittib
+          <lb/>auf der pfleg und schloss Schonegk lase als ich abgeczogen pin ausserhalb
+          <lb/>der alten inventăry dy̆ zu dem schloss Schŏnegk gehŏrt anno 1492
+          <lb/>jar am montag nach Sannd Katrein tag etc.
+          <lb/>It(em) am erst(e)n im keller I haber ster, ain resch ster und ain halb resch ster.
+          <lb/>It(em) ain grosse truhen gehŏrt zu salcz und zu kăß.
+          <lb/>It(em) ain ler truhen mit dreyen klŏster(e)n, ain ŏl stain.
+          <lb/>It(em) ain grosse luter(e)n da man fley̆sch in henngt.
+          <lb/>It(em) ain gross hackpret daman kraut auf hagkt.
+          <lb/>It(em) in der pfister stub(e)n ain wurgk taf(e)l und dy̆ preter dar zue.
+          <lb/>It(em) ain peÿtl kast(e)n, ain knet zuber, ain mel ster, mer ain zuber gehort zu mel.
+          <lb/>It(em) ain potichen zu kleyen und ain trŭh(e)l.
+          <lb/>It(em) in der kuchen ain truhen und ain tisch, in der spey̆s kamer I truhen.
+          <lb/>It(em) im zimmer ain mel truhen und sŭnst ain klayne truh(e)n.
+          <lb/>It(em) in der kamer auch im zimmer ain versperte truh(e)n.
+          <lb/>It(em) in der stubn III tisch und dy̆pengk dar zue und ain schrey̆b taf(e)l.
+          <lb/>It(em) in den zway̆en stell(e)n in iegklichem ain fuetertruhen.
+          <lb/>It(em) V alt spies pey̆ dem tor, mer ain hals eis(e)n mit der ket(e)n, mer ain armbrust.
+          <lb/>It(em) ain eysn puchsen ist nit eingefast, mer XII spanpet pŏs und guet.
+          <lb/>It(em) dÿ ket(e)n zu dem prun und der zigk(e)l dar zue.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330219-2"/>
+          <milestone unit="folio" n="1v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

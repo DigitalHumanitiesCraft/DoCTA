@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11329279">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Schloss Schlossberg bei Seefeld</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 127.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 127.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11329279</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1470">1470</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11329279-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/LWENGKIHCJRXGSZXQHTIAQFT/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329279-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/XDFVNJLMZDATRGZIQPDFJBDK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329279-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/LVUVDJDGHTZQSGVQDIPVBORF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11329279-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/LWIFIGMWCVAEKKIWWRGNTRSR/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11329279-1"/>
+          <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11329279-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>It(em) in dem undtern staingaden
+          <lb/>1/2 läg(e)l pfeil.
+          <lb/>It(em) ain fueter kăstel im undt(er)n staing[---].
+          <lb/>It(em) in meins h(er)ren stuben vier scht[---]
+          <lb/>tisch, der viert in d(er) ander(e)n stubn.
+          <lb/>It(e)m in dem ergkar gen d(er) Schãrnitz
+          <lb/>ain tȃrispũchß(en).
+          <lb/>It(em) in dem arckãr gen Seveld wertz
+          <lb/>fúnff clotz(e)n puchsen.
+          <lb/>It(em) mer daselbs III hagk(e)n püchsen
+          <lb/>und ain claine pũchsen.
+          <lb/>It(em) ain metz(e)n puxenpulver.
+          <lb/>It(em) in d(er) kuchen ain alte speistruhen
+          <lb/>und ain speis käst(e)l.
+          <lb/>It(em) in dem hinter kraut keller ain
+          <lb/>mȯrser.
+          <lb/>It(em) alle pettstat new und alt
+          <lb/>nach ausfart des Clam(m)ers
+          <lb/>sind alle der Burckhartin von
+          <lb/>Hausen, hat sÿ im gschloß
+          <lb/>gelassen wer ir das bezalt.
+          <lb/>It(em) ain eÿsne häl ob dem herd
+          <lb/>ist auch der Purckhartin vo(n)
+          <lb/>Hausen.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11329279-3"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11329279-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Inventari was Pangracz(e)n
+          <lb/>Hanen auf Slosperg
+          <lb/>ingeantwurt ist.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

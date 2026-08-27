@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11330060">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Naudersberg, bisheriger Pfleger Conrad Lammer</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 152.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 152.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11330060</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1478-09-26">1478.09.26</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11330060-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/RNKXVVAYHERWIOAQIIHQELHG/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/KNPGVNZWNAGMDBMMIXWCRMTB/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/ALEAFYSAMLKTCTLJWNPKTSRZ/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/BWXZIGZQZGTCANVZSPSGBOXF/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/IXSCYZYCPYLHUUBNHYTWEOJX/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-6" n="6">
+      <graphic url="https://files.transkribus.eu/iiif/2/RHTBYFWHEQFJTCIMGKFDCSAY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-7" n="7">
+      <graphic url="https://files.transkribus.eu/iiif/2/CTYEDYMSQNIMWNYVEMTRNTJL/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11330060-8" n="8">
+      <graphic url="https://files.transkribus.eu/iiif/2/GWFXSFGAWLQTHIRAAGLLAUHA/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11330060-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Nauders.
+          <lb/>Nota.
+          <lb/>Nach wevelh meins genedigen h(e)rrn etc.
+          <lb/>ist mir Josephen Überrener durch
+          <lb/>Margren Conraden Clammers
+          <lb/>hausfrawen in dem gesloss zů
+          <lb/>Naudrsperg in geantvirtt ungevaer¬
+          <lb/>lich alle varende hab, die par¬
+          <lb/>schafft das vich und anndrs
+          <lb/>und in sanderhait was mein gnädiger
+          <lb/>herr und sein gnaden geslos daselben
+          <lb/>czugehort, wie dann das hiernach
+          <lb/>begriffen und in gegenwurtigk
+          <lb/>der hienach geschriben erbaren
+          <lb/>leut aufgeschriben ist mit namen
+          <lb/>Lienhartt Hindrkirich, And(r)e Czitt
+          <lb/>richtter zů Phuns, Waltaß Mitter¬
+          <lb/>hoffer, Hans Conrad, Jeorug von
+          <lb/>Bästlingen, Rutt Wastian. Hailänd
+          <lb/>und wescheen am nachsten
+          <lb/>sambstig vor Sandt Michael tag anno
+          <lb/>septuagesimo octavo.
+          <lb/>Item inn anefang und czum erstn
+          <lb/>In dem haws
+          <lb/>oben undrm tach.
+          <lb/>Drew knecht pett.
+          <lb/>Dreÿ pöllster.
+          <lb/>Drew̃ par leilach.
+          <lb/>Sechs rauch degken.
+          <lb/>Czwen strosegkh.
+          <lb/>Vier allt sail an stegrauff.
+          <lb/>Ain frawen sattel.
+          <lb/>Ain sattel deck.
+          <lb/>Ain allten czom.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11330060-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>In der grossen kamr
+          <lb/>vor der stuben.
+          <lb/>Drew pett.
+          <lb/>Czwen pölster.
+          <lb/>Drew kuss.
+          <lb/>Draÿ ploss degken.
+          <lb/>Czwo rauch degken.
+          <lb/>Harnasch daselbm.
+          <lb/>Czwen kuris.
+          <lb/>Acht ploss eisen hüt.
+          <lb/>Czwen verdagkt huett.
+          <lb/>Ain gantzen arm zeug.
+          <lb/>Mer ain arm czeug.
+          <lb/>Ain halb(en) arm zeug.
+          <lb/>Ain kragen.
+          <lb/>Czwaÿ meüsl.
+          <lb/>Czwaÿ vardre rüstmeüssl.
+          <lb/>Fünf krebs.
+          <lb/>Vier par hentschŭch.
+          <lb/>Aber vier par alt hentschŭch.
+          <lb/>Czwo arm schinen.
+          <lb/>Vier alt armrör.
+          <lb/>Mer vier kragen.
+          <lb/>Fünff pantzr die drew stechli,
+          <lb/>ains halbs stechlÿ, ains eisen.
+          <lb/>Ain krapp mit ain(em) span
+          <lb/>gurtl.
+          <lb/>Czwen eisen kölben.
+          <lb/>Siben armbrust.
+          <lb/>Dreÿ winden.
+          <lb/>Dreÿ lör kocher.
+          <lb/>Dreÿ handpüchssn.
+          <lb/>Vier schwertt.
+          <lb/>Drew lange messer.
+          <lb/>Ain waidmesser.
+          <lb/>Ain par sporn.
+          <lb/>Ain puchssen pulver täschen.
+          <lb/>Czwo armbrusthulfft.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11330060-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Dreÿ spies, ain helmpart.
+          <lb/>Ain swartz filtzhuetl.
+          <lb/>Ain wenig eisendratt.
+          <lb/>Sennbid garn XX unn scheiben.
+          <lb/>In der kamer
+          <lb/>neben der stuben.
+          <lb/>Czwai pett.
+          <lb/>Czwen pöllster.
+          <lb/>Cwai par lüblach.
+          <lb/>Vier rauch decken.
+          <lb/>Zwo leinin degken.
+          <lb/>Cwen strosegk.
+          <lb/>Im ergker
+          <lb/>gegem dorff.
+          <lb/>Ain pett, ain bolster.
+          <lb/>Ain par liblach.
+          <lb/>Czwo rauch degken und ain
+          <lb/>strosach.
+          <lb/>In dem ergker
+          <lb/>nebn pei.
+          <lb/>Czehen rosspiss, ain alts geraitt
+          <lb/>und drew hawbtgestüedl.
+          <lb/>Drei puschen gembsseiler.
+          <lb/>Siben gesmidet stab eisens.
+          <lb/>Sibn par hiershoren.
+          <lb/>Ain segsail.
+          <lb/>In dem ergker
+          <lb/>aufm tor.
+          <lb/>Ain pëtt, ain polster.
+          <lb/>Ain par liblach.
+          <lb/>Czwo rauch degken.
+          <lb/>Ain strosagk.
+          <lb/>Und etlevil gemssailer.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11330060-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>In der stuben
+          <lb/>oben auff.
+          <lb/>Zwai vässl essich.
+          <lb/>Ain essich krüeg.
+          <lb/>Ain kuphrgieskösel.
+          <lb/>Ain kuphir giespegkh.
+          <lb/>Czwai lidrin banck küss.
+          <lb/>Ain prettspil.
+          <lb/>Ain allte eisen kandlir.
+          <lb/>Trÿ schribtisch und czwin
+          <lb/>sin ver bitschoffen.
+          <lb/>In dem wein keller.
+          <lb/>Ain vas weissr wein von new̃n
+          <lb/>ürn ist gewenet.
+          <lb/>Ain vas von vier ur(e)n rotter
+          <lb/>wein ist gewenet.
+          <lb/>Ain pontz von andr halb(en) ur(e)n
+          <lb/>tromẏnner ist vol.
+          <lb/>Ain pantz essichs.
+          <lb/>Dreÿ schöt gesotten smaltz in
+          <lb/>aine(m) grossen kübl.
+          <lb/>Kes und ziger,
+          <lb/>smaltz und smer.
+          <lb/>Ziger XIII knollen.
+          <lb/>Kes klain und groß XXXII,
+          <lb/>dar under sind VII albkas,
+          <lb/>die anndern vom lamges
+          <lb/>und gais kes.
+          <lb/>Aber acht herbst kes.
+          <lb/>Unslit X schöt, drei smerlaib.
+          <lb/>Ain hafen mit öl nit vol.
+          <lb/>Ain pusch unslit kertz.
+          <lb/>Ain murment.
+          <lb/>Item im milich keller.
+          <lb/>XX VIII srotzen.
+          <lb/>Zwen kubl vol smaltz und
+          <lb/>ainer mit drei schotten.
+          <lb/>Aber ungesotten smaltz
+          <lb/>VIII schöt.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11330060-5"/>
+          <milestone unit="folio" n="3r"/>
+          <lb/>Item speisgadenn.
+          <lb/>Ain vas röggmel, davon ge¬
+          <lb/>pachen drei ofen brott.
+          <lb/>Zwen sweinpachen.
+          <lb/>Vier lang stricken.
+          <lb/>Ain holtz strigken.
+          <lb/>Zwen knollen saltz und sust
+          <lb/>pei VI mut saltz.
+          <lb/>Drei melpeültel und ain palig.
+          <lb/>In der kuchen.
+          <lb/>Erin häfen X klain und groß.
+          <lb/>Kessel klain und groß VIII.
+          <lb/>Ein moerser mit ain(em) stössel.
+          <lb/>Klain und grosß phanen X.
+          <lb/>Fünf trelen.
+          <lb/>Czinschussl klain und grosß
+          <lb/>XIIII und drei senifschüssel.
+          <lb/>Funff czwimessig kanndel,
+          <lb/>vier mass kannd und ain
+          <lb/>seittlen.
+          <lb/>Hultzin schussl XXI.
+          <lb/>XIII pranntraiten, ain hele,
+          <lb/>zwen röst, zwen spis.
+          <lb/>Item zẘ mistgablen, drei
+          <lb/>hawen und IIII schauflen.
+          <lb/>I pigkel.
+          <lb/>Vich.
+          <lb/>Acht küee.
+          <lb/>Ain kalbel.
+          <lb/>Ain stier.
+          <lb/>Zehn capon.
+          <lb/>Hen(e)n XXVII.
+          <lb/>Klaine henlin V.
+          <lb/>Drew swein.
+        </ab>
+        <ab>
+          <pb n="6" facs="#surface-11330060-6"/>
+          <milestone unit="folio" n="3v"/>
+          <lb/>Wagen schier.
+          <lb/>Zwen wagen, I wang mit II
+          <lb/>silschitter, ain kar(en) mit ain(em)
+          <lb/>bösen gestu̇edl, III reder, ains
+          <lb/>on ain bit[..]en, ain wages
+          <lb/>on ain pflůg.
+          <lb/>Item czwefl
+          <lb/>Item czwelff rinder, ochs(en) und
+          <lb/>stier, sind Hanns Klamers
+          <lb/>gewesen.
+          <lb/>Item barschafft in krewcern
+          <lb/>czwainzig [..]rk[.].
+          <lb/>Meines gnädigen herren czewg
+          <lb/>von erst in dem [.]ur[.].
+          <lb/>Item oben auf inn turen.
+          <lb/>Haggen puchssen XXI.
+          <lb/>Tarrespuchssen II.
+          <lb/>Hand puchssen XXIIII.
+          <lb/>Gros taichen XXXVI.
+          <lb/>Klaine taichlin VIIII.
+          <lb/>Item acht vässl sind czů geslagen.
+          <lb/>Zẘ lagel pheil.
+          <lb/>Funff samsellter.
+          <lb/>Sechs kegl.
+          <lb/>Etwe vil kugel und lageisen.
+        </ab>
+        <ab>
+          <pb n="7" facs="#surface-11330060-7"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>Item unden im turen.
+          <lb/>Acht wassel salitters sind
+          <lb/>nit czu geslagen.
+          <lb/>Item XII lagel und vassl sind
+          <lb/>czu geslagen.
+          <lb/>Item ain hauffen hawspheil
+          <lb/>ligt ledig auf den laben.
+          <lb/>Item hams oben undren tach
+          <lb/>ain gross sail.
+          <lb/>Czwo eisen schidpuchsen.
+          <lb/>Ain grosse puchsen ligt
+          <lb/>wnden bei der phister.
+        </ab>
+        <ab>
+          <pb n="8" facs="#surface-11330060-8"/>
+          <milestone unit="folio" n="4v"/>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

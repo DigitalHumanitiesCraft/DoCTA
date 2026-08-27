@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328999">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Tratzberg (neuer Inhaber Hothsprandt Sanazeller)</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 072.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 072.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328999</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1480-01-15">1480.01.15</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328999-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/WHJIFLSEBTUNTYNKRPTRDMCR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328999-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/ZFHKQXMGBGFMCYMVSUXTIQNR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328999-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/WKZAIDAYSDECPULHWXMKNMQY/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328999-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/YMDTVWEUPXGDZEHMKYQQBVZS/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328999-5" n="5">
+      <graphic url="https://files.transkribus.eu/iiif/2/TDGZGEYFWSFUZRGUCAQIGKXD/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328999-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Inventarÿ zedel was Antoni
+          <lb/>vom Ross Hochprandten Sana¬
+          <lb/>zeller zŭ Tratzperg in
+          <lb/>meins gnedigen herren sloss
+          <lb/>eingeantwŭrt und der be¬
+          <lb/>nant Sanazeller von im
+          <lb/>empfangen hat in gegen¬
+          <lb/>wŭrtikait herrn Burckhardten
+          <lb/>von Knŏringen ritter, Tristan
+          <lb/>Rainer, Hannsen Kauffman,
+          <lb/>Linharten Frey̆er, Ludwigen
+          <lb/>Hawgen und Hannsen
+          <lb/>Kellerts all vier zu Swatz
+          <lb/>gesessen. Beschehen am
+          <lb/>sambstag vor Sand Antoni
+          <lb/>tag anno Domini etc. LXXXo
+          <lb/>Item am ersten zehen arm¬
+          <lb/>brost.
+          <lb/>Item ain alter krapp.
+          <lb/>Item zwo tarraspŭchsen.
+          <lb/>Item dreÿ hacken pŭchsen.
+          <lb/>Item zwelf handpŭchsen.
+          <lb/>Item anderhalb lagel mit
+          <lb/>pfeil.
+          <lb/>Item ain halbe lagel mit
+          <lb/>pichner.
+          <lb/>Item acht kugel zŭ den
+          <lb/>tarraspŭchsen.
+          <lb/>Item LXXXV kugel zŭ den
+          <lb/>hacken pŭchsen.
+          <lb/>Item ain hundert kugel
+          <lb/>zŭ den handpŭchsen.
+          <lb/>Item ain alt spanpett.
+          <lb/>Zŭ urkŭnd hab ich obgenanter
+          <lb/>Sanazeller mein pettschafft
+          <lb/>in dise ausgeschniten zedel
+          <lb/>fŭrgedruckt.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328999-2"/>
+          <milestone unit="folio" n="1v"/>
+          <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328999-3"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Trazperg
+          <lb/>Sanazeller 1480
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328999-4"/>
+          <milestone unit="folio" n="4r"/>
+          <lb/>Inventarÿ zedel was Antoni
+          <lb/>vom Ross Hochprandten Sana¬
+          <lb/>zeller zŭ Tratzperg in
+          <lb/>meins gnedigen herren sloss
+          <lb/>eingeantwŭrt und der be¬
+          <lb/>nant Sanazeller von im
+          <lb/>empfangen hat in gegen¬
+          <lb/>wŭrtikait herrn Burckhardten
+          <lb/>von Knŏringen, ritter Tristan
+          <lb/>Rainer, Hannsen Kauffman,
+          <lb/>Linharten Freÿer, Ludwigen
+          <lb/>Hawgen und Hannsen
+          <lb/>Kellerts, all vier zu Swatz
+          <lb/>gesessen, beschehen am
+          <lb/>sambstag vor Sand Antoni
+          <lb/>tag anno Domini etc. LXXXo.
+          <lb/>Item am ersten zehen arm¬
+          <lb/>brost.
+          <lb/>Item ain alter krapp.
+          <lb/>Item zwo tarraspŭchsen.
+          <lb/>Item dreÿ hacken pŭchsen.
+          <lb/>Item zwelf handpŭchsen.
+          <lb/>Item anderhalb lagel mit
+          <lb/>pfeil.
+          <lb/>Item ain halbe lagel mit
+          <lb/>pichner.
+          <lb/>Item acht kugel zŭ den
+          <lb/>tarraspŭchsen.
+          <lb/>Item LXXXV kugel zŭ den
+          <lb/>hacken pŭchsen.
+          <lb/>Item ain hundert kugel
+          <lb/>zŭ den handpŭchsen.
+          <lb/>Item ain alt spanpett.
+          <lb/>Zŭ urkŭnd hab ich obgenanter
+          <lb/>Sanazeller mein pettschafft
+          <lb/>in dise ausgeschniten zedel
+          <lb/>fŭrgedruckt.
+        </ab>
+        <ab>
+          <pb n="5" facs="#surface-11328999-5"/>
+          <milestone unit="folio" n="4v"/>
+          <lb/>Inventarÿ zedel was Antoni
+          <lb/>vom Ross Hochprandten Sana¬
+          <lb/>zeller zŭ Tratzperg in
+          <lb/>meins gnedigen herren sloss
+          <lb/>eingeantwŭrt und der be¬
+          <lb/>nant Sanazeller von im
+          <lb/>empfangen hat in gegen¬
+          <lb/>wŭrtikait herrn Burckhardten
+          <lb/>von Knŏringen, ritter Tristan
+          <lb/>Rainer, Hannsen Kauffman,
+          <lb/>Linharten Freÿer, Ludwigen
+          <lb/>Hawgen und Hannsen
+          <lb/>Kellerts, all vier zu Swatz
+          <lb/>gesessen, beschehen an
+          <lb/>sambstag vor Sand Antoni
+          <lb/>tag anno Domini etc. LXXXo.
+          <lb/>Item am ersten zehen arm¬
+          <lb/>brost.
+          <lb/>Item ain alter krapp.
+          <lb/>Item zwo tarraspŭchsen.
+          <lb/>Item dreÿ hacken pŭchsen.
+          <lb/>Item zwelf handpŭchsen.
+          <lb/>Item anderhalb lagel mit
+          <lb/>pfeil.
+          <lb/>Item ain halbe lagel mit
+          <lb/>pichner.
+          <lb/>Item acht kugel zŭ den
+          <lb/>tarraspŭchsen.
+          <lb/>Item LXXXV kugel zŭ den
+          <lb/>hacken pŭchsen.
+          <lb/>Item ain hundert kugel
+          <lb/>zŭ den handpŭchsen.
+          <lb/>Item ain alt spanpett.
+          <lb/>Zŭ urkŭnd hab ich obgenanter
+          <lb/>Sanazeller mein pettschafft
+          <lb/>in dise ausgeschniten zedel
+          <lb/>fŭrgedruckt.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

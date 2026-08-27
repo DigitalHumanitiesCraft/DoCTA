@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-11328722">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventare des Schlosses Fragenstein bei Zirl</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 125.1</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-27">2026-08-27</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 125.1</idno>
+            <altIdentifier type="transkribus">
+              <idno>11328722</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1477-11-24">1477.11.24</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Burgeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-11328722-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/BHBRFXYRGPQZCMZFERAJBGHK/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328722-2" n="2">
+      <graphic url="https://files.transkribus.eu/iiif/2/EIEENIQKITGIRFADKZKXRHSI/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328722-3" n="3">
+      <graphic url="https://files.transkribus.eu/iiif/2/NAFNBTBQEPJMLRHARXSRFTJR/full/max/0/default.jpg"/>
+    </surface>
+    <surface xml:id="surface-11328722-4" n="4">
+      <graphic url="https://files.transkribus.eu/iiif/2/LPHFFOPFTHWHICDLQDHTUQGG/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <ab>
+          <pb n="1" facs="#surface-11328722-1"/>
+          <milestone unit="folio" n="1r"/>
+          <lb/>Vermerkt meins gnĕdigen
+          <lb/>herrn haußplunder oder
+          <lb/>massarey zŭ Fragenstain.
+          <lb/>Zů erst in der klainĕn
+          <lb/>stuben ainen schreibtisch.
+          <lb/>Item ainen schlȇchtn tisch.
+          <lb/>Item mer IIII tisch.
+          <lb/>Item handtbuchsen IIII.
+          <lb/>Item hakenpŭchsen gros
+          <lb/>und klain XXVII.
+          <lb/>Item vier michel karrn
+          <lb/>püchsen und ain klains
+          <lb/>stain pũchsell
+          <lb/>und ain grossy puchsen.
+          <lb/>Item zwaÿ vassell mit
+          <lb/>pulfer.
+          <lb/>Item zway vãssel mit
+          <lb/>pfeil.
+          <lb/>Item zwo pulfer taschen.
+          <lb/>Item zway alte armbrost.
+          <lb/>Item pleyplȃttn V.
+          <lb/>Item im gwelb ain grossen
+          <lb/>gwand casten.
+          <lb/>Daselbs im gwelb ain
+          <lb/>pettstatt mit aine(m) hÿmmell
+          <lb/>und sunst aine on ain
+          <lb/>hymell.
+        </ab>
+        <ab>
+          <pb n="2" facs="#surface-11328722-2"/>
+          <milestone unit="folio" n="1v"/>
+          <lb/>Item in meins herrn camer
+          <lb/>ain pettschtat mit aine(m)
+          <lb/>hÿmell.
+          <lb/>Item in der selben camer
+          <lb/>zwo pettstat schlecht.
+          <lb/>Item in der mũncz pettstatt
+          <lb/>dreÿ schlecht.
+          <lb/>Item im milch kemerln
+          <lb/>ain schlecht pettstatt.
+          <lb/>Item zwo pettschatt in
+          <lb/>zwain ãrkgern.
+          <lb/>Item in dem aussern turn
+          <lb/>ain tisch und ain
+          <lb/>pettschatt mit ainem
+          <lb/>hỹmell und sunst ain
+          <lb/>schlechte.
+          <lb/>Item ain grossen kessell
+          <lb/>in der padstuben.
+          <lb/>Item in der kuchen ain hel.
+          <lb/>Item dreỹ korn cästen
+          <lb/>und ain fůttercasten.
+          <lb/>Item im tor kemerly ain
+          <lb/>schlechte petschatt.
+          <lb/>Wer.
+          <lb/>Item ain tristlich.
+          <lb/>Item ain alte hellpartten.
+          <lb/>Item ain flaischstokh.
+          <lb/>Ain kugelmodl zü
+          <lb/>pleỹkugelen.
+        </ab>
+        <ab>
+          <pb n="3" facs="#surface-11328722-3"/>
+          <milestone unit="folio" n="2r"/>
+          <lb/>Beẏ der inventtuari zedl
+          <lb/>sind gwesen als der Sig¬
+          <lb/>mund ingenom(en) hat die
+          <lb/>erbern Peter Schee(r), Baltasar
+          <lb/>Fischer, Waltasar Ritter.
+          <lb/>Datum in vigiliai K Katarine
+          <lb/>anno etc. LXXVIIten.
+        </ab>
+        <ab>
+          <pb n="4" facs="#surface-11328722-4"/>
+          <milestone unit="folio" n="2v"/>
+          <lb/>Inventari als Fragenstain
+          <lb/>dem Gothart Lanngen ÿnn geantwurt ist.
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>
