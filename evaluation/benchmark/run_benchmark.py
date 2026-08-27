@@ -4,7 +4,7 @@
 # ///
 """HTR prompt benchmark runner: fixed page set, versioned prompt iterations.
 
-Ports the API/image/normalization core from ../transcription-test/transcribe_test.py
+Ports the API/image/normalization core from ../../experiments/transcription-test/transcribe_test.py
 and fixes its three known defects: split runs only on real double-page spreads,
 consistency is measured positionwise (not set-Jaccard), and every record carries
 prompt provenance (iteration id + SHA-256 of the exact prompt text).

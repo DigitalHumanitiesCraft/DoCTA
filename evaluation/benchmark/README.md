@@ -14,15 +14,15 @@ Kleines, versioniertes Benchmark für die VLM-Transkription des DoCTA-Bestands (
    - Ausbeute und Präzision der uncertain-Marker
    - Zeilenausfall gegen GT bzw. zwischen Wiederholungen
    - arithmetische Konsistenz der Beträge als Ausschlussfilter (nicht als Korrektheitsnachweis; das Modell glättet Bilanzen)
-6. **Herkunft der Iterationen**: it01 ist der Testlauf vom 2026-08-26 (`../transcription-test/`, Ergebnisse bleiben dort erhalten); it02 synthetisiert die drei Analyseberichte desselben Tages (GT-Fehleranalyse, Raitbuch-Divergenz-Adjudikation, Bestandssichtung); it03 ist nach der Mini-GT-Adjudikation mit der Projektleitung geplant (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich).
+6. **Herkunft der Iterationen**: it01 ist der Testlauf vom 2026-08-26 (`../../experiments/transcription-test/`, Ergebnisse bleiben dort erhalten); it02 synthetisiert die drei Analyseberichte desselben Tages (GT-Fehleranalyse, Raitbuch-Divergenz-Adjudikation, Bestandssichtung); it03 ist nach der Mini-GT-Adjudikation mit der Projektleitung geplant (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich).
 
 ## Stand (2026-08-27)
 
 - pages.json: 18 Seiten (8 Raitbuch-Phänomenseiten, 9 DONE-GT-Inventarseiten, 1 dichte Inventarseite) + 5 Reserve
-- it01: eingefroren; Ursprungslauf in `../transcription-test/results/`
+- it01: eingefroren; Ursprungslauf in `../../experiments/transcription-test/results/`
 - it02: Volllauf abgeschlossen; zwei Läufe der dichten Inventarseite `inv_11348659_p1` bleiben offen, die API liefert dort wiederholt keinen Kandidaten (blockReason OTHER), dokumentiert in `errors.json`
 - Runner: `run_benchmark.py` (Download-Race und Kandidaten-Fehlerbehandlung behoben); `summary.json` trägt jetzt IIIF-URL, Quelle, Referenzzeilen und die Run-Dateinamen je Iteration
-- Viewer: `viewer.html` in diesem Ordner, Bild-Text-Synopse über alle Benchmark-Seiten mit Iterations-Tabs, Wiederholungs-Auswahl, Referenz-Vergleich und Metrik-Tabelle; Start mit `python -m http.server 8742` aus dem Repo-Root, dann `http://127.0.0.1:8742/experiments/benchmark/viewer.html`
+- Viewer: `viewer.html` in diesem Ordner, Bild-Text-Synopse über alle Benchmark-Seiten mit Iterations-Tabs, Wiederholungs-Auswahl, Referenz-Vergleich und Metrik-Tabelle; Start mit `python -m http.server 8742` aus dem Repo-Root, dann `http://127.0.0.1:8742/evaluation/benchmark/viewer.html`
 
 ## Wiedereinstieg
 

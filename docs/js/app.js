@@ -71,7 +71,7 @@ function initFooter(activeId) {
     <span class="footer-sep">·</span>
     <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener" class="footer-brand">${GITHUB_ICON} GitHub</a>
     <span class="footer-sep">·</span>
-    <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>${about}
+    <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>${about}
   </p>`;
 }
 
