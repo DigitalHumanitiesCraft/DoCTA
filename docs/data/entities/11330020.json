@@ -1,0 +1,1293 @@
+{
+ "docId": 11330020,
+ "title": "Heinfels_TLA Inventare A 201.1_1440",
+ "provenance": {
+  "source": "llm",
+  "model": "gemini-3.7-flash",
+  "prompt": "entities_it01",
+  "prompt_hash": "01e61e025161",
+  "date": "2026-08-27"
+ },
+ "entities": [
+  {
+   "id": "pl1",
+   "text": "Hewnfels",
+   "normalized": "Heinfels",
+   "type": "place",
+   "pageNr": 1,
+   "lineId": "r2l2",
+   "role": ""
+  },
+  {
+   "id": "p1",
+   "text": "H(einrich) von Görtz",
+   "normalized": "Heinrich von Görz",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r2l3",
+   "role": "Graf von Görz"
+  },
+  {
+   "id": "p2",
+   "text": "Peteren Plangkhen",
+   "normalized": "Peter Plangger",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r2l4",
+   "role": "Dechant zu Innichen"
+  },
+  {
+   "id": "pl2",
+   "text": "Innchingen",
+   "normalized": "Innichen",
+   "type": "place",
+   "pageNr": 1,
+   "lineId": "r2l5",
+   "role": ""
+  },
+  {
+   "id": "p3",
+   "text": "Chunratt Goltstain",
+   "normalized": "Konrad Goldstein",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r2l5",
+   "role": ""
+  },
+  {
+   "id": "p4",
+   "text": "Georien Hew̃ssen",
+   "normalized": "Georg Heuss",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r2l6",
+   "role": ""
+  },
+  {
+   "id": "o1",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l1",
+   "role": "Textilien"
+  },
+  {
+   "id": "o2",
+   "text": "dekhpëtt",
+   "normalized": "Deckbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o3",
+   "text": "hauptpölster",
+   "normalized": "Hauptpolster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o4",
+   "text": "hauptkuss",
+   "normalized": "Hauptkissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o5",
+   "text": "pangkpolster",
+   "normalized": "Bankpolster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o6",
+   "text": "pangkh",
+   "normalized": "Bankkissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o7",
+   "text": "chüss",
+   "normalized": "Bankkissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l4",
+   "role": "Textilien"
+  },
+  {
+   "id": "o8",
+   "text": "lembrein degkh",
+   "normalized": "Lammfelldecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l4",
+   "role": "Textilien"
+  },
+  {
+   "id": "o9",
+   "text": "schäffen dëkch",
+   "normalized": "Schafwolldecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o10",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l5",
+   "role": "Möbel"
+  },
+  {
+   "id": "o11",
+   "text": "kariolen",
+   "normalized": "Kariolbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l5",
+   "role": "Möbel"
+  },
+  {
+   "id": "o12",
+   "text": "leylach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o13",
+   "text": "truchen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l7",
+   "role": "Möbel"
+  },
+  {
+   "id": "o14",
+   "text": "degklach",
+   "normalized": "Decklaken",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l7",
+   "role": "Textilien"
+  },
+  {
+   "id": "o15",
+   "text": "padphaitel",
+   "normalized": "Badpfeit",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o16",
+   "text": "rökel",
+   "normalized": "Röcklein",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o17",
+   "text": "tischtücher",
+   "normalized": "Tischtuch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o18",
+   "text": "handttücher",
+   "normalized": "Handtuch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o19",
+   "text": "arm(bro)st",
+   "normalized": "Armbrust",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l10",
+   "role": "Waffen"
+  },
+  {
+   "id": "o20",
+   "text": "vadertail",
+   "normalized": "Vorderteil",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l10",
+   "role": "Waffen"
+  },
+  {
+   "id": "o21",
+   "text": "handtschuch",
+   "normalized": "Handschuh",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l11",
+   "role": "Waffen"
+  },
+  {
+   "id": "o22",
+   "text": "eysenhut",
+   "normalized": "Eisenhut",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l11",
+   "role": "Waffen"
+  },
+  {
+   "id": "o23",
+   "text": "tärthschel",
+   "normalized": "Tartsche",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l11",
+   "role": "Waffen"
+  },
+  {
+   "id": "o24",
+   "text": "gambssayl",
+   "normalized": "Gamsseil",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l12",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o25",
+   "text": "kŏcher",
+   "normalized": "Köcher",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l12",
+   "role": "Waffen"
+  },
+  {
+   "id": "o26",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o27",
+   "text": "hauptpölster",
+   "normalized": "Hauptpolster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o28",
+   "text": "hauptküss",
+   "normalized": "Hauptkissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o29",
+   "text": "truchen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l15",
+   "role": "Möbel"
+  },
+  {
+   "id": "o30",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l15",
+   "role": "Möbel"
+  },
+  {
+   "id": "o31",
+   "text": "kariolen",
+   "normalized": "Kariolbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l16",
+   "role": "Möbel"
+  },
+  {
+   "id": "o32",
+   "text": "tisch",
+   "normalized": "Tisch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l16",
+   "role": "Möbel"
+  },
+  {
+   "id": "o33",
+   "text": "pëtt",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l17",
+   "role": "Textilien"
+  },
+  {
+   "id": "o34",
+   "text": "leylach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l18",
+   "role": "Textilien"
+  },
+  {
+   "id": "o35",
+   "text": "rauhe dekch",
+   "normalized": "raue Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l18",
+   "role": "Textilien"
+  },
+  {
+   "id": "o36",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l18",
+   "role": "Textilien"
+  },
+  {
+   "id": "o37",
+   "text": "chŭss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l19",
+   "role": "Textilien"
+  },
+  {
+   "id": "o38",
+   "text": "dekchpett",
+   "normalized": "Deckbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l19",
+   "role": "Textilien"
+  },
+  {
+   "id": "o39",
+   "text": "dëgkel",
+   "normalized": "Deckel",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l20",
+   "role": "Textilien"
+  },
+  {
+   "id": "o40",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l20",
+   "role": "Möbel"
+  },
+  {
+   "id": "o41",
+   "text": "tisch",
+   "normalized": "Tisch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l20",
+   "role": "Möbel"
+  },
+  {
+   "id": "o42",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l22",
+   "role": "Textilien"
+  },
+  {
+   "id": "o43",
+   "text": "ziechen",
+   "normalized": "Zieche",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l23",
+   "role": "Textilien"
+  },
+  {
+   "id": "o44",
+   "text": "hauptpolster",
+   "normalized": "Hauptpolster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l23",
+   "role": "Textilien"
+  },
+  {
+   "id": "o45",
+   "text": "hauptkuss",
+   "normalized": "Hauptkissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l24",
+   "role": "Textilien"
+  },
+  {
+   "id": "o46",
+   "text": "schaffein dekch",
+   "normalized": "Schafwolldecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l25",
+   "role": "Textilien"
+  },
+  {
+   "id": "o47",
+   "text": "lembrein dekch",
+   "normalized": "Lammfelldecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l26",
+   "role": "Textilien"
+  },
+  {
+   "id": "o48",
+   "text": "wolfs dekch",
+   "normalized": "Wolfsfelldecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l26",
+   "role": "Textilien"
+  },
+  {
+   "id": "o49",
+   "text": "gestükelts degklachen",
+   "normalized": "gestückeltes Decklaken",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l27",
+   "role": "Textilien"
+  },
+  {
+   "id": "o50",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l27",
+   "role": "Möbel"
+  },
+  {
+   "id": "o51",
+   "text": "harnasch",
+   "normalized": "Harnisch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l28",
+   "role": "Waffen"
+  },
+  {
+   "id": "o52",
+   "text": "pëtt",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l30",
+   "role": "Textilien"
+  },
+  {
+   "id": "o53",
+   "text": "hauptpolster",
+   "normalized": "Hauptpolster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l30",
+   "role": "Textilien"
+  },
+  {
+   "id": "o54",
+   "text": "pëttel",
+   "normalized": "Bettchen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l31",
+   "role": "Textilien"
+  },
+  {
+   "id": "o55",
+   "text": "chüss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l31",
+   "role": "Textilien"
+  },
+  {
+   "id": "o56",
+   "text": "rauch dëkchen",
+   "normalized": "raue Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l32",
+   "role": "Textilien"
+  },
+  {
+   "id": "o57",
+   "text": "dekhlach",
+   "normalized": "Decklaken",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l33",
+   "role": "Textilien"
+  },
+  {
+   "id": "o58",
+   "text": "spanpëtt",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l33",
+   "role": "Möbel"
+  },
+  {
+   "id": "o59",
+   "text": "pëttel",
+   "normalized": "Bettchen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l34",
+   "role": "Textilien"
+  },
+  {
+   "id": "o60",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l34",
+   "role": "Textilien"
+  },
+  {
+   "id": "o61",
+   "text": "küssn",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l35",
+   "role": "Textilien"
+  },
+  {
+   "id": "o62",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l35",
+   "role": "Textilien"
+  },
+  {
+   "id": "o63",
+   "text": "dëkh",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l36",
+   "role": "Textilien"
+  },
+  {
+   "id": "o64",
+   "text": "lodeins dekhel",
+   "normalized": "Lodendekel",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l36",
+   "role": "Textilien"
+  },
+  {
+   "id": "o65",
+   "text": "lidereiner",
+   "normalized": "lederner Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l36",
+   "role": "Textilien"
+  },
+  {
+   "id": "o66",
+   "text": "polster",
+   "normalized": "lederner Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l37",
+   "role": "Textilien"
+  },
+  {
+   "id": "o67",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l37",
+   "role": "Textilien"
+  },
+  {
+   "id": "o68",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l37",
+   "role": "Möbel"
+  },
+  {
+   "id": "o69",
+   "text": "pëtt",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l1",
+   "role": "Textilien"
+  },
+  {
+   "id": "o70",
+   "text": "rauch dekh",
+   "normalized": "raue Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o71",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o72",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o73",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l3",
+   "role": "Möbel"
+  },
+  {
+   "id": "o74",
+   "text": "pëtt",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o75",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o76",
+   "text": "chüss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o77",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o78",
+   "text": "schaffein dekh",
+   "normalized": "Schafwolldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o79",
+   "text": "gambseine dekh",
+   "normalized": "Gamsfelldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l7",
+   "role": "Textilien"
+  },
+  {
+   "id": "o80",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l7",
+   "role": "Möbel"
+  },
+  {
+   "id": "o81",
+   "text": "truchen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l7",
+   "role": "Möbel"
+  },
+  {
+   "id": "o82",
+   "text": "pheylen",
+   "normalized": "Pfeil",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l8",
+   "role": "Waffen"
+  },
+  {
+   "id": "o83",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o84",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l10",
+   "role": "Textilien"
+  },
+  {
+   "id": "o85",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l10",
+   "role": "Textilien"
+  },
+  {
+   "id": "o86",
+   "text": "chüss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l10",
+   "role": "Textilien"
+  },
+  {
+   "id": "o87",
+   "text": "schäffein dekh",
+   "normalized": "Schafwolldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l11",
+   "role": "Textilien"
+  },
+  {
+   "id": "o88",
+   "text": "gambss dekch",
+   "normalized": "Gamsfelldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l11",
+   "role": "Textilien"
+  },
+  {
+   "id": "o89",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l11",
+   "role": "Möbel"
+  },
+  {
+   "id": "o90",
+   "text": "pëtt",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l12",
+   "role": "Textilien"
+  },
+  {
+   "id": "o91",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o92",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o93",
+   "text": "chũß",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o94",
+   "text": "schaffein",
+   "normalized": "Schafwolldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o95",
+   "text": "dekch",
+   "normalized": "Schafwolldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o96",
+   "text": "lembrein gut dekch",
+   "normalized": "Lammfelldecke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o97",
+   "text": "pëttel",
+   "normalized": "Bettchen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l15",
+   "role": "Textilien"
+  },
+  {
+   "id": "o98",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l15",
+   "role": "Textilien"
+  },
+  {
+   "id": "o99",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l16",
+   "role": "Textilien"
+  },
+  {
+   "id": "o100",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l16",
+   "role": "Textilien"
+  },
+  {
+   "id": "o101",
+   "text": "ziech",
+   "normalized": "Zieche",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l17",
+   "role": "Textilien"
+  },
+  {
+   "id": "o102",
+   "text": "rauche dekch",
+   "normalized": "raue Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l17",
+   "role": "Textilien"
+  },
+  {
+   "id": "o103",
+   "text": "degkhel",
+   "normalized": "Deckel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l18",
+   "role": "Textilien"
+  },
+  {
+   "id": "o104",
+   "text": "kessel",
+   "normalized": "Kessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l20",
+   "role": "Küche"
+  },
+  {
+   "id": "o105",
+   "text": "kessel",
+   "normalized": "Kessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l22",
+   "role": "Küche"
+  },
+  {
+   "id": "o106",
+   "text": "hafein",
+   "normalized": "Hafen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l23",
+   "role": "Küche"
+  },
+  {
+   "id": "o107",
+   "text": "laüetschen",
+   "normalized": "Lauetsche",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l24",
+   "role": "Küche"
+  },
+  {
+   "id": "o108",
+   "text": "mörser",
+   "normalized": "Mörser",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l25",
+   "role": "Küche"
+  },
+  {
+   "id": "o109",
+   "text": "stössel",
+   "normalized": "Stößel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l25",
+   "role": "Küche"
+  },
+  {
+   "id": "o110",
+   "text": "zinenschüssel",
+   "normalized": "Zinnschüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l26",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o111",
+   "text": "zinphan",
+   "normalized": "Zinnpfanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l26",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o112",
+   "text": "messene pekh",
+   "normalized": "Messingbecken",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l27",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o113",
+   "text": "messene",
+   "normalized": "Messinggießkanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l27",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o114",
+   "text": "giess kandel",
+   "normalized": "Messinggießkanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l28",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o115",
+   "text": "kupfferene pekh",
+   "normalized": "Kupferbecken",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l28",
+   "role": "Küche"
+  },
+  {
+   "id": "o116",
+   "text": "pott schussel",
+   "normalized": "Schüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l29",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o117",
+   "text": "hulczene täler",
+   "normalized": "Holzteller",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l30",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o118",
+   "text": "tisch",
+   "normalized": "Tisch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l31",
+   "role": "Möbel"
+  },
+  {
+   "id": "o119",
+   "text": "loden",
+   "normalized": "Loden",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l32",
+   "role": "Textilien"
+  },
+  {
+   "id": "o120",
+   "text": "truhen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l34",
+   "role": "Möbel"
+  },
+  {
+   "id": "o121",
+   "text": "grändt",
+   "normalized": "Grand",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l34",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o122",
+   "text": "prantrött",
+   "normalized": "Brandroste",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l35",
+   "role": "Küche"
+  },
+  {
+   "id": "o123",
+   "text": "phann",
+   "normalized": "Pfanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l35",
+   "role": "Küche"
+  },
+  {
+   "id": "o124",
+   "text": "pheffer phan",
+   "normalized": "Pfefferpfanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l36",
+   "role": "Küche"
+  },
+  {
+   "id": "o125",
+   "text": "hälen",
+   "normalized": "Hahl",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l36",
+   "role": "Küche"
+  },
+  {
+   "id": "o126",
+   "text": "phankn¬",
+   "normalized": "Pfannenknecht",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l36",
+   "role": "Küche"
+  },
+  {
+   "id": "o127",
+   "text": "echt",
+   "normalized": "Pfannenknecht",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l37",
+   "role": "Küche"
+  },
+  {
+   "id": "o128",
+   "text": "pratspiss",
+   "normalized": "Bratspieß",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l37",
+   "role": "Küche"
+  },
+  {
+   "id": "o129",
+   "text": "hainczt",
+   "normalized": "Feuerbock",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l37",
+   "role": "Küche"
+  },
+  {
+   "id": "o130",
+   "text": "eysenzang",
+   "normalized": "Eisenzange",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l38",
+   "role": "Küche"
+  },
+  {
+   "id": "o131",
+   "text": "ribeysen",
+   "normalized": "Reibeisen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l38",
+   "role": "Küche"
+  },
+  {
+   "id": "o132",
+   "text": "milch",
+   "normalized": "Milchschüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l38",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o133",
+   "text": "schüssel",
+   "normalized": "Milchschüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l39",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o134",
+   "text": "stötzel",
+   "normalized": "Stößel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l39",
+   "role": "Küche"
+  },
+  {
+   "id": "o135",
+   "text": "wasser gatzen",
+   "normalized": "Wasserkelle",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l39",
+   "role": "Küche"
+  }
+ ],
+ "rejected": [
+  {
+   "lineId": "p2_r2l31",
+   "text": "swein pachen",
+   "normalized": "Schweinebacke",
+   "type": "object",
+   "role": "Küche",
+   "reason": "not_verbatim",
+   "lineText": "tisch im fleisch gadem und vier swein"
+  }
+ ]
+}

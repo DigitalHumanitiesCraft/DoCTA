@@ -1,0 +1,1157 @@
+{
+ "docId": 11330019,
+ "title": "Kronburg_TLA Inventare A 144.1_1478",
+ "provenance": {
+  "source": "llm",
+  "model": "gemini-3.7-flash",
+  "prompt": "entities_it01",
+  "prompt_hash": "01e61e025161",
+  "date": "2026-08-27"
+ },
+ "entities": [
+  {
+   "id": "pl1",
+   "text": "Kronburg",
+   "normalized": "Kronburg",
+   "type": "place",
+   "pageNr": 1,
+   "lineId": "r2l1",
+   "role": ""
+  },
+  {
+   "id": "pl2",
+   "text": "Kronburg",
+   "normalized": "Kronburg",
+   "type": "place",
+   "pageNr": 1,
+   "lineId": "r3l3",
+   "role": ""
+  },
+  {
+   "id": "p1",
+   "text": "Hannsen Clamer",
+   "normalized": "Hans Clamer",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r3l3",
+   "role": "Pfleger"
+  },
+  {
+   "id": "p2",
+   "text": "Joseph Überriner",
+   "normalized": "Joseph Überreiner",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r3l5",
+   "role": ""
+  },
+  {
+   "id": "t1",
+   "text": "freÿtag nach sant Michelstag",
+   "normalized": "Freitag nach St. Michael",
+   "type": "time",
+   "pageNr": 1,
+   "lineId": "r3l8",
+   "role": ""
+  },
+  {
+   "id": "t2",
+   "text": "anno LXXVIII",
+   "normalized": "1478",
+   "type": "time",
+   "pageNr": 1,
+   "lineId": "r3l9",
+   "role": ""
+  },
+  {
+   "id": "o1",
+   "text": "kürüss",
+   "normalized": "Kürass",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l1",
+   "role": "Waffen"
+  },
+  {
+   "id": "o2",
+   "text": "eÿsenhüt",
+   "normalized": "Eisenhut",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l2",
+   "role": "Waffen"
+  },
+  {
+   "id": "o3",
+   "text": "hentschůch",
+   "normalized": "Handschuhe",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l2",
+   "role": "Waffen"
+  },
+  {
+   "id": "o4",
+   "text": "arm zewg",
+   "normalized": "Armzeug",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l3",
+   "role": "Waffen"
+  },
+  {
+   "id": "o5",
+   "text": "wndere",
+   "normalized": "Unterer Beinzeuggurt",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l3",
+   "role": "Waffen"
+  },
+  {
+   "id": "o6",
+   "text": "bain gwand",
+   "normalized": "Beingewand",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l4",
+   "role": "Waffen"
+  },
+  {
+   "id": "o7",
+   "text": "bants",
+   "normalized": "Panzer",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l4",
+   "role": "Waffen"
+  },
+  {
+   "id": "o8",
+   "text": "kragel",
+   "normalized": "Kragen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l4",
+   "role": "Waffen"
+  },
+  {
+   "id": "o9",
+   "text": "armzewg",
+   "normalized": "Armzeug",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l5",
+   "role": "Waffen"
+  },
+  {
+   "id": "o10",
+   "text": "schweinspies",
+   "normalized": "Schweinespieß",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l5",
+   "role": "Waffen"
+  },
+  {
+   "id": "o11",
+   "text": "schribtisch",
+   "normalized": "Schreibtisch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l8",
+   "role": "Möbel"
+  },
+  {
+   "id": "o12",
+   "text": "schrein",
+   "normalized": "Schrein",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l8",
+   "role": "Möbel"
+  },
+  {
+   "id": "o13",
+   "text": "smid zeug",
+   "normalized": "Schmiedzeug",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l9",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o14",
+   "text": "zangen",
+   "normalized": "Zange",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l9",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o15",
+   "text": "hämer",
+   "normalized": "Hammer",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l10",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o16",
+   "text": "veÿhel",
+   "normalized": "Feile",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l10",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o17",
+   "text": "schmidsteck",
+   "normalized": "Schmiedstock",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l10",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o18",
+   "text": "schlosser kloben",
+   "normalized": "Schlosserkloben",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l11",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o19",
+   "text": "bettstatt",
+   "normalized": "Bettstatt",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l12",
+   "role": "Möbel"
+  },
+  {
+   "id": "o20",
+   "text": "bett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o21",
+   "text": "bolster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o22",
+   "text": "kuss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o23",
+   "text": "banck",
+   "normalized": "Bankpolster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o24",
+   "text": "bolster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o25",
+   "text": "rauch deck",
+   "normalized": "Rauchdecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o26",
+   "text": "messin beck",
+   "normalized": "Messingbecken",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l15",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o27",
+   "text": "messin hantvass",
+   "normalized": "Messinghandfass",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l16",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o28",
+   "text": "taller būchß",
+   "normalized": "Tellerbüchse",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l16",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o29",
+   "text": "plandl",
+   "normalized": "Pfännlein",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l17",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o30",
+   "text": "bettruchen",
+   "normalized": "Bettruhe",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l18",
+   "role": "Möbel"
+  },
+  {
+   "id": "o31",
+   "text": "blatt schlos",
+   "normalized": "Blattschloss",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l19",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o32",
+   "text": "malen",
+   "normalized": "Vorhängeschloss",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l19",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o33",
+   "text": "sloss",
+   "normalized": "Schloss",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l20",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o34",
+   "text": "trucken",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l21",
+   "role": "Möbel"
+  },
+  {
+   "id": "o35",
+   "text": "schaffraitt",
+   "normalized": "Schaffreite",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l22",
+   "role": "Möbel"
+  },
+  {
+   "id": "o36",
+   "text": "pfannen",
+   "normalized": "Pfanne",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l22",
+   "role": "Küche"
+  },
+  {
+   "id": "o37",
+   "text": "erin hafen",
+   "normalized": "Eherner Hafen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l23",
+   "role": "Küche"
+  },
+  {
+   "id": "o38",
+   "text": "fischkessel",
+   "normalized": "Fischkessel",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l23",
+   "role": "Küche"
+  },
+  {
+   "id": "o39",
+   "text": "armbrost",
+   "normalized": "Armbrust",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l24",
+   "role": "Waffen"
+  },
+  {
+   "id": "o40",
+   "text": "winden",
+   "normalized": "Winde",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l24",
+   "role": "Waffen"
+  },
+  {
+   "id": "o41",
+   "text": "sen",
+   "normalized": "Sehne",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l25",
+   "role": "Waffen"
+  },
+  {
+   "id": "o42",
+   "text": "truch",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l27",
+   "role": "Möbel"
+  },
+  {
+   "id": "o43",
+   "text": "betstatt",
+   "normalized": "Bettstatt",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l27",
+   "role": "Möbel"
+  },
+  {
+   "id": "o44",
+   "text": "bett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l28",
+   "role": "Textilien"
+  },
+  {
+   "id": "o45",
+   "text": "bolster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l28",
+   "role": "Textilien"
+  },
+  {
+   "id": "o46",
+   "text": "leylach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l28",
+   "role": "Textilien"
+  },
+  {
+   "id": "o47",
+   "text": "rauch deck",
+   "normalized": "Rauchdecke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l29",
+   "role": "Textilien"
+  },
+  {
+   "id": "o48",
+   "text": "golter",
+   "normalized": "Kolter",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r4l29",
+   "role": "Textilien"
+  },
+  {
+   "id": "o49",
+   "text": "raissättel",
+   "normalized": "Reitsattel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l2",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o50",
+   "text": "bettstatt",
+   "normalized": "Bettstatt",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l4",
+   "role": "Möbel"
+  },
+  {
+   "id": "o51",
+   "text": "bett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o52",
+   "text": "deckbett",
+   "normalized": "Deckbett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o53",
+   "text": "bolster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o54",
+   "text": "kuss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o55",
+   "text": "sargen",
+   "normalized": "Sarge",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o56",
+   "text": "golter",
+   "normalized": "Kolter",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l7",
+   "role": "Textilien"
+  },
+  {
+   "id": "o57",
+   "text": "gebaist wolf",
+   "normalized": "Gespannter Wolfbalg",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l9",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o58",
+   "text": "hüt",
+   "normalized": "Haut",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l10",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o59",
+   "text": "fuschs belg",
+   "normalized": "Fuchsbalg",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l10",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o60",
+   "text": "stricken",
+   "normalized": "Strick",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l11",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o61",
+   "text": "zini schisseln",
+   "normalized": "Zinnschüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l13",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o62",
+   "text": "zini plan",
+   "normalized": "Zinnplatte",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l14",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o63",
+   "text": "kessel",
+   "normalized": "Kessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l15",
+   "role": "Küche"
+  },
+  {
+   "id": "o64",
+   "text": "truchen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l17",
+   "role": "Möbel"
+  },
+  {
+   "id": "o65",
+   "text": "truchen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l20",
+   "role": "Möbel"
+  },
+  {
+   "id": "o66",
+   "text": "schreinel",
+   "normalized": "Schreinlein",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l21",
+   "role": "Möbel"
+  },
+  {
+   "id": "o67",
+   "text": "kandelier",
+   "normalized": "Kandelaber",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l21",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o68",
+   "text": "tangelgeschiere",
+   "normalized": "Dengelgeschirr",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l22",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o69",
+   "text": "scherren",
+   "normalized": "Schere",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l22",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o70",
+   "text": "gartt gabel",
+   "normalized": "Gartengabel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l23",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o71",
+   "text": "bratspis",
+   "normalized": "Bratspieß",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l23",
+   "role": "Küche"
+  },
+  {
+   "id": "o72",
+   "text": "sicheln",
+   "normalized": "Sichel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l24",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o73",
+   "text": "rosseyssen",
+   "normalized": "Rosseisen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l24",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o74",
+   "text": "ochsen",
+   "normalized": "Ochseneisen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l24",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o75",
+   "text": "esel eyssen",
+   "normalized": "Eseleisen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l25",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o76",
+   "text": "unslit",
+   "normalized": "Unschlitt",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l26",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o77",
+   "text": "hültzi",
+   "normalized": "Holzschüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l26",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o78",
+   "text": "schisslen",
+   "normalized": "Schüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l27",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o79",
+   "text": "taller",
+   "normalized": "Teller",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l28",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o80",
+   "text": "schweinflaisch",
+   "normalized": "Schweinefleisch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l29",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o81",
+   "text": "gedigen flaisch",
+   "normalized": "Gediegenes Fleisch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l30",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o82",
+   "text": "hächelen",
+   "normalized": "Hechel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l31",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o83",
+   "text": "rüch",
+   "normalized": "Rüch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l31",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o84",
+   "text": "hawen",
+   "normalized": "Haue",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l33",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o85",
+   "text": "furschleg",
+   "normalized": "Vorschlaghammer",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l33",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "o86",
+   "text": "gabe-",
+   "normalized": "Gabel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l33",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o87",
+   "text": "heÿgablen",
+   "normalized": "Heugabel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l34",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o88",
+   "text": "kessel",
+   "normalized": "Kessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l34",
+   "role": "Küche"
+  },
+  {
+   "id": "o89",
+   "text": "czini flaschen",
+   "normalized": "Zinnflasche",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l35",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o90",
+   "text": "buttrich",
+   "normalized": "Buttrich",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l36",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o91",
+   "text": "vass vein",
+   "normalized": "Fass Wein",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l38",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o92",
+   "text": "kanndelen",
+   "normalized": "Kandel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l1",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o93",
+   "text": "küe",
+   "normalized": "Kuh",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l4",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o94",
+   "text": "kalbelen",
+   "normalized": "Kälbchen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l4",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o95",
+   "text": "stierel",
+   "normalized": "Stierlein",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l5",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o96",
+   "text": "schwein",
+   "normalized": "Schwein",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l5",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o97",
+   "text": "verndzogene kalb",
+   "normalized": "Verndzogenes Kalb",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l6",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o98",
+   "text": "wagen ross",
+   "normalized": "Wagenross",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l7",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o99",
+   "text": "bett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o100",
+   "text": "bolster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o101",
+   "text": "eysenstecken",
+   "normalized": "Eisenstecken",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l9",
+   "role": "Wirtschaftsgerät"
+  },
+  {
+   "id": "p3",
+   "text": "Jo",
+   "normalized": "Joseph Überreiner",
+   "type": "person",
+   "pageNr": 2,
+   "lineId": "r4l10",
+   "role": ""
+  },
+  {
+   "id": "p4",
+   "text": "seph",
+   "normalized": "Joseph Überreiner",
+   "type": "person",
+   "pageNr": 2,
+   "lineId": "r4l11",
+   "role": ""
+  },
+  {
+   "id": "pl3",
+   "text": "Kornburg",
+   "normalized": "Kronburg",
+   "type": "place",
+   "pageNr": 2,
+   "lineId": "r4l11",
+   "role": ""
+  },
+  {
+   "id": "o102",
+   "text": "hagkenpüchsen",
+   "normalized": "Hakenbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l14",
+   "role": "Waffen"
+  },
+  {
+   "id": "o103",
+   "text": "hagkenpüchsen",
+   "normalized": "Hakenbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l15",
+   "role": "Waffen"
+  },
+  {
+   "id": "o104",
+   "text": "hagkenpuchsen",
+   "normalized": "Hakenbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l16",
+   "role": "Waffen"
+  },
+  {
+   "id": "o105",
+   "text": "erin hafen",
+   "normalized": "Eherner Hafen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l17",
+   "role": "Küche"
+  },
+  {
+   "id": "o106",
+   "text": "handpuchsen",
+   "normalized": "Handbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l18",
+   "role": "Waffen"
+  },
+  {
+   "id": "o107",
+   "text": "legelen",
+   "normalized": "Legel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l20",
+   "role": "Waffen"
+  },
+  {
+   "id": "o108",
+   "text": "pfeilen",
+   "normalized": "Pfeil",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l20",
+   "role": "Waffen"
+  },
+  {
+   "id": "o109",
+   "text": "tarschel",
+   "normalized": "Tartsche",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l21",
+   "role": "Waffen"
+  },
+  {
+   "id": "o110",
+   "text": "morser puchsen",
+   "normalized": "Mörserbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l22",
+   "role": "Waffen"
+  },
+  {
+   "id": "o111",
+   "text": "morser buchsen",
+   "normalized": "Mörserbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l23",
+   "role": "Waffen"
+  },
+  {
+   "id": "o112",
+   "text": "armprost",
+   "normalized": "Armbrust",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l25",
+   "role": "Waffen"
+  },
+  {
+   "id": "o113",
+   "text": "senen",
+   "normalized": "Sehne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l26",
+   "role": "Waffen"
+  },
+  {
+   "id": "o114",
+   "text": "vässlÿ",
+   "normalized": "Fässlein",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l27",
+   "role": "Waffen"
+  },
+  {
+   "id": "o115",
+   "text": "pulver",
+   "normalized": "Schießpulver",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l27",
+   "role": "Waffen"
+  },
+  {
+   "id": "pl4",
+   "text": "Kronburg",
+   "normalized": "Kronburg",
+   "type": "place",
+   "pageNr": 3,
+   "lineId": "r1l2",
+   "role": ""
+  },
+  {
+   "id": "pl5",
+   "text": "Cronburg",
+   "normalized": "Kronburg",
+   "type": "place",
+   "pageNr": 3,
+   "lineId": "r1l3",
+   "role": ""
+  },
+  {
+   "id": "t3",
+   "text": "1478",
+   "normalized": "1478",
+   "type": "time",
+   "pageNr": 3,
+   "lineId": "r1l4",
+   "role": ""
+  }
+ ],
+ "rejected": []
+}

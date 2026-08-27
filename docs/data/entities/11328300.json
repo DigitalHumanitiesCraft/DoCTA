@@ -1,0 +1,1589 @@
+{
+ "docId": 11328300,
+ "title": "Thaur_TLA Inventare A 49.1_1471",
+ "provenance": {
+  "source": "llm",
+  "model": "gemini-3.7-flash",
+  "prompt": "entities_it01",
+  "prompt_hash": "01e61e025161",
+  "date": "2026-08-27"
+ },
+ "entities": [
+  {
+   "id": "o1",
+   "text": "hawsrats",
+   "normalized": "Hausrat",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r2l1",
+   "role": "Hausrat"
+  },
+  {
+   "id": "p1",
+   "text": "Hannsen Ramung",
+   "normalized": "Hans Ramung",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r2l2",
+   "role": ""
+  },
+  {
+   "id": "p2",
+   "text": "Burkharten von Knoringen",
+   "normalized": "Burkhart von Knöringen",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r2l3",
+   "role": "Burggraf"
+  },
+  {
+   "id": "pl1",
+   "text": "sloss Thawr",
+   "normalized": "Schloss Thaur",
+   "type": "place",
+   "pageNr": 1,
+   "lineId": "r2l4",
+   "role": ""
+  },
+  {
+   "id": "t1",
+   "text": "Sand Michels tag",
+   "normalized": "Sankt Michaelstag",
+   "type": "time",
+   "pageNr": 1,
+   "lineId": "r2l6",
+   "role": ""
+  },
+  {
+   "id": "t2",
+   "text": "anno Domini etc. LXXImo",
+   "normalized": "1471",
+   "type": "time",
+   "pageNr": 1,
+   "lineId": "r2l7",
+   "role": ""
+  },
+  {
+   "id": "o2",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l2",
+   "role": "Möbel"
+  },
+  {
+   "id": "o3",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o4",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l4",
+   "role": "Textilien"
+  },
+  {
+   "id": "o5",
+   "text": "polster strosekh",
+   "normalized": "Polsterstrohsäcke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o6",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l6",
+   "role": "Möbel"
+  },
+  {
+   "id": "o7",
+   "text": "strosakh",
+   "normalized": "Strohsack",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o8",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o9",
+   "text": "rawhe dekhen",
+   "normalized": "Rauhe Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l10",
+   "role": "Textilien"
+  },
+  {
+   "id": "o10",
+   "text": "pott",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l11",
+   "role": "Möbel"
+  },
+  {
+   "id": "o11",
+   "text": "strosekh",
+   "normalized": "Strohsäcke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l12",
+   "role": "Textilien"
+  },
+  {
+   "id": "o12",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o13",
+   "text": "kuss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o14",
+   "text": "rawhe dekhen",
+   "normalized": "Rauhe Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l15",
+   "role": "Textilien"
+  },
+  {
+   "id": "o15",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l16",
+   "role": "Textilien"
+  },
+  {
+   "id": "o16",
+   "text": "pett mit parchant uberzogen",
+   "normalized": "Bett mit Barchent überzogen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l17",
+   "role": "Möbel"
+  },
+  {
+   "id": "p3",
+   "text": "Velbergers",
+   "normalized": "Velberger",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "r3l18",
+   "role": ""
+  },
+  {
+   "id": "o17",
+   "text": "kuss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l19",
+   "role": "Textilien"
+  },
+  {
+   "id": "o18",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l20",
+   "role": "Textilien"
+  },
+  {
+   "id": "o19",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l21",
+   "role": "Textilien"
+  },
+  {
+   "id": "o20",
+   "text": "armbrost",
+   "normalized": "Armbrust",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l22",
+   "role": "Waffen"
+  },
+  {
+   "id": "o21",
+   "text": "weÿsse pett",
+   "normalized": "Weißes Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l24",
+   "role": "Möbel"
+  },
+  {
+   "id": "o22",
+   "text": "gestreimbte pett",
+   "normalized": "Gestreiftes Bett",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l25",
+   "role": "Möbel"
+  },
+  {
+   "id": "o23",
+   "text": "polster mit weissen ziechen",
+   "normalized": "Polster mit weißen Ziechen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l26",
+   "role": "Textilien"
+  },
+  {
+   "id": "o24",
+   "text": "kuss mit weyssen ziechen",
+   "normalized": "Kissen mit weißen Ziechen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l27",
+   "role": "Textilien"
+  },
+  {
+   "id": "o25",
+   "text": "gestreimbte polster",
+   "normalized": "Gestreifter Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l29",
+   "role": "Textilien"
+  },
+  {
+   "id": "o26",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l30",
+   "role": "Textilien"
+  },
+  {
+   "id": "o27",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l31",
+   "role": "Textilien"
+  },
+  {
+   "id": "o28",
+   "text": "gestreimbt kuss",
+   "normalized": "Gestreiftes Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l32",
+   "role": "Textilien"
+  },
+  {
+   "id": "o29",
+   "text": "pett mit weissem uberzogen",
+   "normalized": "Bett mit weißem Überzug",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l33",
+   "role": "Möbel"
+  },
+  {
+   "id": "o30",
+   "text": "gestreimbter polster",
+   "normalized": "Gestreifter Polster",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l35",
+   "role": "Textilien"
+  },
+  {
+   "id": "o31",
+   "text": "weiss kuss",
+   "normalized": "Weißes Kissen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "r3l36",
+   "role": "Textilien"
+  },
+  {
+   "id": "o32",
+   "text": "gestreimbts kũss",
+   "normalized": "Gestreiftes Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l1",
+   "role": "Textilien"
+  },
+  {
+   "id": "o33",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o34",
+   "text": "pott mit weissem uberzogen",
+   "normalized": "Bett mit weißem Überzug",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l3",
+   "role": "Möbel"
+  },
+  {
+   "id": "o35",
+   "text": "gestreimbt polster",
+   "normalized": "Gestreifter Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o36",
+   "text": "gestreimbt kũss",
+   "normalized": "Gestreiftes Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o37",
+   "text": "strosekh",
+   "normalized": "Strohsäcke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l7",
+   "role": "Textilien"
+  },
+  {
+   "id": "o38",
+   "text": "pett mit ainem gestreimbten ziechen",
+   "normalized": "Bett mit einem gestreiften Ziechen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l8",
+   "role": "Möbel"
+  },
+  {
+   "id": "o39",
+   "text": "gestreimbt polster",
+   "normalized": "Gestreifter Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o40",
+   "text": "weisse kuss",
+   "normalized": "Weißes Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l10",
+   "role": "Textilien"
+  },
+  {
+   "id": "o41",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l11",
+   "role": "Textilien"
+  },
+  {
+   "id": "o42",
+   "text": "rawhe dekhen",
+   "normalized": "Rauhe Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l12",
+   "role": "Textilien"
+  },
+  {
+   "id": "o43",
+   "text": "weis pett",
+   "normalized": "Weißes Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l13",
+   "role": "Möbel"
+  },
+  {
+   "id": "o44",
+   "text": "weissen polster",
+   "normalized": "Weißer Polster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l14",
+   "role": "Textilien"
+  },
+  {
+   "id": "o45",
+   "text": "gestreimbte kuss",
+   "normalized": "Gestreiftes Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l15",
+   "role": "Textilien"
+  },
+  {
+   "id": "o46",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l16",
+   "role": "Textilien"
+  },
+  {
+   "id": "o47",
+   "text": "rawhe dekhen",
+   "normalized": "Rauhe Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l17",
+   "role": "Textilien"
+  },
+  {
+   "id": "o48",
+   "text": "pratspise",
+   "normalized": "Bratspieß",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l18",
+   "role": "Küche"
+  },
+  {
+   "id": "o49",
+   "text": "rost",
+   "normalized": "Rost",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l19",
+   "role": "Küche"
+  },
+  {
+   "id": "o50",
+   "text": "drÿfuss",
+   "normalized": "Dreifuß",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l20",
+   "role": "Küche"
+  },
+  {
+   "id": "o51",
+   "text": "hantpuchsen",
+   "normalized": "Handbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l21",
+   "role": "Waffen"
+  },
+  {
+   "id": "o52",
+   "text": "hakgenpuchsen",
+   "normalized": "Hakenbüchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l23",
+   "role": "Waffen"
+  },
+  {
+   "id": "o53",
+   "text": "kũphren pũchsen",
+   "normalized": "Kupferne Büchse",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l24",
+   "role": "Waffen"
+  },
+  {
+   "id": "o54",
+   "text": "eÿsnnen und kuphren puchsen",
+   "normalized": "Eiserne und kupferne Büchsen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l25",
+   "role": "Waffen"
+  },
+  {
+   "id": "o55",
+   "text": "alter harnasch",
+   "normalized": "Alter Harnisch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r2l26",
+   "role": "Waffen"
+  },
+  {
+   "id": "o56",
+   "text": "õllkessel",
+   "normalized": "Ölkessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r3l1",
+   "role": "Küche"
+  },
+  {
+   "id": "pl2",
+   "text": "hoff",
+   "normalized": "Hof",
+   "type": "place",
+   "pageNr": 2,
+   "lineId": "r3l3",
+   "role": ""
+  },
+  {
+   "id": "o57",
+   "text": "kussziechen",
+   "normalized": "Kissenzieche",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r4l1",
+   "role": "Textilien"
+  },
+  {
+   "id": "o58",
+   "text": "hawsrat",
+   "normalized": "Hausrat",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r5l1",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o59",
+   "text": "segens",
+   "normalized": "Sense",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l1",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o60",
+   "text": "hakhen",
+   "normalized": "Haken",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l2",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o61",
+   "text": "eÿsnen wekg",
+   "normalized": "Eiserner Keil",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l3",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o62",
+   "text": "eÿsnen mistgabelen",
+   "normalized": "Eiserne Mistgabel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l4",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o63",
+   "text": "temgelgeschier",
+   "normalized": "Dengelgeschirr",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l5",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o64",
+   "text": "rakgawn",
+   "normalized": "Rakeisen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l6",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o65",
+   "text": "stromesser",
+   "normalized": "Strohmesser",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l7",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o66",
+   "text": "pachtrog",
+   "normalized": "Backtrog",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l8",
+   "role": "Küche"
+  },
+  {
+   "id": "o67",
+   "text": "wurchpret",
+   "normalized": "Wirkbrett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r6l9",
+   "role": "Küche"
+  },
+  {
+   "id": "o68",
+   "text": "spanpett",
+   "normalized": "Spannbett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l1",
+   "role": "Möbel"
+  },
+  {
+   "id": "o69",
+   "text": "sÿdeltruhen",
+   "normalized": "Sedeltruhe",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l2",
+   "role": "Möbel"
+  },
+  {
+   "id": "o70",
+   "text": "strosakh",
+   "normalized": "Strohsack",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o71",
+   "text": "stũel",
+   "normalized": "Stuhl",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l4",
+   "role": "Möbel"
+  },
+  {
+   "id": "o72",
+   "text": "melkasten",
+   "normalized": "Mehlkasten",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l5",
+   "role": "Möbel"
+  },
+  {
+   "id": "o73",
+   "text": "futerkasten",
+   "normalized": "Futterkasten",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l6",
+   "role": "Möbel"
+  },
+  {
+   "id": "o74",
+   "text": "padwannen",
+   "normalized": "Badewanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l7",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o75",
+   "text": "slittruhen",
+   "normalized": "Schlittruhe",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l8",
+   "role": "Möbel"
+  },
+  {
+   "id": "o76",
+   "text": "holzslÿten",
+   "normalized": "Holzschlitten",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l9",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o77",
+   "text": "lagel",
+   "normalized": "Lagel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l10",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o78",
+   "text": "fleÿsch peÿl",
+   "normalized": "Fleischbeil",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l11",
+   "role": "Küche"
+  },
+  {
+   "id": "o79",
+   "text": "speÿskasten",
+   "normalized": "Speisekasten",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l12",
+   "role": "Möbel"
+  },
+  {
+   "id": "o80",
+   "text": "krawtprenten",
+   "normalized": "Krautbrente",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l13",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o81",
+   "text": "kessel",
+   "normalized": "Kessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l14",
+   "role": "Küche"
+  },
+  {
+   "id": "o82",
+   "text": "phannen",
+   "normalized": "Pfanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l15",
+   "role": "Küche"
+  },
+  {
+   "id": "o83",
+   "text": "hulzen schusselen",
+   "normalized": "Hölzerne Schüssel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l16",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o84",
+   "text": "wiltpret vãssel",
+   "normalized": "Wildbretfässchen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l17",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o85",
+   "text": "futer wannen",
+   "normalized": "Futterwanne",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l18",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o86",
+   "text": "tẽllerkorb",
+   "normalized": "Tellerkorb",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l19",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o87",
+   "text": "komat",
+   "normalized": "Kummet",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l20",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "p4",
+   "text": "Kneringer",
+   "normalized": "Burkhart von Knöringen",
+   "type": "person",
+   "pageNr": 2,
+   "lineId": "r8l21",
+   "role": ""
+  },
+  {
+   "id": "o88",
+   "text": "zam",
+   "normalized": "Zaum",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l22",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "p5",
+   "text": "kneringer",
+   "normalized": "Burkhart von Knöringen",
+   "type": "person",
+   "pageNr": 2,
+   "lineId": "r8l22",
+   "role": ""
+  },
+  {
+   "id": "o89",
+   "text": "wagen",
+   "normalized": "Wagen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l23",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o90",
+   "text": "phlũg",
+   "normalized": "Pflug",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l24",
+   "role": "Landwirtschaft"
+  },
+  {
+   "id": "o91",
+   "text": "kessel",
+   "normalized": "Kessel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r8l25",
+   "role": "Küche"
+  },
+  {
+   "id": "pl3",
+   "text": "albon",
+   "normalized": "Alpe",
+   "type": "place",
+   "pageNr": 2,
+   "lineId": "r8l25",
+   "role": ""
+  },
+  {
+   "id": "p6",
+   "text": "Beatrix",
+   "normalized": "Beatrix",
+   "type": "person",
+   "pageNr": 2,
+   "lineId": "r9l2",
+   "role": ""
+  },
+  {
+   "id": "o92",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l1",
+   "role": "Möbel"
+  },
+  {
+   "id": "o93",
+   "text": "strosakh",
+   "normalized": "Strohsack",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o94",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l3",
+   "role": "Möbel"
+  },
+  {
+   "id": "o95",
+   "text": "strosakh",
+   "normalized": "Strohsack",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l4",
+   "role": "Textilien"
+  },
+  {
+   "id": "o96",
+   "text": "pettpõlster",
+   "normalized": "Bettpolster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o97",
+   "text": "lydren pankhpolster",
+   "normalized": "Lederner Bankpolster",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l6",
+   "role": "Möbel"
+  },
+  {
+   "id": "o98",
+   "text": "lydrein pankhkuss",
+   "normalized": "Ledernes Bankkissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l7",
+   "role": "Möbel"
+  },
+  {
+   "id": "o99",
+   "text": "kuss",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o100",
+   "text": "dekhen",
+   "normalized": "Decke",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o101",
+   "text": "beslagen loffel",
+   "normalized": "Beschlagener Löffel",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l10",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o102",
+   "text": "futral",
+   "normalized": "Futteral",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l11",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o103",
+   "text": "swãbischer zwilch",
+   "normalized": "Schwäbischer Zwilch",
+   "type": "object",
+   "pageNr": 2,
+   "lineId": "r10l12",
+   "role": "Textilien"
+  },
+  {
+   "id": "o104",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l1",
+   "role": "Möbel"
+  },
+  {
+   "id": "p7",
+   "text": "Velbergers",
+   "normalized": "Velberger",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r2l1",
+   "role": ""
+  },
+  {
+   "id": "o105",
+   "text": "dekh pett",
+   "normalized": "Deckbett",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o106",
+   "text": "dekhen mit sÿdn genant",
+   "normalized": "Decke mit Seide genäht",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o107",
+   "text": "sakh mit garen",
+   "normalized": "Sack mit Garn",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l4",
+   "role": "Textilien"
+  },
+  {
+   "id": "o108",
+   "text": "rawhe dekhen",
+   "normalized": "Rauhe Decke",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l5",
+   "role": "Textilien"
+  },
+  {
+   "id": "o109",
+   "text": "leÿlach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l6",
+   "role": "Textilien"
+  },
+  {
+   "id": "o110",
+   "text": "truhen",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l6",
+   "role": "Möbel"
+  },
+  {
+   "id": "o111",
+   "text": "padphaiten",
+   "normalized": "Badpfoit",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l7",
+   "role": "Textilien"
+  },
+  {
+   "id": "o112",
+   "text": "underphaiten",
+   "normalized": "Unterpfoit",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l8",
+   "role": "Textilien"
+  },
+  {
+   "id": "o113",
+   "text": "schũrliz",
+   "normalized": "Schurz",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l9",
+   "role": "Textilien"
+  },
+  {
+   "id": "o114",
+   "text": "kusstziechen",
+   "normalized": "Kissenzieche",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l10",
+   "role": "Textilien"
+  },
+  {
+   "id": "o115",
+   "text": "polstertziechen",
+   "normalized": "Polsterzieche",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l11",
+   "role": "Textilien"
+  },
+  {
+   "id": "o116",
+   "text": "tischtũcher",
+   "normalized": "Tischtuch",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l12",
+   "role": "Textilien"
+  },
+  {
+   "id": "o117",
+   "text": "hannttũcher",
+   "normalized": "Handtuch",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l13",
+   "role": "Textilien"
+  },
+  {
+   "id": "o118",
+   "text": "messen padpekh",
+   "normalized": "Messing-Badbecken",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l14",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o119",
+   "text": "zÿnen teller",
+   "normalized": "Zinnteller",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l15",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o120",
+   "text": "kandeln",
+   "normalized": "Kanne",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l16",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o121",
+   "text": "hangenden kandl",
+   "normalized": "Hängende Kanne",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l17",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o122",
+   "text": "plechflachen",
+   "normalized": "Blechflasche",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l18",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o123",
+   "text": "salzvassel",
+   "normalized": "Salzfass",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l19",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o124",
+   "text": "messen gieskãndl",
+   "normalized": "Messing-Gießkanne",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l20",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o125",
+   "text": "zinen schusselen",
+   "normalized": "Zinnschüssel",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l21",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o126",
+   "text": "hulczen tellerpuchsen",
+   "normalized": "Hölzerne Tellerbüchse",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l23",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o127",
+   "text": "telleren",
+   "normalized": "Teller",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l23",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o128",
+   "text": "tischtũcher",
+   "normalized": "Tischtuch",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l24",
+   "role": "Textilien"
+  },
+  {
+   "id": "o129",
+   "text": "hanttucher",
+   "normalized": "Handtuch",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l25",
+   "role": "Textilien"
+  },
+  {
+   "id": "o130",
+   "text": "trũhel",
+   "normalized": "Truhe",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l26",
+   "role": "Möbel"
+  },
+  {
+   "id": "o131",
+   "text": "brief",
+   "normalized": "Brief",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r2l26",
+   "role": "Hausrat"
+  },
+  {
+   "id": "p8",
+   "text": "Jörg Randorffer",
+   "normalized": "Jörg Randorfer",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l2",
+   "role": "hawskamrer"
+  },
+  {
+   "id": "p9",
+   "text": "Hanns",
+   "normalized": "Hans Weiser",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l3",
+   "role": "secretari"
+  },
+  {
+   "id": "p10",
+   "text": "Wÿser",
+   "normalized": "Hans Weiser",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l4",
+   "role": "secretari"
+  },
+  {
+   "id": "p11",
+   "text": "Jacob Haws",
+   "normalized": "Jakob Hausmann",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l4",
+   "role": "Bürger zu Hall"
+  },
+  {
+   "id": "p12",
+   "text": "Michel Awer",
+   "normalized": "Michel Auer",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l5",
+   "role": "Bürger zu Hall"
+  },
+  {
+   "id": "pl4",
+   "text": "Hall",
+   "normalized": "Hall in Tirol",
+   "type": "place",
+   "pageNr": 3,
+   "lineId": "r3l6",
+   "role": ""
+  },
+  {
+   "id": "p13",
+   "text": "Jorg Bubenhofer",
+   "normalized": "Jörg Bubenhofer",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l6",
+   "role": ""
+  },
+  {
+   "id": "p14",
+   "text": "Christopf Velberger",
+   "normalized": "Christoph Velberger",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r3l7",
+   "role": ""
+  },
+  {
+   "id": "p15",
+   "text": "Burkhart von Knŏringen",
+   "normalized": "Burkhart von Knöringen",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r4l1",
+   "role": "Burggraf"
+  },
+  {
+   "id": "o132",
+   "text": "hawsrat",
+   "normalized": "Hausrat",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r4l2",
+   "role": "Hausrat"
+  },
+  {
+   "id": "p16",
+   "text": "Martin Schintel",
+   "normalized": "Martin Schintel",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r4l3",
+   "role": ""
+  },
+  {
+   "id": "p17",
+   "text": "Hannsen von Elsp",
+   "normalized": "Hans von Elsb",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r4l4",
+   "role": ""
+  },
+  {
+   "id": "p18",
+   "text": "Wolfgangen Sumer",
+   "normalized": "Wolfgang Sumer",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r4l5",
+   "role": "kamerschraÿber"
+  },
+  {
+   "id": "t3",
+   "text": "mittwoch nach unnser",
+   "normalized": "Mittwoch nach Mariä Geburt",
+   "type": "time",
+   "pageNr": 3,
+   "lineId": "r4l8",
+   "role": ""
+  },
+  {
+   "id": "t4",
+   "text": "frawen tag nativitatis",
+   "normalized": "Mariä Geburt",
+   "type": "time",
+   "pageNr": 3,
+   "lineId": "r4l9",
+   "role": ""
+  },
+  {
+   "id": "t5",
+   "text": "anno etc.",
+   "normalized": "1472",
+   "type": "time",
+   "pageNr": 3,
+   "lineId": "r4l9",
+   "role": ""
+  },
+  {
+   "id": "t6",
+   "text": "LXX secundo",
+   "normalized": "1472",
+   "type": "time",
+   "pageNr": 3,
+   "lineId": "r4l10",
+   "role": ""
+  },
+  {
+   "id": "p19",
+   "text": "Velldenberger",
+   "normalized": "Velberger",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r5l1",
+   "role": ""
+  },
+  {
+   "id": "o133",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r5l2",
+   "role": "Möbel"
+  },
+  {
+   "id": "o134",
+   "text": "polster",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r5l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "p20",
+   "text": "Polinger",
+   "normalized": "Polinger",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r7l1",
+   "role": ""
+  },
+  {
+   "id": "o135",
+   "text": "pett",
+   "normalized": "Bett",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r7l2",
+   "role": "Möbel"
+  },
+  {
+   "id": "o136",
+   "text": "polsteren",
+   "normalized": "Polster",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r7l2",
+   "role": "Textilien"
+  },
+  {
+   "id": "o137",
+   "text": "kchũs",
+   "normalized": "Kissen",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r7l3",
+   "role": "Textilien"
+  },
+  {
+   "id": "o138",
+   "text": "leilach",
+   "normalized": "Leintuch",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r7l4",
+   "role": "Textilien"
+  },
+  {
+   "id": "p21",
+   "text": "Leupolt Spies",
+   "normalized": "Leupold Spies",
+   "type": "person",
+   "pageNr": 3,
+   "lineId": "r7l6",
+   "role": ""
+  },
+  {
+   "id": "o139",
+   "text": "olcrũeg",
+   "normalized": "Ölkrug",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r7l7",
+   "role": "Hausrat"
+  },
+  {
+   "id": "pl5",
+   "text": "hoff",
+   "normalized": "Hof",
+   "type": "place",
+   "pageNr": 3,
+   "lineId": "r7l8",
+   "role": ""
+  },
+  {
+   "id": "o140",
+   "text": "kraesel",
+   "normalized": "Kräusel",
+   "type": "object",
+   "pageNr": 3,
+   "lineId": "r7l9",
+   "role": "Küche"
+  },
+  {
+   "id": "pl6",
+   "text": "albem",
+   "normalized": "Alpe",
+   "type": "place",
+   "pageNr": 3,
+   "lineId": "r7l10",
+   "role": ""
+  },
+  {
+   "id": "pl7",
+   "text": "Thawr",
+   "normalized": "Thaur",
+   "type": "place",
+   "pageNr": 4,
+   "lineId": "r1l2",
+   "role": ""
+  },
+  {
+   "id": "t7",
+   "text": "1471",
+   "normalized": "1471",
+   "type": "time",
+   "pageNr": 4,
+   "lineId": "r1l3",
+   "role": ""
+  }
+ ],
+ "rejected": []
+}
