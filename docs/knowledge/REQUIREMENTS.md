@@ -1,95 +1,104 @@
-# REQUIREMENTS: Ziele, Constraints, Erfolgskriterien
+# REQUIREMENTS: Goals, Constraints, Success Criteria
 
-## Projektrahmen
+## Project frame
 
 | | |
 |---|---|
-| Projekt | DoCTA (Doing Court in the Tyrolean Alps) |
-| Projektleitung | Dr. Barbara Denicolò, Universität Salzburg |
-| DH-Komponente | Digital Humanities Craft OG (Christopher Pollin, Christian Steiner) |
-| Phasen | 1: Promptotyping → 2: Workflow → 3: Web-App → 4: Training |
-| Zeitrahmen | Geplante Wiedereinreichung bei der ÖAW (APART-GSK) |
+| Project | DoCTA (Doing Court in the Tyrolean Alps) |
+| Project lead | The project lead, University of Salzburg |
+| Digital humanities component | Digital Humanities Craft OG |
+| Phases | 1: Promptotyping, 2: workflow, 3: web application, 4: training |
+| Funding context | Planned resubmission of the research proposal |
 
-## Barbaras Anforderungen (Originalstimme)
+## What the work has to deliver
 
-**Zielgruppe:** "Grundsätzlich erstmal ich zur Beantwortung meiner Forschungsfragen. Weitere Zielgruppen stehen im Projekt nicht drinnen."
+The present goal is an agentic edition pipeline. The Transkribus facsimiles of the Tyrolean State Archives, covering account books (Raitbücher), inventories, copybooks and court ordinances, are turned into research data and a simple digital edition. Every stage is versioned and verifiable, machine output is marked as unrevised until a scholar has approved it, and each approved page is at once evaluation base and edition progress.
 
-**Design:** "Funktional bis irrelevant"
+This is a reframing of the earlier goal rather than a replacement of it. The prototype of February 2026 had to convince a reviewer that the methods work; the pipeline has to actually produce the data. The requirements of the project lead below are unchanged by that shift, and the ten points of review criticism remain the checklist the eventual resubmission has to satisfy.
 
-**Kernwunsch:** "sehen können wer mit welchen Objekten, wo was macht"
+## Requirements of the project lead
 
-**Features:**
-- Web-Applikation mit Netzwerk-, Zeit- und Raumvisualisierungen
-- Netzwerk aus Personen und Objekten
-- Facettierte Suche und Analysefunktionen
-- Verknüpfung mit Normdaten (GND, Wikidata)
+Recorded in her own words and rendered here in English.
 
-**Quellenprioritäten:**
-1. Raitbücher (8.561 Seiten, 26 Bände)
-2. Hofordnungen (inkl. Hs. 2466–2469: Hochzeitsdokumente 1484)
-3. Inventare
-4. Kopialbücher
+**Audience.** In the first instance herself, in order to answer her own research questions. The proposal names no further audience.
 
-**Wunschliste:**
-- Beratung semantisches Modell und Ontologie (CIDOC-CRM, ACE Guidelines)
-- Workflow-Pipeline: Quelle → HTR/TEI → Annotation → RDF/GraphDB → Visualisierung
-- **"Schulung von mir"** (Barbara will selbst lernen)
-- Prototyp-Bau
-- Annotation Guidelines (Praxeologie, Verbfokus)
-- Datenintegration (SiCProD, Inventaria, Wikidata, Getty AAT)
-- "Kann man irgendwie ein Glossar erstellen, einbinden, um die Genauigkeit zu verbessern?"
+**Design.** Functional to the point of being irrelevant.
 
-## Technische Constraints
+**Core wish.** To be able to see who does what with which objects and where.
 
-| Constraint | Begründung |
-|-----------|------------|
-| GitHub Pages (statisch) | Kein Backend, kein Server |
-| Vanilla JS/ES6 Module | Kein Framework, kein Build-Prozess, kein npm zur Laufzeit |
-| Vendored Dependencies | Externe Libs in `/lib/`, keine CDN-Abhängigkeit |
-| Öffentlich, kein Auth | Prototyp für Gutachter zugänglich |
+**Features.**
 
-## Gutachten-Antworten (10 Kritikpunkte → Prototyp)
+- A web application with network, time and space visualisations
+- A network of persons and objects
+- Faceted search and analytical functions
+- Links to authority data (GND, Wikidata)
 
-Ersteinreichung ÖAW APART-GSK: Ablehnung in vorliegender Fassung. Das ÖAW-Gutachten bezog sich primär auf den DH-Teil.
+**Source priorities.**
 
-### Die 10 Kritikpunkte (paraphrasiert)
+1. Account books (Raitbücher)
+2. Court ordinances, including Hs. 2466 to 2469, the wedding documents of 1484
+3. Inventories
+4. Copybooks
 
-| # | Kritik | Prototyp adressiert durch | Ebene |
-|---|--------|--------------------------|-------|
-| 1 | Computationelle Methoden als Standard, kein Innovationsnachweis | Zeigen, dass Standard-Methoden auf DIESEN Quellen funktionieren. Innovation = Anwendung auf frühneuhochdeutsche Quellen. | Code |
-| 2 | "Digital X" nicht originell genug, Relevanzfrage | Framing: DH-Methoden als Werkzeuge für Court Studies, nicht Feldgründung. Landing Page betont Forschungsfragen. | Text |
-| 3 | LLM-Ansätze nicht diskutiert | Pipeline-Demo zeigt LLM-Integration. coOCR/HTR als Referenz. Epistemische Asymmetrie als konzeptueller Rahmen. | Code |
-| 4 | Sprachliche Herausforderungen nicht adressiert | Quellen-Explorer zeigt Frühneuhochdeutsch mit Kurrentschrift, Abkürzungen, regionalen Varianten. | Code |
-| 5 | Historische Linguistik fehlt | Nicht im Prototyp adressierbar. Verweis auf Frühneuhochdeutsch-Forschung im Antragstext. | Text |
-| 6 | Quellen nicht ausreichend charakterisiert | Quellenübersicht mit 312 Einträgen, kategorisiert, filterbar, sortierbar. | Code |
-| 7 | Keine beispielhaften Quellenauszüge | Der Prototyp zeigt echte Inventarseiten mit Arbeitstranskription, Entitäten und Quelllink. Der Referenzstatus wird künftig explizit ausgewiesen. | Code |
-| 8 | Projektplan zu generisch | Funktionierender Prototyp IST der spezifische Plan. Pipeline-Demo zeigt jeden Schritt an konkretem Material. | Code |
-| 9 | Evaluation technischer Verfahren fehlt | Der HTR-Test liefert reale CER- und Divergenzdaten. `HTR-EVALUATION.md` definiert Referenzklassen, aufgabenspezifische Kennzahlen und fachliche Freigabe. Die Pipeline-Demo zeigt zusätzlich Prüfstatus und Extraktionsstatistik. | Code + Methode |
-| 10 | Keine Erfüllungskriterien für Hypothesen | Die sechs Dashboard-Zählungen belegen Datenverfügbarkeit. Erfüllungskriterien für historische Hypothesen müssen im Antrag pro Forschungsfrage als beobachtbare Evidenz und Widerlegungskriterium formuliert werden. | Text + Methode |
+**Wish list.**
 
-**Sieben Punkte sind im Prototyp unmittelbar durch Code adressiert. Punkt 9 ist durch den aktuellen HTR-Test methodisch begonnen. Punkte 2, 5 und 10 benötigen eine explizite Ausarbeitung im Antrag.**
+- Advice on the semantic model and ontology (CIDOC-CRM, ACE guidelines)
+- A workflow pipeline from source through HTR and TEI to annotation, RDF and visualisation
+- **Training for herself.** The project lead wants to learn the methods, not only receive their results.
+- A prototype
+- Annotation guidelines following a praxeological, verb-centred approach
+- Data integration with SiCProD, Inventaria, Wikidata and the Getty AAT
+- A glossary that could be built and integrated to improve recognition accuracy
 
-### Aktuelle Evaluationsgrenze
+The training request is a design constraint rather than a courtesy. A pipeline the project lead cannot operate or inspect herself fails the requirement even if its output is correct.
 
-| Gegenstand | Aktueller Stand |
-|------------|-----------------|
-| CER auf Inventaren | Für eine Seite mit Referenzkandidat gemessen. Der formale Ground-Truth-Status und die Konventionszuordnung sind offen. Der Wert dient der Entwicklung. |
-| CER/WER auf Raitbuch 2 | Vier Seiten wurden transkribiert. Eine akzeptierte Raitbuch-Referenz fehlt, daher sind nur Variantenstabilität, Strukturbeobachtung und fachliche Stichproben verfügbar. |
-| Abgeleitete Quoten (Relationsabdeckung, Quellen-Coverage, Netzwerk-Metriken) | Das Dashboard zeigt Rohzählungen. Quoten setzen einen definierten Nenner voraus (was gilt als vollständig abgedeckt?), der methodisch noch nicht festgelegt ist. |
+## Technical constraints
 
-Der vollständige Prüfvertrag steht in `HTR-EVALUATION.md`.
+| Constraint | Reason |
+|-----------|--------|
+| GitHub Pages, static | No backend, no server |
+| Vanilla JavaScript, ES6 modules | No framework, no build process, no npm at runtime |
+| Vendored dependencies | External libraries in `/lib/`, no CDN dependency |
+| Public, no authentication | The site has to be reachable by reviewers and by the project team alike |
 
-## Erfolgskriterien für den Prototyp
+## Answering the review of the first submission
 
-Der Prototyp ist erfolgreich, wenn:
-1. Ein Gutachter die URL öffnet und in 5 Minuten versteht, was das Projekt methodisch leistet
-2. Barbara ihre Forschungsfragen an echten Daten explorieren kann (Personen, Relationen, Quellen)
-3. Die Pipeline-Demo zeigt: Quelle → HTR/VLM → Extraktion → Netzwerk (an echtem Material)
-4. Die Qualitätsangaben umfassen Prüfstatus pro Entität und Relation, Extraktionsstatistik, Verfügbarkeitspyramide der Quellen und klar gekennzeichnete experimentelle HTR-Metriken mit Referenzklasse.
-5. Die sieben unmittelbar Code-adressierbaren Gutachten-Kritikpunkte beantwortet sind.
+The first submission was rejected in its then form, and the review addressed primarily the digital humanities part. The ten points below are paraphrased. The column "answered by" records how the prototype phase responded to each; that response is history, and the resubmission has to carry it forward.
 
-## Prototyp-Prioritäten (User-Entscheidung)
+| # | Criticism | Answered by | Level |
+|---|-----------|-------------|-------|
+| 1 | Computational methods are standard, no evidence of innovation | Showing that standard methods work on these particular sources. The innovation is the application to Early New High German material. | Code |
+| 2 | "Digital X" not original enough, question of relevance | Framing digital methods as instruments in service of court studies rather than as the founding of a field. | Text |
+| 3 | LLM approaches not discussed | The pipeline demonstrates model integration end to end. Epistemic asymmetry is the conceptual frame. | Code |
+| 4 | Linguistic challenges not addressed | The source explorer shows Early New High German in Kurrentschrift with abbreviations and regional variants. | Code |
+| 5 | Historical linguistics missing | Not addressable in a prototype. Requires reference to Early New High German scholarship in the proposal text. | Text |
+| 6 | Sources not sufficiently characterised | The source catalogue is categorised, filterable and sortable, with an availability tier per source. | Code |
+| 7 | No exemplary source excerpts | Real inventory pages with working transcription, entities and a source link. Reference status is now stated explicitly. | Code |
+| 8 | Project plan too generic | A working pipeline is the specific plan. Each stage is shown on concrete material. | Code |
+| 9 | Evaluation of technical procedures missing | The versioned prompt benchmark measures each prompt iteration with repetitions, stratified metrics and full provenance. `HTR-EVALUATION.md` defines reference classes, task-specific metrics and the release rule. | Code and method |
+| 10 | No fulfilment criteria for the hypotheses | Raw counts on the home page evidence data availability. Fulfilment criteria for historical hypotheses must be formulated per research question in the proposal, as observable evidence together with a refutation criterion. | Text and method |
 
-1. **Pipeline-Demo**: schrittweise an echtem Quellenbeispiel
-2. **Facettierte Suche**: SiCProD-Daten explorierbar
-3. **Quellenexploration**: Bild + Transkription + Entitäten
+Seven points are addressed directly in code. Point 9 has moved from a first test to a running measuring instrument. Points 2, 5 and 10 need explicit work in the proposal text and cannot be answered by building anything.
+
+### Current evaluation boundary
+
+| Object | State |
+|--------|-------|
+| CER on inventories | Measured against the small set of pages carrying formal `DONE` status. The convention assignment of the wider stock is unresolved. |
+| CER and WER on account book 2 | No approved account-book reference exists. Only variant stability, structural observation and scholarly spot checks are available. |
+| Derived rates (relation coverage, source coverage, network metrics) | Only raw counts are shown. A rate needs a defined denominator, that is, an answer to what counts as fully covered, and that has not been fixed methodologically. |
+
+The full review contract is in `HTR-EVALUATION.md`.
+
+## Success criteria
+
+1. A reader opens the site and understands within minutes what the project does methodologically and where it stands.
+2. The project lead can explore her research questions on real data.
+3. The pipeline visibly runs from facsimile through machine transcription and measurement to a scholar-approved page.
+4. Quality statements comprise review status per entity and relation, the availability tiers of the sources, and clearly marked experimental transcription metrics with their reference class.
+5. The seven directly code-addressable points of review criticism are answered.
+
+## Open questions
+
+- Whether bilingual presentation in German and English is needed is unresolved. The site is currently English; the source material and the working documents are German.
+- Which case study the resubmission builds on is not decided (see CONTEXT.md).

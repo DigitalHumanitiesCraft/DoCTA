@@ -1,23 +1,27 @@
-# DATA: Datenquellen, Struktur, Qualität
+# DATA: Sources, Structure, Quality
+
+This document describes the data DoCTA works with, what each source can carry and where it breaks. Counts of the exported data are held in `data/stats.json`, which the site reads; figures given here characterise the collections at the stated verification date and are snapshots, not live values.
 
 ## 1. SiCProD API
 
 **Base:** `https://sicprod.acdh-dev.oeaw.ac.at/apis/api/`
-Öffentlich, kein Auth, JSON via `?format=json`. Paginiert: `?limit=500&offset=0`.
+Public, no authentication, JSON via `?format=json`. Paginated with `?limit=500&offset=0`.
 
-### Entitäten
+SiCProD is the prosopographical database of Sigismund's court, built at the University of Innsbruck together with the Tyrolean State Archives and a partner research infrastructure. It supplies the persons, places, offices and relations the edition can link against.
 
-| Typ | Endpunkt | Anzahl | Qualität |
-|-----|----------|--------|----------|
-| Person | `apis_ontology.person/` | 6.288 | Gut. Name, Daten, Geschlecht, Namensvarianten, Referenzen. `first_name` bei 6.281 von 6.288 befüllt (7 leer), `status` durchgehend leer und daher nicht exportiert. |
-| Ort | `apis_ontology.place/` | 736 | Mittel. Typ vorhanden (Stadt, Burg, Dorf). **Viele ohne lat/lng**, die Karte wird Lücken haben. |
-| Institution | `apis_ontology.institution/` | 215 | **Schlecht. 207 von 215 ohne Typ.** Nur 5 Universität, 1 Kanzlei, 1 Küche, 1 Pfarrei typifiziert. |
-| Funktion | `apis_ontology.function/` | 1.613 | Gut. 79+ distinkte Hofämter. Mischung aus Hofpositionen und regionalen Ämtern. |
-| Gehalt | `apis_ontology.salary/` | 2.906 | **Keine Geldbeträge.** Nur Verknüpfungen Person↔Funktion. |
-| Event | `apis_ontology.event/` | **28** | **Nur Großereignisse:** Landtage (11), Reichstage (6), Hochzeiten (3), Schlachten (3). Keine Alltagspraktiken. |
-| Relation | `relations.relation/` | 42.893 | Gut. Subj→Obj mit Typ. Hauptwert der API. |
+### Entities (verified 17.02.2026)
 
-### Beispiel: Person (Sigmund, ID 18)
+| Type | Endpoint | Quality |
+|------|----------|---------|
+| Person | `apis_ontology.person/` | Good. Name, dates, gender, name variants, references. `first_name` is filled for all but seven records; `status` is empty throughout and therefore not exported. |
+| Place | `apis_ontology.place/` | Medium. Type is present (town, castle, village). **Many records without lat/lng**, so any map will have systematic gaps. |
+| Institution | `apis_ontology.institution/` | **Poor. The great majority carry no type.** Only a handful are typed as university, chancery, kitchen or parish. |
+| Function | `apis_ontology.function/` | Good. Some eighty distinct court offices, mixing court positions and regional offices. |
+| Salary | `apis_ontology.salary/` | **No monetary amounts.** Only links between person and function. |
+| Event | `apis_ontology.event/` | **Major events only:** diets, imperial diets, weddings, battles. No everyday practices. |
+| Relation | `relations.relation/` | Good. Subject to object with a type. The main value of the API. |
+
+### Example: person (Sigismund, ID 18)
 
 ```json
 {
@@ -42,9 +46,9 @@
 }
 ```
 
-Sigmund ist einer der 7 Datensätze ohne Vornamen: `first_name` ist hier ein Leerstring, nicht null. Bei den übrigen 6.281 Personen steht ein Vorname darin, den Suche und Netzwerkansicht auch anzeigen. Der Export `data/persons.json` reduziert den Datensatz auf `id`, `name`, `first_name`, `gender`, `start_date`, `end_date`, `alternative_label`. `status` fällt weg, weil das Feld in allen 6.288 Datensätzen leer ist.
+Sigismund is one of the few records without a given name: `first_name` here is an empty string rather than null. For the remaining persons a given name is present and is shown in search and network views. The export `data/persons.json` reduces each record to `id`, `name`, `first_name`, `gender`, `start_date`, `end_date` and `alternative_label`. `status` is dropped because the field is empty in every record.
 
-### Beispiel: Relation
+### Example: relation
 
 ```json
 {
@@ -60,205 +64,199 @@ Sigmund ist einer der 7 Datensätze ohne Vornamen: `first_name` ist hier ein Lee
 }
 ```
 
-Relationstypen (Auswahl): `nimmtteilan`, `wirdausgeuebtvon`, `istan`, `wirdausbezahltanperson`, `hatfamilienbeziehungzu`, `istmitgliedvon`
+Relation types, a selection: `nimmtteilan` (takes part in), `wirdausgeuebtvon` (is exercised by), `istan` (is at), `wirdausbezahltanperson` (is paid to person), `hatfamilienbeziehungzu` (has family relation to), `istmitgliedvon` (is member of).
 
-### Ausgewählte Hofämter (von 79+)
+### Selected court offices
 
-| Funktion | Personen | Fallstudien-Relevanz |
-|----------|----------|---------------------|
-| Hofmeister | 12 | Hofstruktur |
-| Küchenmeister | 10 | Hofküche |
-| Stallmeister | 10 | Hofstruktur |
-| Marschall | 8 | Hofstruktur |
-| Salzmair zu Hall | 9 | Ökonomie |
-| Hauskämmerer | 5 | Privatgemächer |
-| Hofarzt | 1 | Medizinalpersonen |
-| Leibarzt Sigmunds | 1 | Medizinalpersonen |
-| Koch des Herzogs | 1 | Hofküche |
-| Türhüter der Küche | 1 | Hofküche |
-| Goldschmied | 1 | Luxuskonsum |
-| Hofmaler | 1 | Luxuskonsum |
-| Schleierwäscherin | 1 | Hofstruktur (Frauen) |
-| Trompeterin | 1 | Hofstruktur (Frauen) |
+The office names below are given in the source language with a gloss, because the exact German term is what the data carry.
 
-### Geschlechterverteilung
+| Office | Relevance to case studies |
+|--------|---------------------------|
+| Hofmeister (court steward) | Court structure |
+| Küchenmeister (master of the kitchen) | Court kitchen |
+| Stallmeister (master of the horse) | Court structure |
+| Marschall (marshal) | Court structure |
+| Salzmair zu Hall (salt official at Hall) | Economy |
+| Hauskämmerer (household chamberlain) | Private chambers |
+| Hofarzt, Leibarzt Sigmunds (court physician, personal physician) | Medical personnel |
+| Koch des Herzogs, Türhüter der Küche (the duke's cook, doorkeeper of the kitchen) | Court kitchen |
+| Goldschmied, Hofmaler (goldsmith, court painter) | Luxury consumption |
+| Schleierwäscherin, Trompeterin (veil washer, trumpeter) | Court structure, women |
 
-| Geschlecht | Anzahl |
-|-----------|--------|
-| Männlich | 5.777 |
-| Weiblich | 481 |
-| Unbekannt | 30 |
+The gender distribution is heavily male, with a small female group and a residue of unknown; the exact split is in the exported data.
 
-### Kernwert und Grenzen
+### Core value and limits
 
-**Hauptwert:** Personennetzwerk aus 6.288 Personen mit 42.893 Relationen.
-**Grenzen:** Events fast leer (28), Salaries ohne Beträge, Institutionen untypisiert. Finanzielle und praxeologische Daten müssen aus den Raitbüchern kommen, nicht aus SiCProD.
+**Core value:** a person network of several thousand persons connected by tens of thousands of relations.
+**Limits:** events are nearly empty, salaries carry no amounts, institutions are untyped. Financial and praxeological data have to come from the account books, and SiCProD cannot supply them.
 
-### Pre-Fetch-Strategie
+### Pre-fetch strategy
 
-Python-Script (`scripts/fetch_sicprod.py`): Alle Entitäten paginiert abrufen, Relationen als Edge-Liste. Output: `data/persons.json`, `data/places.json`, `data/institutions.json`, `data/functions.json`, `data/relations.json`. Geschätzt: ~4–5 MB roh, ~1–1.5 MB gzipped.
+A Python script (`scripts/fetch_sicprod.py`) retrieves all entities page by page and the relations as an edge list. Output: `data/persons.json`, `data/places.json`, `data/institutions.json`, `data/functions.json`, `data/relations.json`, on the order of a few megabytes raw and roughly a megabyte gzipped.
 
-Ein zweites Script (`scripts/compute_layout.py`) berechnet mit networkx ein Layout für die Top-200-Knoten vor und schreibt `data/network.json`. Diese Datei ist ein Explorationsartefakt: `network.html` legt das Layout inzwischen selbst im Browser (Cytoscape) und lädt `data/network.json` nicht.
+A second script (`scripts/compute_layout.py`) pre-computes a network layout with networkx and writes `data/network.json`. That file is an exploration artifact from the prototype phase and is loaded by no current page.
 
----
+## 2. Source catalogue (CSV)
 
-## 2. CSV-Quellenübersicht (312 Einträge)
+**File:** `sources/quellen-katalog.csv`, cleaned into `data/sources.json` by `scripts/transform_sources.py`.
 
-**Datei:** `sources/quellen-katalog.csv`
+### Column structure
 
-### Spaltenstruktur (nur 8 von 24 befüllt)
+Of twenty-four columns only eight carry content.
 
-| Spalte | Tatsächlicher Inhalt | Problem |
-|--------|---------------------|---------|
-| Kategorie | Quellenkategorie | OK |
-| Signatur | Archivsignatur | OK |
-| Titel | Beschreibung | OK |
-| Datierung | Datum/Zeitraum | **10+ Formate, en-dash vs. hyphen inkonsistent** |
-| Art | Meist "Einzelstück" | Repertorium missbraucht für Umfang ("390 Bände") |
-| Projekt | SiCProD / Inventaria / DoCTA / leer | OK |
-| Digitalisiert | **Seitenanzahl** (NICHT Boolean) | Spaltenname irreführend |
-| Transkribiert | Nur "Inventaria" (55×) oder leer | Spaltenname irreführend |
-| Spalte3–Spalte18 | **Komplett leer** | Excel-Artefakte |
+| Column | Actual content | Problem |
+|--------|----------------|---------|
+| Kategorie | Source category | Fine |
+| Signatur | Archival shelfmark | Fine |
+| Titel | Description | Fine |
+| Datierung | Date or period | **More than ten formats, en dash and hyphen used inconsistently** |
+| Art | Mostly "Einzelstück" (single item) | The Repertorium rows misuse the field for extent |
+| Projekt | SiCProD, Inventaria, DoCTA or empty | Fine |
+| Digitalisiert | **A page count, not a boolean** | Column name misleading |
+| Transkribiert | Only "Inventaria" or empty | Column name misleading |
+| Spalte3 to Spalte18 | **Entirely empty** | Excel export artifacts |
 
-### Verfügbarkeitspyramide
+### Availability pyramid
 
-| Tier | Status | Anzahl | Inhalt |
-|------|--------|--------|--------|
-| **1** | Digitalisiert + Transkribiert | 55 Einträge (57 Dokumente) | Burgeninventare (Inventaria-Projekt, Volltext in Transkribus). 2 Signaturen (A 125.3-4, A 142.1-2) decken je 2 Transkribus-Dokumente ab. |
-| **2** | Digitalisiert, nicht transkribiert | 56 | Raitbücher, Kopialbücher, Hofordnungen, Personeninventare |
-| **3** | Identifiziert, nicht digitalisiert | 201 | Rest (65% des Katalogs) |
+| Tier | State | Content |
+|------|-------|---------|
+| **1** | Digitized and transcribed | Castle inventories, full text in Transkribus. Several inventories were edited and published by the Inventaria project (see below). Two shelfmarks (A 125.3-4, A 142.1-2) each cover two Transkribus documents. |
+| **2** | Digitized, not transcribed | Account books, copybooks, court ordinances, personal inventories |
+| **3** | Identified, not digitized | The remainder, roughly two thirds of the catalogue |
 
-### Kategorieverteilung
+### Category distribution
 
-Gemessen an `data/sources.json`, also nach der Bereinigung durch `scripts/transform_sources.py`. Das ist der Stand, den `sources.html` anzeigt.
+Measured against `data/sources.json`, that is, after cleaning. This is the state the source table on the home page shows.
 
-| Kategorie | Anzahl (bereinigt) | % | Rohzahl in der CSV |
-|-----------|--------|---|---|
-| Burgeninventar | 84 | 26.9 | 84 |
-| Rechnungen | 56 | 17.9 | 56 |
-| Anderes | 42 | 13.5 | 43 |
-| Repertorium | 41 | 13.1 | 42 |
-| Kopialbuch | 37 | 11.9 | 37 |
-| Personeninventar | 18 | 5.8 | 18 |
-| Hof- und Speiseordnungen | 16 | 5.1 | 16 |
-| Literatur | 9 | 2.9 | 9 |
-| Kircheninventar | 6 | 1.9 | 6 |
-| Landtagsakten | 3 | 1.0 | 4 |
-| **Summe** | **312** | 100 | 315 |
+| Category | Cleaned | Raw in CSV |
+|----------|---------|------------|
+| Castle inventory | 84 | 84 |
+| Accounts | 56 | 56 |
+| Other | 42 | 43 |
+| Repertorium | 41 | 42 |
+| Copybook | 37 | 37 |
+| Personal inventory | 18 | 18 |
+| Court and table ordinances | 16 | 16 |
+| Literature | 9 | 9 |
+| Church inventory | 6 | 6 |
+| Records of the diets | 3 | 4 |
+| **Total** | **312** | 315 |
 
-Die drei Differenzen stammen aus den unten gelisteten Duplikaten und Cross-Listings: die Rohsumme der CSV liegt bei 315, die bereinigte bei 312.
+The three differences come from the duplicates and cross-listings noted below.
 
-### Bekannte Qualitätsprobleme
+### Known quality problems
 
-1. 16 Geisterspalten (Spalte3–18), Excel-Export-Artefakte
-2. Datumsformate: `YYYY`, `YYYY-YYYY`, `YYYY.MM.DD`, `ca.`, `15. Jh.`, offene Ranges (`-1564`, `1229-`)
-3. Repertorium-Sektion nutzt Unicode en-dash (–), Rest nutzt ASCII-Hyphen (-) → Parser-Falle
-4. Echtes Duplikat: Hs. 0041 (zwei identische Zeilen)
-5. Quasi-Duplikat: A 002.1 / A 2.1 (gleiche Quelle, Tippfehler "ubernmmen")
-6. Cross-Listed: Hs. 0048 und Hs. 0057 je in zwei Kategorien
-7. Zeitliche Ausreißer: 7 Quellen außerhalb Sigmunds Lebenszeit (1411–1645)
-8. Datumswert in Art-Spalte (Zeile 304: "1361-1848")
+1. Sixteen ghost columns (Spalte3 to Spalte18), Excel export artifacts
+2. Date formats: `YYYY`, `YYYY-YYYY`, `YYYY.MM.DD`, `ca.`, `15. Jh.`, open ranges (`-1564`, `1229-`)
+3. The Repertorium section uses a Unicode en dash while the rest uses an ASCII hyphen, which is a parser trap
+4. A true duplicate: Hs. 0041 appears as two identical rows
+5. A near duplicate: A 002.1 and A 2.1 are the same source, with a typo in one row
+6. Cross-listed: Hs. 0048 and Hs. 0057 each appear in two categories
+7. Temporal outliers: a handful of sources fall outside Sigismund's lifetime (1411 to 1645)
+8. A date value in the Art column (row 304: "1361-1848")
 
-### Raitbücher
+### Account books (Raitbücher)
 
-**Kanonische Zählung: 26 Bände, 8.561 Seiten.** Diese Zahl stammt aus der Transkribus-Collection 2197991, also aus den tatsächlich vorhandenen Digitalisaten, und wird im Prototyp durchgängig verwendet (`pipeline.html`, REQUIREMENTS.md, JOURNAL.md).
+**Canonical count: 26 volumes, 8,561 pages.** This figure comes from the Transkribus collection, that is, from the digitized material actually present, and is used throughout the project.
 
-Die CSV-Quellenübersicht kommt auf andere Werte:
+The catalogue CSV gives different values.
 
-| Zählung | Bände | Seiten | Herkunft |
-|---------|-------|--------|----------|
-| **Transkribus (kanonisch)** | **26** | **8.561** | Collection 2197991, gezählte Digitalisate |
-| CSV / `data/sources.json` | 25 | 8.750 | Katalogeinträge mit Seitenangabe aus der Digitalisiert-Spalte |
+| Count | Volumes | Pages | Origin |
+|-------|---------|-------|--------|
+| **Transkribus (canonical)** | **26** | **8,561** | Collection 2197991, counted scans |
+| CSV and `data/sources.json` | 25 | 8,750 | Catalogue entries with a page figure in the Digitalisiert column |
 
-Die CSV führt 25 Einträge (Nr. 00 bis 26, ohne 23 und 25, weil diese im Katalog als identisch mit 22 bzw. 26 vermerkt sind). Transkribus zählt die Bände einzeln und kommt daher auf 26. Die Seitenzahlen weichen ab, weil die CSV-Werte Katalogangaben sind und die Transkribus-Werte gezählte Scans. Wo eine belastbare Zahl gebraucht wird, gilt Transkribus.
+The CSV lists 25 entries (numbered 00 to 26, omitting 23 and 25, which the catalogue records as identical with 22 and 26). Transkribus counts the volumes individually and therefore arrives at 26. The page counts diverge because the CSV values are catalogue statements while the Transkribus values are counted scans. Where a defensible figure is needed, Transkribus governs.
 
-| Nr. | Datierung | Seiten (CSV) | Anmerkung |
-|-----|-----------|--------|-----------|
+| No. | Date | Pages (CSV) | Note |
+|-----|------|-------------|------|
 | 00 | 1454–1457 | 241 | "Raitbuch von Konrad Vintler" |
 | 01 | 1460–1461 | 331 | |
-| **02** | **1462–1463** | **123** | **Prototyp-Quelle** |
-| 03 | 1463–1465 | 815 | Größter Band |
-| 04–26 | 1466–1490 | 7.240 | 21 Einträge. Lücken: 1476, 1481. Doppelt: 1485 (Nr. 18 und 19). Identisch und daher nicht separat gelistet: 23=22, 25=26. |
-| **Summe CSV** | 1454–1490 | **8.750** | |
+| **02** | **1462–1463** | **123** | **The volume the project works on** |
+| 03 | 1463–1465 | 815 | Largest volume |
+| 04–26 | 1466–1490 | 7,240 | 21 entries. Gaps at 1476 and 1481. 1485 appears twice (nos. 18 and 19). Nos. 23 and 25 are recorded as identical with 22 and 26 and are not listed separately. |
+| **CSV total** | 1454–1490 | **8,750** | |
 
-### Hofordnungen (DoCTA-Projekt, 11 Einträge)
+### Court ordinances (11 catalogue entries)
 
-Darunter ein zusammenhängendes Cluster zur Hochzeit Sigmunds 1484. Die Seitenzahlen sind Katalogangaben aus der CSV; in Klammern steht die gezählte Scanzahl aus der Transkribus-Collection, die durchgehend niedriger liegt (siehe JOURNAL.md). Welche der beiden Zählungen den Band vollständig abbildet, ist ungeklärt.
+Among them a coherent cluster on Sigismund's wedding of 1484. The page figures are catalogue statements from the CSV; in brackets stands the counted number of scans in the Transkribus collection, which is consistently lower (see JOURNAL.md). Which of the two counts represents the complete volume is unresolved.
 
-- Hs. 2466: "Notl der hochzeit", Einladungsregister, 60 S. laut CSV (33 Scans)
-- Hs. 2467: "Rescribent der hochzeit", Verordnungen an Hofämter, 100 S. laut CSV (58 Scans)
-- Hs. 2468: "Fueterzetl", Festteilnehmer und Pferde, 35 S. laut CSV (19 Scans)
-- Hs. 2469: Register Hochzeit Sigmunds mit Katharina von Sachsen, 140 S. laut CSV (54 Scans)
+- Hs. 2466: "Notl der hochzeit", register of invitations, 60 pp. per CSV (33 scans)
+- Hs. 2467: "Rescribent der hochzeit", instructions to the court offices, 100 pp. per CSV (58 scans)
+- Hs. 2468: "Fueterzetl", guests and horses, 35 pp. per CSV (19 scans)
+- Hs. 2469: register of Sigismund's wedding with Katharina of Saxony, 140 pp. per CSV (54 scans)
 
-### Für Prototyp nutzbar
+### Directly usable material
 
-**57 Burgeninventare** mit Arbeitstranskriptionen sind sofort verfügbar. Sie besitzen keinen dokumentierten formalen Ground-Truth-Status und folgen zwei Transkriptionskonventionen.
-**Raitbuch 2** mit 123 Doppelseiten ist als Bild- und Layoutquelle verfügbar. In Transkribus liegt noch kein Text vor. Experimentelle VLM-Ausgaben für vier Seiten sind seit 26.08.2026 vorhanden.
-Script-Output: `data/sources.json`, die CSV bereinigt und als JSON für `sources.html`.
+**Castle inventories with working transcriptions** are immediately available. A subset was edited and published by the Inventaria project on Transkribus Sites (see section 3); only published material is used, and it is used with attribution. The remaining transcriptions in the collection carry no documented formal ground-truth status and follow two different transcription conventions.
 
----
+**Account book 2** is available as an image and layout source. Transkribus holds no text for it. Machine transcriptions from the benchmark and the pilot exist and are marked as unrevised model output.
 
-## 3. Transkribus Collection 2197991
+Script output: `data/sources.json`, the cleaned catalogue as JSON for the source table on the home page.
 
-### Übersicht (verifiziert 17.02.2026)
+## 3. Transkribus collection 2197991
 
-**Collection-ID:** 2197991
+### Overview (verified 17.02.2026)
+
+**Collection ID:** 2197991
 **URL:** https://app.transkribus.org/collection/2197991
-**Gesamt:** 115 Dokumente, 12.236 Seiten
+**Extent:** 115 documents, 12,236 pages
 
-| Kategorie | Dokumente | Seiten | Mit Transkription |
-|-----------|-----------|--------|-------------------|
-| Burgeninventare | 64 | 569 | **57 ja** (8.979 Zeilen, 35.724 Wörter) |
-| Raitbücher | 26 | 8.561 | **0** (nur Layout-Analyse oder leer) |
-| Kopialbücher | 12 | 2.224 | 0 |
-| Andere (Hofordnungen, Hss.) | 13 | 882 | 0 |
+| Category | Documents | Pages | With transcription |
+|----------|-----------|-------|--------------------|
+| Castle inventories | 64 | 569 | 57 |
+| Account books | 26 | 8,561 | 0 (layout analysis only, or empty) |
+| Copybooks | 12 | 2,224 | 0 |
+| Other (court ordinances, manuscripts) | 13 | 882 | 0 |
 
-### Textbestand und Referenzstatus
+### Inventaria and the status of the inventory transcriptions
 
-**Erwartung (aus CSV):** 55 Burgeninventare mit "Inventaria" in Transkribiert-Spalte.
-**Realität:** 57 Burgeninventare haben Text (8.979 Zeilen, 35.724 Wörter). Zwei davon fehlen in der CSV-Markierung (A 125.3-4, A 142.1-2 mit je zwei Transkribus-Doc-IDs). Drei Dokumente tragen den Workflow-Status `DONE`, 54 den Status `IN_PROGRESS`. Keines besitzt im Projekt einen dokumentierten formalen Ground-Truth-Status. Der kanonische Bestandswert lautet daher **57 Inventare mit Arbeitstranskription**.
+Several of the castle inventories were edited and published by the **Inventaria** project (led from the University of Salzburg with the University of Innsbruck) and are available as an edition on Transkribus Sites at https://www.inventaria.at/. DoCTA uses only material that Inventaria has published, and cites it with attribution to the Inventaria project wherever a transcription is displayed or evaluated.
 
-Im Bestand wurden zwei Transkriptionskonventionen festgestellt. Ein Vergleich über alle Dokumente benötigt eine Konventionspartitionierung und einen versionierten Adapter auf den DoCTA-Datenvertrag. Der Status `DONE` darf nicht als Ersatz für eine fachliche Abnahme verwendet werden. Referenzklassen und Evaluationsregeln stehen in `HTR-EVALUATION.md`.
+The wider inventory stock in the collection is a different matter. The catalogue marks 55 inventories as transcribed; 57 documents actually carry text, two of them missing from the CSV marking (A 125.3-4 and A 142.1-2, each with two Transkribus document IDs). Three documents carry the Transkribus workflow status `DONE`, the rest `IN_PROGRESS`. The workflow status is not a scholarly approval and must never be used as a substitute for one. The canonical description of the stock is therefore **inventories with working transcriptions**, with a small `DONE` subset used as a reference anchor in the benchmark.
 
-**Raitbücher.** 26 Bände sind digitalisiert. Sechs Bände (Nr. 1–6) haben eine Layout-Analyse mit Baselines und Regionen. Zwanzig Bände (Nr. 7–26) tragen den Status `NEW`. In der Transkribus-Collection besitzt keiner der Bände Transkriptionstext. Die VLM-Testausgaben liegen getrennt unter `experiments/transcription-test/`.
+Two transcription conventions are present in the stock. Any comparison across documents needs a convention partition and a versioned adapter onto the DoCTA data contract. Reference classes and evaluation rules are in `HTR-EVALUATION.md`.
 
-### Raitbücher in der Collection
+**Account books.** All 26 volumes are digitized. Six volumes (nos. 1 to 6) have a layout analysis with baselines and regions; the remaining twenty carry the status `NEW`. No volume holds transcription text in Transkribus. Machine transcriptions live outside Transkribus under `evaluation/`, and they are unrevised model output.
 
-| Nr. | Doc-ID | Seiten | Status |
-|-----|--------|--------|--------|
-| 1 | 12514207 | 331 | IN_PROGRESS (Layout) |
-| **2** | **12514730** | **123** | **IN_PROGRESS (Layout, kein Text)** |
-| 3 | 12515152 | 815 | IN_PROGRESS (Layout) |
-| 4 | 12515414 | 347 | IN_PROGRESS (Layout) |
-| 5 | 12515448 | 146 | IN_PROGRESS (Layout) |
-| 6 | 12515416 | 170 | IN_PROGRESS (Layout) |
-| 7–26 | diverse | 6.629 | NEW (nur Bilder) |
+### Account books in the collection
 
-### API und Auth
+| No. | Doc ID | Pages | Status |
+|-----|--------|-------|--------|
+| 1 | 12514207 | 331 | IN_PROGRESS (layout) |
+| **2** | **12514730** | **123** | **IN_PROGRESS (layout, no text)** |
+| 3 | 12515152 | 815 | IN_PROGRESS (layout) |
+| 4 | 12515414 | 347 | IN_PROGRESS (layout) |
+| 5 | 12515448 | 146 | IN_PROGRESS (layout) |
+| 6 | 12515416 | 170 | IN_PROGRESS (layout) |
+| 7–26 | various | 6,629 | NEW (images only) |
 
-**Endpunkt:** `https://transkribus.eu/TrpServer/rest` (Legacy REST API)
+### API and authentication
+
+**Endpoint:** `https://transkribus.eu/TrpServer/rest` (legacy REST API)
 **Auth:** OpenID Connect via Keycloak (`account.readcoop.eu`), `client_id=transkribus-api-client`, `grant_type=password`.
-**Credentials:** Via env vars TRANSKRIBUS_USER / TRANSKRIBUS_PASS
+**Credentials:** through the environment variables TRANSKRIBUS_USER and TRANSKRIBUS_PASS.
 
-Wichtige Endpunkte:
-- `GET /collections/{colId}/list` → Dokumentliste
-- `GET /collections/{colId}/{docId}/fulldoc` → Alle Seiten mit Metadaten und PAGE-XML-URLs
-- PAGE-XML: `https://files.transkribus.eu/Get?id={KEY}` (Auth-Header nötig)
+Relevant endpoints:
 
-### Bilder via IIIF (verifiziert)
+- `GET /collections/{colId}/list` returns the document list
+- `GET /collections/{colId}/{docId}/fulldoc` returns all pages with metadata and PAGE XML URLs
+- PAGE XML: `https://files.transkribus.eu/Get?id={KEY}` (auth header required)
+
+### Images via IIIF (verified)
 
 ```
 https://files.transkribus.eu/iiif/2/{KEY}/full/{width},{height}/0/default.jpg
 ```
 
-**Getestet und bestätigt:** IIIF-URLs funktionieren **ohne Auth** in `<img>` und `fetch()`. Beispiel Raitbuch 2, fol. 0v-1r:
-- Thumb: `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/200,/0/default.jpg`
+**Tested and confirmed:** IIIF URLs work **without authentication** in `<img>` and in `fetch()`. Example, account book 2, fol. 0v-1r:
+
+- Thumbnail: `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/200,/0/default.jpg`
 - Full: `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/max/0/default.jpg`
 
-Auch Direkt-URLs funktionieren ohne Auth:
-- `https://files.transkribus.eu/Get?fileType=view&id={KEY}` (1.2 MB JPG)
+Direct URLs also work without authentication: `https://files.transkribus.eu/Get?fileType=view&id={KEY}`.
 
-### PAGE-XML Format (Beispiel Thaur A 49.1)
+### PAGE XML format (example Thaur A 49.1)
 
 ```xml
 <TextRegion type="page-number" id="r1">
@@ -271,84 +269,81 @@ Auch Direkt-URLs funktionieren ohne Auth:
 </TextRegion>
 ```
 
-Struktur: Page → TextRegion (mit Typ und Coords) → TextLine (mit Coords, Baseline, Unicode-Text). ReadingOrder definiert Reihenfolge der Regionen.
+The structure is Page, then TextRegion (with type and coordinates), then TextLine (with coordinates, baseline and Unicode text). A ReadingOrder element defines the sequence of regions.
 
-### CORS-Problem
+### CORS
 
-APIs für Desktop-Client konzipiert. `fetch()` auf PAGE-XML wird im Browser durch CORS blockiert. **Bilder sind CORS-frei.** → Pre-Fetch-Strategie für Transkriptionen, Bilder direkt ladbar.
+The APIs were designed for a desktop client. A `fetch()` on PAGE XML is blocked in the browser by CORS. **Images are CORS-free.** Hence the pre-fetch strategy for transcriptions, while images load directly.
 
-### Pre-Fetch-Strategie
+### Pre-fetch strategy
 
-Script (`scripts/fetch_transcriptions.py`): OAuth2-Auth → `fulldoc` pro Dokument → PAGE-XML parsen → JSON mit Zeilen, Koordinaten, Text.
-Output: `data/transcriptions/{doc_id}.json`, `data/raitbuch2_pages.json` (123 Seiten mit IIIF-Keys). Die Seitenliste `data/raitbuch2_pages.json` ist ein Explorationsartefakt: keine Seite des Prototyps lädt sie. `viewer.html` nimmt die IIIF-URLs aus den Transkriptionsdateien selbst.
+`scripts/fetch_transcriptions.py` authenticates via OAuth2, requests `fulldoc` per document, parses the PAGE XML and writes JSON with lines, coordinates and text. Output: `data/transcriptions/{doc_id}.json` and `data/raitbuch2_pages.json`. The page list is an exploration artifact that no page loads; the viewer takes its IIIF URLs from the transcription files themselves.
 
-### Offene Punkte
+### Exploration checklist (closed)
 
-- [x] ~~Collection-ID~~ → **2197991**
-- [x] ~~Transkribus-Credentials~~ → verifiziert (via env vars)
-- [x] ~~Document-IDs auflisten~~ → 115 Dokumente kartiert, `data/transkribus_collection.json`
-- [x] ~~IIIF-URLs ohne Auth testen~~ → **Funktioniert** (bestätigt)
-- [x] ~~Vollständigen PAGE-XML-Export der 57 transkribierten Inventare als JSON konvertieren~~ → erledigt, 57 Dateien in `data/transcriptions/` (522 Seiten, 8.979 Zeilen, 35.724 Wörter)
-- [x] ~~Mapping Transkribus-Titel → CSV-Signaturen herstellen~~ → erledigt, 64/64 gematcht, in `data/source_mapping.json`
+- [x] Collection ID: 2197991
+- [x] Transkribus credentials verified via environment variables
+- [x] Document IDs enumerated, in `data/transkribus_collection.json`
+- [x] IIIF URLs tested without authentication, they work
+- [x] PAGE XML export of the transcribed inventories converted to JSON, in `data/transcriptions/`
+- [x] Mapping from Transkribus titles to catalogue shelfmarks established, all matched, in `data/source_mapping.json`
 
-Alle Punkte dieser Liste sind abgearbeitet. Die Collection-Metadaten `data/transkribus_collection.json` und `data/transkribus_status.json` sind Ergebnisse dieser Exploration und werden vom Prototyp nicht geladen.
+The collection metadata `data/transkribus_collection.json` and `data/transkribus_status.json` are results of this exploration and are loaded by no page.
 
----
+## 4. Account book 2, the working volume
 
-## 4. Raitbuch 2 (Prototyp-Quelle)
+| Field | Value |
+|-------|-------|
+| Holding | OÖKAM, Tyrolean State Archives |
+| Transkribus doc ID | **12514730** |
+| Extent | 123 openings (fol. 0v-1r to fol. 122v-123r) |
+| File names | `OÖKAM Raitbuch 2, fol. {Xv-Yr}.jpg` |
+| Digitized images | JPG via IIIF, loadable without authentication |
+| Layout analysis | Yes (baselines, regions), no text |
+| Transcription status in Transkribus | **Not transcribed** |
+| Date | 1462–1463 (exact boundaries to be clarified) |
+| IIIF example (fol. 0v-1r) | `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/max/0/default.jpg` |
 
-| Feld | Wert |
-|------|------|
-| Bestand | OÖKAM, Tiroler Landesarchiv |
-| Transkribus Doc-ID | **12514730** |
-| Umfang | 123 Doppelseiten (fol. 0v-1r bis fol. 122v-123r) |
-| Dateinamen | `OÖKAM Raitbuch 2, fol. {Xv-Yr}.jpg` |
-| Digitalisate | JPG via IIIF, ohne Auth ladbar |
-| Layout-Analyse | Ja (Baselines, Regionen), kein Text |
-| Transkriptionsstatus | **Nicht transkribiert** (0 Zeilen, 0 Wörter) |
-| Datierung | 1462–1463 (Abgrenzung zu klären) |
-| IIIF-Beispiel (fol. 0v-1r) | `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/max/0/default.jpg` |
+### Confirmed structural elements (visually verified)
 
-### Gesicherte Strukturelemente (visuell bestätigt)
-
-| Element | Beschreibung |
+| Element | Description |
 |---------|-------------|
-| Rubrizierte Überschriften | Personennamen in größerer Kanzleischrift |
-| "Nota" | Einleitungsformel für Einträge |
-| "Item" | Markierung von Einzelposten |
-| Zahlenkolonne | Geldbeträge am rechten Rand (fl., kr., lb.) |
-| "daran sein Innemen" | Unterüberschrift (fol. 3r) |
+| Rubricated headings | Personal names in a larger chancery hand |
+| "Nota" | Opening formula of an entry |
+| "Item" | Marker of an individual item |
+| Column of figures | Monetary amounts at the right margin (fl., kr., lb.) |
+| "daran sein Innemen" | Sub-heading (fol. 3r) |
 
-### Gesicherte Personen
+### Confirmed persons
 
-| Person | Folio | Sicherheit |
-|--------|-------|------------|
-| Sigmund von Brandis | fol. 2r | Lesbar |
-| Graf Heinrich von Lupfen | fol. 3r | Lesbar |
-| [Name] | fol. 2v | Unsicher |
+| Person | Folio | Certainty |
+|--------|-------|-----------|
+| Sigmund von Brandis | fol. 2r | Legible |
+| Graf Heinrich von Lupfen | fol. 3r | Legible |
+| [name] | fol. 2v | Uncertain |
 
-### VLM-Transkriptionstest vom 26.08.2026
+### Machine transcription of the volume
 
-Vier Raitbuch-Doppelseiten und eine Inventarseite wurden mit sechs Varianten von `gemini-3.7-flash` verarbeitet. Das Modell erkennt Leerseiten, Seitenaufteilung und grobe Eintragsstruktur. Die Varianten unterscheiden sich bei Personennamen, Datierungen und Geldbeträgen deutlich. Die beste Flash-Variante auf dem Inventar-Referenzkandidaten war V3 Few-Shot mit 17,1 Prozent strikter CER und 7,9 Prozent fairer CER. Dieser Einzelwert lässt sich wegen Textsortenunterschied und ungeklärtem Referenzstatus nicht auf Raitbuch 2 übertragen.
+Openings from account book 2 form the core of the versioned prompt benchmark under `evaluation/benchmark/`; the page set was chosen from a visual survey of all 123 openings so that each selected page represents a distinct phenomenon (rule structure, name rubrics, columns of figures, cancellation crosses, faded rubrics, blank and transitional pages). The pilot under `evaluation/pilot/` runs the same prompts over a stretch of consecutive openings from the start of the volume.
 
-Die Ergebnisse begründen einen Pilot für Kategorienübersicht und Adjudikation. Diplomatische Transkription und Betragserschließung benötigen einen direkten Vergleich mit spezialisiertem HTR sowie fachlich geprüfte Raitbuch-Referenzen. Details stehen in `HTR-EVALUATION.md`.
+The models reliably recognise blank pages, the division of an opening into its two halves and the coarse entry structure. Personal names, dates and monetary amounts vary between repeated runs of the same prompt, and the amounts are precisely what account-book research depends on. All model output is therefore treated as an unrevised proposal until a scholar has reviewed it against the facsimile. The full argument and the current measurements are in `HTR-EVALUATION.md` and in `data/benchmark/summary.json`.
 
-### Erste Kategorie
+### First category identified
 
-**"prussian vnd Solde aussserhalb Lanndes"** (Provision und Sold außerhalb Landes): Personalzahlungen jenseits Tirols. Möglicher Küchenmeister-Fund in Zeile 9, fol. 2r ("[?]kuncmeister" → "kuechenmeister"?). **Verifizierung durch Barbara ausstehend.**
+**"prussian vnd Solde aussserhalb Lanndes"** (provision and pay outside the country): payments to personnel beyond Tyrol. A possible mention of a master of the kitchen in line 9, fol. 2r ("[?]kuncmeister", perhaps "kuechenmeister"). **Verification by the project lead is outstanding.**
 
-### Sprachliche Herausforderungen
+### Linguistic challenges
 
-- Kurrentschrift (ohne HTR nicht lesbar)
-- Frühneuhochdeutsch mit regionalen Varianten
-- Abkürzungen: fl. (Gulden), kr. (Kreuzer), lb. (Pfund)
-- Lateinische Formeln in sonst deutschem Text
+- Kurrentschrift, not readable without transcription support
+- Early New High German with regional variants
+- Abbreviations: fl. (Gulden), kr. (Kreuzer), lb. (Pfund)
+- Latin formulae inside otherwise German text
 
-### Offene Fragen zur Quelle
+### Open questions about the source
 
-- [ ] Welche Jahre deckt Raitbuch 2 genau ab?
-- [ ] Welche weiteren Abrechnungskategorien enthält der Band?
-- [ ] Gibt es einen Index oder eine Inhaltsübersicht?
-- [ ] Wie verhält sich Raitbuch 2 zu den anderen 25 Raitbüchern?
-- [x] ~~Existieren bereits Teiltranskriptionen?~~ → **Nein.** Layout-Analyse (Baselines) vorhanden, aber 0 Zeilen Text.
-- [ ] Enthält der Band küchenbezogene Kategorien?
+- [ ] Which years exactly does account book 2 cover?
+- [ ] Which further accounting categories does the volume contain?
+- [ ] Is there an index or table of contents?
+- [ ] How does account book 2 relate to the other 25 volumes?
+- [x] Do partial transcriptions already exist? **No.** A layout analysis with baselines is present, but no text.
+- [ ] Does the volume contain kitchen-related categories?

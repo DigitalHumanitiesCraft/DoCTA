@@ -1,32 +1,46 @@
-# TECH: Architektur, Libraries, Projektstruktur
+# TECH: Architecture, Libraries, Project Structure
 
 ## Constraint
 
-GitHub Pages (statisch), Vanilla JS/ES6 Module, kein Build-Prozess, kein npm zur Laufzeit. Externe Dependencies vendored in `/lib/`.
+The site is static and served by GitHub Pages from `docs/` on `main`. It uses vanilla JavaScript with ES6 modules, no build process and no package manager at runtime. External dependencies are vendored in `docs/lib/`.
 
-### Gevendorte Versionen (aus den Dateiköpfen in `lib/`)
+### Vendored versions (from the file headers in `docs/lib/`)
 
-| Library | Gevendort | Aktuell | Datei |
-|---------|-----------|---------|-------|
-| Bootstrap | 5.3.3 | 5.3.8 | `lib/bootstrap.min.css`, `lib/bootstrap.bundle.min.js` |
-| Cytoscape.js | 3.30.4 | 3.34.0 | `lib/cytoscape.esm.min.mjs` |
-| OpenSeadragon | 4.1.1 | 6.0.2 | `lib/openseadragon.min.js` |
-| marked | 15.0.12 | 18.0.9 | `lib/marked.min.js` |
+| Library | Vendored | File |
+|---------|----------|------|
+| Bootstrap | 5.3.3 | `lib/bootstrap.min.css`, `lib/bootstrap.bundle.min.js` |
+| Cytoscape.js | 3.30.4 | `lib/cytoscape.esm.min.mjs` |
+| OpenSeadragon | 4.1.1 | `lib/openseadragon.min.js` |
+| marked | 15.0.12 | `lib/marked.min.js` |
 
-Der Rückstand ist bekannt und für einen Prototyp unkritisch: die Versionen sind eingefroren, seit sie funktionieren, und ohne Paketmanager ist ein Update Handarbeit samt erneutem Durchtesten aller Seiten.
+The pins lag behind upstream. That is deliberate. The versions are frozen since they worked, and without a package manager an upgrade means editing files by hand and retesting every page.
 
-## Netzwerk-Visualisierung: Cytoscape.js
+## Site pages
 
-### Warum Cytoscape.js
+| Page | Purpose |
+|------|---------|
+| `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
+| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source |
+| `edition.html` | The edition view over sources that have passed validation |
+| `exploration.html` | The relation network extracted from a validated transcription |
+| `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
+| `knowledge.html` | Knowledge vault, rendering these Markdown documents |
+| `about.html` | About the project, data sources, imprint |
 
-| Bibliothek | Renderer | Max Knoten | ESM-Support | Graph-Algorithmen |
-|-----------|----------|-----------|-------------|-------------------|
-| **Cytoscape.js** | Canvas + WebGL (v3.31+) | ~10.000+ (WebGL) | Ja, ESM-Build | Ja (BFS, PageRank, Betweenness, Communities) |
-| Sigma.js v3 | WebGL nativ | ~15.000+ | Problematisch ohne npm | Via graphology |
-| vis.js | Canvas | ~3.000 | UMD Build | Nein |
-| D3.js | SVG/Canvas | ~2.000 (SVG) | Ja | Nein |
+Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place.
 
-### Einbindung
+## Network visualisation: Cytoscape.js
+
+### Why Cytoscape.js
+
+| Library | Renderer | Node ceiling | ESM support | Graph algorithms |
+|---------|----------|--------------|-------------|------------------|
+| **Cytoscape.js** | Canvas, WebGL from 3.31 | High, with WebGL | Yes, ESM build | Yes (BFS, PageRank, betweenness, communities) |
+| Sigma.js v3 | WebGL native | High | Problematic without npm | Through graphology |
+| vis.js | Canvas | Low | UMD build | No |
+| D3.js | SVG or Canvas | Low with SVG | Yes | No |
+
+Loading it:
 
 ```html
 <script type="module">
@@ -34,43 +48,35 @@ Der Rückstand ist bekannt und für einen Prototyp unkritisch: die Versionen sin
 </script>
 ```
 
-### Performance-Strategie (6.288 Personen + 42.893 Relationen)
+### Scale and the two graph problems
 
-Umgesetzt in `network.html`:
+The current graph on `exploration.html` is the extracted relation network of a single source. It is small, so `cose` over the whole set renders immediately and no progressive disclosure is needed.
 
-1. Progressive Disclosure: Start als Ego-Netzwerk um Sigmund, `EGO_MAX_NEIGHBORS = 50` Nachbarn, Concentric-Layout mit Sigmund im Zentrum
-2. Klick auf einen Knoten zeigt dessen Ego-Netzwerk, Toggle schaltet auf das Gesamtnetzwerk (`FULL_MAX_NODES = 75`, nach Grad gefiltert, COSE-Layout)
-3. Knotensuche und Filter nach Relationstyp, statt alles gleichzeitig zu zeigen
+The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in DESIGN.md and applies again when the court network returns as a view over edited text.
 
-Geplant, aber nicht umgesetzt:
+Two performance measures were planned in the prototype phase and never became necessary. Labels shown only on hover and above a zoom threshold stayed unnecessary at the node counts actually displayed. Layout pre-computation exists as `scripts/compute_layout.py`, which writes `data/network.json`; no page loads that file, because Cytoscape computes a layout for these node counts fast enough in the browser and a live layout allows switching between layout algorithms. The WebGL renderer is unavailable to the vendored 3.30.4 in any case, and Canvas suffices.
 
-4. **Labels nur bei Hover und ab einer Zoomstufe.** Alle Knoten tragen dauerhaft ihr Label. Bei 50 bis 75 Knoten ist das lesbar; ein Zoom-abhängiges Einblenden wäre erst bei deutlich größeren Graphen nötig.
-5. **Layout-Vorberechnung (Python/networkx).** `scripts/compute_layout.py` existiert und schreibt `data/network.json` (200 Knoten mit x/y). Die Datei wird von keiner Seite geladen: bei 50 bis 75 sichtbaren Knoten rechnet Cytoscape das Layout schnell genug im Browser, und ein Live-Layout erlaubt den Wechsel zwischen Concentric und COSE. `data/network.json` bleibt als Explorationsartefakt im Repo.
-6. **WebGL-Renderer** (`{ renderer: { name: 'webgl' } }`). Nicht aktiviert: WebGL gibt es in Cytoscape erst ab 3.31, gevendort ist 3.30.4. Bei der aktuellen Knotenzahl reicht Canvas ohnehin.
+## Document viewer: OpenSeadragon
 
-## Dokumentenviewer: OpenSeadragon
-
-Zero Dependencies, IIIF-Support, Deep Zoom.
+Zero dependencies, IIIF support, deep zoom.
 
 ```html
 <script src="lib/openseadragon.min.js"></script>
 ```
 
-Bild-Quellen: Transkribus-IIIF-URLs, geladen als einfache Bildquelle (`viewer.open({ type: 'image', url })`), nicht als gekachelter IIIF-Service. Das reicht für einzelne Inventarseiten und spart einen Request-Roundtrip pro Kachel.
+Images come from Transkribus IIIF URLs, loaded as a plain image source (`viewer.open({ type: 'image', url })`) rather than as a tiled IIIF service. That is enough for single pages and saves a request round trip per tile.
 
-Das Transkriptionspanel ist eigenes HTML neben dem Viewer. Eine Synchronisation über Viewport-Events (Zeile im Text ↔ Zeilenbox im Bild) war geplant und ist nicht umgesetzt: Bild und Text stehen nebeneinander, ohne aufeinander zu zeigen. Die Zeilenkoordinaten aus dem PAGE-XML liegen in `data/transcriptions/` bereit, das Overlay fehlt.
+The transcription panel is separate HTML beside the viewer. A synchronisation over viewport events, so that a line in the text highlights its line box in the image, was planned and is not implemented; image and text sit side by side without pointing at each other. The line coordinates from the PAGE XML are ready in `data/transcriptions/`, the overlay is missing.
 
-## Facettierte Suche: Custom Vanilla JS
+## Search: custom vanilla JavaScript
 
-Keine Bibliothek nötig. Für 6.288 Personen + 736 Orte reicht `Array.filter()` + `Map` + `Set`. Statt einer eigenen Klasse steht die Logik als Funktionen (`getFiltered`, `renderFacets`, `renderResults`) inline in `search.html`, gegen ein `activeFilters`-Objekt aus vier `Set`s.
+No library is needed. `Array.filter()` with `Map` and `Set` handles the data volumes involved. The logic sits inline in the page that uses it, as plain functions over a small filter-state object, rather than as a class.
 
-Umgesetzte Facetten: **Entitätstyp, Geschlecht, Funktion (Top 15), Ortstyp.**
+The source search on the home page filters over category, availability tier and free text. A faceted search across the SiCProD entities ran in the prototype phase with facets for entity type, gender, function and place type. Institution was never usable as a facet, because almost all institution records carry no type (see DATA.md), and a period slider fails on the heterogeneous and often missing datings.
 
-Geplant, nicht umgesetzt: Institution, Zeitraum als Slider, Ort. Institutionen sind als Ergebnistyp durchsuchbar, taugen aber als Facette nicht, weil 207 von 215 keinen Typ haben (siehe DATA.md). Ein Zeitraum-Slider scheitert an den uneinheitlichen und oft fehlenden Datumsangaben.
+## Data loading
 
-## Daten-Loading
-
-Jede Seite lädt nur die JSON-Dateien, die sie braucht. `js/data-loader.js` exportiert `loadJSON(path)` und `loadAll(pathMap)`; gecacht wird pro Datei in IndexedDB, versioniert über die Konstante `DATA_VERSION`.
+Every page loads only the JSON files it needs. `js/data-loader.js` exports `loadJSON(path)` and `loadAll(pathMap)`, caching per file in IndexedDB and versioning the cache through the constant `DATA_VERSION`.
 
 ```javascript
 export async function loadJSON(path) {
@@ -84,71 +90,77 @@ export async function loadJSON(path) {
 }
 ```
 
-IndexedDB ist optional: Öffnet die Datenbank nicht innerhalb von 1,5 Sekunden oder schlägt sie fehl, fällt das Modul stillschweigend auf reines `fetch()` zurück.
+IndexedDB is optional. If the database does not open within one and a half seconds, or fails outright, the module falls back silently to plain `fetch()`.
 
-Erwartete Ladezeit: ~1–3 Sekunden (1–1.5 MB gzipped über GitHub Pages CDN).
-
-## Projektstruktur
+## Project structure
 
 ```
-DoCTA/docs/             # Published site (GitHub Pages serves docs/ on main)
-├── index.html          # Start: Dashboard + Quellenübersicht mit Suche und Filtern
-├── viewer.html         # Quellen-Explorer (OpenSeadragon + Transkription), Ort der Kuration
-├── benchmark.html      # HTR-Benchmark: Ergebnisse der Prompt-Iterationen
-├── knowledge.html      # Knowledge Vault (Promptotyping-Wissensbasis)
-├── about.html          # About, Bedienung, Datenquellen, Impressum
-├── css/styles.css      # Einheitliches Design
-├── js/                 # ES6 Module, nur was mehrere Seiten teilen
-│   ├── app.js          # Navigation, Beta-Banner, Footer
-│   ├── benchmark.js    # Benchmark-Tabellen aus data/benchmark/summary.json
-│   ├── data-loader.js  # Fetch JSON, IndexedDB-Cache
-│   └── utils.js        # Formatierung, Sortierung, Escaping
-├── data/               # Pre-processed JSON (git-tracked)
-│   ├── benchmark/      # Export des HTR-Benchmarks (summary + runs)
-│   └── demo/           # NER-Demo-Daten
-├── lib/                # Vendored: bootstrap, cytoscape.esm.min.mjs,
-│                       #   openseadragon.min.js, marked.min.js
 DoCTA/
-├── experiments/        # VLM-Transkriptionstest und Prompt-Benchmark (Labor)
-├── scripts/            # Python Build-Time Scripts
-└── knowledge/          # Promptotyping-Dokumentation
+├── docs/                   Published site, GitHub Pages serves this folder on main
+│   ├── *.html              index, viewer, edition, exploration, benchmark, knowledge, about
+│   ├── css/styles.css      Design tokens as CSS custom properties
+│   ├── js/                 ES6 modules shared by several pages
+│   │   ├── app.js          Navigation, banner, footer
+│   │   ├── benchmark.js    Benchmark tables from data/benchmark/summary.json
+│   │   ├── data-loader.js  Fetch JSON, IndexedDB cache
+│   │   └── utils.js        Formatting, sorting, escaping
+│   ├── data/               Pre-processed JSON, git-tracked
+│   │   ├── benchmark/      Published export of the prompt benchmark
+│   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
+│   │   └── transcriptions/ Inventory transcriptions from Transkribus PAGE XML
+│   ├── lib/                Vendored dependencies
+│   └── knowledge/          This knowledge base
+├── evaluation/
+│   ├── benchmark/          Versioned prompt benchmark: pages, prompts, runs, metrics
+│   └── pilot/              The benchmark prompts on continuous, uncurated material
+├── experiments/
+│   └── transcription-test/ The frozen first VLM transcription test of 26.08.2026
+├── pipeline/               Page register: per-page content class, empty evidence,
+│                           verification status, provenance-tagged transcription runs
+├── scripts/                Python build-time scripts
+└── tests/                  Smoke and interaction tests against the published site
 ```
 
-**Abweichung von der ursprünglichen Planung.** Geplant war ein Modul pro Seite (`network-view.js`, `search-engine.js`, `source-table.js`, `document-viewer.js`, `pipeline-demo.js`). Gebaut wurde anders: der seitenspezifische JavaScript-Code steht als `<script type="module">` direkt in der jeweiligen HTML-Datei, unter `js/` liegt nur, was mehrere Seiten gemeinsam nutzen. Grund: ohne Build-Prozess kostet jedes Modul einen zusätzlichen HTTP-Request, und der Code einer Seite wird von keiner anderen verwendet. Wer eine Seite verstehen will, liest eine Datei.
+The module layout departs from the original plan. One module per page was planned (`network-view.js`, `search-engine.js`, `source-table.js`, `document-viewer.js`, `pipeline-demo.js`). What was built is different. Page-specific JavaScript sits as `<script type="module">` directly in its HTML file, and `js/` holds only what several pages share. Without a build process each module costs an additional HTTP request, and the code of one page is used by no other. Reading one file is enough to understand one page.
 
-Auch der geplante Ordner `images/` (Beispiel-Digitalisate) existiert nicht. Die Digitalisate kommen zur Laufzeit über die Transkribus-IIIF-URLs, es liegt kein Bildmaterial im Repo.
+The planned folder `images/` for sample facsimiles does not exist either. Facsimiles load at runtime from the Transkribus IIIF URLs, and no image material lives in the repository.
 
-## Design-System
+## Design system
 
-Konsistent mit coOCR/HTR (externes Referenzprojekt, entwickelt von DHCraft):
+Consistent with coOCR/HTR, an external reference project developed by DHCraft.
 
-| Aspekt | Umsetzung |
-|--------|-----------|
-| Farbschema | Warm, hell |
-| Prüfstatus | Grün (sicher), Gelb (prüfenswert), Rot (problematisch), an Regeln oder fachliche Entscheidung gebunden |
-| HTML | Semantisch, ARIA-Labels |
-| Layout | Desktop-First, responsiv (kein Mobile-Fokus) |
-| Typografie | Monospace für Quellentext, Sans-Serif für UI |
+| Aspect | Implementation |
+|--------|----------------|
+| Colour scheme | Warm, light |
+| Review status | Green for secure, amber for worth checking, red for problematic, bound to rules or to a scholarly decision |
+| HTML | Semantic, with ARIA labels |
+| Layout | Desktop first, responsive, without a mobile focus |
+| Typography | Monospace for source text, sans-serif for the interface |
 
-## Build-Time Scripts (Python)
+## Build-time scripts (Python)
 
 | Script | Input | Output |
 |--------|-------|--------|
 | `fetch_sicprod.py` | SiCProD API | `data/persons.json`, `data/places.json`, `data/institutions.json`, `data/functions.json`, `data/relations.json` |
-| `transform_sources.py` | CSV + `data/source_mapping.json` | `data/sources.json` |
-| `fetch_transcriptions.py` | Transkribus API (OAuth2) | `data/transcriptions/{id}.json` |
-| `map_sources.py` | Transkribus-Titel + CSV-Signaturen | `data/source_mapping.json` |
+| `transform_sources.py` | Source catalogue CSV plus `data/source_mapping.json` | `data/sources.json` |
+| `fetch_transcriptions.py` | Transkribus API over OAuth2 | `data/transcriptions/{id}.json` |
+| `map_sources.py` | Transkribus titles plus catalogue shelfmarks | `data/source_mapping.json` |
+| `build_stats.py` | The exported JSON files | `data/stats.json`, the single source of truth for the figures the site shows |
 
-Explorations- und Hilfsskripte, deren Output der Prototyp nicht lädt: `compute_layout.py` (→ `data/network.json`), `explore_transkribus.py`, `explore_transkribus_deep.py`, `transkribus_status.py` (→ `data/transkribus_collection.json`, `data/transkribus_status.json`), `fetch_remaining.py`. Sie dokumentieren, wie die Datenlage ermittelt wurde, und bleiben deshalb im Repo.
+Exploration and helper scripts whose output no page loads: `compute_layout.py` writing `data/network.json`, `explore_transkribus.py`, `explore_transkribus_deep.py`, `transkribus_status.py` writing `data/transkribus_collection.json` and `data/transkribus_status.json`, and `fetch_remaining.py`. They document how the data situation was established and stay in the repository for that reason.
 
-## coOCR/HTR als Referenz
+## Tests
 
-Browserbasierte VLM-Transkriptionsworkbench. **Externes Projekt**, nicht Teil des Prototyps.
+`tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.
+
+## coOCR/HTR as a reference
+
+A browser-based VLM transcription workbench. It is an **external project** and no part of DoCTA.
 
 | | |
 |---|---|
-| Demo | http://dhcraft.org/co-ocr-htr |
-| Repo | https://github.com/DigitalHumanitiesCraft/co-ocr-htr |
-| Stack | Vanilla JS/ES6, OpenSeadragon, kein Build-Prozess |
+| Demo | https://dhcraft.org/co-ocr-htr |
+| Repository | https://github.com/DigitalHumanitiesCraft/co-ocr-htr |
+| Stack | Vanilla JavaScript with ES6 modules, OpenSeadragon, no build process |
 
-DoCTA übernimmt die visuelle Design-Sprache von coOCR/HTR. Die frühere kategorielle Konfidenz wird als regelgebundener Prüfstatus weitergeführt. Der Code wird nicht übernommen.
+DoCTA adopts the visual design language of coOCR/HTR. Its earlier categorical confidence display is carried on here as a rule-bound review status. The code is not adopted.

@@ -1,184 +1,174 @@
-# JOURNAL: Entscheidungen, Exploration, offene Fragen
+# JOURNAL: Decisions, Exploration, Open Questions
 
-## Phasenstatus (Stand 26.08.2026)
+A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
-| Phase | Status | Ergebnis |
-|-------|--------|----------|
-| 1. Preparation | ✓ | Quelldokumente gesammelt (projektintern, nicht im öffentlichen Repo) |
-| 2. Exploration | ✓ | SiCProD API geprobt, CSV analysiert, Transkribus Collection kartiert (115 Dok, 12.236 S.), IIIF verifiziert |
-| 3. Destillation | ✓ | 8 Knowledge-Dateien plus ein projektinterner Implementierungsplan (`IMPLEMENTATION.md`, ebenfalls nicht im öffentlichen Repo) |
-| 4. Implementation | ✓ | Acht Seiten gebaut, Daten eingebunden, seit 19.02.2026 unter https://dhcraft.org/DoCTA/ öffentlich |
-| HTR-Iteration | ◐ | Fünf Testbilder mit sechs Flash-Varianten ausgewertet; Spezial-HTR-Vergleich und fachliche Raitbuch-Referenz offen |
+## Phase status (as of 26.08.2026)
 
----
+| Phase | State | Result |
+|-------|-------|--------|
+| 1. Preparation | Done | Source documents collected (project-internal, not in the public repository) |
+| 2. Exploration | Done | SiCProD API probed, catalogue CSV analysed, Transkribus collection mapped (115 documents, 12,236 pages), IIIF verified |
+| 3. Distillation | Done | Eight knowledge files plus a project-internal implementation plan (`IMPLEMENTATION.md`, likewise not in the public repository) |
+| 4. Implementation | Done | Eight pages built, data wired in, public since 19.02.2026 at https://dhcraft.org/DoCTA/ |
+| HTR iteration | Running | Five test images evaluated with six prompt variants; the comparison against a specialised HTR model and a scholarly account-book reference are still open |
 
-## Promptotyping-Iteration (26.08.2026)
+## Promptotyping iteration (26.08.2026)
 
-### VLM-Transkriptionstest
+### The VLM transcription test
 
-Der Test verarbeitet vier Doppelseiten aus Raitbuch 2 und eine Inventarseite mit sechs Varianten von `gemini-3.7-flash`. Rohoutputs, Metriken und Synopse-Viewer liegen unter `experiments/transcription-test/`. Die technische Funktion wurde beobachtet. Fachliche Prüfung und Nutzerabnahme stehen aus.
+The test processes four openings from account book 2 and one inventory page with six variants of `gemini-3.7-flash`. Raw outputs, metrics and a synopsis viewer are under `experiments/transcription-test/`. Technical function was observed. Scholarly checking and user acceptance are outstanding, so every output of this run is unrevised machine transcription.
 
-| Befund | Konsequenz |
-|--------|------------|
-| V3 Few-Shot erreicht auf dem Inventar-Referenzkandidaten die beste strikte und faire CER | V3 wird als aktuelle Flash-Entwicklungskonfiguration weitergeführt |
-| V6 Bildverbesserung erreicht die höchste Wortüberlappung und die zweitbeste faire CER | V6 bleibt Vergleichskandidat für schwer lesbare Seiten |
-| V4 Seitenteilung verschlechtert die Inventarwerte | Ausschnitte werden nur gezielt für schwierige Regionen eingesetzt |
-| Raitbuch-Ausgaben variieren bei Namen, Jahreszahlen und Beträgen | Flash eignet sich derzeit für Struktur- und Kategoriensichtung; Forschungsdaten benötigen Adjudikation |
-| Die leere Testseite wird von allen strukturierten Varianten korrekt erkannt | Leerseiten- und Layout-Triage kann in den Bandlauf übernommen werden |
+| Finding | Consequence |
+|---------|-------------|
+| V3 few-shot reaches the best strict and fair CER on the inventory reference candidate | V3 is carried on as the current development configuration |
+| V6 image enhancement reaches the highest word overlap and the second-best fair CER | V6 stays a comparison candidate for hard-to-read pages |
+| V4 page splitting worsens the inventory values | Crops are used only in a targeted way, for difficult regions |
+| Account-book outputs vary in names, years and monetary amounts | The configuration currently suits structural and category survey; research data need adjudication |
+| The blank test page is recognised correctly by all structured variants | Blank-page and layout triage can go into a continuous run |
 
-### Korrektur des Referenzbegriffs
+### Correcting the notion of a reference
 
-Die 57 Inventare enthalten Arbeitstranskriptionen. Drei Dokumente tragen in Transkribus den Status `DONE`, 54 den Status `IN_PROGRESS`. Keines besitzt einen im Projekt dokumentierten formalen Ground-Truth-Status. Zusätzlich liegen zwei Transkriptionskonventionen vor. Der Viewer-Begriff „Ground Truth“ wird methodisch als **Inventar-Referenzkandidat** interpretiert, bis Konvention und fachliche Abnahme dokumentiert sind.
+The inventories in the collection carry working transcriptions. Three documents hold the Transkribus status `DONE`, the remainder `IN_PROGRESS`. None holds a formal ground-truth status documented within the project, and two transcription conventions are present besides. The viewer's use of the term "ground truth" is therefore read methodologically as **inventory reference candidate** until convention and scholarly approval are documented.
 
-### Methodische Entscheidung
+### Methodological decision
 
-Die Produktionsentscheidung wird aufgabenspezifisch getroffen. Kategorienübersicht, diplomatische Transkription und Betragserschließung erhalten getrennte Prüfungen. Der nächste Modellvergleich verwendet denselben gesperrten Raitbuch-Satz für Flash, ein stärkeres Vision-Language-Modell und ein spezialisiertes Transkribus-Modell. Divergenzen werden mit Bildausschnitten zur fachlichen Adjudikation vorgelegt. Der vollständige Prüfvertrag steht in `HTR-EVALUATION.md`.
+The production decision is taken per task. Category survey, diplomatic transcription and the reading of amounts receive separate checks. The next model comparison uses the same held-out account-book set for the current configuration, a stronger vision-language model and a specialised Transkribus model. Divergences are presented with image details for scholarly adjudication. The full review contract is in `HTR-EVALUATION.md`.
 
----
+## Decisions (17.02.2026)
 
-## Entscheidungen (17.02.2026)
+### Agreed with the DH partner
 
-### User-Entscheidungen (mit Christopher abgestimmt)
+| Question | Decision | Reason |
+|----------|----------|--------|
+| Type of prototype | A functional tool rather than a mockup | The reviewer should be able to interact with it |
+| Priorities | Pipeline demo first, faceted search second, source exploration third | The pipeline addresses the review criticism most directly |
+| Technology stack | Vanilla JavaScript, as in coOCR/HTR | Consistency, no build process |
+| Deployment | GitHub Pages | Static and public |
+| Authentication | None | The prototype has to be reachable for reviewers |
+| Images | Transkribus IIIF URLs, with a fallback if needed | IIIF in `<img>` presumed to be CORS-free |
 
-| Frage | Entscheidung | Begründung |
-|-------|-------------|------------|
-| Prototyp-Typ | Funktionales Tool (nicht nur Mockup) | Gutachter soll interagieren können |
-| Prioritäten | 1. Pipeline-Demo, 2. Facettierte Suche, 3. Quellenexploration | Pipeline adressiert Gutachten-Kritik am direktesten |
-| Tech Stack | Vanilla JS wie coOCR/HTR | Konsistenz, kein Build-Prozess |
-| Deployment | GitHub Pages | Statisch, öffentlich |
-| Auth | Keine | Prototyp muss für Gutachter zugänglich sein |
-| Bilder | Transkribus IIIF-URLs + ggf. Dropbox-Fallback | IIIF in `<img>` vermutlich CORS-frei |
+### Open decisions at that date
 
-### Offene Entscheidungen
+| Question | Options | Who decides |
+|----------|---------|-------------|
+| Case study for the prototype | Search account book 2 for kitchen categories, treat "Provision und Sold" as its own study, or choose a different account book | The project lead, after verifying the possible mention of a master of the kitchen |
+| Entity granularity | Four entity types in the demo (person, place, object, time) against nine in SiCPAS | The project lead with the BeNASch team |
+| Mapping practice onto BeNASch | Worked out on a handful of example entries | The project lead with the Bern team |
+| Open-source positioning of coOCR/HTR | Raised with the project lead on 04.02.2026 | The project lead, response outstanding |
 
-| Frage | Optionen | Wer entscheidet |
-|-------|---------|----------------|
-| Fallstudie für Prototyp | A: Küchenkategorien in RB2 suchen, B: "Provision und Sold", C: Anderes Raitbuch | Barbara (Küchenmeister-Fund verifizieren) |
-| NER-Granularität | 4 Entitätstypen in der Demo (person, place, object, time) vs. 9 in SiCPAS | Barbara + BeNASch-Team |
-| Practice↔BeNASch-Mapping | Anhand von 5–10 Beispieleinträgen | Barbara + Berner Team |
-| coOCR/HTR Open-Source-Positionierung | Mail 04.02.2026 an Barbara | Barbara (Rückmeldung ausstehend) |
+## Decisions (18.–19.02.2026, implementation phase)
 
----
+| Question | Decision | Reason |
+|----------|----------|--------|
+| Entry point into the network (commit 86783f2, 18.02.) | The ego network as the default view, with Sigmund at the centre, up to fifty neighbours and a concentric layout. Clicking a node opens that node's ego network. The full network, the seventy-five best-connected nodes under a COSE layout, sits behind a toggle. | The previous entry point through the full network was a cloud without a statement. An ego network answers a question immediately, namely who stands around this person, and makes exploration the obvious next action. |
+| Handling faulty node types (commit d89a58c, 19.02.) | Entities without an entry in the index (`event-*`) are filtered out before drawing. | The full network crashed otherwise. |
+| Positioning of coOCR/HTR (commits d89a58c and 25489aa, 19.02.) | coOCR/HTR is named explicitly as a tool in two places, in the HTR step of the pipeline demo and in the reviewer section of the help page, each time as the editor in the loop for validating and correcting Transkribus results. | The sister project answers review point 3 on language-model approaches concretely instead of abstractly, and shows that quality assurance does not still have to be invented. |
+| Data commitments towards reviewers (commit 25489aa, 19.02.) | The help page names two commitments for the full project: publication of all research data under the FAIR principles, and a documented REST API over persons, relations, sources and transcriptions, alongside the open GitHub repository. | Reusability was only asserted in the proposal. Named as a commitment in the prototype it becomes checkable. |
+| Figures on the home page | Six raw counts (persons, relations, places, sources, transcriptions, functions) and no derived ratios. | A ratio such as relation coverage in percent would need a defined denominator that does not yet exist methodologically. An invented percentage does more harm than an honest count does good. |
 
-## Entscheidungen (18.–19.02.2026, Implementierungsphase)
+## Exploration results (17.02.2026)
 
-| Frage | Entscheidung | Begründung |
-|-------|-------------|------------|
-| Einstieg ins Netzwerk (Commit 86783f2, 18.02.) | Ego-Netzwerk als Standardansicht: Sigmund im Zentrum, bis zu 50 Nachbarn, Concentric-Layout. Klick auf einen Knoten öffnet dessen Ego-Netzwerk. Das Gesamtnetzwerk (Top-75 nach Grad, COSE) ist per Toggle erreichbar. | Der vorherige Einstieg über das Gesamtnetzwerk war eine Wolke ohne Aussage. Ein Ego-Netzwerk beantwortet sofort eine Frage („wer steht um diese Person?") und macht Exploration zur naheliegenden Handlung. |
-| Umgang mit fehlerhaften Knotentypen (Commit d89a58c, 19.02.) | Entitäten ohne Eintrag im Index (`event-*`) werden vor dem Zeichnen herausgefiltert. | Das Gesamtnetzwerk stürzte sonst ab. |
-| Positionierung von coOCR/HTR (Commits d89a58c und 25489aa, 19.02.) | coOCR/HTR wird an zwei Stellen explizit als Werkzeug benannt: im HTR-Schritt der Pipeline-Demo und im Gutachterabschnitt von `help.html`, jeweils als Editor-in-the-Loop für die Validierung und Korrektur der Transkribus-Ergebnisse. | Das Schwesterprojekt beantwortet Gutachten-Punkt 3 (LLM-Ansätze) konkret statt abstrakt und belegt, dass die Qualitätssicherung nicht erst noch erfunden werden muss. |
-| Datenzusagen gegenüber Gutachtern (Commit 25489aa, 19.02.) | `help.html` nennt zwei Zusagen für das Vollprojekt: Publikation aller Forschungsdaten nach den FAIR-Prinzipien und eine dokumentierte REST-API auf Personen, Relationen, Quellen und Transkriptionen, zusätzlich zum offenen GitHub-Repository. | Nachnutzbarkeit war im Antrag nur behauptet. Als benannte Zusage im Prototyp ist sie überprüfbar. |
-| Kennzahlen auf der Startseite | Sechs Rohzählungen (Personen, Relationen, Orte, Quellen, Transkriptionen, Funktionen), keine abgeleiteten Quoten. | Quoten wie „Relationsabdeckung in %" bräuchten einen definierten Nenner, den es methodisch noch nicht gibt. Eine ausgedachte Prozentzahl schadet mehr, als eine ehrliche Zählung nützt. |
+### SiCProD API, expectation against reality
 
----
+| What we assumed | What we found | Consequence |
+|-----------------|---------------|-------------|
+| Events, number unknown | **Only 28 events**, namely diets, imperial diets and weddings | Everyday practices come from the account books rather than from SiCProD |
+| Salaries, 2,906 records | **No monetary amounts**, only links between person and function | Financial data have to be extracted from the account books |
+| Institutions, 215 with types | **207 without a type** | An institution filter is of little use |
+| Functions, some 99 distinct | Around eighty court offices, good variety | Excellent for faceted search and for analysing court structure |
+| Places, 736 with coordinates | Many without lat/lng | A map will have gaps |
+| Persons, 6,288 | Well documented. `first_name` is filled for 6,281 of 6,288, `status` is empty throughout. | The given name is shown in search and network, `status` is not exported at all. Name variants (`alternative_label`) are present and useful. |
 
-## Explorationsergebnisse (17.02.2026)
+### The catalogue CSV, quality problems
 
-### SiCProD API: Erwartung vs. Realität
+Serious problems:
 
-| Was wir dachten | Was wir fanden | Konsequenz |
-|----------------|---------------|------------|
-| Events: "Anzahl unbekannt" | **Nur 28 Events.** Landtage, Reichstage, Hochzeiten. | Alltagspraktiken kommen aus Raitbüchern, nicht aus SiCProD. |
-| Salaries: 2.906 Einträge | **Keine Geldbeträge.** Nur Person↔Funktion-Links. | Finanzielle Daten müssen aus Raitbüchern extrahiert werden. |
-| Institutionen: 215 mit Typen | **207 ohne Typ.** | Institutionen-Filter im Prototyp wenig nützlich. |
-| Funktionen: "99 distinkte" | 79+ Hofämter, gute Vielfalt | Exzellent für facettierte Suche und Hofstruktur-Analyse. |
-| Orte: 736 mit Koordinaten | Viele ohne lat/lng | Karte wird Lücken haben. |
-| Personen: 6.288 | Gut dokumentiert. `first_name` ist bei 6.281 von 6.288 befüllt (nur 7 leer), `status` durchgehend leer. | Vorname wird in Suche und Netzwerk angezeigt, `status` gar nicht erst exportiert. Namensvarianten (`alternative_label`) vorhanden und nützlich. |
+- Sixteen empty ghost columns, artifacts of an Excel export
+- The Digitalisiert column holds a page count rather than a boolean
+- The Transkribiert column holds either "Inventaria" or nothing
+- More than ten different date formats
+- En dash against hyphen used inconsistently, the Repertorium section against the rest
 
-### CSV-Quellenübersicht: Qualitätsprobleme
+Duplicates and errors:
 
-**Schwere Probleme:**
-- 16 leere Geisterspalten (Excel-Artefakte)
-- "Digitalisiert"-Spalte enthält Seitenanzahl, kein Boolean
-- "Transkribiert" enthält nur "Inventaria" (55×) oder nichts
-- 10+ verschiedene Datumsformate
-- En-dash vs. Hyphen inkonsistent (Repertorium vs. Rest)
+- Hs. 0041, a true duplicate
+- A 002.1 and A 2.1, a near duplicate with a typo
+- Seven sources outside Sigismund's lifetime
+- A date value in the Art column, row 304
 
-**Duplikate und Fehler:**
-- Hs. 0041: echtes Duplikat
-- A 002.1 / A 2.1: Quasi-Duplikat mit Tippfehler
-- 7 Quellen außerhalb Sigmunds Lebenszeit
-- Datumswert in Art-Spalte (Zeile 304)
+Structural finding: 57 of 312 sources are transcribed, exclusively castle inventories from the Inventaria project. No account book is transcribed.
 
-**Strukturelle Erkenntnis:**
-57 von 312 Quellen sind transkribiert (18,3%), ausschließlich Burgeninventare (Inventaria-Projekt). Kein Raitbuch transkribiert.
+### File inventory, coverage gaps (closed)
 
-### Dateiinventar: Abdeckungslücken (geschlossen)
+The source documents named below are project-internal and are not contained in the public repository (see INDEX.md).
 
-Die genannten Quelldokumente liegen projektintern und sind im öffentlichen Repository nicht enthalten (siehe INDEX.md).
+| Gap | Source document (project-internal) | Now captured in |
+|-----|------------------------------------|-----------------|
+| Epistemic asymmetry | `sources/coocr-htr-epistemologie.md` | CONTEXT.md |
+| Sequencing of phase 1 | `sources/strategische-planung.md` | REQUIREMENTS.md |
+| The project lead's own wording of the requirements | `sources/requirements-projektleitung.md` | REQUIREMENTS.md |
+| Entity category discrepancy | `sources/fwf-proposal-2025.md` against SiCPAS | CONTEXT.md |
+| Open source questions on account book 2 | `sources/raitbuch-2-analyse.md` | DATA.md |
 
-| Lücke | Quelldokument (projektintern) | Jetzt erfasst in |
-|-------|---------------|-----------------|
-| Epistemische Asymmetrie | `sources/coocr-htr-epistemologie.md` | CONTEXT.md |
-| Phase-1-Sequenzierung | `sources/strategische-planung.md` | REQUIREMENTS.md |
-| Barbaras Originalstimme | `sources/requirements-barbara.md` | knowledge/REQUIREMENTS.md |
-| NER-Kategorie-Diskrepanz | `sources/fwf-proposal-2025.md` vs. SiCPAS | CONTEXT.md |
-| Offene Quellenfragen RB2 | `sources/raitbuch-2-analyse.md` | DATA.md |
+### Deliberately not captured, proposal level rather than code
 
-### Bewusst nicht erfasst (Antragsebene, nicht Code)
+- The bibliography of the proposal, around a hundred references
+- Work-package detail and the Gantt chart over 36 months
+- The financial detail of the proposal
 
-- Bibliografie des ÖAW-Antrags (~100 Referenzen)
-- WP-Details + GANTT (36 Monate)
-- Finanzielle Details des Antrags
+## Dead ends
 
----
+| What | Why it was a dead end | Lesson |
+|------|-----------------------|--------|
+| The Transkribus API in the browser | CORS blocks it, and OAuth2 in the client is insecure | Pre-fetch with Python |
+| SiCProD events as a source of practice data | Only 28 major events | Everyday practices come from the account books |
+| SiCProD salaries as a source of financial data | No amounts, only links | Financial data come from the account books |
+| Reading the SVG model diagram | 742 KB on a single line | The content was carried over as text into CONTEXT.md |
+| Reading the PDF on Windows | pdftoppm unavailable | Agent-based extraction |
+| Transkribus authentication | The initial authentication failed with 401; it succeeded after correcting the credentials | Take credentials directly from the user |
+| The "correction" of the funding body (18.02.2026) | A review round classified the correct references to the funding body as errors and replaced them project-wide with "FWF". Reverted on 05.08.2026: APART-GSK is a programme of the body originally named, and the review of the first submission was that body's review. | A review can turn a correct statement into a wrong one. Proper names of funding programmes and institutions are checked against an external source rather than against the majority of occurrences inside the repository. |
 
-## Sackgassen
+## Transkribus exploration (17.02.2026, updated 26.08.2026)
 
-| Was | Warum Sackgasse | Erkenntnis |
-|-----|----------------|------------|
-| Transkribus API im Browser | CORS blockiert, OAuth2 im Client unsicher | Pre-Fetch mit Python |
-| SiCProD Events für Praxis-Daten | Nur 28 Großereignisse | Alltagspraktiken aus Raitbüchern |
-| SiCProD Salaries für Finanzen | Keine Beträge, nur Links | Finanzielle Daten aus Raitbüchern |
-| SVG-Modelldiagramm lesen | 742 KB einzeilig | Inhalt textuell in CONTEXT.md |
-| PDF auf Windows lesen | pdftoppm nicht verfügbar | Agent-basierte Extraktion |
-| Transkribus Auth | Initial-Authentifizierung fehlgeschlagen (401). Nach Korrektur der Credentials erfolgreich. | Credentials immer direkt vom User übernehmen |
-| "Korrektur" ÖAW zu FWF (18.02.2026) | Eine Review-Runde stufte die korrekten ÖAW-Referenzen als Fehler ein und ersetzte sie projektweit durch "FWF". Am 05.08.2026 zurückgenommen: APART-GSK ist ein Programm der ÖAW, das Gutachten der Ersteinreichung ein ÖAW-Gutachten. | Ein Review kann eine richtige Angabe zur falschen machen. Bei Eigennamen von Förderprogrammen und Institutionen gegen eine externe Quelle prüfen, nicht gegen die Mehrheit der Fundstellen im eigenen Repo. |
+### Collection 2197991, expectation against reality
 
----
+| What we assumed | What we found | Consequence |
+|-----------------|---------------|-------------|
+| Around 55 inventories transcribed | **57 carry text** (8,979 lines, 35,724 words). Three `DONE`, 54 `IN_PROGRESS`, no documented formal ground-truth status. | Treat them as working transcriptions and partition them by convention |
+| Account books not transcribed | **Confirmed for Transkribus.** 26 account books, 8,561 pages, no text. Volumes 1 to 6 carry a layout analysis. Since 26.08.2026 experimental, unrevised VLM output exists for four openings of account book 2. | Compare a specialised HTR model against a scholarly checked account-book reference |
+| Extent of the collection unclear | **115 documents, 12,236 pages**, comprising 64 inventories, 26 account books, 12 copybooks and 13 others | Considerably more material than expected |
+| IIIF URLs possibly a CORS problem | **No problem.** IIIF and direct URLs load without authentication. | OpenSeadragon can use IIIF directly, no pre-fetch needed for images |
+| PAGE XML format unknown | Structured as Page, then TextRegion with coordinates, then TextLine with coordinates, baseline and Unicode | The parser logic is clear and a pre-fetch script can be written |
 
-## Explorationsergebnisse Transkribus (17.02.2026, aktualisiert 26.08.2026)
+### Additional documents, absent from the CSV
 
-### Collection 2197991: Erwartung vs. Realität
+The collection holds documents that the catalogue CSV does not mark as transcribed:
 
-| Was wir dachten | Was wir fanden | Konsequenz |
-|----------------|---------------|------------|
-| ~55 Inventare transkribiert | **57 mit Text** (8.979 Zeilen, 35.724 Wörter). 3× DONE, 54× IN_PROGRESS, kein dokumentierter formaler GT-Status. | Als Arbeitstranskriptionen führen und nach Konvention partitionieren |
-| Raitbücher „nicht transkribiert" | **Für Transkribus bestätigt.** 26 Raitbücher, 8.561 Seiten, 0 Zeilen Text. Nr. 1–6 haben Layout-Analyse. Seit 26.08.2026 liegen experimentelle VLM-Ausgaben für vier RB2-Seiten vor. | Spezialisiertes HTR und fachlich geprüfte Raitbuch-Referenz vergleichen |
-| Collection-Umfang unklar | **115 Dokumente, 12.236 Seiten.** 64 Inventare + 26 Raitbücher + 12 Kopialbücher + 13 Andere | Deutlich mehr Material als erwartet |
-| IIIF-URLs evtl. CORS-Problem | **Kein Problem.** IIIF UND Direkt-URLs laden ohne Auth. | OpenSeadragon kann direkt IIIF nutzen, kein Pre-Fetch für Bilder nötig |
-| PAGE-XML Format unbekannt | Strukturiert: Page → TextRegion (Coords) → TextLine (Coords, Baseline, Unicode) | Parser-Logik klar, Pre-Fetch-Script kann geschrieben werden |
+- Twelve copybooks, 2,224 pages, images only
+- Court and regiment ordinances, TLA_HS_208.1 and 208.2, 149 pages
+- The wedding cluster: Hs. 2466 with 33, Hs. 2467 with 58, Hs. 2468 with 19 and Hs. 2469 with 54 scans. These are counted scans from Transkribus. For the same four volumes the CSV states 60, 100, 35 and 140 pages, which are catalogue statements. Both sets are real; which of them represents the complete volume is unresolved (see DATA.md on the court ordinances).
+- Further manuscripts: Hs. 113 with 133, Hs. 324 with 86, Hs. 514 with 16, Hs. 792 with 7 and Hs. 5087.1+2 with 218 pages
 
-### Zusätzliche Dokumente (nicht in CSV)
+## Open points (consolidated)
 
-Die Collection enthält Dokumente, die in der CSV-Quellenübersicht nicht explizit als „transkribiert" markiert sind:
-- 12 Kopialbücher (2.224 Seiten, nur Bilder)
-- Hof- und Regimentordnungen (TLA_HS_208.1 + 208.2, 149 Seiten)
-- Hochzeitscluster: Hs. 2466 (33p), 2467 (58p), 2468 (19p), 2469 (54p). Die Seitenzahlen hier sind gezählte Scans aus Transkribus. Die CSV nennt für dieselben vier Bände 60/100/35/140 Seiten, also Katalogangaben. Beide Sätze sind real, welcher den Band vollständig abbildet, ist ungeklärt (siehe DATA.md, Hofordnungen).
-- Weitere Handschriften: Hs. 113 (133p), Hs. 324 (86p), Hs. 514 (16p), Hs. 792 (7p), Hs. 5087.1+2 (218p)
+### Blocking for the prototype, all resolved
 
----
+- [x] Transkribus credentials, verified through the environment variables TRANSKRIBUS_USER and TRANSKRIBUS_PASS
+- [x] Collection ID, 2197991 at https://app.transkribus.org/collection/2197991
+- [x] Document IDs enumerated, 115 documents mapped, in `data/transkribus_collection.json`
+- [x] IIIF URLs tested without authentication, they work
+- [x] Sample facsimiles made accessible, IIIF URLs for all 123 openings of account book 2 in `data/raitbuch2_pages.json`
+- [x] PAGE XML of the transcribed inventories exported as JSON, 57 files in `data/transcriptions/`
+- [x] Mapping from Transkribus titles to catalogue shelfmarks, all 64 inventories matched, in `data/source_mapping.json`
 
-## Offene Punkte (konsolidiert)
+### Important for the proposal
 
-### War blockierend für den Prototyp (alles erledigt)
+- [ ] A short methodological text module for the planned resubmission
+- [ ] Finalise the case study, including verification of the possible mention of a master of the kitchen (the project lead)
+- [ ] The mapping between practice and BeNASch, with the Bern team
+- [ ] Literature on historical linguistics, review point 5
 
-- [x] ~~Transkribus-Credentials~~ → verifiziert (via env vars TRANSKRIBUS_USER/TRANSKRIBUS_PASS)
-- [x] ~~Collection-ID~~ → **2197991** (https://app.transkribus.org/collection/2197991)
-- [x] ~~Document-IDs auflisten~~ → 115 Dokumente kartiert, in `data/transkribus_collection.json`
-- [x] ~~IIIF-URLs ohne Auth testen~~ → **Funktioniert** (bestätigt)
-- [x] ~~Beispiel-Digitalisate zugänglich machen~~ → IIIF-URLs für alle 123 Seiten in `data/raitbuch2_pages.json`
-- [x] ~~PAGE-XML der 57 Inventare als JSON exportieren~~ → 57 Dateien in `data/transcriptions/`, 522 Seiten, 8.979 Zeilen, 35.724 Wörter
-- [x] ~~Mapping Transkribus-Titel → CSV-Signaturen~~ → 64/64 Inventare gematcht, in `data/source_mapping.json`
+### Nice to have
 
-### Wichtig für Antrag
-
-- [ ] Methodologischer Textbaustein (~1–2 Seiten) für die geplante Wiedereinreichung bei der ÖAW
-- [ ] Fallstudie finalisieren (A/B/C), inkl. Küchenmeister-Fund verifizieren (Barbara)
-- [ ] Practice↔BeNASch-Mapping (mit Bern)
-- [ ] Historische Linguistik-Literatur (Gutachten-Punkt 5)
-
-### Nice-to-have
-
-- [ ] Google Spreadsheet-URL für zusätzliche Metadaten
-- [ ] Glossar-Idee von Barbara evaluieren
+- [ ] A spreadsheet URL for additional metadata
+- [ ] Evaluate the glossary idea raised by the project lead

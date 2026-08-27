@@ -1,159 +1,165 @@
-# CONTEXT: Domänenwissen, Methoden, Epistemologie
+# CONTEXT: Domain Knowledge, Methods, Epistemology
 
-## Hypothese
+## Hypothesis
 
-Durch semantische Annotation und Ereignismodellierung lassen sich Handlungsmuster rekonstruieren, die in konventioneller Quellenanalyse unsichtbar bleiben.
+Semantic annotation and event modelling make it possible to reconstruct patterns of action that stay invisible under conventional source analysis.
 
-## Drei analytische Dimensionen
+## Three analytical dimensions
 
-| Dimension | Frage | Methoden |
-|-----------|-------|----------|
-| Höfische Praktiken | Wie funktionierten Praktiken im höfischen Umfeld? | Netzwerkanalyse, Event Extraction |
-| Besitz und Objektbewegungen | Wie trugen Besitz und Transfer von Objekten zu Praktiken bei? | Zirkulationsmuster (Kauf, Geschenk, Pfand) |
-| Räumliche Strukturen | Welche Hierarchien existierten und wie beeinflussten sie Interaktionen? | Bewegungsmuster, Zugang, Raumnutzung |
+| Dimension | Question | Methods |
+|-----------|----------|---------|
+| Court practices | How did practices work in the courtly environment? | Network analysis, event extraction |
+| Possession and object movement | How did possession and the transfer of objects contribute to practices? | Patterns of circulation (purchase, gift, pledge) |
+| Spatial structures | Which hierarchies existed and how did they shape interaction? | Movement patterns, access, use of space |
 
-## SiCPAS-Datenmodell
+## The SiCPAS data model
 
-**SiCPAS** = Sigmund's Court Practices and Structures.
+**SiCPAS** stands for Sigmund's Court Practices and Structures.
 
-### Entitäten
+### Entities
 
-| Entität | Erfasste Information | Prototyp |
-|---------|---------------------|----------|
-| **person** | Namen, Titel, Rollen. Agent oder Patient in Events. | ✓ |
-| **place** | Geographische Orte (Innsbruck, Sigmundsberg) | ✓ |
-| **space** | Funktionale Räume (Kammer, Küche, Stall, Frauenzimmer) | Zusammen mit place |
-| **thing** | Gegenstände: Alltag (Brot, Wein, Holz) + Wert (Gold, Seide, Schmuck). Attribute: size, number, material, category, quality, color, function. | ✓ (als `object`) |
-| **time** | Datierungen und Zeitperioden | ✓ |
-| **practice** | Handlungen als Trigger-Verben (Prädikate/Verbformen) | Nicht als Entitätstyp, siehe unten |
-| **group** | Institutionen (Rat, Kanzlei, Küchenteam) | Post-Prototyp |
-| **court** | Hofzugehörigkeit (social group, profession) | Post-Prototyp |
-| **source** | Quellengattung und Metadaten | Post-Prototyp |
+| Entity | Information captured | In the prototype |
+|--------|----------------------|------------------|
+| **person** | Names, titles, roles. Agent or patient in events. | Yes |
+| **place** | Geographical places (Innsbruck, Sigmundsberg) | Yes |
+| **space** | Functional spaces (chamber, kitchen, stable, women's quarters) | Merged with place |
+| **thing** | Objects of everyday use (bread, wine, wood) and of value (gold, silk, jewellery). Attributes: size, number, material, category, quality, colour, function. | Yes, under the label `object` |
+| **time** | Datings and periods | Yes |
+| **practice** | Actions as trigger verbs (predicates and verb forms) | Not as an entity type, see below |
+| **group** | Institutions (council, chancery, kitchen staff) | After the prototype |
+| **court** | Court affiliation (social group, profession) | After the prototype |
+| **source** | Source genre and metadata | After the prototype |
 
-**Prototyp-Set: 4 Entitätstypen.** Die NER-Demo (`data/demo/thaur_entities.json`, Inventar Thaur A 49.1 von 1471) annotiert 42 Entitäten in vier Typen: `object` (18), `person` (16), `place` (4), `time` (4).
+**The prototype set uses four entity types.** The entity-extraction demo (`data/demo/thaur_entities.json`, the Thaur inventory A 49.1 of 1471) annotates `object`, `person`, `place` and `time`.
 
-Zwei Abweichungen vom SiCPAS-Modell sind zu benennen, weil sie leicht als Nachlässigkeit gelesen werden:
+Two departures from the SiCPAS model need to be named, because they read easily as carelessness.
 
-1. **`object` statt `thing`.** Die Demo verwendet die gröbere Bezeichnung, die SiCPAS bewusst hinter sich lässt (siehe NER-Diskrepanz gleich darunter). Das ist keine Modellentscheidung, sondern eine Altlast der ersten Annotationsrunde. Im Vollprojekt gilt `thing` mit den Attributen size, number, material, category, quality, color, function.
-2. **`practice` ist kein eigener Entitätstyp im Prototyp.** Praktiken erscheinen stattdessen als Prädikate der extrahierten Relationen (`data/demo/thaur_relations.json`: 13 Relationen, `predicateType` mit acht Klassen wie inventarisierung, besitz, übergabe, objekttransfer, bewohnung, zeugnis). Der Handlungsbezug ist also vorhanden, nur an der Kante statt am Knoten modelliert. Ob Praktiken eigenständige Knoten werden müssen, entscheidet sich am Practice↔BeNASch-Mapping.
+1. **`object` instead of `thing`.** The demo uses the coarser label that SiCPAS deliberately leaves behind (see the category discrepancy below). This is a legacy of the first annotation round rather than a modelling decision. In the full project `thing` holds, with the attributes size, number, material, category, quality, colour and function.
+2. **`practice` is not a separate entity type in the prototype.** Practices appear instead as predicates of the extracted relations (`data/demo/thaur_relations.json`, with a `predicateType` drawn from eight classes such as inventorying, possession, handover, object transfer, habitation and testimony). The reference to action is present, modelled at the edge rather than at the node. Whether practices have to become nodes of their own is decided by the mapping between practice and BeNASch.
 
-Die Feinunterscheidungen place/space und group/court sind im Prototyp nicht umgesetzt und werden im Antrag als geplante Erweiterung dargestellt.
+The finer distinctions place versus space and group versus court are not implemented in the prototype and are presented in the proposal as a planned extension.
 
-**NER-Diskrepanz:** Der ÖAW-Antrag definierte in Table 2 sechs Kategorien ("object", "organization"). SiCPAS differenziert feiner (9 Entitäten, "thing" statt "object", "group"/"court" statt "organization"). Das Prototyp-Set ist ein pragmatischer Kompromiss und liegt terminologisch noch beim Antragsstand.
+**Category discrepancy.** The proposal for the first submission defined six categories in its Table 2, among them "object" and "organization". SiCPAS differentiates more finely, with "thing" in place of "object" and "group" and "court" in place of "organization". The prototype set is a pragmatic compromise and still sits terminologically at the level of the proposal.
 
-### Relationen
+### Relations
 
-| Typ | Bedeutung |
-|-----|-----------|
-| belongs_to | Besitzverhältnisse |
-| located_in | Räumliche Zuordnung |
-| related_to | Allgemein (Verwandtschaft, Hierarchie) |
-| part_of | Teil-Ganzes |
-| used_by | Nutzungsbeziehung |
+| Type | Meaning |
+|------|---------|
+| belongs_to | Ownership |
+| located_in | Spatial assignment |
+| related_to | General (kinship, hierarchy) |
+| part_of | Part and whole |
+| used_by | Relation of use |
 
-### Ereignismodellierung
+### Event modelling
 
-Zwei Konzeptebenen:
+Two conceptual levels:
 
-| Ebene | Definition | Beispiel | Wer annotiert |
-|-------|-----------|---------|---------------|
-| **Practice** | Einzelne Handlung, Trigger-Verb, Agent↔Patient | "kaufen", "schenken", "kochen" | LLM + Validierung |
-| **Event** | Cluster von Personen, Dingen, Praktiken, benennbar | Hochzeit, Fest, Transaktion | **Nur Fachwissenschaftlerin** (interpretatorisch) |
+| Level | Definition | Example | Who annotates |
+|-------|------------|---------|---------------|
+| **Practice** | A single action, a trigger verb, agent and patient | "buy", "give", "cook" | Model plus validation |
+| **Event** | A nameable cluster of persons, things and practices | Wedding, feast, transaction | **The project's domain expert only**, because the step is interpretative |
 
-Practice-Annotation folgt BeNASch-Schema. Event-Aggregation ist interpretatorische Leistung.
+Practice annotation follows the BeNASch scheme. Aggregating practices into events is an interpretative act.
 
-### Praxeologische Verbklassen
+### Praxeological verb classes
 
-| Klasse | Verben |
-|--------|--------|
-| Ökonomisch | kaufen, verkaufen, schenken, vererben, leihen, verpfänden, stehlen, zählen, wiegen, messen, verwalten |
-| Ästhetisch | genießen, bewundern, beschreiben, vergleichen, schätzen |
-| Körperbezogen | essen, trinken, schlafen, reinigen, pflegen, baden |
-| Repräsentativ | jagen, tanzen, ausstellen, konsumieren, korrespondieren |
-| Produktiv | reinigen, reparieren, kochen, herstellen |
+The verbs are given in the source language, because the classification operates on the German terms the sources carry.
 
-**Offenes Problem:** Verbklassen folgen historisch-inhaltlicher Logik, BeNASch folgt linguistisch-formaler Logik. Mapping anhand von 5–10 Beispieleinträgen nötig, idealerweise mit Berner Team.
+| Class | Verbs |
+|-------|-------|
+| Economic | kaufen, verkaufen, schenken, vererben, leihen, verpfänden, stehlen, zählen, wiegen, messen, verwalten |
+| Aesthetic | genießen, bewundern, beschreiben, vergleichen, schätzen |
+| Body-related | essen, trinken, schlafen, reinigen, pflegen, baden |
+| Representational | jagen, tanzen, ausstellen, konsumieren, korrespondieren |
+| Productive | reinigen, reparieren, kochen, herstellen |
 
-## BeNASch-Annotationsschema
+**Open problem.** The verb classes follow a historical and substantive logic while BeNASch follows a linguistic and formal one. A mapping worked out on a handful of example entries is needed, ideally together with the Bern team.
 
-**BeNASch** = Bernese Early New High German Annotation Scheme. ACE-basiert, CIDOC-CRM-kompatibel.
+## The BeNASch annotation scheme
 
-Modelliert Ereignisse formal: Trigger-Verb → Agent → Patient. Annotationsplattform: INCEpTION. NER-Modelle: FLAIR, BERT, SpaCy.
+**BeNASch** stands for Bernese Early New High German Annotation Scheme. It is ACE-based and compatible with CIDOC-CRM.
 
-**Verbindung Practice↔BeNASch noch nicht operationalisiert.** Beide Systematiken unterschiedlich motiviert. Konkretes Mapping ausstehend.
+It models events formally as trigger verb, then agent, then patient. The annotation platform is INCEpTION; the named-entity models used are FLAIR, BERT and SpaCy.
 
-## Fallstudien
+**The link between practice and BeNASch is not yet operational.** The two systematics are differently motivated, and the concrete mapping is outstanding.
 
-| Fallstudie | Quellen | Status |
-|-----------|---------|--------|
-| **Hofküche** (empfohlen für Prototyp) | Raitbücher (Zahlungen), Inventare (Küchenausstattung) | Küchenmeister-Fund in Raitbuch 2 fol. 2r, Verifizierung durch Barbara ausstehend |
-| Herzogliche Privatgemächer | Inventare, Hofordnungen | Nicht begonnen |
-| Medizinalpersonen | Raitbücher, Raumanalyse | Nicht begonnen |
-| Luxuskonsum | Raitbücher, Inventare | Nicht begonnen |
+## Case studies
 
-**Entscheidung offen.** Drei Optionen: A) Im Raitbuch 2 nach Küchenkategorien suchen, B) "Provision und Sold" als eigenständige Studie, C) Anderes Raitbuch wählen. Für Drittmittelstrategie zählt methodische Überzeugungskraft, nicht spezifische Fallstudie.
+| Case study | Sources | State |
+|------------|---------|-------|
+| **The court kitchen** (recommended for the prototype) | Account books (payments), inventories (kitchen equipment) | A possible mention of a master of the kitchen in account book 2, fol. 2r; verification by the project lead outstanding |
+| The ducal private chambers | Inventories, court ordinances | Not begun |
+| Medical personnel | Account books, spatial analysis | Not begun |
+| Luxury consumption | Account books, inventories | Not begun |
 
-## SiCProD → SiCPAS Mapping
+**The decision is open.** Three options stand. The first searches account book 2 for kitchen categories, the second treats the category "Provision und Sold" as a study in its own right, and the third chooses a different account book. For the funding strategy what counts is methodological persuasiveness rather than the specific case study.
 
-| SiCProD-Entität | SiCPAS-Entität | Anmerkung |
-|----------------|----------------|-----------|
-| Person (6.288) | person | Direkt |
-| Place (736) | place | place/space-Unterscheidung fehlt in SiCProD |
-| Institution (215) | group / court | 207 ohne Typ, Zuordnung unklar |
-| Function (1.613) | practice (Trigger) | Funktionen ≠ Praktiken, aber Brücke vorhanden |
-| Salary (2.906) | kein Gegenstück | Verknüpfung Person↔Funktion, keine Geldbeträge |
-| Event (28) | event | Nur Großereignisse, keine Alltagspraktiken |
-| Relation (42.893) | Relationen | Relationstypen müssen auf SiCPAS gemappt werden |
+## Mapping SiCProD onto SiCPAS
 
-## Kooperationspartner
+| SiCProD entity | SiCPAS entity | Note |
+|----------------|---------------|------|
+| Person | person | Direct |
+| Place | place | The place/space distinction is absent in SiCProD |
+| Institution | group or court | Most records untyped, assignment unclear |
+| Function | practice (trigger) | Functions are distinct from practices, but a bridge exists |
+| Salary | no counterpart | Links person to function, carries no monetary amounts |
+| Event | event | Major events only, no everyday practices |
+| Relation | relations | Relation types have to be mapped onto SiCPAS |
 
-| Partner | Beitrag | Prototyp-Relevanz |
-|---------|---------|-------------------|
-| **SiCProD** (Innsbruck/ACDH) | Prosopographische DB, API (6.288 Personen) | **Primäre Datenquelle** |
-| **BeNASch** (Bern) | Annotationsschema für Frühneuhochdeutsch | Schema-Kompatibilität |
-| **The Flow Project** (Bern/Bielefeld) | Deep Learning für Event/Relation Extraction | Methodische Abstimmung |
-| **Inventaria** (Salzburg/Innsbruck) | Objektthesaurus (5.300 Einträge, Getty AAT) | Objektklassifikation (Prio 3) |
-| **DEPCHA** (Graz) | Rechnungsbuch-Semantik | Strukturmodelle für Raitbücher |
-| **ZB Zürich** | Paralleler coOCR/HTR-Anwendungsfall | Nachhaltigkeitsargument |
-| **VieCPro** (Wien) | Frühneuzeitlicher Wiener Hof | Vergleichsperspektive |
-| **ManMax** (Wien) | Maximilian-SFB | Methodentransfer |
+Current counts for the exported entities are in `data/stats.json`; see DATA.md for the quality of each entity type.
 
-## Epistemische Grundlagen
+## Cooperation partners
 
-### Epistemische Asymmetrie
+| Partner | Contribution | Relevance to the prototype |
+|---------|--------------|----------------------------|
+| **SiCProD** (Innsbruck) | Prosopographic database with a public API | **Primary data source** |
+| **BeNASch** (Bern) | Annotation scheme for Early New High German | Scheme compatibility |
+| **The Flow Project** (Bern and Bielefeld) | Deep learning for event and relation extraction | Methodological alignment |
+| **Inventaria** (Salzburg and Innsbruck) | Object thesaurus aligned with the Getty AAT, published inventory editions | Object classification, third priority |
+| **DEPCHA** (Graz) | Semantics of account books | Structural models for the account books |
+| **ZB Zurich** | A parallel coOCR/HTR application case | Sustainability argument |
+| **VieCPro** (Vienna) | The early modern Viennese court | Comparative perspective |
+| **ManMax** (Vienna) | Research consortium on Maximilian | Method transfer |
 
-LLMs liefern keine verlässliche Selbsteinschätzung ihrer Outputs. Das ist eine **architektonische Eigenschaft**, kein temporäres Defizit. Referenzen: Zheng et al. 2023 (systematische Biases), Wang et al. 2024 (Position Bias), Ye et al. 2024 (Authority Bias).
+## Epistemic foundations
 
-**Konsequenz für den Prototyp:** Numerische Selbsteinschätzungen eines Modells (0.87, 0.93) sind irreführend. Die Kategorien sicher, prüfenswert und problematisch müssen an beobachtbare Prüfregeln oder eine menschliche Entscheidung gebunden sein. Eine Modellaussage über eigene Unsicherheit dient ausschließlich der Triage.
+### Epistemic asymmetry
 
-### Critical Expert in the Loop
+Language models give no reliable self-assessment of their own output. This is an **architectural property** rather than a temporary deficit. References: Zheng et al. 2023 on systematic biases, Wang et al. 2024 on position bias, Ye et al. 2024 on authority bias.
 
-Die Fachwissenschaftlerin übernimmt die Geltungsentscheidung. Das Forschungstool liefert Faksimile, konkurrierende Lesarten, Provenienz und Prüfsignale. Die Aggregation von Practices zu Events bleibt eine interpretatorische Leistung mit dokumentierter fachlicher Verantwortung.
+**Consequence for the pipeline.** Numerical self-assessments produced by a model (0.87, 0.93) are misleading. The categories secure, worth checking and problematic have to be bound to observable checking rules or to a human decision. A model statement about its own uncertainty serves triage and nothing else.
 
-### Hybride Prüfung (aus coOCR/HTR)
+### Critical expert in the loop
 
-| Status | Methode | Geltung |
-|--------|---------|---------|
-| Erzeugt | HTR oder Vision-Language-Modell | Modellvorschlag mit vollständiger Provenienz |
-| Automatisch geprüft | Regeln, Schemata, Summen und Modellvergleich | Markierte Konsistenz oder Divergenz |
-| Agentisch geprüft | Paläographische, linguistische, strukturelle und domänenspezifische Kritik | Begründeter Prüfhinweis |
-| Am Faksimile verifiziert | Menschlicher Bild-Text-Abgleich | Verifizierte Referenz |
-| Fachlich akzeptiert | Projektleitung oder benannte Fachexpertise | Freigegebene Forschungsdaten |
+The domain expert takes the decision about validity. The research tool supplies the facsimile, the competing readings, the provenance and the checking signals. Aggregating practices into events remains an interpretative act with documented scholarly responsibility.
 
-Ein LLM-as-Judge kann Widersprüche und auffällige Stellen priorisieren. Es verleiht einem Output keinen Wahrheits- oder Freigabestatus. Für die Transkription gelten die Referenzklassen und Kennzahlen aus `HTR-EVALUATION.md`.
+### Hybrid checking, carried over from coOCR/HTR
 
-### Methodologische Positionierung
+| Status | Method | Validity |
+|--------|--------|----------|
+| Generated | HTR or a vision-language model | A model proposal with full provenance |
+| Automatically checked | Rules, schemas, sums and model comparison | Marked consistency or divergence |
+| Agentically checked | Palaeographic, linguistic, structural and domain-specific critique | A reasoned checking hint |
+| Verified at the facsimile | Human comparison of image and text | A verified reference |
+| Scholarly accepted | The project lead or a named domain expert | Released research data |
 
-LLMs als Prototyping-Instrumente, deren Outputs systematisch durch Fachexpertise validiert werden. Promptotyping als iterative, quellenkritisch kontrollierte Methode. Dieser Absatz muss als ~1–2 Seiten Textbaustein für die geplante Wiedereinreichung bei der ÖAW ausformuliert werden.
+A model acting as judge can prioritise contradictions and conspicuous passages. It confers no truth status and no release status on an output. For transcription the reference classes and metrics of `HTR-EVALUATION.md` apply.
 
-## Ressourcen-URLs
+### Methodological positioning
 
-| Ressource | URL |
-|-----------|-----|
-| GitHub DoCTA | https://github.com/DigitalHumanitiesCraft/DoCTA |
+Language models serve as prototyping instruments whose outputs are systematically validated by domain expertise. Promptotyping is the iterative method that keeps this under source-critical control. This position still has to be written out as a short text module for the planned resubmission.
+
+## Resource URLs
+
+| Resource | URL |
+|----------|-----|
+| DoCTA on GitHub | https://github.com/DigitalHumanitiesCraft/DoCTA |
+| DoCTA live site | https://dhcraft.org/DoCTA/ |
 | SiCProD API | https://sicprod.acdh-dev.oeaw.ac.at/apis/api |
 | BeNASch | https://dhbern.github.io/BeNASch/ |
 | Inventaria | https://www.inventaria.at |
 | DEPCHA | https://gams.uni-graz.at/context:depcha |
-| coOCR/HTR Demo | http://dhcraft.org/co-ocr-htr |
-| coOCR/HTR Repo | https://github.com/DigitalHumanitiesCraft/co-ocr-htr |
+| Promptotyping | https://dhcraft.org/Promptotyping/ |
+| coOCR/HTR demo | https://dhcraft.org/co-ocr-htr |
+| coOCR/HTR repository | https://github.com/DigitalHumanitiesCraft/co-ocr-htr |
