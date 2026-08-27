@@ -1,0 +1,220 @@
+{
+  "reviewer": "opus-agent",
+  "date": "2026-08-27",
+  "cohort": "pilot2 inventories, it02, gemini-3.7-flash, 2 repeats",
+  "method": "Each page image read visually at 3x-8x crops; line count taken from the image, not from the run files. The Transkribus working transcription was consulted as a second opinion only and is explicitly not treated as ground truth.",
+  "pages": [
+    {
+      "page": "pilot2_inv_11330759_p8",
+      "docId": "11330759",
+      "document": "Sigmundskron, A 225.1, 1487, fol. 4v",
+      "image": "evaluation/benchmark/images/pilot2_inv_11330759_p8.jpg",
+      "image_px": [1225, 3465],
+      "files": [
+        "evaluation/pilot2/runs/pilot2_inv_11330759_p8__it02__r1.json",
+        "evaluation/pilot2/runs/pilot2_inv_11330759_p8__it02__r2.json"
+      ],
+      "visible_lines": 17,
+      "transcribed_lines": [17, 17],
+      "coverage_finding": "Complete. 17 written lines counted on the image, 17 emitted by both repeats, no skipped and no invented line. The ref_lines=18 in the summary counts the working transcription's [fol.4v] marker, which neither repeat invents; the deficit is a reference artifact, not an omission.",
+      "hallucinations": [
+        "r1 L9 'mayster Hannsen zugeschriben' for image 'maister Hannsen zugehoren'; the verb is replaced by a different, plausible chancery verb (r2 has 'zugehoerenn' correctly).",
+        "r1 L8 'tzschmigeschirr' and r2 L8 'geschirrgestueckhalle' for image 'eysengeschirr'; both invent a compound that does not exist.",
+        "r2 L14 'zu heben raytsen' and r1 L14 'bei zehen kaylen' for image 'zu zehen hagkhen'; r1 keeps the number, r2 turns 'zehen' into the verb 'heben'."
+      ],
+      "number_findings": [
+        "L4 image 'Vier phannen' (long-descender Vier, identical glyph to L10 'Vier purden'): r1 'Vier' correct, r2 'Drei pfannen' - quantity changed from 4 to 3 with no basis.",
+        "L5 image 'Ain clainer kessl': r1 'Drei clainer kessl' - quantity invented from 1 to 3; r2 'Ain' correct.",
+        "L7 image 'Drew eysnen gatter': both repeats read 'Zwen' (r1 'Zwen zynnen haefn', r2 'Item zwen haeff') - 3 becomes 2 in both repeats, a shared error.",
+        "L17 image 'ungeverlichen bey lx ster' with a clearly formed lx: r1 'bey ix star' - LX (60) read as ix (9); r2 'bey lx stuc' has the number right and the measure wrong.",
+        "Summary reports consistency_numbers=1.0 for this page although L7 is wrong in both repeats and L4/L5 are wrong in one each; agreement between repeats is not evidence on numerals."
+      ],
+      "error_classes": [
+        "Shared blindness to the word 'eysen' (iron), the leitmotif of the page: L7/L8/L10/L12 image 'eysnen / eysengeschirr / purden eysen / von eysen' -> r1 'zynnen / tzschmigeschirr / pundtenn tzschin / von tzschin', r2 'zwen / geschirr... / pundani hefenn / von hefenn'. Never once read correctly in 8 opportunities.",
+        "Word-numerals confused with each other (Vier/Drei, Drew/Zwen) while roman numerals on the same page are handled better; see number_findings.",
+        "Object nouns replaced by phonetically similar household terms: L1 image 'malschuessel' -> r1 'masspuechss', r2 'malspuesse'; L2 'salsenschuessel' -> r1 'Salffnnipuechs'.",
+        "Long-s and the nasal abbreviation bar over final -en are the recurring letterform trigger; almost every mangled token in this page carries one of the two."
+      ],
+      "better_repeat": "r2",
+      "repeat_difference_character": "Mostly stochastic at token level (the two repeats fail on different words in L1, L4, L5, L9, L13, L17), with one systematic overlap: 'eysen' and L7 'Drew' fail identically in both.",
+      "verdict": "unusable",
+      "key_correction": "The object-noun layer is wrong in roughly two thirds of the lines and the quantities are unreliable in both directions; only the line segmentation and the entry/rubric structure can be carried forward. This hand needs a domain lexicon of Burgeninventar realia in the prompt before it is re-run."
+    },
+    {
+      "page": "pilot2_inv_11330759_p5",
+      "docId": "11330759",
+      "document": "Sigmundskron, A 225.1, 1487, fol. 3r",
+      "image": "evaluation/benchmark/images/pilot2_inv_11330759_p5.jpg",
+      "image_px": [1193, 3465],
+      "files": [
+        "evaluation/pilot2/runs/pilot2_inv_11330759_p5__it02__r1.json",
+        "evaluation/pilot2/runs/pilot2_inv_11330759_p5__it02__r2.json"
+      ],
+      "visible_lines": 17,
+      "transcribed_lines": [17, 17],
+      "coverage_finding": "Complete for the written lines: foliation '3' at the top right plus 16 text lines, both repeats emit all 17 and both classify the two-line rubric correctly as kind=rubric. The 'K. K. STATTHALTEREI-ARCHIV' stamp at the foot of the page is transcribed by neither repeat; defensible, but it means stamps are silently invisible to the pipeline.",
+      "hallucinations": [
+        "r1 L9 'In dem obern gadn bey' for image 'In speyss gaden bey'; 'dem obern' is inserted where the image has a single word.",
+        "r1 L11 and L12 'zusamn' for image 'haefen'; r1 twice replaces the object of the entry with a preposition-like filler.",
+        "r1 L16 'prathspeysi' and r2 L16 'prackhenspis' for image 'glockhspeysen' - the same word both repeats read correctly two lines earlier."
+      ],
+      "number_findings": [
+        "L15 image 'Sechsunddreissig hueltzen taler new': r1 'Sechshundertt', r2 'Sechshundertacht'. Both repeats turn 36 into 600 or 608, a sixteenfold inflation of an inventory count, and they agree closely enough that repeat comparison would not flag it.",
+        "L11 image 'Zwen glockspeysen zerbrochen haefen': r2 'Zwai' (2 written as a different form of 2, harmless), r1 'Zweni' - no substantive loss here.",
+        "L7 'Sechtzehen zynen taler' and L14 'funff loeffl' correct in both repeats; the failure is concentrated in the composed numeral, not in the simple ones."
+      ],
+      "error_classes": [
+        "Composed cardinal numerals ('sechsunddreissig') are decomposed wrongly into a hundreds form; simple cardinals survive.",
+        "Word-initial c read as t: L1 image 'cragel' -> r1 'traght', r2 'traagsl' in both repeats.",
+        "'peren spiess' (L5) read as 'rosen spiss' / 'rosen spruezz' in both repeats: a plausible but unattested item substituted for the written one.",
+        "Rubric wording drifts more than entry wording; the rubric L9/L10 is wrong in both repeats while several long entry lines are near-correct."
+      ],
+      "better_repeat": "r2",
+      "repeat_difference_character": "Systematic on the numeral (L15 identical direction of error) and on L1 and L5; stochastic on the rubric, where r1 gets 'der wer' and r2 gets 'der mor'.",
+      "verdict": "needs-targeted-correction",
+      "key_correction": "L15 'Sechsunddreissig' must be corrected from the invented 'Sechshundert(acht)'; composed numerals are the single highest-risk token type on this page."
+    },
+    {
+      "page": "pilot2_inv_11330759_p6",
+      "docId": "11330759",
+      "document": "Sigmundskron, A 225.1, 1487, fol. 3v",
+      "image": "evaluation/benchmark/images/pilot2_inv_11330759_p6.jpg",
+      "image_px": [1256, 3568],
+      "files": [
+        "evaluation/pilot2/runs/pilot2_inv_11330759_p6__it02__r1.json",
+        "evaluation/pilot2/runs/pilot2_inv_11330759_p6__it02__r2.json"
+      ],
+      "visible_lines": 15,
+      "transcribed_lines": [15, 15],
+      "coverage_finding": "Complete. 15 written lines counted, 15 emitted by both repeats, the rubric 'Im brotgadenn' correctly typed. Note image_info: source 1256x3568 was sent as 1232x3500, a small downscale with crop=None.",
+      "hallucinations": [
+        "r1 L7 replaces the quantity with a formula: image 'Drew messingpeckh vnd ain prochen' -> r1 '. Item messingspeckh vnd ain grossen'. The number vanishes and 'prochen' (broken) becomes 'grossen' (large), inverting the condition statement of an inventory item.",
+        "r2 L7 same line: 'Zwen messingspeckh vnd ain grosen' - number wrong and 'prochen' again turned into 'grosen'.",
+        "L9 image 'Ain oel stain': r1 'Ain oel pann', r2 'Ain Oel pann'. Both invent a pan where the image has a stone; the same substitution recurs in Schoeneck p1 L7.",
+        "r1 L14 'Zwai gross traitfassen' and r2 L14 'Zwai gross krauthafann' for image 'Zwen gross erein hafen'; each repeat invents a different content word."
+      ],
+      "number_findings": [
+        "L3 image 'Vier eysen kellen': r1 'drey beyrein kellerin', r2 'drei beymein kelleinn' - 4 read as 3 in both repeats.",
+        "L6 image 'Vier hafen deckhen': r1 'drey hafen deckhein', r2 'drei hafen deckhenn' - 4 read as 3 in both repeats again.",
+        "L4 image 'Drey phannen': r1 correct, r2 'Acht pfannenn' - 3 read as 8.",
+        "L5 image 'Zwei kessl': r1 correct, r2 'Zwai kyff' - number kept, object lost.",
+        "L7 image 'Drew ...': r1 emits no number at all, r2 emits 'Zwen'.",
+        "Together with p8 this makes three lines on two folios where the scribe's 'Vier' glyph is read as 'drei/drey' by both repeats: a reproducible glyph-level confusion, not noise."
+      ],
+      "error_classes": [
+        "'Vier' with the long leading approach stroke systematically read as 'drei'.",
+        "Condition adjectives normalized to their opposite: 'prochen' -> 'grossen' in both repeats on L7.",
+        "Material nouns replaced by function nouns ('erein hafen' -> 'traitfassen' / 'krauthafann').",
+        "r2 is the freer reader on this page (Acht, kyff, krauthafann all invented), r1 the more conservative one."
+      ],
+      "better_repeat": "r1",
+      "repeat_difference_character": "Systematic on L3, L6 and L9 (identical errors), stochastic on L4, L5, L7 and L14, where r2 invents more aggressively.",
+      "verdict": "needs-targeted-correction",
+      "key_correction": "Re-read every quantity word on the page against the image; four of six numeral-bearing lines are wrong in at least one repeat and two are wrong in both."
+    },
+    {
+      "page": "pilot2_inv_11348481_p7",
+      "docId": "11348481",
+      "document": "Pergine, A 273.5, 1446, fol. 3r (control, high consistency)",
+      "image": "evaluation/benchmark/images/pilot2_inv_11348481_p7.jpg",
+      "image_px": [1104, 3327],
+      "files": [
+        "evaluation/pilot2/runs/pilot2_inv_11348481_p7__it02__r1.json",
+        "evaluation/pilot2/runs/pilot2_inv_11348481_p7__it02__r2.json"
+      ],
+      "visible_lines": 34,
+      "transcribed_lines": [34, 34],
+      "coverage_finding": "Complete. Foliation '3' plus 33 written lines; both repeats emit 34 and both keep 'nicht vast gut' and 'Sua der pet ...' on one physical line as the image has them. The working transcription splits that line, which is why ref_lines=35; again a reference artifact. The two wax seals below the text are correctly left untranscribed.",
+      "hallucinations": [
+        "r1 L13 'In des Iungen harnasch' for image 'In des Cuntzen harnasch': a personal name is replaced by an adjective, which removes a prosopographical fact from the record. r2 keeps a name-shaped token ('Clingen') but the wrong one.",
+        "r2 L33 'obgnennten ebn leut' for image 'obgenanten erbern leut'; 'erbern' (honourable, a formula word) is corrupted, r1 has it right."
+      ],
+      "number_findings": [
+        "L28 image 'Sua der pet xxvj' (two x-loops, v, one final j): both repeats read 'xxvij', adding one minim, so 26 becomes 27. The human working transcription reads XXVI and agrees with the image. This is the running total of beds for the whole inventory, so the error propagates into any aggregate.",
+        "L31 image 'Item xiiij alt vnd zerissen polster': both repeats correct.",
+        "Numeral handling is otherwise clean on this page; the failure is minim-counting in a compressed roman numeral, not numeral recognition as such."
+      ],
+      "error_classes": [
+        "Minim miscounting in roman numerals under compression (xxvj -> xxvij).",
+        "Proper names are the weakest token class even in an easy hand: 'Cuntzen' fails in both repeats, 'ergker' fails in r2 ('Eryker' twice).",
+        "Otherwise the calligraphic bastarda of this scribe is read reliably: formulae ('mit ainer zwilchin ziech ueberzogen', 'und ist halbe lere', 'abschatz') come out right on nearly every occurrence.",
+        "The reference itself is fallible: L29 image reads 'Darnachht die polster vnd kuessen', which both repeats capture, while the Transkribus working transcription has 'Vermerkht'. CER against the working transcription therefore penalizes a correct reading."
+      ],
+      "better_repeat": "r1",
+      "repeat_difference_character": "Stochastic and small; the repeats differ mainly in orthographic variants (ergker/Eryker, Dannach/Darnach, kuessein/kuessin) and in which proper name they invent. No shared drift beyond the xxvij numeral.",
+      "verdict": "usable-as-draft",
+      "key_correction": "Correct the summa 'xxvij' to the written 'xxvj' and restore the personal name 'Cuntzen' in L13; everything else is at correction-pass quality."
+    },
+    {
+      "page": "pilot2_inv_11348481_p5",
+      "docId": "11348481",
+      "document": "Pergine, A 273.5, 1446, fol. 2r (control, high consistency)",
+      "image": "evaluation/benchmark/images/pilot2_inv_11348481_p5.jpg",
+      "image_px": [1140, 3283],
+      "files": [
+        "evaluation/pilot2/runs/pilot2_inv_11348481_p5__it02__r1.json",
+        "evaluation/pilot2/runs/pilot2_inv_11348481_p5__it02__r2.json"
+      ],
+      "visible_lines": 34,
+      "transcribed_lines": [34, 34],
+      "coverage_finding": "Complete. Foliation '2' plus 33 written lines, all emitted by both repeats, rubric/entry typing correct throughout.",
+      "hallucinations": [
+        "Both repeats wrap L27 in strikethrough markup ('~~bey der ewig~~' / '~~bey der styeg~~') although the zoomed image shows 'bey der Styeg' written plainly with no deletion stroke. Invented editorial apparatus, present in both repeats.",
+        "r1 L17 'und ist alt und v[ast] zerissen' - a bracketed expansion is invented for a passage the human transcriber marked as illegible; presenting a guess in editorial brackets is worse than an open gap.",
+        "r2 L23 'da der los inn gelegen' for image 'do der leo Inn gelegen': the personal name Leo is dissolved into a common noun. r1 keeps it.",
+        "r1 L27 'ewig' for 'styeg' - an unrelated word substituted inside the invented strikethrough."
+      ],
+      "number_findings": [
+        "No numerals on this page beyond the foliation '2' and the written-out 'ain / zwayen', all of which are correct in both repeats. The page therefore gives no evidence on number fidelity either way."
+      ],
+      "error_classes": [
+        "Long-s read as f, systematically in r1 only: 'palaft' (L2, L4, L8, L12, L15, L19, L22), 'palafter' (L8), 'haupcmans' (L12). r2 has 'palast' and 'hauptmans' throughout. This is the cleanest single-variable difference between the two repeats in the whole cohort.",
+        "The abbreviated 'ainer' (with suspension stroke) expanded as the non-word 'aind' by both repeats at L9, L15, L20 and L33.",
+        "'schatzwert' read as 'schutzwert' by both repeats at L21 and L30 - a shared lexical error that self-consistency cannot see.",
+        "Invented deletion markup, see hallucinations."
+      ],
+      "better_repeat": "r2",
+      "repeat_difference_character": "One systematic axis (r1's long-s/f confusion runs through the whole page, r2 has none of it) plus stochastic differences on 'leo/los' and 'ewig/styeg'. The shared errors ('aind', 'schutzwert', the strikethrough) are systematic and invisible to repeat comparison.",
+      "verdict": "usable-as-draft",
+      "key_correction": "Strip the unwarranted strikethrough on L27 and the invented bracket expansion 'v[ast]' on L17; both put editorial claims into the record that the image does not support."
+    },
+    {
+      "page": "pilot2_inv_11330219_p1",
+      "docId": "11330219",
+      "document": "Schoeneck, A 185.1, 1492, fol. 1r",
+      "image": "evaluation/benchmark/images/pilot2_inv_11330219_p1.jpg",
+      "image_px": [1721, 1285],
+      "files": [
+        "evaluation/pilot2/runs/pilot2_inv_11330219_p1__it02__r1.json",
+        "evaluation/pilot2/runs/pilot2_inv_11330219_p1__it02__r2.json"
+      ],
+      "visible_lines": 23,
+      "transcribed_lines": [23, 23],
+      "coverage_finding": "Complete and in fact more complete than the reference. 20 written lines (4 of protocol plus 16 items) plus three paratextual elements: the pencil date '1492.' top left, the oval stamp '11. XIII 251', and the vertical shelfmark in the left margin. Both repeats emit all 23 and type the paratext as marginal/foliation; the working transcription has only 21 units. The vertical shelfmark is read differently ('Ums. A 185/1' vs 'Hss. A 185/1'), so the marginal layer is captured but not reliable.",
+      "hallucinations": [
+        "r2 L7 'nach Sannd Lucien tag' for image 'nach Sannd Katrein tag': the saint's day, the dating element of the whole document, is replaced by a different feast. r1 has 'Katrein' correctly.",
+        "r2 L4 'Daz vermerckt was ich ...' - a word is prefixed to the opening protocol that the image does not have.",
+        "r1 L22 'ain vest putzfen Ist in eingefaszt' for image 'ain eysn puchsen ist nit eingefast': the negation 'nit' is dropped, inverting the statement about whether the gun is mounted.",
+        "Both repeats L19 'steyrertafe(l)' for image 'Schreybtafel' - an invented compound in both, identical in direction.",
+        "r1 L10 'ain zier tengen mit dreyen rohern' for image 'ain leer truhen mit dreyen kloestern'."
+      ],
+      "number_findings": [
+        "L19 image 'In der stubn iij tisch': r1 'ij tisch' - one minim dropped, 3 becomes 2; r2 'iij tysch' correct.",
+        "L22 image 'mer xij spanpet pos vnd guet': r2 'mer . iiij . spanpet' - 12 becomes 4; r1 'xij' correct.",
+        "L8 'j haber ster' and L21 'v alt spies' correct in both repeats.",
+        "Every roman numeral on this page is wrong in exactly one of the two repeats, and never in the same one. Repeat disagreement flags these two lines correctly, which is the one case in the cohort where self-consistency would have worked."
+      ],
+      "error_classes": [
+        "Lexical lock-in within a page: r1 reads the recurring 'truhen' as the non-word 'tengen' seven times (L9, L10, L16, L17, L18) plus 'zucken' once (L11); r2 reads 'trugen' throughout and is right. Once the first guess is made it is carried down the page.",
+        "Roman-numeral minim errors in a fast cursive, one per repeat, different lines.",
+        "Negation loss (r1 L22 'nit' dropped), which silently reverses an inventory statement.",
+        "Proper names: 'Gabein Kuenigls' becomes 'baben kungls' (r1) / 'Baben Rungels' (r2); neither is usable.",
+        "'oel stain' read as 'oel trainn' in both repeats, the same object that failed as 'oel pann' in Sigmundskron p6 - a cross-document systematic error on one realia term."
+      ],
+      "better_repeat": "r2",
+      "repeat_difference_character": "The dominant difference is systematic (r1's 'tengen' lock-in across seven lines), the numeral errors are stochastic and complementary, and 'Schreybtafel', 'oel stain' and the personal name fail systematically in both.",
+      "verdict": "needs-targeted-correction",
+      "key_correction": "Restore the dating element 'Sannd Katrein tag' (r2 invented a different saint) and the negation in 'ist nit eingefast' (r1 dropped it); both are single tokens that change what the document says."
+    }
+  ]
+}

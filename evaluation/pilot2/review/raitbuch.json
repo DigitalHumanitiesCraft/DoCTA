@@ -1,0 +1,320 @@
+{
+ "reviewer": "opus-agent",
+ "date": "2026-08-27",
+ "docId": "12514730",
+ "witness": "Raitbuch 2, Tiroler Landesarchiv, 15. Jh., fruehneuhochdeutsch",
+ "method": {
+  "images": "evaluation/benchmark/images/pilot2_rb2_pNNN.jpg (Bildcache, gitignored; alle fuenf Aufnahmen waren vorhanden, kein Nachladen noetig)",
+  "split": "wie im Runner: linke Haelfte = verso, rechte Haelfte = recto, Schnitt bei width//2",
+  "inspection": "jede Haelfte in voller Aufloesung gelesen, Betragszeilen zusaetzlich 2x bis 3x vergroessert",
+  "spread_px": [3780, 2644],
+  "half_px": [1890, 2644],
+  "amount_coverage": "Es wurde jeder auf der jeweiligen Haelfte sichtbare Betrag geprueft. Die Vorgabe von mindestens zehn Betraegen je Haelfte ist auf diesen Seiten nicht erreichbar, weil keine der zehn Haelften mehr als sechs Betraege traegt; geprueft sind 27 Betraege auf acht nicht leeren Haelften, also alle vorhandenen."
+ },
+ "cohort_note": "Die Aufgabenstellung nennt fuer p030 den Wert 0.107 und fuer p041 den Wert 0.235 als Wortkonsistenz. Laut pilot2_summary.json sind das die Zahlenkonsistenzen (consistency_numbers); die Wortkonsistenzen sind 0.5 bzw. 0.713. Der Befund bleibt derselbe, die Divergenz sitzt in den Betraegen.",
+ "pages": [
+  {
+   "page": "pilot2_rb2_p025",
+   "docId": "12514730",
+   "files": {
+    "image": "evaluation/benchmark/images/pilot2_rb2_p025.jpg",
+    "runs": [
+     "evaluation/pilot2/runs/pilot2_rb2_p025__it02__r1.json",
+     "evaluation/pilot2/runs/pilot2_rb2_p025__it02__r2.json"
+    ]
+   },
+   "metrics": {"consistency_words": 0.707, "consistency_numbers": 0.45, "lines": [44, 47]},
+   "halves": [
+    {
+     "half": "verso",
+     "image_px": [1890, 2644],
+     "content": "Rubrik 'Heinreich von Rotenstain' und 'Raitung', neunzeiliger Nota-Block, Rubrik 'Innemen', drei Item-Posten mit je einer eingerueckten Betragszeile, Summenzeile",
+     "visible_lines": 22,
+     "visible_lines_incl_marginal_item": 25,
+     "transcribed_lines": {"r1": 22, "r2": 25},
+     "coverage": "vollstaendig in beiden Wiederholungen",
+     "empty_claim": {"r1": null, "r2": false},
+     "empty_claim_correct": true,
+     "finding": "Die im Summary sichtbare Dreizeilendivergenz ist keine fehlende Substanz. r2 setzt die drei marginalen Item-Initialen als eigene Zeilen vom Typ marginal, r1 zieht sie in die Folgezeile. Beide Segmentierungen sind vertretbar, die Metrik straft die Uneinheitlichkeit."
+    },
+    {
+     "half": "recto",
+     "image_px": [1890, 2644],
+     "content": "Foliierung 25, Rubrik 'Aufgeben', drei Item-Posten, dreizeilige Summe, vierzeiliger Abschlussblock",
+     "visible_lines": 22,
+     "transcribed_lines": {"r1": 22, "r2": 22},
+     "coverage": "vollstaendig in beiden Wiederholungen",
+     "empty_claim": {"r1": false, "r2": null},
+     "empty_claim_correct": true,
+     "finding": "Zeilenzahl und Zeilengrenzen stimmen ueberein. Die Divergenz sitzt ausschliesslich in den Betragsclustern am Zeilenende."
+    }
+   ],
+   "amount_findings": {
+    "checked": 10,
+    "verso": [
+     {"image": "iij [C] Rh gld", "r1": "ijm Rhgld", "r2": "iij C Rhgld", "verdict": "r2 richtig; r1 macht aus dem Hundertzeichen den Multiplikator m und verzehnfacht den Betrag"},
+     {"image": "vij [C] Rh gld", "r1": "vijc Rhgld", "r2": "vij C Rhgld", "verdict": "beide richtig"},
+     {"image": "vj [C] lxxxxiiij Rh gld j", "r1": "vjc lxxxiiij Rhgld j", "r2": "vj C lxxxxiiij Rhgld j", "verdict": "r2 richtig; r1 verliert ein x, 684 statt 694"},
+     {"image": "m . vj [C] lxxxxiiij Rh gld j (Summa)", "r1": "iijm iijc lxxxiiij Rhgld j", "r2": "m . vj C lxxxxiiij Rhgld j", "verdict": "r2 richtig und arithmetisch geschlossen: 300 + 700 + 694 = 1694; r1 ist in sich unstimmig"}
+    ],
+    "recto": [
+     {"image": "viij^[C] . lx Rh gld (Hundertzeichen hochgestellt)", "r1": "viij lb x ss gld", "r2": "viij tt Rh gld", "verdict": "beide falsch; das hochgestellte Hundertzeichen wird zum Pfundzeichen, aus 860 werden 8"},
+     {"image": "xiiij^[C] lxxxvj Rh gld ij ss vj d", "r1": "xiij lb xvij ss iiij d ij d [...]", "r2": "xiiij tt xxvj Rh gld ij d viij hl", "verdict": "beide falsch; r1 haengt zusaetzlich den Platzhalter [...] an"},
+     {"image": "[Hundertzeichen] xxviij gld ij lb iij d", "r1": "4 xxxvij gld ij lb iij d", "r2": "t xxxiiij gld ij d iij hl", "verdict": "beide falsch; das Zeichen wird als lateinische Ziffer 4 bzw. als Buchstabe t ausgegeben"},
+     {"image": "m . viij^[C] xxxviij Rh guld / viij d (Summa)", "r1": "m . iiij lb xxxvij Rhguld / viij d", "r2": "w . iiij tt xxxiiij Rh guld / viij hl", "verdict": "beide falsch in Hunderterstelle und Waehrung"},
+     {"image": "funfzehen Reinsche gld (ausgeschrieben)", "r1": "funfzehn reinisch gld", "r2": "funfzehen Reinsche gld", "verdict": "beide richtig; ausgeschriebene Zahlwoerter sind unproblematisch"},
+     {"image": "Leerlaufstrich vor dem Betrag", "r1": "als —— gesetzt", "r2": "als —— gesetzt", "verdict": "uneinheitlich ueber die Seite gesetzt und daher metrikschaedlich"}
+    ]
+   },
+   "error_classes": [
+    {"class": "Hundertzeichen hochgestellt", "example": "recto Zeile 7, 'viij^C lx Rh gld' wird zu 'viij lb x ss gld' (r1) und 'viij tt Rh gld' (r2)"},
+    {"class": "Waehrungseinheit ersetzt", "example": "Rh gld wird zu lb bzw. tt"},
+    {"class": "Minimzaehlung", "example": "verso 'lxxxxiiij' wird bei r1 zu 'lxxxiiij'"},
+    {"class": "Segmentierung der Marginal-Item", "example": "verso, r2 setzt drei eigene Zeilen, r1 keine"},
+    {"class": "Leerlaufstrich als Text", "example": "'——' erscheint mal im Text, mal nicht"}
+   ],
+   "better_repeat": "r2",
+   "verdict": "needs-targeted-correction",
+   "key_correction": "Alle Betragszeilen des recto sind nachzuziehen; das hochgestellte Hundertzeichen ist dort durchgaengig verloren.",
+   "visible_cause": "Kein schwerer Duktus. Die Schrift ist gut lesbar; die Divergenz entsteht allein an den hochgestellten Abkuerzungszeichen und an der Frage, ob die Item-Initiale eine eigene Zeile ist."
+  },
+  {
+   "page": "pilot2_rb2_p029",
+   "docId": "12514730",
+   "files": {
+    "image": "evaluation/benchmark/images/pilot2_rb2_p029.jpg",
+    "runs": [
+     "evaluation/pilot2/runs/pilot2_rb2_p029__it02__r1.json",
+     "evaluation/pilot2/runs/pilot2_rb2_p029__it02__r2.json"
+    ]
+   },
+   "metrics": {"consistency_words": 0.526, "consistency_numbers": 0.4, "lines": [26, 9]},
+   "halves": [
+    {
+     "half": "verso",
+     "image_px": [1890, 2644],
+     "content": "Schluss einer Judenrechnung in drei Bloecken, der gesamte Textspiegel ist durch einen langen diagonalen Tilgungsstrich entwertet",
+     "visible_lines": 7,
+     "visible_lines_incl_marginal_item": 8,
+     "transcribed_lines": {"r1": 7, "r2": 8},
+     "coverage": "vollstaendig in beiden Wiederholungen",
+     "empty_claim": {"r1": null, "r2": false},
+     "empty_claim_correct": true,
+     "finding": "r2 markiert alle acht Zeilen mit ~~...~~ und trifft damit den im Bild klar sichtbaren Tilgungsstrich. r1 uebergeht die Tilgung vollstaendig. Die Markierung liegt ausserhalb des Schemas, sie ist in den Text hineingeschrieben."
+    },
+    {
+     "half": "recto",
+     "image_px": [1890, 2644],
+     "content": "fol. 29r traegt ausser der Foliierung '29' in der oberen rechten Ecke keine Tinte. Was auf der Aufnahme wie Text aussieht, ist Durchscheinen des daruntersliegenden Blattes fol. 30r; die Rubrik dieses Durchscheinens ist 'Hanns Elsspambm zu Botzn', identisch mit der Rubrik des recto von p030.",
+     "visible_lines": 1,
+     "transcribed_lines": {"r1": 19, "r2": 1},
+     "coverage": "r2 korrekt, r1 erfindet eine ganze Seite",
+     "empty_claim": {"r1": null, "r2": false},
+     "empty_claim_correct": false,
+     "finding": "Die Vermutung eines fruehen Abbruchs von r2 trifft nicht zu. r2 gibt genau das wieder, was auf dem Blatt steht. r1 liest das Durchscheinen als Seiteninhalt, uebernimmt daraus zwei Rubriken, erfindet dabei den Namen 'Hannss Apponntner zu Bozen' und fuellt siebzehn der neunzehn Zeilen mit dem Literal '[...]'. Die Zeilendivergenz 26 gegen 9 ist eine Halluzination in r1, kein Abbruch in r2. Beide Wiederholungen versaeumen es, empty zu setzen."
+    }
+   ],
+   "amount_findings": {
+    "checked": 3,
+    "verso": [
+     {"image": "vj m (Mark, mit Kuerzungsstrich)", "r1": "vj mr", "r2": "vj m-quer", "verdict": "beide richtig"},
+     {"image": "tuot —— lxxxx iij m j d", "r1": "seint —— lxxxxiiij mr j lb", "r2": "tuot — lxxxx iij m-quer j d", "verdict": "r2 richtig; r1 liest 'tuot' als 'seint' und 'd' als 'lb'"},
+     {"image": "worden —— xvij m viij d", "r1": "worden —— xvij mr viij lb", "r2": "worden — xvij m-quer viij d", "verdict": "r2 richtig; r1 setzt erneut lb statt d"}
+    ],
+    "recto": []
+   },
+   "error_classes": [
+    {"class": "Durchscheinen als Seiteninhalt", "example": "r1 recto: neunzehn Zeilen auf einer tintenfreien Seite, Rubriken aus dem Durchscheinen von fol. 30r uebernommen"},
+    {"class": "Platzhalter als Zeileninhalt", "example": "r1 recto: siebzehn Zeilen mit dem Literal '[...]', die die Zeilenzahl und die Konsistenzmetrik aufblaehen"},
+    {"class": "Tilgung nicht erfasst", "example": "r1 verso ignoriert den Diagonalstrich; r2 kodiert ihn schemafremd als ~~...~~"},
+    {"class": "d gegen lb", "example": "verso, r1 setzt zweimal lb, wo im Bild die geschleifte d-Form steht"},
+    {"class": "empty nicht gesetzt", "example": "recto: beide Wiederholungen lassen empty null bzw. false, obwohl die Seite nur die Foliierung traegt"}
+   ],
+   "better_repeat": "r2",
+   "verdict": "needs-targeted-correction",
+   "key_correction": "Der Lauf r1 ist fuer das recto zu verwerfen und die Seite als leer mit Foliierung zu fuehren; die Tilgung des verso braucht ein eigenes Feld statt Markdown im Text.",
+   "visible_cause": "Weder schwerer Duktus noch schwierige Anlage. Ursache ist ein tintenfreies Blatt mit starkem Durchscheinen, das r1 als Text verarbeitet."
+  },
+  {
+   "page": "pilot2_rb2_p030",
+   "docId": "12514730",
+   "files": {
+    "image": "evaluation/benchmark/images/pilot2_rb2_p030.jpg",
+    "runs": [
+     "evaluation/pilot2/runs/pilot2_rb2_p030__it02__r1.json",
+     "evaluation/pilot2/runs/pilot2_rb2_p030__it02__r2.json"
+    ]
+   },
+   "metrics": {"consistency_words": 0.5, "consistency_numbers": 0.107, "lines": [24, 24]},
+   "halves": [
+    {
+     "half": "verso",
+     "image_px": [1890, 2644],
+     "content": "tintenfrei; sichtbar ist nur das seitenverkehrte Durchscheinen des verso von p029 samt dessen Tilgungsstrich",
+     "visible_lines": 0,
+     "transcribed_lines": {"r1": 0, "r2": 0},
+     "coverage": "korrekt",
+     "empty_claim": {"r1": true, "r2": true},
+     "empty_claim_correct": true,
+     "finding": "Die Leermeldung ist zutreffend. Das Durchscheinen ist hier seitenverkehrt und wird von beiden Wiederholungen richtig ignoriert."
+    },
+    {
+     "half": "recto",
+     "image_px": [1890, 2644],
+     "content": "Foliierung 30, Rubrik 'Hanns Elsspambm zu Botzn', neunzeiliger Nota-Block, Rubrik 'Ausgebn', zwoelfzeiliger Ausgabenblock mit vier Betragszeilen; Venedig-Einkauf in Dukaten",
+     "visible_lines": 24,
+     "transcribed_lines": {"r1": 24, "r2": 24},
+     "coverage": "vollstaendig in beiden Wiederholungen, Zeilengrenzen identisch",
+     "empty_claim": {"r1": false, "r2": false},
+     "empty_claim_correct": true,
+     "finding": "Die Abdeckung ist tadellos. Der Einbruch der Zahlenkonsistenz auf 0.107 entsteht allein im unteren Block, wo r2 das gesamte Waehrungssystem verfehlt."
+    }
+   ],
+   "amount_findings": {
+    "checked": 4,
+    "recto": [
+     {"image": "in ainer Summa xij [C] xx duc", "r1": "xij C xx duc", "r2": "xiij m xlviij dut", "verdict": "r1 richtig; r2 macht aus dem Hundertzeichen ein m und erfindet die Einheit 'dut'"},
+     {"image": "vnd muncz c l iiij duc viij ss x d j hl berait", "r1": "vnd munz c l iiij duc viij ss x d j hl berait", "r2": "vnd nunmro xlviij lb viij d e xl viij s e Berait", "verdict": "r1 plausibel; r2 zerfaellt in Einzelbuchstaben"},
+     {"image": "lxviij duc j ss x d j hl", "r1": "lxvij duc j ss x d j hl", "r2": "lxviij dut j lb xxxvij s c", "verdict": "gemischt; r2 trifft die Minimzahl lxviij, r1 die Einheiten"},
+     {"image": "xij [C] lxxxvij duc j ss x d j hl (Schlusssumme)", "r1": "xij C lxxxvij duc j ss x d j hl", "r2": "xiij m lxxvijj dut j lb c xxxvij s c", "verdict": "r1 richtig und arithmetisch geschlossen: 1220 + 67 = 1287; r2 ist in sich unstimmig"}
+    ]
+   },
+   "error_classes": [
+    {"class": "Waehrungssystem verloren", "example": "r2 setzt durchgaengig 'dut' statt 'duc' und lb statt ss/d, obwohl die Seite eine reine Dukatenrechnung ist"},
+    {"class": "Hundertzeichen als m gelesen", "example": "r2: 'xij C xx duc' wird zu 'xiij m xlviij dut'"},
+    {"class": "Buchstabensalat bei Fremdwoertern", "example": "r2 Zeile 16: 'Zendel Diminuter Balter kanss vergy weltmasir' gegen r1 'Zandal Drimuether Zolter hanff vergiss drechselmahir'"},
+    {"class": "kind-Vergabe uneinheitlich", "example": "r1 typisiert die Betragszeilen 19 bis 22 als amount, r2 dieselben Zeilen als entry"}
+   ],
+   "better_repeat": "r1",
+   "verdict": "needs-targeted-correction",
+   "key_correction": "Der Ausgabenblock ab der Registerzeile ist aus r1 zu uebernehmen und gegen die Blocksumme zu rechnen; r2 ist dort unbrauchbar.",
+   "visible_cause": "Der untere Block ist in einem schnelleren, staerker gekuerzten Duktus geschrieben als der Kopf, mit dichten Ziffernclustern und hochgestellten Zeichen am Zeilenende. Der Duktus ist die Ursache, die Anlage der Seite ist unauffaellig. Ein Modellversagen zeigt sich darin, dass r2 nicht nur einzelne Ziffern verfehlt, sondern die Waehrung des Geschaefts aufgibt."
+  },
+  {
+   "page": "pilot2_rb2_p038",
+   "docId": "12514730",
+   "role": "Kontrolle, hoechste Wortkonsistenz der Raitbuch-Kohorte",
+   "files": {
+    "image": "evaluation/benchmark/images/pilot2_rb2_p038.jpg",
+    "runs": [
+     "evaluation/pilot2/runs/pilot2_rb2_p038__it02__r1.json",
+     "evaluation/pilot2/runs/pilot2_rb2_p038__it02__r2.json"
+    ]
+   },
+   "metrics": {"consistency_words": 0.722, "consistency_numbers": 0.765, "lines": [30, 29]},
+   "halves": [
+    {
+     "half": "verso",
+     "image_px": [1890, 2644],
+     "content": "Rubrik 'Vlreich Genger', fuenfzeiliger Nota-Block mit Summenzeile, Rubrik 'Jnnemen', Item-Posten ueber vier Zeilen, dreizeiliger Abschluss; ein grosses diagonales Tilgungskreuz ueber den ganzen Textspiegel",
+     "visible_lines": 14,
+     "transcribed_lines": {"r1": 14, "r2": 14},
+     "coverage": "vollstaendig in beiden Wiederholungen",
+     "empty_claim": {"r1": null, "r2": false},
+     "empty_claim_correct": true,
+     "finding": "Keine Wiederholung erfasst das Tilgungskreuz, obwohl es dieselbe Form hat wie der von r2 auf p029 erkannte Strich. Die Erkennung von Tilgungen ist damit zufaellig."
+    },
+    {
+     "half": "recto",
+     "image_px": [1890, 2644],
+     "content": "Foliierung 38, Rubrik 'Heinrich Dorn', fuenfzeiliger Nota-Block mit Summenzeile, Rubrik 'Daran hat er emphangen', Item-Posten ueber vier Zeilen, dreizeiliger Abschluss; zwei duenne Tilgungsstriche",
+     "visible_lines": 15,
+     "visible_lines_incl_marginal_item": 16,
+     "transcribed_lines": {"r1": 16, "r2": 15},
+     "coverage": "vollstaendig in beiden Wiederholungen",
+     "empty_claim": {"r1": false, "r2": false},
+     "empty_claim_correct": true,
+     "finding": "Die Einzeilendivergenz ist wieder die Marginal-Item, hier von r1 als eigene Zeile gesetzt und von r2 eingezogen, also spiegelbildlich zu p025."
+    }
+   ],
+   "amount_findings": {
+    "checked": 6,
+    "verso": [
+     {"image": "in ainer Summa xx m iiij lb", "r1": "xx m iij [...]", "r2": "xx m-quer iiij lb", "verdict": "r2 richtig; r1 bricht am Zeilenende in einen Platzhalter ab"},
+     {"image": "vij fuder vj vrn iij yms weins fur xxiiij m", "r1": "xvij fuder vj ymren vij yms weins fur xxiiij m [...]", "r2": "viij fueder ij vm viij per weins fur xx iij m-quer", "verdict": "gemischt; r1 trifft vj und xxiiij, r2 trifft die Einheit, beide verfehlen die fuehrende Zahl"},
+     {"image": "schuldig xxvij lb", "r1": "xxviij lb", "r2": "xxvij lb", "verdict": "r2 richtig; r1 setzt eine Minim zu viel"}
+    ],
+    "recto": [
+     {"image": "Summa —— xxxviij m viij lb ij d", "r1": "xxviij lb viij ss vj d", "r2": "xxviij lb iiij ss vj d", "verdict": "beide falsch in Zehnerstelle, Waehrung und Schilling-Stelle; die Kopfsumme der Seite stimmt in keiner Wiederholung"},
+     {"image": "Gelt —— xxx m viij lb ij d", "r1": "brot —— xxx lb viij ss vj d", "r2": "Gelt —— xxx lb viij ss ij d", "verdict": "r2 naeher; r1 liest 'Gelt' als 'brot'"},
+     {"image": "schuldig xlij lb", "r1": "ij lb", "r2": "xlvij ss", "verdict": "beide falsch; r1 verliert die fuehrenden Ziffern, r2 erfindet die Einheit"}
+    ]
+   },
+   "error_classes": [
+    {"class": "Mark-Kuerzung als Pfund gelesen", "example": "recto Summenzeile: 'xxxviij m viij lb ij d' wird in beiden Wiederholungen zu 'xxviij lb viij ss ...'"},
+    {"class": "uebereinstimmend falsch", "example": "Kopfsumme und Empfangssumme des recto sind in r1 und r2 gleichartig verfehlt; hohe Selbstkonsistenz bei falscher Lesung"},
+    {"class": "Platzhalter am Zeilenende", "example": "r1 verso Zeile 6 und Zeile 11 enden mit '[...]', dort wo der Bundschatten die Zeilenenden verdunkelt"},
+    {"class": "Tilgung nicht erfasst", "example": "das grosse Diagonalkreuz des verso fehlt in beiden Wiederholungen"},
+    {"class": "Segmentierung der Marginal-Item", "example": "recto, r1 setzt sie als eigene Zeile, r2 nicht"}
+   ],
+   "better_repeat": "r2",
+   "verdict": "needs-targeted-correction",
+   "key_correction": "Die Kopfsumme und die Empfangssumme des recto sind neu zu lesen; die Mark-Kuerzung ist dort in beiden Wiederholungen zum Pfund geworden.",
+   "visible_cause": "Die Kontrollseite zeigt, dass eine hohe Selbstkonsistenz die Betragsgenauigkeit nicht verbuergt. Der Duktus ist klar und der Textkoerper stimmt weitgehend; beide Wiederholungen scheitern gleichsinnig an derselben Waehrungskuerzung."
+  },
+  {
+   "page": "pilot2_rb2_p041",
+   "docId": "12514730",
+   "files": {
+    "image": "evaluation/benchmark/images/pilot2_rb2_p041.jpg",
+    "runs": [
+     "evaluation/pilot2/runs/pilot2_rb2_p041__it02__r1.json",
+     "evaluation/pilot2/runs/pilot2_rb2_p041__it02__r2.json"
+    ]
+   },
+   "metrics": {"consistency_words": 0.713, "consistency_numbers": 0.235, "lines": [19, 22]},
+   "halves": [
+    {
+     "half": "verso",
+     "image_px": [1890, 2644],
+     "content": "tintenfrei; sichtbar nur seitenverkehrtes Durchscheinen des vorangehenden Blattes",
+     "visible_lines": 0,
+     "transcribed_lines": {"r1": 0, "r2": 0},
+     "coverage": "korrekt",
+     "empty_claim": {"r1": true, "r2": true},
+     "empty_claim_correct": true,
+     "finding": "Die Leermeldung ist zutreffend."
+    },
+    {
+     "half": "recto",
+     "image_px": [1890, 2644],
+     "content": "Foliierung 41, Rubrik 'Lienhart Deringer', siebenzeiliger Nota-Block, Item-Posten ueber vier Zeilen mit eingerueckter Betragszeile, kurze Zwischenzeile, zwei weitere Item-Posten; ein langer diagonaler Tilgungsstrich ueber die ganze Seite",
+     "visible_lines": 20,
+     "visible_lines_incl_marginal_item": 23,
+     "transcribed_lines": {"r1": 19, "r2": 22},
+     "coverage": "r2 vollstaendig, r1 laesst die kurze Zwischenzeile nach der Betragszeile aus",
+     "empty_claim": {"r1": null, "r2": false},
+     "empty_claim_correct": true,
+     "finding": "r1 uebergeht eine kurze, freistehende Zeile und zieht die Item-Initialen ein, r2 setzt beide. Der Tilgungsstrich bleibt in beiden Wiederholungen unerwaehnt, obwohl dasselbe Modell ihn auf p029 markiert hat."
+    }
+   ],
+   "amount_findings": {
+    "checked": 4,
+    "recto": [
+     {"image": "vnd bringt in ainer Summa ij [C] lviij m", "r1": "ij C lviij lb", "r2": "ij C lxxiiij m-quer", "verdict": "gemischt; r1 trifft die Zahl, r2 die Einheit"},
+     {"image": "vnd viij ss xj d et liiij ss", "r1": "vnd viij ss xj d ob liiij s d", "r2": "vnd viij d xvij hl mj s l", "verdict": "r1 deutlich naeher; r2 zerfaellt"},
+     {"image": "geschafftbrief —— lxxx m", "r1": "gescheftikait —— lxxxiiij lb", "r2": "gescheftikait —— lxxx iiij", "verdict": "beide falsch; die Mark-Kuerzung wird als roemisch iiij gelesen, bei r1 zusaetzlich lb angehaengt"},
+     {"image": "als Camermaister lxx m", "r1": "lxxiiij lb", "r2": "lxx iiij", "verdict": "beide falsch, gleiche Ursache wie zuvor"}
+    ]
+   },
+   "error_classes": [
+    {"class": "Mark-Kuerzung als Ziffer gelesen", "example": "'lxxx m' wird zu 'lxxx iiij' (r2) und 'lxxxiiij lb' (r1); die Einheit verschwindet und der Betrag aendert sich"},
+    {"class": "Zeilenauslassung", "example": "r1 laesst die kurze freistehende Zeile zwischen Betragszeile und drittem Posten aus"},
+    {"class": "Ortsname erfunden", "example": "'von Innsprugkhern' wird bei r1 zu 'von crumpffmarckten'; r2 kommt mit 'von Aninspruckhern' nahe"},
+    {"class": "Tilgung nicht erfasst", "example": "der ganzseitige Diagonalstrich fehlt in beiden Wiederholungen"},
+    {"class": "Jahreszahl divergent", "example": "r1 liest 'iiij C lxiiij', r2 'xciiij' fuer dieselbe Datierungsangabe"}
+   ],
+   "better_repeat": "r2",
+   "verdict": "needs-targeted-correction",
+   "key_correction": "Die vier Betraege sind neu zu lesen; die Mark-Kuerzung am Zeilenende wird durchgaengig als Zahl verarbeitet.",
+   "visible_cause": "Die Wortkonsistenz von 0.713 zeigt, dass der Duktus lesbar ist. Der Einbruch der Zahlenkonsistenz auf 0.235 entsteht an genau einem Zeichen, der Mark-Kuerzung in Endstellung, sowie an dem Zeichencluster ss/d/hl dahinter."
+  }
+ ],
+ "cross_page_findings": {
+  "empty_claims": "Alle drei Leermeldungen der Kohorte, p030 verso, p041 verso und implizit p029 recto, wurden am Bild geprueft. Die beiden gemeldeten leeren verso sind tatsaechlich tintenfrei. Der umgekehrte Fall ist der gefaehrliche: p029 recto ist bis auf die Foliierung leer, wird aber von keiner Wiederholung als leer gemeldet, und r1 fuellt es mit einer erfundenen Seite.",
+  "columns": "Die Seiten fuehren keine Spalten. Die Betraege stehen rechts eingerueckt in eigener Zeile oder am Zeilenende, meist nach einem langen Leerlaufstrich. Dieser Strich wird uneinheitlich als '——' in den Text uebernommen.",
+  "dittography": "Ueber Postengrenzen hinweg wurde keine Dittographie beobachtet. Wiederholungsfehler treten stattdessen als Platzhalterketten auf ('[...]' siebzehnmal in Folge auf p029 recto in r1).",
+  "marginal_sums": "Marginale Summen kommen in dieser Kohorte nicht vor. Das einzige marginale Element ist die Item-Initiale am linken Rand, und genau sie erzeugt in drei von fuenf Aufnahmen die Zeilenzahldivergenz zwischen den Wiederholungen.",
+  "gutter": "Der Schnitt bei width//2 legt die Zeilenenden des verso, wo alle Betraege stehen, bis auf wenige Pixel an den Rand des Ausschnitts und in den dunkelsten Bereich des Bundschattens. Auf p038 verso endet die Summenzeile etwa sieben Pixel vor der Schnittkante. Genau dort setzt r1 seine Platzhalter."
+ }
+}
