@@ -1,0 +1,130 @@
+{
+ "page": "pilot_inv_11330060_p7",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1712,
+    4672
+   ],
+   "sent_px": [
+    1283,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 7.5,
+ "timestamp": "2026-08-27T06:56:08+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "Item Vnden Im turn",
+      "kind": "rubric",
+      "uncertain": [
+       "turn"
+      ]
+     },
+     {
+      "text": "drey waffel Isen sind",
+      "kind": "entry",
+      "uncertain": [
+       "waffel Isen"
+      ]
+     },
+     {
+      "text": "nit Eysengslagen",
+      "kind": "entry",
+      "uncertain": [
+       "Eysengslagen"
+      ]
+     },
+     {
+      "text": "Item xij lagel vnd vass sind",
+      "kind": "entry",
+      "uncertain": [
+       "lagel",
+       "vass"
+      ]
+     },
+     {
+      "text": "Zu geschlagen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item ain Hauffen hanffstrick",
+      "kind": "entry",
+      "uncertain": [
+       "hanffstrick"
+      ]
+     },
+     {
+      "text": "ligt ledig auf dem boden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item Hanns oben vnderm tach",
+      "kind": "entry",
+      "uncertain": [
+       "Hanns"
+      ]
+     },
+     {
+      "text": "ain groß sail",
+      "kind": "entry",
+      "uncertain": [
+       "sail"
+      ]
+     },
+     {
+      "text": "Item xxvij hechelpuechsen",
+      "kind": "entry",
+      "uncertain": [
+       "xxvij",
+       "hechelpuechsen"
+      ]
+     },
+     {
+      "text": "Ain grosse puechs ligt",
+      "kind": "entry",
+      "uncertain": [
+       "puechs"
+      ]
+     },
+     {
+      "text": "vnden bey der phlisp",
+      "kind": "entry",
+      "uncertain": [
+       "phlisp"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Item Vnden Im turn",
+  "drey waffel Isen sind",
+  "nit Eysengslagen",
+  "Item xij lagel vnd vass sind",
+  "Zu geschlagen",
+  "Item ain Hauffen hanffstrick",
+  "ligt ledig auf dem boden",
+  "Item Hanns oben vnderm tach",
+  "ain groß sail",
+  "Item xxvij hechelpuechsen",
+  "Ain grosse puechs ligt",
+  "vnden bey der phlisp"
+ ]
+}

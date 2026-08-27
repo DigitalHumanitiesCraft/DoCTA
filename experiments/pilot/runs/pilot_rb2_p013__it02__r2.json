@@ -1,0 +1,298 @@
+{
+ "page": "pilot_rb2_p013",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 13.6,
+ "timestamp": "2026-08-27T06:57:52+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "13r",
+    "lines": [
+     {
+      "text": "13",
+      "kind": "foliation",
+      "uncertain": [
+       "13"
+      ]
+     },
+     {
+      "text": "Des hofgesinds Raitungn",
+      "kind": "rubric",
+      "uncertain": [
+       "Raitungn"
+      ]
+     },
+     {
+      "text": "Irer Sollde",
+      "kind": "rubric",
+      "uncertain": [
+       "Irer",
+       "Sollde"
+      ]
+     },
+     {
+      "text": "a Hawstadl",
+      "kind": "rubric",
+      "uncertain": [
+       "Hawstadl"
+      ]
+     },
+     {
+      "text": "Nota mit Cristoffen Hawstadl ist gerait am",
+      "kind": "entry",
+      "uncertain": [
+       "Cristoffen",
+       "Hawstadl"
+      ]
+     },
+     {
+      "text": "freytag vor dem heyligen Auffartag Anno",
+      "kind": "entry",
+      "uncertain": [
+       "Auffartag"
+      ]
+     },
+     {
+      "text": "domini etc lxxvij vnd man ist Im sein Sold schultig",
+      "kind": "entry",
+      "uncertain": [
+       "lxxvij"
+      ]
+     },
+     {
+      "text": "auf zway phund cron ij Jar das hier yecz",
+      "kind": "entry",
+      "uncertain": [
+       "cron",
+       "hier",
+       "yecz"
+      ]
+     },
+     {
+      "text": "geenndt hat lx Rhgld facit —— xxiij mr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxiij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "geenndt",
+       "lx",
+       "Rhgld",
+       "xxiij",
+       "mr"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Daran hat er von meinims herrn Camermayster",
+      "kind": "entry",
+      "uncertain": [
+       "meinims",
+       "Camermayster"
+      ]
+     },
+     {
+      "text": "emphangen die desselb Camermayster noch verraiten",
+      "kind": "entry",
+      "uncertain": [
+       "Camermayster"
+      ]
+     },
+     {
+      "text": "sol —— viij lb gld facit v mr vj d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "viij",
+       "gld",
+       "v",
+       "mr",
+       "vj",
+       "d"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "So ist er meinis herrn gnaden fur Anceln",
+      "kind": "entry",
+      "uncertain": [
+       "Anceln"
+      ]
+     },
+     {
+      "text": "Bafens saligen schuldig die desselb Bafen muß",
+      "kind": "entry",
+      "uncertain": [
+       "Bafens",
+       "Bafen"
+      ]
+     },
+     {
+      "text": "andern sein gethan meinis herrn gnaden eingelegt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hat —— iij mr ij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "iij",
+       "mr",
+       "ij",
+       "ß"
+      ]
+     },
+     {
+      "text": "Vnd hat Innemeint facit",
+      "kind": "sum",
+      "uncertain": [
+       "Innemeint"
+      ]
+     },
+     {
+      "text": "viij mr iiij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "viij",
+       "mr",
+       "iiij",
+       "d"
+      ]
+     },
+     {
+      "text": "Demnach ist meinis herrn gnad demselben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Hawstadl schuldig xiiij mr vj d darumb hat",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xiiij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "Hawstadl",
+       "xiiij",
+       "mr",
+       "vj",
+       "d"
+      ]
+     },
+     {
+      "text": "man In auf Hannsen Klammar stewr vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsen",
+       "Klammar"
+      ]
+     },
+     {
+      "text": "mülmlan zu Innsz gestraft zu ganzer",
+      "kind": "entry",
+      "uncertain": [
+       "mülmlan",
+       "Innsz",
+       "gestraft"
+      ]
+     },
+     {
+      "text": "bezalung vnd hat hinffur nymm sold",
+      "kind": "entry",
+      "uncertain": [
+       "hinffur",
+       "nymm"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "13",
+  "Des hofgesinds Raitungn",
+  "Irer Sollde",
+  "a Hawstadl",
+  "Nota mit Cristoffen Hawstadl ist gerait am",
+  "freytag vor dem heyligen Auffartag Anno",
+  "domini etc lxxvij vnd man ist Im sein Sold schultig",
+  "auf zway phund cron ij Jar das hier yecz",
+  "geenndt hat lx Rhgld facit —— xxiij mr",
+  "Item",
+  "Daran hat er von meinims herrn Camermayster",
+  "emphangen die desselb Camermayster noch verraiten",
+  "sol —— viij lb gld facit v mr vj d",
+  "Item",
+  "So ist er meinis herrn gnaden fur Anceln",
+  "Bafens saligen schuldig die desselb Bafen muß",
+  "andern sein gethan meinis herrn gnaden eingelegt",
+  "hat —— iij mr ij ß",
+  "Vnd hat Innemeint facit",
+  "viij mr iiij d",
+  "Demnach ist meinis herrn gnad demselben",
+  "Hawstadl schuldig xiiij mr vj d darumb hat",
+  "man In auf Hannsen Klammar stewr vnd",
+  "mülmlan zu Innsz gestraft zu ganzer",
+  "bezalung vnd hat hinffur nymm sold"
+ ]
+}

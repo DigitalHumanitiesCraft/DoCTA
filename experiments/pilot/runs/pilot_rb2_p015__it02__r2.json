@@ -1,0 +1,363 @@
+{
+ "page": "pilot_rb2_p015",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 14.6,
+ "timestamp": "2026-08-27T06:58:09+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Daran hat der hertenfelder",
+      "kind": "rubric",
+      "uncertain": [
+       "der",
+       "hertenfelder"
+      ]
+     },
+     {
+      "text": "emphangen",
+      "kind": "rubric",
+      "uncertain": [
+       "emphangen"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Ihm ersten von herrn Benedicte Camermayster",
+      "kind": "entry",
+      "uncertain": [
+       "Ihm",
+       "ersten",
+       "von",
+       "Benedicte",
+       "Camermayster"
+      ]
+     },
+     {
+      "text": "hat er emphangen auff er seine raittung die",
+      "kind": "entry",
+      "uncertain": [
+       "hat",
+       "er",
+       "emphangen",
+       "auff",
+       "seine",
+       "raittung",
+       "die"
+      ]
+     },
+     {
+      "text": "daß Camermayster in dare stattunge berait",
+      "kind": "entry",
+      "uncertain": [
+       "daß",
+       "dare",
+       "stattunge",
+       "berait"
+      ]
+     },
+     {
+      "text": "hat ———— iij^c lxxiiij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "iij lxxiiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "hat",
+       "Rhgld"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "und von hanns lutz dieß zeit kuchemayster",
+      "kind": "entry",
+      "uncertain": [
+       "und",
+       "von",
+       "hanns",
+       "lutz",
+       "dieß",
+       "zeit",
+       "kuchemayster"
+      ]
+     },
+     {
+      "text": "hat er emphang ———— xij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "hat",
+       "er",
+       "emphang",
+       "Rhgld"
+      ]
+     },
+     {
+      "text": "Summa sein emphabens",
+      "kind": "sum",
+      "uncertain": [
+       "Summa",
+       "sein",
+       "emphabens"
+      ]
+     },
+     {
+      "text": "lxxxvj Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxvj",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Rhgld"
+      ]
+     },
+     {
+      "text": "Das gegeneinander gelegt und abgezogen",
+      "kind": "entry",
+      "uncertain": [
+       "Das",
+       "gegeneinander",
+       "gelegt",
+       "und",
+       "abgezogen"
+      ]
+     },
+     {
+      "text": "darnach ist der hertenfelder meins herrn gnad",
+      "kind": "entry",
+      "uncertain": [
+       "darnach",
+       "ist",
+       "der",
+       "hertenfelder",
+       "meins",
+       "herrn",
+       "gnad"
+      ]
+     },
+     {
+      "text": "uber sein summen schuldig viij gld dn fundten",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "uber",
+       "sein",
+       "summen",
+       "schuldig",
+       "gld",
+       "dn",
+       "fundten"
+      ]
+     },
+     {
+      "text": "nachzeschafft",
+      "kind": "entry",
+      "uncertain": [
+       "nachzeschafft"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "15r",
+    "lines": [
+     {
+      "text": "15",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Jörg Nechmiger",
+      "kind": "rubric",
+      "uncertain": [
+       "Jörg",
+       "Nechmiger"
+      ]
+     },
+     {
+      "text": "Nota mit Jörgen nechmiger gerait vm vberl",
+      "kind": "entry",
+      "uncertain": [
+       "Jörgen",
+       "nechmiger",
+       "vberl"
+      ]
+     },
+     {
+      "text": "seins Golds am freytag nach sand Jacobs",
+      "kind": "entry",
+      "uncertain": [
+       "Golds",
+       "Jacobs"
+      ]
+     },
+     {
+      "text": "tag Anno domini etc lxxiiij in gegenwurtikait",
+      "kind": "entry",
+      "uncertain": [
+       "lxxiiij"
+      ]
+     },
+     {
+      "text": "Benedicts des alten camermaysters / Lienharts von",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicts",
+       "camermaysters",
+       "Lienharts"
+      ]
+     },
+     {
+      "text": "Nocimol camermaysters / vnd wolfgangs",
+      "kind": "entry",
+      "uncertain": [
+       "Nocimol",
+       "camermaysters",
+       "wolfgangs"
+      ]
+     },
+     {
+      "text": "Stimenk camrerslayt / vnd meins gnadig[en] herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Stimenk",
+       "camrerslayt",
+       "gnadig[en]"
+      ]
+     },
+     {
+      "text": "ist jm schuldig sein sold von iiij jarn die",
+      "kind": "entry",
+      "uncertain": [
+       "sold"
+      ]
+     },
+     {
+      "text": "vntz zu Sannd michels tag nechstkomend",
+      "kind": "entry",
+      "uncertain": [
+       "michels"
+      ]
+     },
+     {
+      "text": "ennden werden / von yedem Jar xvj m̄",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvj",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "m̄"
+      ]
+     },
+     {
+      "text": "hat mitsambt der gysspenat xxxij m̄",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "gysspenat",
+       "xxxij",
+       "m̄"
+      ]
+     },
+     {
+      "text": "Darvmb ist er an den lueg geschafft",
+      "kind": "entry",
+      "uncertain": [
+       "lueg",
+       "geschafft"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Daran hat der hertenfelder",
+  "emphangen",
+  "Item",
+  "Ihm ersten von herrn Benedicte Camermayster",
+  "hat er emphangen auff er seine raittung die",
+  "daß Camermayster in dare stattunge berait",
+  "hat ———— iij^c lxxiiij Rhgld",
+  "Item",
+  "und von hanns lutz dieß zeit kuchemayster",
+  "hat er emphang ———— xij Rhgld",
+  "Summa sein emphabens",
+  "lxxxvj Rhgld",
+  "Das gegeneinander gelegt und abgezogen",
+  "darnach ist der hertenfelder meins herrn gnad",
+  "uber sein summen schuldig viij gld dn fundten",
+  "nachzeschafft",
+  "15",
+  "Jörg Nechmiger",
+  "Nota mit Jörgen nechmiger gerait vm vberl",
+  "seins Golds am freytag nach sand Jacobs",
+  "tag Anno domini etc lxxiiij in gegenwurtikait",
+  "Benedicts des alten camermaysters / Lienharts von",
+  "Nocimol camermaysters / vnd wolfgangs",
+  "Stimenk camrerslayt / vnd meins gnadig[en] herrn",
+  "ist jm schuldig sein sold von iiij jarn die",
+  "vntz zu Sannd michels tag nechstkomend",
+  "ennden werden / von yedem Jar xvj m̄",
+  "hat mitsambt der gysspenat xxxij m̄",
+  "Darvmb ist er an den lueg geschafft"
+ ]
+}

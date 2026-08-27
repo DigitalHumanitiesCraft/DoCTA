@@ -1,0 +1,301 @@
+{
+ "page": "pilot_rb2_p004",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 28.5,
+ "timestamp": "2026-08-27T06:56:54+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Her hanns Drulssez",
+      "kind": "rubric",
+      "uncertain": [
+       "Drulssez"
+      ]
+     },
+     {
+      "text": "Ite(m) mit herrn hannsn Drulssez gerait in p(re)sencia",
+      "kind": "entry",
+      "uncertain": [
+       "hannsn",
+       "Drulssez",
+       "p(re)sencia"
+      ]
+     },
+     {
+      "text": "p(re)scriptor(um) an freytag nach Sand Johanns tag",
+      "kind": "entry",
+      "uncertain": [
+       "p(re)scriptor(um)",
+       "freytag",
+       "Sand",
+       "Johanns",
+       "tag"
+      ]
+     },
+     {
+      "text": "Decollacionis Anno d(omi)nj etc lxxj von Schuld",
+      "kind": "entry",
+      "uncertain": [
+       "Decollacionis",
+       "Anno",
+       "d(omi)nj",
+       "lxxj",
+       "Schuld"
+      ]
+     },
+     {
+      "text": "wegen nach Innhald ains Schuldbrieffs vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Innhald",
+       "Schuldbrieffs"
+      ]
+     },
+     {
+      "text": "von Dinstgelt vnd auch Darleyens wegen",
+      "kind": "entry",
+      "uncertain": [
+       "Dinstgelt",
+       "Darleyens"
+      ]
+     },
+     {
+      "text": "nachtstewren, furlaiten, Baymaister, vnd",
+      "kind": "entry",
+      "uncertain": [
+       "nachtstewren",
+       "furlaiten",
+       "Baymaister"
+      ]
+     },
+     {
+      "text": "Zeerungen, nichts aussgenomen vntz auf heunt",
+      "kind": "entry",
+      "uncertain": [
+       "Zeerungen",
+       "aussgenomen",
+       "heunt"
+      ]
+     },
+     {
+      "text": "obgenantn tag, nach Innhaltunng seins Zedl",
+      "kind": "entry",
+      "uncertain": [
+       "obgenantn",
+       "Innhaltunng",
+       "Zedl"
+      ]
+     },
+     {
+      "text": "vnd bringt satts solhn meins herrn gnad schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "satts",
+       "solhn"
+      ]
+     },
+     {
+      "text": "ist in ainer Suma, nach Innhald seins bemelts",
+      "kind": "entry",
+      "uncertain": [
+       "Suma",
+       "Innhald",
+       "bemelts"
+      ]
+     },
+     {
+      "text": "Zedl —— viijc lxxxxiiij Rh gld xiij ß x d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "viijc lxxxxiiij",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "Zedl",
+       "viijc lxxxxiiij",
+       "Rh gld",
+       "xiij",
+       "ß",
+       "x",
+       "d"
+      ]
+     },
+     {
+      "text": "Daran hat er emphangen von dem bemelten",
+      "kind": "entry",
+      "uncertain": [
+       "emphangen",
+       "bemelten"
+      ]
+     },
+     {
+      "text": "Camrermaister emphangn lv Rh gld die er v(er)raitn sol",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lv",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "Camrermaister",
+       "emphangn",
+       "lv",
+       "Rh gld",
+       "v(er)raitn"
+      ]
+     },
+     {
+      "text": "Demnach ist Im meins herrn gnad schuldig",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "viijc xxxix Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "viijc xxxix",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "viijc xxxix",
+       "Rh gld"
+      ]
+     },
+     {
+      "text": "Daran Zusteend nach der Tading hat Im derselb",
+      "kind": "entry",
+      "uncertain": [
+       "Zusteend",
+       "Tading"
+      ]
+     },
+     {
+      "text": "neu Camrermaister aussgericht —— iijc Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "iijc",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "neu",
+       "Camrermaister",
+       "aussgericht",
+       "iijc",
+       "Rh gld"
+      ]
+     },
+     {
+      "text": "Vber das alles ist meins herrn gnad herrn hanns",
+      "kind": "entry",
+      "uncertain": [
+       "Vber",
+       "hanns"
+      ]
+     },
+     {
+      "text": "Drulssez schuldig —— vc xxxix Rh gld,",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "vc xxxix",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "Drulssez",
+       "vc xxxix",
+       "Rh gld"
+      ]
+     },
+     {
+      "text": "Demnach hat Im meins herrn gnad ain Schuldbrieff",
+      "kind": "entry",
+      "uncertain": [
+       "Schuldbrieff"
+      ]
+     },
+     {
+      "text": "geb(e)n auf die nachstkumend Weinachtn zebeczaln",
+      "kind": "entry",
+      "uncertain": [
+       "geb(e)n",
+       "nachstkumend",
+       "Weinachtn",
+       "zebeczaln"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 4r",
+    "lines": [
+     {
+      "text": "4",
+      "kind": "foliation"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Her hanns Drulssez",
+  "Ite(m) mit herrn hannsn Drulssez gerait in p(re)sencia",
+  "p(re)scriptor(um) an freytag nach Sand Johanns tag",
+  "Decollacionis Anno d(omi)nj etc lxxj von Schuld",
+  "wegen nach Innhald ains Schuldbrieffs vnd",
+  "von Dinstgelt vnd auch Darleyens wegen",
+  "nachtstewren, furlaiten, Baymaister, vnd",
+  "Zeerungen, nichts aussgenomen vntz auf heunt",
+  "obgenantn tag, nach Innhaltunng seins Zedl",
+  "vnd bringt satts solhn meins herrn gnad schuldig",
+  "ist in ainer Suma, nach Innhald seins bemelts",
+  "Zedl —— viijc lxxxxiiij Rh gld xiij ß x d",
+  "Daran hat er emphangen von dem bemelten",
+  "Camrermaister emphangn lv Rh gld die er v(er)raitn sol",
+  "Demnach ist Im meins herrn gnad schuldig",
+  "viijc xxxix Rh gld",
+  "Daran Zusteend nach der Tading hat Im derselb",
+  "neu Camrermaister aussgericht —— iijc Rh gld",
+  "Vber das alles ist meins herrn gnad herrn hanns",
+  "Drulssez schuldig —— vc xxxix Rh gld,",
+  "Demnach hat Im meins herrn gnad ain Schuldbrieff",
+  "geb(e)n auf die nachstkumend Weinachtn zebeczaln",
+  "4"
+ ]
+}

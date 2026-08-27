@@ -1,0 +1,221 @@
+{
+ "page": "pilot_rb2_p014",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.1,
+ "timestamp": "2026-08-27T06:57:58+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "14r",
+    "lines": [
+     {
+      "text": "14",
+      "kind": "foliation"
+     },
+     {
+      "text": "Pangretz hertenfelder",
+      "kind": "rubric",
+      "uncertain": [
+       "Pangretz",
+       "hertenfelder"
+      ]
+     },
+     {
+      "text": "Nota mit pangratzn hertenfelder ist gerait ingegen-",
+      "kind": "entry",
+      "uncertain": [
+       "pangratzn",
+       "hertenfelder",
+       "ingegen-"
+      ]
+     },
+     {
+      "text": "würtikait herrn Benedicts pharrer zu Tyroll, Lienharts",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicts",
+       "Tyroll",
+       "Lienharts"
+      ]
+     },
+     {
+      "text": "von Meidel camermaysters, Lienharts fluck hayltainp",
+      "kind": "entry",
+      "uncertain": [
+       "Meidel",
+       "fluck",
+       "hayltainp"
+      ]
+     },
+     {
+      "text": "vnd Wolffgangs Stüncz camrer, am eritag vor",
+      "kind": "entry",
+      "uncertain": [
+       "Wolffgangs",
+       "Stüncz",
+       "eritag"
+      ]
+     },
+     {
+      "text": "Sand Marien Magdalen tag Anno domini etc lxxiiij°",
+      "kind": "entry",
+      "uncertain": [
+       "Marien",
+       "Magdalen",
+       "lxxiiij°"
+      ]
+     },
+     {
+      "text": "Item vnd meins herrn gnad ist Im sein sold schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "sold"
+      ]
+     },
+     {
+      "text": "von viij jar die sich zu Sannd Mertens tag",
+      "kind": "entry",
+      "uncertain": [
+       "viij",
+       "Mertens"
+      ]
+     },
+     {
+      "text": "naugstkomend enden werden, Das erst jar auf",
+      "kind": "entry",
+      "uncertain": [
+       "naugstkomend"
+      ]
+     },
+     {
+      "text": "ein phärd, Darnach die iij jar auf zway phärd",
+      "kind": "entry",
+      "uncertain": [
+       "iij",
+       "zway"
+      ]
+     },
+     {
+      "text": "vnd die ij jar darnach auf drew phärd, ye auf",
+      "kind": "entry",
+      "uncertain": [
+       "ij",
+       "drew"
+      ]
+     },
+     {
+      "text": "j phärd xx gld gerait. Tut — iij^c lx gld Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij^c lx",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "iij^c lx"
+      ]
+     },
+     {
+      "text": "Item So ist Im meins herrn gnad von ainem phärd",
+      "kind": "entry"
+     },
+     {
+      "text": "aufgab auf ain annder phärd das man dem",
+      "kind": "entry"
+     },
+     {
+      "text": "Graven von Swarczpurg gebn hat schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Graven",
+       "Swarczpurg"
+      ]
+     },
+     {
+      "text": "—— xxiiij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxiiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "xxiiij"
+      ]
+     },
+     {
+      "text": "Summa his so man Im schuldig",
+      "kind": "sum"
+     },
+     {
+      "text": "ist tut iij^c lxxxiiij Rhgld",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij^c lxxxiiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "iij^c lxxxiiij"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "14",
+  "Pangretz hertenfelder",
+  "Nota mit pangratzn hertenfelder ist gerait ingegen-",
+  "würtikait herrn Benedicts pharrer zu Tyroll, Lienharts",
+  "von Meidel camermaysters, Lienharts fluck hayltainp",
+  "vnd Wolffgangs Stüncz camrer, am eritag vor",
+  "Sand Marien Magdalen tag Anno domini etc lxxiiij°",
+  "Item vnd meins herrn gnad ist Im sein sold schuldig",
+  "von viij jar die sich zu Sannd Mertens tag",
+  "naugstkomend enden werden, Das erst jar auf",
+  "ein phärd, Darnach die iij jar auf zway phärd",
+  "vnd die ij jar darnach auf drew phärd, ye auf",
+  "j phärd xx gld gerait. Tut — iij^c lx gld Rhgld",
+  "Item So ist Im meins herrn gnad von ainem phärd",
+  "aufgab auf ain annder phärd das man dem",
+  "Graven von Swarczpurg gebn hat schuldig",
+  "—— xxiiij Rhgld",
+  "Summa his so man Im schuldig",
+  "ist tut iij^c lxxxiiij Rhgld"
+ ]
+}

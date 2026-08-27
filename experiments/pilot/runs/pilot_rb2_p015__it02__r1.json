@@ -1,0 +1,316 @@
+{
+ "page": "pilot_rb2_p015",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 20.7,
+ "timestamp": "2026-08-27T06:58:15+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Darann hat der hertenfelder",
+      "kind": "rubric",
+      "uncertain": [
+       "hertenfelder"
+      ]
+     },
+     {
+      "text": "emphangen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Ihm ersten von hern Benedicte Cam̃ermaister",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicte",
+       "Cam̃ermaister"
+      ]
+     },
+     {
+      "text": "hat er emphangen auf wo seine quittung die",
+      "kind": "entry",
+      "uncertain": [
+       "auf",
+       "quittung"
+      ]
+     },
+     {
+      "text": "daß Cam̃ermaister in dare Raitung gerait",
+      "kind": "entry",
+      "uncertain": [
+       "dare",
+       "Raitung",
+       "gerait"
+      ]
+     },
+     {
+      "text": "hat iij^c lxxviij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "iij^c lxxviij",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "vnnd von Hanns Rupp dieß zeit kuckenmaister",
+      "kind": "entry",
+      "uncertain": [
+       "Hanns",
+       "Rupp",
+       "kuckenmaister"
+      ]
+     },
+     {
+      "text": "hat er emphang —— xij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "emphang"
+      ]
+     },
+     {
+      "text": "Summa sein emphabens",
+      "kind": "sum",
+      "uncertain": [
+       "emphabens"
+      ]
+     },
+     {
+      "text": "lxxxx Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxx",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Das gegeneinander gelegt vnd abgezogñ",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogñ"
+      ]
+     },
+     {
+      "text": "Demnach ist der hertenfelder meins hnd gnad",
+      "kind": "entry",
+      "uncertain": [
+       "hertenfelder",
+       "hnd",
+       "gnad"
+      ]
+     },
+     {
+      "text": "vber sein hinen schuldg viij gld dn funfftz",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "hinen",
+       "schuldg",
+       "funfftz"
+      ]
+     },
+     {
+      "text": "nachgelaßñ",
+      "kind": "entry",
+      "uncertain": [
+       "nachgelaßñ"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "15r",
+    "lines": [
+     {
+      "text": "15",
+      "kind": "foliation"
+     },
+     {
+      "text": "Jorg Wechmÿer",
+      "kind": "rubric",
+      "uncertain": [
+       "Jorg",
+       "Wechmÿer"
+      ]
+     },
+     {
+      "text": "Nota mit Jörgen nechmÿer gerait vmb vnglt",
+      "kind": "entry",
+      "uncertain": [
+       "Jörgen",
+       "nechmÿer",
+       "vnglt"
+      ]
+     },
+     {
+      "text": "seins Geltz am freÿtag nach sand Jacobs",
+      "kind": "entry",
+      "uncertain": [
+       "seins",
+       "Geltz",
+       "Jacobs"
+      ]
+     },
+     {
+      "text": "tag Anno domini etc lviij / in gegenwürtikait",
+      "kind": "entry",
+      "uncertain": [
+       "gegenwürtikait"
+      ]
+     },
+     {
+      "text": "Benedicti des altn Camermaÿsters, lienharts des",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicti",
+       "lienharts"
+      ]
+     },
+     {
+      "text": "neúen Camermaÿsters, vnd wolfgangs",
+      "kind": "entry",
+      "uncertain": [
+       "wolfgangs"
+      ]
+     },
+     {
+      "text": "Stümerk Camerschreiber / vnd meins gnedigen herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Stümerk"
+      ]
+     },
+     {
+      "text": "ist jm schuldig sein Gelt von iiij Jarn die",
+      "kind": "entry"
+     },
+     {
+      "text": "vntz zu Sannd andres tag negstkomend",
+      "kind": "entry",
+      "uncertain": [
+       "andres"
+      ]
+     },
+     {
+      "text": "ennden werden / von yedem Jar xvj mr",
+      "kind": "entry",
+      "amount": {
+       "numeral": "xvj",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "xvj",
+       "mr"
+      ]
+     },
+     {
+      "text": "hat mitsambt der presentaz xxxvij mr",
+      "kind": "entry",
+      "amount": {
+       "numeral": "xxxvij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "presentaz",
+       "xxxvij",
+       "mr"
+      ]
+     },
+     {
+      "text": "darvmb ist er an den lueg gschafft",
+      "kind": "entry",
+      "uncertain": [
+       "lueg",
+       "gschafft"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Darann hat der hertenfelder",
+  "emphangen",
+  "It(em)",
+  "Ihm ersten von hern Benedicte Cam̃ermaister",
+  "hat er emphangen auf wo seine quittung die",
+  "daß Cam̃ermaister in dare Raitung gerait",
+  "hat iij^c lxxviij Rhgld",
+  "It(em)",
+  "vnnd von Hanns Rupp dieß zeit kuckenmaister",
+  "hat er emphang —— xij Rhgld",
+  "Summa sein emphabens",
+  "lxxxx Rhgld",
+  "Das gegeneinander gelegt vnd abgezogñ",
+  "Demnach ist der hertenfelder meins hnd gnad",
+  "vber sein hinen schuldg viij gld dn funfftz",
+  "nachgelaßñ",
+  "15",
+  "Jorg Wechmÿer",
+  "Nota mit Jörgen nechmÿer gerait vmb vnglt",
+  "seins Geltz am freÿtag nach sand Jacobs",
+  "tag Anno domini etc lviij / in gegenwürtikait",
+  "Benedicti des altn Camermaÿsters, lienharts des",
+  "neúen Camermaÿsters, vnd wolfgangs",
+  "Stümerk Camerschreiber / vnd meins gnedigen herrn",
+  "ist jm schuldig sein Gelt von iiij Jarn die",
+  "vntz zu Sannd andres tag negstkomend",
+  "ennden werden / von yedem Jar xvj mr",
+  "hat mitsambt der presentaz xxxvij mr",
+  "darvmb ist er an den lueg gschafft"
+ ]
+}

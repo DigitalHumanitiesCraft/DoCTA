@@ -1,0 +1,204 @@
+{
+ "page": "pilot_rb2_p006",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 14.8,
+ "timestamp": "2026-08-27T06:57:04+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Jnnemen vnd außgeben gegenenander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "gegenenander"
+      ]
+     },
+     {
+      "text": "vnd abgeczogen . Dannoch ist meine frow",
+      "kind": "entry",
+      "uncertain": [
+       "meine",
+       "frow"
+      ]
+     },
+     {
+      "text": "gnad dem bemelten herrn wernhern vber",
+      "kind": "entry",
+      "uncertain": [
+       "wernhern"
+      ]
+     },
+     {
+      "text": "sein Jnnemen schuldig . m . ij C lxxxv Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "m",
+       "numeral": "m . ij C lxxxv",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "schuldig",
+       "Rh gld"
+      ]
+     },
+     {
+      "text": "Die sullen jm auf Sannd Jacobs tag",
+      "kind": "entry",
+      "uncertain": [
+       "Sannd Jacobs"
+      ]
+     },
+     {
+      "text": "naegstkhunftig genzlich nach Jnhald",
+      "kind": "entry",
+      "uncertain": [
+       "naegstkhunftig",
+       "genzlich",
+       "Jnhald"
+      ]
+     },
+     {
+      "text": "eins schuldbrieffs so er darumb hat",
+      "kind": "entry",
+      "uncertain": [
+       "schuldbrieffs",
+       "darumb"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "6r",
+    "lines": [
+     {
+      "text": "6",
+      "kind": "foliation"
+     },
+     {
+      "text": "Kstoffler",
+      "kind": "rubric",
+      "uncertain": [
+       "Kstoffler"
+      ]
+     },
+     {
+      "text": "Nota Rach et in presencia prescriptorum ist mit &",
+      "kind": "entry",
+      "uncertain": [
+       "Rach",
+       "presencia",
+       "prescriptorum"
+      ]
+     },
+     {
+      "text": "demselben Stoffler gerait worden . Vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Stoffler",
+       "gerait"
+      ]
+     },
+     {
+      "text": "meins heren gnad ist Im vber die hundert",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd dreizehn gld so Im der camermaister",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "dreizehn",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "camermaister"
+      ]
+     },
+     {
+      "text": "an hewtigen tag geantwurt hat noch",
+      "kind": "entry"
+     },
+     {
+      "text": "mit sartung aller sach schuldig worden",
+      "kind": "entry",
+      "uncertain": [
+       "sartung"
+      ]
+     },
+     {
+      "text": "zu ganncz bezalung iij {tt} gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "ganncz",
+       "{tt}"
+      ]
+     },
+     {
+      "text": "vnd er noch sein kain haben hinfür",
+      "kind": "entry"
+     },
+     {
+      "text": "kain Geld mer",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Jnnemen vnd außgeben gegenenander gelegt",
+  "vnd abgeczogen . Dannoch ist meine frow",
+  "gnad dem bemelten herrn wernhern vber",
+  "sein Jnnemen schuldig . m . ij C lxxxv Rh gld",
+  "Die sullen jm auf Sannd Jacobs tag",
+  "naegstkhunftig genzlich nach Jnhald",
+  "eins schuldbrieffs so er darumb hat",
+  "6",
+  "Kstoffler",
+  "Nota Rach et in presencia prescriptorum ist mit &",
+  "demselben Stoffler gerait worden . Vnd",
+  "meins heren gnad ist Im vber die hundert",
+  "vnd dreizehn gld so Im der camermaister",
+  "an hewtigen tag geantwurt hat noch",
+  "mit sartung aller sach schuldig worden",
+  "zu ganncz bezalung iij {tt} gld",
+  "vnd er noch sein kain haben hinfür",
+  "kain Geld mer"
+ ]
+}

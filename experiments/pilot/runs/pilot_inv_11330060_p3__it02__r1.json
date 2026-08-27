@@ -1,0 +1,303 @@
+{
+ "page": "pilot_inv_11330060_p3",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1900,
+    5258
+   ],
+   "sent_px": [
+    1265,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.1,
+ "timestamp": "2026-08-27T06:55:48+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "178r",
+    "lines": [
+     {
+      "text": "178",
+      "kind": "foliation",
+      "uncertain": [
+       "178"
+      ]
+     },
+     {
+      "text": "Dreij spies Ain helmpart",
+      "kind": "entry",
+      "uncertain": [
+       "helmpart"
+      ]
+     },
+     {
+      "text": "Ain swarcz filtzhuetl",
+      "kind": "entry",
+      "uncertain": [
+       "filtzhuetl"
+      ]
+     },
+     {
+      "text": "Ain wenig eisenstratt",
+      "kind": "entry",
+      "uncertain": [
+       "eisenstratt"
+      ]
+     },
+     {
+      "text": "Hembid gann ysern schaln",
+      "kind": "entry",
+      "uncertain": [
+       "Hembid",
+       "gann",
+       "ysern",
+       "schaln"
+      ]
+     },
+     {
+      "text": "In der kam",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "nebn der stubn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai parc leblach",
+      "kind": "entry",
+      "uncertain": [
+       "parc",
+       "leblach"
+      ]
+     },
+     {
+      "text": "Vier Rauch deckn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo leinn deygkn",
+      "kind": "entry",
+      "uncertain": [
+       "leinn",
+       "deygkn"
+      ]
+     },
+     {
+      "text": "Zwen Strosagk",
+      "kind": "entry",
+      "uncertain": [
+       "Strosagk"
+      ]
+     },
+     {
+      "text": "In ergker",
+      "kind": "rubric",
+      "uncertain": [
+       "ergker"
+      ]
+     },
+     {
+      "text": "gegn dorff",
+      "kind": "rubric",
+      "uncertain": [
+       "dorff"
+      ]
+     },
+     {
+      "text": "Ain pett Ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain parc leblach",
+      "kind": "entry",
+      "uncertain": [
+       "parc",
+       "leblach"
+      ]
+     },
+     {
+      "text": "Zwo rauch deckn vnd ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "strosack",
+      "kind": "entry",
+      "uncertain": [
+       "strosack"
+      ]
+     },
+     {
+      "text": "In dem kegker",
+      "kind": "rubric",
+      "uncertain": [
+       "kegker"
+      ]
+     },
+     {
+      "text": "nebn pei",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zehyn rossspis Ain alts geratt",
+      "kind": "entry",
+      "uncertain": [
+       "Zehyn",
+       "rossspis",
+       "geratt"
+      ]
+     },
+     {
+      "text": "vnd drew stainbiechsenl",
+      "kind": "entry",
+      "uncertain": [
+       "drew",
+       "stainbiechsenl"
+      ]
+     },
+     {
+      "text": "Drej pusten gembshorn",
+      "kind": "entry",
+      "uncertain": [
+       "pusten",
+       "gembshorn"
+      ]
+     },
+     {
+      "text": "Sibn gsundet stal osens",
+      "kind": "entry",
+      "uncertain": [
+       "gsundet",
+       "stal",
+       "osens"
+      ]
+     },
+     {
+      "text": "Sibn parc hieckschuech",
+      "kind": "entry",
+      "uncertain": [
+       "parc",
+       "hieckschuech"
+      ]
+     },
+     {
+      "text": "Ain hoppail",
+      "kind": "entry",
+      "uncertain": [
+       "hoppail"
+      ]
+     },
+     {
+      "text": "In dem ergker",
+      "kind": "rubric",
+      "uncertain": [
+       "ergker"
+      ]
+     },
+     {
+      "text": "aufm tor",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett ain polst",
+      "kind": "entry",
+      "uncertain": [
+       "polst"
+      ]
+     },
+     {
+      "text": "ain parc leblach",
+      "kind": "entry",
+      "uncertain": [
+       "parc",
+       "leblach"
+      ]
+     },
+     {
+      "text": "Zwo rauch deckn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Strosagk",
+      "kind": "entry",
+      "uncertain": [
+       "Strosagk"
+      ]
+     },
+     {
+      "text": "vnd etveil hoppspail",
+      "kind": "entry",
+      "uncertain": [
+       "etveil",
+       "hoppspail"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "178",
+  "Dreij spies Ain helmpart",
+  "Ain swarcz filtzhuetl",
+  "Ain wenig eisenstratt",
+  "Hembid gann ysern schaln",
+  "In der kam",
+  "nebn der stubn",
+  "Zwai pett",
+  "Zwen polster",
+  "Zwai parc leblach",
+  "Vier Rauch deckn",
+  "Zwo leinn deygkn",
+  "Zwen Strosagk",
+  "In ergker",
+  "gegn dorff",
+  "Ain pett Ain polster",
+  "Ain parc leblach",
+  "Zwo rauch deckn vnd ain",
+  "strosack",
+  "In dem kegker",
+  "nebn pei",
+  "Zehyn rossspis Ain alts geratt",
+  "vnd drew stainbiechsenl",
+  "Drej pusten gembshorn",
+  "Sibn gsundet stal osens",
+  "Sibn parc hieckschuech",
+  "Ain hoppail",
+  "In dem ergker",
+  "aufm tor",
+  "Ain pett ain polst",
+  "ain parc leblach",
+  "Zwo rauch deckn",
+  "Ain Strosagk",
+  "vnd etveil hoppspail"
+ ]
+}

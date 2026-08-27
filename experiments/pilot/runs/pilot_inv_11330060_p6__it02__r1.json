@@ -1,0 +1,259 @@
+{
+ "page": "pilot_inv_11330060_p6",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    4809
+   ],
+   "sent_px": [
+    1342,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.5,
+ "timestamp": "2026-08-27T06:56:02+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 19r",
+    "lines": [
+     {
+      "text": "19",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Wagn schirr",
+      "kind": "rubric",
+      "uncertain": [
+       "Wagn",
+       "schirr"
+      ]
+     },
+     {
+      "text": "Zwey wagen I wany .xxiiij.",
+      "kind": "entry",
+      "uncertain": [
+       "Zwey",
+       "wany"
+      ]
+     },
+     {
+      "text": "phelgůn Ain karr mit ainer",
+      "kind": "entry",
+      "uncertain": [
+       "phelgůn",
+       "karr"
+      ]
+     },
+     {
+      "text": "kisten geschürdt iij rad ains",
+      "kind": "entry",
+      "uncertain": [
+       "kisten",
+       "geschürdt"
+      ]
+     },
+     {
+      "text": "an ain karren ain wagen",
+      "kind": "entry",
+      "uncertain": [
+       "karren"
+      ]
+     },
+     {
+      "text": "an ain pflůg",
+      "kind": "entry",
+      "uncertain": [
+       "pflůg"
+      ]
+     },
+     {
+      "text": "Alt harnesch",
+      "kind": "rubric",
+      "uncertain": [
+       "harnesch"
+      ]
+     },
+     {
+      "text": "Item zwelff rund tartschen vnd",
+      "kind": "entry",
+      "uncertain": [
+       "tartschen"
+      ]
+     },
+     {
+      "text": "stuck vnd kains klains",
+      "kind": "entry",
+      "uncertain": [
+       "stuck",
+       "klains"
+      ]
+     },
+     {
+      "text": "gewehr",
+      "kind": "entry",
+      "uncertain": [
+       "gewehr"
+      ]
+     },
+     {
+      "text": "Item Bergschafft In kramen",
+      "kind": "entry",
+      "uncertain": [
+       "Bergschafft",
+       "kramen"
+      ]
+     },
+     {
+      "text": "zwantzig mucke",
+      "kind": "entry",
+      "uncertain": [
+       "mucke"
+      ]
+     },
+     {
+      "text": "Kornes q(ua)rt(e)r h(afer) kernig",
+      "kind": "rubric",
+      "uncertain": [
+       "Kornes",
+       "kernig"
+      ]
+     },
+     {
+      "text": "von erst In dem asten",
+      "kind": "entry",
+      "uncertain": [
+       "asten"
+      ]
+     },
+     {
+      "text": "Item oben auf Im kasten",
+      "kind": "entry",
+      "uncertain": [
+       "kasten"
+      ]
+     },
+     {
+      "text": "Haffen puechsen xxi",
+      "kind": "entry",
+      "uncertain": [
+       "Haffen",
+       "puechsen"
+      ]
+     },
+     {
+      "text": "Taraitzpuechsen ij",
+      "kind": "entry",
+      "uncertain": [
+       "Taraitzpuechsen"
+      ]
+     },
+     {
+      "text": "Hand puechsen xvij",
+      "kind": "entry",
+      "uncertain": [
+       "Hand",
+       "puechsen",
+       "xvij"
+      ]
+     },
+     {
+      "text": "Brod täidlen lxvij",
+      "kind": "entry",
+      "uncertain": [
+       "täidlen",
+       "lxvij"
+      ]
+     },
+     {
+      "text": "klaine täidlen viij",
+      "kind": "entry",
+      "uncertain": [
+       "klaine",
+       "täidlen"
+      ]
+     },
+     {
+      "text": "Item acht vässl sind zů geschlagen",
+      "kind": "entry",
+      "uncertain": [
+       "vässl",
+       "geschlagen"
+      ]
+     },
+     {
+      "text": "zwo lagel pfeil",
+      "kind": "entry",
+      "uncertain": [
+       "lagel",
+       "pfeil"
+      ]
+     },
+     {
+      "text": "Fünff hampell",
+      "kind": "entry",
+      "uncertain": [
+       "Fünff",
+       "hampell"
+      ]
+     },
+     {
+      "text": "Sechs kegl.",
+      "kind": "entry",
+      "uncertain": [
+       "Sechs",
+       "kegl."
+      ]
+     },
+     {
+      "text": "etwo vil pengel vnd lagerpfeil",
+      "kind": "entry",
+      "uncertain": [
+       "pengel",
+       "lagerpfeil"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "19",
+  "Wagn schirr",
+  "Zwey wagen I wany .xxiiij.",
+  "phelgůn Ain karr mit ainer",
+  "kisten geschürdt iij rad ains",
+  "an ain karren ain wagen",
+  "an ain pflůg",
+  "Alt harnesch",
+  "Item zwelff rund tartschen vnd",
+  "stuck vnd kains klains",
+  "gewehr",
+  "Item Bergschafft In kramen",
+  "zwantzig mucke",
+  "Kornes q(ua)rt(e)r h(afer) kernig",
+  "von erst In dem asten",
+  "Item oben auf Im kasten",
+  "Haffen puechsen xxi",
+  "Taraitzpuechsen ij",
+  "Hand puechsen xvij",
+  "Brod täidlen lxvij",
+  "klaine täidlen viij",
+  "Item acht vässl sind zů geschlagen",
+  "zwo lagel pfeil",
+  "Fünff hampell",
+  "Sechs kegl.",
+  "etwo vil pengel vnd lagerpfeil"
+ ]
+}

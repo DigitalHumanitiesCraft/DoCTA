@@ -1,0 +1,249 @@
+{
+ "page": "pilot_rb2_p020",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 14.1,
+ "timestamp": "2026-08-27T06:59:01+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "It(em) Maister Hanns hat auch emphangen von Sebastian",
+      "kind": "entry",
+      "uncertain": [
+       "Sebastian"
+      ]
+     },
+     {
+      "text": "Pramsen zu zwain maln auf herrn Benedict als",
+      "kind": "entry",
+      "uncertain": [
+       "Pramsen",
+       "zwain",
+       "maln",
+       "Benedict"
+      ]
+     },
+     {
+      "text": "camermeisters gestrafft —— liij m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "liij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "camermeisters",
+       "gestrafft"
+      ]
+     },
+     {
+      "text": "It(em) Auch hat er vom lienhart von coronellz emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "lienhart",
+       "coronellz"
+      ]
+     },
+     {
+      "text": "auf desselben herrn Benedict gestrafft auch, die semantz",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict",
+       "gestrafft",
+       "semantz"
+      ]
+     },
+     {
+      "text": "er von Baldtuefs wegen schuldig was —— lxiij m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxiij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "Baldtuefs"
+      ]
+     },
+     {
+      "text": "vnd damit hat er diß verricht / der mein herrn gnad",
+      "kind": "entry",
+      "uncertain": [
+       "verricht"
+      ]
+     },
+     {
+      "text": "gantz / entricht",
+      "kind": "entry",
+      "uncertain": [
+       "entricht"
+      ]
+     },
+     {
+      "text": "It(em) Von Jacob Castner die semantz so er als von Ennd",
+      "kind": "entry",
+      "uncertain": [
+       "Jacob",
+       "Castner",
+       "semantz",
+       "Ennd"
+      ]
+     },
+     {
+      "text": "andt Baldtf wegen mein herrn gnad was schuldt-",
+      "kind": "entry",
+      "uncertain": [
+       "Baldtf",
+       "schuldt-"
+      ]
+     },
+     {
+      "text": "stellen worden hat er emphangen —— lx m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lx",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "stellen",
+       "worden"
+      ]
+     },
+     {
+      "text": "Sūma seins vorgeschriben emphangns",
+      "kind": "sum",
+      "uncertain": [
+       "vorgeschriben",
+       "emphangns"
+      ]
+     },
+     {
+      "text": "hat —— ijᶜ xxviiij m̄ viij lb pw",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "ijᶜ",
+       "numeral": "xxviiij",
+       "unit": "m̄ viij lb pw"
+      },
+      "uncertain": [
+       "pw"
+      ]
+     },
+     {
+      "text": "Des bemelten maister hansns dinst soldt vnd",
+      "kind": "entry",
+      "uncertain": [
+       "bemelten",
+       "hansns",
+       "soldt"
+      ]
+     },
+     {
+      "text": "daentgegen sein Innemen gegeneinander gelegt vnd",
+      "kind": "entry",
+      "uncertain": [
+       "daentgegen",
+       "Innemen",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "abgezogen, dannoch ist Im mein herr gnad alter",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogen",
+       "dannoch"
+      ]
+     },
+     {
+      "text": "Raitung schuldig —— iiijᶜ · x m̄ ij lb pw",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "iiijᶜ",
+       "numeral": "x",
+       "unit": "m̄ ij lb pw"
+      },
+      "uncertain": [
+       "Raitung",
+       "pw"
+      ]
+     },
+     {
+      "text": "vnd hat noch zethun auf Siemons 2 stuk",
+      "kind": "entry",
+      "uncertain": [
+       "zethun",
+       "Siemons",
+       "stuk"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "20r",
+    "lines": [
+     {
+      "text": "20",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(em) Maister Hanns hat auch emphangen von Sebastian",
+  "Pramsen zu zwain maln auf herrn Benedict als",
+  "camermeisters gestrafft —— liij m̄",
+  "It(em) Auch hat er vom lienhart von coronellz emphangen",
+  "auf desselben herrn Benedict gestrafft auch, die semantz",
+  "er von Baldtuefs wegen schuldig was —— lxiij m̄",
+  "vnd damit hat er diß verricht / der mein herrn gnad",
+  "gantz / entricht",
+  "It(em) Von Jacob Castner die semantz so er als von Ennd",
+  "andt Baldtf wegen mein herrn gnad was schuldt-",
+  "stellen worden hat er emphangen —— lx m̄",
+  "Sūma seins vorgeschriben emphangns",
+  "hat —— ijᶜ xxviiij m̄ viij lb pw",
+  "Des bemelten maister hansns dinst soldt vnd",
+  "daentgegen sein Innemen gegeneinander gelegt vnd",
+  "abgezogen, dannoch ist Im mein herr gnad alter",
+  "Raitung schuldig —— iiijᶜ · x m̄ ij lb pw",
+  "vnd hat noch zethun auf Siemons 2 stuk",
+  "20"
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "page": "pilot_inv_11330060_p7",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1712,
+    4672
+   ],
+   "sent_px": [
+    1283,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.0,
+ "timestamp": "2026-08-27T06:56:08+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "It(e)m Vnd(e)n Jm turen",
+      "kind": "rubric",
+      "uncertain": [
+       "turen"
+      ]
+     },
+     {
+      "text": "acht massel halters sind",
+      "kind": "entry",
+      "uncertain": [
+       "massel halters"
+      ]
+     },
+     {
+      "text": "nit Jngeschlagen",
+      "kind": "entry",
+      "uncertain": [
+       "nit"
+      ]
+     },
+     {
+      "text": "It(e)m xij lagel vnd vassl sind",
+      "kind": "entry",
+      "uncertain": [
+       "vassl"
+      ]
+     },
+     {
+      "text": "Zu geschlagen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m ain hauffin hanffseil",
+      "kind": "entry",
+      "uncertain": [
+       "hauffin",
+       "hanffseil"
+      ]
+     },
+     {
+      "text": "ligt ledig auf dem bod(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "bod(e)n"
+      ]
+     },
+     {
+      "text": "It(e)m ganz obn vnd(e)rm tach",
+      "kind": "rubric",
+      "uncertain": [
+       "ganz",
+       "obn",
+       "vnd(e)rm"
+      ]
+     },
+     {
+      "text": "ain gros sail",
+      "kind": "entry",
+      "uncertain": [
+       "sail"
+      ]
+     },
+     {
+      "text": "Zwo eysyn Schelpuechsen",
+      "kind": "entry",
+      "uncertain": [
+       "eysyn",
+       "Schelpuechsen"
+      ]
+     },
+     {
+      "text": "Ain grosse puechsn ligt",
+      "kind": "entry",
+      "uncertain": [
+       "puechsn"
+      ]
+     },
+     {
+      "text": "vnnd bej der phlys",
+      "kind": "entry",
+      "uncertain": [
+       "phlys"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(e)m Vnd(e)n Jm turen",
+  "acht massel halters sind",
+  "nit Jngeschlagen",
+  "It(e)m xij lagel vnd vassl sind",
+  "Zu geschlagen",
+  "It(e)m ain hauffin hanffseil",
+  "ligt ledig auf dem bod(e)n",
+  "It(e)m ganz obn vnd(e)rm tach",
+  "ain gros sail",
+  "Zwo eysyn Schelpuechsen",
+  "Ain grosse puechsn ligt",
+  "vnnd bej der phlys"
+ ]
+}

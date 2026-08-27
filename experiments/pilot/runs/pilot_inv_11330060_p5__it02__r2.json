@@ -1,0 +1,299 @@
+{
+ "page": "pilot_inv_11330060_p5",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1805,
+    4683
+   ],
+   "sent_px": [
+    1349,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.7,
+ "timestamp": "2026-08-27T06:56:00+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "Jm Speisgadem",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain vas xxij mul dauon ge-",
+      "kind": "entry",
+      "uncertain": [
+       "xxij",
+       "mul"
+      ]
+     },
+     {
+      "text": "pachn draj ofen pratt",
+      "kind": "entry",
+      "uncertain": [
+       "draj",
+       "pratt"
+      ]
+     },
+     {
+      "text": "zwen swein pachn",
+      "kind": "entry",
+      "uncertain": [
+       "swein"
+      ]
+     },
+     {
+      "text": "viic lang spickhn",
+      "kind": "entry",
+      "uncertain": [
+       "viic",
+       "spickhn"
+      ]
+     },
+     {
+      "text": "Ain holtz pröckhn",
+      "kind": "entry",
+      "uncertain": [
+       "pröckhn"
+      ]
+     },
+     {
+      "text": "zwen knolln salz vnd sust",
+      "kind": "entry",
+      "uncertain": [
+       "knolln"
+      ]
+     },
+     {
+      "text": "pej vj want salz",
+      "kind": "entry",
+      "uncertain": [
+       "want"
+      ]
+     },
+     {
+      "text": "draj mul peutel vnd ain palig",
+      "kind": "entry",
+      "uncertain": [
+       "mul",
+       "palig"
+      ]
+     },
+     {
+      "text": "Jn der kuchn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Rain häfen x klain vnd groß",
+      "kind": "entry",
+      "uncertain": [
+       "Rain"
+      ]
+     },
+     {
+      "text": "kessil klain vnd groß viij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain möser mit ainn stößel",
+      "kind": "entry",
+      "uncertain": [
+       "ainn",
+       "stößel"
+      ]
+     },
+     {
+      "text": "klain vnd groß phann x",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "fünf triter",
+      "kind": "entry",
+      "uncertain": [
+       "triter"
+      ]
+     },
+     {
+      "text": "Zinnschüssl klain vnd groß",
+      "kind": "entry",
+      "uncertain": [
+       "Zinnschüssl"
+      ]
+     },
+     {
+      "text": "xviij vnd draj gemißschüssl",
+      "kind": "entry",
+      "uncertain": [
+       "gemißschüssl"
+      ]
+     },
+     {
+      "text": "fünf zwimeßig kandel",
+      "kind": "entry",
+      "uncertain": [
+       "zwimeßig"
+      ]
+     },
+     {
+      "text": "zwo maß kannd vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "kannd"
+      ]
+     },
+     {
+      "text": "viertl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Hultzin schüssl xxx",
+      "kind": "entry",
+      "uncertain": [
+       "Hultzin"
+      ]
+     },
+     {
+      "text": "Jnn pranntkasten ain hefe",
+      "kind": "entry",
+      "uncertain": [
+       "pranntkasten",
+       "hefe"
+      ]
+     },
+     {
+      "text": "zwen rost zwen spiß",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt zwo mistgablen draj",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hawn vnd iiij schawfeln",
+      "kind": "entry",
+      "uncertain": [
+       "hawn",
+       "schawfeln"
+      ]
+     },
+     {
+      "text": "j pykel",
+      "kind": "entry",
+      "uncertain": [
+       "pykel"
+      ]
+     },
+     {
+      "text": "Vieh",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Acht küe",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain keülbel",
+      "kind": "entry",
+      "uncertain": [
+       "keülbel"
+      ]
+     },
+     {
+      "text": "ain stiär",
+      "kind": "entry",
+      "uncertain": [
+       "stiär"
+      ]
+     },
+     {
+      "text": "zehn capon",
+      "kind": "entry",
+      "uncertain": [
+       "capon"
+      ]
+     },
+     {
+      "text": "xxiij hüen(er)",
+      "kind": "entry",
+      "uncertain": [
+       "xxiij",
+       "hüen(er)"
+      ]
+     },
+     {
+      "text": "klaine hünlin v",
+      "kind": "entry",
+      "uncertain": [
+       "hünlin"
+      ]
+     },
+     {
+      "text": "dreer swein",
+      "kind": "entry",
+      "uncertain": [
+       "dreer",
+       "swein"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Jm Speisgadem",
+  "Ain vas xxij mul dauon ge-",
+  "pachn draj ofen pratt",
+  "zwen swein pachn",
+  "viic lang spickhn",
+  "Ain holtz pröckhn",
+  "zwen knolln salz vnd sust",
+  "pej vj want salz",
+  "draj mul peutel vnd ain palig",
+  "Jn der kuchn",
+  "Rain häfen x klain vnd groß",
+  "kessil klain vnd groß viij",
+  "ain möser mit ainn stößel",
+  "klain vnd groß phann x",
+  "fünf triter",
+  "Zinnschüssl klain vnd groß",
+  "xviij vnd draj gemißschüssl",
+  "fünf zwimeßig kandel",
+  "zwo maß kannd vnd ain",
+  "viertl",
+  "Hultzin schüssl xxx",
+  "Jnn pranntkasten ain hefe",
+  "zwen rost zwen spiß",
+  "Jt zwo mistgablen draj",
+  "hawn vnd iiij schawfeln",
+  "j pykel",
+  "Vieh",
+  "Acht küe",
+  "Ain keülbel",
+  "ain stiär",
+  "zehn capon",
+  "xxiij hüen(er)",
+  "klaine hünlin v",
+  "dreer swein"
+ ]
+}

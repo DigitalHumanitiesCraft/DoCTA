@@ -1,0 +1,290 @@
+{
+ "page": "pilot_inv_11330060_p1",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1900,
+    5259
+   ],
+   "sent_px": [
+    1264,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 15.6,
+ "timestamp": "2026-08-27T06:55:42+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "(M. XIIIIc 78) Randeckh ~~No 582~~",
+      "kind": "marginal",
+      "uncertain": [
+       "(M. XIIIIc 78)",
+       "Randeckh",
+       "~~No 582~~"
+      ]
+     },
+     {
+      "text": "Nota",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Nach beuelh meins genedigen herrn etc",
+      "kind": "rubric",
+      "uncertain": [
+       "beuelh"
+      ]
+     },
+     {
+      "text": "Ist ainer Jopplin vberrockh Smaltz",
+      "kind": "entry",
+      "uncertain": [
+       "Jopplin",
+       "Smaltz"
+      ]
+     },
+     {
+      "text": "margre Conrad Chammerers",
+      "kind": "entry",
+      "uncertain": [
+       "margre",
+       "Conrad",
+       "Chammerers"
+      ]
+     },
+     {
+      "text": "haussfrawen jn dem gschloss Rů-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "randecksperg entgwanttwortt aygent-",
+      "kind": "entry",
+      "uncertain": [
+       "randecksperg",
+       "entgwanttwortt"
+      ]
+     },
+     {
+      "text": "lich alle varunde hab, die par-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "schafft das vich vnd anndrs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd jn sunderhait. was M. g.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "h vnd sein gnad gschlos dasselbm",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zugehœrt, wie dan das hiernach",
+      "kind": "entry",
+      "uncertain": [
+       "zugehœrt"
+      ]
+     },
+     {
+      "text": "begriffen Vnd jn gegnwœrtigkait",
+      "kind": "entry",
+      "uncertain": [
+       "gegnwœrtigkait"
+      ]
+     },
+     {
+      "text": "der hiernach geschribn erbarn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Leut auffgeschribn ist mit Namen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Lienhartt Jmhofkirch An der Portt",
+      "kind": "entry",
+      "uncertain": [
+       "Lienhartt",
+       "Jmhofkirch",
+       "An der Portt"
+      ]
+     },
+     {
+      "text": "richth zů prims Walthauser Mül-",
+      "kind": "entry",
+      "uncertain": [
+       "richth",
+       "prims",
+       "Walthauser",
+       "Mül-"
+      ]
+     },
+     {
+      "text": "hoffer Hans Conrad Georg von",
+      "kind": "entry",
+      "uncertain": [
+       "hoffer",
+       "Hans",
+       "Conrad",
+       "Georg"
+      ]
+     },
+     {
+      "text": "Aichlingen / Rutt wastan / Hayland",
+      "kind": "entry",
+      "uncertain": [
+       "Aichlingen",
+       "Rutt wastan",
+       "Hayland"
+      ]
+     },
+     {
+      "text": "vnd wosthein Am nachsten",
+      "kind": "entry",
+      "uncertain": [
+       "wosthein"
+      ]
+     },
+     {
+      "text": "Sambstg vor Sandt michel tag Anno",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Septuagesimo octauo -",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ist der Anfang vnd zum Ersten",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "In dem haus",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "oben vnderm tach",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Drey knecht pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Drey pölster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Drey par leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Sechs rauch degken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen strosöckh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier allt sail an stegraiff",
+      "kind": "entry",
+      "uncertain": [
+       "stegraiff"
+      ]
+     },
+     {
+      "text": "Ain karrn sattel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain faul sock",
+      "kind": "entry",
+      "uncertain": [
+       "faul"
+      ]
+     },
+     {
+      "text": "Ain alltn zeug",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Inv. A 152/1",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "(M. XIIIIc 78) Randeckh ~~No 582~~",
+  "Nota",
+  "Nach beuelh meins genedigen herrn etc",
+  "Ist ainer Jopplin vberrockh Smaltz",
+  "margre Conrad Chammerers",
+  "haussfrawen jn dem gschloss Rů-",
+  "randecksperg entgwanttwortt aygent-",
+  "lich alle varunde hab, die par-",
+  "schafft das vich vnd anndrs",
+  "vnd jn sunderhait. was M. g.",
+  "h vnd sein gnad gschlos dasselbm",
+  "zugehœrt, wie dan das hiernach",
+  "begriffen Vnd jn gegnwœrtigkait",
+  "der hiernach geschribn erbarn",
+  "Leut auffgeschribn ist mit Namen",
+  "Lienhartt Jmhofkirch An der Portt",
+  "richth zů prims Walthauser Mül-",
+  "hoffer Hans Conrad Georg von",
+  "Aichlingen / Rutt wastan / Hayland",
+  "vnd wosthein Am nachsten",
+  "Sambstg vor Sandt michel tag Anno",
+  "Septuagesimo octauo -",
+  "Ist der Anfang vnd zum Ersten",
+  "In dem haus",
+  "oben vnderm tach",
+  "Drey knecht pett",
+  "Drey pölster",
+  "Drey par leilach",
+  "Sechs rauch degken",
+  "Zwen strosöckh",
+  "Vier allt sail an stegraiff",
+  "Ain karrn sattel",
+  "Ain faul sock",
+  "Ain alltn zeug",
+  "Inv. A 152/1"
+ ]
+}

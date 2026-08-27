@@ -1,0 +1,315 @@
+{
+ "page": "pilot_rb2_p002",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1906,
+    2622
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1907,
+    2622
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 15.0,
+ "timestamp": "2026-08-27T06:56:23+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation"
+     },
+     {
+      "text": "Prouision vnd Solde",
+      "kind": "rubric",
+      "uncertain": [
+       "Prouision",
+       "Solde"
+      ]
+     },
+     {
+      "text": "ausserhalb lanndes",
+      "kind": "rubric",
+      "uncertain": [
+       "ausserhalb",
+       "lanndes"
+      ]
+     },
+     {
+      "text": "Sigmund von",
+      "kind": "rubric",
+      "uncertain": [
+       "Sigmund"
+      ]
+     },
+     {
+      "text": "Brandiss",
+      "kind": "rubric",
+      "uncertain": [
+       "Brandiss"
+      ]
+     },
+     {
+      "text": "Nota an Sontag Sannd Johannsen tag decollacio",
+      "kind": "entry",
+      "uncertain": [
+       "Sontag",
+       "Johannsen",
+       "decollacio"
+      ]
+     },
+     {
+      "text": "Anno etc lxxij / In gegenwurtikait hern Benedictn Camrerin",
+      "kind": "entry",
+      "uncertain": [
+       "Benedictn",
+       "Camrerin"
+      ]
+     },
+     {
+      "text": "Hannsn Lupn kuckenmayster / Reinharts Cluber haubtman",
+      "kind": "entry",
+      "uncertain": [
+       "Hannsn",
+       "Lupn",
+       "kuckenmayster",
+       "Reinharts",
+       "Cluber",
+       "haubtman"
+      ]
+     },
+     {
+      "text": "vnd Wolffgangs Thümbleins Lanczschreibers / hat maisterat",
+      "kind": "entry",
+      "uncertain": [
+       "Wolffgangs",
+       "Thümbleins",
+       "Lanczschreibers",
+       "maisterat"
+      ]
+     },
+     {
+      "text": "mit petern papus anstat Sigmundsn von Brandiss",
+      "kind": "entry",
+      "uncertain": [
+       "petern",
+       "papus",
+       "Sigmundsn",
+       "Brandiss"
+      ]
+     },
+     {
+      "text": "vmb Solde / vnd darlehen / auch zerung vnd alle schuld",
+      "kind": "entry",
+      "uncertain": [
+       "darlehen",
+       "zerung"
+      ]
+     },
+     {
+      "text": "so meins herrn gnad demselben von Brandiss aller sachenn",
+      "kind": "entry",
+      "uncertain": [
+       "Brandiss",
+       "sachenn"
+      ]
+     },
+     {
+      "text": "auf heuttigen tag ist schuldigk worden /",
+      "kind": "entry",
+      "uncertain": [
+       "heuttigen",
+       "schuldigk"
+      ]
+     },
+     {
+      "text": "meins herrn gnad ist demselben von Brandiss schuldigk word",
+      "kind": "entry",
+      "uncertain": [
+       "Brandiss",
+       "schuldigk"
+      ]
+     },
+     {
+      "text": "nach Innhald ains Schuldbriefs van Soldt vnd darlehens",
+      "kind": "entry",
+      "uncertain": [
+       "Innhald",
+       "Schuldbriefs",
+       "darlehens"
+      ]
+     },
+     {
+      "text": "wegen so er zu Bellueth getan hat — iiij C l lb gld vnd iij lb viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iiij C l ... iij ... viij",
+       "unit": "lb gld"
+      },
+      "uncertain": [
+       "Bellueth",
+       "lb gld"
+      ]
+     },
+     {
+      "text": "It So ist Im meins herrn gnad schuldig prouision vom sannd",
+      "kind": "entry",
+      "uncertain": [
+       "prouision",
+       "sannd"
+      ]
+     },
+     {
+      "text": "kattrein tag des lxxj Jars vntz auf Sand kattrein tag des lxxij",
+      "kind": "entry",
+      "uncertain": [
+       "kattrein",
+       "lxxj",
+       "Sand",
+       "kattrein",
+       "lxxij"
+      ]
+     },
+     {
+      "text": "Jars vnd hat damit den dienst aufgesagt — Cl lb gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "Cl",
+       "unit": "lb gld"
+      },
+      "uncertain": [
+       "aufgesagt",
+       "lb gld"
+      ]
+     },
+     {
+      "text": "It Auch ist Im meins herrn gnad schuldig allerlay zerung — vj lb v ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vj ... v",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "allerlay",
+       "zerung"
+      ]
+     },
+     {
+      "text": "It Darauf hat er von hern Benedict Camrerin empfangen zu",
+      "kind": "entry",
+      "uncertain": [
+       "Darauf",
+       "Benedict",
+       "Camrerin",
+       "empfangen"
+      ]
+     },
+     {
+      "text": "dreyn maln die derselb Camrerin nach bestend zeraiten",
+      "kind": "entry",
+      "uncertain": [
+       "dreyn",
+       "maln",
+       "Camrerin",
+       "bestend",
+       "zeraiten"
+      ]
+     },
+     {
+      "text": "— C lxxij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "C lxxij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Rhgld"
+      ]
+     },
+     {
+      "text": "Dannach ist man Im alles Gancz schuldigk — ijc lxxv lb viij d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij c lxxv ... viij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Dannach",
+       "Gancz",
+       "schuldigk"
+      ]
+     },
+     {
+      "text": "Die hat Im d bemelte Camrerin ausgerait vnd bezalt",
+      "kind": "entry",
+      "uncertain": [
+       "bemelte",
+       "Camrerin",
+       "ausgerait",
+       "bezalt"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "2",
+  "Prouision vnd Solde",
+  "ausserhalb lanndes",
+  "Sigmund von",
+  "Brandiss",
+  "Nota an Sontag Sannd Johannsen tag decollacio",
+  "Anno etc lxxij / In gegenwurtikait hern Benedictn Camrerin",
+  "Hannsn Lupn kuckenmayster / Reinharts Cluber haubtman",
+  "vnd Wolffgangs Thümbleins Lanczschreibers / hat maisterat",
+  "mit petern papus anstat Sigmundsn von Brandiss",
+  "vmb Solde / vnd darlehen / auch zerung vnd alle schuld",
+  "so meins herrn gnad demselben von Brandiss aller sachenn",
+  "auf heuttigen tag ist schuldigk worden /",
+  "meins herrn gnad ist demselben von Brandiss schuldigk word",
+  "nach Innhald ains Schuldbriefs van Soldt vnd darlehens",
+  "wegen so er zu Bellueth getan hat — iiij C l lb gld vnd iij lb viij d",
+  "It So ist Im meins herrn gnad schuldig prouision vom sannd",
+  "kattrein tag des lxxj Jars vntz auf Sand kattrein tag des lxxij",
+  "Jars vnd hat damit den dienst aufgesagt — Cl lb gld",
+  "It Auch ist Im meins herrn gnad schuldig allerlay zerung — vj lb v ß",
+  "It Darauf hat er von hern Benedict Camrerin empfangen zu",
+  "dreyn maln die derselb Camrerin nach bestend zeraiten",
+  "— C lxxij Rhgld",
+  "Dannach ist man Im alles Gancz schuldigk — ijc lxxv lb viij d",
+  "Die hat Im d bemelte Camrerin ausgerait vnd bezalt"
+ ]
+}

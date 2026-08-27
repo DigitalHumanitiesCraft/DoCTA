@@ -1,0 +1,225 @@
+{
+ "page": "pilot_rb2_p006",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 25.7,
+ "timestamp": "2026-08-27T06:57:19+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1v",
+    "lines": [
+     {
+      "text": "Jnnemen vnd aufgeben gegeneinander gelegt",
+      "kind": "entry",
+      "uncertain": [
+       "gegeneinander",
+       "gelegt"
+      ]
+     },
+     {
+      "text": "vnd abgezogen . Dannaus ist meine fraw",
+      "kind": "entry",
+      "uncertain": [
+       "abgezogen",
+       "Dannaus",
+       "meine",
+       "fraw"
+      ]
+     },
+     {
+      "text": "gnad dem bemelten herrn raitnhern vber",
+      "kind": "entry",
+      "uncertain": [
+       "bemelten",
+       "herrn",
+       "raitnhern",
+       "vber"
+      ]
+     },
+     {
+      "text": "sein Jnnemen schuldig . m . ij C lxxxv Rh gld )",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "m . ij C lxxxv",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "schuldig"
+      ]
+     },
+     {
+      "text": "Die süllen jm auf Sand Jacobs tag",
+      "kind": "entry",
+      "uncertain": [
+       "süllen",
+       "Sand Jacobs tag"
+      ]
+     },
+     {
+      "text": "nagstkhümftig gentzlich nach Jnhald",
+      "kind": "entry",
+      "uncertain": [
+       "nagstkhümftig",
+       "gentzlich",
+       "Jnhald"
+      ]
+     },
+     {
+      "text": "ains schuldbrieffs so er darumb hat",
+      "kind": "entry",
+      "uncertain": [
+       "schuldbrieffs",
+       "darumb",
+       "hat"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "6r",
+    "lines": [
+     {
+      "text": "6",
+      "kind": "foliation"
+     },
+     {
+      "text": "Stoffler",
+      "kind": "rubric",
+      "uncertain": [
+       "Stoffler"
+      ]
+     },
+     {
+      "text": "Nota Rachet in presencia prescriptorum ist mit",
+      "kind": "entry",
+      "uncertain": [
+       "Rachet",
+       "presencia",
+       "prescriptorum"
+      ]
+     },
+     {
+      "text": "demselben Stoffler gerait worden , vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Stoffler",
+       "gerait"
+      ]
+     },
+     {
+      "text": "meiner heren gnad ist Im vber die hundert",
+      "kind": "entry",
+      "uncertain": [
+       "heren"
+      ]
+     },
+     {
+      "text": "vnd dreizehn gld so Im der camermaister",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "dreizehn",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "camermaister"
+      ]
+     },
+     {
+      "text": "an hewtigen tag geantwort hat noch",
+      "kind": "entry",
+      "uncertain": [
+       "hewtigen"
+      ]
+     },
+     {
+      "text": "mit sartung aller sach schuldig wordn",
+      "kind": "entry",
+      "uncertain": [
+       "sartung",
+       "wordn"
+      ]
+     },
+     {
+      "text": "zu gantzer bezalung iiij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iiij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "iiij"
+      ]
+     },
+     {
+      "text": "vnd er nach sein trew haben hinfür",
+      "kind": "entry",
+      "uncertain": [
+       "trew",
+       "hinfür"
+      ]
+     },
+     {
+      "text": "kain geld mer",
+      "kind": "entry",
+      "uncertain": [
+       "kain",
+       "geld"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Jnnemen vnd aufgeben gegeneinander gelegt",
+  "vnd abgezogen . Dannaus ist meine fraw",
+  "gnad dem bemelten herrn raitnhern vber",
+  "sein Jnnemen schuldig . m . ij C lxxxv Rh gld )",
+  "Die süllen jm auf Sand Jacobs tag",
+  "nagstkhümftig gentzlich nach Jnhald",
+  "ains schuldbrieffs so er darumb hat",
+  "6",
+  "Stoffler",
+  "Nota Rachet in presencia prescriptorum ist mit",
+  "demselben Stoffler gerait worden , vnd",
+  "meiner heren gnad ist Im vber die hundert",
+  "vnd dreizehn gld so Im der camermaister",
+  "an hewtigen tag geantwort hat noch",
+  "mit sartung aller sach schuldig wordn",
+  "zu gantzer bezalung iiij gld",
+  "vnd er nach sein trew haben hinfür",
+  "kain geld mer"
+ ]
+}

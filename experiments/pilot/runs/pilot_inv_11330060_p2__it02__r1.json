@@ -1,0 +1,304 @@
+{
+ "page": "pilot_inv_11330060_p2",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1941,
+    5151
+   ],
+   "sent_px": [
+    1319,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.5,
+ "timestamp": "2026-08-27T06:55:38+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "In der grossen Kamer",
+      "kind": "rubric",
+      "uncertain": [
+       "Kamer"
+      ]
+     },
+     {
+      "text": "vor der Stuben",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen kůss",
+      "kind": "entry",
+      "uncertain": [
+       "kůss"
+      ]
+     },
+     {
+      "text": "Drey ploss degken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo Rauch degken",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Harnasch daselbs",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen kůris",
+      "kind": "entry",
+      "uncertain": [
+       "kůris"
+      ]
+     },
+     {
+      "text": "Acht ploss eisenhůt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwen verdacht hůett",
+      "kind": "entry",
+      "uncertain": [
+       "verdacht",
+       "hůett"
+      ]
+     },
+     {
+      "text": "Ain gantzn armzeug",
+      "kind": "entry",
+      "uncertain": [
+       "gantzn"
+      ]
+     },
+     {
+      "text": "Mer ain arm zeug",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain halber arm zeug",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain kragen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwai meugl",
+      "kind": "entry",
+      "uncertain": [
+       "meugl"
+      ]
+     },
+     {
+      "text": "Zwai vedre kůssmeigl",
+      "kind": "entry",
+      "uncertain": [
+       "vedre",
+       "kůssmeigl"
+      ]
+     },
+     {
+      "text": "Fünf krebs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier par hentschuch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "aber vier par alt hentschůch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo arm schinen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier alt armrenck",
+      "kind": "entry",
+      "uncertain": [
+       "armrenck"
+      ]
+     },
+     {
+      "text": "Aber vier kragen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Fünff pantzr die drey steech",
+      "kind": "entry",
+      "uncertain": [
+       "steech"
+      ]
+     },
+     {
+      "text": "ains halbs steechin ains eysen",
+      "kind": "entry",
+      "uncertain": [
+       "steechin"
+      ]
+     },
+     {
+      "text": "Ain krapp mit aim span",
+      "kind": "entry",
+      "uncertain": [
+       "krapp"
+      ]
+     },
+     {
+      "text": "guetl",
+      "kind": "entry",
+      "uncertain": [
+       "guetl"
+      ]
+     },
+     {
+      "text": "Zwen eisn kolbn",
+      "kind": "entry",
+      "uncertain": [
+       "eisn",
+       "kolbn"
+      ]
+     },
+     {
+      "text": "Siben arembrust",
+      "kind": "entry",
+      "uncertain": [
+       "arembrust"
+      ]
+     },
+     {
+      "text": "Drey winden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Drey löe koeller",
+      "kind": "entry",
+      "uncertain": [
+       "löe",
+       "koeller"
+      ]
+     },
+     {
+      "text": "Drey handpůchssn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier schwiertt",
+      "kind": "entry",
+      "uncertain": [
+       "schwiertt"
+      ]
+     },
+     {
+      "text": "Drey lange messer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain waidmesser",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par sporn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain půchssen pulvertäschlyn",
+      "kind": "entry",
+      "uncertain": [
+       "pulvertäschlyn"
+      ]
+     },
+     {
+      "text": "Zwo arembrustrůefft",
+      "kind": "entry",
+      "uncertain": [
+       "arembrustrůefft"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "In der grossen Kamer",
+  "vor der Stuben",
+  "Zwo pett",
+  "Zwen polster",
+  "Zwen kůss",
+  "Drey ploss degken",
+  "Zwo Rauch degken",
+  "Harnasch daselbs",
+  "Zwen kůris",
+  "Acht ploss eisenhůt",
+  "Zwen verdacht hůett",
+  "Ain gantzn armzeug",
+  "Mer ain arm zeug",
+  "Ain halber arm zeug",
+  "Ain kragen",
+  "Zwai meugl",
+  "Zwai vedre kůssmeigl",
+  "Fünf krebs",
+  "Vier par hentschuch",
+  "aber vier par alt hentschůch",
+  "Zwo arm schinen",
+  "Vier alt armrenck",
+  "Aber vier kragen",
+  "Fünff pantzr die drey steech",
+  "ains halbs steechin ains eysen",
+  "Ain krapp mit aim span",
+  "guetl",
+  "Zwen eisn kolbn",
+  "Siben arembrust",
+  "Drey winden",
+  "Drey löe koeller",
+  "Drey handpůchssn",
+  "Vier schwiertt",
+  "Drey lange messer",
+  "Ain waidmesser",
+  "Ain par sporn",
+  "Ain půchssen pulvertäschlyn",
+  "Zwo arembrustrůefft"
+ ]
+}

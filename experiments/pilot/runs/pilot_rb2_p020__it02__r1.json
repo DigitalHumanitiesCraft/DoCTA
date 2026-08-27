@@ -1,0 +1,245 @@
+{
+ "page": "pilot_rb2_p020",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 21.9,
+ "timestamp": "2026-08-27T06:59:03+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Maister Hanns hat auch emphangen von Sebastian",
+      "kind": "entry",
+      "uncertain": [
+       "Sebastian"
+      ]
+     },
+     {
+      "text": "Bramsen zu zwaen maln auf herrn Benedict als",
+      "kind": "entry",
+      "uncertain": [
+       "Bramsen",
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Camermeister geschafft j liij mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "j liij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "j"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Item hat er vom Lienhart von Toronels emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "Lienhart",
+       "Toronels"
+      ]
+     },
+     {
+      "text": "auf desselben herrn Benedict geschafft brief, die remanentz",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict",
+       "remanentz"
+      ]
+     },
+     {
+      "text": "so er von Baldriechs wegen schuldig was lxiiij mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxiiij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "Baldriechs"
+      ]
+     },
+     {
+      "text": "und damit hat daß gericht {die meins herrn gnad",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hannz} entricht",
+      "kind": "entry",
+      "uncertain": [
+       "hannz"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "von Jacob Castner die remanentz so er ab von Ennd",
+      "kind": "entry",
+      "uncertain": [
+       "Jacob",
+       "Castner",
+       "Ennd"
+      ]
+     },
+     {
+      "text": "unnd Baldricf wegen meins herrn gnad was hinzu-",
+      "kind": "entry",
+      "uncertain": [
+       "Baldricf"
+      ]
+     },
+     {
+      "text": "stellen worden hat er emphangen lx mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lx",
+       "unit": "m̄"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Suma seins vorgeschriben emphangenn",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "hat ij xxviiij mr xiij lb pw",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "ij xxviiij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "pw"
+      ]
+     },
+     {
+      "text": "Des bemelten maister hannsen dinst sold und",
+      "kind": "entry",
+      "uncertain": [
+       "dinst",
+       "sold"
+      ]
+     },
+     {
+      "text": "daenngelt sein Inneme gegeneinander gelegt und",
+      "kind": "entry",
+      "uncertain": [
+       "daenngelt",
+       "Inneme"
+      ]
+     },
+     {
+      "text": "abgezogen, Dannoch ist Im meins herrn gnad alter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Raitung schuldig iiij . x mr ij lb pw",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iiij x",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "pw"
+      ]
+     },
+     {
+      "text": "und hat noch zedeln auf Öttmars zeyt",
+      "kind": "entry",
+      "uncertain": [
+       "Öttmars"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 20r",
+    "lines": [
+     {
+      "text": "20",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It",
+  "Maister Hanns hat auch emphangen von Sebastian",
+  "Bramsen zu zwaen maln auf herrn Benedict als",
+  "Camermeister geschafft j liij mr",
+  "It",
+  "Item hat er vom Lienhart von Toronels emphangen",
+  "auf desselben herrn Benedict geschafft brief, die remanentz",
+  "so er von Baldriechs wegen schuldig was lxiiij mr",
+  "und damit hat daß gericht {die meins herrn gnad",
+  "hannz} entricht",
+  "It",
+  "von Jacob Castner die remanentz so er ab von Ennd",
+  "unnd Baldricf wegen meins herrn gnad was hinzu-",
+  "stellen worden hat er emphangen lx mr",
+  "Suma seins vorgeschriben emphangenn",
+  "hat ij xxviiij mr xiij lb pw",
+  "Des bemelten maister hannsen dinst sold und",
+  "daenngelt sein Inneme gegeneinander gelegt und",
+  "abgezogen, Dannoch ist Im meins herrn gnad alter",
+  "Raitung schuldig iiij . x mr ij lb pw",
+  "und hat noch zedeln auf Öttmars zeyt",
+  "20"
+ ]
+}

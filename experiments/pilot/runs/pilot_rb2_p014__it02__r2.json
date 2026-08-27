@@ -1,0 +1,205 @@
+{
+ "page": "pilot_rb2_p014",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 12.9,
+ "timestamp": "2026-08-27T06:57:56+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "14r",
+    "lines": [
+     {
+      "text": "14",
+      "kind": "foliation"
+     },
+     {
+      "text": "Pangretz hertenfelder",
+      "kind": "rubric",
+      "uncertain": [
+       "Pangretz",
+       "hertenfelder"
+      ]
+     },
+     {
+      "text": "No mit pangratzn hertenfelder jst gerait jn gege[n]",
+      "kind": "entry",
+      "uncertain": [
+       "pangratzn",
+       "hertenfelder",
+       "gege[n]"
+      ]
+     },
+     {
+      "text": "wirtikait hern Benedicts pharrar zu Brixel, lienharts",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicts",
+       "Brixel",
+       "lienharts"
+      ]
+     },
+     {
+      "text": "von mexel camermayster, lienharts fluk haylcamp",
+      "kind": "entry",
+      "uncertain": [
+       "mexel",
+       "lienharts",
+       "fluk",
+       "haylcamp"
+      ]
+     },
+     {
+      "text": "vnd wolfgangs stumph camerer, am eritag vor",
+      "kind": "entry",
+      "uncertain": [
+       "wolfgangs",
+       "stumph"
+      ]
+     },
+     {
+      "text": "sand marien magdalen tag Anno dominj jm lxxiiijto",
+      "kind": "entry",
+      "uncertain": [
+       "magdalen"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal"
+     },
+     {
+      "text": "vnd meinss herrn gnad jst jm sein sold schuldig",
+      "kind": "entry"
+     },
+     {
+      "text": "von iiij jar die sich zu sannd martins tag",
+      "kind": "entry"
+     },
+     {
+      "text": "nachstkomend ennden werden, Das erst jar auf",
+      "kind": "entry"
+     },
+     {
+      "text": "ain phärd, Darnach die iij jar auf zway phärd",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd die ij jar darnach auf drew phärd, ie auf",
+      "kind": "entry"
+     },
+     {
+      "text": "j phärd xx gld zerait — hat iij C lx gld & c lxxiiij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij C lx",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "& c lxxiiij d"
+      ]
+     },
+     {
+      "text": "It",
+      "kind": "marginal"
+     },
+     {
+      "text": "So jst jm meinss herrn gnad von ainem phärd",
+      "kind": "entry"
+     },
+     {
+      "text": "aufgab auf ain andr pferd das man dem",
+      "kind": "entry"
+     },
+     {
+      "text": "Grafen von Schwartzpurg gebn hat schuld",
+      "kind": "entry",
+      "uncertain": [
+       "Schwartzpurg"
+      ]
+     },
+     {
+      "text": "—— xxiiij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxiiij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "Sm̄a des so man jm schuldig",
+      "kind": "sum"
+     },
+     {
+      "text": "jst hat iij C lxxxiiij Rhgld",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij C lxxxiiij",
+       "unit": "Rhgld"
+      }
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "14",
+  "Pangretz hertenfelder",
+  "No mit pangratzn hertenfelder jst gerait jn gege[n]",
+  "wirtikait hern Benedicts pharrar zu Brixel, lienharts",
+  "von mexel camermayster, lienharts fluk haylcamp",
+  "vnd wolfgangs stumph camerer, am eritag vor",
+  "sand marien magdalen tag Anno dominj jm lxxiiijto",
+  "It",
+  "vnd meinss herrn gnad jst jm sein sold schuldig",
+  "von iiij jar die sich zu sannd martins tag",
+  "nachstkomend ennden werden, Das erst jar auf",
+  "ain phärd, Darnach die iij jar auf zway phärd",
+  "vnd die ij jar darnach auf drew phärd, ie auf",
+  "j phärd xx gld zerait — hat iij C lx gld & c lxxiiij d",
+  "It",
+  "So jst jm meinss herrn gnad von ainem phärd",
+  "aufgab auf ain andr pferd das man dem",
+  "Grafen von Schwartzpurg gebn hat schuld",
+  "—— xxiiij Rhgld",
+  "Sm̄a des so man jm schuldig",
+  "jst hat iij C lxxxiiij Rhgld"
+ ]
+}

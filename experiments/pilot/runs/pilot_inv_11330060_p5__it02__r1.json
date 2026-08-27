@@ -1,0 +1,265 @@
+{
+ "page": "pilot_inv_11330060_p5",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1805,
+    4683
+   ],
+   "sent_px": [
+    1349,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.0,
+ "timestamp": "2026-08-27T06:56:00+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Im Speisgadem",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain vas xxij mel davon ge",
+      "kind": "entry",
+      "uncertain": [
+       "xxij"
+      ]
+     },
+     {
+      "text": "pachen drey ofen pratt",
+      "kind": "entry",
+      "uncertain": [
+       "pratt"
+      ]
+     },
+     {
+      "text": "Zwey swein pachen",
+      "kind": "entry",
+      "uncertain": [
+       "Zwey"
+      ]
+     },
+     {
+      "text": "vier lang speickhen",
+      "kind": "entry",
+      "uncertain": [
+       "speickhen"
+      ]
+     },
+     {
+      "text": "Ain holzprathen",
+      "kind": "entry",
+      "uncertain": [
+       "holzprathen"
+      ]
+     },
+     {
+      "text": "Zwen knollen salz vnd sust",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pey vj stuckh salz",
+      "kind": "entry",
+      "uncertain": [
+       "stuckh"
+      ]
+     },
+     {
+      "text": "drey melpeütel vnd ain palig",
+      "kind": "entry",
+      "uncertain": [
+       "palig"
+      ]
+     },
+     {
+      "text": "In der kuchn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Seinn häfen x klain vnd groß",
+      "kind": "entry",
+      "uncertain": [
+       "Seinn"
+      ]
+     },
+     {
+      "text": "kessil klain vnd groß viij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain möser mit ainer stößel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "klain vnd groß phand x",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "fünf fustein",
+      "kind": "entry",
+      "uncertain": [
+       "fustein"
+      ]
+     },
+     {
+      "text": "Zinnschüssl klain vnd groß",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "xxij vnd drey gemüesschüssl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "funff zwinnechtig kandel",
+      "kind": "entry",
+      "uncertain": [
+       "zwinnechtig"
+      ]
+     },
+     {
+      "text": "vier maß kannd vnd ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vierttl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hultzin schüssl xxij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwi pranntkratten ain hefli",
+      "kind": "entry",
+      "uncertain": [
+       "pranntkratten",
+       "hefli"
+      ]
+     },
+     {
+      "text": "zwen rost zwen spis",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item zwi mistgablen drey",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "karen vnd iiij schauflen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "I pickel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vich",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Acht küe",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain kelbel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain stier",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Sechz capon",
+      "kind": "entry",
+      "uncertain": [
+       "Sechz"
+      ]
+     },
+     {
+      "text": "zwentzig hennen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "klaine henlin v",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "drey swein",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Im Speisgadem",
+  "Ain vas xxij mel davon ge",
+  "pachen drey ofen pratt",
+  "Zwey swein pachen",
+  "vier lang speickhen",
+  "Ain holzprathen",
+  "Zwen knollen salz vnd sust",
+  "pey vj stuckh salz",
+  "drey melpeütel vnd ain palig",
+  "In der kuchn",
+  "Seinn häfen x klain vnd groß",
+  "kessil klain vnd groß viij",
+  "ain möser mit ainer stößel",
+  "klain vnd groß phand x",
+  "fünf fustein",
+  "Zinnschüssl klain vnd groß",
+  "xxij vnd drey gemüesschüssl",
+  "funff zwinnechtig kandel",
+  "vier maß kannd vnd ain",
+  "vierttl",
+  "hultzin schüssl xxij",
+  "Zwi pranntkratten ain hefli",
+  "zwen rost zwen spis",
+  "Item zwi mistgablen drey",
+  "karen vnd iiij schauflen",
+  "I pickel",
+  "Vich",
+  "Acht küe",
+  "Ain kelbel",
+  "Ain stier",
+  "Sechz capon",
+  "zwentzig hennen",
+  "klaine henlin v",
+  "drey swein"
+ ]
+}

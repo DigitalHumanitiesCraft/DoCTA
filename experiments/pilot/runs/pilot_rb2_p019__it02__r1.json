@@ -1,0 +1,333 @@
+{
+ "page": "pilot_rb2_p019",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 26.1,
+ "timestamp": "2026-08-27T06:59:06+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. verso",
+    "lines": [
+     {
+      "text": "Daran blaibt Jnnemer)",
+      "kind": "rubric",
+      "uncertain": [
+       "Jnnemer)"
+      ]
+     },
+     {
+      "text": "Jt(em)",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Der bemelt vlreich Silbercamerär hat von",
+      "kind": "entry",
+      "uncertain": [
+       "vlreich",
+       "Silbercamerär"
+      ]
+     },
+     {
+      "text": "herrn Berndt dem alten Camermaister emphangn",
+      "kind": "entry",
+      "uncertain": [
+       "Berndt",
+       "Camermaister",
+       "emphangn"
+      ]
+     },
+     {
+      "text": "zu zwaim maln —— xv m̅ ij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xv / ij",
+       "unit": "m̅ / lb"
+      },
+      "uncertain": [
+       "zwaim",
+       "maln"
+      ]
+     },
+     {
+      "text": "Dennoch ist jm meins herrn gnad schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Dennoch",
+       "meins",
+       "herrn"
+      ]
+     },
+     {
+      "text": "aller Parting —— xxviij m̅",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "m̅"
+      },
+      "uncertain": [
+       "aller",
+       "Parting"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "19r",
+    "lines": [
+     {
+      "text": "19",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Maister hanns Spek",
+      "kind": "rubric",
+      "uncertain": [
+       "Maister",
+       "hanns",
+       "Spek"
+      ]
+     },
+     {
+      "text": "meins gnadign herrn Arctzt",
+      "kind": "rubric",
+      "uncertain": [
+       "meins",
+       "gnadign",
+       "herrn",
+       "Arctzt"
+      ]
+     },
+     {
+      "text": "Nota Am Sambstag Sand Sixten tag Anno dñj",
+      "kind": "entry",
+      "uncertain": [
+       "Nota",
+       "Sambstag",
+       "Sand",
+       "Sixten"
+      ]
+     },
+     {
+      "text": "iiij c lx iiij in pnca Leonharts von wernst Camermaister",
+      "kind": "entry",
+      "uncertain": [
+       "pnca",
+       "Leonharts",
+       "wernst"
+      ]
+     },
+     {
+      "text": "vnd wolfgangs Stümblein Cammerschreiber · Ist Raitung",
+      "kind": "entry",
+      "uncertain": [
+       "wolfgangs",
+       "Stümblein"
+      ]
+     },
+     {
+      "text": "beschehn mit maister hannsn Spekn meins gnadign",
+      "kind": "entry",
+      "uncertain": [
+       "beschehn",
+       "hannsn",
+       "Spekn"
+      ]
+     },
+     {
+      "text": "herrn wundarzt / von wegen seins Soldts als lang Er",
+      "kind": "entry",
+      "uncertain": [
+       "wundarzt"
+      ]
+     },
+     {
+      "text": "pey sein gnaden gewest ist / von Sannd Simons vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Simons"
+      ]
+     },
+     {
+      "text": "Sannd Judas tag des vergangenn lx jars vntz auf",
+      "kind": "entry",
+      "uncertain": [
+       "Judas"
+      ]
+     },
+     {
+      "text": "Symonis et Jude nagstkomend des gegenwürtigen jars",
+      "kind": "entry",
+      "uncertain": [
+       "Symonis",
+       "Jude"
+      ]
+     },
+     {
+      "text": "das viij gantze jar benüget / von iedem Jar ij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "benüget"
+      ]
+     },
+     {
+      "text": "Ist bringt xvj Rh gld fat animus vj m̄ xlviij",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvj",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "animus"
+      ]
+     },
+     {
+      "text": "Vmb hie seins Soldts",
+      "kind": "entry",
+      "uncertain": [
+       "Vmb"
+      ]
+     },
+     {
+      "text": "Item Darann hat er emphangen von Conrat",
+      "kind": "entry",
+      "uncertain": [
+       "Conrat"
+      ]
+     },
+     {
+      "text": "wintler als von ainem Camermaister lxxxx Rh gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxxx",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "wintler"
+      ]
+     },
+     {
+      "text": "Fat ———— xxxvj m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxvj",
+       "unit": "m̄"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item von Berchtgen Potenstain hat er emphangen xxiiij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxiiij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "Berchtgen",
+       "Potenstain"
+      ]
+     },
+     {
+      "text": "fat ———— viij m̄ ix ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "m̄"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item von herrn Benedict Camermaister hat er emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Zu zwein maln xviij Rh gld fat vij m̄ ij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xviij",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Daran blaibt Jnnemer)",
+  "Jt(em)",
+  "Der bemelt vlreich Silbercamerär hat von",
+  "herrn Berndt dem alten Camermaister emphangn",
+  "zu zwaim maln —— xv m̅ ij lb",
+  "Dennoch ist jm meins herrn gnad schuldig",
+  "aller Parting —— xxviij m̅",
+  "19",
+  "Maister hanns Spek",
+  "meins gnadign herrn Arctzt",
+  "Nota Am Sambstag Sand Sixten tag Anno dñj",
+  "iiij c lx iiij in pnca Leonharts von wernst Camermaister",
+  "vnd wolfgangs Stümblein Cammerschreiber · Ist Raitung",
+  "beschehn mit maister hannsn Spekn meins gnadign",
+  "herrn wundarzt / von wegen seins Soldts als lang Er",
+  "pey sein gnaden gewest ist / von Sannd Simons vnd",
+  "Sannd Judas tag des vergangenn lx jars vntz auf",
+  "Symonis et Jude nagstkomend des gegenwürtigen jars",
+  "das viij gantze jar benüget / von iedem Jar ij gld",
+  "Ist bringt xvj Rh gld fat animus vj m̄ xlviij",
+  "Vmb hie seins Soldts",
+  "Item Darann hat er emphangen von Conrat",
+  "wintler als von ainem Camermaister lxxxx Rh gld",
+  "Fat ———— xxxvj m̄",
+  "Item von Berchtgen Potenstain hat er emphangen xxiiij gld",
+  "fat ———— viij m̄ ix ß",
+  "Item von herrn Benedict Camermaister hat er emphangen",
+  "Zu zwein maln xviij Rh gld fat vij m̄ ij ß"
+ ]
+}

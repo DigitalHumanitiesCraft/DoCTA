@@ -1,0 +1,289 @@
+{
+ "page": "pilot_inv_11330060_p4",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1792,
+    4814
+   ],
+   "sent_px": [
+    1303,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.9,
+ "timestamp": "2026-08-27T06:55:52+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "10 / 19",
+    "lines": [
+     {
+      "text": "10",
+      "kind": "foliation"
+     },
+     {
+      "text": "19",
+      "kind": "foliation"
+     },
+     {
+      "text": "In der stubn",
+      "kind": "rubric"
+     },
+     {
+      "text": "obn auf",
+      "kind": "rubric"
+     },
+     {
+      "text": "Zwai vassl essich",
+      "kind": "entry",
+      "uncertain": [
+       "essich"
+      ]
+     },
+     {
+      "text": "Ain essig kranng",
+      "kind": "entry",
+      "uncertain": [
+       "kranng"
+      ]
+     },
+     {
+      "text": "Ain kupfferygiesskössl",
+      "kind": "entry",
+      "uncertain": [
+       "kupfferygiesskössl"
+      ]
+     },
+     {
+      "text": "Ain kupffrin giesspöckh",
+      "kind": "entry",
+      "uncertain": [
+       "giesspöckh"
+      ]
+     },
+     {
+      "text": "Zwai ledrin panckh fůess",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain prett spil",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain alts eisin kandlin",
+      "kind": "entry"
+     },
+     {
+      "text": "Xxij schraibtisch vnd zwen",
+      "kind": "entry"
+     },
+     {
+      "text": "půchwerckh bischoff",
+      "kind": "entry",
+      "uncertain": [
+       "půchwerckh",
+       "bischoff"
+      ]
+     },
+     {
+      "text": "In dem wein keller",
+      "kind": "rubric"
+     },
+     {
+      "text": "Ain vas weissen wein von neun",
+      "kind": "entry"
+     },
+     {
+      "text": "vůrn ist geminet",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain vas von vier vorn rott",
+      "kind": "entry"
+     },
+     {
+      "text": "wein ist geminet",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pantz von anderhalb vůrn",
+      "kind": "entry"
+     },
+     {
+      "text": "dreininn ist vol",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain pantz essigs",
+      "kind": "entry"
+     },
+     {
+      "text": "Drey schůr gepotten smaltz In",
+      "kind": "entry",
+      "uncertain": [
+       "schůr"
+      ]
+     },
+     {
+      "text": "aime grossn kůbl",
+      "kind": "entry"
+     },
+     {
+      "text": "Kes vnd ziger",
+      "kind": "rubric"
+     },
+     {
+      "text": "Smaltz vnd vnsmer",
+      "kind": "rubric",
+      "uncertain": [
+       "vnsmer"
+      ]
+     },
+     {
+      "text": "Ziger xiij knollen",
+      "kind": "entry"
+     },
+     {
+      "text": "Kes klain vnd gros xxxij",
+      "kind": "entry"
+     },
+     {
+      "text": "darund sind vij alt kes",
+      "kind": "entry"
+     },
+     {
+      "text": "Die anndern von lannges",
+      "kind": "entry",
+      "uncertain": [
+       "lannges"
+      ]
+     },
+     {
+      "text": "vnd gais kes",
+      "kind": "entry"
+     },
+     {
+      "text": "aber acht herbest kes",
+      "kind": "entry"
+     },
+     {
+      "text": "Vnslit x schůr drey smerlaib",
+      "kind": "entry",
+      "uncertain": [
+       "schůr"
+      ]
+     },
+     {
+      "text": "Ain hafen mit öl nit voll",
+      "kind": "entry"
+     },
+     {
+      "text": "Ain puster vnslit kertzn",
+      "kind": "entry",
+      "uncertain": [
+       "puster"
+      ]
+     },
+     {
+      "text": "Ain vnckrott",
+      "kind": "entry",
+      "uncertain": [
+       "vnckrott"
+      ]
+     },
+     {
+      "text": "Ost fůr ainlich siechn",
+      "kind": "entry",
+      "uncertain": [
+       "Ost",
+       "ainlich",
+       "siechn"
+      ]
+     },
+     {
+      "text": "lxviij brotin",
+      "kind": "entry",
+      "uncertain": [
+       "brotin"
+      ]
+     },
+     {
+      "text": "Zwey kůbl vol smaltz vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "ains mit drey schuern",
+      "kind": "entry",
+      "uncertain": [
+       "schuern"
+      ]
+     },
+     {
+      "text": "aber vngepotten smaltz",
+      "kind": "entry"
+     },
+     {
+      "text": "viij schůr",
+      "kind": "entry",
+      "uncertain": [
+       "schůr"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "10",
+  "19",
+  "In der stubn",
+  "obn auf",
+  "Zwai vassl essich",
+  "Ain essig kranng",
+  "Ain kupfferygiesskössl",
+  "Ain kupffrin giesspöckh",
+  "Zwai ledrin panckh fůess",
+  "Ain prett spil",
+  "Ain alts eisin kandlin",
+  "Xxij schraibtisch vnd zwen",
+  "půchwerckh bischoff",
+  "In dem wein keller",
+  "Ain vas weissen wein von neun",
+  "vůrn ist geminet",
+  "Ain vas von vier vorn rott",
+  "wein ist geminet",
+  "Ain pantz von anderhalb vůrn",
+  "dreininn ist vol",
+  "Ain pantz essigs",
+  "Drey schůr gepotten smaltz In",
+  "aime grossn kůbl",
+  "Kes vnd ziger",
+  "Smaltz vnd vnsmer",
+  "Ziger xiij knollen",
+  "Kes klain vnd gros xxxij",
+  "darund sind vij alt kes",
+  "Die anndern von lannges",
+  "vnd gais kes",
+  "aber acht herbest kes",
+  "Vnslit x schůr drey smerlaib",
+  "Ain hafen mit öl nit voll",
+  "Ain puster vnslit kertzn",
+  "Ain vnckrott",
+  "Ost fůr ainlich siechn",
+  "lxviij brotin",
+  "Zwey kůbl vol smaltz vnd",
+  "ains mit drey schuern",
+  "aber vngepotten smaltz",
+  "viij schůr"
+ ]
+}

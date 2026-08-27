@@ -1,0 +1,433 @@
+{
+ "page": "pilot_rb2_p005",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 25.7,
+ "timestamp": "2026-08-27T06:57:09+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Her Wernher von",
+      "kind": "rubric",
+      "uncertain": [
+       "Wernher"
+      ]
+     },
+     {
+      "text": "Schönew",
+      "kind": "rubric",
+      "uncertain": [
+       "Schönew"
+      ]
+     },
+     {
+      "text": "Nota am freytag nach Epiphania anno",
+      "kind": "entry",
+      "uncertain": [
+       "freytag",
+       "Epiphania"
+      ]
+     },
+     {
+      "text": "domini etc lxxiiij in presencia herrn Benedict Camer=",
+      "kind": "entry",
+      "uncertain": [
+       "lxxiiij",
+       "presencia",
+       "Benedict",
+       "Camer="
+      ]
+     },
+     {
+      "text": "maisters hannsn saydn burgermaystrs Lienharts",
+      "kind": "entry",
+      "uncertain": [
+       "saydn",
+       "burgermaystrs",
+       "Lienharts"
+      ]
+     },
+     {
+      "text": "fließer baustann vnd wolfgangs Cümlechs",
+      "kind": "entry",
+      "uncertain": [
+       "fließer",
+       "baustann",
+       "wolfgangs",
+       "Cümlechs"
+      ]
+     },
+     {
+      "text": "Camrers ist mit herrn Wernhern von Schonw",
+      "kind": "entry",
+      "uncertain": [
+       "Camrers",
+       "Wernhern",
+       "Schonw"
+      ]
+     },
+     {
+      "text": "Raitung beschehn an seins zeunhß vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Raitung",
+       "beschehn",
+       "zeunhß"
+      ]
+     },
+     {
+      "text": "Soldes wegen",
+      "kind": "entry",
+      "uncertain": [
+       "Soldes"
+      ]
+     },
+     {
+      "text": "Item am erstn ist jm meins herrn gnad zins",
+      "kind": "entry",
+      "uncertain": [
+       "erstn",
+       "zins"
+      ]
+     },
+     {
+      "text": "schuldig worn an dreyentausent vnd zway=",
+      "kind": "entry",
+      "uncertain": [
+       "worn",
+       "dreyentausent"
+      ]
+     },
+     {
+      "text": "hundert gld von iiij jar das fur das zeu",
+      "kind": "entry",
+      "uncertain": [
+       "hundert",
+       "fur",
+       "zeu"
+      ]
+     },
+     {
+      "text": "den naechsten weratmeßhi ennden wirt",
+      "kind": "entry",
+      "uncertain": [
+       "naechsten",
+       "weratmeßhi",
+       "ennden"
+      ]
+     },
+     {
+      "text": "—— x lvj gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x lvj",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "x lvj"
+      ]
+     },
+     {
+      "text": "Item So ist jm meins herrn gnad Sold vnd dinstgelt",
+      "kind": "entry",
+      "uncertain": [
+       "Sold",
+       "dinstgelt"
+      ]
+     },
+     {
+      "text": "schuldig worden von ainn jar das fuezn am",
+      "kind": "entry",
+      "uncertain": [
+       "schuldig",
+       "ainn",
+       "fuezn"
+      ]
+     },
+     {
+      "text": "naehstvergangen Sand Larentzen tag geent",
+      "kind": "entry",
+      "uncertain": [
+       "naehstvergangen",
+       "Larentzen",
+       "geent"
+      ]
+     },
+     {
+      "text": "hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "—— ij c l xv gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "ij l xv",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "ij c l xv"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "5r",
+    "lines": [
+     {
+      "text": "5",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Item Vnd meins hern gnad cf hern Marxen in",
+      "kind": "entry",
+      "uncertain": [
+       "meins",
+       "hern",
+       "gnad",
+       "cf",
+       "hern",
+       "Marxen"
+      ]
+     },
+     {
+      "text": "seinne maister vadil vartung schuldigs word",
+      "kind": "entry",
+      "uncertain": [
+       "seinne",
+       "maister",
+       "vadil",
+       "vartung",
+       "schuldigs",
+       "word"
+      ]
+     },
+     {
+      "text": "—— iij C ij Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij C ij",
+       "unit": "Rh gld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "So hat er zwayn buechsenmaestern ausgezalt",
+      "kind": "entry",
+      "uncertain": [
+       "zwayn",
+       "buechsenmaestern",
+       "ausgezalt"
+      ]
+     },
+     {
+      "text": "—— xl Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xl",
+       "unit": "Rh gld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Suma der bemelten Schuld",
+      "kind": "sum",
+      "uncertain": [
+       "bemelten",
+       "Schuld"
+      ]
+     },
+     {
+      "text": "iij C xlij Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij C xlij",
+       "unit": "Rh gld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric",
+      "uncertain": [
+       "Innemen"
+      ]
+     },
+     {
+      "text": "Item Von dem bemelten Camermaister hat er daran",
+      "kind": "entry",
+      "uncertain": [
+       "bemelten",
+       "Camermaister"
+      ]
+     },
+     {
+      "text": "empfangen Am ersten l Rh gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "l",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "empfangen"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Darnach —— l Rh gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "l",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "Darnach"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Aber —— xx Rh gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "Aber"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Aber —— vij Rh gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vij",
+       "unit": "Rh gld"
+      },
+      "uncertain": [
+       "Aber"
+      ]
+     },
+     {
+      "text": "Suma des Innemens hat",
+      "kind": "sum",
+      "uncertain": [
+       "Innemens"
+      ]
+     },
+     {
+      "text": "j C xxvij gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "j C xxvij",
+       "unit": "gld"
+      },
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Her Wernher von",
+  "Schönew",
+  "Nota am freytag nach Epiphania anno",
+  "domini etc lxxiiij in presencia herrn Benedict Camer=",
+  "maisters hannsn saydn burgermaystrs Lienharts",
+  "fließer baustann vnd wolfgangs Cümlechs",
+  "Camrers ist mit herrn Wernhern von Schonw",
+  "Raitung beschehn an seins zeunhß vnd",
+  "Soldes wegen",
+  "Item am erstn ist jm meins herrn gnad zins",
+  "schuldig worn an dreyentausent vnd zway=",
+  "hundert gld von iiij jar das fur das zeu",
+  "den naechsten weratmeßhi ennden wirt",
+  "—— x lvj gld",
+  "Item So ist jm meins herrn gnad Sold vnd dinstgelt",
+  "schuldig worden von ainn jar das fuezn am",
+  "naehstvergangen Sand Larentzen tag geent",
+  "hat",
+  "—— ij c l xv gld",
+  "5",
+  "Item Vnd meins hern gnad cf hern Marxen in",
+  "seinne maister vadil vartung schuldigs word",
+  "—— iij C ij Rh gld",
+  "Item",
+  "So hat er zwayn buechsenmaestern ausgezalt",
+  "—— xl Rh gld",
+  "Suma der bemelten Schuld",
+  "iij C xlij Rh gld",
+  "Daran sein Innemen",
+  "Item Von dem bemelten Camermaister hat er daran",
+  "empfangen Am ersten l Rh gld",
+  "Item",
+  "Darnach —— l Rh gld",
+  "Item",
+  "Aber —— xx Rh gld",
+  "Item",
+  "Aber —— vij Rh gld",
+  "Suma des Innemens hat",
+  "j C xxvij gld"
+ ]
+}

@@ -1,0 +1,266 @@
+{
+ "page": "pilot_inv_11330060_p6",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1844,
+    4809
+   ],
+   "sent_px": [
+    1342,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 13.2,
+ "timestamp": "2026-08-27T06:56:05+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "19",
+    "lines": [
+     {
+      "text": "19",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Wagn gschir",
+      "kind": "rubric",
+      "uncertain": [
+       "Wagn",
+       "gschir"
+      ]
+     },
+     {
+      "text": "Zwen wagn j wenig nucz",
+      "kind": "entry",
+      "uncertain": [
+       "wagn",
+       "nucz"
+      ]
+     },
+     {
+      "text": "phlegin Ain khar mit ain",
+      "kind": "entry",
+      "uncertain": [
+       "phlegin",
+       "khar"
+      ]
+     },
+     {
+      "text": "visy geschirdt iij rad ains",
+      "kind": "entry",
+      "uncertain": [
+       "visy",
+       "geschirdt"
+      ]
+     },
+     {
+      "text": "ay an ain bissin ain wagen",
+      "kind": "entry",
+      "uncertain": [
+       "ay",
+       "bissin"
+      ]
+     },
+     {
+      "text": "an ain pflug",
+      "kind": "entry",
+      "uncertain": [
+       "pflug"
+      ]
+     },
+     {
+      "text": "Alt knecht",
+      "kind": "rubric",
+      "uncertain": [
+       "Alt",
+       "knecht"
+      ]
+     },
+     {
+      "text": "It(e)m zwelff rindgress und",
+      "kind": "entry",
+      "uncertain": [
+       "rindgress"
+      ]
+     },
+     {
+      "text": "stuck und manig klains",
+      "kind": "entry",
+      "uncertain": [
+       "manig"
+      ]
+     },
+     {
+      "text": "geweeß",
+      "kind": "entry",
+      "uncertain": [
+       "geweeß"
+      ]
+     },
+     {
+      "text": "cxxxvij",
+      "kind": "entry",
+      "uncertain": [
+       "cxxxvij"
+      ]
+     },
+     {
+      "text": "It(e)m Barschafft In tarrant",
+      "kind": "entry",
+      "uncertain": [
+       "Barschafft",
+       "tarrant"
+      ]
+     },
+     {
+      "text": "zwantzig markh",
+      "kind": "entry",
+      "uncertain": [
+       "zwantzig",
+       "markh"
+      ]
+     },
+     {
+      "text": "Harnasch gh zeug",
+      "kind": "rubric",
+      "uncertain": [
+       "Harnasch",
+       "gh"
+      ]
+     },
+     {
+      "text": "von erst In dem aurn",
+      "kind": "entry",
+      "uncertain": [
+       "aurn"
+      ]
+     },
+     {
+      "text": "It(e)m oben auf Im turn",
+      "kind": "entry",
+      "uncertain": [
+       "turn"
+      ]
+     },
+     {
+      "text": "Haggen puchssen xxj",
+      "kind": "entry",
+      "uncertain": [
+       "Haggen",
+       "puchssen"
+      ]
+     },
+     {
+      "text": "Tartschpuchssen ij",
+      "kind": "entry",
+      "uncertain": [
+       "Tartschpuchssen"
+      ]
+     },
+     {
+      "text": "Hand puchssen xxxiiij",
+      "kind": "entry",
+      "uncertain": [
+       "Hand",
+       "puchssen"
+      ]
+     },
+     {
+      "text": "Brot taeffelin lxxvij",
+      "kind": "entry",
+      "uncertain": [
+       "Brot",
+       "taeffelin"
+      ]
+     },
+     {
+      "text": "Klaine taeffelin viij",
+      "kind": "entry",
+      "uncertain": [
+       "taeffelin"
+      ]
+     },
+     {
+      "text": "It(e)m acht vässl sind zügschlagen",
+      "kind": "entry",
+      "uncertain": [
+       "vässl",
+       "zügschlagen"
+      ]
+     },
+     {
+      "text": "Zwo lagel pheil",
+      "kind": "entry",
+      "uncertain": [
+       "lagel",
+       "pheil"
+      ]
+     },
+     {
+      "text": "Fünff vampelle",
+      "kind": "entry",
+      "uncertain": [
+       "vampelle"
+      ]
+     },
+     {
+      "text": "Sechs keyl",
+      "kind": "entry",
+      "uncertain": [
+       "keyl"
+      ]
+     },
+     {
+      "text": "Etwe vil pengel und logeysen",
+      "kind": "entry",
+      "uncertain": [
+       "Etwe",
+       "pengel",
+       "logeysen"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "19",
+  "Wagn gschir",
+  "Zwen wagn j wenig nucz",
+  "phlegin Ain khar mit ain",
+  "visy geschirdt iij rad ains",
+  "ay an ain bissin ain wagen",
+  "an ain pflug",
+  "Alt knecht",
+  "It(e)m zwelff rindgress und",
+  "stuck und manig klains",
+  "geweeß",
+  "cxxxvij",
+  "It(e)m Barschafft In tarrant",
+  "zwantzig markh",
+  "Harnasch gh zeug",
+  "von erst In dem aurn",
+  "It(e)m oben auf Im turn",
+  "Haggen puchssen xxj",
+  "Tartschpuchssen ij",
+  "Hand puchssen xxxiiij",
+  "Brot taeffelin lxxvij",
+  "Klaine taeffelin viij",
+  "It(e)m acht vässl sind zügschlagen",
+  "Zwo lagel pheil",
+  "Fünff vampelle",
+  "Sechs keyl",
+  "Etwe vil pengel und logeysen"
+ ]
+}

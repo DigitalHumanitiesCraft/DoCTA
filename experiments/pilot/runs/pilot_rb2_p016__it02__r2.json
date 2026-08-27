@@ -1,0 +1,360 @@
+{
+ "page": "pilot_rb2_p016",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 30.9,
+ "timestamp": "2026-08-27T06:58:29+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1v",
+    "lines": [
+     {
+      "text": "Cristan Jager",
+      "kind": "rubric",
+      "uncertain": [
+       "Cristan",
+       "Jager"
+      ]
+     },
+     {
+      "text": "Nota die et in pncia prescripta Ist",
+      "kind": "entry",
+      "uncertain": [
+       "pncia",
+       "prescripta"
+      ]
+     },
+     {
+      "text": "raitung beschehen mit Cristan Jager, von",
+      "kind": "entry",
+      "uncertain": [
+       "Cristan",
+       "Jager",
+       "beschehen"
+      ]
+     },
+     {
+      "text": "wegen seins Soldts . vnd meinis herren",
+      "kind": "entry",
+      "uncertain": [
+       "meinis"
+      ]
+     },
+     {
+      "text": "gnad ist Im Soldt schuldig sitz der naegsten",
+      "kind": "entry",
+      "uncertain": [
+       "sitz",
+       "naegsten"
+      ]
+     },
+     {
+      "text": "vordern raitung, von Sand lucastag des",
+      "kind": "entry",
+      "uncertain": [
+       "Sand",
+       "lucastag"
+      ]
+     },
+     {
+      "text": "verganngen lxxiiij Jar vntz auf Sand lucas",
+      "kind": "entry",
+      "uncertain": [
+       "verganngen",
+       "Sand",
+       "lucas"
+      ]
+     },
+     {
+      "text": "tag naegstkomend des gegenwurtigen lxxv",
+      "kind": "entry",
+      "uncertain": [
+       "naegstkomend",
+       "gegenwurtigen"
+      ]
+     },
+     {
+      "text": "Jars, bringt iij JarSoldt, yeds Jars xxiiij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxiiij",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "JarSoldt"
+      ]
+     },
+     {
+      "text": "Saintt kerrer vj Rh gld, Bringt in münntz",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "vj",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Saintt",
+       "kerrer"
+      ]
+     },
+     {
+      "text": "—— xxxviij lb iiij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "xxxviij"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "So ist Im meinis herren gnad in seinir naegst",
+      "kind": "entry",
+      "uncertain": [
+       "meinis",
+       "seinir",
+       "naegst"
+      ]
+     },
+     {
+      "text": "vordern raitung schuldig xvj Rh gld, bringt",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvj",
+       "unit": "Rhgld"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "in münntz —— xxj lb iiij ß",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxj",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "xxj"
+      ]
+     },
+     {
+      "text": "Suma ka seinir genad",
+      "kind": "sum",
+      "uncertain": [
+       "ka",
+       "genad"
+      ]
+     },
+     {
+      "text": "hat lx lb viij d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lx",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "lx",
+       "viij",
+       "d"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "16r",
+    "lines": [
+     {
+      "text": "16.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Sein emphahen",
+      "kind": "rubric",
+      "uncertain": [
+       "Sein",
+       "emphahen"
+      ]
+     },
+     {
+      "text": "Etwa hat er von meinis herrn gnaden",
+      "kind": "entry",
+      "uncertain": [
+       "Etwa",
+       "meinis",
+       "herrn",
+       "gnaden"
+      ]
+     },
+     {
+      "text": "emphangen xviij Rhgld facit —— iij m̅ ij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "m"
+      },
+      "uncertain": [
+       "emphangen",
+       "xviij"
+      ]
+     },
+     {
+      "text": "Item von zallner am lueg hat er auch emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "zallner",
+       "lueg",
+       "auch",
+       "emphangen"
+      ]
+     },
+     {
+      "text": "xxviij Rhgld facit —— xij m̅ ij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xij",
+       "unit": "m"
+      },
+      "uncertain": [
+       "xxviij",
+       "xij"
+      ]
+     },
+     {
+      "text": "Sm̅a ha sein empfahens",
+      "kind": "sum",
+      "uncertain": [
+       "Sm̅a",
+       "ha",
+       "sein",
+       "empfahens"
+      ]
+     },
+     {
+      "text": "facit xvj m̅ iiij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvj",
+       "unit": "m"
+      },
+      "uncertain": [
+       "xvj"
+      ]
+     },
+     {
+      "text": "Das gegeneinander abgezogen dannoch",
+      "kind": "entry",
+      "uncertain": [
+       "Das",
+       "gegeneinander",
+       "abgezogen",
+       "dannoch"
+      ]
+     },
+     {
+      "text": "ist jm meinis herrn gnad schuldig xxxviij m̅",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviij",
+       "unit": "m"
+      },
+      "uncertain": [
+       "meinis",
+       "herrn",
+       "gnad",
+       "schuldig",
+       "xxxviij"
+      ]
+     },
+     {
+      "text": "—— iij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "iij"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Cristan Jager",
+  "Nota die et in pncia prescripta Ist",
+  "raitung beschehen mit Cristan Jager, von",
+  "wegen seins Soldts . vnd meinis herren",
+  "gnad ist Im Soldt schuldig sitz der naegsten",
+  "vordern raitung, von Sand lucastag des",
+  "verganngen lxxiiij Jar vntz auf Sand lucas",
+  "tag naegstkomend des gegenwurtigen lxxv",
+  "Jars, bringt iij JarSoldt, yeds Jars xxiiij gld",
+  "Saintt kerrer vj Rh gld, Bringt in münntz",
+  "—— xxxviij lb iiij ß",
+  "Item",
+  "So ist Im meinis herren gnad in seinir naegst",
+  "vordern raitung schuldig xvj Rh gld, bringt",
+  "in münntz —— xxj lb iiij ß",
+  "Suma ka seinir genad",
+  "hat lx lb viij d",
+  "16.",
+  "Sein emphahen",
+  "Etwa hat er von meinis herrn gnaden",
+  "emphangen xviij Rhgld facit —— iij m̅ ij lb",
+  "Item von zallner am lueg hat er auch emphangen",
+  "xxviij Rhgld facit —— xij m̅ ij lb",
+  "Sm̅a ha sein empfahens",
+  "facit xvj m̅ iiij lb",
+  "Das gegeneinander abgezogen dannoch",
+  "ist jm meinis herrn gnad schuldig xxxviij m̅",
+  "—— iij lb"
+ ]
+}

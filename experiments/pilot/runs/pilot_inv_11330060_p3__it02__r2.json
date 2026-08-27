@@ -1,0 +1,268 @@
+{
+ "page": "pilot_inv_11330060_p3",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1900,
+    5258
+   ],
+   "sent_px": [
+    1265,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.8,
+ "timestamp": "2026-08-27T06:55:48+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "178r",
+    "lines": [
+     {
+      "text": "178",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Drey spies Ain helmpart",
+      "kind": "entry",
+      "uncertain": [
+       "helmpart"
+      ]
+     },
+     {
+      "text": "Ain swarcz filtzhüetl",
+      "kind": "entry",
+      "uncertain": [
+       "filtzhüetl"
+      ]
+     },
+     {
+      "text": "Ain wenig eysenkatt",
+      "kind": "entry",
+      "uncertain": [
+       "eysenkatt"
+      ]
+     },
+     {
+      "text": "hembid gann ysern schaln",
+      "kind": "entry",
+      "uncertain": [
+       "hembid",
+       "ysern"
+      ]
+     },
+     {
+      "text": "In der kam",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "nebn der stubn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zway pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwen polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zway par leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vier Rauch deckn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwo leinn deckn",
+      "kind": "entry",
+      "uncertain": [
+       "leinn"
+      ]
+     },
+     {
+      "text": "zwen strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In ergker",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "gegn dorf",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett Ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain par leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwo rauch deckn vnd ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "In dem ergker",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "nebnpei",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Zehn resspis Ain alts gerust",
+      "kind": "entry",
+      "uncertain": [
+       "resspis",
+       "gerust"
+      ]
+     },
+     {
+      "text": "vnd drey wambispiesl",
+      "kind": "entry",
+      "uncertain": [
+       "wambispiesl"
+      ]
+     },
+     {
+      "text": "drey pusten hembdlein",
+      "kind": "entry",
+      "uncertain": [
+       "pusten",
+       "hembdlein"
+      ]
+     },
+     {
+      "text": "siben pfundt salpeters",
+      "kind": "entry",
+      "uncertain": [
+       "salpeters"
+      ]
+     },
+     {
+      "text": "sibn par hieschstrickh",
+      "kind": "entry",
+      "uncertain": [
+       "hieschstrickh"
+      ]
+     },
+     {
+      "text": "Ain hepparl",
+      "kind": "entry",
+      "uncertain": [
+       "hepparl"
+      ]
+     },
+     {
+      "text": "In dem ergker",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "aufm tor",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Ain pett ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain pare leilach",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwo rauch deckn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain strosackh",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd etweil henffseil",
+      "kind": "entry",
+      "uncertain": [
+       "etweil",
+       "henffseil"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "178",
+  "Drey spies Ain helmpart",
+  "Ain swarcz filtzhüetl",
+  "Ain wenig eysenkatt",
+  "hembid gann ysern schaln",
+  "In der kam",
+  "nebn der stubn",
+  "Zway pett",
+  "zwen polster",
+  "zway par leilach",
+  "vier Rauch deckn",
+  "zwo leinn deckn",
+  "zwen strosackh",
+  "In ergker",
+  "gegn dorf",
+  "Ain pett Ain polster",
+  "Ain par leilach",
+  "Zwo rauch deckn vnd ain",
+  "strosackh",
+  "In dem ergker",
+  "nebnpei",
+  "Zehn resspis Ain alts gerust",
+  "vnd drey wambispiesl",
+  "drey pusten hembdlein",
+  "siben pfundt salpeters",
+  "sibn par hieschstrickh",
+  "Ain hepparl",
+  "In dem ergker",
+  "aufm tor",
+  "Ain pett ain polster",
+  "ain pare leilach",
+  "zwo rauch deckn",
+  "Ain strosackh",
+  "vnd etweil henffseil"
+ ]
+}

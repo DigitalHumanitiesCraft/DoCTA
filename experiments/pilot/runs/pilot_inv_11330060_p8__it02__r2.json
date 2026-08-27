@@ -1,0 +1,102 @@
+{
+ "page": "pilot_inv_11330060_p8",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1815,
+    4705
+   ],
+   "sent_px": [
+    1350,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.6,
+ "timestamp": "2026-08-27T06:56:14+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Titelblatt / Umschlag",
+    "lines": [
+     {
+      "text": "Inuentarium Schloss Nauders",
+      "kind": "rubric",
+      "uncertain": [
+       "Inuentarium",
+       "Schloss",
+       "Nauders"
+      ]
+     },
+     {
+      "text": "1478",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "b. 109",
+      "kind": "foliation",
+      "uncertain": [
+       "b. 109"
+      ]
+     },
+     {
+      "text": "~~[...]~~",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~Item [...]~~",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~[...]~~",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~Item [...]~~",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~[...]~~",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~Item [...]~~",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~[...]~~",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Inuentarium Schloss Nauders",
+  "1478",
+  "b. 109",
+  "~~[...]~~",
+  "~~Item [...]~~",
+  "~~[...]~~",
+  "~~Item [...]~~",
+  "~~[...]~~",
+  "~~Item [...]~~",
+  "~~[...]~~"
+ ]
+}

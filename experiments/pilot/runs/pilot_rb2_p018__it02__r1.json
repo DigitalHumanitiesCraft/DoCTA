@@ -1,0 +1,324 @@
+{
+ "page": "pilot_rb2_p018",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 14.7,
+ "timestamp": "2026-08-27T06:58:37+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Daran des pauln jnmenen",
+      "kind": "rubric",
+      "uncertain": [
+       "pauln",
+       "jnmenen"
+      ]
+     },
+     {
+      "text": "Der bemelt paull burchstainwär hat von herr",
+      "kind": "entry",
+      "uncertain": [
+       "paull",
+       "burchstainwär",
+       "herr"
+      ]
+     },
+     {
+      "text": "Benedict dem alten camrermaister daran emphangn",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict",
+       "camrermaister",
+       "emphangn"
+      ]
+     },
+     {
+      "text": "xxviij mr",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "mr"
+      },
+      "uncertain": [
+       "mr"
+      ]
+     },
+     {
+      "text": "Dennoch ist jm meins herrn gnad aller statt",
+      "kind": "entry",
+      "uncertain": [
+       "gnad",
+       "aller"
+      ]
+     },
+     {
+      "text": "schuldig xxvj lb d , viij C vj gld vnd xxvj mr",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij C vj",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "schuldig",
+       "lb",
+       "mr"
+      ]
+     },
+     {
+      "text": "vnd viij ß , vnd hat noch zechen annz auf",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "ß"
+      },
+      "uncertain": [
+       "zechen",
+       "annz"
+      ]
+     },
+     {
+      "text": "die nachstennende verschreibung",
+      "kind": "entry",
+      "uncertain": [
+       "nachstennende",
+       "verschreibung"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "18r",
+    "lines": [
+     {
+      "text": "18",
+      "kind": "foliation"
+     },
+     {
+      "text": "Vlreich meiner gnadign",
+      "kind": "rubric",
+      "uncertain": [
+       "Vlreich",
+       "gnadign"
+      ]
+     },
+     {
+      "text": "frawn Silberkramer",
+      "kind": "rubric",
+      "uncertain": [
+       "frawn",
+       "Silberkramer"
+      ]
+     },
+     {
+      "text": "Nō",
+      "kind": "marginal"
+     },
+     {
+      "text": "Anno diē vt pñtibs qūbs sūpᵃ . Yst gerait",
+      "kind": "entry",
+      "uncertain": [
+       "pñtibs",
+       "qūbs",
+       "sūpᵃ"
+      ]
+     },
+     {
+      "text": "worden mit vllreichn meiner gnadign frawñ",
+      "kind": "entry",
+      "uncertain": [
+       "vllreichn",
+       "gnadign",
+       "frawñ"
+      ]
+     },
+     {
+      "text": "Silberkamerer , von seins sollds vnd dargabs",
+      "kind": "entry",
+      "uncertain": [
+       "Silberkamerer",
+       "sollds",
+       "dargabs"
+      ]
+     },
+     {
+      "text": "bellds wegen vmb ain phānd",
+      "kind": "entry",
+      "uncertain": [
+       "bellds",
+       "phānd"
+      ]
+     },
+     {
+      "text": "Itē",
+      "kind": "marginal"
+     },
+     {
+      "text": "Meins herren gnad yst demselben vllreichn Silberkamerer",
+      "kind": "entry",
+      "uncertain": [
+       "vllreichn",
+       "Silberkamerer"
+      ]
+     },
+     {
+      "text": "schuldig sein solld von Sechs jarn , die sich zu",
+      "kind": "entry",
+      "uncertain": [
+       "solld",
+       "jarn"
+      ]
+     },
+     {
+      "text": "Ostêrn nachstvergangen geendt habt van yed",
+      "kind": "entry",
+      "uncertain": [
+       "Ostêrn",
+       "nachstvergangen",
+       "habt",
+       "yed"
+      ]
+     },
+     {
+      "text": "jar xxj Rlgld Facit hewer xij Rlgld Pfennigi",
+      "kind": "entry",
+      "uncertain": [
+       "hewer",
+       "Pfennigi"
+      ]
+     },
+     {
+      "text": "vj vñditz  xxxviiij iiij̄ iiij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviiij iiij̄ iiij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "vñditz"
+      ]
+     },
+     {
+      "text": "Itē  So ist jm meinis herrn gnad schuldig für ain",
+      "kind": "entry",
+      "uncertain": [
+       "meinis"
+      ]
+     },
+     {
+      "text": "phand , so Wẽndel Stallmaistr in seiner gnad",
+      "kind": "entry",
+      "uncertain": [
+       "phand",
+       "Wẽndel",
+       "Stallmaistr"
+      ]
+     },
+     {
+      "text": "stal va jm genomen hat  xij Rlgld fat",
+      "kind": "entry",
+      "uncertain": [
+       "va",
+       "fat"
+      ]
+     },
+     {
+      "text": "——  iiij iiij viij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iiij iiij viij",
+       "unit": "lb"
+      }
+     },
+     {
+      "text": "Sūma ho seins saldo facit mith",
+      "kind": "sum",
+      "uncertain": [
+       "ho",
+       "saldo",
+       "mith"
+      ]
+     },
+     {
+      "text": "dem phānd xlvij viii ij lb",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xlvij viii ij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "phānd"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Daran des pauln jnmenen",
+  "Der bemelt paull burchstainwär hat von herr",
+  "Benedict dem alten camrermaister daran emphangn",
+  "xxviij mr",
+  "Dennoch ist jm meins herrn gnad aller statt",
+  "schuldig xxvj lb d , viij C vj gld vnd xxvj mr",
+  "vnd viij ß , vnd hat noch zechen annz auf",
+  "die nachstennende verschreibung",
+  "18",
+  "Vlreich meiner gnadign",
+  "frawn Silberkramer",
+  "Nō",
+  "Anno diē vt pñtibs qūbs sūpᵃ . Yst gerait",
+  "worden mit vllreichn meiner gnadign frawñ",
+  "Silberkamerer , von seins sollds vnd dargabs",
+  "bellds wegen vmb ain phānd",
+  "Itē",
+  "Meins herren gnad yst demselben vllreichn Silberkamerer",
+  "schuldig sein solld von Sechs jarn , die sich zu",
+  "Ostêrn nachstvergangen geendt habt van yed",
+  "jar xxj Rlgld Facit hewer xij Rlgld Pfennigi",
+  "vj vñditz  xxxviiij iiij̄ iiij lb",
+  "Itē  So ist jm meinis herrn gnad schuldig für ain",
+  "phand , so Wẽndel Stallmaistr in seiner gnad",
+  "stal va jm genomen hat  xij Rlgld fat",
+  "——  iiij iiij viij lb",
+  "Sūma ho seins saldo facit mith",
+  "dem phānd xlvij viii ij lb"
+ ]
+}

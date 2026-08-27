@@ -1,0 +1,287 @@
+{
+ "page": "pilot_rb2_p018",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 17.9,
+ "timestamp": "2026-08-27T06:58:47+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Daran des pauln jnnemen",
+      "kind": "rubric",
+      "uncertain": [
+       "pauln",
+       "jnnemen"
+      ]
+     },
+     {
+      "text": "Der bemelt paul lurtzstannär hat von herr",
+      "kind": "entry",
+      "uncertain": [
+       "paul",
+       "lurtzstannär",
+       "herr"
+      ]
+     },
+     {
+      "text": "Benedict dem alten camermayster daran emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict",
+       "camermayster",
+       "emphangen"
+      ]
+     },
+     {
+      "text": "—— xxvij mür",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxvij",
+       "unit": "mür"
+      },
+      "uncertain": [
+       "mür"
+      ]
+     },
+     {
+      "text": "Dannoch ist jm meins herrn gnad aller schult",
+      "kind": "entry",
+      "uncertain": [
+       "Dannoch",
+       "schult"
+      ]
+     },
+     {
+      "text": "schuldig beleibn gar . viij C ix gld vnd xxvij mür",
+      "kind": "entry",
+      "uncertain": [
+       "beleibn",
+       "mür"
+      ]
+     },
+     {
+      "text": "vnd viij ß . vnd hat noch zechen cantz auf",
+      "kind": "entry",
+      "uncertain": [
+       "zechen",
+       "cantz"
+      ]
+     },
+     {
+      "text": "die nachstennende verschreibung",
+      "kind": "entry",
+      "uncertain": [
+       "nachstennende",
+       "verschreibung"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "18r",
+    "lines": [
+     {
+      "text": "18",
+      "kind": "foliation"
+     },
+     {
+      "text": "Vlreich meiner gnadigen",
+      "kind": "rubric",
+      "uncertain": [
+       "Vlreich",
+       "gnadigen"
+      ]
+     },
+     {
+      "text": "frawn Silberkämrer",
+      "kind": "rubric",
+      "uncertain": [
+       "Silberkämrer"
+      ]
+     },
+     {
+      "text": "No[ta] Anno die ac p[rese]ntib[us] quib[us] sup[ra] . Yst gerait",
+      "kind": "entry",
+      "uncertain": [
+       "p[rese]ntib[us]"
+      ]
+     },
+     {
+      "text": "worden mit vlreichen meiner gnadigen frawen",
+      "kind": "entry",
+      "uncertain": [
+       "vlreichen",
+       "gnadigen"
+      ]
+     },
+     {
+      "text": "Silberkamrär , von seins sollds vnd dargabs",
+      "kind": "entry",
+      "uncertain": [
+       "Silberkamrär"
+      ]
+     },
+     {
+      "text": "welchs wegen vmb ain phärd",
+      "kind": "entry"
+     },
+     {
+      "text": "It[em]",
+      "kind": "marginal"
+     },
+     {
+      "text": "Meins herren gnad yst demselben vlreichen Silberkamrer",
+      "kind": "entry",
+      "uncertain": [
+       "vlreichen",
+       "Silberkamrer"
+      ]
+     },
+     {
+      "text": "schuldig sein solld von Sechs Jarn , die sich zu",
+      "kind": "entry"
+     },
+     {
+      "text": "Ostren nagstvergangen geendt habt , von yed",
+      "kind": "entry",
+      "uncertain": [
+       "Ostren"
+      ]
+     },
+     {
+      "text": "Jar xij Rh gld fat betregt lxxij Rh gld phenning",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxij",
+       "unit": "Rh gld"
+      }
+     },
+     {
+      "text": "iij vntrübes —— xxxviij lb iiij ß iij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviij lb iiij ß iij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "vntrübes"
+      ]
+     },
+     {
+      "text": "It[em]",
+      "kind": "marginal"
+     },
+     {
+      "text": "So ist Jm meins herrn gnad schuldig für ain",
+      "kind": "entry"
+     },
+     {
+      "text": "phärd / so wendel stallmayst[e]r Jn seiner gnad",
+      "kind": "entry",
+      "uncertain": [
+       "wendel",
+       "stallmayst[e]r"
+      ]
+     },
+     {
+      "text": "stal da Jm genommen hat — xij Rh gld fat",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xij",
+       "unit": "Rh gld"
+      }
+     },
+     {
+      "text": "—— iij lb iiij ß viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij lb iiij ß viij",
+       "unit": "d"
+      }
+     },
+     {
+      "text": "Suma ho[c] seins saldo facit mit",
+      "kind": "sum"
+     },
+     {
+      "text": "dem phärd xlj lb viij ß xj d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xlj lb viij ß xj",
+       "unit": "d"
+      }
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Daran des pauln jnnemen",
+  "Der bemelt paul lurtzstannär hat von herr",
+  "Benedict dem alten camermayster daran emphangen",
+  "—— xxvij mür",
+  "Dannoch ist jm meins herrn gnad aller schult",
+  "schuldig beleibn gar . viij C ix gld vnd xxvij mür",
+  "vnd viij ß . vnd hat noch zechen cantz auf",
+  "die nachstennende verschreibung",
+  "18",
+  "Vlreich meiner gnadigen",
+  "frawn Silberkämrer",
+  "No[ta] Anno die ac p[rese]ntib[us] quib[us] sup[ra] . Yst gerait",
+  "worden mit vlreichen meiner gnadigen frawen",
+  "Silberkamrär , von seins sollds vnd dargabs",
+  "welchs wegen vmb ain phärd",
+  "It[em]",
+  "Meins herren gnad yst demselben vlreichen Silberkamrer",
+  "schuldig sein solld von Sechs Jarn , die sich zu",
+  "Ostren nagstvergangen geendt habt , von yed",
+  "Jar xij Rh gld fat betregt lxxij Rh gld phenning",
+  "iij vntrübes —— xxxviij lb iiij ß iij d",
+  "It[em]",
+  "So ist Jm meins herrn gnad schuldig für ain",
+  "phärd / so wendel stallmayst[e]r Jn seiner gnad",
+  "stal da Jm genommen hat — xij Rh gld fat",
+  "—— iij lb iiij ß viij d",
+  "Suma ho[c] seins saldo facit mit",
+  "dem phärd xlj lb viij ß xj d"
+ ]
+}

@@ -1,0 +1,466 @@
+{
+ "iteration": "it02",
+ "model": "gemini-3.7-flash",
+ "pages": {
+  "pilot_inv_11330060_p1": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 1",
+   "k": 2,
+   "lines": [
+    37,
+    35
+   ],
+   "uncertain": [
+    22,
+    30
+   ],
+   "ref_lines": 35,
+   "cer_fair_vs_working": [
+    0.2224,
+    0.2189
+   ],
+   "consistency_words": 0.688,
+   "consistency_numbers": 0.6
+  },
+  "pilot_inv_11330060_p2": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 2",
+   "k": 2,
+   "lines": [
+    38,
+    38
+   ],
+   "uncertain": [
+    22,
+    17
+   ],
+   "ref_lines": 39,
+   "cer_fair_vs_working": [
+    0.1016,
+    0.1061
+   ],
+   "consistency_words": 0.743,
+   "consistency_numbers": 0.0
+  },
+  "pilot_inv_11330060_p3": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 3",
+   "k": 2,
+   "lines": [
+    34,
+    34
+   ],
+   "uncertain": [
+    39,
+    16
+   ],
+   "ref_lines": 34,
+   "cer_fair_vs_working": [
+    0.1834,
+    0.202
+   ],
+   "consistency_words": 0.639,
+   "consistency_numbers": 1.0
+  },
+  "pilot_inv_11330060_p4": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 4",
+   "k": 2,
+   "lines": [
+    41,
+    41
+   ],
+   "uncertain": [
+    18,
+    32
+   ],
+   "ref_lines": 40,
+   "cer_fair_vs_working": [
+    0.1865,
+    0.1827
+   ],
+   "consistency_words": 0.686,
+   "consistency_numbers": 0.5
+  },
+  "pilot_inv_11330060_p5": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 5",
+   "k": 2,
+   "lines": [
+    34,
+    34
+   ],
+   "uncertain": [
+    13,
+    34
+   ],
+   "ref_lines": 35,
+   "cer_fair_vs_working": [
+    0.1677,
+    0.1753
+   ],
+   "consistency_words": 0.613,
+   "consistency_numbers": 0.75
+  },
+  "pilot_inv_11330060_p6": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 6",
+   "k": 2,
+   "lines": [
+    26,
+    27
+   ],
+   "uncertain": [
+    42,
+    42
+   ],
+   "ref_lines": 26,
+   "cer_fair_vs_working": [
+    0.3025,
+    0.3081
+   ],
+   "consistency_words": 0.518,
+   "consistency_numbers": 0.857
+  },
+  "pilot_inv_11330060_p7": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 7",
+   "k": 2,
+   "lines": [
+    12,
+    12
+   ],
+   "uncertain": [
+    15,
+    12
+   ],
+   "ref_lines": 13,
+   "cer_fair_vs_working": [
+    0.1741,
+    0.2444
+   ],
+   "consistency_words": 0.591,
+   "consistency_numbers": 1.0
+  },
+  "pilot_inv_11330060_p8": {
+   "source": "inventar",
+   "folio": "A 152.1 S. 8",
+   "k": 2,
+   "lines": [
+    3,
+    10
+   ],
+   "uncertain": [
+    3,
+    4
+   ],
+   "ref_lines": 1,
+   "cer_fair_vs_working": [
+    37.0,
+    53.0
+   ],
+   "consistency_words": 0.75,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p002": {
+   "source": "raitbuch2",
+   "folio": "pageNr 2",
+   "k": 2,
+   "lines": [
+    25,
+    25
+   ],
+   "uncertain": [
+    66,
+    63
+   ],
+   "consistency_words": 0.747,
+   "consistency_numbers": 0.5
+  },
+  "pilot_rb2_p003": {
+   "source": "raitbuch2",
+   "folio": "pageNr 3",
+   "k": 2,
+   "lines": [
+    36,
+    32
+   ],
+   "uncertain": [
+    48,
+    64
+   ],
+   "consistency_words": 0.813,
+   "consistency_numbers": 0.667
+  },
+  "pilot_rb2_p004": {
+   "source": "raitbuch2",
+   "folio": "pageNr 4",
+   "k": 2,
+   "lines": [
+    23,
+    23
+   ],
+   "uncertain": [
+    54,
+    65
+   ],
+   "consistency_words": 0.702,
+   "consistency_numbers": 0.571
+  },
+  "pilot_rb2_p005": {
+   "source": "raitbuch2",
+   "folio": "pageNr 5",
+   "k": 2,
+   "lines": [
+    41,
+    39
+   ],
+   "uncertain": [
+    43,
+    67
+   ],
+   "consistency_words": 0.702,
+   "consistency_numbers": 0.935
+  },
+  "pilot_rb2_p006": {
+   "source": "raitbuch2",
+   "folio": "pageNr 6",
+   "k": 2,
+   "lines": [
+    18,
+    18
+   ],
+   "uncertain": [
+    22,
+    35
+   ],
+   "consistency_words": 0.787,
+   "consistency_numbers": 0.833
+  },
+  "pilot_rb2_p007": {
+   "source": "raitbuch2",
+   "folio": "pageNr 7",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p008": {
+   "source": "raitbuch2",
+   "folio": "pageNr 8",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p009": {
+   "source": "raitbuch2",
+   "folio": "pageNr 9",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p010": {
+   "source": "raitbuch2",
+   "folio": "pageNr 10",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p011": {
+   "source": "raitbuch2",
+   "folio": "pageNr 11",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p012": {
+   "source": "raitbuch2",
+   "folio": "pageNr 12",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  },
+  "pilot_rb2_p013": {
+   "source": "raitbuch2",
+   "folio": "pageNr 13",
+   "k": 2,
+   "lines": [
+    25,
+    25
+   ],
+   "uncertain": [
+    30,
+    50
+   ],
+   "consistency_words": 0.581,
+   "consistency_numbers": 0.8
+  },
+  "pilot_rb2_p014": {
+   "source": "raitbuch2",
+   "folio": "pageNr 14",
+   "k": 2,
+   "lines": [
+    19,
+    21
+   ],
+   "uncertain": [
+    30,
+    17
+   ],
+   "consistency_words": 0.694,
+   "consistency_numbers": 0.789
+  },
+  "pilot_rb2_p015": {
+   "source": "raitbuch2",
+   "folio": "pageNr 15",
+   "k": 2,
+   "lines": [
+    29,
+    29
+   ],
+   "uncertain": [
+    42,
+    81
+   ],
+   "consistency_words": 0.694,
+   "consistency_numbers": 0.9
+  },
+  "pilot_rb2_p016": {
+   "source": "raitbuch2",
+   "folio": "pageNr 16",
+   "k": 2,
+   "lines": [
+    28,
+    28
+   ],
+   "uncertain": [
+    34,
+    59
+   ],
+   "consistency_words": 0.667,
+   "consistency_numbers": 0.821
+  },
+  "pilot_rb2_p017": {
+   "source": "raitbuch2",
+   "folio": "pageNr 17",
+   "k": 2,
+   "lines": [
+    36,
+    37
+   ],
+   "uncertain": [
+    68,
+    48
+   ],
+   "consistency_words": 0.63,
+   "consistency_numbers": 0.679
+  },
+  "pilot_rb2_p018": {
+   "source": "raitbuch2",
+   "folio": "pageNr 18",
+   "k": 2,
+   "lines": [
+    28,
+    28
+   ],
+   "uncertain": [
+    54,
+    30
+   ],
+   "consistency_words": 0.629,
+   "consistency_numbers": 0.55
+  },
+  "pilot_rb2_p019": {
+   "source": "raitbuch2",
+   "folio": "pageNr 19",
+   "k": 2,
+   "lines": [
+    28,
+    27
+   ],
+   "uncertain": [
+    45,
+    43
+   ],
+   "consistency_words": 0.716,
+   "consistency_numbers": 0.704
+  },
+  "pilot_rb2_p020": {
+   "source": "raitbuch2",
+   "folio": "pageNr 20",
+   "k": 2,
+   "lines": [
+    22,
+    19
+   ],
+   "uncertain": [
+    21,
+    39
+   ],
+   "consistency_words": 0.672,
+   "consistency_numbers": 0.615
+  },
+  "pilot_rb2_p021": {
+   "source": "raitbuch2",
+   "folio": "pageNr 21",
+   "k": 2,
+   "lines": [
+    1,
+    1
+   ],
+   "uncertain": [
+    0,
+    0
+   ],
+   "consistency_words": 0.0,
+   "consistency_numbers": 1.0
+  }
+ }
+}

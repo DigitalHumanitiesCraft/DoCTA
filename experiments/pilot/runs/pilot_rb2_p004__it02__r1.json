@@ -1,0 +1,292 @@
+{
+ "page": "pilot_rb2_p004",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 18.4,
+ "timestamp": "2026-08-27T06:56:43+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Herhanns Drulsesz",
+      "kind": "rubric",
+      "uncertain": [
+       "Herhanns",
+       "Drulsesz"
+      ]
+     },
+     {
+      "text": "Item mit herrn hannsn Drulsesz gerait in p[rese]ntia",
+      "kind": "entry",
+      "uncertain": [
+       "herrn",
+       "hannsn",
+       "Drulsesz",
+       "gerait",
+       "p[rese]ntia"
+      ]
+     },
+     {
+      "text": "p[ro]cerum , an freytag nach Sand Johanss tag",
+      "kind": "entry",
+      "uncertain": [
+       "p[ro]cerum",
+       "Sand",
+       "Johanss"
+      ]
+     },
+     {
+      "text": "Decollacionis Anno d[omi]nj etc lxvij / von Schuld",
+      "kind": "entry",
+      "uncertain": [
+       "Decollacionis",
+       "lxvij"
+      ]
+     },
+     {
+      "text": "wegen nach Innhald ains Schuldbrieffs / vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Innhald",
+       "Schuldbrieffs"
+      ]
+     },
+     {
+      "text": "von Dintlein vnd auch darlegens wegen",
+      "kind": "entry",
+      "uncertain": [
+       "Dintlein",
+       "darlegens"
+      ]
+     },
+     {
+      "text": "nachklemmen , Fürlaiten , Paymaisterei vnd",
+      "kind": "entry",
+      "uncertain": [
+       "nachklemmen",
+       "Fürlaiten",
+       "Paymaisterei"
+      ]
+     },
+     {
+      "text": "Zerrungen , nichts aussgenomen vnz auf hewt",
+      "kind": "entry",
+      "uncertain": [
+       "Zerrungen",
+       "hewt"
+      ]
+     },
+     {
+      "text": "obgenanten tag , nach Innhaldung seins zedl",
+      "kind": "entry",
+      "uncertain": [
+       "obgenanten",
+       "Innhaldung",
+       "zedl"
+      ]
+     },
+     {
+      "text": "vnd bringt salvo sol[uci]one meins hern gnad schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "salvo",
+       "sol[uci]one"
+      ]
+     },
+     {
+      "text": "ist in ainer Suma nach Innhald seins bemelts",
+      "kind": "entry",
+      "uncertain": [
+       "Suma",
+       "Innhald",
+       "bemelts"
+      ]
+     },
+     {
+      "text": "Zedl viij C lxxxxiij Rh gld xiij ß vj d",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij C lxxxxiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "lxxxxiij"
+      ]
+     },
+     {
+      "text": "Daran hat er emphangen von dem bemelten",
+      "kind": "entry",
+      "uncertain": [
+       "emphangen",
+       "bemelten"
+      ]
+     },
+     {
+      "text": "Camermaister emphangn lx Rh gld die er verraitn sol",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lx",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Camermaister",
+       "emphangn",
+       "verraitn"
+      ]
+     },
+     {
+      "text": "Darnach ist jm meins hern gnad schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Darnach",
+       "jm"
+      ]
+     },
+     {
+      "text": "viij C xxxxiij Rh gld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij C xxxxiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "xxxxxiij"
+      ]
+     },
+     {
+      "text": "Daran Ziehend nach der Taylung hat jm derselbig",
+      "kind": "entry",
+      "uncertain": [
+       "Ziehend",
+       "Taylung",
+       "derselbig"
+      ]
+     },
+     {
+      "text": "neü Camermaister aufgericht iij C Rh gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij C",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "neü",
+       "Camermaister",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "Vber das alles ist meins hern gnad herrn hanns",
+      "kind": "entry",
+      "uncertain": [
+       "Vber",
+       "hanns"
+      ]
+     },
+     {
+      "text": "Drulsess schuldig v C xxxxiij Rh gld /",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "v C xxxxiij",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "Drulsess",
+       "xxxxxiij"
+      ]
+     },
+     {
+      "text": "Darnach hat jm meins hern gnad ainen schuldbrief",
+      "kind": "entry",
+      "uncertain": [
+       "Darnach",
+       "jm",
+       "schuldbrief"
+      ]
+     },
+     {
+      "text": "geben auf die nachstkomend Weichnechtzeit zebeczaln",
+      "kind": "entry",
+      "uncertain": [
+       "nachstkomend",
+       "Weichnechtzeit",
+       "zebeczaln"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "4r",
+    "lines": [
+     {
+      "text": "4",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Herhanns Drulsesz",
+  "Item mit herrn hannsn Drulsesz gerait in p[rese]ntia",
+  "p[ro]cerum , an freytag nach Sand Johanss tag",
+  "Decollacionis Anno d[omi]nj etc lxvij / von Schuld",
+  "wegen nach Innhald ains Schuldbrieffs / vnd",
+  "von Dintlein vnd auch darlegens wegen",
+  "nachklemmen , Fürlaiten , Paymaisterei vnd",
+  "Zerrungen , nichts aussgenomen vnz auf hewt",
+  "obgenanten tag , nach Innhaldung seins zedl",
+  "vnd bringt salvo sol[uci]one meins hern gnad schuldig",
+  "ist in ainer Suma nach Innhald seins bemelts",
+  "Zedl viij C lxxxxiij Rh gld xiij ß vj d",
+  "Daran hat er emphangen von dem bemelten",
+  "Camermaister emphangn lx Rh gld die er verraitn sol",
+  "Darnach ist jm meins hern gnad schuldig",
+  "viij C xxxxiij Rh gld",
+  "Daran Ziehend nach der Taylung hat jm derselbig",
+  "neü Camermaister aufgericht iij C Rh gld",
+  "Vber das alles ist meins hern gnad herrn hanns",
+  "Drulsess schuldig v C xxxxiij Rh gld /",
+  "Darnach hat jm meins hern gnad ainen schuldbrief",
+  "geben auf die nachstkomend Weichnechtzeit zebeczaln",
+  "4"
+ ]
+}

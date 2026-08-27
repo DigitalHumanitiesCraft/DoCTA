@@ -1,0 +1,401 @@
+{
+ "page": "pilot_rb2_p017",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 27.8,
+ "timestamp": "2026-08-27T06:58:39+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. [1]v",
+    "lines": [
+     {
+      "text": "Vlreich Gotfrid Bůrkhůter",
+      "kind": "rubric",
+      "uncertain": [
+       "Vlreich",
+       "Gotfrid",
+       "Bůrkhůter"
+      ]
+     },
+     {
+      "text": "Nõ am freytag Sandt Oswalds tag Anno domini",
+      "kind": "entry",
+      "uncertain": [
+       "Oswalds"
+      ]
+     },
+     {
+      "text": "dñi lxiij in presencia Lienharts von rottnekh Land-",
+      "kind": "entry",
+      "uncertain": [
+       "dñi",
+       "lxiij",
+       "Lienharts",
+       "rottnekh"
+      ]
+     },
+     {
+      "text": "mayster vnd wolfgangs Stiembergk Camerschreiber",
+      "kind": "entry",
+      "uncertain": [
+       "wolfgangs",
+       "Stiembergk"
+      ]
+     },
+     {
+      "text": "Ist gerait worden / mit Vlreichen Gotfrid meiner",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreichen",
+       "Gotfrid"
+      ]
+     },
+     {
+      "text": "gnadigen frawen Bůrkhůter",
+      "kind": "entry",
+      "uncertain": [
+       "Bůrkhůter"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Demselben Gotfridt Bůrkhůter ist man schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Gotfridt",
+       "Bůrkhůter"
+      ]
+     },
+     {
+      "text": "sein Soldt von zwain vergangen Jarn die sich",
+      "kind": "entry"
+     },
+     {
+      "text": "am Paschtag in der vasten naichstvergangen",
+      "kind": "entry",
+      "uncertain": [
+       "Paschtag"
+      ]
+     },
+     {
+      "text": "geendtt haben yeds Jar — xij Rh gld facit",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "xxiiij Rh gld thuet in muencz — xj m̃ iiij ß viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xj",
+       "unit": "m̃"
+      },
+      "uncertain": [
+       "m̃"
+      ]
+     },
+     {
+      "text": "Daran hat er von herrn Benedict dem alten",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict"
+      ]
+     },
+     {
+      "text": "Cammermaister emphangen iij gld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "gld"
+      }
+     },
+     {
+      "text": "Demnach ist man demselben {Gotfriden}",
+      "kind": "entry",
+      "uncertain": [
+       "Gotfriden"
+      ]
+     },
+     {
+      "text": "schuldig viij m̃ iiij ß x d ist durch mich",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "m̃"
+      },
+      "uncertain": [
+       "viij",
+       "m̃"
+      ]
+     },
+     {
+      "text": "zalt",
+      "kind": "entry"
+     }
+    ]
+   },
+   {
+    "label": "17r",
+    "lines": [
+     {
+      "text": "17",
+      "kind": "foliation"
+     },
+     {
+      "text": "Paul liechtlammer",
+      "kind": "rubric",
+      "uncertain": [
+       "Paul",
+       "liechtlammer"
+      ]
+     },
+     {
+      "text": "Nō Anno die ut pñtibꝫ quibꝫsūpͣ Ist gerait worden",
+      "kind": "entry",
+      "uncertain": [
+       "Nō",
+       "pñtibꝫ",
+       "quibꝫsūpͣ",
+       "gerait",
+       "worden"
+      ]
+     },
+     {
+      "text": "mit pauln liechtlammer von seins salds wegen",
+      "kind": "entry",
+      "uncertain": [
+       "pauln",
+       "liechtlammer",
+       "salds"
+      ]
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "meins herrn gnad ist demselben pauln liechtlammer",
+      "kind": "entry",
+      "uncertain": [
+       "demselben",
+       "pauln",
+       "liechtlammer"
+      ]
+     },
+     {
+      "text": "schuldig sein sald von viij jarn, die sich zu",
+      "kind": "entry",
+      "uncertain": [
+       "sald",
+       "viij",
+       "jarn"
+      ]
+     },
+     {
+      "text": "den nagstkomenden weichnachten ennden werd",
+      "kind": "entry",
+      "uncertain": [
+       "nagstkomenden",
+       "weichnachten",
+       "ennden",
+       "werd"
+      ]
+     },
+     {
+      "text": "all jar xxj ℔ gld facit — — jᶜ lxviij ℔ Bringt",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "j lxviij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "xxj",
+       "Bringt"
+      ]
+     },
+     {
+      "text": "in mūncz jᶜ iij ℔ — xliiij mr viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "j iij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "mūncz",
+       "iij",
+       "xliiij",
+       "mr",
+       "viij"
+      ]
+     },
+     {
+      "text": "It(em)",
+      "kind": "marginal"
+     },
+     {
+      "text": "So ist meins herrn gnad demselben pauln",
+      "kind": "entry",
+      "uncertain": [
+       "pauln"
+      ]
+     },
+     {
+      "text": "schuldig lxxv ducatn und ungrischen gld, die er sein",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxv",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "lxxv",
+       "ducatn",
+       "ungrischen"
+      ]
+     },
+     {
+      "text": "gnaden zu der Newnstat durch payern berweys",
+      "kind": "entry",
+      "uncertain": [
+       "Newnstat",
+       "payern",
+       "berweys"
+      ]
+     },
+     {
+      "text": "Paternstains, und wolfgang publinger, so sein",
+      "kind": "entry",
+      "uncertain": [
+       "Paternstains",
+       "wolfgang",
+       "publinger"
+      ]
+     },
+     {
+      "text": "gnaden wegen, dargeliehen hat",
+      "kind": "entry",
+      "uncertain": [
+       "dargeliehen"
+      ]
+     },
+     {
+      "text": "Sm̃a bis seins salds und darglichen",
+      "kind": "sum",
+      "uncertain": [
+       "Sm̃a",
+       "salds",
+       "darglichen"
+      ]
+     },
+     {
+      "text": "gelts facit lxxx ungrisch gld und xliiij mr",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxx",
+       "unit": "gld"
+      },
+      "uncertain": [
+       "lxxx",
+       "ungrisch",
+       "xliiij",
+       "mr"
+      ]
+     },
+     {
+      "text": "und viij d pr̃",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "viij",
+       "pr̃"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Vlreich Gotfrid Bůrkhůter",
+  "Nõ am freytag Sandt Oswalds tag Anno domini",
+  "dñi lxiij in presencia Lienharts von rottnekh Land-",
+  "mayster vnd wolfgangs Stiembergk Camerschreiber",
+  "Ist gerait worden / mit Vlreichen Gotfrid meiner",
+  "gnadigen frawen Bůrkhůter",
+  "Item",
+  "Demselben Gotfridt Bůrkhůter ist man schuldig",
+  "sein Soldt von zwain vergangen Jarn die sich",
+  "am Paschtag in der vasten naichstvergangen",
+  "geendtt haben yeds Jar — xij Rh gld facit",
+  "xxiiij Rh gld thuet in muencz — xj m̃ iiij ß viij d",
+  "Daran hat er von herrn Benedict dem alten",
+  "Cammermaister emphangen iij gld",
+  "Demnach ist man demselben {Gotfriden}",
+  "schuldig viij m̃ iiij ß x d ist durch mich",
+  "zalt",
+  "17",
+  "Paul liechtlammer",
+  "Nō Anno die ut pñtibꝫ quibꝫsūpͣ Ist gerait worden",
+  "mit pauln liechtlammer von seins salds wegen",
+  "It(em)",
+  "meins herrn gnad ist demselben pauln liechtlammer",
+  "schuldig sein sald von viij jarn, die sich zu",
+  "den nagstkomenden weichnachten ennden werd",
+  "all jar xxj ℔ gld facit — — jᶜ lxviij ℔ Bringt",
+  "in mūncz jᶜ iij ℔ — xliiij mr viij d",
+  "It(em)",
+  "So ist meins herrn gnad demselben pauln",
+  "schuldig lxxv ducatn und ungrischen gld, die er sein",
+  "gnaden zu der Newnstat durch payern berweys",
+  "Paternstains, und wolfgang publinger, so sein",
+  "gnaden wegen, dargeliehen hat",
+  "Sm̃a bis seins salds und darglichen",
+  "gelts facit lxxx ungrisch gld und xliiij mr",
+  "und viij d pr̃"
+ ]
+}
