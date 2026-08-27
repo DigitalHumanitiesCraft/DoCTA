@@ -89,6 +89,8 @@
             <button type="button" class="view-toggle__btn" id="btn-view-tei" aria-pressed="false"
                     title="TEI P5 encoding of the whole document">TEI</button>
           </div>
+          <button type="button" class="review-toggle" id="btn-review" aria-pressed="false"
+                  title="Review mode: correct lines and record a decision for this page">Review</button>
           <span class="badge text-bg-warning" id="draft-badge" hidden>Unrevised draft</span>
           <a class="tei-download" id="tei-download" href="data/tei/" download hidden>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.75 7.25 8 10.5l3.25-3.25M2.5 13h11"/></svg>
@@ -98,6 +100,25 @@
           </select>
         </div>
         <div id="doc-meta" class="doc-meta" hidden></div>
+        <div id="review-bar" class="review-bar" hidden>
+          <label class="review-bar__label" for="review-initials">Reviewer</label>
+          <input type="text" class="review-bar__initials" id="review-initials" maxlength="4"
+                 size="4" autocomplete="off" spellcheck="false"
+                 aria-label="Reviewer initials, two to four characters"
+                 title="Two to four characters. Required before a decision is stored.">
+          <span class="viewer-bar-sep" aria-hidden="true"></span>
+          <div class="view-toggle" role="group" aria-label="Decision for this page">
+            <button type="button" class="view-toggle__btn" id="btn-status-reviewed" aria-pressed="false"
+                    title="Page reviewed (gesichtet)">Reviewed</button>
+            <button type="button" class="view-toggle__btn" id="btn-status-approved" aria-pressed="false"
+                    title="Page approved (abgenommen). Approved implies reviewed.">Approved</button>
+          </div>
+          <span class="review-bar__hint" id="review-hint"></span>
+          <button type="button" class="review-btn" id="btn-review-export"
+                  title="Download the stored decisions of this document as JSON for the pipeline">Export decisions</button>
+          <button type="button" class="review-btn" id="btn-review-clear"
+                  title="Remove the stored decision and all line corrections of this page">Clear page</button>
+        </div>
         <div id="transcription-container">
           <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
         </div>
@@ -418,6 +439,283 @@
       return n.startsWith('us_') ? n : `fol. ${n}`;
     }
 
+    // === Curation view ===
+    // Decisions are made in the browser and live in localStorage per document.
+    // They leave through an explicit JSON export that the pipeline ingests; the
+    // site itself is static and writes nothing back.
+    const REVIEWER_KEY = 'docta-review-reviewer';
+    const STATUS_LABEL = { gesichtet: 'Reviewed', abgenommen: 'Approved' };
+    let reviewMode = false;
+
+    const reviewKey = (docId) => `docta-review-${docId}`;
+    const today = () => new Date().toISOString().slice(0, 10);
+
+    // Storage may be unavailable (private mode, blocked site data) or full; the
+    // view stays functional and simply carries no stored state.
+    function lsGet(key) {
+      try { return window.localStorage.getItem(key); } catch { return null; }
+    }
+
+    function lsSet(key, value) {
+      try { window.localStorage.setItem(key, value); return true; } catch { return false; }
+    }
+
+    function lsRemove(key) {
+      try { window.localStorage.removeItem(key); } catch { /* nothing stored */ }
+    }
+
+    function currentPageNr() {
+      return currentDoc ? currentDoc.pages[currentPage]?.pageNr : null;
+    }
+
+    function loadReview(docId) {
+      const raw = lsGet(reviewKey(docId));
+      if (!raw) return null;
+      let data;
+      try { data = JSON.parse(raw); } catch { return null; }
+      if (!data || typeof data !== 'object' || typeof data.pages !== 'object' || !data.pages) return null;
+      return data;
+    }
+
+    function reviewStore() {
+      const docId = Number(currentDoc.docId);
+      const stored = loadReview(docId);
+      if (stored) return stored;
+      return { docId, reviewer: initialsValue(), pages: {} };
+    }
+
+    function saveReview(store) {
+      lsSet(reviewKey(store.docId), JSON.stringify(store));
+    }
+
+    function reviewPage(pageNr) {
+      if (!currentDoc || pageNr == null) return null;
+      const store = loadReview(Number(currentDoc.docId));
+      const page = store?.pages?.[String(pageNr)];
+      return page && typeof page === 'object' ? page : null;
+    }
+
+    function ensurePage(store, pageNr) {
+      const key = String(pageNr);
+      const page = store.pages[key];
+      if (page && typeof page === 'object') {
+        if (!Array.isArray(page.lines)) page.lines = [];
+        if (!('status' in page)) page.status = null;
+        return page;
+      }
+      store.pages[key] = { status: null, date: today(), lines: [] };
+      return store.pages[key];
+    }
+
+    // A page entry without a decision and without corrections carries nothing
+    function prunePage(store, pageNr) {
+      const key = String(pageNr);
+      const page = store.pages[key];
+      if (page && !page.status && (!page.lines || !page.lines.length)) delete store.pages[key];
+    }
+
+    // lineId to correction record, for the lines of one page
+    function reviewCorrections(pageNr) {
+      const map = new Map();
+      const page = reviewPage(pageNr);
+      if (!page || !Array.isArray(page.lines)) return map;
+      for (const line of page.lines) {
+        if (line && typeof line.id === 'string' && typeof line.corrected === 'string') {
+          map.set(line.id, line);
+        }
+      }
+      return map;
+    }
+
+    const initialsInput = document.getElementById('review-initials');
+    const reviewBar = document.getElementById('review-bar');
+    const btnReview = document.getElementById('btn-review');
+    const btnStatusReviewed = document.getElementById('btn-status-reviewed');
+    const btnStatusApproved = document.getElementById('btn-status-approved');
+    const reviewHint = document.getElementById('review-hint');
+
+    function initialsValue() {
+      return initialsInput.value.trim();
+    }
+
+    function requireInitials() {
+      if (initialsValue().length >= 2) return true;
+      initialsInput.classList.add('is-missing');
+      initialsInput.focus();
+      reviewHint.textContent = 'Enter two to four initials before recording a decision.';
+      return false;
+    }
+
+    function setStatus(next) {
+      if (!currentDoc || viewMode !== 'synopsis') return;
+      if (!requireInitials()) return;
+      const pageNr = currentPageNr();
+      if (pageNr == null) return;
+      const store = reviewStore();
+      const page = ensurePage(store, pageNr);
+      // The vocabulary is ordered, "abgenommen" is stored alone and implies reviewed
+      page.status = page.status === next ? null : next;
+      page.date = today();
+      store.reviewer = initialsValue();
+      prunePage(store, pageNr);
+      saveReview(store);
+      syncReviewUI();
+    }
+
+    function clearReviewPage() {
+      if (!currentDoc) return;
+      const pageNr = currentPageNr();
+      if (pageNr == null) return;
+      const store = loadReview(Number(currentDoc.docId));
+      if (!store) return;
+      delete store.pages[String(pageNr)];
+      saveReview(store);
+      renderTranscription(currentDoc, pageNr);
+      syncReviewUI();
+    }
+
+    function exportReview() {
+      if (!currentDoc) return;
+      const docId = Number(currentDoc.docId);
+      const store = loadReview(docId) || { docId, reviewer: initialsValue(), pages: {} };
+      const payload = { ...store, exported: new Date().toISOString(), source: 'docta-viewer' };
+      const url = URL.createObjectURL(
+        new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `review-${docId}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      reviewHint.textContent = 'Exported. Hand the file to the pipeline to ingest it.';
+    }
+
+    // The chip states a local decision, so it names its own reach in the tooltip
+    function updateReviewChip() {
+      const meta = document.getElementById('doc-meta');
+      meta.querySelector('#review-chip')?.remove();
+      const page = viewMode === 'synopsis' ? reviewPage(currentPageNr()) : null;
+      if (!page || !page.status) return;
+      const store = loadReview(Number(currentDoc.docId));
+      const who = (store && typeof store.reviewer === 'string' && store.reviewer) || '??';
+      const chip = document.createElement('span');
+      chip.id = 'review-chip';
+      chip.className = 'prov-chip prov-chip--review';
+      chip.textContent = `${STATUS_LABEL[page.status] || 'Reviewed'} · ${who}`;
+      chip.title = `Decision by ${who} on ${page.date}, held in this browser only. ` +
+                   'It is local until it is exported and ingested by the pipeline.';
+      meta.appendChild(chip);
+      meta.hidden = false;
+    }
+
+    // Editable lines get a tab stop only while review mode is on
+    function applyReviewMode() {
+      const editable = reviewMode && viewMode === 'synopsis';
+      document.body.dataset.review = editable ? 'on' : 'off';
+      for (const el of document.querySelectorAll(
+        '.transcription__line[data-line-id]:not(.transcription__line--folio)')) {
+        el.tabIndex = editable ? 0 : -1;
+      }
+    }
+
+    function syncReviewUI() {
+      const isSynopsis = viewMode === 'synopsis';
+      btnReview.setAttribute('aria-pressed', String(reviewMode));
+      btnReview.disabled = !isSynopsis;
+      reviewBar.hidden = !(reviewMode && isSynopsis);
+      const page = isSynopsis ? reviewPage(currentPageNr()) : null;
+      const status = page?.status || null;
+      btnStatusReviewed.setAttribute('aria-pressed',
+        String(status === 'gesichtet' || status === 'abgenommen'));
+      btnStatusApproved.setAttribute('aria-pressed', String(status === 'abgenommen'));
+      if (!reviewBar.hidden && !reviewHint.textContent) {
+        reviewHint.textContent = 'Click a line to correct it.';
+      }
+      applyReviewMode();
+      updateReviewChip();
+    }
+
+    function setReviewMode(on) {
+      reviewMode = on;
+      reviewHint.textContent = '';
+      syncReviewUI();
+      if (on && !reviewBar.hidden && initialsValue().length < 2) initialsInput.focus();
+    }
+
+    function commitCorrection(lineEl, rawValue) {
+      const id = lineEl.dataset.lineId;
+      const pageNr = currentPageNr();
+      if (!id || pageNr == null) return;
+      const original = lineEl.dataset.original ?? '';
+      const value = rawValue.trim();
+      const store = reviewStore();
+      const page = ensurePage(store, pageNr);
+      const idx = page.lines.findIndex(l => l && l.id === id);
+      // An emptied line is treated as a withdrawn correction; a blank reading is
+      // not expressible here and would be indistinguishable from a mis-click
+      if (value === original || value === '') {
+        if (idx < 0) return;
+        page.lines.splice(idx, 1);
+      } else if (idx >= 0) {
+        page.lines[idx].corrected = value;
+      } else {
+        page.lines.push({ id, original, corrected: value });
+      }
+      page.date = today();
+      if (initialsValue().length >= 2) store.reviewer = initialsValue();
+      prunePage(store, pageNr);
+      saveReview(store);
+      renderTranscription(currentDoc, pageNr);
+      syncReviewUI();
+      lineElFor(id)?.focus({ preventScroll: true });
+    }
+
+    function beginEdit(lineEl) {
+      if (!reviewMode || viewMode !== 'synopsis') return;
+      if (!lineEl || lineEl.classList.contains('transcription__line--folio')) return;
+      if (!requireInitials()) return;
+      const span = lineEl.querySelector('.transcription__line-text');
+      if (!span || lineEl.querySelector('.transcription__line-edit')) return;
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'transcription__line-edit';
+      input.value = span.textContent;
+      input.setAttribute('aria-label', 'Correct this transcription line');
+      let settled = false;
+      const finish = (commit) => {
+        if (settled) return;
+        settled = true;
+        const value = input.value;
+        input.remove();
+        span.hidden = false;
+        if (commit) commitCorrection(lineEl, value);
+        else lineEl.focus({ preventScroll: true });
+      };
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); finish(true); }
+        else if (e.key === 'Escape') { e.preventDefault(); finish(false); }
+      });
+      input.addEventListener('blur', () => finish(true));
+      span.hidden = true;
+      span.after(input);
+      input.focus();
+      input.select();
+    }
+
+    btnReview.addEventListener('click', () => setReviewMode(!reviewMode));
+    btnStatusReviewed.addEventListener('click', () => setStatus('gesichtet'));
+    btnStatusApproved.addEventListener('click', () => setStatus('abgenommen'));
+    document.getElementById('btn-review-export').addEventListener('click', exportReview);
+    document.getElementById('btn-review-clear').addEventListener('click', clearReviewPage);
+
+    initialsInput.value = lsGet(REVIEWER_KEY) || '';
+    initialsInput.addEventListener('input', () => {
+      initialsInput.classList.remove('is-missing');
+      lsSet(REVIEWER_KEY, initialsValue());
+    });
+
     function renderTranscription(doc, pageNr) {
       const container = document.getElementById('transcription-container');
       const page = doc.pages.find(p => p.pageNr === pageNr);
@@ -446,6 +744,10 @@
 
       // The line id keys the coupling with the image overlay; tabindex -1 lets a
       // zone click move focus to the line without adding a tab stop per line
+      // A stored correction replaces the text of its line; it is bound to the
+      // original it was made against, so a changed export drops it silently
+      const corrections = reviewCorrections(pageNr);
+
       let html = '<div class="transcription">';
       for (const region of page.regions) {
         for (const line of region.lines) {
@@ -455,18 +757,25 @@
           if (fol) {
             html += `<div class="transcription__line transcription__line--folio"${key}>` +
                     `<span class="transcription__line-nr">${lineNr}</span>` +
-                    `<span>${escapeHTML(line.text)}</span></div>`;
+                    `<span class="transcription__line-text">${escapeHTML(line.text)}</span></div>`;
             continue;
           }
-          let text = escapeHTML(line.text);
-          if (isDemo) {
+          const stored = line.id ? corrections.get(line.id) : null;
+          const corr = stored && stored.original === line.text ? stored : null;
+          let text = escapeHTML(corr ? corr.corrected : line.text);
+          if (isDemo && !corr) {
             for (const [key, ent] of entityMap) {
               const regex = new RegExp(`(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
               const tip = `${ent.normalized || ent.text} (LLM extraction, unverified)`;
               text = text.replace(regex, `<span class="entity entity--${ent.type}" title="${escapeAttr(tip)}">\$1</span>`);
             }
           }
-          html += `<div class="transcription__line"${key}><span class="transcription__line-nr">${lineNr}</span><span>${text}</span></div>`;
+          const mark = corr ? ' transcription__line--corrected' : '';
+          const title = corr ? ` title="${escapeAttr(`Original: ${line.text}`)}"` : '';
+          html += `<div class="transcription__line${mark}"${key}${title}` +
+                  ` data-original="${escapeAttr(line.text)}">` +
+                  `<span class="transcription__line-nr">${lineNr}</span>` +
+                  `<span class="transcription__line-text">${text}</span></div>`;
         }
       }
       html += '</div>';
@@ -474,6 +783,7 @@
       linkedLineId = null;
       container.innerHTML = html;
       container.scrollTop = 0;
+      applyReviewMode();
     }
 
     // Reading mode: the whole document as one text, without line numbers
@@ -570,11 +880,12 @@
       currentPage = clampPage(pageNr);
       updatePager();
       syncParams();
-      if (viewMode !== 'synopsis') return;
+      if (viewMode !== 'synopsis') { syncReviewUI(); return; }
 
       const page = currentDoc.pages[currentPage];
       loadImage(page.iiif);
       renderTranscription(currentDoc, page.pageNr);
+      syncReviewUI();
     }
 
     // Renders whatever the current mode shows, from the page the mode still holds
@@ -585,6 +896,7 @@
       syncParams();
       if (viewMode === 'reading') renderReading(currentDoc);
       else renderTEI(currentDoc.docId);
+      syncReviewUI();
     }
 
     const VIEWS = ['synopsis', 'reading', 'tei'];
@@ -610,6 +922,7 @@
 
       if (!currentDoc) {
         setParams({ view: isSynopsis ? '' : viewMode });
+        syncReviewUI();
         return;
       }
       if (pageNr !== undefined) currentPage = clampPage(pageNr);
@@ -658,7 +971,19 @@
     const transcriptionContainer = document.getElementById('transcription-container');
     transcriptionContainer.addEventListener('click', (e) => {
       const mark = e.target.closest('.reading-page__mark');
-      if (mark) setView('synopsis', Number(mark.dataset.index));
+      if (mark) { setView('synopsis', Number(mark.dataset.index)); return; }
+      if (!reviewMode || e.target.closest('.transcription__line-edit')) return;
+      beginEdit(e.target.closest('.transcription__line[data-line-id]'));
+    });
+
+    // Enter opens the line under the caret for correction; the input handles the rest
+    transcriptionContainer.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' || !reviewMode) return;
+      if (e.target.closest('.transcription__line-edit')) return;
+      const line = e.target.closest('.transcription__line[data-line-id]');
+      if (!line) return;
+      e.preventDefault();
+      beginEdit(line);
     });
 
     // Transcription to image: hover or focus on a line lights up its zone
