@@ -5,6 +5,14 @@
       <titleStmt>
         <title type="main">Inventare des Schlosses Fragenstein bei Zirl</title>
         <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 125.1</title>
+        <respStmt xml:id="resp-transkribus-layer">
+          <resp>Automated text recognition layer from Transkribus, unrevised</resp>
+          <name>Transkribus</name>
+        </respStmt>
+        <respStmt xml:id="resp-tei-generation">
+          <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
+          <name>pipeline/build_tei.py (sha256 5861f06270c4)</name>
+        </respStmt>
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
@@ -35,7 +43,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The text of this file is unrevised machine transcription. It was produced by a vision-language model reading the Transkribus facsimiles and has not been reviewed by an editor, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>The text of this file is unrevised machine transcription. It was produced by automated text recognition and has not been reviewed, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
       </editorialDecl>
       <classDecl>
         <taxonomy xml:id="docta-category">
@@ -54,7 +62,9 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-08-27">Generated from the Transkribus export; unrevised.</change>
+      <change when="2026-08-27" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
+      <change n="transcription-summary" status="machine-unrevised">Transcription stream (state): machine-unrevised</change>
+      <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>
   </teiHeader>
   <facsimile>

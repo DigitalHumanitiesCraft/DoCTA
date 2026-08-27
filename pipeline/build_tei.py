@@ -7,6 +7,7 @@ honest about the fact that the text is unrevised machine transcription.
 Data flow (repo-local only, no network):
   docs/data/source_mapping.json      matched CSV entry <-> Transkribus doc
   docs/data/sources.json             archival metadata (shelfmark, title, dating)
+  docs/data/transkribus_status.json  page-status distribution (DONE = corrected)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
 
 Writes:
@@ -27,6 +28,10 @@ Design decisions:
   one <ab> per region and is the upgrade path once region types are curated.
   Nothing is invented: an element whose data is absent is omitted rather than
   filled with a placeholder.
+  Every file carries its work-step provenance in the header, following the ZBZ
+  pattern: one respStmt per step that actually happened, a digest pinning the
+  generating script version, and per-stream status entries in revisionDesc. A
+  responsibility is never declared for a step that did not run.
 
 Usage:
   python build_tei.py                  # write docs/data/tei/
@@ -35,6 +40,7 @@ Usage:
 """
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -74,6 +80,18 @@ VALID_XML = re.compile(
     "[^\t\n\r\x20-\ud7ff\ue000-\ufffd\U00010000-\U0010ffff]")
 
 
+# Correction state of the transcription stream, derived from the DONE page count
+# in Transkribus. The values are written verbatim into change/@status.
+CORRECTED, PARTLY, MACHINE = (
+    "human-corrected", "partly-corrected", "machine-unrevised")
+
+# resp-expert-verification joins this vocabulary when the curation view ships and
+# a scholarly verification is actually recorded per document; until then no file
+# may carry it, because a responsibility declaration asserts a step that ran.
+RESP_TRANSKRIBUS = "resp-transkribus-layer"
+RESP_GENERATION = "resp-tei-generation"
+
+
 def _load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -91,6 +109,81 @@ def _esc(text: str) -> str:
 
 def _att(text: str) -> str:
     return _esc(text).replace('"', "&quot;")
+
+
+def script_digest() -> str:
+    """First 12 hex of the sha256 over this script, pinning the code version.
+
+    The digest travels in the header, so a file states which generator version
+    produced it. Changing build_tei.py therefore changes every output file; that
+    is the point, and it is stable for an unchanged script.
+    """
+    return hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12]
+
+
+def _correction(done_pages: int | None, pages: int | None) -> str:
+    if not pages or not done_pages:
+        return MACHINE
+    return CORRECTED if done_pages >= pages else PARTLY
+
+
+def _resp_stmts(doc: dict, indent: str) -> list[str]:
+    """One respStmt per work step that actually happened for this document."""
+    state = doc["correction"]
+    if state == CORRECTED:
+        layer = ("Transcription corrected page by page and marked done in"
+                 " Transkribus (human-corrected layer)")
+        # The DONE marks were set by the editors of the Transkribus collection,
+        # not by DoCTA; the neutral role avoids a false attribution.
+        actor = "Editors of the Transkribus collection"
+    elif state == PARTLY:
+        layer = ("Transcription corrected page by page and marked done in"
+                 f" Transkribus for {doc['done_pages']} of {doc['pages']} pages"
+                 " (human-corrected layer); the remaining pages carry the"
+                 " unrevised automated recognition layer")
+        actor = "Editors of the Transkribus collection and Transkribus"
+    else:
+        layer = "Automated text recognition layer from Transkribus, unrevised"
+        actor = "Transkribus"
+    generation = ("Deterministic TEI generation from the Transkribus export,"
+                  " without editorial judgment")
+    steps = ((RESP_TRANSKRIBUS, layer, actor),
+             (RESP_GENERATION, generation,
+              f"pipeline/build_tei.py (sha256 {script_digest()})"))
+    out = []
+    for resp_id, resp, name in steps:
+        out += [f'{indent}<respStmt xml:id="{resp_id}">',
+                f"{indent}  <resp>{_esc(resp)}</resp>",
+                f"{indent}  <name>{_esc(name)}</name>",
+                f"{indent}</respStmt>"]
+    return out
+
+
+def _editorial_decl(state: str, indent: str) -> list[str]:
+    """State-dependent editorial declaration; never asserts a step that did not run."""
+    if state == MACHINE:
+        first = ("The text of this file is unrevised machine transcription."
+                 " It was produced by automated text recognition and has not"
+                 " been reviewed, so every reading is provisional and the file"
+                 " is not a citable edition text.")
+    elif state == PARTLY:
+        first = ("The transcription of this file is corrected in Transkribus"
+                 " for part of its pages and unrevised machine transcription"
+                 " for the rest; which pages are corrected is recorded in the"
+                 " page register. The TEI encoding is machine-generated and"
+                 " scholarly review within DoCTA is still pending, so the file"
+                 " is not yet a citable edition text.")
+    else:
+        first = ("The transcription of this file was corrected page by page in"
+                 " Transkribus and marked done there. The TEI encoding is"
+                 " machine-generated and scholarly review within DoCTA is still"
+                 " pending, so the file is not yet a citable edition text.")
+    second = ("Transcription is diplomatic: the wording and spelling of the"
+              " source are kept, nothing is normalised, expanded or corrected,"
+              " and lineation follows the source, one lb per written line.")
+    return [f"{indent}<editorialDecl>",
+            f"{indent}  <p>{first} {second}</p>",
+            f"{indent}</editorialDecl>"]
 
 
 def _origdate(dating: dict) -> str | None:
@@ -147,6 +240,7 @@ def _header(doc: dict, date: str) -> list[str]:
     if title:
         out.append(f'        <title type="main">{_esc(title)}</title>')
     out.append(f'        <title type="shelfmark">{_esc(signatur)}</title>')
+    out += _resp_stmts(doc, "        ")
     out += ["      </titleStmt>",
             "      <publicationStmt>",
             f"        <publisher>{_esc(PUBLISHER)}</publisher>",
@@ -171,16 +265,8 @@ def _header(doc: dict, date: str) -> list[str]:
             "        <p>DoCTA edits the inventories and account books of the"
             " Tyrolean territorial administration; this file is produced by the"
             " project's agentic edition pipeline from the Transkribus export.</p>",
-            "      </projectDesc>",
-            "      <editorialDecl>",
-            "        <p>The text of this file is unrevised machine transcription."
-            " It was produced by a vision-language model reading the Transkribus"
-            " facsimiles and has not been reviewed by an editor, so every reading"
-            " is provisional and the file is not a citable edition text."
-            " Transcription is diplomatic: the wording and spelling of the source"
-            " are kept, nothing is normalised, expanded or corrected, and"
-            " lineation follows the source, one lb per written line.</p>",
-            "      </editorialDecl>"]
+            "      </projectDesc>"]
+    out += _editorial_decl(doc["correction"], "      ")
     if category:
         out += ['      <classDecl>',
                 '        <taxonomy xml:id="docta-category">',
@@ -204,8 +290,12 @@ def _header(doc: dict, date: str) -> list[str]:
                 "      </textClass>"]
     out += ["    </profileDesc>",
             "    <revisionDesc>",
-            f'      <change when="{_att(date)}">Generated from the Transkribus'
-            " export; unrevised.</change>",
+            f'      <change when="{_att(date)}" who="#{RESP_GENERATION}">Generated'
+            " from the Transkribus export by the DoCTA pipeline.</change>",
+            f'      <change n="transcription-summary" status="{doc["correction"]}">'
+            f"Transcription stream (state): {doc['correction']}</change>",
+            '      <change n="tei-summary" status="machine-generated">TEI stream'
+            " (state): machine-generated</change>",
             "    </revisionDesc>",
             "  </teiHeader>"]
     return out
@@ -270,17 +360,25 @@ def _documents() -> list[dict]:
     mapping = _load(DATA / "source_mapping.json")["matched"]
     by_signatur = {s["signatur"]: s
                    for s in _load(DATA / "sources.json")}
+    # Same source as build_register.py: a DONE page is human-corrected in
+    # Transkribus, everything else is the automated recognition layer.
+    status_by_id = {d["id"]: d for d in _load(DATA / "transkribus_status.json")}
     docs: list[dict] = []
     for entry in mapping:
         if not entry.get("has_text"):
             continue
         source = by_signatur.get(entry["csv_signatur"]) or {}
+        status = status_by_id.get(entry["transkribus_id"]) or {}
+        done, pages = status.get("done_pages"), status.get("pages")
         docs.append({
             "docId": entry["transkribus_id"],
             "shelfmark": entry["csv_signatur"],
             "title": source.get("titel"),
             "category": source.get("kategorie"),
             "dating": source.get("datierung") or {},
+            "done_pages": done,
+            "pages": pages,
+            "correction": _correction(done, pages),
         })
     docs.sort(key=lambda d: d["docId"])
     return docs
