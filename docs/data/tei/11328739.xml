@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -253,29 +253,31 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328739-1"/>
+        <pb n="1" facs="#surface-11328739-1"/>
+        <ab xml:id="ab-11328739-1-r1">
           <milestone unit="folio" n="1r"/>
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328739-2"/>
+        <pb n="2" facs="#surface-11328739-2"/>
+        <ab xml:id="ab-11328739-2-r1">
           <milestone unit="folio" n="1v"/>
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328739-3"/>
+        <pb n="3" facs="#surface-11328739-3"/>
+        <ab xml:id="ab-11328739-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328739-4"/>
+        <pb n="4" facs="#surface-11328739-4"/>
+        <ab xml:id="ab-11328739-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328739-5"/>
+        <pb n="5" facs="#surface-11328739-5"/>
+        <ab xml:id="ab-11328739-5-r1">
           <milestone unit="folio" n="3r"/>
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11328739-6"/>
+        <pb n="6" facs="#surface-11328739-6"/>
+        <ab xml:id="ab-11328739-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11328739-6-r2">
           <lb facs="#zone-11328739-6-r2l1"/>Am erst(e)n in dem hind(er)n stub(e)l in des
           <lb facs="#zone-11328739-6-r2l2"/>torwart(e)ls haus ain tisch mit
           <lb facs="#zone-11328739-6-r2l3"/>ainer furpanck.
@@ -296,7 +298,11 @@
           <lb facs="#zone-11328739-6-r2l18"/>It(em) ain lange sideltruh(e)n nichz darin.
           <lb facs="#zone-11328739-6-r2l19"/>Ain hocher kast(e)n nichtz darinn.
           <lb facs="#zone-11328739-6-r2l20"/>Ain klaine beslagne truh(e)n nichtz darin.
+        </ab>
+        <ab xml:id="ab-11328739-6-r3">
           <lb facs="#zone-11328739-6-r3l1"/>Im stub(e)l im sneck(e)n.
+        </ab>
+        <ab xml:id="ab-11328739-6-r4">
           <lb facs="#zone-11328739-6-r4l1"/>It(em) ain tisch mit ain(em) pretspil und
           <lb facs="#zone-11328739-6-r4l2"/>schachzag(e)l.
           <lb facs="#zone-11328739-6-r4l3"/>It(em) ain gutschenpetl spanpet(e)l darauf
@@ -308,15 +314,21 @@
           <lb facs="#zone-11328739-6-r4l9"/>polst(er) und ain [..]golter.
           <lb facs="#zone-11328739-6-r4l10"/>Ain versperte truh(e)n.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11328739-7"/>
+        <pb n="7" facs="#surface-11328739-7"/>
+        <ab xml:id="ab-11328739-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11328739-7-r2">
           <lb facs="#zone-11328739-7-r2l1"/>It(em) ob(e)n in der kamer auf d(em) sneckh(e)n ain versperte
           <lb facs="#zone-11328739-7-r2l2"/>truh(e)n.
           <lb facs="#zone-11328739-7-r2l3"/>It(em) ain lĕre petstadt.
           <lb facs="#zone-11328739-7-r2l4"/>It(em) acht eyseine gewicht.
           <lb facs="#zone-11328739-7-r2l5"/>Ain klains versperts truch(e)l.
+        </ab>
+        <ab xml:id="ab-11328739-7-r3">
           <lb facs="#zone-11328739-7-r3l1"/>Zu Hasegk in d(er) oberen stuben.
+        </ab>
+        <ab xml:id="ab-11328739-7-r4">
           <lb facs="#zone-11328739-7-r4l1"/>It(em) zwai truh(e)l hat d(er) saltzmair lasß(e)n mach(e)n.
           <lb facs="#zone-11328739-7-r4l2"/>It(em) ain tisch mit ain(em) spilpret.
           <lb facs="#zone-11328739-7-r4l3"/>It(em) [.]drei tisch.
@@ -339,9 +351,11 @@
           <lb facs="#zone-11328739-7-r4l20"/>ain polst(er), ain kuß, ain golt(er).
           <lb facs="#zone-11328739-7-r4l21"/>Ain alt(er) sessel.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11328739-8"/>
+        <pb n="8" facs="#surface-11328739-8"/>
+        <ab xml:id="ab-11328739-8-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11328739-8-r2">
           <lb facs="#zone-11328739-8-r2l1"/>It(em) in d(er) grossen kamer ain kurze truh(e)n
           <lb facs="#zone-11328739-8-r2l2"/>darin etl(ich) golt(er), etlich par messer.
           <lb facs="#zone-11328739-8-r2l3"/>Ain kast(en) m(eines) g(nädigen) h(er)rn.
@@ -371,9 +385,11 @@
           <lb facs="#zone-11328739-8-r2l27"/>umbhang darin I pett, I polst(er),
           <lb facs="#zone-11328739-8-r2l28"/>II kuß.
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11328739-9"/>
+        <pb n="9" facs="#surface-11328739-9"/>
+        <ab xml:id="ab-11328739-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11328739-9-r2">
           <lb facs="#zone-11328739-9-r2l1"/>It(em) ain kast(en) mit werchzeug
           <lb facs="#zone-11328739-9-r2l2"/>darauf zwen golt(er).
           <lb facs="#zone-11328739-9-r2l3"/>It(em) ain spanpet darin ain pet,
@@ -402,9 +418,11 @@
           <lb facs="#zone-11328739-9-r2l26"/>Zu der capellen hat d(er) Kalb ain meßpuch.
           <lb facs="#zone-11328739-9-r2l27"/>Ain mesgwand mit s(ein)er zugehor.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11328739-10"/>
+        <pb n="10" facs="#surface-11328739-10"/>
+        <ab xml:id="ab-11328739-10-r1">
           <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab xml:id="ab-11328739-10-r2">
           <lb facs="#zone-11328739-10-r2l1"/>It(em) in d(er) kuch(e)l etlich zingeschir,
           <lb facs="#zone-11328739-10-r2l2"/>hultzin schussl(e)n, etlich kotin hăfen,
           <lb facs="#zone-11328739-10-r2l3"/>kell(e)n und pfann(e)n, kess(e)l und and(er)s
@@ -414,24 +432,24 @@
           <lb facs="#zone-11328739-10-r2l7"/>ain kuß, ain sidltruch(en).
           <lb facs="#zone-11328739-10-r2l8"/>It(em) in d(er) cam(er) daran zwai spanpet.
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11328739-11"/>
+        <pb n="11" facs="#surface-11328739-11"/>
+        <ab xml:id="ab-11328739-11-r1">
           <milestone unit="folio" n="6r"/>
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11328739-12"/>
+        <pb n="12" facs="#surface-11328739-12"/>
+        <ab xml:id="ab-11328739-12-r1">
           <milestone unit="folio" n="6v"/>
         </ab>
-        <ab>
-          <pb n="13" facs="#surface-11328739-13"/>
+        <pb n="13" facs="#surface-11328739-13"/>
+        <ab xml:id="ab-11328739-13-r1">
           <milestone unit="folio" n="7r"/>
         </ab>
-        <ab>
-          <pb n="14" facs="#surface-11328739-14"/>
+        <pb n="14" facs="#surface-11328739-14"/>
+        <ab xml:id="ab-11328739-14-r1">
           <milestone unit="folio" n="7v"/>
         </ab>
-        <ab>
-          <pb n="15" facs="#surface-11328739-15"/>
+        <pb n="15" facs="#surface-11328739-15"/>
+        <ab xml:id="ab-11328739-15-r1">
           <milestone unit="folio" n="8r"/>
         </ab>
       </div>

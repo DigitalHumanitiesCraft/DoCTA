@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -240,9 +240,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328744-1"/>
+        <pb n="1" facs="#surface-11328744-1"/>
+        <ab xml:id="ab-11328744-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328744-1-r2">
           <lb facs="#zone-11328744-1-r2l1"/>Vermérkt was ich Hainrích
           <lb facs="#zone-11328744-1-r2l2"/>Trůchsaß alz ich das schloß
           <lb facs="#zone-11328744-1-r2l3"/>Sigmundspurg inngenom(en) emphan¬
@@ -250,6 +252,8 @@
           <lb facs="#zone-11328744-1-r2l5"/>and(er)n ding(en) und das meim gne¬
           <lb facs="#zone-11328744-1-r2l6"/>dig(e)n herr(e)n herczoge Sigmŭnd etc.
           <lb facs="#zone-11328744-1-r2l7"/>zugehórt.
+        </ab>
+        <ab xml:id="ab-11328744-1-r3">
           <lb facs="#zone-11328744-1-r3l1"/>It(em) des ersten XLVII spieß¬
           <lb facs="#zone-11328744-1-r3l2"/>eisann, davon sind zechen zu
           <lb facs="#zone-11328744-1-r3l3"/>Sigm(un)dspŭrg bliben und die
@@ -267,9 +271,11 @@
           <lb facs="#zone-11328744-1-r3l15"/>It(em) VI hirßgehȗr(e)n.
           <lb facs="#zone-11328744-1-r3l16"/>It(em) etwevil geschnitens holcz zutisch(e)n.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328744-2"/>
+        <pb n="2" facs="#surface-11328744-2"/>
+        <ab xml:id="ab-11328744-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328744-2-r2">
           <lb facs="#zone-11328744-2-r2l1"/>It(em) LXXIIII trinkgleser klain
           <lb facs="#zone-11328744-2-r2l2"/>und groß.
           <lb facs="#zone-11328744-2-r2l3"/>I(tem) ain glesrein kopf.
@@ -294,9 +300,11 @@
           <lb facs="#zone-11328744-2-r2l22"/>I(tem) III pĕt.
           <lb facs="#zone-11328744-2-r2l23"/>I(tem) III põlster.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328744-3"/>
+        <pb n="3" facs="#surface-11328744-3"/>
+        <ab xml:id="ab-11328744-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328744-3-r2">
           <lb facs="#zone-11328744-3-r2l1"/>I(tem) II par herbein leilach.
           <lb facs="#zone-11328744-3-r2l2"/>I(tem) und I par rŭpfheins.
           <lb facs="#zone-11328744-3-r2l3"/>I(tem) VI schäffin rauch dek(e)n.
@@ -322,12 +330,18 @@
           <lb facs="#zone-11328744-3-r2l23"/>I(tem) I drifŭs.
           <lb facs="#zone-11328744-3-r2l24"/>I(tem) II hůlczin teŭfling.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328744-4"/>
+        <pb n="4" facs="#surface-11328744-4"/>
+        <ab xml:id="ab-11328744-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328744-4-r2">
           <lb facs="#zone-11328744-4-r2l1"/>It(em) XLI hŭlczein zůgscheib(e)n
           <lb facs="#zone-11328744-4-r2l2"/>underm dach.
+        </ab>
+        <ab xml:id="ab-11328744-4-r3">
           <lb facs="#zone-11328744-4-r3l1"/>Schießzŭg.
+        </ab>
+        <ab xml:id="ab-11328744-4-r4">
           <lb facs="#zone-11328744-4-r4l1"/>I(tem) zum erst(e)n II lãgl hauspheil.
           <lb facs="#zone-11328744-4-r4l2"/>It(em) ain lăgl mit VC m(inus) XI
           <lb facs="#zone-11328744-4-r4l3"/>pheil(e)n stȃchlein.
@@ -338,15 +352,19 @@
           <lb facs="#zone-11328744-4-r4l8"/>It(em) XII armbrŭst.
           <lb facs="#zone-11328744-4-r4l9"/>It(em) IIII windenn.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328744-5"/>
+        <pb n="5" facs="#surface-11328744-5"/>
+        <ab xml:id="ab-11328744-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11328744-5-r2">
           <lb facs="#zone-11328744-5-r2l1"/>Nota was mir Hainrich(e)n
           <lb facs="#zone-11328744-5-r2l2"/>Druchsãß der Reichart
           <lb facs="#zone-11328744-5-r2l3"/>am phintztag nach Mar¬
           <lb facs="#zone-11328744-5-r2l4"/>garethe auf das schloß
           <lb facs="#zone-11328744-5-r2l5"/>von eisenn und eisenwerch
           <lb facs="#zone-11328744-5-r2l6"/>geantwurt hat anno etc. LXIIo.
+        </ab>
+        <ab xml:id="ab-11328744-5-r3">
           <lb facs="#zone-11328744-5-r3l1"/>I(tem) X stukh stachl ungevar¬
           <lb facs="#zone-11328744-5-r3l2"/>lich ỹeds ain(er) span(n) lang.
           <lb facs="#zone-11328744-5-r3l3"/>I(tem) XII haw(e)n und pikhel.
@@ -364,9 +382,11 @@
           <lb facs="#zone-11328744-5-r3l15"/>zugehŏrn klain und groß.
           <lb facs="#zone-11328744-5-r3l16"/>I(tem) IIII mortterkell(e)n.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11328744-6"/>
+        <pb n="6" facs="#surface-11328744-6"/>
+        <ab xml:id="ab-11328744-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11328744-6-r2">
           <lb facs="#zone-11328744-6-r2l1"/>It(em) II groß eisennschleg(e)l.
           <lb facs="#zone-11328744-6-r2l2"/>I(tem) VIII eisenn wekh(e)n stain zeprech(e)n.
           <lb facs="#zone-11328744-6-r2l3"/>I(tem) I schloß und ain rig(e)l zu(m) tor.
@@ -390,22 +410,26 @@
           <lb facs="#zone-11328744-6-r2l21"/>I(tem) ain ur mit der stund glokh(e)n
           <lb facs="#zone-11328744-6-r2l22"/>die von Ŭmbst ist kom(m).
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11328744-7"/>
+        <pb n="7" facs="#surface-11328744-7"/>
+        <ab xml:id="ab-11328744-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11328744-7-r2">
           <lb facs="#zone-11328744-7-r2l1"/>It(em) ain zwai lãgl mit pŭchsen pŭlver
           <lb facs="#zone-11328744-7-r2l2"/>von Insprugk.
           <lb facs="#zone-11328744-7-r2l3"/>I(tem) II mẽssin hakh(e)n pŭchsenn.
           <lb facs="#zone-11328744-7-r2l4"/>I(tem) und II mödl darzu darinn
           <lb facs="#zone-11328744-7-r2l5"/>man die kŭgel geŭsset.
+        </ab>
+        <ab xml:id="ab-11328744-7-r3">
           <lb facs="#zone-11328744-7-r3l1"/>Zŭ(m) gezeŭgknŭs aller
           <lb facs="#zone-11328744-7-r3l2"/>v̑orgeschriben sache so hab
           <lb facs="#zone-11328744-7-r3l3"/>ich vorgen(anter) Drŭchsázz mein
           <lb facs="#zone-11328744-7-r3l4"/>aigenn insigl hie inn fũr¬
           <lb facs="#zone-11328744-7-r3l5"/>gĕdrŭckt.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11328744-8"/>
+        <pb n="8" facs="#surface-11328744-8"/>
+        <ab xml:id="ab-11328744-8-r1">
           <milestone unit="folio" n="4v"/>
         </ab>
       </div>

@@ -21,49 +21,178 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Item vermerkt den hausplunder",
-      "so Caspar Frech zw Frewndshaim",
-      "von Leonhart Melkhaimer an",
-      "suntag vor unnser liebem",
-      "Frawen tag zw Liechtmessen",
-      "im LXXVI jar emphanngen",
-      "hat auf geschefft meins",
-      "genedigen herren in gegen¬",
-      "burtigkait herren Hannsen",
-      "Schlosser pharrer im Myemigen,",
-      "herrn Andre Hagenawr",
-      "meins genedigen herrn caplan, herrn",
-      "Ulrichen Pauchsŏder gesellen",
-      "zw Umbst, Hannsen Tewffen¬",
-      "brünn richter zu Umbst,",
-      "Oswalden Schneider zw Ober¬",
-      "myemingen, Hannsen Prokhen",
-      "zw Schnekhnhausn, Marttan",
-      "Ranndolff und ander nacht¬",
-      "pauren mer.",
-      "Item am ersten ain schliefstain.",
-      "Ain keslin.",
-      "Ain badzuber.",
-      "IIII schãffer.",
-      "Ain protkorb.",
-      "II newe beschlagne reder.",
-      "Zwen knettzuber.",
-      "Ain mölchteren.",
-      "Ain prottafel.",
-      "Zwo ramen zw prot.",
-      "Ain schuselkrett.",
-      "Ain vischputtrich.",
-      "Ain grossen kasten.",
-      "Ain klain kasten.",
-      "Ain padvas verglast.",
-      "Ain wannen.",
-      "Ain dreÿfus.",
-      "Aind prandrädpell.",
-      "Ain gross pettstatt",
-      "fur mein genedigen herren",
-      "und da bei ain klaine",
-      "pettstat."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item vermerkt den hausplunder"
+      },
+      {
+       "id": "r2l2",
+       "text": "so Caspar Frech zw Frewndshaim"
+      },
+      {
+       "id": "r2l3",
+       "text": "von Leonhart Melkhaimer an"
+      },
+      {
+       "id": "r2l4",
+       "text": "suntag vor unnser liebem"
+      },
+      {
+       "id": "r2l5",
+       "text": "Frawen tag zw Liechtmessen"
+      },
+      {
+       "id": "r2l6",
+       "text": "im LXXVI jar emphanngen"
+      },
+      {
+       "id": "r2l7",
+       "text": "hat auf geschefft meins"
+      },
+      {
+       "id": "r2l8",
+       "text": "genedigen herren in gegen¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "burtigkait herren Hannsen"
+      },
+      {
+       "id": "r2l10",
+       "text": "Schlosser pharrer im Myemigen,"
+      },
+      {
+       "id": "r2l11",
+       "text": "herrn Andre Hagenawr"
+      },
+      {
+       "id": "r2l12",
+       "text": "meins genedigen herrn caplan, herrn"
+      },
+      {
+       "id": "r2l13",
+       "text": "Ulrichen Pauchsŏder gesellen"
+      },
+      {
+       "id": "r2l14",
+       "text": "zw Umbst, Hannsen Tewffen¬"
+      },
+      {
+       "id": "r2l15",
+       "text": "brünn richter zu Umbst,"
+      },
+      {
+       "id": "r2l16",
+       "text": "Oswalden Schneider zw Ober¬"
+      },
+      {
+       "id": "r2l17",
+       "text": "myemingen, Hannsen Prokhen"
+      },
+      {
+       "id": "r2l18",
+       "text": "zw Schnekhnhausn, Marttan"
+      },
+      {
+       "id": "r2l19",
+       "text": "Ranndolff und ander nacht¬"
+      },
+      {
+       "id": "r2l20",
+       "text": "pauren mer."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten ain schliefstain."
+      },
+      {
+       "id": "r3l2",
+       "text": "Ain keslin."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain badzuber."
+      },
+      {
+       "id": "r3l4",
+       "text": "IIII schãffer."
+      },
+      {
+       "id": "r3l5",
+       "text": "Ain protkorb."
+      },
+      {
+       "id": "r3l6",
+       "text": "II newe beschlagne reder."
+      },
+      {
+       "id": "r3l7",
+       "text": "Zwen knettzuber."
+      },
+      {
+       "id": "r3l8",
+       "text": "Ain mölchteren."
+      },
+      {
+       "id": "r3l9",
+       "text": "Ain prottafel."
+      },
+      {
+       "id": "r3l10",
+       "text": "Zwo ramen zw prot."
+      },
+      {
+       "id": "r3l11",
+       "text": "Ain schuselkrett."
+      },
+      {
+       "id": "r3l12",
+       "text": "Ain vischputtrich."
+      },
+      {
+       "id": "r3l13",
+       "text": "Ain grossen kasten."
+      },
+      {
+       "id": "r3l14",
+       "text": "Ain klain kasten."
+      },
+      {
+       "id": "r3l15",
+       "text": "Ain padvas verglast."
+      },
+      {
+       "id": "r3l16",
+       "text": "Ain wannen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Ain dreÿfus."
+      },
+      {
+       "id": "r3l18",
+       "text": "Aind prandrädpell."
+      },
+      {
+       "id": "r3l19",
+       "text": "Ain gross pettstatt"
+      },
+      {
+       "id": "r3l20",
+       "text": "fur mein genedigen herren"
+      },
+      {
+       "id": "r3l21",
+       "text": "und da bei ain klaine"
+      },
+      {
+       "id": "r3l22",
+       "text": "pettstat."
+      }
      ]
     }
    ]
@@ -88,38 +217,134 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item im zymmer ain bestatt",
-      "und ain pflug mit",
-      "seiner zuegehorung.",
-      "Ain gutten beschlagen wagen",
-      "mit aller zugehorung.",
-      "Ain peitelfas.",
-      "Ain milchkasten.",
-      "Ain prothanngen.",
-      "Ain futterkasten.",
-      "Ain schrodtpret.",
-      "Ain lers weinvass.",
-      "Ain beschlagne vischtruhen.",
-      "Item V pett mit kollischen ziechen.",
-      "III polster.",
-      "VIII kuss vier an ziechen.",
-      "IIII schlecht gŏlter.",
-      "IX rauch tegkhen.",
-      "X par leylachen schlecht",
-      "herrwein.",
-      "XX zynen schusel gross",
-      "und klain [.]III plan.",
-      "XVIII zynen täler in",
-      "ainer hultzen puchsen.",
-      "Zwo zwymãssig kandel.",
-      "Drey masskandel.",
-      "Ain seidel kändel.",
-      "III saltzvas.",
-      "Ain giesvas.",
-      "VI pleyen pecher.",
-      "Ain messein leichter.",
-      "Ain messein giespekkh."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item im zymmer ain bestatt"
+      },
+      {
+       "id": "r2l2",
+       "text": "und ain pflug mit"
+      },
+      {
+       "id": "r2l3",
+       "text": "seiner zuegehorung."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ain gutten beschlagen wagen"
+      },
+      {
+       "id": "r2l5",
+       "text": "mit aller zugehorung."
+      },
+      {
+       "id": "r2l6",
+       "text": "Ain peitelfas."
+      },
+      {
+       "id": "r2l7",
+       "text": "Ain milchkasten."
+      },
+      {
+       "id": "r2l8",
+       "text": "Ain prothanngen."
+      },
+      {
+       "id": "r2l9",
+       "text": "Ain futterkasten."
+      },
+      {
+       "id": "r2l10",
+       "text": "Ain schrodtpret."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain lers weinvass."
+      },
+      {
+       "id": "r2l12",
+       "text": "Ain beschlagne vischtruhen."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item V pett mit kollischen ziechen."
+      },
+      {
+       "id": "r2l14",
+       "text": "III polster."
+      },
+      {
+       "id": "r2l15",
+       "text": "VIII kuss vier an ziechen."
+      },
+      {
+       "id": "r2l16",
+       "text": "IIII schlecht gŏlter."
+      },
+      {
+       "id": "r2l17",
+       "text": "IX rauch tegkhen."
+      },
+      {
+       "id": "r2l18",
+       "text": "X par leylachen schlecht"
+      },
+      {
+       "id": "r2l19",
+       "text": "herrwein."
+      },
+      {
+       "id": "r2l20",
+       "text": "XX zynen schusel gross"
+      },
+      {
+       "id": "r2l21",
+       "text": "und klain [.]III plan."
+      },
+      {
+       "id": "r2l22",
+       "text": "XVIII zynen täler in"
+      },
+      {
+       "id": "r2l23",
+       "text": "ainer hultzen puchsen."
+      },
+      {
+       "id": "r2l24",
+       "text": "Zwo zwymãssig kandel."
+      },
+      {
+       "id": "r2l25",
+       "text": "Drey masskandel."
+      },
+      {
+       "id": "r2l26",
+       "text": "Ain seidel kändel."
+      },
+      {
+       "id": "r2l27",
+       "text": "III saltzvas."
+      },
+      {
+       "id": "r2l28",
+       "text": "Ain giesvas."
+      },
+      {
+       "id": "r2l29",
+       "text": "VI pleyen pecher."
+      },
+      {
+       "id": "r2l30",
+       "text": "Ain messein leichter."
+      },
+      {
+       "id": "r2l31",
+       "text": "Ain messein giespekkh."
+      }
      ]
     }
    ]
@@ -144,31 +369,106 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Ain messein gieskanndel.",
-      "V messein leichter",
-      "mit aim ror.",
-      "Ain messein leichter",
-      "mit dreyen roren.",
-      "Ain eyssen verzintten",
-      "leuchter mit dreyen",
-      "roren.",
-      "Zwen kessel.",
-      "Ain gatzen.",
-      "Ain pfeffer phanen.",
-      "V gros und klainer",
-      "eyssneÿn pfeffer phanen.",
-      "Ain tischtuch.",
-      "XIII hanndtucher.",
-      "VI prottücher.",
-      "Und auf geschãfft des",
-      "benantten meins genedigen",
-      "herrn von Osterreich etc.",
-      "hab ich Caspar Frech",
-      "auf dise inventari zetel",
-      "zw ennd diser geschrifft",
-      "mein aigen petschafft",
-      "gedrukht."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ain messein gieskanndel."
+      },
+      {
+       "id": "r2l2",
+       "text": "V messein leichter"
+      },
+      {
+       "id": "r2l3",
+       "text": "mit aim ror."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ain messein leichter"
+      },
+      {
+       "id": "r2l5",
+       "text": "mit dreyen roren."
+      },
+      {
+       "id": "r2l6",
+       "text": "Ain eyssen verzintten"
+      },
+      {
+       "id": "r2l7",
+       "text": "leuchter mit dreyen"
+      },
+      {
+       "id": "r2l8",
+       "text": "roren."
+      },
+      {
+       "id": "r2l9",
+       "text": "Zwen kessel."
+      },
+      {
+       "id": "r2l10",
+       "text": "Ain gatzen."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain pfeffer phanen."
+      },
+      {
+       "id": "r2l12",
+       "text": "V gros und klainer"
+      },
+      {
+       "id": "r2l13",
+       "text": "eyssneÿn pfeffer phanen."
+      },
+      {
+       "id": "r2l14",
+       "text": "Ain tischtuch."
+      },
+      {
+       "id": "r2l15",
+       "text": "XIII hanndtucher."
+      },
+      {
+       "id": "r2l16",
+       "text": "VI prottücher."
+      },
+      {
+       "id": "r3l1",
+       "text": "Und auf geschãfft des"
+      },
+      {
+       "id": "r3l2",
+       "text": "benantten meins genedigen"
+      },
+      {
+       "id": "r3l3",
+       "text": "herrn von Osterreich etc."
+      },
+      {
+       "id": "r3l4",
+       "text": "hab ich Caspar Frech"
+      },
+      {
+       "id": "r3l5",
+       "text": "auf dise inventari zetel"
+      },
+      {
+       "id": "r3l6",
+       "text": "zw ennd diser geschrifft"
+      },
+      {
+       "id": "r3l7",
+       "text": "mein aigen petschafft"
+      },
+      {
+       "id": "r3l8",
+       "text": "gedrukht."
+      }
      ]
     }
    ]
@@ -193,10 +493,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "In die cantzlei. Inv̊entari",
-      "zedlen von Freuntshaim",
-      "anno etc. LXXVI."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In die cantzlei. Inv̊entari"
+      },
+      {
+       "id": "r2l2",
+       "text": "zedlen von Freuntshaim"
+      },
+      {
+       "id": "r2l3",
+       "text": "anno etc. LXXVI."
+      }
      ]
     }
    ]

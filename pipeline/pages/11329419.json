@@ -21,39 +21,138 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermĕrkt an sant Margreten",
-      "tag anno Domini etc. LXII ist",
-      "gẽn Hẽrtemberg geantwurt",
-      "word(e)n von dem hawsrat",
-      "des und(er)n haw̆ß zu Sigm(un)dsp(ur)g",
-      "alles das so dan(n) hȋenach",
-      "ȋst berŭrt das der Mang Steger",
-      "als selbss auf die haus Hertenberg",
-      "enpfangen hat.",
-      "It(em) am erst(e)n IIII pët mit gestreift(e)n",
-      "ziech(e)n.",
-      "I(tem) und III pŏlster mit gestreift(e)n",
-      "ziech(e)n.",
-      "I(tem) II küß mit gestreȋften ziech(e)n.",
-      "I(tem) IIII pŏlster mit weissen zwȋlchin",
-      "zȋechen.",
-      "I(tem) und aȋn pĕt mit ain(er) zwilcheȋn",
-      "ziech(e)n.",
-      "I(tem) VI par hẽrbeȋn leilach.",
-      "I(tem) VI rauch dẽkenn schãffeȋn.",
-      "I(tem) II ungrisch kocz(e)n.",
-      "I(tem) II gestŭkte deklach.",
-      "I(tem) centrȋng gedigen fleȋsch",
-      "rindfleisch, IC zentring.",
-      "I(tem) zinskeß L.",
-      "I(tem) arbais und ponen VI stẽr.",
-      "I(tem) I vaß vol mit rogkein mel.",
-      "I(tem) I vaß mit [....]",
-      "ro[..]ter gerst XXVII.",
-      "I(tem) XII ster rogk(e)n.",
-      "I(tem) II zȋneȋn leŭchter.",
-      "I(tem) I eisneȋn lutschẽrn."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermĕrkt an sant Margreten"
+      },
+      {
+       "id": "r2l2",
+       "text": "tag anno Domini etc. LXII ist"
+      },
+      {
+       "id": "r2l3",
+       "text": "gẽn Hẽrtemberg geantwurt"
+      },
+      {
+       "id": "r2l4",
+       "text": "word(e)n von dem hawsrat"
+      },
+      {
+       "id": "r2l5",
+       "text": "des und(er)n haw̆ß zu Sigm(un)dsp(ur)g"
+      },
+      {
+       "id": "r2l6",
+       "text": "alles das so dan(n) hȋenach"
+      },
+      {
+       "id": "r2l7",
+       "text": "ȋst berŭrt das der Mang Steger"
+      },
+      {
+       "id": "r2l8",
+       "text": "als selbss auf die haus Hertenberg"
+      },
+      {
+       "id": "r2l9",
+       "text": "enpfangen hat."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) am erst(e)n IIII pët mit gestreift(e)n"
+      },
+      {
+       "id": "r3l2",
+       "text": "ziech(e)n."
+      },
+      {
+       "id": "r3l3",
+       "text": "I(tem) und III pŏlster mit gestreift(e)n"
+      },
+      {
+       "id": "r3l4",
+       "text": "ziech(e)n."
+      },
+      {
+       "id": "r3l5",
+       "text": "I(tem) II küß mit gestreȋften ziech(e)n."
+      },
+      {
+       "id": "r3l6",
+       "text": "I(tem) IIII pŏlster mit weissen zwȋlchin"
+      },
+      {
+       "id": "r3l7",
+       "text": "zȋechen."
+      },
+      {
+       "id": "r3l8",
+       "text": "I(tem) und aȋn pĕt mit ain(er) zwilcheȋn"
+      },
+      {
+       "id": "r3l9",
+       "text": "ziech(e)n."
+      },
+      {
+       "id": "r3l10",
+       "text": "I(tem) VI par hẽrbeȋn leilach."
+      },
+      {
+       "id": "r3l11",
+       "text": "I(tem) VI rauch dẽkenn schãffeȋn."
+      },
+      {
+       "id": "r3l12",
+       "text": "I(tem) II ungrisch kocz(e)n."
+      },
+      {
+       "id": "r3l13",
+       "text": "I(tem) II gestŭkte deklach."
+      },
+      {
+       "id": "r3l14",
+       "text": "I(tem) centrȋng gedigen fleȋsch"
+      },
+      {
+       "id": "r3l15",
+       "text": "rindfleisch, IC zentring."
+      },
+      {
+       "id": "r3l16",
+       "text": "I(tem) zinskeß L."
+      },
+      {
+       "id": "r3l17",
+       "text": "I(tem) arbais und ponen VI stẽr."
+      },
+      {
+       "id": "r3l18",
+       "text": "I(tem) I vaß vol mit rogkein mel."
+      },
+      {
+       "id": "r3l19",
+       "text": "I(tem) I vaß mit [....]"
+      },
+      {
+       "id": "r3l20",
+       "text": "ro[..]ter gerst XXVII."
+      },
+      {
+       "id": "r3l21",
+       "text": "I(tem) XII ster rogk(e)n."
+      },
+      {
+       "id": "r3l22",
+       "text": "I(tem) II zȋneȋn leŭchter."
+      },
+      {
+       "id": "r3l23",
+       "text": "I(tem) I eisneȋn lutschẽrn."
+      }
      ]
     }
    ]
@@ -78,30 +177,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "I(tem) aȋn vȋer mássig zinnkăndl.",
-      "I(tem) aȋn zwomässig zinkandl.",
-      "I(tem) I măssl kandl.",
-      "I(tem) I seidl kăndli.",
-      "I(tem) II herbeȋn tȋschtŭcher.",
-      "I(tem) II herbeȋn hantzwech(e)ln.",
-      "I(tem) dȋe aȋn grosser eisneȋn",
-      "flasch(e)n.",
-      "I(tem) II lägl kirneȋn mĕl.",
-      "I(tem) V sweȋn ham(m)en.",
-      "I(tem) das klainer kŭpfrín gȋeskessl.",
-      "I(tem) II seit(e)n sweȋneȋn fleisch.",
-      "It(em) II vaß darinn man aller¬",
-      "laÿ hau̇srat inngeschlag(en) hat.",
-      "It(em) I fŭdĕr(er)wan(n).",
-      "I(tem) IIII rotschŭss(e)ln.",
-      "I(tem) VI klaȋn hausschȗss(e)ln.",
-      "I(tem) I kůpfrȋn phan(n).",
-      "I(tem) I kůpfrín gacz(e)n.",
-      "It(em) ain eisneȋn kochkell(e)n.",
-      "It(em) und aȋn gelŏchert kell(e)n.",
-      "I(tem) II klaȋn phẽnndlȋn.",
-      "I(tem) II klaȋn hŭlczeȋn siblein."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) aȋn vȋer mássig zinnkăndl."
+      },
+      {
+       "id": "r2l2",
+       "text": "I(tem) aȋn zwomässig zinkandl."
+      },
+      {
+       "id": "r2l3",
+       "text": "I(tem) I măssl kandl."
+      },
+      {
+       "id": "r2l4",
+       "text": "I(tem) I seidl kăndli."
+      },
+      {
+       "id": "r2l5",
+       "text": "I(tem) II herbeȋn tȋschtŭcher."
+      },
+      {
+       "id": "r2l6",
+       "text": "I(tem) II herbeȋn hantzwech(e)ln."
+      },
+      {
+       "id": "r2l7",
+       "text": "I(tem) dȋe aȋn grosser eisneȋn"
+      },
+      {
+       "id": "r2l8",
+       "text": "flasch(e)n."
+      },
+      {
+       "id": "r2l9",
+       "text": "I(tem) II lägl kirneȋn mĕl."
+      },
+      {
+       "id": "r2l10",
+       "text": "I(tem) V sweȋn ham(m)en."
+      },
+      {
+       "id": "r2l11",
+       "text": "I(tem) das klainer kŭpfrín gȋeskessl."
+      },
+      {
+       "id": "r2l12",
+       "text": "I(tem) II seit(e)n sweȋneȋn fleisch."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II vaß darinn man aller¬"
+      },
+      {
+       "id": "r2l14",
+       "text": "laÿ hau̇srat inngeschlag(en) hat."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) I fŭdĕr(er)wan(n)."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) IIII rotschŭss(e)ln."
+      },
+      {
+       "id": "r2l17",
+       "text": "I(tem) VI klaȋn hausschȗss(e)ln."
+      },
+      {
+       "id": "r2l18",
+       "text": "I(tem) I kůpfrȋn phan(n)."
+      },
+      {
+       "id": "r2l19",
+       "text": "I(tem) I kůpfrín gacz(e)n."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) ain eisneȋn kochkell(e)n."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) und aȋn gelŏchert kell(e)n."
+      },
+      {
+       "id": "r2l22",
+       "text": "I(tem) II klaȋn phẽnndlȋn."
+      },
+      {
+       "id": "r2l23",
+       "text": "I(tem) II klaȋn hŭlczeȋn siblein."
+      }
      ]
     }
    ]
@@ -126,32 +297,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "I(tem) aȋn gross(e)n glokspeiseȋn",
-      "haf(e)n mit III fůssen.",
-      "I(tem) und aȋn klaȋnern glokspeisein",
-      "haf(e)n mit III fůssen.",
-      "I(tem) III glokspeȋseȋn lafasch(e)n.",
-      "I(tem) II eisen phann.",
-      "I(tem) I kŭpfrin pheff(er) phann.",
-      "I(tem) I gelŏcherte kest(e)n phann.",
-      "I(tem) XX hŭlczein teller.",
-      "I(tem) II kŭpfrin kessl aȋn",
-      "gross(e)n und ain klaȋnern.",
-      "I(tem) I văssl pei XIII ŭrn",
-      "můsmel.",
-      "I(tem) I wasser schăffl mit smalcz",
-      "zerlass(e)n.",
-      "I(tem) VIIIIC ünslit kercz(e)n.",
-      "I(tem) ain stocz(e)n ünslit.",
-      "I(tem) aĭn sweȋneȋn smẽrlaȋb.",
-      "I(tem) II eȋsneȋn schauf(e)ln.",
-      "So ist vorhand(e)n XVI swein,",
-      "VII kŭe, stier, schlegochs(e)n,",
-      "kapaw̆n, henn, hüner, heẅ",
-      "und strob und trischl narr.",
-      "No(ta) smidzeŭg, hak(e)n, harnasch",
-      "und allerlai eis(e)n werch."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) aȋn gross(e)n glokspeiseȋn"
+      },
+      {
+       "id": "r2l2",
+       "text": "haf(e)n mit III fůssen."
+      },
+      {
+       "id": "r2l3",
+       "text": "I(tem) und aȋn klaȋnern glokspeisein"
+      },
+      {
+       "id": "r2l4",
+       "text": "haf(e)n mit III fůssen."
+      },
+      {
+       "id": "r2l5",
+       "text": "I(tem) III glokspeȋseȋn lafasch(e)n."
+      },
+      {
+       "id": "r2l6",
+       "text": "I(tem) II eisen phann."
+      },
+      {
+       "id": "r2l7",
+       "text": "I(tem) I kŭpfrin pheff(er) phann."
+      },
+      {
+       "id": "r2l8",
+       "text": "I(tem) I gelŏcherte kest(e)n phann."
+      },
+      {
+       "id": "r2l9",
+       "text": "I(tem) XX hŭlczein teller."
+      },
+      {
+       "id": "r2l10",
+       "text": "I(tem) II kŭpfrin kessl aȋn"
+      },
+      {
+       "id": "r2l11",
+       "text": "gross(e)n und ain klaȋnern."
+      },
+      {
+       "id": "r2l12",
+       "text": "I(tem) I văssl pei XIII ŭrn"
+      },
+      {
+       "id": "r2l13",
+       "text": "můsmel."
+      },
+      {
+       "id": "r2l14",
+       "text": "I(tem) I wasser schăffl mit smalcz"
+      },
+      {
+       "id": "r2l15",
+       "text": "zerlass(e)n."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) VIIIIC ünslit kercz(e)n."
+      },
+      {
+       "id": "r2l17",
+       "text": "I(tem) ain stocz(e)n ünslit."
+      },
+      {
+       "id": "r2l18",
+       "text": "I(tem) aĭn sweȋneȋn smẽrlaȋb."
+      },
+      {
+       "id": "r2l19",
+       "text": "I(tem) II eȋsneȋn schauf(e)ln."
+      },
+      {
+       "id": "r2l20",
+       "text": "So ist vorhand(e)n XVI swein,"
+      },
+      {
+       "id": "r2l21",
+       "text": "VII kŭe, stier, schlegochs(e)n,"
+      },
+      {
+       "id": "r2l22",
+       "text": "kapaw̆n, henn, hüner, heẅ"
+      },
+      {
+       "id": "r2l23",
+       "text": "und strob und trischl narr."
+      },
+      {
+       "id": "r2l24",
+       "text": "No(ta) smidzeŭg, hak(e)n, harnasch"
+      },
+      {
+       "id": "r2l25",
+       "text": "und allerlai eis(e)n werch."
+      }
      ]
     }
    ]
@@ -176,7 +425,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -115,13 +115,15 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329279-1"/>
+        <pb n="1" facs="#surface-11329279-1"/>
+        <ab xml:id="ab-11329279-1-r1">
           <milestone unit="folio" n="1r"/>
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329279-2"/>
+        <pb n="2" facs="#surface-11329279-2"/>
+        <ab xml:id="ab-11329279-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329279-2-r2">
           <lb facs="#zone-11329279-2-r2l1"/>It(em) in dem undtern staingaden
           <lb facs="#zone-11329279-2-r2l2"/>1/2 läg(e)l pfeil.
           <lb facs="#zone-11329279-2-r2l3"/>It(em) ain fueter kăstel im undt(er)n staing[---].
@@ -147,13 +149,15 @@
           <lb facs="#zone-11329279-2-r2l23"/>ist auch der Purckhartin vo(n)
           <lb facs="#zone-11329279-2-r2l24"/>Hausen.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329279-3"/>
+        <pb n="3" facs="#surface-11329279-3"/>
+        <ab xml:id="ab-11329279-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329279-4"/>
+        <pb n="4" facs="#surface-11329279-4"/>
+        <ab xml:id="ab-11329279-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11329279-4-r2">
           <lb facs="#zone-11329279-4-r2l1"/>Inventari was Pangracz(e)n
           <lb facs="#zone-11329279-4-r2l2"/>Hanen auf Slosperg
           <lb facs="#zone-11329279-4-r2l3"/>ingeantwurt ist.

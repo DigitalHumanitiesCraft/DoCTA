@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -168,9 +168,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329419-1"/>
+        <pb n="1" facs="#surface-11329419-1"/>
+        <ab xml:id="ab-11329419-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329419-1-r2">
           <lb facs="#zone-11329419-1-r2l1"/>Vermĕrkt an sant Margreten
           <lb facs="#zone-11329419-1-r2l2"/>tag anno Domini etc. LXII ist
           <lb facs="#zone-11329419-1-r2l3"/>gẽn Hẽrtemberg geantwurt
@@ -180,6 +182,8 @@
           <lb facs="#zone-11329419-1-r2l7"/>ȋst berŭrt das der Mang Steger
           <lb facs="#zone-11329419-1-r2l8"/>als selbss auf die haus Hertenberg
           <lb facs="#zone-11329419-1-r2l9"/>enpfangen hat.
+        </ab>
+        <ab xml:id="ab-11329419-1-r3">
           <lb facs="#zone-11329419-1-r3l1"/>It(em) am erst(e)n IIII pët mit gestreift(e)n
           <lb facs="#zone-11329419-1-r3l2"/>ziech(e)n.
           <lb facs="#zone-11329419-1-r3l3"/>I(tem) und III pŏlster mit gestreift(e)n
@@ -204,9 +208,11 @@
           <lb facs="#zone-11329419-1-r3l22"/>I(tem) II zȋneȋn leŭchter.
           <lb facs="#zone-11329419-1-r3l23"/>I(tem) I eisneȋn lutschẽrn.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329419-2"/>
+        <pb n="2" facs="#surface-11329419-2"/>
+        <ab xml:id="ab-11329419-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329419-2-r2">
           <lb facs="#zone-11329419-2-r2l1"/>I(tem) aȋn vȋer mássig zinnkăndl.
           <lb facs="#zone-11329419-2-r2l2"/>I(tem) aȋn zwomässig zinkandl.
           <lb facs="#zone-11329419-2-r2l3"/>I(tem) I măssl kandl.
@@ -231,9 +237,11 @@
           <lb facs="#zone-11329419-2-r2l22"/>I(tem) II klaȋn phẽnndlȋn.
           <lb facs="#zone-11329419-2-r2l23"/>I(tem) II klaȋn hŭlczeȋn siblein.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329419-3"/>
+        <pb n="3" facs="#surface-11329419-3"/>
+        <ab xml:id="ab-11329419-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11329419-3-r2">
           <lb facs="#zone-11329419-3-r2l1"/>I(tem) aȋn gross(e)n glokspeiseȋn
           <lb facs="#zone-11329419-3-r2l2"/>haf(e)n mit III fůssen.
           <lb facs="#zone-11329419-3-r2l3"/>I(tem) und aȋn klaȋnern glokspeisein
@@ -260,8 +268,8 @@
           <lb facs="#zone-11329419-3-r2l24"/>No(ta) smidzeŭg, hak(e)n, harnasch
           <lb facs="#zone-11329419-3-r2l25"/>und allerlai eis(e)n werch.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329419-4"/>
+        <pb n="4" facs="#surface-11329419-4"/>
+        <ab xml:id="ab-11329419-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
       </div>

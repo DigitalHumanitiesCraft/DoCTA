@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -100,13 +100,17 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11330219-1"/>
+        <pb n="1" facs="#surface-11330219-1"/>
+        <ab xml:id="ab-11330219-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11330219-1-r2">
           <lb facs="#zone-11330219-1-r2l1"/>Vermergkt was ich Katerina weylannd Gabein Kŭnigls sălge gelassne wittib
           <lb facs="#zone-11330219-1-r2l2"/>auf der pfleg und schloss Schonegk lase als ich abgeczogen pin ausserhalb
           <lb facs="#zone-11330219-1-r2l3"/>der alten inventăry dy̆ zu dem schloss Schŏnegk gehŏrt anno 1492
           <lb facs="#zone-11330219-1-r2l4"/>jar am montag nach Sannd Katrein tag etc.
+        </ab>
+        <ab xml:id="ab-11330219-1-r3">
           <lb facs="#zone-11330219-1-r3l1"/>It(em) am erst(e)n im keller I haber ster, ain resch ster und ain halb resch ster.
           <lb facs="#zone-11330219-1-r3l2"/>It(em) ain grosse truhen gehŏrt zu salcz und zu kăß.
           <lb facs="#zone-11330219-1-r3l3"/>It(em) ain ler truhen mit dreyen klŏster(e)n, ain ŏl stain.
@@ -124,8 +128,8 @@
           <lb facs="#zone-11330219-1-r3l15"/>It(em) ain eysn puchsen ist nit eingefast, mer XII spanpet pŏs und guet.
           <lb facs="#zone-11330219-1-r3l16"/>It(em) dÿ ket(e)n zu dem prun und der zigk(e)l dar zue.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11330219-2"/>
+        <pb n="2" facs="#surface-11330219-2"/>
+        <ab xml:id="ab-11330219-2-r1">
           <milestone unit="folio" n="1v"/>
         </ab>
       </div>

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -235,15 +235,19 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328746-1"/>
+        <pb n="1" facs="#surface-11328746-1"/>
+        <ab xml:id="ab-11328746-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328746-1-r2">
           <lb facs="#zone-11328746-1-r2l1"/>Vermerckt was ich Hainrich Truchsăz
           <lb facs="#zone-11328746-1-r2l2"/>als ich das schlozz Sigmundspurg in
           <lb facs="#zone-11328746-1-r2l3"/>genomen emphang(e)n hab an hawß¬
           <lb facs="#zone-11328746-1-r2l4"/>rat und an and(er)n ding(e)n und das mei(ne)m
           <lb facs="#zone-11328746-1-r2l5"/>genedigen h(er)rn herczog Sigmund(e)n etc.
           <lb facs="#zone-11328746-1-r2l6"/>zugehórt.
+        </ab>
+        <ab xml:id="ab-11328746-1-r3">
           <lb facs="#zone-11328746-1-r3l1"/>It(em) des ersten XLVII spieß eysnenn,
           <lb facs="#zone-11328746-1-r3l2"/>davon sind zehen zu Sigmund¬
           <lb facs="#zone-11328746-1-r3l3"/>spurg beliben und die and(er)n durch
@@ -265,9 +269,11 @@
           <lb facs="#zone-11328746-1-r3l19"/>und groß.
           <lb facs="#zone-11328746-1-r3l20"/>It(em) ain glesrein kopf.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328746-2"/>
+        <pb n="2" facs="#surface-11328746-2"/>
+        <ab xml:id="ab-11328746-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328746-2-r2">
           <lb facs="#zone-11328746-2-r2l1"/>It(em) II krúeg.
           <lb facs="#zone-11328746-2-r2l2"/>It(em) II glesrein horen.
           <lb facs="#zone-11328746-2-r2l3"/>It(em) ain pehemisch(e)n trinckhkrueg.
@@ -288,9 +294,11 @@
           <lb facs="#zone-11328746-2-r2l18"/>It(em) III pett.
           <lb facs="#zone-11328746-2-r2l19"/>It(em) III pólster.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328746-3"/>
+        <pb n="3" facs="#surface-11328746-3"/>
+        <ab xml:id="ab-11328746-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328746-3-r2">
           <lb facs="#zone-11328746-3-r2l1"/>It(em) II par habein(er) leillach.
           <lb facs="#zone-11328746-3-r2l2"/>It(em) und ain par rupheins.
           <lb facs="#zone-11328746-3-r2l3"/>It(em) VI schaffein rauch degk(e)n.
@@ -315,13 +323,19 @@
           <lb facs="#zone-11328746-3-r2l22"/>It(em) ain hēlln.
           <lb facs="#zone-11328746-3-r2l23"/>It(em) ain drifus.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328746-4"/>
+        <pb n="4" facs="#surface-11328746-4"/>
+        <ab xml:id="ab-11328746-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328746-4-r2">
           <lb facs="#zone-11328746-4-r2l1"/>It(em) II hulczin teufling.
           <lb facs="#zone-11328746-4-r2l2"/>It(em) XLI hulczein zugscheyb(e)n
           <lb facs="#zone-11328746-4-r2l3"/>underm dach.
+        </ab>
+        <ab xml:id="ab-11328746-4-r3">
           <lb facs="#zone-11328746-4-r3l1"/>Schiesszewg.
+        </ab>
+        <ab xml:id="ab-11328746-4-r4">
           <lb facs="#zone-11328746-4-r4l1"/>It(em) zum erst(e)n II lág(e)l hauspheẏl.
           <lb facs="#zone-11328746-4-r4l2"/>It(em) ain lag(e)l mit VC mi(nus) XI
           <lb facs="#zone-11328746-4-r4l3"/>stáchlein pheyln.
@@ -332,9 +346,11 @@
           <lb facs="#zone-11328746-4-r4l8"/>It(em) XII armbrost.
           <lb facs="#zone-11328746-4-r4l9"/>It(em) IIII windten.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328746-5"/>
+        <pb n="5" facs="#surface-11328746-5"/>
+        <ab xml:id="ab-11328746-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11328746-5-r2">
           <lb facs="#zone-11328746-5-r2l1"/>Nota was mir Hainrich(e)n
           <lb facs="#zone-11328746-5-r2l2"/>Druchsaz der Reichart am
           <lb facs="#zone-11328746-5-r2l3"/>phincztag nach Margrete
@@ -358,9 +374,11 @@
           <lb facs="#zone-11328746-5-r2l21"/>gehórn klain und groß.
           <lb facs="#zone-11328746-5-r2l22"/>It(em) IIII morterkell(e)n.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11328746-6"/>
+        <pb n="6" facs="#surface-11328746-6"/>
+        <ab xml:id="ab-11328746-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11328746-6-r2">
           <lb facs="#zone-11328746-6-r2l1"/>I(tem) II groß eysnschleg(e)l.
           <lb facs="#zone-11328746-6-r2l2"/>It(em) VIII eysen wekhen stain ze
           <lb facs="#zone-11328746-6-r2l3"/>prechen.
@@ -383,9 +401,11 @@
           <lb facs="#zone-11328746-6-r2l20"/>It(em) smalcz zub(er) und váss(e)l lagel(e)n.
           <lb facs="#zone-11328746-6-r2l21"/>It(em) XX pesem.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11328746-7"/>
+        <pb n="7" facs="#surface-11328746-7"/>
+        <ab xml:id="ab-11328746-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11328746-7-r2">
           <lb facs="#zone-11328746-7-r2l1"/>It(em) ain ur mit der stund glok(e)n
           <lb facs="#zone-11328746-7-r2l2"/>die von Úmbst ist kom(m)en.
           <lb facs="#zone-11328746-7-r2l3"/>It(em) zwai lāgel mit buchsnpũlv(er)
@@ -394,8 +414,8 @@
           <lb facs="#zone-11328746-7-r2l6"/>It(em) und II mōdel datzu darinn
           <lb facs="#zone-11328746-7-r2l7"/>man die kug(e)l gewst.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11328746-8"/>
+        <pb n="8" facs="#surface-11328746-8"/>
+        <ab xml:id="ab-11328746-8-r1">
           <milestone unit="folio" n="4v"/>
         </ab>
       </div>

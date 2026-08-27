@@ -8,12 +8,15 @@ Usage:
   pytest pipeline/test_build_tei.py
 """
 
+import json
 import re
 import sys
 import tempfile
 from pathlib import Path
 from xml.etree import ElementTree
 
+import apply_review as ar
+import build_register as br
 import build_tei as bt
 
 TEI = "{http://www.tei-c.org/ns/1.0}"
@@ -25,9 +28,17 @@ SAMPLES = (11327963, 11328042)
 FULLY_CORRECTED = (11328300, 11330019, 11330020)
 MACHINE_SAMPLE = 11327963
 
-# the one document with a prototype entity extraction, and a document without
+# the document carrying the prototype entity extraction, and one without any
 DEMO_DOC = 11328300
 NON_DEMO_DOC = 11327963
+
+# the document the review fixture is written against, and one of its lines
+REVIEW_DOC = 11327963
+REVIEW_PAGE = 2
+REVIEW_LINE = "r2l1"
+REVIEW_TEXT = "Auf dem klainen estrich"
+REVIEWER = "XY"
+REVIEW_DATE = "2026-09-03"
 
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 
@@ -35,6 +46,10 @@ XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 def _built() -> dict[int, str]:
     with tempfile.TemporaryDirectory() as td:
         return bt.build(Path(td))
+
+
+def _has_entities(doc_id: int) -> bool:
+    return bt._entity_data(doc_id) is not None
 
 
 def _export_lines(doc_id: int) -> list[str]:
@@ -98,6 +113,24 @@ def test_one_pb_and_one_surface_per_page() -> None:
             assert pb.get("facs") == f"#surface-{doc_id}-{pb.get('n')}"
 
 
+def test_one_ab_per_text_region() -> None:
+    """Regions of the export survive as blocks; nothing is flattened away."""
+    built = _built()
+    for doc_id in SAMPLES:
+        export = bt._load(bt.DATA / "transcriptions" / f"{doc_id}.json")
+        expected = [f"ab-{doc_id}-{page['pageNr']}-{region['id']}"
+                    for page in sorted(export["pages"], key=lambda p: p["pageNr"])
+                    for region in page.get("regions") or []]
+        root = ElementTree.fromstring(built[doc_id])
+        assert [ab.get(XML_ID) for ab in root.iter(f"{TEI}ab")] == expected, \
+            f"ab set differs in {doc_id}"
+        div = root.find(f".//{TEI}div")
+        # the pb of a page stands beside the blocks of that page, not inside one
+        assert [c.tag for c in div].count(f"{TEI}pb") == len(export["pages"])
+        for ab in root.iter(f"{TEI}ab"):
+            assert ab.find(f"{TEI}pb") is None, f"pb inside an ab in {doc_id}"
+
+
 def test_header_carries_the_archival_identity() -> None:
     built = _built()
     docs = {d["docId"]: d for d in bt._documents()}
@@ -153,18 +186,23 @@ def test_every_lb_facs_resolves_to_a_zone() -> None:
         assert bound, f"no lb bound to a zone in {doc_id}"
 
 
-def test_entity_layer_only_in_the_demo_document() -> None:
+def test_entity_layer_only_where_an_extraction_exists() -> None:
     built = _built()
-    demo = ElementTree.fromstring(built[DEMO_DOC])
-    assert bt.RESP_ENTITY in _resp_ids(demo), "entity respStmt missing in demo"
-    names = [pn for pn in demo.iter(f"{TEI}persName")
-             if pn.get("resp") == f"#{bt.RESP_ENTITY}"]
-    assert names, "no persName bound to the entity responsibility"
-    assert all(pn.get("key") and pn.text for pn in names), \
-        "persName without key or content"
-    decl = "".join(demo.find(f".//{TEI}editorialDecl").itertext())
-    assert "unverified extraction by an LLM agent" in decl
+    assert _has_entities(DEMO_DOC), "the prototype extraction disappeared"
+    for doc_id, xml in built.items():
+        if not _has_entities(doc_id):
+            continue
+        root = ElementTree.fromstring(xml)
+        assert bt.RESP_ENTITY in _resp_ids(root), f"entity respStmt missing in {doc_id}"
+        names = [pn for pn in root.iter(f"{TEI}persName")
+                 if pn.get("resp") == f"#{bt.RESP_ENTITY}"]
+        assert names, f"no persName bound to the entity responsibility in {doc_id}"
+        assert all(pn.get("key") and pn.text for pn in names), \
+            f"persName without key or content in {doc_id}"
+        decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
+        assert "unverified extraction by an LLM agent" in decl
 
+    assert not _has_entities(NON_DEMO_DOC), "the counter-example acquired entities"
     other = ElementTree.fromstring(built[NON_DEMO_DOC])
     assert bt.RESP_ENTITY not in _resp_ids(other), "entity respStmt leaked"
     assert bt.RESP_ENTITY not in built[NON_DEMO_DOC]
@@ -197,7 +235,7 @@ def test_every_document_declares_its_work_steps() -> None:
     for doc_id, xml in built.items():
         root = ElementTree.fromstring(xml)
         expected = [bt.RESP_TRANSKRIBUS, bt.RESP_GENERATION]
-        if doc_id == DEMO_DOC:
+        if _has_entities(doc_id):
             expected.append(bt.RESP_ENTITY)
         assert _resp_ids(root) == expected, f"respStmt ids differ in {doc_id}"
         assert "resp-expert-verification" not in xml, \
@@ -257,6 +295,88 @@ def test_rebuild_is_byte_identical() -> None:
         for path in first:
             other = Path(b) / path.name
             assert path.read_bytes() == other.read_bytes(), f"drift in {path.name}"
+
+
+def _review_build(tmp: Path, pages: dict) -> tuple[dict[int, str], dict[int, str]]:
+    """Build the corpus twice off one register copy, before and after a review.
+
+    Both builds run the same code version against the same inputs, so every
+    difference between them is the review and nothing else.
+    """
+    br.build(tmp)
+    pages_dir = tmp / "pages"
+    before = bt.build(tmp / "before", register_dir=pages_dir)
+    path = tmp / f"review-{REVIEW_DOC}.json"
+    path.write_text(json.dumps(
+        {"docId": REVIEW_DOC, "reviewer": REVIEWER, "pages": pages,
+         "exported": f"{REVIEW_DATE}T10:15:00Z", "source": "docta-viewer"},
+        ensure_ascii=False), encoding="utf-8")
+    ar.ingest([path], pages_dir)
+    return before, bt.build(tmp / "after", register_dir=pages_dir)
+
+
+def _base_text(tmp: Path, page_nr: int, line_id: str) -> str:
+    payload = br._load(tmp / "pages" / f"{REVIEW_DOC}.json")
+    page = next(p for p in payload["pages"] if p["pageNr"] == page_nr)
+    run = next(r for r in page["runs"] if r["source"] == "transkribus")
+    return next(ln["text"] for ln in run["lines"] if ln["id"] == line_id)
+
+
+def test_a_reviewed_page_carries_the_reviewed_text() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        br.build(tmp)
+        original = _base_text(tmp, REVIEW_PAGE, REVIEW_LINE)
+        before, after = _review_build(tmp, {str(REVIEW_PAGE): {
+            "status": "gesichtet", "date": REVIEW_DATE,
+            "lines": [{"id": REVIEW_LINE, "original": original,
+                       "corrected": REVIEW_TEXT}]}})
+
+    assert original != REVIEW_TEXT, "the fixture must change something"
+    assert REVIEW_TEXT not in before[REVIEW_DOC], "reviewed text before the review"
+    assert REVIEW_TEXT in after[REVIEW_DOC], "reviewed text missing after"
+
+    root = ElementTree.fromstring(after[REVIEW_DOC])
+    assert bt.RESP_VERIFICATION in _resp_ids(root), "verification not declared"
+    resp = [r for r in root.iter(f"{TEI}respStmt")
+            if r.get(XML_ID) == bt.RESP_VERIFICATION][0]
+    assert resp.find(f"{TEI}resp").text == \
+        "Page-level scholarly review and correction in the DoCTA viewer"
+    assert resp.find(f"{TEI}name").text == \
+        "DoCTA reviewer (initials in the revision log)"
+
+    changes = [c for c in root.iter(f"{TEI}change") if c.get("n") == "review"]
+    assert len(changes) == 1, "expected one review entry per reviewed page"
+    change = changes[0]
+    assert change.get("when") == REVIEW_DATE
+    assert change.get("who") == f"#{bt.RESP_VERIFICATION}"
+    assert f"Page {REVIEW_PAGE}" in change.text and REVIEWER in change.text
+    assert _changes(root)["transcription-summary"].get("status") == bt.REVIEWED
+
+    # a review touches the document it names and nothing else in the corpus
+    for doc_id, xml in before.items():
+        if doc_id != REVIEW_DOC:
+            assert after[doc_id] == xml, f"review leaked into {doc_id}"
+
+    other = ElementTree.fromstring(before[REVIEW_DOC])
+    assert bt.RESP_VERIFICATION not in _resp_ids(other), \
+        "verification claimed without a review"
+
+
+def test_a_fully_accepted_document_reports_approval() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        br.build(tmp)
+        count = len(br._load(tmp / "pages" / f"{REVIEW_DOC}.json")["pages"])
+        _, after = _review_build(tmp, {
+            str(nr): {"status": "abgenommen", "date": REVIEW_DATE, "lines": []}
+            for nr in range(1, count + 1)})
+    root = ElementTree.fromstring(after[REVIEW_DOC])
+    assert _changes(root)["transcription-summary"].get("status") == bt.APPROVED
+    assert len([c for c in root.iter(f"{TEI}change")
+                if c.get("n") == "review"]) == count
+    decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
+    assert "Every page of this file has been read against the scan" in decl
 
 
 def test_generation_date_comes_from_the_argument() -> None:

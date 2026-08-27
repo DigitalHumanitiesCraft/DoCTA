@@ -21,7 +21,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      }
      ]
     }
    ]
@@ -46,31 +49,106 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "It(em) in dem undtern staingaden",
-      "1/2 läg(e)l pfeil.",
-      "It(em) ain fueter kăstel im undt(er)n staing[---].",
-      "It(em) in meins h(er)ren stuben vier scht[---]",
-      "tisch, der viert in d(er) ander(e)n stubn.",
-      "It(e)m in dem ergkar gen d(er) Schãrnitz",
-      "ain tȃrispũchß(en).",
-      "It(em) in dem arckãr gen Seveld wertz",
-      "fúnff clotz(e)n puchsen.",
-      "It(em) mer daselbs III hagk(e)n püchsen",
-      "und ain claine pũchsen.",
-      "It(em) ain metz(e)n puxenpulver.",
-      "It(em) in d(er) kuchen ain alte speistruhen",
-      "und ain speis käst(e)l.",
-      "It(em) in dem hinter kraut keller ain",
-      "mȯrser.",
-      "It(em) alle pettstat new und alt",
-      "nach ausfart des Clam(m)ers",
-      "sind alle der Burckhartin von",
-      "Hausen, hat sÿ im gschloß",
-      "gelassen wer ir das bezalt.",
-      "It(em) ain eÿsne häl ob dem herd",
-      "ist auch der Purckhartin vo(n)",
-      "Hausen."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) in dem undtern staingaden"
+      },
+      {
+       "id": "r2l2",
+       "text": "1/2 läg(e)l pfeil."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) ain fueter kăstel im undt(er)n staing[---]."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) in meins h(er)ren stuben vier scht[---]"
+      },
+      {
+       "id": "r2l5",
+       "text": "tisch, der viert in d(er) ander(e)n stubn."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(e)m in dem ergkar gen d(er) Schãrnitz"
+      },
+      {
+       "id": "r2l7",
+       "text": "ain tȃrispũchß(en)."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) in dem arckãr gen Seveld wertz"
+      },
+      {
+       "id": "r2l9",
+       "text": "fúnff clotz(e)n puchsen."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) mer daselbs III hagk(e)n püchsen"
+      },
+      {
+       "id": "r2l11",
+       "text": "und ain claine pũchsen."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) ain metz(e)n puxenpulver."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) in d(er) kuchen ain alte speistruhen"
+      },
+      {
+       "id": "r2l14",
+       "text": "und ain speis käst(e)l."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) in dem hinter kraut keller ain"
+      },
+      {
+       "id": "r2l16",
+       "text": "mȯrser."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) alle pettstat new und alt"
+      },
+      {
+       "id": "r2l18",
+       "text": "nach ausfart des Clam(m)ers"
+      },
+      {
+       "id": "r2l19",
+       "text": "sind alle der Burckhartin von"
+      },
+      {
+       "id": "r2l20",
+       "text": "Hausen, hat sÿ im gschloß"
+      },
+      {
+       "id": "r2l21",
+       "text": "gelassen wer ir das bezalt."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) ain eÿsne häl ob dem herd"
+      },
+      {
+       "id": "r2l23",
+       "text": "ist auch der Purckhartin vo(n)"
+      },
+      {
+       "id": "r2l24",
+       "text": "Hausen."
+      }
      ]
     }
    ]
@@ -95,7 +173,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -120,10 +201,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Inventari was Pangracz(e)n",
-      "Hanen auf Slosperg",
-      "ingeantwurt ist."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventari was Pangracz(e)n"
+      },
+      {
+       "id": "r2l2",
+       "text": "Hanen auf Slosperg"
+      },
+      {
+       "id": "r2l3",
+       "text": "ingeantwurt ist."
+      }
      ]
     }
    ]

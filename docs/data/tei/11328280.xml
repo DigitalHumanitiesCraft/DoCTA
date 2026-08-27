@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -334,69 +334,121 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328280-1"/>
+        <pb n="1" facs="#surface-11328280-1"/>
+        <ab xml:id="ab-11328280-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328280-1-r2">
           <lb facs="#zone-11328280-1-r2l1"/>Am montag nach Valentini anno etc.
           <lb facs="#zone-11328280-1-r2l2"/>LXXXIIIIt en ist Jacoby von Spar
           <lb facs="#zone-11328280-1-r2l3"/>das Sloß Taŭr yngeãnt[.] und die
           <lb facs="#zone-11328280-1-r2l4"/>hienachgeschrieben hab so Melchior von Hey¬
           <lb facs="#zone-11328280-1-r2l5"/>menhofen dagelassen s h [...] [- - -] ii.
+        </ab>
+        <ab xml:id="ab-11328280-1-r3">
           <lb facs="#zone-11328280-1-r3l1"/>In meins gnedigen herren gmachen in
           <lb facs="#zone-11328280-1-r3l2"/>der oberen grossen stuben.
+        </ab>
+        <ab xml:id="ab-11328280-1-r4">
           <lb facs="#zone-11328280-1-r4l1"/>Drey̆ tisch.
           <lb facs="#zone-11328280-1-r4l2"/>Ain credenz tischel.
           <lb facs="#zone-11328280-1-r4l3"/>Ain schachpret.
           <lb facs="#zone-11328280-1-r4l4"/>Ain gemalz tuch mit etlichen land¬
           <lb facs="#zone-11328280-1-r4l5"/>schaften.
+        </ab>
+        <ab xml:id="ab-11328280-1-r5">
           <lb facs="#zone-11328280-1-r5l1"/>In der camer daran
           <lb facs="#zone-11328280-1-r5l2"/>meines gnedigen herren.
+        </ab>
+        <ab xml:id="ab-11328280-1-r6">
           <lb facs="#zone-11328280-1-r6l1"/>Ain verdeckts spanpet mit
           <lb facs="#zone-11328280-1-r6l2"/>ainem cariol mitßamt ainer
           <lb facs="#zone-11328280-1-r6l3"/>sideltruhen.
           <lb facs="#zone-11328280-1-r6l4"/>Ain sweinspieß.
           <lb facs="#zone-11328280-1-r6l5"/>Ain wezstain an ainem nagel.
           <lb facs="#zone-11328280-1-r6l6"/>Funff gesliffn pfeil.
+        </ab>
+        <ab xml:id="ab-11328280-1-r7">
           <lb facs="#zone-11328280-1-r7l1"/>In der nächsten camer danach.
+        </ab>
+        <ab xml:id="ab-11328280-1-r8">
           <lb facs="#zone-11328280-1-r8l1"/>Ain spanpet.
+        </ab>
+        <ab xml:id="ab-11328280-1-r9">
           <lb facs="#zone-11328280-1-r9l1"/>In der stuben daran.
+        </ab>
+        <ab xml:id="ab-11328280-1-r10">
           <lb facs="#zone-11328280-1-r10l1"/>Ain alter posĕr tisch.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328280-2"/>
+        <pb n="2" facs="#surface-11328280-2"/>
+        <ab xml:id="ab-11328280-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328280-2-r2">
           <lb facs="#zone-11328280-2-r2l1"/>In der camer gegen den hof.
+        </ab>
+        <ab xml:id="ab-11328280-2-r3">
           <lb facs="#zone-11328280-2-r3l1"/>Zway ain spanpet.
+        </ab>
+        <ab xml:id="ab-11328280-2-r4">
           <lb facs="#zone-11328280-2-r4l1"/>In dem undern gemach
           <lb facs="#zone-11328280-2-r4l2"/>in der stuben gegen dem tor.
+        </ab>
+        <ab xml:id="ab-11328280-2-r5">
           <lb facs="#zone-11328280-2-r5l1"/>Ain tisch.
+        </ab>
+        <ab xml:id="ab-11328280-2-r6">
           <lb facs="#zone-11328280-2-r6l1"/>In ainer camer daran.
+        </ab>
+        <ab xml:id="ab-11328280-2-r7">
           <lb facs="#zone-11328280-2-r7l1"/>Ain petstat.
+        </ab>
+        <ab xml:id="ab-11328280-2-r8">
           <lb facs="#zone-11328280-2-r8l1"/>In der andern camer daneben.
+        </ab>
+        <ab xml:id="ab-11328280-2-r9">
           <lb facs="#zone-11328280-2-r9l1"/>Zwo I petstaten.
+        </ab>
+        <ab xml:id="ab-11328280-2-r10">
           <lb facs="#zone-11328280-2-r10l1"/>In der melkamer.
+        </ab>
+        <ab xml:id="ab-11328280-2-r11">
           <lb facs="#zone-11328280-2-r11l1"/>Ain melkasten.
           <lb facs="#zone-11328280-2-r11l2"/>Ain pewtelfas.
           <lb facs="#zone-11328280-2-r11l3"/>Ain peslagner eymer zŭ ainer zistern.
+        </ab>
+        <ab xml:id="ab-11328280-2-r12">
           <lb facs="#zone-11328280-2-r12l1"/>In dem keller.
+        </ab>
+        <ab xml:id="ab-11328280-2-r13">
           <lb facs="#zone-11328280-2-r13l1"/>Ain altn tisch.
+        </ab>
+        <ab xml:id="ab-11328280-2-r14">
           <lb facs="#zone-11328280-2-r14l1"/>Vor diesen keller.
+        </ab>
+        <ab xml:id="ab-11328280-2-r15">
           <lb facs="#zone-11328280-2-r15l1"/>Ain handmŭl mit irer zugehorung.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328280-3"/>
+        <pb n="3" facs="#surface-11328280-3"/>
+        <ab xml:id="ab-11328280-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328280-3-r2">
           <lb facs="#zone-11328280-3-r2l1"/>Ain kŭe.
           <lb facs="#zone-11328280-3-r2l2"/>Zwo kalber kŭe.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328280-4"/>
+        <pb n="4" facs="#surface-11328280-4"/>
+        <ab xml:id="ab-11328280-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328280-5"/>
+        <pb n="5" facs="#surface-11328280-5"/>
+        <ab xml:id="ab-11328280-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11328280-5-r2">
           <lb facs="#zone-11328280-5-r2l1"/>In der harnaschkamer.
+        </ab>
+        <ab xml:id="ab-11328280-5-r3">
           <lb facs="#zone-11328280-5-r3l1"/>XV eysenhuĕt und tschelărn alt,
           <lb facs="#zone-11328280-5-r3l2"/>restig und ungeschaffen.
           <lb facs="#zone-11328280-5-r3l3"/>VIIIII alte prustplech.
@@ -413,13 +465,21 @@
           <lb facs="#zone-11328280-5-r3l14"/>Ain văssel darinn etlich pfeil.
           <lb facs="#zone-11328280-5-r3l15"/>Ain alt spanpet.
           <lb facs="#zone-11328280-5-r3l16"/>Ain plătel pley̆.
+        </ab>
+        <ab xml:id="ab-11328280-5-r4">
           <lb facs="#zone-11328280-5-r4l1"/>Im hof unden.
+        </ab>
+        <ab xml:id="ab-11328280-5-r5">
           <lb facs="#zone-11328280-5-r5l1"/>Ain alter slifstein.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11328280-6"/>
+        <pb n="6" facs="#surface-11328280-6"/>
+        <ab xml:id="ab-11328280-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11328280-6-r2">
           <lb facs="#zone-11328280-6-r2l1"/>Auf dem estrich.
+        </ab>
+        <ab xml:id="ab-11328280-6-r3">
           <lb facs="#zone-11328280-6-r3l1"/>XVIIII lanzen.
           <lb facs="#zone-11328280-6-r3l2"/>XVIII armbrust, davon hat Wofel
           <lb facs="#zone-11328280-6-r3l3"/>Jăger zwen stachel genomen und
@@ -428,13 +488,21 @@
           <lb facs="#zone-11328280-6-r3l6"/>Handpuchsen new̆ X.
           <lb facs="#zone-11328280-6-r3l7"/>Alt handpuchsen XIIII.
           <lb facs="#zone-11328280-6-r3l8"/>Ain alt zugaten spieß.
+        </ab>
+        <ab xml:id="ab-11328280-6-r4">
           <lb facs="#zone-11328280-6-r4l1"/>In der stuben da ain
           <lb facs="#zone-11328280-6-r4l2"/>pfleger in ist.
+        </ab>
+        <ab xml:id="ab-11328280-6-r5">
           <lb facs="#zone-11328280-6-r5l1"/>Zwen tisch.
           <lb facs="#zone-11328280-6-r5l2"/>Vier [.]
           <lb facs="#zone-11328280-6-r5l3"/>Auf dem estrich davor ain speiskasten.
           <lb facs="#zone-11328280-6-r5l4"/>In d(em) casten darin II spanpet.
+        </ab>
+        <ab xml:id="ab-11328280-6-r6">
           <lb facs="#zone-11328280-6-r6l1"/>Im turen.
+        </ab>
+        <ab xml:id="ab-11328280-6-r7">
           <lb facs="#zone-11328280-6-r7l1"/>Ain alte truhen mit hawspfeifen.
           <lb facs="#zone-11328280-6-r7l2"/>XV lagel mit hauspfeilen. Etlich
           <lb facs="#zone-11328280-6-r7l3"/>sind gar voll, die andern halb
@@ -443,38 +511,68 @@
           <lb facs="#zone-11328280-6-r7l6"/>Ain vierteil von a[.]ner lagel swebel.
           <lb facs="#zone-11328280-6-r7l7"/>Ain beslagen aimer zu ainem prunen.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11328280-7"/>
+        <pb n="7" facs="#surface-11328280-7"/>
+        <ab xml:id="ab-11328280-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11328280-7-r2">
           <lb facs="#zone-11328280-7-r2l1"/>Ain zugsail daran man die leut
           <lb facs="#zone-11328280-7-r2l2"/>marternt.
+        </ab>
+        <ab xml:id="ab-11328280-7-r3">
           <lb facs="#zone-11328280-7-r3l1"/>In der knechtstuben.
+        </ab>
+        <ab xml:id="ab-11328280-7-r4">
           <lb facs="#zone-11328280-7-r4l1"/>Zwo handpoyen mit keten.
           <lb facs="#zone-11328280-7-r4l2"/>Zwo pay̆npoyen mit keten.
           <lb facs="#zone-11328280-7-r4l3"/>Vier malenslŏssel. Ain halls poyen.
           <lb facs="#zone-11328280-7-r4l4"/>I arm poyen.
+        </ab>
+        <ab xml:id="ab-11328280-7-r5">
           <lb facs="#zone-11328280-7-r5l1"/>Oben auf dersn stuben.
+        </ab>
+        <ab xml:id="ab-11328280-7-r6">
           <lb facs="#zone-11328280-7-r6l1"/>Vier petstaten.
+        </ab>
+        <ab xml:id="ab-11328280-7-r7">
           <lb facs="#zone-11328280-7-r7l1"/>Im speisgaden.
+        </ab>
+        <ab xml:id="ab-11328280-7-r8">
           <lb facs="#zone-11328280-7-r8l1"/>Ain alter tisch.
           <lb facs="#zone-11328280-7-r8l2"/>Zwo speistruchen.
+        </ab>
+        <ab xml:id="ab-11328280-7-r9">
           <lb facs="#zone-11328280-7-r9l1"/>In der hell.
+        </ab>
+        <ab xml:id="ab-11328280-7-r10">
           <lb facs="#zone-11328280-7-r10l1"/>VII spanpet.
+        </ab>
+        <ab xml:id="ab-11328280-7-r11">
           <lb facs="#zone-11328280-7-r11l1"/>In der kuchl.
+        </ab>
+        <ab xml:id="ab-11328280-7-r12">
           <lb facs="#zone-11328280-7-r12l1"/>Ain sp[..]pl[.]s[.].
           <lb facs="#zone-11328280-7-r12l2"/>Ain hĕl.
           <lb facs="#zone-11328280-7-r12l3"/>Zwei prantraiten. Ain speiskasten.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11328280-8"/>
+        <pb n="8" facs="#surface-11328280-8"/>
+        <ab xml:id="ab-11328280-8-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11328280-8-r2">
           <lb facs="#zone-11328280-8-r2l1"/>Im marstal.
+        </ab>
+        <ab xml:id="ab-11328280-8-r3">
           <lb facs="#zone-11328280-8-r3l1"/>Ain fueterkasten. Ain newen fueterkasten
           <lb facs="#zone-11328280-8-r3l2"/>nicht.
           <lb facs="#zone-11328280-8-r3l3"/>Ain alts kastel.
           <lb facs="#zone-11328280-8-r3l4"/>Ain alts fleispail hat XII pfleger
           <lb facs="#zone-11328280-8-r3l5"/>ausgewert.
+        </ab>
+        <ab xml:id="ab-11328280-8-r4">
           <lb facs="#zone-11328280-8-r4l1"/>In der phister stuben.
+        </ab>
+        <ab xml:id="ab-11328280-8-r5">
           <lb facs="#zone-11328280-8-r5l1"/>Ain welpanck.
           <lb facs="#zone-11328280-8-r5l2"/>Ain hefel trog.
           <lb facs="#zone-11328280-8-r5l3"/>VII protpret.
@@ -483,7 +581,11 @@
           <lb facs="#zone-11328280-8-r5l6"/>Lienhard am mayrhof,
           <lb facs="#zone-11328280-8-r5l7"/>Hanns Keler, Jorg Lini
           <lb facs="#zone-11328280-8-r5l8"/>Hanns Walther
+        </ab>
+        <ab xml:id="ab-11328280-8-r6">
           <lb facs="#zone-11328280-8-r6l1"/>In der capel.
+        </ab>
+        <ab xml:id="ab-11328280-8-r7">
           <lb facs="#zone-11328280-8-r7l1"/>Ain graus damaskens mesgewand.
           <lb facs="#zone-11328280-8-r7l2"/>Zwai corporal.
           <lb facs="#zone-11328280-8-r7l3"/>Ain kelch mit ainer paten
@@ -497,9 +599,11 @@
           <lb facs="#zone-11328280-8-r7l11"/>Zwo messin leuchter.
           <lb facs="#zone-11328280-8-r7l12"/>Ain tebich uber ain altar.
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11328280-9"/>
+        <pb n="9" facs="#surface-11328280-9"/>
+        <ab xml:id="ab-11328280-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11328280-9-r2">
           <lb facs="#zone-11328280-9-r2l1"/>Ain vaß swabisch wein, I urn
           <lb facs="#zone-11328280-9-r2l2"/>per VIII lb. sol das vaß gevistert
           <lb facs="#zone-11328280-9-r2l3"/>und darnach was das bringt
@@ -518,21 +622,23 @@
           <lb facs="#zone-11328280-9-r2l16"/>an den wein facit XXIX mr̃.
           <lb facs="#zone-11328280-9-r2l17"/>VII lb. X kr.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11328280-10"/>
+        <pb n="10" facs="#surface-11328280-10"/>
+        <ab xml:id="ab-11328280-10-r1">
           <milestone unit="folio" n="5v"/>
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11328280-11"/>
+        <pb n="11" facs="#surface-11328280-11"/>
+        <ab xml:id="ab-11328280-11-r1">
           <milestone unit="folio" n="6r"/>
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11328280-12"/>
+        <pb n="12" facs="#surface-11328280-12"/>
+        <ab xml:id="ab-11328280-12-r1">
           <milestone unit="folio" n="6v"/>
         </ab>
-        <ab>
-          <pb n="13" facs="#surface-11328280-13"/>
+        <pb n="13" facs="#surface-11328280-13"/>
+        <ab xml:id="ab-11328280-13-r1">
           <milestone unit="folio" n="7r"/>
+        </ab>
+        <ab xml:id="ab-11328280-13-r2">
           <lb facs="#zone-11328280-13-r2l1"/>So hat herr Melchior von Haymenhofen
           <lb facs="#zone-11328280-13-r2l2"/>herrn Jacoben von Spaŭ geben zekaufen
           <lb facs="#zone-11328280-13-r2l3"/>etlich hew̆, davon sol er herrn Melchior
@@ -561,9 +667,11 @@
           <lb facs="#zone-11328280-13-r2l26"/>pro VII lb.
           <lb facs="#zone-11328280-13-r2l27"/>Summa [..] XXI mr̃. IIII lb X kr.
         </ab>
-        <ab>
-          <pb n="14" facs="#surface-11328280-14"/>
+        <pb n="14" facs="#surface-11328280-14"/>
+        <ab xml:id="ab-11328280-14-r1">
           <milestone unit="folio" n="7v"/>
+        </ab>
+        <ab xml:id="ab-11328280-14-r2">
           <lb facs="#zone-11328280-14-r2l1"/>Ain rost, alte hackmeser, I kuchelspis,
           <lb facs="#zone-11328280-14-r2l2"/>ain kuechlspis, ain pawmschab,
           <lb facs="#zone-11328280-14-r2l3"/>ist g[.]sch ain hafendeck per
@@ -588,12 +696,12 @@
           <lb facs="#zone-11328280-14-r2l22"/>zů ainem gyesfaß hat er
           <lb facs="#zone-11328280-14-r2l23"/>im hingelassen.
         </ab>
-        <ab>
-          <pb n="15" facs="#surface-11328280-15"/>
+        <pb n="15" facs="#surface-11328280-15"/>
+        <ab xml:id="ab-11328280-15-r1">
           <milestone unit="folio" n="8r"/>
         </ab>
-        <ab>
-          <pb n="16" facs="#surface-11328280-16"/>
+        <pb n="16" facs="#surface-11328280-16"/>
+        <ab xml:id="ab-11328280-16-r1">
           <milestone unit="folio" n="8v"/>
         </ab>
       </div>

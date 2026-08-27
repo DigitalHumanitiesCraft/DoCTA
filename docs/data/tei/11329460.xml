@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -122,14 +122,18 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329460-1"/>
+        <pb n="1" facs="#surface-11329460-1"/>
+        <ab xml:id="ab-11329460-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329460-1-r2">
           <lb facs="#zone-11329460-1-r2l1"/>Nota haw̆srat was dem
           <lb facs="#zone-11329460-1-r2l2"/>Frechen im hauß beleibt und daz
           <lb facs="#zone-11329460-1-r2l3"/>wid(er) darumb widerumb der Frech antwurt(e)n sol
           <lb facs="#zone-11329460-1-r2l4"/>und dalassen soll. Beschechen am phincz
           <lb facs="#zone-11329460-1-r2l5"/>d(er) Zwelff Potenschidung anno D(o)m(ini) etc. LXIIo.
+        </ab>
+        <ab xml:id="ab-11329460-1-r3">
           <lb facs="#zone-11329460-1-r3l1"/>It(em) XXVII petstett(e)n und span pet hulczein.
           <lb facs="#zone-11329460-1-r3l2"/>It(em) X tisch.
           <lb facs="#zone-11329460-1-r3l3"/>It(em) und XII fũr penkh.
@@ -156,20 +160,22 @@
           <lb facs="#zone-11329460-1-r3l24"/>It(em) I kupfrins gelŏcherts kraut pekh.
           <lb facs="#zone-11329460-1-r3l25"/>It(em) habern zu verfuedern LVI streÿmas.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329460-2"/>
+        <pb n="2" facs="#surface-11329460-2"/>
+        <ab xml:id="ab-11329460-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329460-2-r2">
           <lb facs="#zone-11329460-2-r2l1"/>It(em) kappaw̃n XXXIIII.
           <lb facs="#zone-11329460-2-r2l2"/>It(em) hanen I.
           <lb facs="#zone-11329460-2-r2l3"/>I(tem) henen XXV.
           <lb facs="#zone-11329460-2-r2l4"/>It(em) hun(er) junge XVII.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329460-3"/>
+        <pb n="3" facs="#surface-11329460-3"/>
+        <ab xml:id="ab-11329460-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329460-4"/>
+        <pb n="4" facs="#surface-11329460-4"/>
+        <ab xml:id="ab-11329460-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
       </div>

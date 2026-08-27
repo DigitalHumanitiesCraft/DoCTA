@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -108,9 +108,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329900-1"/>
+        <pb n="1" facs="#surface-11329900-1"/>
+        <ab xml:id="ab-11329900-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329900-1-r2">
           <lb facs="#zone-11329900-1-r2l1"/>Vermerckt den zeúg zw̆
           <lb facs="#zone-11329900-1-r2l2"/>Sigmȗdsegk so ich Chŭnradt
           <lb facs="#zone-11329900-1-r2l3"/>Metz geantwúrtt hab junnckherren
@@ -118,6 +120,8 @@
           <lb facs="#zone-11329900-1-r2l5"/>würtickhait des Oswalden
           <lb facs="#zone-11329900-1-r2l6"/>Sawrweins richter und ampt¬
           <lb facs="#zone-11329900-1-r2l7"/>mann zŭ Pfu̇ns.
+        </ab>
+        <ab xml:id="ab-11329900-1-r3">
           <lb facs="#zone-11329900-1-r3l1"/>Item zŭ dem ersten vier messein hagckhen¬
           <lb facs="#zone-11329900-1-r3l2"/>pŭchsenn.
           <lb facs="#zone-11329900-1-r3l3"/>Item sechs hantpüchsenn.
@@ -140,8 +144,8 @@
           <lb facs="#zone-11329900-1-r3l20"/>Item ain spey̑s truchen.
           <lb facs="#zone-11329900-1-r3l21"/>Item ain kästlein in der stüben.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329900-2"/>
+        <pb n="2" facs="#surface-11329900-2"/>
+        <ab xml:id="ab-11329900-2-r1">
           <milestone unit="folio" n="1r"/>
         </ab>
       </div>

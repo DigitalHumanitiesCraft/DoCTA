@@ -21,37 +21,130 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerkt den hausrat,",
-      "harnasch und ander were die",
-      "alsdann mein genedigister h(er)r",
-      "von Österreich hat auf seiner",
-      "genad(en) phleg zu Sigmunds purg",
-      "am Verrenstain so ich Karl von",
-      "Spaur dem Jorg Pran(n)disser über¬",
-      "geantwurdt hab innhalt der nach¬",
-      "geschrib(e)n inventuari zetl. Beschech(e)n",
-      "an erittag vor Sand Mathias tag",
-      "im LXXXX jar in beibesen Oswald(e)n",
-      "Schreÿer und Hannsen Vichhanser",
-      "bede seshafft zu Nasareid, auch",
-      "Symon Rueppen dieselb zeit pietter",
-      "daselbs.",
-      "Auf dem ober(e)n haus.",
-      "Am ersten in einem ober(e)n ergkerly",
-      "eȋn zugeschlagne lägl mít haüspfeyl.",
-      "I(tem) aber daselbs ain stübich halb(er) pfeÿl.",
-      "I(tem) ain legl nit gar halb mit",
-      "vergeben pheÿl.",
-      "I(tem) ain halbe legl vol büchsenpulfer.",
-      "I(tem) ain clains pütrichl voller",
-      "püchsenkugl aus bleÿ gemacht.",
-      "I(tem) ain blatten pleÿ.",
-      "I(tem) ain uren pontzl nit gar ein",
-      "virtail büchsenpulfer darinn.",
-      "I(tem) zwen gross mödl zu hagkenpüchs.",
-      "I(tem) zwen clain modl zu handtpüchs(e)n.",
-      "I(tem) ain stukh eÿsen zum zug in das rad."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkt den hausrat,"
+      },
+      {
+       "id": "r2l2",
+       "text": "harnasch und ander were die"
+      },
+      {
+       "id": "r2l3",
+       "text": "alsdann mein genedigister h(er)r"
+      },
+      {
+       "id": "r2l4",
+       "text": "von Österreich hat auf seiner"
+      },
+      {
+       "id": "r2l5",
+       "text": "genad(en) phleg zu Sigmunds purg"
+      },
+      {
+       "id": "r2l6",
+       "text": "am Verrenstain so ich Karl von"
+      },
+      {
+       "id": "r2l7",
+       "text": "Spaur dem Jorg Pran(n)disser über¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "geantwurdt hab innhalt der nach¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "geschrib(e)n inventuari zetl. Beschech(e)n"
+      },
+      {
+       "id": "r2l10",
+       "text": "an erittag vor Sand Mathias tag"
+      },
+      {
+       "id": "r2l11",
+       "text": "im LXXXX jar in beibesen Oswald(e)n"
+      },
+      {
+       "id": "r2l12",
+       "text": "Schreÿer und Hannsen Vichhanser"
+      },
+      {
+       "id": "r2l13",
+       "text": "bede seshafft zu Nasareid, auch"
+      },
+      {
+       "id": "r2l14",
+       "text": "Symon Rueppen dieselb zeit pietter"
+      },
+      {
+       "id": "r2l15",
+       "text": "daselbs."
+      },
+      {
+       "id": "r3l1",
+       "text": "Auf dem ober(e)n haus."
+      },
+      {
+       "id": "r4l1",
+       "text": "Am ersten in einem ober(e)n ergkerly"
+      },
+      {
+       "id": "r4l2",
+       "text": "eȋn zugeschlagne lägl mít haüspfeyl."
+      },
+      {
+       "id": "r4l3",
+       "text": "I(tem) aber daselbs ain stübich halb(er) pfeÿl."
+      },
+      {
+       "id": "r4l4",
+       "text": "I(tem) ain legl nit gar halb mit"
+      },
+      {
+       "id": "r4l5",
+       "text": "vergeben pheÿl."
+      },
+      {
+       "id": "r4l6",
+       "text": "I(tem) ain halbe legl vol büchsenpulfer."
+      },
+      {
+       "id": "r4l7",
+       "text": "I(tem) ain clains pütrichl voller"
+      },
+      {
+       "id": "r4l8",
+       "text": "püchsenkugl aus bleÿ gemacht."
+      },
+      {
+       "id": "r4l9",
+       "text": "I(tem) ain blatten pleÿ."
+      },
+      {
+       "id": "r4l10",
+       "text": "I(tem) ain uren pontzl nit gar ein"
+      },
+      {
+       "id": "r4l11",
+       "text": "virtail büchsenpulfer darinn."
+      },
+      {
+       "id": "r4l12",
+       "text": "I(tem) zwen gross mödl zu hagkenpüchs."
+      },
+      {
+       "id": "r4l13",
+       "text": "I(tem) zwen clain modl zu handtpüchs(e)n."
+      },
+      {
+       "id": "r4l14",
+       "text": "I(tem) ain stukh eÿsen zum zug in das rad."
+      }
      ]
     }
    ]
@@ -76,38 +169,134 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "I(tem) zwen zwÿspitz zum stainhawen.",
-      "I(tem) dreẏ mödl zun züglstain.",
-      "I(tem) und vier dachmödl.",
-      "I(tem) ain gross eysengatt(er) zu̇ balkh(e)n.",
-      "I(tem) fünfȗndtzwaintzig venster ramen",
-      "mit eysen stängl beschlagen.",
-      "I(tem) auf einer stell etwovil bloss(er) pfeil.",
-      "I(tem) ain alts gross zugsaÿl.",
-      "I(tem) ain raispankh zu den armbrost(e)n.",
-      "I(tem) zu öbrist und(er)n dach ain tzug und",
-      "ain saẏl daran.",
-      "I(tem) dreyczechen hakenpüchs(e)n",
-      "gross und clain.",
-      "I(tem) neẅntzech(e)n handtpüchs(e)n.",
-      "I(tem) vier pankh arm(m)brost.",
-      "I(tem) acht claine armbrost.",
-      "I(tem) dreÿ schweinspiess eysen ungefast.",
-      "I(tem) zwaÿ blosse kröndl zum stech(e)n.",
-      "I(tem) acht lantzen hab(e)n ain eÿsen.",
-      "I(tem) in der ober(e)n stuben ain tisch",
-      "mit vier offen truchen.",
-      "I(tem) ain wetzstain an ainer kett(en).",
-      "I(tem) in derselb(e)n stuben ain hirsch",
-      "kuren an der wanndt.",
-      "I(tem) daselb(e)n aus der stub(e)n in ainem",
-      "ergkerli ein spanpett.",
-      "I(tem) ein offne unbeschlagne truch(e)n",
-      "stett vor derselb(en) stuben.",
-      "In der selb(e)n truchen ligt ein alt(er)",
-      "kolb(e)n und ein eisen püx, gehort",
-      "in ein zug rad."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) zwen zwÿspitz zum stainhawen."
+      },
+      {
+       "id": "r2l2",
+       "text": "I(tem) dreẏ mödl zun züglstain."
+      },
+      {
+       "id": "r2l3",
+       "text": "I(tem) und vier dachmödl."
+      },
+      {
+       "id": "r2l4",
+       "text": "I(tem) ain gross eysengatt(er) zu̇ balkh(e)n."
+      },
+      {
+       "id": "r2l5",
+       "text": "I(tem) fünfȗndtzwaintzig venster ramen"
+      },
+      {
+       "id": "r2l6",
+       "text": "mit eysen stängl beschlagen."
+      },
+      {
+       "id": "r2l7",
+       "text": "I(tem) auf einer stell etwovil bloss(er) pfeil."
+      },
+      {
+       "id": "r2l8",
+       "text": "I(tem) ain alts gross zugsaÿl."
+      },
+      {
+       "id": "r2l9",
+       "text": "I(tem) ain raispankh zu den armbrost(e)n."
+      },
+      {
+       "id": "r2l10",
+       "text": "I(tem) zu öbrist und(er)n dach ain tzug und"
+      },
+      {
+       "id": "r2l11",
+       "text": "ain saẏl daran."
+      },
+      {
+       "id": "r2l12",
+       "text": "I(tem) dreyczechen hakenpüchs(e)n"
+      },
+      {
+       "id": "r2l13",
+       "text": "gross und clain."
+      },
+      {
+       "id": "r2l14",
+       "text": "I(tem) neẅntzech(e)n handtpüchs(e)n."
+      },
+      {
+       "id": "r2l15",
+       "text": "I(tem) vier pankh arm(m)brost."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) acht claine armbrost."
+      },
+      {
+       "id": "r2l17",
+       "text": "I(tem) dreÿ schweinspiess eysen ungefast."
+      },
+      {
+       "id": "r2l18",
+       "text": "I(tem) zwaÿ blosse kröndl zum stech(e)n."
+      },
+      {
+       "id": "r2l19",
+       "text": "I(tem) acht lantzen hab(e)n ain eÿsen."
+      },
+      {
+       "id": "r2l20",
+       "text": "I(tem) in der ober(e)n stuben ain tisch"
+      },
+      {
+       "id": "r2l21",
+       "text": "mit vier offen truchen."
+      },
+      {
+       "id": "r2l22",
+       "text": "I(tem) ain wetzstain an ainer kett(en)."
+      },
+      {
+       "id": "r2l23",
+       "text": "I(tem) in derselb(e)n stuben ain hirsch"
+      },
+      {
+       "id": "r2l24",
+       "text": "kuren an der wanndt."
+      },
+      {
+       "id": "r2l25",
+       "text": "I(tem) daselb(e)n aus der stub(e)n in ainem"
+      },
+      {
+       "id": "r2l26",
+       "text": "ergkerli ein spanpett."
+      },
+      {
+       "id": "r2l27",
+       "text": "I(tem) ein offne unbeschlagne truch(e)n"
+      },
+      {
+       "id": "r2l28",
+       "text": "stett vor derselb(en) stuben."
+      },
+      {
+       "id": "r2l29",
+       "text": "In der selb(e)n truchen ligt ein alt(er)"
+      },
+      {
+       "id": "r2l30",
+       "text": "kolb(e)n und ein eisen püx, gehort"
+      },
+      {
+       "id": "r2l31",
+       "text": "in ein zug rad."
+      }
      ]
     }
    ]
@@ -132,24 +321,78 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "I(tem) aber ein truch(e)n mit aim schloss.",
-      "I(tem) funf eẏsenpantt und etlich",
-      "clain ring gehóren zu d(em) zug.",
-      "I(tem) in der gsÿnn stuben dreÿ tisch.",
-      "I(tem) ain offens truch(e)l und ain",
-      "brotkorb sind unbeschlossen.",
-      "I(tem) in der kapell(e)n im kestl etlich",
-      "panttring gehor(e)n zum tzug.",
-      "I(tem) und ain laÿtt(er).",
-      "I(tem) auf dem under(e)n sal sind",
-      "zwaÿ hÿrschkür(e)n.",
-      "I(tem) und acht spanpeth.",
-      "I(tem) ain pöntzl ist halbs mit",
-      "eÿsnen fuesängl.",
-      "I(tem) ain new̃en füetterkasst(e)n.",
-      "I(tem) ain trend(e)l im zergad(e)n.",
-      "I(tem) und zwo klain laÿtter(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) aber ein truch(e)n mit aim schloss."
+      },
+      {
+       "id": "r2l2",
+       "text": "I(tem) funf eẏsenpantt und etlich"
+      },
+      {
+       "id": "r2l3",
+       "text": "clain ring gehóren zu d(em) zug."
+      },
+      {
+       "id": "r2l4",
+       "text": "I(tem) in der gsÿnn stuben dreÿ tisch."
+      },
+      {
+       "id": "r2l5",
+       "text": "I(tem) ain offens truch(e)l und ain"
+      },
+      {
+       "id": "r2l6",
+       "text": "brotkorb sind unbeschlossen."
+      },
+      {
+       "id": "r2l7",
+       "text": "I(tem) in der kapell(e)n im kestl etlich"
+      },
+      {
+       "id": "r2l8",
+       "text": "panttring gehor(e)n zum tzug."
+      },
+      {
+       "id": "r2l9",
+       "text": "I(tem) und ain laÿtt(er)."
+      },
+      {
+       "id": "r2l10",
+       "text": "I(tem) auf dem under(e)n sal sind"
+      },
+      {
+       "id": "r2l11",
+       "text": "zwaÿ hÿrschkür(e)n."
+      },
+      {
+       "id": "r2l12",
+       "text": "I(tem) und acht spanpeth."
+      },
+      {
+       "id": "r2l13",
+       "text": "I(tem) ain pöntzl ist halbs mit"
+      },
+      {
+       "id": "r2l14",
+       "text": "eÿsnen fuesängl."
+      },
+      {
+       "id": "r2l15",
+       "text": "I(tem) ain new̃en füetterkasst(e)n."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) ain trend(e)l im zergad(e)n."
+      },
+      {
+       "id": "r2l17",
+       "text": "I(tem) und zwo klain laÿtter(e)n."
+      }
      ]
     }
    ]
@@ -174,27 +417,90 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Das heysel auf",
-      "dem see h(er)unden.",
-      "I(tem) darinn ist ain tisch.",
-      "I(tem) und dreÿ spanpett.",
-      "Im under(e)n geheÿs.",
-      "I(tem) ain lange meltruch(e)n.",
-      "I(tem) ain peitlvaß.",
-      "I(tem) neÿn kessl clain und gros.",
-      "I(tem) dreÿ erin häfen.",
-      "I(tem) siben tzinschüssel(e)n und ain",
-      "plan und ein clain essigschüssl.",
-      "I(tem) vier eÿsen prantschrag(e)n.",
-      "I(tem) zwen lang pratspiss.",
-      "I(tem) ain anricht prett.",
-      "I(tem) ain alt(e)n grossen padtzub(er).",
-      "I(tem) ain eysnine pfan(e)n.",
-      "I(tem) ain gross kupfrein sib.",
-      "I(tem) ain hurd zu öpfel(e)n od(er) kes.",
-      "I(tem) ain gehengt(e)n schliffstain",
-      "mit seiner zugehör."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Das heysel auf"
+      },
+      {
+       "id": "r2l2",
+       "text": "dem see h(er)unden."
+      },
+      {
+       "id": "r3l1",
+       "text": "I(tem) darinn ist ain tisch."
+      },
+      {
+       "id": "r3l2",
+       "text": "I(tem) und dreÿ spanpett."
+      },
+      {
+       "id": "r4l1",
+       "text": "Im under(e)n geheÿs."
+      },
+      {
+       "id": "r5l1",
+       "text": "I(tem) ain lange meltruch(e)n."
+      },
+      {
+       "id": "r5l2",
+       "text": "I(tem) ain peitlvaß."
+      },
+      {
+       "id": "r5l3",
+       "text": "I(tem) neÿn kessl clain und gros."
+      },
+      {
+       "id": "r5l4",
+       "text": "I(tem) dreÿ erin häfen."
+      },
+      {
+       "id": "r5l5",
+       "text": "I(tem) siben tzinschüssel(e)n und ain"
+      },
+      {
+       "id": "r5l6",
+       "text": "plan und ein clain essigschüssl."
+      },
+      {
+       "id": "r5l7",
+       "text": "I(tem) vier eÿsen prantschrag(e)n."
+      },
+      {
+       "id": "r5l8",
+       "text": "I(tem) zwen lang pratspiss."
+      },
+      {
+       "id": "r5l9",
+       "text": "I(tem) ain anricht prett."
+      },
+      {
+       "id": "r5l10",
+       "text": "I(tem) ain alt(e)n grossen padtzub(er)."
+      },
+      {
+       "id": "r5l11",
+       "text": "I(tem) ain eysnine pfan(e)n."
+      },
+      {
+       "id": "r5l12",
+       "text": "I(tem) ain gross kupfrein sib."
+      },
+      {
+       "id": "r5l13",
+       "text": "I(tem) ain hurd zu öpfel(e)n od(er) kes."
+      },
+      {
+       "id": "r5l14",
+       "text": "I(tem) ain gehengt(e)n schliffstain"
+      },
+      {
+       "id": "r5l15",
+       "text": "mit seiner zugehör."
+      }
      ]
     }
    ]
@@ -219,34 +525,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "I(tem) ain brot rem.",
-      "I(tem) ain alt(e)n tisch.",
-      "I(tem) zwo hellenpartt(en).",
-      "I(tem) sechs leÿnein pettziech(e)n",
-      "sind halb zerrissen.",
-      "I(tem) ain alts tischtuech.",
-      "I(tem) ain beschlossne truchn hat kain",
-      "fues stet im neuen zymer.",
-      "I(tem) ain unbeschlossne sidltruch(e)n",
-      "stet vor dem pett.",
-      "I(tem) ain petstatt mit sambt",
-      "ainem karöl darund(er) stend.",
-      "I(tem) im neuen tzimer zwen tisch.",
-      "I(tem) ain gutsch(e)n mit sambt",
-      "ainem polster.",
-      "I(tem) zway hurschküren.",
-      "I(tem) im staingad(e)n ain beschlagn(er)",
-      "zerbrochner gwantkast(e)n.",
-      "I(tem) und drey spanpett.",
-      "I(tem) in der alt(e)n stuben zwen tïsch.",
-      "I(tem) zwaïntzïg eysenhiet und schaler(e)n.",
-      "I(tem) new̆ntzechen pantzer.",
-      "I(tem) zwen eysen kolb(e)n.",
-      "I(tem) zwen wurfhak(e)n.",
-      "I(tem) ain alts praitz gross swertt.",
-      "I(tem) ain eysneine drÿschl.",
-      "I(tem) ain eysen streittgab(e)l."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) ain brot rem."
+      },
+      {
+       "id": "r2l2",
+       "text": "I(tem) ain alt(e)n tisch."
+      },
+      {
+       "id": "r2l3",
+       "text": "I(tem) zwo hellenpartt(en)."
+      },
+      {
+       "id": "r2l4",
+       "text": "I(tem) sechs leÿnein pettziech(e)n"
+      },
+      {
+       "id": "r2l5",
+       "text": "sind halb zerrissen."
+      },
+      {
+       "id": "r2l6",
+       "text": "I(tem) ain alts tischtuech."
+      },
+      {
+       "id": "r2l7",
+       "text": "I(tem) ain beschlossne truchn hat kain"
+      },
+      {
+       "id": "r2l8",
+       "text": "fues stet im neuen zymer."
+      },
+      {
+       "id": "r2l9",
+       "text": "I(tem) ain unbeschlossne sidltruch(e)n"
+      },
+      {
+       "id": "r2l10",
+       "text": "stet vor dem pett."
+      },
+      {
+       "id": "r2l11",
+       "text": "I(tem) ain petstatt mit sambt"
+      },
+      {
+       "id": "r2l12",
+       "text": "ainem karöl darund(er) stend."
+      },
+      {
+       "id": "r2l13",
+       "text": "I(tem) im neuen tzimer zwen tisch."
+      },
+      {
+       "id": "r2l14",
+       "text": "I(tem) ain gutsch(e)n mit sambt"
+      },
+      {
+       "id": "r2l15",
+       "text": "ainem polster."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) zway hurschküren."
+      },
+      {
+       "id": "r2l17",
+       "text": "I(tem) im staingad(e)n ain beschlagn(er)"
+      },
+      {
+       "id": "r2l18",
+       "text": "zerbrochner gwantkast(e)n."
+      },
+      {
+       "id": "r2l19",
+       "text": "I(tem) und drey spanpett."
+      },
+      {
+       "id": "r2l20",
+       "text": "I(tem) in der alt(e)n stuben zwen tïsch."
+      },
+      {
+       "id": "r2l21",
+       "text": "I(tem) zwaïntzïg eysenhiet und schaler(e)n."
+      },
+      {
+       "id": "r2l22",
+       "text": "I(tem) new̆ntzechen pantzer."
+      },
+      {
+       "id": "r2l23",
+       "text": "I(tem) zwen eysen kolb(e)n."
+      },
+      {
+       "id": "r2l24",
+       "text": "I(tem) zwen wurfhak(e)n."
+      },
+      {
+       "id": "r2l25",
+       "text": "I(tem) ain alts praitz gross swertt."
+      },
+      {
+       "id": "r2l26",
+       "text": "I(tem) ain eysneine drÿschl."
+      },
+      {
+       "id": "r2l27",
+       "text": "I(tem) ain eysen streittgab(e)l."
+      }
      ]
     }
    ]
@@ -271,34 +661,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "I(tem) zechen federpett clain und gros",
-      "hat ain pett ain tziechen und",
-      "die neũn pett haben chain tziech(e)n.",
-      "I(tem) ain strosakh.",
-      "I(tem) funff pólster hat auch nur",
-      "ainer ain tziechen.",
-      "I(tem) und zwaÿ küss.",
-      "I(tem) zwelf dekh(e)n rauch und bloss",
-      "nit gar guet und ein wullein",
-      "dekhen ist alt und mit flat seÿden",
-      "über nãtt.",
-      "I(tem) in der harnaschkam(er) sind",
-      "drey alte spanpet.",
-      "I(tem) dreÿ alt truchen hat nur aine",
-      "ain schlos.",
-      "I(tem) im ober(e)n stübl ain tisch",
-      "und ain spanpeth.",
-      "I(tem) in der alt(e)n kamer sind",
-      "vier spanpett.",
-      "I(tem) in der ober(e)n kamer zwo",
-      "petstett und ain alte truch(e)n.",
-      "I(tem) ain alte armbrost mit einem",
-      "zerbrochen pogen und ein winden.",
-      "I(tem) ain fuetteral darinn sind",
-      "dreÿ tischmess(er).",
-      "I(tem) zwen pugkler zum fecht(e)n.",
-      "I(tem) ain alts köcherl."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) zechen federpett clain und gros"
+      },
+      {
+       "id": "r2l2",
+       "text": "hat ain pett ain tziechen und"
+      },
+      {
+       "id": "r2l3",
+       "text": "die neũn pett haben chain tziech(e)n."
+      },
+      {
+       "id": "r2l4",
+       "text": "I(tem) ain strosakh."
+      },
+      {
+       "id": "r2l5",
+       "text": "I(tem) funff pólster hat auch nur"
+      },
+      {
+       "id": "r2l6",
+       "text": "ainer ain tziechen."
+      },
+      {
+       "id": "r2l7",
+       "text": "I(tem) und zwaÿ küss."
+      },
+      {
+       "id": "r2l8",
+       "text": "I(tem) zwelf dekh(e)n rauch und bloss"
+      },
+      {
+       "id": "r2l9",
+       "text": "nit gar guet und ein wullein"
+      },
+      {
+       "id": "r2l10",
+       "text": "dekhen ist alt und mit flat seÿden"
+      },
+      {
+       "id": "r2l11",
+       "text": "über nãtt."
+      },
+      {
+       "id": "r2l12",
+       "text": "I(tem) in der harnaschkam(er) sind"
+      },
+      {
+       "id": "r2l13",
+       "text": "drey alte spanpet."
+      },
+      {
+       "id": "r2l14",
+       "text": "I(tem) dreÿ alt truchen hat nur aine"
+      },
+      {
+       "id": "r2l15",
+       "text": "ain schlos."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) im ober(e)n stübl ain tisch"
+      },
+      {
+       "id": "r2l17",
+       "text": "und ain spanpeth."
+      },
+      {
+       "id": "r2l18",
+       "text": "I(tem) in der alt(e)n kamer sind"
+      },
+      {
+       "id": "r2l19",
+       "text": "vier spanpett."
+      },
+      {
+       "id": "r2l20",
+       "text": "I(tem) in der ober(e)n kamer zwo"
+      },
+      {
+       "id": "r2l21",
+       "text": "petstett und ain alte truch(e)n."
+      },
+      {
+       "id": "r2l22",
+       "text": "I(tem) ain alte armbrost mit einem"
+      },
+      {
+       "id": "r2l23",
+       "text": "zerbrochen pogen und ein winden."
+      },
+      {
+       "id": "r2l24",
+       "text": "I(tem) ain fuetteral darinn sind"
+      },
+      {
+       "id": "r2l25",
+       "text": "dreÿ tischmess(er)."
+      },
+      {
+       "id": "r2l26",
+       "text": "I(tem) zwen pugkler zum fecht(e)n."
+      },
+      {
+       "id": "r2l27",
+       "text": "I(tem) ain alts köcherl."
+      }
      ]
     }
    ]
@@ -323,36 +797,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "I(tem) ain eÿsen kolben pũchsen.",
-      "I(tem) sibentzechen scheib(e)n zum zug.",
-      "I(tem) under dem dach zwo petstett.",
-      "I(tem) oben auf dem neuen zymer",
-      "in der kamer ain spanpett,",
-      "ain unbeschlossne truchen, ain",
-      "strosakh und ain böse dekh(e)n.",
-      "I(tem) in der kamer darneb(e)n sind",
-      "zwo petstett, darinn ligt ain",
-      "alter zernichter huder(e)n.",
-      "I(tem) ain hefltzuber und ain protafl.",
-      "I(tem) in der kuchl ain häl und",
-      "ain pösen drifues.",
-      "I(tem) zwaÿ eÿsen zum bratten.",
-      "I(tem) ain alte kessten pfan(e)n.",
-      "I(tem) zwen eysen stekh(e)n und",
-      "ain rengstang.",
-      "I(tem) ain zwerchhav und ain",
-      "sperhav und ain zwÿ spitz haw",
-      "zw dem weg.",
-      "I(tem) ain ungevaste kolben püx.",
-      "I(tem) ain beschlag(e)n firschlag mit",
-      "ainem silscheitt.",
-      "I(tem) ain alt(e)n wÿntling auch sunst",
-      "allerlaÿ clains altz eÿsen gschirr.",
-      "I(tem) ain alte zymerhakh(e)n.",
-      "I(tem) ain grossen kessl im pad.",
-      "I(tem) ain alts peitlvaß.",
-      "I(tem) ain alts streichmas."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I(tem) ain eÿsen kolben pũchsen."
+      },
+      {
+       "id": "r2l2",
+       "text": "I(tem) sibentzechen scheib(e)n zum zug."
+      },
+      {
+       "id": "r2l3",
+       "text": "I(tem) under dem dach zwo petstett."
+      },
+      {
+       "id": "r2l4",
+       "text": "I(tem) oben auf dem neuen zymer"
+      },
+      {
+       "id": "r2l5",
+       "text": "in der kamer ain spanpett,"
+      },
+      {
+       "id": "r2l6",
+       "text": "ain unbeschlossne truchen, ain"
+      },
+      {
+       "id": "r2l7",
+       "text": "strosakh und ain böse dekh(e)n."
+      },
+      {
+       "id": "r2l8",
+       "text": "I(tem) in der kamer darneb(e)n sind"
+      },
+      {
+       "id": "r2l9",
+       "text": "zwo petstett, darinn ligt ain"
+      },
+      {
+       "id": "r2l10",
+       "text": "alter zernichter huder(e)n."
+      },
+      {
+       "id": "r2l11",
+       "text": "I(tem) ain hefltzuber und ain protafl."
+      },
+      {
+       "id": "r2l12",
+       "text": "I(tem) in der kuchl ain häl und"
+      },
+      {
+       "id": "r2l13",
+       "text": "ain pösen drifues."
+      },
+      {
+       "id": "r2l14",
+       "text": "I(tem) zwaÿ eÿsen zum bratten."
+      },
+      {
+       "id": "r2l15",
+       "text": "I(tem) ain alte kessten pfan(e)n."
+      },
+      {
+       "id": "r2l16",
+       "text": "I(tem) zwen eysen stekh(e)n und"
+      },
+      {
+       "id": "r2l17",
+       "text": "ain rengstang."
+      },
+      {
+       "id": "r2l18",
+       "text": "I(tem) ain zwerchhav und ain"
+      },
+      {
+       "id": "r2l19",
+       "text": "sperhav und ain zwÿ spitz haw"
+      },
+      {
+       "id": "r2l20",
+       "text": "zw dem weg."
+      },
+      {
+       "id": "r2l21",
+       "text": "I(tem) ain ungevaste kolben püx."
+      },
+      {
+       "id": "r2l22",
+       "text": "I(tem) ain beschlag(e)n firschlag mit"
+      },
+      {
+       "id": "r2l23",
+       "text": "ainem silscheitt."
+      },
+      {
+       "id": "r2l24",
+       "text": "I(tem) ain alt(e)n wÿntling auch sunst"
+      },
+      {
+       "id": "r2l25",
+       "text": "allerlaÿ clains altz eÿsen gschirr."
+      },
+      {
+       "id": "r2l26",
+       "text": "I(tem) ain alte zymerhakh(e)n."
+      },
+      {
+       "id": "r2l27",
+       "text": "I(tem) ain grossen kessl im pad."
+      },
+      {
+       "id": "r2l28",
+       "text": "I(tem) ain alts peitlvaß."
+      },
+      {
+       "id": "r2l29",
+       "text": "I(tem) ain alts streichmas."
+      }
      ]
     }
    ]
@@ -377,25 +941,82 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Item im stall ain karrenpũchss",
-      "mit sambt zweÿ wolbeschlag(en)",
-      "reder(e)n.",
-      "Capellen.",
-      "Am erst(e)n ain messpuech.",
-      "I(tem) ain silbreȋn vergüllt(e)n kelch",
-      "mit sambt dem paten und",
-      "aller ander seiner zuegehör.",
-      "I(tem) drew messgwandt mitt",
-      "alben und aller ir(er) zuegehör.",
-      "I(tem) zwen messin leichter.",
-      "I(tem) ain alte beschlossne truch(e)n.",
-      "I(tem) ain messin rauchfas.",
-      "I(tem) zwaÿ opferkendli.",
-      "I(tem) ain kupfrein weichprun(n) kessl.",
-      "I(tem) e ain clains altz kesseli.",
-      "I(tem) ain clains messin glŏgk(e)l.",
-      "I(tem) oben in d(er) capell ain groß glökl."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item im stall ain karrenpũchss"
+      },
+      {
+       "id": "r2l2",
+       "text": "mit sambt zweÿ wolbeschlag(en)"
+      },
+      {
+       "id": "r2l3",
+       "text": "reder(e)n."
+      },
+      {
+       "id": "r3l1",
+       "text": "Capellen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Am erst(e)n ain messpuech."
+      },
+      {
+       "id": "r4l2",
+       "text": "I(tem) ain silbreȋn vergüllt(e)n kelch"
+      },
+      {
+       "id": "r4l3",
+       "text": "mit sambt dem paten und"
+      },
+      {
+       "id": "r4l4",
+       "text": "aller ander seiner zuegehör."
+      },
+      {
+       "id": "r4l5",
+       "text": "I(tem) drew messgwandt mitt"
+      },
+      {
+       "id": "r4l6",
+       "text": "alben und aller ir(er) zuegehör."
+      },
+      {
+       "id": "r4l7",
+       "text": "I(tem) zwen messin leichter."
+      },
+      {
+       "id": "r4l8",
+       "text": "I(tem) ain alte beschlossne truch(e)n."
+      },
+      {
+       "id": "r4l9",
+       "text": "I(tem) ain messin rauchfas."
+      },
+      {
+       "id": "r4l10",
+       "text": "I(tem) zwaÿ opferkendli."
+      },
+      {
+       "id": "r4l11",
+       "text": "I(tem) ain kupfrein weichprun(n) kessl."
+      },
+      {
+       "id": "r4l12",
+       "text": "I(tem) e ain clains altz kesseli."
+      },
+      {
+       "id": "r4l13",
+       "text": "I(tem) ain clains messin glŏgk(e)l."
+      },
+      {
+       "id": "r4l14",
+       "text": "I(tem) oben in d(er) capell ain groß glökl."
+      }
      ]
     }
    ]
@@ -420,10 +1041,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Item drey alte alter tiech(er).",
-      "Item ain ur mit sambt einem",
-      "glökl und aller ir(er) zuegehör."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item drey alte alter tiech(er)."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item ain ur mit sambt einem"
+      },
+      {
+       "id": "r2l3",
+       "text": "glökl und aller ir(er) zuegehör."
+      }
      ]
     }
    ]
@@ -448,7 +1081,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     }
    ]
@@ -473,7 +1109,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -498,7 +1137,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]

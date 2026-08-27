@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -135,9 +135,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11348480-1"/>
+        <pb n="1" facs="#surface-11348480-1"/>
+        <ab xml:id="ab-11348480-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11348480-1-r2">
           <lb facs="#zone-11348480-1-r2l1"/>Nota vermerkcht die varende
           <lb facs="#zone-11348480-1-r2l2"/>hab die mir der Valentein
           <lb facs="#zone-11348480-1-r2l3"/>von Montãny auff Lichten¬
@@ -147,6 +149,8 @@
           <lb facs="#zone-11348480-1-r2l7"/>hab ingegenwirtikaÿt der
           <lb facs="#zone-11348480-1-r2l8"/>erbern lew̆t die her nach
           <lb facs="#zone-11348480-1-r2l9"/>geschribenn stendt etc.
+        </ab>
+        <ab xml:id="ab-11348480-1-r3">
           <lb facs="#zone-11348480-1-r3l1"/>Item am ersten ain eysnene pũchss
           <lb facs="#zone-11348480-1-r3l2"/>die schŭst ain stain als gross als
           <lb facs="#zone-11348480-1-r3l3"/>ain klaine veltkŭegel.
@@ -169,9 +173,11 @@
           <lb facs="#zone-11348480-1-r3l20"/>Item ain knẽttrog.
           <lb facs="#zone-11348480-1-r3l21"/>Item ain wũrchtavel zü dem prot.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11348480-2"/>
+        <pb n="2" facs="#surface-11348480-2"/>
+        <ab xml:id="ab-11348480-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11348480-2-r2">
           <lb facs="#zone-11348480-2-r2l1"/>Item fier protprëtter.
           <lb facs="#zone-11348480-2-r2l2"/>Item zwwo leỹtter und ain leẏn.
           <lb facs="#zone-11348480-2-r2l3"/>Item ain wasser zuber inder küchenn.
@@ -179,6 +185,8 @@
           <lb facs="#zone-11348480-2-r2l5"/>Item dreÿ new kas stelenn.
           <lb facs="#zone-11348480-2-r2l6"/>Item und wol peÿ X gewant stangen.
           <lb facs="#zone-11348480-2-r2l7"/>Item ain vass in dem tawlen tũren.
+        </ab>
+        <ab xml:id="ab-11348480-2-r3">
           <lb facs="#zone-11348480-2-r3l1"/>Item und peÿ der antwúrtung ist
           <lb facs="#zone-11348480-2-r3l2"/>gewësen auff Liechtenberg Felix
           <lb facs="#zone-11348480-2-r3l3"/>Ratgeb, Peter Kobolt die zeÿt
@@ -190,12 +198,12 @@
           <lb facs="#zone-11348480-2-r3l9"/>und ander lawt mer vonn
           <lb facs="#zone-11348480-2-r3l10"/>Lichtenbergk genŭg etc.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11348480-3"/>
+        <pb n="3" facs="#surface-11348480-3"/>
+        <ab xml:id="ab-11348480-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11348480-4"/>
+        <pb n="4" facs="#surface-11348480-4"/>
+        <ab xml:id="ab-11348480-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
       </div>

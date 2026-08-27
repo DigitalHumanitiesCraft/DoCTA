@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -345,9 +345,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11327963-1"/>
+        <pb n="1" facs="#surface-11327963-1"/>
+        <ab xml:id="ab-11327963-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11327963-1-r2">
           <lb facs="#zone-11327963-1-r2l1"/>1489
           <lb facs="#zone-11327963-1-r2l2"/>An sambstag vor sannd Lorennzen tag anno etc.
           <lb facs="#zone-11327963-1-r2l3"/>LXXXVIIIIno ist herr Sigmund vŏn Wellsperg auf
@@ -357,15 +359,23 @@
           <lb facs="#zone-11327963-1-r2l7"/>ynngeantwort in bey̑wesen Clemȇnten Wolffeckern
           <lb facs="#zone-11327963-1-r2l8"/>anwaldt zu Thawr etc.
           <lb facs="#zone-11327963-1-r2l9"/>R(egistra)ta
+        </ab>
+        <ab xml:id="ab-11327963-1-r3">
           <lb facs="#zone-11327963-1-r3l1"/>Am ersten in der stuben
           <lb facs="#zone-11327963-1-r3l2"/>da ain phleger inn ist.
+        </ab>
+        <ab xml:id="ab-11327963-1-r4">
           <lb facs="#zone-11327963-1-r4l1"/>Zwen tisch.
           <lb facs="#zone-11327963-1-r4l2"/>Ain verdĕckts gutschenpȇtl bei dem ofen.
           <lb facs="#zone-11327963-1-r4l3"/>Ain giesvaskăstl.
           <lb facs="#zone-11327963-1-r4l4"/>Ain giesvass.
           <lb facs="#zone-11327963-1-r4l5"/>Ain pȇckh.
           <lb facs="#zone-11327963-1-r4l6"/>Ain new̑s cȃstl.
+        </ab>
+        <ab xml:id="ab-11327963-1-r5">
           <lb facs="#zone-11327963-1-r5l1"/>In der camer daran.
+        </ab>
+        <ab xml:id="ab-11327963-1-r6">
           <lb facs="#zone-11327963-1-r6l1"/>Zwai spanpȇtt.
           <lb facs="#zone-11327963-1-r6l2"/>Zwai pett.
           <lb facs="#zone-11327963-1-r6l3"/>Ain golter.
@@ -379,7 +389,11 @@
           <lb facs="#zone-11327963-1-r6l11"/>zwai zwilchine tischtuech.
           <lb facs="#zone-11327963-1-r6l12"/>Ain alter tisch.
           <lb facs="#zone-11327963-1-r6l13"/>Ain schachzagl.
+        </ab>
+        <ab xml:id="ab-11327963-1-r7">
           <lb facs="#zone-11327963-1-r7l1"/>In derselben camer in dem clain cȃmȇrl.
+        </ab>
+        <ab xml:id="ab-11327963-1-r8">
           <lb facs="#zone-11327963-1-r8l1"/>Item V grosse zin.
           <lb facs="#zone-11327963-1-r8l2"/>Item V mittre zin.
           <lb facs="#zone-11327963-1-r8l3"/>Item noch kleiner zy̑nn IIII.
@@ -391,13 +405,21 @@
           <lb facs="#zone-11327963-1-r8l9"/>Zinein teller X.
           <lb facs="#zone-11327963-1-r8l10"/>Messin leȗchter clain und gross VI.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11327963-2"/>
+        <pb n="2" facs="#surface-11327963-2"/>
+        <ab xml:id="ab-11327963-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11327963-2-r2">
           <lb facs="#zone-11327963-2-r2l1"/>Auf dem clain estrich
           <lb facs="#zone-11327963-2-r2l2"/>vor der stuben.
+        </ab>
+        <ab xml:id="ab-11327963-2-r3">
           <lb facs="#zone-11327963-2-r3l1"/>Ain grosser speiscasten.
+        </ab>
+        <ab xml:id="ab-11327963-2-r4">
           <lb facs="#zone-11327963-2-r4l1"/>In der hȇll in der ersten camȇr.
+        </ab>
+        <ab xml:id="ab-11327963-2-r5">
           <lb facs="#zone-11327963-2-r5l1"/>Ain pettstat.
           <lb facs="#zone-11327963-2-r5l2"/>Zwo rauch dȇckhen.
           <lb facs="#zone-11327963-2-r5l3"/>Ain pȇtt.
@@ -405,14 +427,22 @@
           <lb facs="#zone-11327963-2-r5l5"/>Ain kȗss.
           <lb facs="#zone-11327963-2-r5l6"/>Ain strosackh.
           <lb facs="#zone-11327963-2-r5l7"/>Ain par ruphfin leilach.
+        </ab>
+        <ab xml:id="ab-11327963-2-r6">
           <lb facs="#zone-11327963-2-r6l1"/>In der andȇrn camȇr.
+        </ab>
+        <ab xml:id="ab-11327963-2-r7">
           <lb facs="#zone-11327963-2-r7l1"/>Petstatten V.
           <lb facs="#zone-11327963-2-r7l2"/>Ain pett.
           <lb facs="#zone-11327963-2-r7l3"/>Ain strosackh.
           <lb facs="#zone-11327963-2-r7l4"/>Zwai ruphfine leilach.
           <lb facs="#zone-11327963-2-r7l5"/>Zwo rauch dȇckhen.
           <lb facs="#zone-11327963-2-r7l6"/>Ain polstȇr.
+        </ab>
+        <ab xml:id="ab-11327963-2-r8">
           <lb facs="#zone-11327963-2-r8l1"/>In des pawknȇchts camer.
+        </ab>
+        <ab xml:id="ab-11327963-2-r9">
           <lb facs="#zone-11327963-2-r9l1"/>Zwo pettstat.
           <lb facs="#zone-11327963-2-r9l2"/>Zwai pett.
           <lb facs="#zone-11327963-2-r9l3"/>Zwen pȏlster.
@@ -420,7 +450,11 @@
           <lb facs="#zone-11327963-2-r9l5"/>Vier rauch dȇckhen.
           <lb facs="#zone-11327963-2-r9l6"/>Vier werchine leilach.
           <lb facs="#zone-11327963-2-r9l7"/>Zwen strosȇckh.
+        </ab>
+        <ab xml:id="ab-11327963-2-r10">
           <lb facs="#zone-11327963-2-r10l1"/>In der andȇrn camer daran.
+        </ab>
+        <ab xml:id="ab-11327963-2-r11">
           <lb facs="#zone-11327963-2-r11l1"/>Ain pettstat.
           <lb facs="#zone-11327963-2-r11l2"/>Ain pett.
           <lb facs="#zone-11327963-2-r11l3"/>Ain polster.
@@ -428,15 +462,23 @@
           <lb facs="#zone-11327963-2-r11l5"/>Ain strosackh.
           <lb facs="#zone-11327963-2-r11l6"/>Ain rauhe dȇckh.
           <lb facs="#zone-11327963-2-r11l7"/>Ain golter.
+        </ab>
+        <ab xml:id="ab-11327963-2-r12">
           <lb facs="#zone-11327963-2-r12l1"/>Auf dem grossen
           <lb facs="#zone-11327963-2-r12l2"/>new̑en sal.
+        </ab>
+        <ab xml:id="ab-11327963-2-r13">
           <lb facs="#zone-11327963-2-r13l1"/>Ain grosser harnasch casten.
           <lb facs="#zone-11327963-2-r13l2"/>Zwen pȏss tisch.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11327963-3"/>
+        <pb n="3" facs="#surface-11327963-3"/>
+        <ab xml:id="ab-11327963-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11327963-3-r2">
           <lb facs="#zone-11327963-3-r2l1"/>In der kuchen.
+        </ab>
+        <ab xml:id="ab-11327963-3-r3">
           <lb facs="#zone-11327963-3-r3l1"/>New̑n phannen gross und clein pȏss und guet.
           <lb facs="#zone-11327963-3-r3l2"/>Fȗnff kessel gross und clain.
           <lb facs="#zone-11327963-3-r3l3"/>Erein hȃfen V.
@@ -453,41 +495,77 @@
           <lb facs="#zone-11327963-3-r3l14"/>Kuchenmȇsser II.
           <lb facs="#zone-11327963-3-r3l15"/>Etlich milch nȃphf.
           <lb facs="#zone-11327963-3-r3l16"/>Item bei der kuchin XII lannzen schãfft.
+        </ab>
+        <ab xml:id="ab-11327963-3-r4">
           <lb facs="#zone-11327963-3-r4l1"/>Im marstall.
+        </ab>
+        <ab xml:id="ab-11327963-3-r5">
           <lb facs="#zone-11327963-3-r5l1"/>Ain neȗer fuetercasten.
+        </ab>
+        <ab xml:id="ab-11327963-3-r6">
           <lb facs="#zone-11327963-3-r6l1"/>In der phister.
+        </ab>
+        <ab xml:id="ab-11327963-3-r7">
           <lb facs="#zone-11327963-3-r7l1"/>Ain knȇttrog.
           <lb facs="#zone-11327963-3-r7l2"/>Ain wȗrchtafl.
           <lb facs="#zone-11327963-3-r7l3"/>Vier prot prettȇr.
           <lb facs="#zone-11327963-3-r7l4"/>Ain stȃr.
+        </ab>
+        <ab xml:id="ab-11327963-3-r8">
           <lb facs="#zone-11327963-3-r8l1"/>Im Speisgadenn.
+        </ab>
+        <ab xml:id="ab-11327963-3-r9">
           <lb facs="#zone-11327963-3-r9l1"/>Ain mȇzger ram.
           <lb facs="#zone-11327963-3-r9l2"/>Ain fleischpannckh.
           <lb facs="#zone-11327963-3-r9l3"/>Ain melcasten.
           <lb facs="#zone-11327963-3-r9l4"/>Ain pew̑tlcasten.
           <lb facs="#zone-11327963-3-r9l5"/>Ain grosser padzubȇr.
           <lb facs="#zone-11327963-3-r9l6"/>Melsȇckh und kornsȇckh V.
+        </ab>
+        <ab xml:id="ab-11327963-3-r10">
           <lb facs="#zone-11327963-3-r10l1"/>In der krautcamȇr.
+        </ab>
+        <ab xml:id="ab-11327963-3-r11">
           <lb facs="#zone-11327963-3-r11l1"/>Ettlich hȗlzin krautprȇnnten.
+        </ab>
+        <ab xml:id="ab-11327963-3-r12">
           <lb facs="#zone-11327963-3-r12l1"/>Vor derselben
           <lb facs="#zone-11327963-3-r12l2"/>hawskamer.
+        </ab>
+        <ab xml:id="ab-11327963-3-r13">
           <lb facs="#zone-11327963-3-r13l1"/>Zwai hackhprȇtter.
           <lb facs="#zone-11327963-3-r13l2"/>Ain slifstain.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11327963-4"/>
+        <pb n="4" facs="#surface-11327963-4"/>
+        <ab xml:id="ab-11327963-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11327963-4-r2">
           <lb facs="#zone-11327963-4-r2l1"/>In dem undȇrn zercasten.
+        </ab>
+        <ab xml:id="ab-11327963-4-r3">
           <lb facs="#zone-11327963-4-r3l1"/>Zwo mȇltruchen.
           <lb facs="#zone-11327963-4-r3l2"/>Ain pȏser tisch.
+        </ab>
+        <ab xml:id="ab-11327963-4-r4">
           <lb facs="#zone-11327963-4-r4l1"/>Vor dem weinkȇller.
+        </ab>
+        <ab xml:id="ab-11327963-4-r5">
           <lb facs="#zone-11327963-4-r5l1"/>Ain hanndtmȗl mit irer zuegehȏrunng.
+        </ab>
+        <ab xml:id="ab-11327963-4-r6">
           <lb facs="#zone-11327963-4-r6l1"/>Im kȇller.
+        </ab>
+        <ab xml:id="ab-11327963-4-r7">
           <lb facs="#zone-11327963-4-r7l1"/>Zinein canndln clain und gross VIII.
           <lb facs="#zone-11327963-4-r7l2"/>Ain stȗrzeine grosse flaschen.
           <lb facs="#zone-11327963-4-r7l3"/>Zwo mȇssing pippen.
           <lb facs="#zone-11327963-4-r7l4"/>Ain gross weinvass.
+        </ab>
+        <ab xml:id="ab-11327963-4-r8">
           <lb facs="#zone-11327963-4-r8l1"/>In der harnaschcamer.
+        </ab>
+        <ab xml:id="ab-11327963-4-r9">
           <lb facs="#zone-11327963-4-r9l1"/>Armbrost XIIII.
           <lb facs="#zone-11327963-4-r9l2"/>Haggenpȗchsen VI.
           <lb facs="#zone-11327963-4-r9l3"/>Hanndtpȗchsen X.
@@ -509,7 +587,11 @@
           <lb facs="#zone-11327963-4-r9l19"/>Ain vȃssel darinn ettlich pheil.
           <lb facs="#zone-11327963-4-r9l20"/>Ain alts spanpȇtt.
           <lb facs="#zone-11327963-4-r9l21"/>Ain plȃtl plei.
+        </ab>
+        <ab xml:id="ab-11327963-4-r10">
           <lb facs="#zone-11327963-4-r10l1"/>Im turn.
+        </ab>
+        <ab xml:id="ab-11327963-4-r11">
           <lb facs="#zone-11327963-4-r11l1"/>Ain alte truhen mit hawspheilen.
           <lb facs="#zone-11327963-4-r11l2"/>XV lȃgl mit hawspheiln, etlich sind gar
           <lb facs="#zone-11327963-4-r11l3"/>voll die andern halb oder nit gar der halb
@@ -517,22 +599,44 @@
           <lb facs="#zone-11327963-4-r11l5"/>Ain halbs vȃssel salitter.
           <lb facs="#zone-11327963-4-r11l6"/>Ain viertail von ainer lagel swȇbl.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11327963-5"/>
+        <pb n="5" facs="#surface-11327963-5"/>
+        <ab xml:id="ab-11327963-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11327963-5-r2">
           <lb facs="#zone-11327963-5-r2l1"/>Ain zugsail daran man die leȗt martȇrt.
+        </ab>
+        <ab xml:id="ab-11327963-5-r3">
           <lb facs="#zone-11327963-5-r3l1"/>In meines gnedigen herrn gemȃchen
           <lb facs="#zone-11327963-5-r3l2"/>in der silberstuben.
+        </ab>
+        <ab xml:id="ab-11327963-5-r4">
           <lb facs="#zone-11327963-5-r4l1"/>Ain bȏser tisch.
+        </ab>
+        <ab xml:id="ab-11327963-5-r5">
           <lb facs="#zone-11327963-5-r5l1"/>In der camer daran.
+        </ab>
+        <ab xml:id="ab-11327963-5-r6">
           <lb facs="#zone-11327963-5-r6l1"/>Ain pettstat.
+        </ab>
+        <ab xml:id="ab-11327963-5-r7">
           <lb facs="#zone-11327963-5-r7l1"/>In der andȇrn camer daran.
+        </ab>
+        <ab xml:id="ab-11327963-5-r8">
           <lb facs="#zone-11327963-5-r8l1"/>Ain pettstat.
+        </ab>
+        <ab xml:id="ab-11327963-5-r9">
           <lb facs="#zone-11327963-5-r9l1"/>In der obern stuben.
+        </ab>
+        <ab xml:id="ab-11327963-5-r10">
           <lb facs="#zone-11327963-5-r10l1"/>Zwen tisch.
           <lb facs="#zone-11327963-5-r10l2"/>Ain credȇnnz tisch.
           <lb facs="#zone-11327963-5-r10l3"/>Ain gemalts tuech mit ettlichen landtschaften.
+        </ab>
+        <ab xml:id="ab-11327963-5-r11">
           <lb facs="#zone-11327963-5-r11l1"/>In der camȇr daran.
+        </ab>
+        <ab xml:id="ab-11327963-5-r12">
           <lb facs="#zone-11327963-5-r12l1"/>Ain verdȇckts spanpȇtt mit aim cariȏll.
           <lb facs="#zone-11327963-5-r12l2"/>Ain sideltruhen davorn.
           <lb facs="#zone-11327963-5-r12l3"/>Ain strosackh.
@@ -547,17 +651,31 @@
           <lb facs="#zone-11327963-5-r12l12"/>Drew̑ hanndttȗecher.
           <lb facs="#zone-11327963-5-r12l13"/>Ain sweinspiess.
           <lb facs="#zone-11327963-5-r12l14"/>Ain wezstain.
+        </ab>
+        <ab xml:id="ab-11327963-5-r13">
           <lb facs="#zone-11327963-5-r13l1"/>In der nẽgsten camer daran.
+        </ab>
+        <ab xml:id="ab-11327963-5-r14">
           <lb facs="#zone-11327963-5-r14l1"/>Ain spanpȇtt.
+        </ab>
+        <ab xml:id="ab-11327963-5-r15">
           <lb facs="#zone-11327963-5-r15l1"/>In der camer gegen dem hoff.
+        </ab>
+        <ab xml:id="ab-11327963-5-r16">
           <lb facs="#zone-11327963-5-r16l1"/>Ain spanpȇtt.
+        </ab>
+        <ab xml:id="ab-11327963-5-r17">
           <lb facs="#zone-11327963-5-r17l1"/>In der capȇllen.
+        </ab>
+        <ab xml:id="ab-11327963-5-r18">
           <lb facs="#zone-11327963-5-r18l1"/>Ain grȗens damaskins messgwanndt.
           <lb facs="#zone-11327963-5-r18l2"/>Zwai corporal.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11327963-6"/>
+        <pb n="6" facs="#surface-11327963-6"/>
+        <ab xml:id="ab-11327963-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11327963-6-r2">
           <lb facs="#zone-11327963-6-r2l1"/>Item ain grabs damaskins mȇssgwanndt mit
           <lb facs="#zone-11327963-6-r2l2"/>seiner zuegehȏrung.
           <lb facs="#zone-11327963-6-r2l3"/>Ain kȇlch silbrin und vergȗlt mit seiner paten
@@ -567,7 +685,11 @@
           <lb facs="#zone-11327963-6-r2l7"/>Ain tȇbich ȗber ain altar.
           <lb facs="#zone-11327963-6-r2l8"/>Und sunst leȗchter und glocken, was zu ainer
           <lb facs="#zone-11327963-6-r2l9"/>capellen gehȏrt.
+        </ab>
+        <ab xml:id="ab-11327963-6-r3">
           <lb facs="#zone-11327963-6-r3l1"/>Im stadl.
+        </ab>
+        <ab xml:id="ab-11327963-6-r4">
           <lb facs="#zone-11327963-6-r4l1"/>Zwai wagenross mit irm geschirr.
           <lb facs="#zone-11327963-6-r4l2"/>Drei wȃgen minder ain rad, ist der ain gannz
           <lb facs="#zone-11327963-6-r4l3"/>new̑.
@@ -590,7 +712,11 @@
           <lb facs="#zone-11327963-6-r4l20"/>Ain halls poy̑en.
           <lb facs="#zone-11327963-6-r4l21"/>Sȇchs maln slȏsser die fȗr die pȏyen ge¬
           <lb facs="#zone-11327963-6-r4l22"/>schlagen werden.
+        </ab>
+        <ab xml:id="ab-11327963-6-r5">
           <lb facs="#zone-11327963-6-r5l1"/>Vermȇrckht das essend ding.
+        </ab>
+        <ab xml:id="ab-11327963-6-r6">
           <lb facs="#zone-11327963-6-r6l1"/>Ain pȗnzl mit smalz.
           <lb facs="#zone-11327963-6-r6l2"/>Zwo halb Tesẽn ziger.
           <lb facs="#zone-11327963-6-r6l3"/>X stȃr mȇll.
@@ -598,9 +724,11 @@
           <lb facs="#zone-11327963-6-r6l5"/>XXV zȇnntring rindfleisch.
           <lb facs="#zone-11327963-6-r6l6"/>Ettlich phund ȗnslitt und kerzen.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11327963-7"/>
+        <pb n="7" facs="#surface-11327963-7"/>
+        <ab xml:id="ab-11327963-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11327963-7-r2">
           <lb facs="#zone-11327963-7-r2l1"/>VIII kaes.
           <lb facs="#zone-11327963-7-r2l2"/>Ettlich pitschȏlen arbaiss und gmȗess.
           <lb facs="#zone-11327963-7-r2l3"/>Ain naig wein im kellȇr.
@@ -610,8 +738,8 @@
           <lb facs="#zone-11327963-7-r2l7"/>LXXXXVII stȇr fuetȇr.
           <lb facs="#zone-11327963-7-r2l8"/>LVI ster gersten.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11327963-8"/>
+        <pb n="8" facs="#surface-11327963-8"/>
+        <ab xml:id="ab-11327963-8-r1">
           <lb facs="#zone-11327963-8-r1l1"/>Die allt invenntuari zettl so
           <lb facs="#zone-11327963-8-r1l2"/>herr Sigmudt vonn Wel¬
           <lb facs="#zone-11327963-8-r1l3"/>sperg her Paulsenn von

@@ -23,6 +23,9 @@ Design decisions:
   Runs are immutable and provenance-tagged. A run is identified by its origin
   ("transkribus" for the export, "<cohort>:<run file stem>" for a VLM run), so a
   rebuild reproduces the same run list byte for byte and never duplicates.
+  A run stores its lines uniformly as {"id", "text"} objects. The id is the
+  Transkribus layout line id where the run knows one and null where it does not,
+  which is what lets a later review address a single line of a page.
   content_class stays "unknown" where no export text exists; an empty page can
   only be established from the scan, which is a later pipeline step. VLM reports
   of an empty page are recorded as empty_evidence without changing the class.
@@ -105,7 +108,9 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
                 # per image part in the order the run reported them; a raitbuch
                 # page is a spread and is sent as verso and recto
                 "empty_parts": parts,
-                "lines": list(rec.get("lines") or []),
+                # uniform line shape across all runs; a VLM run reports bare
+                # text and has no layout line identity, so its id stays null
+                "lines": [{"id": None, "text": t} for t in rec.get("lines") or []],
             })
     for key in runs:
         runs[key].sort(key=lambda r: r["id"])
@@ -225,7 +230,8 @@ def _empty_evidence(page_runs: list[dict]) -> dict | None:
 
 
 def _page_from_export(page: dict) -> dict:
-    lines = [ln["text"] for region in page.get("regions", [])
+    lines = [{"id": ln["id"], "text": ln["text"]}
+             for region in page.get("regions", [])
              for ln in region.get("lines", [])]
     return {"pageNr": page["pageNr"], "iiif": page.get("iiif"), "lines": lines}
 

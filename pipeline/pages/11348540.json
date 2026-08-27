@@ -21,7 +21,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      }
      ]
     }
    ]
@@ -46,29 +49,98 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Vermerkht die hab so Ruoprecht",
-      "von Grey̆ffenstain ausser halb der",
-      "verpettschafften in ventarÿ kawfft",
-      "hat von Mërtein von Neÿdegck.",
-      "Item am ersten für XXXIII ster waitz,",
-      "I ster umb XX gl., facit V1/2 marckh.",
-      "Item II Co und XXI ster rocken, I ster",
-      "umb XV gl., facit XXVII marckh",
-      "VI lb. III gl.",
-      "Item gersten VII ster, I ster umb",
-      "I lb., facit VII lb. perner.",
-      "Item ponn XXVII ster, I ster umb",
-      "XV gl., facit XXXIII lb. perner IX gl.",
-      "Item pÿzollen III ster, I ster umb",
-      "XV gl., facit III lb. perner IX gl.",
-      "Item surich XXXVIII ster, I ster",
-      "umb VII gl., facit XXII lb. II gl.",
-      "Item pfenich I Co und XI ster, I ster",
-      "umb I lb., facit XI marckh I lb.",
-      "Item wein XLVI fuoder, I fuoder",
-      "umb XVII1/2 lb., facit LXXV marckh",
-      "IX lb. perner."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkht die hab so Ruoprecht"
+      },
+      {
+       "id": "r2l2",
+       "text": "von Grey̆ffenstain ausser halb der"
+      },
+      {
+       "id": "r2l3",
+       "text": "verpettschafften in ventarÿ kawfft"
+      },
+      {
+       "id": "r2l4",
+       "text": "hat von Mërtein von Neÿdegck."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten für XXXIII ster waitz,"
+      },
+      {
+       "id": "r3l2",
+       "text": "I ster umb XX gl., facit V1/2 marckh."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item II Co und XXI ster rocken, I ster"
+      },
+      {
+       "id": "r3l4",
+       "text": "umb XV gl., facit XXVII marckh"
+      },
+      {
+       "id": "r3l5",
+       "text": "VI lb. III gl."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item gersten VII ster, I ster umb"
+      },
+      {
+       "id": "r3l7",
+       "text": "I lb., facit VII lb. perner."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item ponn XXVII ster, I ster umb"
+      },
+      {
+       "id": "r3l9",
+       "text": "XV gl., facit XXXIII lb. perner IX gl."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item pÿzollen III ster, I ster umb"
+      },
+      {
+       "id": "r3l11",
+       "text": "XV gl., facit III lb. perner IX gl."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item surich XXXVIII ster, I ster"
+      },
+      {
+       "id": "r3l13",
+       "text": "umb VII gl., facit XXII lb. II gl."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item pfenich I Co und XI ster, I ster"
+      },
+      {
+       "id": "r3l15",
+       "text": "umb I lb., facit XI marckh I lb."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item wein XLVI fuoder, I fuoder"
+      },
+      {
+       "id": "r3l17",
+       "text": "umb XVII1/2 lb., facit LXXV marckh"
+      },
+      {
+       "id": "r3l18",
+       "text": "IX lb. perner."
+      }
      ]
     }
    ]
@@ -93,30 +165,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Item für XXXV lb. schmaltz, das",
-      "lb. umb III gl., facit VIII lb. IX gl.",
-      "Item für öll V r(einische) gulden.",
-      "Item LXXV ster roken mël, I ster",
-      "umb XV gl., facit IX marckh III",
-      "lb IX gl.",
-      "Item III ster waÿtzen mel, I ster",
-      "umb XX gl., facit V lb. perner.",
-      "Item LII ster grüschen, I ster umb",
-      "IIII gl., facit XVII lb. IIII gl.",
-      "Item für XXVIIII rauch degcken",
-      "genütz geschätz von herren XXV",
-      "r(einische) gulden.",
-      "Item VIII küe, tzwen stÿer ain",
-      "grösser und ain klainer,I kälbel",
-      "geschätz XXV marckh.",
-      "Item XX schwein darunder seindt",
-      "IIII züocht müoter, aine mit",
-      "VII junge geschätz XVII marckh.",
-      "Item ain wagen und was dar",
-      "zẅ gehörtt II strÿken, I joch,",
-      "I anplitz, I zunckel, II scheff, I",
-      "segen alles umb XV r(einische) gulden."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item für XXXV lb. schmaltz, das"
+      },
+      {
+       "id": "r2l2",
+       "text": "lb. umb III gl., facit VIII lb. IX gl."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item für öll V r(einische) gulden."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item LXXV ster roken mël, I ster"
+      },
+      {
+       "id": "r2l5",
+       "text": "umb XV gl., facit IX marckh III"
+      },
+      {
+       "id": "r2l6",
+       "text": "lb IX gl."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item III ster waÿtzen mel, I ster"
+      },
+      {
+       "id": "r2l8",
+       "text": "umb XX gl., facit V lb. perner."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item LII ster grüschen, I ster umb"
+      },
+      {
+       "id": "r2l10",
+       "text": "IIII gl., facit XVII lb. IIII gl."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item für XXVIIII rauch degcken"
+      },
+      {
+       "id": "r2l12",
+       "text": "genütz geschätz von herren XXV"
+      },
+      {
+       "id": "r2l13",
+       "text": "r(einische) gulden."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item VIII küe, tzwen stÿer ain"
+      },
+      {
+       "id": "r2l15",
+       "text": "grösser und ain klainer,I kälbel"
+      },
+      {
+       "id": "r2l16",
+       "text": "geschätz XXV marckh."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item XX schwein darunder seindt"
+      },
+      {
+       "id": "r2l18",
+       "text": "IIII züocht müoter, aine mit"
+      },
+      {
+       "id": "r2l19",
+       "text": "VII junge geschätz XVII marckh."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item ain wagen und was dar"
+      },
+      {
+       "id": "r2l21",
+       "text": "zẅ gehörtt II strÿken, I joch,"
+      },
+      {
+       "id": "r2l22",
+       "text": "I anplitz, I zunckel, II scheff, I"
+      },
+      {
+       "id": "r2l23",
+       "text": "segen alles umb XV r(einische) gulden."
+      }
      ]
     }
    ]
@@ -141,32 +285,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Item V pëtt, VI polster, VI küß, IIII",
-      "par leÿlach, I strosagck und XII",
-      "degcken, geschätz XVI marckh.",
-      "Item zinen schüssel und ander",
-      "zin geschir wigt I Co und VI lb.,",
-      "geschätz umb V marckh, peckh,",
-      "gießfas, leüchter.",
-      "Item I kessel, I kupfran kraẅt",
-      "sẏb wigt XXVII lb. groß gewicht.",
-      "Item II haffen wegen XLII lb., ist",
-      "geschätz IIII r(einische) gulden.",
-      "Summa sumarum II Co und",
-      "XXVI marckh VII lb. IX gl.",
-      "Vermerckt was Martein von Neÿdegk",
-      "Ruoprechten von Greÿffn stain",
-      "schuldig ist als herr nach folgt",
-      "und dem Neÿdegker an seiner",
-      "sume so man im schu̇ldig ist",
-      "und er dar auf betzaldt wierdt",
-      "alß das von stuck zw stuck",
-      "herr nach stett.",
-      "Item am erstn XXXI Co und LXVI",
-      "lb. rindt fleÿsch gedigens, II lb",
-      "umb III gl., facit LXXVIIII r(einische) gulden",
-      "IIII gl. II1/2 fl."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item V pëtt, VI polster, VI küß, IIII"
+      },
+      {
+       "id": "r2l2",
+       "text": "par leÿlach, I strosagck und XII"
+      },
+      {
+       "id": "r2l3",
+       "text": "degcken, geschätz XVI marckh."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item zinen schüssel und ander"
+      },
+      {
+       "id": "r2l5",
+       "text": "zin geschir wigt I Co und VI lb.,"
+      },
+      {
+       "id": "r2l6",
+       "text": "geschätz umb V marckh, peckh,"
+      },
+      {
+       "id": "r2l7",
+       "text": "gießfas, leüchter."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item I kessel, I kupfran kraẅt"
+      },
+      {
+       "id": "r2l9",
+       "text": "sẏb wigt XXVII lb. groß gewicht."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item II haffen wegen XLII lb., ist"
+      },
+      {
+       "id": "r2l11",
+       "text": "geschätz IIII r(einische) gulden."
+      },
+      {
+       "id": "r3l1",
+       "text": "Summa sumarum II Co und"
+      },
+      {
+       "id": "r3l2",
+       "text": "XXVI marckh VII lb. IX gl."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vermerckt was Martein von Neÿdegk"
+      },
+      {
+       "id": "r4l2",
+       "text": "Ruoprechten von Greÿffn stain"
+      },
+      {
+       "id": "r4l3",
+       "text": "schuldig ist als herr nach folgt"
+      },
+      {
+       "id": "r4l4",
+       "text": "und dem Neÿdegker an seiner"
+      },
+      {
+       "id": "r4l5",
+       "text": "sume so man im schu̇ldig ist"
+      },
+      {
+       "id": "r4l6",
+       "text": "und er dar auf betzaldt wierdt"
+      },
+      {
+       "id": "r4l7",
+       "text": "alß das von stuck zw stuck"
+      },
+      {
+       "id": "r4l8",
+       "text": "herr nach stett."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item am erstn XXXI Co und LXVI"
+      },
+      {
+       "id": "r5l2",
+       "text": "lb. rindt fleÿsch gedigens, II lb"
+      },
+      {
+       "id": "r5l3",
+       "text": "umb III gl., facit LXXVIIII r(einische) gulden"
+      },
+      {
+       "id": "r5l4",
+       "text": "IIII gl. II1/2 fl."
+      }
      ]
     }
    ]
@@ -191,31 +413,106 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Item IIII Co gruenss fleÿsch, I lb. umb",
-      "I gl., facit XXXIII lb. perner IIII gl.",
-      "Item schweine fley̆sch VIIII Co und",
-      "XXII lb., I lb. umb III gl., facit",
-      "XLVI r(einische) gulden III lb. perner.",
-      "Item schmër LV lb., I lb. umb II gl.,",
-      "facit IX lb. perner II gl.",
-      "Item käß I Co und LI lb., I lb. umb",
-      "VII fl., facit XVIII lb. perner.",
-      "Item XXX schultern, aine fúr VI gl.,",
-      "facit III r(einische) gulden.",
-      "Item für L ster saltz II1/2 marckh.",
-      "Summa LXXXI marckh",
-      "III lb. X gl. II1/2 fl.",
-      "Dÿse sum wurdt abgezogen",
-      "dem Ney̑degker an der vor",
-      "gedachten sum II Co und XXVI",
-      "marckh VII lb. perner IX gl.,",
-      "beleẏbt man noch dem Neÿdeker",
-      "schuldig I Co und XLV marckh",
-      "III lb. V1/2 gl. peÿ dem",
-      "ambtman zw Botzen in halt",
-      "meins gnädigisten herren",
-      "geschäfft."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item IIII Co gruenss fleÿsch, I lb. umb"
+      },
+      {
+       "id": "r2l2",
+       "text": "I gl., facit XXXIII lb. perner IIII gl."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item schweine fley̆sch VIIII Co und"
+      },
+      {
+       "id": "r2l4",
+       "text": "XXII lb., I lb. umb III gl., facit"
+      },
+      {
+       "id": "r2l5",
+       "text": "XLVI r(einische) gulden III lb. perner."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item schmër LV lb., I lb. umb II gl.,"
+      },
+      {
+       "id": "r2l7",
+       "text": "facit IX lb. perner II gl."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item käß I Co und LI lb., I lb. umb"
+      },
+      {
+       "id": "r2l9",
+       "text": "VII fl., facit XVIII lb. perner."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item XXX schultern, aine fúr VI gl.,"
+      },
+      {
+       "id": "r2l11",
+       "text": "facit III r(einische) gulden."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item für L ster saltz II1/2 marckh."
+      },
+      {
+       "id": "r3l1",
+       "text": "Summa LXXXI marckh"
+      },
+      {
+       "id": "r3l2",
+       "text": "III lb. X gl. II1/2 fl."
+      },
+      {
+       "id": "r3l3",
+       "text": "Dÿse sum wurdt abgezogen"
+      },
+      {
+       "id": "r3l4",
+       "text": "dem Ney̑degker an der vor"
+      },
+      {
+       "id": "r3l5",
+       "text": "gedachten sum II Co und XXVI"
+      },
+      {
+       "id": "r3l6",
+       "text": "marckh VII lb. perner IX gl.,"
+      },
+      {
+       "id": "r3l7",
+       "text": "beleẏbt man noch dem Neÿdeker"
+      },
+      {
+       "id": "r3l8",
+       "text": "schuldig I Co und XLV marckh"
+      },
+      {
+       "id": "r3l9",
+       "text": "III lb. V1/2 gl. peÿ dem"
+      },
+      {
+       "id": "r3l10",
+       "text": "ambtman zw Botzen in halt"
+      },
+      {
+       "id": "r3l11",
+       "text": "meins gnädigisten herren"
+      },
+      {
+       "id": "r3l12",
+       "text": "geschäfft."
+      }
      ]
     }
    ]
@@ -240,7 +537,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      }
      ]
     }
    ]
@@ -265,7 +565,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      }
      ]
     }
    ]
@@ -290,7 +593,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -306,9 +306,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11330759-1"/>
+        <pb n="1" facs="#surface-11330759-1"/>
+        <ab xml:id="ab-11330759-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11330759-1-r2">
           <lb facs="#zone-11330759-1-r2l1"/>Vermerckht hienach die hab,
           <lb facs="#zone-11330759-1-r2l2"/>zeůg und gueṫ auff Sig¬
           <lb facs="#zone-11330759-1-r2l3"/>mundskroṅ Cristoffen von
@@ -322,23 +324,33 @@
           <lb facs="#zone-11330759-1-r2l11"/>genwurtikait Johannsen Ellinger,
           <lb facs="#zone-11330759-1-r2l12"/>Johannsen Runngkår notari
           <lb facs="#zone-11330759-1-r2l13"/>burger zü Botzenn und ander.
+        </ab>
+        <ab xml:id="ab-11330759-1-r3">
           <lb facs="#zone-11330759-1-r3l1"/>Am erstënn hat man gefunden
           <lb facs="#zone-11330759-1-r3l2"/>in Sand Ulrichs stöckh an
           <lb facs="#zone-11330759-1-r3l3"/>gelt VI lb. VIII g. I f.
           <lb facs="#zone-11330759-1-r3l4"/>Mer hat man inn geantwurt
           <lb facs="#zone-11330759-1-r3l5"/>von Sand Blasen kirchenn
           <lb facs="#zone-11330759-1-r3l6"/>wegen XXIII lb. II g. I f.
+        </ab>
+        <ab xml:id="ab-11330759-1-r4">
           <lb facs="#zone-11330759-1-r4l1"/>In Sand Ulrichscapellen.
+        </ab>
+        <ab xml:id="ab-11330759-1-r5">
           <lb facs="#zone-11330759-1-r5l1"/>Ain slecht alt mesgwanndt
           <lb facs="#zone-11330759-1-r5l2"/>mit alem und annder seiner
           <lb facs="#zone-11330759-1-r5l3"/>zugehŏrung.
           <lb facs="#zone-11330759-1-r5l4"/>Zwen alt zẙnen leuchter.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11330759-2"/>
+        <pb n="2" facs="#surface-11330759-2"/>
+        <ab xml:id="ab-11330759-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11330759-2-r2">
           <lb facs="#zone-11330759-2-r2l1"/>In Sand Blåseṅ
           <lb facs="#zone-11330759-2-r2l2"/>capellenn.
+        </ab>
+        <ab xml:id="ab-11330759-2-r3">
           <lb facs="#zone-11330759-2-r3l1"/>Ain sůlbreṅ kelch mit seiner pateṅ
           <lb facs="#zone-11330759-2-r3l2"/>unvergůlt geṅant Sand Ulrichs
           <lb facs="#zone-11330759-2-r3l3"/>kelch.
@@ -362,9 +374,11 @@
           <lb facs="#zone-11330759-2-r3l21"/>nicht nach deṁ cestenn.
           <lb facs="#zone-11330759-2-r3l22"/>Ain ŏl stain.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11330759-3"/>
+        <pb n="3" facs="#surface-11330759-3"/>
+        <ab xml:id="ab-11330759-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11330759-3-r2">
           <lb facs="#zone-11330759-3-r2l1"/>Fůnff sweẙtzer lanntzen.
           <lb facs="#zone-11330759-3-r2l2"/>Zwen guldeṅ kertzen ståb auch von
           <lb facs="#zone-11330759-3-r2l3"/>meinem nedigisteṅ hern von Osterreich
@@ -376,8 +390,12 @@
           <lb facs="#zone-11330759-3-r2l9"/>Syben tischtůecher bŏs und guet.
           <lb facs="#zone-11330759-3-r2l10"/>Aber an gelt Sand Sebastian zu
           <lb facs="#zone-11330759-3-r2l11"/>geho̊rennd II lb. V g.
+        </ab>
+        <ab xml:id="ab-11330759-3-r3">
           <lb facs="#zone-11330759-3-r3l1"/>Iṁ oberenalteṅ gehew̆ss
           <lb facs="#zone-11330759-3-r3l2"/>in der stubeṅ.
+        </ab>
+        <ab xml:id="ab-11330759-3-r4">
           <lb facs="#zone-11330759-3-r4l1"/>Drey schlecht tisch.
           <lb facs="#zone-11330759-3-r4l2"/>Ain swartze schreyb tafel.
           <lb facs="#zone-11330759-3-r4l3"/>Ain clain essich våssel.
@@ -385,17 +403,25 @@
           <lb facs="#zone-11330759-3-r4l5"/>Ain pachzeůg mit seiner zugeho̊rung.
           <lb facs="#zone-11330759-3-r4l6"/>Ain schuss wag.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11330759-4"/>
+        <pb n="4" facs="#surface-11330759-4"/>
+        <ab xml:id="ab-11330759-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11330759-4-r2">
           <lb facs="#zone-11330759-4-r2l1"/>Unnter deṁ dach zu o̊brist.
+        </ab>
+        <ab xml:id="ab-11330759-4-r3">
           <lb facs="#zone-11330759-4-r3l1"/>Vier sweẙnen pachenn.
           <lb facs="#zone-11330759-4-r3l2"/>Vier fedren slechte bet.
           <lb facs="#zone-11330759-4-r3l3"/>Drew par zwilcheṅ leylach nicht gut.
           <lb facs="#zone-11330759-4-r3l4"/>Sechs po̊lster, zway kůss.
           <lb facs="#zone-11330759-4-r3l5"/>Zeheṅ zerrissenṅ deckhenṅ.
+        </ab>
+        <ab xml:id="ab-11330759-4-r4">
           <lb facs="#zone-11330759-4-r4l1"/>In der kamer darinn maister
           <lb facs="#zone-11330759-4-r4l2"/>Hanns gelegenn ist.
+        </ab>
+        <ab xml:id="ab-11330759-4-r5">
           <lb facs="#zone-11330759-4-r5l1"/>Dreyzeheṅ bet bo̊s und guet.
           <lb facs="#zone-11330759-4-r5l2"/>Syben po̊lster, acht kůss.
           <lb facs="#zone-11330759-4-r5l3"/>Neẘn deckhen bo̊s und guet.
@@ -403,9 +429,11 @@
           <lb facs="#zone-11330759-4-r5l5"/>Ain eyseṅhůet.
           <lb facs="#zone-11330759-4-r5l6"/>Ain panṅtzer.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11330759-5"/>
+        <pb n="5" facs="#surface-11330759-5"/>
+        <ab xml:id="ab-11330759-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11330759-5-r2">
           <lb facs="#zone-11330759-5-r2l1"/>Ain crăgel.
           <lb facs="#zone-11330759-5-r2l2"/>Ain par hanndtschŭech.
           <lb facs="#zone-11330759-5-r2l3"/>Ain par armschin.
@@ -413,8 +441,12 @@
           <lb facs="#zone-11330759-5-r2l5"/>Ain peren spiess.
           <lb facs="#zone-11330759-5-r2l6"/>Zeheṅ zyneṅ schŭssel clain und gross.
           <lb facs="#zone-11330759-5-r2l7"/>Sechzeheṅ zyneṅ tåler.
+        </ab>
+        <ab xml:id="ab-11330759-5-r3">
           <lb facs="#zone-11330759-5-r3l1"/>Im speyss gaden bey
           <lb facs="#zone-11330759-5-r3l2"/>der wer.
+        </ab>
+        <ab xml:id="ab-11330759-5-r4">
           <lb facs="#zone-11330759-5-r4l1"/>Zwen mitter glockspeyseṅ håfenn gantz.
           <lb facs="#zone-11330759-5-r4l2"/>Zweṅ glockhspeyseṅ zerbrochen håfenṅ.
           <lb facs="#zone-11330759-5-r4l3"/>Ain ligen hultzen futeral darinṅ
@@ -423,9 +455,11 @@
           <lb facs="#zone-11330759-5-r4l6"/>Sechsunddreissig hůltzen tåler neẘ.
           <lb facs="#zone-11330759-5-r4l7"/>Ain grosser glockhspeysen lavetsch.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11330759-6"/>
+        <pb n="6" facs="#surface-11330759-6"/>
+        <ab xml:id="ab-11330759-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11330759-6-r2">
           <lb facs="#zone-11330759-6-r2l1"/>Ain mŏrser glochkspeysenṅ mit seinem
           <lb facs="#zone-11330759-6-r2l2"/>eysneṅ stemphel.
           <lb facs="#zone-11330759-6-r2l3"/>Vier eyseṅ kellenṅ.
@@ -438,31 +472,53 @@
           <lb facs="#zone-11330759-6-r2l10"/>Ain smaltzkŭbel.
           <lb facs="#zone-11330759-6-r2l11"/>Zway brocheṅ hanndtgiessfaß.
           <lb facs="#zone-11330759-6-r2l12"/>Ain brochen messenkandel.
+        </ab>
+        <ab xml:id="ab-11330759-6-r3">
           <lb facs="#zone-11330759-6-r3l1"/>Im brotgadenn.
+        </ab>
+        <ab xml:id="ab-11330759-6-r4">
           <lb facs="#zone-11330759-6-r4l1"/>Zwen gross ereṅ håfenn.
           <lb facs="#zone-11330759-6-r4l2"/>Syben smer låb in ainer tru̇hen.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11330759-7"/>
+        <pb n="7" facs="#surface-11330759-7"/>
+        <ab xml:id="ab-11330759-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11330759-7-r2">
           <lb facs="#zone-11330759-7-r2l1"/>Im kheller.
+        </ab>
+        <ab xml:id="ab-11330759-7-r3">
           <lb facs="#zone-11330759-7-r3l1"/>Zwelff pottigenn.
           <lb facs="#zone-11330759-7-r3l2"/>Aindliff ster mel in drey seckhen.
+        </ab>
+        <ab xml:id="ab-11330759-7-r4">
           <lb facs="#zone-11330759-7-r4l1"/>In der smẙttenṅ.
+        </ab>
+        <ab xml:id="ab-11330759-7-r5">
           <lb facs="#zone-11330759-7-r5l1"/>Ir werchzeůg ungev̇erlichen.
+        </ab>
+        <ab xml:id="ab-11330759-7-r6">
           <lb facs="#zone-11330759-7-r6l1"/>Im půchsenhaw̆s.
+        </ab>
+        <ab xml:id="ab-11330759-7-r7">
           <lb facs="#zone-11330759-7-r7l1"/>Zwo viertail půchsenṅ.
           <lb facs="#zone-11330759-7-r7l2"/>Ain slanngen půchsenn auff
           <lb facs="#zone-11330759-7-r7l3"/>zwain redern.
           <lb facs="#zone-11330759-7-r7l4"/>Ain haubtstuckh.
+        </ab>
+        <ab xml:id="ab-11330759-7-r8">
           <lb facs="#zone-11330759-7-r8l1"/>In deṁ neẘen thuren genant
           <lb facs="#zone-11330759-7-r8l2"/>Maister Hanṅsen Thuren.
+        </ab>
+        <ab xml:id="ab-11330759-7-r9">
           <lb facs="#zone-11330759-7-r9l1"/>Drey zẙneṅ plån.
           <lb facs="#zone-11330759-7-r9l2"/>Acht zyneṅ mitterschůssel.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11330759-8"/>
+        <pb n="8" facs="#surface-11330759-8"/>
+        <ab xml:id="ab-11330759-8-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11330759-8-r2">
           <lb facs="#zone-11330759-8-r2l1"/>Vier gross malschůssel.
           <lb facs="#zone-11330759-8-r2l2"/>Sechs clain zyneṅ salsenṅschůssel.
           <lb facs="#zone-11330759-8-r2l3"/>Sechs zyneṅ tåler.
@@ -481,15 +537,23 @@
           <lb facs="#zone-11330759-8-r2l16"/>Und etlich traid, korn, fueter, gerstenn
           <lb facs="#zone-11330759-8-r2l17"/>ungeverlichenṅ bey LX ster.
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11330759-9"/>
+        <pb n="9" facs="#surface-11330759-9"/>
+        <ab xml:id="ab-11330759-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11330759-9-r2">
           <lb facs="#zone-11330759-9-r2l1"/>In meins gnedgi̊sten hern
           <lb facs="#zone-11330759-9-r2l2"/>von Osterreich zy̆mmer.
           <lb facs="#zone-11330759-9-r2l3"/>Oben in der kamer.
+        </ab>
+        <ab xml:id="ab-11330759-9-r3">
           <lb facs="#zone-11330759-9-r3l1"/>Zwaẙ bet und zway ain kŭss.
           <lb facs="#zone-11330759-9-r3l2"/>Zwo deckhenṅ.
+        </ab>
+        <ab xml:id="ab-11330759-9-r4">
           <lb facs="#zone-11330759-9-r4l1"/>In der kuchel.
+        </ab>
+        <ab xml:id="ab-11330759-9-r5">
           <lb facs="#zone-11330759-9-r5l1"/>Zwo phannen.
           <lb facs="#zone-11330759-9-r5l2"/>Ain fay̆m kellenṅ.
           <lb facs="#zone-11330759-9-r5l3"/>Zwo fleischkrăl.
@@ -498,29 +562,47 @@
           <lb facs="#zone-11330759-9-r5l6"/>Ain pranndtraid.
           <lb facs="#zone-11330759-9-r5l7"/>Ain dreẙfůes.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11330759-10"/>
+        <pb n="10" facs="#surface-11330759-10"/>
+        <ab xml:id="ab-11330759-10-r1">
           <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab xml:id="ab-11330759-10-r2">
           <lb facs="#zone-11330759-10-r2l1"/>Ain clainer kessel.
+        </ab>
+        <ab xml:id="ab-11330759-10-r3">
           <lb facs="#zone-11330759-10-r3l1"/>Im grossenn keller.
+        </ab>
+        <ab xml:id="ab-11330759-10-r4">
           <lb facs="#zone-11330759-10-r4l1"/>Vier maskanndel.
           <lb facs="#zone-11330759-10-r4l2"/>Zwo zwymåessigkandel.
           <lb facs="#zone-11330759-10-r4l3"/>Ain dreẘtrinckhenkandel.
           <lb facs="#zone-11330759-10-r4l4"/>Zwo trinckhenkandel.
+        </ab>
+        <ab xml:id="ab-11330759-10-r5">
           <lb facs="#zone-11330759-10-r5l1"/>In der grosseṅ stubenṅ.
+        </ab>
+        <ab xml:id="ab-11330759-10-r6">
           <lb facs="#zone-11330759-10-r6l1"/>Sechs gemain tisch.
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11330759-11"/>
+        <pb n="11" facs="#surface-11330759-11"/>
+        <ab xml:id="ab-11330759-11-r1">
           <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab xml:id="ab-11330759-11-r2">
           <lb facs="#zone-11330759-11-r2l1"/>In dem clainen stůbleṅ.
+        </ab>
+        <ab xml:id="ab-11330759-11-r3">
           <lb facs="#zone-11330759-11-r3l1"/>Ain gemai̊ner tisch.
           <lb facs="#zone-11330759-11-r3l2"/>Achzeheṅ stuckh puchsenṅ dar
           <lb facs="#zone-11330759-11-r3l3"/>unnder vier hagkheṅ pŭchsenṅ.
           <lb facs="#zone-11330759-11-r3l4"/>Dreẘunddreĭssig helemparten.
+        </ab>
+        <ab xml:id="ab-11330759-11-r4">
           <lb facs="#zone-11330759-11-r4l1"/>Hienachvolgt was der zolner
           <lb facs="#zone-11330759-11-r4l2"/>inngehabt und dem genanten
           <lb facs="#zone-11330759-11-r4l3"/>phleger ȗbergeantwurthat.
+        </ab>
+        <ab xml:id="ab-11330759-11-r5">
           <lb facs="#zone-11330759-11-r5l1"/>Ain wasserschaff.
           <lb facs="#zone-11330759-11-r5l2"/>Ain fleyschpeẙl.
           <lb facs="#zone-11330759-11-r5l3"/>Zwo hafenplatenṅ.
@@ -529,9 +611,11 @@
           <lb facs="#zone-11330759-11-r5l6"/>Fůnff hŭltzen schůsslen.
           <lb facs="#zone-11330759-11-r5l7"/>Ain tåler půchsenn mit XVI tåler.
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11330759-12"/>
+        <pb n="12" facs="#surface-11330759-12"/>
+        <ab xml:id="ab-11330759-12-r1">
           <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab xml:id="ab-11330759-12-r2">
           <lb facs="#zone-11330759-12-r2l1"/>Sechzehen lo̊ffel.
           <lb facs="#zone-11330759-12-r2l2"/>Vierundzwainzig hůlzen tåler gemain.
           <lb facs="#zone-11330759-12-r2l3"/>Ain grosse hangende kanndel.

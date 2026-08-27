@@ -21,7 +21,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      }
      ]
     }
    ]
@@ -46,7 +49,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     }
    ]
@@ -71,33 +77,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Nota was zu Sigmundspurg",
-      "bleibt in dem undrn hawss und",
-      "das Caspar Frech ingenomen und",
-      "emphangen hat und das zu",
-      "meins genedigen h(er)n hand(e)n",
-      "inbehaltsweise versorgen sol un(d)",
-      "das im der Reichart Klyeber dessel¬",
-      "ben meins genedigen h(er)rn rat",
-      "und hawßkamr(er) geantw(ur)t hat",
-      "am phincztag Divisio App(osto)lor(um)",
-      "anno etc. LXIIto.",
-      "Item so bleibt hie in behaltsweis",
-      "auf meins h(er)rn gnad zu wartt(e)n",
-      "in meins genedig(e)n h(er)rn kam(er).",
-      "It(em) X federbett.",
-      "It(em) VI pōlster.",
-      "It(em) XVIII par leilach hārbein und",
-      "wircheín.",
-      "It(em) VI herbein tischtūch(er).",
-      "It(em) II wircheín tischtūch(er).",
-      "It(em) V hanndzwechl(e)n und under den",
-      "zwo lanng umb zu legen hărbein",
-      "und wirchein ha(n)tzwehl(e)n.",
-      "It(em) VIII tischmess(er) in aym futral.",
-      "It(em) XIII rauch degk(e)n schaffeín.",
-      "It(em) VI strosegkh."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota was zu Sigmundspurg"
+      },
+      {
+       "id": "r2l2",
+       "text": "bleibt in dem undrn hawss und"
+      },
+      {
+       "id": "r2l3",
+       "text": "das Caspar Frech ingenomen und"
+      },
+      {
+       "id": "r2l4",
+       "text": "emphangen hat und das zu"
+      },
+      {
+       "id": "r2l5",
+       "text": "meins genedigen h(er)n hand(e)n"
+      },
+      {
+       "id": "r2l6",
+       "text": "inbehaltsweise versorgen sol un(d)"
+      },
+      {
+       "id": "r2l7",
+       "text": "das im der Reichart Klyeber dessel¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "ben meins genedigen h(er)rn rat"
+      },
+      {
+       "id": "r2l9",
+       "text": "und hawßkamr(er) geantw(ur)t hat"
+      },
+      {
+       "id": "r2l10",
+       "text": "am phincztag Divisio App(osto)lor(um)"
+      },
+      {
+       "id": "r2l11",
+       "text": "anno etc. LXIIto."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item so bleibt hie in behaltsweis"
+      },
+      {
+       "id": "r3l2",
+       "text": "auf meins h(er)rn gnad zu wartt(e)n"
+      },
+      {
+       "id": "r3l3",
+       "text": "in meins genedig(e)n h(er)rn kam(er)."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) X federbett."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) VI pōlster."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) XVIII par leilach hārbein und"
+      },
+      {
+       "id": "r4l4",
+       "text": "wircheín."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) VI herbein tischtūch(er)."
+      },
+      {
+       "id": "r4l6",
+       "text": "It(em) II wircheín tischtūch(er)."
+      },
+      {
+       "id": "r4l7",
+       "text": "It(em) V hanndzwechl(e)n und under den"
+      },
+      {
+       "id": "r4l8",
+       "text": "zwo lanng umb zu legen hărbein"
+      },
+      {
+       "id": "r4l9",
+       "text": "und wirchein ha(n)tzwehl(e)n."
+      },
+      {
+       "id": "r4l10",
+       "text": "It(em) VIII tischmess(er) in aym futral."
+      },
+      {
+       "id": "r4l11",
+       "text": "It(em) XIII rauch degk(e)n schaffeín."
+      },
+      {
+       "id": "r4l12",
+       "text": "It(em) VI strosegkh."
+      }
      ]
     }
    ]
@@ -122,7 +209,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]
@@ -147,23 +237,74 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "No(ta) kuchenschir(r),",
-      "gleser und trinckhgeschir(r).",
-      "It(em) XIIII trinckhgleser.",
-      "It(em) und III angster.",
-      "It(em) V erd(e)n milchmödel.",
-      "It(em) II glessreín kŏpfh, ain grun(er) und",
-      "ain blaber.",
-      "It(em) ain prawns credencz glas.",
-      "It(em) IIII v(er)dekhte trinkhgleser.",
-      "It(em) II maygõl glăsel.",
-      "It(em) I glessrein pech(er).",
-      "It(em) glokhspeysen hăfen klain",
-      "und groß V, yeder auf drein",
-      "fũessen.",
-      "It(em) XI glogkspeysen lefersch(e)n",
-      "groß und klain."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "No(ta) kuchenschir(r),"
+      },
+      {
+       "id": "r2l2",
+       "text": "gleser und trinckhgeschir(r)."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) XIIII trinckhgleser."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) und III angster."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) V erd(e)n milchmödel."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) II glessreín kŏpfh, ain grun(er) und"
+      },
+      {
+       "id": "r3l5",
+       "text": "ain blaber."
+      },
+      {
+       "id": "r3l6",
+       "text": "It(em) ain prawns credencz glas."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) IIII v(er)dekhte trinkhgleser."
+      },
+      {
+       "id": "r3l8",
+       "text": "It(em) II maygõl glăsel."
+      },
+      {
+       "id": "r3l9",
+       "text": "It(em) I glessrein pech(er)."
+      },
+      {
+       "id": "r3l10",
+       "text": "It(em) glokhspeysen hăfen klain"
+      },
+      {
+       "id": "r3l11",
+       "text": "und groß V, yeder auf drein"
+      },
+      {
+       "id": "r3l12",
+       "text": "fũessen."
+      },
+      {
+       "id": "r3l13",
+       "text": "It(em) XI glogkspeysen lefersch(e)n"
+      },
+      {
+       "id": "r3l14",
+       "text": "groß und klain."
+      }
      ]
     }
    ]
@@ -188,29 +329,98 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "It(em) I grosse kupfreíne kraut pekg(e)n.",
-      "It(em) I kupfrein gacz(e)n.",
-      "It(em) VI eysen phan(n) klain und groß.",
-      "It(em) V hafen degken gros und klaín.",
-      "It(em) IIII eysne kochkell(e)n.",
-      "It(em) I pōll.",
-      "It(em) I eysnen rost.",
-      "It(em) II pratspiss.",
-      "It(em) II hēln.",
-      "It(em) II pratschrait.",
-      "It(em) und I prantschrăgn zŭ prat(e)n.",
-      "It(em) I pomschab(e)n.",
-      "It(em) I eysnein kŭchlspiss.",
-      "It(em) VII rot schússln hulczeín.",
-      "It(em) I eysne gab(e)l damitma(n) fleisch auf",
-      "henngt.",
-      "I(tem) XII new tewffling.",
-      "I(tem) I fewr kräl.",
-      "I(tem) II drifŭs.",
-      "I(tem) VI kraut mess(er).",
-      "I(tem) XXX hŭlczein tell(er=.",
-      "It(em) XIIII teũffling húlczeín."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) I grosse kupfreíne kraut pekg(e)n."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) I kupfrein gacz(e)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) VI eysen phan(n) klain und groß."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) V hafen degken gros und klaín."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) IIII eysne kochkell(e)n."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) I pōll."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) I eysnen rost."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) II pratspiss."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) II hēln."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) II pratschrait."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) und I prantschrăgn zŭ prat(e)n."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I pomschab(e)n."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) I eysnein kŭchlspiss."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) VII rot schússln hulczeín."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) I eysne gab(e)l damitma(n) fleisch auf"
+      },
+      {
+       "id": "r2l16",
+       "text": "henngt."
+      },
+      {
+       "id": "r2l17",
+       "text": "I(tem) XII new tewffling."
+      },
+      {
+       "id": "r2l18",
+       "text": "I(tem) I fewr kräl."
+      },
+      {
+       "id": "r2l19",
+       "text": "I(tem) II drifŭs."
+      },
+      {
+       "id": "r2l20",
+       "text": "I(tem) VI kraut mess(er)."
+      },
+      {
+       "id": "r2l21",
+       "text": "I(tem) XXX hŭlczein tell(er=."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) XIIII teũffling húlczeín."
+      }
      ]
     }
    ]
@@ -235,29 +445,98 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "It(em) XLV hulczein lŏffel.",
-      "It(em) XXXVIII hūlczein hawßschu̇ss(e)ln",
-      "klain und groz, gut und pŏß.",
-      "It(em) I ribeysen.",
-      "It(em) I stospanck zu räben.",
-      "It(em) I rebschaiben kottín.",
-      "It(em) I kupfreín gießkess(e)l zu waz(er).",
-      "Item I kupfreín pekh.",
-      "Zynngeschirr.",
-      "It(em) I viermassig zynnkannd(e)l.",
-      "It(em) II zwomassig zynnkand(e)l.",
-      "It(em) II maß kannd(e)ln.",
-      "It(em) I seyd(e)l kannd(e)l.",
-      "It(em) I eysne flasch(e)n.",
-      "It(em) II tracht(er).",
-      "It(em) III pipp(e)n.",
-      "It(em) XV zynn schŭss(e)ln zu ambt",
-      "essen.",
-      "It(em) I gross(er) vischplan(n).",
-      "It(em) IIII zynn salss(e)n schŭsseln.",
-      "It(em) II zynn leŭcht(er).",
-      "It(em) bei VC unslitt kercz(e)n ungeva(r)lich."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) XLV hulczein lŏffel."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) XXXVIII hūlczein hawßschu̇ss(e)ln"
+      },
+      {
+       "id": "r2l3",
+       "text": "klain und groz, gut und pŏß."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) I ribeysen."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) I stospanck zu räben."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) I rebschaiben kottín."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) I kupfreín gießkess(e)l zu waz(er)."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item I kupfreín pekh."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zynngeschirr."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) I viermassig zynnkannd(e)l."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) II zwomassig zynnkand(e)l."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) II maß kannd(e)ln."
+      },
+      {
+       "id": "r4l4",
+       "text": "It(em) I seyd(e)l kannd(e)l."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) I eysne flasch(e)n."
+      },
+      {
+       "id": "r4l6",
+       "text": "It(em) II tracht(er)."
+      },
+      {
+       "id": "r4l7",
+       "text": "It(em) III pipp(e)n."
+      },
+      {
+       "id": "r4l8",
+       "text": "It(em) XV zynn schŭss(e)ln zu ambt"
+      },
+      {
+       "id": "r4l9",
+       "text": "essen."
+      },
+      {
+       "id": "r4l10",
+       "text": "It(em) I gross(er) vischplan(n)."
+      },
+      {
+       "id": "r4l11",
+       "text": "It(em) IIII zynn salss(e)n schŭsseln."
+      },
+      {
+       "id": "r4l12",
+       "text": "It(em) II zynn leŭcht(er)."
+      },
+      {
+       "id": "r4l13",
+       "text": "It(em) bei VC unslitt kercz(e)n ungeva(r)lich."
+      }
      ]
     }
    ]
@@ -282,20 +561,62 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Nota harnasch und was",
-      "zu der weer gehõrt.",
-      "It(em) inn ain(em) vásslein XX pancz(er).",
-      "It(em) X eysenhūet.",
-      "It(em) X salaír.",
-      "It(em) III wagenmesser.",
-      "It(em) III paydenhant(er) schw(er)t.",
-      "It(em) I streithackhen.",
-      "It(em) III wurffeys(e)n.",
-      "It(em) I martkolb(e)n.",
-      "It(em) II pugk(e)l.",
-      "It(em) III hellenport(e)n.",
-      "It(em) I weer mit IIII zugken eysen."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota harnasch und was"
+      },
+      {
+       "id": "r2l2",
+       "text": "zu der weer gehõrt."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) inn ain(em) vásslein XX pancz(er)."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) X eysenhūet."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) X salaír."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) III wagenmesser."
+      },
+      {
+       "id": "r3l5",
+       "text": "It(em) III paydenhant(er) schw(er)t."
+      },
+      {
+       "id": "r3l6",
+       "text": "It(em) I streithackhen."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) III wurffeys(e)n."
+      },
+      {
+       "id": "r3l8",
+       "text": "It(em) I martkolb(e)n."
+      },
+      {
+       "id": "r3l9",
+       "text": "It(em) II pugk(e)l."
+      },
+      {
+       "id": "r3l10",
+       "text": "It(em) III hellenport(e)n."
+      },
+      {
+       "id": "r3l11",
+       "text": "It(em) I weer mit IIII zugken eysen."
+      }
      ]
     }
    ]
@@ -320,31 +641,106 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Nota im wasserhawss",
-      "zu Sigmundspurg.",
-      "It(em) in meins genedig(e)n h(er)rn kam(e)r",
-      "für sein genad.",
-      "It(em) II pette.",
-      "It(em) II par leillach klain(er), Sant Gall(er)",
-      "leynnbat.",
-      "It(em) II gut pōlster der ain mit ain(er)",
-      "blaben gestreifft(e)n ziech(e)n der and(e)r",
-      "mit brawn(er).",
-      "It(em) I degken mit seyden genăt.",
-      "It(em) II grosse kŭes.",
-      "It(em) I strosagkh.",
-      "It(em) under meins h(er)rn bett aín karniōl.",
-      "It(em) darinn i pĕtt.",
-      "It(em) I polster.",
-      "It(em) II küss.",
-      "It(em) II par leilach.",
-      "It(em) III schaffein degk.",
-      "It(em) I strosagk.",
-      "It(em) XI windliecht(er).",
-      "It(em) IIII tischliecht(er).",
-      "It(em) II zynein peklin.",
-      "It(em) in d(er) stub(e)n I tisch."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota im wasserhawss"
+      },
+      {
+       "id": "r2l2",
+       "text": "zu Sigmundspurg."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) in meins genedig(e)n h(er)rn kam(e)r"
+      },
+      {
+       "id": "r3l2",
+       "text": "für sein genad."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) II pette."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) II par leillach klain(er), Sant Gall(er)"
+      },
+      {
+       "id": "r3l5",
+       "text": "leynnbat."
+      },
+      {
+       "id": "r3l6",
+       "text": "It(em) II gut pōlster der ain mit ain(er)"
+      },
+      {
+       "id": "r3l7",
+       "text": "blaben gestreifft(e)n ziech(e)n der and(e)r"
+      },
+      {
+       "id": "r3l8",
+       "text": "mit brawn(er)."
+      },
+      {
+       "id": "r3l9",
+       "text": "It(em) I degken mit seyden genăt."
+      },
+      {
+       "id": "r3l10",
+       "text": "It(em) II grosse kŭes."
+      },
+      {
+       "id": "r3l11",
+       "text": "It(em) I strosagkh."
+      },
+      {
+       "id": "r3l12",
+       "text": "It(em) under meins h(er)rn bett aín karniōl."
+      },
+      {
+       "id": "r3l13",
+       "text": "It(em) darinn i pĕtt."
+      },
+      {
+       "id": "r3l14",
+       "text": "It(em) I polster."
+      },
+      {
+       "id": "r3l15",
+       "text": "It(em) II küss."
+      },
+      {
+       "id": "r3l16",
+       "text": "It(em) II par leilach."
+      },
+      {
+       "id": "r3l17",
+       "text": "It(em) III schaffein degk."
+      },
+      {
+       "id": "r3l18",
+       "text": "It(em) I strosagk."
+      },
+      {
+       "id": "r3l19",
+       "text": "It(em) XI windliecht(er)."
+      },
+      {
+       "id": "r3l20",
+       "text": "It(em) IIII tischliecht(er)."
+      },
+      {
+       "id": "r3l21",
+       "text": "It(em) II zynein peklin."
+      },
+      {
+       "id": "r3l22",
+       "text": "It(em) in d(er) stub(e)n I tisch."
+      }
      ]
     }
    ]
@@ -369,30 +765,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]",
-      "It(em) I fewrzewg.",
-      "It(em) II brantschrag(e)n.",
-      "It(em) auserhalb II tisch.",
-      "It(em) IIII fũrpennckh.",
-      "No(ta) und(e)rn dach.",
-      "It(em) IIII spannbett.",
-      "It(em) II federpett.",
-      "It(em) III strosekh.",
-      "It(em) II pölst(er).",
-      "It(em) IIII kũss.",
-      "It(em) II par leilach.",
-      "It(em) IIII rauchdegkh(e)n.",
-      "It(em) ain segennsail.",
-      "It(em) aȋn zugsail.",
-      "It(em) I eysn nagl zu(m) zug.",
-      "It(em) ind(er) und(er)n kam(er).",
-      "It(em) I pētt.",
-      "It(em) I par leilach.",
-      "It(em) I polst(er).",
-      "It(em) II kuss.",
-      "It(em) I strosagkh.",
-      "It(em) II rauchdegk(e)n.",
-      "It(em) I petstatt."
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) I fewrzewg."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) II brantschrag(e)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) auserhalb II tisch."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) IIII fũrpennckh."
+      },
+      {
+       "id": "r3l1",
+       "text": "No(ta) und(e)rn dach."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) IIII spannbett."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) II federpett."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) III strosekh."
+      },
+      {
+       "id": "r4l4",
+       "text": "It(em) II pölst(er)."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) IIII kũss."
+      },
+      {
+       "id": "r4l6",
+       "text": "It(em) II par leilach."
+      },
+      {
+       "id": "r4l7",
+       "text": "It(em) IIII rauchdegkh(e)n."
+      },
+      {
+       "id": "r4l8",
+       "text": "It(em) ain segennsail."
+      },
+      {
+       "id": "r4l9",
+       "text": "It(em) aȋn zugsail."
+      },
+      {
+       "id": "r4l10",
+       "text": "It(em) I eysn nagl zu(m) zug."
+      },
+      {
+       "id": "r4l11",
+       "text": "It(em) ind(er) und(er)n kam(er)."
+      },
+      {
+       "id": "r4l12",
+       "text": "It(em) I pētt."
+      },
+      {
+       "id": "r4l13",
+       "text": "It(em) I par leilach."
+      },
+      {
+       "id": "r4l14",
+       "text": "It(em) I polst(er)."
+      },
+      {
+       "id": "r4l15",
+       "text": "It(em) II kuss."
+      },
+      {
+       "id": "r4l16",
+       "text": "It(em) I strosagkh."
+      },
+      {
+       "id": "r4l17",
+       "text": "It(em) II rauchdegk(e)n."
+      },
+      {
+       "id": "r4l18",
+       "text": "It(em) I petstatt."
+      }
      ]
     }
    ]
@@ -417,27 +885,90 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]",
-      "It(em) ain lannge pūchsn mit",
-      "tėller(e)n, loffeln, tringk",
-      "geschirr(e)n und and(er)n ding(e)n.",
-      "It(em) I tisch.",
-      "It(em) II fūrpenckh.",
-      "Nota in der schmitt(e)n",
-      "und darvor.",
-      "It(em) in der schmitt(e)n I ampoß.",
-      "It(em) und I horn ampaus.",
-      "It(em) ham(m)er, zanng(e)n und all andr(er)",
-      "notdurfft so dan(n) an meins ge¬",
-      "nedigen h(er)rn schmitt(e)n geho̊rt",
-      "und diennt.",
-      "It(em) ain grossen schliffstain in",
-      "der schmitt(e)n.",
-      "It(em) ain truhen in der smitt(e)n,",
-      "darinn ist eysnw(er)ch alts und news.",
-      "It(em) ain eysneíns gātter fu̇r ain",
-      "palkhen.",
-      "It(em) III lanng eysnstāb."
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) ain lannge pūchsn mit"
+      },
+      {
+       "id": "r2l2",
+       "text": "tėller(e)n, loffeln, tringk"
+      },
+      {
+       "id": "r2l3",
+       "text": "geschirr(e)n und and(er)n ding(e)n."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) I tisch."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) II fūrpenckh."
+      },
+      {
+       "id": "r3l1",
+       "text": "Nota in der schmitt(e)n"
+      },
+      {
+       "id": "r3l2",
+       "text": "und darvor."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) in der schmitt(e)n I ampoß."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) und I horn ampaus."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) ham(m)er, zanng(e)n und all andr(er)"
+      },
+      {
+       "id": "r4l4",
+       "text": "notdurfft so dan(n) an meins ge¬"
+      },
+      {
+       "id": "r4l5",
+       "text": "nedigen h(er)rn schmitt(e)n geho̊rt"
+      },
+      {
+       "id": "r4l6",
+       "text": "und diennt."
+      },
+      {
+       "id": "r4l7",
+       "text": "It(em) ain grossen schliffstain in"
+      },
+      {
+       "id": "r4l8",
+       "text": "der schmitt(e)n."
+      },
+      {
+       "id": "r4l9",
+       "text": "It(em) ain truhen in der smitt(e)n,"
+      },
+      {
+       "id": "r4l10",
+       "text": "darinn ist eysnw(er)ch alts und news."
+      },
+      {
+       "id": "r4l11",
+       "text": "It(em) ain eysneíns gātter fu̇r ain"
+      },
+      {
+       "id": "r4l12",
+       "text": "palkhen."
+      },
+      {
+       "id": "r4l13",
+       "text": "It(em) III lanng eysnstāb."
+      }
      ]
     }
    ]
@@ -462,21 +993,66 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]",
-      "It(em) VI par turpēnnt(er).",
-      "It(em) II brantkol in der hútt(e)n vor",
-      "der schmitt(e)n.",
-      "It(em) vor der hu̇tten ungehawt(e)n",
-      "werchkstuck stain II1/2C.",
-      "It(em) gehaw̑n stŭckh mits(ambt) den märb(e)l¬",
-      "stain XXXI stuckh.",
-      "It(em) laden holcz, zieg(e)l und geprennt(er)",
-      "kalch nach innhalt der zed(e)l.",
-      "Zw urkundt aller",
-      "vorgeschribn(er) sache so hab",
-      "ich vorgen(anter) Caspar Frech",
-      "mein aigen betschafft hye",
-      "inne fŭrgedruckt."
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) VI par turpēnnt(er)."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) II brantkol in der hútt(e)n vor"
+      },
+      {
+       "id": "r2l3",
+       "text": "der schmitt(e)n."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) vor der hu̇tten ungehawt(e)n"
+      },
+      {
+       "id": "r2l5",
+       "text": "werchkstuck stain II1/2C."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) gehaw̑n stŭckh mits(ambt) den märb(e)l¬"
+      },
+      {
+       "id": "r2l7",
+       "text": "stain XXXI stuckh."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) laden holcz, zieg(e)l und geprennt(er)"
+      },
+      {
+       "id": "r2l9",
+       "text": "kalch nach innhalt der zed(e)l."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zw urkundt aller"
+      },
+      {
+       "id": "r3l2",
+       "text": "vorgeschribn(er) sache so hab"
+      },
+      {
+       "id": "r3l3",
+       "text": "ich vorgen(anter) Caspar Frech"
+      },
+      {
+       "id": "r3l4",
+       "text": "mein aigen betschafft hye"
+      },
+      {
+       "id": "r3l5",
+       "text": "inne fŭrgedruckt."
+      }
      ]
     }
    ]

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -300,17 +300,19 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329461-1"/>
+        <pb n="1" facs="#surface-11329461-1"/>
+        <ab xml:id="ab-11329461-1-r1">
           <milestone unit="folio" n="1r"/>
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329461-2"/>
+        <pb n="2" facs="#surface-11329461-2"/>
+        <ab xml:id="ab-11329461-2-r1">
           <milestone unit="folio" n="1v"/>
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329461-3"/>
+        <pb n="3" facs="#surface-11329461-3"/>
+        <ab xml:id="ab-11329461-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11329461-3-r2">
           <lb facs="#zone-11329461-3-r2l1"/>Nota was zu Sigmundspurg
           <lb facs="#zone-11329461-3-r2l2"/>bleibt in dem undrn hawss und
           <lb facs="#zone-11329461-3-r2l3"/>das Caspar Frech ingenomen und
@@ -322,9 +324,13 @@
           <lb facs="#zone-11329461-3-r2l9"/>und hawßkamr(er) geantw(ur)t hat
           <lb facs="#zone-11329461-3-r2l10"/>am phincztag Divisio App(osto)lor(um)
           <lb facs="#zone-11329461-3-r2l11"/>anno etc. LXIIto.
+        </ab>
+        <ab xml:id="ab-11329461-3-r3">
           <lb facs="#zone-11329461-3-r3l1"/>Item so bleibt hie in behaltsweis
           <lb facs="#zone-11329461-3-r3l2"/>auf meins h(er)rn gnad zu wartt(e)n
           <lb facs="#zone-11329461-3-r3l3"/>in meins genedig(e)n h(er)rn kam(er).
+        </ab>
+        <ab xml:id="ab-11329461-3-r4">
           <lb facs="#zone-11329461-3-r4l1"/>It(em) X federbett.
           <lb facs="#zone-11329461-3-r4l2"/>It(em) VI pōlster.
           <lb facs="#zone-11329461-3-r4l3"/>It(em) XVIII par leilach hārbein und
@@ -338,15 +344,19 @@
           <lb facs="#zone-11329461-3-r4l11"/>It(em) XIII rauch degk(e)n schaffeín.
           <lb facs="#zone-11329461-3-r4l12"/>It(em) VI strosegkh.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329461-4"/>
+        <pb n="4" facs="#surface-11329461-4"/>
+        <ab xml:id="ab-11329461-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11329461-5"/>
+        <pb n="5" facs="#surface-11329461-5"/>
+        <ab xml:id="ab-11329461-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11329461-5-r2">
           <lb facs="#zone-11329461-5-r2l1"/>No(ta) kuchenschir(r),
           <lb facs="#zone-11329461-5-r2l2"/>gleser und trinckhgeschir(r).
+        </ab>
+        <ab xml:id="ab-11329461-5-r3">
           <lb facs="#zone-11329461-5-r3l1"/>It(em) XIIII trinckhgleser.
           <lb facs="#zone-11329461-5-r3l2"/>It(em) und III angster.
           <lb facs="#zone-11329461-5-r3l3"/>It(em) V erd(e)n milchmödel.
@@ -362,9 +372,11 @@
           <lb facs="#zone-11329461-5-r3l13"/>It(em) XI glogkspeysen lefersch(e)n
           <lb facs="#zone-11329461-5-r3l14"/>groß und klain.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11329461-6"/>
+        <pb n="6" facs="#surface-11329461-6"/>
+        <ab xml:id="ab-11329461-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11329461-6-r2">
           <lb facs="#zone-11329461-6-r2l1"/>It(em) I grosse kupfreíne kraut pekg(e)n.
           <lb facs="#zone-11329461-6-r2l2"/>It(em) I kupfrein gacz(e)n.
           <lb facs="#zone-11329461-6-r2l3"/>It(em) VI eysen phan(n) klain und groß.
@@ -388,9 +400,11 @@
           <lb facs="#zone-11329461-6-r2l21"/>I(tem) XXX hŭlczein tell(er=.
           <lb facs="#zone-11329461-6-r2l22"/>It(em) XIIII teũffling húlczeín.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11329461-7"/>
+        <pb n="7" facs="#surface-11329461-7"/>
+        <ab xml:id="ab-11329461-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11329461-7-r2">
           <lb facs="#zone-11329461-7-r2l1"/>It(em) XLV hulczein lŏffel.
           <lb facs="#zone-11329461-7-r2l2"/>It(em) XXXVIII hūlczein hawßschu̇ss(e)ln
           <lb facs="#zone-11329461-7-r2l3"/>klain und groz, gut und pŏß.
@@ -399,7 +413,11 @@
           <lb facs="#zone-11329461-7-r2l6"/>It(em) I rebschaiben kottín.
           <lb facs="#zone-11329461-7-r2l7"/>It(em) I kupfreín gießkess(e)l zu waz(er).
           <lb facs="#zone-11329461-7-r2l8"/>Item I kupfreín pekh.
+        </ab>
+        <ab xml:id="ab-11329461-7-r3">
           <lb facs="#zone-11329461-7-r3l1"/>Zynngeschirr.
+        </ab>
+        <ab xml:id="ab-11329461-7-r4">
           <lb facs="#zone-11329461-7-r4l1"/>It(em) I viermassig zynnkannd(e)l.
           <lb facs="#zone-11329461-7-r4l2"/>It(em) II zwomassig zynnkand(e)l.
           <lb facs="#zone-11329461-7-r4l3"/>It(em) II maß kannd(e)ln.
@@ -414,11 +432,15 @@
           <lb facs="#zone-11329461-7-r4l12"/>It(em) II zynn leŭcht(er).
           <lb facs="#zone-11329461-7-r4l13"/>It(em) bei VC unslitt kercz(e)n ungeva(r)lich.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11329461-8"/>
+        <pb n="8" facs="#surface-11329461-8"/>
+        <ab xml:id="ab-11329461-8-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11329461-8-r2">
           <lb facs="#zone-11329461-8-r2l1"/>Nota harnasch und was
           <lb facs="#zone-11329461-8-r2l2"/>zu der weer gehõrt.
+        </ab>
+        <ab xml:id="ab-11329461-8-r3">
           <lb facs="#zone-11329461-8-r3l1"/>It(em) inn ain(em) vásslein XX pancz(er).
           <lb facs="#zone-11329461-8-r3l2"/>It(em) X eysenhūet.
           <lb facs="#zone-11329461-8-r3l3"/>It(em) X salaír.
@@ -431,11 +453,15 @@
           <lb facs="#zone-11329461-8-r3l10"/>It(em) III hellenport(e)n.
           <lb facs="#zone-11329461-8-r3l11"/>It(em) I weer mit IIII zugken eysen.
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11329461-9"/>
+        <pb n="9" facs="#surface-11329461-9"/>
+        <ab xml:id="ab-11329461-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11329461-9-r2">
           <lb facs="#zone-11329461-9-r2l1"/>Nota im wasserhawss
           <lb facs="#zone-11329461-9-r2l2"/>zu Sigmundspurg.
+        </ab>
+        <ab xml:id="ab-11329461-9-r3">
           <lb facs="#zone-11329461-9-r3l1"/>It(em) in meins genedig(e)n h(er)rn kam(e)r
           <lb facs="#zone-11329461-9-r3l2"/>für sein genad.
           <lb facs="#zone-11329461-9-r3l3"/>It(em) II pette.
@@ -459,14 +485,20 @@
           <lb facs="#zone-11329461-9-r3l21"/>It(em) II zynein peklin.
           <lb facs="#zone-11329461-9-r3l22"/>It(em) in d(er) stub(e)n I tisch.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11329461-10"/>
+        <pb n="10" facs="#surface-11329461-10"/>
+        <ab xml:id="ab-11329461-10-r1">
           <milestone unit="folio" n="5v"/>
+        </ab>
+        <ab xml:id="ab-11329461-10-r2">
           <lb facs="#zone-11329461-10-r2l1"/>It(em) I fewrzewg.
           <lb facs="#zone-11329461-10-r2l2"/>It(em) II brantschrag(e)n.
           <lb facs="#zone-11329461-10-r2l3"/>It(em) auserhalb II tisch.
           <lb facs="#zone-11329461-10-r2l4"/>It(em) IIII fũrpennckh.
+        </ab>
+        <ab xml:id="ab-11329461-10-r3">
           <lb facs="#zone-11329461-10-r3l1"/>No(ta) und(e)rn dach.
+        </ab>
+        <ab xml:id="ab-11329461-10-r4">
           <lb facs="#zone-11329461-10-r4l1"/>It(em) IIII spannbett.
           <lb facs="#zone-11329461-10-r4l2"/>It(em) II federpett.
           <lb facs="#zone-11329461-10-r4l3"/>It(em) III strosekh.
@@ -486,16 +518,22 @@
           <lb facs="#zone-11329461-10-r4l17"/>It(em) II rauchdegk(e)n.
           <lb facs="#zone-11329461-10-r4l18"/>It(em) I petstatt.
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11329461-11"/>
+        <pb n="11" facs="#surface-11329461-11"/>
+        <ab xml:id="ab-11329461-11-r1">
           <milestone unit="folio" n="6r"/>
+        </ab>
+        <ab xml:id="ab-11329461-11-r2">
           <lb facs="#zone-11329461-11-r2l1"/>It(em) ain lannge pūchsn mit
           <lb facs="#zone-11329461-11-r2l2"/>tėller(e)n, loffeln, tringk
           <lb facs="#zone-11329461-11-r2l3"/>geschirr(e)n und and(er)n ding(e)n.
           <lb facs="#zone-11329461-11-r2l4"/>It(em) I tisch.
           <lb facs="#zone-11329461-11-r2l5"/>It(em) II fūrpenckh.
+        </ab>
+        <ab xml:id="ab-11329461-11-r3">
           <lb facs="#zone-11329461-11-r3l1"/>Nota in der schmitt(e)n
           <lb facs="#zone-11329461-11-r3l2"/>und darvor.
+        </ab>
+        <ab xml:id="ab-11329461-11-r4">
           <lb facs="#zone-11329461-11-r4l1"/>It(em) in der schmitt(e)n I ampoß.
           <lb facs="#zone-11329461-11-r4l2"/>It(em) und I horn ampaus.
           <lb facs="#zone-11329461-11-r4l3"/>It(em) ham(m)er, zanng(e)n und all andr(er)
@@ -510,9 +548,11 @@
           <lb facs="#zone-11329461-11-r4l12"/>palkhen.
           <lb facs="#zone-11329461-11-r4l13"/>It(em) III lanng eysnstāb.
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11329461-12"/>
+        <pb n="12" facs="#surface-11329461-12"/>
+        <ab xml:id="ab-11329461-12-r1">
           <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab xml:id="ab-11329461-12-r2">
           <lb facs="#zone-11329461-12-r2l1"/>It(em) VI par turpēnnt(er).
           <lb facs="#zone-11329461-12-r2l2"/>It(em) II brantkol in der hútt(e)n vor
           <lb facs="#zone-11329461-12-r2l3"/>der schmitt(e)n.
@@ -522,6 +562,8 @@
           <lb facs="#zone-11329461-12-r2l7"/>stain XXXI stuckh.
           <lb facs="#zone-11329461-12-r2l8"/>It(em) laden holcz, zieg(e)l und geprennt(er)
           <lb facs="#zone-11329461-12-r2l9"/>kalch nach innhalt der zed(e)l.
+        </ab>
+        <ab xml:id="ab-11329461-12-r3">
           <lb facs="#zone-11329461-12-r3l1"/>Zw urkundt aller
           <lb facs="#zone-11329461-12-r3l2"/>vorgeschribn(er) sache so hab
           <lb facs="#zone-11329461-12-r3l3"/>ich vorgen(anter) Caspar Frech

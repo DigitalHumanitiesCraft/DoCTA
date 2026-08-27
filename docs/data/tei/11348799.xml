@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -185,9 +185,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11348799-1"/>
+        <pb n="1" facs="#surface-11348799-1"/>
+        <ab xml:id="ab-11348799-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11348799-1-r2">
           <lb facs="#zone-11348799-1-r2l1"/>Item anno Domini etc. quinquagesimosexto
           <lb facs="#zone-11348799-1-r2l2"/>an Sand Sÿmon und Sand Judas tag ist vermerckt und
           <lb facs="#zone-11348799-1-r2l3"/>angeschriben worden die varund hab so auf den gslossen
@@ -196,6 +198,8 @@
           <lb facs="#zone-11348799-1-r2l6"/>als dan derselben gslos Joachim von Montani nach geschäfft
           <lb facs="#zone-11348799-1-r2l7"/>meins gnadgen herren von Triennt dem benantten Otten
           <lb facs="#zone-11348799-1-r2l8"/>Höniger abgetretten und ingeantwurt hat.
+        </ab>
+        <ab xml:id="ab-11348799-1-r3">
           <lb facs="#zone-11348799-1-r3l1"/>Item von getraid und melb hat Jochim von Montani geanttwurtt.
           <lb facs="#zone-11348799-1-r3l2"/>Item LXXXXIX ster hirss. Item LXXXIII ster pon. Item XXIII ster fenich. Item
           <lb facs="#zone-11348799-1-r3l3"/>LXIII ster rogken. Item XLIII ster waitz. Item gemalns mel IIIICII ster.
@@ -204,6 +208,8 @@
           <lb facs="#zone-11348799-1-r3l6"/>ausgenomen vier fuder hat Jochim von Montani von danen
           <lb facs="#zone-11348799-1-r3l7"/>gefurt, dÿe hat er auch dargelichen gehabt auf Delphan
           <lb facs="#zone-11348799-1-r3l8"/>und Sannd Peterspergen.
+        </ab>
+        <ab xml:id="ab-11348799-1-r4">
           <lb facs="#zone-11348799-1-r4l1"/>Item XVIII p[..].
           <lb facs="#zone-11348799-1-r4l2"/>Item II par laylachen.
           <lb facs="#zone-11348799-1-r4l3"/>Item XX raundeckhen.
@@ -216,13 +222,17 @@
           <lb facs="#zone-11348799-1-r4l10"/>Item XIIII häntpŭchsen.
           <lb facs="#zone-11348799-1-r4l11"/>Item VI armbrost.
           <lb facs="#zone-11348799-1-r4l12"/>Item IIII khürus.
+        </ab>
+        <ab xml:id="ab-11348799-1-r5">
           <lb facs="#zone-11348799-1-r5l1"/>Inventari zu Delphan
           <lb facs="#zone-11348799-1-r5l2"/>und Sand Peters Perg.
           <lb facs="#zone-11348799-1-line_1757952146696_870"/>1456
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11348799-2"/>
+        <pb n="2" facs="#surface-11348799-2"/>
+        <ab xml:id="ab-11348799-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11348799-2-r2">
           <lb facs="#zone-11348799-2-r2l1"/>Item V pantczer.
           <lb facs="#zone-11348799-2-r2l2"/>Item VIIII tschäladen.
           <lb facs="#zone-11348799-2-r2l3"/>Item V hellem.
@@ -243,14 +253,20 @@
           <lb facs="#zone-11348799-2-r2l18"/>Item IIII phannen mit der kestenphanen.
           <lb facs="#zone-11348799-2-r2l19"/>Item IIII lavetschen gross und klain.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11348799-3"/>
+        <pb n="3" facs="#surface-11348799-3"/>
+        <ab xml:id="ab-11348799-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11348799-3-r2">
           <lb facs="#zone-11348799-3-r2l1"/>Item ain halbs vass salcz.
           <lb facs="#zone-11348799-3-r2l2"/>Item IIII glockspeissen hafn.
           <lb facs="#zone-11348799-3-r2l3"/>Item ain wag.
+        </ab>
+        <ab xml:id="ab-11348799-3-r3">
           <lb facs="#zone-11348799-3-r3l1"/>Auff Sand Petersperg
           <lb facs="#zone-11348799-3-r3l2"/>die varendn hab.
+        </ab>
+        <ab xml:id="ab-11348799-3-r4">
           <lb facs="#zone-11348799-3-r4l1"/>Item IIII peth.
           <lb facs="#zone-11348799-3-r4l2"/>Item VII leÿlachen.
           <lb facs="#zone-11348799-3-r4l3"/>Item II haubtpölster.
@@ -270,11 +286,15 @@
           <lb facs="#zone-11348799-3-r4l17"/>Item VIII plandel.
           <lb facs="#zone-11348799-3-r4l18"/>Item II hackhn.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11348799-4"/>
+        <pb n="4" facs="#surface-11348799-4"/>
+        <ab xml:id="ab-11348799-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11348799-4-r2">
           <lb facs="#zone-11348799-4-r2l1"/>Item hienach sind vermerckt die zinss so Joachim von Montani
           <lb facs="#zone-11348799-4-r2l2"/>ingenomen hat und all ander zinss besteen vor.
+        </ab>
+        <ab xml:id="ab-11348799-4-r3">
           <lb facs="#zone-11348799-4-r3l1"/>Item am ersten hat er ingenomen von
           <lb facs="#zone-11348799-4-r3l2"/>Mathee Bennegnn XLVIIII marcketten.
           <lb facs="#zone-11348799-4-r3l3"/>Item Andre Rïncker von Runczemer perg X ster hirs.
@@ -285,6 +305,8 @@
           <lb facs="#zone-11348799-4-r3l8"/>Item vom Urban Pecken X ster rocken.
           <lb facs="#zone-11348799-4-r3l9"/>Item die brobst auß der burgen
           <lb facs="#zone-11348799-4-r3l10"/>haben an der collecten außgericht LXXXV lb. per X gl. I lb.
+        </ab>
+        <ab xml:id="ab-11348799-4-r4">
           <lb facs="#zone-11348799-4-r4l1"/>Item auch hat Joachim von Montani ingenomen all zoll in der burgen
           <lb facs="#zone-11348799-4-r4l2"/>alslang er die gslos ingehabt hat untz auf den nachst
           <lb facs="#zone-11348799-4-r4l3"/>vergangen montag vor Sỹmonis et Jude und den lemper¬

@@ -21,42 +21,150 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerckt was herr Hainraich von",
-      "Mersperck dem Ulreich Eÿsenreich an",
-      "stat herr Wignloýs Gradner von plat",
-      "harnasch, ringharnasch poß und gutz,",
-      "puxenpulver, salitter, swebel, pfeil geschifft",
-      "und ungeschifft und targen auff das",
-      "geschloß Perzin geantwurt hat. Actum",
-      "an an sannd Urbans tag anno Domini",
-      "millesimo quadringentesimo etc. XLVIII.",
-      "Item von ersten VIII ganz platen und",
-      "ain halbe platten.",
-      "Item IIII eÿsenhŭt.",
-      "Item VII helmelin.",
-      "Item XII eÿsnenpanzir.",
-      "Item zwaÿ gollir.",
-      "Item huntzchappen IX.",
-      "Item prustplech V.",
-      "Item spangerŏl und mawseÿsen X.",
-      "Item armzeug XXVII minus ain armror.",
-      "Item hantschŭch III par.",
-      "Item paingewant V par minus I rŏr.",
-      "Item targen XVI.",
-      "Item puxenpulver IIIICXXXII lb.",
-      "chlaingewicht.",
-      "Item salitter XV lb.",
-      "Item swebel VC.",
-      "Item pfeil geschifft und ungeschifft VIM.",
-      "Item stain puxen VII.",
-      "Item tarespuxen III.",
-      "Item hagkenpuxen III.",
-      "Item hantpuxen zerbrochen und",
-      "ganzer beÿ XXXII.",
-      "Item gossenstainpuxen II und",
-      "ain chlaine gossen stainpuxen.",
-      "Item ain grosse eÿsnen stain púxen."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerckt was herr Hainraich von"
+      },
+      {
+       "id": "r2l2",
+       "text": "Mersperck dem Ulreich Eÿsenreich an"
+      },
+      {
+       "id": "r2l3",
+       "text": "stat herr Wignloýs Gradner von plat"
+      },
+      {
+       "id": "r2l4",
+       "text": "harnasch, ringharnasch poß und gutz,"
+      },
+      {
+       "id": "r2l5",
+       "text": "puxenpulver, salitter, swebel, pfeil geschifft"
+      },
+      {
+       "id": "r2l6",
+       "text": "und ungeschifft und targen auff das"
+      },
+      {
+       "id": "r2l7",
+       "text": "geschloß Perzin geantwurt hat. Actum"
+      },
+      {
+       "id": "r2l8",
+       "text": "an an sannd Urbans tag anno Domini"
+      },
+      {
+       "id": "r2l9",
+       "text": "millesimo quadringentesimo etc. XLVIII."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item von ersten VIII ganz platen und"
+      },
+      {
+       "id": "r3l2",
+       "text": "ain halbe platten."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item IIII eÿsenhŭt."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item VII helmelin."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item XII eÿsnenpanzir."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item zwaÿ gollir."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item huntzchappen IX."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item prustplech V."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item spangerŏl und mawseÿsen X."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item armzeug XXVII minus ain armror."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item hantschŭch III par."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item paingewant V par minus I rŏr."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item targen XVI."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item puxenpulver IIIICXXXII lb."
+      },
+      {
+       "id": "r3l15",
+       "text": "chlaingewicht."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item salitter XV lb."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item swebel VC."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item pfeil geschifft und ungeschifft VIM."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item stain puxen VII."
+      },
+      {
+       "id": "r3l20",
+       "text": "Item tarespuxen III."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item hagkenpuxen III."
+      },
+      {
+       "id": "r3l22",
+       "text": "Item hantpuxen zerbrochen und"
+      },
+      {
+       "id": "r3l23",
+       "text": "ganzer beÿ XXXII."
+      },
+      {
+       "id": "r3l24",
+       "text": "Item gossenstainpuxen II und"
+      },
+      {
+       "id": "r3l25",
+       "text": "ain chlaine gossen stainpuxen."
+      },
+      {
+       "id": "r3l26",
+       "text": "Item ain grosse eÿsnen stain púxen."
+      }
      ]
     }
    ]
@@ -81,7 +189,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     }
    ]
@@ -106,7 +217,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -131,7 +245,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]

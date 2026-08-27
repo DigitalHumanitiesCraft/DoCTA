@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -198,17 +198,21 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11348540-1"/>
+        <pb n="1" facs="#surface-11348540-1"/>
+        <ab xml:id="ab-11348540-1-r1">
           <milestone unit="folio" n="1r"/>
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11348540-2"/>
+        <pb n="2" facs="#surface-11348540-2"/>
+        <ab xml:id="ab-11348540-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11348540-2-r2">
           <lb facs="#zone-11348540-2-r2l1"/>Vermerkht die hab so Ruoprecht
           <lb facs="#zone-11348540-2-r2l2"/>von Grey̆ffenstain ausser halb der
           <lb facs="#zone-11348540-2-r2l3"/>verpettschafften in ventarÿ kawfft
           <lb facs="#zone-11348540-2-r2l4"/>hat von Mërtein von Neÿdegck.
+        </ab>
+        <ab xml:id="ab-11348540-2-r3">
           <lb facs="#zone-11348540-2-r3l1"/>Item am ersten für XXXIII ster waitz,
           <lb facs="#zone-11348540-2-r3l2"/>I ster umb XX gl., facit V1/2 marckh.
           <lb facs="#zone-11348540-2-r3l3"/>Item II Co und XXI ster rocken, I ster
@@ -228,9 +232,11 @@
           <lb facs="#zone-11348540-2-r3l17"/>umb XVII1/2 lb., facit LXXV marckh
           <lb facs="#zone-11348540-2-r3l18"/>IX lb. perner.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11348540-3"/>
+        <pb n="3" facs="#surface-11348540-3"/>
+        <ab xml:id="ab-11348540-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11348540-3-r2">
           <lb facs="#zone-11348540-3-r2l1"/>Item für XXXV lb. schmaltz, das
           <lb facs="#zone-11348540-3-r2l2"/>lb. umb III gl., facit VIII lb. IX gl.
           <lb facs="#zone-11348540-3-r2l3"/>Item für öll V r(einische) gulden.
@@ -255,9 +261,11 @@
           <lb facs="#zone-11348540-3-r2l22"/>I anplitz, I zunckel, II scheff, I
           <lb facs="#zone-11348540-3-r2l23"/>segen alles umb XV r(einische) gulden.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11348540-4"/>
+        <pb n="4" facs="#surface-11348540-4"/>
+        <ab xml:id="ab-11348540-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11348540-4-r2">
           <lb facs="#zone-11348540-4-r2l1"/>Item V pëtt, VI polster, VI küß, IIII
           <lb facs="#zone-11348540-4-r2l2"/>par leÿlach, I strosagck und XII
           <lb facs="#zone-11348540-4-r2l3"/>degcken, geschätz XVI marckh.
@@ -269,8 +277,12 @@
           <lb facs="#zone-11348540-4-r2l9"/>sẏb wigt XXVII lb. groß gewicht.
           <lb facs="#zone-11348540-4-r2l10"/>Item II haffen wegen XLII lb., ist
           <lb facs="#zone-11348540-4-r2l11"/>geschätz IIII r(einische) gulden.
+        </ab>
+        <ab xml:id="ab-11348540-4-r3">
           <lb facs="#zone-11348540-4-r3l1"/>Summa sumarum II Co und
           <lb facs="#zone-11348540-4-r3l2"/>XXVI marckh VII lb. IX gl.
+        </ab>
+        <ab xml:id="ab-11348540-4-r4">
           <lb facs="#zone-11348540-4-r4l1"/>Vermerckt was Martein von Neÿdegk
           <lb facs="#zone-11348540-4-r4l2"/>Ruoprechten von Greÿffn stain
           <lb facs="#zone-11348540-4-r4l3"/>schuldig ist als herr nach folgt
@@ -279,14 +291,18 @@
           <lb facs="#zone-11348540-4-r4l6"/>und er dar auf betzaldt wierdt
           <lb facs="#zone-11348540-4-r4l7"/>alß das von stuck zw stuck
           <lb facs="#zone-11348540-4-r4l8"/>herr nach stett.
+        </ab>
+        <ab xml:id="ab-11348540-4-r5">
           <lb facs="#zone-11348540-4-r5l1"/>Item am erstn XXXI Co und LXVI
           <lb facs="#zone-11348540-4-r5l2"/>lb. rindt fleÿsch gedigens, II lb
           <lb facs="#zone-11348540-4-r5l3"/>umb III gl., facit LXXVIIII r(einische) gulden
           <lb facs="#zone-11348540-4-r5l4"/>IIII gl. II1/2 fl.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11348540-5"/>
+        <pb n="5" facs="#surface-11348540-5"/>
+        <ab xml:id="ab-11348540-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11348540-5-r2">
           <lb facs="#zone-11348540-5-r2l1"/>Item IIII Co gruenss fleÿsch, I lb. umb
           <lb facs="#zone-11348540-5-r2l2"/>I gl., facit XXXIII lb. perner IIII gl.
           <lb facs="#zone-11348540-5-r2l3"/>Item schweine fley̆sch VIIII Co und
@@ -299,6 +315,8 @@
           <lb facs="#zone-11348540-5-r2l10"/>Item XXX schultern, aine fúr VI gl.,
           <lb facs="#zone-11348540-5-r2l11"/>facit III r(einische) gulden.
           <lb facs="#zone-11348540-5-r2l12"/>Item für L ster saltz II1/2 marckh.
+        </ab>
+        <ab xml:id="ab-11348540-5-r3">
           <lb facs="#zone-11348540-5-r3l1"/>Summa LXXXI marckh
           <lb facs="#zone-11348540-5-r3l2"/>III lb. X gl. II1/2 fl.
           <lb facs="#zone-11348540-5-r3l3"/>Dÿse sum wurdt abgezogen
@@ -312,16 +330,16 @@
           <lb facs="#zone-11348540-5-r3l11"/>meins gnädigisten herren
           <lb facs="#zone-11348540-5-r3l12"/>geschäfft.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11348540-6"/>
+        <pb n="6" facs="#surface-11348540-6"/>
+        <ab xml:id="ab-11348540-6-r1">
           <milestone unit="folio" n="3v"/>
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11348540-7"/>
+        <pb n="7" facs="#surface-11348540-7"/>
+        <ab xml:id="ab-11348540-7-r1">
           <milestone unit="folio" n="4r"/>
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11348540-8"/>
+        <pb n="8" facs="#surface-11348540-8"/>
+        <ab xml:id="ab-11348540-8-r1">
           <milestone unit="folio" n="4v"/>
         </ab>
       </div>

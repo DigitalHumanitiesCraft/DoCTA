@@ -21,44 +21,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Inventarÿ zedel was Antoni",
-      "vom Ross Hochprandten Sana¬",
-      "zeller zŭ Tratzperg in",
-      "meins gnedigen herren sloss",
-      "eingeantwŭrt und der be¬",
-      "nant Sanazeller von im",
-      "empfangen hat in gegen¬",
-      "wŭrtikait herrn Burckhardten",
-      "von Knŏringen ritter, Tristan",
-      "Rainer, Hannsen Kauffman,",
-      "Linharten Frey̆er, Ludwigen",
-      "Hawgen und Hannsen",
-      "Kellerts all vier zu Swatz",
-      "gesessen. Beschehen am",
-      "sambstag vor Sand Antoni",
-      "tag anno Domini etc. LXXXo",
-      "Item am ersten zehen arm¬",
-      "brost.",
-      "Item ain alter krapp.",
-      "Item zwo tarraspŭchsen.",
-      "Item dreÿ hacken pŭchsen.",
-      "Item zwelf handpŭchsen.",
-      "Item anderhalb lagel mit",
-      "pfeil.",
-      "Item ain halbe lagel mit",
-      "pichner.",
-      "Item acht kugel zŭ den",
-      "tarraspŭchsen.",
-      "Item LXXXV kugel zŭ den",
-      "hacken pŭchsen.",
-      "Item ain hundert kugel",
-      "zŭ den handpŭchsen.",
-      "Item ain alt spanpett.",
-      "Zŭ urkŭnd hab ich obgenanter",
-      "Sanazeller mein pettschafft",
-      "in dise ausgeschniten zedel",
-      "fŭrgedruckt."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventarÿ zedel was Antoni"
+      },
+      {
+       "id": "r2l2",
+       "text": "vom Ross Hochprandten Sana¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "zeller zŭ Tratzperg in"
+      },
+      {
+       "id": "r2l4",
+       "text": "meins gnedigen herren sloss"
+      },
+      {
+       "id": "r2l5",
+       "text": "eingeantwŭrt und der be¬"
+      },
+      {
+       "id": "r2l6",
+       "text": "nant Sanazeller von im"
+      },
+      {
+       "id": "r2l7",
+       "text": "empfangen hat in gegen¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "wŭrtikait herrn Burckhardten"
+      },
+      {
+       "id": "r2l9",
+       "text": "von Knŏringen ritter, Tristan"
+      },
+      {
+       "id": "r2l10",
+       "text": "Rainer, Hannsen Kauffman,"
+      },
+      {
+       "id": "r2l11",
+       "text": "Linharten Frey̆er, Ludwigen"
+      },
+      {
+       "id": "r2l12",
+       "text": "Hawgen und Hannsen"
+      },
+      {
+       "id": "r2l13",
+       "text": "Kellerts all vier zu Swatz"
+      },
+      {
+       "id": "r2l14",
+       "text": "gesessen. Beschehen am"
+      },
+      {
+       "id": "r2l15",
+       "text": "sambstag vor Sand Antoni"
+      },
+      {
+       "id": "r2l16",
+       "text": "tag anno Domini etc. LXXXo"
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten zehen arm¬"
+      },
+      {
+       "id": "r3l2",
+       "text": "brost."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item ain alter krapp."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item zwo tarraspŭchsen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item dreÿ hacken pŭchsen."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item zwelf handpŭchsen."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item anderhalb lagel mit"
+      },
+      {
+       "id": "r3l8",
+       "text": "pfeil."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item ain halbe lagel mit"
+      },
+      {
+       "id": "r3l10",
+       "text": "pichner."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item acht kugel zŭ den"
+      },
+      {
+       "id": "r3l12",
+       "text": "tarraspŭchsen."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item LXXXV kugel zŭ den"
+      },
+      {
+       "id": "r3l14",
+       "text": "hacken pŭchsen."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item ain hundert kugel"
+      },
+      {
+       "id": "r3l16",
+       "text": "zŭ den handpŭchsen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item ain alt spanpett."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zŭ urkŭnd hab ich obgenanter"
+      },
+      {
+       "id": "r4l2",
+       "text": "Sanazeller mein pettschafft"
+      },
+      {
+       "id": "r4l3",
+       "text": "in dise ausgeschniten zedel"
+      },
+      {
+       "id": "r4l4",
+       "text": "fŭrgedruckt."
+      }
      ]
     }
    ]
@@ -83,8 +197,14 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -109,9 +229,18 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Trazperg",
-      "Sanazeller 1480"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Trazperg"
+      },
+      {
+       "id": "r2l2",
+       "text": "Sanazeller 1480"
+      }
      ]
     }
    ]
@@ -136,44 +265,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "Inventarÿ zedel was Antoni",
-      "vom Ross Hochprandten Sana¬",
-      "zeller zŭ Tratzperg in",
-      "meins gnedigen herren sloss",
-      "eingeantwŭrt und der be¬",
-      "nant Sanazeller von im",
-      "empfangen hat in gegen¬",
-      "wŭrtikait herrn Burckhardten",
-      "von Knŏringen, ritter Tristan",
-      "Rainer, Hannsen Kauffman,",
-      "Linharten Freÿer, Ludwigen",
-      "Hawgen und Hannsen",
-      "Kellerts, all vier zu Swatz",
-      "gesessen, beschehen am",
-      "sambstag vor Sand Antoni",
-      "tag anno Domini etc. LXXXo.",
-      "Item am ersten zehen arm¬",
-      "brost.",
-      "Item ain alter krapp.",
-      "Item zwo tarraspŭchsen.",
-      "Item dreÿ hacken pŭchsen.",
-      "Item zwelf handpŭchsen.",
-      "Item anderhalb lagel mit",
-      "pfeil.",
-      "Item ain halbe lagel mit",
-      "pichner.",
-      "Item acht kugel zŭ den",
-      "tarraspŭchsen.",
-      "Item LXXXV kugel zŭ den",
-      "hacken pŭchsen.",
-      "Item ain hundert kugel",
-      "zŭ den handpŭchsen.",
-      "Item ain alt spanpett.",
-      "Zŭ urkŭnd hab ich obgenanter",
-      "Sanazeller mein pettschafft",
-      "in dise ausgeschniten zedel",
-      "fŭrgedruckt."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventarÿ zedel was Antoni"
+      },
+      {
+       "id": "r2l2",
+       "text": "vom Ross Hochprandten Sana¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "zeller zŭ Tratzperg in"
+      },
+      {
+       "id": "r2l4",
+       "text": "meins gnedigen herren sloss"
+      },
+      {
+       "id": "r2l5",
+       "text": "eingeantwŭrt und der be¬"
+      },
+      {
+       "id": "r2l6",
+       "text": "nant Sanazeller von im"
+      },
+      {
+       "id": "r2l7",
+       "text": "empfangen hat in gegen¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "wŭrtikait herrn Burckhardten"
+      },
+      {
+       "id": "r2l9",
+       "text": "von Knŏringen, ritter Tristan"
+      },
+      {
+       "id": "r2l10",
+       "text": "Rainer, Hannsen Kauffman,"
+      },
+      {
+       "id": "r2l11",
+       "text": "Linharten Freÿer, Ludwigen"
+      },
+      {
+       "id": "r2l12",
+       "text": "Hawgen und Hannsen"
+      },
+      {
+       "id": "r2l13",
+       "text": "Kellerts, all vier zu Swatz"
+      },
+      {
+       "id": "r2l14",
+       "text": "gesessen, beschehen am"
+      },
+      {
+       "id": "r2l15",
+       "text": "sambstag vor Sand Antoni"
+      },
+      {
+       "id": "r2l16",
+       "text": "tag anno Domini etc. LXXXo."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten zehen arm¬"
+      },
+      {
+       "id": "r3l2",
+       "text": "brost."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item ain alter krapp."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item zwo tarraspŭchsen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item dreÿ hacken pŭchsen."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item zwelf handpŭchsen."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item anderhalb lagel mit"
+      },
+      {
+       "id": "r3l8",
+       "text": "pfeil."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item ain halbe lagel mit"
+      },
+      {
+       "id": "r3l10",
+       "text": "pichner."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item acht kugel zŭ den"
+      },
+      {
+       "id": "r3l12",
+       "text": "tarraspŭchsen."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item LXXXV kugel zŭ den"
+      },
+      {
+       "id": "r3l14",
+       "text": "hacken pŭchsen."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item ain hundert kugel"
+      },
+      {
+       "id": "r3l16",
+       "text": "zŭ den handpŭchsen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item ain alt spanpett."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zŭ urkŭnd hab ich obgenanter"
+      },
+      {
+       "id": "r4l2",
+       "text": "Sanazeller mein pettschafft"
+      },
+      {
+       "id": "r4l3",
+       "text": "in dise ausgeschniten zedel"
+      },
+      {
+       "id": "r4l4",
+       "text": "fŭrgedruckt."
+      }
      ]
     }
    ]
@@ -198,44 +441,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Inventarÿ zedel was Antoni",
-      "vom Ross Hochprandten Sana¬",
-      "zeller zŭ Tratzperg in",
-      "meins gnedigen herren sloss",
-      "eingeantwŭrt und der be¬",
-      "nant Sanazeller von im",
-      "empfangen hat in gegen¬",
-      "wŭrtikait herrn Burckhardten",
-      "von Knŏringen, ritter Tristan",
-      "Rainer, Hannsen Kauffman,",
-      "Linharten Freÿer, Ludwigen",
-      "Hawgen und Hannsen",
-      "Kellerts, all vier zu Swatz",
-      "gesessen, beschehen an",
-      "sambstag vor Sand Antoni",
-      "tag anno Domini etc. LXXXo.",
-      "Item am ersten zehen arm¬",
-      "brost.",
-      "Item ain alter krapp.",
-      "Item zwo tarraspŭchsen.",
-      "Item dreÿ hacken pŭchsen.",
-      "Item zwelf handpŭchsen.",
-      "Item anderhalb lagel mit",
-      "pfeil.",
-      "Item ain halbe lagel mit",
-      "pichner.",
-      "Item acht kugel zŭ den",
-      "tarraspŭchsen.",
-      "Item LXXXV kugel zŭ den",
-      "hacken pŭchsen.",
-      "Item ain hundert kugel",
-      "zŭ den handpŭchsen.",
-      "Item ain alt spanpett.",
-      "Zŭ urkŭnd hab ich obgenanter",
-      "Sanazeller mein pettschafft",
-      "in dise ausgeschniten zedel",
-      "fŭrgedruckt."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventarÿ zedel was Antoni"
+      },
+      {
+       "id": "r2l2",
+       "text": "vom Ross Hochprandten Sana¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "zeller zŭ Tratzperg in"
+      },
+      {
+       "id": "r2l4",
+       "text": "meins gnedigen herren sloss"
+      },
+      {
+       "id": "r2l5",
+       "text": "eingeantwŭrt und der be¬"
+      },
+      {
+       "id": "r2l6",
+       "text": "nant Sanazeller von im"
+      },
+      {
+       "id": "r2l7",
+       "text": "empfangen hat in gegen¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "wŭrtikait herrn Burckhardten"
+      },
+      {
+       "id": "r2l9",
+       "text": "von Knŏringen, ritter Tristan"
+      },
+      {
+       "id": "r2l10",
+       "text": "Rainer, Hannsen Kauffman,"
+      },
+      {
+       "id": "r2l11",
+       "text": "Linharten Freÿer, Ludwigen"
+      },
+      {
+       "id": "r2l12",
+       "text": "Hawgen und Hannsen"
+      },
+      {
+       "id": "r2l13",
+       "text": "Kellerts, all vier zu Swatz"
+      },
+      {
+       "id": "r2l14",
+       "text": "gesessen, beschehen an"
+      },
+      {
+       "id": "r2l15",
+       "text": "sambstag vor Sand Antoni"
+      },
+      {
+       "id": "r2l16",
+       "text": "tag anno Domini etc. LXXXo."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten zehen arm¬"
+      },
+      {
+       "id": "r3l2",
+       "text": "brost."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item ain alter krapp."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item zwo tarraspŭchsen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item dreÿ hacken pŭchsen."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item zwelf handpŭchsen."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item anderhalb lagel mit"
+      },
+      {
+       "id": "r3l8",
+       "text": "pfeil."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item ain halbe lagel mit"
+      },
+      {
+       "id": "r3l10",
+       "text": "pichner."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item acht kugel zŭ den"
+      },
+      {
+       "id": "r3l12",
+       "text": "tarraspŭchsen."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item LXXXV kugel zŭ den"
+      },
+      {
+       "id": "r3l14",
+       "text": "hacken pŭchsen."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item ain hundert kugel"
+      },
+      {
+       "id": "r3l16",
+       "text": "zŭ den handpŭchsen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item ain alt spanpett."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zŭ urkŭnd hab ich obgenanter"
+      },
+      {
+       "id": "r4l2",
+       "text": "Sanazeller mein pettschafft"
+      },
+      {
+       "id": "r4l3",
+       "text": "in dise ausgeschniten zedel"
+      },
+      {
+       "id": "r4l4",
+       "text": "fŭrgedruckt."
+      }
      ]
     }
    ]

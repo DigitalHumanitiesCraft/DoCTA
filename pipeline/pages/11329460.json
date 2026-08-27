@@ -21,37 +21,130 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Nota haw̆srat was dem",
-      "Frechen im hauß beleibt und daz",
-      "wid(er) darumb widerumb der Frech antwurt(e)n sol",
-      "und dalassen soll. Beschechen am phincz",
-      "d(er) Zwelff Potenschidung anno D(o)m(ini) etc. LXIIo.",
-      "It(em) XXVII petstett(e)n und span pet hulczein.",
-      "It(em) X tisch.",
-      "It(em) und XII fũr penkh.",
-      "It(em) II eysein schaufflen.",
-      "It(em) I eysn schlegl.",
-      "It(em) III eysn stek(e)n.",
-      "It(em) II pikel.",
-      "It(em) I grossen ingemawrt(e)n kessel.",
-      "It(em) I eysnein ofen plech.",
-      "It(em) I morser und ain eisnein stõssl.",
-      "It(em) IIII bar schnee raiff.",
-      "It(em) II visch gern.",
-      "It(em) II jag scháfft.",
-      "It(em) I har hăchl.",
-      "It(em) I vass mit hepf wein pei XII ũrn",
-      "ungevarlich.",
-      "It(em) I vássl mit essich im zergad(e)n und",
-      "vássl in der undern stub(e)n ist ungevarlich",
-      "bey I1/2 ũrn.",
-      "It(em) I beschlagens ster maß.",
-      "It(em) etlich prent(e)n kraút.",
-      "It(em) III schef auf dem see zu Sigmu(n)dsp(ur)g",
-      "purg.",
-      "It(em) I kupfrins gelŏcherts kraut pekh.",
-      "It(em) habern zu verfuedern LVI streÿmas."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota haw̆srat was dem"
+      },
+      {
+       "id": "r2l2",
+       "text": "Frechen im hauß beleibt und daz"
+      },
+      {
+       "id": "r2l3",
+       "text": "wid(er) darumb widerumb der Frech antwurt(e)n sol"
+      },
+      {
+       "id": "r2l4",
+       "text": "und dalassen soll. Beschechen am phincz"
+      },
+      {
+       "id": "r2l5",
+       "text": "d(er) Zwelff Potenschidung anno D(o)m(ini) etc. LXIIo."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) XXVII petstett(e)n und span pet hulczein."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) X tisch."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) und XII fũr penkh."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) II eysein schaufflen."
+      },
+      {
+       "id": "r3l5",
+       "text": "It(em) I eysn schlegl."
+      },
+      {
+       "id": "r3l6",
+       "text": "It(em) III eysn stek(e)n."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) II pikel."
+      },
+      {
+       "id": "r3l8",
+       "text": "It(em) I grossen ingemawrt(e)n kessel."
+      },
+      {
+       "id": "r3l9",
+       "text": "It(em) I eysnein ofen plech."
+      },
+      {
+       "id": "r3l10",
+       "text": "It(em) I morser und ain eisnein stõssl."
+      },
+      {
+       "id": "r3l11",
+       "text": "It(em) IIII bar schnee raiff."
+      },
+      {
+       "id": "r3l12",
+       "text": "It(em) II visch gern."
+      },
+      {
+       "id": "r3l13",
+       "text": "It(em) II jag scháfft."
+      },
+      {
+       "id": "r3l14",
+       "text": "It(em) I har hăchl."
+      },
+      {
+       "id": "r3l15",
+       "text": "It(em) I vass mit hepf wein pei XII ũrn"
+      },
+      {
+       "id": "r3l16",
+       "text": "ungevarlich."
+      },
+      {
+       "id": "r3l17",
+       "text": "It(em) I vássl mit essich im zergad(e)n und"
+      },
+      {
+       "id": "r3l18",
+       "text": "vássl in der undern stub(e)n ist ungevarlich"
+      },
+      {
+       "id": "r3l19",
+       "text": "bey I1/2 ũrn."
+      },
+      {
+       "id": "r3l20",
+       "text": "It(em) I beschlagens ster maß."
+      },
+      {
+       "id": "r3l21",
+       "text": "It(em) etlich prent(e)n kraút."
+      },
+      {
+       "id": "r3l22",
+       "text": "It(em) III schef auf dem see zu Sigmu(n)dsp(ur)g"
+      },
+      {
+       "id": "r3l23",
+       "text": "purg."
+      },
+      {
+       "id": "r3l24",
+       "text": "It(em) I kupfrins gelŏcherts kraut pekh."
+      },
+      {
+       "id": "r3l25",
+       "text": "It(em) habern zu verfuedern LVI streÿmas."
+      }
      ]
     }
    ]
@@ -76,11 +169,26 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "It(em) kappaw̃n XXXIIII.",
-      "It(em) hanen I.",
-      "I(tem) henen XXV.",
-      "It(em) hun(er) junge XVII."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) kappaw̃n XXXIIII."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) hanen I."
+      },
+      {
+       "id": "r2l3",
+       "text": "I(tem) henen XXV."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) hun(er) junge XVII."
+      }
      ]
     }
    ]
@@ -105,7 +213,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -130,7 +241,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]

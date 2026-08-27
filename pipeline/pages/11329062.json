@@ -21,25 +21,82 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Nota was man(n) gen Innsprugk",
-      "hinab gefuert hat am phincztag",
-      "nach Sant Margrethen tag.",
-      "It(em) der zynnsskaẽs C und XXVI.",
-      "It(em) ŭnslitt.",
-      "It(em) II schmerlãb.",
-      "Wagen geschir(r).",
-      "It(em) IIII alte kamat.",
-      "It(em) III sílhalsen.",
-      "It(em) III afftersiln.",
-      "It(em) I lannge news sail.",
-      "It(em) VII newe silstrickh.",
-      "It(em) II lidrein stuckh(e)n.",
-      "It(em) III alte hew sail.",
-      "It(em) II lidrein pulgen.",
-      "It(em) II ochsn joch mit riemen.",
-      "It(em) IIIII glaidierten wan.",
-      "It(em) I phlueg mit sein(er) zugehŏrung(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota was man(n) gen Innsprugk"
+      },
+      {
+       "id": "r2l2",
+       "text": "hinab gefuert hat am phincztag"
+      },
+      {
+       "id": "r2l3",
+       "text": "nach Sant Margrethen tag."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) der zynnsskaẽs C und XXVI."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) ŭnslitt."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) II schmerlãb."
+      },
+      {
+       "id": "r4l1",
+       "text": "Wagen geschir(r)."
+      },
+      {
+       "id": "r5l1",
+       "text": "It(em) IIII alte kamat."
+      },
+      {
+       "id": "r5l2",
+       "text": "It(em) III sílhalsen."
+      },
+      {
+       "id": "r5l3",
+       "text": "It(em) III afftersiln."
+      },
+      {
+       "id": "r5l4",
+       "text": "It(em) I lannge news sail."
+      },
+      {
+       "id": "r5l5",
+       "text": "It(em) VII newe silstrickh."
+      },
+      {
+       "id": "r5l6",
+       "text": "It(em) II lidrein stuckh(e)n."
+      },
+      {
+       "id": "r5l7",
+       "text": "It(em) III alte hew sail."
+      },
+      {
+       "id": "r5l8",
+       "text": "It(em) II lidrein pulgen."
+      },
+      {
+       "id": "r5l9",
+       "text": "It(em) II ochsn joch mit riemen."
+      },
+      {
+       "id": "r5l10",
+       "text": "It(em) IIIII glaidierten wan."
+      },
+      {
+       "id": "r5l11",
+       "text": "It(em) I phlueg mit sein(er) zugehŏrung(e)n."
+      }
      ]
     }
    ]
@@ -64,32 +121,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Nota speiß.",
-      "It(em) VI seitt(e)n schweínen fleisch.",
-      "It(em) gedigen fleisch CCC zentring",
-      "und LIIII hat man geben dem visch(er).",
-      "It(em) und von denn obgeschrib(e)n VI seit(e)n",
-      "schweinen fleisch hatma(n) geben",
-      "dem visch(er) I seiten.",
-      "It(em) II smer laib.",
-      "It(em) 1/2 gŏsen unslitt.",
-      "No(ta) bet und petgwa(n)t.",
-      "It(em) X pet mit weyssen ziechen.",
-      "It(em) X rauch schāffen degk(e)n.",
-      "It(em) V par herbein leyllach.",
-      "It(em) II par vẽrhein leilach.",
-      "It(em) II harbain tisch túch(er).",
-      "It(em) II wirchein tisch tüch(er).",
-      "It(em) IIII harbein hantsweh(e)l.",
-      "It(em) II alt zwílhein segk.",
-      "It(em) III deklach.",
-      "It(em) II strosek.",
-      "It(em) V hackhen.",
-      "It(em) I giessphännd(e)l.",
-      "It(em) I leym phẽnnd(e)l.",
-      "It(em) II schlitt schẽrr(e)n.",
-      "It(em) II wagen schărr(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota speiß."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) VI seitt(e)n schweínen fleisch."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) gedigen fleisch CCC zentring"
+      },
+      {
+       "id": "r3l3",
+       "text": "und LIIII hat man geben dem visch(er)."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) und von denn obgeschrib(e)n VI seit(e)n"
+      },
+      {
+       "id": "r3l5",
+       "text": "schweinen fleisch hatma(n) geben"
+      },
+      {
+       "id": "r3l6",
+       "text": "dem visch(er) I seiten."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) II smer laib."
+      },
+      {
+       "id": "r3l8",
+       "text": "It(em) 1/2 gŏsen unslitt."
+      },
+      {
+       "id": "r4l1",
+       "text": "No(ta) bet und petgwa(n)t."
+      },
+      {
+       "id": "r5l1",
+       "text": "It(em) X pet mit weyssen ziechen."
+      },
+      {
+       "id": "r5l2",
+       "text": "It(em) X rauch schāffen degk(e)n."
+      },
+      {
+       "id": "r5l3",
+       "text": "It(em) V par herbein leyllach."
+      },
+      {
+       "id": "r5l4",
+       "text": "It(em) II par vẽrhein leilach."
+      },
+      {
+       "id": "r5l5",
+       "text": "It(em) II harbain tisch túch(er)."
+      },
+      {
+       "id": "r5l6",
+       "text": "It(em) II wirchein tisch tüch(er)."
+      },
+      {
+       "id": "r5l7",
+       "text": "It(em) IIII harbein hantsweh(e)l."
+      },
+      {
+       "id": "r5l8",
+       "text": "It(em) II alt zwílhein segk."
+      },
+      {
+       "id": "r5l9",
+       "text": "It(em) III deklach."
+      },
+      {
+       "id": "r5l10",
+       "text": "It(em) II strosek."
+      },
+      {
+       "id": "r5l11",
+       "text": "It(em) V hackhen."
+      },
+      {
+       "id": "r5l12",
+       "text": "It(em) I giessphännd(e)l."
+      },
+      {
+       "id": "r5l13",
+       "text": "It(em) I leym phẽnnd(e)l."
+      },
+      {
+       "id": "r5l14",
+       "text": "It(em) II schlitt schẽrr(e)n."
+      },
+      {
+       "id": "r5l15",
+       "text": "It(em) II wagen schărr(e)n."
+      }
      ]
     }
    ]
@@ -114,36 +249,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "It(em) II hawen.",
-      "It(em) I ragkaw(e)n.",
-      "It(em) I straiffmess(e)r.",
-      "It(em) II eysen keyl mit ring(en).",
-      "It(em) V sengs(e)n.",
-      "It(em) III kumpf mit III weczstaín.",
-      "It(em) III teng(e)l geschir(r).",
-      "It(em) V werp zu sengs(e)n.",
-      "It(em) II smalcz wag.",
-      "It(em) II meczg messer in ainer schayd(e)n.",
-      "It(em) I fleisch partt(e)n.",
-      "It(em) I fleisch peil.",
-      "It(em) VIII hebeysen.",
-      "It(em) XXVII eysn stang(en).",
-      "Item) II hãckel peil.",
-      "It(em) III eysne mistgabl(e)n.",
-      "It(em) XVI par schuch.",
-      "It(em) I viert(e)l von ain(er) hant proch(e)n led(e)n.",
-      "It(em) so hatma(n) dem Truchsĕn phleg(er) zu",
-      "Sigmundspurg v(er)kaufft umb VI m(a)rkh",
-      "mẽl und smalcz, das sol im an sein(er)",
-      "burgkhȗt abzog(en) werd(e)n.",
-      "It(em) so hatma(n) dȇm Gȇwein v(er)kaufft VI",
-      "kŭe, I stíer und hew umb XVI m(ar)k und",
-      "dar(en) sol er meins h(er)n gnad schleg",
-      "ochsn geb(e)n am herbst.",
-      "It(em) meins h(er)rn visch(e)r hat man(n) geben",
-      "ain(n) seitten schweinen fleisch.",
-      "It(em) dem Frechen I vass weíns von XII [---]."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) II hawen."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) I ragkaw(e)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) I straiffmess(e)r."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) II eysen keyl mit ring(en)."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) V sengs(e)n."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) III kumpf mit III weczstaín."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) III teng(e)l geschir(r)."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) V werp zu sengs(e)n."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) II smalcz wag."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) II meczg messer in ainer schayd(e)n."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) I fleisch partt(e)n."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I fleisch peil."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) VIII hebeysen."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) XXVII eysn stang(en)."
+      },
+      {
+       "id": "r2l15",
+       "text": "Item) II hãckel peil."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) III eysne mistgabl(e)n."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) XVI par schuch."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) I viert(e)l von ain(er) hant proch(e)n led(e)n."
+      },
+      {
+       "id": "r2l19",
+       "text": "It(em) so hatma(n) dem Truchsĕn phleg(er) zu"
+      },
+      {
+       "id": "r2l20",
+       "text": "Sigmundspurg v(er)kaufft umb VI m(a)rkh"
+      },
+      {
+       "id": "r2l21",
+       "text": "mẽl und smalcz, das sol im an sein(er)"
+      },
+      {
+       "id": "r2l22",
+       "text": "burgkhȗt abzog(en) werd(e)n."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) so hatma(n) dȇm Gȇwein v(er)kaufft VI"
+      },
+      {
+       "id": "r2l24",
+       "text": "kŭe, I stíer und hew umb XVI m(ar)k und"
+      },
+      {
+       "id": "r2l25",
+       "text": "dar(en) sol er meins h(er)n gnad schleg"
+      },
+      {
+       "id": "r2l26",
+       "text": "ochsn geb(e)n am herbst."
+      },
+      {
+       "id": "r2l27",
+       "text": "It(em) meins h(er)rn visch(e)r hat man(n) geben"
+      },
+      {
+       "id": "r2l28",
+       "text": "ain(n) seitten schweinen fleisch."
+      },
+      {
+       "id": "r2l29",
+       "text": "It(em) dem Frechen I vass weíns von XII [---]."
+      }
      ]
     }
    ]
@@ -168,7 +393,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]

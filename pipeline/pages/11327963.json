@@ -21,49 +21,178 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "1489",
-      "An sambstag vor sannd Lorennzen tag anno etc.",
-      "LXXXVIIIIno ist herr Sigmund vŏn Wellsperg auf",
-      "bevelch unnsers gnedigen herrn von Ȏstereich der phleg",
-      "Thawr abgetrȇtten und Paulsen von Liechtenstein",
-      "marschalckh mitsambt der hienach geschrieben hab",
-      "ynngeantwort in bey̑wesen Clemȇnten Wolffeckern",
-      "anwaldt zu Thawr etc.",
-      "R(egistra)ta",
-      "Am ersten in der stuben",
-      "da ain phleger inn ist.",
-      "Zwen tisch.",
-      "Ain verdĕckts gutschenpȇtl bei dem ofen.",
-      "Ain giesvaskăstl.",
-      "Ain giesvass.",
-      "Ain pȇckh.",
-      "Ain new̑s cȃstl.",
-      "In der camer daran.",
-      "Zwai spanpȇtt.",
-      "Zwai pett.",
-      "Ain golter.",
-      "Ain rauhe dȇckh.",
-      "Ain per leilach und ain leilach.",
-      "Zwen pȏlster.",
-      "Zwai kȗss.",
-      "Ain strosackh.",
-      "Ain truhen",
-      "dary̑nn V wȇrchine leilach,",
-      "zwai zwilchine tischtuech.",
-      "Ain alter tisch.",
-      "Ain schachzagl.",
-      "In derselben camer in dem clain cȃmȇrl.",
-      "Item V grosse zin.",
-      "Item V mittre zin.",
-      "Item noch kleiner zy̑nn IIII.",
-      "Item noch cleiner V.",
-      "Gross salsen schȗsln V.",
-      "Essich schȗsln V.",
-      "Ain messins pȇckh.",
-      "Ain messiner tischring.",
-      "Zinein teller X.",
-      "Messin leȗchter clain und gross VI."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "1489"
+      },
+      {
+       "id": "r2l2",
+       "text": "An sambstag vor sannd Lorennzen tag anno etc."
+      },
+      {
+       "id": "r2l3",
+       "text": "LXXXVIIIIno ist herr Sigmund vŏn Wellsperg auf"
+      },
+      {
+       "id": "r2l4",
+       "text": "bevelch unnsers gnedigen herrn von Ȏstereich der phleg"
+      },
+      {
+       "id": "r2l5",
+       "text": "Thawr abgetrȇtten und Paulsen von Liechtenstein"
+      },
+      {
+       "id": "r2l6",
+       "text": "marschalckh mitsambt der hienach geschrieben hab"
+      },
+      {
+       "id": "r2l7",
+       "text": "ynngeantwort in bey̑wesen Clemȇnten Wolffeckern"
+      },
+      {
+       "id": "r2l8",
+       "text": "anwaldt zu Thawr etc."
+      },
+      {
+       "id": "r2l9",
+       "text": "R(egistra)ta"
+      },
+      {
+       "id": "r3l1",
+       "text": "Am ersten in der stuben"
+      },
+      {
+       "id": "r3l2",
+       "text": "da ain phleger inn ist."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zwen tisch."
+      },
+      {
+       "id": "r4l2",
+       "text": "Ain verdĕckts gutschenpȇtl bei dem ofen."
+      },
+      {
+       "id": "r4l3",
+       "text": "Ain giesvaskăstl."
+      },
+      {
+       "id": "r4l4",
+       "text": "Ain giesvass."
+      },
+      {
+       "id": "r4l5",
+       "text": "Ain pȇckh."
+      },
+      {
+       "id": "r4l6",
+       "text": "Ain new̑s cȃstl."
+      },
+      {
+       "id": "r5l1",
+       "text": "In der camer daran."
+      },
+      {
+       "id": "r6l1",
+       "text": "Zwai spanpȇtt."
+      },
+      {
+       "id": "r6l2",
+       "text": "Zwai pett."
+      },
+      {
+       "id": "r6l3",
+       "text": "Ain golter."
+      },
+      {
+       "id": "r6l4",
+       "text": "Ain rauhe dȇckh."
+      },
+      {
+       "id": "r6l5",
+       "text": "Ain per leilach und ain leilach."
+      },
+      {
+       "id": "r6l6",
+       "text": "Zwen pȏlster."
+      },
+      {
+       "id": "r6l7",
+       "text": "Zwai kȗss."
+      },
+      {
+       "id": "r6l8",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r6l9",
+       "text": "Ain truhen"
+      },
+      {
+       "id": "r6l10",
+       "text": "dary̑nn V wȇrchine leilach,"
+      },
+      {
+       "id": "r6l11",
+       "text": "zwai zwilchine tischtuech."
+      },
+      {
+       "id": "r6l12",
+       "text": "Ain alter tisch."
+      },
+      {
+       "id": "r6l13",
+       "text": "Ain schachzagl."
+      },
+      {
+       "id": "r7l1",
+       "text": "In derselben camer in dem clain cȃmȇrl."
+      },
+      {
+       "id": "r8l1",
+       "text": "Item V grosse zin."
+      },
+      {
+       "id": "r8l2",
+       "text": "Item V mittre zin."
+      },
+      {
+       "id": "r8l3",
+       "text": "Item noch kleiner zy̑nn IIII."
+      },
+      {
+       "id": "r8l4",
+       "text": "Item noch cleiner V."
+      },
+      {
+       "id": "r8l5",
+       "text": "Gross salsen schȗsln V."
+      },
+      {
+       "id": "r8l6",
+       "text": "Essich schȗsln V."
+      },
+      {
+       "id": "r8l7",
+       "text": "Ain messins pȇckh."
+      },
+      {
+       "id": "r8l8",
+       "text": "Ain messiner tischring."
+      },
+      {
+       "id": "r8l9",
+       "text": "Zinein teller X."
+      },
+      {
+       "id": "r8l10",
+       "text": "Messin leȗchter clain und gross VI."
+      }
      ]
     }
    ]
@@ -88,45 +217,162 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Auf dem clain estrich",
-      "vor der stuben.",
-      "Ain grosser speiscasten.",
-      "In der hȇll in der ersten camȇr.",
-      "Ain pettstat.",
-      "Zwo rauch dȇckhen.",
-      "Ain pȇtt.",
-      "Ain polster.",
-      "Ain kȗss.",
-      "Ain strosackh.",
-      "Ain par ruphfin leilach.",
-      "In der andȇrn camȇr.",
-      "Petstatten V.",
-      "Ain pett.",
-      "Ain strosackh.",
-      "Zwai ruphfine leilach.",
-      "Zwo rauch dȇckhen.",
-      "Ain polstȇr.",
-      "In des pawknȇchts camer.",
-      "Zwo pettstat.",
-      "Zwai pett.",
-      "Zwen pȏlster.",
-      "Ain kȗss.",
-      "Vier rauch dȇckhen.",
-      "Vier werchine leilach.",
-      "Zwen strosȇckh.",
-      "In der andȇrn camer daran.",
-      "Ain pettstat.",
-      "Ain pett.",
-      "Ain polster.",
-      "Zwai kȗss.",
-      "Ain strosackh.",
-      "Ain rauhe dȇckh.",
-      "Ain golter.",
-      "Auf dem grossen",
-      "new̑en sal.",
-      "Ain grosser harnasch casten.",
-      "Zwen pȏss tisch."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Auf dem clain estrich"
+      },
+      {
+       "id": "r2l2",
+       "text": "vor der stuben."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain grosser speiscasten."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der hȇll in der ersten camȇr."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain pettstat."
+      },
+      {
+       "id": "r5l2",
+       "text": "Zwo rauch dȇckhen."
+      },
+      {
+       "id": "r5l3",
+       "text": "Ain pȇtt."
+      },
+      {
+       "id": "r5l4",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r5l5",
+       "text": "Ain kȗss."
+      },
+      {
+       "id": "r5l6",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r5l7",
+       "text": "Ain par ruphfin leilach."
+      },
+      {
+       "id": "r6l1",
+       "text": "In der andȇrn camȇr."
+      },
+      {
+       "id": "r7l1",
+       "text": "Petstatten V."
+      },
+      {
+       "id": "r7l2",
+       "text": "Ain pett."
+      },
+      {
+       "id": "r7l3",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r7l4",
+       "text": "Zwai ruphfine leilach."
+      },
+      {
+       "id": "r7l5",
+       "text": "Zwo rauch dȇckhen."
+      },
+      {
+       "id": "r7l6",
+       "text": "Ain polstȇr."
+      },
+      {
+       "id": "r8l1",
+       "text": "In des pawknȇchts camer."
+      },
+      {
+       "id": "r9l1",
+       "text": "Zwo pettstat."
+      },
+      {
+       "id": "r9l2",
+       "text": "Zwai pett."
+      },
+      {
+       "id": "r9l3",
+       "text": "Zwen pȏlster."
+      },
+      {
+       "id": "r9l4",
+       "text": "Ain kȗss."
+      },
+      {
+       "id": "r9l5",
+       "text": "Vier rauch dȇckhen."
+      },
+      {
+       "id": "r9l6",
+       "text": "Vier werchine leilach."
+      },
+      {
+       "id": "r9l7",
+       "text": "Zwen strosȇckh."
+      },
+      {
+       "id": "r10l1",
+       "text": "In der andȇrn camer daran."
+      },
+      {
+       "id": "r11l1",
+       "text": "Ain pettstat."
+      },
+      {
+       "id": "r11l2",
+       "text": "Ain pett."
+      },
+      {
+       "id": "r11l3",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r11l4",
+       "text": "Zwai kȗss."
+      },
+      {
+       "id": "r11l5",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r11l6",
+       "text": "Ain rauhe dȇckh."
+      },
+      {
+       "id": "r11l7",
+       "text": "Ain golter."
+      },
+      {
+       "id": "r12l1",
+       "text": "Auf dem grossen"
+      },
+      {
+       "id": "r12l2",
+       "text": "new̑en sal."
+      },
+      {
+       "id": "r13l1",
+       "text": "Ain grosser harnasch casten."
+      },
+      {
+       "id": "r13l2",
+       "text": "Zwen pȏss tisch."
+      }
      ]
     }
    ]
@@ -151,44 +397,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "In der kuchen.",
-      "New̑n phannen gross und clein pȏss und guet.",
-      "Fȗnff kessel gross und clain.",
-      "Erein hȃfen V.",
-      "Ain hȃel.",
-      "Pranntraiten II.",
-      "Drifȗess II.",
-      "Pratspiss II.",
-      "Hainzen II.",
-      "Eisnin kȇllen III.",
-      "Hȗlzin schȗsln gross und clain XII.",
-      "Hȗlzin teller XVI.",
-      "Ain gazen.",
-      "Krautmȇsser II.",
-      "Kuchenmȇsser II.",
-      "Etlich milch nȃphf.",
-      "Item bei der kuchin XII lannzen schãfft.",
-      "Im marstall.",
-      "Ain neȗer fuetercasten.",
-      "In der phister.",
-      "Ain knȇttrog.",
-      "Ain wȗrchtafl.",
-      "Vier prot prettȇr.",
-      "Ain stȃr.",
-      "Im Speisgadenn.",
-      "Ain mȇzger ram.",
-      "Ain fleischpannckh.",
-      "Ain melcasten.",
-      "Ain pew̑tlcasten.",
-      "Ain grosser padzubȇr.",
-      "Melsȇckh und kornsȇckh V.",
-      "In der krautcamȇr.",
-      "Ettlich hȗlzin krautprȇnnten.",
-      "Vor derselben",
-      "hawskamer.",
-      "Zwai hackhprȇtter.",
-      "Ain slifstain."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der kuchen."
+      },
+      {
+       "id": "r3l1",
+       "text": "New̑n phannen gross und clein pȏss und guet."
+      },
+      {
+       "id": "r3l2",
+       "text": "Fȗnff kessel gross und clain."
+      },
+      {
+       "id": "r3l3",
+       "text": "Erein hȃfen V."
+      },
+      {
+       "id": "r3l4",
+       "text": "Ain hȃel."
+      },
+      {
+       "id": "r3l5",
+       "text": "Pranntraiten II."
+      },
+      {
+       "id": "r3l6",
+       "text": "Drifȗess II."
+      },
+      {
+       "id": "r3l7",
+       "text": "Pratspiss II."
+      },
+      {
+       "id": "r3l8",
+       "text": "Hainzen II."
+      },
+      {
+       "id": "r3l9",
+       "text": "Eisnin kȇllen III."
+      },
+      {
+       "id": "r3l10",
+       "text": "Hȗlzin schȗsln gross und clain XII."
+      },
+      {
+       "id": "r3l11",
+       "text": "Hȗlzin teller XVI."
+      },
+      {
+       "id": "r3l12",
+       "text": "Ain gazen."
+      },
+      {
+       "id": "r3l13",
+       "text": "Krautmȇsser II."
+      },
+      {
+       "id": "r3l14",
+       "text": "Kuchenmȇsser II."
+      },
+      {
+       "id": "r3l15",
+       "text": "Etlich milch nȃphf."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item bei der kuchin XII lannzen schãfft."
+      },
+      {
+       "id": "r4l1",
+       "text": "Im marstall."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain neȗer fuetercasten."
+      },
+      {
+       "id": "r6l1",
+       "text": "In der phister."
+      },
+      {
+       "id": "r7l1",
+       "text": "Ain knȇttrog."
+      },
+      {
+       "id": "r7l2",
+       "text": "Ain wȗrchtafl."
+      },
+      {
+       "id": "r7l3",
+       "text": "Vier prot prettȇr."
+      },
+      {
+       "id": "r7l4",
+       "text": "Ain stȃr."
+      },
+      {
+       "id": "r8l1",
+       "text": "Im Speisgadenn."
+      },
+      {
+       "id": "r9l1",
+       "text": "Ain mȇzger ram."
+      },
+      {
+       "id": "r9l2",
+       "text": "Ain fleischpannckh."
+      },
+      {
+       "id": "r9l3",
+       "text": "Ain melcasten."
+      },
+      {
+       "id": "r9l4",
+       "text": "Ain pew̑tlcasten."
+      },
+      {
+       "id": "r9l5",
+       "text": "Ain grosser padzubȇr."
+      },
+      {
+       "id": "r9l6",
+       "text": "Melsȇckh und kornsȇckh V."
+      },
+      {
+       "id": "r10l1",
+       "text": "In der krautcamȇr."
+      },
+      {
+       "id": "r11l1",
+       "text": "Ettlich hȗlzin krautprȇnnten."
+      },
+      {
+       "id": "r12l1",
+       "text": "Vor derselben"
+      },
+      {
+       "id": "r12l2",
+       "text": "hawskamer."
+      },
+      {
+       "id": "r13l1",
+       "text": "Zwai hackhprȇtter."
+      },
+      {
+       "id": "r13l2",
+       "text": "Ain slifstain."
+      }
      ]
     }
    ]
@@ -213,46 +573,166 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "In dem undȇrn zercasten.",
-      "Zwo mȇltruchen.",
-      "Ain pȏser tisch.",
-      "Vor dem weinkȇller.",
-      "Ain hanndtmȗl mit irer zuegehȏrunng.",
-      "Im kȇller.",
-      "Zinein canndln clain und gross VIII.",
-      "Ain stȗrzeine grosse flaschen.",
-      "Zwo mȇssing pippen.",
-      "Ain gross weinvass.",
-      "In der harnaschcamer.",
-      "Armbrost XIIII.",
-      "Haggenpȗchsen VI.",
-      "Hanndtpȗchsen X.",
-      "Alt hanndtpȗchsen XIIII.",
-      "Ain alter zuggater spiess.",
-      "XV eisenhȗet und tschulȃren alt rostig",
-      "und ungeschaffen.",
-      "X alte prustplȇch.",
-      "Ain alts rȗckl.",
-      "Zwo alt schoss.",
-      "Ain hindertail und vordertail von ainer schoss.",
-      "Ettlich armzeȗg.",
-      "Ettlich paingwanndt.",
-      "Und sunst ettlich stuckh alts harnasch.",
-      "Ain haufniz pȗchsen.",
-      "Vier kurz allt tarraspȗxen.",
-      "Vier alt pȗchsen mit holz gevast,",
-      "Drew̑ vȃssel dary̑nn etlich pȗchsenpulver.",
-      "Ain vȃssel darinn ettlich pheil.",
-      "Ain alts spanpȇtt.",
-      "Ain plȃtl plei.",
-      "Im turn.",
-      "Ain alte truhen mit hawspheilen.",
-      "XV lȃgl mit hawspheiln, etlich sind gar",
-      "voll die andern halb oder nit gar der halb",
-      "tail ungefȃrlich.",
-      "Ain halbs vȃssel salitter.",
-      "Ain viertail von ainer lagel swȇbl."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In dem undȇrn zercasten."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zwo mȇltruchen."
+      },
+      {
+       "id": "r3l2",
+       "text": "Ain pȏser tisch."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vor dem weinkȇller."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain hanndtmȗl mit irer zuegehȏrunng."
+      },
+      {
+       "id": "r6l1",
+       "text": "Im kȇller."
+      },
+      {
+       "id": "r7l1",
+       "text": "Zinein canndln clain und gross VIII."
+      },
+      {
+       "id": "r7l2",
+       "text": "Ain stȗrzeine grosse flaschen."
+      },
+      {
+       "id": "r7l3",
+       "text": "Zwo mȇssing pippen."
+      },
+      {
+       "id": "r7l4",
+       "text": "Ain gross weinvass."
+      },
+      {
+       "id": "r8l1",
+       "text": "In der harnaschcamer."
+      },
+      {
+       "id": "r9l1",
+       "text": "Armbrost XIIII."
+      },
+      {
+       "id": "r9l2",
+       "text": "Haggenpȗchsen VI."
+      },
+      {
+       "id": "r9l3",
+       "text": "Hanndtpȗchsen X."
+      },
+      {
+       "id": "r9l4",
+       "text": "Alt hanndtpȗchsen XIIII."
+      },
+      {
+       "id": "r9l5",
+       "text": "Ain alter zuggater spiess."
+      },
+      {
+       "id": "r9l6",
+       "text": "XV eisenhȗet und tschulȃren alt rostig"
+      },
+      {
+       "id": "r9l7",
+       "text": "und ungeschaffen."
+      },
+      {
+       "id": "r9l8",
+       "text": "X alte prustplȇch."
+      },
+      {
+       "id": "r9l9",
+       "text": "Ain alts rȗckl."
+      },
+      {
+       "id": "r9l10",
+       "text": "Zwo alt schoss."
+      },
+      {
+       "id": "r9l11",
+       "text": "Ain hindertail und vordertail von ainer schoss."
+      },
+      {
+       "id": "r9l12",
+       "text": "Ettlich armzeȗg."
+      },
+      {
+       "id": "r9l13",
+       "text": "Ettlich paingwanndt."
+      },
+      {
+       "id": "r9l14",
+       "text": "Und sunst ettlich stuckh alts harnasch."
+      },
+      {
+       "id": "r9l15",
+       "text": "Ain haufniz pȗchsen."
+      },
+      {
+       "id": "r9l16",
+       "text": "Vier kurz allt tarraspȗxen."
+      },
+      {
+       "id": "r9l17",
+       "text": "Vier alt pȗchsen mit holz gevast,"
+      },
+      {
+       "id": "r9l18",
+       "text": "Drew̑ vȃssel dary̑nn etlich pȗchsenpulver."
+      },
+      {
+       "id": "r9l19",
+       "text": "Ain vȃssel darinn ettlich pheil."
+      },
+      {
+       "id": "r9l20",
+       "text": "Ain alts spanpȇtt."
+      },
+      {
+       "id": "r9l21",
+       "text": "Ain plȃtl plei."
+      },
+      {
+       "id": "r10l1",
+       "text": "Im turn."
+      },
+      {
+       "id": "r11l1",
+       "text": "Ain alte truhen mit hawspheilen."
+      },
+      {
+       "id": "r11l2",
+       "text": "XV lȃgl mit hawspheiln, etlich sind gar"
+      },
+      {
+       "id": "r11l3",
+       "text": "voll die andern halb oder nit gar der halb"
+      },
+      {
+       "id": "r11l4",
+       "text": "tail ungefȃrlich."
+      },
+      {
+       "id": "r11l5",
+       "text": "Ain halbs vȃssel salitter."
+      },
+      {
+       "id": "r11l6",
+       "text": "Ain viertail von ainer lagel swȇbl."
+      }
      ]
     }
    ]
@@ -277,41 +757,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Ain zugsail daran man die leȗt martȇrt.",
-      "In meines gnedigen herrn gemȃchen",
-      "in der silberstuben.",
-      "Ain bȏser tisch.",
-      "In der camer daran.",
-      "Ain pettstat.",
-      "In der andȇrn camer daran.",
-      "Ain pettstat.",
-      "In der obern stuben.",
-      "Zwen tisch.",
-      "Ain credȇnnz tisch.",
-      "Ain gemalts tuech mit ettlichen landtschaften.",
-      "In der camȇr daran.",
-      "Ain verdȇckts spanpȇtt mit aim cariȏll.",
-      "Ain sideltruhen davorn.",
-      "Ain strosackh.",
-      "Ain pett.",
-      "Ain polster.",
-      "An kȗss.",
-      "Ain weisser golter.",
-      "Ain seideiner golter.",
-      "Zwai par leilach.",
-      "Zwai tischtuech.",
-      "Zwen umbschlȇg.",
-      "Drew̑ hanndttȗecher.",
-      "Ain sweinspiess.",
-      "Ain wezstain.",
-      "In der nẽgsten camer daran.",
-      "Ain spanpȇtt.",
-      "In der camer gegen dem hoff.",
-      "Ain spanpȇtt.",
-      "In der capȇllen.",
-      "Ain grȗens damaskins messgwanndt.",
-      "Zwai corporal."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ain zugsail daran man die leȗt martȇrt."
+      },
+      {
+       "id": "r3l1",
+       "text": "In meines gnedigen herrn gemȃchen"
+      },
+      {
+       "id": "r3l2",
+       "text": "in der silberstuben."
+      },
+      {
+       "id": "r4l1",
+       "text": "Ain bȏser tisch."
+      },
+      {
+       "id": "r5l1",
+       "text": "In der camer daran."
+      },
+      {
+       "id": "r6l1",
+       "text": "Ain pettstat."
+      },
+      {
+       "id": "r7l1",
+       "text": "In der andȇrn camer daran."
+      },
+      {
+       "id": "r8l1",
+       "text": "Ain pettstat."
+      },
+      {
+       "id": "r9l1",
+       "text": "In der obern stuben."
+      },
+      {
+       "id": "r10l1",
+       "text": "Zwen tisch."
+      },
+      {
+       "id": "r10l2",
+       "text": "Ain credȇnnz tisch."
+      },
+      {
+       "id": "r10l3",
+       "text": "Ain gemalts tuech mit ettlichen landtschaften."
+      },
+      {
+       "id": "r11l1",
+       "text": "In der camȇr daran."
+      },
+      {
+       "id": "r12l1",
+       "text": "Ain verdȇckts spanpȇtt mit aim cariȏll."
+      },
+      {
+       "id": "r12l2",
+       "text": "Ain sideltruhen davorn."
+      },
+      {
+       "id": "r12l3",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r12l4",
+       "text": "Ain pett."
+      },
+      {
+       "id": "r12l5",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r12l6",
+       "text": "An kȗss."
+      },
+      {
+       "id": "r12l7",
+       "text": "Ain weisser golter."
+      },
+      {
+       "id": "r12l8",
+       "text": "Ain seideiner golter."
+      },
+      {
+       "id": "r12l9",
+       "text": "Zwai par leilach."
+      },
+      {
+       "id": "r12l10",
+       "text": "Zwai tischtuech."
+      },
+      {
+       "id": "r12l11",
+       "text": "Zwen umbschlȇg."
+      },
+      {
+       "id": "r12l12",
+       "text": "Drew̑ hanndttȗecher."
+      },
+      {
+       "id": "r12l13",
+       "text": "Ain sweinspiess."
+      },
+      {
+       "id": "r12l14",
+       "text": "Ain wezstain."
+      },
+      {
+       "id": "r13l1",
+       "text": "In der nẽgsten camer daran."
+      },
+      {
+       "id": "r14l1",
+       "text": "Ain spanpȇtt."
+      },
+      {
+       "id": "r15l1",
+       "text": "In der camer gegen dem hoff."
+      },
+      {
+       "id": "r16l1",
+       "text": "Ain spanpȇtt."
+      },
+      {
+       "id": "r17l1",
+       "text": "In der capȇllen."
+      },
+      {
+       "id": "r18l1",
+       "text": "Ain grȗens damaskins messgwanndt."
+      },
+      {
+       "id": "r18l2",
+       "text": "Zwai corporal."
+      }
      ]
     }
    ]
@@ -336,46 +921,166 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Item ain grabs damaskins mȇssgwanndt mit",
-      "seiner zuegehȏrung.",
-      "Ain kȇlch silbrin und vergȗlt mit seiner paten",
-      "der ander kȇlch kȗphrin und vergȗlt.",
-      "Ain mespuech.",
-      "Zwen mȇssin leȗchter.",
-      "Ain tȇbich ȗber ain altar.",
-      "Und sunst leȗchter und glocken, was zu ainer",
-      "capellen gehȏrt.",
-      "Im stadl.",
-      "Zwai wagenross mit irm geschirr.",
-      "Drei wȃgen minder ain rad, ist der ain gannz",
-      "new̑.",
-      "Ain holzschlitten.",
-      "Ain phlueg.",
-      "Zwai tȇnnglgschirr.",
-      "Drei new̑ segensen.",
-      "Ettlich alt segȇnsen.",
-      "Etlich rȇchen.",
-      "Fȗnff hewgablen.",
-      "Drei new̑ mistgablen.",
-      "Drei alt mistgablen.",
-      "Ain mistkrȃll.",
-      "Drei holzhackhen.",
-      "Vier camat.",
-      "Item sunst III tischtȗecher und III handtȗecher",
-      "fȗr das gesind.",
-      "Item III arm poyen.",
-      "Painpoyen II mit kȇtten.",
-      "Ain halls poy̑en.",
-      "Sȇchs maln slȏsser die fȗr die pȏyen ge¬",
-      "schlagen werden.",
-      "Vermȇrckht das essend ding.",
-      "Ain pȗnzl mit smalz.",
-      "Zwo halb Tesẽn ziger.",
-      "X stȃr mȇll.",
-      "Drei sweinin ganz pachen.",
-      "XXV zȇnntring rindfleisch.",
-      "Ettlich phund ȗnslitt und kerzen."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain grabs damaskins mȇssgwanndt mit"
+      },
+      {
+       "id": "r2l2",
+       "text": "seiner zuegehȏrung."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain kȇlch silbrin und vergȗlt mit seiner paten"
+      },
+      {
+       "id": "r2l4",
+       "text": "der ander kȇlch kȗphrin und vergȗlt."
+      },
+      {
+       "id": "r2l5",
+       "text": "Ain mespuech."
+      },
+      {
+       "id": "r2l6",
+       "text": "Zwen mȇssin leȗchter."
+      },
+      {
+       "id": "r2l7",
+       "text": "Ain tȇbich ȗber ain altar."
+      },
+      {
+       "id": "r2l8",
+       "text": "Und sunst leȗchter und glocken, was zu ainer"
+      },
+      {
+       "id": "r2l9",
+       "text": "capellen gehȏrt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Im stadl."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zwai wagenross mit irm geschirr."
+      },
+      {
+       "id": "r4l2",
+       "text": "Drei wȃgen minder ain rad, ist der ain gannz"
+      },
+      {
+       "id": "r4l3",
+       "text": "new̑."
+      },
+      {
+       "id": "r4l4",
+       "text": "Ain holzschlitten."
+      },
+      {
+       "id": "r4l5",
+       "text": "Ain phlueg."
+      },
+      {
+       "id": "r4l6",
+       "text": "Zwai tȇnnglgschirr."
+      },
+      {
+       "id": "r4l7",
+       "text": "Drei new̑ segensen."
+      },
+      {
+       "id": "r4l8",
+       "text": "Ettlich alt segȇnsen."
+      },
+      {
+       "id": "r4l9",
+       "text": "Etlich rȇchen."
+      },
+      {
+       "id": "r4l10",
+       "text": "Fȗnff hewgablen."
+      },
+      {
+       "id": "r4l11",
+       "text": "Drei new̑ mistgablen."
+      },
+      {
+       "id": "r4l12",
+       "text": "Drei alt mistgablen."
+      },
+      {
+       "id": "r4l13",
+       "text": "Ain mistkrȃll."
+      },
+      {
+       "id": "r4l14",
+       "text": "Drei holzhackhen."
+      },
+      {
+       "id": "r4l15",
+       "text": "Vier camat."
+      },
+      {
+       "id": "r4l16",
+       "text": "Item sunst III tischtȗecher und III handtȗecher"
+      },
+      {
+       "id": "r4l17",
+       "text": "fȗr das gesind."
+      },
+      {
+       "id": "r4l18",
+       "text": "Item III arm poyen."
+      },
+      {
+       "id": "r4l19",
+       "text": "Painpoyen II mit kȇtten."
+      },
+      {
+       "id": "r4l20",
+       "text": "Ain halls poy̑en."
+      },
+      {
+       "id": "r4l21",
+       "text": "Sȇchs maln slȏsser die fȗr die pȏyen ge¬"
+      },
+      {
+       "id": "r4l22",
+       "text": "schlagen werden."
+      },
+      {
+       "id": "r5l1",
+       "text": "Vermȇrckht das essend ding."
+      },
+      {
+       "id": "r6l1",
+       "text": "Ain pȗnzl mit smalz."
+      },
+      {
+       "id": "r6l2",
+       "text": "Zwo halb Tesẽn ziger."
+      },
+      {
+       "id": "r6l3",
+       "text": "X stȃr mȇll."
+      },
+      {
+       "id": "r6l4",
+       "text": "Drei sweinin ganz pachen."
+      },
+      {
+       "id": "r6l5",
+       "text": "XXV zȇnntring rindfleisch."
+      },
+      {
+       "id": "r6l6",
+       "text": "Ettlich phund ȗnslitt und kerzen."
+      }
      ]
     }
    ]
@@ -400,15 +1105,42 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "VIII kaes.",
-      "Ettlich pitschȏlen arbaiss und gmȗess.",
-      "Ain naig wein im kellȇr.",
-      "XIX hennenn.",
-      "V cappeȗnn.",
-      "XVIII ster rocken.",
-      "LXXXXVII stȇr fuetȇr.",
-      "LVI ster gersten."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "VIII kaes."
+      },
+      {
+       "id": "r2l2",
+       "text": "Ettlich pitschȏlen arbaiss und gmȗess."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain naig wein im kellȇr."
+      },
+      {
+       "id": "r2l4",
+       "text": "XIX hennenn."
+      },
+      {
+       "id": "r2l5",
+       "text": "V cappeȗnn."
+      },
+      {
+       "id": "r2l6",
+       "text": "XVIII ster rocken."
+      },
+      {
+       "id": "r2l7",
+       "text": "LXXXXVII stȇr fuetȇr."
+      },
+      {
+       "id": "r2l8",
+       "text": "LVI ster gersten."
+      }
      ]
     }
    ]
@@ -433,11 +1165,26 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "Die allt invenntuari zettl so",
-      "herr Sigmudt vonn Wel¬",
-      "sperg her Paulsenn von",
-      "Liechtennstain ubergeant¬",
-      "wurt hat."
+      {
+       "id": "r1l1",
+       "text": "Die allt invenntuari zettl so"
+      },
+      {
+       "id": "r1l2",
+       "text": "herr Sigmudt vonn Wel¬"
+      },
+      {
+       "id": "r1l3",
+       "text": "sperg her Paulsenn von"
+      },
+      {
+       "id": "r1l4",
+       "text": "Liechtennstain ubergeant¬"
+      },
+      {
+       "id": "r1l5",
+       "text": "wurt hat."
+      }
      ]
     }
    ]

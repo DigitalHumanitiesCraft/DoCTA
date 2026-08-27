@@ -21,27 +21,90 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermergkt was ich Katerina weylannd Gabein Kŭnigls sălge gelassne wittib",
-      "auf der pfleg und schloss Schonegk lase als ich abgeczogen pin ausserhalb",
-      "der alten inventăry dy̆ zu dem schloss Schŏnegk gehŏrt anno 1492",
-      "jar am montag nach Sannd Katrein tag etc.",
-      "It(em) am erst(e)n im keller I haber ster, ain resch ster und ain halb resch ster.",
-      "It(em) ain grosse truhen gehŏrt zu salcz und zu kăß.",
-      "It(em) ain ler truhen mit dreyen klŏster(e)n, ain ŏl stain.",
-      "It(em) ain grosse luter(e)n da man fley̆sch in henngt.",
-      "It(em) ain gross hackpret daman kraut auf hagkt.",
-      "It(em) in der pfister stub(e)n ain wurgk taf(e)l und dy̆ preter dar zue.",
-      "It(em) ain peÿtl kast(e)n, ain knet zuber, ain mel ster, mer ain zuber gehort zu mel.",
-      "It(em) ain potichen zu kleyen und ain trŭh(e)l.",
-      "It(em) in der kuchen ain truhen und ain tisch, in der spey̆s kamer I truhen.",
-      "It(em) im zimmer ain mel truhen und sŭnst ain klayne truh(e)n.",
-      "It(em) in der kamer auch im zimmer ain versperte truh(e)n.",
-      "It(em) in der stubn III tisch und dy̆pengk dar zue und ain schrey̆b taf(e)l.",
-      "It(em) in den zway̆en stell(e)n in iegklichem ain fuetertruhen.",
-      "It(em) V alt spies pey̆ dem tor, mer ain hals eis(e)n mit der ket(e)n, mer ain armbrust.",
-      "It(em) ain eysn puchsen ist nit eingefast, mer XII spanpet pŏs und guet.",
-      "It(em) dÿ ket(e)n zu dem prun und der zigk(e)l dar zue."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermergkt was ich Katerina weylannd Gabein Kŭnigls sălge gelassne wittib"
+      },
+      {
+       "id": "r2l2",
+       "text": "auf der pfleg und schloss Schonegk lase als ich abgeczogen pin ausserhalb"
+      },
+      {
+       "id": "r2l3",
+       "text": "der alten inventăry dy̆ zu dem schloss Schŏnegk gehŏrt anno 1492"
+      },
+      {
+       "id": "r2l4",
+       "text": "jar am montag nach Sannd Katrein tag etc."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) am erst(e)n im keller I haber ster, ain resch ster und ain halb resch ster."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) ain grosse truhen gehŏrt zu salcz und zu kăß."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) ain ler truhen mit dreyen klŏster(e)n, ain ŏl stain."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) ain grosse luter(e)n da man fley̆sch in henngt."
+      },
+      {
+       "id": "r3l5",
+       "text": "It(em) ain gross hackpret daman kraut auf hagkt."
+      },
+      {
+       "id": "r3l6",
+       "text": "It(em) in der pfister stub(e)n ain wurgk taf(e)l und dy̆ preter dar zue."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) ain peÿtl kast(e)n, ain knet zuber, ain mel ster, mer ain zuber gehort zu mel."
+      },
+      {
+       "id": "r3l8",
+       "text": "It(em) ain potichen zu kleyen und ain trŭh(e)l."
+      },
+      {
+       "id": "r3l9",
+       "text": "It(em) in der kuchen ain truhen und ain tisch, in der spey̆s kamer I truhen."
+      },
+      {
+       "id": "r3l10",
+       "text": "It(em) im zimmer ain mel truhen und sŭnst ain klayne truh(e)n."
+      },
+      {
+       "id": "r3l11",
+       "text": "It(em) in der kamer auch im zimmer ain versperte truh(e)n."
+      },
+      {
+       "id": "r3l12",
+       "text": "It(em) in der stubn III tisch und dy̆pengk dar zue und ain schrey̆b taf(e)l."
+      },
+      {
+       "id": "r3l13",
+       "text": "It(em) in den zway̆en stell(e)n in iegklichem ain fuetertruhen."
+      },
+      {
+       "id": "r3l14",
+       "text": "It(em) V alt spies pey̆ dem tor, mer ain hals eis(e)n mit der ket(e)n, mer ain armbrust."
+      },
+      {
+       "id": "r3l15",
+       "text": "It(em) ain eysn puchsen ist nit eingefast, mer XII spanpet pŏs und guet."
+      },
+      {
+       "id": "r3l16",
+       "text": "It(em) dÿ ket(e)n zu dem prun und der zigk(e)l dar zue."
+      }
      ]
     },
     {
@@ -57,29 +120,98 @@
       false
      ],
      "lines": [
-      "1492.",
-      "(11. XIII 251)",
-      "Ums. A 185/1",
-      "Vermerckt was Ich katreina weylandt baben kungls selge gelaßne wittib",
-      "auf der pfleg vnd Schloß Schöneckh laß als Ich abgezogen pin ausserhalb",
-      "der alten Inuentarj dy zu dem Schloß Schöneckh gehort Anno . 1492",
-      "Jar an montag nach Sannd Katrein tag zcũ",
-      "Item erstu Im keller j haber sterck ain gers sterck vnd ain halb gers sterck",
-      "It(em) ain grosse tengen gehort zu holtz vnd zu laß",
-      "It(em) ain zier tengen mit dreyen rohern / ain öl trainn",
-      "It(em) ain grosse zucken da man fleysch In henngt",
-      "It(em) ain groß trachtset daman kraut auf hackt",
-      "It(em) In der pfister stubn ain vorricht tafe vnd dy preten dar zue",
-      "It(em) ain speisl fassn ain fur zuber ain sanc sterck / mer ain zuber gebrochen mer",
-      "It(em) ain föttigen zu klagen vnd ain teufl",
-      "It(em) In der kucken ain tengen vnd ain tisch / In der speys kamer j tengen",
-      "It(em) Im zimmer ain mel tengen vnd sunst ain klain tengen",
-      "It(em) In der kamir auch Im zimmer j ain versperte trugn",
-      "It(em) An der stubn ij tisch vnd dy pengk dar zue vnd ain steyrertafe",
-      "It(em) In den zwayen stelen In iegleichem ain fueter truhen",
-      "It(em) v alt spies pey dem tor / mer ain halb fasn mit der fetn / mer ain armbrust",
-      "It(em) ain vest putzfen Ist in eingefaßt / mer xij pampet pos vnd gutt",
-      "It(em) dy ketn zu dem prunn vnd der zigel dar zue //"
+      {
+       "id": null,
+       "text": "1492."
+      },
+      {
+       "id": null,
+       "text": "(11. XIII 251)"
+      },
+      {
+       "id": null,
+       "text": "Ums. A 185/1"
+      },
+      {
+       "id": null,
+       "text": "Vermerckt was Ich katreina weylandt baben kungls selge gelaßne wittib"
+      },
+      {
+       "id": null,
+       "text": "auf der pfleg vnd Schloß Schöneckh laß als Ich abgezogen pin ausserhalb"
+      },
+      {
+       "id": null,
+       "text": "der alten Inuentarj dy zu dem Schloß Schöneckh gehort Anno . 1492"
+      },
+      {
+       "id": null,
+       "text": "Jar an montag nach Sannd Katrein tag zcũ"
+      },
+      {
+       "id": null,
+       "text": "Item erstu Im keller j haber sterck ain gers sterck vnd ain halb gers sterck"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain grosse tengen gehort zu holtz vnd zu laß"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain zier tengen mit dreyen rohern / ain öl trainn"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain grosse zucken da man fleysch In henngt"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain groß trachtset daman kraut auf hackt"
+      },
+      {
+       "id": null,
+       "text": "It(em) In der pfister stubn ain vorricht tafe vnd dy preten dar zue"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain speisl fassn ain fur zuber ain sanc sterck / mer ain zuber gebrochen mer"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain föttigen zu klagen vnd ain teufl"
+      },
+      {
+       "id": null,
+       "text": "It(em) In der kucken ain tengen vnd ain tisch / In der speys kamer j tengen"
+      },
+      {
+       "id": null,
+       "text": "It(em) Im zimmer ain mel tengen vnd sunst ain klain tengen"
+      },
+      {
+       "id": null,
+       "text": "It(em) In der kamir auch Im zimmer j ain versperte trugn"
+      },
+      {
+       "id": null,
+       "text": "It(em) An der stubn ij tisch vnd dy pengk dar zue vnd ain steyrertafe"
+      },
+      {
+       "id": null,
+       "text": "It(em) In den zwayen stelen In iegleichem ain fueter truhen"
+      },
+      {
+       "id": null,
+       "text": "It(em) v alt spies pey dem tor / mer ain halb fasn mit der fetn / mer ain armbrust"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain vest putzfen Ist in eingefaßt / mer xij pampet pos vnd gutt"
+      },
+      {
+       "id": null,
+       "text": "It(em) dy ketn zu dem prunn vnd der zigel dar zue //"
+      }
      ]
     },
     {
@@ -95,29 +227,98 @@
       false
      ],
      "lines": [
-      "1492.",
-      "11. XIII 251",
-      "Hss. A 185/1",
-      "Daz vermerckt was ich Caterina weyland Baben Rungels selige gelaßne wittib",
-      "auff der pfleg vnd Schloß Schöneckh last als ich abgeczogen pin ausserhalb",
-      "der alten Innuentary dy zu dem Schloß Schöneckh gehörend Anno . 1492",
-      "Iar an montag nach Sannd Lucien tag zc.",
-      "Item In dem keller . j . haber stex ain terff stex vnd ain halb terff stex",
-      "Item ain grosse trugen gehört zu holtz vnd zu kaß",
-      "Item ain leer trugen mit dreyen löchern / ain öl trainn",
-      "Item ain grosse trugen da man fleisch In henget",
-      "Item ain groß hackpret darauf man kraut auf hackt",
-      "Item In der phister stubn ain vorrefft tafel vnd dy preten dar zue",
-      "Item ain paerl fass ain knet zuber ain saue stex / mer ain zuber gebrochen mer",
-      "Item ain schötzen zu tragen vnd ain truche",
-      "Item In der kuchen ain trugen vnd ain tysch / In der speys kamer . j . trugen",
-      "Item Im zymmer ain . mel trugen vnd sonst ain clainne trugen",
-      "Item In der kamir auch Im zimmer j ain versperte trugen",
-      "Item An der stubn iij tysch vnd dy pengk dar zue vnd ain steyrertafel",
-      "Item In den zwayen stelen In iegleichem ain fueter truchen",
-      "Item v alt spies pey dem tor / mer ain halb fass mit der ketn / mer ain armbrust",
-      "Item ain feste putzpn ryt in lingefaßt / mer . iiij . spanpet pös vnd guet",
-      "Item dy ketn zu dem prunn vnd der zygel dar zue /"
+      {
+       "id": null,
+       "text": "1492."
+      },
+      {
+       "id": null,
+       "text": "11. XIII 251"
+      },
+      {
+       "id": null,
+       "text": "Hss. A 185/1"
+      },
+      {
+       "id": null,
+       "text": "Daz vermerckt was ich Caterina weyland Baben Rungels selige gelaßne wittib"
+      },
+      {
+       "id": null,
+       "text": "auff der pfleg vnd Schloß Schöneckh last als ich abgeczogen pin ausserhalb"
+      },
+      {
+       "id": null,
+       "text": "der alten Innuentary dy zu dem Schloß Schöneckh gehörend Anno . 1492"
+      },
+      {
+       "id": null,
+       "text": "Iar an montag nach Sannd Lucien tag zc."
+      },
+      {
+       "id": null,
+       "text": "Item In dem keller . j . haber stex ain terff stex vnd ain halb terff stex"
+      },
+      {
+       "id": null,
+       "text": "Item ain grosse trugen gehört zu holtz vnd zu kaß"
+      },
+      {
+       "id": null,
+       "text": "Item ain leer trugen mit dreyen löchern / ain öl trainn"
+      },
+      {
+       "id": null,
+       "text": "Item ain grosse trugen da man fleisch In henget"
+      },
+      {
+       "id": null,
+       "text": "Item ain groß hackpret darauf man kraut auf hackt"
+      },
+      {
+       "id": null,
+       "text": "Item In der phister stubn ain vorrefft tafel vnd dy preten dar zue"
+      },
+      {
+       "id": null,
+       "text": "Item ain paerl fass ain knet zuber ain saue stex / mer ain zuber gebrochen mer"
+      },
+      {
+       "id": null,
+       "text": "Item ain schötzen zu tragen vnd ain truche"
+      },
+      {
+       "id": null,
+       "text": "Item In der kuchen ain trugen vnd ain tysch / In der speys kamer . j . trugen"
+      },
+      {
+       "id": null,
+       "text": "Item Im zymmer ain . mel trugen vnd sonst ain clainne trugen"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamir auch Im zimmer j ain versperte trugen"
+      },
+      {
+       "id": null,
+       "text": "Item An der stubn iij tysch vnd dy pengk dar zue vnd ain steyrertafel"
+      },
+      {
+       "id": null,
+       "text": "Item In den zwayen stelen In iegleichem ain fueter truchen"
+      },
+      {
+       "id": null,
+       "text": "Item v alt spies pey dem tor / mer ain halb fass mit der ketn / mer ain armbrust"
+      },
+      {
+       "id": null,
+       "text": "Item ain feste putzpn ryt in lingefaßt / mer . iiij . spanpet pös vnd guet"
+      },
+      {
+       "id": null,
+       "text": "Item dy ketn zu dem prunn vnd der zygel dar zue /"
+      }
      ]
     }
    ]
@@ -142,7 +343,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     },
     {
@@ -158,7 +362,10 @@
       false
      ],
      "lines": [
-      "Pfondz, Inventari"
+      {
+       "id": null,
+       "text": "Pfondz, Inventari"
+      }
      ]
     },
     {
@@ -174,7 +381,10 @@
       false
      ],
      "lines": [
-      "Pfonds, Cameral"
+      {
+       "id": null,
+       "text": "Pfonds, Cameral"
+      }
      ]
     }
    ]

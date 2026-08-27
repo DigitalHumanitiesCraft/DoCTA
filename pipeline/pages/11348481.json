@@ -21,15 +21,42 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[us_vorne_r]",
-      "Persen",
-      "1434",
-      "46",
-      "48",
-      "Zedel der phlegen",
-      "etlicher varender hab",
-      "und zewg der hewser.",
-      "[.]w[..]t."
+      {
+       "id": "r1l1",
+       "text": "[us_vorne_r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Persen"
+      },
+      {
+       "id": "r2l2",
+       "text": "1434"
+      },
+      {
+       "id": "r2l3",
+       "text": "46"
+      },
+      {
+       "id": "r2l4",
+       "text": "48"
+      },
+      {
+       "id": "r3l1",
+       "text": "Zedel der phlegen"
+      },
+      {
+       "id": "r3l2",
+       "text": "etlicher varender hab"
+      },
+      {
+       "id": "r3l3",
+       "text": "und zewg der hewser."
+      },
+      {
+       "id": "r3l4",
+       "text": "[.]w[..]t."
+      }
      ]
     },
     {
@@ -45,17 +72,50 @@
       false
      ],
      "lines": [
-      "1446 Juni 13",
-      "Persen.",
-      "1434",
-      "46",
-      "48",
-      "l: 109.",
-      "Schloss vnd bawer gut",
-      "ettliches varende hab",
-      "Wolff der phleger",
-      "(früher: Sch. A. 7590)",
-      "Inv. A 273/5"
+      {
+       "id": null,
+       "text": "1446 Juni 13"
+      },
+      {
+       "id": null,
+       "text": "Persen."
+      },
+      {
+       "id": null,
+       "text": "1434"
+      },
+      {
+       "id": null,
+       "text": "46"
+      },
+      {
+       "id": null,
+       "text": "48"
+      },
+      {
+       "id": null,
+       "text": "l: 109."
+      },
+      {
+       "id": null,
+       "text": "Schloss vnd bawer gut"
+      },
+      {
+       "id": null,
+       "text": "ettliches varende hab"
+      },
+      {
+       "id": null,
+       "text": "Wolff der phleger"
+      },
+      {
+       "id": null,
+       "text": "(früher: Sch. A. 7590)"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 273/5"
+      }
      ]
     },
     {
@@ -71,18 +131,54 @@
       false
      ],
      "lines": [
-      "1446 Juni 13",
-      "Persen",
-      "1434",
-      "46",
-      "48",
-      "C: 109.",
-      "Jnuentari vnd schadenguet",
-      "etliches varende hab",
-      "vber dy pfleger",
-      "Inventar",
-      "(früher: Sch. A. 7590)",
-      "Inv. A 273/5"
+      {
+       "id": null,
+       "text": "1446 Juni 13"
+      },
+      {
+       "id": null,
+       "text": "Persen"
+      },
+      {
+       "id": null,
+       "text": "1434"
+      },
+      {
+       "id": null,
+       "text": "46"
+      },
+      {
+       "id": null,
+       "text": "48"
+      },
+      {
+       "id": null,
+       "text": "C: 109."
+      },
+      {
+       "id": null,
+       "text": "Jnuentari vnd schadenguet"
+      },
+      {
+       "id": null,
+       "text": "etliches varende hab"
+      },
+      {
+       "id": null,
+       "text": "vber dy pfleger"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      },
+      {
+       "id": null,
+       "text": "(früher: Sch. A. 7590)"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 273/5"
+      }
      ]
     }
    ]
@@ -111,7 +207,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[us_vorne_v]"
+      {
+       "id": "r1l1",
+       "text": "[us_vorne_v]"
+      }
      ]
     },
     {
@@ -164,37 +263,130 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Register als her nach geschriben stet",
-      "des gesloss Persen.",
-      "Hie nach ist vermerkt alles das so ich",
-      "Hainrich von Mörsperg in dem gesloss",
-      "Persen gefunden hab und mir von",
-      "der Küngkspergerin nach abgang Hansen",
-      "von Küngsperg irs gemahels seligen",
-      "ist eingeanttwürt das daz dem durleüch¬",
-      "tigen hochgeborn fürsten hertzog Sig¬",
-      "munden hertzogen ze Österreich und",
-      "graven ze Tyrol etc. meine(m) gnedigen",
-      "her(r)n zügehört. Dasselb gesloss mir sein",
-      "gnad hat eingeanttwürt in phlegs weyse",
-      "seinen gnaden getreülich damit wartent sein",
-      "und hab also das benant gesloss eingenomen",
-      "an dem montag dreÿzehen tag in dem",
-      "monet junio in der jarzal nach cristi ge¬",
-      "pürde tausentvierhundert und in dem",
-      "sechsundvierzigisten jare daselbs edel,",
-      "unedel und vil ander erber leüt beÿ gerufn",
-      "seind mit namen her Markabrůn von",
-      "Bÿsein, herr Antoni von Terlag, doctor Misser,",
-      "Lucas Massär ze Triendt, Lienhart vom Salz,",
-      "Cunrat zoller Ganser zollner am Nefeÿs,",
-      "Hainrich von Castell zollner ze Triendt,",
-      "Hans Stampher nodër, Hainrich wirt zü",
-      "dem Visch ze Triendt und sunst vil",
-      "ander erber leüt und was mir geantwurt",
-      "ist worden daz haben die obgenanten gesehen",
-      "und beschaẇet."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Register als her nach geschriben stet"
+      },
+      {
+       "id": "r2l2",
+       "text": "des gesloss Persen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Hie nach ist vermerkt alles das so ich"
+      },
+      {
+       "id": "r3l2",
+       "text": "Hainrich von Mörsperg in dem gesloss"
+      },
+      {
+       "id": "r3l3",
+       "text": "Persen gefunden hab und mir von"
+      },
+      {
+       "id": "r3l4",
+       "text": "der Küngkspergerin nach abgang Hansen"
+      },
+      {
+       "id": "r3l5",
+       "text": "von Küngsperg irs gemahels seligen"
+      },
+      {
+       "id": "r3l6",
+       "text": "ist eingeanttwürt das daz dem durleüch¬"
+      },
+      {
+       "id": "r3l7",
+       "text": "tigen hochgeborn fürsten hertzog Sig¬"
+      },
+      {
+       "id": "r3l8",
+       "text": "munden hertzogen ze Österreich und"
+      },
+      {
+       "id": "r3l9",
+       "text": "graven ze Tyrol etc. meine(m) gnedigen"
+      },
+      {
+       "id": "r3l10",
+       "text": "her(r)n zügehört. Dasselb gesloss mir sein"
+      },
+      {
+       "id": "r3l11",
+       "text": "gnad hat eingeanttwürt in phlegs weyse"
+      },
+      {
+       "id": "r3l12",
+       "text": "seinen gnaden getreülich damit wartent sein"
+      },
+      {
+       "id": "r3l13",
+       "text": "und hab also das benant gesloss eingenomen"
+      },
+      {
+       "id": "r3l14",
+       "text": "an dem montag dreÿzehen tag in dem"
+      },
+      {
+       "id": "r3l15",
+       "text": "monet junio in der jarzal nach cristi ge¬"
+      },
+      {
+       "id": "r3l16",
+       "text": "pürde tausentvierhundert und in dem"
+      },
+      {
+       "id": "r3l17",
+       "text": "sechsundvierzigisten jare daselbs edel,"
+      },
+      {
+       "id": "r3l18",
+       "text": "unedel und vil ander erber leüt beÿ gerufn"
+      },
+      {
+       "id": "r3l19",
+       "text": "seind mit namen her Markabrůn von"
+      },
+      {
+       "id": "r3l20",
+       "text": "Bÿsein, herr Antoni von Terlag, doctor Misser,"
+      },
+      {
+       "id": "r3l21",
+       "text": "Lucas Massär ze Triendt, Lienhart vom Salz,"
+      },
+      {
+       "id": "r3l22",
+       "text": "Cunrat zoller Ganser zollner am Nefeÿs,"
+      },
+      {
+       "id": "r3l23",
+       "text": "Hainrich von Castell zollner ze Triendt,"
+      },
+      {
+       "id": "r3l24",
+       "text": "Hans Stampher nodër, Hainrich wirt zü"
+      },
+      {
+       "id": "r3l25",
+       "text": "dem Visch ze Triendt und sunst vil"
+      },
+      {
+       "id": "r3l26",
+       "text": "ander erber leüt und was mir geantwurt"
+      },
+      {
+       "id": "r3l27",
+       "text": "ist worden daz haben die obgenanten gesehen"
+      },
+      {
+       "id": "r3l28",
+       "text": "und beschaẇet."
+      }
      ]
     },
     {
@@ -210,37 +402,130 @@
       false
      ],
      "lines": [
-      "1",
-      "Register als her nach geschriben stet",
-      "des Schloss persen :",
-      "Hie nach ist vermerkt alles das so ich",
-      "hainreich von axspperg in dem Schloss",
-      "persen gefunden hab . Vnd mir von",
-      "der küngspergerin nach abgang hrnsch",
-      "von küngsperg Irs gemahels seligen",
-      "ist eingeanttwürt / Als das dem durleüch =",
-      "tigen hochgeborn fürsten Hertzog Sig =",
-      "munden hertzogen ze Österreich vnd",
-      "Grauen ze Tyrol rc meine gnedigen",
-      "hern zügehört . Dasselb Schloss mir sein",
-      "gnad hat eingeanttwürt in phlegs weyse",
-      "seinen gnaden getrewlich darmit wartten sein",
-      "vnd hab also das hint Schloss eingenomen",
-      "an dem montag dreyzehen tag in dem",
-      "Monet Junio In der Jartzal nach crstige =",
-      "purde Tausent virhundert vnd in dem",
-      "sechsundvierczigisten Jare Dasselbs sas",
-      "vriedel vnd vil ander erber leüt bey gewest",
-      "seind / mit namen Her marckabrun von",
-      "Ristein Her antoni von terlay Doctor / agiss",
-      "lucas massar ze triendt / lienhart vom saler",
-      "Cunrat goller ganser zolln am Neseys",
-      "Hainnrich von Castell zolln ze triendt",
-      "hans stampher noder Hainnrich wirt zu",
-      "dem ochsn ze triendt / vnd sunst vil",
-      "ander erber leüt Vnd was mir geantwürt",
-      "ist worden das habn die obgnten gesehen",
-      "vnd beschawet /"
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Register als her nach geschriben stet"
+      },
+      {
+       "id": null,
+       "text": "des Schloss persen :"
+      },
+      {
+       "id": null,
+       "text": "Hie nach ist vermerkt alles das so ich"
+      },
+      {
+       "id": null,
+       "text": "hainreich von axspperg in dem Schloss"
+      },
+      {
+       "id": null,
+       "text": "persen gefunden hab . Vnd mir von"
+      },
+      {
+       "id": null,
+       "text": "der küngspergerin nach abgang hrnsch"
+      },
+      {
+       "id": null,
+       "text": "von küngsperg Irs gemahels seligen"
+      },
+      {
+       "id": null,
+       "text": "ist eingeanttwürt / Als das dem durleüch ="
+      },
+      {
+       "id": null,
+       "text": "tigen hochgeborn fürsten Hertzog Sig ="
+      },
+      {
+       "id": null,
+       "text": "munden hertzogen ze Österreich vnd"
+      },
+      {
+       "id": null,
+       "text": "Grauen ze Tyrol rc meine gnedigen"
+      },
+      {
+       "id": null,
+       "text": "hern zügehört . Dasselb Schloss mir sein"
+      },
+      {
+       "id": null,
+       "text": "gnad hat eingeanttwürt in phlegs weyse"
+      },
+      {
+       "id": null,
+       "text": "seinen gnaden getrewlich darmit wartten sein"
+      },
+      {
+       "id": null,
+       "text": "vnd hab also das hint Schloss eingenomen"
+      },
+      {
+       "id": null,
+       "text": "an dem montag dreyzehen tag in dem"
+      },
+      {
+       "id": null,
+       "text": "Monet Junio In der Jartzal nach crstige ="
+      },
+      {
+       "id": null,
+       "text": "purde Tausent virhundert vnd in dem"
+      },
+      {
+       "id": null,
+       "text": "sechsundvierczigisten Jare Dasselbs sas"
+      },
+      {
+       "id": null,
+       "text": "vriedel vnd vil ander erber leüt bey gewest"
+      },
+      {
+       "id": null,
+       "text": "seind / mit namen Her marckabrun von"
+      },
+      {
+       "id": null,
+       "text": "Ristein Her antoni von terlay Doctor / agiss"
+      },
+      {
+       "id": null,
+       "text": "lucas massar ze triendt / lienhart vom saler"
+      },
+      {
+       "id": null,
+       "text": "Cunrat goller ganser zolln am Neseys"
+      },
+      {
+       "id": null,
+       "text": "Hainnrich von Castell zolln ze triendt"
+      },
+      {
+       "id": null,
+       "text": "hans stampher noder Hainnrich wirt zu"
+      },
+      {
+       "id": null,
+       "text": "dem ochsn ze triendt / vnd sunst vil"
+      },
+      {
+       "id": null,
+       "text": "ander erber leüt Vnd was mir geantwürt"
+      },
+      {
+       "id": null,
+       "text": "ist worden das habn die obgnten gesehen"
+      },
+      {
+       "id": null,
+       "text": "vnd beschawet /"
+      }
      ]
     },
     {
@@ -256,37 +541,130 @@
       false
      ],
      "lines": [
-      "1",
-      "Register als her nach geschriben stet",
-      "des besloss persen:",
-      "Hie nach ist vermerkt alles das ich",
-      "hainreich von awersperg in dem besloss",
-      "persen gefunden hab. Vnd mir von",
-      "der ku(e)ngspergerin nach abgang herrn",
-      "von ku(e)ngsperg Irs gemahels seligen",
-      "ist eingeantwurt / Als das dem durleuch-",
-      "tigen hochgeborn fursten Hertzog Sig-",
-      "munden hertzogen ze osterreich vnd",
-      "Grauen ze Tyrol etc meinem gnedigen",
-      "herrn zu(e)geho(e)rt. Dasselb beslos mir sein",
-      "gnad hat eingeantwurt in phlegs weyse",
-      "seinen gnaden getrewlich damit warten sein",
-      "Vnd hab also das berut besloss eingenomen",
-      "an dem montag dreyzehen tag in dem",
-      "Monet Junio In der Iarzal nach cristi ge-",
-      "purt Tausent vierhundert vnd in dem",
-      "sechs vnd vierczigisten Iare Daselbs stet",
-      "vriedel vnd vil ander erber leut bey gewest",
-      "seind / mit namen Her markabrun von",
-      "Rofein Her Antoni von Terlay doctor / aygiss",
-      "lucas massar ze triendt / lienhart vom salez",
-      "Cunrat zoller gansser zolln am Nefeys /",
-      "Hainreich von Castell zolln ze triendt",
-      "hans stampher noter Hainreich wirt zu(e)",
-      "dem o(e)rtsch ze triendt / vnd sunst vil",
-      "ander erber leut Vnd was mir geantwurt",
-      "ist worden das haben die obgnanten gesehen",
-      "vnd beschawet."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Register als her nach geschriben stet"
+      },
+      {
+       "id": null,
+       "text": "des besloss persen:"
+      },
+      {
+       "id": null,
+       "text": "Hie nach ist vermerkt alles das ich"
+      },
+      {
+       "id": null,
+       "text": "hainreich von awersperg in dem besloss"
+      },
+      {
+       "id": null,
+       "text": "persen gefunden hab. Vnd mir von"
+      },
+      {
+       "id": null,
+       "text": "der ku(e)ngspergerin nach abgang herrn"
+      },
+      {
+       "id": null,
+       "text": "von ku(e)ngsperg Irs gemahels seligen"
+      },
+      {
+       "id": null,
+       "text": "ist eingeantwurt / Als das dem durleuch-"
+      },
+      {
+       "id": null,
+       "text": "tigen hochgeborn fursten Hertzog Sig-"
+      },
+      {
+       "id": null,
+       "text": "munden hertzogen ze osterreich vnd"
+      },
+      {
+       "id": null,
+       "text": "Grauen ze Tyrol etc meinem gnedigen"
+      },
+      {
+       "id": null,
+       "text": "herrn zu(e)geho(e)rt. Dasselb beslos mir sein"
+      },
+      {
+       "id": null,
+       "text": "gnad hat eingeantwurt in phlegs weyse"
+      },
+      {
+       "id": null,
+       "text": "seinen gnaden getrewlich damit warten sein"
+      },
+      {
+       "id": null,
+       "text": "Vnd hab also das berut besloss eingenomen"
+      },
+      {
+       "id": null,
+       "text": "an dem montag dreyzehen tag in dem"
+      },
+      {
+       "id": null,
+       "text": "Monet Junio In der Iarzal nach cristi ge-"
+      },
+      {
+       "id": null,
+       "text": "purt Tausent vierhundert vnd in dem"
+      },
+      {
+       "id": null,
+       "text": "sechs vnd vierczigisten Iare Daselbs stet"
+      },
+      {
+       "id": null,
+       "text": "vriedel vnd vil ander erber leut bey gewest"
+      },
+      {
+       "id": null,
+       "text": "seind / mit namen Her markabrun von"
+      },
+      {
+       "id": null,
+       "text": "Rofein Her Antoni von Terlay doctor / aygiss"
+      },
+      {
+       "id": null,
+       "text": "lucas massar ze triendt / lienhart vom salez"
+      },
+      {
+       "id": null,
+       "text": "Cunrat zoller gansser zolln am Nefeys /"
+      },
+      {
+       "id": null,
+       "text": "Hainreich von Castell zolln ze triendt"
+      },
+      {
+       "id": null,
+       "text": "hans stampher noter Hainreich wirt zu(e)"
+      },
+      {
+       "id": null,
+       "text": "dem o(e)rtsch ze triendt / vnd sunst vil"
+      },
+      {
+       "id": null,
+       "text": "ander erber leut Vnd was mir geantwurt"
+      },
+      {
+       "id": null,
+       "text": "ist worden das haben die obgnanten gesehen"
+      },
+      {
+       "id": null,
+       "text": "vnd beschawet."
+      }
      ]
     }
    ]
@@ -315,7 +693,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     },
     {
@@ -368,40 +749,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Auf dem palast.",
-      "Hie ist vermerkht am ersten was auf",
-      "dem palast ist von peten als ichs gefunden han.",
-      "Item in dem ergger da der Keller ist gelegen",
-      "darinn ist ain pet mit ainer zwilchin",
-      "ziech unden und oben zerissen.",
-      "Item aber auf dem palast da die palaster",
-      "gelegen sind ist ain pet von ainer person",
-      "mit ainer alten zwilchin ziechen auch",
-      "zerissen.",
-      "Item aber auf dem palast in des hauptmans",
-      "ergger ain pet mit ainer zwilchin ziech",
-      "überzogen ist auch nicht vast gůt.",
-      "Item aber auf dem paläst ein pet in ainer",
-      "kammer mit ainer zwilchin ziechen über¬",
-      "zogen und ist alt und  [..] zerrissen. Auch",
-      "ist in derselben kammer ain lëre petstat.",
-      "Item aber auf dem palast ain klaines pöses",
-      "petlein von ainer person und ist auch",
-      "zerissen und klaines schatzwert.",
-      "Item aber auf dem pȧlast in dem ergger",
-      "do der Leo inn gelegen ist ain gůt pett",
-      "von zwayen person auch mit ainer",
-      "zwilchin ziech überzogen.",
-      "In des caplans kammer",
-      "beÿ der stÿeg.",
-      "Item ain klaines petlein von zwaien",
-      "personen mit ainer zwilchin ziechen",
-      "uberzogen, claines schatzwert.",
-      "In des kochs kammer.",
-      "Item ain klaines altes petlein vast zer¬",
-      "rissen mit ainer zwilchen ziech überzogen",
-      "und ist auch abschatz."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Auf dem palast."
+      },
+      {
+       "id": "r3l1",
+       "text": "Hie ist vermerkht am ersten was auf"
+      },
+      {
+       "id": "r3l2",
+       "text": "dem palast ist von peten als ichs gefunden han."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item in dem ergger da der Keller ist gelegen"
+      },
+      {
+       "id": "r4l2",
+       "text": "darinn ist ain pet mit ainer zwilchin"
+      },
+      {
+       "id": "r4l3",
+       "text": "ziech unden und oben zerissen."
+      },
+      {
+       "id": "r4l4",
+       "text": "Item aber auf dem palast da die palaster"
+      },
+      {
+       "id": "r4l5",
+       "text": "gelegen sind ist ain pet von ainer person"
+      },
+      {
+       "id": "r4l6",
+       "text": "mit ainer alten zwilchin ziechen auch"
+      },
+      {
+       "id": "r4l7",
+       "text": "zerissen."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item aber auf dem palast in des hauptmans"
+      },
+      {
+       "id": "r4l9",
+       "text": "ergger ain pet mit ainer zwilchin ziech"
+      },
+      {
+       "id": "r4l10",
+       "text": "überzogen ist auch nicht vast gůt."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item aber auf dem paläst ein pet in ainer"
+      },
+      {
+       "id": "r4l12",
+       "text": "kammer mit ainer zwilchin ziechen über¬"
+      },
+      {
+       "id": "r4l13",
+       "text": "zogen und ist alt und  [..] zerrissen. Auch"
+      },
+      {
+       "id": "r4l14",
+       "text": "ist in derselben kammer ain lëre petstat."
+      },
+      {
+       "id": "r4l15",
+       "text": "Item aber auf dem palast ain klaines pöses"
+      },
+      {
+       "id": "r4l16",
+       "text": "petlein von ainer person und ist auch"
+      },
+      {
+       "id": "r4l17",
+       "text": "zerissen und klaines schatzwert."
+      },
+      {
+       "id": "r4l18",
+       "text": "Item aber auf dem pȧlast in dem ergger"
+      },
+      {
+       "id": "r4l19",
+       "text": "do der Leo inn gelegen ist ain gůt pett"
+      },
+      {
+       "id": "r4l20",
+       "text": "von zwayen person auch mit ainer"
+      },
+      {
+       "id": "r4l21",
+       "text": "zwilchin ziech überzogen."
+      },
+      {
+       "id": "r5l1",
+       "text": "In des caplans kammer"
+      },
+      {
+       "id": "r5l2",
+       "text": "beÿ der stÿeg."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item ain klaines petlein von zwaien"
+      },
+      {
+       "id": "r6l2",
+       "text": "personen mit ainer zwilchin ziechen"
+      },
+      {
+       "id": "r6l3",
+       "text": "uberzogen, claines schatzwert."
+      },
+      {
+       "id": "r7l1",
+       "text": "In des kochs kammer."
+      },
+      {
+       "id": "r8l1",
+       "text": "Item ain klaines altes petlein vast zer¬"
+      },
+      {
+       "id": "r8l2",
+       "text": "rissen mit ainer zwilchen ziech überzogen"
+      },
+      {
+       "id": "r8l3",
+       "text": "und ist auch abschatz."
+      }
      ]
     },
     {
@@ -417,40 +900,142 @@
       false
      ],
      "lines": [
-      "2",
-      "Auf dem palaft",
-      "Hie ist vermerkht am ersten was auf",
-      "dem palaft ist von peten als ichs gefundn han",
-      "Item in dem ergger da der keller ist gelegen",
-      "darinn ist ain pet mit ainer zwilchin",
-      "ziech unden und oben zerissen",
-      "Item aber auf dem palaft da die palafter",
-      "gelegen sind ist ain pet von aind person",
-      "mit ainer alten zwilchin ziechen auch",
-      "zerissen",
-      "Item aber auf dem palaft in des haupcmans",
-      "ergger ain pet mit ainer zwilchin ziech",
-      "uberzogen ist auch nicht vast gut",
-      "Item aber auf dem palaft ain pet in aind",
-      "kamer mit ainer zwilchin ziechen uber",
-      "zogen und ist alt und v[ast] zerissen auch",
-      "ist in derselbn kam ain lere petstat",
-      "Item aber auf dem palaft ain klaines poss",
-      "petlein von aind pson und ist auch",
-      "zerissen und klaines schutzwert",
-      "Item aber auf dem palaft in den ergger",
-      "do der leo jnn gelegen ist ain gut pett",
-      "von zwayen person auch mit ainer",
-      "zwilchin ziech uberzogen",
-      "In des caplans kamer",
-      "~~bey der ewig~~",
-      "Item ain klaines petlein von zwayen",
-      "personen mit ainer zwilchin ziechen",
-      "uberzogen claines schutzwert",
-      "In des kochs kamer",
-      "Item ain klaines altes petlein vast zer",
-      "rissen mit aind zwilchin ziech uberzogen",
-      "und ist auch abschatz"
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "Auf dem palaft"
+      },
+      {
+       "id": null,
+       "text": "Hie ist vermerkht am ersten was auf"
+      },
+      {
+       "id": null,
+       "text": "dem palaft ist von peten als ichs gefundn han"
+      },
+      {
+       "id": null,
+       "text": "Item in dem ergger da der keller ist gelegen"
+      },
+      {
+       "id": null,
+       "text": "darinn ist ain pet mit ainer zwilchin"
+      },
+      {
+       "id": null,
+       "text": "ziech unden und oben zerissen"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palaft da die palafter"
+      },
+      {
+       "id": null,
+       "text": "gelegen sind ist ain pet von aind person"
+      },
+      {
+       "id": null,
+       "text": "mit ainer alten zwilchin ziechen auch"
+      },
+      {
+       "id": null,
+       "text": "zerissen"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palaft in des haupcmans"
+      },
+      {
+       "id": null,
+       "text": "ergger ain pet mit ainer zwilchin ziech"
+      },
+      {
+       "id": null,
+       "text": "uberzogen ist auch nicht vast gut"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palaft ain pet in aind"
+      },
+      {
+       "id": null,
+       "text": "kamer mit ainer zwilchin ziechen uber"
+      },
+      {
+       "id": null,
+       "text": "zogen und ist alt und v[ast] zerissen auch"
+      },
+      {
+       "id": null,
+       "text": "ist in derselbn kam ain lere petstat"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palaft ain klaines poss"
+      },
+      {
+       "id": null,
+       "text": "petlein von aind pson und ist auch"
+      },
+      {
+       "id": null,
+       "text": "zerissen und klaines schutzwert"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palaft in den ergger"
+      },
+      {
+       "id": null,
+       "text": "do der leo jnn gelegen ist ain gut pett"
+      },
+      {
+       "id": null,
+       "text": "von zwayen person auch mit ainer"
+      },
+      {
+       "id": null,
+       "text": "zwilchin ziech uberzogen"
+      },
+      {
+       "id": null,
+       "text": "In des caplans kamer"
+      },
+      {
+       "id": null,
+       "text": "~~bey der ewig~~"
+      },
+      {
+       "id": null,
+       "text": "Item ain klaines petlein von zwayen"
+      },
+      {
+       "id": null,
+       "text": "personen mit ainer zwilchin ziechen"
+      },
+      {
+       "id": null,
+       "text": "uberzogen claines schutzwert"
+      },
+      {
+       "id": null,
+       "text": "In des kochs kamer"
+      },
+      {
+       "id": null,
+       "text": "Item ain klaines altes petlein vast zer"
+      },
+      {
+       "id": null,
+       "text": "rissen mit aind zwilchin ziech uberzogen"
+      },
+      {
+       "id": null,
+       "text": "und ist auch abschatz"
+      }
      ]
     },
     {
@@ -466,40 +1051,142 @@
       false
      ],
      "lines": [
-      "2",
-      "Auf dem palast",
-      "Hie ist vermerkht am ersten was auf",
-      "dem palast ist von peten als ichs gefunden han",
-      "Item in dem ergger da der keller ist gelegen",
-      "darinn ist ain pet mit ainer zwilchin",
-      "ziech unden und oben zerrissen",
-      "Item aber auf dem palast da die palaster",
-      "gelegen sind ist ain pet von aind person",
-      "mit ainer alten zwilchin ziechen auch",
-      "zerrissen",
-      "Item aber auf dem palast in des hauptmans",
-      "ergger ain pet mit ainer zwilchin ziech",
-      "überzogen ist auch nicht vast gut",
-      "Item aber auf dem palast ain pet in aind",
-      "kamer mit ainer zwilchin ziechen über-",
-      "zogen und ist alt und so zerrissen auch",
-      "ist in derselbn kam ain lere petstat",
-      "Item aber auf dem palast ain klaines pose",
-      "petlein von aind person und ist auch",
-      "zerrissen und klaines schutzwert",
-      "Item aber auf dem palast in den ergger",
-      "da der los inn gelegen ist ain gut pett",
-      "von zwayen person auch mit ainer",
-      "zwilchin ziech überzogen",
-      "In des Caplans kamer",
-      "~~bey der styeg~~",
-      "Item ain klaines petlein von zwayen",
-      "personen mit ainer zwilchin ziechen",
-      "überzogen clains schutzwert",
-      "In des kochs kamer",
-      "Item ain klaines altes petlein vast zer-",
-      "rissen mit ainr zwilchin ziech überzogen",
-      "und ist auch abschatz"
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "Auf dem palast"
+      },
+      {
+       "id": null,
+       "text": "Hie ist vermerkht am ersten was auf"
+      },
+      {
+       "id": null,
+       "text": "dem palast ist von peten als ichs gefunden han"
+      },
+      {
+       "id": null,
+       "text": "Item in dem ergger da der keller ist gelegen"
+      },
+      {
+       "id": null,
+       "text": "darinn ist ain pet mit ainer zwilchin"
+      },
+      {
+       "id": null,
+       "text": "ziech unden und oben zerrissen"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palast da die palaster"
+      },
+      {
+       "id": null,
+       "text": "gelegen sind ist ain pet von aind person"
+      },
+      {
+       "id": null,
+       "text": "mit ainer alten zwilchin ziechen auch"
+      },
+      {
+       "id": null,
+       "text": "zerrissen"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palast in des hauptmans"
+      },
+      {
+       "id": null,
+       "text": "ergger ain pet mit ainer zwilchin ziech"
+      },
+      {
+       "id": null,
+       "text": "überzogen ist auch nicht vast gut"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palast ain pet in aind"
+      },
+      {
+       "id": null,
+       "text": "kamer mit ainer zwilchin ziechen über-"
+      },
+      {
+       "id": null,
+       "text": "zogen und ist alt und so zerrissen auch"
+      },
+      {
+       "id": null,
+       "text": "ist in derselbn kam ain lere petstat"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palast ain klaines pose"
+      },
+      {
+       "id": null,
+       "text": "petlein von aind person und ist auch"
+      },
+      {
+       "id": null,
+       "text": "zerrissen und klaines schutzwert"
+      },
+      {
+       "id": null,
+       "text": "Item aber auf dem palast in den ergger"
+      },
+      {
+       "id": null,
+       "text": "da der los inn gelegen ist ain gut pett"
+      },
+      {
+       "id": null,
+       "text": "von zwayen person auch mit ainer"
+      },
+      {
+       "id": null,
+       "text": "zwilchin ziech überzogen"
+      },
+      {
+       "id": null,
+       "text": "In des Caplans kamer"
+      },
+      {
+       "id": null,
+       "text": "~~bey der styeg~~"
+      },
+      {
+       "id": null,
+       "text": "Item ain klaines petlein von zwayen"
+      },
+      {
+       "id": null,
+       "text": "personen mit ainer zwilchin ziechen"
+      },
+      {
+       "id": null,
+       "text": "überzogen clains schutzwert"
+      },
+      {
+       "id": null,
+       "text": "In des kochs kamer"
+      },
+      {
+       "id": null,
+       "text": "Item ain klaines altes petlein vast zer-"
+      },
+      {
+       "id": null,
+       "text": "rissen mit ainr zwilchin ziech überzogen"
+      },
+      {
+       "id": null,
+       "text": "und ist auch abschatz"
+      }
      ]
     }
    ]
@@ -524,41 +1211,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "In dem obern staȋngaden.",
-      "Item ain altes pet mit ainer alten parchant",
-      "ziechen überzogen und ain alter seydener",
-      "golter gru̇n und gel zerissen und abschatz",
-      "und ain alter polster mit ainer kölnischen",
-      "ziechen auch zerissen.",
-      "Item in derselben kammer ain altes petlein",
-      "in ainem kariol mit ainer parchanden ziechen",
-      "uberzȏgen auch klaines schatzwert.",
-      "In der jungfrawen kammer.",
-      "Item ain pet mit ainer zwilchin ziechen",
-      "überzogen, geflickt und ist von zwayn",
-      "personen und in derselben kammer aber",
-      "ain altes pet von ain person.",
-      "In der herren kammer",
-      "beÿ dem stüblein.",
-      "Item ain altes pett zerissen mit ainer",
-      "parchanden ziech überzogen und",
-      "polster mit ainer zwilchin ziech und",
-      "ain pet in dem cariol alt und geflickt",
-      "und ist auch von ainer person.",
-      "In dem marstal.",
-      "Item ain klaines altes petlein von",
-      "ainer person und ist auch mit ainer",
-      "zwilchin ziechen überzogen und ist",
-      "abschatz.",
-      "In dem kol ergger.",
-      "Item ain altes poses petlein mit ainer",
-      "zwilchin ziechen uberzogen und ist",
-      "auch geflickt und von ainer person.",
-      "In dem hohen turn.",
-      "Item darinn sind II pet nicht vast",
-      "gůt und mit zwilchin ziechen uberzogen",
-      "und von zwaÿen personen."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In dem obern staȋngaden."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item ain altes pet mit ainer alten parchant"
+      },
+      {
+       "id": "r3l2",
+       "text": "ziechen überzogen und ain alter seydener"
+      },
+      {
+       "id": "r3l3",
+       "text": "golter gru̇n und gel zerissen und abschatz"
+      },
+      {
+       "id": "r3l4",
+       "text": "und ain alter polster mit ainer kölnischen"
+      },
+      {
+       "id": "r3l5",
+       "text": "ziechen auch zerissen."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item in derselben kammer ain altes petlein"
+      },
+      {
+       "id": "r3l7",
+       "text": "in ainem kariol mit ainer parchanden ziechen"
+      },
+      {
+       "id": "r3l8",
+       "text": "uberzȏgen auch klaines schatzwert."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der jungfrawen kammer."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item ain pet mit ainer zwilchin ziechen"
+      },
+      {
+       "id": "r5l2",
+       "text": "überzogen, geflickt und ist von zwayn"
+      },
+      {
+       "id": "r5l3",
+       "text": "personen und in derselben kammer aber"
+      },
+      {
+       "id": "r5l4",
+       "text": "ain altes pet von ain person."
+      },
+      {
+       "id": "r6l1",
+       "text": "In der herren kammer"
+      },
+      {
+       "id": "r6l2",
+       "text": "beÿ dem stüblein."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item ain altes pett zerissen mit ainer"
+      },
+      {
+       "id": "r7l2",
+       "text": "parchanden ziech überzogen und"
+      },
+      {
+       "id": "r7l3",
+       "text": "polster mit ainer zwilchin ziech und"
+      },
+      {
+       "id": "r7l4",
+       "text": "ain pet in dem cariol alt und geflickt"
+      },
+      {
+       "id": "r7l5",
+       "text": "und ist auch von ainer person."
+      },
+      {
+       "id": "r8l1",
+       "text": "In dem marstal."
+      },
+      {
+       "id": "r9l1",
+       "text": "Item ain klaines altes petlein von"
+      },
+      {
+       "id": "r9l2",
+       "text": "ainer person und ist auch mit ainer"
+      },
+      {
+       "id": "r9l3",
+       "text": "zwilchin ziechen überzogen und ist"
+      },
+      {
+       "id": "r9l4",
+       "text": "abschatz."
+      },
+      {
+       "id": "r10l1",
+       "text": "In dem kol ergger."
+      },
+      {
+       "id": "r11l1",
+       "text": "Item ain altes poses petlein mit ainer"
+      },
+      {
+       "id": "r11l2",
+       "text": "zwilchin ziechen uberzogen und ist"
+      },
+      {
+       "id": "r11l3",
+       "text": "auch geflickt und von ainer person."
+      },
+      {
+       "id": "r12l1",
+       "text": "In dem hohen turn."
+      },
+      {
+       "id": "r13l1",
+       "text": "Item darinn sind II pet nicht vast"
+      },
+      {
+       "id": "r13l2",
+       "text": "gůt und mit zwilchin ziechen uberzogen"
+      },
+      {
+       "id": "r13l3",
+       "text": "und von zwaÿen personen."
+      }
      ]
     },
     {
@@ -574,40 +1366,142 @@
       false
      ],
      "lines": [
-      "In dem obern staingaden",
-      "Item ain altes pet mit aind alten parchant",
-      "ziechen vberzogen vnd ain alter seiden",
-      "golter grun vnd gel zerissen vnd abschatz",
-      "vnd ain alt polster mit aind kölmischen",
-      "ziechen auch zerissen",
-      "Item in derselben kamer ain altes petlein",
-      "in ainem cariol mit aind parchanten ziechin",
-      "vberzogen auch klaines schatzwerck",
-      "In der Jungfrawen kamer",
-      "Item ain pet mit aind zwilchin ziechin",
-      "vberzogen geflickt vnd ist von zwayn",
-      "personen vnd in derselben kamer aber",
-      "ain altes pet von aind person",
-      "In der herren kamer",
-      "bey dem stüblein",
-      "Item ain altes pett zerissen mit aind",
-      "parchantn ziech vberzogen vnd j",
-      "polster mit aind zwilchin ziech vnd",
-      "ain pet in dem cariol alt vnd geflickt",
-      "vnd ist auch von aind person",
-      "In dem aparstal",
-      "Item ain klaines altes petlein von",
-      "aind person vnd ist auch mit ainer",
-      "zwilchin ziechen vberzogen vnd ist",
-      "abschatz",
-      "In dem kol ergger",
-      "Item ain altes poses petlein mit aind",
-      "zwilchin ziechen vberzogen vnd ist",
-      "auch geflickt vnd von aind person",
-      "In dem hohen turn",
-      "Item darinn sind ij pet nicht vast",
-      "gut vnd mit zwilchin ziechen vberzogn",
-      "vnd von zwayen personen"
+      {
+       "id": null,
+       "text": "In dem obern staingaden"
+      },
+      {
+       "id": null,
+       "text": "Item ain altes pet mit aind alten parchant"
+      },
+      {
+       "id": null,
+       "text": "ziechen vberzogen vnd ain alter seiden"
+      },
+      {
+       "id": null,
+       "text": "golter grun vnd gel zerissen vnd abschatz"
+      },
+      {
+       "id": null,
+       "text": "vnd ain alt polster mit aind kölmischen"
+      },
+      {
+       "id": null,
+       "text": "ziechen auch zerissen"
+      },
+      {
+       "id": null,
+       "text": "Item in derselben kamer ain altes petlein"
+      },
+      {
+       "id": null,
+       "text": "in ainem cariol mit aind parchanten ziechin"
+      },
+      {
+       "id": null,
+       "text": "vberzogen auch klaines schatzwerck"
+      },
+      {
+       "id": null,
+       "text": "In der Jungfrawen kamer"
+      },
+      {
+       "id": null,
+       "text": "Item ain pet mit aind zwilchin ziechin"
+      },
+      {
+       "id": null,
+       "text": "vberzogen geflickt vnd ist von zwayn"
+      },
+      {
+       "id": null,
+       "text": "personen vnd in derselben kamer aber"
+      },
+      {
+       "id": null,
+       "text": "ain altes pet von aind person"
+      },
+      {
+       "id": null,
+       "text": "In der herren kamer"
+      },
+      {
+       "id": null,
+       "text": "bey dem stüblein"
+      },
+      {
+       "id": null,
+       "text": "Item ain altes pett zerissen mit aind"
+      },
+      {
+       "id": null,
+       "text": "parchantn ziech vberzogen vnd j"
+      },
+      {
+       "id": null,
+       "text": "polster mit aind zwilchin ziech vnd"
+      },
+      {
+       "id": null,
+       "text": "ain pet in dem cariol alt vnd geflickt"
+      },
+      {
+       "id": null,
+       "text": "vnd ist auch von aind person"
+      },
+      {
+       "id": null,
+       "text": "In dem aparstal"
+      },
+      {
+       "id": null,
+       "text": "Item ain klaines altes petlein von"
+      },
+      {
+       "id": null,
+       "text": "aind person vnd ist auch mit ainer"
+      },
+      {
+       "id": null,
+       "text": "zwilchin ziechen vberzogen vnd ist"
+      },
+      {
+       "id": null,
+       "text": "abschatz"
+      },
+      {
+       "id": null,
+       "text": "In dem kol ergger"
+      },
+      {
+       "id": null,
+       "text": "Item ain altes poses petlein mit aind"
+      },
+      {
+       "id": null,
+       "text": "zwilchin ziechen vberzogen vnd ist"
+      },
+      {
+       "id": null,
+       "text": "auch geflickt vnd von aind person"
+      },
+      {
+       "id": null,
+       "text": "In dem hohen turn"
+      },
+      {
+       "id": null,
+       "text": "Item darinn sind ij pet nicht vast"
+      },
+      {
+       "id": null,
+       "text": "gut vnd mit zwilchin ziechen vberzogn"
+      },
+      {
+       "id": null,
+       "text": "vnd von zwayen personen"
+      }
      ]
     },
     {
@@ -623,40 +1517,142 @@
       false
      ],
      "lines": [
-      "Indem obrn staingaden",
-      "Item ain altes pet mit ainn alten parchant",
-      "ziechen vberzogen vnd ainn alter seiden",
-      "golter grun vnd gel zerrißen vnd abschatz",
-      "vnd ain alt polster mit ainn kölnischen",
-      "ziechen auch zerrißn",
-      "Item in derselben kamer ain altes petlein",
-      "in ainem kariol mit ainn parchanden ziechn",
-      "vberzogen auch klaines schatzwerc",
-      "In der Jungfrawen kamer",
-      "Item ain pet mit ainn zwilchin ziechin",
-      "vberzogen geflickt vnd ist von zwayen",
-      "personen vnd in derselben kamer aber",
-      "ain altes pet von ainn person",
-      "In der herren kamer",
-      "bey dem stüblein",
-      "Item ain altes pett zerrißen mit ainn",
-      "parchandin ziech vberzogen vnd j",
-      "polster mit ainn zwilchin ziech vnd",
-      "ain pet in dem cariol alt vnd geflickt",
-      "vnd ist auch von ainn person",
-      "Indem apristal",
-      "Item ain klaines altes petlein von",
-      "ainn person vnd ist auch mit ainer",
-      "zwilchin ziechen vberzogen vnd ist",
-      "abschatz",
-      "In dem kol ergger",
-      "Item ain altes poses petlein mit ainn",
-      "zwilchin ziechen vberzogen vnd ist",
-      "auch geflickt vnd von ainn person",
-      "In dem hohen turn",
-      "Item darinn sind ij pet nicht vast",
-      "gut vnd mit zwilchin ziechen vberzogen",
-      "vnd von zwayen personen"
+      {
+       "id": null,
+       "text": "Indem obrn staingaden"
+      },
+      {
+       "id": null,
+       "text": "Item ain altes pet mit ainn alten parchant"
+      },
+      {
+       "id": null,
+       "text": "ziechen vberzogen vnd ainn alter seiden"
+      },
+      {
+       "id": null,
+       "text": "golter grun vnd gel zerrißen vnd abschatz"
+      },
+      {
+       "id": null,
+       "text": "vnd ain alt polster mit ainn kölnischen"
+      },
+      {
+       "id": null,
+       "text": "ziechen auch zerrißn"
+      },
+      {
+       "id": null,
+       "text": "Item in derselben kamer ain altes petlein"
+      },
+      {
+       "id": null,
+       "text": "in ainem kariol mit ainn parchanden ziechn"
+      },
+      {
+       "id": null,
+       "text": "vberzogen auch klaines schatzwerc"
+      },
+      {
+       "id": null,
+       "text": "In der Jungfrawen kamer"
+      },
+      {
+       "id": null,
+       "text": "Item ain pet mit ainn zwilchin ziechin"
+      },
+      {
+       "id": null,
+       "text": "vberzogen geflickt vnd ist von zwayen"
+      },
+      {
+       "id": null,
+       "text": "personen vnd in derselben kamer aber"
+      },
+      {
+       "id": null,
+       "text": "ain altes pet von ainn person"
+      },
+      {
+       "id": null,
+       "text": "In der herren kamer"
+      },
+      {
+       "id": null,
+       "text": "bey dem stüblein"
+      },
+      {
+       "id": null,
+       "text": "Item ain altes pett zerrißen mit ainn"
+      },
+      {
+       "id": null,
+       "text": "parchandin ziech vberzogen vnd j"
+      },
+      {
+       "id": null,
+       "text": "polster mit ainn zwilchin ziech vnd"
+      },
+      {
+       "id": null,
+       "text": "ain pet in dem cariol alt vnd geflickt"
+      },
+      {
+       "id": null,
+       "text": "vnd ist auch von ainn person"
+      },
+      {
+       "id": null,
+       "text": "Indem apristal"
+      },
+      {
+       "id": null,
+       "text": "Item ain klaines altes petlein von"
+      },
+      {
+       "id": null,
+       "text": "ainn person vnd ist auch mit ainer"
+      },
+      {
+       "id": null,
+       "text": "zwilchin ziechen vberzogen vnd ist"
+      },
+      {
+       "id": null,
+       "text": "abschatz"
+      },
+      {
+       "id": null,
+       "text": "In dem kol ergger"
+      },
+      {
+       "id": null,
+       "text": "Item ain altes poses petlein mit ainn"
+      },
+      {
+       "id": null,
+       "text": "zwilchin ziechen vberzogen vnd ist"
+      },
+      {
+       "id": null,
+       "text": "auch geflickt vnd von ainn person"
+      },
+      {
+       "id": null,
+       "text": "In dem hohen turn"
+      },
+      {
+       "id": null,
+       "text": "Item darinn sind ij pet nicht vast"
+      },
+      {
+       "id": null,
+       "text": "gut vnd mit zwilchin ziechen vberzogen"
+      },
+      {
+       "id": null,
+       "text": "vnd von zwayen personen"
+      }
      ]
     }
    ]
@@ -681,41 +1677,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "In dem turn ob der phÿstrein.",
-      "Item darinn ist ain altes pet von zwayen",
-      "personen und ist geflickt.",
-      "In dem vorhof.",
-      "Item da der Vischer leyt ist ain pet alt und",
-      "halb lere mit ainer zwilchin ziech überzogen",
-      "und ist abschatz.",
-      "In dem turn ob der porten",
-      "in dem vorhof.",
-      "Item darinn seind zwaÿ pet mit zwilchin",
-      "ziechen überzogen und seind zegůtermas.",
-      "In des Cŭnczen harnasch",
-      "maisters ergker.",
-      "Item ain claines altes pet mit ainer zwilchin",
-      "ziech überzogen und ist halbs lëre.",
-      "In dem miteln ergger in",
-      "dem vorhof.",
-      "Item darinn ain klaines petlein von ainer person",
-      "und ist mit ainer zwilchin ziechen überzogen",
-      "auch abschaz.",
-      "In dem valschen türnlein.",
-      "Item darinn aȋn claines altes pöses petlein",
-      "von zwaÿ personen und ist halbs lëre.",
-      "In dem ergker Lamparten.",
-      "Item darinn ist ain klaines petlein mit ainer",
-      "leẏnin ziechen von ainer person und ist",
-      "nicht vast gůt.",
-      "Summa der pet XXVI.",
-      "Vermerkht die pölster und küssein",
-      "die ich in dem haws funden hab.",
-      "Item XIIII alt und zerissen polster und ain",
-      "küssein und seind gar abschatz als die",
-      "obgenanten erbern leüt wol und aigenlichen",
-      "gesehan und beschawet haben."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In dem turn ob der phÿstrein."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item darinn ist ain altes pet von zwayen"
+      },
+      {
+       "id": "r3l2",
+       "text": "personen und ist geflickt."
+      },
+      {
+       "id": "r4l1",
+       "text": "In dem vorhof."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item da der Vischer leyt ist ain pet alt und"
+      },
+      {
+       "id": "r5l2",
+       "text": "halb lere mit ainer zwilchin ziech überzogen"
+      },
+      {
+       "id": "r5l3",
+       "text": "und ist abschatz."
+      },
+      {
+       "id": "r6l1",
+       "text": "In dem turn ob der porten"
+      },
+      {
+       "id": "r6l2",
+       "text": "in dem vorhof."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item darinn seind zwaÿ pet mit zwilchin"
+      },
+      {
+       "id": "r7l2",
+       "text": "ziechen überzogen und seind zegůtermas."
+      },
+      {
+       "id": "r8l1",
+       "text": "In des Cŭnczen harnasch"
+      },
+      {
+       "id": "r8l2",
+       "text": "maisters ergker."
+      },
+      {
+       "id": "r9l1",
+       "text": "Item ain claines altes pet mit ainer zwilchin"
+      },
+      {
+       "id": "r9l2",
+       "text": "ziech überzogen und ist halbs lëre."
+      },
+      {
+       "id": "r10l1",
+       "text": "In dem miteln ergger in"
+      },
+      {
+       "id": "r10l2",
+       "text": "dem vorhof."
+      },
+      {
+       "id": "r11l1",
+       "text": "Item darinn ain klaines petlein von ainer person"
+      },
+      {
+       "id": "r11l2",
+       "text": "und ist mit ainer zwilchin ziechen überzogen"
+      },
+      {
+       "id": "r11l3",
+       "text": "auch abschaz."
+      },
+      {
+       "id": "r12l1",
+       "text": "In dem valschen türnlein."
+      },
+      {
+       "id": "r13l1",
+       "text": "Item darinn aȋn claines altes pöses petlein"
+      },
+      {
+       "id": "r13l2",
+       "text": "von zwaÿ personen und ist halbs lëre."
+      },
+      {
+       "id": "r14l1",
+       "text": "In dem ergker Lamparten."
+      },
+      {
+       "id": "r15l1",
+       "text": "Item darinn ist ain klaines petlein mit ainer"
+      },
+      {
+       "id": "r15l2",
+       "text": "leẏnin ziechen von ainer person und ist"
+      },
+      {
+       "id": "r15l3",
+       "text": "nicht vast gůt."
+      },
+      {
+       "id": "r15l4",
+       "text": "Summa der pet XXVI."
+      },
+      {
+       "id": "r16l1",
+       "text": "Vermerkht die pölster und küssein"
+      },
+      {
+       "id": "r16l2",
+       "text": "die ich in dem haws funden hab."
+      },
+      {
+       "id": "r17l1",
+       "text": "Item XIIII alt und zerissen polster und ain"
+      },
+      {
+       "id": "r17l2",
+       "text": "küssein und seind gar abschatz als die"
+      },
+      {
+       "id": "r17l3",
+       "text": "obgenanten erbern leüt wol und aigenlichen"
+      },
+      {
+       "id": "r17l4",
+       "text": "gesehan und beschawet haben."
+      }
      ]
     },
     {
@@ -731,40 +1832,142 @@
       false
      ],
      "lines": [
-      "3",
-      "In dem turn ob der phistrey",
-      "Item darinn ist ain altes pet von zwayen",
-      "personen vnd ist geflickt",
-      "In dem vorhof",
-      "Item da der vischer leyt ist ain pet alt vnd",
-      "halb lere mit ainem zwilchin ziech vberzogen",
-      "vnd ist abschatz",
-      "In dem turn ob der porten",
-      "in dem vorhof",
-      "Item darinn seind zway pet mit zwilchin",
-      "ziechen vberzogen vnd seind zegůtermas",
-      "In des Iungen harnasch",
-      "maisters Ergker",
-      "Item ain claines altes pet mit aim zwilchin",
-      "ziech vberzogen vnd ist halbe lere",
-      "In dem miteln ergger in",
-      "dem vorhof",
-      "Item darinn ain klaines petlein von ain person",
-      "vnd ist mit aim zwilichin ziechen vberzogen",
-      "auch abschatz",
-      "In dem valschen türnlein",
-      "Item darinn ain claines altes pöses petlein",
-      "von zway personen vnd ist halbe lere",
-      "In dem Ergker lamparten",
-      "Item darinn ist ain klaines petlein mit aim",
-      "leynin ziechen von ain person vnd ist",
-      "nicht vast gut Suma der pet xxvij",
-      "Dannach die polster vnd küssen",
-      "die ich in dem haws funden hab",
-      "Item xiiij alt vnd zerissen polster vnd ain",
-      "küssein vnd seind gar abschatz als die",
-      "obgenanten erbern leut wol vnd aigentlichen",
-      "gesehen vnd beschawet habn"
+      {
+       "id": null,
+       "text": "3"
+      },
+      {
+       "id": null,
+       "text": "In dem turn ob der phistrey"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ist ain altes pet von zwayen"
+      },
+      {
+       "id": null,
+       "text": "personen vnd ist geflickt"
+      },
+      {
+       "id": null,
+       "text": "In dem vorhof"
+      },
+      {
+       "id": null,
+       "text": "Item da der vischer leyt ist ain pet alt vnd"
+      },
+      {
+       "id": null,
+       "text": "halb lere mit ainem zwilchin ziech vberzogen"
+      },
+      {
+       "id": null,
+       "text": "vnd ist abschatz"
+      },
+      {
+       "id": null,
+       "text": "In dem turn ob der porten"
+      },
+      {
+       "id": null,
+       "text": "in dem vorhof"
+      },
+      {
+       "id": null,
+       "text": "Item darinn seind zway pet mit zwilchin"
+      },
+      {
+       "id": null,
+       "text": "ziechen vberzogen vnd seind zegůtermas"
+      },
+      {
+       "id": null,
+       "text": "In des Iungen harnasch"
+      },
+      {
+       "id": null,
+       "text": "maisters Ergker"
+      },
+      {
+       "id": null,
+       "text": "Item ain claines altes pet mit aim zwilchin"
+      },
+      {
+       "id": null,
+       "text": "ziech vberzogen vnd ist halbe lere"
+      },
+      {
+       "id": null,
+       "text": "In dem miteln ergger in"
+      },
+      {
+       "id": null,
+       "text": "dem vorhof"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ain klaines petlein von ain person"
+      },
+      {
+       "id": null,
+       "text": "vnd ist mit aim zwilichin ziechen vberzogen"
+      },
+      {
+       "id": null,
+       "text": "auch abschatz"
+      },
+      {
+       "id": null,
+       "text": "In dem valschen türnlein"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ain claines altes pöses petlein"
+      },
+      {
+       "id": null,
+       "text": "von zway personen vnd ist halbe lere"
+      },
+      {
+       "id": null,
+       "text": "In dem Ergker lamparten"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ist ain klaines petlein mit aim"
+      },
+      {
+       "id": null,
+       "text": "leynin ziechen von ain person vnd ist"
+      },
+      {
+       "id": null,
+       "text": "nicht vast gut Suma der pet xxvij"
+      },
+      {
+       "id": null,
+       "text": "Dannach die polster vnd küssen"
+      },
+      {
+       "id": null,
+       "text": "die ich in dem haws funden hab"
+      },
+      {
+       "id": null,
+       "text": "Item xiiij alt vnd zerissen polster vnd ain"
+      },
+      {
+       "id": null,
+       "text": "küssein vnd seind gar abschatz als die"
+      },
+      {
+       "id": null,
+       "text": "obgenanten erbern leut wol vnd aigentlichen"
+      },
+      {
+       "id": null,
+       "text": "gesehen vnd beschawet habn"
+      }
      ]
     },
     {
@@ -780,40 +1983,142 @@
       false
      ],
      "lines": [
-      "3",
-      "In dem turn ob der physterey",
-      "Item darinn ist ain altes pet von zwayen",
-      "personen vnd ist geflicket",
-      "In dem Vorhof",
-      "Item da der vischer leyt ist ain pet alt vnd",
-      "halb lere mit ainem zwilchin ziech vberzogen",
-      "vnd ist abschatz",
-      "In dem turn ob der porten",
-      "in dem vorhof",
-      "Item darinn seind zway pet mit zwilchin",
-      "ziechen vberzogen vnd seind zegůtermas",
-      "In des Clingen harnasch",
-      "maisters Eryker",
-      "Item ain claines altes pet mit ain zwilchin",
-      "ziech vberzogen vnd ist halbe lere",
-      "In dem mitteln eryger in",
-      "dem vorhof",
-      "Item darinn ain klaines petlein von ain person",
-      "vnd ist mit ain zwilichin ziechen vberzogen",
-      "auch abschatz",
-      "In dem valschen tůrnlein",
-      "Item darinn ain claines altes poses petlein",
-      "von zway personen vnd ist halbe lere",
-      "In dem Eryker lamparten",
-      "Item darinn ist ain klaines petlein mit ain",
-      "leynin ziechen von ain person vnd ist",
-      "nicht vast gut Sma der pet xxvij",
-      "Darnach die polster vnd kůssen",
-      "die ich in dem haws funden hab",
-      "Item xiiij alt vnd zerissen polster vnd ain",
-      "kůssin vnd seind gar abschatz als die",
-      "obgnennten ebn leut wol vnd aigentlichen",
-      "gesehen vnd beschawet habn"
+      {
+       "id": null,
+       "text": "3"
+      },
+      {
+       "id": null,
+       "text": "In dem turn ob der physterey"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ist ain altes pet von zwayen"
+      },
+      {
+       "id": null,
+       "text": "personen vnd ist geflicket"
+      },
+      {
+       "id": null,
+       "text": "In dem Vorhof"
+      },
+      {
+       "id": null,
+       "text": "Item da der vischer leyt ist ain pet alt vnd"
+      },
+      {
+       "id": null,
+       "text": "halb lere mit ainem zwilchin ziech vberzogen"
+      },
+      {
+       "id": null,
+       "text": "vnd ist abschatz"
+      },
+      {
+       "id": null,
+       "text": "In dem turn ob der porten"
+      },
+      {
+       "id": null,
+       "text": "in dem vorhof"
+      },
+      {
+       "id": null,
+       "text": "Item darinn seind zway pet mit zwilchin"
+      },
+      {
+       "id": null,
+       "text": "ziechen vberzogen vnd seind zegůtermas"
+      },
+      {
+       "id": null,
+       "text": "In des Clingen harnasch"
+      },
+      {
+       "id": null,
+       "text": "maisters Eryker"
+      },
+      {
+       "id": null,
+       "text": "Item ain claines altes pet mit ain zwilchin"
+      },
+      {
+       "id": null,
+       "text": "ziech vberzogen vnd ist halbe lere"
+      },
+      {
+       "id": null,
+       "text": "In dem mitteln eryger in"
+      },
+      {
+       "id": null,
+       "text": "dem vorhof"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ain klaines petlein von ain person"
+      },
+      {
+       "id": null,
+       "text": "vnd ist mit ain zwilichin ziechen vberzogen"
+      },
+      {
+       "id": null,
+       "text": "auch abschatz"
+      },
+      {
+       "id": null,
+       "text": "In dem valschen tůrnlein"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ain claines altes poses petlein"
+      },
+      {
+       "id": null,
+       "text": "von zway personen vnd ist halbe lere"
+      },
+      {
+       "id": null,
+       "text": "In dem Eryker lamparten"
+      },
+      {
+       "id": null,
+       "text": "Item darinn ist ain klaines petlein mit ain"
+      },
+      {
+       "id": null,
+       "text": "leynin ziechen von ain person vnd ist"
+      },
+      {
+       "id": null,
+       "text": "nicht vast gut Sma der pet xxvij"
+      },
+      {
+       "id": null,
+       "text": "Darnach die polster vnd kůssen"
+      },
+      {
+       "id": null,
+       "text": "die ich in dem haws funden hab"
+      },
+      {
+       "id": null,
+       "text": "Item xiiij alt vnd zerissen polster vnd ain"
+      },
+      {
+       "id": null,
+       "text": "kůssin vnd seind gar abschatz als die"
+      },
+      {
+       "id": null,
+       "text": "obgnennten ebn leut wol vnd aigentlichen"
+      },
+      {
+       "id": null,
+       "text": "gesehen vnd beschawet habn"
+      }
      ]
     }
    ]
@@ -838,40 +2143,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Vermerkh leÿlach.",
-      "Item vier leÿlach von grobem zwilich die",
-      "seind nicht vast gůt und aber drew par",
-      "alter pöser leylach und zerrissen und III par",
-      "warn nicht zenüczen.",
-      "Vermerkht rauch castron dekh.",
-      "Item zehen rauch dekh die seind nicht übrigs",
-      "gůt und aber zwů dekh gar zenichten.",
-      "Vermerkht der harnasch in",
-      "der harnasch kammer.",
-      "Item acht gemaine panzer.",
-      "Item ain huntzcappen.",
-      "Item siben hawben mit geheng.",
-      "Item ain ledigs geheng an ain hauben.",
-      "Item fünf hauben one geheng.",
-      "Item zwü englisch hauben mit geheng.",
-      "Item zwaÿ helmlein.",
-      "Item vier eÿsenhüte.",
-      "Item sechs zschaladen.",
-      "Item neẅn prustplech.",
-      "Item ain mailendische platen.",
-      "Item aber ain halbe leichte platen.",
-      "Item vier ganze paẏngwandt.",
-      "Item drew par underpaÿngewand.",
-      "Item vier spangeröl.",
-      "Item zehen par armzeüg.",
-      "Item ainlif par plechhantschůch.",
-      "Item acht visier.",
-      "Item XXIIIII kupfrein hantpüxen.",
-      "Item I lidrein hůt.",
-      "Item XXXVIII scheiben senogarn.",
-      "Item und zwaÿ kariol sind lere.",
-      "Item aber"
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkh leÿlach."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item vier leÿlach von grobem zwilich die"
+      },
+      {
+       "id": "r3l2",
+       "text": "seind nicht vast gůt und aber drew par"
+      },
+      {
+       "id": "r3l3",
+       "text": "alter pöser leylach und zerrissen und III par"
+      },
+      {
+       "id": "r3l4",
+       "text": "warn nicht zenüczen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vermerkht rauch castron dekh."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item zehen rauch dekh die seind nicht übrigs"
+      },
+      {
+       "id": "r5l2",
+       "text": "gůt und aber zwů dekh gar zenichten."
+      },
+      {
+       "id": "r6l1",
+       "text": "Vermerkht der harnasch in"
+      },
+      {
+       "id": "r6l2",
+       "text": "der harnasch kammer."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item acht gemaine panzer."
+      },
+      {
+       "id": "r7l2",
+       "text": "Item ain huntzcappen."
+      },
+      {
+       "id": "r7l3",
+       "text": "Item siben hawben mit geheng."
+      },
+      {
+       "id": "r7l4",
+       "text": "Item ain ledigs geheng an ain hauben."
+      },
+      {
+       "id": "r7l5",
+       "text": "Item fünf hauben one geheng."
+      },
+      {
+       "id": "r7l6",
+       "text": "Item zwü englisch hauben mit geheng."
+      },
+      {
+       "id": "r7l7",
+       "text": "Item zwaÿ helmlein."
+      },
+      {
+       "id": "r7l8",
+       "text": "Item vier eÿsenhüte."
+      },
+      {
+       "id": "r7l9",
+       "text": "Item sechs zschaladen."
+      },
+      {
+       "id": "r7l10",
+       "text": "Item neẅn prustplech."
+      },
+      {
+       "id": "r7l11",
+       "text": "Item ain mailendische platen."
+      },
+      {
+       "id": "r7l12",
+       "text": "Item aber ain halbe leichte platen."
+      },
+      {
+       "id": "r7l13",
+       "text": "Item vier ganze paẏngwandt."
+      },
+      {
+       "id": "r7l14",
+       "text": "Item drew par underpaÿngewand."
+      },
+      {
+       "id": "r7l15",
+       "text": "Item vier spangeröl."
+      },
+      {
+       "id": "r7l16",
+       "text": "Item zehen par armzeüg."
+      },
+      {
+       "id": "r7l17",
+       "text": "Item ainlif par plechhantschůch."
+      },
+      {
+       "id": "r7l18",
+       "text": "Item acht visier."
+      },
+      {
+       "id": "r7l19",
+       "text": "Item XXIIIII kupfrein hantpüxen."
+      },
+      {
+       "id": "r7l20",
+       "text": "Item I lidrein hůt."
+      },
+      {
+       "id": "r7l21",
+       "text": "Item XXXVIII scheiben senogarn."
+      },
+      {
+       "id": "r7l22",
+       "text": "Item und zwaÿ kariol sind lere."
+      },
+      {
+       "id": "r7l23",
+       "text": "Item aber"
+      }
      ]
     },
     {
@@ -887,39 +2294,138 @@
       false
      ],
      "lines": [
-      "Vermerckh leylach",
-      "Item vier leylach von groben zwirich die",
-      "seind nicht vast gůt Vnd aber drew par",
-      "alter pöser leylach vnd zerrissen vnd iij par",
-      "wern nicht zenuczen",
-      "Vermerckht Rauch Castron dekh",
-      "Item zehen rauch dekh die seind nicht vbrigs",
-      "gůt Vnd aber zwo dekh gar zenichten",
-      "Vermerckht der harnasch in",
-      "der harnasch kamer",
-      "Item acht gemaine panzer.",
-      "Item ain huntscappen",
-      "Item siben hauben mit geheng",
-      "Item ain ledigs geheng an ain haubn",
-      "Item fúnif hauben one geheng",
-      "Item zwo englisch haubn mit geheng",
-      "Item zway helmlein",
-      "Item vier eisenhůte",
-      "Item sechs zschaladn",
-      "Item newn prustplath",
-      "Item ain mailendische platn",
-      "Item aber ain halbe leichte platten",
-      "Item vier gancze payngwant",
-      "Item drew par vnderpayngewand",
-      "Item vier spangerůl",
-      "Item zehen par armzeug",
-      "Item ainlif par plechhentschůch",
-      "Item acht visier",
-      "Item xxiiij kupfrein hantpůxen",
-      "Item j ledrein hůt",
-      "Item xxxvij schaiben snoggarn",
-      "Item vnd zway kariol sind ler",
-      "Item aber . [...]"
+      {
+       "id": null,
+       "text": "Vermerckh leylach"
+      },
+      {
+       "id": null,
+       "text": "Item vier leylach von groben zwirich die"
+      },
+      {
+       "id": null,
+       "text": "seind nicht vast gůt Vnd aber drew par"
+      },
+      {
+       "id": null,
+       "text": "alter pöser leylach vnd zerrissen vnd iij par"
+      },
+      {
+       "id": null,
+       "text": "wern nicht zenuczen"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht Rauch Castron dekh"
+      },
+      {
+       "id": null,
+       "text": "Item zehen rauch dekh die seind nicht vbrigs"
+      },
+      {
+       "id": null,
+       "text": "gůt Vnd aber zwo dekh gar zenichten"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht der harnasch in"
+      },
+      {
+       "id": null,
+       "text": "der harnasch kamer"
+      },
+      {
+       "id": null,
+       "text": "Item acht gemaine panzer."
+      },
+      {
+       "id": null,
+       "text": "Item ain huntscappen"
+      },
+      {
+       "id": null,
+       "text": "Item siben hauben mit geheng"
+      },
+      {
+       "id": null,
+       "text": "Item ain ledigs geheng an ain haubn"
+      },
+      {
+       "id": null,
+       "text": "Item fúnif hauben one geheng"
+      },
+      {
+       "id": null,
+       "text": "Item zwo englisch haubn mit geheng"
+      },
+      {
+       "id": null,
+       "text": "Item zway helmlein"
+      },
+      {
+       "id": null,
+       "text": "Item vier eisenhůte"
+      },
+      {
+       "id": null,
+       "text": "Item sechs zschaladn"
+      },
+      {
+       "id": null,
+       "text": "Item newn prustplath"
+      },
+      {
+       "id": null,
+       "text": "Item ain mailendische platn"
+      },
+      {
+       "id": null,
+       "text": "Item aber ain halbe leichte platten"
+      },
+      {
+       "id": null,
+       "text": "Item vier gancze payngwant"
+      },
+      {
+       "id": null,
+       "text": "Item drew par vnderpayngewand"
+      },
+      {
+       "id": null,
+       "text": "Item vier spangerůl"
+      },
+      {
+       "id": null,
+       "text": "Item zehen par armzeug"
+      },
+      {
+       "id": null,
+       "text": "Item ainlif par plechhentschůch"
+      },
+      {
+       "id": null,
+       "text": "Item acht visier"
+      },
+      {
+       "id": null,
+       "text": "Item xxiiij kupfrein hantpůxen"
+      },
+      {
+       "id": null,
+       "text": "Item j ledrein hůt"
+      },
+      {
+       "id": null,
+       "text": "Item xxxvij schaiben snoggarn"
+      },
+      {
+       "id": null,
+       "text": "Item vnd zway kariol sind ler"
+      },
+      {
+       "id": null,
+       "text": "Item aber . [...]"
+      }
      ]
     },
     {
@@ -935,39 +2441,138 @@
       false
      ],
      "lines": [
-      "Vermerkht leylach",
-      "Item vier leylach von groben zwirich die",
-      "seind nicht vast gut Vnd aber drew par",
-      "alter pöser leylach vnd zerrissen vnd iij par",
-      "warn nicht zennuczen",
-      "Vermerkht rauch castron dekh",
-      "Item zehen rauch dekh die seind nicht vbrigs",
-      "gut Vnd aber zwo dekh gar zernichten",
-      "Vermerkht der harnasch in",
-      "der harnasch kamer",
-      "Item acht gemaine panzer.",
-      "Item ain huntzcappen",
-      "Item siben hauben mit geheng",
-      "Item ain ledigs geheng an ain haubn",
-      "Item funf hauben one geheng",
-      "Item zwo englisch haubn mit geheng.",
-      "Item zway helmlin",
-      "Item vier eysenhüte",
-      "Item sechs zschaladn",
-      "Item newn prustplatn",
-      "Item ain mailendysche platen",
-      "Item aber ain halbe leuchte platen",
-      "Item vier gannze payngwant",
-      "Item drew par vnderpayngewand",
-      "Item vier spangerdel",
-      "Item zehen par armczeüg",
-      "Item ainlif par plechhanczschůch",
-      "Item acht visier",
-      "Item xxiiij kupfrein hantpüxen",
-      "Item j lederin hut",
-      "Item xxxvij schaiben snogarn",
-      "Item vnd zway fassol sind lere",
-      "Item aber .l."
+      {
+       "id": null,
+       "text": "Vermerkht leylach"
+      },
+      {
+       "id": null,
+       "text": "Item vier leylach von groben zwirich die"
+      },
+      {
+       "id": null,
+       "text": "seind nicht vast gut Vnd aber drew par"
+      },
+      {
+       "id": null,
+       "text": "alter pöser leylach vnd zerrissen vnd iij par"
+      },
+      {
+       "id": null,
+       "text": "warn nicht zennuczen"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht rauch castron dekh"
+      },
+      {
+       "id": null,
+       "text": "Item zehen rauch dekh die seind nicht vbrigs"
+      },
+      {
+       "id": null,
+       "text": "gut Vnd aber zwo dekh gar zernichten"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht der harnasch in"
+      },
+      {
+       "id": null,
+       "text": "der harnasch kamer"
+      },
+      {
+       "id": null,
+       "text": "Item acht gemaine panzer."
+      },
+      {
+       "id": null,
+       "text": "Item ain huntzcappen"
+      },
+      {
+       "id": null,
+       "text": "Item siben hauben mit geheng"
+      },
+      {
+       "id": null,
+       "text": "Item ain ledigs geheng an ain haubn"
+      },
+      {
+       "id": null,
+       "text": "Item funf hauben one geheng"
+      },
+      {
+       "id": null,
+       "text": "Item zwo englisch haubn mit geheng."
+      },
+      {
+       "id": null,
+       "text": "Item zway helmlin"
+      },
+      {
+       "id": null,
+       "text": "Item vier eysenhüte"
+      },
+      {
+       "id": null,
+       "text": "Item sechs zschaladn"
+      },
+      {
+       "id": null,
+       "text": "Item newn prustplatn"
+      },
+      {
+       "id": null,
+       "text": "Item ain mailendysche platen"
+      },
+      {
+       "id": null,
+       "text": "Item aber ain halbe leuchte platen"
+      },
+      {
+       "id": null,
+       "text": "Item vier gannze payngwant"
+      },
+      {
+       "id": null,
+       "text": "Item drew par vnderpayngewand"
+      },
+      {
+       "id": null,
+       "text": "Item vier spangerdel"
+      },
+      {
+       "id": null,
+       "text": "Item zehen par armczeüg"
+      },
+      {
+       "id": null,
+       "text": "Item ainlif par plechhanczschůch"
+      },
+      {
+       "id": null,
+       "text": "Item acht visier"
+      },
+      {
+       "id": null,
+       "text": "Item xxiiij kupfrein hantpüxen"
+      },
+      {
+       "id": null,
+       "text": "Item j lederin hut"
+      },
+      {
+       "id": null,
+       "text": "Item xxxvij schaiben snogarn"
+      },
+      {
+       "id": null,
+       "text": "Item vnd zway fassol sind lere"
+      },
+      {
+       "id": null,
+       "text": "Item aber .l."
+      }
      ]
     }
    ]
@@ -992,43 +2597,154 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "Vermerkht in der kammer",
-      "da die monic(i)on inn leÿt.",
-      "Item fünfundfünfzig armprost und",
-      "eyben gůt und pös.",
-      "Item sibenundzwainzig alt verdackt",
-      "platen pös und gůt ain tail zerprochen.",
-      "Item acht welisch spangürtel zü den eÿben.",
-      "Item acht köcher und II eẏsenstekhen.",
-      "Item ain erer hafen zerbrochen.",
-      "Item ain lavetsch zerprochen.",
-      "Item zehen lageln mit pheylen.",
-      "Item ain vässlein mit pulver ainer ürn gross.",
-      "Item aber ain klaines vësslein mit pulver.",
-      "Item ain lagel mit swebel.",
-      "Item ain vesslein mit salmiter von II ürn gros.",
-      "Item VII feür pheẏl.",
-      "Item ain trühlein mit welschen pheylen.",
-      "Item VII purd und VII stangen eysens.",
-      "Vermerkht auf dem sal.",
-      "Item ain messin püchs scheu̇st ain stain von",
-      "zehen phunden.",
-      "Item zwŭ lang kuphrein püchs.",
-      "Item achtzehen eysen püchsen gross und klain.",
-      "Item LXII targen und sezschilt gŭt und pŏs.",
-      "Item ain gross kupfrein püchs beẏ der miteln",
-      "porten auf zwaÿ redërn, dabey ain eÿsen püchs.",
-      "Item II spansail, II seün, ain schling.",
-      "Item II spanpanch.",
-      "Vermerkht in der kuchen.",
-      "Item II lavetschen seind zerprochen.",
-      "Item I ganzer lavetsch.",
-      "Item III haheln und I prantrauch.",
-      "Item I pratspis und I trifŭß.",
-      "Item I feür hauken.",
-      "Item I kessel von zwaẏ ziggel wasser.",
-      "Item I eren hafen."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkht in der kammer"
+      },
+      {
+       "id": "r2l2",
+       "text": "da die monic(i)on inn leÿt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item fünfundfünfzig armprost und"
+      },
+      {
+       "id": "r3l2",
+       "text": "eyben gůt und pös."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item sibenundzwainzig alt verdackt"
+      },
+      {
+       "id": "r3l4",
+       "text": "platen pös und gůt ain tail zerprochen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item acht welisch spangürtel zü den eÿben."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item acht köcher und II eẏsenstekhen."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item ain erer hafen zerbrochen."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item ain lavetsch zerprochen."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item zehen lageln mit pheylen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item ain vässlein mit pulver ainer ürn gross."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item aber ain klaines vësslein mit pulver."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item ain lagel mit swebel."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item ain vesslein mit salmiter von II ürn gros."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item VII feür pheẏl."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item ain trühlein mit welschen pheylen."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item VII purd und VII stangen eysens."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vermerkht auf dem sal."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item ain messin püchs scheu̇st ain stain von"
+      },
+      {
+       "id": "r5l2",
+       "text": "zehen phunden."
+      },
+      {
+       "id": "r5l3",
+       "text": "Item zwŭ lang kuphrein püchs."
+      },
+      {
+       "id": "r5l4",
+       "text": "Item achtzehen eysen püchsen gross und klain."
+      },
+      {
+       "id": "r5l5",
+       "text": "Item LXII targen und sezschilt gŭt und pŏs."
+      },
+      {
+       "id": "r5l6",
+       "text": "Item ain gross kupfrein püchs beẏ der miteln"
+      },
+      {
+       "id": "r5l7",
+       "text": "porten auf zwaÿ redërn, dabey ain eÿsen püchs."
+      },
+      {
+       "id": "r5l8",
+       "text": "Item II spansail, II seün, ain schling."
+      },
+      {
+       "id": "r5l9",
+       "text": "Item II spanpanch."
+      },
+      {
+       "id": "r6l1",
+       "text": "Vermerkht in der kuchen."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item II lavetschen seind zerprochen."
+      },
+      {
+       "id": "r7l2",
+       "text": "Item I ganzer lavetsch."
+      },
+      {
+       "id": "r7l3",
+       "text": "Item III haheln und I prantrauch."
+      },
+      {
+       "id": "r7l4",
+       "text": "Item I pratspis und I trifŭß."
+      },
+      {
+       "id": "r7l5",
+       "text": "Item I feür hauken."
+      },
+      {
+       "id": "r7l6",
+       "text": "Item I kessel von zwaẏ ziggel wasser."
+      },
+      {
+       "id": "r7l7",
+       "text": "Item I eren hafen."
+      }
      ]
     },
     {
@@ -1044,43 +2760,154 @@
       false
      ],
      "lines": [
-      "4",
-      "Vermerckht in der kamer",
-      "da die monicon jnn leyt",
-      "Item fúnfundfúnfczig armprost vnd",
-      "eyben gút vnd pös",
-      "Item sibenundtzwainczig alt verdeckt",
-      "platen pös vnd gútt ain tail zerprochen",
-      "Item acht welisch spanngürtel zú den eybn",
-      "Item acht köcher vnd ij eysenstöfflyn",
-      "Item ain erer hafen zerbrochen",
-      "Item ain lancztsth zerprochen",
-      "Item zehen lageln mit pheylen",
-      "Item ain vässlen mit puluer ain viij gross",
-      "Item aber ain klaines vessleyn mit puluer",
-      "Item ain lagel mit fackel",
-      "Item ain vessleyn mit salniter von ij viij gros",
-      "Item viij feúrpheyl",
-      "Item ain trúckleyn mit welschen pheylen",
-      "Item viij púrd vnd vij stangen eysens",
-      "Vermerckht auf dem pal",
-      "Item ain messin púchs scheúst ain stain von",
-      "zehen phunden",
-      "Item zwoú lang kupfrein púchs",
-      "Item achtzehen eysen púchsen gross vnd klain",
-      "Item bey targen vnd sechstle gut vnd pos",
-      "Item ain gross kupfrein púchs bey der mitteln",
-      "porten auf zway rädern dabey ain eysen púchs",
-      "Item ij spanseil ij senn ain seckling",
-      "Item ij spenpanch",
-      "Vermerckht in der kuchen",
-      "Item ij lanczetschen seind zerprochen",
-      "Item j gantzer lancztsth",
-      "Item iij hälckhy vnd j prantrauch",
-      "Item j pratrost vnd .j. dreifus",
-      "Item j feúr haucken",
-      "Item j kessel von zway gyegel wasser",
-      "Item j erer hafen"
+      {
+       "id": null,
+       "text": "4"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht in der kamer"
+      },
+      {
+       "id": null,
+       "text": "da die monicon jnn leyt"
+      },
+      {
+       "id": null,
+       "text": "Item fúnfundfúnfczig armprost vnd"
+      },
+      {
+       "id": null,
+       "text": "eyben gút vnd pös"
+      },
+      {
+       "id": null,
+       "text": "Item sibenundtzwainczig alt verdeckt"
+      },
+      {
+       "id": null,
+       "text": "platen pös vnd gútt ain tail zerprochen"
+      },
+      {
+       "id": null,
+       "text": "Item acht welisch spanngürtel zú den eybn"
+      },
+      {
+       "id": null,
+       "text": "Item acht köcher vnd ij eysenstöfflyn"
+      },
+      {
+       "id": null,
+       "text": "Item ain erer hafen zerbrochen"
+      },
+      {
+       "id": null,
+       "text": "Item ain lancztsth zerprochen"
+      },
+      {
+       "id": null,
+       "text": "Item zehen lageln mit pheylen"
+      },
+      {
+       "id": null,
+       "text": "Item ain vässlen mit puluer ain viij gross"
+      },
+      {
+       "id": null,
+       "text": "Item aber ain klaines vessleyn mit puluer"
+      },
+      {
+       "id": null,
+       "text": "Item ain lagel mit fackel"
+      },
+      {
+       "id": null,
+       "text": "Item ain vessleyn mit salniter von ij viij gros"
+      },
+      {
+       "id": null,
+       "text": "Item viij feúrpheyl"
+      },
+      {
+       "id": null,
+       "text": "Item ain trúckleyn mit welschen pheylen"
+      },
+      {
+       "id": null,
+       "text": "Item viij púrd vnd vij stangen eysens"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht auf dem pal"
+      },
+      {
+       "id": null,
+       "text": "Item ain messin púchs scheúst ain stain von"
+      },
+      {
+       "id": null,
+       "text": "zehen phunden"
+      },
+      {
+       "id": null,
+       "text": "Item zwoú lang kupfrein púchs"
+      },
+      {
+       "id": null,
+       "text": "Item achtzehen eysen púchsen gross vnd klain"
+      },
+      {
+       "id": null,
+       "text": "Item bey targen vnd sechstle gut vnd pos"
+      },
+      {
+       "id": null,
+       "text": "Item ain gross kupfrein púchs bey der mitteln"
+      },
+      {
+       "id": null,
+       "text": "porten auf zway rädern dabey ain eysen púchs"
+      },
+      {
+       "id": null,
+       "text": "Item ij spanseil ij senn ain seckling"
+      },
+      {
+       "id": null,
+       "text": "Item ij spenpanch"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht in der kuchen"
+      },
+      {
+       "id": null,
+       "text": "Item ij lanczetschen seind zerprochen"
+      },
+      {
+       "id": null,
+       "text": "Item j gantzer lancztsth"
+      },
+      {
+       "id": null,
+       "text": "Item iij hälckhy vnd j prantrauch"
+      },
+      {
+       "id": null,
+       "text": "Item j pratrost vnd .j. dreifus"
+      },
+      {
+       "id": null,
+       "text": "Item j feúr haucken"
+      },
+      {
+       "id": null,
+       "text": "Item j kessel von zway gyegel wasser"
+      },
+      {
+       "id": null,
+       "text": "Item j erer hafen"
+      }
      ]
     },
     {
@@ -1096,43 +2923,154 @@
       false
      ],
      "lines": [
-      "4",
-      "Vermerckht in der kamer",
-      "da die moniczen jnn leyt",
-      "Item fünfundfünfczig armproste und",
-      "eyben gůt und pös",
-      "Item sibenundczwainczig alt verdeckt",
-      "platen pös und gůtt ain tail zerprochen",
-      "Item acht welisch spanngürtel zu den eyben",
-      "Item acht köcker und ij eysenflätschl",
-      "Item ain erer hafen zerbrochen",
-      "Item ain lanczsch zerprochen",
-      "Item zehen lageln mit pheylen",
-      "Item ain vässlen mit pulver ain viij gross",
-      "Item aber ain klaines vesslein mit pulver",
-      "Item ain lagel mit fackel",
-      "Item ain vesslein mit salniter von ij viij gros",
-      "Item viij feürpheyl",
-      "Item ain trüchlein mit welschen pheylen",
-      "Item viij purd und viij stangen eysens",
-      "Vermerckht auf dem pal",
-      "Item ain messin půchs scheüst ain stain von",
-      "zehen phunden",
-      "Item zwoů lang kuphrein půchs",
-      "Item achtzehen eysen půchsen gross und klain",
-      "Item bey torgen und scheftleitle gůt und pös",
-      "Item ain gross kuphrein půchs bey der miteln",
-      "porten auf zwain redern dabey ain eysen půchs",
-      "Item ij spansül ij feür ain stöckling",
-      "Item ij spenpanck",
-      "Vermerckht in der kuchen",
-      "Item ij lanczschen seind zerprochen",
-      "Item j gantzer lanczsch",
-      "Item iij hälchlin und j prantranck",
-      "Item j pratrost und .j. dreifus",
-      "Item j feür hanken",
-      "Item j kessel von zwain giggel wasser",
-      "Item j eren hafen"
+      {
+       "id": null,
+       "text": "4"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht in der kamer"
+      },
+      {
+       "id": null,
+       "text": "da die moniczen jnn leyt"
+      },
+      {
+       "id": null,
+       "text": "Item fünfundfünfczig armproste und"
+      },
+      {
+       "id": null,
+       "text": "eyben gůt und pös"
+      },
+      {
+       "id": null,
+       "text": "Item sibenundczwainczig alt verdeckt"
+      },
+      {
+       "id": null,
+       "text": "platen pös und gůtt ain tail zerprochen"
+      },
+      {
+       "id": null,
+       "text": "Item acht welisch spanngürtel zu den eyben"
+      },
+      {
+       "id": null,
+       "text": "Item acht köcker und ij eysenflätschl"
+      },
+      {
+       "id": null,
+       "text": "Item ain erer hafen zerbrochen"
+      },
+      {
+       "id": null,
+       "text": "Item ain lanczsch zerprochen"
+      },
+      {
+       "id": null,
+       "text": "Item zehen lageln mit pheylen"
+      },
+      {
+       "id": null,
+       "text": "Item ain vässlen mit pulver ain viij gross"
+      },
+      {
+       "id": null,
+       "text": "Item aber ain klaines vesslein mit pulver"
+      },
+      {
+       "id": null,
+       "text": "Item ain lagel mit fackel"
+      },
+      {
+       "id": null,
+       "text": "Item ain vesslein mit salniter von ij viij gros"
+      },
+      {
+       "id": null,
+       "text": "Item viij feürpheyl"
+      },
+      {
+       "id": null,
+       "text": "Item ain trüchlein mit welschen pheylen"
+      },
+      {
+       "id": null,
+       "text": "Item viij purd und viij stangen eysens"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht auf dem pal"
+      },
+      {
+       "id": null,
+       "text": "Item ain messin půchs scheüst ain stain von"
+      },
+      {
+       "id": null,
+       "text": "zehen phunden"
+      },
+      {
+       "id": null,
+       "text": "Item zwoů lang kuphrein půchs"
+      },
+      {
+       "id": null,
+       "text": "Item achtzehen eysen půchsen gross und klain"
+      },
+      {
+       "id": null,
+       "text": "Item bey torgen und scheftleitle gůt und pös"
+      },
+      {
+       "id": null,
+       "text": "Item ain gross kuphrein půchs bey der miteln"
+      },
+      {
+       "id": null,
+       "text": "porten auf zwain redern dabey ain eysen půchs"
+      },
+      {
+       "id": null,
+       "text": "Item ij spansül ij feür ain stöckling"
+      },
+      {
+       "id": null,
+       "text": "Item ij spenpanck"
+      },
+      {
+       "id": null,
+       "text": "Vermerckht in der kuchen"
+      },
+      {
+       "id": null,
+       "text": "Item ij lanczschen seind zerprochen"
+      },
+      {
+       "id": null,
+       "text": "Item j gantzer lanczsch"
+      },
+      {
+       "id": null,
+       "text": "Item iij hälchlin und j prantranck"
+      },
+      {
+       "id": null,
+       "text": "Item j pratrost und .j. dreifus"
+      },
+      {
+       "id": null,
+       "text": "Item j feür hanken"
+      },
+      {
+       "id": null,
+       "text": "Item j kessel von zwain giggel wasser"
+      },
+      {
+       "id": null,
+       "text": "Item j eren hafen"
+      }
      ]
     }
    ]
@@ -1157,40 +3095,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Vermerkht in dem keler.",
-      "Item acht hulzen zefften gůt und pös.",
-      "Item ain flaischparten und I kemichsail.",
-      "Item ain vass sail unt II eysen haucken.",
-      "Item ain pamschab und III trachter.",
-      "Item II protschaf und II weinschaf.",
-      "Item IIII weinvass gross und klain.",
-      "Item XVI kastladen gůt und pös.",
-      "Item und V potigen.",
-      "Item II krautfas und X crau̇tpotigen von halben vassen.",
-      "Item in der badtstuben ain kessel.",
-      "Item in der phistreẏ ain kessel.",
-      "Item ain fürvaß mit salz.",
-      "Item beÿ ainer prenten hönig in ainem vass.",
-      "Item vor dem keler in dem stain I1/2 mŭt öl.",
-      "Vermerkht in dem speÿsgaden",
-      "ob dem keler.",
-      "Item CXV lb. weysses unschlit des seind",
-      "dreÿ knollen und XXVI lb. swartz unschlit",
-      "an ainem knollen und X schmerlaib.",
-      "Vermerkht in der capell.",
-      "Item ain altarstain, ain messgwand.",
-      "Item ain kelch und I papirïn messpůch.",
-      "Item II opferkentlein und IIII altartücher.",
-      "Vermerkht der wein in dem",
-      "keler.",
-      "Item vierundfunfzig fůder hab ich",
-      "emphangen allerlaẏ wein rot und",
-      "weyss als sy in den keler seind kummen",
-      "und ist alles gewesen LX fuder und ain halbs",
-      "und ist der abgang angeslagen VI füder.",
-      "Item in dem aussern keler ain grosse",
-      "eÿsen püchs hinnder der tür."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkht in dem keler."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item acht hulzen zefften gůt und pös."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item ain flaischparten und I kemichsail."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item ain vass sail unt II eysen haucken."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item ain pamschab und III trachter."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item II protschaf und II weinschaf."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item IIII weinvass gross und klain."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item XVI kastladen gůt und pös."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item und V potigen."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item II krautfas und X crau̇tpotigen von halben vassen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item in der badtstuben ain kessel."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item in der phistreẏ ain kessel."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item ain fürvaß mit salz."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item beÿ ainer prenten hönig in ainem vass."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item vor dem keler in dem stain I1/2 mŭt öl."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vermerkht in dem speÿsgaden"
+      },
+      {
+       "id": "r4l2",
+       "text": "ob dem keler."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item CXV lb. weysses unschlit des seind"
+      },
+      {
+       "id": "r5l2",
+       "text": "dreÿ knollen und XXVI lb. swartz unschlit"
+      },
+      {
+       "id": "r5l3",
+       "text": "an ainem knollen und X schmerlaib."
+      },
+      {
+       "id": "r6l1",
+       "text": "Vermerkht in der capell."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item ain altarstain, ain messgwand."
+      },
+      {
+       "id": "r7l2",
+       "text": "Item ain kelch und I papirïn messpůch."
+      },
+      {
+       "id": "r7l3",
+       "text": "Item II opferkentlein und IIII altartücher."
+      },
+      {
+       "id": "r8l1",
+       "text": "Vermerkht der wein in dem"
+      },
+      {
+       "id": "r8l2",
+       "text": "keler."
+      },
+      {
+       "id": "r9l1",
+       "text": "Item vierundfunfzig fůder hab ich"
+      },
+      {
+       "id": "r9l2",
+       "text": "emphangen allerlaẏ wein rot und"
+      },
+      {
+       "id": "r9l3",
+       "text": "weyss als sy in den keler seind kummen"
+      },
+      {
+       "id": "r9l4",
+       "text": "und ist alles gewesen LX fuder und ain halbs"
+      },
+      {
+       "id": "r9l5",
+       "text": "und ist der abgang angeslagen VI füder."
+      },
+      {
+       "id": "r9l6",
+       "text": "Item in dem aussern keler ain grosse"
+      },
+      {
+       "id": "r9l7",
+       "text": "eÿsen püchs hinnder der tür."
+      }
      ]
     },
     {
@@ -1206,39 +3246,138 @@
       false
      ],
      "lines": [
-      "Vermerkht in dem keler",
-      "Item acht hulzen gafften gůt vnd pös",
-      "Item ain flaischparten vnd j kemichseul",
-      "Item ain vasssail mit ij eysen hancken",
-      "Item ain paumschaub vnd iij trachter",
-      "Item ij presstůch vnd ij weinstůch",
-      "Item liiij weinvass gross vnd klain",
-      "Item xxij kastlädn gůt vnd pös",
-      "Item aind .v. pottigen",
-      "Item ij krautfas vnd x krautpottigen von hilzln vassen",
-      "Item in der badstuben ain kessel",
-      "Item in der pfistery ain kessel",
-      "Item ain fůrvaß mit salz",
-      "Item bey ainer prentzn honig in aim vaß",
-      "Item vor dem keler in dem stain ij mitt öl",
-      "Vermerkht in dem speyßgaden",
-      "ob dem keler",
-      "Item C xv lb weyßes vnschlit des sind",
-      "drey knollen vnd xxvj lb swartz vnschlit",
-      "an ainẽ knollen vnd x schmerlaib",
-      "Vermerkht in der Capell",
-      "Item ain altarstain, ain messgwand",
-      "Item ain kelch vnd j papirin messpůch",
-      "Item ij opferkentlein vnd iiij altartůcher",
-      "Vermerkht der wein in dem",
-      "keler",
-      "Item vierundfunftzig fuder hab ich",
-      "enpfangen allerlay wein rot vnd",
-      "weyß als sy in den keler seind kumen",
-      "vnd ist alles gewesen lx fuder vnd ain halbs",
-      "vnd ist der abgang angeslagen vj fuder 1/2",
-      "Item in dem aussern keler ain gross",
-      "eysen půchß hinder der tůr"
+      {
+       "id": null,
+       "text": "Vermerkht in dem keler"
+      },
+      {
+       "id": null,
+       "text": "Item acht hulzen gafften gůt vnd pös"
+      },
+      {
+       "id": null,
+       "text": "Item ain flaischparten vnd j kemichseul"
+      },
+      {
+       "id": null,
+       "text": "Item ain vasssail mit ij eysen hancken"
+      },
+      {
+       "id": null,
+       "text": "Item ain paumschaub vnd iij trachter"
+      },
+      {
+       "id": null,
+       "text": "Item ij presstůch vnd ij weinstůch"
+      },
+      {
+       "id": null,
+       "text": "Item liiij weinvass gross vnd klain"
+      },
+      {
+       "id": null,
+       "text": "Item xxij kastlädn gůt vnd pös"
+      },
+      {
+       "id": null,
+       "text": "Item aind .v. pottigen"
+      },
+      {
+       "id": null,
+       "text": "Item ij krautfas vnd x krautpottigen von hilzln vassen"
+      },
+      {
+       "id": null,
+       "text": "Item in der badstuben ain kessel"
+      },
+      {
+       "id": null,
+       "text": "Item in der pfistery ain kessel"
+      },
+      {
+       "id": null,
+       "text": "Item ain fůrvaß mit salz"
+      },
+      {
+       "id": null,
+       "text": "Item bey ainer prentzn honig in aim vaß"
+      },
+      {
+       "id": null,
+       "text": "Item vor dem keler in dem stain ij mitt öl"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht in dem speyßgaden"
+      },
+      {
+       "id": null,
+       "text": "ob dem keler"
+      },
+      {
+       "id": null,
+       "text": "Item C xv lb weyßes vnschlit des sind"
+      },
+      {
+       "id": null,
+       "text": "drey knollen vnd xxvj lb swartz vnschlit"
+      },
+      {
+       "id": null,
+       "text": "an ainẽ knollen vnd x schmerlaib"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht in der Capell"
+      },
+      {
+       "id": null,
+       "text": "Item ain altarstain, ain messgwand"
+      },
+      {
+       "id": null,
+       "text": "Item ain kelch vnd j papirin messpůch"
+      },
+      {
+       "id": null,
+       "text": "Item ij opferkentlein vnd iiij altartůcher"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht der wein in dem"
+      },
+      {
+       "id": null,
+       "text": "keler"
+      },
+      {
+       "id": null,
+       "text": "Item vierundfunftzig fuder hab ich"
+      },
+      {
+       "id": null,
+       "text": "enpfangen allerlay wein rot vnd"
+      },
+      {
+       "id": null,
+       "text": "weyß als sy in den keler seind kumen"
+      },
+      {
+       "id": null,
+       "text": "vnd ist alles gewesen lx fuder vnd ain halbs"
+      },
+      {
+       "id": null,
+       "text": "vnd ist der abgang angeslagen vj fuder 1/2"
+      },
+      {
+       "id": null,
+       "text": "Item in dem aussern keler ain gross"
+      },
+      {
+       "id": null,
+       "text": "eysen půchß hinder der tůr"
+      }
      ]
     },
     {
@@ -1254,39 +3393,138 @@
       false
      ],
      "lines": [
-      "Vermerkht in dem keler",
-      "Item acht hulzen gefften gut vnd pos",
-      "Item ain flaischparten vnd j kemichseul",
-      "Item ain vasssail mit ij eysen hancken",
-      "Item ain pamschab vnd iij trachter",
-      "Item ij pressschuf vnd ij weinschuf",
-      "Item liiij weinvass gross vnd klain",
-      "Item xxj kestladen gut vnd pos",
-      "Item vnd . x . potigen",
-      "Item ij krautfas und x krautpotigen von hültzn vassen",
-      "Item in der padstuben ain kessel",
-      "Item in der pfisterey ain kessel",
-      "Item ain fuervaß mit salcz",
-      "Item bey ainer prentzn honig in aine vaß",
-      "Item vor dem keler in dem stain ij mut öl",
-      "Vermerkht in dem speyßgaden",
-      "ob dem keler",
-      "Item C xv lb weysses unschlit das sind",
-      "drey knollen vnd xxvj lb swarcz unschlit",
-      "an ainem knollen vnd x schmerlaib",
-      "Vermerkht in der Capell",
-      "Item ain altarstain ain messgwand",
-      "Item ain kelch vnd j papirin messpuch",
-      "Item ij opferkentlein vnd iiij altartuecher",
-      "Vermerkht der wein in dem",
-      "keler",
-      "Item vierundfunfczig füder hab ich",
-      "empfangen allerlay wein rot vnd",
-      "weyss als sy in den keler seind kumen",
-      "vnd ist alles gewesen lx füder vnd ain halbs",
-      "und ist der abgang angeschlagen vj füder 1/2",
-      "Item in dem aussern keler ain gross",
-      "eysen puchß hinder der tür"
+      {
+       "id": null,
+       "text": "Vermerkht in dem keler"
+      },
+      {
+       "id": null,
+       "text": "Item acht hulzen gefften gut vnd pos"
+      },
+      {
+       "id": null,
+       "text": "Item ain flaischparten vnd j kemichseul"
+      },
+      {
+       "id": null,
+       "text": "Item ain vasssail mit ij eysen hancken"
+      },
+      {
+       "id": null,
+       "text": "Item ain pamschab vnd iij trachter"
+      },
+      {
+       "id": null,
+       "text": "Item ij pressschuf vnd ij weinschuf"
+      },
+      {
+       "id": null,
+       "text": "Item liiij weinvass gross vnd klain"
+      },
+      {
+       "id": null,
+       "text": "Item xxj kestladen gut vnd pos"
+      },
+      {
+       "id": null,
+       "text": "Item vnd . x . potigen"
+      },
+      {
+       "id": null,
+       "text": "Item ij krautfas und x krautpotigen von hültzn vassen"
+      },
+      {
+       "id": null,
+       "text": "Item in der padstuben ain kessel"
+      },
+      {
+       "id": null,
+       "text": "Item in der pfisterey ain kessel"
+      },
+      {
+       "id": null,
+       "text": "Item ain fuervaß mit salcz"
+      },
+      {
+       "id": null,
+       "text": "Item bey ainer prentzn honig in aine vaß"
+      },
+      {
+       "id": null,
+       "text": "Item vor dem keler in dem stain ij mut öl"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht in dem speyßgaden"
+      },
+      {
+       "id": null,
+       "text": "ob dem keler"
+      },
+      {
+       "id": null,
+       "text": "Item C xv lb weysses unschlit das sind"
+      },
+      {
+       "id": null,
+       "text": "drey knollen vnd xxvj lb swarcz unschlit"
+      },
+      {
+       "id": null,
+       "text": "an ainem knollen vnd x schmerlaib"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht in der Capell"
+      },
+      {
+       "id": null,
+       "text": "Item ain altarstain ain messgwand"
+      },
+      {
+       "id": null,
+       "text": "Item ain kelch vnd j papirin messpuch"
+      },
+      {
+       "id": null,
+       "text": "Item ij opferkentlein vnd iiij altartuecher"
+      },
+      {
+       "id": null,
+       "text": "Vermerkht der wein in dem"
+      },
+      {
+       "id": null,
+       "text": "keler"
+      },
+      {
+       "id": null,
+       "text": "Item vierundfunfczig füder hab ich"
+      },
+      {
+       "id": null,
+       "text": "empfangen allerlay wein rot vnd"
+      },
+      {
+       "id": null,
+       "text": "weyss als sy in den keler seind kumen"
+      },
+      {
+       "id": null,
+       "text": "vnd ist alles gewesen lx füder vnd ain halbs"
+      },
+      {
+       "id": null,
+       "text": "und ist der abgang angeschlagen vj füder 1/2"
+      },
+      {
+       "id": null,
+       "text": "Item in dem aussern keler ain gross"
+      },
+      {
+       "id": null,
+       "text": "eysen puchß hinder der tür"
+      }
      ]
     }
    ]
@@ -1311,27 +3549,90 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Vermerkht mel, waiz, roken",
-      "und sunst ander getraide als",
-      "ichs in dem haws gefunden hab",
-      "auf dem palast und in den kästen.",
-      "Item mel IIC und LXXXX ster.",
-      "Item waiz M IIICLXXXXII ster.",
-      "Item rocken IIC und I ster.",
-      "Item hirß VIIIIC und XLIII ster.",
-      "Item gerst XXXIII ster.",
-      "Item pon XXXVIIII ster.",
-      "Item sürch XXV ster.",
-      "Item panitsch XV ster.",
-      "Item arbäis V ster.",
-      "Summa facit IIMVIIIC",
-      "und XLII1/2 ster.",
-      "Vermerkt der zeüg in der",
-      "smitten.",
-      "Item ain amposs und ain hornamposs,",
-      "IIII hammer, X zangen, ain schrot¬",
-      "maissel und II plausspelg."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkht mel, waiz, roken"
+      },
+      {
+       "id": "r2l2",
+       "text": "und sunst ander getraide als"
+      },
+      {
+       "id": "r2l3",
+       "text": "ichs in dem haws gefunden hab"
+      },
+      {
+       "id": "r2l4",
+       "text": "auf dem palast und in den kästen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item mel IIC und LXXXX ster."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item waiz M IIICLXXXXII ster."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item rocken IIC und I ster."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item hirß VIIIIC und XLIII ster."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item gerst XXXIII ster."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item pon XXXVIIII ster."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item sürch XXV ster."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item panitsch XV ster."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item arbäis V ster."
+      },
+      {
+       "id": "r3l10",
+       "text": "Summa facit IIMVIIIC"
+      },
+      {
+       "id": "r3l11",
+       "text": "und XLII1/2 ster."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vermerkt der zeüg in der"
+      },
+      {
+       "id": "r4l2",
+       "text": "smitten."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item ain amposs und ain hornamposs,"
+      },
+      {
+       "id": "r5l2",
+       "text": "IIII hammer, X zangen, ain schrot¬"
+      },
+      {
+       "id": "r5l3",
+       "text": "maissel und II plausspelg."
+      }
      ]
     },
     {
@@ -1347,27 +3648,90 @@
       false
      ],
      "lines": [
-      "5",
-      "Vermerkt mel waicz rockn",
-      "vnd sunst ander getraide als",
-      "ichs in dem haus gefunden hab",
-      "auf dem palast vnd in den kasten",
-      "Item mel ijc vnd lxxxx star",
-      "Item waicz .c. iij lxxxx star",
-      "Item Rocken ijc vnd l star",
-      "Item hirß viijc vnd xlvij star",
-      "Item gerst xxxiiij star",
-      "Item pon xxxviij st",
-      "Item türckh xxv st",
-      "Item panisth xv st",
-      "Item arbais x star",
-      "Suma facit ijml viijc",
-      "vnd xlvij star.",
-      "Vermerkt der czeug in der",
-      "smitten",
-      "Item ain anposs vnd ain hornanposs",
-      "iiij hemer x czangen ain schrot=",
-      "maißel vnd ij plauffpelg"
+      {
+       "id": null,
+       "text": "5"
+      },
+      {
+       "id": null,
+       "text": "Vermerkt mel waicz rockn"
+      },
+      {
+       "id": null,
+       "text": "vnd sunst ander getraide als"
+      },
+      {
+       "id": null,
+       "text": "ichs in dem haus gefunden hab"
+      },
+      {
+       "id": null,
+       "text": "auf dem palast vnd in den kasten"
+      },
+      {
+       "id": null,
+       "text": "Item mel ijc vnd lxxxx star"
+      },
+      {
+       "id": null,
+       "text": "Item waicz .c. iij lxxxx star"
+      },
+      {
+       "id": null,
+       "text": "Item Rocken ijc vnd l star"
+      },
+      {
+       "id": null,
+       "text": "Item hirß viijc vnd xlvij star"
+      },
+      {
+       "id": null,
+       "text": "Item gerst xxxiiij star"
+      },
+      {
+       "id": null,
+       "text": "Item pon xxxviij st"
+      },
+      {
+       "id": null,
+       "text": "Item türckh xxv st"
+      },
+      {
+       "id": null,
+       "text": "Item panisth xv st"
+      },
+      {
+       "id": null,
+       "text": "Item arbais x star"
+      },
+      {
+       "id": null,
+       "text": "Suma facit ijml viijc"
+      },
+      {
+       "id": null,
+       "text": "vnd xlvij star."
+      },
+      {
+       "id": null,
+       "text": "Vermerkt der czeug in der"
+      },
+      {
+       "id": null,
+       "text": "smitten"
+      },
+      {
+       "id": null,
+       "text": "Item ain anposs vnd ain hornanposs"
+      },
+      {
+       "id": null,
+       "text": "iiij hemer x czangen ain schrot="
+      },
+      {
+       "id": null,
+       "text": "maißel vnd ij plauffpelg"
+      }
      ]
     },
     {
@@ -1383,27 +3747,90 @@
       false
      ],
      "lines": [
-      "5",
-      "Vermerckt mel waig rockn",
-      "vnd sunst ander getraide als",
-      "ichs in dem haws gefunden hab",
-      "auf dem palast vnd in den kasten",
-      "Item mel ijc vnd lxxxx star",
-      "Item waigczen . iij hoppen star",
-      "Item Rocken ijc vnd l star",
-      "Item hirsz viijc vnd xliiij star",
-      "Item Gerst xxxiiij star",
-      "Item pon xxxviij star",
-      "Item fůnch xxv star",
-      "Item panestz xv star",
-      "Item arbais x star",
-      "Suma facit ij M viijc",
-      "vnd xlvj star .",
-      "Vermerckt der czeug in der",
-      "smitten",
-      "Item ain anposs vnd ain hornanposs",
-      "iiij hamer x czangen ain schrot-",
-      "maissel vnd ij plauffpelg"
+      {
+       "id": null,
+       "text": "5"
+      },
+      {
+       "id": null,
+       "text": "Vermerckt mel waig rockn"
+      },
+      {
+       "id": null,
+       "text": "vnd sunst ander getraide als"
+      },
+      {
+       "id": null,
+       "text": "ichs in dem haws gefunden hab"
+      },
+      {
+       "id": null,
+       "text": "auf dem palast vnd in den kasten"
+      },
+      {
+       "id": null,
+       "text": "Item mel ijc vnd lxxxx star"
+      },
+      {
+       "id": null,
+       "text": "Item waigczen . iij hoppen star"
+      },
+      {
+       "id": null,
+       "text": "Item Rocken ijc vnd l star"
+      },
+      {
+       "id": null,
+       "text": "Item hirsz viijc vnd xliiij star"
+      },
+      {
+       "id": null,
+       "text": "Item Gerst xxxiiij star"
+      },
+      {
+       "id": null,
+       "text": "Item pon xxxviij star"
+      },
+      {
+       "id": null,
+       "text": "Item fůnch xxv star"
+      },
+      {
+       "id": null,
+       "text": "Item panestz xv star"
+      },
+      {
+       "id": null,
+       "text": "Item arbais x star"
+      },
+      {
+       "id": null,
+       "text": "Suma facit ij M viijc"
+      },
+      {
+       "id": null,
+       "text": "vnd xlvj star ."
+      },
+      {
+       "id": null,
+       "text": "Vermerckt der czeug in der"
+      },
+      {
+       "id": null,
+       "text": "smitten"
+      },
+      {
+       "id": null,
+       "text": "Item ain anposs vnd ain hornanposs"
+      },
+      {
+       "id": null,
+       "text": "iiij hamer x czangen ain schrot-"
+      },
+      {
+       "id": null,
+       "text": "maissel vnd ij plauffpelg"
+      }
      ]
     }
    ]
@@ -1432,7 +3859,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     },
     {
@@ -1485,7 +3915,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     },
     {
@@ -1501,7 +3934,10 @@
       false
      ],
      "lines": [
-      "6"
+      {
+       "id": null,
+       "text": "6"
+      }
      ]
     },
     {
@@ -1517,7 +3953,10 @@
       false
      ],
      "lines": [
-      "6"
+      {
+       "id": null,
+       "text": "6"
+      }
      ]
     }
    ]
@@ -1546,7 +3985,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     },
     {
@@ -1599,7 +4041,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[us_hinten_r]"
+      {
+       "id": "r1l1",
+       "text": "[us_hinten_r]"
+      }
      ]
     },
     {
@@ -1615,7 +4060,10 @@
       false
      ],
      "lines": [
-      "7"
+      {
+       "id": null,
+       "text": "7"
+      }
      ]
     },
     {
@@ -1631,7 +4079,10 @@
       false
      ],
      "lines": [
-      "7"
+      {
+       "id": null,
+       "text": "7"
+      }
      ]
     }
    ]
@@ -1660,7 +4111,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[us_hinten_v]"
+      {
+       "id": "r1l1",
+       "text": "[us_hinten_v]"
+      }
      ]
     },
     {

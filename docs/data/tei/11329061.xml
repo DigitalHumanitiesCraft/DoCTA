@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -113,9 +113,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329061-1"/>
+        <pb n="1" facs="#surface-11329061-1"/>
+        <ab xml:id="ab-11329061-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329061-1-r2">
           <lb facs="#zone-11329061-1-r2l1"/>So ist zu wissen mit diser offen inventuari zetel das auf bevelch des
           <lb facs="#zone-11329061-1-r2l2"/>durchleȗchtigen hochgebornen fȗrsten und herrn herrn Sigmunds erz¬
           <lb facs="#zone-11329061-1-r2l3"/>herzog ze Õsterreich und grave zu Tÿrol etc. meines gnădigisten herrn
@@ -128,6 +130,8 @@
           <lb facs="#zone-11329061-1-r2l10"/>und annder.
           <lb facs="#zone-11329061-1-r2l11"/>Ist daselben im gschloss funden nachlaut der alten inventuarizetl
           <lb facs="#zone-11329061-1-r2l12"/>das dem bemelten meinem gnadigisten herrn zu gehõrt.
+        </ab>
+        <ab xml:id="ab-11329061-1-r3">
           <lb facs="#zone-11329061-1-r3l1"/>Am ersten in der oberen kamer ain tũrgkischer sãbel, vier helleparten,
           <lb facs="#zone-11329061-1-r3l2"/>zwo streit hagken und ain grosser kolb zu paÿden hennden.
           <lb facs="#zone-11329061-1-r3l3"/>Ain pũttrich mit ettwievil scharnagelen.
@@ -149,9 +153,11 @@
           <lb facs="#zone-11329061-1-r3l19"/>unnder der schupffen beÿ dem prunnen angevarde IIII schintel
           <lb facs="#zone-11329061-1-r3l20"/>kasten.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329061-2"/>
+        <pb n="2" facs="#surface-11329061-2"/>
+        <ab xml:id="ab-11329061-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329061-2-r2">
           <lb facs="#zone-11329061-2-r2l1"/>Inventuari Hertenberg.
         </ab>
       </div>

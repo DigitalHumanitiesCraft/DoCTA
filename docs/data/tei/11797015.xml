@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -155,9 +155,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11797015-1"/>
+        <pb n="1" facs="#surface-11797015-1"/>
+        <ab xml:id="ab-11797015-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11797015-1-r2">
           <lb facs="#zone-11797015-1-r2l1"/>Zȗwissen sey̑ wenigklich mit disem inv̑entari und offen spanczedel das aȗf heȗt seiner dato
           <lb facs="#zone-11797015-1-r2l2"/>aȗf m(einer) fȗrstlicher dȗrchleȗchtigkait meines genedigisten herren aȗsgegangen bev̑elch der
           <lb facs="#zone-11797015-1-r2l3"/>edel und vest Eberhard von Frey̑berg zȗm Ey̑semberg phleger zȗ Erenberg von dem erbern
@@ -171,6 +173,8 @@
           <lb facs="#zone-11797015-1-r2l11"/>lich halten und darinnen nichcz uncziechen lassen sol in crafft seiner gethanen pflicht und
           <lb facs="#zone-11797015-1-r2l12"/>daraȗf ist im genanten Jheronimen Banholcz in bemelter claȗsen zȗbewaren uberant¬
           <lb facs="#zone-11797015-1-r2l13"/>wȗrt worden.
+        </ab>
+        <ab xml:id="ab-11797015-1-r3">
           <lb facs="#zone-11797015-1-r3l1"/>Nemlich erstmals in drey̑en trȗchen sechs hȗndert und drey̑czehen
           <lb facs="#zone-11797015-1-r3l2"/>aȗsgemachter ey̑bmėn hanndtpógen. Mer neŭnundfierczig pfeil zŭm gembsen schiessn.
           <lb facs="#zone-11797015-1-r3l3"/>Item achczehen dŭllmesser mit schaiden. Mer sechs par fůßey̑sen. Item ain trȗchen darinn
@@ -179,6 +183,8 @@
           <lb facs="#zone-11797015-1-r3l6"/>ŭndneŭczig gros ey̑sen kůglen zȗ den scharfen mẽczen. Item zehen khorn pranndten. Zway̑
           <lb facs="#zone-11797015-1-r3l7"/>beschlagen Innsprȗgger stẽr. Ain Fȗesser meczen. Zway̑ zȗgsail und ain kharren zȗ den
           <lb facs="#zone-11797015-1-r3l8"/>seckhen.
+        </ab>
+        <ab xml:id="ab-11797015-1-r4">
           <lb facs="#zone-11797015-1-r4l1"/>Des zȗ urkhund und gȗetter gedechtnȗs sind diser zedel zwen gleichlaȗttend
           <lb facs="#zone-11797015-1-r4l2"/>mit ainer hanndgeschriben gemacht und aŭs ainanndern geschnitten, der ainer obemelter
           <lb facs="#zone-11797015-1-r4l3"/>f(ȗrstlicher) d(ȗrchleȗchtigkait) aȗf ir tirolisch raitcamer zȗ Y̑nnsprȗgg uberantwȗrt und der annder bedachtem
@@ -188,13 +194,15 @@
           <lb facs="#zone-11797015-1-r4l7"/>Sebastian Tescher gerichtsch(reiber)
           <lb facs="#zone-11797015-1-r4l8"/>zu Erenberg manu propria.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11797015-2"/>
+        <pb n="2" facs="#surface-11797015-2"/>
+        <ab xml:id="ab-11797015-2-r1">
           <milestone unit="folio" n="1v"/>
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11797015-3"/>
+        <pb n="3" facs="#surface-11797015-3"/>
+        <ab xml:id="ab-11797015-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11797015-3-r2">
           <lb facs="#zone-11797015-3-r2l1"/>Mein frŭntlich gŭetwillig diennst zuv̇or gŭnstig lieb herrn
           <lb facs="#zone-11797015-3-r2l2"/>unnd frŭndt, ich schick eŭch hiemit die innfentari der
           <lb facs="#zone-11797015-3-r2l3"/>claŭsen unnd wirczhaŭs Ernnberg wie ir mir dann
@@ -225,9 +233,11 @@
           <lb facs="#zone-11797015-3-r2l28"/>Eberhart [...] Freiberg
           <lb facs="#zone-11797015-3-r2l29"/>f(ŭrstlicher) g(naden) pfleger zu Erenberg.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11797015-4"/>
+        <pb n="4" facs="#surface-11797015-4"/>
+        <ab xml:id="ab-11797015-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11797015-4-r2">
           <lb facs="#zone-11797015-4-r2l1"/>1525
           <lb facs="#zone-11797015-4-r2l2"/>Der fŭrstlichen dŭrchleŭchtigkait
           <lb facs="#zone-11797015-4-r2l3"/>meins gnedigisten herren rãtte

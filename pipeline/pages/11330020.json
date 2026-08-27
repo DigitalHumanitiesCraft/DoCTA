@@ -21,52 +21,190 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Zemerkchen die hab und güet so auf dem",
-      "gsloß Hewnfels aus dem geschäft meins gnädgen grafn",
-      "H(einrich) von Görtz und durch den geistlichen",
-      "herren, herren Peteren Plangkhen techant",
-      "zu Innchingen, auch den Chunratt Goltstain",
-      "und Georien Hew̃ssen auf den hewtigen tag",
-      "dato der zödel aigenntlich besicht und beschawt",
-      "ist worden.",
-      "Item in der kamer bey der stuben V pett,",
-      "ain dekhpëtt, zwen hauptpölster, VI",
-      "hauptkuss, ain pangkpolster, II pangkh",
-      "chüss, VII lembrein degkh, alt und new̃,",
-      "X schäffen dëkch, II spanpett, ain kariolen,",
-      "XXIII leylach guete und pöze gezaichent",
-      "und drey truchen, II alte degklach, ain",
-      "padphaitel, ain raucher liechtplabs rökel,",
-      "III tischtücher, IX handttücher gute und",
-      "põse, vier plosse arm(bro)st, ain vadertail,",
-      "II handtschuch, ain eysenhut, i tärthschel",
-      "und ain gambssayl und ain kŏcher.",
-      "Item in meins gnädigen f(ürsten) zimer ist IIII pett, IIII",
-      "hauptpölster, VII hauptküss und ain",
-      "truchen ist verslagen, III spanpett, zwo",
-      "kariolen, III tisch.",
-      "Item in des richters kamer ain pëtt, II",
-      "leylach, ain rauhe dekch, ain polster,",
-      "II chŭss, ain dekchpett, ain altz ge",
-      "streufcz dëgkel, II spanpett, I tisch.",
-      "Item in der harrnasch kamer ist beschawt",
-      "worden und gefunden IIII pett mit",
-      "pösen ziechen, drey pöz hauptpolster,",
-      "VIII hauptkuss gut und ergere, XVIII",
-      "schaffein dekch alt und new, zwo guet",
-      "lembrein dekch, ain wolfs dekch, ain",
-      "gestükelts degklachen, IIII spanpett und",
-      "edtlich alter harnasch.",
-      "Item in der nachsten kamer darnach sein",
-      "drew miterre pëtt, IIII poz hauptpolster",
-      "und ain pöz pëttel, ain chüss und",
-      "vier alt rauch dëkchen und drew",
-      "gantz zerissne dekhlach und vier spanpëtt.",
-      "Item in der wachterkamer I pöz pëttel, I polster,",
-      "zwai pöse küssn, wirchane leilach, zwo",
-      "pöz dëkh, ain lodeins dekhel, ain lidereiner",
-      "polster und zwo gar alte dekhen, ain spanpett."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Zemerkchen die hab und güet so auf dem"
+      },
+      {
+       "id": "r2l2",
+       "text": "gsloß Hewnfels aus dem geschäft meins gnädgen grafn"
+      },
+      {
+       "id": "r2l3",
+       "text": "H(einrich) von Görtz und durch den geistlichen"
+      },
+      {
+       "id": "r2l4",
+       "text": "herren, herren Peteren Plangkhen techant"
+      },
+      {
+       "id": "r2l5",
+       "text": "zu Innchingen, auch den Chunratt Goltstain"
+      },
+      {
+       "id": "r2l6",
+       "text": "und Georien Hew̃ssen auf den hewtigen tag"
+      },
+      {
+       "id": "r2l7",
+       "text": "dato der zödel aigenntlich besicht und beschawt"
+      },
+      {
+       "id": "r2l8",
+       "text": "ist worden."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item in der kamer bey der stuben V pett,"
+      },
+      {
+       "id": "r3l2",
+       "text": "ain dekhpëtt, zwen hauptpölster, VI"
+      },
+      {
+       "id": "r3l3",
+       "text": "hauptkuss, ain pangkpolster, II pangkh"
+      },
+      {
+       "id": "r3l4",
+       "text": "chüss, VII lembrein degkh, alt und new̃,"
+      },
+      {
+       "id": "r3l5",
+       "text": "X schäffen dëkch, II spanpett, ain kariolen,"
+      },
+      {
+       "id": "r3l6",
+       "text": "XXIII leylach guete und pöze gezaichent"
+      },
+      {
+       "id": "r3l7",
+       "text": "und drey truchen, II alte degklach, ain"
+      },
+      {
+       "id": "r3l8",
+       "text": "padphaitel, ain raucher liechtplabs rökel,"
+      },
+      {
+       "id": "r3l9",
+       "text": "III tischtücher, IX handttücher gute und"
+      },
+      {
+       "id": "r3l10",
+       "text": "põse, vier plosse arm(bro)st, ain vadertail,"
+      },
+      {
+       "id": "r3l11",
+       "text": "II handtschuch, ain eysenhut, i tärthschel"
+      },
+      {
+       "id": "r3l12",
+       "text": "und ain gambssayl und ain kŏcher."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item in meins gnädigen f(ürsten) zimer ist IIII pett, IIII"
+      },
+      {
+       "id": "r3l14",
+       "text": "hauptpölster, VII hauptküss und ain"
+      },
+      {
+       "id": "r3l15",
+       "text": "truchen ist verslagen, III spanpett, zwo"
+      },
+      {
+       "id": "r3l16",
+       "text": "kariolen, III tisch."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item in des richters kamer ain pëtt, II"
+      },
+      {
+       "id": "r3l18",
+       "text": "leylach, ain rauhe dekch, ain polster,"
+      },
+      {
+       "id": "r3l19",
+       "text": "II chŭss, ain dekchpett, ain altz ge"
+      },
+      {
+       "id": "r3l20",
+       "text": "streufcz dëgkel, II spanpett, I tisch."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item in der harrnasch kamer ist beschawt"
+      },
+      {
+       "id": "r3l22",
+       "text": "worden und gefunden IIII pett mit"
+      },
+      {
+       "id": "r3l23",
+       "text": "pösen ziechen, drey pöz hauptpolster,"
+      },
+      {
+       "id": "r3l24",
+       "text": "VIII hauptkuss gut und ergere, XVIII"
+      },
+      {
+       "id": "r3l25",
+       "text": "schaffein dekch alt und new, zwo guet"
+      },
+      {
+       "id": "r3l26",
+       "text": "lembrein dekch, ain wolfs dekch, ain"
+      },
+      {
+       "id": "r3l27",
+       "text": "gestükelts degklachen, IIII spanpett und"
+      },
+      {
+       "id": "r3l28",
+       "text": "edtlich alter harnasch."
+      },
+      {
+       "id": "r3l29",
+       "text": "Item in der nachsten kamer darnach sein"
+      },
+      {
+       "id": "r3l30",
+       "text": "drew miterre pëtt, IIII poz hauptpolster"
+      },
+      {
+       "id": "r3l31",
+       "text": "und ain pöz pëttel, ain chüss und"
+      },
+      {
+       "id": "r3l32",
+       "text": "vier alt rauch dëkchen und drew"
+      },
+      {
+       "id": "r3l33",
+       "text": "gantz zerissne dekhlach und vier spanpëtt."
+      },
+      {
+       "id": "r3l34",
+       "text": "Item in der wachterkamer I pöz pëttel, I polster,"
+      },
+      {
+       "id": "r3l35",
+       "text": "zwai pöse küssn, wirchane leilach, zwo"
+      },
+      {
+       "id": "r3l36",
+       "text": "pöz dëkh, ain lodeins dekhel, ain lidereiner"
+      },
+      {
+       "id": "r3l37",
+       "text": "polster und zwo gar alte dekhen, ain spanpett."
+      }
      ]
     },
     {
@@ -82,53 +220,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerkchen die hab vnd guet so auf dem",
-      "sflos Gerenfels aus dem gescheft meins g(nädigen) h(errn)",
-      "h(errn) von Borg vnd durch den geistlichen",
-      "herrn herren Peteren plangken dechant",
-      "zu Imeßingen sampt den thumprobst gehostaim",
-      "vnd beorren gewessen auf den hewtigen tag",
-      "dato der zwelff aigentlich besicht vnd beschawt",
-      "ist worden",
-      "It(e)m In der kamer bey der stubn ij pett",
-      "ain dekbett zwen hawptpolster vj",
-      "hawptkuffst ain pangkpolster ij pangk-",
-      "tkhůch vj lembern dekg alt vnd new",
-      "x schäffen dekg ij spanpett ain karioln",
-      "xxij leylach gute vnd pöse gezaychent",
-      "vnd drey twahlen ij alte segklach ain",
-      "padgwant ain rumbg hirßgwant rokk",
-      "lij tischtůcher ve handtůcher gute vnd",
-      "pöse vier ploff armst ain vadertail",
-      "ij handtspisly ain roßenhůt j türckyst [...]",
-      "vnd ain hawptsayl vnd gen steckx",
-      "It(e)m In meins g(nädigen) h(errn) Zimmer ist iiij pett iiij",
-      "hawptpolster viij hawptkuffst vnd ain",
-      "twahlen ist gschlagen ij spanpett zwo",
-      "kariolen ij tisch",
-      "It(e)m In der Richterz kamer ain pett y",
-      "leylach ain rumbg dekg ain polster",
-      "y kůssn ain dekbett ain altz",
-      "steentz segel ij spanpett j tisch",
-      "It(e)m In der harnasch kamer ist beschawt",
-      "worden vnd gefundn iij pett mit",
-      "pösen züechen drey por hawptpolster",
-      "viij hawptkufft gut v[nd ...] letgere xviij",
-      "schaffein dekg alt vnd new zwo guet",
-      "lamberin dekg ain wolfs dekg ain",
-      "gestikchs segklach iiij spanpett vnd",
-      "etlich altez harnasch",
-      "It(e)m In der neggstn kamer darnach sein",
-      "drey nittzere pett iiij por hawptpolstr",
-      "vnd ain por fattl ain kůysst vnd",
-      "vier alt rumbg dekg vnd drey",
-      "gantz zerissne segklach vnd vier panpett",
-      "It(e)m In der wachtarkamer j por pett j polstar",
-      "drey pöse kůssn ij wuchans leylach zwo",
-      "por dekg ain lödins dekl ain lederiner",
-      "polster vnd zwo gar alte dekg ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerkchen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "sflos Gerenfels aus dem gescheft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Borg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herrn herren Peteren plangken dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Imeßingen sampt den thumprobst gehostaim"
+      },
+      {
+       "id": null,
+       "text": "vnd beorren gewessen auf den hewtigen tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zwelff aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der stubn ij pett"
+      },
+      {
+       "id": null,
+       "text": "ain dekbett zwen hawptpolster vj"
+      },
+      {
+       "id": null,
+       "text": "hawptkuffst ain pangkpolster ij pangk-"
+      },
+      {
+       "id": null,
+       "text": "tkhůch vj lembern dekg alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffen dekg ij spanpett ain karioln"
+      },
+      {
+       "id": null,
+       "text": "xxij leylach gute vnd pöse gezaychent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey twahlen ij alte segklach ain"
+      },
+      {
+       "id": null,
+       "text": "padgwant ain rumbg hirßgwant rokk"
+      },
+      {
+       "id": null,
+       "text": "lij tischtůcher ve handtůcher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier ploff armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspisly ain roßenhůt j türckyst [...]"
+      },
+      {
+       "id": null,
+       "text": "vnd ain hawptsayl vnd gen steckx"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In meins g(nädigen) h(errn) Zimmer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hawptpolster viij hawptkuffst vnd ain"
+      },
+      {
+       "id": null,
+       "text": "twahlen ist gschlagen ij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "kariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der Richterz kamer ain pett y"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rumbg dekg ain polster"
+      },
+      {
+       "id": null,
+       "text": "y kůssn ain dekbett ain altz"
+      },
+      {
+       "id": null,
+       "text": "steentz segel ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der harnasch kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefundn iij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen züechen drey por hawptpolster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkufft gut v[nd ...] letgere xviij"
+      },
+      {
+       "id": null,
+       "text": "schaffein dekg alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lamberin dekg ain wolfs dekg ain"
+      },
+      {
+       "id": null,
+       "text": "gestikchs segklach iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlich altez harnasch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der neggstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drey nittzere pett iiij por hawptpolstr"
+      },
+      {
+       "id": null,
+       "text": "vnd ain por fattl ain kůysst vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rumbg dekg vnd drey"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne segklach vnd vier panpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der wachtarkamer j por pett j polstar"
+      },
+      {
+       "id": null,
+       "text": "drey pöse kůssn ij wuchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por dekg ain lödins dekl ain lederiner"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte dekg ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -144,53 +423,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zcmerckhen die hab vnd guet so auf dem",
-      "sclos herrnfels aus dem gescheft meins g(nädigen) h(errn)",
-      "h(errn) von Burg vnd durch den geistlichen",
-      "herrn herrn petern plangkhen dechant",
-      "zu Inneckingen sambt den thumcast gelöstung",
-      "vnd berüren gewesen auf den hewtign tag",
-      "dato der zcödl aigentlich besicht vnd beschawt",
-      "ist worden",
-      "It(e)m In der kamer bey der stubn ij pett",
-      "ain dekkepett zwen hawbtpölster vj",
-      "hawptkchüfft ain pangkpölster y pangkch-",
-      "khüfft vij lembrein dekg alt vnd new",
-      "x schäffei dekg ij spanpett ain karioln",
-      "xxij leylacth guet vnd pözs gezaychent",
-      "vnd drey tewtzen ij alte segkhlach am",
-      "padpewte ain rauchs luchsspöls röckl",
-      "lij tischtüecher vc handtüecher guet vnd",
-      "pösz vier plöffe armst ain vadertail",
-      "ij handtspiegeltz am erfenbut j tüchtlt",
-      "vnd am hancksäxl vnd hen pölster",
-      "It(e)m In mein g(nädigen) h(errn) zimer ist iiij pett iiij",
-      "hauptpölster viij hauptkchüfft vnd ain",
-      "tewtzen ist vfslegin iij spanpett zwoo",
-      "kariolen ij tisch",
-      "It(e)m In der Riegters kamer ain pett y",
-      "leylacth ain rauche dekg ain pölster",
-      "y kchüff ain dekkpett ain alts f...",
-      "stewfs tigel iij spanpett j tisch",
-      "It(e)m In der harnasch kamer ist beschawt",
-      "worden vnd gefunde(n) iiij pett mit",
-      "pösen ziëchgn drey pösz hawbtpölster",
-      "viij hawptkchüft gut vi... lexgere xviij",
-      "schaffei dekch alt vnd new zwo guet",
-      "lambreim dekch ain wolfs dekch ain",
-      "gestikchts seigklacth iiij spanpett vnd",
-      "etl(i)ch altez harnasch",
-      "It(e)m In der naegstn kamer darnach sein",
-      "drew nüttzere pett iiij pösz hawbtpölster",
-      "vnd ain pösz petül ain kchüfft vnd",
-      "vier alt ranch dekch vnd drew",
-      "gantz zerissne seigklacth vnd vier panpett",
-      "It(e)m In der wachtarkamer j pösz pette j polstar",
-      "zwen pösz kchüff ij wurchans leylacth zwo",
-      "pösz dekch ain lödiner dekch ain lidriemer",
-      "pölster vnd zwo gar alte dekg ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zcmerckhen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "sclos herrnfels aus dem gescheft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herrn herrn petern plangkhen dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Inneckingen sambt den thumcast gelöstung"
+      },
+      {
+       "id": null,
+       "text": "vnd berüren gewesen auf den hewtign tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zcödl aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der stubn ij pett"
+      },
+      {
+       "id": null,
+       "text": "ain dekkepett zwen hawbtpölster vj"
+      },
+      {
+       "id": null,
+       "text": "hawptkchüfft ain pangkpölster y pangkch-"
+      },
+      {
+       "id": null,
+       "text": "khüfft vij lembrein dekg alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffei dekg ij spanpett ain karioln"
+      },
+      {
+       "id": null,
+       "text": "xxij leylacth guet vnd pözs gezaychent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey tewtzen ij alte segkhlach am"
+      },
+      {
+       "id": null,
+       "text": "padpewte ain rauchs luchsspöls röckl"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher guet vnd"
+      },
+      {
+       "id": null,
+       "text": "pösz vier plöffe armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspiegeltz am erfenbut j tüchtlt"
+      },
+      {
+       "id": null,
+       "text": "vnd am hancksäxl vnd hen pölster"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In mein g(nädigen) h(errn) zimer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hauptpölster viij hauptkchüfft vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tewtzen ist vfslegin iij spanpett zwoo"
+      },
+      {
+       "id": null,
+       "text": "kariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der Riegters kamer ain pett y"
+      },
+      {
+       "id": null,
+       "text": "leylacth ain rauche dekg ain pölster"
+      },
+      {
+       "id": null,
+       "text": "y kchüff ain dekkpett ain alts f..."
+      },
+      {
+       "id": null,
+       "text": "stewfs tigel iij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der harnasch kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefunde(n) iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen ziëchgn drey pösz hawbtpölster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkchüft gut vi... lexgere xviij"
+      },
+      {
+       "id": null,
+       "text": "schaffei dekch alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lambreim dekch ain wolfs dekch ain"
+      },
+      {
+       "id": null,
+       "text": "gestikchts seigklacth iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etl(i)ch altez harnasch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der naegstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drew nüttzere pett iiij pösz hawbtpölster"
+      },
+      {
+       "id": null,
+       "text": "vnd ain pösz petül ain kchüfft vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt ranch dekch vnd drew"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne seigklacth vnd vier panpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der wachtarkamer j pösz pette j polstar"
+      },
+      {
+       "id": null,
+       "text": "zwen pösz kchüff ij wurchans leylacth zwo"
+      },
+      {
+       "id": null,
+       "text": "pösz dekch ain lödiner dekch ain lidriemer"
+      },
+      {
+       "id": null,
+       "text": "pölster vnd zwo gar alte dekg ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -206,53 +626,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die hab vnd guet so auf dem",
-      "gslos Gerenfels aus dem gescheft meins g(nädigen) h(errn)",
-      "h(errn) von Burg vnd durch den geistlichen",
-      "herrn herren Peteren plangken dechant",
-      "zu Imstingen sambt den thumrast gelostain",
-      "vnd bewisen gewesen auf den hewigen tag",
-      "dato der zödl aigentlich besicht vnd beschawt",
-      "ist worden",
-      "It(e)m In der kam(er) bey der stubn ij pett",
-      "ain dechpett zwen haubtpolster vj",
-      "haupttůch(er) ain pangkpolster ij pangk-",
-      "thůch(e)r vij lembram dech(e)n alt vnd new",
-      "x schäffen dech(e)n ij spanpett ain barioln",
-      "xxij leylach gute vnd pöse gezäuchent",
-      "vnd drey turchten ij alte seÿtlach ain",
-      "padgwart ain rauhe kurznpatz rott",
-      "lij tischthůch(e)r vc handtůcher gute vnd",
-      "pöse vier plofft armst ain vadertail",
-      "ij handtspintly ain eschenbur j tůrchthůch",
-      "vnd ain haubffayl vnd zcũ sesster",
-      "It(e)m In meins g(nädigen) h(errn) Zimer ist iiij pett iiij",
-      "hauptpolster viij haupttůch(er) vnd ain",
-      "turtchen jf dslagn ij spanpett zwo",
-      "pariolen ij tisch",
-      "It(e)m In der hietzters kamer ain pett y",
-      "leylach ain rauhe dechg ain polster",
-      "ij thůch(e)r ain dechpett ain altz",
-      "steuchs tůgelt ij spanpett j tisch",
-      "It(e)m In der harnasch kamer ist beschawt",
-      "worden vnd gefundn iiij pett mit",
-      "pösen züechen drey poz haubtpolster",
-      "viij haupttůch gut v(nd) legere xviij",
-      "schafflein dechg alt vnd new zwo guet",
-      "lembram dechg ain wolfs dechg ain",
-      "gestickchs seÿtlach iiij spanpett vnd",
-      "etlīch altez harnasch",
-      "It(e)m In der naegstn kamer darnach sein",
-      "drew nittzir pett iiij poz haubtpolst(er)",
-      "vnd ain poz seytil ain thůch vnd",
-      "vier alt rauhe dechg vnd drew",
-      "gantz zerissne seÿtlach vnd vier paupett",
-      "It(e)m In der wartitzkamer j poz pett j polstar",
-      "zwen pöse thůch ij wurchans leylach zwo",
-      "poz dechg ain ledins dechl ain lidrinnes",
-      "polster vnd zwo gar alte dechg ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "gslos Gerenfels aus dem gescheft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herrn herren Peteren plangken dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Imstingen sambt den thumrast gelostain"
+      },
+      {
+       "id": null,
+       "text": "vnd bewisen gewesen auf den hewigen tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zödl aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kam(er) bey der stubn ij pett"
+      },
+      {
+       "id": null,
+       "text": "ain dechpett zwen haubtpolster vj"
+      },
+      {
+       "id": null,
+       "text": "haupttůch(er) ain pangkpolster ij pangk-"
+      },
+      {
+       "id": null,
+       "text": "thůch(e)r vij lembram dech(e)n alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffen dech(e)n ij spanpett ain barioln"
+      },
+      {
+       "id": null,
+       "text": "xxij leylach gute vnd pöse gezäuchent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey turchten ij alte seÿtlach ain"
+      },
+      {
+       "id": null,
+       "text": "padgwart ain rauhe kurznpatz rott"
+      },
+      {
+       "id": null,
+       "text": "lij tischthůch(e)r vc handtůcher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier plofft armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspintly ain eschenbur j tůrchthůch"
+      },
+      {
+       "id": null,
+       "text": "vnd ain haubffayl vnd zcũ sesster"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In meins g(nädigen) h(errn) Zimer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hauptpolster viij haupttůch(er) vnd ain"
+      },
+      {
+       "id": null,
+       "text": "turtchen jf dslagn ij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "pariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der hietzters kamer ain pett y"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauhe dechg ain polster"
+      },
+      {
+       "id": null,
+       "text": "ij thůch(e)r ain dechpett ain altz"
+      },
+      {
+       "id": null,
+       "text": "steuchs tůgelt ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der harnasch kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefundn iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen züechen drey poz haubtpolster"
+      },
+      {
+       "id": null,
+       "text": "viij haupttůch gut v(nd) legere xviij"
+      },
+      {
+       "id": null,
+       "text": "schafflein dechg alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lembram dechg ain wolfs dechg ain"
+      },
+      {
+       "id": null,
+       "text": "gestickchs seÿtlach iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlīch altez harnasch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der naegstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drew nittzir pett iiij poz haubtpolst(er)"
+      },
+      {
+       "id": null,
+       "text": "vnd ain poz seytil ain thůch vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauhe dechg vnd drew"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne seÿtlach vnd vier paupett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der wartitzkamer j poz pett j polstar"
+      },
+      {
+       "id": null,
+       "text": "zwen pöse thůch ij wurchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "poz dechg ain ledins dechl ain lidrinnes"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte dechg ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -268,53 +829,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die hab vnd guet so auf dem",
-      "sclos herrnfels aus dem geschefft meins g(nädigen) h(errn)",
-      "h(errn) von Burg vnd durch den geistlichen",
-      "herren herren Peteren plangken dechant",
-      "zu Imstingen sampt den thumratt gelaiting",
-      "vnd beordnt gewessen auf den hewting tag",
-      "dato der zödl aigentlich besicht vnd beschawt",
-      "ist worden",
-      "It(e)m In der kam(e)r bey der stubn ij pett",
-      "ain dekbpet zwen hawptpölster vj",
-      "hawptkhws(e)n ain pangkpolster ij pangkhe",
-      "khüsn vij leinlein degkh alt vnd new",
-      "x schlaffen dekg ij spanpert ain harioln",
-      "xxiiij leylach gute vnd pöse gezaychent",
-      "vnd drey truchen ij alte degglach am",
-      "padpente ain rauchs hirschkhälbs rökll",
-      "lij tischtüecher vc handtüecher gute vnd",
-      "pöse vier plofft armst am vadertail",
-      "ij handtspisell ain losenbut j türckhisch t[...]",
-      "vnd ain hawspfeill vnd xvij kolben",
-      "It(e)m In mein g(nädigen) h(errn) zimer ist iiij pett iiij",
-      "hawptpolster viij hawptkhüsn vnd ain",
-      "truchen ist vfsclagn iij spanpett zwo",
-      "hariolen ij tisch",
-      "It(e)m In der hiezters kamer ain pett y",
-      "leylach ain rauchs dekg ain polster",
-      "y khüsn ain dekbpett ain alts [...]",
-      "steuffts tüechell iij spanpett j tisch",
-      "It(e)m In der harnascht kamer ist beschawt",
-      "worden vnd gefundn iiij pett mit",
-      "pösen ziechn drey por hawptpolster",
-      "viij hawptkhust gut v(nd) leigere xviij",
-      "staffeln dekg alt vnd new zwo guet",
-      "leinlein dekg ain wolfs dekg ain",
-      "gestickchts degglach iij spanpett vnd",
-      "etl(e)ichs altes harnascht",
-      "It(e)m In der naegstn kamer darnach sein",
-      "drey nützers pett iiij por hawptpolster",
-      "vnd ain por fattil ain khüsn vnd",
-      "vier alt rauch dekg vnd drey",
-      "gantz zerissne degglach vnd vier panpett",
-      "It(e)m In der wachtarkamer j por pett j polstar",
-      "zway pöse küsn y rwchans leylach zwo",
-      "por dekg ain ledrins dekg ain lederiner",
-      "polster vnd zwo gar alte dekg ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "sclos herrnfels aus dem geschefft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herren herren Peteren plangken dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Imstingen sampt den thumratt gelaiting"
+      },
+      {
+       "id": null,
+       "text": "vnd beordnt gewessen auf den hewting tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zödl aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kam(e)r bey der stubn ij pett"
+      },
+      {
+       "id": null,
+       "text": "ain dekbpet zwen hawptpölster vj"
+      },
+      {
+       "id": null,
+       "text": "hawptkhws(e)n ain pangkpolster ij pangkhe"
+      },
+      {
+       "id": null,
+       "text": "khüsn vij leinlein degkh alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schlaffen dekg ij spanpert ain harioln"
+      },
+      {
+       "id": null,
+       "text": "xxiiij leylach gute vnd pöse gezaychent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey truchen ij alte degglach am"
+      },
+      {
+       "id": null,
+       "text": "padpente ain rauchs hirschkhälbs rökll"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier plofft armst am vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspisell ain losenbut j türckhisch t[...]"
+      },
+      {
+       "id": null,
+       "text": "vnd ain hawspfeill vnd xvij kolben"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In mein g(nädigen) h(errn) zimer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hawptpolster viij hawptkhüsn vnd ain"
+      },
+      {
+       "id": null,
+       "text": "truchen ist vfsclagn iij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "hariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der hiezters kamer ain pett y"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauchs dekg ain polster"
+      },
+      {
+       "id": null,
+       "text": "y khüsn ain dekbpett ain alts [...]"
+      },
+      {
+       "id": null,
+       "text": "steuffts tüechell iij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der harnascht kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefundn iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen ziechn drey por hawptpolster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkhust gut v(nd) leigere xviij"
+      },
+      {
+       "id": null,
+       "text": "staffeln dekg alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "leinlein dekg ain wolfs dekg ain"
+      },
+      {
+       "id": null,
+       "text": "gestickchts degglach iij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etl(e)ichs altes harnascht"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der naegstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drey nützers pett iiij por hawptpolster"
+      },
+      {
+       "id": null,
+       "text": "vnd ain por fattil ain khüsn vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauch dekg vnd drey"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne degglach vnd vier panpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der wachtarkamer j por pett j polstar"
+      },
+      {
+       "id": null,
+       "text": "zway pöse küsn y rwchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por dekg ain ledrins dekg ain lederiner"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte dekg ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -330,53 +1032,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die hab vnd gueter so auf dem",
-      "gschlos Erenfels aus dem gescheft meins g(nädigen) h(errn)",
-      "h(errn) von Burg vnd durch den geistlichen",
-      "herren herren Petern plangken dechant",
-      "zu Inniczingen vnd den thumcust gestaing",
-      "vnd beschain gewessen auf den hewting tag",
-      "dato der zwelff aigentlich besicht vnd beschawt",
-      "ist worden",
-      "It(e)m In der kamer bey der stubn ij pett",
-      "ain dechpett zwen haubtpolster vj",
-      "haubtkhüssen ain pangkpolster ij pangkh-",
-      "khüssen vj lembram dech(e)n alt vnd new",
-      "x schäffen dech(e)n ij spanpett ain barioln",
-      "xxiiij leylach gute vnd pöse gezäuchent",
-      "vnd drey tuechen ij alte dechleylach am",
-      "padpente ain rauchs hewffader köll",
-      "lij tischtüecher vc handtüecher gute vnd",
-      "pöse vier ploffe ärmst am vadertail",
-      "ij handtspigelt am eysenhur j türkhisch t[...]",
-      "vnd am harnischkarl vnd güt pettkest",
-      "It(e)m In mein g(nädigen) h(errn) zimmer ist iiij pett iiij",
-      "haubtpolster viij haubtkhüssn vnd ain",
-      "tuechen ist schlagen ij spanpett zwo",
-      "bariolen ij tisch",
-      "It(e)m In der Richters kamer ain pett ij",
-      "leylach ain rauche dech(e)n ain polster",
-      "j khüssen ain dechpett ain altz fe[...]",
-      "steenhsz tüechel ij spanpett j tisch",
-      "It(e)m In der harnasch kamer ist beschawt",
-      "worden vnd gefund(e)n iij pett mit",
-      "pösen züechen drey por haubtpolster",
-      "viij haubtkhüst gut vi [...] lechtere xviij",
-      "schäfflein dech(e)n alt vnd new zwo guet",
-      "lembrem dech(e)n ain wolfs dech(e)n ain",
-      "gestückelts dechleylach iiij spanpett vnd",
-      "etlich altez harnasch",
-      "It(e)m In der nechstn kamer darnach sein",
-      "drey mittlere pett iiij por haubtpolster",
-      "vnd ain por pettl ain khüssen vnd",
-      "vier alt rauch dech(e)n vnd drey",
-      "ganz zerissne dechleylach vnd vier panpett",
-      "It(e)m In der wachtarkamer j por pettl j polster",
-      "zwen pöse khüsen ij wuchans leylach zwo",
-      "por dech(e)n ain lëderms dechel ain lëdremter",
-      "polster vnd zwo gar alte dech(e)n ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die hab vnd gueter so auf dem"
+      },
+      {
+       "id": null,
+       "text": "gschlos Erenfels aus dem gescheft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herren herren Petern plangken dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Inniczingen vnd den thumcust gestaing"
+      },
+      {
+       "id": null,
+       "text": "vnd beschain gewessen auf den hewting tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zwelff aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der stubn ij pett"
+      },
+      {
+       "id": null,
+       "text": "ain dechpett zwen haubtpolster vj"
+      },
+      {
+       "id": null,
+       "text": "haubtkhüssen ain pangkpolster ij pangkh-"
+      },
+      {
+       "id": null,
+       "text": "khüssen vj lembram dech(e)n alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffen dech(e)n ij spanpett ain barioln"
+      },
+      {
+       "id": null,
+       "text": "xxiiij leylach gute vnd pöse gezäuchent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey tuechen ij alte dechleylach am"
+      },
+      {
+       "id": null,
+       "text": "padpente ain rauchs hewffader köll"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier ploffe ärmst am vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspigelt am eysenhur j türkhisch t[...]"
+      },
+      {
+       "id": null,
+       "text": "vnd am harnischkarl vnd güt pettkest"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In mein g(nädigen) h(errn) zimmer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "haubtpolster viij haubtkhüssn vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tuechen ist schlagen ij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "bariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der Richters kamer ain pett ij"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauche dech(e)n ain polster"
+      },
+      {
+       "id": null,
+       "text": "j khüssen ain dechpett ain altz fe[...]"
+      },
+      {
+       "id": null,
+       "text": "steenhsz tüechel ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der harnasch kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefund(e)n iij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen züechen drey por haubtpolster"
+      },
+      {
+       "id": null,
+       "text": "viij haubtkhüst gut vi [...] lechtere xviij"
+      },
+      {
+       "id": null,
+       "text": "schäfflein dech(e)n alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lembrem dech(e)n ain wolfs dech(e)n ain"
+      },
+      {
+       "id": null,
+       "text": "gestückelts dechleylach iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlich altez harnasch"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der nechstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drey mittlere pett iiij por haubtpolster"
+      },
+      {
+       "id": null,
+       "text": "vnd ain por pettl ain khüssen vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauch dech(e)n vnd drey"
+      },
+      {
+       "id": null,
+       "text": "ganz zerissne dechleylach vnd vier panpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der wachtarkamer j por pettl j polster"
+      },
+      {
+       "id": null,
+       "text": "zwen pöse khüsen ij wuchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por dech(e)n ain lëderms dechel ain lëdremter"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte dech(e)n ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -392,53 +1235,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Bemerckhen die hab vnd guet so auf dem",
-      "sclos Gerenfels aus dem geschefft meins g(nädigen) h(errn)",
-      "h(errn) von Burg vnd durch den geistlichen",
-      "herren herren Petern plangkhner techant",
-      "zu Innechingen sampt den thumcast(ner) gelofftayng",
-      "vnd theoriern gewesen auf den hewtign tag",
-      "dato der zwelff aigentlich besicht vnd beschawt",
-      "ist worden",
-      "Item In der kamer bey der stubn x pett",
-      "ain deckpett zwen hawptpölster vj",
-      "hawptküsst ain pangkhpölster ij pangkh",
-      "thüecher vij lembrein deckh alt vnd new",
-      "x schlaffen deckh ij spanpett ain karioln",
-      "xxiiij leylach guett vnd pöse gezaychent",
-      "vnd drey truchen ij alte deppich ain",
-      "padgwant ain rawhe hirschhärne röckh",
-      "lij tischtüecher vc handtüecher gute vnd",
-      "pöse vier ploffekrüst ain vadertail",
-      "ij handtspillg ain cosenbut j tüchtystl",
-      "vnd ain harnaschsayl vnd zwen polster",
-      "Item In mein g(nädigen) h(errn) zimmer ist iiij pett iiij",
-      "hawptpölster viij hawptkhüsst vnd ain",
-      "truchen ist vfslahen ij spanpett zwo",
-      "kariolen iij tisch",
-      "Item In der hietzters kamer ain pett ij",
-      "leylach ain rawhe deckh ain polster",
-      "ij khüsst ain deckhpett ain altz",
-      "steuchs röckhl ij spanpett j tisch",
-      "Item In der harnascht kamer ist beschawt",
-      "worden vnd gefund(e)n iiij pett mit",
-      "pösen züchen drey por hawptpölster",
-      "viij hawptkhust gut v[nd ...] ergere xviij",
-      "schlafflein deckh alt vnd new zwo guet",
-      "lembrein deckh ain wolfs deckh ain",
-      "gestickhts tüechleing iiij spanpett vnd",
-      "etlich altez harnascht",
-      "Item In der naechstn kamer darnach sein",
-      "drew mittlere pett iiij por hawptpölst(er)",
-      "vnd ain por föttil ain khüsst vnd",
-      "vier alt rawch deckh vnd drew",
-      "gantz zerissne debplych vnd vier spanpett",
-      "Item In der wachtarkamer j por pett j polstar",
-      "zway pöse küst(e)n ij werchans leylach zwo",
-      "por deckh ain leders deckh ain ledreiner",
-      "polster vnd zwo gar alte deckh ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Bemerckhen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "sclos Gerenfels aus dem geschefft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herren herren Petern plangkhner techant"
+      },
+      {
+       "id": null,
+       "text": "zu Innechingen sampt den thumcast(ner) gelofftayng"
+      },
+      {
+       "id": null,
+       "text": "vnd theoriern gewesen auf den hewtign tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zwelff aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der stubn x pett"
+      },
+      {
+       "id": null,
+       "text": "ain deckpett zwen hawptpölster vj"
+      },
+      {
+       "id": null,
+       "text": "hawptküsst ain pangkhpölster ij pangkh"
+      },
+      {
+       "id": null,
+       "text": "thüecher vij lembrein deckh alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schlaffen deckh ij spanpett ain karioln"
+      },
+      {
+       "id": null,
+       "text": "xxiiij leylach guett vnd pöse gezaychent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey truchen ij alte deppich ain"
+      },
+      {
+       "id": null,
+       "text": "padgwant ain rawhe hirschhärne röckh"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier ploffekrüst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspillg ain cosenbut j tüchtystl"
+      },
+      {
+       "id": null,
+       "text": "vnd ain harnaschsayl vnd zwen polster"
+      },
+      {
+       "id": null,
+       "text": "Item In mein g(nädigen) h(errn) zimmer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hawptpölster viij hawptkhüsst vnd ain"
+      },
+      {
+       "id": null,
+       "text": "truchen ist vfslahen ij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "kariolen iij tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der hietzters kamer ain pett ij"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rawhe deckh ain polster"
+      },
+      {
+       "id": null,
+       "text": "ij khüsst ain deckhpett ain altz"
+      },
+      {
+       "id": null,
+       "text": "steuchs röckhl ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der harnascht kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefund(e)n iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen züchen drey por hawptpölster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkhust gut v[nd ...] ergere xviij"
+      },
+      {
+       "id": null,
+       "text": "schlafflein deckh alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lembrein deckh ain wolfs deckh ain"
+      },
+      {
+       "id": null,
+       "text": "gestickhts tüechleing iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlich altez harnascht"
+      },
+      {
+       "id": null,
+       "text": "Item In der naechstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drew mittlere pett iiij por hawptpölst(er)"
+      },
+      {
+       "id": null,
+       "text": "vnd ain por föttil ain khüsst vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rawch deckh vnd drew"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne debplych vnd vier spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der wachtarkamer j por pett j polstar"
+      },
+      {
+       "id": null,
+       "text": "zway pöse küst(e)n ij werchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por deckh ain leders deckh ain ledreiner"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte deckh ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -454,53 +1438,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die hab vnd guet so auf dem",
-      "schlos Gerenfels aus dem gescheft meins g(nädigen) h(errn)",
-      "h(errn) von Görtz vnd durch den geistlichen",
-      "herrn herrn Petern planckhen dechant",
-      "zu Jnnichen sampt den thümcust gelobt ain",
-      "vnd beorbet gewesen auf den hewrigen tag",
-      "dato der zölf aigentlich besicht vnd beschawt",
-      "ist worden",
-      "Jtem Jn der kamer bey der stubn x pett",
-      "ain dechpett zwen hawptpölster vj",
-      "hawptkhüß ain pangkhpölster ij pangkh-",
-      "thüecher vij lembrein deckh alt vnd new",
-      "x schäffein deckh ij spanpett ain karioln",
-      "xxij leylach guett vnd pöse gezäuchent",
-      "vnd drey truchen ij alte dechleylach ain",
-      "padgwant ain rauchs hirtspölsterl rötl",
-      "lij tischtüecher vc handtüecher gute vnd",
-      "pöse vier pläffe armst ain vadertail",
-      "ij handtspigely ain scherbutz j tüchthütl",
-      "vnd ain harnaschpayl vnd zwen pölster",
-      "Jtem Jn mein g(nädigen) h(errn) zimmer ist iiij pett iiij",
-      "hawptpölster vij hawptkhüß vnd ain",
-      "truchen ist gschlagen iij spanpett zwo",
-      "kariolen ij tisch",
-      "Jtem Jn der Richter kamer ain pett ij",
-      "leylach ain rauche deckh ain polster",
-      "ij khüß ain dechpett ain altz",
-      "steuchs tüchl ij spanpett j tisch",
-      "Jtem Jn der harnasch kamer ist beschawt",
-      "worden vnd gefundn iiij pett mit",
-      "pösen ziechen drey par hawptpölster",
-      "viij hawptkhüß gut vnd ergere xviij",
-      "schäffein deckh alt vnd new zwo guet",
-      "lembrein deckh ain wolfs deckh ain",
-      "gestickhts tüchlein iiij spanpett vnd",
-      "etlich alter harnasch",
-      "Jtem Jn der nechstn kamer darnach sein",
-      "drew mittlere pett iiij par hawptpölster",
-      "vnd ain par pölstl ain khüßlein vnd",
-      "vier alt rauch deckh vnd drew",
-      "gantz zerissne dechleylach vnd vier spanpett",
-      "Jtem Jn der wachterkamer j par pett j polster",
-      "drew pöse khüßn ij werchine leylach zwo",
-      "par deckh ain lödins deckh ain lederiner",
-      "polster vnd zwo gar alte deckh ain panpett",
-      "Jnv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "schlos Gerenfels aus dem gescheft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Görtz vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herrn herrn Petern planckhen dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Jnnichen sampt den thümcust gelobt ain"
+      },
+      {
+       "id": null,
+       "text": "vnd beorbet gewesen auf den hewrigen tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zölf aigentlich besicht vnd beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "Jtem Jn der kamer bey der stubn x pett"
+      },
+      {
+       "id": null,
+       "text": "ain dechpett zwen hawptpölster vj"
+      },
+      {
+       "id": null,
+       "text": "hawptkhüß ain pangkhpölster ij pangkh-"
+      },
+      {
+       "id": null,
+       "text": "thüecher vij lembrein deckh alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffein deckh ij spanpett ain karioln"
+      },
+      {
+       "id": null,
+       "text": "xxij leylach guett vnd pöse gezäuchent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey truchen ij alte dechleylach ain"
+      },
+      {
+       "id": null,
+       "text": "padgwant ain rauchs hirtspölsterl rötl"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier pläffe armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspigely ain scherbutz j tüchthütl"
+      },
+      {
+       "id": null,
+       "text": "vnd ain harnaschpayl vnd zwen pölster"
+      },
+      {
+       "id": null,
+       "text": "Jtem Jn mein g(nädigen) h(errn) zimmer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hawptpölster vij hawptkhüß vnd ain"
+      },
+      {
+       "id": null,
+       "text": "truchen ist gschlagen iij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "kariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "Jtem Jn der Richter kamer ain pett ij"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauche deckh ain polster"
+      },
+      {
+       "id": null,
+       "text": "ij khüß ain dechpett ain altz"
+      },
+      {
+       "id": null,
+       "text": "steuchs tüchl ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "Jtem Jn der harnasch kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefundn iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen ziechen drey par hawptpölster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkhüß gut vnd ergere xviij"
+      },
+      {
+       "id": null,
+       "text": "schäffein deckh alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lembrein deckh ain wolfs deckh ain"
+      },
+      {
+       "id": null,
+       "text": "gestickhts tüchlein iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlich alter harnasch"
+      },
+      {
+       "id": null,
+       "text": "Jtem Jn der nechstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drew mittlere pett iiij par hawptpölster"
+      },
+      {
+       "id": null,
+       "text": "vnd ain par pölstl ain khüßlein vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauch deckh vnd drew"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne dechleylach vnd vier spanpett"
+      },
+      {
+       "id": null,
+       "text": "Jtem Jn der wachterkamer j par pett j polster"
+      },
+      {
+       "id": null,
+       "text": "drew pöse khüßn ij werchine leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "par deckh ain lödins deckh ain lederiner"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte deckh ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Jnv. A 201/1"
+      }
      ]
     },
     {
@@ -516,53 +1641,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die hab und güet so auf dem",
-      "sclos Gerenfels aus dem gescheft meins gn(edigen)",
-      "h(errn) von Burg und durch den geistlichen",
-      "herren herren Petern planckhen dechant",
-      "zu Impstingen samp den thumcant phlaistain",
-      "und Berrien gewesen auf den hewtigen tag",
-      "dato der zödl aigentlich besicht und beschawt",
-      "ist worden",
-      "Item In der kamer bey der stubn j pett",
-      "ain dekchpett zwen hawptpölster vj",
-      "hawptkchüfft ain pangkchpolster ij pangkhe",
-      "thüchlr vj lembrein dekkhe alt und new",
-      "x schäffein dekch ij spanpett ain karioln",
-      "xxiiij leylach guett und pöss gezaychent",
-      "und drey trukhen ij alta degkhlakh ain",
-      "padgwant ain rauchs hirschfellins röckl",
-      "lij tischtüecher vc handtüecher guett und",
-      "pöss vier pheffl armst ain vadertail",
-      "ij handtspiegell ain eschentrüch j tüchtlthüetl",
-      "und ain hawptpörl und zwen pölster",
-      "Item In mein gn(edigen) h(errn) Zimer ist iiij pett iiij",
-      "hawptpölster viij hawptkhüst und ain",
-      "trutchen ist dslagin iij spanpett zwo",
-      "kariolen ij tischt",
-      "Item In der hiegters kamer ain pett y",
-      "leylach ain rauche dekch ain pölster",
-      "y kchüffs ain dekchpett ain altz fe-",
-      "stewchs rögckl ij spanpett j tisch",
-      "Item In der harnascht kamer ist beschawt",
-      "worden und gefundn iij pett mit",
-      "pösen ziechen drey por hawptpölster",
-      "viij hawptkchüst gut v[nd ...] ergere xviij",
-      "schäffein dekch alt und new zwo guet",
-      "lambreyn dekch ain wolfs dekch ain",
-      "gestübelts deggkhlach iij spanpett und",
-      "etlich alter harnasch",
-      "Item In der naegstn kamer darnach sein",
-      "drew unnutze pett iiij por hawptpölster",
-      "und ain por föttel ain khüfst und",
-      "vier alt rauch dekch und drew",
-      "gantz zerissne deggkhlakh und vier panpett",
-      "Item In der wachtarkamer j por pett j polster",
-      "drew pöss khüfftn ij wurchand leylach zwo",
-      "por dekch ain ledins dekchl ain lederiner",
-      "pölster und zwo gar alte dekch ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die hab und güet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "sclos Gerenfels aus dem gescheft meins gn(edigen)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg und durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herren herren Petern planckhen dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Impstingen samp den thumcant phlaistain"
+      },
+      {
+       "id": null,
+       "text": "und Berrien gewesen auf den hewtigen tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zödl aigentlich besicht und beschawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der stubn j pett"
+      },
+      {
+       "id": null,
+       "text": "ain dekchpett zwen hawptpölster vj"
+      },
+      {
+       "id": null,
+       "text": "hawptkchüfft ain pangkchpolster ij pangkhe"
+      },
+      {
+       "id": null,
+       "text": "thüchlr vj lembrein dekkhe alt und new"
+      },
+      {
+       "id": null,
+       "text": "x schäffein dekch ij spanpett ain karioln"
+      },
+      {
+       "id": null,
+       "text": "xxiiij leylach guett und pöss gezaychent"
+      },
+      {
+       "id": null,
+       "text": "und drey trukhen ij alta degkhlakh ain"
+      },
+      {
+       "id": null,
+       "text": "padgwant ain rauchs hirschfellins röckl"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher guett und"
+      },
+      {
+       "id": null,
+       "text": "pöss vier pheffl armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspiegell ain eschentrüch j tüchtlthüetl"
+      },
+      {
+       "id": null,
+       "text": "und ain hawptpörl und zwen pölster"
+      },
+      {
+       "id": null,
+       "text": "Item In mein gn(edigen) h(errn) Zimer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hawptpölster viij hawptkhüst und ain"
+      },
+      {
+       "id": null,
+       "text": "trutchen ist dslagin iij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "kariolen ij tischt"
+      },
+      {
+       "id": null,
+       "text": "Item In der hiegters kamer ain pett y"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauche dekch ain pölster"
+      },
+      {
+       "id": null,
+       "text": "y kchüffs ain dekchpett ain altz fe-"
+      },
+      {
+       "id": null,
+       "text": "stewchs rögckl ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der harnascht kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden und gefundn iij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen ziechen drey por hawptpölster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkchüst gut v[nd ...] ergere xviij"
+      },
+      {
+       "id": null,
+       "text": "schäffein dekch alt und new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lambreyn dekch ain wolfs dekch ain"
+      },
+      {
+       "id": null,
+       "text": "gestübelts deggkhlach iij spanpett und"
+      },
+      {
+       "id": null,
+       "text": "etlich alter harnasch"
+      },
+      {
+       "id": null,
+       "text": "Item In der naegstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drew unnutze pett iiij por hawptpölster"
+      },
+      {
+       "id": null,
+       "text": "und ain por föttel ain khüfst und"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauch dekch und drew"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne deggkhlakh und vier panpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der wachtarkamer j por pett j polster"
+      },
+      {
+       "id": null,
+       "text": "drew pöss khüfftn ij wurchand leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por dekch ain ledins dekchl ain lederiner"
+      },
+      {
+       "id": null,
+       "text": "pölster und zwo gar alte dekch ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -578,53 +1844,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die hab vnd guet so auf dem",
-      "sflos herenfeld aus dem gescheft meins g(nädigen) h(errn)",
-      "h(errn) von burg vnd durch den geistlichen",
-      "herrn herrn petern plangken dechant",
-      "zu Inniczlingen samp den thumrart geliftain",
-      "vnd beorien gewessen auf den hewtign tag",
-      "daro der zödl aigentlich besicht vnd besthawt",
-      "ist worden",
-      "Item In der kamer bey der stubn vo pett",
-      "ain dekbett zwen hawptpölster vj",
-      "hauptküss ain pangkpolster ij pangkh",
-      "tüecher vij lembrein deckh alt vnd new",
-      "x schäffein dekch ij spanpet ain barioln",
-      "xxij leylach gutt vnd pöse gezaychent",
-      "vnd drey truckhen ij alte deppich ain",
-      "padgwant ain rauchs hirczfelds röckl",
-      "lij tischtüecher vc handtüecher gute vnd",
-      "pöse vier plöffe armst ain vadertail",
-      "ij handtspigly ain losenbut j tüchttigst[...]",
-      "vnd ain haubtseyl vnd xij kölber",
-      "Item In mein gl h zimer ist iiij pett iiij",
-      "hauptpölster viij hauptküss vnd ain",
-      "truchen ist sflagen ij spanpett zwo",
-      "pariolen ij tisch",
-      "Item In der Richters kamer ain pett ij",
-      "leylach ain rauchs dekch ain polster",
-      "ij khüss ain dekchpet ain alts [...]",
-      "strewfs rüget ij spanpert j tisch",
-      "Item In der harnasch kamer ist beschawt",
-      "worden vnd gefundn iiij pett mit",
-      "pösen züechen drey por hauptpolster",
-      "viij hauptkuss gut v[...] ergere xviij",
-      "schäffein dekch alt vnd new zwo guet",
-      "lambreim dekch ain wolfs dekch ain",
-      "gestikchts tüechlein iiij spanpett vnd",
-      "etlich alter harnasch",
-      "Item In der neegstn kamer darnach sein",
-      "drew nittere pett iiij por hauptpolster",
-      "vnd ain por pettl an küss vnd",
-      "vier alt rauch dekch vnd drew",
-      "gantz zerissne dekchlein vnd vier panpett",
-      "Item In der wachtarkamer j por pett j polstar",
-      "drew pöse küssn ij wurchans leylach zwo",
-      "por dekch ain ledins dekch ain lederiner",
-      "polster vnd zwo gar alte dekch ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die hab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "sflos herenfeld aus dem gescheft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herrn herrn petern plangken dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Inniczlingen samp den thumrart geliftain"
+      },
+      {
+       "id": null,
+       "text": "vnd beorien gewessen auf den hewtign tag"
+      },
+      {
+       "id": null,
+       "text": "daro der zödl aigentlich besicht vnd besthawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der stubn vo pett"
+      },
+      {
+       "id": null,
+       "text": "ain dekbett zwen hawptpölster vj"
+      },
+      {
+       "id": null,
+       "text": "hauptküss ain pangkpolster ij pangkh"
+      },
+      {
+       "id": null,
+       "text": "tüecher vij lembrein deckh alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffein dekch ij spanpet ain barioln"
+      },
+      {
+       "id": null,
+       "text": "xxij leylach gutt vnd pöse gezaychent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey truckhen ij alte deppich ain"
+      },
+      {
+       "id": null,
+       "text": "padgwant ain rauchs hirczfelds röckl"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier plöffe armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspigly ain losenbut j tüchttigst[...]"
+      },
+      {
+       "id": null,
+       "text": "vnd ain haubtseyl vnd xij kölber"
+      },
+      {
+       "id": null,
+       "text": "Item In mein gl h zimer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hauptpölster viij hauptküss vnd ain"
+      },
+      {
+       "id": null,
+       "text": "truchen ist sflagen ij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "pariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der Richters kamer ain pett ij"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauchs dekch ain polster"
+      },
+      {
+       "id": null,
+       "text": "ij khüss ain dekchpet ain alts [...]"
+      },
+      {
+       "id": null,
+       "text": "strewfs rüget ij spanpert j tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der harnasch kamer ist beschawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefundn iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen züechen drey por hauptpolster"
+      },
+      {
+       "id": null,
+       "text": "viij hauptkuss gut v[...] ergere xviij"
+      },
+      {
+       "id": null,
+       "text": "schäffein dekch alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lambreim dekch ain wolfs dekch ain"
+      },
+      {
+       "id": null,
+       "text": "gestikchts tüechlein iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlich alter harnasch"
+      },
+      {
+       "id": null,
+       "text": "Item In der neegstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drew nittere pett iiij por hauptpolster"
+      },
+      {
+       "id": null,
+       "text": "vnd ain por pettl an küss vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauch dekch vnd drew"
+      },
+      {
+       "id": null,
+       "text": "gantz zerissne dekchlein vnd vier panpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der wachtarkamer j por pett j polstar"
+      },
+      {
+       "id": null,
+       "text": "drew pöse küssn ij wurchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por dekch ain ledins dekch ain lederiner"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte dekch ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     },
     {
@@ -640,53 +2047,194 @@
       false
      ],
      "lines": [
-      "1440",
-      "Zemerckhen die gab vnd guet so auf dem",
-      "schlos Gerenfels aus dem geschefft meins g(nädigen) h(errn)",
-      "h(errn) von Burg vnd durch den geistlichen",
-      "herren herren Petern plangkhlen dechant",
-      "zu Inniczingn sambt den thumcastner gelaitung",
-      "vnd besichtigten gewessen auf den hewtingn tag",
-      "dato der zwelff aigentlich besicht vnd besthawt",
-      "ist worden",
-      "Item In der kamer bey der stubn I pett",
-      "ain dechpett zwen hawptpölster vi",
-      "hawptküsst ain pangkpolster ij pangkh-",
-      "tüicher vy lembrein deycht alt vnd new",
-      "x schäffein dekch ij spanpett ain karioln",
-      "xxiiij leylach gutt vnd pöse gezäuchent",
-      "vnd drey truchen ij alte teppich ain",
-      "padgwant ain rauchs hirschhaars röckl",
-      "lij tischtüecher vc handtüecher gute vnd",
-      "pöse vier plofft armst ain vadertail",
-      "ij handtspisly ain eisenhut j türchlhwt",
-      "vnd ain harnischsail vnd zen polster",
-      "Item In meins g(nädigen) h(errn) Zimer ist iiij pett iiij",
-      "hawptpölster viij hawptküsst vnd ain",
-      "truchen ist vfsclagn ij spanpett zwo",
-      "kariolen ij tisch",
-      "Item In der Richters kamer ain pett ij",
-      "leylach ain rauchs dekch ain polster",
-      "ij küistn ain dechpett ain alts ge-",
-      "strewfts röckl ij spanpett j tisch",
-      "Item In der harnascht kamer ist besthawt",
-      "worden vnd gefundn iiij pett mit",
-      "pösen ziechen drey por hawptpolster",
-      "viij hawptkust gut vnd ärgere xviij",
-      "schäffein dekch alt vnd new zwo guet",
-      "lembrein dekch ain wolfs dekch ain",
-      "gestühelts säcklach iiij spanpett vnd",
-      "etlich altez harnascht",
-      "Item In der nechstn kamer darnach sein",
-      "drey nittzere pett iiij por hawptpolster",
-      "vnd ein por foetle ain küist vnd",
-      "vier alt rauch dekch vnd drey",
-      "gantz zerrissne dechlech vnd vier panpett",
-      "Item In der wachtarkamer j por pette j polstar",
-      "zway pöse küstn ij wurchans leylach zwo",
-      "por dekg ain ledrins dekgl ain lederiner",
-      "polster vnd zwo gar alte dekg ain panpett",
-      "Inv. A 201/1"
+      {
+       "id": null,
+       "text": "1440"
+      },
+      {
+       "id": null,
+       "text": "Zemerckhen die gab vnd guet so auf dem"
+      },
+      {
+       "id": null,
+       "text": "schlos Gerenfels aus dem geschefft meins g(nädigen) h(errn)"
+      },
+      {
+       "id": null,
+       "text": "h(errn) von Burg vnd durch den geistlichen"
+      },
+      {
+       "id": null,
+       "text": "herren herren Petern plangkhlen dechant"
+      },
+      {
+       "id": null,
+       "text": "zu Inniczingn sambt den thumcastner gelaitung"
+      },
+      {
+       "id": null,
+       "text": "vnd besichtigten gewessen auf den hewtingn tag"
+      },
+      {
+       "id": null,
+       "text": "dato der zwelff aigentlich besicht vnd besthawt"
+      },
+      {
+       "id": null,
+       "text": "ist worden"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der stubn I pett"
+      },
+      {
+       "id": null,
+       "text": "ain dechpett zwen hawptpölster vi"
+      },
+      {
+       "id": null,
+       "text": "hawptküsst ain pangkpolster ij pangkh-"
+      },
+      {
+       "id": null,
+       "text": "tüicher vy lembrein deycht alt vnd new"
+      },
+      {
+       "id": null,
+       "text": "x schäffein dekch ij spanpett ain karioln"
+      },
+      {
+       "id": null,
+       "text": "xxiiij leylach gutt vnd pöse gezäuchent"
+      },
+      {
+       "id": null,
+       "text": "vnd drey truchen ij alte teppich ain"
+      },
+      {
+       "id": null,
+       "text": "padgwant ain rauchs hirschhaars röckl"
+      },
+      {
+       "id": null,
+       "text": "lij tischtüecher vc handtüecher gute vnd"
+      },
+      {
+       "id": null,
+       "text": "pöse vier plofft armst ain vadertail"
+      },
+      {
+       "id": null,
+       "text": "ij handtspisly ain eisenhut j türchlhwt"
+      },
+      {
+       "id": null,
+       "text": "vnd ain harnischsail vnd zen polster"
+      },
+      {
+       "id": null,
+       "text": "Item In meins g(nädigen) h(errn) Zimer ist iiij pett iiij"
+      },
+      {
+       "id": null,
+       "text": "hawptpölster viij hawptküsst vnd ain"
+      },
+      {
+       "id": null,
+       "text": "truchen ist vfsclagn ij spanpett zwo"
+      },
+      {
+       "id": null,
+       "text": "kariolen ij tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der Richters kamer ain pett ij"
+      },
+      {
+       "id": null,
+       "text": "leylach ain rauchs dekch ain polster"
+      },
+      {
+       "id": null,
+       "text": "ij küistn ain dechpett ain alts ge-"
+      },
+      {
+       "id": null,
+       "text": "strewfts röckl ij spanpett j tisch"
+      },
+      {
+       "id": null,
+       "text": "Item In der harnascht kamer ist besthawt"
+      },
+      {
+       "id": null,
+       "text": "worden vnd gefundn iiij pett mit"
+      },
+      {
+       "id": null,
+       "text": "pösen ziechen drey por hawptpolster"
+      },
+      {
+       "id": null,
+       "text": "viij hawptkust gut vnd ärgere xviij"
+      },
+      {
+       "id": null,
+       "text": "schäffein dekch alt vnd new zwo guet"
+      },
+      {
+       "id": null,
+       "text": "lembrein dekch ain wolfs dekch ain"
+      },
+      {
+       "id": null,
+       "text": "gestühelts säcklach iiij spanpett vnd"
+      },
+      {
+       "id": null,
+       "text": "etlich altez harnascht"
+      },
+      {
+       "id": null,
+       "text": "Item In der nechstn kamer darnach sein"
+      },
+      {
+       "id": null,
+       "text": "drey nittzere pett iiij por hawptpolster"
+      },
+      {
+       "id": null,
+       "text": "vnd ein por foetle ain küist vnd"
+      },
+      {
+       "id": null,
+       "text": "vier alt rauch dekch vnd drey"
+      },
+      {
+       "id": null,
+       "text": "gantz zerrissne dechlech vnd vier panpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der wachtarkamer j por pette j polstar"
+      },
+      {
+       "id": null,
+       "text": "zway pöse küstn ij wurchans leylach zwo"
+      },
+      {
+       "id": null,
+       "text": "por dekg ain ledrins dekgl ain lederiner"
+      },
+      {
+       "id": null,
+       "text": "polster vnd zwo gar alte dekg ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 201/1"
+      }
      ]
     }
    ]
@@ -711,46 +2259,166 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item in dez partners kamer ist ain pëtt, IIII",
-      "rauch dekh die alt sein, II wirchane leilach,",
-      "I polster, I spanpett.",
-      "Item in der kamer bey der ander ladung sein vier",
-      "pëtt, zwen polster, zwai chüss, zwai pöze",
-      "leilach, sechs schaffein dekh alt und new, ain",
-      "gambseine dekh, drew spanpett, zwo truchen",
-      "mit geschisten pheylen.",
-      "Item im stublein da bey sein zwai pett, zwai",
-      "poze leilach, ain polster, ain chüss, drey",
-      "schäffein dekh, ain gambss dekch, ain spanpett.",
-      "Item in dem oberen ärgker ist zwai pëtt, zwai",
-      "leilach, ain polster, ain chũß, drei schaffein",
-      "dekch, zwo lembrein gut dekch.",
-      "Item in der dirnn kamer ist zwai ain pëttel, ain polster,",
-      "zwai wirchene leilach, ain pöser polster",
-      "anein ziech, mer ain rauche dekch, zwai",
-      "pöse degkhel gestreift.",
-      "Item darnach in der nachsten kamer und",
-      "sunst allenthalben sein XVI kessel gross",
-      "und klain, guet und pöz und ain klain",
-      "kessel zu dem öl. Mer IIII gar pöze kessel",
-      "zwel erden hafein gross und klain, ain",
-      "gueter laüetschen da man kertzen in macht,",
-      "III mörser, zwen stössel, mer XXII mittere",
-      "und klaine zinenschüssel und ain zinphan,",
-      "vier pöze messene pekh und ain messene",
-      "giess kandel und zwai kupfferene pekh.",
-      "Mer XXXI pott schussel gros und klain.",
-      "Mer XLVIIIl hulczene täler und ain",
-      "tisch im fleisch gadem und vier swein",
-      "pachen loden V ellen und ain virtail.",
-      "Mer im fleischgadem und dirnn kamer",
-      "IIII truhen und grändt.",
-      "Item in der kuchel III prantrött, X phann,",
-      "III pheffer phan, III hälen, zwen phankn¬",
-      "echt, III pratspiss und ain hainczt, ain",
-      "eysenzang, ain ribeysen, funf milch",
-      "schüssel, zwai stötzel, ain wasser gatzen."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item in dez partners kamer ist ain pëtt, IIII"
+      },
+      {
+       "id": "r2l2",
+       "text": "rauch dekh die alt sein, II wirchane leilach,"
+      },
+      {
+       "id": "r2l3",
+       "text": "I polster, I spanpett."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item in der kamer bey der ander ladung sein vier"
+      },
+      {
+       "id": "r2l5",
+       "text": "pëtt, zwen polster, zwai chüss, zwai pöze"
+      },
+      {
+       "id": "r2l6",
+       "text": "leilach, sechs schaffein dekh alt und new, ain"
+      },
+      {
+       "id": "r2l7",
+       "text": "gambseine dekh, drew spanpett, zwo truchen"
+      },
+      {
+       "id": "r2l8",
+       "text": "mit geschisten pheylen."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item im stublein da bey sein zwai pett, zwai"
+      },
+      {
+       "id": "r2l10",
+       "text": "poze leilach, ain polster, ain chüss, drey"
+      },
+      {
+       "id": "r2l11",
+       "text": "schäffein dekh, ain gambss dekch, ain spanpett."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item in dem oberen ärgker ist zwai pëtt, zwai"
+      },
+      {
+       "id": "r2l13",
+       "text": "leilach, ain polster, ain chũß, drei schaffein"
+      },
+      {
+       "id": "r2l14",
+       "text": "dekch, zwo lembrein gut dekch."
+      },
+      {
+       "id": "r2l15",
+       "text": "Item in der dirnn kamer ist zwai ain pëttel, ain polster,"
+      },
+      {
+       "id": "r2l16",
+       "text": "zwai wirchene leilach, ain pöser polster"
+      },
+      {
+       "id": "r2l17",
+       "text": "anein ziech, mer ain rauche dekch, zwai"
+      },
+      {
+       "id": "r2l18",
+       "text": "pöse degkhel gestreift."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item darnach in der nachsten kamer und"
+      },
+      {
+       "id": "r2l20",
+       "text": "sunst allenthalben sein XVI kessel gross"
+      },
+      {
+       "id": "r2l21",
+       "text": "und klain, guet und pöz und ain klain"
+      },
+      {
+       "id": "r2l22",
+       "text": "kessel zu dem öl. Mer IIII gar pöze kessel"
+      },
+      {
+       "id": "r2l23",
+       "text": "zwel erden hafein gross und klain, ain"
+      },
+      {
+       "id": "r2l24",
+       "text": "gueter laüetschen da man kertzen in macht,"
+      },
+      {
+       "id": "r2l25",
+       "text": "III mörser, zwen stössel, mer XXII mittere"
+      },
+      {
+       "id": "r2l26",
+       "text": "und klaine zinenschüssel und ain zinphan,"
+      },
+      {
+       "id": "r2l27",
+       "text": "vier pöze messene pekh und ain messene"
+      },
+      {
+       "id": "r2l28",
+       "text": "giess kandel und zwai kupfferene pekh."
+      },
+      {
+       "id": "r2l29",
+       "text": "Mer XXXI pott schussel gros und klain."
+      },
+      {
+       "id": "r2l30",
+       "text": "Mer XLVIIIl hulczene täler und ain"
+      },
+      {
+       "id": "r2l31",
+       "text": "tisch im fleisch gadem und vier swein"
+      },
+      {
+       "id": "r2l32",
+       "text": "pachen loden V ellen und ain virtail."
+      },
+      {
+       "id": "r2l33",
+       "text": "Mer im fleischgadem und dirnn kamer"
+      },
+      {
+       "id": "r2l34",
+       "text": "IIII truhen und grändt."
+      },
+      {
+       "id": "r2l35",
+       "text": "Item in der kuchel III prantrött, X phann,"
+      },
+      {
+       "id": "r2l36",
+       "text": "III pheffer phan, III hälen, zwen phankn¬"
+      },
+      {
+       "id": "r2l37",
+       "text": "echt, III pratspiss und ain hainczt, ain"
+      },
+      {
+       "id": "r2l38",
+       "text": "eysenzang, ain ribeysen, funf milch"
+      },
+      {
+       "id": "r2l39",
+       "text": "schüssel, zwai stötzel, ain wasser gatzen."
+      }
      ]
     },
     {
@@ -766,45 +2434,162 @@
       false
      ],
      "lines": [
-      "Jt(e)m Jn der partmoter kamer ist ain pëtt .iiij.",
-      "rauch dech die alt sein ij renchene leilach",
-      "j polster j panpett",
-      "Jt(e)m Jn der kamer bey der and ladung sein vier",
-      "pëtt zwen polster zway chüjsij zway poze",
-      "leilach sechß schaffain dech alt vnd new ain",
-      "gambseine dech diere panpett zwo renchen",
-      "mit gestriczlen pferlin",
-      "Jt(e)m Jn Stublein dabey sein zway pëtt zway",
-      "poze leilach ain polster ain chüsij drey",
-      "schäffain dech ain gambß dech ain panpett",
-      "Jt(e)m Jn dem obern erckler ist zway pëtt zway",
-      "leilach ain polster ain chüsj drey schaffain",
-      "dech zwo lambrein gut dech",
-      "Jt(e)m Jn der dren kamer ist {ain} ~~zway~~ pëtt ain polst(er)",
-      "zway renchene leilach ain pöser polster",
-      "anen zuech mer ain rauche dech zway",
-      "pösë dechel gestreift",
-      "Jt(e)m darnach Jn der naechstn kamer vnd",
-      "sunst allenthalbn sein xxj kessl grosn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesslezn zu dem öl mer iiij par pöze kessl",
-      "zwel erden hafain grosß vnd klain ain",
-      "guete lanctsten da man stewrn Jn machet",
-      "iij mörser zwen stössl mer xxij müttern",
-      "vnd klaine zinen schissl vnd ain zimplau",
-      "vier pöze messene pech vnd ain messens",
-      "giesß kandl vnd zway kupferene pech",
-      "mer xxxij par stäuff gros vnd klain",
-      "mer xxxvij hölzene täler vnd ain",
-      "tisch Jn fleysch gadm vnd vier stvrn",
-      "partn laden v elln vnd ain vnetail",
-      "mer Jm fleyschgadm vnd dren kamer",
-      "iij truchß vnd geandt",
-      "Jt(e)m Jn der kuchl iij prantrüst x pfann",
-      "iij pfaffn pfann iij häln zwen pfann",
-      "cest iij pratspiß vnd ain gaust ain",
-      "eyßrzang ain ribeysß funf milch",
-      "seupff zway stözt ain mass datzů"
+      {
+       "id": null,
+       "text": "Jt(e)m Jn der partmoter kamer ist ain pëtt .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch dech die alt sein ij renchene leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j panpett"
+      },
+      {
+       "id": null,
+       "text": "Jt(e)m Jn der kamer bey der and ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pëtt zwen polster zway chüjsij zway poze"
+      },
+      {
+       "id": null,
+       "text": "leilach sechß schaffain dech alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambseine dech diere panpett zwo renchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestriczlen pferlin"
+      },
+      {
+       "id": null,
+       "text": "Jt(e)m Jn Stublein dabey sein zway pëtt zway"
+      },
+      {
+       "id": null,
+       "text": "poze leilach ain polster ain chüsij drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain dech ain gambß dech ain panpett"
+      },
+      {
+       "id": null,
+       "text": "Jt(e)m Jn dem obern erckler ist zway pëtt zway"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chüsj drey schaffain"
+      },
+      {
+       "id": null,
+       "text": "dech zwo lambrein gut dech"
+      },
+      {
+       "id": null,
+       "text": "Jt(e)m Jn der dren kamer ist {ain} ~~zway~~ pëtt ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zway renchene leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anen zuech mer ain rauche dech zway"
+      },
+      {
+       "id": null,
+       "text": "pösë dechel gestreift"
+      },
+      {
+       "id": null,
+       "text": "Jt(e)m darnach Jn der naechstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xxj kessl grosn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesslezn zu dem öl mer iiij par pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwel erden hafain grosß vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lanctsten da man stewrn Jn machet"
+      },
+      {
+       "id": null,
+       "text": "iij mörser zwen stössl mer xxij müttern"
+      },
+      {
+       "id": null,
+       "text": "vnd klaine zinen schissl vnd ain zimplau"
+      },
+      {
+       "id": null,
+       "text": "vier pöze messene pech vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "giesß kandl vnd zway kupferene pech"
+      },
+      {
+       "id": null,
+       "text": "mer xxxij par stäuff gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer xxxvij hölzene täler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Jn fleysch gadm vnd vier stvrn"
+      },
+      {
+       "id": null,
+       "text": "partn laden v elln vnd ain vnetail"
+      },
+      {
+       "id": null,
+       "text": "mer Jm fleyschgadm vnd dren kamer"
+      },
+      {
+       "id": null,
+       "text": "iij truchß vnd geandt"
+      },
+      {
+       "id": null,
+       "text": "Jt(e)m Jn der kuchl iij prantrüst x pfann"
+      },
+      {
+       "id": null,
+       "text": "iij pfaffn pfann iij häln zwen pfann"
+      },
+      {
+       "id": null,
+       "text": "cest iij pratspiß vnd ain gaust ain"
+      },
+      {
+       "id": null,
+       "text": "eyßrzang ain ribeysß funf milch"
+      },
+      {
+       "id": null,
+       "text": "seupff zway stözt ain mass datzů"
+      }
      ]
     },
     {
@@ -820,45 +2605,162 @@
       false
      ],
      "lines": [
-      "It(e)m In der partnorei kamer ist ain pëtt iiij",
-      "rauch(e) dekch die alt sein ij renczhens leilach",
-      "j polster j spanpett",
-      "It(e)m In der kamer bey der and(ern) ladung sein vier",
-      "pëtt zwen polster zwaj chüßn zwaj poze",
-      "leilach Sechs schaffain dech alt vnd new ain",
-      "gambseins dech drew spanpett zwo teuchen",
-      "mit geschlechten pëten",
-      "It(e)m Im stublein dabey sein zwaj pëtt zwaj",
-      "poze leilach ain polster ain chüsß drey",
-      "schäffain dech ain gambsß dech ain spanpett",
-      "It(e)m In dem obern ärckler ist zwaj pëtt zwaj",
-      "leilach ain polster ain chüsß drey schaffain",
-      "dech zwo lambrein gut dech",
-      "It(e)m In der ören kamer ist {ain} ~~zwaj~~ pëtt ain polst(er)",
-      "zwaj renczhens leilach ain pöser polster",
-      "anem ziech mer ain rauchs dech zwaj",
-      "pöse degcht geschlefet",
-      "It(e)m Darnach In der nachstn kamer vnd",
-      "sunst allenthalbn sein xvij kessl grosn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "këffeln zu dem ölj mer iiij por pöze kessl",
-      "zwelff erden häfain groß vnd klain ain",
-      "guets lauestfaß da man saygn In macht",
-      "iij mörser zwen stößl mer xxij mättezs",
-      "vnd klains zinenstgeschirr vnd ain zinplan",
-      "vier poze messens pekch vnd ain messens",
-      "gießlkantl vnd zwaj kupfferens pekch",
-      "mer xxxij sart steyrsch gros vnd klain",
-      "mer xlvij hultzne täler vnd ain",
-      "tisch Im fleischgadm vnd vier freien",
-      "pärsen loden v elln vnd ain victail",
-      "mer Im fleischgadm vnd dren kamer",
-      "iij tuchs vnd gewand",
-      "It(e)m In der kuchl iij prantröst x phann",
-      "iij pfaffnspan iiij häln zwen phann",
-      "cast iij prattspiß vnd ain ganst ain",
-      "eyßzang ain rübeiß funf milch",
-      "schissl zwaj sätzl ain maß hatzch"
+      {
+       "id": null,
+       "text": "It(e)m In der partnorei kamer ist ain pëtt iiij"
+      },
+      {
+       "id": null,
+       "text": "rauch(e) dekch die alt sein ij renczhens leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j spanpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der and(ern) ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pëtt zwen polster zwaj chüßn zwaj poze"
+      },
+      {
+       "id": null,
+       "text": "leilach Sechs schaffain dech alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambseins dech drew spanpett zwo teuchen"
+      },
+      {
+       "id": null,
+       "text": "mit geschlechten pëten"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Im stublein dabey sein zwaj pëtt zwaj"
+      },
+      {
+       "id": null,
+       "text": "poze leilach ain polster ain chüsß drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain dech ain gambsß dech ain spanpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In dem obern ärckler ist zwaj pëtt zwaj"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chüsß drey schaffain"
+      },
+      {
+       "id": null,
+       "text": "dech zwo lambrein gut dech"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der ören kamer ist {ain} ~~zwaj~~ pëtt ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zwaj renczhens leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anem ziech mer ain rauchs dech zwaj"
+      },
+      {
+       "id": null,
+       "text": "pöse degcht geschlefet"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xvij kessl grosn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "këffeln zu dem ölj mer iiij por pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwelff erden häfain groß vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guets lauestfaß da man saygn In macht"
+      },
+      {
+       "id": null,
+       "text": "iij mörser zwen stößl mer xxij mättezs"
+      },
+      {
+       "id": null,
+       "text": "vnd klains zinenstgeschirr vnd ain zinplan"
+      },
+      {
+       "id": null,
+       "text": "vier poze messens pekch vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "gießlkantl vnd zwaj kupfferens pekch"
+      },
+      {
+       "id": null,
+       "text": "mer xxxij sart steyrsch gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer xlvij hultzne täler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im fleischgadm vnd vier freien"
+      },
+      {
+       "id": null,
+       "text": "pärsen loden v elln vnd ain victail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleischgadm vnd dren kamer"
+      },
+      {
+       "id": null,
+       "text": "iij tuchs vnd gewand"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kuchl iij prantröst x phann"
+      },
+      {
+       "id": null,
+       "text": "iij pfaffnspan iiij häln zwen phann"
+      },
+      {
+       "id": null,
+       "text": "cast iij prattspiß vnd ain ganst ain"
+      },
+      {
+       "id": null,
+       "text": "eyßzang ain rübeiß funf milch"
+      },
+      {
+       "id": null,
+       "text": "schissl zwaj sätzl ain maß hatzch"
+      }
      ]
     },
     {
@@ -874,45 +2776,162 @@
       false
      ],
      "lines": [
-      "It(e)m In der partnerer kamer ist ain pêtt .iiij.",
-      "rauch deckh die alt sein ij renchene leilach",
-      "j polster j panpart",
-      "It(e)m In der kamer bey der aus ladung sein vier",
-      "pett zwen polster zway chrüse zway poze",
-      "leilach Sechs schaffene deckh alt vnd new ain",
-      "gamßene deckh zwen spanpart zwo renchen",
-      "mit gestreichten pfechn",
-      "It(e)m Im stüblein da bey sein zway pett zway",
-      "poze leilach ain polster ain chrüse drey",
-      "schäffene deckh ain gamßß deckh ain spanpart",
-      "It(e)m In dem obern ärgker ist zway pett zway",
-      "leilach ain polster ain chrüs drey schäffin",
-      "deckh zwo lembrein gut deckh",
-      "It(e)m In der dritt kamer ist {ain} ~~zway~~ pett ain polst(er)",
-      "zway renchene leilach ain pöser polster",
-      "anen zuech mer ain rauche deckh zway",
-      "pöse deckhles gestreift",
-      "It(e)m Darnach In der naechstn kamer vnd",
-      "sunst allenthalbn sein xxj kessl grosn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesslein zu dem öl mer iiij par pöze kessl",
-      "zwelf erden hafenn grose vnd klain ain",
-      "guete lanctsten da man fisch In macht",
-      "iij mörser zwen stössl mer xxij mittage",
-      "vnd klaine zünenschiessl vnd ain zimplau",
-      "vier pöze messene pekh vnd ain messens",
-      "gieffelkandl vnd zway kupfferene pekh",
-      "mer xxxij part stagnis p gros vnd klain",
-      "mer pfunf hultzne täler vnd ain",
-      "tisch Im fleysch gadm vnd vier frain",
-      "purden loden v elln vnd ain vnetail",
-      "mer Im fleyschgadm vnd dritt kamer",
-      "iiij tauchf vnd gewandt",
-      "It(e)m In dir kuch(e)l iij prantröst x pfann",
-      "iij pfaffnpfan iij häln zwen pfann",
-      "cost iij praetspiß vnd ain gaust ain",
-      "cyffzang ain rübeyssn funf miltz",
-      "sessle zway stößl ain masssatzg"
+      {
+       "id": null,
+       "text": "It(e)m In der partnerer kamer ist ain pêtt .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch deckh die alt sein ij renchene leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j panpart"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der aus ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pett zwen polster zway chrüse zway poze"
+      },
+      {
+       "id": null,
+       "text": "leilach Sechs schaffene deckh alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gamßene deckh zwen spanpart zwo renchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestreichten pfechn"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Im stüblein da bey sein zway pett zway"
+      },
+      {
+       "id": null,
+       "text": "poze leilach ain polster ain chrüse drey"
+      },
+      {
+       "id": null,
+       "text": "schäffene deckh ain gamßß deckh ain spanpart"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In dem obern ärgker ist zway pett zway"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chrüs drey schäffin"
+      },
+      {
+       "id": null,
+       "text": "deckh zwo lembrein gut deckh"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der dritt kamer ist {ain} ~~zway~~ pett ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zway renchene leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anen zuech mer ain rauche deckh zway"
+      },
+      {
+       "id": null,
+       "text": "pöse deckhles gestreift"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Darnach In der naechstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xxj kessl grosn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesslein zu dem öl mer iiij par pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwelf erden hafenn grose vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lanctsten da man fisch In macht"
+      },
+      {
+       "id": null,
+       "text": "iij mörser zwen stössl mer xxij mittage"
+      },
+      {
+       "id": null,
+       "text": "vnd klaine zünenschiessl vnd ain zimplau"
+      },
+      {
+       "id": null,
+       "text": "vier pöze messene pekh vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "gieffelkandl vnd zway kupfferene pekh"
+      },
+      {
+       "id": null,
+       "text": "mer xxxij part stagnis p gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer pfunf hultzne täler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im fleysch gadm vnd vier frain"
+      },
+      {
+       "id": null,
+       "text": "purden loden v elln vnd ain vnetail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleyschgadm vnd dritt kamer"
+      },
+      {
+       "id": null,
+       "text": "iiij tauchf vnd gewandt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In dir kuch(e)l iij prantröst x pfann"
+      },
+      {
+       "id": null,
+       "text": "iij pfaffnpfan iij häln zwen pfann"
+      },
+      {
+       "id": null,
+       "text": "cost iij praetspiß vnd ain gaust ain"
+      },
+      {
+       "id": null,
+       "text": "cyffzang ain rübeyssn funf miltz"
+      },
+      {
+       "id": null,
+       "text": "sessle zway stößl ain masssatzg"
+      }
      ]
     },
     {
@@ -928,45 +2947,162 @@
       false
      ],
      "lines": [
-      "It(e)m In der partnorer kamer ist ain pätt .iiij.",
-      "rauch deckh die alt sein ij renczhens leilath",
-      "j polster j spanpätt",
-      "It(e)m In der kamer bey der and ladung sein vier",
-      "pätt zwen polster zway chüch zway pare",
-      "leilath sechß schaffain deckh alt vnd new ain",
-      "gambseina deckh drew spanpätt zwo reuchen",
-      "mit gestrickhten pörcln",
-      "It(e)m Im stüblein da bey sein zway pätt zway",
-      "pare leilath ain polster ain chüch drey",
-      "schäffain deckh ain gambß deckh ain spanpätt",
-      "It(e)m In dem obern ärgker ist zway pätt zway",
-      "leilath ain polster ain chüch drey schaffain",
-      "deckh zwo lambrein gut deckh",
-      "It(e)m In der dren kamer ist ~~zway pätt~~ {ain pätt} ain polst(er)",
-      "zway renczhens leilath ain pöser polster",
-      "ainen züch mer ain rauche deckh zway",
-      "pöse deckhes gestrickt",
-      "It(e)m Darnach In der nachstn kamer vnd",
-      "sunst allenthalb(e)n sein xxj kessl groß",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesslein zu dem öl mer iiij par pöse kessl",
-      "zwelff erden hafein groß vnd klain ain",
-      "guete lanckhschu da man feirjn In macht",
-      "iij mörser zwen stößl mer xxij müttern",
-      "vnd krainn zinnen schüssl vnd ain zinnlan",
-      "vier pare messens peckh vnd ain messens",
-      "gießlchandl vnd zway kupfferein peckh",
-      "mer xxvj hafner gschirr gros vnd klain",
-      "mer clxviij hülzein thäler vnd ain",
-      "tysch Im fleyßh gadm vnd vier stuein",
-      "purden loden drelly vnd ain vuertail",
-      "mer Im fleyßhgadm vnd dren kamer",
-      "iiij tuckhsen vnd gsündt",
-      "It(e)m In der kuchel iij prantröst x phann",
-      "iij pfaffn phann iij häln zwayen phanen",
-      "rost ij pratspiß vnd ain gaust ain",
-      "eyßtzang ain ribeisen funf milch",
-      "seufft zway stößl ain maß hatzch"
+      {
+       "id": null,
+       "text": "It(e)m In der partnorer kamer ist ain pätt .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch deckh die alt sein ij renczhens leilath"
+      },
+      {
+       "id": null,
+       "text": "j polster j spanpätt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der and ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pätt zwen polster zway chüch zway pare"
+      },
+      {
+       "id": null,
+       "text": "leilath sechß schaffain deckh alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambseina deckh drew spanpätt zwo reuchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestrickhten pörcln"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Im stüblein da bey sein zway pätt zway"
+      },
+      {
+       "id": null,
+       "text": "pare leilath ain polster ain chüch drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain deckh ain gambß deckh ain spanpätt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In dem obern ärgker ist zway pätt zway"
+      },
+      {
+       "id": null,
+       "text": "leilath ain polster ain chüch drey schaffain"
+      },
+      {
+       "id": null,
+       "text": "deckh zwo lambrein gut deckh"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der dren kamer ist ~~zway pätt~~ {ain pätt} ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zway renczhens leilath ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "ainen züch mer ain rauche deckh zway"
+      },
+      {
+       "id": null,
+       "text": "pöse deckhes gestrickt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalb(e)n sein xxj kessl groß"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesslein zu dem öl mer iiij par pöse kessl"
+      },
+      {
+       "id": null,
+       "text": "zwelff erden hafein groß vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lanckhschu da man feirjn In macht"
+      },
+      {
+       "id": null,
+       "text": "iij mörser zwen stößl mer xxij müttern"
+      },
+      {
+       "id": null,
+       "text": "vnd krainn zinnen schüssl vnd ain zinnlan"
+      },
+      {
+       "id": null,
+       "text": "vier pare messens peckh vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "gießlchandl vnd zway kupfferein peckh"
+      },
+      {
+       "id": null,
+       "text": "mer xxvj hafner gschirr gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer clxviij hülzein thäler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tysch Im fleyßh gadm vnd vier stuein"
+      },
+      {
+       "id": null,
+       "text": "purden loden drelly vnd ain vuertail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleyßhgadm vnd dren kamer"
+      },
+      {
+       "id": null,
+       "text": "iiij tuckhsen vnd gsündt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kuchel iij prantröst x phann"
+      },
+      {
+       "id": null,
+       "text": "iij pfaffn phann iij häln zwayen phanen"
+      },
+      {
+       "id": null,
+       "text": "rost ij pratspiß vnd ain gaust ain"
+      },
+      {
+       "id": null,
+       "text": "eyßtzang ain ribeisen funf milch"
+      },
+      {
+       "id": null,
+       "text": "seufft zway stößl ain maß hatzch"
+      }
      ]
     },
     {
@@ -982,45 +3118,162 @@
       false
      ],
      "lines": [
-      "It(e)m In der partnerei kamer ist ain pätt .iiij.",
-      "rauch dekk die alt sein ij renchene leilach",
-      "j polster j spanpett",
-      "It(e)m In der kamer bey der außladung sein vier",
-      "pätt zwen polster zway chüch zway poze",
-      "leilach sechs schaffem dekk alt vnd new ain",
-      "gambsseine dekk viere spanpett zwo rencken",
-      "mit gestickten phölen",
-      "It(e)m Im Stüblein dabey sein zway pätt zway",
-      "poze leilach ain polster ain chüch drey",
-      "schäffein dekk ain gamsß dekk ain spanpett",
-      "It(e)m In dem obern ärgker ist zway pätt zway",
-      "leilach ain polster ain chüch drey schäffein",
-      "dekk zwo lambrein gut dekk",
-      "It(e)m In der ören kamer ist {ain} ~~zway~~ pätt ain polst(er)",
-      "zway renchene leilach ain pöser polster",
-      "anem zuech mer ain rauche dekk zway",
-      "pöß dekkels gestickt",
-      "It(e)m Darnach In der nachstn kamer vnd",
-      "sunst allenthalbn sein xij kessl grosn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kessele zu dem öl mer iiij par pöze kessl",
-      "zwelf erden häfein grosß vnd klain ain",
-      "guete lauetfäß da man seigen In macht",
-      "iiij mörser zwen stößl mer xxij mittags",
-      "vnd kranne zineinstüffl vnd ain zimplau",
-      "vier poze messene pätte vnd ain messene",
-      "guesol kannell vnd zway kupfferene pätte",
-      "mer xxxj pott stieffl gros vnd klain",
-      "mer xlviiij hultzene Däler vnd ain",
-      "tisch Im fleisch gadm vnd vier frain",
-      "prueten loden v elln vnd ain vuctail",
-      "mer Im fleischgadm vnd dren kamer",
-      "iiij truchß vnd gändt",
-      "It(e)m In der kuckel iiij pranthäfst x phann",
-      "iij pfaffphann iij häln daren phann",
-      "cocht iiij prattspiß vnd ain hainzt ain",
-      "eyßzang ain rübeyß finf milch",
-      "seüfft zway söftl ain maß hatzg"
+      {
+       "id": null,
+       "text": "It(e)m In der partnerei kamer ist ain pätt .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch dekk die alt sein ij renchene leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j spanpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kamer bey der außladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pätt zwen polster zway chüch zway poze"
+      },
+      {
+       "id": null,
+       "text": "leilach sechs schaffem dekk alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambsseine dekk viere spanpett zwo rencken"
+      },
+      {
+       "id": null,
+       "text": "mit gestickten phölen"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Im Stüblein dabey sein zway pätt zway"
+      },
+      {
+       "id": null,
+       "text": "poze leilach ain polster ain chüch drey"
+      },
+      {
+       "id": null,
+       "text": "schäffein dekk ain gamsß dekk ain spanpett"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In dem obern ärgker ist zway pätt zway"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chüch drey schäffein"
+      },
+      {
+       "id": null,
+       "text": "dekk zwo lambrein gut dekk"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der ören kamer ist {ain} ~~zway~~ pätt ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zway renchene leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anem zuech mer ain rauche dekk zway"
+      },
+      {
+       "id": null,
+       "text": "pöß dekkels gestickt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xij kessl grosn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kessele zu dem öl mer iiij par pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwelf erden häfein grosß vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lauetfäß da man seigen In macht"
+      },
+      {
+       "id": null,
+       "text": "iiij mörser zwen stößl mer xxij mittags"
+      },
+      {
+       "id": null,
+       "text": "vnd kranne zineinstüffl vnd ain zimplau"
+      },
+      {
+       "id": null,
+       "text": "vier poze messene pätte vnd ain messene"
+      },
+      {
+       "id": null,
+       "text": "guesol kannell vnd zway kupfferene pätte"
+      },
+      {
+       "id": null,
+       "text": "mer xxxj pott stieffl gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer xlviiij hultzene Däler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im fleisch gadm vnd vier frain"
+      },
+      {
+       "id": null,
+       "text": "prueten loden v elln vnd ain vuctail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleischgadm vnd dren kamer"
+      },
+      {
+       "id": null,
+       "text": "iiij truchß vnd gändt"
+      },
+      {
+       "id": null,
+       "text": "It(e)m In der kuckel iiij pranthäfst x phann"
+      },
+      {
+       "id": null,
+       "text": "iij pfaffphann iij häln daren phann"
+      },
+      {
+       "id": null,
+       "text": "cocht iiij prattspiß vnd ain hainzt ain"
+      },
+      {
+       "id": null,
+       "text": "eyßzang ain rübeyß finf milch"
+      },
+      {
+       "id": null,
+       "text": "seüfft zway söftl ain maß hatzg"
+      }
      ]
     },
     {
@@ -1036,45 +3289,162 @@
       false
      ],
      "lines": [
-      "Item In der partnern kamer ist ain pett iiij",
-      "rauch deckh die alt sein v renckheins leilach",
-      "j polster j spanpett",
-      "Item In der kamer bey der aus ladung sein vier",
-      "pett zwen polster zway chüsen zway pare",
-      "leilach sechs schaffain deckh alt vnd new ain",
-      "gambsseine deckh dreye spanpett zwo teuchen",
-      "mit gestrifften pfeidln",
-      "Item Im stüblein da bey sein zway pett zway",
-      "pare leilach ain polster ain chüss drey",
-      "schäffain deckh ain gambss deckh ain spanpett",
-      "Item In dem obern ärckher ist zway pett zway",
-      "leilach ain polster ain chüss drey schaffain",
-      "deckh zwo lambrein gut deckh",
-      "Item In der dritn kamer ist {ain} ~~zway~~ pett ain polst(er)",
-      "zway werckheins leilach ain pöser polster",
-      "anem zuech mer ain rauche deckh zway",
-      "pöse deckhel gestreift",
-      "Item Darnach In der nachstn kamer vnd",
-      "sunst allenthalbn sein xxj kessl gross",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesslein zu dem öl mer iiij par pöze kessl",
-      "zwoel erden häfain gross vnd klain ain",
-      "guete laistften da man teygn In macht",
-      "iiij mörser zwen stösszl mer xxij mittage",
-      "vnd klaine zinen schissl vnd ain zinplan",
-      "vier pare messens pett vnd ain messene",
-      "giessöl kandel vnd zway kupfferene pett",
-      "mer xxxj pett stengtl gross vnd klain",
-      "mer xlviiij hulzene täler vnd ain",
-      "tisch Im fleysch gaden vnd vier strein",
-      "purten loden v eln vnd ain preteil",
-      "mer Im fleyschgaden vnd dreü kamer",
-      "iiij tuchs vnd gwändt",
-      "Item In der kuchl iij prantröst x pfann",
-      "iij pfaffnphan iiij häln zwen pfankh-",
-      "cöst iij pratspiss vnd ain haubt ain",
-      "erffd zang ain rubeyff funf milch",
-      "schissl zway stöbl ain mass darzů"
+      {
+       "id": null,
+       "text": "Item In der partnern kamer ist ain pett iiij"
+      },
+      {
+       "id": null,
+       "text": "rauch deckh die alt sein v renckheins leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der aus ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pett zwen polster zway chüsen zway pare"
+      },
+      {
+       "id": null,
+       "text": "leilach sechs schaffain deckh alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambsseine deckh dreye spanpett zwo teuchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestrifften pfeidln"
+      },
+      {
+       "id": null,
+       "text": "Item Im stüblein da bey sein zway pett zway"
+      },
+      {
+       "id": null,
+       "text": "pare leilach ain polster ain chüss drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain deckh ain gambss deckh ain spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In dem obern ärckher ist zway pett zway"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chüss drey schaffain"
+      },
+      {
+       "id": null,
+       "text": "deckh zwo lambrein gut deckh"
+      },
+      {
+       "id": null,
+       "text": "Item In der dritn kamer ist {ain} ~~zway~~ pett ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zway werckheins leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anem zuech mer ain rauche deckh zway"
+      },
+      {
+       "id": null,
+       "text": "pöse deckhel gestreift"
+      },
+      {
+       "id": null,
+       "text": "Item Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xxj kessl gross"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesslein zu dem öl mer iiij par pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwoel erden häfain gross vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete laistften da man teygn In macht"
+      },
+      {
+       "id": null,
+       "text": "iiij mörser zwen stösszl mer xxij mittage"
+      },
+      {
+       "id": null,
+       "text": "vnd klaine zinen schissl vnd ain zinplan"
+      },
+      {
+       "id": null,
+       "text": "vier pare messens pett vnd ain messene"
+      },
+      {
+       "id": null,
+       "text": "giessöl kandel vnd zway kupfferene pett"
+      },
+      {
+       "id": null,
+       "text": "mer xxxj pett stengtl gross vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer xlviiij hulzene täler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im fleysch gaden vnd vier strein"
+      },
+      {
+       "id": null,
+       "text": "purten loden v eln vnd ain preteil"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleyschgaden vnd dreü kamer"
+      },
+      {
+       "id": null,
+       "text": "iiij tuchs vnd gwändt"
+      },
+      {
+       "id": null,
+       "text": "Item In der kuchl iij prantröst x pfann"
+      },
+      {
+       "id": null,
+       "text": "iij pfaffnphan iiij häln zwen pfankh-"
+      },
+      {
+       "id": null,
+       "text": "cöst iij pratspiss vnd ain haubt ain"
+      },
+      {
+       "id": null,
+       "text": "erffd zang ain rubeyff funf milch"
+      },
+      {
+       "id": null,
+       "text": "schissl zway stöbl ain mass darzů"
+      }
      ]
     },
     {
@@ -1090,45 +3460,162 @@
       false
      ],
      "lines": [
-      "Item In der partnerin kamer ist ain pètt .iiij.",
-      "rauch deckh die alt sein .ij. rouchene leilach",
-      ".j. polster .j. spanpett",
-      "Item In der kamer bey der aus ladung sein vier",
-      "pètt zwen polster zwoaj chrüse zway päre",
-      "leilach sechß schaffain dech alt vnd new ain",
-      "gambseine deckh drey spanpett zwo truchen",
-      "mit gestichten pferdn",
-      "Item Im stüblein dabey sein zway pett zway",
-      "pare leilach ain polster ain chiss drey",
-      "schäffain deckh ain gambß deckh ain spanpett",
-      "Item In dem obern ärgker ist zway pett zway",
-      "leilach ain polster ain chiss drey schaffain",
-      "deckh zwo lembrein gut deckh",
-      "Item In der drin kamer ist {ain} ~~zway~~ pètt ain polster",
-      "zway rouchene leilach ain pöser polster",
-      "ainen zuech mer ain rauche deckh zway",
-      "pöse deckhel gestickt",
-      "Item Darnach In der nachstn kamer vnd",
-      "sonst allenthalbn sein xxxj kessl grosn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesseln zu dem öl mer .iiij. par pöse kessl",
-      "zwel erden hafain groß vnd klain ain",
-      "guete lanckhsen da man seign In macht",
-      ".iij. mörser zwen stössl mer .xxij. mittagz",
-      "vnd claine zinen schissl vnd ain zimplen",
-      "vier pare messens pech vnd ain messens",
-      "giesßkanndl vnd zway kupfferene pech",
-      "mer .xxxj. pair stignisch groß vnd klain",
-      "mer .xlviij. hultzne taler vnd ain",
-      "tysch Im fleysch gadm vnd vier frein",
-      "purden loden v elly vnd ain vuctail",
-      "mer Im fleyschgadm vnd drin kamer",
-      ".iiij. truchsen vnd grawdt",
-      "Item In der kuchl .iij. prantrost .x. pfann",
-      ".iij. pfaffnphan .iij. haln zwen phann",
-      "cast .iij. prattspis vnd ain hamat ain",
-      "auffzang ain ribeisen funf miltz",
-      "seupffe zway seiht ain mass datzů"
+      {
+       "id": null,
+       "text": "Item In der partnerin kamer ist ain pètt .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch deckh die alt sein .ij. rouchene leilach"
+      },
+      {
+       "id": null,
+       "text": ".j. polster .j. spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der aus ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pètt zwen polster zwoaj chrüse zway päre"
+      },
+      {
+       "id": null,
+       "text": "leilach sechß schaffain dech alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambseine deckh drey spanpett zwo truchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestichten pferdn"
+      },
+      {
+       "id": null,
+       "text": "Item Im stüblein dabey sein zway pett zway"
+      },
+      {
+       "id": null,
+       "text": "pare leilach ain polster ain chiss drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain deckh ain gambß deckh ain spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In dem obern ärgker ist zway pett zway"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chiss drey schaffain"
+      },
+      {
+       "id": null,
+       "text": "deckh zwo lembrein gut deckh"
+      },
+      {
+       "id": null,
+       "text": "Item In der drin kamer ist {ain} ~~zway~~ pètt ain polster"
+      },
+      {
+       "id": null,
+       "text": "zway rouchene leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "ainen zuech mer ain rauche deckh zway"
+      },
+      {
+       "id": null,
+       "text": "pöse deckhel gestickt"
+      },
+      {
+       "id": null,
+       "text": "Item Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sonst allenthalbn sein xxxj kessl grosn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesseln zu dem öl mer .iiij. par pöse kessl"
+      },
+      {
+       "id": null,
+       "text": "zwel erden hafain groß vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lanckhsen da man seign In macht"
+      },
+      {
+       "id": null,
+       "text": ".iij. mörser zwen stössl mer .xxij. mittagz"
+      },
+      {
+       "id": null,
+       "text": "vnd claine zinen schissl vnd ain zimplen"
+      },
+      {
+       "id": null,
+       "text": "vier pare messens pech vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "giesßkanndl vnd zway kupfferene pech"
+      },
+      {
+       "id": null,
+       "text": "mer .xxxj. pair stignisch groß vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer .xlviij. hultzne taler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tysch Im fleysch gadm vnd vier frein"
+      },
+      {
+       "id": null,
+       "text": "purden loden v elly vnd ain vuctail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleyschgadm vnd drin kamer"
+      },
+      {
+       "id": null,
+       "text": ".iiij. truchsen vnd grawdt"
+      },
+      {
+       "id": null,
+       "text": "Item In der kuchl .iij. prantrost .x. pfann"
+      },
+      {
+       "id": null,
+       "text": ".iij. pfaffnphan .iij. haln zwen phann"
+      },
+      {
+       "id": null,
+       "text": "cast .iij. prattspis vnd ain hamat ain"
+      },
+      {
+       "id": null,
+       "text": "auffzang ain ribeisen funf miltz"
+      },
+      {
+       "id": null,
+       "text": "seupffe zway seiht ain mass datzů"
+      }
      ]
     },
     {
@@ -1144,45 +3631,162 @@
       false
      ],
      "lines": [
-      "Item In der partnekers kamer ist ain pett .iiij.",
-      "rauch dekh die alt sein .ij. rowchane leilach",
-      ".j. polster .j. spanpett",
-      "Item In der kamer bey der aus ladung sein vier",
-      "pett zwen polster zwaj chrüse zwaj pare",
-      "leilach sechs schaffain dekh alt vnd new ain",
-      "gamberine dekh dreye spanpett zwo truchen",
-      "mit gestickhten pfehln",
-      "Item In Stublein da bey sein zwaj pett zwaj",
-      "pare leilach ain polster ain chüs drey",
-      "schäffain dekh ain gambs dekh ain spanpett",
-      "Item In dem obern erckher ist zwaj pett zwaj",
-      "leilach ain polster ain chüs drey schäffain",
-      "dekh zwo lemberin gut dekh",
-      "Item In der dern kamer ist {ain} ~~zwaj pett~~ ain polster",
-      "zwaj rowchine leilach ain pöser polster",
-      "anem zuech mer ain rauche dekh zwaj",
-      "pöse dechelt gesteift",
-      "Item Darnach In der nachsten kamer vnd",
-      "sunst allenthalbn sein .xxj. kessl grossn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesslein zu dem öl mer .iiij. par pöze kessl",
-      "zwelf erden hafein gross vnd klain ain",
-      "guete lannstenn da man seign In macht",
-      "iiij mörser zwen stössl mer .xxij. mittagz",
-      "vnd klaine zineinflaisch vnd ain zinplan",
-      "vier pare messens peltz vnd ain messens",
-      "guesol kanndl vnd zwaj kupfferene peltz",
-      "mer .xxxij. pett flaisch gros vnd klain",
-      "mer .lxxij. hulzerne taler vnd ain",
-      "tisch Im flaish gadm vnd vier frain",
-      "püchsen laden v ellen vnd ain vnetail",
-      "mer Im flaishgadn vnd dern kamer",
-      "iiij treyhs vnd geawdt",
-      "Item In der kuckhel .iiij. prantrôst .x. phann",
-      "iiij phaffpphan .iij. halm darann phann",
-      "rast .iiij. pratsspiss vnd ain haupt ain",
-      "eyss zang ain ribeyss funf milch",
-      "feissl zway stössl ain mass darzu"
+      {
+       "id": null,
+       "text": "Item In der partnekers kamer ist ain pett .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch dekh die alt sein .ij. rowchane leilach"
+      },
+      {
+       "id": null,
+       "text": ".j. polster .j. spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der aus ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pett zwen polster zwaj chrüse zwaj pare"
+      },
+      {
+       "id": null,
+       "text": "leilach sechs schaffain dekh alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gamberine dekh dreye spanpett zwo truchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestickhten pfehln"
+      },
+      {
+       "id": null,
+       "text": "Item In Stublein da bey sein zwaj pett zwaj"
+      },
+      {
+       "id": null,
+       "text": "pare leilach ain polster ain chüs drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain dekh ain gambs dekh ain spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In dem obern erckher ist zwaj pett zwaj"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chüs drey schäffain"
+      },
+      {
+       "id": null,
+       "text": "dekh zwo lemberin gut dekh"
+      },
+      {
+       "id": null,
+       "text": "Item In der dern kamer ist {ain} ~~zwaj pett~~ ain polster"
+      },
+      {
+       "id": null,
+       "text": "zwaj rowchine leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anem zuech mer ain rauche dekh zwaj"
+      },
+      {
+       "id": null,
+       "text": "pöse dechelt gesteift"
+      },
+      {
+       "id": null,
+       "text": "Item Darnach In der nachsten kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein .xxj. kessl grossn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesslein zu dem öl mer .iiij. par pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwelf erden hafein gross vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lannstenn da man seign In macht"
+      },
+      {
+       "id": null,
+       "text": "iiij mörser zwen stössl mer .xxij. mittagz"
+      },
+      {
+       "id": null,
+       "text": "vnd klaine zineinflaisch vnd ain zinplan"
+      },
+      {
+       "id": null,
+       "text": "vier pare messens peltz vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "guesol kanndl vnd zwaj kupfferene peltz"
+      },
+      {
+       "id": null,
+       "text": "mer .xxxij. pett flaisch gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer .lxxij. hulzerne taler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im flaish gadm vnd vier frain"
+      },
+      {
+       "id": null,
+       "text": "püchsen laden v ellen vnd ain vnetail"
+      },
+      {
+       "id": null,
+       "text": "mer Im flaishgadn vnd dern kamer"
+      },
+      {
+       "id": null,
+       "text": "iiij treyhs vnd geawdt"
+      },
+      {
+       "id": null,
+       "text": "Item In der kuckhel .iiij. prantrôst .x. phann"
+      },
+      {
+       "id": null,
+       "text": "iiij phaffpphan .iij. halm darann phann"
+      },
+      {
+       "id": null,
+       "text": "rast .iiij. pratsspiss vnd ain haupt ain"
+      },
+      {
+       "id": null,
+       "text": "eyss zang ain ribeyss funf milch"
+      },
+      {
+       "id": null,
+       "text": "feissl zway stössl ain mass darzu"
+      }
      ]
     },
     {
@@ -1198,45 +3802,162 @@
       false
      ],
      "lines": [
-      "Item In der padmeyst(e)r kamer ist ain pëtt .iiij.",
-      "rauch deckh die alt sein ij rouchene leilach",
-      "j polster j spanpëtt",
-      "Item In der kamer bey der aus ladung sein vier",
-      "pëtt zwen polster zwoaj chüjss zway pare",
-      "leilach Sechs schaffain dekch alt vnd new ain",
-      "gamlsseine deckh drey spanpëtt zwo truchen",
-      "mit gestrifften pfeeln",
-      "Item Im stublein da bey sein zway pëtt zway",
-      "pare leilach ain polster ain chiss drey",
-      "schäffain dekch ain gamlss deckh ain spanpëtt",
-      "Item In dem obern ärckher ist zway pëtt zwoaj",
-      "leilach ain polster ain chůss drey schaffain",
-      "dekch zwo lambrein gut dekch",
-      "Item In der dritn kamer ist {ain} ~~zway~~ pëtt ain polst(er)",
-      "zway rouchene leilach ain pöser polster",
-      "ainent zuech mer ain rauche dekch zwoaj",
-      "pöse dechelt gestreifft",
-      "Item Darnach In der nachstn kamer vnd",
-      "sunst allenthalbn sein xxxj kessl grosen",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kësslein zu dem öl mer iiij par pöze kessl",
-      "zwel erden häfain grose vnd klain ain",
-      "guete lauetschn da man saypn In macht",
-      "iij mörser zwen stössl mer xxij mittagz",
-      "vnd klaine zinen schissl vnd ain zimplat",
-      "vier pare messens pëtt vnd ain messens",
-      "gissolkanndl vnd zway kupfferene pëtt",
-      "mer xxxj part stënyff gross vnd klain",
-      "mer xlvij hulzene däller vnd ain",
-      "tisch Im fleysch gadein vnd vier furchin",
-      "pürsten loden velly vnd ain vüctail",
-      "mer Im fleysch gadein vnd dritn kamer",
-      "viij truchn vnd geänndt",
-      "Item In der kuchl iij pranthöst x phann",
-      "iij phaffnphan iij häln zwoen phann",
-      "cöst iij pratspiss vnd ain haubt ain",
-      "eyffrsang ain ribeysn funf milch",
-      "seuffe zway sössl ain mass satz"
+      {
+       "id": null,
+       "text": "Item In der padmeyst(e)r kamer ist ain pëtt .iiij."
+      },
+      {
+       "id": null,
+       "text": "rauch deckh die alt sein ij rouchene leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j spanpëtt"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der aus ladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pëtt zwen polster zwoaj chüjss zway pare"
+      },
+      {
+       "id": null,
+       "text": "leilach Sechs schaffain dekch alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gamlsseine deckh drey spanpëtt zwo truchen"
+      },
+      {
+       "id": null,
+       "text": "mit gestrifften pfeeln"
+      },
+      {
+       "id": null,
+       "text": "Item Im stublein da bey sein zway pëtt zway"
+      },
+      {
+       "id": null,
+       "text": "pare leilach ain polster ain chiss drey"
+      },
+      {
+       "id": null,
+       "text": "schäffain dekch ain gamlss deckh ain spanpëtt"
+      },
+      {
+       "id": null,
+       "text": "Item In dem obern ärckher ist zway pëtt zwoaj"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chůss drey schaffain"
+      },
+      {
+       "id": null,
+       "text": "dekch zwo lambrein gut dekch"
+      },
+      {
+       "id": null,
+       "text": "Item In der dritn kamer ist {ain} ~~zway~~ pëtt ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "zway rouchene leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "ainent zuech mer ain rauche dekch zwoaj"
+      },
+      {
+       "id": null,
+       "text": "pöse dechelt gestreifft"
+      },
+      {
+       "id": null,
+       "text": "Item Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xxxj kessl grosen"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kësslein zu dem öl mer iiij par pöze kessl"
+      },
+      {
+       "id": null,
+       "text": "zwel erden häfain grose vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lauetschn da man saypn In macht"
+      },
+      {
+       "id": null,
+       "text": "iij mörser zwen stössl mer xxij mittagz"
+      },
+      {
+       "id": null,
+       "text": "vnd klaine zinen schissl vnd ain zimplat"
+      },
+      {
+       "id": null,
+       "text": "vier pare messens pëtt vnd ain messens"
+      },
+      {
+       "id": null,
+       "text": "gissolkanndl vnd zway kupfferene pëtt"
+      },
+      {
+       "id": null,
+       "text": "mer xxxj part stënyff gross vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer xlvij hulzene däller vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im fleysch gadein vnd vier furchin"
+      },
+      {
+       "id": null,
+       "text": "pürsten loden velly vnd ain vüctail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleysch gadein vnd dritn kamer"
+      },
+      {
+       "id": null,
+       "text": "viij truchn vnd geänndt"
+      },
+      {
+       "id": null,
+       "text": "Item In der kuchl iij pranthöst x phann"
+      },
+      {
+       "id": null,
+       "text": "iij phaffnphan iij häln zwoen phann"
+      },
+      {
+       "id": null,
+       "text": "cöst iij pratspiss vnd ain haubt ain"
+      },
+      {
+       "id": null,
+       "text": "eyffrsang ain ribeysn funf milch"
+      },
+      {
+       "id": null,
+       "text": "seuffe zway sössl ain mass satz"
+      }
      ]
     },
     {
@@ -1252,45 +3973,162 @@
       false
      ],
      "lines": [
-      "Item In der partnerei kamer ist ain pëtt iiij",
-      "rauch dekk die alt sein ij rowchane leilach",
-      "j polster j spanpett",
-      "Item In der kamer bey der anndladung sein vier",
-      "pëtt zwen polster zwaj chrüse zwaj pare",
-      "leilach sechs schaffain dekk alt vnd new ain",
-      "gambsein dekk drew spanpett zwo truchen",
-      "mit geschnidten pheldn",
-      "Item In stüblein dabey sein zwaj pëtt zwaj",
-      "pare leilach ain polster ain chüss drey",
-      "schäffein dekk ain gambs dekk ain spanpëtt",
-      "Item In dem obern ärckher ist zwaj pëtt zwaj",
-      "leilach ain polster ain chüss drey schaffein",
-      "dekk zwo lambrein gut dekk",
-      "Item In der dritn kamer ist ~~zwaj~~ {ain} pëtt ain polst[er]",
-      "zwaj rowchene leilach ain pöser polster",
-      "anant zuech mer ain rauche dekk zwaj",
-      "pösë deggest gestreifft",
-      "Item Darnach In der nachstn kamer vnd",
-      "sunst allenthalbn sein xxxj kessl grossn",
-      "vnd klain guet vnd pöz vnd ain klain",
-      "kesslein zu dem öl mer iiij par pöse kessl",
-      "zwelf erden hafain grosse vnd klain ain",
-      "guete lavatfäss da man wein In mancht",
-      "iiij mörser zwen stössl mer xxxij mittege",
-      "vnd klaine zinen schissl vnd ain zimplat",
-      "vier pare messene peltz vnd ain messene",
-      "giessl kanndl vnd zwaj kupffrene peltz",
-      "mer xxxij pëtt schissl gros vnd klain",
-      "mer xlvij hultzne taler vnd ain",
-      "tisch Im fleischgadin vnd vier schrein",
-      "pünden loden v elln vnd ain vretail",
-      "mer Im fleischgadin vnd dritn kamer",
-      "iiij truchn vnd pfannt",
-      "Item In der kuchl iiij prantrost x phann",
-      "iiij pfäffliphan iiij halm raven phann",
-      "cast iiij prattspis vnd ain ganntzt ain",
-      "eyffrzang ain rebeysn funf milch",
-      "seiffë zwaj röstl ain mass datzn"
+      {
+       "id": null,
+       "text": "Item In der partnerei kamer ist ain pëtt iiij"
+      },
+      {
+       "id": null,
+       "text": "rauch dekk die alt sein ij rowchane leilach"
+      },
+      {
+       "id": null,
+       "text": "j polster j spanpett"
+      },
+      {
+       "id": null,
+       "text": "Item In der kamer bey der anndladung sein vier"
+      },
+      {
+       "id": null,
+       "text": "pëtt zwen polster zwaj chrüse zwaj pare"
+      },
+      {
+       "id": null,
+       "text": "leilach sechs schaffain dekk alt vnd new ain"
+      },
+      {
+       "id": null,
+       "text": "gambsein dekk drew spanpett zwo truchen"
+      },
+      {
+       "id": null,
+       "text": "mit geschnidten pheldn"
+      },
+      {
+       "id": null,
+       "text": "Item In stüblein dabey sein zwaj pëtt zwaj"
+      },
+      {
+       "id": null,
+       "text": "pare leilach ain polster ain chüss drey"
+      },
+      {
+       "id": null,
+       "text": "schäffein dekk ain gambs dekk ain spanpëtt"
+      },
+      {
+       "id": null,
+       "text": "Item In dem obern ärckher ist zwaj pëtt zwaj"
+      },
+      {
+       "id": null,
+       "text": "leilach ain polster ain chüss drey schaffein"
+      },
+      {
+       "id": null,
+       "text": "dekk zwo lambrein gut dekk"
+      },
+      {
+       "id": null,
+       "text": "Item In der dritn kamer ist ~~zwaj~~ {ain} pëtt ain polst[er]"
+      },
+      {
+       "id": null,
+       "text": "zwaj rowchene leilach ain pöser polster"
+      },
+      {
+       "id": null,
+       "text": "anant zuech mer ain rauche dekk zwaj"
+      },
+      {
+       "id": null,
+       "text": "pösë deggest gestreifft"
+      },
+      {
+       "id": null,
+       "text": "Item Darnach In der nachstn kamer vnd"
+      },
+      {
+       "id": null,
+       "text": "sunst allenthalbn sein xxxj kessl grossn"
+      },
+      {
+       "id": null,
+       "text": "vnd klain guet vnd pöz vnd ain klain"
+      },
+      {
+       "id": null,
+       "text": "kesslein zu dem öl mer iiij par pöse kessl"
+      },
+      {
+       "id": null,
+       "text": "zwelf erden hafain grosse vnd klain ain"
+      },
+      {
+       "id": null,
+       "text": "guete lavatfäss da man wein In mancht"
+      },
+      {
+       "id": null,
+       "text": "iiij mörser zwen stössl mer xxxij mittege"
+      },
+      {
+       "id": null,
+       "text": "vnd klaine zinen schissl vnd ain zimplat"
+      },
+      {
+       "id": null,
+       "text": "vier pare messene peltz vnd ain messene"
+      },
+      {
+       "id": null,
+       "text": "giessl kanndl vnd zwaj kupffrene peltz"
+      },
+      {
+       "id": null,
+       "text": "mer xxxij pëtt schissl gros vnd klain"
+      },
+      {
+       "id": null,
+       "text": "mer xlvij hultzne taler vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tisch Im fleischgadin vnd vier schrein"
+      },
+      {
+       "id": null,
+       "text": "pünden loden v elln vnd ain vretail"
+      },
+      {
+       "id": null,
+       "text": "mer Im fleischgadin vnd dritn kamer"
+      },
+      {
+       "id": null,
+       "text": "iiij truchn vnd pfannt"
+      },
+      {
+       "id": null,
+       "text": "Item In der kuchl iiij prantrost x phann"
+      },
+      {
+       "id": null,
+       "text": "iiij pfäffliphan iiij halm raven phann"
+      },
+      {
+       "id": null,
+       "text": "cast iiij prattspis vnd ain ganntzt ain"
+      },
+      {
+       "id": null,
+       "text": "eyffrzang ain rebeysn funf milch"
+      },
+      {
+       "id": null,
+       "text": "seiffë zwaj röstl ain mass datzn"
+      }
      ]
     }
    ]

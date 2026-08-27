@@ -21,43 +21,154 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Inventari in p(raese)ncia(rum) Walther",
-      "Hendlin, Hainrich Stenger und",
-      "ander mer erber leẃt von",
-      "Úmbst und Nazareit des U̇lrich",
-      "Ramung abziechen beru̇rend.",
-      "Act(um) an eritag nach Bartho¬",
-      "lomei anno D(omi)ni etc. LXXVIIIten.",
-      "Zu Sigmundspurg im sloss.",
-      "It(em) ain vessel halb vol mit hauss¬",
-      "pfeil.",
-      "It(em) fúnff púchsen mod(e)l klain",
-      "und gros.",
-      "It(em) ain vess(e)l halb mit pfeil(e)n.",
-      "It(em) ain lag(e)l halb mit hauspf¬",
-      "eil(e)n.",
-      "It(em) ain vess(e)l auf ain pazeid(e)n",
-      "mit pȗchs(e)nkug(e)ln.",
-      "It(em) ain vess(e)l beỹ ain(er) halben",
-      "úrn mit púchs(e)n pulv(er).",
-      "It(em) ain lýdrin sackh zind pulv(er).",
-      "It(em) ain halb pazeid(e)n mit púchs(e)n",
-      "kugeln.",
-      "It(em) III zÿnd(er) hagken.",
-      "It(em) ain eÿsin zapfn zwn zug.",
-      "It(em) II mert(e)l hawen.",
-      "It(em) I eÿsin nagel.",
-      "It(em) etlich ramen zú venst(er)n",
-      "XV.",
-      "It(em) ain ledig eȳsen get(er) fúr ain",
-      "venster.",
-      "It(em) II spanpett.",
-      "It(em) II spicz eÿsen.",
-      "It(em) IIII eỹsin mod(e)l zú tach",
-      "ziegel.",
-      "It(em) III mod(e)l zú stain zieg(e)l.",
-      "It(em) ain ungefeilt sagplat."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventari in p(raese)ncia(rum) Walther"
+      },
+      {
+       "id": "r2l2",
+       "text": "Hendlin, Hainrich Stenger und"
+      },
+      {
+       "id": "r2l3",
+       "text": "ander mer erber leẃt von"
+      },
+      {
+       "id": "r2l4",
+       "text": "Úmbst und Nazareit des U̇lrich"
+      },
+      {
+       "id": "r2l5",
+       "text": "Ramung abziechen beru̇rend."
+      },
+      {
+       "id": "r2l6",
+       "text": "Act(um) an eritag nach Bartho¬"
+      },
+      {
+       "id": "r2l7",
+       "text": "lomei anno D(omi)ni etc. LXXVIIIten."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zu Sigmundspurg im sloss."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) ain vessel halb vol mit hauss¬"
+      },
+      {
+       "id": "r4l2",
+       "text": "pfeil."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) fúnff púchsen mod(e)l klain"
+      },
+      {
+       "id": "r4l4",
+       "text": "und gros."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) ain vess(e)l halb mit pfeil(e)n."
+      },
+      {
+       "id": "r4l6",
+       "text": "It(em) ain lag(e)l halb mit hauspf¬"
+      },
+      {
+       "id": "r4l7",
+       "text": "eil(e)n."
+      },
+      {
+       "id": "r4l8",
+       "text": "It(em) ain vess(e)l auf ain pazeid(e)n"
+      },
+      {
+       "id": "r4l9",
+       "text": "mit pȗchs(e)nkug(e)ln."
+      },
+      {
+       "id": "r4l10",
+       "text": "It(em) ain vess(e)l beỹ ain(er) halben"
+      },
+      {
+       "id": "r4l11",
+       "text": "úrn mit púchs(e)n pulv(er)."
+      },
+      {
+       "id": "r4l12",
+       "text": "It(em) ain lýdrin sackh zind pulv(er)."
+      },
+      {
+       "id": "r4l13",
+       "text": "It(em) ain halb pazeid(e)n mit púchs(e)n"
+      },
+      {
+       "id": "r4l14",
+       "text": "kugeln."
+      },
+      {
+       "id": "r4l15",
+       "text": "It(em) III zÿnd(er) hagken."
+      },
+      {
+       "id": "r4l16",
+       "text": "It(em) ain eÿsin zapfn zwn zug."
+      },
+      {
+       "id": "r4l17",
+       "text": "It(em) II mert(e)l hawen."
+      },
+      {
+       "id": "r4l18",
+       "text": "It(em) I eÿsin nagel."
+      },
+      {
+       "id": "r4l19",
+       "text": "It(em) etlich ramen zú venst(er)n"
+      },
+      {
+       "id": "r4l20",
+       "text": "XV."
+      },
+      {
+       "id": "r4l21",
+       "text": "It(em) ain ledig eȳsen get(er) fúr ain"
+      },
+      {
+       "id": "r4l22",
+       "text": "venster."
+      },
+      {
+       "id": "r4l23",
+       "text": "It(em) II spanpett."
+      },
+      {
+       "id": "r4l24",
+       "text": "It(em) II spicz eÿsen."
+      },
+      {
+       "id": "r4l25",
+       "text": "It(em) IIII eỹsin mod(e)l zú tach"
+      },
+      {
+       "id": "r4l26",
+       "text": "ziegel."
+      },
+      {
+       "id": "r4l27",
+       "text": "It(em) III mod(e)l zú stain zieg(e)l."
+      },
+      {
+       "id": "r4l28",
+       "text": "It(em) ain ungefeilt sagplat."
+      }
      ]
     }
    ]
@@ -82,41 +193,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "It(em) V hobl gros und klain.",
-      "It(em) ain spanpet.",
-      "It(em) etlich unbeslag(e)n pfeil",
-      "schefft.",
-      "It(em) II alte grose zugsail.",
-      "It(em) I klain zug sail.",
-      "It(em) I petstat.",
-      "It(em) ain raispanck zu armbrost.",
-      "It(em) I tisch.",
-      "It(em) VIII lancz(e)n, III haben kein",
-      "eÿsen.",
-      "It(em) I lag(e)l mit pfeil.",
-      "It(em) III panck armbrost.",
-      "It(em) VIIII zilige hausarmbrost.",
-      "It(em) XIII hacken púchsen.",
-      "It(em) XIX handpŭchsen.",
-      "It(em) III pernspieseÿsen.",
-      "It(em) II krendlin.",
-      "It(em) I hellenpart an ain stil.",
-      "It(em) ain glesin horn.",
-      "It(em) III fledrin kópf.",
-      "It(em) ain sloss mit aim túrangl.",
-      "It(em) I spanpet.",
-      "It(em) I kasten.",
-      "It(em) I gwand trȗhel.",
-      "It(em) I petstat.",
-      "It(em) II tisch.",
-      "It(em) ain wetstain an ain(er) kett(e)n.",
-      "It(em) I hoher tisch.",
-      "It(em) III hirsskȗrn.",
-      "It(em) II wasser lag(e)l.",
-      "It(em) II spanpett.",
-      "It(em) III alte trŭhlin.",
-      "It(em) ain schrein."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) V hobl gros und klain."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) ain spanpet."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) etlich unbeslag(e)n pfeil"
+      },
+      {
+       "id": "r2l4",
+       "text": "schefft."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) II alte grose zugsail."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) I klain zug sail."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) I petstat."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) ain raispanck zu armbrost."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) I tisch."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) VIII lancz(e)n, III haben kein"
+      },
+      {
+       "id": "r2l11",
+       "text": "eÿsen."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I lag(e)l mit pfeil."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) III panck armbrost."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) VIIII zilige hausarmbrost."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) XIII hacken púchsen."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) XIX handpŭchsen."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) III pernspieseÿsen."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) II krendlin."
+      },
+      {
+       "id": "r2l19",
+       "text": "It(em) I hellenpart an ain stil."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) ain glesin horn."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) III fledrin kópf."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) ain sloss mit aim túrangl."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) I spanpet."
+      },
+      {
+       "id": "r2l24",
+       "text": "It(em) I kasten."
+      },
+      {
+       "id": "r2l25",
+       "text": "It(em) I gwand trȗhel."
+      },
+      {
+       "id": "r2l26",
+       "text": "It(em) I petstat."
+      },
+      {
+       "id": "r2l27",
+       "text": "It(em) II tisch."
+      },
+      {
+       "id": "r2l28",
+       "text": "It(em) ain wetstain an ain(er) kett(e)n."
+      },
+      {
+       "id": "r2l29",
+       "text": "It(em) I hoher tisch."
+      },
+      {
+       "id": "r2l30",
+       "text": "It(em) III hirsskȗrn."
+      },
+      {
+       "id": "r2l31",
+       "text": "It(em) II wasser lag(e)l."
+      },
+      {
+       "id": "r2l32",
+       "text": "It(em) II spanpett."
+      },
+      {
+       "id": "r2l33",
+       "text": "It(em) III alte trŭhlin."
+      },
+      {
+       "id": "r2l34",
+       "text": "It(em) ain schrein."
+      }
      ]
     }
    ]
@@ -141,43 +357,154 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "It(em) I melkast.",
-      "It(em) II prantschrag(e)n.",
-      "It(em) II spiczeȳsen.",
-      "It(em) etlich eÿsen zū zu̇gen.",
-      "It(em) ain arbis kolben.",
-      "It(em) I petstat.",
-      "It(em) I unúberzog(e)n petlin.",
-      "It(em) I hauslodin deck(e)n.",
-      "It(em) ain plat(e)n un(d) I stuck pleÿ.",
-      "It(em) I stuckh zÿnn.",
-      "It(em) I pratspiss.",
-      "It(em) I eÿsin ofengab(e)l.",
-      "It(em) II alt eÿsin schauf(e)l.",
-      "It(em) I drÿfȗss.",
-      "It(em) I panckschabeÿsen.",
-      "It(em) I hehel.",
-      "It(em) I lavetschlin.",
-      "It(em) III1/2 fůss eÿsen.",
-      "It(em) I hawshorn.",
-      "It(em) II mortkolben.",
-      "It(em) ain vess(e)l mit fũss ang(e)l.",
-      "It(em) ain melkestlin.",
-      "It(em) ain fleisch ram.",
-      "It(em) in der und(er)n hind(er)n stub(e)n",
-      "ain tisch.",
-      "It(em) auf dem sal II tisch.",
-      "It(em) in der grosen turnicz",
-      "ain tisch.",
-      "Im seehews(e)l, in der",
-      "schmid, under der zÿm(er)",
-      "hũt(e)n.",
-      "It(em) I tisch.",
-      "It(em) VI petstat(e)n.",
-      "It(em) I rolpet(e)l.",
-      "It(em) I eÿsin nag(e)l zum zug.",
-      "It(em) XIII spies stang(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) I melkast."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) II prantschrag(e)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) II spiczeȳsen."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) etlich eÿsen zū zu̇gen."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) ain arbis kolben."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) I petstat."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) I unúberzog(e)n petlin."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) I hauslodin deck(e)n."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) ain plat(e)n un(d) I stuck pleÿ."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) I stuckh zÿnn."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) I pratspiss."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I eÿsin ofengab(e)l."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II alt eÿsin schauf(e)l."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) I drÿfȗss."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) I panckschabeÿsen."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) I hehel."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) I lavetschlin."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) III1/2 fůss eÿsen."
+      },
+      {
+       "id": "r2l19",
+       "text": "It(em) I hawshorn."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) II mortkolben."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) ain vess(e)l mit fũss ang(e)l."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) ain melkestlin."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) ain fleisch ram."
+      },
+      {
+       "id": "r2l24",
+       "text": "It(em) in der und(er)n hind(er)n stub(e)n"
+      },
+      {
+       "id": "r2l25",
+       "text": "ain tisch."
+      },
+      {
+       "id": "r2l26",
+       "text": "It(em) auf dem sal II tisch."
+      },
+      {
+       "id": "r2l27",
+       "text": "It(em) in der grosen turnicz"
+      },
+      {
+       "id": "r2l28",
+       "text": "ain tisch."
+      },
+      {
+       "id": "r3l1",
+       "text": "Im seehews(e)l, in der"
+      },
+      {
+       "id": "r3l2",
+       "text": "schmid, under der zÿm(er)"
+      },
+      {
+       "id": "r3l3",
+       "text": "hũt(e)n."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) I tisch."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) VI petstat(e)n."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) I rolpet(e)l."
+      },
+      {
+       "id": "r4l4",
+       "text": "It(em) I eÿsin nag(e)l zum zug."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) XIII spies stang(e)n."
+      }
      ]
     }
    ]
@@ -202,44 +529,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "In der schmidt(e)n.",
-      "It(em) ain ampos.",
-      "It(em) ain grosen schliffstain.",
-      "It(em) II plaspelg.",
-      "Und(er) der holczhút(e)n.",
-      "It(em) XVIII stuckh stain von",
-      "Mittenwald.",
-      "It(em) etlich tach zieg(e)l.",
-      "It(em) VIIII lerch(e)n pod(e)n lad(e)n.",
-      "It(em) V klain lad(e)n.",
-      "It(em) LX pem gezÿmert un¬",
-      "gevarlich(e)n.",
-      "Im haws under",
-      "Sigmundspurg.",
-      "It(em) ain gros pett mit ain(er)",
-      "plab(e)n ziehen.",
-      "It(em) I kŭss mit ain(er) weissen zieh(e)n",
-      "und ains an ziehen.",
-      "It(em) I polster mit plab.",
-      "It(em) I parchati polster.",
-      "It(em) I plab geneti decken mit",
-      "seiden.",
-      "It(em) I alter strosackh.",
-      "It(em) I alts gestreifft pett.",
-      "It(em) I polster mit ainer gestrei¬",
-      "fft(e)n ziehen.",
-      "It(em) ain neẇ(e)n strosackh.",
-      "It(em) ain alts gestreiffts pett.",
-      "It(em) I span pett.",
-      "It(em) I kariol pet(e)l.",
-      "It(em) I truch.",
-      "It(em) I sessel.",
-      "It(em) I hirskŭrn.",
-      "In stuba princip(is).",
-      "It(em) II tisch.",
-      "It(em) III hirsskúrn.",
-      "It(em) I tisch vor der stub(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der schmidt(e)n."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) ain ampos."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) ain grosen schliffstain."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) II plaspelg."
+      },
+      {
+       "id": "r4l1",
+       "text": "Und(er) der holczhút(e)n."
+      },
+      {
+       "id": "r5l1",
+       "text": "It(em) XVIII stuckh stain von"
+      },
+      {
+       "id": "r5l2",
+       "text": "Mittenwald."
+      },
+      {
+       "id": "r5l3",
+       "text": "It(em) etlich tach zieg(e)l."
+      },
+      {
+       "id": "r5l4",
+       "text": "It(em) VIIII lerch(e)n pod(e)n lad(e)n."
+      },
+      {
+       "id": "r5l5",
+       "text": "It(em) V klain lad(e)n."
+      },
+      {
+       "id": "r5l6",
+       "text": "It(em) LX pem gezÿmert un¬"
+      },
+      {
+       "id": "r5l7",
+       "text": "gevarlich(e)n."
+      },
+      {
+       "id": "r6l1",
+       "text": "Im haws under"
+      },
+      {
+       "id": "r6l2",
+       "text": "Sigmundspurg."
+      },
+      {
+       "id": "r7l1",
+       "text": "It(em) ain gros pett mit ain(er)"
+      },
+      {
+       "id": "r7l2",
+       "text": "plab(e)n ziehen."
+      },
+      {
+       "id": "r7l3",
+       "text": "It(em) I kŭss mit ain(er) weissen zieh(e)n"
+      },
+      {
+       "id": "r7l4",
+       "text": "und ains an ziehen."
+      },
+      {
+       "id": "r7l5",
+       "text": "It(em) I polster mit plab."
+      },
+      {
+       "id": "r7l6",
+       "text": "It(em) I parchati polster."
+      },
+      {
+       "id": "r7l7",
+       "text": "It(em) I plab geneti decken mit"
+      },
+      {
+       "id": "r7l8",
+       "text": "seiden."
+      },
+      {
+       "id": "r7l9",
+       "text": "It(em) I alter strosackh."
+      },
+      {
+       "id": "r7l10",
+       "text": "It(em) I alts gestreifft pett."
+      },
+      {
+       "id": "r7l11",
+       "text": "It(em) I polster mit ainer gestrei¬"
+      },
+      {
+       "id": "r7l12",
+       "text": "fft(e)n ziehen."
+      },
+      {
+       "id": "r7l13",
+       "text": "It(em) ain neẇ(e)n strosackh."
+      },
+      {
+       "id": "r7l14",
+       "text": "It(em) ain alts gestreiffts pett."
+      },
+      {
+       "id": "r7l15",
+       "text": "It(em) I span pett."
+      },
+      {
+       "id": "r7l16",
+       "text": "It(em) I kariol pet(e)l."
+      },
+      {
+       "id": "r7l17",
+       "text": "It(em) I truch."
+      },
+      {
+       "id": "r7l18",
+       "text": "It(em) I sessel."
+      },
+      {
+       "id": "r7l19",
+       "text": "It(em) I hirskŭrn."
+      },
+      {
+       "id": "r8l1",
+       "text": "In stuba princip(is)."
+      },
+      {
+       "id": "r9l1",
+       "text": "It(em) II tisch."
+      },
+      {
+       "id": "r9l2",
+       "text": "It(em) III hirsskúrn."
+      },
+      {
+       "id": "r9l3",
+       "text": "It(em) I tisch vor der stub(e)n."
+      }
      ]
     }
    ]
@@ -264,42 +705,150 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "It(em) I petstat mit ain(er) hobel.",
-      "It(em) I fůtral mit VIII messern.",
-      "It(em) XII zÿn schȗss(e)l.",
-      "It(em) II klain zerrissen schúss(e)l.",
-      "It(em) I zỹn plan.",
-      "It(em) I alte plech flasch(e)n.",
-      "It(em) III alt pip(e)n.",
-      "It(em) I zwomássig kand(e)l.",
-      "It(em) I ainmassig kand(e)l.",
-      "It(em) I drincken kand(e)l.",
-      "It(em) I alte zerprochne kand(e)l.",
-      "It(em) IIII senff schússel.",
-      "It(em) II alt eÿsin leúcht(er).",
-      "It(em) V milhkarlin.",
-      "It(em) V mal schúss(e)l.",
-      "Harnasch kam(e)r.",
-      "It(em) I gestreift alts petlin.",
-      "It(em) I weiss póss petlin.",
-      "It(em) I alt(er) stro sackh.",
-      "It(em) I pet mit weiss(er) leinwat.",
-      "It(em) I gestreifft(er) polster.",
-      "It(em) II gestreiffte kũss.",
-      "It(em) I alter stro sackh.",
-      "It(em) I gestreifts alts petlin.",
-      "It(em) I stro sackh.",
-      "It(em) I alt(er) gestreifft(er) polst(er).",
-      "It(em) II gestreiffte kȗss.",
-      "It(em) I weiß klain petlin.",
-      "It(em) I strosackh.",
-      "It(em) III spanpett.",
-      "It(em) I spanpet mit aim hob(e)l.",
-      "It(em) XI rauch scheffin deck(e)n.",
-      "It(em) gemsin zerrissen decken.",
-      "It(em) I scheffin zerriss(e)n deck(e)n.",
-      "It(em) II alt genet gŏlter."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) I petstat mit ain(er) hobel."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) I fůtral mit VIII messern."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) XII zÿn schȗss(e)l."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) II klain zerrissen schúss(e)l."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) I zỹn plan."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) I alte plech flasch(e)n."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) III alt pip(e)n."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) I zwomássig kand(e)l."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) I ainmassig kand(e)l."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) I drincken kand(e)l."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) I alte zerprochne kand(e)l."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) IIII senff schússel."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II alt eÿsin leúcht(er)."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) V milhkarlin."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) V mal schúss(e)l."
+      },
+      {
+       "id": "r3l1",
+       "text": "Harnasch kam(e)r."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) I gestreift alts petlin."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) I weiss póss petlin."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) I alt(er) stro sackh."
+      },
+      {
+       "id": "r4l4",
+       "text": "It(em) I pet mit weiss(er) leinwat."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) I gestreifft(er) polster."
+      },
+      {
+       "id": "r4l6",
+       "text": "It(em) II gestreiffte kũss."
+      },
+      {
+       "id": "r4l7",
+       "text": "It(em) I alter stro sackh."
+      },
+      {
+       "id": "r4l8",
+       "text": "It(em) I gestreifts alts petlin."
+      },
+      {
+       "id": "r4l9",
+       "text": "It(em) I stro sackh."
+      },
+      {
+       "id": "r4l10",
+       "text": "It(em) I alt(er) gestreifft(er) polst(er)."
+      },
+      {
+       "id": "r4l11",
+       "text": "It(em) II gestreiffte kȗss."
+      },
+      {
+       "id": "r4l12",
+       "text": "It(em) I weiß klain petlin."
+      },
+      {
+       "id": "r4l13",
+       "text": "It(em) I strosackh."
+      },
+      {
+       "id": "r4l14",
+       "text": "It(em) III spanpett."
+      },
+      {
+       "id": "r4l15",
+       "text": "It(em) I spanpet mit aim hob(e)l."
+      },
+      {
+       "id": "r4l16",
+       "text": "It(em) XI rauch scheffin deck(e)n."
+      },
+      {
+       "id": "r4l17",
+       "text": "It(em) gemsin zerrissen decken."
+      },
+      {
+       "id": "r4l18",
+       "text": "It(em) I scheffin zerriss(e)n deck(e)n."
+      },
+      {
+       "id": "r4l19",
+       "text": "It(em) II alt genet gŏlter."
+      }
      ]
     }
    ]
@@ -324,7 +873,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      }
      ]
     }
    ]
@@ -349,7 +901,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      }
      ]
     }
    ]
@@ -374,45 +929,162 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "It(em) II hauslodin decken.",
-      "It(em) II schalawn decken.",
-      "It(em) I polster an ziehen.",
-      "It(em) I alt(er) gestreifft(er) polst(er).",
-      "It(em) X helmlin.",
-      "It(em) X eýsenhüt alt.",
-      "It(em) XIX pancz(er).",
-      "It(em) wer mit IIII hacken.",
-      "It(em) swert alz ain trischel.",
-      "It(em) II mordaxen.",
-      "It(em) I eÿsin pŭchslin.",
-      "It(em) II puckler.",
-      "It(em) II eýsin kolb(e)n.",
-      "It(em) II wurfhack(e)n.",
-      "It(em) I gros gassen swert.",
-      "It(em) I armbrost mit ain(er)",
-      "winden.",
-      "It(em) I kocher mit VII wasser",
-      "poltz(e)n.",
-      "It(em) I hellenpart.",
-      "It(em) II zwilhin handtŭch.",
-      "It(em) II wirchin hand túch.",
-      "It(em) II par alte henfine",
-      "leilach.",
-      "It(em) IIII par alt wirchine",
-      "leinlach.",
-      "It(em) XI klaine zerrissne alte",
-      "leinlach.",
-      "It(em) III wirchine tischtúch.",
-      "It(em) I zwilhe alt tischtŭch.",
-      "It(em) I schreinlin.",
-      "It(em) III petstat.",
-      "It(em) II petstat.",
-      "It(em) II tisch.",
-      "It(em) II alte spanpett.",
-      "It(em) I zerrissen strosackh.",
-      "It(em) IIII spanpett.",
-      "It(em) I alte truh."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) II hauslodin decken."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) II schalawn decken."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) I polster an ziehen."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) I alt(er) gestreifft(er) polst(er)."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) X helmlin."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) X eýsenhüt alt."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) XIX pancz(er)."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) wer mit IIII hacken."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) swert alz ain trischel."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) II mordaxen."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) I eÿsin pŭchslin."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) II puckler."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II eýsin kolb(e)n."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) II wurfhack(e)n."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) I gros gassen swert."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) I armbrost mit ain(er)"
+      },
+      {
+       "id": "r2l17",
+       "text": "winden."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) I kocher mit VII wasser"
+      },
+      {
+       "id": "r2l19",
+       "text": "poltz(e)n."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) I hellenpart."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) II zwilhin handtŭch."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) II wirchin hand túch."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) II par alte henfine"
+      },
+      {
+       "id": "r2l24",
+       "text": "leilach."
+      },
+      {
+       "id": "r2l25",
+       "text": "It(em) IIII par alt wirchine"
+      },
+      {
+       "id": "r2l26",
+       "text": "leinlach."
+      },
+      {
+       "id": "r2l27",
+       "text": "It(em) XI klaine zerrissne alte"
+      },
+      {
+       "id": "r2l28",
+       "text": "leinlach."
+      },
+      {
+       "id": "r2l29",
+       "text": "It(em) III wirchine tischtúch."
+      },
+      {
+       "id": "r2l30",
+       "text": "It(em) I zwilhe alt tischtŭch."
+      },
+      {
+       "id": "r2l31",
+       "text": "It(em) I schreinlin."
+      },
+      {
+       "id": "r2l32",
+       "text": "It(em) III petstat."
+      },
+      {
+       "id": "r2l33",
+       "text": "It(em) II petstat."
+      },
+      {
+       "id": "r2l34",
+       "text": "It(em) II tisch."
+      },
+      {
+       "id": "r2l35",
+       "text": "It(em) II alte spanpett."
+      },
+      {
+       "id": "r2l36",
+       "text": "It(em) I zerrissen strosackh."
+      },
+      {
+       "id": "r2l37",
+       "text": "It(em) IIII spanpett."
+      },
+      {
+       "id": "r2l38",
+       "text": "It(em) I alte truh."
+      }
      ]
     }
    ]
@@ -437,45 +1109,162 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "It(em) III wirchine pettlin.",
-      "It(em) I zwilhin pettlin.",
-      "It(em) I petlin mit ainer hauslodin",
-      "decken.",
-      "It(em) III polst(er) mit leinwat úber",
-      "zog(e)n.",
-      "It(em) I polst(er) an ziehen.",
-      "It(em) I zerrissen unúberzog(e)n",
-      "petlin.",
-      "It(em) II gestreifft polster.",
-      "It(em) II gestreifft kȗss.",
-      "It(em) I kȗss an úberzug.",
-      "It(em) II petlin an ziehen.",
-      "It(em) I alte deck mit enden.",
-      "It(em) I hawslodin decken gestreifft.",
-      "It(em) I weissen golter.",
-      "It(em) I schalawn zerrissen.",
-      "It(em) under dem tach",
-      "V spanpett.",
-      "It(em) XXI hỹlczin scheib(e)n.",
-      "It(em) I petstat.",
-      "It(em) II tisch.",
-      "It(em) I alt(er) gieskess(e)l und",
-      "ain kupferin peckh.",
-      "It(em) IIII erin hefen auf",
-      "dreÿ fuessen, hat der ain",
-      "ain fŭss verlor(e)n.",
-      "It(em) I erin lavetsch(e)n.",
-      "It(em) I kupferin zerrissen sÿb.",
-      "It(em) X kessel klain und gros.",
-      "It(em) I zerrissen kessel.",
-      "It(em) I mersel und stóssel.",
-      "It(em) II pratschragen.",
-      "It(em) IIII pfannen gros und",
-      "klain.",
-      "It(em) I kesten pfendlin.",
-      "It(em) I glůtpfannen.",
-      "It(em) II eÿsin póss kell(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) III wirchine pettlin."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) I zwilhin pettlin."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) I petlin mit ainer hauslodin"
+      },
+      {
+       "id": "r2l4",
+       "text": "decken."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) III polst(er) mit leinwat úber"
+      },
+      {
+       "id": "r2l6",
+       "text": "zog(e)n."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) I polst(er) an ziehen."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) I zerrissen unúberzog(e)n"
+      },
+      {
+       "id": "r2l9",
+       "text": "petlin."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) II gestreifft polster."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) II gestreifft kȗss."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I kȗss an úberzug."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II petlin an ziehen."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) I alte deck mit enden."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) I hawslodin decken gestreifft."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) I weissen golter."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) I schalawn zerrissen."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) under dem tach"
+      },
+      {
+       "id": "r2l19",
+       "text": "V spanpett."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) XXI hỹlczin scheib(e)n."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) I petstat."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) II tisch."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) I alt(er) gieskess(e)l und"
+      },
+      {
+       "id": "r2l24",
+       "text": "ain kupferin peckh."
+      },
+      {
+       "id": "r2l25",
+       "text": "It(em) IIII erin hefen auf"
+      },
+      {
+       "id": "r2l26",
+       "text": "dreÿ fuessen, hat der ain"
+      },
+      {
+       "id": "r2l27",
+       "text": "ain fŭss verlor(e)n."
+      },
+      {
+       "id": "r2l28",
+       "text": "It(em) I erin lavetsch(e)n."
+      },
+      {
+       "id": "r2l29",
+       "text": "It(em) I kupferin zerrissen sÿb."
+      },
+      {
+       "id": "r2l30",
+       "text": "It(em) X kessel klain und gros."
+      },
+      {
+       "id": "r2l31",
+       "text": "It(em) I zerrissen kessel."
+      },
+      {
+       "id": "r2l32",
+       "text": "It(em) I mersel und stóssel."
+      },
+      {
+       "id": "r2l33",
+       "text": "It(em) II pratschragen."
+      },
+      {
+       "id": "r2l34",
+       "text": "It(em) IIII pfannen gros und"
+      },
+      {
+       "id": "r2l35",
+       "text": "klain."
+      },
+      {
+       "id": "r2l36",
+       "text": "It(em) I kesten pfendlin."
+      },
+      {
+       "id": "r2l37",
+       "text": "It(em) I glůtpfannen."
+      },
+      {
+       "id": "r2l38",
+       "text": "It(em) II eÿsin póss kell(e)n."
+      }
      ]
     }
    ]
@@ -500,40 +1289,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]",
-      "It(em) I messin ketzlin.",
-      "It(em) I pratspiss zú hirsleb(er)n.",
-      "It(em) II gros pratspiss.",
-      "It(em) I eÿsin gabl damit man",
-      "fleisch auf henckt.",
-      "It(em) Iu̇tzschern.",
-      "It(em) I feẃrkreel.",
-      "It(em) IIII alt hafendecken.",
-      "It(em) II prantschragen.",
-      "It(em) I hehel.",
-      "It(em) III ketin hefen.",
-      "It(em) I rÿbeÿsen.",
-      "It(em) II krawtmesser.",
-      "It(em) I alt hackmesser.",
-      "It(em) I rŭbscherr(e)n.",
-      "It(em) XXX hÿltzin teller.",
-      "It(em) I panckschab, ist zerproch(e)n.",
-      "It(em) I kupferin sỹb.",
-      "It(em) I drÿfŭss.",
-      "It(em) I pewt(e)lfass.",
-      "It(em) I fleisch zuber.",
-      "It(em) I kessel.",
-      "It(em) I pazeid(e)n.",
-      "It(em) I alter tisch.",
-      "It(em) ain kŭffkar.",
-      "It(em) I speis truhen.",
-      "It(em) I alt streihmass.",
-      "It(em) II lang winting.",
-      "It(em) I leffing(er).",
-      "It(em) III hebeÿsen.",
-      "It(em) II alte schnaiteÿsen.",
-      "It(em) II nagel eÿsen.",
-      "It(em) ain horn ampos."
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) I messin ketzlin."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) I pratspiss zú hirsleb(er)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) II gros pratspiss."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) I eÿsin gabl damit man"
+      },
+      {
+       "id": "r2l5",
+       "text": "fleisch auf henckt."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) Iu̇tzschern."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) I feẃrkreel."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) IIII alt hafendecken."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) II prantschragen."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) I hehel."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) III ketin hefen."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I rÿbeÿsen."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II krawtmesser."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) I alt hackmesser."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) I rŭbscherr(e)n."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) XXX hÿltzin teller."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) I panckschab, ist zerproch(e)n."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) I kupferin sỹb."
+      },
+      {
+       "id": "r2l19",
+       "text": "It(em) I drÿfŭss."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) I pewt(e)lfass."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) I fleisch zuber."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) I kessel."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) I pazeid(e)n."
+      },
+      {
+       "id": "r2l24",
+       "text": "It(em) I alter tisch."
+      },
+      {
+       "id": "r2l25",
+       "text": "It(em) ain kŭffkar."
+      },
+      {
+       "id": "r2l26",
+       "text": "It(em) I speis truhen."
+      },
+      {
+       "id": "r2l27",
+       "text": "It(em) I alt streihmass."
+      },
+      {
+       "id": "r2l28",
+       "text": "It(em) II lang winting."
+      },
+      {
+       "id": "r2l29",
+       "text": "It(em) I leffing(er)."
+      },
+      {
+       "id": "r2l30",
+       "text": "It(em) III hebeÿsen."
+      },
+      {
+       "id": "r2l31",
+       "text": "It(em) II alte schnaiteÿsen."
+      },
+      {
+       "id": "r2l32",
+       "text": "It(em) II nagel eÿsen."
+      },
+      {
+       "id": "r2l33",
+       "text": "It(em) ain horn ampos."
+      }
      ]
     }
    ]
@@ -558,40 +1449,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]",
-      "It(em) II feẃr zangen.",
-      "It(em) II span ring.",
-      "It(em) I werch ham(er).",
-      "It(em) I vor schlag.",
-      "It(em) I ebenschlag.",
-      "It(em) I mawrhamer.",
-      "It(em) ain zwaȳ spitz.",
-      "It(em) ain gegenham(e)r.",
-      "It(em) ain protpancklin.",
-      "It(em) I alter tisch.",
-      "It(em) I prot hang(e)n.",
-      "It(em) I kurtz(e)nket(e)n an zug.",
-      "It(em) II eÿsen an zug.",
-      "It(em) II alt zerproch(e)n schaufl(e)n.",
-      "It(em) II alt mert(e)lhawen.",
-      "It(em) I eỹsin schleg(e)l.",
-      "It(em) II werchhawen.",
-      "It(em) ain zwaÿspicz.",
-      "It(em) ain rennstang(e)n.",
-      "It(em) II eÿsin stecken.",
-      "It(em) ain welhawen.",
-      "It(em) ain eỹsin stang(e)n",
-      "zum schliffstain.",
-      "It(em) etlich mer eÿsin geschir",
-      "zú der sag.",
-      "It(em) ain holczhacken.",
-      "It(em) I ainspitz.",
-      "It(em) ain alter haiden.",
-      "It(em) ain mert(e)l kellen.",
-      "It(em) ain hawen.",
-      "It(em) ain protschaff.",
-      "It(em) VIIII púsch(e)l lannczen",
-      "schafft."
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) II feẃr zangen."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) II span ring."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) I werch ham(er)."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) I vor schlag."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) I ebenschlag."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) I mawrhamer."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) ain zwaȳ spitz."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) ain gegenham(e)r."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) ain protpancklin."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) I alter tisch."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) I prot hang(e)n."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) I kurtz(e)nket(e)n an zug."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) II eÿsen an zug."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) II alt zerproch(e)n schaufl(e)n."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) II alt mert(e)lhawen."
+      },
+      {
+       "id": "r2l16",
+       "text": "It(em) I eỹsin schleg(e)l."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) II werchhawen."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) ain zwaÿspicz."
+      },
+      {
+       "id": "r2l19",
+       "text": "It(em) ain rennstang(e)n."
+      },
+      {
+       "id": "r2l20",
+       "text": "It(em) II eÿsin stecken."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) ain welhawen."
+      },
+      {
+       "id": "r2l22",
+       "text": "It(em) ain eỹsin stang(e)n"
+      },
+      {
+       "id": "r2l23",
+       "text": "zum schliffstain."
+      },
+      {
+       "id": "r2l24",
+       "text": "It(em) etlich mer eÿsin geschir"
+      },
+      {
+       "id": "r2l25",
+       "text": "zú der sag."
+      },
+      {
+       "id": "r2l26",
+       "text": "It(em) ain holczhacken."
+      },
+      {
+       "id": "r2l27",
+       "text": "It(em) I ainspitz."
+      },
+      {
+       "id": "r2l28",
+       "text": "It(em) ain alter haiden."
+      },
+      {
+       "id": "r2l29",
+       "text": "It(em) ain mert(e)l kellen."
+      },
+      {
+       "id": "r2l30",
+       "text": "It(em) ain hawen."
+      },
+      {
+       "id": "r2l31",
+       "text": "It(em) ain protschaff."
+      },
+      {
+       "id": "r2l32",
+       "text": "It(em) VIIII púsch(e)l lannczen"
+      },
+      {
+       "id": "r2l33",
+       "text": "schafft."
+      }
      ]
     }
    ]
@@ -616,39 +1609,138 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]",
-      "It(em) V púsch(e)l rũder.",
-      "It(em) ain alts zug sail.",
-      "It(em) ain eingemawrt(e)n kessel.",
-      "It(em) ain groser pad zuber.",
-      "It(em) etlich úrn, scheffer,",
-      "zȗber im alten keller.",
-      "It(em) ain milh tisch.",
-      "It(em) ain kornpŭchss mit aim",
-      "komet und geschirr.",
-      "It(em) ain eÿsin zang da",
-      "man stain mit auf zeúcht.",
-      "It(em) ain alt(e)n tisch.",
-      "It(em) ain alt spanpett.",
-      "Ecclesia.",
-      "It(em) ain swartz samatin",
-      "messgwand mit grunem",
-      "zend(e)l underzog(e)n und",
-      "ain swarcz(e)n tasch zum",
-      "corporal mit sein(er) zúge¬",
-      "horung.",
-      "It(em) ain gruen zendlin",
-      "messgwand mit sein(er)",
-      "zugehórung.",
-      "It(em) ain weiß leinwat",
-      "messgwand mit sein(er)",
-      "zȗgehórung.",
-      "It(em) ain weiss gúts",
-      "altar tũch.",
-      "It(em) ain gantz weiß",
-      "altar tüch.",
-      "It(em) ain weiss altar tüch",
-      "mit plaben leisten."
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) V púsch(e)l rũder."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) ain alts zug sail."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) ain eingemawrt(e)n kessel."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) ain groser pad zuber."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) etlich úrn, scheffer,"
+      },
+      {
+       "id": "r2l6",
+       "text": "zȗber im alten keller."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) ain milh tisch."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) ain kornpŭchss mit aim"
+      },
+      {
+       "id": "r2l9",
+       "text": "komet und geschirr."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) ain eÿsin zang da"
+      },
+      {
+       "id": "r2l11",
+       "text": "man stain mit auf zeúcht."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) ain alt(e)n tisch."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) ain alt spanpett."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ecclesia."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) ain swartz samatin"
+      },
+      {
+       "id": "r4l2",
+       "text": "messgwand mit grunem"
+      },
+      {
+       "id": "r4l3",
+       "text": "zend(e)l underzog(e)n und"
+      },
+      {
+       "id": "r4l4",
+       "text": "ain swarcz(e)n tasch zum"
+      },
+      {
+       "id": "r4l5",
+       "text": "corporal mit sein(er) zúge¬"
+      },
+      {
+       "id": "r4l6",
+       "text": "horung."
+      },
+      {
+       "id": "r4l7",
+       "text": "It(em) ain gruen zendlin"
+      },
+      {
+       "id": "r4l8",
+       "text": "messgwand mit sein(er)"
+      },
+      {
+       "id": "r4l9",
+       "text": "zugehórung."
+      },
+      {
+       "id": "r4l10",
+       "text": "It(em) ain weiß leinwat"
+      },
+      {
+       "id": "r4l11",
+       "text": "messgwand mit sein(er)"
+      },
+      {
+       "id": "r4l12",
+       "text": "zȗgehórung."
+      },
+      {
+       "id": "r4l13",
+       "text": "It(em) ain weiss gúts"
+      },
+      {
+       "id": "r4l14",
+       "text": "altar tũch."
+      },
+      {
+       "id": "r4l15",
+       "text": "It(em) ain gantz weiß"
+      },
+      {
+       "id": "r4l16",
+       "text": "altar tüch."
+      },
+      {
+       "id": "r4l17",
+       "text": "It(em) ain weiss altar tüch"
+      },
+      {
+       "id": "r4l18",
+       "text": "mit plaben leisten."
+      }
      ]
     }
    ]
@@ -673,19 +1765,58 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7r]",
-      "It(em) ain messpūch.",
-      "It(em) ain rochfass.",
-      "It(em) II opfer kand(e)l.",
-      "It(em) V lb. wax unge¬",
-      "varlich.",
-      "It(em) III messig leẃcht(er)",
-      "klain und gros.",
-      "It(em) ain glockh.",
-      "It(em) ain weỹhkessel.",
-      "It(em) ain alter leúcht(er).",
-      "It(em) ain glockh und ain",
-      "ur auf dem tor."
+      {
+       "id": "r1l1",
+       "text": "[fol.7r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) ain messpūch."
+      },
+      {
+       "id": "r2l2",
+       "text": "It(em) ain rochfass."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) II opfer kand(e)l."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) V lb. wax unge¬"
+      },
+      {
+       "id": "r2l5",
+       "text": "varlich."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) III messig leẃcht(er)"
+      },
+      {
+       "id": "r2l7",
+       "text": "klain und gros."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) ain glockh."
+      },
+      {
+       "id": "r2l9",
+       "text": "It(em) ain weỹhkessel."
+      },
+      {
+       "id": "r2l10",
+       "text": "It(em) ain alter leúcht(er)."
+      },
+      {
+       "id": "r2l11",
+       "text": "It(em) ain glockh und ain"
+      },
+      {
+       "id": "r2l12",
+       "text": "ur auf dem tor."
+      }
      ]
     }
    ]
@@ -710,7 +1841,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7v]"
+      }
      ]
     }
    ]
@@ -735,7 +1869,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8r]"
+      }
      ]
     }
    ]
@@ -760,7 +1897,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8v]"
+      }
      ]
     }
    ]

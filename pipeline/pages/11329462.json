@@ -21,47 +21,170 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerckt den gezŭg so juncker",
-      "Cristoff Rentlÿ juncker Josseppen",
-      "U̇berriner in geantwurt haut zů",
-      "Sigmundsegg am mitwochen an",
-      "dem Cotember in der Vasten im LXXXV.",
-      "Item vier möschÿ hagenbu̇chssen.",
-      "Sechs hantbu̇chssen.",
-      "Ain halbs väsly mit pulffer.",
-      "Sechs armbrust.",
-      "Drÿ winden.",
-      "Ain lagil mit pfilen.",
-      "Ain schafrait.",
-      "Ain betstat.",
-      "Zwo pfannen.",
-      "Zwo rotschu̇schlen.",
-      "Ain lang schwert.",
-      "Ain gros horn.",
-      "Ain stuck blÿ.",
-      "Ain lang zugsail.",
-      "Ain spis truchen.",
-      "Ain vancknus ÿsen.",
-      "Zwo seges sen.",
-      "Ain häll.",
-      "Ain rost.",
-      "Ain drÿfůs.",
-      "Item Leo Schmid zů Pfuns ist schuldig",
-      "m(einem) g(nädigen) h(erren) drÿ eÿssenplech, zwaÿ",
-      "wagen reder kosten XXVI gl. sol",
-      "er weschlachen, haut dar an hin",
-      "ain r(einischer) gulden ist verrait m(einem) g(nädigen) h(erren).",
-      "Drÿ hu̇bsch strithacken.",
-      "Zwen schwin spies.",
-      "Ain eren spies mit aim schwȃrtzen schaft.",
-      "Vier märter howen.",
-      "Drÿ bickel.",
-      "Vier eẏssen schuflen.",
-      "Zwo holtz hacken.",
-      "Ain piel.",
-      "Neúw eẏssenplech.",
-      "Vier lad eÿssen."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerckt den gezŭg so juncker"
+      },
+      {
+       "id": "r2l2",
+       "text": "Cristoff Rentlÿ juncker Josseppen"
+      },
+      {
+       "id": "r2l3",
+       "text": "U̇berriner in geantwurt haut zů"
+      },
+      {
+       "id": "r2l4",
+       "text": "Sigmundsegg am mitwochen an"
+      },
+      {
+       "id": "r2l5",
+       "text": "dem Cotember in der Vasten im LXXXV."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item vier möschÿ hagenbu̇chssen."
+      },
+      {
+       "id": "r3l2",
+       "text": "Sechs hantbu̇chssen."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain halbs väsly mit pulffer."
+      },
+      {
+       "id": "r3l4",
+       "text": "Sechs armbrust."
+      },
+      {
+       "id": "r3l5",
+       "text": "Drÿ winden."
+      },
+      {
+       "id": "r3l6",
+       "text": "Ain lagil mit pfilen."
+      },
+      {
+       "id": "r3l7",
+       "text": "Ain schafrait."
+      },
+      {
+       "id": "r3l8",
+       "text": "Ain betstat."
+      },
+      {
+       "id": "r3l9",
+       "text": "Zwo pfannen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Zwo rotschu̇schlen."
+      },
+      {
+       "id": "r3l11",
+       "text": "Ain lang schwert."
+      },
+      {
+       "id": "r3l12",
+       "text": "Ain gros horn."
+      },
+      {
+       "id": "r3l13",
+       "text": "Ain stuck blÿ."
+      },
+      {
+       "id": "r3l14",
+       "text": "Ain lang zugsail."
+      },
+      {
+       "id": "r3l15",
+       "text": "Ain spis truchen."
+      },
+      {
+       "id": "r3l16",
+       "text": "Ain vancknus ÿsen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Zwo seges sen."
+      },
+      {
+       "id": "r3l18",
+       "text": "Ain häll."
+      },
+      {
+       "id": "r3l19",
+       "text": "Ain rost."
+      },
+      {
+       "id": "r3l20",
+       "text": "Ain drÿfůs."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item Leo Schmid zů Pfuns ist schuldig"
+      },
+      {
+       "id": "r3l22",
+       "text": "m(einem) g(nädigen) h(erren) drÿ eÿssenplech, zwaÿ"
+      },
+      {
+       "id": "r3l23",
+       "text": "wagen reder kosten XXVI gl. sol"
+      },
+      {
+       "id": "r3l24",
+       "text": "er weschlachen, haut dar an hin"
+      },
+      {
+       "id": "r3l25",
+       "text": "ain r(einischer) gulden ist verrait m(einem) g(nädigen) h(erren)."
+      },
+      {
+       "id": "r3l26",
+       "text": "Drÿ hu̇bsch strithacken."
+      },
+      {
+       "id": "r3l27",
+       "text": "Zwen schwin spies."
+      },
+      {
+       "id": "r3l28",
+       "text": "Ain eren spies mit aim schwȃrtzen schaft."
+      },
+      {
+       "id": "r3l29",
+       "text": "Vier märter howen."
+      },
+      {
+       "id": "r3l30",
+       "text": "Drÿ bickel."
+      },
+      {
+       "id": "r3l31",
+       "text": "Vier eẏssen schuflen."
+      },
+      {
+       "id": "r3l32",
+       "text": "Zwo holtz hacken."
+      },
+      {
+       "id": "r3l33",
+       "text": "Ain piel."
+      },
+      {
+       "id": "r3l34",
+       "text": "Neúw eẏssenplech."
+      },
+      {
+       "id": "r3l35",
+       "text": "Vier lad eÿssen."
+      }
      ]
     }
    ]
@@ -86,9 +209,18 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Inventȃri von Sigmundseckg",
-      "geantwurt durch den Uberener."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "line_1753700449251_1652",
+       "text": "Inventȃri von Sigmundseckg"
+      },
+      {
+       "id": "line_1753700451617_1657",
+       "text": "geantwurt durch den Uberener."
+      }
      ]
     }
    ]

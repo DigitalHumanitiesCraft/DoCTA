@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -188,9 +188,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328661-1"/>
+        <pb n="1" facs="#surface-11328661-1"/>
+        <ab xml:id="ab-11328661-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328661-1-r2">
           <lb facs="#zone-11328661-1-r2l1"/>Item vermerkt den hausplunder
           <lb facs="#zone-11328661-1-r2l2"/>so Caspar Frech zw Frewndshaim
           <lb facs="#zone-11328661-1-r2l3"/>von Leonhart Melkhaimer an
@@ -211,6 +213,8 @@
           <lb facs="#zone-11328661-1-r2l18"/>zw Schnekhnhausn, Marttan
           <lb facs="#zone-11328661-1-r2l19"/>Ranndolff und ander nacht¬
           <lb facs="#zone-11328661-1-r2l20"/>pauren mer.
+        </ab>
+        <ab xml:id="ab-11328661-1-r3">
           <lb facs="#zone-11328661-1-r3l1"/>Item am ersten ain schliefstain.
           <lb facs="#zone-11328661-1-r3l2"/>Ain keslin.
           <lb facs="#zone-11328661-1-r3l3"/>Ain badzuber.
@@ -234,9 +238,11 @@
           <lb facs="#zone-11328661-1-r3l21"/>und da bei ain klaine
           <lb facs="#zone-11328661-1-r3l22"/>pettstat.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328661-2"/>
+        <pb n="2" facs="#surface-11328661-2"/>
+        <ab xml:id="ab-11328661-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328661-2-r2">
           <lb facs="#zone-11328661-2-r2l1"/>Item im zymmer ain bestatt
           <lb facs="#zone-11328661-2-r2l2"/>und ain pflug mit
           <lb facs="#zone-11328661-2-r2l3"/>seiner zuegehorung.
@@ -269,9 +275,11 @@
           <lb facs="#zone-11328661-2-r2l30"/>Ain messein leichter.
           <lb facs="#zone-11328661-2-r2l31"/>Ain messein giespekkh.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328661-3"/>
+        <pb n="3" facs="#surface-11328661-3"/>
+        <ab xml:id="ab-11328661-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328661-3-r2">
           <lb facs="#zone-11328661-3-r2l1"/>Ain messein gieskanndel.
           <lb facs="#zone-11328661-3-r2l2"/>V messein leichter
           <lb facs="#zone-11328661-3-r2l3"/>mit aim ror.
@@ -288,6 +296,8 @@
           <lb facs="#zone-11328661-3-r2l14"/>Ain tischtuch.
           <lb facs="#zone-11328661-3-r2l15"/>XIII hanndtucher.
           <lb facs="#zone-11328661-3-r2l16"/>VI prottücher.
+        </ab>
+        <ab xml:id="ab-11328661-3-r3">
           <lb facs="#zone-11328661-3-r3l1"/>Und auf geschãfft des
           <lb facs="#zone-11328661-3-r3l2"/>benantten meins genedigen
           <lb facs="#zone-11328661-3-r3l3"/>herrn von Osterreich etc.
@@ -297,9 +307,11 @@
           <lb facs="#zone-11328661-3-r3l7"/>mein aigen petschafft
           <lb facs="#zone-11328661-3-r3l8"/>gedrukht.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328661-4"/>
+        <pb n="4" facs="#surface-11328661-4"/>
+        <ab xml:id="ab-11328661-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328661-4-r2">
           <lb facs="#zone-11328661-4-r2l1"/>In die cantzlei. Inv̊entari
           <lb facs="#zone-11328661-4-r2l2"/>zedlen von Freuntshaim
           <lb facs="#zone-11328661-4-r2l3"/>anno etc. LXXVI.

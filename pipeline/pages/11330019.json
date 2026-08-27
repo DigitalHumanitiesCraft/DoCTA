@@ -21,46 +21,166 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Kronburg",
-      "Vermerkt die farund hab,",
-      "haws plunder und anders auff",
-      "Kronburg, Hannsen Clamer,",
-      "weÿlund phleger, da selbs zu",
-      "gehörig so Joseph Überriner",
-      "an sant meins genedigen herren etc.",
-      "in geschrifft ingenomen hatt an",
-      "freÿtag nach sant Michelstag",
-      "anno LXXVIII.",
-      "Item zum ersten aim kürüss, III",
-      "eÿsenhüt, II par hentschůch, III",
-      "par arm zewg, III par wndere",
-      "bain gwand, II bants, III kragel,",
-      "mer ain armzewg, III schweinspies",
-      "sind nit gevast.",
-      "Item in der stuben und kamer da",
-      "ist ain schribtisch, I grosser schrein,",
-      "darunter lig smid zeug, VI zangen,",
-      "IIII hämer, I veÿhel, I schmidsteck,",
-      "ain schlosser kloben.",
-      "Item mer ain bettstatt darinn ligt",
-      "ain bett, ain bolster, I kuss, II banck",
-      "bolster, III rauch deck.",
-      "Item mer ain messin beck und ain",
-      "messin hantvass, I taller būchß,",
-      "dar sind XXV plandl.",
-      "Mer ligen in ainer bettruchen VII",
-      "blatt schlos und ain gross malen",
-      "sloss.",
-      "Mer vor der kuchin ain trucken",
-      "und ain schaffraitt, II pfannen,",
-      "V erin hafen, III fischkessel.",
-      "Item ain armbrost mit ainer winden",
-      "hat kain sen.",
-      "Item auff der untern wer stett ain",
-      "truch, ain betstatt, dar inn ligt",
-      "ain bett, ain bolster, II leylach, ain",
-      "rauch deck und ain golter."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Kronburg"
+      },
+      {
+       "id": "r3l1",
+       "text": "Vermerkt die farund hab,"
+      },
+      {
+       "id": "r3l2",
+       "text": "haws plunder und anders auff"
+      },
+      {
+       "id": "r3l3",
+       "text": "Kronburg, Hannsen Clamer,"
+      },
+      {
+       "id": "r3l4",
+       "text": "weÿlund phleger, da selbs zu"
+      },
+      {
+       "id": "r3l5",
+       "text": "gehörig so Joseph Überriner"
+      },
+      {
+       "id": "r3l6",
+       "text": "an sant meins genedigen herren etc."
+      },
+      {
+       "id": "r3l7",
+       "text": "in geschrifft ingenomen hatt an"
+      },
+      {
+       "id": "r3l8",
+       "text": "freÿtag nach sant Michelstag"
+      },
+      {
+       "id": "r3l9",
+       "text": "anno LXXVIII."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item zum ersten aim kürüss, III"
+      },
+      {
+       "id": "r4l2",
+       "text": "eÿsenhüt, II par hentschůch, III"
+      },
+      {
+       "id": "r4l3",
+       "text": "par arm zewg, III par wndere"
+      },
+      {
+       "id": "r4l4",
+       "text": "bain gwand, II bants, III kragel,"
+      },
+      {
+       "id": "r4l5",
+       "text": "mer ain armzewg, III schweinspies"
+      },
+      {
+       "id": "r4l6",
+       "text": "sind nit gevast."
+      },
+      {
+       "id": "r4l7",
+       "text": "Item in der stuben und kamer da"
+      },
+      {
+       "id": "r4l8",
+       "text": "ist ain schribtisch, I grosser schrein,"
+      },
+      {
+       "id": "r4l9",
+       "text": "darunter lig smid zeug, VI zangen,"
+      },
+      {
+       "id": "r4l10",
+       "text": "IIII hämer, I veÿhel, I schmidsteck,"
+      },
+      {
+       "id": "r4l11",
+       "text": "ain schlosser kloben."
+      },
+      {
+       "id": "r4l12",
+       "text": "Item mer ain bettstatt darinn ligt"
+      },
+      {
+       "id": "r4l13",
+       "text": "ain bett, ain bolster, I kuss, II banck"
+      },
+      {
+       "id": "r4l14",
+       "text": "bolster, III rauch deck."
+      },
+      {
+       "id": "r4l15",
+       "text": "Item mer ain messin beck und ain"
+      },
+      {
+       "id": "r4l16",
+       "text": "messin hantvass, I taller būchß,"
+      },
+      {
+       "id": "r4l17",
+       "text": "dar sind XXV plandl."
+      },
+      {
+       "id": "r4l18",
+       "text": "Mer ligen in ainer bettruchen VII"
+      },
+      {
+       "id": "r4l19",
+       "text": "blatt schlos und ain gross malen"
+      },
+      {
+       "id": "r4l20",
+       "text": "sloss."
+      },
+      {
+       "id": "r4l21",
+       "text": "Mer vor der kuchin ain trucken"
+      },
+      {
+       "id": "r4l22",
+       "text": "und ain schaffraitt, II pfannen,"
+      },
+      {
+       "id": "r4l23",
+       "text": "V erin hafen, III fischkessel."
+      },
+      {
+       "id": "r4l24",
+       "text": "Item ain armbrost mit ainer winden"
+      },
+      {
+       "id": "r4l25",
+       "text": "hat kain sen."
+      },
+      {
+       "id": "r4l26",
+       "text": "Item auff der untern wer stett ain"
+      },
+      {
+       "id": "r4l27",
+       "text": "truch, ain betstatt, dar inn ligt"
+      },
+      {
+       "id": "r4l28",
+       "text": "ain bett, ain bolster, II leylach, ain"
+      },
+      {
+       "id": "r4l29",
+       "text": "rauch deck und ain golter."
+      }
      ]
     },
     {
@@ -76,48 +196,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Freinperg",
-      "V(er)merckt die farennd hab",
-      "haws plunnd vnnd anders auff",
-      "Frenberg Hannsen Kamer-",
-      "maisters pfleg(e)r da selbs zu-",
-      "gehörig So Joseph pluetl",
-      "an statt meins gnedigen herren",
-      "vngeschätzt ingenom hatt an",
-      "freytag nach Sant michelstag",
-      "Anno lxxviij",
-      "It(em) Zum Ersten ain khuesst ij",
-      "eysenhůt ij par henntschůch iij",
-      "par armbzeug iij par waden-",
-      "bann gewanndt ij hanntw(er)ckzeug",
-      "mer ain armbzeug iij pfeilamppus",
-      "sind nit gewasst",
-      "It(em) In der stuben vnnd kam(e)r da",
-      "ist ain schreibpult j grosser schrein",
-      "darauf lig(e)t xxxij pildzeug vj hannt-",
-      "tůch ij hanndtreg(e)l j schmidstuck",
-      "ain schlosser kloben",
-      "It(em) mer ain pettstatt darJn lyt",
-      "ain pett ain polst(e)r j kuss ij panck-",
-      "polster iij rauch tuech",
-      "It(em) mer ain messig peck vnnd ain",
-      "messing hanntvass j teller buchs",
-      "dar sind xxv plater",
-      "Mer ligt in aind pettcurgell viij",
-      "blatt schlos vnd ain gros mals-",
-      "slos",
-      "Mer vor der khuchin ain tancken",
-      "vnnd ain schaffreitt ij pfannen",
-      "dreinn hafenn iij schitkessel",
-      "It(em) ain armbrost mit aind wunnd(e)n",
-      "hůt kain say",
-      "It(em) auff der vnnd(e)rn worstatt ain",
-      "turch ain betstatt darJnn ligt",
-      "ain pett ain polst(e)r ij leylach ain",
-      "rauch tuech vnd ain puel",
-      "Inv. A 144/1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Freinperg"
+      },
+      {
+       "id": null,
+       "text": "V(er)merckt die farennd hab"
+      },
+      {
+       "id": null,
+       "text": "haws plunnd vnnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Frenberg Hannsen Kamer-"
+      },
+      {
+       "id": null,
+       "text": "maisters pfleg(e)r da selbs zu-"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph pluetl"
+      },
+      {
+       "id": null,
+       "text": "an statt meins gnedigen herren"
+      },
+      {
+       "id": null,
+       "text": "vngeschätzt ingenom hatt an"
+      },
+      {
+       "id": null,
+       "text": "freytag nach Sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It(em) Zum Ersten ain khuesst ij"
+      },
+      {
+       "id": null,
+       "text": "eysenhůt ij par henntschůch iij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par waden-"
+      },
+      {
+       "id": null,
+       "text": "bann gewanndt ij hanntw(er)ckzeug"
+      },
+      {
+       "id": null,
+       "text": "mer ain armbzeug iij pfeilamppus"
+      },
+      {
+       "id": null,
+       "text": "sind nit gewasst"
+      },
+      {
+       "id": null,
+       "text": "It(em) In der stuben vnnd kam(e)r da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schreibpult j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darauf lig(e)t xxxij pildzeug vj hannt-"
+      },
+      {
+       "id": null,
+       "text": "tůch ij hanndtreg(e)l j schmidstuck"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser kloben"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer ain pettstatt darJn lyt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(e)r j kuss ij panck-"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch tuech"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer ain messig peck vnnd ain"
+      },
+      {
+       "id": null,
+       "text": "messing hanntvass j teller buchs"
+      },
+      {
+       "id": null,
+       "text": "dar sind xxv plater"
+      },
+      {
+       "id": null,
+       "text": "Mer ligt in aind pettcurgell viij"
+      },
+      {
+       "id": null,
+       "text": "blatt schlos vnd ain gros mals-"
+      },
+      {
+       "id": null,
+       "text": "slos"
+      },
+      {
+       "id": null,
+       "text": "Mer vor der khuchin ain tancken"
+      },
+      {
+       "id": null,
+       "text": "vnnd ain schaffreitt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "dreinn hafenn iij schitkessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit aind wunnd(e)n"
+      },
+      {
+       "id": null,
+       "text": "hůt kain say"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der vnnd(e)rn worstatt ain"
+      },
+      {
+       "id": null,
+       "text": "turch ain betstatt darJnn ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(e)r ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch tuech vnd ain puel"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144/1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -133,48 +379,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Fro(e)nburg",
-      "V(er)merckt die farund hab",
-      "ganz plund vnd anders auff",
-      "Fro(e)nburg Hannsen Camer-",
-      "maisters phleg(er) da selbs zu-",
-      "gehörig So Joseph Vlreichen",
-      "an stat meins gnedigen herren",
-      "vngefehrist eyngenom(m)en hatt an",
-      "freytag nach Sant Michelstag",
-      "Anno lxxviij",
-      "It(em) In(e)m kesten ain knieyff ij",
-      "eyse(n)hüt ij par hentschuch ij",
-      "par armbzeug iij par wendel-",
-      "haub(e)n gwannff ij hantsch iij krag(e)n",
-      "mor ain armbzeug iij schwebenschuch",
-      "sind nit genast .",
-      "It(em) In der stubn vnd kam(er) da",
-      "ist ain schribtisch j grosser schrein",
-      "daronnt lig tuchzeug vj hantsch",
-      "iiij häub vegigel j schmidstuck",
-      "ain schlosser klobi(e)n",
-      "It(em) mor ain pettstatt darin lyt",
-      "ain pett ain polst(er) j kuss ij panck-",
-      "polster iij rauch deck",
-      "It(em) mor ain messig beck vnd ain",
-      "messig hantvass j keller buech",
-      "darz sind xxv plandl",
-      "Mor ligt in and pettzeug viij",
-      "blatt schlos vnd ain groß mals",
-      "Rohr",
-      "Mor vor der kuckey ain tancken",
-      "vnd ain schaffentt ij pfannen",
-      "drein häfen iij fihzkessel",
-      "It(em) ain armbrost mit aind wendel",
-      "vnd hat kain seyy",
-      "It(em) auff der wand war statt ain",
-      "tuerch ain pestatt dar Iny lyt",
-      "ain pett ain bolst(er) ij laylach ain",
-      "rauch deck vnd ain pfol",
-      "Inv. A 144 / 1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Fro(e)nburg"
+      },
+      {
+       "id": null,
+       "text": "V(er)merckt die farund hab"
+      },
+      {
+       "id": null,
+       "text": "ganz plund vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Fro(e)nburg Hannsen Camer-"
+      },
+      {
+       "id": null,
+       "text": "maisters phleg(er) da selbs zu-"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph Vlreichen"
+      },
+      {
+       "id": null,
+       "text": "an stat meins gnedigen herren"
+      },
+      {
+       "id": null,
+       "text": "vngefehrist eyngenom(m)en hatt an"
+      },
+      {
+       "id": null,
+       "text": "freytag nach Sant Michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It(em) In(e)m kesten ain knieyff ij"
+      },
+      {
+       "id": null,
+       "text": "eyse(n)hüt ij par hentschuch ij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par wendel-"
+      },
+      {
+       "id": null,
+       "text": "haub(e)n gwannff ij hantsch iij krag(e)n"
+      },
+      {
+       "id": null,
+       "text": "mor ain armbzeug iij schwebenschuch"
+      },
+      {
+       "id": null,
+       "text": "sind nit genast ."
+      },
+      {
+       "id": null,
+       "text": "It(em) In der stubn vnd kam(er) da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schribtisch j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "daronnt lig tuchzeug vj hantsch"
+      },
+      {
+       "id": null,
+       "text": "iiij häub vegigel j schmidstuck"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser klobi(e)n"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain pettstatt darin lyt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(er) j kuss ij panck-"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch deck"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain messig beck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messig hantvass j keller buech"
+      },
+      {
+       "id": null,
+       "text": "darz sind xxv plandl"
+      },
+      {
+       "id": null,
+       "text": "Mor ligt in and pettzeug viij"
+      },
+      {
+       "id": null,
+       "text": "blatt schlos vnd ain groß mals"
+      },
+      {
+       "id": null,
+       "text": "Rohr"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuckey ain tancken"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schaffentt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "drein häfen iij fihzkessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit aind wendel"
+      },
+      {
+       "id": null,
+       "text": "vnd hat kain seyy"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der wand war statt ain"
+      },
+      {
+       "id": null,
+       "text": "tuerch ain pestatt dar Iny lyt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(er) ij laylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain pfol"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144 / 1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -190,48 +562,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Fro(n)burg",
-      "V(er)merckt die farundhab",
-      "Gerew pslunt vnd anders auff",
-      "Fronburg Hannsen Kam(er)r",
-      "maister vnd phleg(er) da selbs zu",
-      "gehörig So Joseph vbernu(m)b(e)n",
-      "an stat mein(e)s genedign herrn",
-      "vngefe(er)list ingeno(m)m(en) hatt an",
-      "freytag nach sant michelstag",
-      "Anno lxxviij",
-      "It(em) Ju(m) ersten ain kneußt ij",
-      "eysenhut ij par hentschuch ij",
-      "par armbzeug iij par wendenck",
-      "harnschgewand ij hantz viij kragn",
-      "mor ain armbzeug iij pscheempurst",
-      "sind nit genast ——",
-      "It(em) Jn der stubn vnd kam(er) da",
-      "ist ain schrannckh j gstracke pschein",
-      "darauf lig 6 tund zeug viij hanntz",
-      "iiij han vögel j schnidfeill",
-      "ain gschlossen kloben",
-      "It(em) mor ain bettstatt darJn lyt",
-      "ain bett ain polst(er) j kuß ij haubt",
-      "polster iij rauch deck ——",
-      "It(em) mor ain messig becke vnd ain",
-      "tewtschy hantvass j teller buchs",
-      "dar sind xxv plater",
-      "Mor ligt in and bettungen vij",
-      "blatt schloß vnd ain groß malo",
-      "roß",
-      "Mor vor der kuchj ain trankat",
-      "vnd ain schaffrant ij pfanneng",
-      "dreinn hafen viij fischkessel",
-      "It(em) ain armbrost mit aind winden",
-      "gut trantschij",
-      "It(em) auff der vntern vor statt ain",
-      "truch ain bettstatt dar Jnj lyt",
-      "ain pett ain bolst(er) ij leylach ain",
-      "rauch deck vnd ain polst(er)",
-      "Jnv. A 144 / 1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Fro(n)burg"
+      },
+      {
+       "id": null,
+       "text": "V(er)merckt die farundhab"
+      },
+      {
+       "id": null,
+       "text": "Gerew pslunt vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Fronburg Hannsen Kam(er)r"
+      },
+      {
+       "id": null,
+       "text": "maister vnd phleg(er) da selbs zu"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph vbernu(m)b(e)n"
+      },
+      {
+       "id": null,
+       "text": "an stat mein(e)s genedign herrn"
+      },
+      {
+       "id": null,
+       "text": "vngefe(er)list ingeno(m)m(en) hatt an"
+      },
+      {
+       "id": null,
+       "text": "freytag nach sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It(em) Ju(m) ersten ain kneußt ij"
+      },
+      {
+       "id": null,
+       "text": "eysenhut ij par hentschuch ij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par wendenck"
+      },
+      {
+       "id": null,
+       "text": "harnschgewand ij hantz viij kragn"
+      },
+      {
+       "id": null,
+       "text": "mor ain armbzeug iij pscheempurst"
+      },
+      {
+       "id": null,
+       "text": "sind nit genast ——"
+      },
+      {
+       "id": null,
+       "text": "It(em) Jn der stubn vnd kam(er) da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schrannckh j gstracke pschein"
+      },
+      {
+       "id": null,
+       "text": "darauf lig 6 tund zeug viij hanntz"
+      },
+      {
+       "id": null,
+       "text": "iiij han vögel j schnidfeill"
+      },
+      {
+       "id": null,
+       "text": "ain gschlossen kloben"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain bettstatt darJn lyt"
+      },
+      {
+       "id": null,
+       "text": "ain bett ain polst(er) j kuß ij haubt"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch deck ——"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain messig becke vnd ain"
+      },
+      {
+       "id": null,
+       "text": "tewtschy hantvass j teller buchs"
+      },
+      {
+       "id": null,
+       "text": "dar sind xxv plater"
+      },
+      {
+       "id": null,
+       "text": "Mor ligt in and bettungen vij"
+      },
+      {
+       "id": null,
+       "text": "blatt schloß vnd ain groß malo"
+      },
+      {
+       "id": null,
+       "text": "roß"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuchj ain trankat"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schaffrant ij pfanneng"
+      },
+      {
+       "id": null,
+       "text": "dreinn hafen viij fischkessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit aind winden"
+      },
+      {
+       "id": null,
+       "text": "gut trantschij"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der vntern vor statt ain"
+      },
+      {
+       "id": null,
+       "text": "truch ain bettstatt dar Jnj lyt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(er) ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain polst(er)"
+      },
+      {
+       "id": null,
+       "text": "Jnv. A 144 / 1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -247,47 +745,170 @@
       false
      ],
      "lines": [
-      "1",
-      "Frewnperg",
-      "Vermerkt die farend hab",
-      "gaws plund vnd anders auff",
-      "Frewnberg Hanßen kamer",
-      "meisters pfleg(er) da selbst zwo",
-      "gehörig So Josseph vlreichs(un)",
-      "an stat meins gnedigen herren",
-      "Ingeschribt ingenom(en) hatt an",
-      "freytag Nach Sant michelstag",
-      "Anno lxxviij^o",
-      "It(em) Jnn kesten ain knwfft ij",
-      "ysenhüt ij par hentschüch ij",
-      "par armbzeug iij par wndere",
-      "panz gwand ij hanttwart iij krapf",
-      "mor ain armbzeug iij schweinßspieß",
-      "sind nit gewest —",
-      "It(em) Jn der stubn vnd kam(er) da",
-      "ist ain schratteg j grosser schrein",
-      "darour lig brawzeug vj hanttw(art)",
-      "iij hant rigl j schmidstuck",
-      "ain schlosser kloben",
-      "It(em) mor ain pettstatt darJn ligt",
-      "ain pett ain polst(er) j küss ij pawl(e)",
-      "polster iij rawch deck —",
-      "It(em) mor ain messig beck vnd ain",
-      "messig hantwass(er) j teller büchs",
-      "dar sind xxx plandl",
-      "Mor ligd in and pettung(e)n vij",
-      "platt schlos vnd ain groß mals",
-      "roß",
-      "Mor vor der kuchj ain truffen",
-      "vnd ain schafftratt ij pfannen",
-      "dreier hafen iij sitskessel",
-      "It(em) ain armbrost mit aind wind(e)n",
-      "v gut kenczcy",
-      "It(em) auff der wand war statt ain",
-      "{truchl} ain pettstatt darJnj ligt",
-      "ain pett ain polst(er) ij leylach ain",
-      "rawch deck vnd ain pölst",
-      "Inv. A 144/1       1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Frewnperg"
+      },
+      {
+       "id": null,
+       "text": "Vermerkt die farend hab"
+      },
+      {
+       "id": null,
+       "text": "gaws plund vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Frewnberg Hanßen kamer"
+      },
+      {
+       "id": null,
+       "text": "meisters pfleg(er) da selbst zwo"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Josseph vlreichs(un)"
+      },
+      {
+       "id": null,
+       "text": "an stat meins gnedigen herren"
+      },
+      {
+       "id": null,
+       "text": "Ingeschribt ingenom(en) hatt an"
+      },
+      {
+       "id": null,
+       "text": "freytag Nach Sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij^o"
+      },
+      {
+       "id": null,
+       "text": "It(em) Jnn kesten ain knwfft ij"
+      },
+      {
+       "id": null,
+       "text": "ysenhüt ij par hentschüch ij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par wndere"
+      },
+      {
+       "id": null,
+       "text": "panz gwand ij hanttwart iij krapf"
+      },
+      {
+       "id": null,
+       "text": "mor ain armbzeug iij schweinßspieß"
+      },
+      {
+       "id": null,
+       "text": "sind nit gewest —"
+      },
+      {
+       "id": null,
+       "text": "It(em) Jn der stubn vnd kam(er) da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schratteg j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darour lig brawzeug vj hanttw(art)"
+      },
+      {
+       "id": null,
+       "text": "iij hant rigl j schmidstuck"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser kloben"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain pettstatt darJn ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(er) j küss ij pawl(e)"
+      },
+      {
+       "id": null,
+       "text": "polster iij rawch deck —"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain messig beck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messig hantwass(er) j teller büchs"
+      },
+      {
+       "id": null,
+       "text": "dar sind xxx plandl"
+      },
+      {
+       "id": null,
+       "text": "Mor ligd in and pettung(e)n vij"
+      },
+      {
+       "id": null,
+       "text": "platt schlos vnd ain groß mals"
+      },
+      {
+       "id": null,
+       "text": "roß"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuchj ain truffen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schafftratt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "dreier hafen iij sitskessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit aind wind(e)n"
+      },
+      {
+       "id": null,
+       "text": "v gut kenczcy"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der wand war statt ain"
+      },
+      {
+       "id": null,
+       "text": "{truchl} ain pettstatt darJnj ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(er) ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rawch deck vnd ain pölst"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144/1       1478 Okt. 2."
+      }
      ]
     },
     {
@@ -303,48 +924,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Fronburg",
-      "Vermerckt die farundhab",
-      "Gwer plund vnd anders auff",
-      "Fronburg Hannsen Chamre",
-      "weylund Pfleg(er) da selbst Zu",
-      "gehörig So Joseph Vlmer",
-      "an stat meins gnedigen herrn",
-      "Jn geschrifft ingenom(en) hatt an",
-      "Freytag Nach Sant michelstag",
-      "Anno lxxviij",
-      "It(em) Jnem kesten aim Chnecht ij",
-      "eysenhuet ij par hentsckuech ij",
-      "par armbzeug iij par wendtz",
-      "ham gwand ij hantz viij krapf",
-      "mor ain armbzeug iij schweitze(n)spies",
-      "sind mit gewest",
-      "It(em) Jn der stubn vnd kam(er) da",
-      "ist ain schreibpult j grosser schrein",
-      "darauff lig b(uech) vnd zeug .vj. hantz",
-      "iiij han verigell j schmidspiss",
-      "ain schlosser kloben",
-      "It(em) mor ain petstatt darin ligt",
-      "ain pett ain polst(er) j küss ij paur",
-      "polster iij rauch tuech",
-      "It(em) mor ain messig peck vnd ain",
-      "messing hantvass j teller puechs",
-      "darin sind xxv pfaend",
-      "Mor ligd in and pettzunger vij",
-      "platt schlos vnd ain gros mals",
-      "schlos",
-      "Mor vor der kuechin ain truchen",
-      "vnd ain schafftratt ij pfannt(e)g",
-      "draier hafen viij sittzkessel",
-      "It(em) ain armbrost mit aind winde(n)",
-      "wer kaufey",
-      "It(em) auff der vnter wac statt ain",
-      "{truch} ain petstatt dar Jny ligt",
-      "ain pett ain polst(er) ij leylach ain",
-      "rauch tuech vnd ain pholst",
-      "Jnv. A 144/1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Fronburg"
+      },
+      {
+       "id": null,
+       "text": "Vermerckt die farundhab"
+      },
+      {
+       "id": null,
+       "text": "Gwer plund vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Fronburg Hannsen Chamre"
+      },
+      {
+       "id": null,
+       "text": "weylund Pfleg(er) da selbst Zu"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph Vlmer"
+      },
+      {
+       "id": null,
+       "text": "an stat meins gnedigen herrn"
+      },
+      {
+       "id": null,
+       "text": "Jn geschrifft ingenom(en) hatt an"
+      },
+      {
+       "id": null,
+       "text": "Freytag Nach Sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It(em) Jnem kesten aim Chnecht ij"
+      },
+      {
+       "id": null,
+       "text": "eysenhuet ij par hentsckuech ij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par wendtz"
+      },
+      {
+       "id": null,
+       "text": "ham gwand ij hantz viij krapf"
+      },
+      {
+       "id": null,
+       "text": "mor ain armbzeug iij schweitze(n)spies"
+      },
+      {
+       "id": null,
+       "text": "sind mit gewest"
+      },
+      {
+       "id": null,
+       "text": "It(em) Jn der stubn vnd kam(er) da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schreibpult j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darauff lig b(uech) vnd zeug .vj. hantz"
+      },
+      {
+       "id": null,
+       "text": "iiij han verigell j schmidspiss"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser kloben"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain petstatt darin ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(er) j küss ij paur"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch tuech"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain messig peck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messing hantvass j teller puechs"
+      },
+      {
+       "id": null,
+       "text": "darin sind xxv pfaend"
+      },
+      {
+       "id": null,
+       "text": "Mor ligd in and pettzunger vij"
+      },
+      {
+       "id": null,
+       "text": "platt schlos vnd ain gros mals"
+      },
+      {
+       "id": null,
+       "text": "schlos"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuechin ain truchen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schafftratt ij pfannt(e)g"
+      },
+      {
+       "id": null,
+       "text": "draier hafen viij sittzkessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit aind winde(n)"
+      },
+      {
+       "id": null,
+       "text": "wer kaufey"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der vnter wac statt ain"
+      },
+      {
+       "id": null,
+       "text": "{truch} ain petstatt dar Jny ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain polst(er) ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch tuech vnd ain pholst"
+      },
+      {
+       "id": null,
+       "text": "Jnv. A 144/1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -360,48 +1107,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Freinperg",
-      "Vermerkt die farundhab",
-      "haris plumbs vnd anders auff",
-      "Freinberg Hannsen Kammer-",
-      "maisters pflegers da selbs zu-",
-      "gehörig So Joseph vberrumpff",
-      "an stat meins genedigen herrn",
-      "vngestifft ingenom hatt an",
-      "freitag nach sant michelstag",
-      "Anno lxxviij",
-      "Item In ain kasten ain knüfft iij",
-      "eysenhuet ij par hantschuech iiij",
-      "par armbzeug iij par vnd(e)r",
-      "harnschgewand ij hantschuech",
-      "mor ain armbzeug iij pfeureisensteck",
-      "sind nit genast.",
-      "Item In der stubn vnd kamr da",
-      "ist ain schubkasten I grosser schrein",
-      "darauff lig I ain armbzeug vij hantschuech",
-      "iiij hand rörlein I schmidstuck",
-      "ain schlosser kloben",
-      "Item mor ain pettstatt darin ligt",
-      "ain pett ain bolstr I kuss ij banck-",
-      "polster iij rauch deck",
-      "Item mor ain messinj beck vnd ain",
-      "messinj hantvass I teller buechs",
-      "darin sind xxv pfaendll",
-      "Mor ligen in ain pettwagen viij",
-      "platt schlos vnd ain gros mals",
-      "poss",
-      "Mor vor der kuchj ain truhen",
-      "vnd ain schafftratt ij pfannen",
-      "I kreurhafen iij sitszkessel",
-      "Item ain armbrost mit ain winden",
-      "I karr feurstey",
-      "Item auff der wind war statt ain",
-      "turch ain pestatt darin ligt",
-      "ain pett ain bolstr ij leylach ain",
-      "rauch deck vnd ain goldt",
-      "Inv. A 144/1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Freinperg"
+      },
+      {
+       "id": null,
+       "text": "Vermerkt die farundhab"
+      },
+      {
+       "id": null,
+       "text": "haris plumbs vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Freinberg Hannsen Kammer-"
+      },
+      {
+       "id": null,
+       "text": "maisters pflegers da selbs zu-"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph vberrumpff"
+      },
+      {
+       "id": null,
+       "text": "an stat meins genedigen herrn"
+      },
+      {
+       "id": null,
+       "text": "vngestifft ingenom hatt an"
+      },
+      {
+       "id": null,
+       "text": "freitag nach sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "Item In ain kasten ain knüfft iij"
+      },
+      {
+       "id": null,
+       "text": "eysenhuet ij par hantschuech iiij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par vnd(e)r"
+      },
+      {
+       "id": null,
+       "text": "harnschgewand ij hantschuech"
+      },
+      {
+       "id": null,
+       "text": "mor ain armbzeug iij pfeureisensteck"
+      },
+      {
+       "id": null,
+       "text": "sind nit genast."
+      },
+      {
+       "id": null,
+       "text": "Item In der stubn vnd kamr da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schubkasten I grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darauff lig I ain armbzeug vij hantschuech"
+      },
+      {
+       "id": null,
+       "text": "iiij hand rörlein I schmidstuck"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser kloben"
+      },
+      {
+       "id": null,
+       "text": "Item mor ain pettstatt darin ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolstr I kuss ij banck-"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch deck"
+      },
+      {
+       "id": null,
+       "text": "Item mor ain messinj beck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messinj hantvass I teller buechs"
+      },
+      {
+       "id": null,
+       "text": "darin sind xxv pfaendll"
+      },
+      {
+       "id": null,
+       "text": "Mor ligen in ain pettwagen viij"
+      },
+      {
+       "id": null,
+       "text": "platt schlos vnd ain gros mals"
+      },
+      {
+       "id": null,
+       "text": "poss"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuchj ain truhen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schafftratt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "I kreurhafen iij sitszkessel"
+      },
+      {
+       "id": null,
+       "text": "Item ain armbrost mit ain winden"
+      },
+      {
+       "id": null,
+       "text": "I karr feurstey"
+      },
+      {
+       "id": null,
+       "text": "Item auff der wind war statt ain"
+      },
+      {
+       "id": null,
+       "text": "turch ain pestatt darin ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolstr ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain goldt"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144/1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -417,48 +1290,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Froinperg",
-      "V(er)merckt die farendhab",
-      "g(e)wer phund vnd anders auff",
-      "Froinberg hannsen cham(er)er",
-      "weillund pfleg(e)r da selbs zu",
-      "gehörig So Josseph vlb(er)stain",
-      "an stat meins g(e)nedign herren",
-      "vngeschifft ingenom(e)n hatt an",
-      "freytag nach sant michelstag",
-      "anno lxxviij",
-      "It(em) jn aym kesten ainn kneist iiij",
-      "eisenhüt ij par hentschüch iij",
-      "par armbzeug iij par vnnd(e)r",
-      "pain gwand ij hantz(w)erch",
-      "mor ein armbzeug iij plecheintzel",
-      "sind nit genast",
-      "It(em) Jn der stubn vnd kam(e)r da",
-      "ist ain halbtrug j grosser schrein",
-      "darauff lig beubzeug vj hantz(w)erch",
-      "iiij hanntreigel j schmidstuck",
-      "ain geschlosser kloben",
-      "It(em) mor ain pettstat dar jn ligt",
-      "ain pett ain bolst(e)r j kuss ij pank",
-      "polster iij rauch deck",
-      "It(em) mor ain messin peck vnd ain",
-      "messin hantvass j teller buchs",
-      "dar sind xxv plaudl",
-      "Mor ligt in and pettcamer vij",
-      "blatt schlos vnd ain gros mals",
-      "schos",
-      "Mor vor der kuchj ain tanken",
-      "vnd ain schaffcarrt ij pfannen",
-      "drein hafen iij sitzkessel",
-      "It(em) ain armbrost mit aind winden",
-      "gut stainstay",
-      "It(em) auff der vnnd(e)r warstatt ain",
-      "truch ain pestatt dar jnj ligt",
-      "ain pett ain bolst(e)r ij leylach ain",
-      "rauch deck vnd ain gold",
-      "Inv. A 144 / 1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Froinperg"
+      },
+      {
+       "id": null,
+       "text": "V(er)merckt die farendhab"
+      },
+      {
+       "id": null,
+       "text": "g(e)wer phund vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Froinberg hannsen cham(er)er"
+      },
+      {
+       "id": null,
+       "text": "weillund pfleg(e)r da selbs zu"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Josseph vlb(er)stain"
+      },
+      {
+       "id": null,
+       "text": "an stat meins g(e)nedign herren"
+      },
+      {
+       "id": null,
+       "text": "vngeschifft ingenom(e)n hatt an"
+      },
+      {
+       "id": null,
+       "text": "freytag nach sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It(em) jn aym kesten ainn kneist iiij"
+      },
+      {
+       "id": null,
+       "text": "eisenhüt ij par hentschüch iij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par vnnd(e)r"
+      },
+      {
+       "id": null,
+       "text": "pain gwand ij hantz(w)erch"
+      },
+      {
+       "id": null,
+       "text": "mor ein armbzeug iij plecheintzel"
+      },
+      {
+       "id": null,
+       "text": "sind nit genast"
+      },
+      {
+       "id": null,
+       "text": "It(em) Jn der stubn vnd kam(e)r da"
+      },
+      {
+       "id": null,
+       "text": "ist ain halbtrug j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darauff lig beubzeug vj hantz(w)erch"
+      },
+      {
+       "id": null,
+       "text": "iiij hanntreigel j schmidstuck"
+      },
+      {
+       "id": null,
+       "text": "ain geschlosser kloben"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain pettstat dar jn ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(e)r j kuss ij pank"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch deck"
+      },
+      {
+       "id": null,
+       "text": "It(em) mor ain messin peck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messin hantvass j teller buchs"
+      },
+      {
+       "id": null,
+       "text": "dar sind xxv plaudl"
+      },
+      {
+       "id": null,
+       "text": "Mor ligt in and pettcamer vij"
+      },
+      {
+       "id": null,
+       "text": "blatt schlos vnd ain gros mals"
+      },
+      {
+       "id": null,
+       "text": "schos"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuchj ain tanken"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schaffcarrt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "drein hafen iij sitzkessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit aind winden"
+      },
+      {
+       "id": null,
+       "text": "gut stainstay"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der vnnd(e)r warstatt ain"
+      },
+      {
+       "id": null,
+       "text": "truch ain pestatt dar jnj ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(e)r ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain gold"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144 / 1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -474,48 +1473,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Freinberch",
-      "Vermerckt die farend hab",
-      "gewer pfarnd vnd anders auff",
-      "Freinberg Hannsen Camer-",
-      "maisters pfleg(e)r da selbs zu-",
-      "gehörig So Joseph Vlman",
-      "an stat meins genedigen herren",
-      "vngefärlich ingenom hatt an",
-      "freytag nach sant Michelstag",
-      "Anno lxxviij",
-      "It(em) In ainn kasten ainn kneicht iij",
-      "eysenhuͤt ij par hentschuͤch iij",
-      "par armbzeug iij par vnder-",
-      "bane gewand ij hantz viij krage",
-      "mer ain armbzeug iij pfeilaintspicz",
-      "sind nit genast",
-      "It(em) In der stubn vnd kam(e)r da",
-      "lest ain schubtisch j grosser schrein",
-      "darauf lig 5 armzeug viij hantz",
-      "iiij hantriegel j schmitstock",
-      "ain schlosser kloben",
-      "It(em) mer ain pettstatt darin lyt",
-      "ain pett ain bolst(e)r j kuss ij pauch-",
-      "bolster iij rauch deck",
-      "It(em) mer ain messig peck vnd ain",
-      "messing hantfass j teller puchss",
-      "dar sind xxv plandl",
-      "Yter lign in ain pettcurgld viij",
-      "blatt schlos vnd ain gros mals-",
-      "slos",
-      "Yter vor der kuchj ain tanten",
-      "vnd ain schaffcant ij phan(e)n",
-      "stein häfen iij sitzkessel",
-      "It(em) ain armbrost mit ainn windel",
-      "vnd gut kainsen",
-      "It(em) auff der unnd(e)rn warstatt ain",
-      "{trucht} ain betstatt dar jnn ligt",
-      "ain pett ain bolst(e)r ij leylach ain",
-      "rauch deck vnd ain gold",
-      "Inv. A 144/1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Freinberch"
+      },
+      {
+       "id": null,
+       "text": "Vermerckt die farend hab"
+      },
+      {
+       "id": null,
+       "text": "gewer pfarnd vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Freinberg Hannsen Camer-"
+      },
+      {
+       "id": null,
+       "text": "maisters pfleg(e)r da selbs zu-"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph Vlman"
+      },
+      {
+       "id": null,
+       "text": "an stat meins genedigen herren"
+      },
+      {
+       "id": null,
+       "text": "vngefärlich ingenom hatt an"
+      },
+      {
+       "id": null,
+       "text": "freytag nach sant Michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It(em) In ainn kasten ainn kneicht iij"
+      },
+      {
+       "id": null,
+       "text": "eysenhuͤt ij par hentschuͤch iij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par vnder-"
+      },
+      {
+       "id": null,
+       "text": "bane gewand ij hantz viij krage"
+      },
+      {
+       "id": null,
+       "text": "mer ain armbzeug iij pfeilaintspicz"
+      },
+      {
+       "id": null,
+       "text": "sind nit genast"
+      },
+      {
+       "id": null,
+       "text": "It(em) In der stubn vnd kam(e)r da"
+      },
+      {
+       "id": null,
+       "text": "lest ain schubtisch j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darauf lig 5 armzeug viij hantz"
+      },
+      {
+       "id": null,
+       "text": "iiij hantriegel j schmitstock"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser kloben"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer ain pettstatt darin lyt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(e)r j kuss ij pauch-"
+      },
+      {
+       "id": null,
+       "text": "bolster iij rauch deck"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer ain messig peck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messing hantfass j teller puchss"
+      },
+      {
+       "id": null,
+       "text": "dar sind xxv plandl"
+      },
+      {
+       "id": null,
+       "text": "Yter lign in ain pettcurgld viij"
+      },
+      {
+       "id": null,
+       "text": "blatt schlos vnd ain gros mals-"
+      },
+      {
+       "id": null,
+       "text": "slos"
+      },
+      {
+       "id": null,
+       "text": "Yter vor der kuchj ain tanten"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schaffcant ij phan(e)n"
+      },
+      {
+       "id": null,
+       "text": "stein häfen iij sitzkessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) ain armbrost mit ainn windel"
+      },
+      {
+       "id": null,
+       "text": "vnd gut kainsen"
+      },
+      {
+       "id": null,
+       "text": "It(em) auff der unnd(e)rn warstatt ain"
+      },
+      {
+       "id": null,
+       "text": "{trucht} ain betstatt dar jnn ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(e)r ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain gold"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144/1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -531,48 +1656,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Freinperg",
-      "Vermerckt die farunndhab",
-      "harws plund vnd anders auff",
-      "Freinberg hannsen Hannser",
-      "weillunnd pfleger da selbst zu-",
-      "gehörig So Joseph vlbrecht",
-      "an statt meines genedigen herren",
-      "vngeschifft ingenom hett an",
-      "Freitag nach Sant michelstag",
-      "Anno lxxviij",
-      "Item Jnnm kasten ain kneipff iij",
-      "eysenhůt ij par hewtschůch iij",
-      "par armbrůst iij par waderr",
-      "haws gwant ij hantt iij kraxl",
-      "mer ein armbrost iij schreczenpfeil",
-      "sind nit gewest",
-      "Item Jnn der stuben vnd kam(er) da",
-      "ist ain heubtzüg j grosser pfann",
-      "darauff lig brenzeug vj hantt",
-      "iiij hant rëygel j schmidpetk",
-      "ain gleser kleidt",
-      "Item mer ain pettstatt darin lÿgt",
-      "ain pett ain bolst(er) j kuss ij pauch",
-      "polster iij rauch deck",
-      "Item mer ain messinj peck vnd ain",
-      "messinj hantvass j teller puchß",
-      "darin sind xxv plaudl",
-      "Mer ligtt in aind petkürgdin viij",
-      "platt schlos vnd ain gros mals",
-      "schlos",
-      "Mer vor der kuchj ain truchen",
-      "vnd ain schafftratt ij pfannen",
-      "drein häfen iij sitzkessel",
-      "Item ain armbrost mit aind wunden",
-      "v gůt kenczley",
-      "Item auff der winden warttstett ain",
-      "{knecht} ain pettstatt dar Jnnj lÿgt",
-      "ain pett ain bolstr ij leylach ain",
-      "rauch deck vnd ain gold",
-      "Inv. A 144 / 1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Freinperg"
+      },
+      {
+       "id": null,
+       "text": "Vermerckt die farunndhab"
+      },
+      {
+       "id": null,
+       "text": "harws plund vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Freinberg hannsen Hannser"
+      },
+      {
+       "id": null,
+       "text": "weillunnd pfleger da selbst zu-"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph vlbrecht"
+      },
+      {
+       "id": null,
+       "text": "an statt meines genedigen herren"
+      },
+      {
+       "id": null,
+       "text": "vngeschifft ingenom hett an"
+      },
+      {
+       "id": null,
+       "text": "Freitag nach Sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "Item Jnnm kasten ain kneipff iij"
+      },
+      {
+       "id": null,
+       "text": "eysenhůt ij par hewtschůch iij"
+      },
+      {
+       "id": null,
+       "text": "par armbrůst iij par waderr"
+      },
+      {
+       "id": null,
+       "text": "haws gwant ij hantt iij kraxl"
+      },
+      {
+       "id": null,
+       "text": "mer ein armbrost iij schreczenpfeil"
+      },
+      {
+       "id": null,
+       "text": "sind nit gewest"
+      },
+      {
+       "id": null,
+       "text": "Item Jnn der stuben vnd kam(er) da"
+      },
+      {
+       "id": null,
+       "text": "ist ain heubtzüg j grosser pfann"
+      },
+      {
+       "id": null,
+       "text": "darauff lig brenzeug vj hantt"
+      },
+      {
+       "id": null,
+       "text": "iiij hant rëygel j schmidpetk"
+      },
+      {
+       "id": null,
+       "text": "ain gleser kleidt"
+      },
+      {
+       "id": null,
+       "text": "Item mer ain pettstatt darin lÿgt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst(er) j kuss ij pauch"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch deck"
+      },
+      {
+       "id": null,
+       "text": "Item mer ain messinj peck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messinj hantvass j teller puchß"
+      },
+      {
+       "id": null,
+       "text": "darin sind xxv plaudl"
+      },
+      {
+       "id": null,
+       "text": "Mer ligtt in aind petkürgdin viij"
+      },
+      {
+       "id": null,
+       "text": "platt schlos vnd ain gros mals"
+      },
+      {
+       "id": null,
+       "text": "schlos"
+      },
+      {
+       "id": null,
+       "text": "Mer vor der kuchj ain truchen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schafftratt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "drein häfen iij sitzkessel"
+      },
+      {
+       "id": null,
+       "text": "Item ain armbrost mit aind wunden"
+      },
+      {
+       "id": null,
+       "text": "v gůt kenczley"
+      },
+      {
+       "id": null,
+       "text": "Item auff der winden warttstett ain"
+      },
+      {
+       "id": null,
+       "text": "{knecht} ain pettstatt dar Jnnj lÿgt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolstr ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain gold"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144 / 1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     },
     {
@@ -588,48 +1839,174 @@
       false
      ],
      "lines": [
-      "1",
-      "Frewnperg",
-      "Vermerckt die farend hab",
-      "Gwere phund vnd anders auff",
-      "Frewnberg Hannsen Camer-",
-      "meisters pfleg[er] da selbs zu-",
-      "gehörig So Joseph Vlbecker",
-      "an stat meins genedigen herren",
-      "vngeschitzt ingenom hatt an",
-      "Freytag Nach Sant michelstag",
-      "Anno lxxviij",
-      "It[em] In ainem kesten ain knüpff ij",
-      "eysenhüt ij par hentzschüch iij",
-      "par armbzeug iij par wadern",
-      "harnischgwand ij hantz viij krage[n]",
-      "mor ain armbzeug iij pfeureinspritz",
-      "sind nit gewest -",
-      "It[em] In der stuben vnd kam[er] da",
-      "ist ain schubtisch j grosser schrein",
-      "darauff lig ein beng vij banck-",
-      "iij hand riegel j schmid stok",
-      "ain schlosser klobi",
-      "It[em] mor ain pettstatt darin ligt",
-      "ain pett ain bolst[er] j kuss ij panck",
-      "polster iij rauch deck",
-      "It[em] mor ain messin peck vnd ain",
-      "messin hantvass j teller buchs",
-      "dar sind xxv plater",
-      "Mor ligt in ain[er] bettwand viij",
-      "blatt schlos vnd ain gros maler",
-      "schlos",
-      "Mor vor der kuckin ain truhen",
-      "vnd ain schafftratt ij pfannen",
-      "vͤren hafen vij sitzkessel",
-      "It[em] ain armbrost mit aine[m] windel",
-      "vnd hat kain steyg",
-      "It[em] auff der windwarttstatt ain",
-      "{tuerch} {ain} pettstatt dar jnn ligt",
-      "ain pett ain bolst[er] ij leylach ain",
-      "rauch deck vnd ain gold[er]",
-      "Inv. A 144 / 1",
-      "1478 Okt. 2."
+      {
+       "id": null,
+       "text": "1"
+      },
+      {
+       "id": null,
+       "text": "Frewnperg"
+      },
+      {
+       "id": null,
+       "text": "Vermerckt die farend hab"
+      },
+      {
+       "id": null,
+       "text": "Gwere phund vnd anders auff"
+      },
+      {
+       "id": null,
+       "text": "Frewnberg Hannsen Camer-"
+      },
+      {
+       "id": null,
+       "text": "meisters pfleg[er] da selbs zu-"
+      },
+      {
+       "id": null,
+       "text": "gehörig So Joseph Vlbecker"
+      },
+      {
+       "id": null,
+       "text": "an stat meins genedigen herren"
+      },
+      {
+       "id": null,
+       "text": "vngeschitzt ingenom hatt an"
+      },
+      {
+       "id": null,
+       "text": "Freytag Nach Sant michelstag"
+      },
+      {
+       "id": null,
+       "text": "Anno lxxviij"
+      },
+      {
+       "id": null,
+       "text": "It[em] In ainem kesten ain knüpff ij"
+      },
+      {
+       "id": null,
+       "text": "eysenhüt ij par hentzschüch iij"
+      },
+      {
+       "id": null,
+       "text": "par armbzeug iij par wadern"
+      },
+      {
+       "id": null,
+       "text": "harnischgwand ij hantz viij krage[n]"
+      },
+      {
+       "id": null,
+       "text": "mor ain armbzeug iij pfeureinspritz"
+      },
+      {
+       "id": null,
+       "text": "sind nit gewest -"
+      },
+      {
+       "id": null,
+       "text": "It[em] In der stuben vnd kam[er] da"
+      },
+      {
+       "id": null,
+       "text": "ist ain schubtisch j grosser schrein"
+      },
+      {
+       "id": null,
+       "text": "darauff lig ein beng vij banck-"
+      },
+      {
+       "id": null,
+       "text": "iij hand riegel j schmid stok"
+      },
+      {
+       "id": null,
+       "text": "ain schlosser klobi"
+      },
+      {
+       "id": null,
+       "text": "It[em] mor ain pettstatt darin ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst[er] j kuss ij panck"
+      },
+      {
+       "id": null,
+       "text": "polster iij rauch deck"
+      },
+      {
+       "id": null,
+       "text": "It[em] mor ain messin peck vnd ain"
+      },
+      {
+       "id": null,
+       "text": "messin hantvass j teller buchs"
+      },
+      {
+       "id": null,
+       "text": "dar sind xxv plater"
+      },
+      {
+       "id": null,
+       "text": "Mor ligt in ain[er] bettwand viij"
+      },
+      {
+       "id": null,
+       "text": "blatt schlos vnd ain gros maler"
+      },
+      {
+       "id": null,
+       "text": "schlos"
+      },
+      {
+       "id": null,
+       "text": "Mor vor der kuckin ain truhen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain schafftratt ij pfannen"
+      },
+      {
+       "id": null,
+       "text": "vͤren hafen vij sitzkessel"
+      },
+      {
+       "id": null,
+       "text": "It[em] ain armbrost mit aine[m] windel"
+      },
+      {
+       "id": null,
+       "text": "vnd hat kain steyg"
+      },
+      {
+       "id": null,
+       "text": "It[em] auff der windwarttstatt ain"
+      },
+      {
+       "id": null,
+       "text": "{tuerch} {ain} pettstatt dar jnn ligt"
+      },
+      {
+       "id": null,
+       "text": "ain pett ain bolst[er] ij leylach ain"
+      },
+      {
+       "id": null,
+       "text": "rauch deck vnd ain gold[er]"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 144 / 1"
+      },
+      {
+       "id": null,
+       "text": "1478 Okt. 2."
+      }
      ]
     }
    ]
@@ -654,74 +2031,278 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item oben im turen ligen VIII",
-      "raissättel gůtt und böst.",
-      "Item wnten in dem gewelem",
-      "sind zwo bettstatt dar inn",
-      "XI bett, ain deckbett, IIII",
-      "bolster, II kuss, III sargen",
-      "und ain golter.",
-      "Item mer im dem selben ge¬",
-      "weltem sind VII gebaist wolf",
-      "hüt, XIIII fr fuschs belg",
-      "mer VII stricken, lanng und",
-      "kurtz.",
-      "Item XIIII zini schisseln, klain",
-      "und grosß, ain zini plan",
-      "und III kessel.",
-      "Item mer in dem selben gewelten",
-      "sind zwo truchen dar inn",
-      "ligt allerlaÿ plunder und māsser¬",
-      "reÿ sind ver bettschafft. Mer",
-      "zuo truchen sind lär. Zwai",
-      "klaine schreinel, II kandelier,",
-      "II tangelgeschiere, III scherren,",
-      "ain gartt gabel, III bratspis,",
-      "zuo sicheln, XV rosseyssen, ochsen",
-      "und esel eyssen.",
-      "Item XXV veld unslit, hültzi",
-      "schisslen klain und gross",
-      "XVI, taller XXVI, zwen bachen",
-      "schweinflaisch, ungeverlich",
-      "zwen spiss gedigen flaisch.",
-      "Item mer III hächelen, ain rüch.",
-      "Mer im untern keller sind IIII",
-      "hawen, II furschleg, V alt gabe-",
-      "len, VI heÿgablen, IIII kessel",
-      "ain czini flaschen und ain",
-      "buttrich.",
-      "Item mer in dem selben keller",
-      "ist ain vass vein, X1/2 uren,",
-      "ist die wenn dar auff gesnitten.",
-      "[fol.2r]",
-      "Item V kanndelen, klain und",
-      "gross.",
-      "Item so ist wntten im vorhoff",
-      "VI küe, zwo kalbelen, zwai",
-      "stierel, ain schwein und ain",
-      "verndzogene kalb, ain",
-      "wagen ross.",
-      "Item mer da selbs III bett, I bolster",
-      "und III eysenstecken.",
-      "Item so hatt der obgemelt Jo¬",
-      "seph auff Kornburg funden",
-      "das meines gnädigen herrn zů siner gnaden",
-      "gslos gehortt.",
-      "Item hagkenpüchsen VIII.",
-      "Mer hagkenpüchsen XXII.",
-      "Mer hagkenpuchsen, sind nit gevast, II.",
-      "Item erin hafen II.",
-      "Item mer handpuchsen, sind nit",
-      "gevast, II.",
-      "Item drÿ legelen mit pfeilen ligen.",
-      "Item gwelem, zwai klaine tarschel.",
-      "Item mer III gross morser puchsen.",
-      "Mer funff morser buchsen und",
-      "III klaine.",
-      "Item der alten armprost ain",
-      "senen XI.",
-      "Item zway vässlÿ mit pulver."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item oben im turen ligen VIII"
+      },
+      {
+       "id": "r2l2",
+       "text": "raissättel gůtt und böst."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item wnten in dem gewelem"
+      },
+      {
+       "id": "r2l4",
+       "text": "sind zwo bettstatt dar inn"
+      },
+      {
+       "id": "r2l5",
+       "text": "XI bett, ain deckbett, IIII"
+      },
+      {
+       "id": "r2l6",
+       "text": "bolster, II kuss, III sargen"
+      },
+      {
+       "id": "r2l7",
+       "text": "und ain golter."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item mer im dem selben ge¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "weltem sind VII gebaist wolf"
+      },
+      {
+       "id": "r2l10",
+       "text": "hüt, XIIII fr fuschs belg"
+      },
+      {
+       "id": "r2l11",
+       "text": "mer VII stricken, lanng und"
+      },
+      {
+       "id": "r2l12",
+       "text": "kurtz."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item XIIII zini schisseln, klain"
+      },
+      {
+       "id": "r2l14",
+       "text": "und grosß, ain zini plan"
+      },
+      {
+       "id": "r2l15",
+       "text": "und III kessel."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item mer in dem selben gewelten"
+      },
+      {
+       "id": "r2l17",
+       "text": "sind zwo truchen dar inn"
+      },
+      {
+       "id": "r2l18",
+       "text": "ligt allerlaÿ plunder und māsser¬"
+      },
+      {
+       "id": "r2l19",
+       "text": "reÿ sind ver bettschafft. Mer"
+      },
+      {
+       "id": "r2l20",
+       "text": "zuo truchen sind lär. Zwai"
+      },
+      {
+       "id": "r2l21",
+       "text": "klaine schreinel, II kandelier,"
+      },
+      {
+       "id": "r2l22",
+       "text": "II tangelgeschiere, III scherren,"
+      },
+      {
+       "id": "r2l23",
+       "text": "ain gartt gabel, III bratspis,"
+      },
+      {
+       "id": "r2l24",
+       "text": "zuo sicheln, XV rosseyssen, ochsen"
+      },
+      {
+       "id": "r2l25",
+       "text": "und esel eyssen."
+      },
+      {
+       "id": "r2l26",
+       "text": "Item XXV veld unslit, hültzi"
+      },
+      {
+       "id": "r2l27",
+       "text": "schisslen klain und gross"
+      },
+      {
+       "id": "r2l28",
+       "text": "XVI, taller XXVI, zwen bachen"
+      },
+      {
+       "id": "r2l29",
+       "text": "schweinflaisch, ungeverlich"
+      },
+      {
+       "id": "r2l30",
+       "text": "zwen spiss gedigen flaisch."
+      },
+      {
+       "id": "r2l31",
+       "text": "Item mer III hächelen, ain rüch."
+      },
+      {
+       "id": "r2l32",
+       "text": "Mer im untern keller sind IIII"
+      },
+      {
+       "id": "r2l33",
+       "text": "hawen, II furschleg, V alt gabe-"
+      },
+      {
+       "id": "r2l34",
+       "text": "len, VI heÿgablen, IIII kessel"
+      },
+      {
+       "id": "r2l35",
+       "text": "ain czini flaschen und ain"
+      },
+      {
+       "id": "r2l36",
+       "text": "buttrich."
+      },
+      {
+       "id": "r2l37",
+       "text": "Item mer in dem selben keller"
+      },
+      {
+       "id": "r2l38",
+       "text": "ist ain vass vein, X1/2 uren,"
+      },
+      {
+       "id": "r2l39",
+       "text": "ist die wenn dar auff gesnitten."
+      },
+      {
+       "id": "r3l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r4l1",
+       "text": "Item V kanndelen, klain und"
+      },
+      {
+       "id": "r4l2",
+       "text": "gross."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item so ist wntten im vorhoff"
+      },
+      {
+       "id": "r4l4",
+       "text": "VI küe, zwo kalbelen, zwai"
+      },
+      {
+       "id": "r4l5",
+       "text": "stierel, ain schwein und ain"
+      },
+      {
+       "id": "r4l6",
+       "text": "verndzogene kalb, ain"
+      },
+      {
+       "id": "r4l7",
+       "text": "wagen ross."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item mer da selbs III bett, I bolster"
+      },
+      {
+       "id": "r4l9",
+       "text": "und III eysenstecken."
+      },
+      {
+       "id": "r4l10",
+       "text": "Item so hatt der obgemelt Jo¬"
+      },
+      {
+       "id": "r4l11",
+       "text": "seph auff Kornburg funden"
+      },
+      {
+       "id": "r4l12",
+       "text": "das meines gnädigen herrn zů siner gnaden"
+      },
+      {
+       "id": "r4l13",
+       "text": "gslos gehortt."
+      },
+      {
+       "id": "r4l14",
+       "text": "Item hagkenpüchsen VIII."
+      },
+      {
+       "id": "r4l15",
+       "text": "Mer hagkenpüchsen XXII."
+      },
+      {
+       "id": "r4l16",
+       "text": "Mer hagkenpuchsen, sind nit gevast, II."
+      },
+      {
+       "id": "r4l17",
+       "text": "Item erin hafen II."
+      },
+      {
+       "id": "r4l18",
+       "text": "Item mer handpuchsen, sind nit"
+      },
+      {
+       "id": "r4l19",
+       "text": "gevast, II."
+      },
+      {
+       "id": "r4l20",
+       "text": "Item drÿ legelen mit pfeilen ligen."
+      },
+      {
+       "id": "r4l21",
+       "text": "Item gwelem, zwai klaine tarschel."
+      },
+      {
+       "id": "r4l22",
+       "text": "Item mer III gross morser puchsen."
+      },
+      {
+       "id": "r4l23",
+       "text": "Mer funff morser buchsen und"
+      },
+      {
+       "id": "r4l24",
+       "text": "III klaine."
+      },
+      {
+       "id": "r4l25",
+       "text": "Item der alten armprost ain"
+      },
+      {
+       "id": "r4l26",
+       "text": "senen XI."
+      },
+      {
+       "id": "r4l27",
+       "text": "Item zway vässlÿ mit pulver."
+      }
      ]
     },
     {
@@ -738,73 +2319,274 @@
       false
      ],
      "lines": [
-      "It(em) oben ain tenn(e)n lig(e)nd viij",
-      "schaiffstetel guett vnd böst",
-      "It(em) vnd(er)n In dem gewelb",
-      "sind zwo bettstatt dar jnn(en)",
-      "j bett ain dechbett iiij",
-      "polst(er) ij küss ij pfarren",
-      "vnd ain golter",
-      "It(em) mer In dem selben ge=",
-      "welbend sind viij gelaist woll",
-      "gut xxiij st(u)ck flachs tüch",
-      "j st(u)ck viij ströling lann(e)ng vnd",
-      "burch",
-      "It(em) xxij stáin pfirffly klain",
-      "vnd gross ain stáin plaz",
-      "vnd iij kestel",
-      "It(em) mer in dem selben gewelb",
-      "sind zwo truhen dar jnn",
-      "lxx sellerlay klaid vnd wiss",
-      "rait sind vor bett gschafft jtt(em)",
-      "zwo truh(e)n sind leir zway",
-      "klaine schrénnl ij kandellin",
-      "ij tangelheffend iij stänern",
-      "ain geat habb iiij heffelli",
-      "zwo sigeln xv wesfessln oessw",
-      "vnd vjl effen",
-      "It(em) xxv dult wulhs halbs",
-      "schaiffes klain vnd gross",
-      "xxj tell(e)r xxvij stáin hafen",
-      "swarczn flaisch vnschmerlich",
-      "zway schiff gedörten flaischs",
-      "It(em) mer iij hüetleñ ain ring",
-      "jtt(em) in vnd(er)n kell(e)r sind iij",
-      "harna ij fueßglos v alt gabil",
-      "lx vj heygabels iiij kestel",
-      "ain stáin flasch(e)n vnd ain",
-      "guttring",
-      "It(em) mer in dem selben kell(e)r",
-      "ist ain vass wein xj vtz",
-      "ist die wein dar auff gesunten",
-      "2",
-      "It(em) v kanndelln klain vnd",
-      "gross",
-      "It(em) So ist vnnd(er)n Im vorhoff",
-      "vj khüe zwo kalbeln zway",
-      "stirlé ain schwein vnd ain",
-      "trenndtzoges kalb ain",
-      "wagen ross",
-      "It(em) mer daselbs ij bett j kuelp",
-      "sond(er) iij ayssnstéchen",
-      "It(em) So hatt d(e)r obgemelt Jo=",
-      "seph auff Krenburg fund(e)n",
-      "das {alr} It(em) of h zů sundgrieff",
-      "gschlos g(e)horet",
-      "It(em) hagkenpuechsn viij",
-      "jtt(em) hargk(e)npuechsn xxvij",
-      "jtt(em) hargk(e)npuechsn samttschafft ij",
-      "It(em) stain byxn ij",
-      "It(em) mer handpuechsn sind nit",
-      "gerafft v",
-      "It(em) drey legelen mit pfeylen lig(e)nd",
-      "It(em) graben zway klain vachsel",
-      "It(em) mer iij gross morß puechsn",
-      "jtt(em) funff morßbuechs(e)n vnd",
-      "iij stainn",
-      "It(em) vor als Armprosst ain",
-      "stund xj",
-      "It(em) zway rüssly mit puelv(er)"
+      {
+       "id": null,
+       "text": "It(em) oben ain tenn(e)n lig(e)nd viij"
+      },
+      {
+       "id": null,
+       "text": "schaiffstetel guett vnd böst"
+      },
+      {
+       "id": null,
+       "text": "It(em) vnd(er)n In dem gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo bettstatt dar jnn(en)"
+      },
+      {
+       "id": null,
+       "text": "j bett ain dechbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polst(er) ij küss ij pfarren"
+      },
+      {
+       "id": null,
+       "text": "vnd ain golter"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer In dem selben ge="
+      },
+      {
+       "id": null,
+       "text": "welbend sind viij gelaist woll"
+      },
+      {
+       "id": null,
+       "text": "gut xxiij st(u)ck flachs tüch"
+      },
+      {
+       "id": null,
+       "text": "j st(u)ck viij ströling lann(e)ng vnd"
+      },
+      {
+       "id": null,
+       "text": "burch"
+      },
+      {
+       "id": null,
+       "text": "It(em) xxij stáin pfirffly klain"
+      },
+      {
+       "id": null,
+       "text": "vnd gross ain stáin plaz"
+      },
+      {
+       "id": null,
+       "text": "vnd iij kestel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer in dem selben gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truhen dar jnn"
+      },
+      {
+       "id": null,
+       "text": "lxx sellerlay klaid vnd wiss"
+      },
+      {
+       "id": null,
+       "text": "rait sind vor bett gschafft jtt(em)"
+      },
+      {
+       "id": null,
+       "text": "zwo truh(e)n sind leir zway"
+      },
+      {
+       "id": null,
+       "text": "klaine schrénnl ij kandellin"
+      },
+      {
+       "id": null,
+       "text": "ij tangelheffend iij stänern"
+      },
+      {
+       "id": null,
+       "text": "ain geat habb iiij heffelli"
+      },
+      {
+       "id": null,
+       "text": "zwo sigeln xv wesfessln oessw"
+      },
+      {
+       "id": null,
+       "text": "vnd vjl effen"
+      },
+      {
+       "id": null,
+       "text": "It(em) xxv dult wulhs halbs"
+      },
+      {
+       "id": null,
+       "text": "schaiffes klain vnd gross"
+      },
+      {
+       "id": null,
+       "text": "xxj tell(e)r xxvij stáin hafen"
+      },
+      {
+       "id": null,
+       "text": "swarczn flaisch vnschmerlich"
+      },
+      {
+       "id": null,
+       "text": "zway schiff gedörten flaischs"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij hüetleñ ain ring"
+      },
+      {
+       "id": null,
+       "text": "jtt(em) in vnd(er)n kell(e)r sind iij"
+      },
+      {
+       "id": null,
+       "text": "harna ij fueßglos v alt gabil"
+      },
+      {
+       "id": null,
+       "text": "lx vj heygabels iiij kestel"
+      },
+      {
+       "id": null,
+       "text": "ain stáin flasch(e)n vnd ain"
+      },
+      {
+       "id": null,
+       "text": "guttring"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer in dem selben kell(e)r"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj vtz"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesunten"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "It(em) v kanndelln klain vnd"
+      },
+      {
+       "id": null,
+       "text": "gross"
+      },
+      {
+       "id": null,
+       "text": "It(em) So ist vnnd(er)n Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj khüe zwo kalbeln zway"
+      },
+      {
+       "id": null,
+       "text": "stirlé ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "trenndtzoges kalb ain"
+      },
+      {
+       "id": null,
+       "text": "wagen ross"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer daselbs ij bett j kuelp"
+      },
+      {
+       "id": null,
+       "text": "sond(er) iij ayssnstéchen"
+      },
+      {
+       "id": null,
+       "text": "It(em) So hatt d(e)r obgemelt Jo="
+      },
+      {
+       "id": null,
+       "text": "seph auff Krenburg fund(e)n"
+      },
+      {
+       "id": null,
+       "text": "das {alr} It(em) of h zů sundgrieff"
+      },
+      {
+       "id": null,
+       "text": "gschlos g(e)horet"
+      },
+      {
+       "id": null,
+       "text": "It(em) hagkenpuechsn viij"
+      },
+      {
+       "id": null,
+       "text": "jtt(em) hargk(e)npuechsn xxvij"
+      },
+      {
+       "id": null,
+       "text": "jtt(em) hargk(e)npuechsn samttschafft ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) stain byxn ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer handpuechsn sind nit"
+      },
+      {
+       "id": null,
+       "text": "gerafft v"
+      },
+      {
+       "id": null,
+       "text": "It(em) drey legelen mit pfeylen lig(e)nd"
+      },
+      {
+       "id": null,
+       "text": "It(em) graben zway klain vachsel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij gross morß puechsn"
+      },
+      {
+       "id": null,
+       "text": "jtt(em) funff morßbuechs(e)n vnd"
+      },
+      {
+       "id": null,
+       "text": "iij stainn"
+      },
+      {
+       "id": null,
+       "text": "It(em) vor als Armprosst ain"
+      },
+      {
+       "id": null,
+       "text": "stund xj"
+      },
+      {
+       "id": null,
+       "text": "It(em) zway rüssly mit puelv(er)"
+      }
      ]
     },
     {
@@ -821,73 +2603,274 @@
       false
      ],
      "lines": [
-      "It(em) oben ain tanndligin vnnz",
-      "draiffartel gůtt vnnd böst",
-      "It(em) vnnden In dem gewelbd",
-      "seinnd zwo bettstatt dar Inn",
-      "j bett Ain dechbett iiij",
-      "polster ij kchüß iij parckn",
-      "vnnd ain polster",
-      "It(em) mer In dem selben ge=",
-      "welbed seinnd viij gebaisst woll",
-      "hůt xxiij st(uck) fuechter tůch",
-      "j tůch viij stůcklin leining vnnd",
-      "zuech",
-      "It(em) xvij sůn pfeiffer klain",
-      "vnnd groß ain sůn play",
-      "vnnd iiij kessel",
-      "It(em) mer in dem selben gewelbd",
-      "seinnd zwo truhen dar Inn",
-      "lxx tallertschůeller vnnd missi[...]",
-      "erer seinnd vier bettgewant j tůch",
-      "zwo truchen sind leer Zway",
-      "klain pfennd ij kandelin",
-      "ij tangelheppen iiij schirckn",
-      "ain grat gabll viij kreippis",
-      "zwo sigeln xv weschffasl ochsen",
-      "vnnd esl gschirr",
-      "It(em) xxv vall wasser kůlzi",
-      "schepfer klain vnd groß",
-      "xvj tellr xxvij smrn karten",
-      "swenn flaisch vnschmrlih",
-      "zway schiff gedrochen flaisch",
-      "It(em) mer iij hůetlin ain rüch",
-      "Ite(m) in vnter keller sind iij",
-      "gann ij furglin v alt gabil",
-      "lx vj heygeblln iiij kessl",
-      "ain sůn flaschen vnnd als",
-      "guttring",
-      "It(em) mer in dem selben keller",
-      "ist ain vass wein xj vtz",
-      "ist die wein der auff gesunten",
-      "2",
-      "It(em) v kanndeln klain vnd",
-      "groß",
-      "It(em) So ist vnnden Im vorhoff",
-      "vj küe zwo kalbeln zway",
-      "still ain schwein vnd ain",
-      "drendtzent kallb ain",
-      "wagend ross",
-      "It(em) mer daselbs iij bett j kuelp",
-      "vnnd iiij ossnstarten",
-      "It(em) So hatt der obgemelt Jo=",
-      "seph auff korennburg funden",
-      "das NB oh h sů find gmuet",
-      "gschlos g[e]hoert",
-      "It(em) hagkenpüchsen viij",
-      "Item hagkenpüchsn xxvij",
-      "Item hagkenpuechsn sambt geschoss ij",
-      "It(em) stainbüchsen ij",
-      "It(em) mer handpüechsn sind nit",
-      "gerast v",
-      "It(em) drey legetten mit pfeilenn legel",
-      "It(em) gundlen zway klaine wechspil",
-      "It(em) mer iiij groß mörser püchsn",
-      "Item funff mörsbüchsn vnd",
-      "iiij klaine",
-      "It(em) zwo alsp armprosst ain",
-      "seinn xj",
-      "It(em) zway rüfflij mit pech"
+      {
+       "id": null,
+       "text": "It(em) oben ain tanndligin vnnz"
+      },
+      {
+       "id": null,
+       "text": "draiffartel gůtt vnnd böst"
+      },
+      {
+       "id": null,
+       "text": "It(em) vnnden In dem gewelbd"
+      },
+      {
+       "id": null,
+       "text": "seinnd zwo bettstatt dar Inn"
+      },
+      {
+       "id": null,
+       "text": "j bett Ain dechbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polster ij kchüß iij parckn"
+      },
+      {
+       "id": null,
+       "text": "vnnd ain polster"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer In dem selben ge="
+      },
+      {
+       "id": null,
+       "text": "welbed seinnd viij gebaisst woll"
+      },
+      {
+       "id": null,
+       "text": "hůt xxiij st(uck) fuechter tůch"
+      },
+      {
+       "id": null,
+       "text": "j tůch viij stůcklin leining vnnd"
+      },
+      {
+       "id": null,
+       "text": "zuech"
+      },
+      {
+       "id": null,
+       "text": "It(em) xvij sůn pfeiffer klain"
+      },
+      {
+       "id": null,
+       "text": "vnnd groß ain sůn play"
+      },
+      {
+       "id": null,
+       "text": "vnnd iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer in dem selben gewelbd"
+      },
+      {
+       "id": null,
+       "text": "seinnd zwo truhen dar Inn"
+      },
+      {
+       "id": null,
+       "text": "lxx tallertschůeller vnnd missi[...]"
+      },
+      {
+       "id": null,
+       "text": "erer seinnd vier bettgewant j tůch"
+      },
+      {
+       "id": null,
+       "text": "zwo truchen sind leer Zway"
+      },
+      {
+       "id": null,
+       "text": "klain pfennd ij kandelin"
+      },
+      {
+       "id": null,
+       "text": "ij tangelheppen iiij schirckn"
+      },
+      {
+       "id": null,
+       "text": "ain grat gabll viij kreippis"
+      },
+      {
+       "id": null,
+       "text": "zwo sigeln xv weschffasl ochsen"
+      },
+      {
+       "id": null,
+       "text": "vnnd esl gschirr"
+      },
+      {
+       "id": null,
+       "text": "It(em) xxv vall wasser kůlzi"
+      },
+      {
+       "id": null,
+       "text": "schepfer klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "xvj tellr xxvij smrn karten"
+      },
+      {
+       "id": null,
+       "text": "swenn flaisch vnschmrlih"
+      },
+      {
+       "id": null,
+       "text": "zway schiff gedrochen flaisch"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij hůetlin ain rüch"
+      },
+      {
+       "id": null,
+       "text": "Ite(m) in vnter keller sind iij"
+      },
+      {
+       "id": null,
+       "text": "gann ij furglin v alt gabil"
+      },
+      {
+       "id": null,
+       "text": "lx vj heygeblln iiij kessl"
+      },
+      {
+       "id": null,
+       "text": "ain sůn flaschen vnnd als"
+      },
+      {
+       "id": null,
+       "text": "guttring"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer in dem selben keller"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj vtz"
+      },
+      {
+       "id": null,
+       "text": "ist die wein der auff gesunten"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "It(em) v kanndeln klain vnd"
+      },
+      {
+       "id": null,
+       "text": "groß"
+      },
+      {
+       "id": null,
+       "text": "It(em) So ist vnnden Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj küe zwo kalbeln zway"
+      },
+      {
+       "id": null,
+       "text": "still ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "drendtzent kallb ain"
+      },
+      {
+       "id": null,
+       "text": "wagend ross"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer daselbs iij bett j kuelp"
+      },
+      {
+       "id": null,
+       "text": "vnnd iiij ossnstarten"
+      },
+      {
+       "id": null,
+       "text": "It(em) So hatt der obgemelt Jo="
+      },
+      {
+       "id": null,
+       "text": "seph auff korennburg funden"
+      },
+      {
+       "id": null,
+       "text": "das NB oh h sů find gmuet"
+      },
+      {
+       "id": null,
+       "text": "gschlos g[e]hoert"
+      },
+      {
+       "id": null,
+       "text": "It(em) hagkenpüchsen viij"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpüchsn xxvij"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuechsn sambt geschoss ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) stainbüchsen ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer handpüechsn sind nit"
+      },
+      {
+       "id": null,
+       "text": "gerast v"
+      },
+      {
+       "id": null,
+       "text": "It(em) drey legetten mit pfeilenn legel"
+      },
+      {
+       "id": null,
+       "text": "It(em) gundlen zway klaine wechspil"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iiij groß mörser püchsn"
+      },
+      {
+       "id": null,
+       "text": "Item funff mörsbüchsn vnd"
+      },
+      {
+       "id": null,
+       "text": "iiij klaine"
+      },
+      {
+       "id": null,
+       "text": "It(em) zwo alsp armprosst ain"
+      },
+      {
+       "id": null,
+       "text": "seinn xj"
+      },
+      {
+       "id": null,
+       "text": "It(em) zway rüfflij mit pech"
+      }
      ]
     },
     {
@@ -904,73 +2887,274 @@
       false
      ],
      "lines": [
-      "It(em) oben ain khein ligend viij",
-      "draissattel gůtt v(nd) böst",
-      "It(em) vnden In dem gewelb",
-      "sind Zwo bettstatt dar Inn",
-      "iij bett Ain dechbett iiij",
-      "polster ij küß in paregt",
-      "v(nd) ain polster",
-      "It(em) mer In dem selben ge-",
-      "welwb sind viij gebaint welsf",
-      "hut xxiij st(u)ck furphes tůch",
-      "Mor viij stückhein laung v(nd)",
-      "kurch",
-      "It(em) xvij stain pfeffer klain",
-      "v(nd) groff ain stain pley",
-      "v(nd) iiij kessel",
-      "It(em) mer In dem selben gewelb",
-      "sind Zwo trüchen dar Inn",
-      "lxx tell(er)lay pfeur v(nd) miss-",
-      "tell sind vier bettgwäft Mor",
-      "Zwo truchen sind dar Zway",
-      "klain truchel ij kandelin",
-      "ij tangelgspünd iiij stüchel",
-      "ain gratgabe viij bratspis",
-      "Zwo slegely xv refftyssen ochsen",
-      "v(nd) elf essen",
-      "It(em) xxv stik welsschs hulcz",
-      "schaͤffers klain v(nd) groff",
-      "xxj tell(er) xxvij stain barch(et)",
-      "schwein flaisch v(n)nderschaidlich",
-      "Zway schiff gedoͤrtez flaisch",
-      "It(em) mer iij hüetlet ain Ruͦg",
-      "Mor Im vnter keller sind iij",
-      "gawd ij furphes v alt gabi-",
-      "ler vj heygabler iij kessl",
-      "ain stain flaster v(nd) ain",
-      "Guttring",
-      "It(em) mer In dem selben kell-",
-      "er ain vass wein xj vry",
-      "ist die wein dar auff gesunten",
-      "2",
-      "It(em) v kandelin klain v(nd)",
-      "groff",
-      "It(em) So ist vnter Im vorhoff",
-      "vij stüc Zwo saldeln Zway",
-      "pürd ain schwein v(nd) ain",
-      "weinwogren krall ain",
-      "wagn roff",
-      "It(em) mer daselbis iij bett j kuelp",
-      "v(nd) iiij effentöcher",
-      "It(em) So hatt der obgemelt Jo-",
-      "seph auff Kerenburg funden",
-      "das Er of h(er)rn zuͦ hindpriess",
-      "schlos g(e)hoͤrt —————",
-      "It(em) hagken püchsen viij",
-      "Mor hagkenpüchsen xxij",
-      "Mor hagkenpüchsen sind aintwerdt ij",
-      "It(em) stain büchsen ij",
-      "It(em) mer hand püchsen sind nit",
-      "gezalt — v",
-      "It(em) drey legelen mit pfeylen leg(e)d",
-      "It(em) gemelt Zway klain vachvögel",
-      "It(em) mer iij groff mors puechsen",
-      "Mor fünff mors puechsen v(nd)",
-      "iij klain",
-      "It(em) dor alsz Armproft ain",
-      "seine xj",
-      "It(em) Zway rüfflij mit pech"
+      {
+       "id": null,
+       "text": "It(em) oben ain khein ligend viij"
+      },
+      {
+       "id": null,
+       "text": "draissattel gůtt v(nd) böst"
+      },
+      {
+       "id": null,
+       "text": "It(em) vnden In dem gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind Zwo bettstatt dar Inn"
+      },
+      {
+       "id": null,
+       "text": "iij bett Ain dechbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polster ij küß in paregt"
+      },
+      {
+       "id": null,
+       "text": "v(nd) ain polster"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer In dem selben ge-"
+      },
+      {
+       "id": null,
+       "text": "welwb sind viij gebaint welsf"
+      },
+      {
+       "id": null,
+       "text": "hut xxiij st(u)ck furphes tůch"
+      },
+      {
+       "id": null,
+       "text": "Mor viij stückhein laung v(nd)"
+      },
+      {
+       "id": null,
+       "text": "kurch"
+      },
+      {
+       "id": null,
+       "text": "It(em) xvij stain pfeffer klain"
+      },
+      {
+       "id": null,
+       "text": "v(nd) groff ain stain pley"
+      },
+      {
+       "id": null,
+       "text": "v(nd) iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer In dem selben gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind Zwo trüchen dar Inn"
+      },
+      {
+       "id": null,
+       "text": "lxx tell(er)lay pfeur v(nd) miss-"
+      },
+      {
+       "id": null,
+       "text": "tell sind vier bettgwäft Mor"
+      },
+      {
+       "id": null,
+       "text": "Zwo truchen sind dar Zway"
+      },
+      {
+       "id": null,
+       "text": "klain truchel ij kandelin"
+      },
+      {
+       "id": null,
+       "text": "ij tangelgspünd iiij stüchel"
+      },
+      {
+       "id": null,
+       "text": "ain gratgabe viij bratspis"
+      },
+      {
+       "id": null,
+       "text": "Zwo slegely xv refftyssen ochsen"
+      },
+      {
+       "id": null,
+       "text": "v(nd) elf essen"
+      },
+      {
+       "id": null,
+       "text": "It(em) xxv stik welsschs hulcz"
+      },
+      {
+       "id": null,
+       "text": "schaͤffers klain v(nd) groff"
+      },
+      {
+       "id": null,
+       "text": "xxj tell(er) xxvij stain barch(et)"
+      },
+      {
+       "id": null,
+       "text": "schwein flaisch v(n)nderschaidlich"
+      },
+      {
+       "id": null,
+       "text": "Zway schiff gedoͤrtez flaisch"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij hüetlet ain Ruͦg"
+      },
+      {
+       "id": null,
+       "text": "Mor Im vnter keller sind iij"
+      },
+      {
+       "id": null,
+       "text": "gawd ij furphes v alt gabi-"
+      },
+      {
+       "id": null,
+       "text": "ler vj heygabler iij kessl"
+      },
+      {
+       "id": null,
+       "text": "ain stain flaster v(nd) ain"
+      },
+      {
+       "id": null,
+       "text": "Guttring"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer In dem selben kell-"
+      },
+      {
+       "id": null,
+       "text": "er ain vass wein xj vry"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesunten"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "It(em) v kandelin klain v(nd)"
+      },
+      {
+       "id": null,
+       "text": "groff"
+      },
+      {
+       "id": null,
+       "text": "It(em) So ist vnter Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vij stüc Zwo saldeln Zway"
+      },
+      {
+       "id": null,
+       "text": "pürd ain schwein v(nd) ain"
+      },
+      {
+       "id": null,
+       "text": "weinwogren krall ain"
+      },
+      {
+       "id": null,
+       "text": "wagn roff"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer daselbis iij bett j kuelp"
+      },
+      {
+       "id": null,
+       "text": "v(nd) iiij effentöcher"
+      },
+      {
+       "id": null,
+       "text": "It(em) So hatt der obgemelt Jo-"
+      },
+      {
+       "id": null,
+       "text": "seph auff Kerenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das Er of h(er)rn zuͦ hindpriess"
+      },
+      {
+       "id": null,
+       "text": "schlos g(e)hoͤrt —————"
+      },
+      {
+       "id": null,
+       "text": "It(em) hagken püchsen viij"
+      },
+      {
+       "id": null,
+       "text": "Mor hagkenpüchsen xxij"
+      },
+      {
+       "id": null,
+       "text": "Mor hagkenpüchsen sind aintwerdt ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) stain büchsen ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer hand püchsen sind nit"
+      },
+      {
+       "id": null,
+       "text": "gezalt — v"
+      },
+      {
+       "id": null,
+       "text": "It(em) drey legelen mit pfeylen leg(e)d"
+      },
+      {
+       "id": null,
+       "text": "It(em) gemelt Zway klain vachvögel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij groff mors puechsen"
+      },
+      {
+       "id": null,
+       "text": "Mor fünff mors puechsen v(nd)"
+      },
+      {
+       "id": null,
+       "text": "iij klain"
+      },
+      {
+       "id": null,
+       "text": "It(em) dor alsz Armproft ain"
+      },
+      {
+       "id": null,
+       "text": "seine xj"
+      },
+      {
+       "id": null,
+       "text": "It(em) Zway rüfflij mit pech"
+      }
      ]
     },
     {
@@ -987,73 +3171,274 @@
       false
      ],
      "lines": [
-      "It(em) oben jn ainer ligen viij",
-      "draiheschel guot vnd boes",
-      "It(em) vnden jn dem gewelb",
-      "sind zwo pettstatt dar jnn",
-      "pett ain dechbett iiij",
-      "poelster ij fueß jn payd(e)n",
-      "vnd ain polster",
-      "It(em) mer jn dem selben ge-",
-      "welbend sind viij gelaßt woll",
-      "gut xxiij st(uck) fuechs pelcz",
-      "jte(m) viij stucken lanng vnd",
-      "burch",
-      "It(em) xxij stuec phellen klain",
-      "vnd groß ain stun plech",
-      "vnd iij kessel",
-      "It(em) mer jn dem selben gewelb",
-      "sind zwo truchen dar jnn",
-      "lxx tellerler zeinn vnd misch-",
-      "rot sind vor bett schafft jte(m)",
-      "zwo truchen sind lar zwaj",
-      "klaine schraindl ij kanndlein",
-      "ij tanngelgeschird iiij schroecol",
-      "ain garat gabd viij krappfen",
-      "zwo frigelin xv roessyssen ochsen",
-      "vnd esel eyssen",
-      "It(em) xxv stelt roessis hulzin",
-      "schaeffen klain vnd groß",
-      "xxj teller xxvj stucken backen",
-      "schwein flaisch vnserundling",
-      "zway stiff gedoerst flaisch",
-      "It(em) mer iij huetschen ain ring",
-      "jte(m) jn vnt(e)rn kellr sind iij",
-      "gawa ij surpalgn v alt gablen",
-      "lx vj heygabeln iiij kessel",
-      "ain stuec flaschen vnd ain",
-      "puttring",
-      "It(em) mer jn dem selben kell(er)",
-      "jst ain vaß wein xj vi(er)l(in)g",
-      "jst der wein dar auff gesunck(e)n",
-      "2",
-      "It(em) v kanndlen klain vnd",
-      "groß",
-      "It(em) so jst vnnd(er)n jm vorhoff",
-      "vj stuec zwo kalbeln zwaj",
-      "stuecl ain schwein vnd ain",
-      "draindtogeinl krall ain",
-      "wayd roß",
-      "It(em) mer da selbs iiij bett j fueß",
-      "vnd iiij ospynstucken",
-      "It(em) so hatt der obgenant Jo-",
-      "seph auff Kofenburg funden",
-      "das mr oft h zue fund gnuoeg",
-      "gsloß gchoert",
-      "It(em) hagkenpuechsen viij",
-      "jtem hagkenpuechsen xxvij",
-      "jtem hagkenpuechsen sambtgeschoß ij",
-      "It(em) stainpuechsen ij",
-      "It(em) mer handpuechsen sind mit",
-      "geschaft v",
-      "It(em) drey legelen mit pfeylen legel",
-      "It(em) gvunden zwaj klaine torßegel",
-      "It(em) mer iiij groß morschpuechsen",
-      "jtem funff morschbuechsen vnd",
-      "iij klain",
-      "It(em) der alsp armprost ain",
-      "seine xj",
-      "It(em) zway reisslij mit pfeiln"
+      {
+       "id": null,
+       "text": "It(em) oben jn ainer ligen viij"
+      },
+      {
+       "id": null,
+       "text": "draiheschel guot vnd boes"
+      },
+      {
+       "id": null,
+       "text": "It(em) vnden jn dem gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo pettstatt dar jnn"
+      },
+      {
+       "id": null,
+       "text": "pett ain dechbett iiij"
+      },
+      {
+       "id": null,
+       "text": "poelster ij fueß jn payd(e)n"
+      },
+      {
+       "id": null,
+       "text": "vnd ain polster"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer jn dem selben ge-"
+      },
+      {
+       "id": null,
+       "text": "welbend sind viij gelaßt woll"
+      },
+      {
+       "id": null,
+       "text": "gut xxiij st(uck) fuechs pelcz"
+      },
+      {
+       "id": null,
+       "text": "jte(m) viij stucken lanng vnd"
+      },
+      {
+       "id": null,
+       "text": "burch"
+      },
+      {
+       "id": null,
+       "text": "It(em) xxij stuec phellen klain"
+      },
+      {
+       "id": null,
+       "text": "vnd groß ain stun plech"
+      },
+      {
+       "id": null,
+       "text": "vnd iij kessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer jn dem selben gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truchen dar jnn"
+      },
+      {
+       "id": null,
+       "text": "lxx tellerler zeinn vnd misch-"
+      },
+      {
+       "id": null,
+       "text": "rot sind vor bett schafft jte(m)"
+      },
+      {
+       "id": null,
+       "text": "zwo truchen sind lar zwaj"
+      },
+      {
+       "id": null,
+       "text": "klaine schraindl ij kanndlein"
+      },
+      {
+       "id": null,
+       "text": "ij tanngelgeschird iiij schroecol"
+      },
+      {
+       "id": null,
+       "text": "ain garat gabd viij krappfen"
+      },
+      {
+       "id": null,
+       "text": "zwo frigelin xv roessyssen ochsen"
+      },
+      {
+       "id": null,
+       "text": "vnd esel eyssen"
+      },
+      {
+       "id": null,
+       "text": "It(em) xxv stelt roessis hulzin"
+      },
+      {
+       "id": null,
+       "text": "schaeffen klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "xxj teller xxvj stucken backen"
+      },
+      {
+       "id": null,
+       "text": "schwein flaisch vnserundling"
+      },
+      {
+       "id": null,
+       "text": "zway stiff gedoerst flaisch"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij huetschen ain ring"
+      },
+      {
+       "id": null,
+       "text": "jte(m) jn vnt(e)rn kellr sind iij"
+      },
+      {
+       "id": null,
+       "text": "gawa ij surpalgn v alt gablen"
+      },
+      {
+       "id": null,
+       "text": "lx vj heygabeln iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain stuec flaschen vnd ain"
+      },
+      {
+       "id": null,
+       "text": "puttring"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer jn dem selben kell(er)"
+      },
+      {
+       "id": null,
+       "text": "jst ain vaß wein xj vi(er)l(in)g"
+      },
+      {
+       "id": null,
+       "text": "jst der wein dar auff gesunck(e)n"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "It(em) v kanndlen klain vnd"
+      },
+      {
+       "id": null,
+       "text": "groß"
+      },
+      {
+       "id": null,
+       "text": "It(em) so jst vnnd(er)n jm vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj stuec zwo kalbeln zwaj"
+      },
+      {
+       "id": null,
+       "text": "stuecl ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "draindtogeinl krall ain"
+      },
+      {
+       "id": null,
+       "text": "wayd roß"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer da selbs iiij bett j fueß"
+      },
+      {
+       "id": null,
+       "text": "vnd iiij ospynstucken"
+      },
+      {
+       "id": null,
+       "text": "It(em) so hatt der obgenant Jo-"
+      },
+      {
+       "id": null,
+       "text": "seph auff Kofenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das mr oft h zue fund gnuoeg"
+      },
+      {
+       "id": null,
+       "text": "gsloß gchoert"
+      },
+      {
+       "id": null,
+       "text": "It(em) hagkenpuechsen viij"
+      },
+      {
+       "id": null,
+       "text": "jtem hagkenpuechsen xxvij"
+      },
+      {
+       "id": null,
+       "text": "jtem hagkenpuechsen sambtgeschoß ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) stainpuechsen ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer handpuechsen sind mit"
+      },
+      {
+       "id": null,
+       "text": "geschaft v"
+      },
+      {
+       "id": null,
+       "text": "It(em) drey legelen mit pfeylen legel"
+      },
+      {
+       "id": null,
+       "text": "It(em) gvunden zwaj klaine torßegel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iiij groß morschpuechsen"
+      },
+      {
+       "id": null,
+       "text": "jtem funff morschbuechsen vnd"
+      },
+      {
+       "id": null,
+       "text": "iij klain"
+      },
+      {
+       "id": null,
+       "text": "It(em) der alsp armprost ain"
+      },
+      {
+       "id": null,
+       "text": "seine xj"
+      },
+      {
+       "id": null,
+       "text": "It(em) zway reisslij mit pfeiln"
+      }
      ]
     },
     {
@@ -1070,73 +3455,274 @@
       false
      ],
      "lines": [
-      "It(em) oben jn ainer ligen vij",
-      "dauffattel gůtt vnd böst",
-      "It(em) vnden Jn dem gemelb",
-      "sind zwo bettstatt dar jnn",
-      "j bett ain deckbett iiij",
-      "polster ij kyss jn pargen",
-      "vnd ain polster",
-      "It(em) mer Jn dem selben ge-",
-      "melwb sind vij gelatzt wolf",
-      "gůt xiiij st(u)ck fuchs balg",
-      "More vij st(u)cklin lanng vnd",
-      "kurch",
-      "It(em) xvij fein peysslein klain",
-      "vnd groß ain fein play",
-      "vnd iiij kessel",
-      "It(em) mer jn dem selben gemelb",
-      "sind zwo truhen dar jnn",
-      "lxx tischlath klain vnd miss-",
-      "erli sind vor bettschefft More",
-      "zwo truhen jnd dar zwaj",
-      "klaine sperwele ij kandelin",
-      "ij tangel gerspind iiij pfann",
-      "ain grat gabl vij brenpsch",
-      "zwo slegeln xv weschffas oeffn",
-      "vnd xil eschen",
-      "It(em) xlvij wild ochsen häut",
-      "spechssers klain vnd groß",
-      "xvij teller xxvij zinen barten",
-      "swain flaisch vngesuntlich",
-      "zway schiff gedörten flaischs",
-      "It(em) mer iij hütstain ain ring",
-      "More jn vnt(er)n kell sind iij",
-      "garen ij furchglen v alt gabl",
-      "lx vj heygabeln iiij kessel",
-      "ain fein flaschen vnd ain",
-      "qutterlin",
-      "It(em) mer jn dem selben kell",
-      "ist ain vass wein xj vi(er)l(in)g",
-      "ist die wein der auff gesunten",
-      "2",
-      "It(em) v kandelin klain vnd",
-      "groß",
-      "It(em) So ist vnntt(er)m vorhoff",
-      "vj sein zwo keller zwaj",
-      "stuck ain schwein vnd ain",
-      "drevndtregers stall ain",
-      "wagen roff",
-      "It(em) mer daselbs ij bett j kuelf",
-      "sonnd(e)r vij essenscherben",
-      "It(em) So hatt der obgemelt Jo-",
-      "seph auff Kerenburg funden",
-      "das N R of h zwo sind gewest",
-      "ysers g(e)hoert",
-      "It(em) hagkenpuxen viij",
-      "More hargkenpuxen xxvij",
-      "More hagkenpuxen sundert(er)haft ij",
-      "It(em) fein lysen ij",
-      "It(em) mer hand puxen sind nit",
-      "gantz v",
-      "It(em) drey legelen mit pfeylen ligen",
-      "It(em) vnden zway klaine tachördel",
-      "It(em) mer iiij groß mörser puxen",
-      "More funff mors puxen vnd",
-      "iij klaine",
-      "It(em) der alsp Armproft ain",
-      "seind xj",
-      "It(em) zway rüfflij mit pulv"
+      {
+       "id": null,
+       "text": "It(em) oben jn ainer ligen vij"
+      },
+      {
+       "id": null,
+       "text": "dauffattel gůtt vnd böst"
+      },
+      {
+       "id": null,
+       "text": "It(em) vnden Jn dem gemelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo bettstatt dar jnn"
+      },
+      {
+       "id": null,
+       "text": "j bett ain deckbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polster ij kyss jn pargen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain polster"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer Jn dem selben ge-"
+      },
+      {
+       "id": null,
+       "text": "melwb sind vij gelatzt wolf"
+      },
+      {
+       "id": null,
+       "text": "gůt xiiij st(u)ck fuchs balg"
+      },
+      {
+       "id": null,
+       "text": "More vij st(u)cklin lanng vnd"
+      },
+      {
+       "id": null,
+       "text": "kurch"
+      },
+      {
+       "id": null,
+       "text": "It(em) xvij fein peysslein klain"
+      },
+      {
+       "id": null,
+       "text": "vnd groß ain fein play"
+      },
+      {
+       "id": null,
+       "text": "vnd iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer jn dem selben gemelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truhen dar jnn"
+      },
+      {
+       "id": null,
+       "text": "lxx tischlath klain vnd miss-"
+      },
+      {
+       "id": null,
+       "text": "erli sind vor bettschefft More"
+      },
+      {
+       "id": null,
+       "text": "zwo truhen jnd dar zwaj"
+      },
+      {
+       "id": null,
+       "text": "klaine sperwele ij kandelin"
+      },
+      {
+       "id": null,
+       "text": "ij tangel gerspind iiij pfann"
+      },
+      {
+       "id": null,
+       "text": "ain grat gabl vij brenpsch"
+      },
+      {
+       "id": null,
+       "text": "zwo slegeln xv weschffas oeffn"
+      },
+      {
+       "id": null,
+       "text": "vnd xil eschen"
+      },
+      {
+       "id": null,
+       "text": "It(em) xlvij wild ochsen häut"
+      },
+      {
+       "id": null,
+       "text": "spechssers klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "xvij teller xxvij zinen barten"
+      },
+      {
+       "id": null,
+       "text": "swain flaisch vngesuntlich"
+      },
+      {
+       "id": null,
+       "text": "zway schiff gedörten flaischs"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iij hütstain ain ring"
+      },
+      {
+       "id": null,
+       "text": "More jn vnt(er)n kell sind iij"
+      },
+      {
+       "id": null,
+       "text": "garen ij furchglen v alt gabl"
+      },
+      {
+       "id": null,
+       "text": "lx vj heygabeln iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain fein flaschen vnd ain"
+      },
+      {
+       "id": null,
+       "text": "qutterlin"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer jn dem selben kell"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj vi(er)l(in)g"
+      },
+      {
+       "id": null,
+       "text": "ist die wein der auff gesunten"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "It(em) v kandelin klain vnd"
+      },
+      {
+       "id": null,
+       "text": "groß"
+      },
+      {
+       "id": null,
+       "text": "It(em) So ist vnntt(er)m vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj sein zwo keller zwaj"
+      },
+      {
+       "id": null,
+       "text": "stuck ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "drevndtregers stall ain"
+      },
+      {
+       "id": null,
+       "text": "wagen roff"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer daselbs ij bett j kuelf"
+      },
+      {
+       "id": null,
+       "text": "sonnd(e)r vij essenscherben"
+      },
+      {
+       "id": null,
+       "text": "It(em) So hatt der obgemelt Jo-"
+      },
+      {
+       "id": null,
+       "text": "seph auff Kerenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das N R of h zwo sind gewest"
+      },
+      {
+       "id": null,
+       "text": "ysers g(e)hoert"
+      },
+      {
+       "id": null,
+       "text": "It(em) hagkenpuxen viij"
+      },
+      {
+       "id": null,
+       "text": "More hargkenpuxen xxvij"
+      },
+      {
+       "id": null,
+       "text": "More hagkenpuxen sundert(er)haft ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) fein lysen ij"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer hand puxen sind nit"
+      },
+      {
+       "id": null,
+       "text": "gantz v"
+      },
+      {
+       "id": null,
+       "text": "It(em) drey legelen mit pfeylen ligen"
+      },
+      {
+       "id": null,
+       "text": "It(em) vnden zway klaine tachördel"
+      },
+      {
+       "id": null,
+       "text": "It(em) mer iiij groß mörser puxen"
+      },
+      {
+       "id": null,
+       "text": "More funff mors puxen vnd"
+      },
+      {
+       "id": null,
+       "text": "iij klaine"
+      },
+      {
+       "id": null,
+       "text": "It(em) der alsp Armproft ain"
+      },
+      {
+       "id": null,
+       "text": "seind xj"
+      },
+      {
+       "id": null,
+       "text": "It(em) zway rüfflij mit pulv"
+      }
      ]
     },
     {
@@ -1152,73 +3738,274 @@
       false
      ],
      "lines": [
-      "2",
-      "Item oben in ainer truchen ligen viij",
-      "Reitsattel guett vnd böß",
-      "Item vnnden Jn dem gewelb",
-      "sind zwo pettstatt dar jnn",
-      "pett ain deckbett iiij",
-      "pölster ij küss iiij par pleilach",
-      "vnd ain golter",
-      "Item mer Jn dem selben ge-",
-      "welbe sind vij gepewt woll",
-      "gut xxiiij stuck flachs talg",
-      "Item viij stucken lanng vnd",
-      "kurtz",
-      "Item xxiiij stuck pfeffer clain",
-      "vnd groß ain stuck plei",
-      "vnd iiij kessel",
-      "Item mer in dem selben gewelbe",
-      "sind zwo truhen dar jnn",
-      "ligt allerlay phunt vnd messing",
-      "zeug sind zwo pettschafft ainer",
-      "zwo truchen sind leir zway",
-      "klenne pefferne ij kandelin",
-      "ij tangelgspind iiij schirck",
-      "ain grat gabe viij krappis",
-      "zwo seigeln xv wescherle achse",
-      "vnd xli eisen",
-      "Item xv vird wild ochsen häut",
-      "schaffel clain vnd groß",
-      "xxj tellr xxxvij swin peckn",
-      "swinein flaisch vnsunndrig",
-      "zway phif gedörrt flaisch",
-      "Item mer iij hüetlein ain Ring",
-      "Item in vntern keller sind iij",
-      "hafen ij furrgleisen v alt gabil",
-      "xvj hergabeln iiij kessel",
-      "ain stuck flaisschs vnd alz",
-      "pntterich",
-      "Item mer in dem selben keller",
-      "ist ain vass wein xj dry",
-      "ist die wein dar auff gesunten",
-      "Item v kandelin klain vnd",
-      "groß",
-      "Item So ist vnnden Jm vorhoff",
-      "vij kue zwo kalbeln zway",
-      "stuel ain sßwein vnd ain",
-      "prenndtzeyner kall ain",
-      "wagkross",
-      "Item mer daselbs iij pett j kuelp",
-      "vnd iiij oppertecken",
-      "Item So haft der obgenant Jo-",
-      "seph auff Krawenburg funden",
-      "das wr of h zů sind geuest",
-      "schlos gehoert",
-      "Item hagkenpuechsen viij",
-      "Item hagkenpuexen xxv",
-      "Item hagkenpuexen sind aufgemacht ij",
-      "Item stain puexen ij",
-      "Item mer handpuechsen sind mit",
-      "geuaft vij",
-      "Item drey legen mit pfejlen ligen",
-      "Item gewinden zway klaine tachspil",
-      "Item mer iij groß morffpuexen",
-      "Item funff morffbuexen vnd",
-      "ij klain",
-      "Item gar altr armproft ain",
-      "seins xj",
-      "Item zway rösslij mit pulver"
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "Item oben in ainer truchen ligen viij"
+      },
+      {
+       "id": null,
+       "text": "Reitsattel guett vnd böß"
+      },
+      {
+       "id": null,
+       "text": "Item vnnden Jn dem gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo pettstatt dar jnn"
+      },
+      {
+       "id": null,
+       "text": "pett ain deckbett iiij"
+      },
+      {
+       "id": null,
+       "text": "pölster ij küss iiij par pleilach"
+      },
+      {
+       "id": null,
+       "text": "vnd ain golter"
+      },
+      {
+       "id": null,
+       "text": "Item mer Jn dem selben ge-"
+      },
+      {
+       "id": null,
+       "text": "welbe sind vij gepewt woll"
+      },
+      {
+       "id": null,
+       "text": "gut xxiiij stuck flachs talg"
+      },
+      {
+       "id": null,
+       "text": "Item viij stucken lanng vnd"
+      },
+      {
+       "id": null,
+       "text": "kurtz"
+      },
+      {
+       "id": null,
+       "text": "Item xxiiij stuck pfeffer clain"
+      },
+      {
+       "id": null,
+       "text": "vnd groß ain stuck plei"
+      },
+      {
+       "id": null,
+       "text": "vnd iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben gewelbe"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truhen dar jnn"
+      },
+      {
+       "id": null,
+       "text": "ligt allerlay phunt vnd messing"
+      },
+      {
+       "id": null,
+       "text": "zeug sind zwo pettschafft ainer"
+      },
+      {
+       "id": null,
+       "text": "zwo truchen sind leir zway"
+      },
+      {
+       "id": null,
+       "text": "klenne pefferne ij kandelin"
+      },
+      {
+       "id": null,
+       "text": "ij tangelgspind iiij schirck"
+      },
+      {
+       "id": null,
+       "text": "ain grat gabe viij krappis"
+      },
+      {
+       "id": null,
+       "text": "zwo seigeln xv wescherle achse"
+      },
+      {
+       "id": null,
+       "text": "vnd xli eisen"
+      },
+      {
+       "id": null,
+       "text": "Item xv vird wild ochsen häut"
+      },
+      {
+       "id": null,
+       "text": "schaffel clain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "xxj tellr xxxvij swin peckn"
+      },
+      {
+       "id": null,
+       "text": "swinein flaisch vnsunndrig"
+      },
+      {
+       "id": null,
+       "text": "zway phif gedörrt flaisch"
+      },
+      {
+       "id": null,
+       "text": "Item mer iij hüetlein ain Ring"
+      },
+      {
+       "id": null,
+       "text": "Item in vntern keller sind iij"
+      },
+      {
+       "id": null,
+       "text": "hafen ij furrgleisen v alt gabil"
+      },
+      {
+       "id": null,
+       "text": "xvj hergabeln iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain stuck flaisschs vnd alz"
+      },
+      {
+       "id": null,
+       "text": "pntterich"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben keller"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj dry"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesunten"
+      },
+      {
+       "id": null,
+       "text": "Item v kandelin klain vnd"
+      },
+      {
+       "id": null,
+       "text": "groß"
+      },
+      {
+       "id": null,
+       "text": "Item So ist vnnden Jm vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vij kue zwo kalbeln zway"
+      },
+      {
+       "id": null,
+       "text": "stuel ain sßwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "prenndtzeyner kall ain"
+      },
+      {
+       "id": null,
+       "text": "wagkross"
+      },
+      {
+       "id": null,
+       "text": "Item mer daselbs iij pett j kuelp"
+      },
+      {
+       "id": null,
+       "text": "vnd iiij oppertecken"
+      },
+      {
+       "id": null,
+       "text": "Item So haft der obgenant Jo-"
+      },
+      {
+       "id": null,
+       "text": "seph auff Krawenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das wr of h zů sind geuest"
+      },
+      {
+       "id": null,
+       "text": "schlos gehoert"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuechsen viij"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuexen xxv"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuexen sind aufgemacht ij"
+      },
+      {
+       "id": null,
+       "text": "Item stain puexen ij"
+      },
+      {
+       "id": null,
+       "text": "Item mer handpuechsen sind mit"
+      },
+      {
+       "id": null,
+       "text": "geuaft vij"
+      },
+      {
+       "id": null,
+       "text": "Item drey legen mit pfejlen ligen"
+      },
+      {
+       "id": null,
+       "text": "Item gewinden zway klaine tachspil"
+      },
+      {
+       "id": null,
+       "text": "Item mer iij groß morffpuexen"
+      },
+      {
+       "id": null,
+       "text": "Item funff morffbuexen vnd"
+      },
+      {
+       "id": null,
+       "text": "ij klain"
+      },
+      {
+       "id": null,
+       "text": "Item gar altr armproft ain"
+      },
+      {
+       "id": null,
+       "text": "seins xj"
+      },
+      {
+       "id": null,
+       "text": "Item zway rösslij mit pulver"
+      }
      ]
     },
     {
@@ -1234,73 +4021,274 @@
       false
      ],
      "lines": [
-      "Item oben in ainem ligend viiij",
-      "Reitsattel gu[e]tt vnd bo[e]st",
-      "Item vnden In dem gewelb",
-      "sind zwo pettstatt dar Inn",
-      "pett ain dechbett iiij",
-      "polster ij ku[e]ss iij paragen",
-      "vnd ain golter",
-      "Item mer In dem selben ge=",
-      "welbe sind vij gepeint wolff",
-      "hu[e]t xxiiij ffe fuechs pelcz",
-      "Item viij stuchey leineng vnd",
-      "hu[e]rch",
-      "Item xxiiij stuin pfeffley klain",
-      "vnd grosz ain stuin pley",
-      "vnd iij kessel",
-      "Item mer in dem selben gewelbe",
-      "sind zwo truhen dar Inn",
-      "ligen allrlay pfeur vnd mi[e]st",
-      "eiss sind vier pett schaff Item",
-      "zwo truhen sind leer zwai",
-      "klaine schraindl ij kandelin",
-      "ij tangelgepeind iiij schirck",
-      "ain garnt gabe viij krappfen",
-      "zwo sieglen xv wesschir ochsn",
-      "vnd eyl effen",
-      "Item xv veld vescher hu[e]tzl",
-      "schepffen klain vnd grosz",
-      "xxj tellr xxvij swein parter",
-      "swenein flaisch aussenumlich",
-      "zway stu[e]ckh gesoten flaisch",
-      "Item mer iij hu[e]telein ain ring",
-      "Item in vitter keller sind iij",
-      "hafen ij furchtlen v alt gabeln",
-      "Item vij heygabeln iiij kessel",
-      "ain stuin flaschen vnd ain",
-      "Butterig",
-      "Item mer in dem selben keller",
-      "ist ain vasz wein xj dry",
-      "ist die wein dar auff gesuncken",
-      "2",
-      "Item v kandelin klain vnd",
-      "grosz",
-      "Item so ist vnden Im vorhoff",
-      "ij su[e]n zwo satteln zwai",
-      "pfrild ain schwein vnd ain",
-      "werndzoger scall ain",
-      "wagn roff",
-      "Item mer daselbs ij pett j ku[e]ss",
-      "sonn drey appffeltrosen",
-      "Item so hatt der obgenant Jo=",
-      "seph auff Kerenburg funden",
-      "das mr oft h zu dem guett",
-      "gschlos geho[e]rt",
-      "Item hagkempu[e]chsen viij",
-      "Item hargkempu[e]chsen xxij",
-      "Item hargkempu[e]chsen sind ausgemacht ij",
-      "Item kein husen ij",
-      "Item mer handpuechsen sind nit",
-      "geru[e]st v",
-      "Item drey legerleyn mit pfeilern ligen",
-      "Item gefunden zwai klaine vechsel",
-      "Item mer iij grosz morsz puechsen",
-      "Item funff morsz puechsen vnd",
-      "iij klaine",
-      "Item gar alsy armproft ain",
-      "seine xj",
-      "Item zwai rissleij mit peeln"
+      {
+       "id": null,
+       "text": "Item oben in ainem ligend viiij"
+      },
+      {
+       "id": null,
+       "text": "Reitsattel gu[e]tt vnd bo[e]st"
+      },
+      {
+       "id": null,
+       "text": "Item vnden In dem gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo pettstatt dar Inn"
+      },
+      {
+       "id": null,
+       "text": "pett ain dechbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polster ij ku[e]ss iij paragen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain golter"
+      },
+      {
+       "id": null,
+       "text": "Item mer In dem selben ge="
+      },
+      {
+       "id": null,
+       "text": "welbe sind vij gepeint wolff"
+      },
+      {
+       "id": null,
+       "text": "hu[e]t xxiiij ffe fuechs pelcz"
+      },
+      {
+       "id": null,
+       "text": "Item viij stuchey leineng vnd"
+      },
+      {
+       "id": null,
+       "text": "hu[e]rch"
+      },
+      {
+       "id": null,
+       "text": "Item xxiiij stuin pfeffley klain"
+      },
+      {
+       "id": null,
+       "text": "vnd grosz ain stuin pley"
+      },
+      {
+       "id": null,
+       "text": "vnd iij kessel"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben gewelbe"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truhen dar Inn"
+      },
+      {
+       "id": null,
+       "text": "ligen allrlay pfeur vnd mi[e]st"
+      },
+      {
+       "id": null,
+       "text": "eiss sind vier pett schaff Item"
+      },
+      {
+       "id": null,
+       "text": "zwo truhen sind leer zwai"
+      },
+      {
+       "id": null,
+       "text": "klaine schraindl ij kandelin"
+      },
+      {
+       "id": null,
+       "text": "ij tangelgepeind iiij schirck"
+      },
+      {
+       "id": null,
+       "text": "ain garnt gabe viij krappfen"
+      },
+      {
+       "id": null,
+       "text": "zwo sieglen xv wesschir ochsn"
+      },
+      {
+       "id": null,
+       "text": "vnd eyl effen"
+      },
+      {
+       "id": null,
+       "text": "Item xv veld vescher hu[e]tzl"
+      },
+      {
+       "id": null,
+       "text": "schepffen klain vnd grosz"
+      },
+      {
+       "id": null,
+       "text": "xxj tellr xxvij swein parter"
+      },
+      {
+       "id": null,
+       "text": "swenein flaisch aussenumlich"
+      },
+      {
+       "id": null,
+       "text": "zway stu[e]ckh gesoten flaisch"
+      },
+      {
+       "id": null,
+       "text": "Item mer iij hu[e]telein ain ring"
+      },
+      {
+       "id": null,
+       "text": "Item in vitter keller sind iij"
+      },
+      {
+       "id": null,
+       "text": "hafen ij furchtlen v alt gabeln"
+      },
+      {
+       "id": null,
+       "text": "Item vij heygabeln iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain stuin flaschen vnd ain"
+      },
+      {
+       "id": null,
+       "text": "Butterig"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben keller"
+      },
+      {
+       "id": null,
+       "text": "ist ain vasz wein xj dry"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesuncken"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "Item v kandelin klain vnd"
+      },
+      {
+       "id": null,
+       "text": "grosz"
+      },
+      {
+       "id": null,
+       "text": "Item so ist vnden Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "ij su[e]n zwo satteln zwai"
+      },
+      {
+       "id": null,
+       "text": "pfrild ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "werndzoger scall ain"
+      },
+      {
+       "id": null,
+       "text": "wagn roff"
+      },
+      {
+       "id": null,
+       "text": "Item mer daselbs ij pett j ku[e]ss"
+      },
+      {
+       "id": null,
+       "text": "sonn drey appffeltrosen"
+      },
+      {
+       "id": null,
+       "text": "Item so hatt der obgenant Jo="
+      },
+      {
+       "id": null,
+       "text": "seph auff Kerenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das mr oft h zu dem guett"
+      },
+      {
+       "id": null,
+       "text": "gschlos geho[e]rt"
+      },
+      {
+       "id": null,
+       "text": "Item hagkempu[e]chsen viij"
+      },
+      {
+       "id": null,
+       "text": "Item hargkempu[e]chsen xxij"
+      },
+      {
+       "id": null,
+       "text": "Item hargkempu[e]chsen sind ausgemacht ij"
+      },
+      {
+       "id": null,
+       "text": "Item kein husen ij"
+      },
+      {
+       "id": null,
+       "text": "Item mer handpuechsen sind nit"
+      },
+      {
+       "id": null,
+       "text": "geru[e]st v"
+      },
+      {
+       "id": null,
+       "text": "Item drey legerleyn mit pfeilern ligen"
+      },
+      {
+       "id": null,
+       "text": "Item gefunden zwai klaine vechsel"
+      },
+      {
+       "id": null,
+       "text": "Item mer iij grosz morsz puechsen"
+      },
+      {
+       "id": null,
+       "text": "Item funff morsz puechsen vnd"
+      },
+      {
+       "id": null,
+       "text": "iij klaine"
+      },
+      {
+       "id": null,
+       "text": "Item gar alsy armproft ain"
+      },
+      {
+       "id": null,
+       "text": "seine xj"
+      },
+      {
+       "id": null,
+       "text": "Item zwai rissleij mit peeln"
+      }
      ]
     },
     {
@@ -1316,73 +4304,274 @@
       false
      ],
      "lines": [
-      "2",
-      "It[em] oben in ainer truch ligend viij",
-      "traiffsattel guet und boest",
-      "It[em] unnden In dem gewelreb",
-      "seind zwo pettstatt dar Inn",
-      "I pett Ain deckbett iiij",
-      "polster ij küss iiij par g[ewant]",
-      "und ain golterc",
-      "It[em] mer In dem selben ge-",
-      "welreb sind viij gebaint welsf",
-      "gut xxiiij stkh fuehrs turch",
-      "It[em] viij stucken lanng und",
-      "burch",
-      "It[em] xxviij stau phertlen klain",
-      "und groff ain stau play",
-      "und iij kessel",
-      "It[em] mer in dem selben gewelreb",
-      "seind zwo truhen dar inn",
-      "ligen allrlay plech und mess",
-      "noch seind vier bettstatt darr",
-      "zwo truhen und dar Inn zway",
-      "klaine phannle ij kandelin",
-      "ij tangelphann und iiij scheub",
-      "ain grat gab viij bratspis",
-      "zwo seges xv raspeysen oeffn",
-      "und vil effey",
-      "It[em] xxv viertel cölssis hülsn",
-      "schepffen klain und groff",
-      "xxj teller xxvij zinen barchn",
-      "swarzen fleisch ungesuntlich",
-      "zway phiff gedrochten fleischs",
-      "It[em] mer iij hackhen ain ring",
-      "It[em] in ainer kellr seind iij",
-      "garn ij fuergleis v alt gabeln",
-      "lb vj hewgabeln iij kessel",
-      "ain stau flaschen und ain",
-      "butterrich",
-      "It[em] mer in dem selben kellr",
-      "ist ain vass wein xj dry",
-      "ist die wein dar auff gesuncken",
-      "It[em] v kanndeln klain und",
-      "groff",
-      "It[em] so ist unnden Im vorhoff",
-      "vj seum zwo satteln zway",
-      "smid ain pfeng und ain",
-      "weerntwagenn karr ain",
-      "wayn roff",
-      "It[em] mer daselbs iij pett j kuelp",
-      "sond iiij oppertucken",
-      "It[em] so hatt der obgenant Jo-",
-      "seph auff Kerenburg funden",
-      "das nit of h zuo sendt peters",
-      "schlos gehoert",
-      "It[em] hagkenpüechsn viij",
-      "It[em] hargknpüechsn xxvij",
-      "It[em] hargknpuechsn sambt schloss ij",
-      "It[em] stain puechsn ij",
-      "It[em] mer handt puechsn sind nit",
-      "gerust v",
-      "It[em] drey legetten mit phfeilen ligend",
-      "It[em] gefunden zway klaine wexstueckl",
-      "It[em] mer iiij groff mors puechsn",
-      "It[em] funff mors buechsn und",
-      "iij klain",
-      "It[em] der alts Arenprosst ain",
-      "seinn xj",
-      "It[em] zway resslein mit pulvr"
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "It[em] oben in ainer truch ligend viij"
+      },
+      {
+       "id": null,
+       "text": "traiffsattel guet und boest"
+      },
+      {
+       "id": null,
+       "text": "It[em] unnden In dem gewelreb"
+      },
+      {
+       "id": null,
+       "text": "seind zwo pettstatt dar Inn"
+      },
+      {
+       "id": null,
+       "text": "I pett Ain deckbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polster ij küss iiij par g[ewant]"
+      },
+      {
+       "id": null,
+       "text": "und ain golterc"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer In dem selben ge-"
+      },
+      {
+       "id": null,
+       "text": "welreb sind viij gebaint welsf"
+      },
+      {
+       "id": null,
+       "text": "gut xxiiij stkh fuehrs turch"
+      },
+      {
+       "id": null,
+       "text": "It[em] viij stucken lanng und"
+      },
+      {
+       "id": null,
+       "text": "burch"
+      },
+      {
+       "id": null,
+       "text": "It[em] xxviij stau phertlen klain"
+      },
+      {
+       "id": null,
+       "text": "und groff ain stau play"
+      },
+      {
+       "id": null,
+       "text": "und iij kessel"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer in dem selben gewelreb"
+      },
+      {
+       "id": null,
+       "text": "seind zwo truhen dar inn"
+      },
+      {
+       "id": null,
+       "text": "ligen allrlay plech und mess"
+      },
+      {
+       "id": null,
+       "text": "noch seind vier bettstatt darr"
+      },
+      {
+       "id": null,
+       "text": "zwo truhen und dar Inn zway"
+      },
+      {
+       "id": null,
+       "text": "klaine phannle ij kandelin"
+      },
+      {
+       "id": null,
+       "text": "ij tangelphann und iiij scheub"
+      },
+      {
+       "id": null,
+       "text": "ain grat gab viij bratspis"
+      },
+      {
+       "id": null,
+       "text": "zwo seges xv raspeysen oeffn"
+      },
+      {
+       "id": null,
+       "text": "und vil effey"
+      },
+      {
+       "id": null,
+       "text": "It[em] xxv viertel cölssis hülsn"
+      },
+      {
+       "id": null,
+       "text": "schepffen klain und groff"
+      },
+      {
+       "id": null,
+       "text": "xxj teller xxvij zinen barchn"
+      },
+      {
+       "id": null,
+       "text": "swarzen fleisch ungesuntlich"
+      },
+      {
+       "id": null,
+       "text": "zway phiff gedrochten fleischs"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer iij hackhen ain ring"
+      },
+      {
+       "id": null,
+       "text": "It[em] in ainer kellr seind iij"
+      },
+      {
+       "id": null,
+       "text": "garn ij fuergleis v alt gabeln"
+      },
+      {
+       "id": null,
+       "text": "lb vj hewgabeln iij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain stau flaschen und ain"
+      },
+      {
+       "id": null,
+       "text": "butterrich"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer in dem selben kellr"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj dry"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesuncken"
+      },
+      {
+       "id": null,
+       "text": "It[em] v kanndeln klain und"
+      },
+      {
+       "id": null,
+       "text": "groff"
+      },
+      {
+       "id": null,
+       "text": "It[em] so ist unnden Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj seum zwo satteln zway"
+      },
+      {
+       "id": null,
+       "text": "smid ain pfeng und ain"
+      },
+      {
+       "id": null,
+       "text": "weerntwagenn karr ain"
+      },
+      {
+       "id": null,
+       "text": "wayn roff"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer daselbs iij pett j kuelp"
+      },
+      {
+       "id": null,
+       "text": "sond iiij oppertucken"
+      },
+      {
+       "id": null,
+       "text": "It[em] so hatt der obgenant Jo-"
+      },
+      {
+       "id": null,
+       "text": "seph auff Kerenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das nit of h zuo sendt peters"
+      },
+      {
+       "id": null,
+       "text": "schlos gehoert"
+      },
+      {
+       "id": null,
+       "text": "It[em] hagkenpüechsn viij"
+      },
+      {
+       "id": null,
+       "text": "It[em] hargknpüechsn xxvij"
+      },
+      {
+       "id": null,
+       "text": "It[em] hargknpuechsn sambt schloss ij"
+      },
+      {
+       "id": null,
+       "text": "It[em] stain puechsn ij"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer handt puechsn sind nit"
+      },
+      {
+       "id": null,
+       "text": "gerust v"
+      },
+      {
+       "id": null,
+       "text": "It[em] drey legetten mit phfeilen ligend"
+      },
+      {
+       "id": null,
+       "text": "It[em] gefunden zway klaine wexstueckl"
+      },
+      {
+       "id": null,
+       "text": "It[em] mer iiij groff mors puechsn"
+      },
+      {
+       "id": null,
+       "text": "It[em] funff mors buechsn und"
+      },
+      {
+       "id": null,
+       "text": "iij klain"
+      },
+      {
+       "id": null,
+       "text": "It[em] der alts Arenprosst ain"
+      },
+      {
+       "id": null,
+       "text": "seinn xj"
+      },
+      {
+       "id": null,
+       "text": "It[em] zway resslein mit pulvr"
+      }
      ]
     },
     {
@@ -1399,73 +4588,274 @@
       false
      ],
      "lines": [
-      "Item oben in ainer ligen viij",
-      "Reitsattel gutt vnd böst",
-      "Item vnden In dem gewelb",
-      "sind zwo pettstatt dar jnn",
-      "pett Ain deckbett iiij",
-      "polster ij keiß ij pargew",
-      "vnd ain golter",
-      "Item mer In dem selben ge-",
-      "welbe sind vij gelait wasch",
-      "gut xxiiij stü fuchs pelcz",
-      "Item vij stainstey lannz vnd",
-      "kurcz",
-      "Item xxviij stain peyßly klain",
-      "vnd gross ain stain play",
-      "vnd iij kessel",
-      "Item mer in dem selben gewelbe",
-      "sind zwo truchen dar jnn",
-      "leyt allerlay pfand vnd miss-",
-      "wess sind vor pettgwant Item",
-      "zwo truchen sind ler zway",
-      "klaini trüchind ij kandelein",
-      "ij tangelgeschirnd iiij slegeln",
-      "ain gart gabl vij kracklin",
-      "zwo sigeln xv wesserschoeffin",
-      "vnd xlv essig",
-      "Item xxv veld wescher külpi",
-      "schepffen klain vnd gross",
-      "xxj tellr xxxvij swen speck",
-      "swenen fleisch vnsmundig",
-      "zway riff gedörten fleisch",
-      "Item mer iij häckhen ain zung",
-      "Item im viert keller sind iij",
-      "haren ij ferglen v alt gabln",
-      "xvj heygebeln iij kessel",
-      "ain stain flaschen vnd alty",
-      "pütting",
-      "Item mer in dem selben kell[er]",
-      "ist ain vass wein xj v[iertl]",
-      "ist die wein dar auff gesotten",
-      "2",
-      "Item v kandelein klain vnd",
-      "gross",
-      "Item so ist vnnter Im vorhoff",
-      "vj küee zwo kalben zway",
-      "rind ain schwein vnd ain",
-      "wendlwagenn stall ain",
-      "wayd ross",
-      "Item mer daselbs iij pett j kueß",
-      "vnd iij scheffteckhen",
-      "Item so hatt der obgemelt Jo-",
-      "seph auff Rotenburg funden",
-      "das Mr of h zu frydung",
-      "schlos gehört",
-      "Item hagkenpüchsen viij",
-      "Item hargkenpüchsenn xxij",
-      "Item hargkenpuechsn sind aufgemacht ij",
-      "Item stain püchsen ij",
-      "Item mer handpüchsen sind nit",
-      "gemacht v",
-      "Item drey lencken mit pfeylen legn",
-      "Item gewunden zway klaine tachsechel",
-      "Item mer iij gros mörser püchsn",
-      "Item funff mörserspüchsn vnd",
-      "ij klaine",
-      "Item vor alts armbrost ain",
-      "sein xj",
-      "Item zway rösslij mit peln"
+      {
+       "id": null,
+       "text": "Item oben in ainer ligen viij"
+      },
+      {
+       "id": null,
+       "text": "Reitsattel gutt vnd böst"
+      },
+      {
+       "id": null,
+       "text": "Item vnden In dem gewelb"
+      },
+      {
+       "id": null,
+       "text": "sind zwo pettstatt dar jnn"
+      },
+      {
+       "id": null,
+       "text": "pett Ain deckbett iiij"
+      },
+      {
+       "id": null,
+       "text": "polster ij keiß ij pargew"
+      },
+      {
+       "id": null,
+       "text": "vnd ain golter"
+      },
+      {
+       "id": null,
+       "text": "Item mer In dem selben ge-"
+      },
+      {
+       "id": null,
+       "text": "welbe sind vij gelait wasch"
+      },
+      {
+       "id": null,
+       "text": "gut xxiiij stü fuchs pelcz"
+      },
+      {
+       "id": null,
+       "text": "Item vij stainstey lannz vnd"
+      },
+      {
+       "id": null,
+       "text": "kurcz"
+      },
+      {
+       "id": null,
+       "text": "Item xxviij stain peyßly klain"
+      },
+      {
+       "id": null,
+       "text": "vnd gross ain stain play"
+      },
+      {
+       "id": null,
+       "text": "vnd iij kessel"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben gewelbe"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truchen dar jnn"
+      },
+      {
+       "id": null,
+       "text": "leyt allerlay pfand vnd miss-"
+      },
+      {
+       "id": null,
+       "text": "wess sind vor pettgwant Item"
+      },
+      {
+       "id": null,
+       "text": "zwo truchen sind ler zway"
+      },
+      {
+       "id": null,
+       "text": "klaini trüchind ij kandelein"
+      },
+      {
+       "id": null,
+       "text": "ij tangelgeschirnd iiij slegeln"
+      },
+      {
+       "id": null,
+       "text": "ain gart gabl vij kracklin"
+      },
+      {
+       "id": null,
+       "text": "zwo sigeln xv wesserschoeffin"
+      },
+      {
+       "id": null,
+       "text": "vnd xlv essig"
+      },
+      {
+       "id": null,
+       "text": "Item xxv veld wescher külpi"
+      },
+      {
+       "id": null,
+       "text": "schepffen klain vnd gross"
+      },
+      {
+       "id": null,
+       "text": "xxj tellr xxxvij swen speck"
+      },
+      {
+       "id": null,
+       "text": "swenen fleisch vnsmundig"
+      },
+      {
+       "id": null,
+       "text": "zway riff gedörten fleisch"
+      },
+      {
+       "id": null,
+       "text": "Item mer iij häckhen ain zung"
+      },
+      {
+       "id": null,
+       "text": "Item im viert keller sind iij"
+      },
+      {
+       "id": null,
+       "text": "haren ij ferglen v alt gabln"
+      },
+      {
+       "id": null,
+       "text": "xvj heygebeln iij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain stain flaschen vnd alty"
+      },
+      {
+       "id": null,
+       "text": "pütting"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben kell[er]"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj v[iertl]"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesotten"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "Item v kandelein klain vnd"
+      },
+      {
+       "id": null,
+       "text": "gross"
+      },
+      {
+       "id": null,
+       "text": "Item so ist vnnter Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj küee zwo kalben zway"
+      },
+      {
+       "id": null,
+       "text": "rind ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "wendlwagenn stall ain"
+      },
+      {
+       "id": null,
+       "text": "wayd ross"
+      },
+      {
+       "id": null,
+       "text": "Item mer daselbs iij pett j kueß"
+      },
+      {
+       "id": null,
+       "text": "vnd iij scheffteckhen"
+      },
+      {
+       "id": null,
+       "text": "Item so hatt der obgemelt Jo-"
+      },
+      {
+       "id": null,
+       "text": "seph auff Rotenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das Mr of h zu frydung"
+      },
+      {
+       "id": null,
+       "text": "schlos gehört"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpüchsen viij"
+      },
+      {
+       "id": null,
+       "text": "Item hargkenpüchsenn xxij"
+      },
+      {
+       "id": null,
+       "text": "Item hargkenpuechsn sind aufgemacht ij"
+      },
+      {
+       "id": null,
+       "text": "Item stain püchsen ij"
+      },
+      {
+       "id": null,
+       "text": "Item mer handpüchsen sind nit"
+      },
+      {
+       "id": null,
+       "text": "gemacht v"
+      },
+      {
+       "id": null,
+       "text": "Item drey lencken mit pfeylen legn"
+      },
+      {
+       "id": null,
+       "text": "Item gewunden zway klaine tachsechel"
+      },
+      {
+       "id": null,
+       "text": "Item mer iij gros mörser püchsn"
+      },
+      {
+       "id": null,
+       "text": "Item funff mörserspüchsn vnd"
+      },
+      {
+       "id": null,
+       "text": "ij klaine"
+      },
+      {
+       "id": null,
+       "text": "Item vor alts armbrost ain"
+      },
+      {
+       "id": null,
+       "text": "sein xj"
+      },
+      {
+       "id": null,
+       "text": "Item zway rösslij mit peln"
+      }
      ]
     },
     {
@@ -1482,73 +4872,274 @@
       false
      ],
      "lines": [
-      "Item oben in ainem kasten viij",
-      "Reissattel guet vnd boͤst",
-      "Item vnden In dem gemecht",
-      "sind zwo pettstatt dar Inn",
-      "pett ain dechkpett iiij",
-      "poͤlster ij kuss iij parwerg",
-      "vnd ain golter",
-      "Item mer In dem selben ge=",
-      "mecht sind viij gebaint wels",
-      "hut xxiiij ffein fassles talg",
-      "Item vii parttenn lang vnd",
-      "kurtz",
-      "Item xxvij kuen pfeffer klayn",
-      "vnd grosff ain huon plaij",
-      "vnd iij kessel",
-      "Item mer in dem selben gemecht",
-      "sind zwo truhen dar Inn",
-      "ligen allerlay pfann vnd mess[ing]",
-      "vas sind vier pettprafft Item",
-      "zwo truhen sind leer zway",
-      "klaine perrenl ij kandelier",
-      "ij tangelpretter iiij schiessel",
-      "ain grabgabl viij kraeffin",
-      "zwo sieglen xv messessn ochsen",
-      "vnd eyl essig",
-      "Item xlvij veld reuffer hiltzin",
-      "schepfen klain vnd grosff",
-      "xxj teller xxvj swen barche",
-      "swenun flaisch unssundling",
-      "zway schiff gedoͤrren flaisch",
-      "Item vnd iij huettstock ain kuetz",
-      "Item in vnter keller sind iij",
-      "garn ij fuergallen v alt gabel",
-      "lx vlj hey gabeles iiij kessel",
-      "ain kuen flasschen vnd ain",
-      "puttring",
-      "Item mer in dem selben keller",
-      "ist ain vass wein xj dry",
-      "ist die wein dar auff gesuncken",
-      "2",
-      "Item v kandelin klain vnd",
-      "grauff",
-      "Item so ist vnntten Im vorhoff",
-      "vj kuen zwo kaldeln zway",
-      "ruelt ain schwein vnd ain",
-      "wennntwagen leess ain",
-      "wagross",
-      "Item mer da selbs iij pett j kuss",
-      "sondern auffgeworffen",
-      "Item So hafft der obgemelt Io=",
-      "seph auff Kerenburg funden",
-      "das nit of h zuo sind gnuog",
-      "schlos g'hoͤrt",
-      "Item hagkenpuechsen viij",
-      "Item hagkenpuechsen xxvij",
-      "Item hagkenpuechsen sind ausgeputzt ij",
-      "Item stainpuechsen ij",
-      "Item mer hand puechsen sind nit",
-      "gerast v",
-      "Item drey legelen mit pfeylen legel",
-      "Item gefunden zway klaine tachsoͤgel",
-      "Item mer iiij grossemortz puechsen",
-      "Item funff mortzpuechsen vnd",
-      "iij klaine",
-      "Item der alt armprofft ain",
-      "sene xj",
-      "Item zway risslich mit pulwer"
+      {
+       "id": null,
+       "text": "Item oben in ainem kasten viij"
+      },
+      {
+       "id": null,
+       "text": "Reissattel guet vnd boͤst"
+      },
+      {
+       "id": null,
+       "text": "Item vnden In dem gemecht"
+      },
+      {
+       "id": null,
+       "text": "sind zwo pettstatt dar Inn"
+      },
+      {
+       "id": null,
+       "text": "pett ain dechkpett iiij"
+      },
+      {
+       "id": null,
+       "text": "poͤlster ij kuss iij parwerg"
+      },
+      {
+       "id": null,
+       "text": "vnd ain golter"
+      },
+      {
+       "id": null,
+       "text": "Item mer In dem selben ge="
+      },
+      {
+       "id": null,
+       "text": "mecht sind viij gebaint wels"
+      },
+      {
+       "id": null,
+       "text": "hut xxiiij ffein fassles talg"
+      },
+      {
+       "id": null,
+       "text": "Item vii parttenn lang vnd"
+      },
+      {
+       "id": null,
+       "text": "kurtz"
+      },
+      {
+       "id": null,
+       "text": "Item xxvij kuen pfeffer klayn"
+      },
+      {
+       "id": null,
+       "text": "vnd grosff ain huon plaij"
+      },
+      {
+       "id": null,
+       "text": "vnd iij kessel"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben gemecht"
+      },
+      {
+       "id": null,
+       "text": "sind zwo truhen dar Inn"
+      },
+      {
+       "id": null,
+       "text": "ligen allerlay pfann vnd mess[ing]"
+      },
+      {
+       "id": null,
+       "text": "vas sind vier pettprafft Item"
+      },
+      {
+       "id": null,
+       "text": "zwo truhen sind leer zway"
+      },
+      {
+       "id": null,
+       "text": "klaine perrenl ij kandelier"
+      },
+      {
+       "id": null,
+       "text": "ij tangelpretter iiij schiessel"
+      },
+      {
+       "id": null,
+       "text": "ain grabgabl viij kraeffin"
+      },
+      {
+       "id": null,
+       "text": "zwo sieglen xv messessn ochsen"
+      },
+      {
+       "id": null,
+       "text": "vnd eyl essig"
+      },
+      {
+       "id": null,
+       "text": "Item xlvij veld reuffer hiltzin"
+      },
+      {
+       "id": null,
+       "text": "schepfen klain vnd grosff"
+      },
+      {
+       "id": null,
+       "text": "xxj teller xxvj swen barche"
+      },
+      {
+       "id": null,
+       "text": "swenun flaisch unssundling"
+      },
+      {
+       "id": null,
+       "text": "zway schiff gedoͤrren flaisch"
+      },
+      {
+       "id": null,
+       "text": "Item vnd iij huettstock ain kuetz"
+      },
+      {
+       "id": null,
+       "text": "Item in vnter keller sind iij"
+      },
+      {
+       "id": null,
+       "text": "garn ij fuergallen v alt gabel"
+      },
+      {
+       "id": null,
+       "text": "lx vlj hey gabeles iiij kessel"
+      },
+      {
+       "id": null,
+       "text": "ain kuen flasschen vnd ain"
+      },
+      {
+       "id": null,
+       "text": "puttring"
+      },
+      {
+       "id": null,
+       "text": "Item mer in dem selben keller"
+      },
+      {
+       "id": null,
+       "text": "ist ain vass wein xj dry"
+      },
+      {
+       "id": null,
+       "text": "ist die wein dar auff gesuncken"
+      },
+      {
+       "id": null,
+       "text": "2"
+      },
+      {
+       "id": null,
+       "text": "Item v kandelin klain vnd"
+      },
+      {
+       "id": null,
+       "text": "grauff"
+      },
+      {
+       "id": null,
+       "text": "Item so ist vnntten Im vorhoff"
+      },
+      {
+       "id": null,
+       "text": "vj kuen zwo kaldeln zway"
+      },
+      {
+       "id": null,
+       "text": "ruelt ain schwein vnd ain"
+      },
+      {
+       "id": null,
+       "text": "wennntwagen leess ain"
+      },
+      {
+       "id": null,
+       "text": "wagross"
+      },
+      {
+       "id": null,
+       "text": "Item mer da selbs iij pett j kuss"
+      },
+      {
+       "id": null,
+       "text": "sondern auffgeworffen"
+      },
+      {
+       "id": null,
+       "text": "Item So hafft der obgemelt Io="
+      },
+      {
+       "id": null,
+       "text": "seph auff Kerenburg funden"
+      },
+      {
+       "id": null,
+       "text": "das nit of h zuo sind gnuog"
+      },
+      {
+       "id": null,
+       "text": "schlos g'hoͤrt"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuechsen viij"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuechsen xxvij"
+      },
+      {
+       "id": null,
+       "text": "Item hagkenpuechsen sind ausgeputzt ij"
+      },
+      {
+       "id": null,
+       "text": "Item stainpuechsen ij"
+      },
+      {
+       "id": null,
+       "text": "Item mer hand puechsen sind nit"
+      },
+      {
+       "id": null,
+       "text": "gerast v"
+      },
+      {
+       "id": null,
+       "text": "Item drey legelen mit pfeylen legel"
+      },
+      {
+       "id": null,
+       "text": "Item gefunden zway klaine tachsoͤgel"
+      },
+      {
+       "id": null,
+       "text": "Item mer iiij grossemortz puechsen"
+      },
+      {
+       "id": null,
+       "text": "Item funff mortzpuechsen vnd"
+      },
+      {
+       "id": null,
+       "text": "iij klaine"
+      },
+      {
+       "id": null,
+       "text": "Item der alt armprofft ain"
+      },
+      {
+       "id": null,
+       "text": "sene xj"
+      },
+      {
+       "id": null,
+       "text": "Item zway risslich mit pulwer"
+      }
      ]
     }
    ]
@@ -1573,10 +5164,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "Inventari zedel",
-      "Kronburg",
-      "Cronburg",
-      "1478"
+      {
+       "id": "r1l1",
+       "text": "Inventari zedel"
+      },
+      {
+       "id": "r1l2",
+       "text": "Kronburg"
+      },
+      {
+       "id": "r1l3",
+       "text": "Cronburg"
+      },
+      {
+       "id": "r1l4",
+       "text": "1478"
+      }
      ]
     },
     {
@@ -1592,13 +5195,34 @@
       false
      ],
      "lines": [
-      "1478",
-      "( L. 109 )",
-      "L: 109.",
-      "1478",
-      "Cronburg",
-      "Ringw(er)ch",
-      "Inuentar Roll"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "( L. 109 )"
+      },
+      {
+       "id": null,
+       "text": "L: 109."
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Cronburg"
+      },
+      {
+       "id": null,
+       "text": "Ringw(er)ch"
+      },
+      {
+       "id": null,
+       "text": "Inuentar Roll"
+      }
      ]
     },
     {
@@ -1614,14 +5238,38 @@
       false
      ],
      "lines": [
-      "1478",
-      "(L. 109)",
-      "L: 109.",
-      "1478",
-      "Tratsperg",
-      "Jngrosirt",
-      "Jnuentur",
-      "zell"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "(L. 109)"
+      },
+      {
+       "id": null,
+       "text": "L: 109."
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Tratsperg"
+      },
+      {
+       "id": null,
+       "text": "Jngrosirt"
+      },
+      {
+       "id": null,
+       "text": "Jnuentur"
+      },
+      {
+       "id": null,
+       "text": "zell"
+      }
      ]
     },
     {
@@ -1637,14 +5285,38 @@
       false
      ],
      "lines": [
-      "1478",
-      "( L. 109 )",
-      "L: 109",
-      "1478",
-      "Prawnberg",
-      "Kunigunt",
-      "Jungfraw Ros[...]",
-      "Inventar"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "( L. 109 )"
+      },
+      {
+       "id": null,
+       "text": "L: 109"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Prawnberg"
+      },
+      {
+       "id": null,
+       "text": "Kunigunt"
+      },
+      {
+       "id": null,
+       "text": "Jungfraw Ros[...]"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      }
      ]
     },
     {
@@ -1660,13 +5332,34 @@
       false
      ],
      "lines": [
-      "1478",
-      "( L. 109 )",
-      "L: 109.",
-      "1478",
-      "Starnberg",
-      "Ingwirt",
-      "Jorg Toll } Inventar"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "( L. 109 )"
+      },
+      {
+       "id": null,
+       "text": "L: 109."
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Starnberg"
+      },
+      {
+       "id": null,
+       "text": "Ingwirt"
+      },
+      {
+       "id": null,
+       "text": "Jorg Toll } Inventar"
+      }
      ]
     },
     {
@@ -1682,14 +5375,38 @@
       false
      ],
      "lines": [
-      "1478",
-      "( L. 109 )",
-      "f. 109.",
-      "1478",
-      "Trauburg",
-      "Kranich-",
-      "berg",
-      "Inuentar"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "( L. 109 )"
+      },
+      {
+       "id": null,
+       "text": "f. 109."
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Trauburg"
+      },
+      {
+       "id": null,
+       "text": "Kranich-"
+      },
+      {
+       "id": null,
+       "text": "berg"
+      },
+      {
+       "id": null,
+       "text": "Inuentar"
+      }
      ]
     },
     {
@@ -1705,14 +5422,38 @@
       false
      ],
      "lines": [
-      "1478",
-      "( L. 109 )",
-      "l. 109",
-      "1478",
-      "Cronburg",
-      "Ringnitz",
-      "Inventar",
-      "drey Roll"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "( L. 109 )"
+      },
+      {
+       "id": null,
+       "text": "l. 109"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Cronburg"
+      },
+      {
+       "id": null,
+       "text": "Ringnitz"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      },
+      {
+       "id": null,
+       "text": "drey Roll"
+      }
      ]
     },
     {
@@ -1728,13 +5469,34 @@
       false
      ],
      "lines": [
-      "1478",
-      "(L. 109)",
-      "L: 109",
-      "1478",
-      "Cronburg",
-      "Inventar",
-      "Zetl"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "(L. 109)"
+      },
+      {
+       "id": null,
+       "text": "L: 109"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Cronburg"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      },
+      {
+       "id": null,
+       "text": "Zetl"
+      }
      ]
     },
     {
@@ -1750,13 +5512,34 @@
       false
      ],
      "lines": [
-      "1478",
-      "(L: 109)",
-      "l: 109",
-      "1478",
-      "Cronburg",
-      "Inuentar Roel",
-      "[...]"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "(L: 109)"
+      },
+      {
+       "id": null,
+       "text": "l: 109"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Cronburg"
+      },
+      {
+       "id": null,
+       "text": "Inuentar Roel"
+      },
+      {
+       "id": null,
+       "text": "[...]"
+      }
      ]
     },
     {
@@ -1772,13 +5555,34 @@
       false
      ],
      "lines": [
-      "1478",
-      "(L. 109)",
-      "L: 109",
-      "1478",
-      "Starckenberg",
-      "Klingnstain",
-      "Jnventar vber"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "(L. 109)"
+      },
+      {
+       "id": null,
+       "text": "L: 109"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Starckenberg"
+      },
+      {
+       "id": null,
+       "text": "Klingnstain"
+      },
+      {
+       "id": null,
+       "text": "Jnventar vber"
+      }
      ]
     },
     {
@@ -1794,13 +5598,34 @@
       false
      ],
      "lines": [
-      "1478",
-      "( L. 109 )",
-      "L: 109.",
-      "1478",
-      "Frawburg",
-      "Ringwitz",
-      "Inventar Roll"
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "( L. 109 )"
+      },
+      {
+       "id": null,
+       "text": "L: 109."
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "Frawburg"
+      },
+      {
+       "id": null,
+       "text": "Ringwitz"
+      },
+      {
+       "id": null,
+       "text": "Inventar Roll"
+      }
      ]
     }
    ]

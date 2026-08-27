@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -322,9 +322,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328745-1"/>
+        <pb n="1" facs="#surface-11328745-1"/>
+        <ab xml:id="ab-11328745-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328745-1-r2">
           <lb facs="#zone-11328745-1-r2l1"/>Vermerkt den hausrat,
           <lb facs="#zone-11328745-1-r2l2"/>harnasch und ander were die
           <lb facs="#zone-11328745-1-r2l3"/>alsdann mein genedigister h(er)r
@@ -340,7 +342,11 @@
           <lb facs="#zone-11328745-1-r2l13"/>bede seshafft zu Nasareid, auch
           <lb facs="#zone-11328745-1-r2l14"/>Symon Rueppen dieselb zeit pietter
           <lb facs="#zone-11328745-1-r2l15"/>daselbs.
+        </ab>
+        <ab xml:id="ab-11328745-1-r3">
           <lb facs="#zone-11328745-1-r3l1"/>Auf dem ober(e)n haus.
+        </ab>
+        <ab xml:id="ab-11328745-1-r4">
           <lb facs="#zone-11328745-1-r4l1"/>Am ersten in einem ober(e)n ergkerly
           <lb facs="#zone-11328745-1-r4l2"/>eȋn zugeschlagne lägl mít haüspfeyl.
           <lb facs="#zone-11328745-1-r4l3"/>I(tem) aber daselbs ain stübich halb(er) pfeÿl.
@@ -356,9 +362,11 @@
           <lb facs="#zone-11328745-1-r4l13"/>I(tem) zwen clain modl zu handtpüchs(e)n.
           <lb facs="#zone-11328745-1-r4l14"/>I(tem) ain stukh eÿsen zum zug in das rad.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328745-2"/>
+        <pb n="2" facs="#surface-11328745-2"/>
+        <ab xml:id="ab-11328745-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328745-2-r2">
           <lb facs="#zone-11328745-2-r2l1"/>I(tem) zwen zwÿspitz zum stainhawen.
           <lb facs="#zone-11328745-2-r2l2"/>I(tem) dreẏ mödl zun züglstain.
           <lb facs="#zone-11328745-2-r2l3"/>I(tem) und vier dachmödl.
@@ -391,9 +399,11 @@
           <lb facs="#zone-11328745-2-r2l30"/>kolb(e)n und ein eisen püx, gehort
           <lb facs="#zone-11328745-2-r2l31"/>in ein zug rad.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328745-3"/>
+        <pb n="3" facs="#surface-11328745-3"/>
+        <ab xml:id="ab-11328745-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328745-3-r2">
           <lb facs="#zone-11328745-3-r2l1"/>I(tem) aber ein truch(e)n mit aim schloss.
           <lb facs="#zone-11328745-3-r2l2"/>I(tem) funf eẏsenpantt und etlich
           <lb facs="#zone-11328745-3-r2l3"/>clain ring gehóren zu d(em) zug.
@@ -412,14 +422,22 @@
           <lb facs="#zone-11328745-3-r2l16"/>I(tem) ain trend(e)l im zergad(e)n.
           <lb facs="#zone-11328745-3-r2l17"/>I(tem) und zwo klain laÿtter(e)n.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328745-4"/>
+        <pb n="4" facs="#surface-11328745-4"/>
+        <ab xml:id="ab-11328745-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328745-4-r2">
           <lb facs="#zone-11328745-4-r2l1"/>Das heysel auf
           <lb facs="#zone-11328745-4-r2l2"/>dem see h(er)unden.
+        </ab>
+        <ab xml:id="ab-11328745-4-r3">
           <lb facs="#zone-11328745-4-r3l1"/>I(tem) darinn ist ain tisch.
           <lb facs="#zone-11328745-4-r3l2"/>I(tem) und dreÿ spanpett.
+        </ab>
+        <ab xml:id="ab-11328745-4-r4">
           <lb facs="#zone-11328745-4-r4l1"/>Im under(e)n geheÿs.
+        </ab>
+        <ab xml:id="ab-11328745-4-r5">
           <lb facs="#zone-11328745-4-r5l1"/>I(tem) ain lange meltruch(e)n.
           <lb facs="#zone-11328745-4-r5l2"/>I(tem) ain peitlvaß.
           <lb facs="#zone-11328745-4-r5l3"/>I(tem) neÿn kessl clain und gros.
@@ -436,9 +454,11 @@
           <lb facs="#zone-11328745-4-r5l14"/>I(tem) ain gehengt(e)n schliffstain
           <lb facs="#zone-11328745-4-r5l15"/>mit seiner zugehör.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328745-5"/>
+        <pb n="5" facs="#surface-11328745-5"/>
+        <ab xml:id="ab-11328745-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11328745-5-r2">
           <lb facs="#zone-11328745-5-r2l1"/>I(tem) ain brot rem.
           <lb facs="#zone-11328745-5-r2l2"/>I(tem) ain alt(e)n tisch.
           <lb facs="#zone-11328745-5-r2l3"/>I(tem) zwo hellenpartt(en).
@@ -467,9 +487,11 @@
           <lb facs="#zone-11328745-5-r2l26"/>I(tem) ain eysneine drÿschl.
           <lb facs="#zone-11328745-5-r2l27"/>I(tem) ain eysen streittgab(e)l.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11328745-6"/>
+        <pb n="6" facs="#surface-11328745-6"/>
+        <ab xml:id="ab-11328745-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11328745-6-r2">
           <lb facs="#zone-11328745-6-r2l1"/>I(tem) zechen federpett clain und gros
           <lb facs="#zone-11328745-6-r2l2"/>hat ain pett ain tziechen und
           <lb facs="#zone-11328745-6-r2l3"/>die neũn pett haben chain tziech(e)n.
@@ -498,9 +520,11 @@
           <lb facs="#zone-11328745-6-r2l26"/>I(tem) zwen pugkler zum fecht(e)n.
           <lb facs="#zone-11328745-6-r2l27"/>I(tem) ain alts köcherl.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11328745-7"/>
+        <pb n="7" facs="#surface-11328745-7"/>
+        <ab xml:id="ab-11328745-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11328745-7-r2">
           <lb facs="#zone-11328745-7-r2l1"/>I(tem) ain eÿsen kolben pũchsen.
           <lb facs="#zone-11328745-7-r2l2"/>I(tem) sibentzechen scheib(e)n zum zug.
           <lb facs="#zone-11328745-7-r2l3"/>I(tem) under dem dach zwo petstett.
@@ -531,13 +555,19 @@
           <lb facs="#zone-11328745-7-r2l28"/>I(tem) ain alts peitlvaß.
           <lb facs="#zone-11328745-7-r2l29"/>I(tem) ain alts streichmas.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11328745-8"/>
+        <pb n="8" facs="#surface-11328745-8"/>
+        <ab xml:id="ab-11328745-8-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11328745-8-r2">
           <lb facs="#zone-11328745-8-r2l1"/>Item im stall ain karrenpũchss
           <lb facs="#zone-11328745-8-r2l2"/>mit sambt zweÿ wolbeschlag(en)
           <lb facs="#zone-11328745-8-r2l3"/>reder(e)n.
+        </ab>
+        <ab xml:id="ab-11328745-8-r3">
           <lb facs="#zone-11328745-8-r3l1"/>Capellen.
+        </ab>
+        <ab xml:id="ab-11328745-8-r4">
           <lb facs="#zone-11328745-8-r4l1"/>Am erst(e)n ain messpuech.
           <lb facs="#zone-11328745-8-r4l2"/>I(tem) ain silbreȋn vergüllt(e)n kelch
           <lb facs="#zone-11328745-8-r4l3"/>mit sambt dem paten und
@@ -553,23 +583,25 @@
           <lb facs="#zone-11328745-8-r4l13"/>I(tem) ain clains messin glŏgk(e)l.
           <lb facs="#zone-11328745-8-r4l14"/>I(tem) oben in d(er) capell ain groß glökl.
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11328745-9"/>
+        <pb n="9" facs="#surface-11328745-9"/>
+        <ab xml:id="ab-11328745-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11328745-9-r2">
           <lb facs="#zone-11328745-9-r2l1"/>Item drey alte alter tiech(er).
           <lb facs="#zone-11328745-9-r2l2"/>Item ain ur mit sambt einem
           <lb facs="#zone-11328745-9-r2l3"/>glökl und aller ir(er) zuegehör.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11328745-10"/>
+        <pb n="10" facs="#surface-11328745-10"/>
+        <ab xml:id="ab-11328745-10-r1">
           <milestone unit="folio" n="5v"/>
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11328745-11"/>
+        <pb n="11" facs="#surface-11328745-11"/>
+        <ab xml:id="ab-11328745-11-r1">
           <milestone unit="folio" n="6r"/>
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11328745-12"/>
+        <pb n="12" facs="#surface-11328745-12"/>
+        <ab xml:id="ab-11328745-12-r1">
           <milestone unit="folio" n="6v"/>
         </ab>
       </div>

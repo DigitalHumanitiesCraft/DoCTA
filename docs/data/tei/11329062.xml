@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -160,16 +160,24 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329062-1"/>
+        <pb n="1" facs="#surface-11329062-1"/>
+        <ab xml:id="ab-11329062-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329062-1-r2">
           <lb facs="#zone-11329062-1-r2l1"/>Nota was man(n) gen Innsprugk
           <lb facs="#zone-11329062-1-r2l2"/>hinab gefuert hat am phincztag
           <lb facs="#zone-11329062-1-r2l3"/>nach Sant Margrethen tag.
+        </ab>
+        <ab xml:id="ab-11329062-1-r3">
           <lb facs="#zone-11329062-1-r3l1"/>It(em) der zynnsskaẽs C und XXVI.
           <lb facs="#zone-11329062-1-r3l2"/>It(em) ŭnslitt.
           <lb facs="#zone-11329062-1-r3l3"/>It(em) II schmerlãb.
+        </ab>
+        <ab xml:id="ab-11329062-1-r4">
           <lb facs="#zone-11329062-1-r4l1"/>Wagen geschir(r).
+        </ab>
+        <ab xml:id="ab-11329062-1-r5">
           <lb facs="#zone-11329062-1-r5l1"/>It(em) IIII alte kamat.
           <lb facs="#zone-11329062-1-r5l2"/>It(em) III sílhalsen.
           <lb facs="#zone-11329062-1-r5l3"/>It(em) III afftersiln.
@@ -182,10 +190,14 @@
           <lb facs="#zone-11329062-1-r5l10"/>It(em) IIIII glaidierten wan.
           <lb facs="#zone-11329062-1-r5l11"/>It(em) I phlueg mit sein(er) zugehŏrung(e)n.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329062-2"/>
+        <pb n="2" facs="#surface-11329062-2"/>
+        <ab xml:id="ab-11329062-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329062-2-r2">
           <lb facs="#zone-11329062-2-r2l1"/>Nota speiß.
+        </ab>
+        <ab xml:id="ab-11329062-2-r3">
           <lb facs="#zone-11329062-2-r3l1"/>It(em) VI seitt(e)n schweínen fleisch.
           <lb facs="#zone-11329062-2-r3l2"/>It(em) gedigen fleisch CCC zentring
           <lb facs="#zone-11329062-2-r3l3"/>und LIIII hat man geben dem visch(er).
@@ -194,7 +206,11 @@
           <lb facs="#zone-11329062-2-r3l6"/>dem visch(er) I seiten.
           <lb facs="#zone-11329062-2-r3l7"/>It(em) II smer laib.
           <lb facs="#zone-11329062-2-r3l8"/>It(em) 1/2 gŏsen unslitt.
+        </ab>
+        <ab xml:id="ab-11329062-2-r4">
           <lb facs="#zone-11329062-2-r4l1"/>No(ta) bet und petgwa(n)t.
+        </ab>
+        <ab xml:id="ab-11329062-2-r5">
           <lb facs="#zone-11329062-2-r5l1"/>It(em) X pet mit weyssen ziechen.
           <lb facs="#zone-11329062-2-r5l2"/>It(em) X rauch schāffen degk(e)n.
           <lb facs="#zone-11329062-2-r5l3"/>It(em) V par herbein leyllach.
@@ -211,9 +227,11 @@
           <lb facs="#zone-11329062-2-r5l14"/>It(em) II schlitt schẽrr(e)n.
           <lb facs="#zone-11329062-2-r5l15"/>It(em) II wagen schărr(e)n.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329062-3"/>
+        <pb n="3" facs="#surface-11329062-3"/>
+        <ab xml:id="ab-11329062-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11329062-3-r2">
           <lb facs="#zone-11329062-3-r2l1"/>It(em) II hawen.
           <lb facs="#zone-11329062-3-r2l2"/>It(em) I ragkaw(e)n.
           <lb facs="#zone-11329062-3-r2l3"/>It(em) I straiffmess(e)r.
@@ -244,8 +262,8 @@
           <lb facs="#zone-11329062-3-r2l28"/>ain(n) seitten schweinen fleisch.
           <lb facs="#zone-11329062-3-r2l29"/>It(em) dem Frechen I vass weíns von XII [---].
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329062-4"/>
+        <pb n="4" facs="#surface-11329062-4"/>
+        <ab xml:id="ab-11329062-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
       </div>

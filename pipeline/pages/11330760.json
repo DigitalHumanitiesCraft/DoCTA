@@ -21,40 +21,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerkt waz dy Pŭcherin",
-      "zŭ irer notdurfft mit ir",
-      "auß dem turen genomen",
-      "hatt von petgewant und",
-      "andre masserey durch",
-      "Caspern Ŭbel die zeit verweser",
-      "im turen ir geantwurt.",
-      "Item II pett mit kõllischer ziechen.",
-      "Item I pett mit ainer leynen ziechen.",
-      "Item I klains degk pett.",
-      "Item II põlster mit kõllischer ziechen.",
-      "Item I klains kũss.",
-      "Item I rawche fũxine degk",
-      "von swãnzen.",
-      "Item I fũxine rũgkine schawben.",
-      "Item III lõdene degken von pãllãtsch.",
-      "Item III par leynlachen.",
-      "Item IIII tisch tũcher.",
-      "Item III handzwehel.",
-      "Item III kũssen.",
-      "Item II rauche degken.",
-      "Item I zesarig degken.",
-      "Item I geschnittne degk.",
-      "Item II klain zynnen kantlein",
-      "von ain halbs tringken.",
-      "Item II messin peck.",
-      "Item II zynnen salz vãßlen.",
-      "Item II flãdrin kõphel.",
-      "Item I klains painen trũchli.",
-      "Item I mass kantten.",
-      "Item V gross zynnen schũssel.",
-      "Item VIIII klaine zynne schũssel.",
-      "Item I zynnen senffschũssel."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkt waz dy Pŭcherin"
+      },
+      {
+       "id": "r2l2",
+       "text": "zŭ irer notdurfft mit ir"
+      },
+      {
+       "id": "r2l3",
+       "text": "auß dem turen genomen"
+      },
+      {
+       "id": "r2l4",
+       "text": "hatt von petgewant und"
+      },
+      {
+       "id": "r2l5",
+       "text": "andre masserey durch"
+      },
+      {
+       "id": "r2l6",
+       "text": "Caspern Ŭbel die zeit verweser"
+      },
+      {
+       "id": "r2l7",
+       "text": "im turen ir geantwurt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item II pett mit kõllischer ziechen."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item I pett mit ainer leynen ziechen."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item I klains degk pett."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item II põlster mit kõllischer ziechen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item I klains kũss."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item I rawche fũxine degk"
+      },
+      {
+       "id": "r3l7",
+       "text": "von swãnzen."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item I fũxine rũgkine schawben."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item III lõdene degken von pãllãtsch."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item III par leynlachen."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item IIII tisch tũcher."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item III handzwehel."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item III kũssen."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item II rauche degken."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item I zesarig degken."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item I geschnittne degk."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item II klain zynnen kantlein"
+      },
+      {
+       "id": "r3l18",
+       "text": "von ain halbs tringken."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item II messin peck."
+      },
+      {
+       "id": "r3l20",
+       "text": "Item II zynnen salz vãßlen."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item II flãdrin kõphel."
+      },
+      {
+       "id": "r3l22",
+       "text": "Item I klains painen trũchli."
+      },
+      {
+       "id": "r3l23",
+       "text": "Item I mass kantten."
+      },
+      {
+       "id": "r3l24",
+       "text": "Item V gross zynnen schũssel."
+      },
+      {
+       "id": "r3l25",
+       "text": "Item VIIII klaine zynne schũssel."
+      },
+      {
+       "id": "r3l26",
+       "text": "Item I zynnen senffschũssel."
+      }
      ]
     }
    ]
@@ -79,32 +181,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item ain messen gieß vãsel.",
-      "Item mer I maß kantten.",
-      "Item ain klaine slechte truhen.",
-      "Item I klain erin hafen.",
-      "Item II phannen.",
-      "Vermerkt dy masserey",
-      "und hawsplunder so",
-      "der Pŭcher im turen",
-      "gelassen hat, daz nit",
-      "in den verpettschafften",
-      "gemãchlen verslossen ist.",
-      "Von ersten pett und pettgewant.",
-      "Item in der kamer vor der newen",
-      "stuben sind III pett.",
-      "Item I schãffene degk und I strosack.",
-      "Item in dem vorder staingadem III pet.",
-      "Item III põlster mit leynen ziechen.",
-      "Item II kũsse mit gstreifften ziechen.",
-      "Item VI leinlach.",
-      "Item I plaber gollter.",
-      "Item IIII rauch degken.",
-      "Item III pälãtsch degken under dy petten.",
-      "Item mer ain polster mit ainer leynen ziechen.",
-      "Item I küssen mit köllischer ziechen.",
-      "Item mer IIII schaffene degken."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain messen gieß vãsel."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item mer I maß kantten."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item ain klaine slechte truhen."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item I klain erin hafen."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item II phannen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Vermerkt dy masserey"
+      },
+      {
+       "id": "r3l2",
+       "text": "und hawsplunder so"
+      },
+      {
+       "id": "r3l3",
+       "text": "der Pŭcher im turen"
+      },
+      {
+       "id": "r3l4",
+       "text": "gelassen hat, daz nit"
+      },
+      {
+       "id": "r3l5",
+       "text": "in den verpettschafften"
+      },
+      {
+       "id": "r3l6",
+       "text": "gemãchlen verslossen ist."
+      },
+      {
+       "id": "r4l1",
+       "text": "Von ersten pett und pettgewant."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item in der kamer vor der newen"
+      },
+      {
+       "id": "r5l2",
+       "text": "stuben sind III pett."
+      },
+      {
+       "id": "r5l3",
+       "text": "Item I schãffene degk und I strosack."
+      },
+      {
+       "id": "r5l4",
+       "text": "Item in dem vorder staingadem III pet."
+      },
+      {
+       "id": "r5l5",
+       "text": "Item III põlster mit leynen ziechen."
+      },
+      {
+       "id": "r5l6",
+       "text": "Item II kũsse mit gstreifften ziechen."
+      },
+      {
+       "id": "r5l7",
+       "text": "Item VI leinlach."
+      },
+      {
+       "id": "r5l8",
+       "text": "Item I plaber gollter."
+      },
+      {
+       "id": "r5l9",
+       "text": "Item IIII rauch degken."
+      },
+      {
+       "id": "r5l10",
+       "text": "Item III pälãtsch degken under dy petten."
+      },
+      {
+       "id": "r5l11",
+       "text": "Item mer ain polster mit ainer leynen ziechen."
+      },
+      {
+       "id": "r5l12",
+       "text": "Item I küssen mit köllischer ziechen."
+      },
+      {
+       "id": "r5l13",
+       "text": "Item mer IIII schaffene degken."
+      }
      ]
     }
    ]
@@ -129,41 +309,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Item I swarzer gollter.",
-      "Item I par leynlach.",
-      "Item mer III pãllãtschen degken, ist",
-      "dy ain mit schãffin underzogen.",
-      "Item II new̃e kupphren kessel.",
-      "Item I kupphren haffen.",
-      "Item IIII tisch tũecher und III hant",
-      "zwehel sind herfornen gelassen,",
-      "daz nicht ain gespert ist tãglich",
-      "ze prauchen.",
-      "Item in dez pũxenmaisters ãrcker",
-      "ist I pett.",
-      "Item I pŏlster.",
-      "Item I kũss.",
-      "Item I ziechen.",
-      "Item I swarzer gollter.",
-      "Item I pellz.",
-      "Item II leynlachen.",
-      "Item I pȯlãcken.",
-      "Item mer I leynlach.",
-      "Item mer I ziechen.",
-      "Harnasch in der gsellen stuben.",
-      "Item II rucken krebs.",
-      "Item V krebs.",
-      "Item I eysen hüt.",
-      "Item I part.",
-      "Item I par meũsel.",
-      "Item I par straiff tãschen.",
-      "Item IIII par hentschůch.",
-      "Manglt II par",
-      "hat der Ubeli",
-      "und [.]fili.",
-      "Item III winden.",
-      "Item III arm brost und I kocher."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item I swarzer gollter."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item I par leynlach."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item mer III pãllãtschen degken, ist"
+      },
+      {
+       "id": "r2l4",
+       "text": "dy ain mit schãffin underzogen."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item II new̃e kupphren kessel."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item I kupphren haffen."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item IIII tisch tũecher und III hant"
+      },
+      {
+       "id": "r2l8",
+       "text": "zwehel sind herfornen gelassen,"
+      },
+      {
+       "id": "r2l9",
+       "text": "daz nicht ain gespert ist tãglich"
+      },
+      {
+       "id": "r2l10",
+       "text": "ze prauchen."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item in dez pũxenmaisters ãrcker"
+      },
+      {
+       "id": "r2l12",
+       "text": "ist I pett."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item I pŏlster."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item I kũss."
+      },
+      {
+       "id": "r2l15",
+       "text": "Item I ziechen."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item I swarzer gollter."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item I pellz."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item II leynlachen."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item I pȯlãcken."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item mer I leynlach."
+      },
+      {
+       "id": "r2l21",
+       "text": "Item mer I ziechen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Harnasch in der gsellen stuben."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item II rucken krebs."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item V krebs."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item I eysen hüt."
+      },
+      {
+       "id": "r4l4",
+       "text": "Item I part."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item I par meũsel."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item I par straiff tãschen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item IIII par hentschůch."
+      },
+      {
+       "id": "r5l2",
+       "text": "Manglt II par"
+      },
+      {
+       "id": "r5l3",
+       "text": "hat der Ubeli"
+      },
+      {
+       "id": "r5l4",
+       "text": "und [.]fili."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item III winden."
+      },
+      {
+       "id": "r6l2",
+       "text": "Item III arm brost und I kocher."
+      }
      ]
     }
    ]
@@ -188,32 +473,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Von zynen gschyer.",
-      "Item VII zynen schũssel,",
-      "II plann,",
-      "VIII klaine zynen schũssel,",
-      "I mõrser,",
-      "I stõssel,",
-      "I zynnes gÿeßvass,",
-      "I kupphren giesvãsspegk,",
-      "II messen lew̃chter,",
-      "I spilprett,",
-      "III zwymassige kanten,",
-      "II maß kantten,",
-      "I maß trincken kannten ist daz lid",
-      "darab prochen.",
-      "Item in der hell ist pei II1/2 z[..]st[...]",
-      "oxen an tigen flaisch,",
-      "I zenten ũnslid allez ungefarlich.",
-      "Item sweine flaysch von IIII swein",
-      "und ain viertail.",
-      "Item III gãrbte hew̑t,",
-      "VI gãrbte kälb fel,",
-      "XXXV roche schaff fel,",
-      "X par schŭech.",
-      "Item in dem korn gadem",
-      "ain visch segen."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Von zynen gschyer."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item VII zynen schũssel,"
+      },
+      {
+       "id": "r3l2",
+       "text": "II plann,"
+      },
+      {
+       "id": "r3l3",
+       "text": "VIII klaine zynen schũssel,"
+      },
+      {
+       "id": "r3l4",
+       "text": "I mõrser,"
+      },
+      {
+       "id": "r3l5",
+       "text": "I stõssel,"
+      },
+      {
+       "id": "r3l6",
+       "text": "I zynnes gÿeßvass,"
+      },
+      {
+       "id": "r3l7",
+       "text": "I kupphren giesvãsspegk,"
+      },
+      {
+       "id": "r3l8",
+       "text": "II messen lew̃chter,"
+      },
+      {
+       "id": "r3l9",
+       "text": "I spilprett,"
+      },
+      {
+       "id": "r3l10",
+       "text": "III zwymassige kanten,"
+      },
+      {
+       "id": "r3l11",
+       "text": "II maß kantten,"
+      },
+      {
+       "id": "r3l12",
+       "text": "I maß trincken kannten ist daz lid"
+      },
+      {
+       "id": "r3l13",
+       "text": "darab prochen."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item in der hell ist pei II1/2 z[..]st[...]"
+      },
+      {
+       "id": "r3l15",
+       "text": "oxen an tigen flaisch,"
+      },
+      {
+       "id": "r3l16",
+       "text": "I zenten ũnslid allez ungefarlich."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item sweine flaysch von IIII swein"
+      },
+      {
+       "id": "r3l18",
+       "text": "und ain viertail."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item III gãrbte hew̑t,"
+      },
+      {
+       "id": "r3l20",
+       "text": "VI gãrbte kälb fel,"
+      },
+      {
+       "id": "r3l21",
+       "text": "XXXV roche schaff fel,"
+      },
+      {
+       "id": "r3l22",
+       "text": "X par schŭech."
+      },
+      {
+       "id": "r3l23",
+       "text": "Item in dem korn gadem"
+      },
+      {
+       "id": "r3l24",
+       "text": "ain visch segen."
+      }
      ]
     }
    ]
@@ -238,36 +601,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Item in dem speysgadem",
-      "I vaß mit mel nit gar vol,",
-      "I pottich darinn etwev̆il mel,",
-      "I hew̆ strick,",
-      "IIII pelg,",
-      "X käss,",
-      "III melpew̃tel.",
-      "Item in dem milch keller",
-      "II kŭbel mit smaltz,",
-      "II1/2 knollen roch smaltz,",
-      "ain hawffen mit ungehachelter",
-      "hanff und har.",
-      "Item in dem wein keller ligen",
-      "V fũer vãsser, in dem ain",
-      "vaß leÿt Trämynner und",
-      "ist dý wĕn vornen an der",
-      "spangen gesnitten, in dem",
-      "ander vaß ist pei II ȗren",
-      "speiß wein.",
-      "Item III klaine văsel, in dem",
-      "ain văssl ist pei IIII uren",
-      "alter rotter wein, und",
-      "III smerlayb.",
-      "Item in der knecht arker sind",
-      "II knecht pett,",
-      "I polster,",
-      "I kũsse,",
-      "IIII leynlachen,",
-      "IIII põse decken."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item in dem speysgadem"
+      },
+      {
+       "id": "r2l2",
+       "text": "I vaß mit mel nit gar vol,"
+      },
+      {
+       "id": "r2l3",
+       "text": "I pottich darinn etwev̆il mel,"
+      },
+      {
+       "id": "r2l4",
+       "text": "I hew̆ strick,"
+      },
+      {
+       "id": "r2l5",
+       "text": "IIII pelg,"
+      },
+      {
+       "id": "r2l6",
+       "text": "X käss,"
+      },
+      {
+       "id": "r2l7",
+       "text": "III melpew̃tel."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item in dem milch keller"
+      },
+      {
+       "id": "r2l9",
+       "text": "II kŭbel mit smaltz,"
+      },
+      {
+       "id": "r2l10",
+       "text": "II1/2 knollen roch smaltz,"
+      },
+      {
+       "id": "r2l11",
+       "text": "ain hawffen mit ungehachelter"
+      },
+      {
+       "id": "r2l12",
+       "text": "hanff und har."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item in dem wein keller ligen"
+      },
+      {
+       "id": "r2l14",
+       "text": "V fũer vãsser, in dem ain"
+      },
+      {
+       "id": "r2l15",
+       "text": "vaß leÿt Trämynner und"
+      },
+      {
+       "id": "r2l16",
+       "text": "ist dý wĕn vornen an der"
+      },
+      {
+       "id": "r2l17",
+       "text": "spangen gesnitten, in dem"
+      },
+      {
+       "id": "r2l18",
+       "text": "ander vaß ist pei II ȗren"
+      },
+      {
+       "id": "r2l19",
+       "text": "speiß wein."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item III klaine văsel, in dem"
+      },
+      {
+       "id": "r2l21",
+       "text": "ain văssl ist pei IIII uren"
+      },
+      {
+       "id": "r2l22",
+       "text": "alter rotter wein, und"
+      },
+      {
+       "id": "r2l23",
+       "text": "III smerlayb."
+      },
+      {
+       "id": "r2l24",
+       "text": "Item in der knecht arker sind"
+      },
+      {
+       "id": "r2l25",
+       "text": "II knecht pett,"
+      },
+      {
+       "id": "r2l26",
+       "text": "I polster,"
+      },
+      {
+       "id": "r2l27",
+       "text": "I kũsse,"
+      },
+      {
+       "id": "r2l28",
+       "text": "IIII leynlachen,"
+      },
+      {
+       "id": "r2l29",
+       "text": "IIII põse decken."
+      }
      ]
     }
    ]
@@ -292,32 +745,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Item in dem gang ligen",
-      "VIII lãre fũer vãsß.",
-      "Kuchen gschyer.",
-      "Item in der kuchen sind V erin haffen",
-      "klain und groß,",
-      "III laffetsch kessel klain und groß,",
-      "VI eysen kellen põß und gŭt,",
-      "XII phannen klain und groß,",
-      "II pratt spiß,",
-      "II drey̆ fuss,",
-      "II hälen,",
-      "I prant traitt,",
-      "ain rost,",
-      "ain kuchn gãbel.",
-      "Paw stadel.",
-      "Item im pawstadel ist hew̃, grŭmat,",
-      "koren, waiz und stro, gedroschens",
-      "und ungedroschen.",
-      "Item II wannen,",
-      "I mut,",
-      "I wagen mit IIII reder",
-      "sünsten II reder,",
-      "II unbeslagen reder,",
-      "I roche oxen hawt,",
-      "II hew̃ strick."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item in dem gang ligen"
+      },
+      {
+       "id": "r2l2",
+       "text": "VIII lãre fũer vãsß."
+      },
+      {
+       "id": "r3l1",
+       "text": "Kuchen gschyer."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item in der kuchen sind V erin haffen"
+      },
+      {
+       "id": "r4l2",
+       "text": "klain und groß,"
+      },
+      {
+       "id": "r4l3",
+       "text": "III laffetsch kessel klain und groß,"
+      },
+      {
+       "id": "r4l4",
+       "text": "VI eysen kellen põß und gŭt,"
+      },
+      {
+       "id": "r4l5",
+       "text": "XII phannen klain und groß,"
+      },
+      {
+       "id": "r4l6",
+       "text": "II pratt spiß,"
+      },
+      {
+       "id": "r4l7",
+       "text": "II drey̆ fuss,"
+      },
+      {
+       "id": "r4l8",
+       "text": "II hälen,"
+      },
+      {
+       "id": "r4l9",
+       "text": "I prant traitt,"
+      },
+      {
+       "id": "r4l10",
+       "text": "ain rost,"
+      },
+      {
+       "id": "r4l11",
+       "text": "ain kuchn gãbel."
+      },
+      {
+       "id": "r5l1",
+       "text": "Paw stadel."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item im pawstadel ist hew̃, grŭmat,"
+      },
+      {
+       "id": "r6l2",
+       "text": "koren, waiz und stro, gedroschens"
+      },
+      {
+       "id": "r6l3",
+       "text": "und ungedroschen."
+      },
+      {
+       "id": "r6l4",
+       "text": "Item II wannen,"
+      },
+      {
+       "id": "r6l5",
+       "text": "I mut,"
+      },
+      {
+       "id": "r6l6",
+       "text": "I wagen mit IIII reder"
+      },
+      {
+       "id": "r6l7",
+       "text": "sünsten II reder,"
+      },
+      {
+       "id": "r6l8",
+       "text": "II unbeslagen reder,"
+      },
+      {
+       "id": "r6l9",
+       "text": "I roche oxen hawt,"
+      },
+      {
+       "id": "r6l10",
+       "text": "II hew̃ strick."
+      }
      ]
     }
    ]
@@ -342,27 +873,90 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "Item II holz strick,",
-      "I prozen,",
-      "V hew̃ gabel,",
-      "II phlũg,",
-      "II wagensen,",
-      "I kădenãtsch,",
-      "III kammat,",
-      "I ziech joch mit seinem zeũg,",
-      "IIII hawgen, põzz und gŭt,",
-      "II zappawen,",
-      "III scheitthacken.",
-      "Vĭch.",
-      "Item II ziech oxen,",
-      "IIII kũe,",
-      "III schaff,",
-      "II lămper,",
-      "I kalb.",
-      "Item V klaine mest swein,",
-      "I swein mŭter,",
-      "II junge swein."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item II holz strick,"
+      },
+      {
+       "id": "r2l2",
+       "text": "I prozen,"
+      },
+      {
+       "id": "r2l3",
+       "text": "V hew̃ gabel,"
+      },
+      {
+       "id": "r2l4",
+       "text": "II phlũg,"
+      },
+      {
+       "id": "r2l5",
+       "text": "II wagensen,"
+      },
+      {
+       "id": "r2l6",
+       "text": "I kădenãtsch,"
+      },
+      {
+       "id": "r2l7",
+       "text": "III kammat,"
+      },
+      {
+       "id": "r2l8",
+       "text": "I ziech joch mit seinem zeũg,"
+      },
+      {
+       "id": "r2l9",
+       "text": "IIII hawgen, põzz und gŭt,"
+      },
+      {
+       "id": "r2l10",
+       "text": "II zappawen,"
+      },
+      {
+       "id": "r2l11",
+       "text": "III scheitthacken."
+      },
+      {
+       "id": "r3l1",
+       "text": "Vĭch."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item II ziech oxen,"
+      },
+      {
+       "id": "r4l2",
+       "text": "IIII kũe,"
+      },
+      {
+       "id": "r4l3",
+       "text": "III schaff,"
+      },
+      {
+       "id": "r4l4",
+       "text": "II lămper,"
+      },
+      {
+       "id": "r4l5",
+       "text": "I kalb."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item V klaine mest swein,"
+      },
+      {
+       "id": "r4l7",
+       "text": "I swein mŭter,"
+      },
+      {
+       "id": "r4l8",
+       "text": "II junge swein."
+      }
      ]
     }
    ]
@@ -387,7 +981,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]
@@ -412,35 +1009,122 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Vermerkt meins gnadigen",
-      "herrn zeȗg von pŭxen,",
-      "armbrost und tartschen",
-      "im turen ze Mals.",
-      "Item in dem vorder staingaden ligen",
-      "XI hagken pȗxen,",
-      "I tarrass pũxen,",
-      "XLVIII hanntpŭxen,",
-      "XXI lidrein pulfer tãschen, die",
-      "zŭ dy̅ obgemeltten puxen gehoren,",
-      "XVIII zŭntt ring zū pŭxen.",
-      "Item VIII allte armbrost.",
-      "Item auff dem sal hangen VIII tãrtschen.",
-      "Item in dem grossen turen sind",
-      "II lagel mit pũxen pulfer,",
-      "I lagel mit hawß pheyl,",
-      "II vãsli mit sallitter.",
-      "Item mer ligen im turen XII pofesen,",
-      "V hanndt tartschen hat der",
-      "Grũenepach mit im von Slanders",
-      "her auff pracht im turen.",
-      "Item II hacken pux sind gelihen",
-      "auff Liechntenberg gelihen dy",
-      "gehõren auch im turen.",
-      "Item I panzer krãgl, hanntschŭch",
-      "und anders etc. hat Casper Ŭbeli",
-      "und sein sun hin gefirt und",
-      "nit angeschriben etc."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkt meins gnadigen"
+      },
+      {
+       "id": "r2l2",
+       "text": "herrn zeȗg von pŭxen,"
+      },
+      {
+       "id": "r2l3",
+       "text": "armbrost und tartschen"
+      },
+      {
+       "id": "r2l4",
+       "text": "im turen ze Mals."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item in dem vorder staingaden ligen"
+      },
+      {
+       "id": "r3l2",
+       "text": "XI hagken pȗxen,"
+      },
+      {
+       "id": "r3l3",
+       "text": "I tarrass pũxen,"
+      },
+      {
+       "id": "r3l4",
+       "text": "XLVIII hanntpŭxen,"
+      },
+      {
+       "id": "r3l5",
+       "text": "XXI lidrein pulfer tãschen, die"
+      },
+      {
+       "id": "r3l6",
+       "text": "zŭ dy̅ obgemeltten puxen gehoren,"
+      },
+      {
+       "id": "r3l7",
+       "text": "XVIII zŭntt ring zū pŭxen."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item VIII allte armbrost."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item auff dem sal hangen VIII tãrtschen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item in dem grossen turen sind"
+      },
+      {
+       "id": "r3l11",
+       "text": "II lagel mit pũxen pulfer,"
+      },
+      {
+       "id": "r3l12",
+       "text": "I lagel mit hawß pheyl,"
+      },
+      {
+       "id": "r3l13",
+       "text": "II vãsli mit sallitter."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item mer ligen im turen XII pofesen,"
+      },
+      {
+       "id": "r3l15",
+       "text": "V hanndt tartschen hat der"
+      },
+      {
+       "id": "r3l16",
+       "text": "Grũenepach mit im von Slanders"
+      },
+      {
+       "id": "r3l17",
+       "text": "her auff pracht im turen."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item II hacken pux sind gelihen"
+      },
+      {
+       "id": "r3l19",
+       "text": "auff Liechntenberg gelihen dy"
+      },
+      {
+       "id": "r3l20",
+       "text": "gehõren auch im turen."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item I panzer krãgl, hanntschŭch"
+      },
+      {
+       "id": "r3l22",
+       "text": "und anders etc. hat Casper Ŭbeli"
+      },
+      {
+       "id": "r3l23",
+       "text": "und sein sun hin gefirt und"
+      },
+      {
+       "id": "r3l24",
+       "text": "nit angeschriben etc."
+      }
      ]
     }
    ]
@@ -465,7 +1149,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     }
    ]
@@ -490,7 +1177,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -515,7 +1205,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]

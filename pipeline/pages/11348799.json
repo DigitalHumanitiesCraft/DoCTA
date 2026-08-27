@@ -21,38 +21,134 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Item anno Domini etc. quinquagesimosexto",
-      "an Sand Sÿmon und Sand Judas tag ist vermerckt und",
-      "angeschriben worden die varund hab so auf den gslossen",
-      "Telphan und Peters Perg gewesen und herren Jacoben",
-      "Trappen dienner, genant Otten Honiger, geantwurt worden ist",
-      "als dan derselben gslos Joachim von Montani nach geschäfft",
-      "meins gnadgen herren von Triennt dem benantten Otten",
-      "Höniger abgetretten und ingeantwurt hat.",
-      "Item von getraid und melb hat Jochim von Montani geanttwurtt.",
-      "Item LXXXXIX ster hirss. Item LXXXIII ster pon. Item XXIII ster fenich. Item",
-      "LXIII ster rogken. Item XLIII ster waitz. Item gemalns mel IIIICII ster.",
-      "Item auf Sand Peterspergen gemalns getraid XXX ster.",
-      "Item aller wein so gen Delphan gehort ist daselbs bliben",
-      "ausgenomen vier fuder hat Jochim von Montani von danen",
-      "gefurt, dÿe hat er auch dargelichen gehabt auf Delphan",
-      "und Sannd Peterspergen.",
-      "Item XVIII p[..].",
-      "Item II par laylachen.",
-      "Item XX raundeckhen.",
-      "Item XII haubtpolster.",
-      "Item IIII khüssen.",
-      "Item VI khoczen.",
-      "Item II lederlach.",
-      "Item III schermpuchsen.",
-      "Item III staïnpuchsen.",
-      "Item XIIII häntpŭchsen.",
-      "Item VI armbrost.",
-      "Item IIII khürus.",
-      "Inventari zu Delphan",
-      "und Sand Peters Perg.",
-      "1456"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item anno Domini etc. quinquagesimosexto"
+      },
+      {
+       "id": "r2l2",
+       "text": "an Sand Sÿmon und Sand Judas tag ist vermerckt und"
+      },
+      {
+       "id": "r2l3",
+       "text": "angeschriben worden die varund hab so auf den gslossen"
+      },
+      {
+       "id": "r2l4",
+       "text": "Telphan und Peters Perg gewesen und herren Jacoben"
+      },
+      {
+       "id": "r2l5",
+       "text": "Trappen dienner, genant Otten Honiger, geantwurt worden ist"
+      },
+      {
+       "id": "r2l6",
+       "text": "als dan derselben gslos Joachim von Montani nach geschäfft"
+      },
+      {
+       "id": "r2l7",
+       "text": "meins gnadgen herren von Triennt dem benantten Otten"
+      },
+      {
+       "id": "r2l8",
+       "text": "Höniger abgetretten und ingeantwurt hat."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item von getraid und melb hat Jochim von Montani geanttwurtt."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item LXXXXIX ster hirss. Item LXXXIII ster pon. Item XXIII ster fenich. Item"
+      },
+      {
+       "id": "r3l3",
+       "text": "LXIII ster rogken. Item XLIII ster waitz. Item gemalns mel IIIICII ster."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item auf Sand Peterspergen gemalns getraid XXX ster."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item aller wein so gen Delphan gehort ist daselbs bliben"
+      },
+      {
+       "id": "r3l6",
+       "text": "ausgenomen vier fuder hat Jochim von Montani von danen"
+      },
+      {
+       "id": "r3l7",
+       "text": "gefurt, dÿe hat er auch dargelichen gehabt auf Delphan"
+      },
+      {
+       "id": "r3l8",
+       "text": "und Sannd Peterspergen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item XVIII p[..]."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item II par laylachen."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item XX raundeckhen."
+      },
+      {
+       "id": "r4l4",
+       "text": "Item XII haubtpolster."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item IIII khüssen."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item VI khoczen."
+      },
+      {
+       "id": "r4l7",
+       "text": "Item II lederlach."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item III schermpuchsen."
+      },
+      {
+       "id": "r4l9",
+       "text": "Item III staïnpuchsen."
+      },
+      {
+       "id": "r4l10",
+       "text": "Item XIIII häntpŭchsen."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item VI armbrost."
+      },
+      {
+       "id": "r4l12",
+       "text": "Item IIII khürus."
+      },
+      {
+       "id": "r5l1",
+       "text": "Inventari zu Delphan"
+      },
+      {
+       "id": "r5l2",
+       "text": "und Sand Peters Perg."
+      },
+      {
+       "id": "line_1757952146696_870",
+       "text": "1456"
+      }
      ]
     }
    ]
@@ -77,26 +173,86 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item V pantczer.",
-      "Item VIIII tschäladen.",
-      "Item V hellem.",
-      "Item II spiess.",
-      "Item ein wenig puchsenpulver.",
-      "Item II star silitter.",
-      "Item IIII lagelln mit pheil",
-      "und ander ledig pheil.",
-      "Item IIII stuckh pleÿ.",
-      "Item ain fleisch portten.",
-      "Item III khëssellen.",
-      "Item XV hulczen schüssellen.",
-      "Item IIII gross zynnen schussellen.",
-      "Item III klain zynnen schussellen.",
-      "Item XXVIII plandel.",
-      "Item V hullen.",
-      "Item II pratspiss.",
-      "Item IIII phannen mit der kestenphanen.",
-      "Item IIII lavetschen gross und klain."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item V pantczer."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item VIIII tschäladen."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item V hellem."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item II spiess."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item ein wenig puchsenpulver."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item II star silitter."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item IIII lagelln mit pheil"
+      },
+      {
+       "id": "r2l8",
+       "text": "und ander ledig pheil."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item IIII stuckh pleÿ."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item ain fleisch portten."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item III khëssellen."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item XV hulczen schüssellen."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item IIII gross zynnen schussellen."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item III klain zynnen schussellen."
+      },
+      {
+       "id": "r2l15",
+       "text": "Item XXVIII plandel."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item V hullen."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item II pratspiss."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item IIII phannen mit der kestenphanen."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item IIII lavetschen gross und klain."
+      }
      ]
     }
    ]
@@ -121,30 +277,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Item ain halbs vass salcz.",
-      "Item IIII glockspeissen hafn.",
-      "Item ain wag.",
-      "Auff Sand Petersperg",
-      "die varendn hab.",
-      "Item IIII peth.",
-      "Item VII leÿlachen.",
-      "Item II haubtpölster.",
-      "Item III khotczen.",
-      "Item ain khüss(en).",
-      "Item IIII rauchdeckhen.",
-      "Item III hantpuchsen.",
-      "Item III khessëllen.",
-      "Item II lavetschen.",
-      "Item ain phannen.",
-      "Item ain drifuess.",
-      "Item II feurhund.",
-      "Item ain hällen.",
-      "Item ain rost.",
-      "Item ain pratspiss.",
-      "Item VIIII hulcznschussellen.",
-      "Item VIII plandel.",
-      "Item II hackhn."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain halbs vass salcz."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item IIII glockspeissen hafn."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item ain wag."
+      },
+      {
+       "id": "r3l1",
+       "text": "Auff Sand Petersperg"
+      },
+      {
+       "id": "r3l2",
+       "text": "die varendn hab."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item IIII peth."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item VII leÿlachen."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item II haubtpölster."
+      },
+      {
+       "id": "r4l4",
+       "text": "Item III khotczen."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item ain khüss(en)."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item IIII rauchdeckhen."
+      },
+      {
+       "id": "r4l7",
+       "text": "Item III hantpuchsen."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item III khessëllen."
+      },
+      {
+       "id": "r4l9",
+       "text": "Item II lavetschen."
+      },
+      {
+       "id": "r4l10",
+       "text": "Item ain phannen."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item ain drifuess."
+      },
+      {
+       "id": "r4l12",
+       "text": "Item II feurhund."
+      },
+      {
+       "id": "r4l13",
+       "text": "Item ain hällen."
+      },
+      {
+       "id": "r4l14",
+       "text": "Item ain rost."
+      },
+      {
+       "id": "r4l15",
+       "text": "Item ain pratspiss."
+      },
+      {
+       "id": "r4l16",
+       "text": "Item VIIII hulcznschussellen."
+      },
+      {
+       "id": "r4l17",
+       "text": "Item VIII plandel."
+      },
+      {
+       "id": "r4l18",
+       "text": "Item II hackhn."
+      }
      ]
     }
    ]
@@ -169,31 +397,106 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Item hienach sind vermerckt die zinss so Joachim von Montani",
-      "ingenomen hat und all ander zinss besteen vor.",
-      "Item am ersten hat er ingenomen von",
-      "Mathee Bennegnn XLVIIII marcketten.",
-      "Item Andre Rïncker von Runczemer perg X ster hirs.",
-      "Item von demselben Andre III 1/2 ster waitz.",
-      "Item von demselben Andre XIII ster rogcken.",
-      "Item von des Donä hoff",
-      "an der Maẅt III ster hirs.",
-      "Item vom Urban Pecken X ster rocken.",
-      "Item die brobst auß der burgen",
-      "haben an der collecten außgericht LXXXV lb. per X gl. I lb.",
-      "Item auch hat Joachim von Montani ingenomen all zoll in der burgen",
-      "alslang er die gslos ingehabt hat untz auf den nachst",
-      "vergangen montag vor Sỹmonis et Jude und den lemper¬",
-      "zehennt und den zinss von zwain alben Casse und Vall",
-      "Solar. Auch vorbesteet dem Joachim von Montani das",
-      "hew auf dem perg Cassapendula. Beÿ disem inventari",
-      "und zedl zemachen sind gewesen Franczischk Kastelalter, Hainrich",
-      "von Jauffen, Jacob Cariol richter zu Ivan und Lienhart von",
-      "Montavall richter in der burgen und vil annder verpetschafft",
-      "und versigelt mit Joachims von Montani, des benantten Castel¬",
-      "alter, Hainrichs von Jauffen und Otten Honiger aufgedruckten",
-      "pethschafth der zedel in gleicher laẅt drey(e) gemacht seien."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item hienach sind vermerckt die zinss so Joachim von Montani"
+      },
+      {
+       "id": "r2l2",
+       "text": "ingenomen hat und all ander zinss besteen vor."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten hat er ingenomen von"
+      },
+      {
+       "id": "r3l2",
+       "text": "Mathee Bennegnn XLVIIII marcketten."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item Andre Rïncker von Runczemer perg X ster hirs."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item von demselben Andre III 1/2 ster waitz."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item von demselben Andre XIII ster rogcken."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item von des Donä hoff"
+      },
+      {
+       "id": "r3l7",
+       "text": "an der Maẅt III ster hirs."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item vom Urban Pecken X ster rocken."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item die brobst auß der burgen"
+      },
+      {
+       "id": "r3l10",
+       "text": "haben an der collecten außgericht LXXXV lb. per X gl. I lb."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item auch hat Joachim von Montani ingenomen all zoll in der burgen"
+      },
+      {
+       "id": "r4l2",
+       "text": "alslang er die gslos ingehabt hat untz auf den nachst"
+      },
+      {
+       "id": "r4l3",
+       "text": "vergangen montag vor Sỹmonis et Jude und den lemper¬"
+      },
+      {
+       "id": "r4l4",
+       "text": "zehennt und den zinss von zwain alben Casse und Vall"
+      },
+      {
+       "id": "r4l5",
+       "text": "Solar. Auch vorbesteet dem Joachim von Montani das"
+      },
+      {
+       "id": "r4l6",
+       "text": "hew auf dem perg Cassapendula. Beÿ disem inventari"
+      },
+      {
+       "id": "r4l7",
+       "text": "und zedl zemachen sind gewesen Franczischk Kastelalter, Hainrich"
+      },
+      {
+       "id": "r4l8",
+       "text": "von Jauffen, Jacob Cariol richter zu Ivan und Lienhart von"
+      },
+      {
+       "id": "r4l9",
+       "text": "Montavall richter in der burgen und vil annder verpetschafft"
+      },
+      {
+       "id": "r4l10",
+       "text": "und versigelt mit Joachims von Montani, des benantten Castel¬"
+      },
+      {
+       "id": "r4l11",
+       "text": "alter, Hainrichs von Jauffen und Otten Honiger aufgedruckten"
+      },
+      {
+       "id": "r4l12",
+       "text": "pethschafth der zedel in gleicher laẅt drey(e) gemacht seien."
+      }
      ]
     }
    ]

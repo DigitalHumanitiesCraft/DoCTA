@@ -21,41 +21,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Nauders.",
-      "Nota.",
-      "Nach wevelh meins genedigen h(e)rrn etc.",
-      "ist mir Josephen Überrener durch",
-      "Margren Conraden Clammers",
-      "hausfrawen in dem gesloss zů",
-      "Naudrsperg in geantvirtt ungevaer¬",
-      "lich alle varende hab, die par¬",
-      "schafft das vich und anndrs",
-      "und in sanderhait was mein gnädiger",
-      "herr und sein gnaden geslos daselben",
-      "czugehort, wie dann das hiernach",
-      "begriffen und in gegenwurtigk",
-      "der hienach geschriben erbaren",
-      "leut aufgeschriben ist mit namen",
-      "Lienhartt Hindrkirich, And(r)e Czitt",
-      "richtter zů Phuns, Waltaß Mitter¬",
-      "hoffer, Hans Conrad, Jeorug von",
-      "Bästlingen, Rutt Wastian. Hailänd",
-      "und wescheen am nachsten",
-      "sambstig vor Sandt Michael tag anno",
-      "septuagesimo octavo.",
-      "Item inn anefang und czum erstn",
-      "In dem haws",
-      "oben undrm tach.",
-      "Drew knecht pett.",
-      "Dreÿ pöllster.",
-      "Drew̃ par leilach.",
-      "Sechs rauch degken.",
-      "Czwen strosegkh.",
-      "Vier allt sail an stegrauff.",
-      "Ain frawen sattel.",
-      "Ain sattel deck.",
-      "Ain allten czom."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nauders."
+      },
+      {
+       "id": "r2l2",
+       "text": "Nota."
+      },
+      {
+       "id": "r3l1",
+       "text": "Nach wevelh meins genedigen h(e)rrn etc."
+      },
+      {
+       "id": "r3l2",
+       "text": "ist mir Josephen Überrener durch"
+      },
+      {
+       "id": "r3l3",
+       "text": "Margren Conraden Clammers"
+      },
+      {
+       "id": "r3l4",
+       "text": "hausfrawen in dem gesloss zů"
+      },
+      {
+       "id": "r3l5",
+       "text": "Naudrsperg in geantvirtt ungevaer¬"
+      },
+      {
+       "id": "r3l6",
+       "text": "lich alle varende hab, die par¬"
+      },
+      {
+       "id": "r3l7",
+       "text": "schafft das vich und anndrs"
+      },
+      {
+       "id": "r3l8",
+       "text": "und in sanderhait was mein gnädiger"
+      },
+      {
+       "id": "r3l9",
+       "text": "herr und sein gnaden geslos daselben"
+      },
+      {
+       "id": "r3l10",
+       "text": "czugehort, wie dann das hiernach"
+      },
+      {
+       "id": "r3l11",
+       "text": "begriffen und in gegenwurtigk"
+      },
+      {
+       "id": "r3l12",
+       "text": "der hienach geschriben erbaren"
+      },
+      {
+       "id": "r3l13",
+       "text": "leut aufgeschriben ist mit namen"
+      },
+      {
+       "id": "r3l14",
+       "text": "Lienhartt Hindrkirich, And(r)e Czitt"
+      },
+      {
+       "id": "r3l15",
+       "text": "richtter zů Phuns, Waltaß Mitter¬"
+      },
+      {
+       "id": "r3l16",
+       "text": "hoffer, Hans Conrad, Jeorug von"
+      },
+      {
+       "id": "r3l17",
+       "text": "Bästlingen, Rutt Wastian. Hailänd"
+      },
+      {
+       "id": "r3l18",
+       "text": "und wescheen am nachsten"
+      },
+      {
+       "id": "r3l19",
+       "text": "sambstig vor Sandt Michael tag anno"
+      },
+      {
+       "id": "r3l20",
+       "text": "septuagesimo octavo."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item inn anefang und czum erstn"
+      },
+      {
+       "id": "r4l2",
+       "text": "In dem haws"
+      },
+      {
+       "id": "r4l3",
+       "text": "oben undrm tach."
+      },
+      {
+       "id": "r5l1",
+       "text": "Drew knecht pett."
+      },
+      {
+       "id": "r5l2",
+       "text": "Dreÿ pöllster."
+      },
+      {
+       "id": "r5l3",
+       "text": "Drew̃ par leilach."
+      },
+      {
+       "id": "r5l4",
+       "text": "Sechs rauch degken."
+      },
+      {
+       "id": "r5l5",
+       "text": "Czwen strosegkh."
+      },
+      {
+       "id": "r5l6",
+       "text": "Vier allt sail an stegrauff."
+      },
+      {
+       "id": "r5l7",
+       "text": "Ain frawen sattel."
+      },
+      {
+       "id": "r5l8",
+       "text": "Ain sattel deck."
+      },
+      {
+       "id": "r5l9",
+       "text": "Ain allten czom."
+      }
      ]
     },
     {
@@ -71,43 +176,154 @@
       false
      ],
      "lines": [
-      "M.XIIIJ 149",
-      "Randeck",
-      "~~No 582~~",
-      "Nota",
-      "Nach beuelh meins genedign herrn etc",
-      "Ist aine Jopplin vberrorn Innatz",
-      "mairtze Conrad Chamrers",
-      "hausfrawen In dem gschloss Zu",
-      "randeckperg entgeantwortt aingend=",
-      "lich alle varende hab, die par=",
-      "schafft das vich vnd annders",
-      "vnd In sunderhait (was M g",
-      "h vnd sein gnad gschlos daselbs",
-      "zuegehort, wie dan das hiernach",
-      "begriffn Vnd In gegnwertigh=",
-      "kait der hiernach geschribn erbarn",
-      "leut aufgezaichnt ist mit Namen",
-      "Lienhartt Gindlhaimer An de(r) Ritt",
-      "richter Zu peumb, Balthas Muel=",
-      "haiser Hanns Conrad Jerger von",
-      "Cöstlingen, Ruet wasttan, Harland",
-      "vnd Westhein Am nachsten",
-      "Sambstg vor Sandt michel tag Anno",
-      "Septuagesimo octauo",
-      "Ist das Anfang vnd zum erstn",
-      "In dem haus",
-      "oben vnderim tach",
-      "Drein knecht pett",
-      "drey pölster",
-      "drew par leilach",
-      "sechs rauch degken",
-      "Zwen strosöckh",
-      "Vier allt Sail an stegraiff",
-      "Ain frawen sattel",
-      "Ain feurl hock",
-      "Ain alltin zeug",
-      "Inv. A 152/1"
+      {
+       "id": null,
+       "text": "M.XIIIJ 149"
+      },
+      {
+       "id": null,
+       "text": "Randeck"
+      },
+      {
+       "id": null,
+       "text": "~~No 582~~"
+      },
+      {
+       "id": null,
+       "text": "Nota"
+      },
+      {
+       "id": null,
+       "text": "Nach beuelh meins genedign herrn etc"
+      },
+      {
+       "id": null,
+       "text": "Ist aine Jopplin vberrorn Innatz"
+      },
+      {
+       "id": null,
+       "text": "mairtze Conrad Chamrers"
+      },
+      {
+       "id": null,
+       "text": "hausfrawen In dem gschloss Zu"
+      },
+      {
+       "id": null,
+       "text": "randeckperg entgeantwortt aingend="
+      },
+      {
+       "id": null,
+       "text": "lich alle varende hab, die par="
+      },
+      {
+       "id": null,
+       "text": "schafft das vich vnd annders"
+      },
+      {
+       "id": null,
+       "text": "vnd In sunderhait (was M g"
+      },
+      {
+       "id": null,
+       "text": "h vnd sein gnad gschlos daselbs"
+      },
+      {
+       "id": null,
+       "text": "zuegehort, wie dan das hiernach"
+      },
+      {
+       "id": null,
+       "text": "begriffn Vnd In gegnwertigh="
+      },
+      {
+       "id": null,
+       "text": "kait der hiernach geschribn erbarn"
+      },
+      {
+       "id": null,
+       "text": "leut aufgezaichnt ist mit Namen"
+      },
+      {
+       "id": null,
+       "text": "Lienhartt Gindlhaimer An de(r) Ritt"
+      },
+      {
+       "id": null,
+       "text": "richter Zu peumb, Balthas Muel="
+      },
+      {
+       "id": null,
+       "text": "haiser Hanns Conrad Jerger von"
+      },
+      {
+       "id": null,
+       "text": "Cöstlingen, Ruet wasttan, Harland"
+      },
+      {
+       "id": null,
+       "text": "vnd Westhein Am nachsten"
+      },
+      {
+       "id": null,
+       "text": "Sambstg vor Sandt michel tag Anno"
+      },
+      {
+       "id": null,
+       "text": "Septuagesimo octauo"
+      },
+      {
+       "id": null,
+       "text": "Ist das Anfang vnd zum erstn"
+      },
+      {
+       "id": null,
+       "text": "In dem haus"
+      },
+      {
+       "id": null,
+       "text": "oben vnderim tach"
+      },
+      {
+       "id": null,
+       "text": "Drein knecht pett"
+      },
+      {
+       "id": null,
+       "text": "drey pölster"
+      },
+      {
+       "id": null,
+       "text": "drew par leilach"
+      },
+      {
+       "id": null,
+       "text": "sechs rauch degken"
+      },
+      {
+       "id": null,
+       "text": "Zwen strosöckh"
+      },
+      {
+       "id": null,
+       "text": "Vier allt Sail an stegraiff"
+      },
+      {
+       "id": null,
+       "text": "Ain frawen sattel"
+      },
+      {
+       "id": null,
+       "text": "Ain feurl hock"
+      },
+      {
+       "id": null,
+       "text": "Ain alltin zeug"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 152/1"
+      }
      ]
     },
     {
@@ -123,41 +339,146 @@
       false
      ],
      "lines": [
-      "(M. XIIIIc 78) Randeckh ~~No 582~~",
-      "Nota",
-      "Nach beuelh meins genedigen herrn etc",
-      "Ist ainer Jopplin vberrockh Smaltz",
-      "margre Conrad Chammerers",
-      "haussfrawen jn dem gschloss Rů-",
-      "randecksperg entgwanttwortt aygent-",
-      "lich alle varunde hab, die par-",
-      "schafft das vich vnd anndrs",
-      "vnd jn sunderhait. was M. g.",
-      "h vnd sein gnad gschlos dasselbm",
-      "zugehœrt, wie dan das hiernach",
-      "begriffen Vnd jn gegnwœrtigkait",
-      "der hiernach geschribn erbarn",
-      "Leut auffgeschribn ist mit Namen",
-      "Lienhartt Jmhofkirch An der Portt",
-      "richth zů prims Walthauser Mül-",
-      "hoffer Hans Conrad Georg von",
-      "Aichlingen / Rutt wastan / Hayland",
-      "vnd wosthein Am nachsten",
-      "Sambstg vor Sandt michel tag Anno",
-      "Septuagesimo octauo -",
-      "Ist der Anfang vnd zum Ersten",
-      "In dem haus",
-      "oben vnderm tach",
-      "Drey knecht pett",
-      "Drey pölster",
-      "Drey par leilach",
-      "Sechs rauch degken",
-      "Zwen strosöckh",
-      "Vier allt sail an stegraiff",
-      "Ain karrn sattel",
-      "Ain faul sock",
-      "Ain alltn zeug",
-      "Inv. A 152/1"
+      {
+       "id": null,
+       "text": "(M. XIIIIc 78) Randeckh ~~No 582~~"
+      },
+      {
+       "id": null,
+       "text": "Nota"
+      },
+      {
+       "id": null,
+       "text": "Nach beuelh meins genedigen herrn etc"
+      },
+      {
+       "id": null,
+       "text": "Ist ainer Jopplin vberrockh Smaltz"
+      },
+      {
+       "id": null,
+       "text": "margre Conrad Chammerers"
+      },
+      {
+       "id": null,
+       "text": "haussfrawen jn dem gschloss Rů-"
+      },
+      {
+       "id": null,
+       "text": "randecksperg entgwanttwortt aygent-"
+      },
+      {
+       "id": null,
+       "text": "lich alle varunde hab, die par-"
+      },
+      {
+       "id": null,
+       "text": "schafft das vich vnd anndrs"
+      },
+      {
+       "id": null,
+       "text": "vnd jn sunderhait. was M. g."
+      },
+      {
+       "id": null,
+       "text": "h vnd sein gnad gschlos dasselbm"
+      },
+      {
+       "id": null,
+       "text": "zugehœrt, wie dan das hiernach"
+      },
+      {
+       "id": null,
+       "text": "begriffen Vnd jn gegnwœrtigkait"
+      },
+      {
+       "id": null,
+       "text": "der hiernach geschribn erbarn"
+      },
+      {
+       "id": null,
+       "text": "Leut auffgeschribn ist mit Namen"
+      },
+      {
+       "id": null,
+       "text": "Lienhartt Jmhofkirch An der Portt"
+      },
+      {
+       "id": null,
+       "text": "richth zů prims Walthauser Mül-"
+      },
+      {
+       "id": null,
+       "text": "hoffer Hans Conrad Georg von"
+      },
+      {
+       "id": null,
+       "text": "Aichlingen / Rutt wastan / Hayland"
+      },
+      {
+       "id": null,
+       "text": "vnd wosthein Am nachsten"
+      },
+      {
+       "id": null,
+       "text": "Sambstg vor Sandt michel tag Anno"
+      },
+      {
+       "id": null,
+       "text": "Septuagesimo octauo -"
+      },
+      {
+       "id": null,
+       "text": "Ist der Anfang vnd zum Ersten"
+      },
+      {
+       "id": null,
+       "text": "In dem haus"
+      },
+      {
+       "id": null,
+       "text": "oben vnderm tach"
+      },
+      {
+       "id": null,
+       "text": "Drey knecht pett"
+      },
+      {
+       "id": null,
+       "text": "Drey pölster"
+      },
+      {
+       "id": null,
+       "text": "Drey par leilach"
+      },
+      {
+       "id": null,
+       "text": "Sechs rauch degken"
+      },
+      {
+       "id": null,
+       "text": "Zwen strosöckh"
+      },
+      {
+       "id": null,
+       "text": "Vier allt sail an stegraiff"
+      },
+      {
+       "id": null,
+       "text": "Ain karrn sattel"
+      },
+      {
+       "id": null,
+       "text": "Ain faul sock"
+      },
+      {
+       "id": null,
+       "text": "Ain alltn zeug"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 152/1"
+      }
      ]
     }
    ]
@@ -182,45 +503,162 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "In der grossen kamr",
-      "vor der stuben.",
-      "Drew pett.",
-      "Czwen pölster.",
-      "Drew kuss.",
-      "Draÿ ploss degken.",
-      "Czwo rauch degken.",
-      "Harnasch daselbm.",
-      "Czwen kuris.",
-      "Acht ploss eisen hüt.",
-      "Czwen verdagkt huett.",
-      "Ain gantzen arm zeug.",
-      "Mer ain arm czeug.",
-      "Ain halb(en) arm zeug.",
-      "Ain kragen.",
-      "Czwaÿ meüsl.",
-      "Czwaÿ vardre rüstmeüssl.",
-      "Fünf krebs.",
-      "Vier par hentschŭch.",
-      "Aber vier par alt hentschŭch.",
-      "Czwo arm schinen.",
-      "Vier alt armrör.",
-      "Mer vier kragen.",
-      "Fünff pantzr die drew stechli,",
-      "ains halbs stechlÿ, ains eisen.",
-      "Ain krapp mit ain(em) span",
-      "gurtl.",
-      "Czwen eisen kölben.",
-      "Siben armbrust.",
-      "Dreÿ winden.",
-      "Dreÿ lör kocher.",
-      "Dreÿ handpüchssn.",
-      "Vier schwertt.",
-      "Drew lange messer.",
-      "Ain waidmesser.",
-      "Ain par sporn.",
-      "Ain puchssen pulver täschen.",
-      "Czwo armbrusthulfft."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der grossen kamr"
+      },
+      {
+       "id": "r2l2",
+       "text": "vor der stuben."
+      },
+      {
+       "id": "r3l1",
+       "text": "Drew pett."
+      },
+      {
+       "id": "r3l2",
+       "text": "Czwen pölster."
+      },
+      {
+       "id": "r3l3",
+       "text": "Drew kuss."
+      },
+      {
+       "id": "r3l4",
+       "text": "Draÿ ploss degken."
+      },
+      {
+       "id": "r3l5",
+       "text": "Czwo rauch degken."
+      },
+      {
+       "id": "r4l1",
+       "text": "Harnasch daselbm."
+      },
+      {
+       "id": "r5l1",
+       "text": "Czwen kuris."
+      },
+      {
+       "id": "r5l2",
+       "text": "Acht ploss eisen hüt."
+      },
+      {
+       "id": "r5l3",
+       "text": "Czwen verdagkt huett."
+      },
+      {
+       "id": "r5l4",
+       "text": "Ain gantzen arm zeug."
+      },
+      {
+       "id": "r5l5",
+       "text": "Mer ain arm czeug."
+      },
+      {
+       "id": "r5l6",
+       "text": "Ain halb(en) arm zeug."
+      },
+      {
+       "id": "r5l7",
+       "text": "Ain kragen."
+      },
+      {
+       "id": "r5l8",
+       "text": "Czwaÿ meüsl."
+      },
+      {
+       "id": "r5l9",
+       "text": "Czwaÿ vardre rüstmeüssl."
+      },
+      {
+       "id": "r5l10",
+       "text": "Fünf krebs."
+      },
+      {
+       "id": "r5l11",
+       "text": "Vier par hentschŭch."
+      },
+      {
+       "id": "r5l12",
+       "text": "Aber vier par alt hentschŭch."
+      },
+      {
+       "id": "r5l13",
+       "text": "Czwo arm schinen."
+      },
+      {
+       "id": "r5l14",
+       "text": "Vier alt armrör."
+      },
+      {
+       "id": "r5l15",
+       "text": "Mer vier kragen."
+      },
+      {
+       "id": "r5l16",
+       "text": "Fünff pantzr die drew stechli,"
+      },
+      {
+       "id": "r5l17",
+       "text": "ains halbs stechlÿ, ains eisen."
+      },
+      {
+       "id": "r5l18",
+       "text": "Ain krapp mit ain(em) span"
+      },
+      {
+       "id": "r5l19",
+       "text": "gurtl."
+      },
+      {
+       "id": "r5l20",
+       "text": "Czwen eisen kölben."
+      },
+      {
+       "id": "r5l21",
+       "text": "Siben armbrust."
+      },
+      {
+       "id": "r5l22",
+       "text": "Dreÿ winden."
+      },
+      {
+       "id": "r5l23",
+       "text": "Dreÿ lör kocher."
+      },
+      {
+       "id": "r5l24",
+       "text": "Dreÿ handpüchssn."
+      },
+      {
+       "id": "r5l25",
+       "text": "Vier schwertt."
+      },
+      {
+       "id": "r5l26",
+       "text": "Drew lange messer."
+      },
+      {
+       "id": "r5l27",
+       "text": "Ain waidmesser."
+      },
+      {
+       "id": "r5l28",
+       "text": "Ain par sporn."
+      },
+      {
+       "id": "r5l29",
+       "text": "Ain puchssen pulver täschen."
+      },
+      {
+       "id": "r5l30",
+       "text": "Czwo armbrusthulfft."
+      }
      ]
     },
     {
@@ -236,44 +674,158 @@
       false
      ],
      "lines": [
-      "In der grossen Kamer",
-      "vor der Stuben",
-      "Zwo pett",
-      "Zwen polster",
-      "Zwen kůss",
-      "Drey ploss degken",
-      "Zwo Rauch degken",
-      "Harnasch daselbs",
-      "Zwen kůris",
-      "Acht ploss eisenhůt",
-      "Zwen verdacht hůett",
-      "Ain gantzn armzeug",
-      "Mer ain arm zeug",
-      "Ain halber arm zeug",
-      "Ain kragen",
-      "Zwai meugl",
-      "Zwai vedre kůssmeigl",
-      "Fünf krebs",
-      "Vier par hentschuch",
-      "aber vier par alt hentschůch",
-      "Zwo arm schinen",
-      "Vier alt armrenck",
-      "Aber vier kragen",
-      "Fünff pantzr die drey steech",
-      "ains halbs steechin ains eysen",
-      "Ain krapp mit aim span",
-      "guetl",
-      "Zwen eisn kolbn",
-      "Siben arembrust",
-      "Drey winden",
-      "Drey löe koeller",
-      "Drey handpůchssn",
-      "Vier schwiertt",
-      "Drey lange messer",
-      "Ain waidmesser",
-      "Ain par sporn",
-      "Ain půchssen pulvertäschlyn",
-      "Zwo arembrustrůefft"
+      {
+       "id": null,
+       "text": "In der grossen Kamer"
+      },
+      {
+       "id": null,
+       "text": "vor der Stuben"
+      },
+      {
+       "id": null,
+       "text": "Zwo pett"
+      },
+      {
+       "id": null,
+       "text": "Zwen polster"
+      },
+      {
+       "id": null,
+       "text": "Zwen kůss"
+      },
+      {
+       "id": null,
+       "text": "Drey ploss degken"
+      },
+      {
+       "id": null,
+       "text": "Zwo Rauch degken"
+      },
+      {
+       "id": null,
+       "text": "Harnasch daselbs"
+      },
+      {
+       "id": null,
+       "text": "Zwen kůris"
+      },
+      {
+       "id": null,
+       "text": "Acht ploss eisenhůt"
+      },
+      {
+       "id": null,
+       "text": "Zwen verdacht hůett"
+      },
+      {
+       "id": null,
+       "text": "Ain gantzn armzeug"
+      },
+      {
+       "id": null,
+       "text": "Mer ain arm zeug"
+      },
+      {
+       "id": null,
+       "text": "Ain halber arm zeug"
+      },
+      {
+       "id": null,
+       "text": "Ain kragen"
+      },
+      {
+       "id": null,
+       "text": "Zwai meugl"
+      },
+      {
+       "id": null,
+       "text": "Zwai vedre kůssmeigl"
+      },
+      {
+       "id": null,
+       "text": "Fünf krebs"
+      },
+      {
+       "id": null,
+       "text": "Vier par hentschuch"
+      },
+      {
+       "id": null,
+       "text": "aber vier par alt hentschůch"
+      },
+      {
+       "id": null,
+       "text": "Zwo arm schinen"
+      },
+      {
+       "id": null,
+       "text": "Vier alt armrenck"
+      },
+      {
+       "id": null,
+       "text": "Aber vier kragen"
+      },
+      {
+       "id": null,
+       "text": "Fünff pantzr die drey steech"
+      },
+      {
+       "id": null,
+       "text": "ains halbs steechin ains eysen"
+      },
+      {
+       "id": null,
+       "text": "Ain krapp mit aim span"
+      },
+      {
+       "id": null,
+       "text": "guetl"
+      },
+      {
+       "id": null,
+       "text": "Zwen eisn kolbn"
+      },
+      {
+       "id": null,
+       "text": "Siben arembrust"
+      },
+      {
+       "id": null,
+       "text": "Drey winden"
+      },
+      {
+       "id": null,
+       "text": "Drey löe koeller"
+      },
+      {
+       "id": null,
+       "text": "Drey handpůchssn"
+      },
+      {
+       "id": null,
+       "text": "Vier schwiertt"
+      },
+      {
+       "id": null,
+       "text": "Drey lange messer"
+      },
+      {
+       "id": null,
+       "text": "Ain waidmesser"
+      },
+      {
+       "id": null,
+       "text": "Ain par sporn"
+      },
+      {
+       "id": null,
+       "text": "Ain půchssen pulvertäschlyn"
+      },
+      {
+       "id": null,
+       "text": "Zwo arembrustrůefft"
+      }
      ]
     },
     {
@@ -289,44 +841,158 @@
       false
      ],
      "lines": [
-      "In der grossen kamer",
-      "vor der Stuben",
-      "Drew pett",
-      "Zwen polster",
-      "Drew khues",
-      "Drey ploss degken",
-      "Zwo Rauch degken",
-      "Harnasch daselbs",
-      "Zwen kureis",
-      "Acht ploss eisenhüt",
-      "Zwen vordaglst guertl",
-      "Ain gantzn armzeug",
-      "Mer ain arm zeug",
-      "Ain halber arm zeug",
-      "Ain kragn",
-      "Zway mayl",
-      "Zway vndre kussmayl",
-      "Fünf krebs",
-      "Vier par hentschuch",
-      "Aber vier par alt hentschuch",
-      "Zwo arenschimen",
-      "Vier alt aremrar",
-      "Aber vier kragn",
-      "Fünff pantzr die drew stedig",
-      "ains halbs stedig ains eysen",
-      "Ain krapp mit ain span",
-      "guertl",
-      "Zwen eisn kolbn",
-      "Siben arembrust",
-      "Drey winden",
-      "Drey lör kocher",
-      "Drey handpuechssn",
-      "Vier schwertt",
-      "Drew lange messer",
-      "Ain waidmesser",
-      "Ain par sporn",
-      "Ain puechssen puluertäschlyn",
-      "Zwo arembrustnuestt"
+      {
+       "id": null,
+       "text": "In der grossen kamer"
+      },
+      {
+       "id": null,
+       "text": "vor der Stuben"
+      },
+      {
+       "id": null,
+       "text": "Drew pett"
+      },
+      {
+       "id": null,
+       "text": "Zwen polster"
+      },
+      {
+       "id": null,
+       "text": "Drew khues"
+      },
+      {
+       "id": null,
+       "text": "Drey ploss degken"
+      },
+      {
+       "id": null,
+       "text": "Zwo Rauch degken"
+      },
+      {
+       "id": null,
+       "text": "Harnasch daselbs"
+      },
+      {
+       "id": null,
+       "text": "Zwen kureis"
+      },
+      {
+       "id": null,
+       "text": "Acht ploss eisenhüt"
+      },
+      {
+       "id": null,
+       "text": "Zwen vordaglst guertl"
+      },
+      {
+       "id": null,
+       "text": "Ain gantzn armzeug"
+      },
+      {
+       "id": null,
+       "text": "Mer ain arm zeug"
+      },
+      {
+       "id": null,
+       "text": "Ain halber arm zeug"
+      },
+      {
+       "id": null,
+       "text": "Ain kragn"
+      },
+      {
+       "id": null,
+       "text": "Zway mayl"
+      },
+      {
+       "id": null,
+       "text": "Zway vndre kussmayl"
+      },
+      {
+       "id": null,
+       "text": "Fünf krebs"
+      },
+      {
+       "id": null,
+       "text": "Vier par hentschuch"
+      },
+      {
+       "id": null,
+       "text": "Aber vier par alt hentschuch"
+      },
+      {
+       "id": null,
+       "text": "Zwo arenschimen"
+      },
+      {
+       "id": null,
+       "text": "Vier alt aremrar"
+      },
+      {
+       "id": null,
+       "text": "Aber vier kragn"
+      },
+      {
+       "id": null,
+       "text": "Fünff pantzr die drew stedig"
+      },
+      {
+       "id": null,
+       "text": "ains halbs stedig ains eysen"
+      },
+      {
+       "id": null,
+       "text": "Ain krapp mit ain span"
+      },
+      {
+       "id": null,
+       "text": "guertl"
+      },
+      {
+       "id": null,
+       "text": "Zwen eisn kolbn"
+      },
+      {
+       "id": null,
+       "text": "Siben arembrust"
+      },
+      {
+       "id": null,
+       "text": "Drey winden"
+      },
+      {
+       "id": null,
+       "text": "Drey lör kocher"
+      },
+      {
+       "id": null,
+       "text": "Drey handpuechssn"
+      },
+      {
+       "id": null,
+       "text": "Vier schwertt"
+      },
+      {
+       "id": null,
+       "text": "Drew lange messer"
+      },
+      {
+       "id": null,
+       "text": "Ain waidmesser"
+      },
+      {
+       "id": null,
+       "text": "Ain par sporn"
+      },
+      {
+       "id": null,
+       "text": "Ain puechssen puluertäschlyn"
+      },
+      {
+       "id": null,
+       "text": "Zwo arembrustnuestt"
+      }
      ]
     }
    ]
@@ -351,40 +1017,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Dreÿ spies, ain helmpart.",
-      "Ain swartz filtzhuetl.",
-      "Ain wenig eisendratt.",
-      "Sennbid garn XX unn scheiben.",
-      "In der kamer",
-      "neben der stuben.",
-      "Czwai pett.",
-      "Czwen pöllster.",
-      "Cwai par lüblach.",
-      "Vier rauch decken.",
-      "Zwo leinin degken.",
-      "Cwen strosegk.",
-      "Im ergker",
-      "gegem dorff.",
-      "Ain pett, ain bolster.",
-      "Ain par liblach.",
-      "Czwo rauch degken und ain",
-      "strosach.",
-      "In dem ergker",
-      "nebn pei.",
-      "Czehen rosspiss, ain alts geraitt",
-      "und drew hawbtgestüedl.",
-      "Drei puschen gembsseiler.",
-      "Siben gesmidet stab eisens.",
-      "Sibn par hiershoren.",
-      "Ain segsail.",
-      "In dem ergker",
-      "aufm tor.",
-      "Ain pëtt, ain polster.",
-      "Ain par liblach.",
-      "Czwo rauch degken.",
-      "Ain strosagk.",
-      "Und etlevil gemssailer."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Dreÿ spies, ain helmpart."
+      },
+      {
+       "id": "r2l2",
+       "text": "Ain swartz filtzhuetl."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain wenig eisendratt."
+      },
+      {
+       "id": "r2l4",
+       "text": "Sennbid garn XX unn scheiben."
+      },
+      {
+       "id": "r3l1",
+       "text": "In der kamer"
+      },
+      {
+       "id": "r3l2",
+       "text": "neben der stuben."
+      },
+      {
+       "id": "r4l1",
+       "text": "Czwai pett."
+      },
+      {
+       "id": "r4l2",
+       "text": "Czwen pöllster."
+      },
+      {
+       "id": "r4l3",
+       "text": "Cwai par lüblach."
+      },
+      {
+       "id": "r4l4",
+       "text": "Vier rauch decken."
+      },
+      {
+       "id": "r4l5",
+       "text": "Zwo leinin degken."
+      },
+      {
+       "id": "r4l6",
+       "text": "Cwen strosegk."
+      },
+      {
+       "id": "r5l1",
+       "text": "Im ergker"
+      },
+      {
+       "id": "r5l2",
+       "text": "gegem dorff."
+      },
+      {
+       "id": "r6l1",
+       "text": "Ain pett, ain bolster."
+      },
+      {
+       "id": "r6l2",
+       "text": "Ain par liblach."
+      },
+      {
+       "id": "r6l3",
+       "text": "Czwo rauch degken und ain"
+      },
+      {
+       "id": "r6l4",
+       "text": "strosach."
+      },
+      {
+       "id": "r7l1",
+       "text": "In dem ergker"
+      },
+      {
+       "id": "r7l2",
+       "text": "nebn pei."
+      },
+      {
+       "id": "r8l1",
+       "text": "Czehen rosspiss, ain alts geraitt"
+      },
+      {
+       "id": "r8l2",
+       "text": "und drew hawbtgestüedl."
+      },
+      {
+       "id": "r8l3",
+       "text": "Drei puschen gembsseiler."
+      },
+      {
+       "id": "r8l4",
+       "text": "Siben gesmidet stab eisens."
+      },
+      {
+       "id": "r8l5",
+       "text": "Sibn par hiershoren."
+      },
+      {
+       "id": "r8l6",
+       "text": "Ain segsail."
+      },
+      {
+       "id": "r9l1",
+       "text": "In dem ergker"
+      },
+      {
+       "id": "r9l2",
+       "text": "aufm tor."
+      },
+      {
+       "id": "r10l1",
+       "text": "Ain pëtt, ain polster."
+      },
+      {
+       "id": "r10l2",
+       "text": "Ain par liblach."
+      },
+      {
+       "id": "r10l3",
+       "text": "Czwo rauch degken."
+      },
+      {
+       "id": "r10l4",
+       "text": "Ain strosagk."
+      },
+      {
+       "id": "r10l5",
+       "text": "Und etlevil gemssailer."
+      }
      ]
     },
     {
@@ -400,40 +1168,142 @@
       false
      ],
      "lines": [
-      "178",
-      "Dreij spies Ain helmpart",
-      "Ain swarcz filtzhuetl",
-      "Ain wenig eisenstratt",
-      "Hembid gann ysern schaln",
-      "In der kam",
-      "nebn der stubn",
-      "Zwai pett",
-      "Zwen polster",
-      "Zwai parc leblach",
-      "Vier Rauch deckn",
-      "Zwo leinn deygkn",
-      "Zwen Strosagk",
-      "In ergker",
-      "gegn dorff",
-      "Ain pett Ain polster",
-      "Ain parc leblach",
-      "Zwo rauch deckn vnd ain",
-      "strosack",
-      "In dem kegker",
-      "nebn pei",
-      "Zehyn rossspis Ain alts geratt",
-      "vnd drew stainbiechsenl",
-      "Drej pusten gembshorn",
-      "Sibn gsundet stal osens",
-      "Sibn parc hieckschuech",
-      "Ain hoppail",
-      "In dem ergker",
-      "aufm tor",
-      "Ain pett ain polst",
-      "ain parc leblach",
-      "Zwo rauch deckn",
-      "Ain Strosagk",
-      "vnd etveil hoppspail"
+      {
+       "id": null,
+       "text": "178"
+      },
+      {
+       "id": null,
+       "text": "Dreij spies Ain helmpart"
+      },
+      {
+       "id": null,
+       "text": "Ain swarcz filtzhuetl"
+      },
+      {
+       "id": null,
+       "text": "Ain wenig eisenstratt"
+      },
+      {
+       "id": null,
+       "text": "Hembid gann ysern schaln"
+      },
+      {
+       "id": null,
+       "text": "In der kam"
+      },
+      {
+       "id": null,
+       "text": "nebn der stubn"
+      },
+      {
+       "id": null,
+       "text": "Zwai pett"
+      },
+      {
+       "id": null,
+       "text": "Zwen polster"
+      },
+      {
+       "id": null,
+       "text": "Zwai parc leblach"
+      },
+      {
+       "id": null,
+       "text": "Vier Rauch deckn"
+      },
+      {
+       "id": null,
+       "text": "Zwo leinn deygkn"
+      },
+      {
+       "id": null,
+       "text": "Zwen Strosagk"
+      },
+      {
+       "id": null,
+       "text": "In ergker"
+      },
+      {
+       "id": null,
+       "text": "gegn dorff"
+      },
+      {
+       "id": null,
+       "text": "Ain pett Ain polster"
+      },
+      {
+       "id": null,
+       "text": "Ain parc leblach"
+      },
+      {
+       "id": null,
+       "text": "Zwo rauch deckn vnd ain"
+      },
+      {
+       "id": null,
+       "text": "strosack"
+      },
+      {
+       "id": null,
+       "text": "In dem kegker"
+      },
+      {
+       "id": null,
+       "text": "nebn pei"
+      },
+      {
+       "id": null,
+       "text": "Zehyn rossspis Ain alts geratt"
+      },
+      {
+       "id": null,
+       "text": "vnd drew stainbiechsenl"
+      },
+      {
+       "id": null,
+       "text": "Drej pusten gembshorn"
+      },
+      {
+       "id": null,
+       "text": "Sibn gsundet stal osens"
+      },
+      {
+       "id": null,
+       "text": "Sibn parc hieckschuech"
+      },
+      {
+       "id": null,
+       "text": "Ain hoppail"
+      },
+      {
+       "id": null,
+       "text": "In dem ergker"
+      },
+      {
+       "id": null,
+       "text": "aufm tor"
+      },
+      {
+       "id": null,
+       "text": "Ain pett ain polst"
+      },
+      {
+       "id": null,
+       "text": "ain parc leblach"
+      },
+      {
+       "id": null,
+       "text": "Zwo rauch deckn"
+      },
+      {
+       "id": null,
+       "text": "Ain Strosagk"
+      },
+      {
+       "id": null,
+       "text": "vnd etveil hoppspail"
+      }
      ]
     },
     {
@@ -449,40 +1319,142 @@
       false
      ],
      "lines": [
-      "178",
-      "Drey spies Ain helmpart",
-      "Ain swarcz filtzhüetl",
-      "Ain wenig eysenkatt",
-      "hembid gann ysern schaln",
-      "In der kam",
-      "nebn der stubn",
-      "Zway pett",
-      "zwen polster",
-      "zway par leilach",
-      "vier Rauch deckn",
-      "zwo leinn deckn",
-      "zwen strosackh",
-      "In ergker",
-      "gegn dorf",
-      "Ain pett Ain polster",
-      "Ain par leilach",
-      "Zwo rauch deckn vnd ain",
-      "strosackh",
-      "In dem ergker",
-      "nebnpei",
-      "Zehn resspis Ain alts gerust",
-      "vnd drey wambispiesl",
-      "drey pusten hembdlein",
-      "siben pfundt salpeters",
-      "sibn par hieschstrickh",
-      "Ain hepparl",
-      "In dem ergker",
-      "aufm tor",
-      "Ain pett ain polster",
-      "ain pare leilach",
-      "zwo rauch deckn",
-      "Ain strosackh",
-      "vnd etweil henffseil"
+      {
+       "id": null,
+       "text": "178"
+      },
+      {
+       "id": null,
+       "text": "Drey spies Ain helmpart"
+      },
+      {
+       "id": null,
+       "text": "Ain swarcz filtzhüetl"
+      },
+      {
+       "id": null,
+       "text": "Ain wenig eysenkatt"
+      },
+      {
+       "id": null,
+       "text": "hembid gann ysern schaln"
+      },
+      {
+       "id": null,
+       "text": "In der kam"
+      },
+      {
+       "id": null,
+       "text": "nebn der stubn"
+      },
+      {
+       "id": null,
+       "text": "Zway pett"
+      },
+      {
+       "id": null,
+       "text": "zwen polster"
+      },
+      {
+       "id": null,
+       "text": "zway par leilach"
+      },
+      {
+       "id": null,
+       "text": "vier Rauch deckn"
+      },
+      {
+       "id": null,
+       "text": "zwo leinn deckn"
+      },
+      {
+       "id": null,
+       "text": "zwen strosackh"
+      },
+      {
+       "id": null,
+       "text": "In ergker"
+      },
+      {
+       "id": null,
+       "text": "gegn dorf"
+      },
+      {
+       "id": null,
+       "text": "Ain pett Ain polster"
+      },
+      {
+       "id": null,
+       "text": "Ain par leilach"
+      },
+      {
+       "id": null,
+       "text": "Zwo rauch deckn vnd ain"
+      },
+      {
+       "id": null,
+       "text": "strosackh"
+      },
+      {
+       "id": null,
+       "text": "In dem ergker"
+      },
+      {
+       "id": null,
+       "text": "nebnpei"
+      },
+      {
+       "id": null,
+       "text": "Zehn resspis Ain alts gerust"
+      },
+      {
+       "id": null,
+       "text": "vnd drey wambispiesl"
+      },
+      {
+       "id": null,
+       "text": "drey pusten hembdlein"
+      },
+      {
+       "id": null,
+       "text": "siben pfundt salpeters"
+      },
+      {
+       "id": null,
+       "text": "sibn par hieschstrickh"
+      },
+      {
+       "id": null,
+       "text": "Ain hepparl"
+      },
+      {
+       "id": null,
+       "text": "In dem ergker"
+      },
+      {
+       "id": null,
+       "text": "aufm tor"
+      },
+      {
+       "id": null,
+       "text": "Ain pett ain polster"
+      },
+      {
+       "id": null,
+       "text": "ain pare leilach"
+      },
+      {
+       "id": null,
+       "text": "zwo rauch deckn"
+      },
+      {
+       "id": null,
+       "text": "Ain strosackh"
+      },
+      {
+       "id": null,
+       "text": "vnd etweil henffseil"
+      }
      ]
     }
    ]
@@ -507,46 +1479,166 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "In der stuben",
-      "oben auff.",
-      "Zwai vässl essich.",
-      "Ain essich krüeg.",
-      "Ain kuphrgieskösel.",
-      "Ain kuphir giespegkh.",
-      "Czwai lidrin banck küss.",
-      "Ain prettspil.",
-      "Ain allte eisen kandlir.",
-      "Trÿ schribtisch und czwin",
-      "sin ver bitschoffen.",
-      "In dem wein keller.",
-      "Ain vas weissr wein von new̃n",
-      "ürn ist gewenet.",
-      "Ain vas von vier ur(e)n rotter",
-      "wein ist gewenet.",
-      "Ain pontz von andr halb(en) ur(e)n",
-      "tromẏnner ist vol.",
-      "Ain pantz essichs.",
-      "Dreÿ schöt gesotten smaltz in",
-      "aine(m) grossen kübl.",
-      "Kes und ziger,",
-      "smaltz und smer.",
-      "Ziger XIII knollen.",
-      "Kes klain und groß XXXII,",
-      "dar under sind VII albkas,",
-      "die anndern vom lamges",
-      "und gais kes.",
-      "Aber acht herbst kes.",
-      "Unslit X schöt, drei smerlaib.",
-      "Ain hafen mit öl nit vol.",
-      "Ain pusch unslit kertz.",
-      "Ain murment.",
-      "Item im milich keller.",
-      "XX VIII srotzen.",
-      "Zwen kubl vol smaltz und",
-      "ainer mit drei schotten.",
-      "Aber ungesotten smaltz",
-      "VIII schöt."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der stuben"
+      },
+      {
+       "id": "r2l2",
+       "text": "oben auff."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zwai vässl essich."
+      },
+      {
+       "id": "r3l2",
+       "text": "Ain essich krüeg."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain kuphrgieskösel."
+      },
+      {
+       "id": "r3l4",
+       "text": "Ain kuphir giespegkh."
+      },
+      {
+       "id": "r3l5",
+       "text": "Czwai lidrin banck küss."
+      },
+      {
+       "id": "r3l6",
+       "text": "Ain prettspil."
+      },
+      {
+       "id": "r3l7",
+       "text": "Ain allte eisen kandlir."
+      },
+      {
+       "id": "r3l8",
+       "text": "Trÿ schribtisch und czwin"
+      },
+      {
+       "id": "r3l9",
+       "text": "sin ver bitschoffen."
+      },
+      {
+       "id": "r4l1",
+       "text": "In dem wein keller."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain vas weissr wein von new̃n"
+      },
+      {
+       "id": "r5l2",
+       "text": "ürn ist gewenet."
+      },
+      {
+       "id": "r5l3",
+       "text": "Ain vas von vier ur(e)n rotter"
+      },
+      {
+       "id": "r5l4",
+       "text": "wein ist gewenet."
+      },
+      {
+       "id": "r5l5",
+       "text": "Ain pontz von andr halb(en) ur(e)n"
+      },
+      {
+       "id": "r5l6",
+       "text": "tromẏnner ist vol."
+      },
+      {
+       "id": "r5l7",
+       "text": "Ain pantz essichs."
+      },
+      {
+       "id": "r5l8",
+       "text": "Dreÿ schöt gesotten smaltz in"
+      },
+      {
+       "id": "r5l9",
+       "text": "aine(m) grossen kübl."
+      },
+      {
+       "id": "r6l1",
+       "text": "Kes und ziger,"
+      },
+      {
+       "id": "r6l2",
+       "text": "smaltz und smer."
+      },
+      {
+       "id": "r7l1",
+       "text": "Ziger XIII knollen."
+      },
+      {
+       "id": "r7l2",
+       "text": "Kes klain und groß XXXII,"
+      },
+      {
+       "id": "r7l3",
+       "text": "dar under sind VII albkas,"
+      },
+      {
+       "id": "r7l4",
+       "text": "die anndern vom lamges"
+      },
+      {
+       "id": "r7l5",
+       "text": "und gais kes."
+      },
+      {
+       "id": "r7l6",
+       "text": "Aber acht herbst kes."
+      },
+      {
+       "id": "r7l7",
+       "text": "Unslit X schöt, drei smerlaib."
+      },
+      {
+       "id": "r7l8",
+       "text": "Ain hafen mit öl nit vol."
+      },
+      {
+       "id": "r7l9",
+       "text": "Ain pusch unslit kertz."
+      },
+      {
+       "id": "r7l10",
+       "text": "Ain murment."
+      },
+      {
+       "id": "r7l11",
+       "text": "Item im milich keller."
+      },
+      {
+       "id": "r7l12",
+       "text": "XX VIII srotzen."
+      },
+      {
+       "id": "r7l13",
+       "text": "Zwen kubl vol smaltz und"
+      },
+      {
+       "id": "r7l14",
+       "text": "ainer mit drei schotten."
+      },
+      {
+       "id": "r7l15",
+       "text": "Aber ungesotten smaltz"
+      },
+      {
+       "id": "r7l16",
+       "text": "VIII schöt."
+      }
      ]
     },
     {
@@ -562,47 +1654,170 @@
       false
      ],
      "lines": [
-      "10",
-      "19",
-      "In der stubn",
-      "obn auf",
-      "Zwai vassl essich",
-      "Ain essig kranng",
-      "Ain kupfferygiesskössl",
-      "Ain kupffrin giesspöckh",
-      "Zwai ledrin panckh fůess",
-      "Ain prett spil",
-      "Ain alts eisin kandlin",
-      "Xxij schraibtisch vnd zwen",
-      "půchwerckh bischoff",
-      "In dem wein keller",
-      "Ain vas weissen wein von neun",
-      "vůrn ist geminet",
-      "Ain vas von vier vorn rott",
-      "wein ist geminet",
-      "Ain pantz von anderhalb vůrn",
-      "dreininn ist vol",
-      "Ain pantz essigs",
-      "Drey schůr gepotten smaltz In",
-      "aime grossn kůbl",
-      "Kes vnd ziger",
-      "Smaltz vnd vnsmer",
-      "Ziger xiij knollen",
-      "Kes klain vnd gros xxxij",
-      "darund sind vij alt kes",
-      "Die anndern von lannges",
-      "vnd gais kes",
-      "aber acht herbest kes",
-      "Vnslit x schůr drey smerlaib",
-      "Ain hafen mit öl nit voll",
-      "Ain puster vnslit kertzn",
-      "Ain vnckrott",
-      "Ost fůr ainlich siechn",
-      "lxviij brotin",
-      "Zwey kůbl vol smaltz vnd",
-      "ains mit drey schuern",
-      "aber vngepotten smaltz",
-      "viij schůr"
+      {
+       "id": null,
+       "text": "10"
+      },
+      {
+       "id": null,
+       "text": "19"
+      },
+      {
+       "id": null,
+       "text": "In der stubn"
+      },
+      {
+       "id": null,
+       "text": "obn auf"
+      },
+      {
+       "id": null,
+       "text": "Zwai vassl essich"
+      },
+      {
+       "id": null,
+       "text": "Ain essig kranng"
+      },
+      {
+       "id": null,
+       "text": "Ain kupfferygiesskössl"
+      },
+      {
+       "id": null,
+       "text": "Ain kupffrin giesspöckh"
+      },
+      {
+       "id": null,
+       "text": "Zwai ledrin panckh fůess"
+      },
+      {
+       "id": null,
+       "text": "Ain prett spil"
+      },
+      {
+       "id": null,
+       "text": "Ain alts eisin kandlin"
+      },
+      {
+       "id": null,
+       "text": "Xxij schraibtisch vnd zwen"
+      },
+      {
+       "id": null,
+       "text": "půchwerckh bischoff"
+      },
+      {
+       "id": null,
+       "text": "In dem wein keller"
+      },
+      {
+       "id": null,
+       "text": "Ain vas weissen wein von neun"
+      },
+      {
+       "id": null,
+       "text": "vůrn ist geminet"
+      },
+      {
+       "id": null,
+       "text": "Ain vas von vier vorn rott"
+      },
+      {
+       "id": null,
+       "text": "wein ist geminet"
+      },
+      {
+       "id": null,
+       "text": "Ain pantz von anderhalb vůrn"
+      },
+      {
+       "id": null,
+       "text": "dreininn ist vol"
+      },
+      {
+       "id": null,
+       "text": "Ain pantz essigs"
+      },
+      {
+       "id": null,
+       "text": "Drey schůr gepotten smaltz In"
+      },
+      {
+       "id": null,
+       "text": "aime grossn kůbl"
+      },
+      {
+       "id": null,
+       "text": "Kes vnd ziger"
+      },
+      {
+       "id": null,
+       "text": "Smaltz vnd vnsmer"
+      },
+      {
+       "id": null,
+       "text": "Ziger xiij knollen"
+      },
+      {
+       "id": null,
+       "text": "Kes klain vnd gros xxxij"
+      },
+      {
+       "id": null,
+       "text": "darund sind vij alt kes"
+      },
+      {
+       "id": null,
+       "text": "Die anndern von lannges"
+      },
+      {
+       "id": null,
+       "text": "vnd gais kes"
+      },
+      {
+       "id": null,
+       "text": "aber acht herbest kes"
+      },
+      {
+       "id": null,
+       "text": "Vnslit x schůr drey smerlaib"
+      },
+      {
+       "id": null,
+       "text": "Ain hafen mit öl nit voll"
+      },
+      {
+       "id": null,
+       "text": "Ain puster vnslit kertzn"
+      },
+      {
+       "id": null,
+       "text": "Ain vnckrott"
+      },
+      {
+       "id": null,
+       "text": "Ost fůr ainlich siechn"
+      },
+      {
+       "id": null,
+       "text": "lxviij brotin"
+      },
+      {
+       "id": null,
+       "text": "Zwey kůbl vol smaltz vnd"
+      },
+      {
+       "id": null,
+       "text": "ains mit drey schuern"
+      },
+      {
+       "id": null,
+       "text": "aber vngepotten smaltz"
+      },
+      {
+       "id": null,
+       "text": "viij schůr"
+      }
      ]
     },
     {
@@ -618,47 +1833,170 @@
       false
      ],
      "lines": [
-      "16",
-      "19",
-      "In der stubn",
-      "obn auf",
-      "Zwai vässl essig",
-      "Ain essig kranng",
-      "Ain kupffrey giesköpffl",
-      "Ain kupffrin giespheffl",
-      "Zwai ledrin panckh kůss",
-      "Ain prett spil",
-      "Ain allreciey kandelx",
-      "I xxij schrauptisch vnd Zenn",
-      "pey der Bischoff",
-      "In dem wein keller",
-      "Ain vas weissen wein von newen",
-      "wein ist geminet",
-      "Ain vas von der veür wein rott",
-      "wein ist geminet",
-      "Ain pontz von andr halb vien",
-      "drannynn ist vol",
-      "Ain pauntz essigs",
-      "Drey Schöt gesottn smaltz In",
-      "ain(er) grosn kübl",
-      "Kes vnd Ziger",
-      "Smaltz vnd smer",
-      "Ziger xiij knolln",
-      "Kes klain vnd groß lxxij",
-      "dar vnd(er) sind vij alt kes",
-      "Die annd(e)rn von lannge(n)s",
-      "vnd gayß kes",
-      "abe acht halb kes",
-      "Vnslit I Schöt drey Smirclaib",
-      "Ain hafen mit öl, nit vol",
-      "Ain puster vnslit kerzn",
-      "Ain murment",
-      "Ost für mülich fuett(er)",
-      "lx viij brotn",
-      "Zwey kübl vol smaltz vnd",
-      "ains mit drey Schötern",
-      "ab(er) ungesottn smaltz",
-      "viij Schöt"
+      {
+       "id": null,
+       "text": "16"
+      },
+      {
+       "id": null,
+       "text": "19"
+      },
+      {
+       "id": null,
+       "text": "In der stubn"
+      },
+      {
+       "id": null,
+       "text": "obn auf"
+      },
+      {
+       "id": null,
+       "text": "Zwai vässl essig"
+      },
+      {
+       "id": null,
+       "text": "Ain essig kranng"
+      },
+      {
+       "id": null,
+       "text": "Ain kupffrey giesköpffl"
+      },
+      {
+       "id": null,
+       "text": "Ain kupffrin giespheffl"
+      },
+      {
+       "id": null,
+       "text": "Zwai ledrin panckh kůss"
+      },
+      {
+       "id": null,
+       "text": "Ain prett spil"
+      },
+      {
+       "id": null,
+       "text": "Ain allreciey kandelx"
+      },
+      {
+       "id": null,
+       "text": "I xxij schrauptisch vnd Zenn"
+      },
+      {
+       "id": null,
+       "text": "pey der Bischoff"
+      },
+      {
+       "id": null,
+       "text": "In dem wein keller"
+      },
+      {
+       "id": null,
+       "text": "Ain vas weissen wein von newen"
+      },
+      {
+       "id": null,
+       "text": "wein ist geminet"
+      },
+      {
+       "id": null,
+       "text": "Ain vas von der veür wein rott"
+      },
+      {
+       "id": null,
+       "text": "wein ist geminet"
+      },
+      {
+       "id": null,
+       "text": "Ain pontz von andr halb vien"
+      },
+      {
+       "id": null,
+       "text": "drannynn ist vol"
+      },
+      {
+       "id": null,
+       "text": "Ain pauntz essigs"
+      },
+      {
+       "id": null,
+       "text": "Drey Schöt gesottn smaltz In"
+      },
+      {
+       "id": null,
+       "text": "ain(er) grosn kübl"
+      },
+      {
+       "id": null,
+       "text": "Kes vnd Ziger"
+      },
+      {
+       "id": null,
+       "text": "Smaltz vnd smer"
+      },
+      {
+       "id": null,
+       "text": "Ziger xiij knolln"
+      },
+      {
+       "id": null,
+       "text": "Kes klain vnd groß lxxij"
+      },
+      {
+       "id": null,
+       "text": "dar vnd(er) sind vij alt kes"
+      },
+      {
+       "id": null,
+       "text": "Die annd(e)rn von lannge(n)s"
+      },
+      {
+       "id": null,
+       "text": "vnd gayß kes"
+      },
+      {
+       "id": null,
+       "text": "abe acht halb kes"
+      },
+      {
+       "id": null,
+       "text": "Vnslit I Schöt drey Smirclaib"
+      },
+      {
+       "id": null,
+       "text": "Ain hafen mit öl, nit vol"
+      },
+      {
+       "id": null,
+       "text": "Ain puster vnslit kerzn"
+      },
+      {
+       "id": null,
+       "text": "Ain murment"
+      },
+      {
+       "id": null,
+       "text": "Ost für mülich fuett(er)"
+      },
+      {
+       "id": null,
+       "text": "lx viij brotn"
+      },
+      {
+       "id": null,
+       "text": "Zwey kübl vol smaltz vnd"
+      },
+      {
+       "id": null,
+       "text": "ains mit drey Schötern"
+      },
+      {
+       "id": null,
+       "text": "ab(er) ungesottn smaltz"
+      },
+      {
+       "id": null,
+       "text": "viij Schöt"
+      }
      ]
     }
    ]
@@ -683,41 +2021,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Item speisgadenn.",
-      "Ain vas röggmel, davon ge¬",
-      "pachen drei ofen brott.",
-      "Zwen sweinpachen.",
-      "Vier lang stricken.",
-      "Ain holtz strigken.",
-      "Zwen knollen saltz und sust",
-      "pei VI mut saltz.",
-      "Drei melpeültel und ain palig.",
-      "In der kuchen.",
-      "Erin häfen X klain und groß.",
-      "Kessel klain und groß VIII.",
-      "Ein moerser mit ain(em) stössel.",
-      "Klain und grosß phanen X.",
-      "Fünf trelen.",
-      "Czinschussl klain und grosß",
-      "XIIII und drei senifschüssel.",
-      "Funff czwimessig kanndel,",
-      "vier mass kannd und ain",
-      "seittlen.",
-      "Hultzin schussl XXI.",
-      "XIII pranntraiten, ain hele,",
-      "zwen röst, zwen spis.",
-      "Item zẘ mistgablen, drei",
-      "hawen und IIII schauflen.",
-      "I pigkel.",
-      "Vich.",
-      "Acht küee.",
-      "Ain kalbel.",
-      "Ain stier.",
-      "Zehn capon.",
-      "Hen(e)n XXVII.",
-      "Klaine henlin V.",
-      "Drew swein."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item speisgadenn."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain vas röggmel, davon ge¬"
+      },
+      {
+       "id": "r3l2",
+       "text": "pachen drei ofen brott."
+      },
+      {
+       "id": "r3l3",
+       "text": "Zwen sweinpachen."
+      },
+      {
+       "id": "r3l4",
+       "text": "Vier lang stricken."
+      },
+      {
+       "id": "r3l5",
+       "text": "Ain holtz strigken."
+      },
+      {
+       "id": "r3l6",
+       "text": "Zwen knollen saltz und sust"
+      },
+      {
+       "id": "r3l7",
+       "text": "pei VI mut saltz."
+      },
+      {
+       "id": "r3l8",
+       "text": "Drei melpeültel und ain palig."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der kuchen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Erin häfen X klain und groß."
+      },
+      {
+       "id": "r5l2",
+       "text": "Kessel klain und groß VIII."
+      },
+      {
+       "id": "r5l3",
+       "text": "Ein moerser mit ain(em) stössel."
+      },
+      {
+       "id": "r5l4",
+       "text": "Klain und grosß phanen X."
+      },
+      {
+       "id": "r5l5",
+       "text": "Fünf trelen."
+      },
+      {
+       "id": "r5l6",
+       "text": "Czinschussl klain und grosß"
+      },
+      {
+       "id": "r5l7",
+       "text": "XIIII und drei senifschüssel."
+      },
+      {
+       "id": "r5l8",
+       "text": "Funff czwimessig kanndel,"
+      },
+      {
+       "id": "r5l9",
+       "text": "vier mass kannd und ain"
+      },
+      {
+       "id": "r5l10",
+       "text": "seittlen."
+      },
+      {
+       "id": "r5l11",
+       "text": "Hultzin schussl XXI."
+      },
+      {
+       "id": "r5l12",
+       "text": "XIII pranntraiten, ain hele,"
+      },
+      {
+       "id": "r5l13",
+       "text": "zwen röst, zwen spis."
+      },
+      {
+       "id": "r5l14",
+       "text": "Item zẘ mistgablen, drei"
+      },
+      {
+       "id": "r5l15",
+       "text": "hawen und IIII schauflen."
+      },
+      {
+       "id": "r5l16",
+       "text": "I pigkel."
+      },
+      {
+       "id": "r6l1",
+       "text": "Vich."
+      },
+      {
+       "id": "r7l1",
+       "text": "Acht küee."
+      },
+      {
+       "id": "r7l2",
+       "text": "Ain kalbel."
+      },
+      {
+       "id": "r7l3",
+       "text": "Ain stier."
+      },
+      {
+       "id": "r7l4",
+       "text": "Zehn capon."
+      },
+      {
+       "id": "r7l5",
+       "text": "Hen(e)n XXVII."
+      },
+      {
+       "id": "r7l6",
+       "text": "Klaine henlin V."
+      },
+      {
+       "id": "r7l7",
+       "text": "Drew swein."
+      }
      ]
     },
     {
@@ -733,40 +2176,142 @@
       false
      ],
      "lines": [
-      "Im Speisgadem",
-      "Ain vas xxij mel davon ge",
-      "pachen drey ofen pratt",
-      "Zwey swein pachen",
-      "vier lang speickhen",
-      "Ain holzprathen",
-      "Zwen knollen salz vnd sust",
-      "pey vj stuckh salz",
-      "drey melpeütel vnd ain palig",
-      "In der kuchn",
-      "Seinn häfen x klain vnd groß",
-      "kessil klain vnd groß viij",
-      "ain möser mit ainer stößel",
-      "klain vnd groß phand x",
-      "fünf fustein",
-      "Zinnschüssl klain vnd groß",
-      "xxij vnd drey gemüesschüssl",
-      "funff zwinnechtig kandel",
-      "vier maß kannd vnd ain",
-      "vierttl",
-      "hultzin schüssl xxij",
-      "Zwi pranntkratten ain hefli",
-      "zwen rost zwen spis",
-      "Item zwi mistgablen drey",
-      "karen vnd iiij schauflen",
-      "I pickel",
-      "Vich",
-      "Acht küe",
-      "Ain kelbel",
-      "Ain stier",
-      "Sechz capon",
-      "zwentzig hennen",
-      "klaine henlin v",
-      "drey swein"
+      {
+       "id": null,
+       "text": "Im Speisgadem"
+      },
+      {
+       "id": null,
+       "text": "Ain vas xxij mel davon ge"
+      },
+      {
+       "id": null,
+       "text": "pachen drey ofen pratt"
+      },
+      {
+       "id": null,
+       "text": "Zwey swein pachen"
+      },
+      {
+       "id": null,
+       "text": "vier lang speickhen"
+      },
+      {
+       "id": null,
+       "text": "Ain holzprathen"
+      },
+      {
+       "id": null,
+       "text": "Zwen knollen salz vnd sust"
+      },
+      {
+       "id": null,
+       "text": "pey vj stuckh salz"
+      },
+      {
+       "id": null,
+       "text": "drey melpeütel vnd ain palig"
+      },
+      {
+       "id": null,
+       "text": "In der kuchn"
+      },
+      {
+       "id": null,
+       "text": "Seinn häfen x klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "kessil klain vnd groß viij"
+      },
+      {
+       "id": null,
+       "text": "ain möser mit ainer stößel"
+      },
+      {
+       "id": null,
+       "text": "klain vnd groß phand x"
+      },
+      {
+       "id": null,
+       "text": "fünf fustein"
+      },
+      {
+       "id": null,
+       "text": "Zinnschüssl klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "xxij vnd drey gemüesschüssl"
+      },
+      {
+       "id": null,
+       "text": "funff zwinnechtig kandel"
+      },
+      {
+       "id": null,
+       "text": "vier maß kannd vnd ain"
+      },
+      {
+       "id": null,
+       "text": "vierttl"
+      },
+      {
+       "id": null,
+       "text": "hultzin schüssl xxij"
+      },
+      {
+       "id": null,
+       "text": "Zwi pranntkratten ain hefli"
+      },
+      {
+       "id": null,
+       "text": "zwen rost zwen spis"
+      },
+      {
+       "id": null,
+       "text": "Item zwi mistgablen drey"
+      },
+      {
+       "id": null,
+       "text": "karen vnd iiij schauflen"
+      },
+      {
+       "id": null,
+       "text": "I pickel"
+      },
+      {
+       "id": null,
+       "text": "Vich"
+      },
+      {
+       "id": null,
+       "text": "Acht küe"
+      },
+      {
+       "id": null,
+       "text": "Ain kelbel"
+      },
+      {
+       "id": null,
+       "text": "Ain stier"
+      },
+      {
+       "id": null,
+       "text": "Sechz capon"
+      },
+      {
+       "id": null,
+       "text": "zwentzig hennen"
+      },
+      {
+       "id": null,
+       "text": "klaine henlin v"
+      },
+      {
+       "id": null,
+       "text": "drey swein"
+      }
      ]
     },
     {
@@ -782,40 +2327,142 @@
       false
      ],
      "lines": [
-      "Jm Speisgadem",
-      "Ain vas xxij mul dauon ge-",
-      "pachn draj ofen pratt",
-      "zwen swein pachn",
-      "viic lang spickhn",
-      "Ain holtz pröckhn",
-      "zwen knolln salz vnd sust",
-      "pej vj want salz",
-      "draj mul peutel vnd ain palig",
-      "Jn der kuchn",
-      "Rain häfen x klain vnd groß",
-      "kessil klain vnd groß viij",
-      "ain möser mit ainn stößel",
-      "klain vnd groß phann x",
-      "fünf triter",
-      "Zinnschüssl klain vnd groß",
-      "xviij vnd draj gemißschüssl",
-      "fünf zwimeßig kandel",
-      "zwo maß kannd vnd ain",
-      "viertl",
-      "Hultzin schüssl xxx",
-      "Jnn pranntkasten ain hefe",
-      "zwen rost zwen spiß",
-      "Jt zwo mistgablen draj",
-      "hawn vnd iiij schawfeln",
-      "j pykel",
-      "Vieh",
-      "Acht küe",
-      "Ain keülbel",
-      "ain stiär",
-      "zehn capon",
-      "xxiij hüen(er)",
-      "klaine hünlin v",
-      "dreer swein"
+      {
+       "id": null,
+       "text": "Jm Speisgadem"
+      },
+      {
+       "id": null,
+       "text": "Ain vas xxij mul dauon ge-"
+      },
+      {
+       "id": null,
+       "text": "pachn draj ofen pratt"
+      },
+      {
+       "id": null,
+       "text": "zwen swein pachn"
+      },
+      {
+       "id": null,
+       "text": "viic lang spickhn"
+      },
+      {
+       "id": null,
+       "text": "Ain holtz pröckhn"
+      },
+      {
+       "id": null,
+       "text": "zwen knolln salz vnd sust"
+      },
+      {
+       "id": null,
+       "text": "pej vj want salz"
+      },
+      {
+       "id": null,
+       "text": "draj mul peutel vnd ain palig"
+      },
+      {
+       "id": null,
+       "text": "Jn der kuchn"
+      },
+      {
+       "id": null,
+       "text": "Rain häfen x klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "kessil klain vnd groß viij"
+      },
+      {
+       "id": null,
+       "text": "ain möser mit ainn stößel"
+      },
+      {
+       "id": null,
+       "text": "klain vnd groß phann x"
+      },
+      {
+       "id": null,
+       "text": "fünf triter"
+      },
+      {
+       "id": null,
+       "text": "Zinnschüssl klain vnd groß"
+      },
+      {
+       "id": null,
+       "text": "xviij vnd draj gemißschüssl"
+      },
+      {
+       "id": null,
+       "text": "fünf zwimeßig kandel"
+      },
+      {
+       "id": null,
+       "text": "zwo maß kannd vnd ain"
+      },
+      {
+       "id": null,
+       "text": "viertl"
+      },
+      {
+       "id": null,
+       "text": "Hultzin schüssl xxx"
+      },
+      {
+       "id": null,
+       "text": "Jnn pranntkasten ain hefe"
+      },
+      {
+       "id": null,
+       "text": "zwen rost zwen spiß"
+      },
+      {
+       "id": null,
+       "text": "Jt zwo mistgablen draj"
+      },
+      {
+       "id": null,
+       "text": "hawn vnd iiij schawfeln"
+      },
+      {
+       "id": null,
+       "text": "j pykel"
+      },
+      {
+       "id": null,
+       "text": "Vieh"
+      },
+      {
+       "id": null,
+       "text": "Acht küe"
+      },
+      {
+       "id": null,
+       "text": "Ain keülbel"
+      },
+      {
+       "id": null,
+       "text": "ain stiär"
+      },
+      {
+       "id": null,
+       "text": "zehn capon"
+      },
+      {
+       "id": null,
+       "text": "xxiij hüen(er)"
+      },
+      {
+       "id": null,
+       "text": "klaine hünlin v"
+      },
+      {
+       "id": null,
+       "text": "dreer swein"
+      }
      ]
     }
    ]
@@ -840,32 +2487,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Wagen schier.",
-      "Zwen wagen, I wang mit II",
-      "silschitter, ain kar(en) mit ain(em)",
-      "bösen gestu̇edl, III reder, ains",
-      "on ain bit[..]en, ain wages",
-      "on ain pflůg.",
-      "Item czwefl",
-      "Item czwelff rinder, ochs(en) und",
-      "stier, sind Hanns Klamers",
-      "gewesen.",
-      "Item barschafft in krewcern",
-      "czwainzig [..]rk[.].",
-      "Meines gnädigen herren czewg",
-      "von erst in dem [.]ur[.].",
-      "Item oben auf inn turen.",
-      "Haggen puchssen XXI.",
-      "Tarrespuchssen II.",
-      "Hand puchssen XXIIII.",
-      "Gros taichen XXXVI.",
-      "Klaine taichlin VIIII.",
-      "Item acht vässl sind czů geslagen.",
-      "Zẘ lagel pheil.",
-      "Funff samsellter.",
-      "Sechs kegl.",
-      "Etwe vil kugel und lageisen."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Wagen schier."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zwen wagen, I wang mit II"
+      },
+      {
+       "id": "r3l2",
+       "text": "silschitter, ain kar(en) mit ain(em)"
+      },
+      {
+       "id": "r3l3",
+       "text": "bösen gestu̇edl, III reder, ains"
+      },
+      {
+       "id": "r3l4",
+       "text": "on ain bit[..]en, ain wages"
+      },
+      {
+       "id": "r3l5",
+       "text": "on ain pflůg."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item czwefl"
+      },
+      {
+       "id": "r3l7",
+       "text": "Item czwelff rinder, ochs(en) und"
+      },
+      {
+       "id": "r3l8",
+       "text": "stier, sind Hanns Klamers"
+      },
+      {
+       "id": "r3l9",
+       "text": "gewesen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item barschafft in krewcern"
+      },
+      {
+       "id": "r3l11",
+       "text": "czwainzig [..]rk[.]."
+      },
+      {
+       "id": "r4l1",
+       "text": "Meines gnädigen herren czewg"
+      },
+      {
+       "id": "r4l2",
+       "text": "von erst in dem [.]ur[.]."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item oben auf inn turen."
+      },
+      {
+       "id": "r5l2",
+       "text": "Haggen puchssen XXI."
+      },
+      {
+       "id": "r5l3",
+       "text": "Tarrespuchssen II."
+      },
+      {
+       "id": "r5l4",
+       "text": "Hand puchssen XXIIII."
+      },
+      {
+       "id": "r5l5",
+       "text": "Gros taichen XXXVI."
+      },
+      {
+       "id": "r5l6",
+       "text": "Klaine taichlin VIIII."
+      },
+      {
+       "id": "r5l7",
+       "text": "Item acht vässl sind czů geslagen."
+      },
+      {
+       "id": "r5l8",
+       "text": "Zẘ lagel pheil."
+      },
+      {
+       "id": "r5l9",
+       "text": "Funff samsellter."
+      },
+      {
+       "id": "r5l10",
+       "text": "Sechs kegl."
+      },
+      {
+       "id": "r5l11",
+       "text": "Etwe vil kugel und lageisen."
+      }
      ]
     },
     {
@@ -881,32 +2606,110 @@
       false
      ],
      "lines": [
-      "19",
-      "Wagn schirr",
-      "Zwey wagen I wany .xxiiij.",
-      "phelgůn Ain karr mit ainer",
-      "kisten geschürdt iij rad ains",
-      "an ain karren ain wagen",
-      "an ain pflůg",
-      "Alt harnesch",
-      "Item zwelff rund tartschen vnd",
-      "stuck vnd kains klains",
-      "gewehr",
-      "Item Bergschafft In kramen",
-      "zwantzig mucke",
-      "Kornes q(ua)rt(e)r h(afer) kernig",
-      "von erst In dem asten",
-      "Item oben auf Im kasten",
-      "Haffen puechsen xxi",
-      "Taraitzpuechsen ij",
-      "Hand puechsen xvij",
-      "Brod täidlen lxvij",
-      "klaine täidlen viij",
-      "Item acht vässl sind zů geschlagen",
-      "zwo lagel pfeil",
-      "Fünff hampell",
-      "Sechs kegl.",
-      "etwo vil pengel vnd lagerpfeil"
+      {
+       "id": null,
+       "text": "19"
+      },
+      {
+       "id": null,
+       "text": "Wagn schirr"
+      },
+      {
+       "id": null,
+       "text": "Zwey wagen I wany .xxiiij."
+      },
+      {
+       "id": null,
+       "text": "phelgůn Ain karr mit ainer"
+      },
+      {
+       "id": null,
+       "text": "kisten geschürdt iij rad ains"
+      },
+      {
+       "id": null,
+       "text": "an ain karren ain wagen"
+      },
+      {
+       "id": null,
+       "text": "an ain pflůg"
+      },
+      {
+       "id": null,
+       "text": "Alt harnesch"
+      },
+      {
+       "id": null,
+       "text": "Item zwelff rund tartschen vnd"
+      },
+      {
+       "id": null,
+       "text": "stuck vnd kains klains"
+      },
+      {
+       "id": null,
+       "text": "gewehr"
+      },
+      {
+       "id": null,
+       "text": "Item Bergschafft In kramen"
+      },
+      {
+       "id": null,
+       "text": "zwantzig mucke"
+      },
+      {
+       "id": null,
+       "text": "Kornes q(ua)rt(e)r h(afer) kernig"
+      },
+      {
+       "id": null,
+       "text": "von erst In dem asten"
+      },
+      {
+       "id": null,
+       "text": "Item oben auf Im kasten"
+      },
+      {
+       "id": null,
+       "text": "Haffen puechsen xxi"
+      },
+      {
+       "id": null,
+       "text": "Taraitzpuechsen ij"
+      },
+      {
+       "id": null,
+       "text": "Hand puechsen xvij"
+      },
+      {
+       "id": null,
+       "text": "Brod täidlen lxvij"
+      },
+      {
+       "id": null,
+       "text": "klaine täidlen viij"
+      },
+      {
+       "id": null,
+       "text": "Item acht vässl sind zů geschlagen"
+      },
+      {
+       "id": null,
+       "text": "zwo lagel pfeil"
+      },
+      {
+       "id": null,
+       "text": "Fünff hampell"
+      },
+      {
+       "id": null,
+       "text": "Sechs kegl."
+      },
+      {
+       "id": null,
+       "text": "etwo vil pengel vnd lagerpfeil"
+      }
      ]
     },
     {
@@ -922,33 +2725,114 @@
       false
      ],
      "lines": [
-      "19",
-      "Wagn gschir",
-      "Zwen wagn j wenig nucz",
-      "phlegin Ain khar mit ain",
-      "visy geschirdt iij rad ains",
-      "ay an ain bissin ain wagen",
-      "an ain pflug",
-      "Alt knecht",
-      "It(e)m zwelff rindgress und",
-      "stuck und manig klains",
-      "geweeß",
-      "cxxxvij",
-      "It(e)m Barschafft In tarrant",
-      "zwantzig markh",
-      "Harnasch gh zeug",
-      "von erst In dem aurn",
-      "It(e)m oben auf Im turn",
-      "Haggen puchssen xxj",
-      "Tartschpuchssen ij",
-      "Hand puchssen xxxiiij",
-      "Brot taeffelin lxxvij",
-      "Klaine taeffelin viij",
-      "It(e)m acht vässl sind zügschlagen",
-      "Zwo lagel pheil",
-      "Fünff vampelle",
-      "Sechs keyl",
-      "Etwe vil pengel und logeysen"
+      {
+       "id": null,
+       "text": "19"
+      },
+      {
+       "id": null,
+       "text": "Wagn gschir"
+      },
+      {
+       "id": null,
+       "text": "Zwen wagn j wenig nucz"
+      },
+      {
+       "id": null,
+       "text": "phlegin Ain khar mit ain"
+      },
+      {
+       "id": null,
+       "text": "visy geschirdt iij rad ains"
+      },
+      {
+       "id": null,
+       "text": "ay an ain bissin ain wagen"
+      },
+      {
+       "id": null,
+       "text": "an ain pflug"
+      },
+      {
+       "id": null,
+       "text": "Alt knecht"
+      },
+      {
+       "id": null,
+       "text": "It(e)m zwelff rindgress und"
+      },
+      {
+       "id": null,
+       "text": "stuck und manig klains"
+      },
+      {
+       "id": null,
+       "text": "geweeß"
+      },
+      {
+       "id": null,
+       "text": "cxxxvij"
+      },
+      {
+       "id": null,
+       "text": "It(e)m Barschafft In tarrant"
+      },
+      {
+       "id": null,
+       "text": "zwantzig markh"
+      },
+      {
+       "id": null,
+       "text": "Harnasch gh zeug"
+      },
+      {
+       "id": null,
+       "text": "von erst In dem aurn"
+      },
+      {
+       "id": null,
+       "text": "It(e)m oben auf Im turn"
+      },
+      {
+       "id": null,
+       "text": "Haggen puchssen xxj"
+      },
+      {
+       "id": null,
+       "text": "Tartschpuchssen ij"
+      },
+      {
+       "id": null,
+       "text": "Hand puchssen xxxiiij"
+      },
+      {
+       "id": null,
+       "text": "Brot taeffelin lxxvij"
+      },
+      {
+       "id": null,
+       "text": "Klaine taeffelin viij"
+      },
+      {
+       "id": null,
+       "text": "It(e)m acht vässl sind zügschlagen"
+      },
+      {
+       "id": null,
+       "text": "Zwo lagel pheil"
+      },
+      {
+       "id": null,
+       "text": "Fünff vampelle"
+      },
+      {
+       "id": null,
+       "text": "Sechs keyl"
+      },
+      {
+       "id": null,
+       "text": "Etwe vil pengel und logeysen"
+      }
      ]
     }
    ]
@@ -973,19 +2857,58 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "Item unden im turen.",
-      "Acht wassel salitters sind",
-      "nit czu geslagen.",
-      "Item XII lagel und vassl sind",
-      "czu geslagen.",
-      "Item ain hauffen hawspheil",
-      "ligt ledig auf den laben.",
-      "Item hams oben undren tach",
-      "ain gross sail.",
-      "Czwo eisen schidpuchsen.",
-      "Ain grosse puchsen ligt",
-      "wnden bei der phister."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item unden im turen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Acht wassel salitters sind"
+      },
+      {
+       "id": "r3l2",
+       "text": "nit czu geslagen."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item XII lagel und vassl sind"
+      },
+      {
+       "id": "r3l4",
+       "text": "czu geslagen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item ain hauffen hawspheil"
+      },
+      {
+       "id": "r3l6",
+       "text": "ligt ledig auf den laben."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item hams oben undren tach"
+      },
+      {
+       "id": "r3l8",
+       "text": "ain gross sail."
+      },
+      {
+       "id": "r3l9",
+       "text": "Czwo eisen schidpuchsen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Ain grosse puchsen ligt"
+      },
+      {
+       "id": "r3l11",
+       "text": "wnden bei der phister."
+      }
      ]
     },
     {
@@ -1001,18 +2924,54 @@
       false
      ],
      "lines": [
-      "It(e)m Vnd(e)n Jm turen",
-      "acht massel halters sind",
-      "nit Jngeschlagen",
-      "It(e)m xij lagel vnd vassl sind",
-      "Zu geschlagen",
-      "It(e)m ain hauffin hanffseil",
-      "ligt ledig auf dem bod(e)n",
-      "It(e)m ganz obn vnd(e)rm tach",
-      "ain gros sail",
-      "Zwo eysyn Schelpuechsen",
-      "Ain grosse puechsn ligt",
-      "vnnd bej der phlys"
+      {
+       "id": null,
+       "text": "It(e)m Vnd(e)n Jm turen"
+      },
+      {
+       "id": null,
+       "text": "acht massel halters sind"
+      },
+      {
+       "id": null,
+       "text": "nit Jngeschlagen"
+      },
+      {
+       "id": null,
+       "text": "It(e)m xij lagel vnd vassl sind"
+      },
+      {
+       "id": null,
+       "text": "Zu geschlagen"
+      },
+      {
+       "id": null,
+       "text": "It(e)m ain hauffin hanffseil"
+      },
+      {
+       "id": null,
+       "text": "ligt ledig auf dem bod(e)n"
+      },
+      {
+       "id": null,
+       "text": "It(e)m ganz obn vnd(e)rm tach"
+      },
+      {
+       "id": null,
+       "text": "ain gros sail"
+      },
+      {
+       "id": null,
+       "text": "Zwo eysyn Schelpuechsen"
+      },
+      {
+       "id": null,
+       "text": "Ain grosse puechsn ligt"
+      },
+      {
+       "id": null,
+       "text": "vnnd bej der phlys"
+      }
      ]
     },
     {
@@ -1028,18 +2987,54 @@
       false
      ],
      "lines": [
-      "Item Vnden Im turn",
-      "drey waffel Isen sind",
-      "nit Eysengslagen",
-      "Item xij lagel vnd vass sind",
-      "Zu geschlagen",
-      "Item ain Hauffen hanffstrick",
-      "ligt ledig auf dem boden",
-      "Item Hanns oben vnderm tach",
-      "ain groß sail",
-      "Item xxvij hechelpuechsen",
-      "Ain grosse puechs ligt",
-      "vnden bey der phlisp"
+      {
+       "id": null,
+       "text": "Item Vnden Im turn"
+      },
+      {
+       "id": null,
+       "text": "drey waffel Isen sind"
+      },
+      {
+       "id": null,
+       "text": "nit Eysengslagen"
+      },
+      {
+       "id": null,
+       "text": "Item xij lagel vnd vass sind"
+      },
+      {
+       "id": null,
+       "text": "Zu geschlagen"
+      },
+      {
+       "id": null,
+       "text": "Item ain Hauffen hanffstrick"
+      },
+      {
+       "id": null,
+       "text": "ligt ledig auf dem boden"
+      },
+      {
+       "id": null,
+       "text": "Item Hanns oben vnderm tach"
+      },
+      {
+       "id": null,
+       "text": "ain groß sail"
+      },
+      {
+       "id": null,
+       "text": "Item xxvij hechelpuechsen"
+      },
+      {
+       "id": null,
+       "text": "Ain grosse puechs ligt"
+      },
+      {
+       "id": null,
+       "text": "vnden bey der phlisp"
+      }
      ]
     }
    ]
@@ -1064,7 +3059,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     },
     {
@@ -1080,9 +3078,18 @@
       false
      ],
      "lines": [
-      "Jnuentarij Schloss Nauders",
-      "1478",
-      "b. 109"
+      {
+       "id": null,
+       "text": "Jnuentarij Schloss Nauders"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "b. 109"
+      }
      ]
     },
     {
@@ -1098,16 +3105,46 @@
       false
      ],
      "lines": [
-      "Inuentarium Schloss Nauders",
-      "1478",
-      "b. 109",
-      "~~[...]~~",
-      "~~Item [...]~~",
-      "~~[...]~~",
-      "~~Item [...]~~",
-      "~~[...]~~",
-      "~~Item [...]~~",
-      "~~[...]~~"
+      {
+       "id": null,
+       "text": "Inuentarium Schloss Nauders"
+      },
+      {
+       "id": null,
+       "text": "1478"
+      },
+      {
+       "id": null,
+       "text": "b. 109"
+      },
+      {
+       "id": null,
+       "text": "~~[...]~~"
+      },
+      {
+       "id": null,
+       "text": "~~Item [...]~~"
+      },
+      {
+       "id": null,
+       "text": "~~[...]~~"
+      },
+      {
+       "id": null,
+       "text": "~~Item [...]~~"
+      },
+      {
+       "id": null,
+       "text": "~~[...]~~"
+      },
+      {
+       "id": null,
+       "text": "~~Item [...]~~"
+      },
+      {
+       "id": null,
+       "text": "~~[...]~~"
+      }
      ]
     }
    ]

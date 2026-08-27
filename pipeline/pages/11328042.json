@@ -21,36 +21,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Am montag nach dem Palmtag",
-      "anno etc. LXXXVIIIt(en) ist Hildprand",
-      "von Gles d(e)s sloss Thaŭr abtret(en)",
-      "und h(errn)n Sig(munden) von Welssp(er)g",
-      "ingeant(wurt) auf bevelch uns(er)s g(nedigen) h(er)rn",
-      "von Est(erreich), in geg(enwart) v(on) Rudolf(en)",
-      "Hauscam(er)s und Pet(er)n Herb(ers), Clem(en)t(en)",
-      "Wolfsegk(er) und Hanns Ubelh(er).",
-      "Am erst(en) in d(er) stub(e)n da",
-      "ain pfleg(er) in ist.",
-      "Zwen tisch.",
-      "Ain verdeckts gutschnpet(e)l bei(m) of(en).",
-      "Ain giesvaskast(e)l.",
-      "Ain giesvass.",
-      "Ain peck.",
-      "In d(er) cam(er) daran.",
-      "Zwai spanpet.",
-      "Zwei pett.",
-      "I golt(er).",
-      "I rauhe deck.",
-      "I p(er) leilach und I leilach.",
-      "II polst(er).",
-      "II kŭß.",
-      "Ain strosack.",
-      "Ain truh(e)n.",
-      "It(em) darin V werchene leilach.",
-      "II zbilchin tischtŭch.",
-      "Ain alt(er) tisch.",
-      "It(em) ein schachzabl(er)."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Am montag nach dem Palmtag"
+      },
+      {
+       "id": "r2l2",
+       "text": "anno etc. LXXXVIIIt(en) ist Hildprand"
+      },
+      {
+       "id": "r2l3",
+       "text": "von Gles d(e)s sloss Thaŭr abtret(en)"
+      },
+      {
+       "id": "r2l4",
+       "text": "und h(errn)n Sig(munden) von Welssp(er)g"
+      },
+      {
+       "id": "r2l5",
+       "text": "ingeant(wurt) auf bevelch uns(er)s g(nedigen) h(er)rn"
+      },
+      {
+       "id": "r2l6",
+       "text": "von Est(erreich), in geg(enwart) v(on) Rudolf(en)"
+      },
+      {
+       "id": "r2l7",
+       "text": "Hauscam(er)s und Pet(er)n Herb(ers), Clem(en)t(en)"
+      },
+      {
+       "id": "r2l8",
+       "text": "Wolfsegk(er) und Hanns Ubelh(er)."
+      },
+      {
+       "id": "r3l1",
+       "text": "Am erst(en) in d(er) stub(e)n da"
+      },
+      {
+       "id": "r3l2",
+       "text": "ain pfleg(er) in ist."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zwen tisch."
+      },
+      {
+       "id": "r4l2",
+       "text": "Ain verdeckts gutschnpet(e)l bei(m) of(en)."
+      },
+      {
+       "id": "r4l3",
+       "text": "Ain giesvaskast(e)l."
+      },
+      {
+       "id": "r4l4",
+       "text": "Ain giesvass."
+      },
+      {
+       "id": "r4l5",
+       "text": "Ain peck."
+      },
+      {
+       "id": "r5l1",
+       "text": "In d(er) cam(er) daran."
+      },
+      {
+       "id": "r6l1",
+       "text": "Zwai spanpet."
+      },
+      {
+       "id": "r6l2",
+       "text": "Zwei pett."
+      },
+      {
+       "id": "r6l3",
+       "text": "I golt(er)."
+      },
+      {
+       "id": "r6l4",
+       "text": "I rauhe deck."
+      },
+      {
+       "id": "r6l5",
+       "text": "I p(er) leilach und I leilach."
+      },
+      {
+       "id": "r6l6",
+       "text": "II polst(er)."
+      },
+      {
+       "id": "r6l7",
+       "text": "II kŭß."
+      },
+      {
+       "id": "r6l8",
+       "text": "Ain strosack."
+      },
+      {
+       "id": "r6l9",
+       "text": "Ain truh(e)n."
+      },
+      {
+       "id": "r6l10",
+       "text": "It(em) darin V werchene leilach."
+      },
+      {
+       "id": "r6l11",
+       "text": "II zbilchin tischtŭch."
+      },
+      {
+       "id": "r6l12",
+       "text": "Ain alt(er) tisch."
+      },
+      {
+       "id": "r6l13",
+       "text": "It(em) ein schachzabl(er)."
+      }
      ]
     }
    ]
@@ -75,29 +165,98 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "It(em) in dem clainen kame(r)l in derß cam(er).",
-      "It(em) V grosse zin.",
-      "It(em) V mitere zin.",
-      "It(em) noch clain(er) IIII.",
-      "It(em) noch clain(er) V.",
-      "It(em) groß sals(e)n schussl(e)n V.",
-      "Essich schussl(e)n V.",
-      "It(em) ain mess(e)n peck.",
-      "It(em) ain mess(e)n ring tischring.",
-      "It(em) X zinnen tĕll(er).",
-      "It(em) VI messin leucht(er) clein vnd gross.",
-      "Auf dem clein(en) estrich vor",
-      "d(e)r stub(e)n.",
-      "It(em) ain grosser cast(e)n.",
-      "In d(er) hell in d(er) erst(en) cam(er).",
-      "It(em) I petstat.",
-      "II rauchdeck(e)n.",
-      "Ai(n) pot.",
-      "I polst(er).",
-      "I kis.",
-      "I strosack.",
-      "I p(ar) rupfen leilach."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) in dem clainen kame(r)l in derß cam(er)."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) V grosse zin."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) V mitere zin."
+      },
+      {
+       "id": "r3l3",
+       "text": "It(em) noch clain(er) IIII."
+      },
+      {
+       "id": "r3l4",
+       "text": "It(em) noch clain(er) V."
+      },
+      {
+       "id": "r3l5",
+       "text": "It(em) groß sals(e)n schussl(e)n V."
+      },
+      {
+       "id": "r3l6",
+       "text": "Essich schussl(e)n V."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) ain mess(e)n peck."
+      },
+      {
+       "id": "r3l8",
+       "text": "It(em) ain mess(e)n ring tischring."
+      },
+      {
+       "id": "r3l9",
+       "text": "It(em) X zinnen tĕll(er)."
+      },
+      {
+       "id": "r3l10",
+       "text": "It(em) VI messin leucht(er) clein vnd gross."
+      },
+      {
+       "id": "r4l1",
+       "text": "Auf dem clein(en) estrich vor"
+      },
+      {
+       "id": "r4l2",
+       "text": "d(e)r stub(e)n."
+      },
+      {
+       "id": "r5l1",
+       "text": "It(em) ain grosser cast(e)n."
+      },
+      {
+       "id": "r6l1",
+       "text": "In d(er) hell in d(er) erst(en) cam(er)."
+      },
+      {
+       "id": "r7l1",
+       "text": "It(em) I petstat."
+      },
+      {
+       "id": "r7l2",
+       "text": "II rauchdeck(e)n."
+      },
+      {
+       "id": "r7l3",
+       "text": "Ai(n) pot."
+      },
+      {
+       "id": "r7l4",
+       "text": "I polst(er)."
+      },
+      {
+       "id": "r7l5",
+       "text": "I kis."
+      },
+      {
+       "id": "r7l6",
+       "text": "I strosack."
+      },
+      {
+       "id": "r7l7",
+       "text": "I p(ar) rupfen leilach."
+      }
      ]
     }
    ]
@@ -122,30 +281,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "In d(er) and(er) cam(er).",
-      "V petstat(e)n.",
-      "It(em) I pet.",
-      "I strosack.",
-      "II rupfen leilach.",
-      "II rauch deck(e)n,",
-      "I polst(er).",
-      "In des pauknecht kam(er).",
-      "It(em) II petstat.",
-      "II pett.",
-      "II polst(er).",
-      "I kŭss.",
-      "IIII rauch deck(e)n.",
-      "IIII werchine leilach.",
-      "II stroseck.",
-      "In d(er) and(er) cam(er).",
-      "I petstat.",
-      "I pet.",
-      "I polst(er).",
-      "II kis.",
-      "I strosack.",
-      "I rahe deck.",
-      "I golt(er)."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In d(er) and(er) cam(er)."
+      },
+      {
+       "id": "r3l1",
+       "text": "V petstat(e)n."
+      },
+      {
+       "id": "r3l2",
+       "text": "It(em) I pet."
+      },
+      {
+       "id": "r3l3",
+       "text": "I strosack."
+      },
+      {
+       "id": "r3l4",
+       "text": "II rupfen leilach."
+      },
+      {
+       "id": "r3l5",
+       "text": "II rauch deck(e)n,"
+      },
+      {
+       "id": "r3l6",
+       "text": "I polst(er)."
+      },
+      {
+       "id": "r4l1",
+       "text": "In des pauknecht kam(er)."
+      },
+      {
+       "id": "r5l1",
+       "text": "It(em) II petstat."
+      },
+      {
+       "id": "r5l2",
+       "text": "II pett."
+      },
+      {
+       "id": "r5l3",
+       "text": "II polst(er)."
+      },
+      {
+       "id": "r5l4",
+       "text": "I kŭss."
+      },
+      {
+       "id": "r5l5",
+       "text": "IIII rauch deck(e)n."
+      },
+      {
+       "id": "r5l6",
+       "text": "IIII werchine leilach."
+      },
+      {
+       "id": "r5l7",
+       "text": "II stroseck."
+      },
+      {
+       "id": "r6l1",
+       "text": "In d(er) and(er) cam(er)."
+      },
+      {
+       "id": "r7l1",
+       "text": "I petstat."
+      },
+      {
+       "id": "r7l2",
+       "text": "I pet."
+      },
+      {
+       "id": "r7l3",
+       "text": "I polst(er)."
+      },
+      {
+       "id": "r7l4",
+       "text": "II kis."
+      },
+      {
+       "id": "r7l5",
+       "text": "I strosack."
+      },
+      {
+       "id": "r7l6",
+       "text": "I rahe deck."
+      },
+      {
+       "id": "r7l7",
+       "text": "I golt(er)."
+      }
      ]
     }
    ]
@@ -170,33 +401,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "It(em) auf dem gross(e)n neu(e)n sal.",
-      "I gross(er) harnasch cast(e)n.",
-      "II poss(er) tisch.",
-      "In d(er) chuch(e)n.",
-      "It(em) VIIII pfann(en) gros und clein  [- - -] gr",
-      "pos und gut.",
-      "V kes(e)l gros u(nd) cl(ein).",
-      "V erin haf(e)n.",
-      "I hăl.",
-      "II prantrait(e)n.",
-      "II drifus.",
-      "II pratspis.",
-      "II heincz(e)n.",
-      "II eysin kell(e)n.",
-      "XII hulczin schissl(en) gar clein.",
-      "XVI tell(er) holcz.",
-      "I gacz(e)n.",
-      "II krautmess(er).",
-      "II kuchinmess(er).",
-      "Im marstal.",
-      "I neu(er) fut(er) cast(e)n.",
-      "In der pfist(er).",
-      "I knet trog.",
-      "I werch taf(e)l.",
-      "IIII pret(er).",
-      "I stăr."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) auf dem gross(e)n neu(e)n sal."
+      },
+      {
+       "id": "r3l1",
+       "text": "I gross(er) harnasch cast(e)n."
+      },
+      {
+       "id": "r3l2",
+       "text": "II poss(er) tisch."
+      },
+      {
+       "id": "r4l1",
+       "text": "In d(er) chuch(e)n."
+      },
+      {
+       "id": "r5l1",
+       "text": "It(em) VIIII pfann(en) gros und clein  [- - -] gr"
+      },
+      {
+       "id": "r5l2",
+       "text": "pos und gut."
+      },
+      {
+       "id": "r5l3",
+       "text": "V kes(e)l gros u(nd) cl(ein)."
+      },
+      {
+       "id": "r5l4",
+       "text": "V erin haf(e)n."
+      },
+      {
+       "id": "r5l5",
+       "text": "I hăl."
+      },
+      {
+       "id": "r5l6",
+       "text": "II prantrait(e)n."
+      },
+      {
+       "id": "r5l7",
+       "text": "II drifus."
+      },
+      {
+       "id": "r5l8",
+       "text": "II pratspis."
+      },
+      {
+       "id": "r5l9",
+       "text": "II heincz(e)n."
+      },
+      {
+       "id": "r5l10",
+       "text": "II eysin kell(e)n."
+      },
+      {
+       "id": "r5l11",
+       "text": "XII hulczin schissl(en) gar clein."
+      },
+      {
+       "id": "r5l12",
+       "text": "XVI tell(er) holcz."
+      },
+      {
+       "id": "r5l13",
+       "text": "I gacz(e)n."
+      },
+      {
+       "id": "r5l14",
+       "text": "II krautmess(er)."
+      },
+      {
+       "id": "r5l15",
+       "text": "II kuchinmess(er)."
+      },
+      {
+       "id": "r5l16",
+       "text": "Im marstal."
+      },
+      {
+       "id": "r5l17",
+       "text": "I neu(er) fut(er) cast(e)n."
+      },
+      {
+       "id": "r6l1",
+       "text": "In der pfist(er)."
+      },
+      {
+       "id": "r7l1",
+       "text": "I knet trog."
+      },
+      {
+       "id": "r7l2",
+       "text": "I werch taf(e)l."
+      },
+      {
+       "id": "r7l3",
+       "text": "IIII pret(er)."
+      },
+      {
+       "id": "r7l4",
+       "text": "I stăr."
+      }
      ]
     }
    ]
@@ -221,32 +533,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Im zergad(e)n speisgad(e)n.",
-      "Ain mecz(er)s ram.",
-      "I fleisch panck.",
-      "Ain mel kasten.",
-      "Ain peut(el) vaß.",
-      "Ain gross(er) pad zub(er).",
-      "V ster.",
-      "Item kraut cam(er).",
-      "Erstlich hulcz(ei)n krautprent(e)n.",
-      "It(em) VI prenten mit gut(en) kraut.",
-      "It(em) VI prent(en) mit saukraut.",
-      "It(em) vor derselb(e)n cam(er).",
-      "II hackpret(er).",
-      "I sleifstein.",
-      "Ain",
-      "It(em) in d(er)m und(ern) zercast(e)n.",
-      "Zwo meltruh(e)n.",
-      "Ain pos(er) tisch.",
-      "Vorm wein kell(er).",
-      "Ain handmŭl mit ir(er) zugehor(ung).",
-      "Im kell(er).",
-      "VIII kand(e)l klei(n) und gross.",
-      "I sturczine flasch(en).",
-      "II zwo mess(e)n pipp(e)n.",
-      "I gros vass."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Im zergad(e)n speisgad(e)n."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain mecz(er)s ram."
+      },
+      {
+       "id": "r3l2",
+       "text": "I fleisch panck."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain mel kasten."
+      },
+      {
+       "id": "r3l4",
+       "text": "Ain peut(el) vaß."
+      },
+      {
+       "id": "r3l5",
+       "text": "Ain gross(er) pad zub(er)."
+      },
+      {
+       "id": "r3l6",
+       "text": "V ster."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item kraut cam(er)."
+      },
+      {
+       "id": "r5l1",
+       "text": "Erstlich hulcz(ei)n krautprent(e)n."
+      },
+      {
+       "id": "r5l2",
+       "text": "It(em) VI prenten mit gut(en) kraut."
+      },
+      {
+       "id": "r5l3",
+       "text": "It(em) VI prent(en) mit saukraut."
+      },
+      {
+       "id": "r5l4",
+       "text": "It(em) vor derselb(e)n cam(er)."
+      },
+      {
+       "id": "r5l5",
+       "text": "II hackpret(er)."
+      },
+      {
+       "id": "r5l6",
+       "text": "I sleifstein."
+      },
+      {
+       "id": "r5l7",
+       "text": "Ain"
+      },
+      {
+       "id": "r6l1",
+       "text": "It(em) in d(er)m und(ern) zercast(e)n."
+      },
+      {
+       "id": "r7l1",
+       "text": "Zwo meltruh(e)n."
+      },
+      {
+       "id": "r7l2",
+       "text": "Ain pos(er) tisch."
+      },
+      {
+       "id": "r8l1",
+       "text": "Vorm wein kell(er)."
+      },
+      {
+       "id": "r9l1",
+       "text": "Ain handmŭl mit ir(er) zugehor(ung)."
+      },
+      {
+       "id": "r10l1",
+       "text": "Im kell(er)."
+      },
+      {
+       "id": "r11l1",
+       "text": "VIII kand(e)l klei(n) und gross."
+      },
+      {
+       "id": "r11l2",
+       "text": "I sturczine flasch(en)."
+      },
+      {
+       "id": "r11l3",
+       "text": "II zwo mess(e)n pipp(e)n."
+      },
+      {
+       "id": "r11l4",
+       "text": "I gros vass."
+      }
      ]
     }
    ]
@@ -271,32 +661,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "In d(er) harnasch kam(er).",
-      "It(em) bei d(er) kuch(e)n XIII lancz(e)n scheft.",
-      "XIIII armbrust.",
-      "VI hak(e)n puchs(en).",
-      "X ha(n)dpuchs(en).",
-      "XIIII alt ha(n)dpuchs(en).",
-      "I alt(er) zugkat(er) spieß bei den tir.",
-      "It(em) hernach harnasch als in d(em) alt(e)n",
-      "inventari",
-      "im turm wesen.",
-      "In meins g(nädigen) h(errn) gmach(e)n.",
-      "In der silb(er) stub(e)n I bȏs tisch.",
-      "In d(er) cam(er) dran I petstat.",
-      "In d(er) and(er)n cam(er) dann I petstat.",
-      "In d(er) ob(er)n stub(e) m(eins) g(nädigen) h(errn).",
-      "II tisch.",
-      "I kredencz tisch.",
-      "I gmalts tuch mit etl(e)n landschaft(e)n.",
-      "In d(er) cam(er) dran.",
-      "I verdeckts spanpet mit e(in) kariol.",
-      "Ain sidltruh(e)n daran.",
-      "I strosack.",
-      "I pet.",
-      "I polst(er).",
-      "I kis."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In d(er) harnasch kam(er)."
+      },
+      {
+       "id": "r3l1",
+       "text": "It(em) bei d(er) kuch(e)n XIII lancz(e)n scheft."
+      },
+      {
+       "id": "r3l2",
+       "text": "XIIII armbrust."
+      },
+      {
+       "id": "r3l3",
+       "text": "VI hak(e)n puchs(en)."
+      },
+      {
+       "id": "r3l4",
+       "text": "X ha(n)dpuchs(en)."
+      },
+      {
+       "id": "r3l5",
+       "text": "XIIII alt ha(n)dpuchs(en)."
+      },
+      {
+       "id": "r3l6",
+       "text": "I alt(er) zugkat(er) spieß bei den tir."
+      },
+      {
+       "id": "r3l7",
+       "text": "It(em) hernach harnasch als in d(em) alt(e)n"
+      },
+      {
+       "id": "r3l8",
+       "text": "inventari"
+      },
+      {
+       "id": "r3l9",
+       "text": "im turm wesen."
+      },
+      {
+       "id": "r4l1",
+       "text": "In meins g(nädigen) h(errn) gmach(e)n."
+      },
+      {
+       "id": "r5l1",
+       "text": "In der silb(er) stub(e)n I bȏs tisch."
+      },
+      {
+       "id": "r5l2",
+       "text": "In d(er) cam(er) dran I petstat."
+      },
+      {
+       "id": "r5l3",
+       "text": "In d(er) and(er)n cam(er) dann I petstat."
+      },
+      {
+       "id": "r6l1",
+       "text": "In d(er) ob(er)n stub(e) m(eins) g(nädigen) h(errn)."
+      },
+      {
+       "id": "r7l1",
+       "text": "II tisch."
+      },
+      {
+       "id": "r7l2",
+       "text": "I kredencz tisch."
+      },
+      {
+       "id": "r7l3",
+       "text": "I gmalts tuch mit etl(e)n landschaft(e)n."
+      },
+      {
+       "id": "r8l1",
+       "text": "In d(er) cam(er) dran."
+      },
+      {
+       "id": "r9l1",
+       "text": "I verdeckts spanpet mit e(in) kariol."
+      },
+      {
+       "id": "r9l2",
+       "text": "Ain sidltruh(e)n daran."
+      },
+      {
+       "id": "r9l3",
+       "text": "I strosack."
+      },
+      {
+       "id": "r9l4",
+       "text": "I pet."
+      },
+      {
+       "id": "r9l5",
+       "text": "I polst(er)."
+      },
+      {
+       "id": "r9l6",
+       "text": "I kis."
+      }
      ]
     }
    ]
@@ -321,27 +789,90 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "I weis(er) golt(er).",
-      "I seidner golt(er).",
-      "II p(er) leilach.",
-      "II tischtuch.",
-      "II umbsleg.",
-      "III handtuch(er).",
-      "I schweinspies.",
-      "I gl weczstein.",
-      "In d(er) nahst(en) cam(er) daran.",
-      "I spanpet.",
-      "In d(er) cam(er) geg(en) d(en) hof.",
-      "I spanpet.",
-      "In d(er) capell wie for.",
-      "Im stad(e)l.",
-      "II kue.",
-      "It(em) II wagenros mit ir(em) gschirr.",
-      "und sonst wie for.",
-      "Rechen etlich z(er)proch(e)n.",
-      "It(em) IIII tischtiech(er) fir das gsind",
-      "III handtuech(er)."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "I weis(er) golt(er)."
+      },
+      {
+       "id": "r2l2",
+       "text": "I seidner golt(er)."
+      },
+      {
+       "id": "r2l3",
+       "text": "II p(er) leilach."
+      },
+      {
+       "id": "r2l4",
+       "text": "II tischtuch."
+      },
+      {
+       "id": "r2l5",
+       "text": "II umbsleg."
+      },
+      {
+       "id": "r2l6",
+       "text": "III handtuch(er)."
+      },
+      {
+       "id": "r2l7",
+       "text": "I schweinspies."
+      },
+      {
+       "id": "r2l8",
+       "text": "I gl weczstein."
+      },
+      {
+       "id": "r3l1",
+       "text": "In d(er) nahst(en) cam(er) daran."
+      },
+      {
+       "id": "r4l1",
+       "text": "I spanpet."
+      },
+      {
+       "id": "r5l1",
+       "text": "In d(er) cam(er) geg(en) d(en) hof."
+      },
+      {
+       "id": "r6l1",
+       "text": "I spanpet."
+      },
+      {
+       "id": "r7l1",
+       "text": "In d(er) capell wie for."
+      },
+      {
+       "id": "r8l1",
+       "text": "Im stad(e)l."
+      },
+      {
+       "id": "r9l1",
+       "text": "II kue."
+      },
+      {
+       "id": "r9l2",
+       "text": "It(em) II wagenros mit ir(em) gschirr."
+      },
+      {
+       "id": "r9l3",
+       "text": "und sonst wie for."
+      },
+      {
+       "id": "r9l4",
+       "text": "Rechen etlich z(er)proch(e)n."
+      },
+      {
+       "id": "r9l5",
+       "text": "It(em) IIII tischtiech(er) fir das gsind"
+      },
+      {
+       "id": "r9l6",
+       "text": "III handtuech(er)."
+      }
      ]
     }
    ]
@@ -366,7 +897,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]
@@ -391,29 +925,98 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Essends das im speisgad(en).",
-      "I pŭntzles smalcz.",
-      "II halb tes(e)n zig(er).",
-      "XX ster mel.",
-      "In dem and(er)n speiscast(en).",
-      "III sweins gancz pach(en).",
-      "It(em) etlich XXV zentring rindfleisch.",
-      "It(em) etlich pf(un)d unslit.",
-      "It(em) VIII kăss.",
-      "It(em) etlich pitschol(en), arbais und",
-      "gemŭess.",
-      "It(em) II [- - -]",
-      "It(em) ain naig wein im kell(er).",
-      "It(em) XIX III hen(er).",
-      "VIIII cappeun.",
-      "IX kuo hut in g(nädigen) h(errn) d(eren) gens(er)",
-      "geschriben was sih h(er) Sig(mund) perschibet [..] [..]",
-      "ern datus.",
-      "Auf dem cast(e)n.",
-      "XXXVI stăr rock(e)n.",
-      "ICXIX st(er) fuet(er).",
-      "ICIII st(er) gerst(en)."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Essends das im speisgad(en)."
+      },
+      {
+       "id": "r3l1",
+       "text": "I pŭntzles smalcz."
+      },
+      {
+       "id": "r3l2",
+       "text": "II halb tes(e)n zig(er)."
+      },
+      {
+       "id": "r3l3",
+       "text": "XX ster mel."
+      },
+      {
+       "id": "r4l1",
+       "text": "In dem and(er)n speiscast(en)."
+      },
+      {
+       "id": "r5l1",
+       "text": "III sweins gancz pach(en)."
+      },
+      {
+       "id": "r5l2",
+       "text": "It(em) etlich XXV zentring rindfleisch."
+      },
+      {
+       "id": "r5l3",
+       "text": "It(em) etlich pf(un)d unslit."
+      },
+      {
+       "id": "r5l4",
+       "text": "It(em) VIII kăss."
+      },
+      {
+       "id": "r5l5",
+       "text": "It(em) etlich pitschol(en), arbais und"
+      },
+      {
+       "id": "r5l6",
+       "text": "gemŭess."
+      },
+      {
+       "id": "r5l7",
+       "text": "It(em) II [- - -]"
+      },
+      {
+       "id": "r5l8",
+       "text": "It(em) ain naig wein im kell(er)."
+      },
+      {
+       "id": "r5l9",
+       "text": "It(em) XIX III hen(er)."
+      },
+      {
+       "id": "r5l10",
+       "text": "VIIII cappeun."
+      },
+      {
+       "id": "r5l11",
+       "text": "IX kuo hut in g(nädigen) h(errn) d(eren) gens(er)"
+      },
+      {
+       "id": "r5l12",
+       "text": "geschriben was sih h(er) Sig(mund) perschibet [..] [..]"
+      },
+      {
+       "id": "r5l13",
+       "text": "ern datus."
+      },
+      {
+       "id": "r6l1",
+       "text": "Auf dem cast(e)n."
+      },
+      {
+       "id": "r7l1",
+       "text": "XXXVI stăr rock(e)n."
+      },
+      {
+       "id": "r7l2",
+       "text": "ICXIX st(er) fuet(er)."
+      },
+      {
+       "id": "r7l3",
+       "text": "ICIII st(er) gerst(en)."
+      }
      ]
     }
    ]
@@ -438,7 +1041,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     }
    ]
@@ -463,7 +1069,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -488,7 +1097,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]
@@ -513,7 +1125,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7r]"
+      }
      ]
     }
    ]
@@ -538,7 +1153,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7v]"
+      }
      ]
     }
    ]
@@ -563,7 +1181,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8r]"
+      }
      ]
     }
    ]
@@ -588,7 +1209,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8v]"
+      }
      ]
     }
    ]

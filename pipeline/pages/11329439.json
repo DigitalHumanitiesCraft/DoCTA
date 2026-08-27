@@ -21,36 +21,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Nota was zu Sígmund¬",
-      "spurg beleibt in dem undern",
-      "haw̆s und das Kaspẽr",
-      "Frĕch inngenom(en) und em¬",
-      "phang(e)n hat und das",
-      "zu meȋns gnedig(en) h(er)n etc.",
-      "hannden innbehalczweȋß",
-      "versorg(e)n sol und daz im",
-      "Reȋchart Klȋeber desselben meins",
-      "gnẽdig(en) h(er)rn rat und haw̆ß",
-      "kamrer geantwurt hat am",
-      "phincztȃg Divisio Ap(ostol)or(um) LXII.",
-      "Item so bleibt hie inn behalcz",
-      "weȋß auf meins her(r)n gnad zu",
-      "wart(e)n inn meȋns gnedig(en) h(er)n kam(e)r.",
-      "Item X federpet.",
-      "Item VI põlster.",
-      "Item XVIII par leilach herbeȋn",
-      "und wȋrcheȋn.",
-      "Item tȋschtŭcher VI hĕrbeín.",
-      "Item II wȋrcheȋn tischtŭcher.",
-      "Item V hanndzwĕchl(e)n und",
-      "under den zwo lang umb",
-      "zuleg(e)n hérbeȋn und wircheȋn",
-      "hantzwechl(e)n.",
-      "Item VIII tȋschmesser ȋn aȋm",
-      "fŭterall.",
-      "Item XIII rauch dek(e)n schȃffein.",
-      "Item VI strŏsĕkh."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota was zu Sígmund¬"
+      },
+      {
+       "id": "r2l2",
+       "text": "spurg beleibt in dem undern"
+      },
+      {
+       "id": "r2l3",
+       "text": "haw̆s und das Kaspẽr"
+      },
+      {
+       "id": "r2l4",
+       "text": "Frĕch inngenom(en) und em¬"
+      },
+      {
+       "id": "r2l5",
+       "text": "phang(e)n hat und das"
+      },
+      {
+       "id": "r2l6",
+       "text": "zu meȋns gnedig(en) h(er)n etc."
+      },
+      {
+       "id": "r2l7",
+       "text": "hannden innbehalczweȋß"
+      },
+      {
+       "id": "r2l8",
+       "text": "versorg(e)n sol und daz im"
+      },
+      {
+       "id": "r2l9",
+       "text": "Reȋchart Klȋeber desselben meins"
+      },
+      {
+       "id": "r2l10",
+       "text": "gnẽdig(en) h(er)rn rat und haw̆ß"
+      },
+      {
+       "id": "r2l11",
+       "text": "kamrer geantwurt hat am"
+      },
+      {
+       "id": "r2l12",
+       "text": "phincztȃg Divisio Ap(ostol)or(um) LXII."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item so bleibt hie inn behalcz"
+      },
+      {
+       "id": "r3l2",
+       "text": "weȋß auf meins her(r)n gnad zu"
+      },
+      {
+       "id": "r3l3",
+       "text": "wart(e)n inn meȋns gnedig(en) h(er)n kam(e)r."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item X federpet."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item VI põlster."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item XVIII par leilach herbeȋn"
+      },
+      {
+       "id": "r4l4",
+       "text": "und wȋrcheȋn."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item tȋschtŭcher VI hĕrbeín."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item II wȋrcheȋn tischtŭcher."
+      },
+      {
+       "id": "r4l7",
+       "text": "Item V hanndzwĕchl(e)n und"
+      },
+      {
+       "id": "r4l8",
+       "text": "under den zwo lang umb"
+      },
+      {
+       "id": "r4l9",
+       "text": "zuleg(e)n hérbeȋn und wircheȋn"
+      },
+      {
+       "id": "r4l10",
+       "text": "hantzwechl(e)n."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item VIII tȋschmesser ȋn aȋm"
+      },
+      {
+       "id": "r4l12",
+       "text": "fŭterall."
+      },
+      {
+       "id": "r4l13",
+       "text": "Item XIII rauch dek(e)n schȃffein."
+      },
+      {
+       "id": "r4l14",
+       "text": "Item VI strŏsĕkh."
+      }
      ]
     }
    ]
@@ -75,7 +165,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     }
    ]
@@ -100,25 +193,82 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Nota kŭchenschȋrr,",
-      "gleser und trinkh¬",
-      "geschirr.",
-      "Item XIIII trȋnkhglëser.",
-      "Item und III angster.",
-      "Item V ereȋn mȋlchmõdl.",
-      "Item II glesreȋn kŏpf, aȋn",
-      "grŭner und aȋn blaber.",
-      "Item aȋn braw̆ns kredenczglaß.",
-      "Item IIII verdakte trȋnkglẽser.",
-      "Item maỹglo̊l glãsl zwaỹ.",
-      "Item ŭnd und aȋn glesreȋn",
-      "pechĕr.",
-      "Item glokhspeȋseȋn hăfen",
-      "klaȋn und groß V, yeder",
-      "auf dreȋn fůssenn.",
-      "Item XI glokspeíseȋn lefersch(e)n",
-      "gros und klaȋn."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota kŭchenschȋrr,"
+      },
+      {
+       "id": "r2l2",
+       "text": "gleser und trinkh¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "geschirr."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item XIIII trȋnkhglëser."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item und III angster."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item V ereȋn mȋlchmõdl."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item II glesreȋn kŏpf, aȋn"
+      },
+      {
+       "id": "r3l5",
+       "text": "grŭner und aȋn blaber."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item aȋn braw̆ns kredenczglaß."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item IIII verdakte trȋnkglẽser."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item maỹglo̊l glãsl zwaỹ."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item ŭnd und aȋn glesreȋn"
+      },
+      {
+       "id": "r3l10",
+       "text": "pechĕr."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item glokhspeȋseȋn hăfen"
+      },
+      {
+       "id": "r3l12",
+       "text": "klaȋn und groß V, yeder"
+      },
+      {
+       "id": "r3l13",
+       "text": "auf dreȋn fůssenn."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item XI glokspeíseȋn lefersch(e)n"
+      },
+      {
+       "id": "r3l15",
+       "text": "gros und klaȋn."
+      }
      ]
     }
    ]
@@ -143,33 +293,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Item I grosse kŭpfreȋne kraut",
-      "pĕkhn.",
-      "Item I kŭpfreȋn gacz(e)n.",
-      "Item VIII VI eisenn phan(n) klaȋn",
-      "und groß.",
-      "Item V hafn dek(e)n gros",
-      "und klaȋn.",
-      "Item IIII eisneȋn kochkell(e)n.",
-      "Item I pël.",
-      "Item I eȋsneȋn rost.",
-      "Item II pratspȋs.",
-      "Item II hẽln.",
-      "Item II prantschrait.",
-      "Item und I prantchrag(e)n",
-      "zu prattenn.",
-      "Item I pomschab(e)n.",
-      "Item I eȋsneín kũchlspis.",
-      "Item VII rot schůssl(e)n hůlczeȋn.",
-      "Item I eisneȋn gabl damit man",
-      "fleisch aufhëngt.",
-      "Item XII new̆ teŭflíng.",
-      "Item I few̆r kräl.",
-      "Item II drifũs.",
-      "Item VI krautmesser.",
-      "Item XXX hũlczein tẽller.",
-      "Item XIIII teẅfling hůlczeȋn."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item I grosse kŭpfreȋne kraut"
+      },
+      {
+       "id": "r2l2",
+       "text": "pĕkhn."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item I kŭpfreȋn gacz(e)n."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item VIII VI eisenn phan(n) klaȋn"
+      },
+      {
+       "id": "r2l5",
+       "text": "und groß."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item V hafn dek(e)n gros"
+      },
+      {
+       "id": "r2l7",
+       "text": "und klaȋn."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item IIII eisneȋn kochkell(e)n."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item I pël."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item I eȋsneȋn rost."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item II pratspȋs."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item II hẽln."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item II prantschrait."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item und I prantchrag(e)n"
+      },
+      {
+       "id": "r2l15",
+       "text": "zu prattenn."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item I pomschab(e)n."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item I eȋsneín kũchlspis."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item VII rot schůssl(e)n hůlczeȋn."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item I eisneȋn gabl damit man"
+      },
+      {
+       "id": "r2l20",
+       "text": "fleisch aufhëngt."
+      },
+      {
+       "id": "r2l21",
+       "text": "Item XII new̆ teŭflíng."
+      },
+      {
+       "id": "r2l22",
+       "text": "Item I few̆r kräl."
+      },
+      {
+       "id": "r2l23",
+       "text": "Item II drifũs."
+      },
+      {
+       "id": "r2l24",
+       "text": "Item VI krautmesser."
+      },
+      {
+       "id": "r2l25",
+       "text": "Item XXX hũlczein tẽller."
+      },
+      {
+       "id": "r2l26",
+       "text": "Item XIIII teẅfling hůlczeȋn."
+      }
      ]
     }
    ]
@@ -194,32 +425,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Item XLV húlczein lŏffl.",
-      "Item XXXVIII hŭlczeȋn",
-      "hausschusslen klaȋn",
-      "und groß gŭt und pös.",
-      "Item I ribeisenn.",
-      "Item I stospankh zu räb(e)n.",
-      "Item I rȃbschărben köttȋn.",
-      "Item I kufphrȋn giesgessl zu",
-      "wasser.",
-      "Item I kŭpfrȋn pẽkh.",
-      "Zȋngeschír.",
-      "Item I vȋermássig zȋnnkandl.",
-      "Item II zwomãssig zinkandl.",
-      "Item II măß kandl.",
-      "Item I seidlkänndl.",
-      "Item I eisneĭn flasch(e)n.",
-      "Item II trachter.",
-      "Item III pipp(e)n.",
-      "Item XV zin(n) schŭssl(e)n zu ambt¬",
-      "essenn.",
-      "Item I grösser fischplan(n).",
-      "Item zȋnn salsenn schŭsseleȋn IIII.",
-      "Item II zȋneȋn leũchtär.",
-      "Item bei VC ŭnslit kercz(e)n",
-      "ungevarlȋch."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item XLV húlczein lŏffl."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item XXXVIII hŭlczeȋn"
+      },
+      {
+       "id": "r2l3",
+       "text": "hausschusslen klaȋn"
+      },
+      {
+       "id": "r2l4",
+       "text": "und groß gŭt und pös."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item I ribeisenn."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item I stospankh zu räb(e)n."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item I rȃbschărben köttȋn."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item I kufphrȋn giesgessl zu"
+      },
+      {
+       "id": "r2l9",
+       "text": "wasser."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item I kŭpfrȋn pẽkh."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zȋngeschír."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item I vȋermássig zȋnnkandl."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item II zwomãssig zinkandl."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item II măß kandl."
+      },
+      {
+       "id": "r4l4",
+       "text": "Item I seidlkänndl."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item I eisneĭn flasch(e)n."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item II trachter."
+      },
+      {
+       "id": "r4l7",
+       "text": "Item III pipp(e)n."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item XV zin(n) schŭssl(e)n zu ambt¬"
+      },
+      {
+       "id": "r4l9",
+       "text": "essenn."
+      },
+      {
+       "id": "r4l10",
+       "text": "Item I grösser fischplan(n)."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item zȋnn salsenn schŭsseleȋn IIII."
+      },
+      {
+       "id": "r4l12",
+       "text": "Item II zȋneȋn leũchtär."
+      },
+      {
+       "id": "r4l13",
+       "text": "Item bei VC ŭnslit kercz(e)n"
+      },
+      {
+       "id": "r4l14",
+       "text": "ungevarlȋch."
+      }
      ]
     }
    ]
@@ -244,21 +553,66 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Nota harnasch und",
-      "was zu der wĕr gehört.",
-      "Item inn aím văsslin XX panczer.",
-      "Item X eisennhŭet.",
-      "Item X salair.",
-      "Item III wag(e)nmésser.",
-      "Item III paidenhanderswẽrt.",
-      "Item I streithakh(e)n.",
-      "Item III wŭrfeȋs(e)n.",
-      "Item I mortkolb(e)n.",
-      "Item II pŭgkler.",
-      "Item III hell(e)npart(e)n.",
-      "Item aȋn we̊r mit IIII",
-      "zŭgken eisenn."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota harnasch und"
+      },
+      {
+       "id": "r2l2",
+       "text": "was zu der wĕr gehört."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item inn aím văsslin XX panczer."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item X eisennhŭet."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item X salair."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item III wag(e)nmésser."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item III paidenhanderswẽrt."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item I streithakh(e)n."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item III wŭrfeȋs(e)n."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item I mortkolb(e)n."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item II pŭgkler."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item III hell(e)npart(e)n."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item aȋn we̊r mit IIII"
+      },
+      {
+       "id": "r3l12",
+       "text": "zŭgken eisenn."
+      }
      ]
     }
    ]
@@ -283,32 +637,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "Nota im wãsserhaw̃s",
-      "zú Sigmundspurg.",
-      "Item in meins gnëdig(e)n herr(e)n kamer",
-      "fŭr sein gnad.",
-      "Item II pẽtt.",
-      "Item II par leilach klainer, Sant Galler",
-      "leinwat.",
-      "Item II gŭt pŏlster der ain mit ainer",
-      "plab(e)n gestreifft(e)n ziech(e)n der ander",
-      "mit braw̆ner.",
-      "Item I dek(e)n mit seid(e)n genätt.",
-      "Item II grosse küß.",
-      "Item und ain strosakh.",
-      "Item unnder meins h(e)ren bĕt",
-      "aȋn karniŏll.",
-      "Item darinn I pët.",
-      "Item I pŏlster.",
-      "Item II kŭß.",
-      "Item II par leilach.",
-      "Item III schäffȋn dekh.",
-      "Item und I strosakh.",
-      "Item XI windtliechter.",
-      "Item IIII tȋschliechter.",
-      "Item II zineín pĕklȋn.",
-      "Item in der stuben I tisch."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota im wãsserhaw̃s"
+      },
+      {
+       "id": "r2l2",
+       "text": "zú Sigmundspurg."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item in meins gnëdig(e)n herr(e)n kamer"
+      },
+      {
+       "id": "r3l2",
+       "text": "fŭr sein gnad."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item II pẽtt."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item II par leilach klainer, Sant Galler"
+      },
+      {
+       "id": "r3l5",
+       "text": "leinwat."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item II gŭt pŏlster der ain mit ainer"
+      },
+      {
+       "id": "r3l7",
+       "text": "plab(e)n gestreifft(e)n ziech(e)n der ander"
+      },
+      {
+       "id": "r3l8",
+       "text": "mit braw̆ner."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item I dek(e)n mit seid(e)n genätt."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item II grosse küß."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item und ain strosakh."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item unnder meins h(e)ren bĕt"
+      },
+      {
+       "id": "r3l13",
+       "text": "aȋn karniŏll."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item darinn I pët."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item I pŏlster."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item II kŭß."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item II par leilach."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item III schäffȋn dekh."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item und I strosakh."
+      },
+      {
+       "id": "r3l20",
+       "text": "Item XI windtliechter."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item IIII tȋschliechter."
+      },
+      {
+       "id": "r3l22",
+       "text": "Item II zineín pĕklȋn."
+      },
+      {
+       "id": "r3l23",
+       "text": "Item in der stuben I tisch."
+      }
      ]
     }
    ]
@@ -333,30 +765,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Item ain few̆rzeŭg.",
-      "Item II brantschrag(e)n.",
-      "Item ausserhalb II tȋsch.",
-      "Item IIII fŭrpẽnnkh.",
-      "Nota underm dach.",
-      "Item IIII span(n)pẽt.",
-      "Item II federpét.",
-      "Item III strosekh.",
-      "Item II pölster.",
-      "Item IIII kŭß.",
-      "Item II par leilach.",
-      "Item IIII rauchdek(e)n.",
-      "Item aȋn sẽgennsail.",
-      "Item aȋn zugsail.",
-      "Item I eisenn nag(e)l zum zŭg.",
-      "Item in der undern kamer.",
-      "Item aȋn pët.",
-      "Item I par leȋlach.",
-      "Item I polster.",
-      "Item II küß.",
-      "Item I strosakh.",
-      "Item II rauch dek(e)n.",
-      "Item I pétstátt."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain few̆rzeŭg."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item II brantschrag(e)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item ausserhalb II tȋsch."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item IIII fŭrpẽnnkh."
+      },
+      {
+       "id": "r3l1",
+       "text": "Nota underm dach."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item IIII span(n)pẽt."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item II federpét."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item III strosekh."
+      },
+      {
+       "id": "r4l4",
+       "text": "Item II pölster."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item IIII kŭß."
+      },
+      {
+       "id": "r4l6",
+       "text": "Item II par leilach."
+      },
+      {
+       "id": "r4l7",
+       "text": "Item IIII rauchdek(e)n."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item aȋn sẽgennsail."
+      },
+      {
+       "id": "r4l9",
+       "text": "Item aȋn zugsail."
+      },
+      {
+       "id": "r4l10",
+       "text": "Item I eisenn nag(e)l zum zŭg."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item in der undern kamer."
+      },
+      {
+       "id": "r4l12",
+       "text": "Item aȋn pët."
+      },
+      {
+       "id": "r4l13",
+       "text": "Item I par leȋlach."
+      },
+      {
+       "id": "r4l14",
+       "text": "Item I polster."
+      },
+      {
+       "id": "r4l15",
+       "text": "Item II küß."
+      },
+      {
+       "id": "r4l16",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r4l17",
+       "text": "Item II rauch dek(e)n."
+      },
+      {
+       "id": "r4l18",
+       "text": "Item I pétstátt."
+      }
      ]
     }
    ]
@@ -381,12 +885,30 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Item aȋn lange pũchsen mit",
-      "tellẽrn, lofflẽn, trȋnkh¬",
-      "geschirr(e)n und andern dȋng(en).",
-      "Item I tȋsch.",
-      "Item II fůrpennkh."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item aȋn lange pũchsen mit"
+      },
+      {
+       "id": "r2l2",
+       "text": "tellẽrn, lofflẽn, trȋnkh¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "geschirr(e)n und andern dȋng(en)."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item I tȋsch."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item II fůrpennkh."
+      }
      ]
     }
    ]
@@ -411,32 +933,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]",
-      "Nota inn der",
-      "schmidten und",
-      "darvor.",
-      "Item inn der smidt(e)n.",
-      "Item I anpoß.",
-      "Item I hornanpoß.",
-      "Item hămer zang(e)n und all",
-      "annder notdȗrft so dan(n) inn",
-      "meins gnedig herr(e)n smidt(e)n",
-      "gehŏrt und dȋennt.",
-      "Item aȋn schliffstaȋn, ain gross(e)n",
-      "ȋn der schmidt(e)n.",
-      "Item aȋn trȗch(e)n in der smidt(e)n",
-      "darinn ist eisenwĕrch alcz und",
-      "new̆s.",
-      "Item aȋn eisneȋn gätter fŭr",
-      "aȋn palkh(e)n.",
-      "Item III lanng eisenn stãb.",
-      "Item VI par tůrpẽnnttĕr.",
-      "Item II brantkol ȋn der hŭtt(e)n",
-      "vor der smidt(e)n.",
-      "Item vor der smidt(e)n ungehaw̆(e)n",
-      "II1/2C werkstůkh stain.",
-      "Item gehaw(e)n stŭkh mitsambt",
-      "den mabelstain XXXI stukh."
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota inn der"
+      },
+      {
+       "id": "r2l2",
+       "text": "schmidten und"
+      },
+      {
+       "id": "r2l3",
+       "text": "darvor."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item inn der smidt(e)n."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item I anpoß."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item I hornanpoß."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item hămer zang(e)n und all"
+      },
+      {
+       "id": "r3l5",
+       "text": "annder notdȗrft so dan(n) inn"
+      },
+      {
+       "id": "r3l6",
+       "text": "meins gnedig herr(e)n smidt(e)n"
+      },
+      {
+       "id": "r3l7",
+       "text": "gehŏrt und dȋennt."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item aȋn schliffstaȋn, ain gross(e)n"
+      },
+      {
+       "id": "r3l9",
+       "text": "ȋn der schmidt(e)n."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item aȋn trȗch(e)n in der smidt(e)n"
+      },
+      {
+       "id": "r3l11",
+       "text": "darinn ist eisenwĕrch alcz und"
+      },
+      {
+       "id": "r3l12",
+       "text": "new̆s."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item aȋn eisneȋn gätter fŭr"
+      },
+      {
+       "id": "r3l14",
+       "text": "aȋn palkh(e)n."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item III lanng eisenn stãb."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item VI par tůrpẽnnttĕr."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item II brantkol ȋn der hŭtt(e)n"
+      },
+      {
+       "id": "r3l18",
+       "text": "vor der smidt(e)n."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item vor der smidt(e)n ungehaw̆(e)n"
+      },
+      {
+       "id": "r3l20",
+       "text": "II1/2C werkstůkh stain."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item gehaw(e)n stŭkh mitsambt"
+      },
+      {
+       "id": "r3l22",
+       "text": "den mabelstain XXXI stukh."
+      }
      ]
     }
    ]
@@ -461,10 +1061,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]",
-      "Item ladenn holcz, zȋegl",
-      "geprănter kalch nãch innhalt",
-      "der zed(e)l."
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ladenn holcz, zȋegl"
+      },
+      {
+       "id": "r2l2",
+       "text": "geprănter kalch nãch innhalt"
+      },
+      {
+       "id": "r2l3",
+       "text": "der zed(e)l."
+      }
      ]
     }
    ]
@@ -489,7 +1101,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]
@@ -514,7 +1129,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7v]"
+      }
      ]
     }
    ]
@@ -539,7 +1157,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7v]"
+      }
      ]
     }
    ]
@@ -564,7 +1185,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8r]"
+      }
      ]
     }
    ]
@@ -589,7 +1213,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8v]"
+      }
      ]
     }
    ]

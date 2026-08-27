@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -117,13 +117,17 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329901-1"/>
+        <pb n="1" facs="#surface-11329901-1"/>
+        <ab xml:id="ab-11329901-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329901-1-r2">
           <lb facs="#zone-11329901-1-r2l1"/>Vermircktt was ich Jörgg Gossennbrott von dem vesten Caspar
           <lb facs="#zone-11329901-1-r2l2"/>Frechenn an statt meins gnädigen herren in dem schloss Erenberg
           <lb facs="#zone-11329901-1-r2l3"/>uff mittwuchen den Heiligen Auffartt abentt anno etc. LXXVII
           <lb facs="#zone-11329901-1-r2l4"/>emphannigen hab.
+        </ab>
+        <ab xml:id="ab-11329901-1-r3">
           <lb facs="#zone-11329901-1-r3l1"/>Item zun ersten dreẅ bettli sind aus neẅn bösen gannz errissen
           <lb facs="#zone-11329901-1-r3l2"/>bettlen zusamen prachtt alles blos und aus vier bösse pólsteren
           <lb facs="#zone-11329901-1-r3l3"/>und VII küssenn die gar tzu nichte sein gewesen nach ausweý¬
@@ -150,15 +154,19 @@
           <lb facs="#zone-11329901-1-r3l24"/>Item zwaÿ ketten darin man die gefangen legtt.
           <lb facs="#zone-11329901-1-r3l25"/>Item neẅn schloss angeschlagen überall umbher an die gemãch.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329901-2"/>
+        <pb n="2" facs="#surface-11329901-2"/>
+        <ab xml:id="ab-11329901-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329901-2-r2">
           <lb facs="#zone-11329901-2-r2l1"/>Item ain schloss an kastenn, ain schloss an marstall, ain
           <lb facs="#zone-11329901-2-r2l2"/>schloss am stüblin beý dem marstall.
           <lb facs="#zone-11329901-2-r2l3"/>Item ain gewanntt kastenn in dem alten fraw̃en zinner
           <lb facs="#zone-11329901-2-r2l4"/>und dritthalb hundertt glasscheiben sindtt verglast in dem
           <lb facs="#zone-11329901-2-r2l5"/>newen paw ainen kertzen trog, ain kestlin da man gleser einheng.
           <lb facs="#zone-11329901-2-r2l6"/>Item ain streitt kolb mit ainen hilltzin stil.
+        </ab>
+        <ab xml:id="ab-11329901-2-r3">
           <lb facs="#zone-11329901-2-r3l1"/>Inventari zedl gen
           <lb facs="#zone-11329901-2-r3l2"/>Eremberg.
         </ab>

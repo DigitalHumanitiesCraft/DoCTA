@@ -21,34 +21,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerkt meins gnĕdigen",
-      "herrn haußplunder oder",
-      "massarey zŭ Fragenstain.",
-      "Zů erst in der klainĕn",
-      "stuben ainen schreibtisch.",
-      "Item ainen schlȇchtn tisch.",
-      "Item mer IIII tisch.",
-      "Item handtbuchsen IIII.",
-      "Item hakenpŭchsen gros",
-      "und klain XXVII.",
-      "Item vier michel karrn",
-      "püchsen und ain klains",
-      "stain pũchsell",
-      "und ain grossy puchsen.",
-      "Item zwaÿ vassell mit",
-      "pulfer.",
-      "Item zway vãssel mit",
-      "pfeil.",
-      "Item zwo pulfer taschen.",
-      "Item zway alte armbrost.",
-      "Item pleyplȃttn V.",
-      "Item im gwelb ain grossen",
-      "gwand casten.",
-      "Daselbs im gwelb ain",
-      "pettstatt mit aine(m) hÿmmell",
-      "und sunst aine on ain",
-      "hymell."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkt meins gnĕdigen"
+      },
+      {
+       "id": "r2l2",
+       "text": "herrn haußplunder oder"
+      },
+      {
+       "id": "r2l3",
+       "text": "massarey zŭ Fragenstain."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zů erst in der klainĕn"
+      },
+      {
+       "id": "r3l2",
+       "text": "stuben ainen schreibtisch."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item ainen schlȇchtn tisch."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item mer IIII tisch."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item handtbuchsen IIII."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item hakenpŭchsen gros"
+      },
+      {
+       "id": "r3l7",
+       "text": "und klain XXVII."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item vier michel karrn"
+      },
+      {
+       "id": "r3l9",
+       "text": "püchsen und ain klains"
+      },
+      {
+       "id": "r3l10",
+       "text": "stain pũchsell"
+      },
+      {
+       "id": "r3l11",
+       "text": "und ain grossy puchsen."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item zwaÿ vassell mit"
+      },
+      {
+       "id": "r3l13",
+       "text": "pulfer."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item zway vãssel mit"
+      },
+      {
+       "id": "r3l15",
+       "text": "pfeil."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item zwo pulfer taschen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item zway alte armbrost."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item pleyplȃttn V."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item im gwelb ain grossen"
+      },
+      {
+       "id": "r3l20",
+       "text": "gwand casten."
+      },
+      {
+       "id": "r3l21",
+       "text": "Daselbs im gwelb ain"
+      },
+      {
+       "id": "r3l22",
+       "text": "pettstatt mit aine(m) hÿmmell"
+      },
+      {
+       "id": "r3l23",
+       "text": "und sunst aine on ain"
+      },
+      {
+       "id": "r3l24",
+       "text": "hymell."
+      }
      ]
     }
    ]
@@ -73,36 +157,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item in meins herrn camer",
-      "ain pettschtat mit aine(m)",
-      "hÿmell.",
-      "Item in der selben camer",
-      "zwo pettstat schlecht.",
-      "Item in der mũncz pettstatt",
-      "dreÿ schlecht.",
-      "Item im milch kemerln",
-      "ain schlecht pettstatt.",
-      "Item zwo pettschatt in",
-      "zwain ãrkgern.",
-      "Item in dem aussern turn",
-      "ain tisch und ain",
-      "pettschatt mit ainem",
-      "hỹmell und sunst ain",
-      "schlechte.",
-      "Item ain grossen kessell",
-      "in der padstuben.",
-      "Item in der kuchen ain hel.",
-      "Item dreỹ korn cästen",
-      "und ain fůttercasten.",
-      "Item im tor kemerly ain",
-      "schlechte petschatt.",
-      "Wer.",
-      "Item ain tristlich.",
-      "Item ain alte hellpartten.",
-      "Item ain flaischstokh.",
-      "Ain kugelmodl zü",
-      "pleỹkugelen."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item in meins herrn camer"
+      },
+      {
+       "id": "r2l2",
+       "text": "ain pettschtat mit aine(m)"
+      },
+      {
+       "id": "r2l3",
+       "text": "hÿmell."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item in der selben camer"
+      },
+      {
+       "id": "r2l5",
+       "text": "zwo pettstat schlecht."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item in der mũncz pettstatt"
+      },
+      {
+       "id": "r2l7",
+       "text": "dreÿ schlecht."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item im milch kemerln"
+      },
+      {
+       "id": "r2l9",
+       "text": "ain schlecht pettstatt."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item zwo pettschatt in"
+      },
+      {
+       "id": "r2l11",
+       "text": "zwain ãrkgern."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item in dem aussern turn"
+      },
+      {
+       "id": "r2l13",
+       "text": "ain tisch und ain"
+      },
+      {
+       "id": "r2l14",
+       "text": "pettschatt mit ainem"
+      },
+      {
+       "id": "r2l15",
+       "text": "hỹmell und sunst ain"
+      },
+      {
+       "id": "r2l16",
+       "text": "schlechte."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item ain grossen kessell"
+      },
+      {
+       "id": "r2l18",
+       "text": "in der padstuben."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item in der kuchen ain hel."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item dreỹ korn cästen"
+      },
+      {
+       "id": "r2l21",
+       "text": "und ain fůttercasten."
+      },
+      {
+       "id": "r2l22",
+       "text": "Item im tor kemerly ain"
+      },
+      {
+       "id": "r2l23",
+       "text": "schlechte petschatt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Wer."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item ain tristlich."
+      },
+      {
+       "id": "r4l2",
+       "text": "Item ain alte hellpartten."
+      },
+      {
+       "id": "r4l3",
+       "text": "Item ain flaischstokh."
+      },
+      {
+       "id": "r4l4",
+       "text": "Ain kugelmodl zü"
+      },
+      {
+       "id": "r4l5",
+       "text": "pleỹkugelen."
+      }
      ]
     }
    ]
@@ -127,14 +301,38 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Beẏ der inventtuari zedl",
-      "sind gwesen als der Sig¬",
-      "mund ingenom(en) hat die",
-      "erbern Peter Schee(r), Baltasar",
-      "Fischer, Waltasar Ritter.",
-      "Datum in vigiliai K Katarine",
-      "anno etc. LXXVIIten."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Beẏ der inventtuari zedl"
+      },
+      {
+       "id": "r2l2",
+       "text": "sind gwesen als der Sig¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "mund ingenom(en) hat die"
+      },
+      {
+       "id": "r2l4",
+       "text": "erbern Peter Schee(r), Baltasar"
+      },
+      {
+       "id": "r2l5",
+       "text": "Fischer, Waltasar Ritter."
+      },
+      {
+       "id": "r2l6",
+       "text": "Datum in vigiliai K Katarine"
+      },
+      {
+       "id": "r2l7",
+       "text": "anno etc. LXXVIIten."
+      }
      ]
     }
    ]
@@ -159,9 +357,18 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Inventari als Fragenstain",
-      "dem Gothart Lanngen ÿnn geantwurt ist."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventari als Fragenstain"
+      },
+      {
+       "id": "r2l2",
+       "text": "dem Gothart Lanngen ÿnn geantwurt ist."
+      }
      ]
     }
    ]

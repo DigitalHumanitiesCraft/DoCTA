@@ -10,6 +10,8 @@ Data flow (repo-local only, no network):
   docs/data/transkribus_status.json  page-status distribution (DONE = corrected)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
   docs/data/demo/thaur_entities.json prototype named entities of one document
+  docs/data/entities/<docId>.json    named entities of a document, same schema
+  pipeline/pages/<docId>.json        page register: verification and review runs
 
 Writes:
   docs/data/tei/<docId>.xml          one file per document with has_text
@@ -22,11 +24,16 @@ Design decisions:
   Generation is deterministic. The date in publicationStmt and revisionDesc comes
   from --date and never from the clock, so a rebuild without input changes leaves
   no diff.
-  The page is the only structural unit the export gives, so the body is one <ab>
-  per page and carries no paragraph or section structure; <ab> avoids claiming a
-  <p> the source has not been read for. Transkribus text regions are flattened in
-  this baseline (lines in reading order of the export); preserving them would mean
-  one <ab> per region and is the upgrade path once region types are curated.
+  The page and the text region are the structural units the export gives, so the
+  body is one <ab> per region under a <pb> per page and carries no paragraph or
+  section structure; <ab> avoids claiming a <p> the source has not been read for.
+  A region keeps its export id in the xml:id of its <ab>, so a block of the TEI
+  and a block of the layout analysis stay addressable in both directions.
+  The text of a page comes from the review layer where one exists. A page that a
+  reviewer marked gesichtet or abgenommen in the viewer and corrected there
+  carries the lines of its newest review run instead of the raw export; the
+  layout data of the export still carries zones and lb bindings, because a
+  correction changes a reading and not the position of a line on the image.
   Every line of a page becomes a <zone> under the surface of that page, and the
   <lb> of the line points at it, so text and image region stay bound. Zones and
   lb come from the same iteration over the export, which keeps them in step.
@@ -47,6 +54,7 @@ Usage:
   python build_tei.py                  # write docs/data/tei/
   python build_tei.py --out DIR        # write elsewhere
   python build_tei.py --date 2026-09-01
+  python build_tei.py --register DIR   # read the register elsewhere
 """
 
 import argparse
@@ -62,6 +70,7 @@ ROOT = Path(__file__).parent
 REPO = ROOT.parent
 DATA = REPO / "docs" / "data"
 TEI_OUT = DATA / "tei"
+REGISTER = ROOT / "pages"
 
 GENERATION_DATE = "2026-08-27"
 
@@ -98,16 +107,28 @@ VALID_XML = re.compile(
 CORRECTED, PARTLY, MACHINE = (
     "human-corrected", "partly-corrected", "machine-unrevised")
 
-# resp-expert-verification joins this vocabulary when the curation view ships and
-# a scholarly verification is actually recorded per document; until then no file
-# may carry it, because a responsibility declaration asserts a step that ran.
+# Review states of the transcription stream. They outrank the Transkribus states
+# above, because a page reviewed in DoCTA has been read against the scan here.
+REVIEWED, APPROVED = "partly-reviewed", "approved"
+
+# Register verification states from which the review layer becomes the text of a
+# page; the machine states of the register assert no reading of the scan.
+REVIEWED_STATUS = ("gesichtet", "abgenommen")
+
+# A responsibility is declared only for a step that actually ran; the
+# verification statement therefore appears only in a file with a review layer.
 RESP_TRANSKRIBUS = "resp-transkribus-layer"
 RESP_GENERATION = "resp-tei-generation"
+RESP_VERIFICATION = "resp-expert-verification"
 RESP_ENTITY = "resp-entity-llm"
 
 # Prototype named entities of a single document. The file names the docId it
 # belongs to, so no other document can pick the layer up by accident.
 ENTITY_FILE = DATA / "demo" / "thaur_entities.json"
+
+# Per-document entity files of the running extraction, same schema as the
+# prototype file; a document without one keeps no entity layer.
+ENTITY_DIR = DATA / "entities"
 
 # Entity types the encoding covers; a type outside this map stays unencoded
 # rather than being forced into an element that does not fit it.
@@ -150,7 +171,8 @@ def _correction(done_pages: int | None, pages: int | None) -> str:
     return CORRECTED if done_pages >= pages else PARTLY
 
 
-def _resp_stmts(doc: dict, indent: str, entities: bool = False) -> list[str]:
+def _resp_stmts(doc: dict, indent: str, entities: bool = False,
+                reviewed: bool = False) -> list[str]:
     """One respStmt per work step that actually happened for this document."""
     state = doc["correction"]
     if state == CORRECTED:
@@ -173,6 +195,11 @@ def _resp_stmts(doc: dict, indent: str, entities: bool = False) -> list[str]:
     steps = [(RESP_TRANSKRIBUS, layer, actor),
              (RESP_GENERATION, generation,
               f"pipeline/build_tei.py (sha256 {script_digest()})")]
+    if reviewed:
+        steps.append((RESP_VERIFICATION,
+                      "Page-level scholarly review and correction in the DoCTA"
+                      " viewer",
+                      "DoCTA reviewer (initials in the revision log)"))
     if entities:
         steps.append((RESP_ENTITY,
                       "Named-entity extraction by an LLM agent in the prototype"
@@ -187,7 +214,8 @@ def _resp_stmts(doc: dict, indent: str, entities: bool = False) -> list[str]:
     return out
 
 
-def _editorial_decl(state: str, indent: str, entities: bool = False) -> list[str]:
+def _editorial_decl(state: str, indent: str, entities: bool = False,
+                    review: dict | None = None) -> list[str]:
     """State-dependent editorial declaration; never asserts a step that did not run."""
     if state == MACHINE:
         first = ("The text of this file is unrevised machine transcription."
@@ -211,6 +239,8 @@ def _editorial_decl(state: str, indent: str, entities: bool = False) -> list[str
               " and lineation follows the source, one lb per written line.")
     out = [f"{indent}<editorialDecl>",
            f"{indent}  <p>{first} {second}</p>"]
+    if review and review["pages"]:
+        out.append(f"{indent}  <p>{_esc(_review_sentence(review))}</p>")
     if entities:
         out.append(f"{indent}  <p>The named entities marked in this file are an"
                    " unverified extraction by an LLM agent from the prototype"
@@ -218,6 +248,60 @@ def _editorial_decl(state: str, indent: str, entities: bool = False) -> list[str
                    " scholar and carry no claim of correctness.</p>")
     out.append(f"{indent}</editorialDecl>")
     return out
+
+
+def _review(doc_id: int, register_dir: Path) -> dict:
+    """The review layer of a document, read from the page register.
+
+    Returns the reviewed pages in page order and, per page that carries a review
+    run, the corrected line texts by line id. A page counts as reviewed on its
+    register verification alone; the run is what supplies a changed reading, and
+    a page reviewed without a correction simply keeps the export text.
+    """
+    path = register_dir / f"{doc_id}.json"
+    if not path.exists():
+        return {"pages": [], "texts": {}, "complete": False}
+    register = _load(path)["pages"]
+    pages, texts = [], {}
+    for page in register:
+        verification = page.get("verification") or {}
+        if verification.get("status") not in REVIEWED_STATUS:
+            continue
+        runs = [r for r in page.get("runs") or []
+                if str(r.get("id", "")).startswith("review:")]
+        pages.append({"pageNr": page["pageNr"],
+                      "status": verification["status"],
+                      "reviewer": verification.get("reviewer"),
+                      "date": verification.get("date")})
+        if runs:
+            latest = max(runs, key=lambda r: (r.get("date") or "", r["id"]))
+            texts[page["pageNr"]] = {line["id"]: line["text"]
+                                     for line in latest["lines"]
+                                     if line.get("id")}
+    complete = bool(register) and len(pages) == len(register) and \
+        all(p["status"] == "abgenommen" for p in pages)
+    return {"pages": pages, "texts": texts, "complete": complete}
+
+
+def _stream_status(doc: dict, review: dict) -> str:
+    """State of the transcription stream, review layer first."""
+    if review["complete"]:
+        return APPROVED
+    if review["pages"]:
+        return REVIEWED
+    return doc["correction"]
+
+
+def _review_sentence(review: dict) -> str:
+    if review["complete"]:
+        return ("Every page of this file has been read against the scan in the"
+                " DoCTA viewer and accepted as edition text; the corrections"
+                " made there are part of the text.")
+    return ("Part of the pages of this file has been read against the scan in"
+            " the DoCTA viewer and marked gesichtet or abgenommen there. The"
+            " revision log names those pages one by one with the initials of the"
+            " reviewer, and the corrections made there are part of the text of"
+            " those pages.")
 
 
 def _origdate(dating: dict) -> str | None:
@@ -264,7 +348,10 @@ def _ms_identifier(signatur: str, doc_id: int, indent: str) -> list[str]:
     return out
 
 
-def _header(doc: dict, date: str, entities: bool = False) -> list[str]:
+def _header(doc: dict, date: str, entities: bool = False,
+            review: dict | None = None) -> list[str]:
+    review = review or {"pages": [], "texts": {}, "complete": False}
+    reviewed = bool(review["pages"])
     title = (doc.get("title") or "").strip()
     signatur = doc["shelfmark"]
     category = (doc.get("category") or "").strip()
@@ -274,7 +361,7 @@ def _header(doc: dict, date: str, entities: bool = False) -> list[str]:
     if title:
         out.append(f'        <title type="main">{_esc(title)}</title>')
     out.append(f'        <title type="shelfmark">{_esc(signatur)}</title>')
-    out += _resp_stmts(doc, "        ", entities)
+    out += _resp_stmts(doc, "        ", entities, reviewed)
     out += ["      </titleStmt>",
             "      <publicationStmt>",
             f"        <publisher>{_esc(PUBLISHER)}</publisher>",
@@ -300,7 +387,7 @@ def _header(doc: dict, date: str, entities: bool = False) -> list[str]:
             " Tyrolean territorial administration; this file is produced by the"
             " project's agentic edition pipeline from the Transkribus export.</p>",
             "      </projectDesc>"]
-    out += _editorial_decl(doc["correction"], "      ", entities)
+    out += _editorial_decl(doc["correction"], "      ", entities, review)
     if category:
         out += ['      <classDecl>',
                 '        <taxonomy xml:id="docta-category">',
@@ -322,12 +409,19 @@ def _header(doc: dict, date: str, entities: bool = False) -> list[str]:
                 f"          <term>{_esc(category)}</term>",
                 "        </keywords>",
                 "      </textClass>"]
+    stream = _stream_status(doc, review)
     out += ["    </profileDesc>",
             "    <revisionDesc>",
             f'      <change when="{_att(date)}" who="#{RESP_GENERATION}">Generated'
-            " from the Transkribus export by the DoCTA pipeline.</change>",
-            f'      <change n="transcription-summary" status="{doc["correction"]}">'
-            f"Transcription stream (state): {doc['correction']}</change>",
+            " from the Transkribus export by the DoCTA pipeline.</change>"]
+    for page in review["pages"]:
+        when = f' when="{_att(page["date"])}"' if page.get("date") else ""
+        initials = page.get("reviewer") or "unnamed"
+        out.append(f'      <change{when} who="#{RESP_VERIFICATION}" n="review">Page'
+                   f' {page["pageNr"]} reviewed in the DoCTA viewer by'
+                   f" {_esc(initials)} (state): {page['status']}</change>")
+    out += [f'      <change n="transcription-summary" status="{stream}">'
+            f"Transcription stream (state): {stream}</change>",
             '      <change n="tei-summary" status="machine-generated">TEI stream'
             " (state): machine-generated</change>",
             "    </revisionDesc>",
@@ -362,34 +456,46 @@ def _zone_id(doc_id: int, page_nr: int, line_id: str) -> str:
     return f"zone-{doc_id}-{page_nr}-{line_id}"
 
 
-def _page_body(page: dict, doc_id: int, anchors: dict) -> list[str]:
-    pb = f'<pb n="{page["pageNr"]}"'
+def _page_body(page: dict, doc_id: int, anchors: dict,
+               review_texts: dict | None = None) -> list[str]:
+    """One pb per page and one ab per text region of the export."""
+    page_nr = page["pageNr"]
+    pb = f'<pb n="{page_nr}"'
     has_surface = bool(page.get("iiif"))
     if has_surface:
         pb += f' facs="#{_att(_surface_id(doc_id, page))}"'
-    out = ["      <ab>", f"        {pb}/>"]
-    for line in _line_records(page):
-        text = (line.get("text") or "").strip()
-        if m := FOLIO_LINE.match(text):
-            out.append(f'        <milestone unit="folio" n="{_att(m.group(1))}"/>')
-        elif m := COVER_LINE.match(text):
-            out.append(f'        <milestone unit="cover" n="{_att(m.group(1))}"/>')
-        else:
-            # The lb points at a zone only where that zone was actually
-            # emitted, which needs both a surface for the page and coordinates
-            # for the line; a dangling facs reference is worse than none.
-            lb = "<lb/>"
-            if has_surface and (line.get("coords") or "").strip():
-                zone = _zone_id(doc_id, page["pageNr"], line["id"])
-                lb = f'<lb facs="#{_att(zone)}"/>'
-            content = _line_content(text, anchors.get(line["id"]) or [])
-            out.append(f"        {lb}{content}")
-    out.append("      </ab>")
+    out = [f"      {pb}/>"]
+    for region in page.get("regions") or []:
+        out.append(f'      <ab xml:id="{_att(_ab_id(doc_id, page_nr, region))}">')
+        for line in region.get("lines") or []:
+            text = _line_text(line, review_texts)
+            if m := FOLIO_LINE.match(text):
+                out.append(f'        <milestone unit="folio"'
+                           f' n="{_att(m.group(1))}"/>')
+            elif m := COVER_LINE.match(text):
+                out.append(f'        <milestone unit="cover"'
+                           f' n="{_att(m.group(1))}"/>')
+            else:
+                # The lb points at a zone only where that zone was actually
+                # emitted, which needs both a surface for the page and
+                # coordinates for the line; a dangling facs reference is worse
+                # than none.
+                lb = "<lb/>"
+                if has_surface and (line.get("coords") or "").strip():
+                    zone = _zone_id(doc_id, page_nr, line["id"])
+                    lb = f'<lb facs="#{_att(zone)}"/>'
+                content = _line_content(text, anchors.get(line["id"]) or [])
+                out.append(f"        {lb}{content}")
+        out.append("      </ab>")
     return out
 
 
+def _ab_id(doc_id: int, page_nr: int, region: dict) -> str:
+    return f"ab-{doc_id}-{page_nr}-{region['id']}"
+
+
 def _line_records(page: dict) -> list[dict]:
-    """Line records of a page in export order; regions are flattened.
+    """Line records of a page in export order, across its regions.
 
     Single source of the page-to-line iteration, so zone, lb and entity anchor
     are derived from the same order and cannot drift apart.
@@ -399,9 +505,16 @@ def _line_records(page: dict) -> list[dict]:
             for line in region.get("lines") or []]
 
 
-def _lines(page: dict) -> list[str]:
-    """Line texts of a page in export order; regions are flattened."""
-    return [(line.get("text") or "").strip() for line in _line_records(page)]
+def _line_text(line: dict, review_texts: dict | None = None) -> str:
+    """Effective text of a line: the reviewed reading where one exists."""
+    if review_texts and line.get("id") in review_texts:
+        return review_texts[line["id"]].strip()
+    return (line.get("text") or "").strip()
+
+
+def _lines(page: dict, review_texts: dict | None = None) -> list[str]:
+    """Line texts of a page in export order, across its regions."""
+    return [_line_text(line, review_texts) for line in _line_records(page)]
 
 
 def _line_content(text: str, anchors: list[dict]) -> str:
@@ -429,7 +542,24 @@ def _line_content(text: str, anchors: list[dict]) -> str:
     return "".join(out)
 
 
-def _entity_anchors(doc_id: int, pages: list[dict]
+def _entity_data(doc_id: int) -> dict | None:
+    """The entity extraction of this document, from the per-document file first.
+
+    Both sources carry the same schema and name the docId they belong to, so no
+    document can pick a layer up by accident. A document with neither file has
+    no entity layer, which is the normal case.
+    """
+    path = ENTITY_DIR / f"{doc_id}.json"
+    if not path.exists():
+        path = ENTITY_FILE
+        if not path.exists():
+            return None
+    data = _load(path)
+    return data if data.get("docId") == doc_id else None
+
+
+def _entity_anchors(doc_id: int, pages: list[dict],
+                    review_texts: dict | None = None
                     ) -> tuple[dict[int, dict[str, list[dict]]],
                                list[tuple[str, str]]]:
     """Deterministic inline anchors for the prototype entity layer.
@@ -440,12 +570,14 @@ def _entity_anchors(doc_id: int, pages: list[dict]
     verbatim exactly once; a second occurrence makes the position ambiguous and
     guessing one would assert a reading that was never established.
     """
-    if not ENTITY_FILE.exists():
+    data = _entity_data(doc_id)
+    if data is None:
         return {}, []
-    data = _load(ENTITY_FILE)
-    if data.get("docId") != doc_id:
-        return {}, []
-    texts = {(page["pageNr"], line["id"]): (line.get("text") or "").strip()
+    # Anchors are cut against the text the file will carry, so a corrected line
+    # is matched on its reviewed reading and never on the superseded one.
+    review_texts = review_texts or {}
+    texts = {(page["pageNr"], line["id"]):
+             _line_text(line, review_texts.get(page["pageNr"]))
              for page in pages for line in _line_records(page)}
     anchors: dict[int, dict[str, list[dict]]] = {}
     skipped: list[tuple[str, str]] = []
@@ -475,20 +607,22 @@ def _entity_anchors(doc_id: int, pages: list[dict]
 
 
 def document_xml(doc: dict, pages: list[dict], date: str,
-                 anchors: dict | None = None) -> str:
+                 anchors: dict | None = None, review: dict | None = None) -> str:
     doc_id = doc["docId"]
     anchors = anchors or {}
+    review = review or {"pages": [], "texts": {}, "complete": False}
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<TEI xmlns="http://www.tei-c.org/ns/1.0"'
            f' xml:id="docta-{doc_id}">']
-    out += _header(doc, date, bool(anchors))
+    out += _header(doc, date, bool(anchors), review)
     out += _facsimile(pages, doc_id)
     out += [f'  <text xml:lang="{TEXT_LANG}">', "    <body>",
             '      <div type="transcription">']
     for page in pages:
         page_anchors = anchors.get(page["pageNr"]) or {}
+        texts = review["texts"].get(page["pageNr"])
         out += ["  " + line
-                for line in _page_body(page, doc_id, page_anchors)]
+                for line in _page_body(page, doc_id, page_anchors, texts)]
     out += ["      </div>", "    </body>", "  </text>", "</TEI>", ""]
     return "\n".join(out)
 
@@ -522,7 +656,8 @@ def _documents() -> list[dict]:
     return docs
 
 
-def build(out_dir: Path, date: str = GENERATION_DATE) -> dict[int, str]:
+def build(out_dir: Path, date: str = GENERATION_DATE,
+          register_dir: Path = REGISTER) -> dict[int, str]:
     """Build one TEI file per transcribed document. Deterministic and re-runnable.
 
     Every document is re-parsed before it is written; a malformed result is a
@@ -538,12 +673,13 @@ def build(out_dir: Path, date: str = GENERATION_DATE) -> dict[int, str]:
                   file=sys.stderr)
             continue
         pages = sorted(_load(export)["pages"], key=lambda p: p["pageNr"])
-        anchors, skipped = _entity_anchors(doc_id, pages)
+        review = _review(doc_id, register_dir)
+        anchors, skipped = _entity_anchors(doc_id, pages, review["texts"])
         if skipped:
             print(f"ENTITIES {doc_id}: {len(skipped)} nicht kodiert", file=sys.stderr)
             for entity_id, reason in skipped:
                 print(f"  {entity_id}: {reason}", file=sys.stderr)
-        xml = document_xml(doc, pages, date, anchors)
+        xml = document_xml(doc, pages, date, anchors, review)
         ElementTree.fromstring(xml)  # fail fast on a malformed template result
         result[doc_id] = xml
     for doc_id, xml in result.items():
@@ -558,9 +694,11 @@ def main() -> None:
     ap.add_argument("--date", default=GENERATION_DATE,
                     help="generation date written into the header"
                          f" (default: {GENERATION_DATE})")
+    ap.add_argument("--register", type=Path, default=REGISTER,
+                    help="register page directory (default: pipeline/pages/)")
     args = ap.parse_args()
 
-    built = build(args.out, args.date)
+    built = build(args.out, args.date, args.register)
     print(f"OK TEI: {len(built)} Dokumente -> {args.out}")
 
 

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -339,9 +339,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11330760-1"/>
+        <pb n="1" facs="#surface-11330760-1"/>
+        <ab xml:id="ab-11330760-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11330760-1-r2">
           <lb facs="#zone-11330760-1-r2l1"/>Vermerkt waz dy Pŭcherin
           <lb facs="#zone-11330760-1-r2l2"/>zŭ irer notdurfft mit ir
           <lb facs="#zone-11330760-1-r2l3"/>auß dem turen genomen
@@ -349,6 +351,8 @@
           <lb facs="#zone-11330760-1-r2l5"/>andre masserey durch
           <lb facs="#zone-11330760-1-r2l6"/>Caspern Ŭbel die zeit verweser
           <lb facs="#zone-11330760-1-r2l7"/>im turen ir geantwurt.
+        </ab>
+        <ab xml:id="ab-11330760-1-r3">
           <lb facs="#zone-11330760-1-r3l1"/>Item II pett mit kõllischer ziechen.
           <lb facs="#zone-11330760-1-r3l2"/>Item I pett mit ainer leynen ziechen.
           <lb facs="#zone-11330760-1-r3l3"/>Item I klains degk pett.
@@ -376,21 +380,29 @@
           <lb facs="#zone-11330760-1-r3l25"/>Item VIIII klaine zynne schũssel.
           <lb facs="#zone-11330760-1-r3l26"/>Item I zynnen senffschũssel.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11330760-2"/>
+        <pb n="2" facs="#surface-11330760-2"/>
+        <ab xml:id="ab-11330760-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11330760-2-r2">
           <lb facs="#zone-11330760-2-r2l1"/>Item ain messen gieß vãsel.
           <lb facs="#zone-11330760-2-r2l2"/>Item mer I maß kantten.
           <lb facs="#zone-11330760-2-r2l3"/>Item ain klaine slechte truhen.
           <lb facs="#zone-11330760-2-r2l4"/>Item I klain erin hafen.
           <lb facs="#zone-11330760-2-r2l5"/>Item II phannen.
+        </ab>
+        <ab xml:id="ab-11330760-2-r3">
           <lb facs="#zone-11330760-2-r3l1"/>Vermerkt dy masserey
           <lb facs="#zone-11330760-2-r3l2"/>und hawsplunder so
           <lb facs="#zone-11330760-2-r3l3"/>der Pŭcher im turen
           <lb facs="#zone-11330760-2-r3l4"/>gelassen hat, daz nit
           <lb facs="#zone-11330760-2-r3l5"/>in den verpettschafften
           <lb facs="#zone-11330760-2-r3l6"/>gemãchlen verslossen ist.
+        </ab>
+        <ab xml:id="ab-11330760-2-r4">
           <lb facs="#zone-11330760-2-r4l1"/>Von ersten pett und pettgewant.
+        </ab>
+        <ab xml:id="ab-11330760-2-r5">
           <lb facs="#zone-11330760-2-r5l1"/>Item in der kamer vor der newen
           <lb facs="#zone-11330760-2-r5l2"/>stuben sind III pett.
           <lb facs="#zone-11330760-2-r5l3"/>Item I schãffene degk und I strosack.
@@ -405,9 +417,11 @@
           <lb facs="#zone-11330760-2-r5l12"/>Item I küssen mit köllischer ziechen.
           <lb facs="#zone-11330760-2-r5l13"/>Item mer IIII schaffene degken.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11330760-3"/>
+        <pb n="3" facs="#surface-11330760-3"/>
+        <ab xml:id="ab-11330760-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11330760-3-r2">
           <lb facs="#zone-11330760-3-r2l1"/>Item I swarzer gollter.
           <lb facs="#zone-11330760-3-r2l2"/>Item I par leynlach.
           <lb facs="#zone-11330760-3-r2l3"/>Item mer III pãllãtschen degken, ist
@@ -429,24 +443,36 @@
           <lb facs="#zone-11330760-3-r2l19"/>Item I pȯlãcken.
           <lb facs="#zone-11330760-3-r2l20"/>Item mer I leynlach.
           <lb facs="#zone-11330760-3-r2l21"/>Item mer I ziechen.
+        </ab>
+        <ab xml:id="ab-11330760-3-r3">
           <lb facs="#zone-11330760-3-r3l1"/>Harnasch in der gsellen stuben.
+        </ab>
+        <ab xml:id="ab-11330760-3-r4">
           <lb facs="#zone-11330760-3-r4l1"/>Item II rucken krebs.
           <lb facs="#zone-11330760-3-r4l2"/>Item V krebs.
           <lb facs="#zone-11330760-3-r4l3"/>Item I eysen hüt.
           <lb facs="#zone-11330760-3-r4l4"/>Item I part.
           <lb facs="#zone-11330760-3-r4l5"/>Item I par meũsel.
           <lb facs="#zone-11330760-3-r4l6"/>Item I par straiff tãschen.
+        </ab>
+        <ab xml:id="ab-11330760-3-r5">
           <lb facs="#zone-11330760-3-r5l1"/>Item IIII par hentschůch.
           <lb facs="#zone-11330760-3-r5l2"/>Manglt II par
           <lb facs="#zone-11330760-3-r5l3"/>hat der Ubeli
           <lb facs="#zone-11330760-3-r5l4"/>und [.]fili.
+        </ab>
+        <ab xml:id="ab-11330760-3-r6">
           <lb facs="#zone-11330760-3-r6l1"/>Item III winden.
           <lb facs="#zone-11330760-3-r6l2"/>Item III arm brost und I kocher.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11330760-4"/>
+        <pb n="4" facs="#surface-11330760-4"/>
+        <ab xml:id="ab-11330760-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11330760-4-r2">
           <lb facs="#zone-11330760-4-r2l1"/>Von zynen gschyer.
+        </ab>
+        <ab xml:id="ab-11330760-4-r3">
           <lb facs="#zone-11330760-4-r3l1"/>Item VII zynen schũssel,
           <lb facs="#zone-11330760-4-r3l2"/>II plann,
           <lb facs="#zone-11330760-4-r3l3"/>VIII klaine zynen schũssel,
@@ -472,9 +498,11 @@
           <lb facs="#zone-11330760-4-r3l23"/>Item in dem korn gadem
           <lb facs="#zone-11330760-4-r3l24"/>ain visch segen.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11330760-5"/>
+        <pb n="5" facs="#surface-11330760-5"/>
+        <ab xml:id="ab-11330760-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11330760-5-r2">
           <lb facs="#zone-11330760-5-r2l1"/>Item in dem speysgadem
           <lb facs="#zone-11330760-5-r2l2"/>I vaß mit mel nit gar vol,
           <lb facs="#zone-11330760-5-r2l3"/>I pottich darinn etwev̆il mel,
@@ -505,12 +533,18 @@
           <lb facs="#zone-11330760-5-r2l28"/>IIII leynlachen,
           <lb facs="#zone-11330760-5-r2l29"/>IIII põse decken.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11330760-6"/>
+        <pb n="6" facs="#surface-11330760-6"/>
+        <ab xml:id="ab-11330760-6-r1">
           <milestone unit="folio" n="3v"/>
+        </ab>
+        <ab xml:id="ab-11330760-6-r2">
           <lb facs="#zone-11330760-6-r2l1"/>Item in dem gang ligen
           <lb facs="#zone-11330760-6-r2l2"/>VIII lãre fũer vãsß.
+        </ab>
+        <ab xml:id="ab-11330760-6-r3">
           <lb facs="#zone-11330760-6-r3l1"/>Kuchen gschyer.
+        </ab>
+        <ab xml:id="ab-11330760-6-r4">
           <lb facs="#zone-11330760-6-r4l1"/>Item in der kuchen sind V erin haffen
           <lb facs="#zone-11330760-6-r4l2"/>klain und groß,
           <lb facs="#zone-11330760-6-r4l3"/>III laffetsch kessel klain und groß,
@@ -522,7 +556,11 @@
           <lb facs="#zone-11330760-6-r4l9"/>I prant traitt,
           <lb facs="#zone-11330760-6-r4l10"/>ain rost,
           <lb facs="#zone-11330760-6-r4l11"/>ain kuchn gãbel.
+        </ab>
+        <ab xml:id="ab-11330760-6-r5">
           <lb facs="#zone-11330760-6-r5l1"/>Paw stadel.
+        </ab>
+        <ab xml:id="ab-11330760-6-r6">
           <lb facs="#zone-11330760-6-r6l1"/>Item im pawstadel ist hew̃, grŭmat,
           <lb facs="#zone-11330760-6-r6l2"/>koren, waiz und stro, gedroschens
           <lb facs="#zone-11330760-6-r6l3"/>und ungedroschen.
@@ -534,9 +572,11 @@
           <lb facs="#zone-11330760-6-r6l9"/>I roche oxen hawt,
           <lb facs="#zone-11330760-6-r6l10"/>II hew̃ strick.
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11330760-7"/>
+        <pb n="7" facs="#surface-11330760-7"/>
+        <ab xml:id="ab-11330760-7-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11330760-7-r2">
           <lb facs="#zone-11330760-7-r2l1"/>Item II holz strick,
           <lb facs="#zone-11330760-7-r2l2"/>I prozen,
           <lb facs="#zone-11330760-7-r2l3"/>V hew̃ gabel,
@@ -548,7 +588,11 @@
           <lb facs="#zone-11330760-7-r2l9"/>IIII hawgen, põzz und gŭt,
           <lb facs="#zone-11330760-7-r2l10"/>II zappawen,
           <lb facs="#zone-11330760-7-r2l11"/>III scheitthacken.
+        </ab>
+        <ab xml:id="ab-11330760-7-r3">
           <lb facs="#zone-11330760-7-r3l1"/>Vĭch.
+        </ab>
+        <ab xml:id="ab-11330760-7-r4">
           <lb facs="#zone-11330760-7-r4l1"/>Item II ziech oxen,
           <lb facs="#zone-11330760-7-r4l2"/>IIII kũe,
           <lb facs="#zone-11330760-7-r4l3"/>III schaff,
@@ -558,17 +602,21 @@
           <lb facs="#zone-11330760-7-r4l7"/>I swein mŭter,
           <lb facs="#zone-11330760-7-r4l8"/>II junge swein.
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11330760-8"/>
+        <pb n="8" facs="#surface-11330760-8"/>
+        <ab xml:id="ab-11330760-8-r1">
           <milestone unit="folio" n="4v"/>
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11330760-9"/>
+        <pb n="9" facs="#surface-11330760-9"/>
+        <ab xml:id="ab-11330760-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11330760-9-r2">
           <lb facs="#zone-11330760-9-r2l1"/>Vermerkt meins gnadigen
           <lb facs="#zone-11330760-9-r2l2"/>herrn zeȗg von pŭxen,
           <lb facs="#zone-11330760-9-r2l3"/>armbrost und tartschen
           <lb facs="#zone-11330760-9-r2l4"/>im turen ze Mals.
+        </ab>
+        <ab xml:id="ab-11330760-9-r3">
           <lb facs="#zone-11330760-9-r3l1"/>Item in dem vorder staingaden ligen
           <lb facs="#zone-11330760-9-r3l2"/>XI hagken pȗxen,
           <lb facs="#zone-11330760-9-r3l3"/>I tarrass pũxen,
@@ -594,16 +642,16 @@
           <lb facs="#zone-11330760-9-r3l23"/>und sein sun hin gefirt und
           <lb facs="#zone-11330760-9-r3l24"/>nit angeschriben etc.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11330760-10"/>
+        <pb n="10" facs="#surface-11330760-10"/>
+        <ab xml:id="ab-11330760-10-r1">
           <milestone unit="folio" n="5v"/>
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11330760-11"/>
+        <pb n="11" facs="#surface-11330760-11"/>
+        <ab xml:id="ab-11330760-11-r1">
           <milestone unit="folio" n="6r"/>
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11330760-12"/>
+        <pb n="12" facs="#surface-11330760-12"/>
+        <ab xml:id="ab-11330760-12-r1">
           <milestone unit="folio" n="6v"/>
         </ab>
       </div>

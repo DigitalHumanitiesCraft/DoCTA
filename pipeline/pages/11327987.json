@@ -21,10 +21,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "1498",
-      "Invenntuari Paul",
-      "von Liechtenstain"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "1498"
+      },
+      {
+       "id": "r2l2",
+       "text": "Invenntuari Paul"
+      },
+      {
+       "id": "r2l3",
+       "text": "von Liechtenstain"
+      }
      ]
     }
    ]
@@ -49,7 +61,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     }
    ]
@@ -74,48 +89,174 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Ann dem achcennden tag des monnats",
-      "marty anno Domini etc. LXXXXVIII",
-      "ist herr Pauls vonn Liechtennstein",
-      "auß bevelh römisch kŭniglicher mayestat der pfleg",
-      "Thaur abgetretten unnd junckher",
-      "Bartlme Kasler cammermaister",
-      "mit sambst der hernach geschriben habe",
-      "inngeannttwurdt inn bey wesen",
-      "des edlnn unnd vestenn unnd",
-      "der erberenn Hannsenn Fuegers",
-      "des jungern unnd Dionisien",
-      "Usenwanngrs an stat bemelts",
-      "cammer maisters, Clemennten",
-      "Wolfegkhers annwaldt daselbs",
-      "zu Thawr, Hannsen Nolfs,",
-      "Hannsen am Staināchs,",
-      "Hannss Walchners, Hannss",
-      "Anners alle dasölbs an stat",
-      "bemelts vonn Liechtennstain.",
-      "Item am erstenn in der stubenn",
-      "da ain pfleger in ist.",
-      "Zwenn tisch.",
-      "Ain castl mit ainem zinenn gieß vaßel.",
-      "Ain groß messing peckh.",
-      "Ain sidltruchenn new mit",
-      "ainem sloss.",
-      "Ain angenaglte trüchen verslossen.",
-      "Inn des herren",
-      "cammer darann.",
-      "Ain spannpett mit ainem halben",
-      "himel darúnndter ain redlpettstat.",
-      "Zway veder pett II polsster.",
-      "Mangelt",
-      "ainer.",
-      "Zway ku̇ss.",
-      "Ain strosackh.",
-      "Ain sidltruchen mit ainem sloss.",
-      "Ain tisch slacht.",
-      "Ain egk trifach cāstl.",
-      "Ain 4 eggketer kast.",
-      "New."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ann dem achcennden tag des monnats"
+      },
+      {
+       "id": "r2l2",
+       "text": "marty anno Domini etc. LXXXXVIII"
+      },
+      {
+       "id": "r2l3",
+       "text": "ist herr Pauls vonn Liechtennstein"
+      },
+      {
+       "id": "r2l4",
+       "text": "auß bevelh römisch kŭniglicher mayestat der pfleg"
+      },
+      {
+       "id": "r2l5",
+       "text": "Thaur abgetretten unnd junckher"
+      },
+      {
+       "id": "r2l6",
+       "text": "Bartlme Kasler cammermaister"
+      },
+      {
+       "id": "r2l7",
+       "text": "mit sambst der hernach geschriben habe"
+      },
+      {
+       "id": "r2l8",
+       "text": "inngeannttwurdt inn bey wesen"
+      },
+      {
+       "id": "r2l9",
+       "text": "des edlnn unnd vestenn unnd"
+      },
+      {
+       "id": "r2l10",
+       "text": "der erberenn Hannsenn Fuegers"
+      },
+      {
+       "id": "r2l11",
+       "text": "des jungern unnd Dionisien"
+      },
+      {
+       "id": "r2l12",
+       "text": "Usenwanngrs an stat bemelts"
+      },
+      {
+       "id": "r2l13",
+       "text": "cammer maisters, Clemennten"
+      },
+      {
+       "id": "r2l14",
+       "text": "Wolfegkhers annwaldt daselbs"
+      },
+      {
+       "id": "r2l15",
+       "text": "zu Thawr, Hannsen Nolfs,"
+      },
+      {
+       "id": "r2l16",
+       "text": "Hannsen am Staināchs,"
+      },
+      {
+       "id": "r2l17",
+       "text": "Hannss Walchners, Hannss"
+      },
+      {
+       "id": "r2l18",
+       "text": "Anners alle dasölbs an stat"
+      },
+      {
+       "id": "r2l19",
+       "text": "bemelts vonn Liechtennstain."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am erstenn in der stubenn"
+      },
+      {
+       "id": "r3l2",
+       "text": "da ain pfleger in ist."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zwenn tisch."
+      },
+      {
+       "id": "r4l2",
+       "text": "Ain castl mit ainem zinenn gieß vaßel."
+      },
+      {
+       "id": "r4l3",
+       "text": "Ain groß messing peckh."
+      },
+      {
+       "id": "r4l4",
+       "text": "Ain sidltruchenn new mit"
+      },
+      {
+       "id": "r4l5",
+       "text": "ainem sloss."
+      },
+      {
+       "id": "r4l6",
+       "text": "Ain angenaglte trüchen verslossen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Inn des herren"
+      },
+      {
+       "id": "r5l2",
+       "text": "cammer darann."
+      },
+      {
+       "id": "r6l1",
+       "text": "Ain spannpett mit ainem halben"
+      },
+      {
+       "id": "r6l2",
+       "text": "himel darúnndter ain redlpettstat."
+      },
+      {
+       "id": "r7l1",
+       "text": "Zway veder pett II polsster."
+      },
+      {
+       "id": "r7l2",
+       "text": "Mangelt"
+      },
+      {
+       "id": "r7l3",
+       "text": "ainer."
+      },
+      {
+       "id": "r8l1",
+       "text": "Zway ku̇ss."
+      },
+      {
+       "id": "r8l2",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r8l3",
+       "text": "Ain sidltruchen mit ainem sloss."
+      },
+      {
+       "id": "r8l4",
+       "text": "Ain tisch slacht."
+      },
+      {
+       "id": "r8l5",
+       "text": "Ain egk trifach cāstl."
+      },
+      {
+       "id": "r8l6",
+       "text": "Ain 4 eggketer kast."
+      },
+      {
+       "id": "r8l7",
+       "text": "New."
+      }
      ]
     }
    ]
@@ -140,46 +281,166 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Inn der nachstenn camer",
-      "da die junckhfrawen",
-      "innenn ligen.",
-      "Zway spannpett mit halbem himl,",
-      "darunntter zway redl pettstatt,",
-      "darann genagllt zwo sidltruchen",
-      "mit slossenn, ain veder pett.",
-      "Ain petkastl",
-      "oder candl",
-      "ain zwifacher",
-      "maus korb",
-      "verglast.",
-      "Ain polster.",
-      "Ain kiss.",
-      "Zwenn stroseckh.",
-      "Zway par schonne leillach.",
-      "Acht par werchene leillach.",
-      "Zway schonne tischtiecher,",
-      "Dar zu zway ub leg.",
-      "Zway slechte tuschtücher.",
-      "Drei allt poss hanndt zwechelen.",
-      "Auff dem estrich",
-      "vor der stuben.",
-      "Ain allter speiss kassten.",
-      "Mer ain lannge truchen",
-      "mit zwain slossen auß der",
-      "stubenn gebrochenn worden.",
-      "Inn der cappellenn",
-      "gehorendt ettlichs gen",
-      "Sanndt Petter.",
-      "Ain grienns tamastens meß",
-      "gewanndt ist allt.",
-      "Zway corporall.",
-      "Ain grabs tamastenns meß",
-      "gewanndt mit seiner zugehorung.",
-      "Ain rotes attlassens meß",
-      "gewanndt mit seiner zugehorŭng,",
-      "hat die Liechtennstainerin dazu",
-      "gegeben."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inn der nachstenn camer"
+      },
+      {
+       "id": "r2l2",
+       "text": "da die junckhfrawen"
+      },
+      {
+       "id": "r2l3",
+       "text": "innenn ligen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zway spannpett mit halbem himl,"
+      },
+      {
+       "id": "r3l2",
+       "text": "darunntter zway redl pettstatt,"
+      },
+      {
+       "id": "r3l3",
+       "text": "darann genagllt zwo sidltruchen"
+      },
+      {
+       "id": "r3l4",
+       "text": "mit slossenn, ain veder pett."
+      },
+      {
+       "id": "r3l5",
+       "text": "Ain petkastl"
+      },
+      {
+       "id": "r3l6",
+       "text": "oder candl"
+      },
+      {
+       "id": "r3l7",
+       "text": "ain zwifacher"
+      },
+      {
+       "id": "r3l8",
+       "text": "maus korb"
+      },
+      {
+       "id": "r3l9",
+       "text": "verglast."
+      },
+      {
+       "id": "r4l1",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r4l2",
+       "text": "Ain kiss."
+      },
+      {
+       "id": "r4l3",
+       "text": "Zwenn stroseckh."
+      },
+      {
+       "id": "r4l4",
+       "text": "Zway par schonne leillach."
+      },
+      {
+       "id": "r4l5",
+       "text": "Acht par werchene leillach."
+      },
+      {
+       "id": "r4l6",
+       "text": "Zway schonne tischtiecher,"
+      },
+      {
+       "id": "r4l7",
+       "text": "Dar zu zway ub leg."
+      },
+      {
+       "id": "r4l8",
+       "text": "Zway slechte tuschtücher."
+      },
+      {
+       "id": "r4l9",
+       "text": "Drei allt poss hanndt zwechelen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Auff dem estrich"
+      },
+      {
+       "id": "r5l2",
+       "text": "vor der stuben."
+      },
+      {
+       "id": "r6l1",
+       "text": "Ain allter speiss kassten."
+      },
+      {
+       "id": "r6l2",
+       "text": "Mer ain lannge truchen"
+      },
+      {
+       "id": "r6l3",
+       "text": "mit zwain slossen auß der"
+      },
+      {
+       "id": "r6l4",
+       "text": "stubenn gebrochenn worden."
+      },
+      {
+       "id": "r7l1",
+       "text": "Inn der cappellenn"
+      },
+      {
+       "id": "r7l2",
+       "text": "gehorendt ettlichs gen"
+      },
+      {
+       "id": "r7l3",
+       "text": "Sanndt Petter."
+      },
+      {
+       "id": "r8l1",
+       "text": "Ain grienns tamastens meß"
+      },
+      {
+       "id": "r8l2",
+       "text": "gewanndt ist allt."
+      },
+      {
+       "id": "r8l3",
+       "text": "Zway corporall."
+      },
+      {
+       "id": "r8l4",
+       "text": "Ain grabs tamastenns meß"
+      },
+      {
+       "id": "r8l5",
+       "text": "gewanndt mit seiner zugehorung."
+      },
+      {
+       "id": "r8l6",
+       "text": "Ain rotes attlassens meß"
+      },
+      {
+       "id": "r8l7",
+       "text": "gewanndt mit seiner zugehorŭng,"
+      },
+      {
+       "id": "r8l8",
+       "text": "hat die Liechtennstainerin dazu"
+      },
+      {
+       "id": "r8l9",
+       "text": "gegeben."
+      }
      ]
     }
    ]
@@ -204,44 +465,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Mer zwenn kelch vergollte, der ain",
-      "kupferenn der ain silberen, ain",
-      "patenn.",
-      "Ist ain",
-      "kelch da der",
-      "silbrein und",
-      "paten.",
-      "Ain groß geschribenn meß buech.",
-      "Ain alts meß buech.",
-      "Zwenn messing leuchter.",
-      "Zway altartuecher.",
-      "Ettlich opfer kenntel.",
-      "Ain glogkhl zu dem alltar.",
-      "Inn der gesellenn stuben.",
-      "Ain klains castl mit zwaien",
-      "wappenn angemalt Osterreich",
-      "unnd Sachssen.",
-      "Zwenn allt tisch.",
-      "Ainer da",
-      "und auf dem",
-      "sal.",
-      "Ain credennz tisch ist ainer in meiner gnadigen frawen",
-      "stuben.",
-      "Ain allte sidltruchen.",
-      "Drei vorpennckh.",
-      "Ain visch perel.",
-      "Inn des herzogen",
-      "stubenn.",
-      "Ain tisch slecht mit ainer truchen.",
-      "Ist das plat erprochen und dhn slos daran.",
-      "Stet in der",
-      "camer.",
-      "Ain gewanndt truchen mit",
-      "ain sloss.",
-      "Zechenn rauch lemere deckhen.",
-      "Drei gŏlter.",
-      "Ain allts zynnenn gieß vaß."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Mer zwenn kelch vergollte, der ain"
+      },
+      {
+       "id": "r2l2",
+       "text": "kupferenn der ain silberen, ain"
+      },
+      {
+       "id": "r2l3",
+       "text": "patenn."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ist ain"
+      },
+      {
+       "id": "r2l5",
+       "text": "kelch da der"
+      },
+      {
+       "id": "r2l6",
+       "text": "silbrein und"
+      },
+      {
+       "id": "r2l7",
+       "text": "paten."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain groß geschribenn meß buech."
+      },
+      {
+       "id": "r3l2",
+       "text": "Ain alts meß buech."
+      },
+      {
+       "id": "r3l3",
+       "text": "Zwenn messing leuchter."
+      },
+      {
+       "id": "r3l4",
+       "text": "Zway altartuecher."
+      },
+      {
+       "id": "r3l5",
+       "text": "Ettlich opfer kenntel."
+      },
+      {
+       "id": "r3l6",
+       "text": "Ain glogkhl zu dem alltar."
+      },
+      {
+       "id": "r4l1",
+       "text": "Inn der gesellenn stuben."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain klains castl mit zwaien"
+      },
+      {
+       "id": "r5l2",
+       "text": "wappenn angemalt Osterreich"
+      },
+      {
+       "id": "r5l3",
+       "text": "unnd Sachssen."
+      },
+      {
+       "id": "r6l1",
+       "text": "Zwenn allt tisch."
+      },
+      {
+       "id": "r6l2",
+       "text": "Ainer da"
+      },
+      {
+       "id": "r6l3",
+       "text": "und auf dem"
+      },
+      {
+       "id": "r6l4",
+       "text": "sal."
+      },
+      {
+       "id": "r7l1",
+       "text": "Ain credennz tisch ist ainer in meiner gnadigen frawen"
+      },
+      {
+       "id": "r7l2",
+       "text": "stuben."
+      },
+      {
+       "id": "r8l1",
+       "text": "Ain allte sidltruchen."
+      },
+      {
+       "id": "r8l2",
+       "text": "Drei vorpennckh."
+      },
+      {
+       "id": "r8l3",
+       "text": "Ain visch perel."
+      },
+      {
+       "id": "r9l1",
+       "text": "Inn des herzogen"
+      },
+      {
+       "id": "r9l2",
+       "text": "stubenn."
+      },
+      {
+       "id": "r10l1",
+       "text": "Ain tisch slecht mit ainer truchen."
+      },
+      {
+       "id": "r10l2",
+       "text": "Ist das plat erprochen und dhn slos daran."
+      },
+      {
+       "id": "r10l3",
+       "text": "Stet in der"
+      },
+      {
+       "id": "r10l4",
+       "text": "camer."
+      },
+      {
+       "id": "r11l1",
+       "text": "Ain gewanndt truchen mit"
+      },
+      {
+       "id": "r11l2",
+       "text": "ain sloss."
+      },
+      {
+       "id": "r11l3",
+       "text": "Zechenn rauch lemere deckhen."
+      },
+      {
+       "id": "r11l4",
+       "text": "Drei gŏlter."
+      },
+      {
+       "id": "r11l5",
+       "text": "Ain allts zynnenn gieß vaß."
+      }
      ]
     }
    ]
@@ -266,37 +641,130 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Inn des herzogenn",
-      "cammer.",
-      "Ain spannpet mit ainem ganzen",
-      "himel.",
-      "Ain redl pett darunndter.",
-      "Zway veder petten.",
-      "Zwen polster.",
-      "Zway kuss.",
-      "Ain strosakh.",
-      "Sind 2.",
-      "Inn der anndren camer",
-      "darneben.",
-      "Ain harnasch kassten.",
-      "Zway spannpett mit",
-      "halbenn himel, darundter",
-      "ain radl pett, I federpet.",
-      "Ain polster.",
-      "Ain kŭss.",
-      "Ain seyden gollter",
-      "grienn unnd rot.",
-      "Inn der hell in des",
-      "herzogen zimer.",
-      "Zway spannpett.",
-      "Ain poss vederpettel.",
-      "Ain polster.",
-      "Ain strosackh.",
-      "Inn der mittern camer",
-      "auf dem unnderen poden.",
-      "Zway spannpett.",
-      "Ain radl pett."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inn des herzogenn"
+      },
+      {
+       "id": "r2l2",
+       "text": "cammer."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain spannpet mit ainem ganzen"
+      },
+      {
+       "id": "r3l2",
+       "text": "himel."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain redl pett darunndter."
+      },
+      {
+       "id": "r3l4",
+       "text": "Zway veder petten."
+      },
+      {
+       "id": "r3l5",
+       "text": "Zwen polster."
+      },
+      {
+       "id": "r3l6",
+       "text": "Zway kuss."
+      },
+      {
+       "id": "r4l1",
+       "text": "Ain strosakh."
+      },
+      {
+       "id": "r4l2",
+       "text": "Sind 2."
+      },
+      {
+       "id": "r5l1",
+       "text": "Inn der anndren camer"
+      },
+      {
+       "id": "r5l2",
+       "text": "darneben."
+      },
+      {
+       "id": "r6l1",
+       "text": "Ain harnasch kassten."
+      },
+      {
+       "id": "r6l2",
+       "text": "Zway spannpett mit"
+      },
+      {
+       "id": "r6l3",
+       "text": "halbenn himel, darundter"
+      },
+      {
+       "id": "r6l4",
+       "text": "ain radl pett, I federpet."
+      },
+      {
+       "id": "r6l5",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r6l6",
+       "text": "Ain kŭss."
+      },
+      {
+       "id": "r6l7",
+       "text": "Ain seyden gollter"
+      },
+      {
+       "id": "r6l8",
+       "text": "grienn unnd rot."
+      },
+      {
+       "id": "r7l1",
+       "text": "Inn der hell in des"
+      },
+      {
+       "id": "r7l2",
+       "text": "herzogen zimer."
+      },
+      {
+       "id": "r8l1",
+       "text": "Zway spannpett."
+      },
+      {
+       "id": "r8l2",
+       "text": "Ain poss vederpettel."
+      },
+      {
+       "id": "r8l3",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r8l4",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r9l1",
+       "text": "Inn der mittern camer"
+      },
+      {
+       "id": "r9l2",
+       "text": "auf dem unnderen poden."
+      },
+      {
+       "id": "r10l1",
+       "text": "Zway spannpett."
+      },
+      {
+       "id": "r10l2",
+       "text": "Ain radl pett."
+      }
      ]
     }
    ]
@@ -321,33 +789,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "Inn der raiß camer.",
-      "Zway spannpett.",
-      "Ain redlpett.",
-      "Ain petel.",
-      "Ain polster.",
-      "Ain kiss.",
-      "Ain spannpetel.",
-      "Ain strosackh.",
-      "Oben auf in denn",
-      "cameren bei des pfaffen",
-      "camer.",
-      "Sechs spanpett.",
-      "Ain tüsch mit ainer truchen.",
-      "Mer zway spanpet.",
-      "Inn der pfisster.",
-      "Ain knett trog.",
-      "Ain wurchtafl.",
-      "Ettlich prott pretter.",
-      "Inn dem speiß gaden.",
-      "Ain peuttl kassten.",
-      "Ain mel kassten.",
-      "Ain fleisch pankel.",
-      "Ain padt wannenn.",
-      "mell Mel segkh unnd korennseckh funff.",
-      "Inn der pattstuben.",
-      "Ain grosser kessel."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inn der raiß camer."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zway spannpett."
+      },
+      {
+       "id": "r3l2",
+       "text": "Ain redlpett."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain petel."
+      },
+      {
+       "id": "r3l4",
+       "text": "Ain polster."
+      },
+      {
+       "id": "r3l5",
+       "text": "Ain kiss."
+      },
+      {
+       "id": "r3l6",
+       "text": "Ain spannpetel."
+      },
+      {
+       "id": "r3l7",
+       "text": "Ain strosackh."
+      },
+      {
+       "id": "r4l1",
+       "text": "Oben auf in denn"
+      },
+      {
+       "id": "r4l2",
+       "text": "cameren bei des pfaffen"
+      },
+      {
+       "id": "r4l3",
+       "text": "camer."
+      },
+      {
+       "id": "r5l1",
+       "text": "Sechs spanpett."
+      },
+      {
+       "id": "r5l2",
+       "text": "Ain tüsch mit ainer truchen."
+      },
+      {
+       "id": "r5l3",
+       "text": "Mer zway spanpet."
+      },
+      {
+       "id": "r6l1",
+       "text": "Inn der pfisster."
+      },
+      {
+       "id": "r7l1",
+       "text": "Ain knett trog."
+      },
+      {
+       "id": "r7l2",
+       "text": "Ain wurchtafl."
+      },
+      {
+       "id": "r7l3",
+       "text": "Ettlich prott pretter."
+      },
+      {
+       "id": "r8l1",
+       "text": "Inn dem speiß gaden."
+      },
+      {
+       "id": "r9l1",
+       "text": "Ain peuttl kassten."
+      },
+      {
+       "id": "r9l2",
+       "text": "Ain mel kassten."
+      },
+      {
+       "id": "r9l3",
+       "text": "Ain fleisch pankel."
+      },
+      {
+       "id": "r9l4",
+       "text": "Ain padt wannenn."
+      },
+      {
+       "id": "r10l1",
+       "text": "mell Mel segkh unnd korennseckh funff."
+      },
+      {
+       "id": "r11l1",
+       "text": "Inn der pattstuben."
+      },
+      {
+       "id": "r12l1",
+       "text": "Ain grosser kessel."
+      }
      ]
     }
    ]
@@ -372,43 +921,154 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Item mer zŭnngeschir.",
-      "Gross zynn funff.",
-      "Drew mittere zÿnn.",
-      "14 und 3",
-      "plan.",
-      "Klainer zynnlenn vier.",
-      "Sallsenn schusler VII 4.",
-      "Ain messinger tisch ring.",
-      "VII zinen teller.",
-      "Messing leichter klain und gross",
-      "VI.",
-      "Im keller.",
-      "Zynnenn kandlenn klain und",
-      "gross achte.",
-      "4",
-      "Ain sturzene grosse flaschen.",
-      "Zwo messinge pippen.",
-      "Vor dem wein keller.",
-      "Ain hanndt mũl mit irer",
-      "zugehorung.",
-      "Ist ausf[...]ch(en).",
-      "Inn dem krautt",
-      "keller.",
-      "Zway hackh pretter.",
-      "Ettlich allt krautt prenten.",
-      "Item dann in der harnisch",
-      "camer.",
-      "Armbrost.",
-      "Hanndtpuxen.",
-      "Hagkhennpuxen.",
-      "Terexpuxen.",
-      "Allter harnisch unnd ander zeug",
-      "ist verhannden wie der allt",
-      "zettl lautt unnd anzaigt,",
-      "so herrn Paulsen von Liechtenstein",
-      "ingeannttwurdt ist worden."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item mer zŭnngeschir."
+      },
+      {
+       "id": "r2l2",
+       "text": "Gross zynn funff."
+      },
+      {
+       "id": "r3l1",
+       "text": "Drew mittere zÿnn."
+      },
+      {
+       "id": "r3l2",
+       "text": "14 und 3"
+      },
+      {
+       "id": "r3l3",
+       "text": "plan."
+      },
+      {
+       "id": "r4l1",
+       "text": "Klainer zynnlenn vier."
+      },
+      {
+       "id": "r4l2",
+       "text": "Sallsenn schusler VII 4."
+      },
+      {
+       "id": "r4l3",
+       "text": "Ain messinger tisch ring."
+      },
+      {
+       "id": "r4l4",
+       "text": "VII zinen teller."
+      },
+      {
+       "id": "r4l5",
+       "text": "Messing leichter klain und gross"
+      },
+      {
+       "id": "r4l6",
+       "text": "VI."
+      },
+      {
+       "id": "r5l1",
+       "text": "Im keller."
+      },
+      {
+       "id": "r6l1",
+       "text": "Zynnenn kandlenn klain und"
+      },
+      {
+       "id": "r6l2",
+       "text": "gross achte."
+      },
+      {
+       "id": "r6l3",
+       "text": "4"
+      },
+      {
+       "id": "r7l1",
+       "text": "Ain sturzene grosse flaschen."
+      },
+      {
+       "id": "r7l2",
+       "text": "Zwo messinge pippen."
+      },
+      {
+       "id": "r8l1",
+       "text": "Vor dem wein keller."
+      },
+      {
+       "id": "r9l1",
+       "text": "Ain hanndt mũl mit irer"
+      },
+      {
+       "id": "r9l2",
+       "text": "zugehorung."
+      },
+      {
+       "id": "r9l3",
+       "text": "Ist ausf[...]ch(en)."
+      },
+      {
+       "id": "r10l1",
+       "text": "Inn dem krautt"
+      },
+      {
+       "id": "r10l2",
+       "text": "keller."
+      },
+      {
+       "id": "r11l1",
+       "text": "Zway hackh pretter."
+      },
+      {
+       "id": "r11l2",
+       "text": "Ettlich allt krautt prenten."
+      },
+      {
+       "id": "r12l1",
+       "text": "Item dann in der harnisch"
+      },
+      {
+       "id": "r12l2",
+       "text": "camer."
+      },
+      {
+       "id": "r13l1",
+       "text": "Armbrost."
+      },
+      {
+       "id": "r13l2",
+       "text": "Hanndtpuxen."
+      },
+      {
+       "id": "r13l3",
+       "text": "Hagkhennpuxen."
+      },
+      {
+       "id": "r13l4",
+       "text": "Terexpuxen."
+      },
+      {
+       "id": "r13l5",
+       "text": "Allter harnisch unnd ander zeug"
+      },
+      {
+       "id": "r13l6",
+       "text": "ist verhannden wie der allt"
+      },
+      {
+       "id": "r13l7",
+       "text": "zettl lautt unnd anzaigt,"
+      },
+      {
+       "id": "r13l8",
+       "text": "so herrn Paulsen von Liechtenstein"
+      },
+      {
+       "id": "r13l9",
+       "text": "ingeannttwurdt ist worden."
+      }
      ]
     }
    ]
@@ -433,31 +1093,106 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Im thuren ist auch verhanden",
-      "wie dieselb allt zettl",
-      "innsich hellt.",
-      "Inn der kuchen.",
-      "Kesslenn, pfannen.",
-      "Erein haffenn.",
-      "Drifus.",
-      "Pranndt raitten und ander",
-      "kuchenngeschir, ist auch",
-      "alles allso funden",
-      "vnd verhanden wie die",
-      "selb zettl anzeigt.",
-      "Im stadel.",
-      "Zwenn gannze wăgen.",
-      "Ain pflūg.",
-      "Zwai tennglgeschir.",
-      "Drey new segensen.",
-      "Ettlich rechen.",
-      "Hewgabl.",
-      "Mustgablen.",
-      "Mistkrel.",
-      "Drei holzhackhen.",
-      "Vier kammet.",
-      "Ain fuetter kasten."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Im thuren ist auch verhanden"
+      },
+      {
+       "id": "r2l2",
+       "text": "wie dieselb allt zettl"
+      },
+      {
+       "id": "r2l3",
+       "text": "innsich hellt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Inn der kuchen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Kesslenn, pfannen."
+      },
+      {
+       "id": "r4l2",
+       "text": "Erein haffenn."
+      },
+      {
+       "id": "r4l3",
+       "text": "Drifus."
+      },
+      {
+       "id": "r4l4",
+       "text": "Pranndt raitten und ander"
+      },
+      {
+       "id": "r4l5",
+       "text": "kuchenngeschir, ist auch"
+      },
+      {
+       "id": "r4l6",
+       "text": "alles allso funden"
+      },
+      {
+       "id": "r4l7",
+       "text": "vnd verhanden wie die"
+      },
+      {
+       "id": "r4l8",
+       "text": "selb zettl anzeigt."
+      },
+      {
+       "id": "r5l1",
+       "text": "Im stadel."
+      },
+      {
+       "id": "r6l1",
+       "text": "Zwenn gannze wăgen."
+      },
+      {
+       "id": "r6l2",
+       "text": "Ain pflūg."
+      },
+      {
+       "id": "r6l3",
+       "text": "Zwai tennglgeschir."
+      },
+      {
+       "id": "r6l4",
+       "text": "Drey new segensen."
+      },
+      {
+       "id": "r6l5",
+       "text": "Ettlich rechen."
+      },
+      {
+       "id": "r6l6",
+       "text": "Hewgabl."
+      },
+      {
+       "id": "r6l7",
+       "text": "Mustgablen."
+      },
+      {
+       "id": "r6l8",
+       "text": "Mistkrel."
+      },
+      {
+       "id": "r6l9",
+       "text": "Drei holzhackhen."
+      },
+      {
+       "id": "r6l10",
+       "text": "Vier kammet."
+      },
+      {
+       "id": "r6l11",
+       "text": "Ain fuetter kasten."
+      }
      ]
     }
    ]
@@ -482,34 +1217,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]",
-      "Item sunst in dem sloss.",
-      "Drey arem poyenn.",
-      "Pain poien mit ketten II.",
-      "Ain halls poien.",
-      "Sechs slosser die fur die",
-      "poienn geslagen werden.",
-      "Vermerkcht daz essenndt ding",
-      "ist alles geannttwurdt und",
-      "verlassen, wie die allt zettl",
-      "inn sich hellt.",
-      "Item es ist auch ettlich varennde hab",
-      "unnd essenndt ding lautt ainer",
-      "anndren zettl anheut beschezt",
-      "unnd angeslagen worden. Davonn",
-      "soll daz essendt ding lautt",
-      "der vorangezaigten allten zettl",
-      "geanndtwurdt werden",
-      "zu dem sloss vnnd die uberteir",
-      "gehordt her Paulsen vonn",
-      "Liechtennstein zŭ.",
-      "Das ist die inventari zedel der",
-      "farenden hab so her Pauls auf",
-      "Thaur slossen vnd mir uber",
-      "geantwort ist worden wie vor stet.",
-      "D(omi)n(us) stpssti manu(m) propter desuper",
-      "inventari zedl Thaur mit",
-      "abtretten des posten."
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item sunst in dem sloss."
+      },
+      {
+       "id": "r3l1",
+       "text": "Drey arem poyenn."
+      },
+      {
+       "id": "r3l2",
+       "text": "Pain poien mit ketten II."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain halls poien."
+      },
+      {
+       "id": "r3l4",
+       "text": "Sechs slosser die fur die"
+      },
+      {
+       "id": "r3l5",
+       "text": "poienn geslagen werden."
+      },
+      {
+       "id": "r4l1",
+       "text": "Vermerkcht daz essenndt ding"
+      },
+      {
+       "id": "r4l2",
+       "text": "ist alles geannttwurdt und"
+      },
+      {
+       "id": "r4l3",
+       "text": "verlassen, wie die allt zettl"
+      },
+      {
+       "id": "r4l4",
+       "text": "inn sich hellt."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item es ist auch ettlich varennde hab"
+      },
+      {
+       "id": "r5l2",
+       "text": "unnd essenndt ding lautt ainer"
+      },
+      {
+       "id": "r5l3",
+       "text": "anndren zettl anheut beschezt"
+      },
+      {
+       "id": "r5l4",
+       "text": "unnd angeslagen worden. Davonn"
+      },
+      {
+       "id": "r5l5",
+       "text": "soll daz essendt ding lautt"
+      },
+      {
+       "id": "r5l6",
+       "text": "der vorangezaigten allten zettl"
+      },
+      {
+       "id": "r5l7",
+       "text": "geanndtwurdt werden"
+      },
+      {
+       "id": "r5l8",
+       "text": "zu dem sloss vnnd die uberteir"
+      },
+      {
+       "id": "r5l9",
+       "text": "gehordt her Paulsen vonn"
+      },
+      {
+       "id": "r5l10",
+       "text": "Liechtennstein zŭ."
+      },
+      {
+       "id": "r6l1",
+       "text": "Das ist die inventari zedel der"
+      },
+      {
+       "id": "r6l2",
+       "text": "farenden hab so her Pauls auf"
+      },
+      {
+       "id": "r6l3",
+       "text": "Thaur slossen vnd mir uber"
+      },
+      {
+       "id": "r6l4",
+       "text": "geantwort ist worden wie vor stet."
+      },
+      {
+       "id": "r6l5",
+       "text": "D(omi)n(us) stpssti manu(m) propter desuper"
+      },
+      {
+       "id": "r6l6",
+       "text": "inventari zedl Thaur mit"
+      },
+      {
+       "id": "r6l7",
+       "text": "abtretten des posten."
+      }
      ]
     }
    ]
@@ -534,7 +1353,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -559,7 +1381,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]

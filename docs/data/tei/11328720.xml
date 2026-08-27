@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -161,9 +161,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328720-1"/>
+        <pb n="1" facs="#surface-11328720-1"/>
+        <ab xml:id="ab-11328720-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328720-1-r2">
           <lb facs="#zone-11328720-1-r2l1"/>Vermerckt die inventuari czettl des
           <lb facs="#zone-11328720-1-r2l2"/>hausplonder und massaria auff
           <lb facs="#zone-11328720-1-r2l3"/>Sigmunds Lust meinem gnãdigisten
@@ -177,7 +179,11 @@
           <lb facs="#zone-11328720-1-r2l11"/>Vingkh cze Swatz. Geschechen am
           <lb facs="#zone-11328720-1-r2l12"/>ertag nach Exalta(tio) Cruc(is) anno etc.
           <lb facs="#zone-11328720-1-r2l13"/>octuagesimo octavo.
+        </ab>
+        <ab xml:id="ab-11328720-1-r3">
           <lb facs="#zone-11328720-1-r3l1"/>Item in der kamer bey̑ der obrenn stuben.
+        </ab>
+        <ab xml:id="ab-11328720-1-r4">
           <lb facs="#zone-11328720-1-r4l1"/>VI par hărbin leỹlacher.
           <lb facs="#zone-11328720-1-r4l2"/>II tysch tuecher.
           <lb facs="#zone-11328720-1-r4l3"/>III umblegen oder hantt zwechel.
@@ -202,9 +208,11 @@
           <lb facs="#zone-11328720-1-r4l22"/>I hang(e)nd kandell, I drincken kăndell.
           <lb facs="#zone-11328720-1-r4l23"/>VIIII zinschũssell, I plan, IIII salsen schũssel.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328720-2"/>
+        <pb n="2" facs="#surface-11328720-2"/>
+        <ab xml:id="ab-11328720-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328720-2-r2">
           <lb facs="#zone-11328720-2-r2l1"/>Item II wein zefftenn, I kwbell.
           <lb facs="#zone-11328720-2-r2l2"/>VI wasser schãffer, I spuelschaff.
           <lb facs="#zone-11328720-2-r2l3"/>V kessell klainer und grõsser.
@@ -222,6 +230,8 @@
           <lb facs="#zone-11328720-2-r2l15"/>II truchen, I pett stuell.
           <lb facs="#zone-11328720-2-r2l16"/>V vorpenckh, III wein lãgell.
           <lb facs="#zone-11328720-2-r2l17"/>I essich vãssell.
+        </ab>
+        <ab xml:id="ab-11328720-2-r3">
           <lb facs="#zone-11328720-2-r3l1"/>Durchleuchtiger hochgeborner
           <lb facs="#zone-11328720-2-r3l2"/>furst gnådigister herr, ich
           <lb facs="#zone-11328720-2-r3l3"/>hab mich befragt und erkundt
@@ -240,13 +250,15 @@
           <lb facs="#zone-11328720-2-r3l16"/>das es dem Langseysen also
           <lb facs="#zone-11328720-2-r3l17"/>geanttwurtt seȋ.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328720-3"/>
+        <pb n="3" facs="#surface-11328720-3"/>
+        <ab xml:id="ab-11328720-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328720-4"/>
+        <pb n="4" facs="#surface-11328720-4"/>
+        <ab xml:id="ab-11328720-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328720-4-r2">
           <lb facs="#zone-11328720-4-r2l1"/>Inventari Sigmundslust
           <lb facs="#zone-11328720-4-r2l2"/>Sig(mund) Mexlrainers.
         </ab>

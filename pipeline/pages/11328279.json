@@ -21,35 +21,122 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerckt die hab und guĕt so",
-      "herr Melchior von Heymenhofen",
-      "als er ab der phleg Thaur gezogen",
-      "ist, herren Jacoben von Spaur ze",
-      "kauffen geben hat und ist also",
-      "betewrt und angeslagen.",
-      "Von erst etlichs hew̆, davon sol ain",
-      "fuederle mit zwain rossen gefuĕrt",
-      "werden, und etlich stro pro",
-      "XXIIII gld.",
-      "XXXIIII stăr koren und 1/2 stăr ist",
-      "darein gelassen, ain star pro I lb.,",
-      "facit",
-      "III mr̃. IIII lb.",
-      "XLVI stăr gersten, I stăr pro X k.,",
-      "facit",
-      "III mr̃. VIII lb. IIII k.",
-      "Zwo groß swăbisch kandeln.",
-      "Ain zwo måssige kandel, drey maß",
-      "kandl, ain trinckn kandel, drey",
-      "zynein schŭseln, ain saltzfas, ain",
-      "gyesfas. Ist alles geschătzt pro",
-      "X lb.",
-      "VII pfannen klein und groß",
-      "und ain pfefferpfannen pro",
-      "III lb.",
-      "XXIIII kŏtin hăfen klein und groß",
-      "pro II lb. VI k."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerckt die hab und guĕt so"
+      },
+      {
+       "id": "r2l2",
+       "text": "herr Melchior von Heymenhofen"
+      },
+      {
+       "id": "r2l3",
+       "text": "als er ab der phleg Thaur gezogen"
+      },
+      {
+       "id": "r2l4",
+       "text": "ist, herren Jacoben von Spaur ze"
+      },
+      {
+       "id": "r2l5",
+       "text": "kauffen geben hat und ist also"
+      },
+      {
+       "id": "r2l6",
+       "text": "betewrt und angeslagen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Von erst etlichs hew̆, davon sol ain"
+      },
+      {
+       "id": "r3l2",
+       "text": "fuederle mit zwain rossen gefuĕrt"
+      },
+      {
+       "id": "r3l3",
+       "text": "werden, und etlich stro pro"
+      },
+      {
+       "id": "r3l4",
+       "text": "XXIIII gld."
+      },
+      {
+       "id": "r3l5",
+       "text": "XXXIIII stăr koren und 1/2 stăr ist"
+      },
+      {
+       "id": "r3l6",
+       "text": "darein gelassen, ain star pro I lb.,"
+      },
+      {
+       "id": "r3l7",
+       "text": "facit"
+      },
+      {
+       "id": "r3l8",
+       "text": "III mr̃. IIII lb."
+      },
+      {
+       "id": "r3l9",
+       "text": "XLVI stăr gersten, I stăr pro X k.,"
+      },
+      {
+       "id": "r3l10",
+       "text": "facit"
+      },
+      {
+       "id": "r3l11",
+       "text": "III mr̃. VIII lb. IIII k."
+      },
+      {
+       "id": "r3l12",
+       "text": "Zwo groß swăbisch kandeln."
+      },
+      {
+       "id": "r3l13",
+       "text": "Ain zwo måssige kandel, drey maß"
+      },
+      {
+       "id": "r3l14",
+       "text": "kandl, ain trinckn kandel, drey"
+      },
+      {
+       "id": "r3l15",
+       "text": "zynein schŭseln, ain saltzfas, ain"
+      },
+      {
+       "id": "r3l16",
+       "text": "gyesfas. Ist alles geschătzt pro"
+      },
+      {
+       "id": "r3l17",
+       "text": "X lb."
+      },
+      {
+       "id": "r3l18",
+       "text": "VII pfannen klein und groß"
+      },
+      {
+       "id": "r3l19",
+       "text": "und ain pfefferpfannen pro"
+      },
+      {
+       "id": "r3l20",
+       "text": "III lb."
+      },
+      {
+       "id": "r3l21",
+       "text": "XXIIII kŏtin hăfen klein und groß"
+      },
+      {
+       "id": "r3l22",
+       "text": "pro II lb. VI k."
+      }
      ]
     }
    ]
@@ -74,28 +161,94 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Drey kessl klein und groß und",
-      "ain rebeysen pro VII lb.",
-      "Ain rost, alte hackmesser, ain kuechl",
-      "spiß, ain pawmschab, ain hafendeck",
-      "pro II lb.",
-      "Etlich milich năpf, schŭsseln,",
-      "tăller, zway slegkubel, zwen",
-      "smaltzkubel und etliche schăffer pro",
-      "I gld.",
-      "Zwen padzuber und ain sechteren",
-      "pro IIII lb.",
-      "Ain grosse vischpfannen und",
-      "ain nudlpfannen pro II lb.",
-      "Ain speiskasten in der kuchen pro",
-      "IIII lb.",
-      "Ain harnaschkasten und ain",
-      "gutschenspanpet mit ainem",
-      "himel in der stuben pro VI lb.",
-      "Zwo sidltruhen und ain kastel",
-      "zů ainem gyesfas in der stuben",
-      "hat er im darein gelassen."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Drey kessl klein und groß und"
+      },
+      {
+       "id": "r2l2",
+       "text": "ain rebeysen pro VII lb."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain rost, alte hackmesser, ain kuechl"
+      },
+      {
+       "id": "r2l4",
+       "text": "spiß, ain pawmschab, ain hafendeck"
+      },
+      {
+       "id": "r2l5",
+       "text": "pro II lb."
+      },
+      {
+       "id": "r2l6",
+       "text": "Etlich milich năpf, schŭsseln,"
+      },
+      {
+       "id": "r2l7",
+       "text": "tăller, zway slegkubel, zwen"
+      },
+      {
+       "id": "r2l8",
+       "text": "smaltzkubel und etliche schăffer pro"
+      },
+      {
+       "id": "r2l9",
+       "text": "I gld."
+      },
+      {
+       "id": "r2l10",
+       "text": "Zwen padzuber und ain sechteren"
+      },
+      {
+       "id": "r2l11",
+       "text": "pro IIII lb."
+      },
+      {
+       "id": "r2l12",
+       "text": "Ain grosse vischpfannen und"
+      },
+      {
+       "id": "r2l13",
+       "text": "ain nudlpfannen pro II lb."
+      },
+      {
+       "id": "r2l14",
+       "text": "Ain speiskasten in der kuchen pro"
+      },
+      {
+       "id": "r2l15",
+       "text": "IIII lb."
+      },
+      {
+       "id": "r2l16",
+       "text": "Ain harnaschkasten und ain"
+      },
+      {
+       "id": "r2l17",
+       "text": "gutschenspanpet mit ainem"
+      },
+      {
+       "id": "r2l18",
+       "text": "himel in der stuben pro VI lb."
+      },
+      {
+       "id": "r2l19",
+       "text": "Zwo sidltruhen und ain kastel"
+      },
+      {
+       "id": "r2l20",
+       "text": "zů ainem gyesfas in der stuben"
+      },
+      {
+       "id": "r2l21",
+       "text": "hat er im darein gelassen."
+      }
      ]
     }
    ]
@@ -120,10 +273,22 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "Item auf Tawr hat das groser vas",
-      "zehen ürn, dar an get ab dreÿ pazeiden",
-      "und das chlainer vas hat dreÿ urn",
-      "daran get ab ain pazeiden."
+      {
+       "id": "r1l1",
+       "text": "Item auf Tawr hat das groser vas"
+      },
+      {
+       "id": "r1l2",
+       "text": "zehen ürn, dar an get ab dreÿ pazeiden"
+      },
+      {
+       "id": "r1l3",
+       "text": "und das chlainer vas hat dreÿ urn"
+      },
+      {
+       "id": "r1l4",
+       "text": "daran get ab ain pazeiden."
+      }
      ]
     }
    ]
@@ -148,9 +313,18 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "Etschwein X urn minus III pazeiden, I urn pro XI",
-      "lb., facit XI mr̃. Daran gend die III pazeiden",
-      "herab."
+      {
+       "id": "r1l1",
+       "text": "Etschwein X urn minus III pazeiden, I urn pro XI"
+      },
+      {
+       "id": "r1l2",
+       "text": "lb., facit XI mr̃. Daran gend die III pazeiden"
+      },
+      {
+       "id": "r1l3",
+       "text": "herab."
+      }
      ]
     }
    ]
@@ -175,23 +349,74 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Zehen swein klein und groß",
-      "pro V gld. II lb.",
-      "Zwen wăgen, ain pflueg",
-      "mit iren zugehorungen pro",
-      "VI gld.",
-      "Ain karr pro III lb.",
-      "Ain vaß swabisch wein, I uren",
-      "pro VIII lb., sol das vaß gefisert",
-      "und darnach was das bringt",
-      "bezalt werden und hat innen",
-      "III uren minus I paceiden.",
-      "Ain vaß etschwein, sol auch",
-      "gefisert und was das bringt",
-      "albeg ain uren pro XI lb. bezalt",
-      "werden und hat innen X uren",
-      "minus III paceiden."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Zehen swein klein und groß"
+      },
+      {
+       "id": "r2l2",
+       "text": "pro V gld. II lb."
+      },
+      {
+       "id": "r2l3",
+       "text": "Zwen wăgen, ain pflueg"
+      },
+      {
+       "id": "r2l4",
+       "text": "mit iren zugehorungen pro"
+      },
+      {
+       "id": "r2l5",
+       "text": "VI gld."
+      },
+      {
+       "id": "r2l6",
+       "text": "Ain karr pro III lb."
+      },
+      {
+       "id": "r2l7",
+       "text": "Ain vaß swabisch wein, I uren"
+      },
+      {
+       "id": "r2l8",
+       "text": "pro VIII lb., sol das vaß gefisert"
+      },
+      {
+       "id": "r2l9",
+       "text": "und darnach was das bringt"
+      },
+      {
+       "id": "r2l10",
+       "text": "bezalt werden und hat innen"
+      },
+      {
+       "id": "r2l11",
+       "text": "III uren minus I paceiden."
+      },
+      {
+       "id": "r2l12",
+       "text": "Ain vaß etschwein, sol auch"
+      },
+      {
+       "id": "r2l13",
+       "text": "gefisert und was das bringt"
+      },
+      {
+       "id": "r2l14",
+       "text": "albeg ain uren pro XI lb. bezalt"
+      },
+      {
+       "id": "r2l15",
+       "text": "werden und hat innen X uren"
+      },
+      {
+       "id": "r2l16",
+       "text": "minus III paceiden."
+      }
      ]
     }
    ]
@@ -216,7 +441,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]
@@ -241,7 +469,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      }
      ]
     }
    ]
@@ -266,7 +497,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      }
      ]
     }
    ]
@@ -291,7 +525,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      }
      ]
     }
    ]
@@ -316,7 +553,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]

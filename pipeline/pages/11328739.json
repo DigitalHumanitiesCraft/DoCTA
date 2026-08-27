@@ -21,7 +21,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      }
      ]
     }
    ]
@@ -46,7 +49,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     }
    ]
@@ -71,7 +77,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -96,7 +105,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]
@@ -121,7 +133,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      }
      ]
     }
    ]
@@ -146,38 +161,134 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Am erst(e)n in dem hind(er)n stub(e)l in des",
-      "torwart(e)ls haus ain tisch mit",
-      "ainer furpanck.",
-      "It(em) ain verdeckts spanpet darauf",
-      "ain strosack, ain ledren(er) polst(er)",
-      "und ain ledrens kuß mit ain(em)",
-      "waissen leynin(en) umbhang.",
-      "It(em) in d(er) camer darhind(er) ain tisch.",
-      "Ain spanbet mitßt ainem kariol(er).",
-      "Ain sidltruch(e)n.",
-      "Ain pett.",
-      "Ain polst(er).",
-      "It(em) ain kast(e)n darinn etlich zingeschirr,",
-      "messingeschirr, kand(e)ln, schussl(e)n,",
-      "tăller, peck, leucht(er) und ain",
-      "langß mess(er) und ist verpetsch(aft).",
-      "It(em) ain hoche pfefferpŭchs.",
-      "It(em) ain lange sideltruh(e)n nichz darin.",
-      "Ain hocher kast(e)n nichtz darinn.",
-      "Ain klaine beslagne truh(e)n nichtz darin.",
-      "Im stub(e)l im sneck(e)n.",
-      "It(em) ain tisch mit ain(em) pretspil und",
-      "schachzag(e)l.",
-      "It(em) ain gutschenpetl spanpet(e)l darauf",
-      "ain ledrein polster, ain ledreins kuß.",
-      "It(em) in der cam(er) ob dem schnegk(e)n.",
-      "Ain tisch mit ain(em) schachzag(e)l.",
-      "Ain eysein later(e)n.",
-      "Ain kariol darauf ain pet¬",
-      "polst(er) und ain [..]golter.",
-      "Ain versperte truh(e)n."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Am erst(e)n in dem hind(er)n stub(e)l in des"
+      },
+      {
+       "id": "r2l2",
+       "text": "torwart(e)ls haus ain tisch mit"
+      },
+      {
+       "id": "r2l3",
+       "text": "ainer furpanck."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) ain verdeckts spanpet darauf"
+      },
+      {
+       "id": "r2l5",
+       "text": "ain strosack, ain ledren(er) polst(er)"
+      },
+      {
+       "id": "r2l6",
+       "text": "und ain ledrens kuß mit ain(em)"
+      },
+      {
+       "id": "r2l7",
+       "text": "waissen leynin(en) umbhang."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) in d(er) camer darhind(er) ain tisch."
+      },
+      {
+       "id": "r2l9",
+       "text": "Ain spanbet mitßt ainem kariol(er)."
+      },
+      {
+       "id": "r2l10",
+       "text": "Ain sidltruch(e)n."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain pett."
+      },
+      {
+       "id": "r2l12",
+       "text": "Ain polst(er)."
+      },
+      {
+       "id": "r2l13",
+       "text": "It(em) ain kast(e)n darinn etlich zingeschirr,"
+      },
+      {
+       "id": "r2l14",
+       "text": "messingeschirr, kand(e)ln, schussl(e)n,"
+      },
+      {
+       "id": "r2l15",
+       "text": "tăller, peck, leucht(er) und ain"
+      },
+      {
+       "id": "r2l16",
+       "text": "langß mess(er) und ist verpetsch(aft)."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) ain hoche pfefferpŭchs."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) ain lange sideltruh(e)n nichz darin."
+      },
+      {
+       "id": "r2l19",
+       "text": "Ain hocher kast(e)n nichtz darinn."
+      },
+      {
+       "id": "r2l20",
+       "text": "Ain klaine beslagne truh(e)n nichtz darin."
+      },
+      {
+       "id": "r3l1",
+       "text": "Im stub(e)l im sneck(e)n."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) ain tisch mit ain(em) pretspil und"
+      },
+      {
+       "id": "r4l2",
+       "text": "schachzag(e)l."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) ain gutschenpetl spanpet(e)l darauf"
+      },
+      {
+       "id": "r4l4",
+       "text": "ain ledrein polster, ain ledreins kuß."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) in der cam(er) ob dem schnegk(e)n."
+      },
+      {
+       "id": "r4l6",
+       "text": "Ain tisch mit ain(em) schachzag(e)l."
+      },
+      {
+       "id": "r4l7",
+       "text": "Ain eysein later(e)n."
+      },
+      {
+       "id": "r4l8",
+       "text": "Ain kariol darauf ain pet¬"
+      },
+      {
+       "id": "r4l9",
+       "text": "polst(er) und ain [..]golter."
+      },
+      {
+       "id": "r4l10",
+       "text": "Ain versperte truh(e)n."
+      }
      ]
     }
    ]
@@ -202,34 +313,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]",
-      "It(em) ob(e)n in der kamer auf d(em) sneckh(e)n ain versperte",
-      "truh(e)n.",
-      "It(em) ain lĕre petstadt.",
-      "It(em) acht eyseine gewicht.",
-      "Ain klains versperts truch(e)l.",
-      "Zu Hasegk in d(er) oberen stuben.",
-      "It(em) zwai truh(e)l hat d(er) saltzmair lasß(e)n mach(e)n.",
-      "It(em) ain tisch mit ain(em) spilpret.",
-      "It(em) [.]drei tisch.",
-      "It(em) zwen stŭl auf yed(en) ain lidrei(n)s kuß.",
-      "It(em) zwo vorpenck.",
-      "It(em) ain credenz tisch(e)l und ain",
-      "stŭl davor.",
-      "It(em) ain eyse(ner) schach.",
-      "It(em) in d(er) stub(e)n ain truh(e)n mit darin",
-      "etlich zinen geslag(e)n flasch(e)n, kandl(e)n,",
-      "leucht(er), gießkand(e)l, spruz(e)n,",
-      "windpend(er) und and(ers) und ist",
-      "versecretirt.",
-      "It(em) in ainer klain(en) kam(er) daran",
-      "ain truh(e)n darinn etlich zinnen",
-      "platt(e)n, kandl(e)n, zwen mors(er),",
-      "messing leucht(er) auf ain alt(er)",
-      "und hultzin plan.",
-      "It(em) ain petstat darin ain pet,",
-      "ain polst(er), ain kuß, ain golt(er).",
-      "Ain alt(er) sessel."
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) ob(e)n in der kamer auf d(em) sneckh(e)n ain versperte"
+      },
+      {
+       "id": "r2l2",
+       "text": "truh(e)n."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) ain lĕre petstadt."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) acht eyseine gewicht."
+      },
+      {
+       "id": "r2l5",
+       "text": "Ain klains versperts truch(e)l."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zu Hasegk in d(er) oberen stuben."
+      },
+      {
+       "id": "r4l1",
+       "text": "It(em) zwai truh(e)l hat d(er) saltzmair lasß(e)n mach(e)n."
+      },
+      {
+       "id": "r4l2",
+       "text": "It(em) ain tisch mit ain(em) spilpret."
+      },
+      {
+       "id": "r4l3",
+       "text": "It(em) [.]drei tisch."
+      },
+      {
+       "id": "r4l4",
+       "text": "It(em) zwen stŭl auf yed(en) ain lidrei(n)s kuß."
+      },
+      {
+       "id": "r4l5",
+       "text": "It(em) zwo vorpenck."
+      },
+      {
+       "id": "r4l6",
+       "text": "It(em) ain credenz tisch(e)l und ain"
+      },
+      {
+       "id": "r4l7",
+       "text": "stŭl davor."
+      },
+      {
+       "id": "r4l8",
+       "text": "It(em) ain eyse(ner) schach."
+      },
+      {
+       "id": "r4l9",
+       "text": "It(em) in d(er) stub(e)n ain truh(e)n mit darin"
+      },
+      {
+       "id": "r4l10",
+       "text": "etlich zinen geslag(e)n flasch(e)n, kandl(e)n,"
+      },
+      {
+       "id": "r4l11",
+       "text": "leucht(er), gießkand(e)l, spruz(e)n,"
+      },
+      {
+       "id": "r4l12",
+       "text": "windpend(er) und and(ers) und ist"
+      },
+      {
+       "id": "r4l13",
+       "text": "versecretirt."
+      },
+      {
+       "id": "r4l14",
+       "text": "It(em) in ainer klain(en) kam(er) daran"
+      },
+      {
+       "id": "r4l15",
+       "text": "ain truh(e)n darinn etlich zinnen"
+      },
+      {
+       "id": "r4l16",
+       "text": "platt(e)n, kandl(e)n, zwen mors(er),"
+      },
+      {
+       "id": "r4l17",
+       "text": "messing leucht(er) auf ain alt(er)"
+      },
+      {
+       "id": "r4l18",
+       "text": "und hultzin plan."
+      },
+      {
+       "id": "r4l19",
+       "text": "It(em) ain petstat darin ain pet,"
+      },
+      {
+       "id": "r4l20",
+       "text": "ain polst(er), ain kuß, ain golt(er)."
+      },
+      {
+       "id": "r4l21",
+       "text": "Ain alt(er) sessel."
+      }
      ]
     }
    ]
@@ -254,35 +449,122 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "It(em) in d(er) grossen kamer ain kurze truh(e)n",
-      "darin etl(ich) golt(er), etlich par messer.",
-      "Ain kast(en) m(eines) g(nädigen) h(er)rn.",
-      "It(em) aber ain kurze truh(e)n darin",
-      "etlich zinen platt(en), flasch(e)n, wag(e)n,",
-      "tasch(e)n, irch, pergamen, ain hor(e)n",
-      "mit silber beslag(e)n, ain silber(er)",
-      "pecher, drei beslag(en) loff(e)l, ain",
-      "agstain(er) pa(ter) n(oster) und ain gralli(ner)",
-      "pa(ter) n(oster), ain guldn(er) ring, etlich",
-      "seck(e)l und nest(e)l.",
-      "It(em) in ain(er) fuestruch(e)n etlich leilach",
-      "un(d) pfait(e)n.",
-      "It(em) ain truh(e)n darin etlich kopf,",
-      "hulzin schusl(e)n, flasch(e)n, tallerpichs(e)n",
-      "un(d) zinen plăn.",
-      "It(em) XXIIII ar(e)mbrust.",
-      "Etliche geschos und pfeil.",
-      "Ain sess(e)l.",
-      "Zwo lang hulzin pfeff(er) pichs(en).",
-      "Ain sid(e)ltruh(e)n darin ain stuck",
-      "zbilich, ain stuck(e)l galschen,",
-      "ledreine leilach und etliche tischtuech(er).",
-      "Ain kast(e)n nichtz darin, ab(er) darauf",
-      "etlich groß hulzeine schuss(len).",
-      "Ain spanpet mit ain(em) seidn(e)n",
-      "umbhang darin I pett, I polst(er),",
-      "II kuß."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) in d(er) grossen kamer ain kurze truh(e)n"
+      },
+      {
+       "id": "r2l2",
+       "text": "darin etl(ich) golt(er), etlich par messer."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain kast(en) m(eines) g(nädigen) h(er)rn."
+      },
+      {
+       "id": "r2l4",
+       "text": "It(em) aber ain kurze truh(e)n darin"
+      },
+      {
+       "id": "r2l5",
+       "text": "etlich zinen platt(en), flasch(e)n, wag(e)n,"
+      },
+      {
+       "id": "r2l6",
+       "text": "tasch(e)n, irch, pergamen, ain hor(e)n"
+      },
+      {
+       "id": "r2l7",
+       "text": "mit silber beslag(e)n, ain silber(er)"
+      },
+      {
+       "id": "r2l8",
+       "text": "pecher, drei beslag(en) loff(e)l, ain"
+      },
+      {
+       "id": "r2l9",
+       "text": "agstain(er) pa(ter) n(oster) und ain gralli(ner)"
+      },
+      {
+       "id": "r2l10",
+       "text": "pa(ter) n(oster), ain guldn(er) ring, etlich"
+      },
+      {
+       "id": "r2l11",
+       "text": "seck(e)l und nest(e)l."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) in ain(er) fuestruch(e)n etlich leilach"
+      },
+      {
+       "id": "r2l13",
+       "text": "un(d) pfait(e)n."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) ain truh(e)n darin etlich kopf,"
+      },
+      {
+       "id": "r2l15",
+       "text": "hulzin schusl(e)n, flasch(e)n, tallerpichs(e)n"
+      },
+      {
+       "id": "r2l16",
+       "text": "un(d) zinen plăn."
+      },
+      {
+       "id": "r2l17",
+       "text": "It(em) XXIIII ar(e)mbrust."
+      },
+      {
+       "id": "r2l18",
+       "text": "Etliche geschos und pfeil."
+      },
+      {
+       "id": "r2l19",
+       "text": "Ain sess(e)l."
+      },
+      {
+       "id": "r2l20",
+       "text": "Zwo lang hulzin pfeff(er) pichs(en)."
+      },
+      {
+       "id": "r2l21",
+       "text": "Ain sid(e)ltruh(e)n darin ain stuck"
+      },
+      {
+       "id": "r2l22",
+       "text": "zbilich, ain stuck(e)l galschen,"
+      },
+      {
+       "id": "r2l23",
+       "text": "ledreine leilach und etliche tischtuech(er)."
+      },
+      {
+       "id": "r2l24",
+       "text": "Ain kast(e)n nichtz darin, ab(er) darauf"
+      },
+      {
+       "id": "r2l25",
+       "text": "etlich groß hulzeine schuss(len)."
+      },
+      {
+       "id": "r2l26",
+       "text": "Ain spanpet mit ain(em) seidn(e)n"
+      },
+      {
+       "id": "r2l27",
+       "text": "umbhang darin I pett, I polst(er),"
+      },
+      {
+       "id": "r2l28",
+       "text": "II kuß."
+      }
      ]
     }
    ]
@@ -307,34 +589,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "It(em) ain kast(en) mit werchzeug",
-      "darauf zwen golt(er).",
-      "It(em) ain spanpet darin ain pet,",
-      "ain polst(er), II kuß, ain golt(er),",
-      "ain lidrin deck.",
-      "It(em) vier alte schwert.",
-      "It(em) VII hell(e)nparten und morhack(e)n.",
-      "Etlich alt leicht(er).",
-      "V messin peck.",
-      "Ain lant(er)n.",
-      "Ain grŭen(er) schw(ei)n spieß.",
-      "It(em) im kleinen stub(e)l ist ein",
-      "spilpret.",
-      "It(em) pet, zwey polst(er), II kuß, ain deck.",
-      "It(em) in d(er) kamer auf d(er) stiegen",
-      "drei petstat, drei pet mit strosech,",
-      "V pol kuß, zwen polst(er), drei deck.",
-      "It(em) in d(er) silberkamer zwei petstat,",
-      "pet darin mit ir(er) zugehor.",
-      "In der sideltruhen tischtuech(er), handzwechen.",
-      "Ain kast(en) nichtz darin.",
-      "Die kam(er) ist auch v(er)petsch(aft).",
-      "It(em) in kell(er) VI kandl(e)n.",
-      "Ain stand(er).",
-      "Ain lars văss(e)l.",
-      "Zu der capellen hat d(er) Kalb ain meßpuch.",
-      "Ain mesgwand mit s(ein)er zugehor."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) ain kast(en) mit werchzeug"
+      },
+      {
+       "id": "r2l2",
+       "text": "darauf zwen golt(er)."
+      },
+      {
+       "id": "r2l3",
+       "text": "It(em) ain spanpet darin ain pet,"
+      },
+      {
+       "id": "r2l4",
+       "text": "ain polst(er), II kuß, ain golt(er),"
+      },
+      {
+       "id": "r2l5",
+       "text": "ain lidrin deck."
+      },
+      {
+       "id": "r2l6",
+       "text": "It(em) vier alte schwert."
+      },
+      {
+       "id": "r2l7",
+       "text": "It(em) VII hell(e)nparten und morhack(e)n."
+      },
+      {
+       "id": "r2l8",
+       "text": "Etlich alt leicht(er)."
+      },
+      {
+       "id": "r2l9",
+       "text": "V messin peck."
+      },
+      {
+       "id": "r2l10",
+       "text": "Ain lant(er)n."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain grŭen(er) schw(ei)n spieß."
+      },
+      {
+       "id": "r2l12",
+       "text": "It(em) im kleinen stub(e)l ist ein"
+      },
+      {
+       "id": "r2l13",
+       "text": "spilpret."
+      },
+      {
+       "id": "r2l14",
+       "text": "It(em) pet, zwey polst(er), II kuß, ain deck."
+      },
+      {
+       "id": "r2l15",
+       "text": "It(em) in d(er) kamer auf d(er) stiegen"
+      },
+      {
+       "id": "r2l16",
+       "text": "drei petstat, drei pet mit strosech,"
+      },
+      {
+       "id": "r2l17",
+       "text": "V pol kuß, zwen polst(er), drei deck."
+      },
+      {
+       "id": "r2l18",
+       "text": "It(em) in d(er) silberkamer zwei petstat,"
+      },
+      {
+       "id": "r2l19",
+       "text": "pet darin mit ir(er) zugehor."
+      },
+      {
+       "id": "r2l20",
+       "text": "In der sideltruhen tischtuech(er), handzwechen."
+      },
+      {
+       "id": "r2l21",
+       "text": "Ain kast(en) nichtz darin."
+      },
+      {
+       "id": "r2l22",
+       "text": "Die kam(er) ist auch v(er)petsch(aft)."
+      },
+      {
+       "id": "r2l23",
+       "text": "It(em) in kell(er) VI kandl(e)n."
+      },
+      {
+       "id": "r2l24",
+       "text": "Ain stand(er)."
+      },
+      {
+       "id": "r2l25",
+       "text": "Ain lars văss(e)l."
+      },
+      {
+       "id": "r2l26",
+       "text": "Zu der capellen hat d(er) Kalb ain meßpuch."
+      },
+      {
+       "id": "r2l27",
+       "text": "Ain mesgwand mit s(ein)er zugehor."
+      }
      ]
     }
    ]
@@ -359,15 +725,42 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]",
-      "It(em) in d(er) kuch(e)l etlich zingeschir,",
-      "hultzin schussl(e)n, etlich kotin hăfen,",
-      "kell(e)n und pfann(e)n, kess(e)l und and(er)s",
-      "und ist v(er)petsch(aft).",
-      "It(em) in d(er) kam(er) hind(er) d(er) kochstub(e)n",
-      "ain spanpet, I pet, ain polst(er),",
-      "ain kuß, ain sidltruch(en).",
-      "It(em) in d(er) cam(er) daran zwai spanpet."
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "It(em) in d(er) kuch(e)l etlich zingeschir,"
+      },
+      {
+       "id": "r2l2",
+       "text": "hultzin schussl(e)n, etlich kotin hăfen,"
+      },
+      {
+       "id": "r2l3",
+       "text": "kell(e)n und pfann(e)n, kess(e)l und and(er)s"
+      },
+      {
+       "id": "r2l4",
+       "text": "und ist v(er)petsch(aft)."
+      },
+      {
+       "id": "r2l5",
+       "text": "It(em) in d(er) kam(er) hind(er) d(er) kochstub(e)n"
+      },
+      {
+       "id": "r2l6",
+       "text": "ain spanpet, I pet, ain polst(er),"
+      },
+      {
+       "id": "r2l7",
+       "text": "ain kuß, ain sidltruch(en)."
+      },
+      {
+       "id": "r2l8",
+       "text": "It(em) in d(er) cam(er) daran zwai spanpet."
+      }
      ]
     }
    ]
@@ -392,7 +785,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -417,7 +813,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]
@@ -442,7 +841,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7r]"
+      }
      ]
     }
    ]
@@ -467,7 +869,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7v]"
+      }
      ]
     }
    ]
@@ -492,7 +897,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8r]"
+      }
      ]
     }
    ]

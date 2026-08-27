@@ -21,32 +21,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Ingegenwurtigkait m(eines) g(nedigen) h(errn)",
-      "he(rr)n Ludwigen von Masminster",
-      "hofmarschalck, Walth(er)en von",
-      "Stadion seiner gnaden rate, Stef¬",
-      "fan Harder forstmaister, Heurling",
-      "seiner g(naden) thurhŭtter, Conraden",
-      "Metzner und Hannsen Liechten¬",
-      "staren canczlschreiber, ist Got¬",
-      "hardten seiner gnaden ka¬",
-      "merknecht das sloss Fragen¬",
-      "stain mit aller seiner zůgeho¬",
-      "rung enngeben worden an",
-      "phincztag vor Anthoni anno",
-      "etc. LXX octavo.",
-      "Und ist dise massarey in de(m)",
-      "sloss als hernach stet funden",
-      "worden.",
-      "Item hanntpuchsen IIII.",
-      "Hackenpuchensen gross IIII.",
-      "Hackenpuchsen klain XXIII.",
-      "Karrenpuchsen IIII.",
-      "Und ain klain stainpuchsen.",
-      "Und ain grosse puchsen.",
-      "I1/2 vaslein mit pulver.",
-      "I1/2 lagl mit pheyl."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ingegenwurtigkait m(eines) g(nedigen) h(errn)"
+      },
+      {
+       "id": "r2l2",
+       "text": "he(rr)n Ludwigen von Masminster"
+      },
+      {
+       "id": "r2l3",
+       "text": "hofmarschalck, Walth(er)en von"
+      },
+      {
+       "id": "r2l4",
+       "text": "Stadion seiner gnaden rate, Stef¬"
+      },
+      {
+       "id": "r2l5",
+       "text": "fan Harder forstmaister, Heurling"
+      },
+      {
+       "id": "r2l6",
+       "text": "seiner g(naden) thurhŭtter, Conraden"
+      },
+      {
+       "id": "r2l7",
+       "text": "Metzner und Hannsen Liechten¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "staren canczlschreiber, ist Got¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "hardten seiner gnaden ka¬"
+      },
+      {
+       "id": "r2l10",
+       "text": "merknecht das sloss Fragen¬"
+      },
+      {
+       "id": "r2l11",
+       "text": "stain mit aller seiner zůgeho¬"
+      },
+      {
+       "id": "r2l12",
+       "text": "rung enngeben worden an"
+      },
+      {
+       "id": "r2l13",
+       "text": "phincztag vor Anthoni anno"
+      },
+      {
+       "id": "r2l14",
+       "text": "etc. LXX octavo."
+      },
+      {
+       "id": "r2l15",
+       "text": "Und ist dise massarey in de(m)"
+      },
+      {
+       "id": "r2l16",
+       "text": "sloss als hernach stet funden"
+      },
+      {
+       "id": "r2l17",
+       "text": "worden."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item hanntpuchsen IIII."
+      },
+      {
+       "id": "r3l2",
+       "text": "Hackenpuchensen gross IIII."
+      },
+      {
+       "id": "r3l3",
+       "text": "Hackenpuchsen klain XXIII."
+      },
+      {
+       "id": "r3l4",
+       "text": "Karrenpuchsen IIII."
+      },
+      {
+       "id": "r3l5",
+       "text": "Und ain klain stainpuchsen."
+      },
+      {
+       "id": "r3l6",
+       "text": "Und ain grosse puchsen."
+      },
+      {
+       "id": "r3l7",
+       "text": "I1/2 vaslein mit pulver."
+      },
+      {
+       "id": "r3l8",
+       "text": "I1/2 lagl mit pheyl."
+      }
      ]
     }
    ]
@@ -71,24 +149,78 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Zwo pulver taschen.",
-      "II alte armst.",
-      "V pley platten.",
-      "Ain pŭchsen model",
-      "zŭ puchsen.",
-      "Ain hehel in der kuchen.",
-      "Ain kessel in der padstŭben.",
-      "I alte schilt tartschen.",
-      "Zwo karren puchsen auf",
-      "der wȇre.",
-      "Ain tafel auf de(m) altar",
-      "mit dem XII poten.",
-      "Ain silbrein kelch ŭbergũlt.",
-      "Ain stifftbrief.",
-      "Ain ornat mit seiner",
-      "zŭgehoru̇ng.",
-      "Ain spetial."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Zwo pulver taschen."
+      },
+      {
+       "id": "r2l2",
+       "text": "II alte armst."
+      },
+      {
+       "id": "r2l3",
+       "text": "V pley platten."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ain pŭchsen model"
+      },
+      {
+       "id": "r2l5",
+       "text": "zŭ puchsen."
+      },
+      {
+       "id": "r2l6",
+       "text": "Ain hehel in der kuchen."
+      },
+      {
+       "id": "r2l7",
+       "text": "Ain kessel in der padstŭben."
+      },
+      {
+       "id": "r2l8",
+       "text": "I alte schilt tartschen."
+      },
+      {
+       "id": "r2l9",
+       "text": "Zwo karren puchsen auf"
+      },
+      {
+       "id": "r2l10",
+       "text": "der wȇre."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain tafel auf de(m) altar"
+      },
+      {
+       "id": "r2l12",
+       "text": "mit dem XII poten."
+      },
+      {
+       "id": "r2l13",
+       "text": "Ain silbrein kelch ŭbergũlt."
+      },
+      {
+       "id": "r2l14",
+       "text": "Ain stifftbrief."
+      },
+      {
+       "id": "r2l15",
+       "text": "Ain ornat mit seiner"
+      },
+      {
+       "id": "r2l16",
+       "text": "zŭgehoru̇ng."
+      },
+      {
+       "id": "r2l17",
+       "text": "Ain spetial."
+      }
      ]
     }
    ]
@@ -113,13 +245,34 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Ain glocken.",
-      "Und I klaine darŭnder.",
-      "Der zetel sind zwo gleich",
-      "in ainem laut, hat gethan",
-      "aine und m(eines) g(nedigen) h(errn) cancz¬",
-      "ley aine die ander."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ain glocken."
+      },
+      {
+       "id": "r2l2",
+       "text": "Und I klaine darŭnder."
+      },
+      {
+       "id": "r3l1",
+       "text": "Der zetel sind zwo gleich"
+      },
+      {
+       "id": "r3l2",
+       "text": "in ainem laut, hat gethan"
+      },
+      {
+       "id": "r3l3",
+       "text": "aine und m(eines) g(nedigen) h(errn) cancz¬"
+      },
+      {
+       "id": "r3l4",
+       "text": "ley aine die ander."
+      }
      ]
     }
    ]
@@ -144,11 +297,26 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Inventari auf Fragenstain",
-      "als das Gotharten Hartlieb",
-      "vom nach dem Hannsen",
-      "Lanngen ynngeantwurt ist."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventari auf Fragenstain"
+      },
+      {
+       "id": "r2l2",
+       "text": "als das Gotharten Hartlieb"
+      },
+      {
+       "id": "r2l3",
+       "text": "vom nach dem Hannsen"
+      },
+      {
+       "id": "r2l4",
+       "text": "Lanngen ynngeantwurt ist."
+      }
      ]
     }
    ]

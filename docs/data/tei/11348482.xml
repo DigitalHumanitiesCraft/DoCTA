@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -123,9 +123,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11348482-1"/>
+        <pb n="1" facs="#surface-11348482-1"/>
+        <ab xml:id="ab-11348482-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11348482-1-r2">
           <lb facs="#zone-11348482-1-r2l1"/>Vermerckt was herr Hainraich von
           <lb facs="#zone-11348482-1-r2l2"/>Mersperck dem Ulreich Eÿsenreich an
           <lb facs="#zone-11348482-1-r2l3"/>stat herr Wignloýs Gradner von plat
@@ -135,6 +137,8 @@
           <lb facs="#zone-11348482-1-r2l7"/>geschloß Perzin geantwurt hat. Actum
           <lb facs="#zone-11348482-1-r2l8"/>an an sannd Urbans tag anno Domini
           <lb facs="#zone-11348482-1-r2l9"/>millesimo quadringentesimo etc. XLVIII.
+        </ab>
+        <ab xml:id="ab-11348482-1-r3">
           <lb facs="#zone-11348482-1-r3l1"/>Item von ersten VIII ganz platen und
           <lb facs="#zone-11348482-1-r3l2"/>ain halbe platten.
           <lb facs="#zone-11348482-1-r3l3"/>Item IIII eÿsenhŭt.
@@ -162,16 +166,16 @@
           <lb facs="#zone-11348482-1-r3l25"/>ain chlaine gossen stainpuxen.
           <lb facs="#zone-11348482-1-r3l26"/>Item ain grosse eÿsnen stain púxen.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11348482-2"/>
+        <pb n="2" facs="#surface-11348482-2"/>
+        <ab xml:id="ab-11348482-2-r1">
           <milestone unit="folio" n="1v"/>
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11348482-3"/>
+        <pb n="3" facs="#surface-11348482-3"/>
+        <ab xml:id="ab-11348482-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11348482-4"/>
+        <pb n="4" facs="#surface-11348482-4"/>
+        <ab xml:id="ab-11348482-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
       </div>

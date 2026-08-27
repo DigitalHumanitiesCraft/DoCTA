@@ -21,36 +21,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermircktt was ich Jörgg Gossennbrott von dem vesten Caspar",
-      "Frechenn an statt meins gnädigen herren in dem schloss Erenberg",
-      "uff mittwuchen den Heiligen Auffartt abentt anno etc. LXXVII",
-      "emphannigen hab.",
-      "Item zun ersten dreẅ bettli sind aus neẅn bösen gannz errissen",
-      "bettlen zusamen prachtt alles blos und aus vier bösse pólsteren",
-      "und VII küssenn die gar tzu nichte sein gewesen nach ausweý¬",
-      "sung der zedl die ich von herren Kasparen von Laubenberg han.",
-      "Item ain tarras bũchs ist sibenn spann lang schüst ain stain als ain",
-      "aÿ.",
-      "Item vier hanmdbȗchsen geschifftt. Item ain lágell und ain klains",
-      "vȃsßlin mitt büchsenbullver ist aus baiden genommen.",
-      "Item ain stain bȗchs angeschăfftt.",
-      "Item ain tarrans búchs ist sechs schůch lang hatt Österreÿch an",
-      "baiden seÿtten. Mer ain tarrans büchs in ainer lad.",
-      "Item zwaÿ armprust und vier läglen mitt pfey̑llen ist aus ainer genomen.",
-      "Item ain platt mitt pleÿ de ist abgenomen.",
-      "Item fünff erhȃffenn, ain kessell in dem bad offenn gewesen leÿtt",
-      "ÿetz im speÿs gaden und tzway̑ allte böse beck.",
-      "Item ain prattphann und ain kestin pfann, ain brantt raÿtt",
-      "und ain feẅrhagken, ain hächell zu der kúchin und ain rost.",
-      "Item ain ambos und ain horn anbos, ain tzang, ainen eÿsen schlegl.",
-      "Item ain eÿsen ketten an der zisteren.",
-      "Item siben tisch und ain tzÿm giesßfaß in der stuben.",
-      "Item zwaỹ lãgenle mitt eẏsen peschlagen.",
-      "Item zwaÿ plech, ains vor der badstuben das ander hört uff die küchin.",
-      "Item ain eýsentürlin gehȏrtt fȗr das büchsenbullver.",
-      "Item zwaÿ ketten darin man die gefangen legtt.",
-      "Item neẅn schloss angeschlagen überall umbher an die gemãch."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermircktt was ich Jörgg Gossennbrott von dem vesten Caspar"
+      },
+      {
+       "id": "r2l2",
+       "text": "Frechenn an statt meins gnädigen herren in dem schloss Erenberg"
+      },
+      {
+       "id": "r2l3",
+       "text": "uff mittwuchen den Heiligen Auffartt abentt anno etc. LXXVII"
+      },
+      {
+       "id": "r2l4",
+       "text": "emphannigen hab."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item zun ersten dreẅ bettli sind aus neẅn bösen gannz errissen"
+      },
+      {
+       "id": "r3l2",
+       "text": "bettlen zusamen prachtt alles blos und aus vier bösse pólsteren"
+      },
+      {
+       "id": "r3l3",
+       "text": "und VII küssenn die gar tzu nichte sein gewesen nach ausweý¬"
+      },
+      {
+       "id": "r3l4",
+       "text": "sung der zedl die ich von herren Kasparen von Laubenberg han."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item ain tarras bũchs ist sibenn spann lang schüst ain stain als ain"
+      },
+      {
+       "id": "r3l6",
+       "text": "aÿ."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item vier hanmdbȗchsen geschifftt. Item ain lágell und ain klains"
+      },
+      {
+       "id": "r3l8",
+       "text": "vȃsßlin mitt büchsenbullver ist aus baiden genommen."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item ain stain bȗchs angeschăfftt."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item ain tarrans búchs ist sechs schůch lang hatt Österreÿch an"
+      },
+      {
+       "id": "r3l11",
+       "text": "baiden seÿtten. Mer ain tarrans büchs in ainer lad."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item zwaÿ armprust und vier läglen mitt pfey̑llen ist aus ainer genomen."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item ain platt mitt pleÿ de ist abgenomen."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item fünff erhȃffenn, ain kessell in dem bad offenn gewesen leÿtt"
+      },
+      {
+       "id": "r3l15",
+       "text": "ÿetz im speÿs gaden und tzway̑ allte böse beck."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item ain prattphann und ain kestin pfann, ain brantt raÿtt"
+      },
+      {
+       "id": "r3l17",
+       "text": "und ain feẅrhagken, ain hächell zu der kúchin und ain rost."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item ain ambos und ain horn anbos, ain tzang, ainen eÿsen schlegl."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item ain eÿsen ketten an der zisteren."
+      },
+      {
+       "id": "r3l20",
+       "text": "Item siben tisch und ain tzÿm giesßfaß in der stuben."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item zwaỹ lãgenle mitt eẏsen peschlagen."
+      },
+      {
+       "id": "r3l22",
+       "text": "Item zwaÿ plech, ains vor der badstuben das ander hört uff die küchin."
+      },
+      {
+       "id": "r3l23",
+       "text": "Item ain eýsentürlin gehȏrtt fȗr das büchsenbullver."
+      },
+      {
+       "id": "r3l24",
+       "text": "Item zwaÿ ketten darin man die gefangen legtt."
+      },
+      {
+       "id": "r3l25",
+       "text": "Item neẅn schloss angeschlagen überall umbher an die gemãch."
+      }
      ]
     }
    ]
@@ -75,15 +165,42 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item ain schloss an kastenn, ain schloss an marstall, ain",
-      "schloss am stüblin beý dem marstall.",
-      "Item ain gewanntt kastenn in dem alten fraw̃en zinner",
-      "und dritthalb hundertt glasscheiben sindtt verglast in dem",
-      "newen paw ainen kertzen trog, ain kestlin da man gleser einheng.",
-      "Item ain streitt kolb mit ainen hilltzin stil.",
-      "Inventari zedl gen",
-      "Eremberg."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain schloss an kastenn, ain schloss an marstall, ain"
+      },
+      {
+       "id": "r2l2",
+       "text": "schloss am stüblin beý dem marstall."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item ain gewanntt kastenn in dem alten fraw̃en zinner"
+      },
+      {
+       "id": "r2l4",
+       "text": "und dritthalb hundertt glasscheiben sindtt verglast in dem"
+      },
+      {
+       "id": "r2l5",
+       "text": "newen paw ainen kertzen trog, ain kestlin da man gleser einheng."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item ain streitt kolb mit ainen hilltzin stil."
+      },
+      {
+       "id": "r3l1",
+       "text": "Inventari zedl gen"
+      },
+      {
+       "id": "r3l2",
+       "text": "Eremberg."
+      }
      ]
     }
    ]

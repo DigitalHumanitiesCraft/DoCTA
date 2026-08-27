@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -140,9 +140,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328721-1"/>
+        <pb n="1" facs="#surface-11328721-1"/>
+        <ab xml:id="ab-11328721-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328721-1-r2">
           <lb facs="#zone-11328721-1-r2l1"/>Ingegenwurtigkait m(eines) g(nedigen) h(errn)
           <lb facs="#zone-11328721-1-r2l2"/>he(rr)n Ludwigen von Masminster
           <lb facs="#zone-11328721-1-r2l3"/>hofmarschalck, Walth(er)en von
@@ -160,6 +162,8 @@
           <lb facs="#zone-11328721-1-r2l15"/>Und ist dise massarey in de(m)
           <lb facs="#zone-11328721-1-r2l16"/>sloss als hernach stet funden
           <lb facs="#zone-11328721-1-r2l17"/>worden.
+        </ab>
+        <ab xml:id="ab-11328721-1-r3">
           <lb facs="#zone-11328721-1-r3l1"/>Item hanntpuchsen IIII.
           <lb facs="#zone-11328721-1-r3l2"/>Hackenpuchensen gross IIII.
           <lb facs="#zone-11328721-1-r3l3"/>Hackenpuchsen klain XXIII.
@@ -169,9 +173,11 @@
           <lb facs="#zone-11328721-1-r3l7"/>I1/2 vaslein mit pulver.
           <lb facs="#zone-11328721-1-r3l8"/>I1/2 lagl mit pheyl.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328721-2"/>
+        <pb n="2" facs="#surface-11328721-2"/>
+        <ab xml:id="ab-11328721-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328721-2-r2">
           <lb facs="#zone-11328721-2-r2l1"/>Zwo pulver taschen.
           <lb facs="#zone-11328721-2-r2l2"/>II alte armst.
           <lb facs="#zone-11328721-2-r2l3"/>V pley platten.
@@ -190,19 +196,25 @@
           <lb facs="#zone-11328721-2-r2l16"/>zŭgehoru̇ng.
           <lb facs="#zone-11328721-2-r2l17"/>Ain spetial.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328721-3"/>
+        <pb n="3" facs="#surface-11328721-3"/>
+        <ab xml:id="ab-11328721-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328721-3-r2">
           <lb facs="#zone-11328721-3-r2l1"/>Ain glocken.
           <lb facs="#zone-11328721-3-r2l2"/>Und I klaine darŭnder.
+        </ab>
+        <ab xml:id="ab-11328721-3-r3">
           <lb facs="#zone-11328721-3-r3l1"/>Der zetel sind zwo gleich
           <lb facs="#zone-11328721-3-r3l2"/>in ainem laut, hat gethan
           <lb facs="#zone-11328721-3-r3l3"/>aine und m(eines) g(nedigen) h(errn) cancz¬
           <lb facs="#zone-11328721-3-r3l4"/>ley aine die ander.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328721-4"/>
+        <pb n="4" facs="#surface-11328721-4"/>
+        <ab xml:id="ab-11328721-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328721-4-r2">
           <lb facs="#zone-11328721-4-r2l1"/>Inventari auf Fragenstain
           <lb facs="#zone-11328721-4-r2l2"/>als das Gotharten Hartlieb
           <lb facs="#zone-11328721-4-r2l3"/>vom nach dem Hannsen

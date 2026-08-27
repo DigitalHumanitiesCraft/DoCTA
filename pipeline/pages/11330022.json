@@ -21,41 +21,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Nota hie nach ist vermerkt die",
-      "speiss zewg und varind hab",
-      "so auf Greiffenstain noch",
-      "vorhanndn ist und das herrn",
-      "Chunradten von Guell ritter",
-      "ist ingeanttw(u)rtet als man",
-      "im Greiffenstain von meins",
-      "gnädigen herrn hertczog Sigmunds etc.",
-      "wegen empholhen und inge¬",
-      "anttw(u)rt hab am vreitag",
-      "nach Sand Bartholomeus",
-      "tag anno Domini etc. quinqua¬",
-      "gesimosecundo etc.",
-      "Item czwain vass wein, darunder",
-      "ist das aine vol und hat",
-      "peẏ X ürn, ausdem andern",
-      "ist gespeiset und ist noch",
-      "darinn als peẏ VI ürn.",
-      "Item ain kasten voller melbs",
-      "dar indem kelder stet.",
-      "Item zwo lageln vol smalcz.",
-      "Item ain new̑ kubel vol mit öl.",
-      "Item salcz czehen stãr.",
-      "Item waitczein mel ain stär.",
-      "Item vier par leÿnlach.",
-      "Item pleẏ peẏ VII1/2 czenttnn.",
-      "Item puxenpulver czwo lägeln,",
-      "ist yde umb ain twerch hant",
-      "lẽr.",
-      "Item pheill czwo lagelnn.",
-      "Item czwelf hantpŭxen.",
-      "Item czwo phanne.",
-      "Item vier hulczein plaÿ.",
-      "Item funf theller."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Nota hie nach ist vermerkt die"
+      },
+      {
+       "id": "r2l2",
+       "text": "speiss zewg und varind hab"
+      },
+      {
+       "id": "r2l3",
+       "text": "so auf Greiffenstain noch"
+      },
+      {
+       "id": "r2l4",
+       "text": "vorhanndn ist und das herrn"
+      },
+      {
+       "id": "r2l5",
+       "text": "Chunradten von Guell ritter"
+      },
+      {
+       "id": "r2l6",
+       "text": "ist ingeanttw(u)rtet als man"
+      },
+      {
+       "id": "r2l7",
+       "text": "im Greiffenstain von meins"
+      },
+      {
+       "id": "r2l8",
+       "text": "gnädigen herrn hertczog Sigmunds etc."
+      },
+      {
+       "id": "r2l9",
+       "text": "wegen empholhen und inge¬"
+      },
+      {
+       "id": "r2l10",
+       "text": "anttw(u)rt hab am vreitag"
+      },
+      {
+       "id": "r2l11",
+       "text": "nach Sand Bartholomeus"
+      },
+      {
+       "id": "r2l12",
+       "text": "tag anno Domini etc. quinqua¬"
+      },
+      {
+       "id": "r2l13",
+       "text": "gesimosecundo etc."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item czwain vass wein, darunder"
+      },
+      {
+       "id": "r3l2",
+       "text": "ist das aine vol und hat"
+      },
+      {
+       "id": "r3l3",
+       "text": "peẏ X ürn, ausdem andern"
+      },
+      {
+       "id": "r3l4",
+       "text": "ist gespeiset und ist noch"
+      },
+      {
+       "id": "r3l5",
+       "text": "darinn als peẏ VI ürn."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item ain kasten voller melbs"
+      },
+      {
+       "id": "r3l7",
+       "text": "dar indem kelder stet."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item zwo lageln vol smalcz."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item ain new̑ kubel vol mit öl."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item salcz czehen stãr."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item waitczein mel ain stär."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item vier par leÿnlach."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item pleẏ peẏ VII1/2 czenttnn."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item puxenpulver czwo lägeln,"
+      },
+      {
+       "id": "r3l15",
+       "text": "ist yde umb ain twerch hant"
+      },
+      {
+       "id": "r3l16",
+       "text": "lẽr."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item pheill czwo lagelnn."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item czwelf hantpŭxen."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item czwo phanne."
+      },
+      {
+       "id": "r3l20",
+       "text": "Item vier hulczein plaÿ."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item funf theller."
+      }
      ]
     }
    ]
@@ -80,39 +185,138 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item ain erey̑ner haven.",
-      "Item XVIII hulczein weiss",
-      "klaÿne schusselnn die von",
-      "Eppan komen sind.",
-      "Item ain altarstain daraŭf",
-      "man mėss halt.",
-      "Item ain kelch an ain patenn",
-      "und ain corperal.",
-      "Item vier opherkanndle(n).",
-      "Item drey glokle(n).",
-      "Item vier palleÿsen und",
-      "ettleich ledigeÿsen und",
-      "alteysen.",
-      "Item sechs smidzangen gross",
-      "und klaÿn.",
-      "Item ain pöser anposs.",
-      "Item vier lärchein und feuchtenn",
-      "vass im kelder.",
-      "Item ain pewtelvass aufdem",
-      "kelder.",
-      "Item ain lagel mit püxen¬",
-      "pulver, ist kawm das drittail.",
-      "Item in ain(er) lägel ist ain",
-      "wenig swebel.",
-      "Item ain halb lageln(n) mit",
-      "pigel.",
-      "Item czwo gross lidrein stuchknn",
-      "czum czewg.",
-      "Item czwo lageln mit pheilln.",
-      "Item funf pett.",
-      "Item czwaý messgewant mit",
-      "irer zugehorung(en)."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain erey̑ner haven."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item XVIII hulczein weiss"
+      },
+      {
+       "id": "r2l3",
+       "text": "klaÿne schusselnn die von"
+      },
+      {
+       "id": "r2l4",
+       "text": "Eppan komen sind."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item ain altarstain daraŭf"
+      },
+      {
+       "id": "r2l6",
+       "text": "man mėss halt."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item ain kelch an ain patenn"
+      },
+      {
+       "id": "r2l8",
+       "text": "und ain corperal."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item vier opherkanndle(n)."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item drey glokle(n)."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item vier palleÿsen und"
+      },
+      {
+       "id": "r2l12",
+       "text": "ettleich ledigeÿsen und"
+      },
+      {
+       "id": "r2l13",
+       "text": "alteysen."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item sechs smidzangen gross"
+      },
+      {
+       "id": "r2l15",
+       "text": "und klaÿn."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item ain pöser anposs."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item vier lärchein und feuchtenn"
+      },
+      {
+       "id": "r2l18",
+       "text": "vass im kelder."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item ain pewtelvass aufdem"
+      },
+      {
+       "id": "r2l20",
+       "text": "kelder."
+      },
+      {
+       "id": "r2l21",
+       "text": "Item ain lagel mit püxen¬"
+      },
+      {
+       "id": "r2l22",
+       "text": "pulver, ist kawm das drittail."
+      },
+      {
+       "id": "r2l23",
+       "text": "Item in ain(er) lägel ist ain"
+      },
+      {
+       "id": "r2l24",
+       "text": "wenig swebel."
+      },
+      {
+       "id": "r2l25",
+       "text": "Item ain halb lageln(n) mit"
+      },
+      {
+       "id": "r2l26",
+       "text": "pigel."
+      },
+      {
+       "id": "r2l27",
+       "text": "Item czwo gross lidrein stuchknn"
+      },
+      {
+       "id": "r2l28",
+       "text": "czum czewg."
+      },
+      {
+       "id": "r2l29",
+       "text": "Item czwo lageln mit pheilln."
+      },
+      {
+       "id": "r2l30",
+       "text": "Item funf pett."
+      },
+      {
+       "id": "r2l31",
+       "text": "Item czwaý messgewant mit"
+      },
+      {
+       "id": "r2l32",
+       "text": "irer zugehorung(en)."
+      }
      ]
     }
    ]
@@ -137,38 +341,134 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Item ain messpüch.",
-      "Item drew pücher und altar¬",
-      "tücher.",
-      "Item aber ain püchel.",
-      "Item sechs targen güt und",
-      "pöse.",
-      "Item ain spannpanchk.",
-      "Item ain plaspalg und ain",
-      "hantsagt.",
-      "Item czwen sliffstain.",
-      "Item siben messein hänt¬",
-      "puxen gestilt.",
-      "Item funf pöse alte armbrũst",
-      "und ain alte eÿben und",
-      "ain spannpanchk.",
-      "Item ain nuspawmen",
-      "truhen.",
-      "Item fünf alte pöse eÿsen¬",
-      "püxen klain gestilt.",
-      "Item ain grosser kossȯl.",
-      "Item ain lavetsch.",
-      "Item dreẏ glokspeisein haṽen",
-      "und ain czerbrochen hav̆en.",
-      "Item ain pöse phann.",
-      "Item ain röst.",
-      "Item ain drifüss.",
-      "Item czwo hȧlen.",
-      "Item ain morser.",
-      "Item ain prȧttspiss.",
-      "Item czwo tarȃrspuxen",
-      "mit ainer lad(ung)."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain messpüch."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item drew pücher und altar¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "tücher."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item aber ain püchel."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item sechs targen güt und"
+      },
+      {
+       "id": "r2l6",
+       "text": "pöse."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item ain spannpanchk."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item ain plaspalg und ain"
+      },
+      {
+       "id": "r2l9",
+       "text": "hantsagt."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item czwen sliffstain."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item siben messein hänt¬"
+      },
+      {
+       "id": "r2l12",
+       "text": "puxen gestilt."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item funf pöse alte armbrũst"
+      },
+      {
+       "id": "r2l14",
+       "text": "und ain alte eÿben und"
+      },
+      {
+       "id": "r2l15",
+       "text": "ain spannpanchk."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item ain nuspawmen"
+      },
+      {
+       "id": "r2l17",
+       "text": "truhen."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item fünf alte pöse eÿsen¬"
+      },
+      {
+       "id": "r2l19",
+       "text": "püxen klain gestilt."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item ain grosser kossȯl."
+      },
+      {
+       "id": "r2l21",
+       "text": "Item ain lavetsch."
+      },
+      {
+       "id": "r2l22",
+       "text": "Item dreẏ glokspeisein haṽen"
+      },
+      {
+       "id": "r2l23",
+       "text": "und ain czerbrochen hav̆en."
+      },
+      {
+       "id": "r2l24",
+       "text": "Item ain pöse phann."
+      },
+      {
+       "id": "r2l25",
+       "text": "Item ain röst."
+      },
+      {
+       "id": "r2l26",
+       "text": "Item ain drifüss."
+      },
+      {
+       "id": "r2l27",
+       "text": "Item czwo hȧlen."
+      },
+      {
+       "id": "r2l28",
+       "text": "Item ain morser."
+      },
+      {
+       "id": "r2l29",
+       "text": "Item ain prȧttspiss."
+      },
+      {
+       "id": "r2l30",
+       "text": "Item czwo tarȃrspuxen"
+      },
+      {
+       "id": "r2l31",
+       "text": "mit ainer lad(ung)."
+      }
      ]
     }
    ]
@@ -193,25 +493,82 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Item ain alte eysnein püxen",
-      "ist czerbrochnn.",
-      "Item ain alte stechplattnn.",
-      "Item drėy czÿnein kanndln.",
-      "Item der harnäsch in der",
-      "stuben ist nicht vast güt",
-      "und ain armzewg und ain",
-      "scharfflir.",
-      "Item dreÿ bullen mit",
-      "anhangenndn insigelnn.",
-      "Item ain näbiger.",
-      "Item ain schleghachknn.",
-      "Item ain alte hawenn.",
-      "Item zwelf maÿlanisch(e)",
-      "panċzėr, darunder ain eysnein",
-      "panczer ist.",
-      "Item ain newer stochk zu",
-      "gevange[.] [..]ttn."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain alte eysnein püxen"
+      },
+      {
+       "id": "r2l2",
+       "text": "ist czerbrochnn."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item ain alte stechplattnn."
+      },
+      {
+       "id": "r2l4",
+       "text": "Item drėy czÿnein kanndln."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item der harnäsch in der"
+      },
+      {
+       "id": "r2l6",
+       "text": "stuben ist nicht vast güt"
+      },
+      {
+       "id": "r2l7",
+       "text": "und ain armzewg und ain"
+      },
+      {
+       "id": "r2l8",
+       "text": "scharfflir."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item dreÿ bullen mit"
+      },
+      {
+       "id": "r2l10",
+       "text": "anhangenndn insigelnn."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item ain näbiger."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item ain schleghachknn."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item ain alte hawenn."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item zwelf maÿlanisch(e)"
+      },
+      {
+       "id": "r2l15",
+       "text": "panċzėr, darunder ain eysnein"
+      },
+      {
+       "id": "r2l16",
+       "text": "panczer ist."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item ain newer stochk zu"
+      },
+      {
+       "id": "r2l18",
+       "text": "gevange[.] [..]ttn."
+      }
      ]
     }
    ]

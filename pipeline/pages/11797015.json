@@ -21,36 +21,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Zȗwissen sey̑ wenigklich mit disem inv̑entari und offen spanczedel das aȗf heȗt seiner dato",
-      "aȗf m(einer) fȗrstlicher dȗrchleȗchtigkait meines genedigisten herren aȗsgegangen bev̑elch der",
-      "edel und vest Eberhard von Frey̑berg zȗm Ey̑semberg phleger zȗ Erenberg von dem erbern",
-      "Petern Wittnig an Erenberger claȗsen wonhëfftig in seinem abczŭg dieselb claȗsen mit",
-      "sampt behaȗssȗng, khorn kasßten, aller innhab und zȗgehorȗng aȗch die zoll so dann obedachter",
-      "f(ȗrstlicher) d(ȗrchleȗchtigkait) zȗgehörig ist nicht aȗsgenomen dem edlen und vesten Jheronimen Banholcz von",
-      "Wald inhalt seiner erlanngten f(ȗrstlichen) d(ȗrchleȗchtigkait) verley̑chbrief dasselb zoll und claȗsner ampt mit",
-      "allen dingen wie der gebraȗch und allt herkomen ist innenczȗhaben, zuv̑erwesen und vor",
-      "schaden getreȗlich zuv̑erwaren bev̑olchen und eingegeben hatt. Als das er soliches alles",
-      "inhalt f(ȗrstlicher) d(ȗrchleȗchtigkait) gegeben verleichbriefs solich zöll und claȗsner ambt in gȗtten wirden wesen¬",
-      "lich halten und darinnen nichcz uncziechen lassen sol in crafft seiner gethanen pflicht und",
-      "daraȗf ist im genanten Jheronimen Banholcz in bemelter claȗsen zȗbewaren uberant¬",
-      "wȗrt worden.",
-      "Nemlich erstmals in drey̑en trȗchen sechs hȗndert und drey̑czehen",
-      "aȗsgemachter ey̑bmėn hanndtpógen. Mer neŭnundfierczig pfeil zŭm gembsen schiessn.",
-      "Item achczehen dŭllmesser mit schaiden. Mer sechs par fůßey̑sen. Item ain trȗchen darinn",
-      "ligen acht uberczogen und vierczehen ploß y̑agschëfft. Item drey̑haȗffen raȗch viraŭfgemacht",
-      "gekloben ey̑ben daraȗs man ey̆ben hanndtpogen machen mag. Item hȗndert und fŭnff¬",
-      "ŭndneŭczig gros ey̑sen kůglen zȗ den scharfen mẽczen. Item zehen khorn pranndten. Zway̑",
-      "beschlagen Innsprȗgger stẽr. Ain Fȗesser meczen. Zway̑ zȗgsail und ain kharren zȗ den",
-      "seckhen.",
-      "Des zȗ urkhund und gȗetter gedechtnȗs sind diser zedel zwen gleichlaȗttend",
-      "mit ainer hanndgeschriben gemacht und aŭs ainanndern geschnitten, der ainer obemelter",
-      "f(ȗrstlicher) d(ȗrchleȗchtigkait) aȗf ir tirolisch raitcamer zȗ Y̑nnsprȗgg uberantwȗrt und der annder bedachtem",
-      "Banholcz gegeben ist. Beschehen an.",
-      "Eberhart von Fre[.]berg",
-      "f(ȗrstlicher) d(ȗrchleȗchtigkait) phleger zu Erenberg.",
-      "Sebastian Tescher gerichtsch(reiber)",
-      "zu Erenberg manu propria."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Zȗwissen sey̑ wenigklich mit disem inv̑entari und offen spanczedel das aȗf heȗt seiner dato"
+      },
+      {
+       "id": "r2l2",
+       "text": "aȗf m(einer) fȗrstlicher dȗrchleȗchtigkait meines genedigisten herren aȗsgegangen bev̑elch der"
+      },
+      {
+       "id": "r2l3",
+       "text": "edel und vest Eberhard von Frey̑berg zȗm Ey̑semberg phleger zȗ Erenberg von dem erbern"
+      },
+      {
+       "id": "r2l4",
+       "text": "Petern Wittnig an Erenberger claȗsen wonhëfftig in seinem abczŭg dieselb claȗsen mit"
+      },
+      {
+       "id": "r2l5",
+       "text": "sampt behaȗssȗng, khorn kasßten, aller innhab und zȗgehorȗng aȗch die zoll so dann obedachter"
+      },
+      {
+       "id": "r2l6",
+       "text": "f(ȗrstlicher) d(ȗrchleȗchtigkait) zȗgehörig ist nicht aȗsgenomen dem edlen und vesten Jheronimen Banholcz von"
+      },
+      {
+       "id": "r2l7",
+       "text": "Wald inhalt seiner erlanngten f(ȗrstlichen) d(ȗrchleȗchtigkait) verley̑chbrief dasselb zoll und claȗsner ampt mit"
+      },
+      {
+       "id": "r2l8",
+       "text": "allen dingen wie der gebraȗch und allt herkomen ist innenczȗhaben, zuv̑erwesen und vor"
+      },
+      {
+       "id": "r2l9",
+       "text": "schaden getreȗlich zuv̑erwaren bev̑olchen und eingegeben hatt. Als das er soliches alles"
+      },
+      {
+       "id": "r2l10",
+       "text": "inhalt f(ȗrstlicher) d(ȗrchleȗchtigkait) gegeben verleichbriefs solich zöll und claȗsner ambt in gȗtten wirden wesen¬"
+      },
+      {
+       "id": "r2l11",
+       "text": "lich halten und darinnen nichcz uncziechen lassen sol in crafft seiner gethanen pflicht und"
+      },
+      {
+       "id": "r2l12",
+       "text": "daraȗf ist im genanten Jheronimen Banholcz in bemelter claȗsen zȗbewaren uberant¬"
+      },
+      {
+       "id": "r2l13",
+       "text": "wȗrt worden."
+      },
+      {
+       "id": "r3l1",
+       "text": "Nemlich erstmals in drey̑en trȗchen sechs hȗndert und drey̑czehen"
+      },
+      {
+       "id": "r3l2",
+       "text": "aȗsgemachter ey̑bmėn hanndtpógen. Mer neŭnundfierczig pfeil zŭm gembsen schiessn."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item achczehen dŭllmesser mit schaiden. Mer sechs par fůßey̑sen. Item ain trȗchen darinn"
+      },
+      {
+       "id": "r3l4",
+       "text": "ligen acht uberczogen und vierczehen ploß y̑agschëfft. Item drey̑haȗffen raȗch viraŭfgemacht"
+      },
+      {
+       "id": "r3l5",
+       "text": "gekloben ey̑ben daraȗs man ey̆ben hanndtpogen machen mag. Item hȗndert und fŭnff¬"
+      },
+      {
+       "id": "r3l6",
+       "text": "ŭndneŭczig gros ey̑sen kůglen zȗ den scharfen mẽczen. Item zehen khorn pranndten. Zway̑"
+      },
+      {
+       "id": "r3l7",
+       "text": "beschlagen Innsprȗgger stẽr. Ain Fȗesser meczen. Zway̑ zȗgsail und ain kharren zȗ den"
+      },
+      {
+       "id": "r3l8",
+       "text": "seckhen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Des zȗ urkhund und gȗetter gedechtnȗs sind diser zedel zwen gleichlaȗttend"
+      },
+      {
+       "id": "r4l2",
+       "text": "mit ainer hanndgeschriben gemacht und aŭs ainanndern geschnitten, der ainer obemelter"
+      },
+      {
+       "id": "r4l3",
+       "text": "f(ȗrstlicher) d(ȗrchleȗchtigkait) aȗf ir tirolisch raitcamer zȗ Y̑nnsprȗgg uberantwȗrt und der annder bedachtem"
+      },
+      {
+       "id": "r4l4",
+       "text": "Banholcz gegeben ist. Beschehen an."
+      },
+      {
+       "id": "r4l5",
+       "text": "Eberhart von Fre[.]berg"
+      },
+      {
+       "id": "r4l6",
+       "text": "f(ȗrstlicher) d(ȗrchleȗchtigkait) phleger zu Erenberg."
+      },
+      {
+       "id": "r4l7",
+       "text": "Sebastian Tescher gerichtsch(reiber)"
+      },
+      {
+       "id": "r4l8",
+       "text": "zu Erenberg manu propria."
+      }
      ]
     }
    ]
@@ -75,7 +165,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      }
      ]
     }
    ]
@@ -100,36 +193,126 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Mein frŭntlich gŭetwillig diennst zuv̇or gŭnstig lieb herrn",
-      "unnd frŭndt, ich schick eŭch hiemit die innfentari der",
-      "claŭsen unnd wirczhaŭs Ernnberg wie ir mir dann",
-      "vomals darŭmb geschriben habt.",
-      "Aŭch wie ir mir verschriben habt wie ir mit",
-      "dem Maldicz fŭrderlich hanndlen wolt, desshalb",
-      "ich personnlich zŭ Ernnberg verziehen sol. Dieweil",
-      "wir aber etliche geschefft daran mir gelegen ist",
-      "mich zŭ mey̆nem gnedigisten herrn zŭverfŭegen",
-      "desshalb ich ainzeitt lanng nit anhaim sein wirdt",
-      "des ich dann dem Maldicz zŭegeschriben hab ich",
-      "meiner nottŭrfft halb nit erlassen kan wirt",
-      "er als ich acht ettlich zeitt vor Sand Bartlmestag",
-      "heraus verfŭegen unnd soferr mir von mein",
-      "gnedigisten herrn oder eŭch der abtretŭng halb",
-      "bev̆elich kŭmbt wird ich dem selbigen statt",
-      "thŭen darinnen pitt ich aŭch wellet ordnŭng",
-      "geben der brofanndt halben so ich aŭf ein ansy̑nen",
-      "aŭf das schloss verordnet und kaůft hab aŭch",
-      "annder mein aŭßgeben und schũld so man mir",
-      "pey̑ der abtrettŭng bezallen schŭldig ist damit",
-      "euch wo ich kan frŭntlichen gŭetwilligen diennst",
-      "way̆s zŭbewey̆sen bin ich alzeitt willig. Datum",
-      "Ernnberg den letzten tag julli anno etc. XXVtn.",
-      "Ichhab p[...] die drit",
-      "Ulrĭche hie aussen [.]altiß",
-      "gene[..]tet.",
-      "Eberhart [...] Freiberg",
-      "f(ŭrstlicher) g(naden) pfleger zu Erenberg."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Mein frŭntlich gŭetwillig diennst zuv̇or gŭnstig lieb herrn"
+      },
+      {
+       "id": "r2l2",
+       "text": "unnd frŭndt, ich schick eŭch hiemit die innfentari der"
+      },
+      {
+       "id": "r2l3",
+       "text": "claŭsen unnd wirczhaŭs Ernnberg wie ir mir dann"
+      },
+      {
+       "id": "r2l4",
+       "text": "vomals darŭmb geschriben habt."
+      },
+      {
+       "id": "r2l5",
+       "text": "Aŭch wie ir mir verschriben habt wie ir mit"
+      },
+      {
+       "id": "r2l6",
+       "text": "dem Maldicz fŭrderlich hanndlen wolt, desshalb"
+      },
+      {
+       "id": "r2l7",
+       "text": "ich personnlich zŭ Ernnberg verziehen sol. Dieweil"
+      },
+      {
+       "id": "r2l8",
+       "text": "wir aber etliche geschefft daran mir gelegen ist"
+      },
+      {
+       "id": "r2l9",
+       "text": "mich zŭ mey̆nem gnedigisten herrn zŭverfŭegen"
+      },
+      {
+       "id": "r2l10",
+       "text": "desshalb ich ainzeitt lanng nit anhaim sein wirdt"
+      },
+      {
+       "id": "r2l11",
+       "text": "des ich dann dem Maldicz zŭegeschriben hab ich"
+      },
+      {
+       "id": "r2l12",
+       "text": "meiner nottŭrfft halb nit erlassen kan wirt"
+      },
+      {
+       "id": "r2l13",
+       "text": "er als ich acht ettlich zeitt vor Sand Bartlmestag"
+      },
+      {
+       "id": "r2l14",
+       "text": "heraus verfŭegen unnd soferr mir von mein"
+      },
+      {
+       "id": "r2l15",
+       "text": "gnedigisten herrn oder eŭch der abtretŭng halb"
+      },
+      {
+       "id": "r2l16",
+       "text": "bev̆elich kŭmbt wird ich dem selbigen statt"
+      },
+      {
+       "id": "r2l17",
+       "text": "thŭen darinnen pitt ich aŭch wellet ordnŭng"
+      },
+      {
+       "id": "r2l18",
+       "text": "geben der brofanndt halben so ich aŭf ein ansy̑nen"
+      },
+      {
+       "id": "r2l19",
+       "text": "aŭf das schloss verordnet und kaůft hab aŭch"
+      },
+      {
+       "id": "r2l20",
+       "text": "annder mein aŭßgeben und schũld so man mir"
+      },
+      {
+       "id": "r2l21",
+       "text": "pey̑ der abtrettŭng bezallen schŭldig ist damit"
+      },
+      {
+       "id": "r2l22",
+       "text": "euch wo ich kan frŭntlichen gŭetwilligen diennst"
+      },
+      {
+       "id": "r2l23",
+       "text": "way̆s zŭbewey̆sen bin ich alzeitt willig. Datum"
+      },
+      {
+       "id": "r2l24",
+       "text": "Ernnberg den letzten tag julli anno etc. XXVtn."
+      },
+      {
+       "id": "r2l25",
+       "text": "Ichhab p[...] die drit"
+      },
+      {
+       "id": "r2l26",
+       "text": "Ulrĭche hie aussen [.]altiß"
+      },
+      {
+       "id": "r2l27",
+       "text": "gene[..]tet."
+      },
+      {
+       "id": "r2l28",
+       "text": "Eberhart [...] Freiberg"
+      },
+      {
+       "id": "r2l29",
+       "text": "f(ŭrstlicher) g(naden) pfleger zu Erenberg."
+      }
      ]
     }
    ]
@@ -154,16 +337,46 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "1525",
-      "Der fŭrstlichen dŭrchleŭchtigkait",
-      "meins gnedigisten herren rãtte",
-      "der oberŏsterreichischen raitkamer",
-      "seiner gŭnstigen herren unnd",
-      "gŭeten frŭnden.",
-      "Eberhart von Freÿberg",
-      "claus innvitarium",
-      "abtrettŭng Ernberg."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "1525"
+      },
+      {
+       "id": "r2l2",
+       "text": "Der fŭrstlichen dŭrchleŭchtigkait"
+      },
+      {
+       "id": "r2l3",
+       "text": "meins gnedigisten herren rãtte"
+      },
+      {
+       "id": "r2l4",
+       "text": "der oberŏsterreichischen raitkamer"
+      },
+      {
+       "id": "r2l5",
+       "text": "seiner gŭnstigen herren unnd"
+      },
+      {
+       "id": "r2l6",
+       "text": "gŭeten frŭnden."
+      },
+      {
+       "id": "r2l7",
+       "text": "Eberhart von Freÿberg"
+      },
+      {
+       "id": "r2l8",
+       "text": "claus innvitarium"
+      },
+      {
+       "id": "r2l9",
+       "text": "abtrettŭng Ernberg."
+      }
      ]
     }
    ]

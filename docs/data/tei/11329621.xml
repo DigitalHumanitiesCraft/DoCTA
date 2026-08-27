@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -138,13 +138,17 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329621-1"/>
+        <pb n="1" facs="#surface-11329621-1"/>
+        <ab xml:id="ab-11329621-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329621-1-r2">
           <lb facs="#zone-11329621-1-r2l1"/>Inventuary̆ zedl von jŭnckherr
           <lb facs="#zone-11329621-1-r2l2"/>Joseppen Ŭberrein Cristoffen Răntly̆
           <lb facs="#zone-11329621-1-r2l3"/>in geantwort am erchtag vor
           <lb facs="#zone-11329621-1-r2l4"/>Margarete anno etc. octuagesimo nono.
+        </ab>
+        <ab xml:id="ab-11329621-1-r3">
           <lb facs="#zone-11329621-1-r3l1"/>Item vier mĕsseny̆ haggen pŭxen.
           <lb facs="#zone-11329621-1-r3l2"/>Item sex hanndt püxen.
           <lb facs="#zone-11329621-1-r3l3"/>Item sex arembrust.
@@ -167,9 +171,11 @@
           <lb facs="#zone-11329621-1-r3l20"/>Dar an hat er h[...] I R(heinischen) gulden der ist
           <lb facs="#zone-11329621-1-r3l21"/>verrait meinem gnädigen herren.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329621-2"/>
+        <pb n="2" facs="#surface-11329621-2"/>
+        <ab xml:id="ab-11329621-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329621-2-r2">
           <lb facs="#zone-11329621-2-r2l1"/>Item zwŏ streithacken, dy̆ dritt ist erprochen.
           <lb facs="#zone-11329621-2-r2l2"/>Item zwen schweinspiess.
           <lb facs="#zone-11329621-2-r2l3"/>Item ain oeraten spiess mit aim swartzen schafft.
@@ -187,6 +193,8 @@
           <lb facs="#zone-11329621-2-r2l15"/>Item ain truchen mit ainm schloss.
           <lb facs="#zone-11329621-2-r2l16"/>Item vier eÿsene lÿder so man tŭrn da
           <lb facs="#zone-11329621-2-r2l17"/>mit an henngt.
+        </ab>
+        <ab xml:id="ab-11329621-2-r3">
           <lb facs="#zone-11329621-2-r3l1"/>Ingegenwürtikait sind dar mit und da
           <lb facs="#zone-11329621-2-r3l2"/>pey̆ gewesen Hanns von Newenhauwss
           <lb facs="#zone-11329621-2-r3l3"/>pfleger auf Naudersperg, Josep Kŭntz Schlüchter
@@ -196,12 +204,12 @@
           <lb facs="#zone-11329621-2-r3l7"/>Mĕtz, Hanns Utzenfeld auch von Pfŭnss
           <lb facs="#zone-11329621-2-r3l8"/>ŭnd mer erbar lew̆tt.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329621-3"/>
+        <pb n="3" facs="#surface-11329621-3"/>
+        <ab xml:id="ab-11329621-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329621-4"/>
+        <pb n="4" facs="#surface-11329621-4"/>
+        <ab xml:id="ab-11329621-4-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
       </div>

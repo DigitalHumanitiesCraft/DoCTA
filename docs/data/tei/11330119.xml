@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -150,9 +150,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11330119-1"/>
+        <pb n="1" facs="#surface-11330119-1"/>
+        <ab xml:id="ab-11330119-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11330119-1-r2">
           <lb facs="#zone-11330119-1-r2l1"/>Vermergkht was Antoni Schengkh
           <lb facs="#zone-11330119-1-r2l2"/>in dem Schloß Wisberg gefunden
           <lb facs="#zone-11330119-1-r2l3"/>hat, im durch Hannsen Keren gerhab
@@ -160,6 +162,8 @@
           <lb facs="#zone-11330119-1-r2l5"/>kinder und Florian Paldaũff als
           <lb facs="#zone-11330119-1-r2l6"/>nachster frew̃nt der selben kinder
           <lb facs="#zone-11330119-1-r2l7"/>und als beistand geantwũrt ist.
+        </ab>
+        <ab xml:id="ab-11330119-1-r3">
           <lb facs="#zone-11330119-1-r3l1"/>Item zwoe laglen mit pulver y̆ede nũr halb.
           <lb facs="#zone-11330119-1-r3l2"/>Item etlich kũgell mit pũlver.
           <lb facs="#zone-11330119-1-r3l3"/>Item zway̆ klaine săgkhel mit salitter.
@@ -194,9 +198,11 @@
           <lb facs="#zone-11330119-1-r3l32"/>Item vier alter tŭcher.
           <lb facs="#zone-11330119-1-r3l33"/>Item zweỹ õpferkãndel.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11330119-2"/>
+        <pb n="2" facs="#surface-11330119-2"/>
+        <ab xml:id="ab-11330119-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11330119-2-r2">
           <lb facs="#zone-11330119-2-r2l1"/>Item ain mesbũch.
           <lb facs="#zone-11330119-2-r2l2"/>Item zwoe gesangpũchel.
           <lb facs="#zone-11330119-2-r2l3"/>Item ain klains pargameins psalterli.
@@ -204,6 +210,8 @@
           <lb facs="#zone-11330119-2-r2l5"/>Item ain altz pargameins mespũchel.
           <lb facs="#zone-11330119-2-r2l6"/>Item mer etliche alte pũcher.
           <lb facs="#zone-11330119-2-r2l7"/>Item ain haŭßmũll mit aller zŭgehŏr.
+        </ab>
+        <ab xml:id="ab-11330119-2-r3">
           <lb facs="#zone-11330119-2-r3l1"/>Item beỹ allen vorgeschriben sachen
           <lb facs="#zone-11330119-2-r3l2"/>sind gwesen Hanns Paw̃r pergkhrichter
           <lb facs="#zone-11330119-2-r3l3"/>ze Umbst, Jos Hew̃gel gerichtschreiber
@@ -213,21 +221,19 @@
           <lb facs="#zone-11330119-2-r3l7"/>Actum an mitich nach Ambrosi
           <lb facs="#zone-11330119-2-r3l8"/>anno Domini etc. octũagesimosexto.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11330119-3"/>
+        <pb n="3" facs="#surface-11330119-3"/>
+        <ab xml:id="ab-11330119-3-r1">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11330119-4"/>
+        <pb n="4" facs="#surface-11330119-4"/>
+        <ab xml:id="ab-11330119-4-r1">
           <lb facs="#zone-11330119-4-r1l1"/>Inventuari zedl gen Wysperg wie
           <lb facs="#zone-11330119-4-r1l2"/>dasselb sloss Anthonien Schencken
           <lb facs="#zone-11330119-4-r1l3"/>durch Hannsen Keren weylend Hannsen
           <lb facs="#zone-11330119-4-r1l4"/>Wysers verlassen erben gerhaben ist
           <lb facs="#zone-11330119-4-r1l5"/>eingeantwurt worden.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11330119-5"/>
-        </ab>
+        <pb n="5" facs="#surface-11330119-5"/>
       </div>
     </body>
   </text>

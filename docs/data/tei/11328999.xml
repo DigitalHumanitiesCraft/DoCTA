@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -206,9 +206,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328999-1"/>
+        <pb n="1" facs="#surface-11328999-1"/>
+        <ab xml:id="ab-11328999-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328999-1-r2">
           <lb facs="#zone-11328999-1-r2l1"/>Inventarÿ zedel was Antoni
           <lb facs="#zone-11328999-1-r2l2"/>vom Ross Hochprandten Sana¬
           <lb facs="#zone-11328999-1-r2l3"/>zeller zŭ Tratzperg in
@@ -225,6 +227,8 @@
           <lb facs="#zone-11328999-1-r2l14"/>gesessen. Beschehen am
           <lb facs="#zone-11328999-1-r2l15"/>sambstag vor Sand Antoni
           <lb facs="#zone-11328999-1-r2l16"/>tag anno Domini etc. LXXXo
+        </ab>
+        <ab xml:id="ab-11328999-1-r3">
           <lb facs="#zone-11328999-1-r3l1"/>Item am ersten zehen arm¬
           <lb facs="#zone-11328999-1-r3l2"/>brost.
           <lb facs="#zone-11328999-1-r3l3"/>Item ain alter krapp.
@@ -242,25 +246,33 @@
           <lb facs="#zone-11328999-1-r3l15"/>Item ain hundert kugel
           <lb facs="#zone-11328999-1-r3l16"/>zŭ den handpŭchsen.
           <lb facs="#zone-11328999-1-r3l17"/>Item ain alt spanpett.
+        </ab>
+        <ab xml:id="ab-11328999-1-r4">
           <lb facs="#zone-11328999-1-r4l1"/>Zŭ urkŭnd hab ich obgenanter
           <lb facs="#zone-11328999-1-r4l2"/>Sanazeller mein pettschafft
           <lb facs="#zone-11328999-1-r4l3"/>in dise ausgeschniten zedel
           <lb facs="#zone-11328999-1-r4l4"/>fŭrgedruckt.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328999-2"/>
+        <pb n="2" facs="#surface-11328999-2"/>
+        <ab xml:id="ab-11328999-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328999-2-r2">
           <milestone unit="folio" n="2r"/>
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328999-3"/>
+        <pb n="3" facs="#surface-11328999-3"/>
+        <ab xml:id="ab-11328999-3-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328999-3-r2">
           <lb facs="#zone-11328999-3-r2l1"/>Trazperg
           <lb facs="#zone-11328999-3-r2l2"/>Sanazeller 1480
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328999-4"/>
+        <pb n="4" facs="#surface-11328999-4"/>
+        <ab xml:id="ab-11328999-4-r1">
           <milestone unit="folio" n="4r"/>
+        </ab>
+        <ab xml:id="ab-11328999-4-r2">
           <lb facs="#zone-11328999-4-r2l1"/>Inventarÿ zedel was Antoni
           <lb facs="#zone-11328999-4-r2l2"/>vom Ross Hochprandten Sana¬
           <lb facs="#zone-11328999-4-r2l3"/>zeller zŭ Tratzperg in
@@ -277,6 +289,8 @@
           <lb facs="#zone-11328999-4-r2l14"/>gesessen, beschehen am
           <lb facs="#zone-11328999-4-r2l15"/>sambstag vor Sand Antoni
           <lb facs="#zone-11328999-4-r2l16"/>tag anno Domini etc. LXXXo.
+        </ab>
+        <ab xml:id="ab-11328999-4-r3">
           <lb facs="#zone-11328999-4-r3l1"/>Item am ersten zehen arm¬
           <lb facs="#zone-11328999-4-r3l2"/>brost.
           <lb facs="#zone-11328999-4-r3l3"/>Item ain alter krapp.
@@ -294,14 +308,18 @@
           <lb facs="#zone-11328999-4-r3l15"/>Item ain hundert kugel
           <lb facs="#zone-11328999-4-r3l16"/>zŭ den handpŭchsen.
           <lb facs="#zone-11328999-4-r3l17"/>Item ain alt spanpett.
+        </ab>
+        <ab xml:id="ab-11328999-4-r4">
           <lb facs="#zone-11328999-4-r4l1"/>Zŭ urkŭnd hab ich obgenanter
           <lb facs="#zone-11328999-4-r4l2"/>Sanazeller mein pettschafft
           <lb facs="#zone-11328999-4-r4l3"/>in dise ausgeschniten zedel
           <lb facs="#zone-11328999-4-r4l4"/>fŭrgedruckt.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328999-5"/>
+        <pb n="5" facs="#surface-11328999-5"/>
+        <ab xml:id="ab-11328999-5-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11328999-5-r2">
           <lb facs="#zone-11328999-5-r2l1"/>Inventarÿ zedel was Antoni
           <lb facs="#zone-11328999-5-r2l2"/>vom Ross Hochprandten Sana¬
           <lb facs="#zone-11328999-5-r2l3"/>zeller zŭ Tratzperg in
@@ -318,6 +336,8 @@
           <lb facs="#zone-11328999-5-r2l14"/>gesessen, beschehen an
           <lb facs="#zone-11328999-5-r2l15"/>sambstag vor Sand Antoni
           <lb facs="#zone-11328999-5-r2l16"/>tag anno Domini etc. LXXXo.
+        </ab>
+        <ab xml:id="ab-11328999-5-r3">
           <lb facs="#zone-11328999-5-r3l1"/>Item am ersten zehen arm¬
           <lb facs="#zone-11328999-5-r3l2"/>brost.
           <lb facs="#zone-11328999-5-r3l3"/>Item ain alter krapp.
@@ -335,6 +355,8 @@
           <lb facs="#zone-11328999-5-r3l15"/>Item ain hundert kugel
           <lb facs="#zone-11328999-5-r3l16"/>zŭ den handpŭchsen.
           <lb facs="#zone-11328999-5-r3l17"/>Item ain alt spanpett.
+        </ab>
+        <ab xml:id="ab-11328999-5-r4">
           <lb facs="#zone-11328999-5-r4l1"/>Zŭ urkŭnd hab ich obgenanter
           <lb facs="#zone-11328999-5-r4l2"/>Sanazeller mein pettschafft
           <lb facs="#zone-11328999-5-r4l3"/>in dise ausgeschniten zedel

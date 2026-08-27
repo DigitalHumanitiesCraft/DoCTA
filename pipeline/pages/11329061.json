@@ -21,39 +21,138 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "So ist zu wissen mit diser offen inventuari zetel das auf bevelch des",
-      "durchleȗchtigen hochgebornen fȗrsten und herrn herrn Sigmunds erz¬",
-      "herzog ze Õsterreich und grave zu Tÿrol etc. meines gnădigisten herrn",
-      "der edel und vest Wilhelm von Phiert durch sein dienner Balthasar Tũbing",
-      "dem edlen und vesten Wilhelm wer das gschloss Hertenberg an hewt",
-      "sambstag nach Mauriti anno etc. LXXX nono eingeantburt hat",
-      "in beÿ wesen der edlen und vesten Vigilÿ Gnewssen und",
-      "von Hohenburg, auch der erberen weysen Blásÿ Sau̇rbein zu Flaur¬",
-      "ling, Erharten Stadelwiser, Jõrgen Knăbel, Martein Wipfen zu Telfs",
-      "und annder.",
-      "Ist daselben im gschloss funden nachlaut der alten inventuarizetl",
-      "das dem bemelten meinem gnadigisten herrn zu gehõrt.",
-      "Am ersten in der oberen kamer ain tũrgkischer sãbel, vier helleparten,",
-      "zwo streit hagken und ain grosser kolb zu paÿden hennden.",
-      "Ain pũttrich mit ettwievil scharnagelen.",
-      "Dreÿ eÿsnein stainpuxen und zwo lenger eÿsnein pũchsen.",
-      "Des alten zewgs XVI armbrost und zwen pogen zu pangkarmbrosten.",
-      "In dreÿen laglen põß alt pfeÿl, ain wenig schwĕbel",
-      "und in ainem klain săckel ain wenig pũchsen pulver.",
-      "Ettlich fewr kuglen und ettlich stainein pũxen kugelen.",
-      "Ain kambp rad zu ainer hanntmŭl, zwen mũlstain, ain rũtlscheib.",
-      "Zwen tisch, zwo vorpenck, zwen seßel, vier pettstett.",
-      "In der oberen kuchen ain kȃstel und vor der stuben ains.",
-      "Ain raÿss panck, ain hãl, ain beschlagne drischel beÿ dem",
-      "toer zu ainer wẽr.",
-      "Siben eÿsnen rorpuxen, ain pew̃tel kasten, zwen koren oder mel kãsten.",
-      "Holz zu dem paw gehorend, fewchtein und lărchein pãm auß¬",
-      "geschniten in die vierung LXXXXVI.",
-      "Und ungeschnittnen pãm lãrchein hundert und XXVII.",
-      "Schintelkasten im gschloss angevarde beÿ IC und XXIIII kasten",
-      "unnder der schupffen beÿ dem prunnen angevarde IIII schintel",
-      "kasten."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "So ist zu wissen mit diser offen inventuari zetel das auf bevelch des"
+      },
+      {
+       "id": "r2l2",
+       "text": "durchleȗchtigen hochgebornen fȗrsten und herrn herrn Sigmunds erz¬"
+      },
+      {
+       "id": "r2l3",
+       "text": "herzog ze Õsterreich und grave zu Tÿrol etc. meines gnădigisten herrn"
+      },
+      {
+       "id": "r2l4",
+       "text": "der edel und vest Wilhelm von Phiert durch sein dienner Balthasar Tũbing"
+      },
+      {
+       "id": "r2l5",
+       "text": "dem edlen und vesten Wilhelm wer das gschloss Hertenberg an hewt"
+      },
+      {
+       "id": "r2l6",
+       "text": "sambstag nach Mauriti anno etc. LXXX nono eingeantburt hat"
+      },
+      {
+       "id": "r2l7",
+       "text": "in beÿ wesen der edlen und vesten Vigilÿ Gnewssen und"
+      },
+      {
+       "id": "r2l8",
+       "text": "von Hohenburg, auch der erberen weysen Blásÿ Sau̇rbein zu Flaur¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "ling, Erharten Stadelwiser, Jõrgen Knăbel, Martein Wipfen zu Telfs"
+      },
+      {
+       "id": "r2l10",
+       "text": "und annder."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ist daselben im gschloss funden nachlaut der alten inventuarizetl"
+      },
+      {
+       "id": "r2l12",
+       "text": "das dem bemelten meinem gnadigisten herrn zu gehõrt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Am ersten in der oberen kamer ain tũrgkischer sãbel, vier helleparten,"
+      },
+      {
+       "id": "r3l2",
+       "text": "zwo streit hagken und ain grosser kolb zu paÿden hennden."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain pũttrich mit ettwievil scharnagelen."
+      },
+      {
+       "id": "r3l4",
+       "text": "Dreÿ eÿsnein stainpuxen und zwo lenger eÿsnein pũchsen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Des alten zewgs XVI armbrost und zwen pogen zu pangkarmbrosten."
+      },
+      {
+       "id": "r3l6",
+       "text": "In dreÿen laglen põß alt pfeÿl, ain wenig schwĕbel"
+      },
+      {
+       "id": "r3l7",
+       "text": "und in ainem klain săckel ain wenig pũchsen pulver."
+      },
+      {
+       "id": "r3l8",
+       "text": "Ettlich fewr kuglen und ettlich stainein pũxen kugelen."
+      },
+      {
+       "id": "r3l9",
+       "text": "Ain kambp rad zu ainer hanntmŭl, zwen mũlstain, ain rũtlscheib."
+      },
+      {
+       "id": "r3l10",
+       "text": "Zwen tisch, zwo vorpenck, zwen seßel, vier pettstett."
+      },
+      {
+       "id": "r3l11",
+       "text": "In der oberen kuchen ain kȃstel und vor der stuben ains."
+      },
+      {
+       "id": "r3l12",
+       "text": "Ain raÿss panck, ain hãl, ain beschlagne drischel beÿ dem"
+      },
+      {
+       "id": "r3l13",
+       "text": "toer zu ainer wẽr."
+      },
+      {
+       "id": "r3l14",
+       "text": "Siben eÿsnen rorpuxen, ain pew̃tel kasten, zwen koren oder mel kãsten."
+      },
+      {
+       "id": "r3l15",
+       "text": "Holz zu dem paw gehorend, fewchtein und lărchein pãm auß¬"
+      },
+      {
+       "id": "r3l16",
+       "text": "geschniten in die vierung LXXXXVI."
+      },
+      {
+       "id": "r3l17",
+       "text": "Und ungeschnittnen pãm lãrchein hundert und XXVII."
+      },
+      {
+       "id": "r3l18",
+       "text": "Schintelkasten im gschloss angevarde beÿ IC und XXIIII kasten"
+      },
+      {
+       "id": "r3l19",
+       "text": "unnder der schupffen beÿ dem prunnen angevarde IIII schintel"
+      },
+      {
+       "id": "r3l20",
+       "text": "kasten."
+      }
      ]
     }
    ]
@@ -78,8 +177,14 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Inventuari Hertenberg."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventuari Hertenberg."
+      }
      ]
     }
    ]

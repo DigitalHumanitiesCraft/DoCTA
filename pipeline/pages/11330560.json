@@ -21,35 +21,122 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Hie ist vermerkt zeug und hausge¬",
-      "rat den ich Hanns von Welsperg dem",
-      "edlen Wolfgangen Hannen auff dem",
-      "gslos Lamperspurg in geantwurt",
-      "hab als ich abgezogen pin des",
-      "sambztag nach Jeori im ains und",
-      "achzigisten jar in peÿ wesen der",
-      "eren vest und streng ritter herr Walta¬",
-      "sar von Welsperg und die fürsichti¬",
-      "gen und weÿs Oswalt Staudinger,",
-      "Peter Hofstetter, Caspar Mentelberger",
-      "und Hans Hämnöder notarÿ.",
-      "Item am in der cappellen.",
-      "Item ein nwes mesgewant mit",
-      "seiner zugehörung daran mengt",
-      "ein stoll.",
-      "Aber zwaÿ allte mesgewant",
-      "mit irer zugehörung.",
-      "Ain mespuech.",
-      "Aber ein néws mespuech.",
-      "Ain tagzeitt puech.",
-      "Ain newes gesankchpuechel.",
-      "Vier allte klaine puechel.",
-      "Siben altar tuecher guet und",
-      "pös.",
-      "Ain silbrein kelch,",
-      "ain kupfrein kelch sind",
-      "paÿde über gült."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Hie ist vermerkt zeug und hausge¬"
+      },
+      {
+       "id": "r2l2",
+       "text": "rat den ich Hanns von Welsperg dem"
+      },
+      {
+       "id": "r2l3",
+       "text": "edlen Wolfgangen Hannen auff dem"
+      },
+      {
+       "id": "r2l4",
+       "text": "gslos Lamperspurg in geantwurt"
+      },
+      {
+       "id": "r2l5",
+       "text": "hab als ich abgezogen pin des"
+      },
+      {
+       "id": "r2l6",
+       "text": "sambztag nach Jeori im ains und"
+      },
+      {
+       "id": "r2l7",
+       "text": "achzigisten jar in peÿ wesen der"
+      },
+      {
+       "id": "r2l8",
+       "text": "eren vest und streng ritter herr Walta¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "sar von Welsperg und die fürsichti¬"
+      },
+      {
+       "id": "r2l10",
+       "text": "gen und weÿs Oswalt Staudinger,"
+      },
+      {
+       "id": "r2l11",
+       "text": "Peter Hofstetter, Caspar Mentelberger"
+      },
+      {
+       "id": "r2l12",
+       "text": "und Hans Hämnöder notarÿ."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am in der cappellen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item ein nwes mesgewant mit"
+      },
+      {
+       "id": "r4l2",
+       "text": "seiner zugehörung daran mengt"
+      },
+      {
+       "id": "r4l3",
+       "text": "ein stoll."
+      },
+      {
+       "id": "r4l4",
+       "text": "Aber zwaÿ allte mesgewant"
+      },
+      {
+       "id": "r4l5",
+       "text": "mit irer zugehörung."
+      },
+      {
+       "id": "r4l6",
+       "text": "Ain mespuech."
+      },
+      {
+       "id": "r4l7",
+       "text": "Aber ein néws mespuech."
+      },
+      {
+       "id": "r4l8",
+       "text": "Ain tagzeitt puech."
+      },
+      {
+       "id": "r4l9",
+       "text": "Ain newes gesankchpuechel."
+      },
+      {
+       "id": "r4l10",
+       "text": "Vier allte klaine puechel."
+      },
+      {
+       "id": "r4l11",
+       "text": "Siben altar tuecher guet und"
+      },
+      {
+       "id": "r4l12",
+       "text": "pös."
+      },
+      {
+       "id": "r4l13",
+       "text": "Ain silbrein kelch,"
+      },
+      {
+       "id": "r4l14",
+       "text": "ain kupfrein kelch sind"
+      },
+      {
+       "id": "r4l15",
+       "text": "paÿde über gült."
+      }
      ]
     }
    ]
@@ -74,33 +161,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Ain I kupfreins kreÿz auch über¬",
-      "gült.",
-      "Ain kor rokch.",
-      "Ain lädlein mit heÿltum",
-      "und mit prieffen.",
-      "Und ein hunger tuech.",
-      "Ain newe umbleÿ ist peÿ",
-      "dem newen mesgewant.",
-      "Ain newes alltar tuech.",
-      "Mer ein newes allter tuech.",
-      "Ain weÿssen seÿden fan.",
-      "Ain genätte hantzwehel an",
-      "ein altar tuech genätt.",
-      "Im geschloss.",
-      "Item fünff eÿsnen hakchen püxsen",
-      "und zwen messing mödel darzu.",
-      "Ain eÿsnen hantpüxsen.",
-      "Ain messinge hant püxsen.",
-      "Item zwaÿ väslen mit püxsen",
-      "pulfer, etwas mÿnder dan",
-      "ein zentten.",
-      "Item anderhalbe lagell mit pheÿllen.",
-      "Ain armprust.",
-      "Item vier targen.",
-      "Item ain speÿs truhen",
-      "und vier truhen guet und pös."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ain I kupfreins kreÿz auch über¬"
+      },
+      {
+       "id": "r2l2",
+       "text": "gült."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain kor rokch."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ain lädlein mit heÿltum"
+      },
+      {
+       "id": "r2l5",
+       "text": "und mit prieffen."
+      },
+      {
+       "id": "r2l6",
+       "text": "Und ein hunger tuech."
+      },
+      {
+       "id": "r2l7",
+       "text": "Ain newe umbleÿ ist peÿ"
+      },
+      {
+       "id": "r2l8",
+       "text": "dem newen mesgewant."
+      },
+      {
+       "id": "r2l9",
+       "text": "Ain newes alltar tuech."
+      },
+      {
+       "id": "r2l10",
+       "text": "Mer ein newes allter tuech."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain weÿssen seÿden fan."
+      },
+      {
+       "id": "r2l12",
+       "text": "Ain genätte hantzwehel an"
+      },
+      {
+       "id": "r2l13",
+       "text": "ein altar tuech genätt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Im geschloss."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item fünff eÿsnen hakchen püxsen"
+      },
+      {
+       "id": "r4l2",
+       "text": "und zwen messing mödel darzu."
+      },
+      {
+       "id": "r4l3",
+       "text": "Ain eÿsnen hantpüxsen."
+      },
+      {
+       "id": "r4l4",
+       "text": "Ain messinge hant püxsen."
+      },
+      {
+       "id": "r4l5",
+       "text": "Item zwaÿ väslen mit püxsen"
+      },
+      {
+       "id": "r4l6",
+       "text": "pulfer, etwas mÿnder dan"
+      },
+      {
+       "id": "r4l7",
+       "text": "ein zentten."
+      },
+      {
+       "id": "r4l8",
+       "text": "Item anderhalbe lagell mit pheÿllen."
+      },
+      {
+       "id": "r4l9",
+       "text": "Ain armprust."
+      },
+      {
+       "id": "r4l10",
+       "text": "Item vier targen."
+      },
+      {
+       "id": "r4l11",
+       "text": "Item ain speÿs truhen"
+      },
+      {
+       "id": "r4l12",
+       "text": "und vier truhen guet und pös."
+      }
      ]
     }
    ]
@@ -125,20 +293,62 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Item vier tisch guet und pös.",
-      "Item acht spanpet guet und pös.",
-      "Ain öllstain.",
-      "Ain pachschaff.",
-      "Ain fewr huet obder phisterstuben.",
-      "Item ein koren kasten und ein mel",
-      "kasten.",
-      "Item ain glöklen ob dem tor.",
-      "Sölcher inventäri zedel sind zwo",
-      "in geleÿchem laut gemacht mit",
-      "ŭnsser paÿder petschafft für",
-      "gedrukt und yedlichen taÿll",
-      "ainer gegeben."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item vier tisch guet und pös."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item acht spanpet guet und pös."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain öllstain."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ain pachschaff."
+      },
+      {
+       "id": "r2l5",
+       "text": "Ain fewr huet obder phisterstuben."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item ein koren kasten und ein mel"
+      },
+      {
+       "id": "r2l7",
+       "text": "kasten."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item ain glöklen ob dem tor."
+      },
+      {
+       "id": "r3l1",
+       "text": "Sölcher inventäri zedel sind zwo"
+      },
+      {
+       "id": "r3l2",
+       "text": "in geleÿchem laut gemacht mit"
+      },
+      {
+       "id": "r3l3",
+       "text": "ŭnsser paÿder petschafft für"
+      },
+      {
+       "id": "r3l4",
+       "text": "gedrukt und yedlichen taÿll"
+      },
+      {
+       "id": "r3l5",
+       "text": "ainer gegeben."
+      }
      ]
     }
    ]
@@ -163,7 +373,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]
@@ -188,48 +401,174 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Vermerkt den zewg und hausratt",
-      "so ich Wolffganng Han von Hanberg",
-      "auff dem gschloss Lamprechtzpurg",
-      "gefunden und mir der edel und vest",
-      "Hanns von Velsperg geanttburt hatt",
-      "und ich hab die vesten zu sambt dem",
-      "hernachgeschriben hausratt also in¬",
-      "genomm und emphangen an samztag",
-      "nach Sannd Geõrgen tag des ainsund¬",
-      "achzigisten jars da pey̑ und mit sind",
-      "gebesen der edl, streng und eren vesst ritter her",
-      "Balthasar von Belsperg die zey̆t haubt¬",
-      "man auff Braunegk an stat meins gnadi¬",
-      "gen herrn von Brigsen und mir die benant",
-      "vesten ingeanttburt und Oswald Stau¬",
-      "dinger, Peter Hofstetter, Caspar Mentelberger",
-      "und Hanns Haĩnõder notari.",
-      "Item in der cappellen ain newes mess¬",
-      "gebannt mit seiner zuegehõrung, dar¬",
-      "an mengelt ain stol.",
-      "Aber zbaÿ alte messgebant mit irer",
-      "zuegehõrung.",
-      "Ain messpuech, mer ain newes",
-      "messgebannt messpuech, ain tagzeit¬",
-      "puech, ain newes gesannkpũechel.",
-      "Vier alte klaine pŭechel, siben altar¬",
-      "tũecher guet und pŏss.",
-      "Ain silbrein kelch und ain",
-      "kchupphren kelch payde ũbergult.",
-      "Ain kchuphreins kreũtzs vergult.",
-      "Ain kchorrokch.",
-      "Ain lãdlein mit heÿltung unnd",
-      "prieffen.",
-      "Ain hungertuech.",
-      "Ain newe umbleg ist peÿ dem",
-      "newen messgebannt.",
-      "Ain news altartuech, mer ain",
-      "news altartuech.",
-      "Ain weissen seÿden fan.",
-      "Ain genãtte hántzwẽhel an ain",
-      "altartuech genãt."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerkt den zewg und hausratt"
+      },
+      {
+       "id": "r2l2",
+       "text": "so ich Wolffganng Han von Hanberg"
+      },
+      {
+       "id": "r2l3",
+       "text": "auff dem gschloss Lamprechtzpurg"
+      },
+      {
+       "id": "r2l4",
+       "text": "gefunden und mir der edel und vest"
+      },
+      {
+       "id": "r2l5",
+       "text": "Hanns von Velsperg geanttburt hatt"
+      },
+      {
+       "id": "r2l6",
+       "text": "und ich hab die vesten zu sambt dem"
+      },
+      {
+       "id": "r2l7",
+       "text": "hernachgeschriben hausratt also in¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "genomm und emphangen an samztag"
+      },
+      {
+       "id": "r2l9",
+       "text": "nach Sannd Geõrgen tag des ainsund¬"
+      },
+      {
+       "id": "r2l10",
+       "text": "achzigisten jars da pey̑ und mit sind"
+      },
+      {
+       "id": "r2l11",
+       "text": "gebesen der edl, streng und eren vesst ritter her"
+      },
+      {
+       "id": "r2l12",
+       "text": "Balthasar von Belsperg die zey̆t haubt¬"
+      },
+      {
+       "id": "r2l13",
+       "text": "man auff Braunegk an stat meins gnadi¬"
+      },
+      {
+       "id": "r2l14",
+       "text": "gen herrn von Brigsen und mir die benant"
+      },
+      {
+       "id": "r2l15",
+       "text": "vesten ingeanttburt und Oswald Stau¬"
+      },
+      {
+       "id": "r2l16",
+       "text": "dinger, Peter Hofstetter, Caspar Mentelberger"
+      },
+      {
+       "id": "r2l17",
+       "text": "und Hanns Haĩnõder notari."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item in der cappellen ain newes mess¬"
+      },
+      {
+       "id": "r3l2",
+       "text": "gebannt mit seiner zuegehõrung, dar¬"
+      },
+      {
+       "id": "r3l3",
+       "text": "an mengelt ain stol."
+      },
+      {
+       "id": "r3l4",
+       "text": "Aber zbaÿ alte messgebant mit irer"
+      },
+      {
+       "id": "r3l5",
+       "text": "zuegehõrung."
+      },
+      {
+       "id": "r3l6",
+       "text": "Ain messpuech, mer ain newes"
+      },
+      {
+       "id": "r3l7",
+       "text": "messgebannt messpuech, ain tagzeit¬"
+      },
+      {
+       "id": "r3l8",
+       "text": "puech, ain newes gesannkpũechel."
+      },
+      {
+       "id": "r3l9",
+       "text": "Vier alte klaine pŭechel, siben altar¬"
+      },
+      {
+       "id": "r3l10",
+       "text": "tũecher guet und pŏss."
+      },
+      {
+       "id": "r3l11",
+       "text": "Ain silbrein kelch und ain"
+      },
+      {
+       "id": "r3l12",
+       "text": "kchupphren kelch payde ũbergult."
+      },
+      {
+       "id": "r3l13",
+       "text": "Ain kchuphreins kreũtzs vergult."
+      },
+      {
+       "id": "r3l14",
+       "text": "Ain kchorrokch."
+      },
+      {
+       "id": "r3l15",
+       "text": "Ain lãdlein mit heÿltung unnd"
+      },
+      {
+       "id": "r3l16",
+       "text": "prieffen."
+      },
+      {
+       "id": "r3l17",
+       "text": "Ain hungertuech."
+      },
+      {
+       "id": "r3l18",
+       "text": "Ain newe umbleg ist peÿ dem"
+      },
+      {
+       "id": "r3l19",
+       "text": "newen messgebannt."
+      },
+      {
+       "id": "r3l20",
+       "text": "Ain news altartuech, mer ain"
+      },
+      {
+       "id": "r3l21",
+       "text": "news altartuech."
+      },
+      {
+       "id": "r3l22",
+       "text": "Ain weissen seÿden fan."
+      },
+      {
+       "id": "r3l23",
+       "text": "Ain genãtte hántzwẽhel an ain"
+      },
+      {
+       "id": "r3l24",
+       "text": "altartuech genãt."
+      }
      ]
     }
    ]
@@ -254,32 +593,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]",
-      "Im gschloss.",
-      "Item fũnff eẏsnen hagken pugsen und",
-      "zben messein mõdel dar zue.",
-      "Ain eÿsnen hantpũgsen.",
-      "Ain messen hantpũgsen.",
-      "Item zbaÿ vãssel mit pugsen pulver",
-      "ettwas my̆nder dann ain centen.",
-      "Item anderhalb lăgel mit pheillen.",
-      "Item ain armprust.",
-      "Item vier targen.",
-      "Item ain speiss truhen und vier",
-      "tru̇hen guet und põss.",
-      "Item vier tisch guet und põss.",
-      "Item acht spanpet guet und pŏs.",
-      "Item ain õllstain.",
-      "Item ain pachschȧff.",
-      "Item ain fewr huet ob der phisterstuben.",
-      "Item ain kchoren kchassten und ain",
-      "melkchassten.",
-      "Item ain glokel ob dem tor.",
-      "Sõlhes wie oben begriffen hab ich bemelter",
-      "Wolffgang Han von dem benanten Hansen von",
-      "Belsperg emphangen und des zu urkunt hab",
-      "ich mein aigen petschafft zu ennd deß ynventari",
-      "zettel gedrukt."
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Im gschloss."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item fũnff eẏsnen hagken pugsen und"
+      },
+      {
+       "id": "r3l2",
+       "text": "zben messein mõdel dar zue."
+      },
+      {
+       "id": "r3l3",
+       "text": "Ain eÿsnen hantpũgsen."
+      },
+      {
+       "id": "r3l4",
+       "text": "Ain messen hantpũgsen."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item zbaÿ vãssel mit pugsen pulver"
+      },
+      {
+       "id": "r3l6",
+       "text": "ettwas my̆nder dann ain centen."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item anderhalb lăgel mit pheillen."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item ain armprust."
+      },
+      {
+       "id": "r3l9",
+       "text": "Item vier targen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item ain speiss truhen und vier"
+      },
+      {
+       "id": "r3l11",
+       "text": "tru̇hen guet und põss."
+      },
+      {
+       "id": "r3l12",
+       "text": "Item vier tisch guet und põss."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item acht spanpet guet und pŏs."
+      },
+      {
+       "id": "r3l14",
+       "text": "Item ain õllstain."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item ain pachschȧff."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item ain fewr huet ob der phisterstuben."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item ain kchoren kchassten und ain"
+      },
+      {
+       "id": "r3l18",
+       "text": "melkchassten."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item ain glokel ob dem tor."
+      },
+      {
+       "id": "r4l1",
+       "text": "Sõlhes wie oben begriffen hab ich bemelter"
+      },
+      {
+       "id": "r4l2",
+       "text": "Wolffgang Han von dem benanten Hansen von"
+      },
+      {
+       "id": "r4l3",
+       "text": "Belsperg emphangen und des zu urkunt hab"
+      },
+      {
+       "id": "r4l4",
+       "text": "ich mein aigen petschafft zu ennd deß ynventari"
+      },
+      {
+       "id": "r4l5",
+       "text": "zettel gedrukt."
+      }
      ]
     }
    ]
@@ -304,7 +721,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      }
      ]
     }
    ]
@@ -329,7 +749,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]
@@ -354,7 +777,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      }
      ]
     }
    ]
@@ -379,7 +805,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     }
    ]
@@ -404,7 +833,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -429,7 +861,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      }
      ]
     }
    ]
@@ -454,7 +889,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.7r]"
+      }
      ]
     }
    ]
@@ -479,9 +917,18 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.7v]",
-      "Was Lamperspůrg fŭr stůckh",
-      "unnd gůetter hat."
+      {
+       "id": "r1l1",
+       "text": "[fol.7v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Was Lamperspůrg fŭr stůckh"
+      },
+      {
+       "id": "r2l2",
+       "text": "unnd gůetter hat."
+      }
      ]
     }
    ]
@@ -506,7 +953,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.8r]"
+      }
      ]
     }
    ]
@@ -531,8 +981,14 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.8v]",
-      "Lamprechtspurg"
+      {
+       "id": "r1l1",
+       "text": "[fol.8v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Lamprechtspurg"
+      }
      ]
     }
    ]
@@ -557,11 +1013,26 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.9r]",
-      "1547",
-      "Annõ domini.",
-      "Inṽentarỹ der ṽestn",
-      "Lamprechtspũrg."
+      {
+       "id": "r1l1",
+       "text": "[fol.9r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "1547"
+      },
+      {
+       "id": "r2l2",
+       "text": "Annõ domini."
+      },
+      {
+       "id": "r2l3",
+       "text": "Inṽentarỹ der ṽestn"
+      },
+      {
+       "id": "r2l4",
+       "text": "Lamprechtspũrg."
+      }
      ]
     }
    ]
@@ -586,7 +1057,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.9v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.9v]"
+      }
      ]
     }
    ]
@@ -611,32 +1085,110 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.10r]",
-      "Am XX tag maỹ im",
-      "fȗnffzechenhŭndert",
-      "und im sỹbenŭndtvier¬",
-      "tzigisten jar etc.",
-      "ist dȗrch die edln und",
-      "vestn Hannß von Rost zŭ",
-      "Aȗfhofn pfleger zȗ Uett¬",
-      "nhaÿm und Balthaȗsser",
-      "Scheggn ambtmãn zȗ",
-      "Braŭnĕggn, baid als",
-      "dȗrch fȗrstliche befelh",
-      "von obrigkait wegn hier¬",
-      "zȗe verorderte zwischen",
-      "den edln und vestn Lam¬",
-      "prechtn Han von Hanperg",
-      "und Jacobn Han seinem",
-      "vettern von wegen abtret¬",
-      "tȗng der vesten Lam¬",
-      "prechtspȗrg gehandlt",
-      "und gedachtn Jacobn Han",
-      "aȗf erstervente befehlh",
-      "eruents schloß Lamprechts¬",
-      "pȗrg sambt der selbn va¬",
-      "renden hab, ligenden",
-      "stȗckhen, waldȗngen und"
+      {
+       "id": "r1l1",
+       "text": "[fol.10r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Am XX tag maỹ im"
+      },
+      {
+       "id": "r2l2",
+       "text": "fȗnffzechenhŭndert"
+      },
+      {
+       "id": "r2l3",
+       "text": "und im sỹbenŭndtvier¬"
+      },
+      {
+       "id": "r2l4",
+       "text": "tzigisten jar etc."
+      },
+      {
+       "id": "r2l5",
+       "text": "ist dȗrch die edln und"
+      },
+      {
+       "id": "r2l6",
+       "text": "vestn Hannß von Rost zŭ"
+      },
+      {
+       "id": "r2l7",
+       "text": "Aȗfhofn pfleger zȗ Uett¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "nhaÿm und Balthaȗsser"
+      },
+      {
+       "id": "r2l9",
+       "text": "Scheggn ambtmãn zȗ"
+      },
+      {
+       "id": "r2l10",
+       "text": "Braŭnĕggn, baid als"
+      },
+      {
+       "id": "r2l11",
+       "text": "dȗrch fȗrstliche befelh"
+      },
+      {
+       "id": "r2l12",
+       "text": "von obrigkait wegn hier¬"
+      },
+      {
+       "id": "r2l13",
+       "text": "zȗe verorderte zwischen"
+      },
+      {
+       "id": "r2l14",
+       "text": "den edln und vestn Lam¬"
+      },
+      {
+       "id": "r2l15",
+       "text": "prechtn Han von Hanperg"
+      },
+      {
+       "id": "r2l16",
+       "text": "und Jacobn Han seinem"
+      },
+      {
+       "id": "r2l17",
+       "text": "vettern von wegen abtret¬"
+      },
+      {
+       "id": "r2l18",
+       "text": "tȗng der vesten Lam¬"
+      },
+      {
+       "id": "r2l19",
+       "text": "prechtspȗrg gehandlt"
+      },
+      {
+       "id": "r2l20",
+       "text": "und gedachtn Jacobn Han"
+      },
+      {
+       "id": "r2l21",
+       "text": "aȗf erstervente befehlh"
+      },
+      {
+       "id": "r2l22",
+       "text": "eruents schloß Lamprechts¬"
+      },
+      {
+       "id": "r2l23",
+       "text": "pȗrg sambt der selbn va¬"
+      },
+      {
+       "id": "r2l24",
+       "text": "renden hab, ligenden"
+      },
+      {
+       "id": "r2l25",
+       "text": "stȗckhen, waldȗngen und"
+      }
      ]
     }
    ]
@@ -661,34 +1213,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.10v]",
-      "lăpnŭssen, einkhomenß",
-      "der kirchen, brieflich",
-      "gerechtigkhaittn anheȗt",
-      "aigentlichn bschribn und",
-      "inv̑entiert worden. Aȗch",
-      "gedachtn Jacobn Hann",
-      "von Hanperg als kȗnfftigen",
-      "inhaber und pflẽger",
-      "des schloß Lamprechtspȗrg",
-      "schloß und schlissl sambt",
-      "derselbn zŭegehŏrŭng zŭe¬",
-      "gestelt und ũberant¬",
-      "wȗrdt die er zŭ seiner",
-      "zeit zŭ seinem abtzȗg",
-      "dermassn widerh bei dem",
-      "schloß Lamprechtspȗrg",
-      "lassn und antwũrttn soll",
-      "zwo gleichlaȗttent inv̑en¬",
-      "tari gschribn und jeder thaill",
-      "ainen zȗ handen empfangen.",
-      "Dise uberantwŭrttung ist",
-      "beschechn in bei sein der fȗr¬",
-      "nemen weisn Lienharten Sell,",
-      "Gabrieln Morn und Marxn",
-      "Pŭelln, al drei burger zŭ Braŭ¬",
-      "nȇggn. Bschribn wie von",
-      "post zŭ post hernach volgt."
+      {
+       "id": "r1l1",
+       "text": "[fol.10v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "lăpnŭssen, einkhomenß"
+      },
+      {
+       "id": "r2l2",
+       "text": "der kirchen, brieflich"
+      },
+      {
+       "id": "r2l3",
+       "text": "gerechtigkhaittn anheȗt"
+      },
+      {
+       "id": "r2l4",
+       "text": "aigentlichn bschribn und"
+      },
+      {
+       "id": "r2l5",
+       "text": "inv̑entiert worden. Aȗch"
+      },
+      {
+       "id": "r2l6",
+       "text": "gedachtn Jacobn Hann"
+      },
+      {
+       "id": "r2l7",
+       "text": "von Hanperg als kȗnfftigen"
+      },
+      {
+       "id": "r2l8",
+       "text": "inhaber und pflẽger"
+      },
+      {
+       "id": "r2l9",
+       "text": "des schloß Lamprechtspȗrg"
+      },
+      {
+       "id": "r2l10",
+       "text": "schloß und schlissl sambt"
+      },
+      {
+       "id": "r2l11",
+       "text": "derselbn zŭegehŏrŭng zŭe¬"
+      },
+      {
+       "id": "r2l12",
+       "text": "gestelt und ũberant¬"
+      },
+      {
+       "id": "r2l13",
+       "text": "wȗrdt die er zŭ seiner"
+      },
+      {
+       "id": "r2l14",
+       "text": "zeit zŭ seinem abtzȗg"
+      },
+      {
+       "id": "r2l15",
+       "text": "dermassn widerh bei dem"
+      },
+      {
+       "id": "r2l16",
+       "text": "schloß Lamprechtspȗrg"
+      },
+      {
+       "id": "r2l17",
+       "text": "lassn und antwũrttn soll"
+      },
+      {
+       "id": "r2l18",
+       "text": "zwo gleichlaȗttent inv̑en¬"
+      },
+      {
+       "id": "r2l19",
+       "text": "tari gschribn und jeder thaill"
+      },
+      {
+       "id": "r2l20",
+       "text": "ainen zȗ handen empfangen."
+      },
+      {
+       "id": "r2l21",
+       "text": "Dise uberantwŭrttung ist"
+      },
+      {
+       "id": "r2l22",
+       "text": "beschechn in bei sein der fȗr¬"
+      },
+      {
+       "id": "r2l23",
+       "text": "nemen weisn Lienharten Sell,"
+      },
+      {
+       "id": "r2l24",
+       "text": "Gabrieln Morn und Marxn"
+      },
+      {
+       "id": "r2l25",
+       "text": "Pŭelln, al drei burger zŭ Braŭ¬"
+      },
+      {
+       "id": "r2l26",
+       "text": "nȇggn. Bschribn wie von"
+      },
+      {
+       "id": "r2l27",
+       "text": "post zŭ post hernach volgt."
+      }
      ]
     }
    ]
@@ -713,24 +1349,78 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.11r]",
-      "In der kĩrchen.",
-      "Ain plabs mesßgwant",
-      "aerissen mit gȗlden stern",
-      "und mit ainem grossn kreȗz",
-      "sambt derselbn seiner zȗge¬",
-      "horȗng ist abschleissig und",
-      "alt.",
-      "Ittem mer ain alts mesß¬",
-      "gwandt gew̑elter zwilh",
-      "mit ainem alten gȗlden kreŭz",
-      "mit seiner zȗgehorȗng.",
-      "Ittem mer ain alte abschlei¬",
-      "ssige albm mit altn sa¬",
-      "matten schilten.",
-      "Ittem mer ain zÿmblih",
-      "gŭette albm.",
-      "Ittem ain guẽtter korrokh."
+      {
+       "id": "r1l1",
+       "text": "[fol.11r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der kĩrchen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain plabs mesßgwant"
+      },
+      {
+       "id": "r3l2",
+       "text": "aerissen mit gȗlden stern"
+      },
+      {
+       "id": "r3l3",
+       "text": "und mit ainem grossn kreȗz"
+      },
+      {
+       "id": "r3l4",
+       "text": "sambt derselbn seiner zȗge¬"
+      },
+      {
+       "id": "r3l5",
+       "text": "horȗng ist abschleissig und"
+      },
+      {
+       "id": "r3l6",
+       "text": "alt."
+      },
+      {
+       "id": "r3l7",
+       "text": "Ittem mer ain alts mesß¬"
+      },
+      {
+       "id": "r3l8",
+       "text": "gwandt gew̑elter zwilh"
+      },
+      {
+       "id": "r3l9",
+       "text": "mit ainem alten gȗlden kreŭz"
+      },
+      {
+       "id": "r3l10",
+       "text": "mit seiner zȗgehorȗng."
+      },
+      {
+       "id": "r3l11",
+       "text": "Ittem mer ain alte abschlei¬"
+      },
+      {
+       "id": "r3l12",
+       "text": "ssige albm mit altn sa¬"
+      },
+      {
+       "id": "r3l13",
+       "text": "matten schilten."
+      },
+      {
+       "id": "r3l14",
+       "text": "Ittem mer ain zÿmblih"
+      },
+      {
+       "id": "r3l15",
+       "text": "gŭette albm."
+      },
+      {
+       "id": "r3l16",
+       "text": "Ittem ain guẽtter korrokh."
+      }
      ]
     }
    ]
@@ -755,19 +1445,58 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.11v]",
-      "Sÿben altar tũecher",
-      "pe̊sser und peser.",
-      "Ain gȗetter rotter tebich",
-      "aȗff dem altar.",
-      "Ain gȗett gedrȗckht miss¬",
-      "sall pŭech.",
-      "Ain gȗets groß parga¬",
-      "mennen mĕsspŭech.",
-      "Ain alts pargamennen",
-      "gsang pȗech.",
-      "Ain alts pargamenen",
-      "psalter pŭech."
+      {
+       "id": "r1l1",
+       "text": "[fol.11v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Sÿben altar tũecher"
+      },
+      {
+       "id": "r2l2",
+       "text": "pe̊sser und peser."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain gȗetter rotter tebich"
+      },
+      {
+       "id": "r2l4",
+       "text": "aȗff dem altar."
+      },
+      {
+       "id": "r2l5",
+       "text": "Ain gȗett gedrȗckht miss¬"
+      },
+      {
+       "id": "r2l6",
+       "text": "sall pŭech."
+      },
+      {
+       "id": "r2l7",
+       "text": "Ain gȗets groß parga¬"
+      },
+      {
+       "id": "r2l8",
+       "text": "mennen mĕsspŭech."
+      },
+      {
+       "id": "r2l9",
+       "text": "Ain alts pargamennen"
+      },
+      {
+       "id": "r2l10",
+       "text": "gsang pȗech."
+      },
+      {
+       "id": "r2l11",
+       "text": "Ain alts pargamenen"
+      },
+      {
+       "id": "r2l12",
+       "text": "psalter pŭech."
+      }
      ]
     }
    ]
@@ -792,20 +1521,62 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.12r]",
-      "Mer ain alts pargamenen",
-      "psalter, klainß pȗechl.",
-      "Ain alts pargamenen",
-      "gradȗall mit weiss",
-      "hilzn copãrt.",
-      "Mer ain alts znichts",
-      "pargamenen pȗech.",
-      "Ain sÿlbrenner vergȗlter",
-      "kelch mit sambt der paten",
-      "und corporall.",
-      "Zwaÿ zÿnnen opfer kăndln.",
-      "Zwen messing leȗchter",
-      "aȗf den altar."
+      {
+       "id": "r1l1",
+       "text": "[fol.12r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Mer ain alts pargamenen"
+      },
+      {
+       "id": "r2l2",
+       "text": "psalter, klainß pȗechl."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain alts pargamenen"
+      },
+      {
+       "id": "r2l4",
+       "text": "gradȗall mit weiss"
+      },
+      {
+       "id": "r2l5",
+       "text": "hilzn copãrt."
+      },
+      {
+       "id": "r2l6",
+       "text": "Mer ain alts znichts"
+      },
+      {
+       "id": "r2l7",
+       "text": "pargamenen pȗech."
+      },
+      {
+       "id": "r2l8",
+       "text": "Ain sÿlbrenner vergȗlter"
+      },
+      {
+       "id": "r2l9",
+       "text": "kelch mit sambt der paten"
+      },
+      {
+       "id": "r2l10",
+       "text": "und corporall."
+      },
+      {
+       "id": "r2l11",
+       "text": "Zwaÿ zÿnnen opfer kăndln."
+      },
+      {
+       "id": "r2l12",
+       "text": "Zwen messing leȗchter"
+      },
+      {
+       "id": "r2l13",
+       "text": "aȗf den altar."
+      }
      ]
     }
    ]
@@ -830,17 +1601,50 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.12v]",
-      "Mer ain alter messinger",
-      "leichter.",
-      "Ain alter eÿseiner leichter.",
-      "Ain alts kȗpfrens ũber¬",
-      "gilts kreȗz.",
-      "Sechß klaine stall kerzn.",
-      "Zwo stall kerzn aȗf den",
-      "altar.",
-      "Ain alts kupfrennss",
-      "spreng kessell."
+      {
+       "id": "r1l1",
+       "text": "[fol.12v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Mer ain alter messinger"
+      },
+      {
+       "id": "r2l2",
+       "text": "leichter."
+      },
+      {
+       "id": "r2l3",
+       "text": "Ain alter eÿseiner leichter."
+      },
+      {
+       "id": "r2l4",
+       "text": "Ain alts kȗpfrens ũber¬"
+      },
+      {
+       "id": "r2l5",
+       "text": "gilts kreȗz."
+      },
+      {
+       "id": "r2l6",
+       "text": "Sechß klaine stall kerzn."
+      },
+      {
+       "id": "r2l7",
+       "text": "Zwo stall kerzn aȗf den"
+      },
+      {
+       "id": "r2l8",
+       "text": "altar."
+      },
+      {
+       "id": "r2l9",
+       "text": "Ain alts kupfrennss"
+      },
+      {
+       "id": "r2l10",
+       "text": "spreng kessell."
+      }
      ]
     }
    ]
@@ -865,18 +1669,54 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.13r]",
-      "Ain alts raȗch fass.",
-      "Dreÿ alte wandlstãngen.",
-      "Zwo gloggen aȗff der",
-      "kirchen.",
-      "Ain hilzenner casten",
-      "dar innen der obgemelt",
-      "zeȗg ligt.",
-      "Ain alter eÿsenner",
-      "feȗer hũet.",
-      "Ain ȏllstain im hoff",
-      "an ain lũckh."
+      {
+       "id": "r1l1",
+       "text": "[fol.13r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ain alts raȗch fass."
+      },
+      {
+       "id": "r2l2",
+       "text": "Dreÿ alte wandlstãngen."
+      },
+      {
+       "id": "r2l3",
+       "text": "Zwo gloggen aȗff der"
+      },
+      {
+       "id": "r2l4",
+       "text": "kirchen."
+      },
+      {
+       "id": "r2l5",
+       "text": "Ain hilzenner casten"
+      },
+      {
+       "id": "r2l6",
+       "text": "dar innen der obgemelt"
+      },
+      {
+       "id": "r2l7",
+       "text": "zeȗg ligt."
+      },
+      {
+       "id": "r2l8",
+       "text": "Ain alter eÿsenner"
+      },
+      {
+       "id": "r2l9",
+       "text": "feȗer hũet."
+      },
+      {
+       "id": "r2l10",
+       "text": "Ain ȏllstain im hoff"
+      },
+      {
+       "id": "r2l11",
+       "text": "an ain lũckh."
+      }
      ]
     }
    ]
@@ -901,18 +1741,54 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.13v]",
-      "In dem kãmerlen",
-      "aȗff dem stall.",
-      "Zwo alte pethstatten gar",
-      "nichts werth.",
-      "Im mellgaden.",
-      "Ain alter tisch.",
-      "Ain gar alts znichts trȗchl.",
-      "Ain alter korn kastn",
-      "und ain alter mel casten",
-      "sein die pretter darv̑on",
-      "khŭmen."
+      {
+       "id": "r1l1",
+       "text": "[fol.13v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In dem kãmerlen"
+      },
+      {
+       "id": "r2l2",
+       "text": "aȗff dem stall."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zwo alte pethstatten gar"
+      },
+      {
+       "id": "r3l2",
+       "text": "nichts werth."
+      },
+      {
+       "id": "r4l1",
+       "text": "Im mellgaden."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain alter tisch."
+      },
+      {
+       "id": "r5l2",
+       "text": "Ain gar alts znichts trȗchl."
+      },
+      {
+       "id": "r5l3",
+       "text": "Ain alter korn kastn"
+      },
+      {
+       "id": "r5l4",
+       "text": "und ain alter mel casten"
+      },
+      {
+       "id": "r5l5",
+       "text": "sein die pretter darv̑on"
+      },
+      {
+       "id": "r5l6",
+       "text": "khŭmen."
+      }
      ]
     }
    ]
@@ -937,15 +1813,42 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.14r]",
-      "Im sãllelen.",
-      "Zwo alte pethstattn.",
-      "Ain alte trȗchen",
-      "an schloß und pant.",
-      "Im speisgaden.",
-      "Zwo alte trũchn.",
-      "Im keller.",
-      "Ain znichtiger alter tisch."
+      {
+       "id": "r1l1",
+       "text": "[fol.14r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Im sãllelen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Zwo alte pethstattn."
+      },
+      {
+       "id": "r3l2",
+       "text": "Ain alte trȗchen"
+      },
+      {
+       "id": "r3l3",
+       "text": "an schloß und pant."
+      },
+      {
+       "id": "r4l1",
+       "text": "Im speisgaden."
+      },
+      {
+       "id": "r5l1",
+       "text": "Zwo alte trũchn."
+      },
+      {
+       "id": "r6l1",
+       "text": "Im keller."
+      },
+      {
+       "id": "r7l1",
+       "text": "Ain znichtiger alter tisch."
+      }
      ]
     }
    ]
@@ -970,15 +1873,42 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.14v]",
-      "In der diẽrn kãmerl.",
-      "Ain alts niders rãdl",
-      "peth stăttl.",
-      "In der knecht camer.",
-      "Ain zimblich gȗette",
-      "pethstatt.",
-      "In der altn stũbn.",
-      "Ain tisch ain alter."
+      {
+       "id": "r1l1",
+       "text": "[fol.14v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der diẽrn kãmerl."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain alts niders rãdl"
+      },
+      {
+       "id": "r3l2",
+       "text": "peth stăttl."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der knecht camer."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain zimblich gȗette"
+      },
+      {
+       "id": "r5l2",
+       "text": "pethstatt."
+      },
+      {
+       "id": "r6l1",
+       "text": "In der altn stũbn."
+      },
+      {
+       "id": "r7l1",
+       "text": "Ain tisch ain alter."
+      }
      ]
     }
    ]
@@ -1003,11 +1933,26 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.15r]",
-      "Ain alte pethstatt.",
-      "Im thũrnn.",
-      "Zwo lagll mit",
-      "etlichen pfeilln."
+      {
+       "id": "r1l1",
+       "text": "[fol.15r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ain alte pethstatt."
+      },
+      {
+       "id": "r3l1",
+       "text": "Im thũrnn."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zwo lagll mit"
+      },
+      {
+       "id": "r4l2",
+       "text": "etlichen pfeilln."
+      }
      ]
     }
    ]
@@ -1032,7 +1977,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.15v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.15v]"
+      }
      ]
     }
    ]
@@ -1057,7 +2005,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.16r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.16r]"
+      }
      ]
     }
    ]
@@ -1082,7 +2033,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.16v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.16v]"
+      }
      ]
     }
    ]
@@ -1107,7 +2061,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.17r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.17r]"
+      }
      ]
     }
    ]
@@ -1132,7 +2089,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.17v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.17v]"
+      }
      ]
     }
    ]
@@ -1157,7 +2117,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.18r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.18r]"
+      }
      ]
     }
    ]
@@ -1182,7 +2145,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.18v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.18v]"
+      }
      ]
     }
    ]
@@ -1207,7 +2173,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.19r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.19r]"
+      }
      ]
     }
    ]
@@ -1232,7 +2201,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.19v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.19v]"
+      }
      ]
     }
    ]
@@ -1257,7 +2229,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.20r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.20r]"
+      }
      ]
     }
    ]
@@ -1282,7 +2257,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.20v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.20v]"
+      }
      ]
     }
    ]

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -153,12 +153,16 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328722-1"/>
+        <pb n="1" facs="#surface-11328722-1"/>
+        <ab xml:id="ab-11328722-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328722-1-r2">
           <lb facs="#zone-11328722-1-r2l1"/>Vermerkt meins gnĕdigen
           <lb facs="#zone-11328722-1-r2l2"/>herrn haußplunder oder
           <lb facs="#zone-11328722-1-r2l3"/>massarey zŭ Fragenstain.
+        </ab>
+        <ab xml:id="ab-11328722-1-r3">
           <lb facs="#zone-11328722-1-r3l1"/>Zů erst in der klainĕn
           <lb facs="#zone-11328722-1-r3l2"/>stuben ainen schreibtisch.
           <lb facs="#zone-11328722-1-r3l3"/>Item ainen schlȇchtn tisch.
@@ -184,9 +188,11 @@
           <lb facs="#zone-11328722-1-r3l23"/>und sunst aine on ain
           <lb facs="#zone-11328722-1-r3l24"/>hymell.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328722-2"/>
+        <pb n="2" facs="#surface-11328722-2"/>
+        <ab xml:id="ab-11328722-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328722-2-r2">
           <lb facs="#zone-11328722-2-r2l1"/>Item in meins herrn camer
           <lb facs="#zone-11328722-2-r2l2"/>ain pettschtat mit aine(m)
           <lb facs="#zone-11328722-2-r2l3"/>hÿmell.
@@ -210,16 +216,22 @@
           <lb facs="#zone-11328722-2-r2l21"/>und ain fůttercasten.
           <lb facs="#zone-11328722-2-r2l22"/>Item im tor kemerly ain
           <lb facs="#zone-11328722-2-r2l23"/>schlechte petschatt.
+        </ab>
+        <ab xml:id="ab-11328722-2-r3">
           <lb facs="#zone-11328722-2-r3l1"/>Wer.
+        </ab>
+        <ab xml:id="ab-11328722-2-r4">
           <lb facs="#zone-11328722-2-r4l1"/>Item ain tristlich.
           <lb facs="#zone-11328722-2-r4l2"/>Item ain alte hellpartten.
           <lb facs="#zone-11328722-2-r4l3"/>Item ain flaischstokh.
           <lb facs="#zone-11328722-2-r4l4"/>Ain kugelmodl zü
           <lb facs="#zone-11328722-2-r4l5"/>pleỹkugelen.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328722-3"/>
+        <pb n="3" facs="#surface-11328722-3"/>
+        <ab xml:id="ab-11328722-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328722-3-r2">
           <lb facs="#zone-11328722-3-r2l1"/>Beẏ der inventtuari zedl
           <lb facs="#zone-11328722-3-r2l2"/>sind gwesen als der Sig¬
           <lb facs="#zone-11328722-3-r2l3"/>mund ingenom(en) hat die
@@ -228,9 +240,11 @@
           <lb facs="#zone-11328722-3-r2l6"/>Datum in vigiliai K Katarine
           <lb facs="#zone-11328722-3-r2l7"/>anno etc. LXXVIIten.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328722-4"/>
+        <pb n="4" facs="#surface-11328722-4"/>
+        <ab xml:id="ab-11328722-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11328722-4-r2">
           <lb facs="#zone-11328722-4-r2l1"/>Inventari als Fragenstain
           <lb facs="#zone-11328722-4-r2l2"/>dem Gothart Lanngen ÿnn geantwurt ist.
         </ab>

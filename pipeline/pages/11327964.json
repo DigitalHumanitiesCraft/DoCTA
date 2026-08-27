@@ -21,38 +21,134 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Anno etc. LXXXVIIten an mitich(e)n vor",
-      "Purificacionis Mater Marie ist Hildprant von",
-      "Gles das Slos Taur mit s(einer) zusach(en)",
-      "von ander hab es so hernach geschr(ieben) ders(elbe) so (der)",
-      "selb(er) geantwurt Peteren, Hansen Ubelhers",
-      "[- - -] gelist(en) [- - -] [- - -] [- - -]",
-      "[- - -]von [- - -] [- - -] [- - -].",
-      "In der grossen herrn stubenn als vor.",
-      "In der camer daran ausn und inen.",
-      "I pet.",
-      "I polster.",
-      "I kuss.",
-      "I weisser golter.",
-      "I seidiner golter.",
-      "I per leilach.",
-      "Item in allen ganz isst sich.",
-      "In der melkamer auch vor.",
-      "Item ein vassel mit poten [- - -].",
-      "Item LVI XXV ster mel rigken dazu.",
-      "Item LVI VIII ster klays.",
-      "Item ein wag und gwichten dazu.",
-      "Item ain sturzenni flaschen.",
-      "Item III schauflen an stil.",
-      "Item ein fleisch stock.",
-      "Item ein fleischpeil.",
-      "Item ein kupfreiner hafen zu ŏl.",
-      "Item ein morser mit sein sto̊se).",
-      "Item an dem fenst(er) [- - -] etlich [- - -].",
-      "Item so muss es [- - -] [- - -].",
-      "I stŭ[.].",
-      "VI [- - -]."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Anno etc. LXXXVIIten an mitich(e)n vor"
+      },
+      {
+       "id": "r2l2",
+       "text": "Purificacionis Mater Marie ist Hildprant von"
+      },
+      {
+       "id": "r2l3",
+       "text": "Gles das Slos Taur mit s(einer) zusach(en)"
+      },
+      {
+       "id": "r2l4",
+       "text": "von ander hab es so hernach geschr(ieben) ders(elbe) so (der)"
+      },
+      {
+       "id": "r2l5",
+       "text": "selb(er) geantwurt Peteren, Hansen Ubelhers"
+      },
+      {
+       "id": "r2l6",
+       "text": "[- - -] gelist(en) [- - -] [- - -] [- - -]"
+      },
+      {
+       "id": "r2l7",
+       "text": "[- - -]von [- - -] [- - -] [- - -]."
+      },
+      {
+       "id": "r3l1",
+       "text": "In der grossen herrn stubenn als vor."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der camer daran ausn und inen."
+      },
+      {
+       "id": "r5l1",
+       "text": "I pet."
+      },
+      {
+       "id": "r5l2",
+       "text": "I polster."
+      },
+      {
+       "id": "r5l3",
+       "text": "I kuss."
+      },
+      {
+       "id": "r5l4",
+       "text": "I weisser golter."
+      },
+      {
+       "id": "r5l5",
+       "text": "I seidiner golter."
+      },
+      {
+       "id": "r5l6",
+       "text": "I per leilach."
+      },
+      {
+       "id": "r5l7",
+       "text": "Item in allen ganz isst sich."
+      },
+      {
+       "id": "r6l1",
+       "text": "In der melkamer auch vor."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item ein vassel mit poten [- - -]."
+      },
+      {
+       "id": "r7l2",
+       "text": "Item LVI XXV ster mel rigken dazu."
+      },
+      {
+       "id": "r7l3",
+       "text": "Item LVI VIII ster klays."
+      },
+      {
+       "id": "r7l4",
+       "text": "Item ein wag und gwichten dazu."
+      },
+      {
+       "id": "r7l5",
+       "text": "Item ain sturzenni flaschen."
+      },
+      {
+       "id": "r7l6",
+       "text": "Item III schauflen an stil."
+      },
+      {
+       "id": "r7l7",
+       "text": "Item ein fleisch stock."
+      },
+      {
+       "id": "r7l8",
+       "text": "Item ein fleischpeil."
+      },
+      {
+       "id": "r7l9",
+       "text": "Item ein kupfreiner hafen zu ŏl."
+      },
+      {
+       "id": "r7l10",
+       "text": "Item ein morser mit sein sto̊se)."
+      },
+      {
+       "id": "r7l11",
+       "text": "Item an dem fenst(er) [- - -] etlich [- - -]."
+      },
+      {
+       "id": "r7l12",
+       "text": "Item so muss es [- - -] [- - -]."
+      },
+      {
+       "id": "r7l13",
+       "text": "I stŭ[.]."
+      },
+      {
+       "id": "r7l14",
+       "text": "VI [- - -]."
+      }
      ]
     }
    ]
@@ -77,33 +173,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item in d(er) [- - -] I grosess peck.",
-      "Item in der camer da ein pfleger inn ist",
-      "als vor.",
-      "Item ein pet.",
-      "I polster.",
-      "I kiss.",
-      "I strosack.",
-      "II deck(en).",
-      "I truhen.",
-      "Item in der hel als vor.",
-      "I pet.",
-      "III polster.",
-      "II kis.",
-      "II rauch decken.",
-      "I golter.",
-      "I p(er) leilach.",
-      "II stroseck.",
-      "In der andern kamer.",
-      "I pet.",
-      "I polster.",
-      "I rauche deck.",
-      "I per leilach.",
-      "I strosack.",
-      "In der knecht stuben als vor",
-      "II tisch.",
-      "I slosser in(er)."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item in d(er) [- - -] I grosess peck."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item in der camer da ein pfleger inn ist"
+      },
+      {
+       "id": "r3l2",
+       "text": "als vor."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item ein pet."
+      },
+      {
+       "id": "r4l2",
+       "text": "I polster."
+      },
+      {
+       "id": "r4l3",
+       "text": "I kiss."
+      },
+      {
+       "id": "r4l4",
+       "text": "I strosack."
+      },
+      {
+       "id": "r4l5",
+       "text": "II deck(en)."
+      },
+      {
+       "id": "r4l6",
+       "text": "I truhen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item in der hel als vor."
+      },
+      {
+       "id": "r6l1",
+       "text": "I pet."
+      },
+      {
+       "id": "r6l2",
+       "text": "III polster."
+      },
+      {
+       "id": "r6l3",
+       "text": "II kis."
+      },
+      {
+       "id": "r6l4",
+       "text": "II rauch decken."
+      },
+      {
+       "id": "r6l5",
+       "text": "I golter."
+      },
+      {
+       "id": "r6l6",
+       "text": "I p(er) leilach."
+      },
+      {
+       "id": "r6l7",
+       "text": "II stroseck."
+      },
+      {
+       "id": "r7l1",
+       "text": "In der andern kamer."
+      },
+      {
+       "id": "r8l1",
+       "text": "I pet."
+      },
+      {
+       "id": "r8l2",
+       "text": "I polster."
+      },
+      {
+       "id": "r8l3",
+       "text": "I rauche deck."
+      },
+      {
+       "id": "r8l4",
+       "text": "I per leilach."
+      },
+      {
+       "id": "r8l5",
+       "text": "I strosack."
+      },
+      {
+       "id": "r9l1",
+       "text": "In der knecht stuben als vor"
+      },
+      {
+       "id": "r10l1",
+       "text": "II tisch."
+      },
+      {
+       "id": "r10l2",
+       "text": "I slosser in(er)."
+      }
      ]
     }
    ]
@@ -128,35 +305,122 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "Item allen auf d(er) strall in der pawknecht kamer.",
-      "I pet.",
-      "I strosack.",
-      "II kiss.",
-      "II rauche deck.",
-      "II lailach.",
-      "I petstat pos.",
-      "Item in der ander knecht kamer.",
-      "I pet.",
-      "I polster.",
-      "I strosack.",
-      "I p(er) lailach.",
-      "II rauch decken.",
-      "I pl[.]se petstat.",
-      "Item aber in der drit(en) kamer.",
-      "II petstat.",
-      "I pet.",
-      "I polster.",
-      "I per leilach.",
-      "I strosack.",
-      "II deck rauch.",
-      "Item im speisgaden.",
-      "VIIII pachen halb.",
-      "LVI fleisch LVI [- - -].",
-      "Item VIII groß speiskes.",
-      "II ziger tes(en).",
-      "I vasel vol unzerlassen unslit.",
-      "I [- - -]."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item allen auf d(er) strall in der pawknecht kamer."
+      },
+      {
+       "id": "r3l1",
+       "text": "I pet."
+      },
+      {
+       "id": "r3l2",
+       "text": "I strosack."
+      },
+      {
+       "id": "r3l3",
+       "text": "II kiss."
+      },
+      {
+       "id": "r3l4",
+       "text": "II rauche deck."
+      },
+      {
+       "id": "r3l5",
+       "text": "II lailach."
+      },
+      {
+       "id": "r3l6",
+       "text": "I petstat pos."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item in der ander knecht kamer."
+      },
+      {
+       "id": "r5l1",
+       "text": "I pet."
+      },
+      {
+       "id": "r5l2",
+       "text": "I polster."
+      },
+      {
+       "id": "r5l3",
+       "text": "I strosack."
+      },
+      {
+       "id": "r5l4",
+       "text": "I p(er) lailach."
+      },
+      {
+       "id": "r5l5",
+       "text": "II rauch decken."
+      },
+      {
+       "id": "r5l6",
+       "text": "I pl[.]se petstat."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item aber in der drit(en) kamer."
+      },
+      {
+       "id": "r7l1",
+       "text": "II petstat."
+      },
+      {
+       "id": "r7l2",
+       "text": "I pet."
+      },
+      {
+       "id": "r7l3",
+       "text": "I polster."
+      },
+      {
+       "id": "r7l4",
+       "text": "I per leilach."
+      },
+      {
+       "id": "r7l5",
+       "text": "I strosack."
+      },
+      {
+       "id": "r7l6",
+       "text": "II deck rauch."
+      },
+      {
+       "id": "r8l1",
+       "text": "Item im speisgaden."
+      },
+      {
+       "id": "r9l1",
+       "text": "VIIII pachen halb."
+      },
+      {
+       "id": "r9l2",
+       "text": "LVI fleisch LVI [- - -]."
+      },
+      {
+       "id": "r9l3",
+       "text": "Item VIII groß speiskes."
+      },
+      {
+       "id": "r9l4",
+       "text": "II ziger tes(en)."
+      },
+      {
+       "id": "r9l5",
+       "text": "I vasel vol unzerlassen unslit."
+      },
+      {
+       "id": "r9l6",
+       "text": "I [- - -]."
+      }
      ]
     }
    ]
@@ -181,40 +445,142 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]",
-      "Vor(e)m speisgaden.",
-      "I schlifstein.",
-      "II kraut hackhpenck.",
-      "In der kuchen.",
-      "VII pfannen gros und clein.",
-      "V kessel gris und clein.",
-      "V erein hafen.",
-      "I hal.",
-      "II prantrait.",
-      "II drifues.",
-      "II pratspiss.",
-      "II heinzen.",
-      "IIII eysenn kellen.",
-      "IIII eysin hefen decken.",
-      "XX milch schusslen.",
-      "XII hulzin schusslen V new XVI teller.",
-      "Ain gatz(en).",
-      "IIII krautmesser.",
-      "II kuchenmesser.",
-      "XXIX zin schissl gros clein.",
-      "X zinnen teller.",
-      "VI messen leuchter.",
-      "Vi kendlen klein gros.",
-      "II pippen.",
-      "[- - -]",
-      "Item II hantuech.",
-      "II tisch tuecher.",
-      "I umbleg.",
-      "Fŭr m(eins) h(errn) g(naden).",
-      "IIIII tischtuecher.",
-      "VI handtuecher.",
-      "I umbleg.",
-      "Fur das gesind."
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vor(e)m speisgaden."
+      },
+      {
+       "id": "r3l1",
+       "text": "I schlifstein."
+      },
+      {
+       "id": "r3l2",
+       "text": "II kraut hackhpenck."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der kuchen."
+      },
+      {
+       "id": "r5l1",
+       "text": "VII pfannen gros und clein."
+      },
+      {
+       "id": "r5l2",
+       "text": "V kessel gris und clein."
+      },
+      {
+       "id": "r5l3",
+       "text": "V erein hafen."
+      },
+      {
+       "id": "r5l4",
+       "text": "I hal."
+      },
+      {
+       "id": "r5l5",
+       "text": "II prantrait."
+      },
+      {
+       "id": "r5l6",
+       "text": "II drifues."
+      },
+      {
+       "id": "r5l7",
+       "text": "II pratspiss."
+      },
+      {
+       "id": "r5l8",
+       "text": "II heinzen."
+      },
+      {
+       "id": "r5l9",
+       "text": "IIII eysenn kellen."
+      },
+      {
+       "id": "r5l10",
+       "text": "IIII eysin hefen decken."
+      },
+      {
+       "id": "r5l11",
+       "text": "XX milch schusslen."
+      },
+      {
+       "id": "r5l12",
+       "text": "XII hulzin schusslen V new XVI teller."
+      },
+      {
+       "id": "r5l13",
+       "text": "Ain gatz(en)."
+      },
+      {
+       "id": "r5l14",
+       "text": "IIII krautmesser."
+      },
+      {
+       "id": "r5l15",
+       "text": "II kuchenmesser."
+      },
+      {
+       "id": "r5l16",
+       "text": "XXIX zin schissl gros clein."
+      },
+      {
+       "id": "r5l17",
+       "text": "X zinnen teller."
+      },
+      {
+       "id": "r5l18",
+       "text": "VI messen leuchter."
+      },
+      {
+       "id": "r5l19",
+       "text": "Vi kendlen klein gros."
+      },
+      {
+       "id": "r5l20",
+       "text": "II pippen."
+      },
+      {
+       "id": "r6l1",
+       "text": "[- - -]"
+      },
+      {
+       "id": "r6l2",
+       "text": "Item II hantuech."
+      },
+      {
+       "id": "r6l3",
+       "text": "II tisch tuecher."
+      },
+      {
+       "id": "r6l4",
+       "text": "I umbleg."
+      },
+      {
+       "id": "r6l5",
+       "text": "Fŭr m(eins) h(errn) g(naden)."
+      },
+      {
+       "id": "r7l1",
+       "text": "IIIII tischtuecher."
+      },
+      {
+       "id": "r7l2",
+       "text": "VI handtuecher."
+      },
+      {
+       "id": "r7l3",
+       "text": "I umbleg."
+      },
+      {
+       "id": "r7l4",
+       "text": "Fur das gesind."
+      }
      ]
     }
    ]
@@ -239,33 +605,114 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "X kŭe.",
-      "[- - -].",
-      "II wagenross mit irem gschir.",
-      "III wagen minder I rads, ist der I ganz new̆.",
-      "I holzsliten.",
-      "I pflueg.",
-      "Item IIII per leilach fŭr das hausfolck.",
-      "Item ein messiger ring auf dem tisch.",
-      "Item ein messens giespeck.",
-      "Item II tengel gschir.",
-      "III new segensen.",
-      "Etlich alt segensen.",
-      "VI rechen pos und gut.",
-      "V gabeln hew̆.",
-      "III new mistgabeln.",
-      "III [.]alt.",
-      "I mistkral.",
-      "III holzhacken.",
-      "IIII [- - -].",
-      "IIII comat.",
-      "It(em) V capaun.",
-      "[- - -].",
-      "XIX hennen.",
-      "I han.",
-      "Item holz hew̆ und strew̆ sol ansteen",
-      "[- - -]."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "X kŭe."
+      },
+      {
+       "id": "r2l2",
+       "text": "[- - -]."
+      },
+      {
+       "id": "r2l3",
+       "text": "II wagenross mit irem gschir."
+      },
+      {
+       "id": "r2l4",
+       "text": "III wagen minder I rads, ist der I ganz new̆."
+      },
+      {
+       "id": "r2l5",
+       "text": "I holzsliten."
+      },
+      {
+       "id": "r2l6",
+       "text": "I pflueg."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item IIII per leilach fŭr das hausfolck."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item ein messiger ring auf dem tisch."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item ein messens giespeck."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item II tengel gschir."
+      },
+      {
+       "id": "r2l11",
+       "text": "III new segensen."
+      },
+      {
+       "id": "r2l12",
+       "text": "Etlich alt segensen."
+      },
+      {
+       "id": "r2l13",
+       "text": "VI rechen pos und gut."
+      },
+      {
+       "id": "r2l14",
+       "text": "V gabeln hew̆."
+      },
+      {
+       "id": "r2l15",
+       "text": "III new mistgabeln."
+      },
+      {
+       "id": "r2l16",
+       "text": "III [.]alt."
+      },
+      {
+       "id": "r2l17",
+       "text": "I mistkral."
+      },
+      {
+       "id": "r2l18",
+       "text": "III holzhacken."
+      },
+      {
+       "id": "r2l19",
+       "text": "IIII [- - -]."
+      },
+      {
+       "id": "r2l20",
+       "text": "IIII comat."
+      },
+      {
+       "id": "r2l21",
+       "text": "It(em) V capaun."
+      },
+      {
+       "id": "r2l22",
+       "text": "[- - -]."
+      },
+      {
+       "id": "r2l23",
+       "text": "XIX hennen."
+      },
+      {
+       "id": "r2l24",
+       "text": "I han."
+      },
+      {
+       "id": "r2l25",
+       "text": "Item holz hew̆ und strew̆ sol ansteen"
+      },
+      {
+       "id": "r2l26",
+       "text": "[- - -]."
+      }
      ]
     }
    ]
@@ -290,7 +737,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      }
      ]
     }
    ]
@@ -315,7 +765,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      }
      ]
     }
    ]
@@ -340,7 +793,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]
@@ -365,7 +821,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      }
      ]
     }
    ]
@@ -390,7 +849,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     }
    ]
@@ -415,7 +877,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]

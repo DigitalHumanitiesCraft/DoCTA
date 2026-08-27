@@ -21,44 +21,158 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerckt die inventuari czettl des",
-      "hausplonder und massaria auff",
-      "Sigmunds Lust meinem gnãdigisten",
-      "herrenn czugehorendt so Sigmunden",
-      "Mãxelraỹner, pfleger ze Frũnttsperg",
-      "und Sigmunds Lust von Linhardt",
-      "Langseỹss geanttwurtt ist und hie",
-      "innen auff geschribenn in gegen¬",
-      "wũrtigkaitt und bey wesen der",
-      "erberen Ludwig Haugen und Clauss",
-      "Vingkh cze Swatz. Geschechen am",
-      "ertag nach Exalta(tio) Cruc(is) anno etc.",
-      "octuagesimo octavo.",
-      "Item in der kamer bey̑ der obrenn stuben.",
-      "VI par hărbin leỹlacher.",
-      "II tysch tuecher.",
-      "III umblegen oder hantt zwechel.",
-      "XI genãtt decklachenn.",
-      "I raỹsschwertt, I prattspỹss.",
-      "I stroe huett.",
-      "VIII bett, VIII põlster, IIII kw̃ss.",
-      "V stroeseckh.",
-      "I messynn kandell, I messynn peckh.",
-      "V messing law̃chter gross und klain.",
-      "III eysnynn uberzintt leũchter.",
-      "I czỹneỹn gỹesfass.",
-      "III saltz fãssell.",
-      "VIII pfannen klainer und grõsser,",
-      "guett und põser.",
-      "XV erdein hȃffenn klayn und gross.",
-      "VI haffenplattenn, I rybeysenn.",
-      "II hackh messer, II brattspyss.",
-      "I roscht, III fewrhuntt, I dryfuess.",
-      "II dryfuess czum bratten.",
-      "II mass kandel, I zwỹmassig kandel.",
-      "I hang(e)nd kandell, I drincken kăndell.",
-      "VIIII zinschũssell, I plan, IIII salsen schũssel."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerckt die inventuari czettl des"
+      },
+      {
+       "id": "r2l2",
+       "text": "hausplonder und massaria auff"
+      },
+      {
+       "id": "r2l3",
+       "text": "Sigmunds Lust meinem gnãdigisten"
+      },
+      {
+       "id": "r2l4",
+       "text": "herrenn czugehorendt so Sigmunden"
+      },
+      {
+       "id": "r2l5",
+       "text": "Mãxelraỹner, pfleger ze Frũnttsperg"
+      },
+      {
+       "id": "r2l6",
+       "text": "und Sigmunds Lust von Linhardt"
+      },
+      {
+       "id": "r2l7",
+       "text": "Langseỹss geanttwurtt ist und hie"
+      },
+      {
+       "id": "r2l8",
+       "text": "innen auff geschribenn in gegen¬"
+      },
+      {
+       "id": "r2l9",
+       "text": "wũrtigkaitt und bey wesen der"
+      },
+      {
+       "id": "r2l10",
+       "text": "erberen Ludwig Haugen und Clauss"
+      },
+      {
+       "id": "r2l11",
+       "text": "Vingkh cze Swatz. Geschechen am"
+      },
+      {
+       "id": "r2l12",
+       "text": "ertag nach Exalta(tio) Cruc(is) anno etc."
+      },
+      {
+       "id": "r2l13",
+       "text": "octuagesimo octavo."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item in der kamer bey̑ der obrenn stuben."
+      },
+      {
+       "id": "r4l1",
+       "text": "VI par hărbin leỹlacher."
+      },
+      {
+       "id": "r4l2",
+       "text": "II tysch tuecher."
+      },
+      {
+       "id": "r4l3",
+       "text": "III umblegen oder hantt zwechel."
+      },
+      {
+       "id": "r4l4",
+       "text": "XI genãtt decklachenn."
+      },
+      {
+       "id": "r4l5",
+       "text": "I raỹsschwertt, I prattspỹss."
+      },
+      {
+       "id": "r4l6",
+       "text": "I stroe huett."
+      },
+      {
+       "id": "r4l7",
+       "text": "VIII bett, VIII põlster, IIII kw̃ss."
+      },
+      {
+       "id": "r4l8",
+       "text": "V stroeseckh."
+      },
+      {
+       "id": "r4l9",
+       "text": "I messynn kandell, I messynn peckh."
+      },
+      {
+       "id": "r4l10",
+       "text": "V messing law̃chter gross und klain."
+      },
+      {
+       "id": "r4l11",
+       "text": "III eysnynn uberzintt leũchter."
+      },
+      {
+       "id": "r4l12",
+       "text": "I czỹneỹn gỹesfass."
+      },
+      {
+       "id": "r4l13",
+       "text": "III saltz fãssell."
+      },
+      {
+       "id": "r4l14",
+       "text": "VIII pfannen klainer und grõsser,"
+      },
+      {
+       "id": "r4l15",
+       "text": "guett und põser."
+      },
+      {
+       "id": "r4l16",
+       "text": "XV erdein hȃffenn klayn und gross."
+      },
+      {
+       "id": "r4l17",
+       "text": "VI haffenplattenn, I rybeysenn."
+      },
+      {
+       "id": "r4l18",
+       "text": "II hackh messer, II brattspyss."
+      },
+      {
+       "id": "r4l19",
+       "text": "I roscht, III fewrhuntt, I dryfuess."
+      },
+      {
+       "id": "r4l20",
+       "text": "II dryfuess czum bratten."
+      },
+      {
+       "id": "r4l21",
+       "text": "II mass kandel, I zwỹmassig kandel."
+      },
+      {
+       "id": "r4l22",
+       "text": "I hang(e)nd kandell, I drincken kăndell."
+      },
+      {
+       "id": "r4l23",
+       "text": "VIIII zinschũssell, I plan, IIII salsen schũssel."
+      }
      ]
     }
    ]
@@ -83,41 +197,146 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "Item II wein zefftenn, I kwbell.",
-      "VI wasser schãffer, I spuelschaff.",
-      "V kessell klainer und grõsser.",
-      "I mel trõgell, I melkũbl, I prottschaff.",
-      "VIII messing haggen pũxsenn.",
-      "IIII eysnyn haggen pũxsenn.",
-      "IIII messing hantt pũxsenn.",
-      "I vãssell mitt pulver.",
-      "I grosser hŭltzĭner weinkopff.",
-      "III schreib tysch, IIII schlecht týsch.",
-      "I credentz tysch.",
-      "I tyschell mitt ainem spilbrett.",
-      "III gross spanpett, II radelbett.",
-      "I fuestruchen, I czwifacher gwanttkast.",
-      "II truchen, I pett stuell.",
-      "V vorpenckh, III wein lãgell.",
-      "I essich vãssell.",
-      "Durchleuchtiger hochgeborner",
-      "furst gnådigister herr, ich",
-      "hab mich befragt und erkundt",
-      "und kãnn kain andre inventuari",
-      "zettell erfragen dann die mir",
-      "der Langseysen furbracht hatt",
-      "wie im die massaria und",
-      "ander von Ludwig Haugen",
-      "ein geanttwurtt und auff",
-      "geschriben sei, dabei Ludwig",
-      "Hawg ỹtzuntt auch gewesen",
-      "ist, der sagt im sei kain",
-      "gegen inventuari czettell ge¬",
-      "anttwurtt, aber er wiß kain",
-      "mangell der da sei wann",
-      "das es dem Langseysen also",
-      "geanttwurtt seȋ."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item II wein zefftenn, I kwbell."
+      },
+      {
+       "id": "r2l2",
+       "text": "VI wasser schãffer, I spuelschaff."
+      },
+      {
+       "id": "r2l3",
+       "text": "V kessell klainer und grõsser."
+      },
+      {
+       "id": "r2l4",
+       "text": "I mel trõgell, I melkũbl, I prottschaff."
+      },
+      {
+       "id": "r2l5",
+       "text": "VIII messing haggen pũxsenn."
+      },
+      {
+       "id": "r2l6",
+       "text": "IIII eysnyn haggen pũxsenn."
+      },
+      {
+       "id": "r2l7",
+       "text": "IIII messing hantt pũxsenn."
+      },
+      {
+       "id": "r2l8",
+       "text": "I vãssell mitt pulver."
+      },
+      {
+       "id": "r2l9",
+       "text": "I grosser hŭltzĭner weinkopff."
+      },
+      {
+       "id": "r2l10",
+       "text": "III schreib tysch, IIII schlecht týsch."
+      },
+      {
+       "id": "r2l11",
+       "text": "I credentz tysch."
+      },
+      {
+       "id": "r2l12",
+       "text": "I tyschell mitt ainem spilbrett."
+      },
+      {
+       "id": "r2l13",
+       "text": "III gross spanpett, II radelbett."
+      },
+      {
+       "id": "r2l14",
+       "text": "I fuestruchen, I czwifacher gwanttkast."
+      },
+      {
+       "id": "r2l15",
+       "text": "II truchen, I pett stuell."
+      },
+      {
+       "id": "r2l16",
+       "text": "V vorpenckh, III wein lãgell."
+      },
+      {
+       "id": "r2l17",
+       "text": "I essich vãssell."
+      },
+      {
+       "id": "r3l1",
+       "text": "Durchleuchtiger hochgeborner"
+      },
+      {
+       "id": "r3l2",
+       "text": "furst gnådigister herr, ich"
+      },
+      {
+       "id": "r3l3",
+       "text": "hab mich befragt und erkundt"
+      },
+      {
+       "id": "r3l4",
+       "text": "und kãnn kain andre inventuari"
+      },
+      {
+       "id": "r3l5",
+       "text": "zettell erfragen dann die mir"
+      },
+      {
+       "id": "r3l6",
+       "text": "der Langseysen furbracht hatt"
+      },
+      {
+       "id": "r3l7",
+       "text": "wie im die massaria und"
+      },
+      {
+       "id": "r3l8",
+       "text": "ander von Ludwig Haugen"
+      },
+      {
+       "id": "r3l9",
+       "text": "ein geanttwurtt und auff"
+      },
+      {
+       "id": "r3l10",
+       "text": "geschriben sei, dabei Ludwig"
+      },
+      {
+       "id": "r3l11",
+       "text": "Hawg ỹtzuntt auch gewesen"
+      },
+      {
+       "id": "r3l12",
+       "text": "ist, der sagt im sei kain"
+      },
+      {
+       "id": "r3l13",
+       "text": "gegen inventuari czettell ge¬"
+      },
+      {
+       "id": "r3l14",
+       "text": "anttwurtt, aber er wiß kain"
+      },
+      {
+       "id": "r3l15",
+       "text": "mangell der da sei wann"
+      },
+      {
+       "id": "r3l16",
+       "text": "das es dem Langseysen also"
+      },
+      {
+       "id": "r3l17",
+       "text": "geanttwurtt seȋ."
+      }
      ]
     }
    ]
@@ -142,7 +361,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -167,9 +389,18 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Inventari Sigmundslust",
-      "Sig(mund) Mexlrainers."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Inventari Sigmundslust"
+      },
+      {
+       "id": "r2l2",
+       "text": "Sig(mund) Mexlrainers."
+      }
      ]
     }
    ]

@@ -21,34 +21,118 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerck die măsserey̆ so Gothart",
-      "Hartlieb in dem sloss Fragenstain",
-      "gelassen das sein und meinem g(nedigen)",
-      "herren zŭ gelt angeslagen und durch",
-      "die hienachgeschriben geschaczt und",
-      "beteurt ist.",
-      "Im gwelb.",
-      "Zwen beslagen kasten bey̆ der",
-      "tŭr, seind geschĕczt I.",
-      "Ain petstat mit ainer sidel¬",
-      "truchen, ist alles geschaczt XII g(u)ld(en).",
-      "Ain klaine petstat, geschaczt",
-      "umb XXX kr.",
-      "In der kamer vor",
-      "dem gwelb an der",
-      "stuben.",
-      "Item drey̆ hŏch beslagen kasten,",
-      "sind geschăczt umb XV g(u)ld(en).",
-      "Item drew spanpet, sind geschaczt III g(u)ld(en).",
-      "In der grossen",
-      "stuben.",
-      "Item ain spanpet und ain",
-      "giesvass mitsambt aine(m)",
-      "kastlein bei der tŭr, ist ge¬",
-      "schăczt fŭr XII g(u)ld(en).",
-      "Item zwen tisch und ain",
-      "sideltruhen, IIII g(u)ld(en)."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerck die măsserey̆ so Gothart"
+      },
+      {
+       "id": "r2l2",
+       "text": "Hartlieb in dem sloss Fragenstain"
+      },
+      {
+       "id": "r2l3",
+       "text": "gelassen das sein und meinem g(nedigen)"
+      },
+      {
+       "id": "r2l4",
+       "text": "herren zŭ gelt angeslagen und durch"
+      },
+      {
+       "id": "r2l5",
+       "text": "die hienachgeschriben geschaczt und"
+      },
+      {
+       "id": "r2l6",
+       "text": "beteurt ist."
+      },
+      {
+       "id": "r3l1",
+       "text": "Im gwelb."
+      },
+      {
+       "id": "r4l1",
+       "text": "Zwen beslagen kasten bey̆ der"
+      },
+      {
+       "id": "r4l2",
+       "text": "tŭr, seind geschĕczt I."
+      },
+      {
+       "id": "r4l3",
+       "text": "Ain petstat mit ainer sidel¬"
+      },
+      {
+       "id": "r4l4",
+       "text": "truchen, ist alles geschaczt XII g(u)ld(en)."
+      },
+      {
+       "id": "r4l5",
+       "text": "Ain klaine petstat, geschaczt"
+      },
+      {
+       "id": "r4l6",
+       "text": "umb XXX kr."
+      },
+      {
+       "id": "r5l1",
+       "text": "In der kamer vor"
+      },
+      {
+       "id": "r5l2",
+       "text": "dem gwelb an der"
+      },
+      {
+       "id": "r5l3",
+       "text": "stuben."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item drey̆ hŏch beslagen kasten,"
+      },
+      {
+       "id": "r6l2",
+       "text": "sind geschăczt umb XV g(u)ld(en)."
+      },
+      {
+       "id": "r6l3",
+       "text": "Item drew spanpet, sind geschaczt III g(u)ld(en)."
+      },
+      {
+       "id": "r7l1",
+       "text": "In der grossen"
+      },
+      {
+       "id": "r7l2",
+       "text": "stuben."
+      },
+      {
+       "id": "r8l1",
+       "text": "Item ain spanpet und ain"
+      },
+      {
+       "id": "r8l2",
+       "text": "giesvass mitsambt aine(m)"
+      },
+      {
+       "id": "r8l3",
+       "text": "kastlein bei der tŭr, ist ge¬"
+      },
+      {
+       "id": "r8l4",
+       "text": "schăczt fŭr XII g(u)ld(en)."
+      },
+      {
+       "id": "r8l5",
+       "text": "Item zwen tisch und ain"
+      },
+      {
+       "id": "r8l6",
+       "text": "sideltruhen, IIII g(u)ld(en)."
+      }
      ]
     }
    ]
@@ -73,29 +157,98 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "In der camer",
-      "[.]bei dem prunen.",
-      "Item drei spanpet und",
-      "ain kasten, geschăczt IIII g(u)ld(en).",
-      "In der silber",
-      "camer daneben.",
-      "Item ain slechter tisch und ain",
-      "castel zun giesvass, I g(u)ld(en).",
-      "Im stublein ob",
-      "dem prunen.",
-      "Item etlich stelen, I g(u)ld(en).",
-      "Auf dem sal.",
-      "Ain harnasch kasten, ist geschaczt",
-      "umb X g(u)ld(en).",
-      "In der grossen",
-      "oberen stuben.",
-      "Zwen schŏn tisch mit gŭeten",
-      "hulcz und verdeckt, sind ge¬",
-      "schăczt fŭr XII g(u)ld(en).",
-      "In meins g(nedigen) h(e)rn",
-      "camer neben der stuben.",
-      "Item ain verdeckts spanpet, III g(u)ld(en)."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der camer"
+      },
+      {
+       "id": "r2l2",
+       "text": "[.]bei dem prunen."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item drei spanpet und"
+      },
+      {
+       "id": "r3l2",
+       "text": "ain kasten, geschăczt IIII g(u)ld(en)."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der silber"
+      },
+      {
+       "id": "r4l2",
+       "text": "camer daneben."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item ain slechter tisch und ain"
+      },
+      {
+       "id": "r5l2",
+       "text": "castel zun giesvass, I g(u)ld(en)."
+      },
+      {
+       "id": "r6l1",
+       "text": "Im stublein ob"
+      },
+      {
+       "id": "r6l2",
+       "text": "dem prunen."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item etlich stelen, I g(u)ld(en)."
+      },
+      {
+       "id": "r8l1",
+       "text": "Auf dem sal."
+      },
+      {
+       "id": "r9l1",
+       "text": "Ain harnasch kasten, ist geschaczt"
+      },
+      {
+       "id": "r9l2",
+       "text": "umb X g(u)ld(en)."
+      },
+      {
+       "id": "r10l1",
+       "text": "In der grossen"
+      },
+      {
+       "id": "r10l2",
+       "text": "oberen stuben."
+      },
+      {
+       "id": "r11l1",
+       "text": "Zwen schŏn tisch mit gŭeten"
+      },
+      {
+       "id": "r11l2",
+       "text": "hulcz und verdeckt, sind ge¬"
+      },
+      {
+       "id": "r11l3",
+       "text": "schăczt fŭr XII g(u)ld(en)."
+      },
+      {
+       "id": "r12l1",
+       "text": "In meins g(nedigen) h(e)rn"
+      },
+      {
+       "id": "r12l2",
+       "text": "camer neben der stuben."
+      },
+      {
+       "id": "r13l1",
+       "text": "Item ain verdeckts spanpet, III g(u)ld(en)."
+      }
      ]
     }
    ]
@@ -120,25 +273,82 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]",
-      "In der camrer kammer.",
-      "Ain petstat, ist geschăctzt I1/2 g(u)ld(en).",
-      "Item ain sideltruhen, II lb.",
-      "In der kuchen.",
-      "Ain speiskasten, geschăczt fŭr I g(u)ld(en).",
-      "In den ărgkern.",
-      "Zway̆ spanpet, geschăczt fŭ I1/2 g(u)ld(en).",
-      "Unden im sloss",
-      "in ainer kamer.",
-      "Drey potich mit kraut, ist",
-      "geschăczt fŭr XII g(u)ld(en).",
-      "Im speisgaden.",
-      "Vier zenten smalcz, sind geschaczt",
-      "ain zenten umb IIII g(u)ld(en), fa(ci)t XVI g(u)ld(en).",
-      "Item für etlich ŏpfel, geschaczt IIII g(u)ld(en).",
-      "Im kellern.",
-      "Drey vaß mit wein, sind geschăczt LXXXXI g(u)ld(en).",
-      "Item umb fueter XXIIII g(u)ld(en)."
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "In der camrer kammer."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain petstat, ist geschăctzt I1/2 g(u)ld(en)."
+      },
+      {
+       "id": "r3l2",
+       "text": "Item ain sideltruhen, II lb."
+      },
+      {
+       "id": "r4l1",
+       "text": "In der kuchen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Ain speiskasten, geschăczt fŭr I g(u)ld(en)."
+      },
+      {
+       "id": "r6l1",
+       "text": "In den ărgkern."
+      },
+      {
+       "id": "r7l1",
+       "text": "Zway̆ spanpet, geschăczt fŭ I1/2 g(u)ld(en)."
+      },
+      {
+       "id": "r8l1",
+       "text": "Unden im sloss"
+      },
+      {
+       "id": "r8l2",
+       "text": "in ainer kamer."
+      },
+      {
+       "id": "r9l1",
+       "text": "Drey potich mit kraut, ist"
+      },
+      {
+       "id": "r9l2",
+       "text": "geschăczt fŭr XII g(u)ld(en)."
+      },
+      {
+       "id": "r10l1",
+       "text": "Im speisgaden."
+      },
+      {
+       "id": "r11l1",
+       "text": "Vier zenten smalcz, sind geschaczt"
+      },
+      {
+       "id": "r11l2",
+       "text": "ain zenten umb IIII g(u)ld(en), fa(ci)t XVI g(u)ld(en)."
+      },
+      {
+       "id": "r11l3",
+       "text": "Item für etlich ŏpfel, geschaczt IIII g(u)ld(en)."
+      },
+      {
+       "id": "r12l1",
+       "text": "Im kellern."
+      },
+      {
+       "id": "r13l1",
+       "text": "Drey vaß mit wein, sind geschăczt LXXXXI g(u)ld(en)."
+      },
+      {
+       "id": "r13l2",
+       "text": "Item umb fueter XXIIII g(u)ld(en)."
+      }
      ]
     }
    ]
@@ -163,30 +373,102 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]",
-      "Im schreibstubel.",
-      "Ain schreibtisch, ist geschăczt I1/2 g(u)ld(en).",
-      "Sum(m)a[..] IICXXX R(einische) g(u)ld(en).",
-      "Item zehen haubt vich dafŭr",
-      "angeslagen XXX g(u)ld(en).",
-      "Item umb hew̆, grumat und",
-      "stro angeslagen X g(u)ld(en).",
-      "Item XXX hennen dafŭr II g(u)ld(en).",
-      "Item ein eingemaurter kessel bei",
-      "dem paw̆stadel zum vich an",
-      "geslagen fŭr IIII g(u)ld(en).",
-      "Item zerung so mein g(nediger) her auf",
-      "Fragenst(ein) get(an) hat XX lb. VIII kr.",
-      "Item etlich swein(en) fleisch, haber",
-      "mel und andr mel, ketzen",
-      "und etlich vasser und prenten",
-      "sind geschaczt fůr VI m(a)r(k).",
-      "Sum(m)a su(m)ar(um) schaczung der messerei",
-      "fa(ci)t IICLXXXXII g(u)ld(en).",
-      "Sum(m)a su(mm)ar(um) was m(ein) g(nediger) h(err) dem Gothart",
-      "mit schaczung der măsserey̆ und was",
-      "im auf den paw gangen ist, fa(ci)t",
-      "IIIIC und XII g(u)ld(en)."
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Im schreibstubel."
+      },
+      {
+       "id": "r3l1",
+       "text": "Ain schreibtisch, ist geschăczt I1/2 g(u)ld(en)."
+      },
+      {
+       "id": "r3l2",
+       "text": "Sum(m)a[..] IICXXX R(einische) g(u)ld(en)."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item zehen haubt vich dafŭr"
+      },
+      {
+       "id": "r3l4",
+       "text": "angeslagen XXX g(u)ld(en)."
+      },
+      {
+       "id": "r3l5",
+       "text": "Item umb hew̆, grumat und"
+      },
+      {
+       "id": "r3l6",
+       "text": "stro angeslagen X g(u)ld(en)."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item XXX hennen dafŭr II g(u)ld(en)."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item ein eingemaurter kessel bei"
+      },
+      {
+       "id": "r3l9",
+       "text": "dem paw̆stadel zum vich an"
+      },
+      {
+       "id": "r3l10",
+       "text": "geslagen fŭr IIII g(u)ld(en)."
+      },
+      {
+       "id": "r3l11",
+       "text": "Item zerung so mein g(nediger) her auf"
+      },
+      {
+       "id": "r3l12",
+       "text": "Fragenst(ein) get(an) hat XX lb. VIII kr."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item etlich swein(en) fleisch, haber"
+      },
+      {
+       "id": "r3l14",
+       "text": "mel und andr mel, ketzen"
+      },
+      {
+       "id": "r3l15",
+       "text": "und etlich vasser und prenten"
+      },
+      {
+       "id": "r3l16",
+       "text": "sind geschaczt fůr VI m(a)r(k)."
+      },
+      {
+       "id": "r3l17",
+       "text": "Sum(m)a su(m)ar(um) schaczung der messerei"
+      },
+      {
+       "id": "r3l18",
+       "text": "fa(ci)t IICLXXXXII g(u)ld(en)."
+      },
+      {
+       "id": "r3l19",
+       "text": "Sum(m)a su(mm)ar(um) was m(ein) g(nediger) h(err) dem Gothart"
+      },
+      {
+       "id": "r3l20",
+       "text": "mit schaczung der măsserey̆ und was"
+      },
+      {
+       "id": "r3l21",
+       "text": "im auf den paw gangen ist, fa(ci)t"
+      },
+      {
+       "id": "r3l22",
+       "text": "IIIIC und XII g(u)ld(en)."
+      }
      ]
     }
    ]
@@ -211,19 +493,58 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3r]",
-      "Item im stublein ob d(em) prunnen etlihe",
-      "sloß gehoren zŭ d(em) Frag(enstein).",
-      "Item in der cammer ob d(em) prunnen",
-      "zwai grosse und vier",
-      "klaine pet mit aller zughorung,",
-      "gehoren zŭ(m) sloss, hat er durch",
-      "den hauskerer empfa(n)gen gehabt.",
-      "Es ist alles nach laut der alten",
-      "ynventari zedel funden. Dan(n)",
-      "ain stainpuchsen, die ist zŭ",
-      "Insprugg bei d(em) Hertenfeldr.",
-      "Item ain virtel puchs bei d(em) stall."
+      {
+       "id": "r1l1",
+       "text": "[fol.3r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item im stublein ob d(em) prunnen etlihe"
+      },
+      {
+       "id": "r2l2",
+       "text": "sloß gehoren zŭ d(em) Frag(enstein)."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item in der cammer ob d(em) prunnen"
+      },
+      {
+       "id": "r2l4",
+       "text": "zwai grosse und vier"
+      },
+      {
+       "id": "r2l5",
+       "text": "klaine pet mit aller zughorung,"
+      },
+      {
+       "id": "r2l6",
+       "text": "gehoren zŭ(m) sloss, hat er durch"
+      },
+      {
+       "id": "r2l7",
+       "text": "den hauskerer empfa(n)gen gehabt."
+      },
+      {
+       "id": "r2l8",
+       "text": "Es ist alles nach laut der alten"
+      },
+      {
+       "id": "r2l9",
+       "text": "ynventari zedel funden. Dan(n)"
+      },
+      {
+       "id": "r2l10",
+       "text": "ain stainpuchsen, die ist zŭ"
+      },
+      {
+       "id": "r2l11",
+       "text": "Insprugg bei d(em) Hertenfeldr."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item ain virtel puchs bei d(em) stall."
+      }
      ]
     }
    ]
@@ -248,7 +569,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.3v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.3v]"
+      }
      ]
     }
    ]
@@ -273,7 +597,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4r]"
+      }
      ]
     }
    ]
@@ -298,7 +625,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.4v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.4v]"
+      }
      ]
     }
    ]
@@ -323,12 +653,30 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5r]",
-      "Bei der schaczung sind gewesen Antoni",
-      "vom Roß, Rudolf Haber, hauskerer",
-      "H. Dieperskircher und der tischler",
-      "von Hasegk. Actum an freitag",
-      "vor Judica anno etc. LXXXIIdo."
+      {
+       "id": "r1l1",
+       "text": "[fol.5r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Bei der schaczung sind gewesen Antoni"
+      },
+      {
+       "id": "r2l2",
+       "text": "vom Roß, Rudolf Haber, hauskerer"
+      },
+      {
+       "id": "r2l3",
+       "text": "H. Dieperskircher und der tischler"
+      },
+      {
+       "id": "r2l4",
+       "text": "von Hasegk. Actum an freitag"
+      },
+      {
+       "id": "r2l5",
+       "text": "vor Judica anno etc. LXXXIIdo."
+      }
      ]
     }
    ]
@@ -353,7 +701,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.5v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.5v]"
+      }
      ]
     }
    ]
@@ -378,7 +729,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.6r]"
+      }
      ]
     }
    ]
@@ -403,45 +757,162 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.6v]",
-      "Item ain blaues messgwand mit seiner",
-      "zugehorung.",
-      "Item ain rots sameteins mesgband",
-      "mitß(am)t seiner zughorung.",
-      "Item zben messein leuchter.",
-      "Item zben zynein leuchter.",
-      "Item zbay opfer kăndel.",
-      "Drew alter tuech.",
-      "Ain alter deck.",
-      "Item ain tuechel darauf ain crucifix",
-      "mitß(am)t etlichen heilgigen gmalt.",
-      "Item ain hulczeine tafel daneben.",
-      "Ain weichkessel.",
-      "Item [....] [.] h(er)r XII handtpuchsen.",
-      "XVI haggenpuchsen ungfas(s)t.",
-      "Item zbay lange messer.",
-      "Zwo mordaxen.",
-      "Alles ist nach leut der inventari funden.",
-      "Dan(n) die hăl in der kuchen [.]it.",
-      "Zwo feŭr [.]anntn prantrait.",
-      "Ain wasserhafen kupfrein.",
-      "Ain rost.",
-      "Ain pratspiss.",
-      "Ain drifŭss.",
-      "Ain seich pfandel.",
-      "Zway hackmesser.",
-      "Zwo eysnein kellen.",
-      "Item zbay̆ gemalte himeltŭch.",
-      "Item ain newe petstat mit ain(em) hymel[..]",
-      "ob dem schreibstubel in ainer camer.",
-      "Item im gwelb ain beslagner casten.",
-      "Item drai malen schlosser.",
-      "Item ain blaws [.....] mesgband.",
-      "Item in ain(em) vass wein ist das vass X1/2 span(n)",
-      "lang und IIII1/2 weit sind und steet",
-      "1/2 span(n) wein sind VIII uren wein darinn",
-      "gescha[..] uberslagen.",
-      "Item ain klainer [..]scher."
+      {
+       "id": "r1l1",
+       "text": "[fol.6v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item ain blaues messgwand mit seiner"
+      },
+      {
+       "id": "r2l2",
+       "text": "zugehorung."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item ain rots sameteins mesgband"
+      },
+      {
+       "id": "r2l4",
+       "text": "mitß(am)t seiner zughorung."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item zben messein leuchter."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item zben zynein leuchter."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item zbay opfer kăndel."
+      },
+      {
+       "id": "r2l8",
+       "text": "Drew alter tuech."
+      },
+      {
+       "id": "r2l9",
+       "text": "Ain alter deck."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item ain tuechel darauf ain crucifix"
+      },
+      {
+       "id": "r2l11",
+       "text": "mitß(am)t etlichen heilgigen gmalt."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item ain hulczeine tafel daneben."
+      },
+      {
+       "id": "r2l13",
+       "text": "Ain weichkessel."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item [....] [.] h(er)r XII handtpuchsen."
+      },
+      {
+       "id": "r2l15",
+       "text": "XVI haggenpuchsen ungfas(s)t."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item zbay lange messer."
+      },
+      {
+       "id": "r2l17",
+       "text": "Zwo mordaxen."
+      },
+      {
+       "id": "r2l18",
+       "text": "Alles ist nach leut der inventari funden."
+      },
+      {
+       "id": "r2l19",
+       "text": "Dan(n) die hăl in der kuchen [.]it."
+      },
+      {
+       "id": "r2l20",
+       "text": "Zwo feŭr [.]anntn prantrait."
+      },
+      {
+       "id": "r2l21",
+       "text": "Ain wasserhafen kupfrein."
+      },
+      {
+       "id": "r2l22",
+       "text": "Ain rost."
+      },
+      {
+       "id": "r2l23",
+       "text": "Ain pratspiss."
+      },
+      {
+       "id": "r2l24",
+       "text": "Ain drifŭss."
+      },
+      {
+       "id": "r2l25",
+       "text": "Ain seich pfandel."
+      },
+      {
+       "id": "r2l26",
+       "text": "Zway hackmesser."
+      },
+      {
+       "id": "r2l27",
+       "text": "Zwo eysnein kellen."
+      },
+      {
+       "id": "r2l28",
+       "text": "Item zbay̆ gemalte himeltŭch."
+      },
+      {
+       "id": "r2l29",
+       "text": "Item ain newe petstat mit ain(em) hymel[..]"
+      },
+      {
+       "id": "r2l30",
+       "text": "ob dem schreibstubel in ainer camer."
+      },
+      {
+       "id": "r2l31",
+       "text": "Item im gwelb ain beslagner casten."
+      },
+      {
+       "id": "r2l32",
+       "text": "Item drai malen schlosser."
+      },
+      {
+       "id": "r2l33",
+       "text": "Item ain blaws [.....] mesgband."
+      },
+      {
+       "id": "r2l34",
+       "text": "Item in ain(em) vass wein ist das vass X1/2 span(n)"
+      },
+      {
+       "id": "r2l35",
+       "text": "lang und IIII1/2 weit sind und steet"
+      },
+      {
+       "id": "r2l36",
+       "text": "1/2 span(n) wein sind VIII uren wein darinn"
+      },
+      {
+       "id": "r2l37",
+       "text": "gescha[..] uberslagen."
+      },
+      {
+       "id": "r2l38",
+       "text": "Item ain klainer [..]scher."
+      }
      ]
     }
    ]

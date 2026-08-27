@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -122,14 +122,18 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329462-1"/>
+        <pb n="1" facs="#surface-11329462-1"/>
+        <ab xml:id="ab-11329462-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329462-1-r2">
           <lb facs="#zone-11329462-1-r2l1"/>Vermerckt den gezŭg so juncker
           <lb facs="#zone-11329462-1-r2l2"/>Cristoff Rentlÿ juncker Josseppen
           <lb facs="#zone-11329462-1-r2l3"/>U̇berriner in geantwurt haut zů
           <lb facs="#zone-11329462-1-r2l4"/>Sigmundsegg am mitwochen an
           <lb facs="#zone-11329462-1-r2l5"/>dem Cotember in der Vasten im LXXXV.
+        </ab>
+        <ab xml:id="ab-11329462-1-r3">
           <lb facs="#zone-11329462-1-r3l1"/>Item vier möschÿ hagenbu̇chssen.
           <lb facs="#zone-11329462-1-r3l2"/>Sechs hantbu̇chssen.
           <lb facs="#zone-11329462-1-r3l3"/>Ain halbs väsly mit pulffer.
@@ -166,9 +170,11 @@
           <lb facs="#zone-11329462-1-r3l34"/>Neúw eẏssenplech.
           <lb facs="#zone-11329462-1-r3l35"/>Vier lad eÿssen.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329462-2"/>
+        <pb n="2" facs="#surface-11329462-2"/>
+        <ab xml:id="ab-11329462-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329462-2-region_1753700409451_1641">
           <lb facs="#zone-11329462-2-line_1753700449251_1652"/>Inventȃri von Sigmundseckg
           <lb facs="#zone-11329462-2-line_1753700451617_1657"/>geantwurt durch den Uberener.
         </ab>

@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -265,30 +265,44 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11329059-1"/>
+        <pb n="1" facs="#surface-11329059-1"/>
+        <ab xml:id="ab-11329059-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11329059-1-r2">
           <lb facs="#zone-11329059-1-r2l1"/>Vermerck die măsserey̆ so Gothart
           <lb facs="#zone-11329059-1-r2l2"/>Hartlieb in dem sloss Fragenstain
           <lb facs="#zone-11329059-1-r2l3"/>gelassen das sein und meinem g(nedigen)
           <lb facs="#zone-11329059-1-r2l4"/>herren zŭ gelt angeslagen und durch
           <lb facs="#zone-11329059-1-r2l5"/>die hienachgeschriben geschaczt und
           <lb facs="#zone-11329059-1-r2l6"/>beteurt ist.
+        </ab>
+        <ab xml:id="ab-11329059-1-r3">
           <lb facs="#zone-11329059-1-r3l1"/>Im gwelb.
+        </ab>
+        <ab xml:id="ab-11329059-1-r4">
           <lb facs="#zone-11329059-1-r4l1"/>Zwen beslagen kasten bey̆ der
           <lb facs="#zone-11329059-1-r4l2"/>tŭr, seind geschĕczt I.
           <lb facs="#zone-11329059-1-r4l3"/>Ain petstat mit ainer sidel¬
           <lb facs="#zone-11329059-1-r4l4"/>truchen, ist alles geschaczt XII g(u)ld(en).
           <lb facs="#zone-11329059-1-r4l5"/>Ain klaine petstat, geschaczt
           <lb facs="#zone-11329059-1-r4l6"/>umb XXX kr.
+        </ab>
+        <ab xml:id="ab-11329059-1-r5">
           <lb facs="#zone-11329059-1-r5l1"/>In der kamer vor
           <lb facs="#zone-11329059-1-r5l2"/>dem gwelb an der
           <lb facs="#zone-11329059-1-r5l3"/>stuben.
+        </ab>
+        <ab xml:id="ab-11329059-1-r6">
           <lb facs="#zone-11329059-1-r6l1"/>Item drey̆ hŏch beslagen kasten,
           <lb facs="#zone-11329059-1-r6l2"/>sind geschăczt umb XV g(u)ld(en).
           <lb facs="#zone-11329059-1-r6l3"/>Item drew spanpet, sind geschaczt III g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-1-r7">
           <lb facs="#zone-11329059-1-r7l1"/>In der grossen
           <lb facs="#zone-11329059-1-r7l2"/>stuben.
+        </ab>
+        <ab xml:id="ab-11329059-1-r8">
           <lb facs="#zone-11329059-1-r8l1"/>Item ain spanpet und ain
           <lb facs="#zone-11329059-1-r8l2"/>giesvass mitsambt aine(m)
           <lb facs="#zone-11329059-1-r8l3"/>kastlein bei der tŭr, ist ge¬
@@ -296,58 +310,110 @@
           <lb facs="#zone-11329059-1-r8l5"/>Item zwen tisch und ain
           <lb facs="#zone-11329059-1-r8l6"/>sideltruhen, IIII g(u)ld(en).
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11329059-2"/>
+        <pb n="2" facs="#surface-11329059-2"/>
+        <ab xml:id="ab-11329059-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11329059-2-r2">
           <lb facs="#zone-11329059-2-r2l1"/>In der camer
           <lb facs="#zone-11329059-2-r2l2"/>[.]bei dem prunen.
+        </ab>
+        <ab xml:id="ab-11329059-2-r3">
           <lb facs="#zone-11329059-2-r3l1"/>Item drei spanpet und
           <lb facs="#zone-11329059-2-r3l2"/>ain kasten, geschăczt IIII g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-2-r4">
           <lb facs="#zone-11329059-2-r4l1"/>In der silber
           <lb facs="#zone-11329059-2-r4l2"/>camer daneben.
+        </ab>
+        <ab xml:id="ab-11329059-2-r5">
           <lb facs="#zone-11329059-2-r5l1"/>Item ain slechter tisch und ain
           <lb facs="#zone-11329059-2-r5l2"/>castel zun giesvass, I g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-2-r6">
           <lb facs="#zone-11329059-2-r6l1"/>Im stublein ob
           <lb facs="#zone-11329059-2-r6l2"/>dem prunen.
+        </ab>
+        <ab xml:id="ab-11329059-2-r7">
           <lb facs="#zone-11329059-2-r7l1"/>Item etlich stelen, I g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-2-r8">
           <lb facs="#zone-11329059-2-r8l1"/>Auf dem sal.
+        </ab>
+        <ab xml:id="ab-11329059-2-r9">
           <lb facs="#zone-11329059-2-r9l1"/>Ain harnasch kasten, ist geschaczt
           <lb facs="#zone-11329059-2-r9l2"/>umb X g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-2-r10">
           <lb facs="#zone-11329059-2-r10l1"/>In der grossen
           <lb facs="#zone-11329059-2-r10l2"/>oberen stuben.
+        </ab>
+        <ab xml:id="ab-11329059-2-r11">
           <lb facs="#zone-11329059-2-r11l1"/>Zwen schŏn tisch mit gŭeten
           <lb facs="#zone-11329059-2-r11l2"/>hulcz und verdeckt, sind ge¬
           <lb facs="#zone-11329059-2-r11l3"/>schăczt fŭr XII g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-2-r12">
           <lb facs="#zone-11329059-2-r12l1"/>In meins g(nedigen) h(e)rn
           <lb facs="#zone-11329059-2-r12l2"/>camer neben der stuben.
+        </ab>
+        <ab xml:id="ab-11329059-2-r13">
           <lb facs="#zone-11329059-2-r13l1"/>Item ain verdeckts spanpet, III g(u)ld(en).
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11329059-3"/>
+        <pb n="3" facs="#surface-11329059-3"/>
+        <ab xml:id="ab-11329059-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11329059-3-r2">
           <lb facs="#zone-11329059-3-r2l1"/>In der camrer kammer.
+        </ab>
+        <ab xml:id="ab-11329059-3-r3">
           <lb facs="#zone-11329059-3-r3l1"/>Ain petstat, ist geschăctzt I1/2 g(u)ld(en).
           <lb facs="#zone-11329059-3-r3l2"/>Item ain sideltruhen, II lb.
+        </ab>
+        <ab xml:id="ab-11329059-3-r4">
           <lb facs="#zone-11329059-3-r4l1"/>In der kuchen.
+        </ab>
+        <ab xml:id="ab-11329059-3-r5">
           <lb facs="#zone-11329059-3-r5l1"/>Ain speiskasten, geschăczt fŭr I g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-3-r6">
           <lb facs="#zone-11329059-3-r6l1"/>In den ărgkern.
+        </ab>
+        <ab xml:id="ab-11329059-3-r7">
           <lb facs="#zone-11329059-3-r7l1"/>Zway̆ spanpet, geschăczt fŭ I1/2 g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-3-r8">
           <lb facs="#zone-11329059-3-r8l1"/>Unden im sloss
           <lb facs="#zone-11329059-3-r8l2"/>in ainer kamer.
+        </ab>
+        <ab xml:id="ab-11329059-3-r9">
           <lb facs="#zone-11329059-3-r9l1"/>Drey potich mit kraut, ist
           <lb facs="#zone-11329059-3-r9l2"/>geschăczt fŭr XII g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-3-r10">
           <lb facs="#zone-11329059-3-r10l1"/>Im speisgaden.
+        </ab>
+        <ab xml:id="ab-11329059-3-r11">
           <lb facs="#zone-11329059-3-r11l1"/>Vier zenten smalcz, sind geschaczt
           <lb facs="#zone-11329059-3-r11l2"/>ain zenten umb IIII g(u)ld(en), fa(ci)t XVI g(u)ld(en).
           <lb facs="#zone-11329059-3-r11l3"/>Item für etlich ŏpfel, geschaczt IIII g(u)ld(en).
+        </ab>
+        <ab xml:id="ab-11329059-3-r12">
           <lb facs="#zone-11329059-3-r12l1"/>Im kellern.
+        </ab>
+        <ab xml:id="ab-11329059-3-r13">
           <lb facs="#zone-11329059-3-r13l1"/>Drey vaß mit wein, sind geschăczt LXXXXI g(u)ld(en).
           <lb facs="#zone-11329059-3-r13l2"/>Item umb fueter XXIIII g(u)ld(en).
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11329059-4"/>
+        <pb n="4" facs="#surface-11329059-4"/>
+        <ab xml:id="ab-11329059-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11329059-4-r2">
           <lb facs="#zone-11329059-4-r2l1"/>Im schreibstubel.
+        </ab>
+        <ab xml:id="ab-11329059-4-r3">
           <lb facs="#zone-11329059-4-r3l1"/>Ain schreibtisch, ist geschăczt I1/2 g(u)ld(en).
           <lb facs="#zone-11329059-4-r3l2"/>Sum(m)a[..] IICXXX R(einische) g(u)ld(en).
           <lb facs="#zone-11329059-4-r3l3"/>Item zehen haubt vich dafŭr
@@ -371,9 +437,11 @@
           <lb facs="#zone-11329059-4-r3l21"/>im auf den paw gangen ist, fa(ci)t
           <lb facs="#zone-11329059-4-r3l22"/>IIIIC und XII g(u)ld(en).
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11329059-5"/>
+        <pb n="5" facs="#surface-11329059-5"/>
+        <ab xml:id="ab-11329059-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11329059-5-r2">
           <lb facs="#zone-11329059-5-r2l1"/>Item im stublein ob d(em) prunnen etlihe
           <lb facs="#zone-11329059-5-r2l2"/>sloß gehoren zŭ d(em) Frag(enstein).
           <lb facs="#zone-11329059-5-r2l3"/>Item in der cammer ob d(em) prunnen
@@ -387,38 +455,42 @@
           <lb facs="#zone-11329059-5-r2l11"/>Insprugg bei d(em) Hertenfeldr.
           <lb facs="#zone-11329059-5-r2l12"/>Item ain virtel puchs bei d(em) stall.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11329059-6"/>
+        <pb n="6" facs="#surface-11329059-6"/>
+        <ab xml:id="ab-11329059-6-r1">
           <milestone unit="folio" n="3v"/>
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11329059-7"/>
+        <pb n="7" facs="#surface-11329059-7"/>
+        <ab xml:id="ab-11329059-7-r1">
           <milestone unit="folio" n="4r"/>
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11329059-8"/>
+        <pb n="8" facs="#surface-11329059-8"/>
+        <ab xml:id="ab-11329059-8-r1">
           <milestone unit="folio" n="4v"/>
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11329059-9"/>
+        <pb n="9" facs="#surface-11329059-9"/>
+        <ab xml:id="ab-11329059-9-r1">
           <milestone unit="folio" n="5r"/>
+        </ab>
+        <ab xml:id="ab-11329059-9-r2">
           <lb facs="#zone-11329059-9-r2l1"/>Bei der schaczung sind gewesen Antoni
           <lb facs="#zone-11329059-9-r2l2"/>vom Roß, Rudolf Haber, hauskerer
           <lb facs="#zone-11329059-9-r2l3"/>H. Dieperskircher und der tischler
           <lb facs="#zone-11329059-9-r2l4"/>von Hasegk. Actum an freitag
           <lb facs="#zone-11329059-9-r2l5"/>vor Judica anno etc. LXXXIIdo.
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11329059-10"/>
+        <pb n="10" facs="#surface-11329059-10"/>
+        <ab xml:id="ab-11329059-10-r1">
           <milestone unit="folio" n="5v"/>
         </ab>
-        <ab>
-          <pb n="11" facs="#surface-11329059-11"/>
+        <pb n="11" facs="#surface-11329059-11"/>
+        <ab xml:id="ab-11329059-11-r1">
           <milestone unit="folio" n="6r"/>
         </ab>
-        <ab>
-          <pb n="12" facs="#surface-11329059-12"/>
+        <pb n="12" facs="#surface-11329059-12"/>
+        <ab xml:id="ab-11329059-12-r1">
           <milestone unit="folio" n="6v"/>
+        </ab>
+        <ab xml:id="ab-11329059-12-r2">
           <lb facs="#zone-11329059-12-r2l1"/>Item ain blaues messgwand mit seiner
           <lb facs="#zone-11329059-12-r2l2"/>zugehorung.
           <lb facs="#zone-11329059-12-r2l3"/>Item ain rots sameteins mesgband

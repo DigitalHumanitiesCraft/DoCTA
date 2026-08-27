@@ -21,63 +21,234 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Ich Balthasar Liechtenstainer phleger zu Bisein, ich Hainrich Ainch phleger zu Yfan",
-      "bekennen auf brieflich bevelhnŭss des durleuchtigen hochgeboren fũrsten und herrn",
-      "hern Sigmund hertzog zu Osterreich und grafe zu Tirol unnser gnediger herr",
-      "als der edel und vest Linhart von Meinekg dem edln vesten Mertt Neydegker zu",
-      "Persen alle hab und gut die dem benantten unnserm gnedigen herrn auf dasselb seiner",
-      "gnaden gsloss Bersen zugehŏrt die durch uns besehen und alles vorhannden ist als",
-      "hernach geschriben steet.",
-      "Item am ersten waytzen zwayhundert funffundviertzikg",
-      "stãr. Item rokgen zwayhundert dreissigk star. Item gersten dreytzehen stãr. Item",
-      "pŏnn ainleff stăr. Item haber zwayhundert funfftzehen star. Item phenich",
-      "hundert und new̃n stãr, hirsch zwayhundert zway star. Item rokhen mel zway¬",
-      "hundert dreytzehen star. Item gedigen rindfleisch sechsunddreissigk centten und",
-      "sechtzehen pfunt. Item vier zentten grŭn fleisch. Item zwen lebentig ochssen. Item",
-      "schweynen gedigen fleisch viertzehen zenntten zwayunddreissikg phunt. Item dreissikg",
-      "sweynen schulter. Item wein achtundsibentzigk fuder und funff prenntten wein",
-      "Passauner, zwo ŭrn essigk, ain văsslen mit pŏsem essikg. Item ŭnslig siben zentten",
-      "und new̃ntzehen phunt. Item smer ain zentten sechsunddreissigk pfunt. Item smaltz",
-      "ain zentten und achtzigk pfunt. Item kess zwen zenttenn und ainsundviertzigk",
-      "pfunt. Item pett new̆nundtzwaintzikg pŏss und gůts. Item zwaintzikg pŏlster.",
-      "Item sibentzehen kůss. Item zwaintzigk par leilach. Item funffunddreissigk",
-      "rauch dekgen. Item achtzehen slasin. Item new̃n golter. Item drewtzehen",
-      "tisch tůcher. Item vier hanndzwehl alles pŏs und gůt. Item drew̃ fũrvass",
-      "saltz. Item am allten eysen drey zentten funffundsibentzigk pfunt mitsambt",
-      "dem gayßfŭess. Item zwen eysnen rechen. Item vierhundert gar lanng eysen",
-      "nãgel. Item sechs ganntz pleyen platten. Item ain fisch seg und allter netz.",
-      "Item ain hauffnitz puchssen. Item zwo virtail puchssen. Item drey gross",
-      "eysen puchssen, sein aus den zwain morsern gemacht und ist die ain vorhanden.",
-      "Item vier kuppfern stainpuchssen. Item ainleff kupfferen tarrass puchssen",
-      "und ain zebrochne. Item syben kupffern hagken puchssen. Item ain puchssen",
-      "mit syben kugel. Item vier eysen tarrass puchssen. Item dreytzehen eysen",
-      "stainpuchssen, ist aus der ainen ain mõrser gemacht. Item dreyundsibentzigk",
-      "hanndpuchssen und sechs zebrochen. Item fũnfftzigk targen. Item drew",
-      "vaslen und ain halbs mit puchssen pulver. Item ain văslen mit geleũtterten",
-      "salitter von zwayn ũren. Item aber ain văslen mit gelew̃tterten salitter von ainer",
-      "ũren. Item aber im in zwain lăgel gelew̃tterten salitter. Item zway vaslen mit",
-      "swebel ains halbs das annder umb ain spann lẽr. Item aber in ainem",
-      "prentlen bey ainem stăr swebl. Item sibentzehen gũtter merblin mŏdl zu tarrass,",
-      "hanndpuchssen und hagken puchssen. Item syben alt mõdel, bey ainem halben centten",
-      "pleyen kugl zu den obgenanten puchssen. Item zwoundtzwaintzigk lãgel",
-      "hauss geschoss ungevãrlich. Item funff truhen mit hawss geschoss. Item",
-      "ain hauffen mit grossen pheylen zu pankh armbrost. Item zwayundzwaintzigk",
-      "allte armbrost. Item harnasch acht kuriss. Item zwen halb kuriss. Item",
-      "ainleff par payn gewanndt. Item zehen spanyerol. Item newn helmlin. Item",
-      "zwo knye pukhl. Item viertzehen engelisch hauben. Item zwayundzwaintzikg",
-      "prustplech. Item viertzigk par arm rõr. Item zwen ganntz arem zew̃g. Item",
-      "ain krebiss. Item funff schaladen. Item new̃nundtzwaintzigk par",
-      "plech hanndschuch põss und gutt. Item achtzehen pantzer. Item zway goller.",
-      "Item funff par mew̃seysen. Item achtzehen eysen hůt, ettlich alt zenicht pregadin.",
-      "Item vier ungrisch tarschen. Item acht swert. Item vier degen. Item ain",
-      "mordaxt. Item ain stainpogen mit seinem zerff. Item zwen partt. Item drey",
-      "pullver sekh. Item newn huntzkappen. Item viertzehen umbhengk von harnasch",
-      "ringen. Item in ainer truhen allerlay few̃r zewg. Item ain eysnen zanngen damit",
-      "man auf hebt. Item ain ziegl zew̃g. Item ain giess vas. Item zwo zynen kandl.",
-      "Item sechs handwergk sayl. Item ain sayl von zehen klaffter. Item zwo slingen.",
-      "Item zway lannge grosse zũg sayl. Item ain papiren meß puch. Item ain kelch",
-      "mit seiner zugehorung. Item ain mess gewandt. Item ain new̃e alben. Item"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Ich Balthasar Liechtenstainer phleger zu Bisein, ich Hainrich Ainch phleger zu Yfan"
+      },
+      {
+       "id": "r2l2",
+       "text": "bekennen auf brieflich bevelhnŭss des durleuchtigen hochgeboren fũrsten und herrn"
+      },
+      {
+       "id": "r2l3",
+       "text": "hern Sigmund hertzog zu Osterreich und grafe zu Tirol unnser gnediger herr"
+      },
+      {
+       "id": "r2l4",
+       "text": "als der edel und vest Linhart von Meinekg dem edln vesten Mertt Neydegker zu"
+      },
+      {
+       "id": "r2l5",
+       "text": "Persen alle hab und gut die dem benantten unnserm gnedigen herrn auf dasselb seiner"
+      },
+      {
+       "id": "r2l6",
+       "text": "gnaden gsloss Bersen zugehŏrt die durch uns besehen und alles vorhannden ist als"
+      },
+      {
+       "id": "r2l7",
+       "text": "hernach geschriben steet."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item am ersten waytzen zwayhundert funffundviertzikg"
+      },
+      {
+       "id": "r3l2",
+       "text": "stãr. Item rokgen zwayhundert dreissigk star. Item gersten dreytzehen stãr. Item"
+      },
+      {
+       "id": "r3l3",
+       "text": "pŏnn ainleff stăr. Item haber zwayhundert funfftzehen star. Item phenich"
+      },
+      {
+       "id": "r3l4",
+       "text": "hundert und new̃n stãr, hirsch zwayhundert zway star. Item rokhen mel zway¬"
+      },
+      {
+       "id": "r3l5",
+       "text": "hundert dreytzehen star. Item gedigen rindfleisch sechsunddreissigk centten und"
+      },
+      {
+       "id": "r3l6",
+       "text": "sechtzehen pfunt. Item vier zentten grŭn fleisch. Item zwen lebentig ochssen. Item"
+      },
+      {
+       "id": "r3l7",
+       "text": "schweynen gedigen fleisch viertzehen zenntten zwayunddreissikg phunt. Item dreissikg"
+      },
+      {
+       "id": "r3l8",
+       "text": "sweynen schulter. Item wein achtundsibentzigk fuder und funff prenntten wein"
+      },
+      {
+       "id": "r3l9",
+       "text": "Passauner, zwo ŭrn essigk, ain văsslen mit pŏsem essikg. Item ŭnslig siben zentten"
+      },
+      {
+       "id": "r3l10",
+       "text": "und new̃ntzehen phunt. Item smer ain zentten sechsunddreissigk pfunt. Item smaltz"
+      },
+      {
+       "id": "r3l11",
+       "text": "ain zentten und achtzigk pfunt. Item kess zwen zenttenn und ainsundviertzigk"
+      },
+      {
+       "id": "r3l12",
+       "text": "pfunt. Item pett new̆nundtzwaintzikg pŏss und gůts. Item zwaintzikg pŏlster."
+      },
+      {
+       "id": "r3l13",
+       "text": "Item sibentzehen kůss. Item zwaintzigk par leilach. Item funffunddreissigk"
+      },
+      {
+       "id": "r3l14",
+       "text": "rauch dekgen. Item achtzehen slasin. Item new̃n golter. Item drewtzehen"
+      },
+      {
+       "id": "r3l15",
+       "text": "tisch tůcher. Item vier hanndzwehl alles pŏs und gůt. Item drew̃ fũrvass"
+      },
+      {
+       "id": "r3l16",
+       "text": "saltz. Item am allten eysen drey zentten funffundsibentzigk pfunt mitsambt"
+      },
+      {
+       "id": "r3l17",
+       "text": "dem gayßfŭess. Item zwen eysnen rechen. Item vierhundert gar lanng eysen"
+      },
+      {
+       "id": "r3l18",
+       "text": "nãgel. Item sechs ganntz pleyen platten. Item ain fisch seg und allter netz."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item ain hauffnitz puchssen. Item zwo virtail puchssen. Item drey gross"
+      },
+      {
+       "id": "r3l20",
+       "text": "eysen puchssen, sein aus den zwain morsern gemacht und ist die ain vorhanden."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item vier kuppfern stainpuchssen. Item ainleff kupfferen tarrass puchssen"
+      },
+      {
+       "id": "r3l22",
+       "text": "und ain zebrochne. Item syben kupffern hagken puchssen. Item ain puchssen"
+      },
+      {
+       "id": "r3l23",
+       "text": "mit syben kugel. Item vier eysen tarrass puchssen. Item dreytzehen eysen"
+      },
+      {
+       "id": "r3l24",
+       "text": "stainpuchssen, ist aus der ainen ain mõrser gemacht. Item dreyundsibentzigk"
+      },
+      {
+       "id": "r3l25",
+       "text": "hanndpuchssen und sechs zebrochen. Item fũnfftzigk targen. Item drew"
+      },
+      {
+       "id": "r3l26",
+       "text": "vaslen und ain halbs mit puchssen pulver. Item ain văslen mit geleũtterten"
+      },
+      {
+       "id": "r3l27",
+       "text": "salitter von zwayn ũren. Item aber ain văslen mit gelew̃tterten salitter von ainer"
+      },
+      {
+       "id": "r3l28",
+       "text": "ũren. Item aber im in zwain lăgel gelew̃tterten salitter. Item zway vaslen mit"
+      },
+      {
+       "id": "r3l29",
+       "text": "swebel ains halbs das annder umb ain spann lẽr. Item aber in ainem"
+      },
+      {
+       "id": "r3l30",
+       "text": "prentlen bey ainem stăr swebl. Item sibentzehen gũtter merblin mŏdl zu tarrass,"
+      },
+      {
+       "id": "r3l31",
+       "text": "hanndpuchssen und hagken puchssen. Item syben alt mõdel, bey ainem halben centten"
+      },
+      {
+       "id": "r3l32",
+       "text": "pleyen kugl zu den obgenanten puchssen. Item zwoundtzwaintzigk lãgel"
+      },
+      {
+       "id": "r3l33",
+       "text": "hauss geschoss ungevãrlich. Item funff truhen mit hawss geschoss. Item"
+      },
+      {
+       "id": "r3l34",
+       "text": "ain hauffen mit grossen pheylen zu pankh armbrost. Item zwayundzwaintzigk"
+      },
+      {
+       "id": "r3l35",
+       "text": "allte armbrost. Item harnasch acht kuriss. Item zwen halb kuriss. Item"
+      },
+      {
+       "id": "r3l36",
+       "text": "ainleff par payn gewanndt. Item zehen spanyerol. Item newn helmlin. Item"
+      },
+      {
+       "id": "r3l37",
+       "text": "zwo knye pukhl. Item viertzehen engelisch hauben. Item zwayundzwaintzikg"
+      },
+      {
+       "id": "r3l38",
+       "text": "prustplech. Item viertzigk par arm rõr. Item zwen ganntz arem zew̃g. Item"
+      },
+      {
+       "id": "r3l39",
+       "text": "ain krebiss. Item funff schaladen. Item new̃nundtzwaintzigk par"
+      },
+      {
+       "id": "r3l40",
+       "text": "plech hanndschuch põss und gutt. Item achtzehen pantzer. Item zway goller."
+      },
+      {
+       "id": "r3l41",
+       "text": "Item funff par mew̃seysen. Item achtzehen eysen hůt, ettlich alt zenicht pregadin."
+      },
+      {
+       "id": "r3l42",
+       "text": "Item vier ungrisch tarschen. Item acht swert. Item vier degen. Item ain"
+      },
+      {
+       "id": "r3l43",
+       "text": "mordaxt. Item ain stainpogen mit seinem zerff. Item zwen partt. Item drey"
+      },
+      {
+       "id": "r3l44",
+       "text": "pullver sekh. Item newn huntzkappen. Item viertzehen umbhengk von harnasch"
+      },
+      {
+       "id": "r3l45",
+       "text": "ringen. Item in ainer truhen allerlay few̃r zewg. Item ain eysnen zanngen damit"
+      },
+      {
+       "id": "r3l46",
+       "text": "man auf hebt. Item ain ziegl zew̃g. Item ain giess vas. Item zwo zynen kandl."
+      },
+      {
+       "id": "r3l47",
+       "text": "Item sechs handwergk sayl. Item ain sayl von zehen klaffter. Item zwo slingen."
+      },
+      {
+       "id": "r3l48",
+       "text": "Item zway lannge grosse zũg sayl. Item ain papiren meß puch. Item ain kelch"
+      },
+      {
+       "id": "r3l49",
+       "text": "mit seiner zugehorung. Item ain mess gewandt. Item ain new̃e alben. Item"
+      }
      ]
     },
     {
@@ -93,69 +264,258 @@
       false
      ],
      "lines": [
-      "Versen",
-      "Schloß",
-      "Inventur",
-      "11/3 1466",
-      "N. 109",
-      "N. XIII 30",
-      "Ich Balthasar Liechtenstainer phleger zu Bisein. Ich Hainrich Kuen phleg(er) zu Pfan=",
-      "bekennen auf brieflich bevelhnuß des Durchleuchtigen hochgeporn Fursten vnd her(re)n",
-      "h(er)rn Sigmund hertzog zu Osterreich vnd Grafe zu Tyrol vnns(er)s genedig(e)n h(er)rn",
-      "Als der Edl vnd vest Linhart von Nemetz den Edln vesten maister Nendlein zu",
-      "Versen alle hab vnd gut die dem benannten vnnsern gnedig(e)n h(er)rn. auf dasselb sein",
-      "gnaden Schloß Versen zugehort die durch vns besehen vnd alles vorhannde ist. als",
-      "hernach geschriben steet. Item am Ersten waizen zwaihundt funffundvierzigk",
-      "star. Item Roggen Zwayhundert dreissigt star. Item gersten dreyzehen star. Item",
-      "korn ainleff star. Item haber Zwayhundert funfftzehen star. Item pfenich",
-      "hundert vnd neun star. hirsseh Zwayhundert zway star. Item kolben mel. zway",
-      "hundert dreyzehn star. Item gedigen Rindfleisch Sechshundtreissigt centn(er) vnd",
-      "sechtzehn phunt. Item vier zentn gemmsfleisch. Item zwen lebendig Ochssen. Item",
-      "schweinen gedigen fleisch viertzehn zenntten Zwayunddreissigk phunt. Item dreyssigk",
-      "sweynen schulter. Item Wein achttundsibentzigk fuder. vnd funff vierttung Wein",
-      "passaner Zwo vrn [...]ssigk. ain Vasßlen mit pos(e)m essigk. Item unschlitz siben zenntn",
-      "vnd nevnnzehn phunt. Item Smahlz ain zentn sechßunddreissigt phunt. Item smaltz",
-      "ain Zenttner vnd achtzigt phunt. Item kesß zwen zenttn vnd ainsundneuntzigk",
-      "phunt. Item pett vierundtneuntzig posß vnd gut. Item zwayundzwaintzig polster",
-      "Item sibentzehen küss. Item zwaintzig par leilach. Item funffunddreissigt",
-      "rauch deßen. Item achtetzehen pfasn. Item viern polter. Item Harnascheiß",
-      "tisch tuecher. Item vier hanndtzwehl. alles posß vnd gut. Item drew fiurwasß",
-      "faltz. Item ain allten Cofen drey Zentten funffundsibentzigk phunt. mitsambt",
-      "dem garff fueß. Item zwen cofen rechten. Item vierhundert gar lang eysen",
-      "nagel. Item sechs zwaintz pleyen plattn. Item ain fisch sez vnd aller neiz",
-      "Item ain hauffnitz puchssen. Item zwo vintaill puchssen. Item drey groß",
-      "eysen puchssen sein aus den zwain morsern gemacht vnd ist die ain vorhanden",
-      "Item vier kupffern stanckpuchssen. Item ainleff kupffern tarrass puchssen",
-      "vnd ain gebrochene. Item syben kupffern harglen puchssen. Item ain plunck(e)n",
-      "mit syben kugl. Item vier eysen tarrass puchssen. Item dreyzehn eysen",
-      "stanckpuchssen ist aus der ainen ain morser gemacht. Item dreyundsibentzigk",
-      "hanndpuchssen vnd sechs gebrochen. Item funfftzehn targen. Item drew",
-      "vaßlen vnd ein halbes mit puchssenpulver. Item ain vaslen mit geleyttertn",
-      "salniter von zwayn vrrn. Item aber ain Vaslen mit gcleittertn salniter von xxv",
-      "ph(un)t. Item aber in zwayn laegel geleyttertn salniter. Item zway Vaslen mit",
-      "Swyebel ains halbs das annder vmb ain spann lar. Item aber in ainem",
-      "wendly bey ainem star swebl. Item sibentzehen gütter merklin medl zu tarrass",
-      "hanndpuchssen vnd heuffen puchssen. Item syben alt mödl. bey ainem halben centn",
-      "pleyen kugl zu den obgenannten puchssen. Item zwayundtzwaintzigt laegel",
-      "hayss gestosse vngevaerlich. Item funff truben mit harras geschaar. Item",
-      "ain hauffen mit grossen pfeylen zu panntzer armbrost. Item zwayundzwaintzigt",
-      "allte armbrost. Item vierzehn acht kruefs. Item zwen halb kruyß. Item",
-      "ainleff par payn gewanndt. Item zehen spanzerol. Item viern helmblin. Item",
-      "zwo strucputzl. Item viertzehen engellischen hauben. Item zwayundzwaintzigt",
-      "pruestplath. Item viertzigk par harnysocz. Item zwen gzantz bein zeug. Item",
-      "ain bechys. Item funff schaladen. Item vierundtzwaintzigk par",
-      "pleyer hanndtschuhe posß vnd gutt. Item achtetzehn pantzer. Item zway poller.",
-      "Item funff par meurerssen. Item achtetzehen hosen hut etlich alt gemacht preytadn",
-      "Item vier vngerisch tartschn. Item acht sweert. Item vier degen. Item ain",
-      "mordart. Item ain samptcogen mit seinem zewff. Item zwen partt. Item drey",
-      "pullner seck. Item vierundneuntz kappen. Item viertzehen vmbhengt von harnasch",
-      "Item ain mainzer truhen allerlay ferr zewg. Item ain boßnen zannign darmit",
-      "man auf hebt. Item ain ziegl zewg. Item ain greso vas. Item zwo zynen kandt",
-      "Item sechs handtwerckgsayl. Item ain sayl von zehen klafftern. Item zwo schingn",
-      "Item zway lannge gresffe zwo sayl. Item ain papireyn meß puech. Item ain kelch",
-      "mit seiner zugehorung. Item ain meß gewanndt. Item ain newe alben. Item",
-      "1466 Mai 3",
-      "Inv. A 273/7"
+      {
+       "id": null,
+       "text": "Versen"
+      },
+      {
+       "id": null,
+       "text": "Schloß"
+      },
+      {
+       "id": null,
+       "text": "Inventur"
+      },
+      {
+       "id": null,
+       "text": "11/3 1466"
+      },
+      {
+       "id": null,
+       "text": "N. 109"
+      },
+      {
+       "id": null,
+       "text": "N. XIII 30"
+      },
+      {
+       "id": null,
+       "text": "Ich Balthasar Liechtenstainer phleger zu Bisein. Ich Hainrich Kuen phleg(er) zu Pfan="
+      },
+      {
+       "id": null,
+       "text": "bekennen auf brieflich bevelhnuß des Durchleuchtigen hochgeporn Fursten vnd her(re)n"
+      },
+      {
+       "id": null,
+       "text": "h(er)rn Sigmund hertzog zu Osterreich vnd Grafe zu Tyrol vnns(er)s genedig(e)n h(er)rn"
+      },
+      {
+       "id": null,
+       "text": "Als der Edl vnd vest Linhart von Nemetz den Edln vesten maister Nendlein zu"
+      },
+      {
+       "id": null,
+       "text": "Versen alle hab vnd gut die dem benannten vnnsern gnedig(e)n h(er)rn. auf dasselb sein"
+      },
+      {
+       "id": null,
+       "text": "gnaden Schloß Versen zugehort die durch vns besehen vnd alles vorhannde ist. als"
+      },
+      {
+       "id": null,
+       "text": "hernach geschriben steet. Item am Ersten waizen zwaihundt funffundvierzigk"
+      },
+      {
+       "id": null,
+       "text": "star. Item Roggen Zwayhundert dreissigt star. Item gersten dreyzehen star. Item"
+      },
+      {
+       "id": null,
+       "text": "korn ainleff star. Item haber Zwayhundert funfftzehen star. Item pfenich"
+      },
+      {
+       "id": null,
+       "text": "hundert vnd neun star. hirsseh Zwayhundert zway star. Item kolben mel. zway"
+      },
+      {
+       "id": null,
+       "text": "hundert dreyzehn star. Item gedigen Rindfleisch Sechshundtreissigt centn(er) vnd"
+      },
+      {
+       "id": null,
+       "text": "sechtzehn phunt. Item vier zentn gemmsfleisch. Item zwen lebendig Ochssen. Item"
+      },
+      {
+       "id": null,
+       "text": "schweinen gedigen fleisch viertzehn zenntten Zwayunddreissigk phunt. Item dreyssigk"
+      },
+      {
+       "id": null,
+       "text": "sweynen schulter. Item Wein achttundsibentzigk fuder. vnd funff vierttung Wein"
+      },
+      {
+       "id": null,
+       "text": "passaner Zwo vrn [...]ssigk. ain Vasßlen mit pos(e)m essigk. Item unschlitz siben zenntn"
+      },
+      {
+       "id": null,
+       "text": "vnd nevnnzehn phunt. Item Smahlz ain zentn sechßunddreissigt phunt. Item smaltz"
+      },
+      {
+       "id": null,
+       "text": "ain Zenttner vnd achtzigt phunt. Item kesß zwen zenttn vnd ainsundneuntzigk"
+      },
+      {
+       "id": null,
+       "text": "phunt. Item pett vierundtneuntzig posß vnd gut. Item zwayundzwaintzig polster"
+      },
+      {
+       "id": null,
+       "text": "Item sibentzehen küss. Item zwaintzig par leilach. Item funffunddreissigt"
+      },
+      {
+       "id": null,
+       "text": "rauch deßen. Item achtetzehen pfasn. Item viern polter. Item Harnascheiß"
+      },
+      {
+       "id": null,
+       "text": "tisch tuecher. Item vier hanndtzwehl. alles posß vnd gut. Item drew fiurwasß"
+      },
+      {
+       "id": null,
+       "text": "faltz. Item ain allten Cofen drey Zentten funffundsibentzigk phunt. mitsambt"
+      },
+      {
+       "id": null,
+       "text": "dem garff fueß. Item zwen cofen rechten. Item vierhundert gar lang eysen"
+      },
+      {
+       "id": null,
+       "text": "nagel. Item sechs zwaintz pleyen plattn. Item ain fisch sez vnd aller neiz"
+      },
+      {
+       "id": null,
+       "text": "Item ain hauffnitz puchssen. Item zwo vintaill puchssen. Item drey groß"
+      },
+      {
+       "id": null,
+       "text": "eysen puchssen sein aus den zwain morsern gemacht vnd ist die ain vorhanden"
+      },
+      {
+       "id": null,
+       "text": "Item vier kupffern stanckpuchssen. Item ainleff kupffern tarrass puchssen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain gebrochene. Item syben kupffern harglen puchssen. Item ain plunck(e)n"
+      },
+      {
+       "id": null,
+       "text": "mit syben kugl. Item vier eysen tarrass puchssen. Item dreyzehn eysen"
+      },
+      {
+       "id": null,
+       "text": "stanckpuchssen ist aus der ainen ain morser gemacht. Item dreyundsibentzigk"
+      },
+      {
+       "id": null,
+       "text": "hanndpuchssen vnd sechs gebrochen. Item funfftzehn targen. Item drew"
+      },
+      {
+       "id": null,
+       "text": "vaßlen vnd ein halbes mit puchssenpulver. Item ain vaslen mit geleyttertn"
+      },
+      {
+       "id": null,
+       "text": "salniter von zwayn vrrn. Item aber ain Vaslen mit gcleittertn salniter von xxv"
+      },
+      {
+       "id": null,
+       "text": "ph(un)t. Item aber in zwayn laegel geleyttertn salniter. Item zway Vaslen mit"
+      },
+      {
+       "id": null,
+       "text": "Swyebel ains halbs das annder vmb ain spann lar. Item aber in ainem"
+      },
+      {
+       "id": null,
+       "text": "wendly bey ainem star swebl. Item sibentzehen gütter merklin medl zu tarrass"
+      },
+      {
+       "id": null,
+       "text": "hanndpuchssen vnd heuffen puchssen. Item syben alt mödl. bey ainem halben centn"
+      },
+      {
+       "id": null,
+       "text": "pleyen kugl zu den obgenannten puchssen. Item zwayundtzwaintzigt laegel"
+      },
+      {
+       "id": null,
+       "text": "hayss gestosse vngevaerlich. Item funff truben mit harras geschaar. Item"
+      },
+      {
+       "id": null,
+       "text": "ain hauffen mit grossen pfeylen zu panntzer armbrost. Item zwayundzwaintzigt"
+      },
+      {
+       "id": null,
+       "text": "allte armbrost. Item vierzehn acht kruefs. Item zwen halb kruyß. Item"
+      },
+      {
+       "id": null,
+       "text": "ainleff par payn gewanndt. Item zehen spanzerol. Item viern helmblin. Item"
+      },
+      {
+       "id": null,
+       "text": "zwo strucputzl. Item viertzehen engellischen hauben. Item zwayundzwaintzigt"
+      },
+      {
+       "id": null,
+       "text": "pruestplath. Item viertzigk par harnysocz. Item zwen gzantz bein zeug. Item"
+      },
+      {
+       "id": null,
+       "text": "ain bechys. Item funff schaladen. Item vierundtzwaintzigk par"
+      },
+      {
+       "id": null,
+       "text": "pleyer hanndtschuhe posß vnd gutt. Item achtetzehn pantzer. Item zway poller."
+      },
+      {
+       "id": null,
+       "text": "Item funff par meurerssen. Item achtetzehen hosen hut etlich alt gemacht preytadn"
+      },
+      {
+       "id": null,
+       "text": "Item vier vngerisch tartschn. Item acht sweert. Item vier degen. Item ain"
+      },
+      {
+       "id": null,
+       "text": "mordart. Item ain samptcogen mit seinem zewff. Item zwen partt. Item drey"
+      },
+      {
+       "id": null,
+       "text": "pullner seck. Item vierundneuntz kappen. Item viertzehen vmbhengt von harnasch"
+      },
+      {
+       "id": null,
+       "text": "Item ain mainzer truhen allerlay ferr zewg. Item ain boßnen zannign darmit"
+      },
+      {
+       "id": null,
+       "text": "man auf hebt. Item ain ziegl zewg. Item ain greso vas. Item zwo zynen kandt"
+      },
+      {
+       "id": null,
+       "text": "Item sechs handtwerckgsayl. Item ain sayl von zehen klafftern. Item zwo schingn"
+      },
+      {
+       "id": null,
+       "text": "Item zway lannge gresffe zwo sayl. Item ain papireyn meß puech. Item ain kelch"
+      },
+      {
+       "id": null,
+       "text": "mit seiner zugehorung. Item ain meß gewanndt. Item ain newe alben. Item"
+      },
+      {
+       "id": null,
+       "text": "1466 Mai 3"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 273/7"
+      }
      ]
     },
     {
@@ -171,69 +531,258 @@
       false
      ],
      "lines": [
-      "Persen",
-      "Schlosz",
-      "Inventar",
-      "11/3 1466",
-      "a/109",
-      "A. XIII 30",
-      "Ich Balthasar Liechtenstainer phleger zu Bisen / Ich hainrich Tirch phleg(er) zu Pfan=",
-      "bekennen auf brieflich bevelchnus des durchleuchtig(e)n hochgeborn Fursten vnd h(er)rn",
-      "h(er)rn Sigmund herzog zu Osterreych vnd Grafe zu Tirol vns(er)s gnedig(e)n h(er)rn",
-      "Als der edel vnd vest Linhart von Nemecz den Edln vesten marx Nevenzer zu",
-      "Persen alle hab vnd gut die dem benannten vns(er)m gnedig(e)n h(er)rn . auf dasselb sein",
-      "gnad(e)n Schlos Persen zugehort die durch vns beseh(e)n vnd alles vorhannd(e)n ist / als",
-      "hernach geschriben steet. Item am Ersten waiczen zwaihund(er)t funffundviertzigk",
-      "star . Item Roggen zwaihundert dreissigk star Item gersten dreyzehen star . Item",
-      "korn ainleff star. Item haber zwaihundert funfftzehen star . It(e)m pfenich",
-      "hundert vnd nevnn star hirsen zwaihundert dray star . Item koblhen mel zwaij",
-      "hundert dreyczehn star . Item gedigen rindfleisch sexshundtreyssigk cent(e)r vnd",
-      "sechtzehn phunt . Item drey zenttn gembfleisch. It(e)m ainen lebendig ochssen . Item",
-      "sweynen gedigen fleisch viertzehn zentten drayunddreissigk phunt . Item dreyssig",
-      "sweynen schulter . Item Wein achttundsibentzigk fuder vnd funff vierttl Wein",
-      "passamner zwo vrn . It(e)m ain vaszlen mit posen essigk . It(e)m vnslitt siben zentt(e)r",
-      "vnd nevenczigk phunt . Item Smair ain zent(e)r sechshundtreyssigk phunt . It(e)m smaltz",
-      "ain zentt(e)n vnd achtzigk phunt . Item kess zwen zenttn vnd ainhundertneing",
-      "phunt . Item pett vberwunten ain tailz pos vnd guts . Item zwaintzig polster",
-      "Item sibentzehen kuss . Item zwaintzig par leilach . Item funffunddreissigk",
-      "rauch dech(e)n . Item achttzehen pfasn . Item viern polster It(e)m handtwehel",
-      "tisch tuech . Item vier hanndtzeehl alles pos vnd gut . Item dreye finwasz",
-      "saltz . Item ain allten hosen drey zentten funffundsibentzigk phunt mit sambt",
-      "dem garffueß . Item zwen eysnen rechen . Item vierhundert gar lanng eysen",
-      "nagel . Item sechstzaintz pleyen plattn . Item ain fith sey vnd aller new",
-      "Item ain hauffnitz puchssen . Item zwo vintail puchssen . Item drey grosz",
-      "eysen puchssen sein aus den zwain mörsern gemacht vnd ist die ain vorhanndn",
-      "Item drey kupfern stanngpuchssen . Item ainleff kupfern tarrass puchssen",
-      "vnd ain gebrochene . Item syben kupffern hagken puchssen . Item ain steinern",
-      "mit syben kugl . Item drey eysen tarrass puchssen . Item dreytzig eysen",
-      "stanngpuchssen ist aus der ainen ain mörser gemacht . Item dreyundsibentzigk",
-      "stanngpuchssen vnd sechs gebrochen . Item funfftzingk tartzn . Item drey",
-      "vasten vnd ein halbs mit puchssenpuluer . Item ain vaslen mit gcleittertn",
-      "salniter von zwayn v(e)rn . Item aber ain vaslen mit geclittertn salniter von ain",
-      "vrn . Item aber in zwain laygl gcleitterten salniter . Item zway vaslen mit",
-      "swebl ains halbs das annder vmb ain spann lerr . Item aber in ainem",
-      "wendly bey ainem star swebl . Item sibentzehn gütter merklin mödl zu tarrass",
-      "hanndpuchssen vnd hagken puchssen . Item syben alt mödl bey ainem halben centtn",
-      "pleyen kugl zu den obgenanndtn puchssen . Item zwayundzwaintzigk laygl",
-      "hauss geschoss vngevaerlich . Item funff truben mit harrss geschosz . Item",
-      "ain hauffen mit grossen pfeylen zu gantzn armbrost . Item zwayundzwaintzigk",
-      "allte armbrost . Item durnechst acht knecht . Item zwen halb knecht . It(e)m",
-      "ainleff par payn gewannt . Item zehen spannzapl . Item vieren helmlein . It(e)m",
-      "zwo stroepultzl . Item viertzehen engellisch hauben . Item zwayundzwaintzikg",
-      "pruestplech . Item viertzigk par parn hor . Item zwen grantz kein zengy . It(e)m",
-      "ain pechsiss . Item funff Schaladen . Item vierundzwaintzigk par",
-      "pleyer hanndschueb poes vnd gutt . Item achttzehn panzer . Item zway poller .",
-      "It(e)m funff par murnrossen . Item achttzehen hosen hut etlich alt gemosst preczadin",
-      "Item vier vngerisch tartschn . Item acht swert . Item vier degen . Item ain",
-      "mordart . Item ain stangpogen mit seinem zewff . Item zwen partt . It(e)m drey",
-      "pullver seck . Item viernhimtz kappen . Item viertzehen vmbhengt von barnasch",
-      "ymssz . Item mainer trauben allerlay feier zewg . Item ain böhnen zannkyn daraut",
-      "man auf hebt . Item ain ziegl zewg . It(e)m ain gresso par . It(e)m zwo zonen landt",
-      "fey sechs handtwergk fayl . Item ain sayel von zehen klafften . It(e)m zwo slingn",
-      "fey zway lannge gysses zwo sayl . It(e)m ain papyr(e)n meß puch & It(e)m ain kelch",
-      "mit seincr zugehorung It(e)m ain mesz gewandt Item ain newe alben . It(e)m",
-      "1466 Mai 3",
-      "Inv. A 273/7"
+      {
+       "id": null,
+       "text": "Persen"
+      },
+      {
+       "id": null,
+       "text": "Schlosz"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      },
+      {
+       "id": null,
+       "text": "11/3 1466"
+      },
+      {
+       "id": null,
+       "text": "a/109"
+      },
+      {
+       "id": null,
+       "text": "A. XIII 30"
+      },
+      {
+       "id": null,
+       "text": "Ich Balthasar Liechtenstainer phleger zu Bisen / Ich hainrich Tirch phleg(er) zu Pfan="
+      },
+      {
+       "id": null,
+       "text": "bekennen auf brieflich bevelchnus des durchleuchtig(e)n hochgeborn Fursten vnd h(er)rn"
+      },
+      {
+       "id": null,
+       "text": "h(er)rn Sigmund herzog zu Osterreych vnd Grafe zu Tirol vns(er)s gnedig(e)n h(er)rn"
+      },
+      {
+       "id": null,
+       "text": "Als der edel vnd vest Linhart von Nemecz den Edln vesten marx Nevenzer zu"
+      },
+      {
+       "id": null,
+       "text": "Persen alle hab vnd gut die dem benannten vns(er)m gnedig(e)n h(er)rn . auf dasselb sein"
+      },
+      {
+       "id": null,
+       "text": "gnad(e)n Schlos Persen zugehort die durch vns beseh(e)n vnd alles vorhannd(e)n ist / als"
+      },
+      {
+       "id": null,
+       "text": "hernach geschriben steet. Item am Ersten waiczen zwaihund(er)t funffundviertzigk"
+      },
+      {
+       "id": null,
+       "text": "star . Item Roggen zwaihundert dreissigk star Item gersten dreyzehen star . Item"
+      },
+      {
+       "id": null,
+       "text": "korn ainleff star. Item haber zwaihundert funfftzehen star . It(e)m pfenich"
+      },
+      {
+       "id": null,
+       "text": "hundert vnd nevnn star hirsen zwaihundert dray star . Item koblhen mel zwaij"
+      },
+      {
+       "id": null,
+       "text": "hundert dreyczehn star . Item gedigen rindfleisch sexshundtreyssigk cent(e)r vnd"
+      },
+      {
+       "id": null,
+       "text": "sechtzehn phunt . Item drey zenttn gembfleisch. It(e)m ainen lebendig ochssen . Item"
+      },
+      {
+       "id": null,
+       "text": "sweynen gedigen fleisch viertzehn zentten drayunddreissigk phunt . Item dreyssig"
+      },
+      {
+       "id": null,
+       "text": "sweynen schulter . Item Wein achttundsibentzigk fuder vnd funff vierttl Wein"
+      },
+      {
+       "id": null,
+       "text": "passamner zwo vrn . It(e)m ain vaszlen mit posen essigk . It(e)m vnslitt siben zentt(e)r"
+      },
+      {
+       "id": null,
+       "text": "vnd nevenczigk phunt . Item Smair ain zent(e)r sechshundtreyssigk phunt . It(e)m smaltz"
+      },
+      {
+       "id": null,
+       "text": "ain zentt(e)n vnd achtzigk phunt . Item kess zwen zenttn vnd ainhundertneing"
+      },
+      {
+       "id": null,
+       "text": "phunt . Item pett vberwunten ain tailz pos vnd guts . Item zwaintzig polster"
+      },
+      {
+       "id": null,
+       "text": "Item sibentzehen kuss . Item zwaintzig par leilach . Item funffunddreissigk"
+      },
+      {
+       "id": null,
+       "text": "rauch dech(e)n . Item achttzehen pfasn . Item viern polster It(e)m handtwehel"
+      },
+      {
+       "id": null,
+       "text": "tisch tuech . Item vier hanndtzeehl alles pos vnd gut . Item dreye finwasz"
+      },
+      {
+       "id": null,
+       "text": "saltz . Item ain allten hosen drey zentten funffundsibentzigk phunt mit sambt"
+      },
+      {
+       "id": null,
+       "text": "dem garffueß . Item zwen eysnen rechen . Item vierhundert gar lanng eysen"
+      },
+      {
+       "id": null,
+       "text": "nagel . Item sechstzaintz pleyen plattn . Item ain fith sey vnd aller new"
+      },
+      {
+       "id": null,
+       "text": "Item ain hauffnitz puchssen . Item zwo vintail puchssen . Item drey grosz"
+      },
+      {
+       "id": null,
+       "text": "eysen puchssen sein aus den zwain mörsern gemacht vnd ist die ain vorhanndn"
+      },
+      {
+       "id": null,
+       "text": "Item drey kupfern stanngpuchssen . Item ainleff kupfern tarrass puchssen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain gebrochene . Item syben kupffern hagken puchssen . Item ain steinern"
+      },
+      {
+       "id": null,
+       "text": "mit syben kugl . Item drey eysen tarrass puchssen . Item dreytzig eysen"
+      },
+      {
+       "id": null,
+       "text": "stanngpuchssen ist aus der ainen ain mörser gemacht . Item dreyundsibentzigk"
+      },
+      {
+       "id": null,
+       "text": "stanngpuchssen vnd sechs gebrochen . Item funfftzingk tartzn . Item drey"
+      },
+      {
+       "id": null,
+       "text": "vasten vnd ein halbs mit puchssenpuluer . Item ain vaslen mit gcleittertn"
+      },
+      {
+       "id": null,
+       "text": "salniter von zwayn v(e)rn . Item aber ain vaslen mit geclittertn salniter von ain"
+      },
+      {
+       "id": null,
+       "text": "vrn . Item aber in zwain laygl gcleitterten salniter . Item zway vaslen mit"
+      },
+      {
+       "id": null,
+       "text": "swebl ains halbs das annder vmb ain spann lerr . Item aber in ainem"
+      },
+      {
+       "id": null,
+       "text": "wendly bey ainem star swebl . Item sibentzehn gütter merklin mödl zu tarrass"
+      },
+      {
+       "id": null,
+       "text": "hanndpuchssen vnd hagken puchssen . Item syben alt mödl bey ainem halben centtn"
+      },
+      {
+       "id": null,
+       "text": "pleyen kugl zu den obgenanndtn puchssen . Item zwayundzwaintzigk laygl"
+      },
+      {
+       "id": null,
+       "text": "hauss geschoss vngevaerlich . Item funff truben mit harrss geschosz . Item"
+      },
+      {
+       "id": null,
+       "text": "ain hauffen mit grossen pfeylen zu gantzn armbrost . Item zwayundzwaintzigk"
+      },
+      {
+       "id": null,
+       "text": "allte armbrost . Item durnechst acht knecht . Item zwen halb knecht . It(e)m"
+      },
+      {
+       "id": null,
+       "text": "ainleff par payn gewannt . Item zehen spannzapl . Item vieren helmlein . It(e)m"
+      },
+      {
+       "id": null,
+       "text": "zwo stroepultzl . Item viertzehen engellisch hauben . Item zwayundzwaintzikg"
+      },
+      {
+       "id": null,
+       "text": "pruestplech . Item viertzigk par parn hor . Item zwen grantz kein zengy . It(e)m"
+      },
+      {
+       "id": null,
+       "text": "ain pechsiss . Item funff Schaladen . Item vierundzwaintzigk par"
+      },
+      {
+       "id": null,
+       "text": "pleyer hanndschueb poes vnd gutt . Item achttzehn panzer . Item zway poller ."
+      },
+      {
+       "id": null,
+       "text": "It(e)m funff par murnrossen . Item achttzehen hosen hut etlich alt gemosst preczadin"
+      },
+      {
+       "id": null,
+       "text": "Item vier vngerisch tartschn . Item acht swert . Item vier degen . Item ain"
+      },
+      {
+       "id": null,
+       "text": "mordart . Item ain stangpogen mit seinem zewff . Item zwen partt . It(e)m drey"
+      },
+      {
+       "id": null,
+       "text": "pullver seck . Item viernhimtz kappen . Item viertzehen vmbhengt von barnasch"
+      },
+      {
+       "id": null,
+       "text": "ymssz . Item mainer trauben allerlay feier zewg . Item ain böhnen zannkyn daraut"
+      },
+      {
+       "id": null,
+       "text": "man auf hebt . Item ain ziegl zewg . It(e)m ain gresso par . It(e)m zwo zonen landt"
+      },
+      {
+       "id": null,
+       "text": "fey sechs handtwergk fayl . Item ain sayel von zehen klafften . It(e)m zwo slingn"
+      },
+      {
+       "id": null,
+       "text": "fey zway lannge gysses zwo sayl . It(e)m ain papyr(e)n meß puch & It(e)m ain kelch"
+      },
+      {
+       "id": null,
+       "text": "mit seincr zugehorung It(e)m ain mesz gewandt Item ain newe alben . It(e)m"
+      },
+      {
+       "id": null,
+       "text": "1466 Mai 3"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 273/7"
+      }
      ]
     },
     {
@@ -249,69 +798,258 @@
       false
      ],
      "lines": [
-      "Persen",
-      "Schloss",
-      "Inventar",
-      "11/3 1466",
-      "3/109",
-      "M. XIII 30",
-      "Ich Balthasar Liechtenstaner pfleger zu Rifen, Ich Hainrich Tirnch pfleg zu Yffan.",
-      "Bekennen auf brieflich bevelchnus des durchleuchtigen hochgeborn Fursten und herrn",
-      "herrn Sigmund hertzog zu Osterreich etc und Grafe zu Tirol unnserm gnedigen herrn",
-      "Als der edl und vest Linhart von Nemetz den Edln vesten maister Veydenter zu",
-      "persen alle hab vnd gut die dem benannten unnserm gnedign herrn auf dasselb sein",
-      "genaden Sloss Persen zugehort die durch vns besehn vnd alles vberhanndt ist als",
-      "hernach geschriben steet. Item am Ersten waytzn zwayhundt funffundviertzig",
-      "star. Item Roggen zwayhundert dreissigt star. Item gersten dreizehen star. Item",
-      "korn ainleff star. Item haber zwayhundert funfftzehen star. Item psenisch",
-      "hundert und neun star. hirse zwayhundert zway star. Item kolben mel zway",
-      "hundert dreytzehn star. Item gedingen Rindtfleisch sechshundtreyssingk centn und",
-      "sechtzehn pfunt. Item vier zenttn vnnflaisch. Item zwen lebendig Ochsen. Item",
-      "sweynen gedingen fleisch viertzehn zentten zwayunddreyssigk pfunt. Item dreyssik",
-      "sweynen schulter. Item Wein achttundsibentzigk fuder und funff vierntlg. Item",
-      "passawer zwo urne. Item ain vaßlen mit posen essig. Item unslitz siben zenttn",
-      "vnd nevntzigk pfunt. Item Smaltz ain zenttn sechssunddreyssigk pfunt. Item smaltz",
-      "ain zenttn vnd achtzigk pfunt. Item kese zwen zenttn vnd ainvndneintzigk",
-      "pfunt. Item pett sewmmtsvnamtaty pose und gut. Item zwaintzig polster.",
-      "Item sibentzehen küße. Item zwayntzig pax leilach. Item funffunddreissigk",
-      "rauch decken. Item achtetzehen tlasn. Item viern golter. Item harnaschel",
-      "tisen tuecher. Item vier hanndtzwehl. alles pose vnd gut. Item drew furwaes",
-      "saltz. Item ain allten hosen drey zentten funffundsibentzigk pfunt. mitsambt",
-      "dem garffueß. Item zwen eysnen rechen. Item vierhundert gar lang eysen",
-      "nargel. Item sechs zwayntz pleyen plattn. Item ain fith sey vnd aller ner",
-      "Item ain hauffnitz puchssen. Item zwo virtail puchssen. Item drey grose",
-      "eysen puchssen sem ains den zwam morßern gemachtt vnd ist die ain vberbanndt",
-      "Item vier kupffern stampfpuchssen. Item ainleff kupffern tarnass puchssen",
-      "vnd ain zebrochene. Item syben kupffern haytzn puchssen. Item ain planntn",
-      "mit syben kugel. Item vier eysen tarrass puchssen. Item dreyeczigk eysen",
-      "tanckpuchssen ist ans der ainen ain morser gemacht. Item dreyundsibentzigk",
-      "hanndtpuchssen vnd sechs gebrochen. Item funfftzingk targen. Item drew",
-      "vasten vnd ain halbs mit puechsenpulver. Item ain vaßlen mit geleuttertn",
-      "salniter von zwayn xxij. Item aber ain vaßlen mit geleuttertn salniter von xxx",
-      "ptzy. Item aber in zwam laygl geleutterten salniter. Item zway vaßlen mit",
-      "swebl ains halbs das annder vmb ain spann lar. Item aber in ainem",
-      "wentz bey ainem star swebl. Item sibentzehn gueter merklin meel zu tarrass",
-      "hanndtpuchsen und hewtzn puchssen. Item syben alt meel bey ainem halben centtn",
-      "pleyen kufft in den obgenannten puchssen. Item zwayundtzwayntzig laygl",
-      "pauchs gestross vngeverlich. Item funff truhen mit harrows geschooß. Item",
-      "ain hauffen mit grossen pfeylen zu gantzn armbrost. Item zwayundtzwaintzigk",
-      "allte armbrost. Item hirnvaßen acht kuryss. Item zwen halb kuryss. Item",
-      "ainleff par payn gewanndt. Item zehen spamwerck. Item viern helmlyn. Item",
-      "zwo stryepuckl. Item viertzehen engellisch hauben. Item zwayundzwaintzik",
-      "panntplech. Item viertzigk par harny hosen. Item zwen gantze harnzeyg. Item",
-      "ain bechys. Item funfft schalladen. Item vierundzwaintzigk par",
-      "pleyt hanndtschuh pose vnd güt. Item achtzehn pantzer. Item drew golter.",
-      "Item funff par meeresosen. Item achtzehen hosen hut etlich alt gemeszt preytadn",
-      "Item vier vngerisch tartzsen. Item acht sworett. Item vier degen. Item ain",
-      "mordart. Item ain stamptzezn mit seinem zexff. Item zwen parti. Item drey",
-      "pullver sesz. Item viernhintz kappen. Item viertzehen umbhengt von harnasch",
-      "ungesy. Item in ainer truhen allerlay ferrx gzeug. Item ain bosen sammyt darinn",
-      "man auf hebt. Item ain ziegl zewg. Item ain greso vas. Item zwo zynen kandl",
-      "Item sechs hanndwergk payl. Item ain sahel von zehen krafften. Item zwo slingn",
-      "Item zway lannge gysses zun payl. Item ain papyren meß puech. Item ain velds",
-      "not seiner zugehorung. Item ain meß gewandt. Item ain newe alben. Item",
-      "1466 Mai 3",
-      "Inv. A 273/7"
+      {
+       "id": null,
+       "text": "Persen"
+      },
+      {
+       "id": null,
+       "text": "Schloss"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      },
+      {
+       "id": null,
+       "text": "11/3 1466"
+      },
+      {
+       "id": null,
+       "text": "3/109"
+      },
+      {
+       "id": null,
+       "text": "M. XIII 30"
+      },
+      {
+       "id": null,
+       "text": "Ich Balthasar Liechtenstaner pfleger zu Rifen, Ich Hainrich Tirnch pfleg zu Yffan."
+      },
+      {
+       "id": null,
+       "text": "Bekennen auf brieflich bevelchnus des durchleuchtigen hochgeborn Fursten und herrn"
+      },
+      {
+       "id": null,
+       "text": "herrn Sigmund hertzog zu Osterreich etc und Grafe zu Tirol unnserm gnedigen herrn"
+      },
+      {
+       "id": null,
+       "text": "Als der edl und vest Linhart von Nemetz den Edln vesten maister Veydenter zu"
+      },
+      {
+       "id": null,
+       "text": "persen alle hab vnd gut die dem benannten unnserm gnedign herrn auf dasselb sein"
+      },
+      {
+       "id": null,
+       "text": "genaden Sloss Persen zugehort die durch vns besehn vnd alles vberhanndt ist als"
+      },
+      {
+       "id": null,
+       "text": "hernach geschriben steet. Item am Ersten waytzn zwayhundt funffundviertzig"
+      },
+      {
+       "id": null,
+       "text": "star. Item Roggen zwayhundert dreissigt star. Item gersten dreizehen star. Item"
+      },
+      {
+       "id": null,
+       "text": "korn ainleff star. Item haber zwayhundert funfftzehen star. Item psenisch"
+      },
+      {
+       "id": null,
+       "text": "hundert und neun star. hirse zwayhundert zway star. Item kolben mel zway"
+      },
+      {
+       "id": null,
+       "text": "hundert dreytzehn star. Item gedingen Rindtfleisch sechshundtreyssingk centn und"
+      },
+      {
+       "id": null,
+       "text": "sechtzehn pfunt. Item vier zenttn vnnflaisch. Item zwen lebendig Ochsen. Item"
+      },
+      {
+       "id": null,
+       "text": "sweynen gedingen fleisch viertzehn zentten zwayunddreyssigk pfunt. Item dreyssik"
+      },
+      {
+       "id": null,
+       "text": "sweynen schulter. Item Wein achttundsibentzigk fuder und funff vierntlg. Item"
+      },
+      {
+       "id": null,
+       "text": "passawer zwo urne. Item ain vaßlen mit posen essig. Item unslitz siben zenttn"
+      },
+      {
+       "id": null,
+       "text": "vnd nevntzigk pfunt. Item Smaltz ain zenttn sechssunddreyssigk pfunt. Item smaltz"
+      },
+      {
+       "id": null,
+       "text": "ain zenttn vnd achtzigk pfunt. Item kese zwen zenttn vnd ainvndneintzigk"
+      },
+      {
+       "id": null,
+       "text": "pfunt. Item pett sewmmtsvnamtaty pose und gut. Item zwaintzig polster."
+      },
+      {
+       "id": null,
+       "text": "Item sibentzehen küße. Item zwayntzig pax leilach. Item funffunddreissigk"
+      },
+      {
+       "id": null,
+       "text": "rauch decken. Item achtetzehen tlasn. Item viern golter. Item harnaschel"
+      },
+      {
+       "id": null,
+       "text": "tisen tuecher. Item vier hanndtzwehl. alles pose vnd gut. Item drew furwaes"
+      },
+      {
+       "id": null,
+       "text": "saltz. Item ain allten hosen drey zentten funffundsibentzigk pfunt. mitsambt"
+      },
+      {
+       "id": null,
+       "text": "dem garffueß. Item zwen eysnen rechen. Item vierhundert gar lang eysen"
+      },
+      {
+       "id": null,
+       "text": "nargel. Item sechs zwayntz pleyen plattn. Item ain fith sey vnd aller ner"
+      },
+      {
+       "id": null,
+       "text": "Item ain hauffnitz puchssen. Item zwo virtail puchssen. Item drey grose"
+      },
+      {
+       "id": null,
+       "text": "eysen puchssen sem ains den zwam morßern gemachtt vnd ist die ain vberbanndt"
+      },
+      {
+       "id": null,
+       "text": "Item vier kupffern stampfpuchssen. Item ainleff kupffern tarnass puchssen"
+      },
+      {
+       "id": null,
+       "text": "vnd ain zebrochene. Item syben kupffern haytzn puchssen. Item ain planntn"
+      },
+      {
+       "id": null,
+       "text": "mit syben kugel. Item vier eysen tarrass puchssen. Item dreyeczigk eysen"
+      },
+      {
+       "id": null,
+       "text": "tanckpuchssen ist ans der ainen ain morser gemacht. Item dreyundsibentzigk"
+      },
+      {
+       "id": null,
+       "text": "hanndtpuchssen vnd sechs gebrochen. Item funfftzingk targen. Item drew"
+      },
+      {
+       "id": null,
+       "text": "vasten vnd ain halbs mit puechsenpulver. Item ain vaßlen mit geleuttertn"
+      },
+      {
+       "id": null,
+       "text": "salniter von zwayn xxij. Item aber ain vaßlen mit geleuttertn salniter von xxx"
+      },
+      {
+       "id": null,
+       "text": "ptzy. Item aber in zwam laygl geleutterten salniter. Item zway vaßlen mit"
+      },
+      {
+       "id": null,
+       "text": "swebl ains halbs das annder vmb ain spann lar. Item aber in ainem"
+      },
+      {
+       "id": null,
+       "text": "wentz bey ainem star swebl. Item sibentzehn gueter merklin meel zu tarrass"
+      },
+      {
+       "id": null,
+       "text": "hanndtpuchsen und hewtzn puchssen. Item syben alt meel bey ainem halben centtn"
+      },
+      {
+       "id": null,
+       "text": "pleyen kufft in den obgenannten puchssen. Item zwayundtzwayntzig laygl"
+      },
+      {
+       "id": null,
+       "text": "pauchs gestross vngeverlich. Item funff truhen mit harrows geschooß. Item"
+      },
+      {
+       "id": null,
+       "text": "ain hauffen mit grossen pfeylen zu gantzn armbrost. Item zwayundtzwaintzigk"
+      },
+      {
+       "id": null,
+       "text": "allte armbrost. Item hirnvaßen acht kuryss. Item zwen halb kuryss. Item"
+      },
+      {
+       "id": null,
+       "text": "ainleff par payn gewanndt. Item zehen spamwerck. Item viern helmlyn. Item"
+      },
+      {
+       "id": null,
+       "text": "zwo stryepuckl. Item viertzehen engellisch hauben. Item zwayundzwaintzik"
+      },
+      {
+       "id": null,
+       "text": "panntplech. Item viertzigk par harny hosen. Item zwen gantze harnzeyg. Item"
+      },
+      {
+       "id": null,
+       "text": "ain bechys. Item funfft schalladen. Item vierundzwaintzigk par"
+      },
+      {
+       "id": null,
+       "text": "pleyt hanndtschuh pose vnd güt. Item achtzehn pantzer. Item drew golter."
+      },
+      {
+       "id": null,
+       "text": "Item funff par meeresosen. Item achtzehen hosen hut etlich alt gemeszt preytadn"
+      },
+      {
+       "id": null,
+       "text": "Item vier vngerisch tartzsen. Item acht sworett. Item vier degen. Item ain"
+      },
+      {
+       "id": null,
+       "text": "mordart. Item ain stamptzezn mit seinem zexff. Item zwen parti. Item drey"
+      },
+      {
+       "id": null,
+       "text": "pullver sesz. Item viernhintz kappen. Item viertzehen umbhengt von harnasch"
+      },
+      {
+       "id": null,
+       "text": "ungesy. Item in ainer truhen allerlay ferrx gzeug. Item ain bosen sammyt darinn"
+      },
+      {
+       "id": null,
+       "text": "man auf hebt. Item ain ziegl zewg. Item ain greso vas. Item zwo zynen kandl"
+      },
+      {
+       "id": null,
+       "text": "Item sechs hanndwergk payl. Item ain sahel von zehen krafften. Item zwo slingn"
+      },
+      {
+       "id": null,
+       "text": "Item zway lannge gysses zun payl. Item ain papyren meß puech. Item ain velds"
+      },
+      {
+       "id": null,
+       "text": "not seiner zugehorung. Item ain meß gewandt. Item ain newe alben. Item"
+      },
+      {
+       "id": null,
+       "text": "1466 Mai 3"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 273/7"
+      }
      ]
     },
     {
@@ -327,69 +1065,258 @@
       false
      ],
      "lines": [
-      "Velsen",
-      "Schloss",
-      "Inventar",
-      "1466",
-      "d(en) 3 Maij",
-      "M. XIII 30",
-      "Ich Balthasar Liechtenstainer phleger zu Velsneckh, Ich Hainrich Kintsch phleger zu Pfann-",
-      "berekh, Bekennen auf brieflich bevelhnuss des Durchleuchtigen Hochgeborn Fürsten und Herrn,",
-      "Herrn Sigmunds hertzog zu Österreich und Grafe zu Tirol unnsers gnedigen herrn,",
-      "Als der Edel und Vest Linhart von Memetingen den vesten Mert Newheuser zu",
-      "velsen alle hab und gut, die dem benannten unnserm gnedigen herrn auf dasselb sein",
-      "genaden Schloss Velsen zugehort, die durch uns besehen und alles vorhannden ist, als",
-      "hernach geschriben steet. Item am Ersten waizen zwaihundt funffundvierzigk",
-      "star. Item Roggen zwaihundert dreissigk star. Item gersten dreyzehen star. Item",
-      "korn ainleff star. Item haber zwaihundert funfftzehen star. Item wicken",
-      "hundert und neun star. Kirsen zwaihundert zway star. Item Rogken mel zway",
-      "hundert dreyzehn star. Item gedigen Rindfleisch sechtzunddreyssigk centt(er) und",
-      "sechtzehn phunt. Item vier zenttn gembsfleisch. Item ain lebendig Ochssen. Item",
-      "schweinen gedigen fleisch viertzehn zennten zwainunddreyssig phunt. Item dreyssig",
-      "sweynen schulter. Item Wein achttundsibentzigk fuder und funff vierntayl. Item",
-      "passamer zwo urne. Item ain vasslen mit rosen essigk. Item unschlit siben zenttn",
-      "und neuntzigk phunt. Item Omai ain zenter sechtzunddreyssigk phunt. Item ssmaltz",
-      "ain zentten und achtzigt phunt. Item kess zwen zenttn und ainundneuntzigk",
-      "phunt. Item pett gewannt nemlich petter rots und guts. Item zwaintzig polster.",
-      "Item sibentzehen küss. Item zwaintzig par leilach. Item funffunddreissigk",
-      "rauch deckhen. Item achttzehen pfasen. Item viern golter. Item tischpölster. Item",
-      "tischtüecher. Item vier handzwechl, alles rots und gut. Item dreye furwat-",
-      "saltz. Item am allten hosen drey zentten funffundsibentzigk phunt mitsambt",
-      "dem garffsuefz. Item zwen eysnen rechen. Item dreihundert gar lannge eysen",
-      "Nagel. Item sechs zwanntz pleyen platten. Item ain fith sey und allerlay netz.",
-      "Item ain hauffnitz puchssen. Item zwo vinkl puchssen. Item drey gross",
-      "eysen puchssen, sein aus den zwain morsern gemacht, und ist die ain vorhanden",
-      "Item vier kupffern stampfpuchssen. Item ainleff kupffern tarrass puchssen,",
-      "und ain gebrochene. Item syben kupffern hagken puchssen. Item ain pleynen",
-      "mit syben kugel. Item vier eysen tarrass puchssen. Item dreyzehn eysen",
-      "hanndtpuchssen, ist aus der ainen ain morser gemacht. Item dreyundsibentzigk",
-      "hanndtpuchssen und sechs gebrochen. Item funfftzehn tartschen. Item drey",
-      "casten und ain halber mit puchsenpulver. Item ain vasslen mit geleuttertn",
-      "salniter von zwain zenn. Item aber ain vasslen mit geleuttertn salnitter von ayn",
-      "zenn. Item aber in zwain laygl geleuttertn salnitter. Item zway vasslen mit",
-      "swebl ains halbs das annder vmb ain spann lar. Item aber in ainem",
-      "wently bey ainem star swebl. Item sibentzehn gütter mercklin modl zu tarrass",
-      "hanndtpuchssen und hagken puchssen. Item syben alt mödl, bey ainem halben centtn",
-      "pleyen kugel zu den obgenannten puchssen. Item zwayundzwaintzigk laygl",
-      "hanffs gestross ungenucklich. Item funff truhen mit harnasch geschlosst. Item",
-      "ain hauffen mit grossen pfeylen zu gantzn armbrost. Item zwayundzwaintzigk",
-      "allte armbrost. Item harnaasch acht krueffe. Item zwen halb krueff. Item",
-      "ainleff par payngewandt. Item zehen spannröl. Item viern helmlin. Item",
-      "zwo streepulchl. Item viertzehen engellisch hauben. Item zwayundzwaintzigk",
-      "prustplech. Item viertzigk par hantschue. Item zwen ganncz helm zeug. Item",
-      "ain bechiss. Item funff schalladen. Item vierundtzwaintzigk par",
-      "pleyrs hanntschue rots und guts. Item achttzehn pantzer. Item zway goller.",
-      "Item funff par morscrofen. Item achttzehen hosen hut, eytlich alt gemecht preygaden.",
-      "Item vier ungrisch tartschen. Item acht swert. Item vier degen. Item ain",
-      "mordart. Item ain stamppogen mit seinem zewff. Item zwen parti. Item drey",
-      "pulluer sekh. Item vierundneunczkappen. Item viertzehen umbhengt von harnasch",
-      "zewg. Item in ainer truhen allerlay ferrx zewg. Item ain posnen sannign darinn",
-      "man auf hebt. Item ain ziegl zewg. Item ain gussohar. Item zwo zonen fands",
-      "Item sechs handwerckh payl. Item ain sarck von zehen klafftern. Item zwo klingn",
-      "Item zway lannge gwallfe zwn payl. Item ain papreyn mech puch. Item ain kelch",
-      "mit seiner zugehorung. Item ain mess gewandt. Item ain newe alben. Item",
-      "1466 Mai 3",
-      "Inv. A 273/7"
+      {
+       "id": null,
+       "text": "Velsen"
+      },
+      {
+       "id": null,
+       "text": "Schloss"
+      },
+      {
+       "id": null,
+       "text": "Inventar"
+      },
+      {
+       "id": null,
+       "text": "1466"
+      },
+      {
+       "id": null,
+       "text": "d(en) 3 Maij"
+      },
+      {
+       "id": null,
+       "text": "M. XIII 30"
+      },
+      {
+       "id": null,
+       "text": "Ich Balthasar Liechtenstainer phleger zu Velsneckh, Ich Hainrich Kintsch phleger zu Pfann-"
+      },
+      {
+       "id": null,
+       "text": "berekh, Bekennen auf brieflich bevelhnuss des Durchleuchtigen Hochgeborn Fürsten und Herrn,"
+      },
+      {
+       "id": null,
+       "text": "Herrn Sigmunds hertzog zu Österreich und Grafe zu Tirol unnsers gnedigen herrn,"
+      },
+      {
+       "id": null,
+       "text": "Als der Edel und Vest Linhart von Memetingen den vesten Mert Newheuser zu"
+      },
+      {
+       "id": null,
+       "text": "velsen alle hab und gut, die dem benannten unnserm gnedigen herrn auf dasselb sein"
+      },
+      {
+       "id": null,
+       "text": "genaden Schloss Velsen zugehort, die durch uns besehen und alles vorhannden ist, als"
+      },
+      {
+       "id": null,
+       "text": "hernach geschriben steet. Item am Ersten waizen zwaihundt funffundvierzigk"
+      },
+      {
+       "id": null,
+       "text": "star. Item Roggen zwaihundert dreissigk star. Item gersten dreyzehen star. Item"
+      },
+      {
+       "id": null,
+       "text": "korn ainleff star. Item haber zwaihundert funfftzehen star. Item wicken"
+      },
+      {
+       "id": null,
+       "text": "hundert und neun star. Kirsen zwaihundert zway star. Item Rogken mel zway"
+      },
+      {
+       "id": null,
+       "text": "hundert dreyzehn star. Item gedigen Rindfleisch sechtzunddreyssigk centt(er) und"
+      },
+      {
+       "id": null,
+       "text": "sechtzehn phunt. Item vier zenttn gembsfleisch. Item ain lebendig Ochssen. Item"
+      },
+      {
+       "id": null,
+       "text": "schweinen gedigen fleisch viertzehn zennten zwainunddreyssig phunt. Item dreyssig"
+      },
+      {
+       "id": null,
+       "text": "sweynen schulter. Item Wein achttundsibentzigk fuder und funff vierntayl. Item"
+      },
+      {
+       "id": null,
+       "text": "passamer zwo urne. Item ain vasslen mit rosen essigk. Item unschlit siben zenttn"
+      },
+      {
+       "id": null,
+       "text": "und neuntzigk phunt. Item Omai ain zenter sechtzunddreyssigk phunt. Item ssmaltz"
+      },
+      {
+       "id": null,
+       "text": "ain zentten und achtzigt phunt. Item kess zwen zenttn und ainundneuntzigk"
+      },
+      {
+       "id": null,
+       "text": "phunt. Item pett gewannt nemlich petter rots und guts. Item zwaintzig polster."
+      },
+      {
+       "id": null,
+       "text": "Item sibentzehen küss. Item zwaintzig par leilach. Item funffunddreissigk"
+      },
+      {
+       "id": null,
+       "text": "rauch deckhen. Item achttzehen pfasen. Item viern golter. Item tischpölster. Item"
+      },
+      {
+       "id": null,
+       "text": "tischtüecher. Item vier handzwechl, alles rots und gut. Item dreye furwat-"
+      },
+      {
+       "id": null,
+       "text": "saltz. Item am allten hosen drey zentten funffundsibentzigk phunt mitsambt"
+      },
+      {
+       "id": null,
+       "text": "dem garffsuefz. Item zwen eysnen rechen. Item dreihundert gar lannge eysen"
+      },
+      {
+       "id": null,
+       "text": "Nagel. Item sechs zwanntz pleyen platten. Item ain fith sey und allerlay netz."
+      },
+      {
+       "id": null,
+       "text": "Item ain hauffnitz puchssen. Item zwo vinkl puchssen. Item drey gross"
+      },
+      {
+       "id": null,
+       "text": "eysen puchssen, sein aus den zwain morsern gemacht, und ist die ain vorhanden"
+      },
+      {
+       "id": null,
+       "text": "Item vier kupffern stampfpuchssen. Item ainleff kupffern tarrass puchssen,"
+      },
+      {
+       "id": null,
+       "text": "und ain gebrochene. Item syben kupffern hagken puchssen. Item ain pleynen"
+      },
+      {
+       "id": null,
+       "text": "mit syben kugel. Item vier eysen tarrass puchssen. Item dreyzehn eysen"
+      },
+      {
+       "id": null,
+       "text": "hanndtpuchssen, ist aus der ainen ain morser gemacht. Item dreyundsibentzigk"
+      },
+      {
+       "id": null,
+       "text": "hanndtpuchssen und sechs gebrochen. Item funfftzehn tartschen. Item drey"
+      },
+      {
+       "id": null,
+       "text": "casten und ain halber mit puchsenpulver. Item ain vasslen mit geleuttertn"
+      },
+      {
+       "id": null,
+       "text": "salniter von zwain zenn. Item aber ain vasslen mit geleuttertn salnitter von ayn"
+      },
+      {
+       "id": null,
+       "text": "zenn. Item aber in zwain laygl geleuttertn salnitter. Item zway vasslen mit"
+      },
+      {
+       "id": null,
+       "text": "swebl ains halbs das annder vmb ain spann lar. Item aber in ainem"
+      },
+      {
+       "id": null,
+       "text": "wently bey ainem star swebl. Item sibentzehn gütter mercklin modl zu tarrass"
+      },
+      {
+       "id": null,
+       "text": "hanndtpuchssen und hagken puchssen. Item syben alt mödl, bey ainem halben centtn"
+      },
+      {
+       "id": null,
+       "text": "pleyen kugel zu den obgenannten puchssen. Item zwayundzwaintzigk laygl"
+      },
+      {
+       "id": null,
+       "text": "hanffs gestross ungenucklich. Item funff truhen mit harnasch geschlosst. Item"
+      },
+      {
+       "id": null,
+       "text": "ain hauffen mit grossen pfeylen zu gantzn armbrost. Item zwayundzwaintzigk"
+      },
+      {
+       "id": null,
+       "text": "allte armbrost. Item harnaasch acht krueffe. Item zwen halb krueff. Item"
+      },
+      {
+       "id": null,
+       "text": "ainleff par payngewandt. Item zehen spannröl. Item viern helmlin. Item"
+      },
+      {
+       "id": null,
+       "text": "zwo streepulchl. Item viertzehen engellisch hauben. Item zwayundzwaintzigk"
+      },
+      {
+       "id": null,
+       "text": "prustplech. Item viertzigk par hantschue. Item zwen ganncz helm zeug. Item"
+      },
+      {
+       "id": null,
+       "text": "ain bechiss. Item funff schalladen. Item vierundtzwaintzigk par"
+      },
+      {
+       "id": null,
+       "text": "pleyrs hanntschue rots und guts. Item achttzehn pantzer. Item zway goller."
+      },
+      {
+       "id": null,
+       "text": "Item funff par morscrofen. Item achttzehen hosen hut, eytlich alt gemecht preygaden."
+      },
+      {
+       "id": null,
+       "text": "Item vier ungrisch tartschen. Item acht swert. Item vier degen. Item ain"
+      },
+      {
+       "id": null,
+       "text": "mordart. Item ain stamppogen mit seinem zewff. Item zwen parti. Item drey"
+      },
+      {
+       "id": null,
+       "text": "pulluer sekh. Item vierundneunczkappen. Item viertzehen umbhengt von harnasch"
+      },
+      {
+       "id": null,
+       "text": "zewg. Item in ainer truhen allerlay ferrx zewg. Item ain posnen sannign darinn"
+      },
+      {
+       "id": null,
+       "text": "man auf hebt. Item ain ziegl zewg. Item ain gussohar. Item zwo zonen fands"
+      },
+      {
+       "id": null,
+       "text": "Item sechs handwerckh payl. Item ain sarck von zehen klafftern. Item zwo klingn"
+      },
+      {
+       "id": null,
+       "text": "Item zway lannge gwallfe zwn payl. Item ain papreyn mech puch. Item ain kelch"
+      },
+      {
+       "id": null,
+       "text": "mit seiner zugehorung. Item ain mess gewandt. Item ain newe alben. Item"
+      },
+      {
+       "id": null,
+       "text": "1466 Mai 3"
+      },
+      {
+       "id": null,
+       "text": "Inv. A 273/7"
+      }
      ]
     }
    ]
@@ -414,48 +1341,174 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1v]",
-      "ain umbral, ain gũrttl. Item vier õppfer kãnndl. Item ain kessel zu dem weyh¬",
-      "wasser. Item ain rauch vaß. Item drew altar tŭcher. Item ain schreibtisch,",
-      "ain gyeßvas und ain pekh. Item sechs zefften klain und gross. Item sechs",
-      "wein pũttrich pŏss und gut. Item ain protkorb. Item zwen zynen trachter.",
-      "Item zway wein schăffl. Item kuchl geschirr. Item zwo klain lavetzschen. Item",
-      "sibentzehen kessl klain und gross, põss und gut. Item ain mõrser mit dem",
-      "stŏssl. Item funff eren hãfen klain und gross. Item zwen dryfũss. Item drey rõst.",
-      "Item drey pratspiss. Item vier hakhenn, funff phannen. Item ain fleisch",
-      "messer. Item ain fleisch partten. Item sechs kraut messer. Item sibentzehen",
-      "hũltzen schũssl. Item new̆nundzwaintzigk tĕller. Item schŭr eysen. Item zwo",
-      "wachterkutten. Item zway par filtzschuch. Item in der smitten. Item ain grossen",
-      "anposs. Item zwen new̃ plas pelg. Item ain slosser zewg als durch den",
-      "Weinegker kaufft ist. Item zwen plaspelg. Item drey anposs klain und",
-      "gross. Item syben zanngen. Item vier hanndt hãmer. Item ainen grossen",
-      "auffslag hamer. Item vier schrot meŭssl. Item ain markh eysen. Item vier",
-      "schrot eysen. Item ain beslagzew̃g. Item drey mõdl zu hagken. Item ain sliffstain.",
-      "Item die leger vaß und andrew vasser und potting so zu dem gsloss gehorden.",
-      "Item ettwevil eyssen so der Weinegker kaufft hat daraus man hellenpartten",
-      "gemacht hat und noch macht. Item viertzigk eysen plech. Item drey",
-      "zwispitz. Item ain slegl. Item ain schelhamer. Item vier eysen keyll zum stain",
-      "prechen. Item acht lãgl mit pigl.",
-      "Nota vermerkht was maister Ludwig der",
-      "puchssenmaister von Trient gen Bersen geschikht hat von zew̆g.",
-      "Item",
-      "ain vãslen puchssen pulver. Item zehen hagken puchssen. Item zehen",
-      "hannd puchssen. Item ain pleyen platten. Item ain krieg mitsambt dem sayl.",
-      "Item vermerkht was von vãrender hab, pettgewannd, kuchengeschirr und",
-      "annders von Trient gen Persen komen ist.",
-      "Item acht pett. Item sibenthalbs",
-      "par leylach zerissen. Item syben rauch dekhen. Item drey slasin. Item fŭnff",
-      "pŏss dekhen. Item sechs pŏlster. Item zwey kŭss. Item zwen kessl und",
-      "ain klains. Item funff pfannen. Item drey eren hãfen. Item drey lavetzschen.",
-      "Item zwo hŭltzen zefften. Item drey kanndl. Item ain dryfŭss. Item zwen",
-      "pratstŏckh. Item zwen pratspiss. Item drey hẽlen. Item zwo hacken. Item",
-      "eysnen keyll. Item drey pley platten.",
-      "Item aller obgeschribner sach",
-      "sein drey gleich zedl worden gemacht under unnserm vorbemelten Liechstainer",
-      "und Anich aufgedruckhtten pettschafften die ain zedl dem obgenantten unnserm",
-      "gnedigen herrn, die annder Mertten Neydegker, die dritt Linhartten Weinegker.",
-      "Beschehen auf Bersen an des Heiligen krew̃tztag invencion anno Domini et.",
-      "im sechsundsechtzigisten jare."
+      {
+       "id": "r1l1",
+       "text": "[fol.1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "ain umbral, ain gũrttl. Item vier õppfer kãnndl. Item ain kessel zu dem weyh¬"
+      },
+      {
+       "id": "r2l2",
+       "text": "wasser. Item ain rauch vaß. Item drew altar tŭcher. Item ain schreibtisch,"
+      },
+      {
+       "id": "r2l3",
+       "text": "ain gyeßvas und ain pekh. Item sechs zefften klain und gross. Item sechs"
+      },
+      {
+       "id": "r2l4",
+       "text": "wein pũttrich pŏss und gut. Item ain protkorb. Item zwen zynen trachter."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item zway wein schăffl. Item kuchl geschirr. Item zwo klain lavetzschen. Item"
+      },
+      {
+       "id": "r2l6",
+       "text": "sibentzehen kessl klain und gross, põss und gut. Item ain mõrser mit dem"
+      },
+      {
+       "id": "r2l7",
+       "text": "stŏssl. Item funff eren hãfen klain und gross. Item zwen dryfũss. Item drey rõst."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item drey pratspiss. Item vier hakhenn, funff phannen. Item ain fleisch"
+      },
+      {
+       "id": "r2l9",
+       "text": "messer. Item ain fleisch partten. Item sechs kraut messer. Item sibentzehen"
+      },
+      {
+       "id": "r2l10",
+       "text": "hũltzen schũssl. Item new̆nundzwaintzigk tĕller. Item schŭr eysen. Item zwo"
+      },
+      {
+       "id": "r2l11",
+       "text": "wachterkutten. Item zway par filtzschuch. Item in der smitten. Item ain grossen"
+      },
+      {
+       "id": "r2l12",
+       "text": "anposs. Item zwen new̃ plas pelg. Item ain slosser zewg als durch den"
+      },
+      {
+       "id": "r2l13",
+       "text": "Weinegker kaufft ist. Item zwen plaspelg. Item drey anposs klain und"
+      },
+      {
+       "id": "r2l14",
+       "text": "gross. Item syben zanngen. Item vier hanndt hãmer. Item ainen grossen"
+      },
+      {
+       "id": "r2l15",
+       "text": "auffslag hamer. Item vier schrot meŭssl. Item ain markh eysen. Item vier"
+      },
+      {
+       "id": "r2l16",
+       "text": "schrot eysen. Item ain beslagzew̃g. Item drey mõdl zu hagken. Item ain sliffstain."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item die leger vaß und andrew vasser und potting so zu dem gsloss gehorden."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item ettwevil eyssen so der Weinegker kaufft hat daraus man hellenpartten"
+      },
+      {
+       "id": "r2l19",
+       "text": "gemacht hat und noch macht. Item viertzigk eysen plech. Item drey"
+      },
+      {
+       "id": "r2l20",
+       "text": "zwispitz. Item ain slegl. Item ain schelhamer. Item vier eysen keyll zum stain"
+      },
+      {
+       "id": "r2l21",
+       "text": "prechen. Item acht lãgl mit pigl."
+      },
+      {
+       "id": "r3l1",
+       "text": "Nota vermerkht was maister Ludwig der"
+      },
+      {
+       "id": "r3l2",
+       "text": "puchssenmaister von Trient gen Bersen geschikht hat von zew̆g."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item"
+      },
+      {
+       "id": "r4l2",
+       "text": "ain vãslen puchssen pulver. Item zehen hagken puchssen. Item zehen"
+      },
+      {
+       "id": "r4l3",
+       "text": "hannd puchssen. Item ain pleyen platten. Item ain krieg mitsambt dem sayl."
+      },
+      {
+       "id": "r5l1",
+       "text": "Item vermerkht was von vãrender hab, pettgewannd, kuchengeschirr und"
+      },
+      {
+       "id": "r5l2",
+       "text": "annders von Trient gen Persen komen ist."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item acht pett. Item sibenthalbs"
+      },
+      {
+       "id": "r6l2",
+       "text": "par leylach zerissen. Item syben rauch dekhen. Item drey slasin. Item fŭnff"
+      },
+      {
+       "id": "r6l3",
+       "text": "pŏss dekhen. Item sechs pŏlster. Item zwey kŭss. Item zwen kessl und"
+      },
+      {
+       "id": "r6l4",
+       "text": "ain klains. Item funff pfannen. Item drey eren hãfen. Item drey lavetzschen."
+      },
+      {
+       "id": "r6l5",
+       "text": "Item zwo hŭltzen zefften. Item drey kanndl. Item ain dryfŭss. Item zwen"
+      },
+      {
+       "id": "r6l6",
+       "text": "pratstŏckh. Item zwen pratspiss. Item drey hẽlen. Item zwo hacken. Item"
+      },
+      {
+       "id": "r6l7",
+       "text": "eysnen keyll. Item drey pley platten."
+      },
+      {
+       "id": "r7l1",
+       "text": "Item aller obgeschribner sach"
+      },
+      {
+       "id": "r7l2",
+       "text": "sein drey gleich zedl worden gemacht under unnserm vorbemelten Liechstainer"
+      },
+      {
+       "id": "r7l3",
+       "text": "und Anich aufgedruckhtten pettschafften die ain zedl dem obgenantten unnserm"
+      },
+      {
+       "id": "r7l4",
+       "text": "gnedigen herrn, die annder Mertten Neydegker, die dritt Linhartten Weinegker."
+      },
+      {
+       "id": "r7l5",
+       "text": "Beschehen auf Bersen an des Heiligen krew̃tztag invencion anno Domini et."
+      },
+      {
+       "id": "r7l6",
+       "text": "im sechsundsechtzigisten jare."
+      }
      ]
     }
    ]
@@ -480,7 +1533,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2r]"
+      }
      ]
     }
    ]
@@ -505,7 +1561,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.2v]"
+      {
+       "id": "r1l1",
+       "text": "[fol.2v]"
+      }
      ]
     }
    ]

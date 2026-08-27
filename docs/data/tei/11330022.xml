@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -203,9 +203,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11330022-1"/>
+        <pb n="1" facs="#surface-11330022-1"/>
+        <ab xml:id="ab-11330022-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11330022-1-r2">
           <lb facs="#zone-11330022-1-r2l1"/>Nota hie nach ist vermerkt die
           <lb facs="#zone-11330022-1-r2l2"/>speiss zewg und varind hab
           <lb facs="#zone-11330022-1-r2l3"/>so auf Greiffenstain noch
@@ -219,6 +221,8 @@
           <lb facs="#zone-11330022-1-r2l11"/>nach Sand Bartholomeus
           <lb facs="#zone-11330022-1-r2l12"/>tag anno Domini etc. quinqua¬
           <lb facs="#zone-11330022-1-r2l13"/>gesimosecundo etc.
+        </ab>
+        <ab xml:id="ab-11330022-1-r3">
           <lb facs="#zone-11330022-1-r3l1"/>Item czwain vass wein, darunder
           <lb facs="#zone-11330022-1-r3l2"/>ist das aine vol und hat
           <lb facs="#zone-11330022-1-r3l3"/>peẏ X ürn, ausdem andern
@@ -241,9 +245,11 @@
           <lb facs="#zone-11330022-1-r3l20"/>Item vier hulczein plaÿ.
           <lb facs="#zone-11330022-1-r3l21"/>Item funf theller.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11330022-2"/>
+        <pb n="2" facs="#surface-11330022-2"/>
+        <ab xml:id="ab-11330022-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11330022-2-r2">
           <lb facs="#zone-11330022-2-r2l1"/>Item ain erey̑ner haven.
           <lb facs="#zone-11330022-2-r2l2"/>Item XVIII hulczein weiss
           <lb facs="#zone-11330022-2-r2l3"/>klaÿne schusselnn die von
@@ -277,9 +283,11 @@
           <lb facs="#zone-11330022-2-r2l31"/>Item czwaý messgewant mit
           <lb facs="#zone-11330022-2-r2l32"/>irer zugehorung(en).
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11330022-3"/>
+        <pb n="3" facs="#surface-11330022-3"/>
+        <ab xml:id="ab-11330022-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11330022-3-r2">
           <lb facs="#zone-11330022-3-r2l1"/>Item ain messpüch.
           <lb facs="#zone-11330022-3-r2l2"/>Item drew pücher und altar¬
           <lb facs="#zone-11330022-3-r2l3"/>tücher.
@@ -312,9 +320,11 @@
           <lb facs="#zone-11330022-3-r2l30"/>Item czwo tarȃrspuxen
           <lb facs="#zone-11330022-3-r2l31"/>mit ainer lad(ung).
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11330022-4"/>
+        <pb n="4" facs="#surface-11330022-4"/>
+        <ab xml:id="ab-11330022-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11330022-4-r2">
           <lb facs="#zone-11330022-4-r2l1"/>Item ain alte eysnein püxen
           <lb facs="#zone-11330022-4-r2l2"/>ist czerbrochnn.
           <lb facs="#zone-11330022-4-r2l3"/>Item ain alte stechplattnn.

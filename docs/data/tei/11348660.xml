@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -207,9 +207,11 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11348660-1"/>
+        <pb n="1" facs="#surface-11348660-1"/>
+        <ab xml:id="ab-11348660-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11348660-1-r2">
           <lb facs="#zone-11348660-1-r2l1"/>Verzaichnũs und inṽentari
           <lb facs="#zone-11348660-1-r2l2"/>was anno 1450 aũf beeden
           <lb facs="#zone-11348660-1-r2l3"/>schlössern Telphan und Sanct
@@ -217,6 +219,8 @@
           <lb facs="#zone-11348660-1-r2l5"/>und prov̈iant aũch mũnition
           <lb facs="#zone-11348660-1-r2l6"/>und varender haab verhanden
           <lb facs="#zone-11348660-1-r2l7"/>gewesen wie hernach volgt.
+        </ab>
+        <ab xml:id="ab-11348660-1-r3">
           <lb facs="#zone-11348660-1-r3l1"/>Vermerckht waß ich Heinrich Compũner
           <lb facs="#zone-11348660-1-r3l2"/>hab ich eingeantwũrt anstat meines herrn
           <lb facs="#zone-11348660-1-r3l3"/>Degen Fũchs Ulrichen Eisenreich dem Jũngern
@@ -228,29 +232,41 @@
           <lb facs="#zone-11348660-1-r3l9"/>Telffan, Jacob Kăriol richter zũ Ÿffan und
           <lb facs="#zone-11348660-1-r3l10"/>ander leüth mer und hofgsünd von Ÿfan
           <lb facs="#zone-11348660-1-r3l11"/>und Telffan.
+        </ab>
+        <ab xml:id="ab-11348660-1-r4">
           <lb facs="#zone-11348660-1-r4l1"/>Item am ersten hab ich im eingeantwũrt
           <lb facs="#zone-11348660-1-r4l2"/>an Sanct Merten tag Telfan und Sanct
           <lb facs="#zone-11348660-1-r4l3"/>Petersperg.
           <lb facs="#zone-11348660-1-r4l4"/>Item was meins herrn genad zũgehört von
           <lb facs="#zone-11348660-1-r4l5"/>haũsswer aũf Sand Petersperg.
+        </ab>
+        <ab xml:id="ab-11348660-1-r5">
           <lb facs="#zone-11348660-1-r5l1"/>Item II eisenstainpũchsen, II hantpũchsen,
           <lb facs="#zone-11348660-1-r5l2"/>IIII targan und ain verschlagens trüchl mit
           <lb facs="#zone-11348660-1-r5l3"/>pfeilen.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11348660-2"/>
+        <pb n="2" facs="#surface-11348660-2"/>
+        <ab xml:id="ab-11348660-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11348660-2-r2">
           <lb facs="#zone-11348660-2-r2l1"/>Item vermerckht was meines herrn gnad
           <lb facs="#zone-11348660-2-r2l2"/>zũgehört von haũßwer aũf Telffan.
+        </ab>
+        <ab xml:id="ab-11348660-2-r3">
           <lb facs="#zone-11348660-2-r3l1"/>Item am ersten XIII targan, XXVI eisen¬
           <lb facs="#zone-11348660-2-r3l2"/>püchsen klain und groß und ain tarraspũchsen
           <lb facs="#zone-11348660-2-r3l3"/>XXIII handtpũchsen.
           <lb facs="#zone-11348660-2-r3l4"/>Item in dem gewelb zũ Telphan VI lägln und
           <lb facs="#zone-11348660-2-r3l5"/>ain trũchen darinnen ist pfeil, schwebl, pũlṽer
           <lb facs="#zone-11348660-2-r3l6"/>und saliter.
+        </ab>
+        <ab xml:id="ab-11348660-2-r4">
           <lb facs="#zone-11348660-2-r4l1"/>Item die obgenanten heüser hat der Joachim
           <lb facs="#zone-11348660-2-r4l2"/>dem Degen Fũchs gelassen aũf ain ansprũch
           <lb facs="#zone-11348660-2-r4l3"/>die hab dem Eisenreich also ingeantwũrt.
+        </ab>
+        <ab xml:id="ab-11348660-2-r5">
           <lb facs="#zone-11348660-2-r5l1"/>Item ich han im geben von ferdigen wein und
           <lb facs="#zone-11348660-2-r5l2"/>traidt aũf beeden heüsern XI fũeder II prenten,
           <lb facs="#zone-11348660-2-r5l3"/>darũnder sein II fũeder weiß weins in ainem
@@ -260,9 +276,11 @@
           <lb facs="#zone-11348660-2-r5l7"/>Item waizen V stär und LXX stär roggen.
           <lb facs="#zone-11348660-2-r5l8"/>Item hirß IIC und LXII stär.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11348660-3"/>
+        <pb n="3" facs="#surface-11348660-3"/>
+        <ab xml:id="ab-11348660-3-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11348660-3-r2">
           <lb facs="#zone-11348660-3-r2l1"/>Item ponen XI stär.
           <lb facs="#zone-11348660-3-r2l2"/>Item fenig LXVIII stär.
           <lb facs="#zone-11348660-3-r2l3"/>Item habern LXXXIIII stär.
@@ -276,9 +294,11 @@
           <lb facs="#zone-11348660-3-r2l11"/>Item laũter unsslit IC und LI 1/2 lb.
           <lb facs="#zone-11348660-3-r2l12"/>Item schmer LXXVI 1/2 lb.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11348660-4"/>
+        <pb n="4" facs="#surface-11348660-4"/>
+        <ab xml:id="ab-11348660-4-r1">
           <milestone unit="folio" n="2v"/>
+        </ab>
+        <ab xml:id="ab-11348660-4-r2">
           <lb facs="#zone-11348660-4-r2l1"/>Item XXXV ochsen klain und gross, die sein
           <lb facs="#zone-11348660-4-r2l2"/>geschäzt worden umb hũndert und fũnffzig
           <lb facs="#zone-11348660-4-r2l3"/>dũcaten.
@@ -298,9 +318,11 @@
           <lb facs="#zone-11348660-4-r2l17"/>und gross, pöß und gũet aũf beeden heüsern,
           <lb facs="#zone-11348660-4-r2l18"/>die wegen LXXII lb.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11348660-5"/>
+        <pb n="5" facs="#surface-11348660-5"/>
+        <ab xml:id="ab-11348660-5-r1">
           <milestone unit="folio" n="3r"/>
+        </ab>
+        <ab xml:id="ab-11348660-5-r2">
           <lb facs="#zone-11348660-5-r2l1"/>Item VII kessel khlain und gross pöß und
           <lb facs="#zone-11348660-5-r2l2"/>gũet aũf beeden heüsern, die wegen
           <lb facs="#zone-11348660-5-r2l3"/>LXXIII lb. mit eisn metal.
@@ -321,17 +343,19 @@
           <lb facs="#zone-11348660-5-r2l18"/>Item umb fleiß und hũner jũng und alt
           <lb facs="#zone-11348660-5-r2l19"/>ist angeschlagen umb VII lb. II gr.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11348660-6"/>
+        <pb n="6" facs="#surface-11348660-6"/>
+        <ab xml:id="ab-11348660-6-r1">
           <milestone unit="folio" n="3v"/>
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11348660-7"/>
+        <pb n="7" facs="#surface-11348660-7"/>
+        <ab xml:id="ab-11348660-7-r1">
           <milestone unit="folio" n="4r"/>
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11348660-8"/>
+        <pb n="8" facs="#surface-11348660-8"/>
+        <ab xml:id="ab-11348660-8-r1">
           <milestone unit="folio" n="4v"/>
+        </ab>
+        <ab xml:id="ab-11348660-8-r2">
           <lb facs="#zone-11348660-8-r2l1"/>Abschrüfft.
           <lb facs="#zone-11348660-8-r2l2"/>Inṽentarii oder verzaich¬
           <lb facs="#zone-11348660-8-r2l3"/>nũs aller dern in beeden

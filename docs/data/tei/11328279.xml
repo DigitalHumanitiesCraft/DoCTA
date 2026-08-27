@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 89cf0822553f)</name>
+          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -182,15 +182,19 @@
   <text xml:lang="gmh">
     <body>
       <div type="transcription">
-        <ab>
-          <pb n="1" facs="#surface-11328279-1"/>
+        <pb n="1" facs="#surface-11328279-1"/>
+        <ab xml:id="ab-11328279-1-r1">
           <milestone unit="folio" n="1r"/>
+        </ab>
+        <ab xml:id="ab-11328279-1-r2">
           <lb facs="#zone-11328279-1-r2l1"/>Vermerckt die hab und guĕt so
           <lb facs="#zone-11328279-1-r2l2"/>herr Melchior von Heymenhofen
           <lb facs="#zone-11328279-1-r2l3"/>als er ab der phleg Thaur gezogen
           <lb facs="#zone-11328279-1-r2l4"/>ist, herren Jacoben von Spaur ze
           <lb facs="#zone-11328279-1-r2l5"/>kauffen geben hat und ist also
           <lb facs="#zone-11328279-1-r2l6"/>betewrt und angeslagen.
+        </ab>
+        <ab xml:id="ab-11328279-1-r3">
           <lb facs="#zone-11328279-1-r3l1"/>Von erst etlichs hew̆, davon sol ain
           <lb facs="#zone-11328279-1-r3l2"/>fuederle mit zwain rossen gefuĕrt
           <lb facs="#zone-11328279-1-r3l3"/>werden, und etlich stro pro
@@ -214,9 +218,11 @@
           <lb facs="#zone-11328279-1-r3l21"/>XXIIII kŏtin hăfen klein und groß
           <lb facs="#zone-11328279-1-r3l22"/>pro II lb. VI k.
         </ab>
-        <ab>
-          <pb n="2" facs="#surface-11328279-2"/>
+        <pb n="2" facs="#surface-11328279-2"/>
+        <ab xml:id="ab-11328279-2-r1">
           <milestone unit="folio" n="1v"/>
+        </ab>
+        <ab xml:id="ab-11328279-2-r2">
           <lb facs="#zone-11328279-2-r2l1"/>Drey kessl klein und groß und
           <lb facs="#zone-11328279-2-r2l2"/>ain rebeysen pro VII lb.
           <lb facs="#zone-11328279-2-r2l3"/>Ain rost, alte hackmesser, ain kuechl
@@ -239,22 +245,24 @@
           <lb facs="#zone-11328279-2-r2l20"/>zů ainem gyesfas in der stuben
           <lb facs="#zone-11328279-2-r2l21"/>hat er im darein gelassen.
         </ab>
-        <ab>
-          <pb n="3" facs="#surface-11328279-3"/>
+        <pb n="3" facs="#surface-11328279-3"/>
+        <ab xml:id="ab-11328279-3-r1">
           <lb facs="#zone-11328279-3-r1l1"/>Item auf Tawr hat das groser vas
           <lb facs="#zone-11328279-3-r1l2"/>zehen ürn, dar an get ab dreÿ pazeiden
           <lb facs="#zone-11328279-3-r1l3"/>und das chlainer vas hat dreÿ urn
           <lb facs="#zone-11328279-3-r1l4"/>daran get ab ain pazeiden.
         </ab>
-        <ab>
-          <pb n="4" facs="#surface-11328279-4"/>
+        <pb n="4" facs="#surface-11328279-4"/>
+        <ab xml:id="ab-11328279-4-r1">
           <lb facs="#zone-11328279-4-r1l1"/>Etschwein X urn minus III pazeiden, I urn pro XI
           <lb facs="#zone-11328279-4-r1l2"/>lb., facit XI mr̃. Daran gend die III pazeiden
           <lb facs="#zone-11328279-4-r1l3"/>herab.
         </ab>
-        <ab>
-          <pb n="5" facs="#surface-11328279-5"/>
+        <pb n="5" facs="#surface-11328279-5"/>
+        <ab xml:id="ab-11328279-5-r1">
           <milestone unit="folio" n="2r"/>
+        </ab>
+        <ab xml:id="ab-11328279-5-r2">
           <lb facs="#zone-11328279-5-r2l1"/>Zehen swein klein und groß
           <lb facs="#zone-11328279-5-r2l2"/>pro V gld. II lb.
           <lb facs="#zone-11328279-5-r2l3"/>Zwen wăgen, ain pflueg
@@ -272,24 +280,24 @@
           <lb facs="#zone-11328279-5-r2l15"/>werden und hat innen X uren
           <lb facs="#zone-11328279-5-r2l16"/>minus III paceiden.
         </ab>
-        <ab>
-          <pb n="6" facs="#surface-11328279-6"/>
+        <pb n="6" facs="#surface-11328279-6"/>
+        <ab xml:id="ab-11328279-6-r1">
           <milestone unit="folio" n="2v"/>
         </ab>
-        <ab>
-          <pb n="7" facs="#surface-11328279-7"/>
+        <pb n="7" facs="#surface-11328279-7"/>
+        <ab xml:id="ab-11328279-7-r1">
           <milestone unit="folio" n="3r"/>
         </ab>
-        <ab>
-          <pb n="8" facs="#surface-11328279-8"/>
+        <pb n="8" facs="#surface-11328279-8"/>
+        <ab xml:id="ab-11328279-8-r1">
           <milestone unit="folio" n="3v"/>
         </ab>
-        <ab>
-          <pb n="9" facs="#surface-11328279-9"/>
+        <pb n="9" facs="#surface-11328279-9"/>
+        <ab xml:id="ab-11328279-9-r1">
           <milestone unit="folio" n="4r"/>
         </ab>
-        <ab>
-          <pb n="10" facs="#surface-11328279-10"/>
+        <pb n="10" facs="#surface-11328279-10"/>
+        <ab xml:id="ab-11328279-10-r1">
           <milestone unit="folio" n="4v"/>
         </ab>
       </div>

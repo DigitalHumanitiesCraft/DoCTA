@@ -21,35 +21,122 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]",
-      "Vermerckt den zeúg zw̆",
-      "Sigmȗdsegk so ich Chŭnradt",
-      "Metz geantwúrtt hab junnckherren",
-      "Dÿettrichen von Cappell in gegen¬",
-      "würtickhait des Oswalden",
-      "Sawrweins richter und ampt¬",
-      "mann zŭ Pfu̇ns.",
-      "Item zŭ dem ersten vier messein hagckhen¬",
-      "pŭchsenn.",
-      "Item sechs hantpüchsenn.",
-      "Item ain fässlein mit guettem püchsenn pülver",
-      "hat y̑n peÿ LX oder LXX phündenn.",
-      "Item sëchs armprŭsst.",
-      "Item dreÿ wÿn̑den.",
-      "Item vierhundert pfeill und ain lägell",
-      "mit pfeẏllen.",
-      "Item ain schaffraÿt und ain schreynn",
-      "und ain pettstat und zwo phannen,",
-      "zwo rodtschusslen ist meins gnädign",
-      "herrn nit an geschlagen und kost",
-      "XX lb.",
-      "Item ain langes schwert.",
-      "Item ain groß hornn.",
-      "Item ain platten pleÿ.",
-      "Item XIIII eÿsen plech.",
-      "Item langs zügsaill.",
-      "Item ain spey̑s truchen.",
-      "Item ain kästlein in der stüben."
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Vermerckt den zeúg zw̆"
+      },
+      {
+       "id": "r2l2",
+       "text": "Sigmȗdsegk so ich Chŭnradt"
+      },
+      {
+       "id": "r2l3",
+       "text": "Metz geantwúrtt hab junnckherren"
+      },
+      {
+       "id": "r2l4",
+       "text": "Dÿettrichen von Cappell in gegen¬"
+      },
+      {
+       "id": "r2l5",
+       "text": "würtickhait des Oswalden"
+      },
+      {
+       "id": "r2l6",
+       "text": "Sawrweins richter und ampt¬"
+      },
+      {
+       "id": "r2l7",
+       "text": "mann zŭ Pfu̇ns."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item zŭ dem ersten vier messein hagckhen¬"
+      },
+      {
+       "id": "r3l2",
+       "text": "pŭchsenn."
+      },
+      {
+       "id": "r3l3",
+       "text": "Item sechs hantpüchsenn."
+      },
+      {
+       "id": "r3l4",
+       "text": "Item ain fässlein mit guettem püchsenn pülver"
+      },
+      {
+       "id": "r3l5",
+       "text": "hat y̑n peÿ LX oder LXX phündenn."
+      },
+      {
+       "id": "r3l6",
+       "text": "Item sëchs armprŭsst."
+      },
+      {
+       "id": "r3l7",
+       "text": "Item dreÿ wÿn̑den."
+      },
+      {
+       "id": "r3l8",
+       "text": "Item vierhundert pfeill und ain lägell"
+      },
+      {
+       "id": "r3l9",
+       "text": "mit pfeẏllen."
+      },
+      {
+       "id": "r3l10",
+       "text": "Item ain schaffraÿt und ain schreynn"
+      },
+      {
+       "id": "r3l11",
+       "text": "und ain pettstat und zwo phannen,"
+      },
+      {
+       "id": "r3l12",
+       "text": "zwo rodtschusslen ist meins gnädign"
+      },
+      {
+       "id": "r3l13",
+       "text": "herrn nit an geschlagen und kost"
+      },
+      {
+       "id": "r3l14",
+       "text": "XX lb."
+      },
+      {
+       "id": "r3l15",
+       "text": "Item ain langes schwert."
+      },
+      {
+       "id": "r3l16",
+       "text": "Item ain groß hornn."
+      },
+      {
+       "id": "r3l17",
+       "text": "Item ain platten pleÿ."
+      },
+      {
+       "id": "r3l18",
+       "text": "Item XIIII eÿsen plech."
+      },
+      {
+       "id": "r3l19",
+       "text": "Item langs zügsaill."
+      },
+      {
+       "id": "r3l20",
+       "text": "Item ain spey̑s truchen."
+      },
+      {
+       "id": "r3l21",
+       "text": "Item ain kästlein in der stüben."
+      }
      ]
     }
    ]
@@ -74,7 +161,10 @@
      "empty": null,
      "empty_parts": null,
      "lines": [
-      "[fol.1r]"
+      {
+       "id": "r1l1",
+       "text": "[fol.1r]"
+      }
      ]
     }
    ]
