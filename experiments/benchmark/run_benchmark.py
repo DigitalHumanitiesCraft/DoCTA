@@ -154,7 +154,7 @@ def build_prompts() -> dict:
 def resolve_pages() -> list[dict]:
     spec = json.loads((ROOT / "pages.json").read_text(encoding="utf-8"))["pages"]
     rb = {p["pageNr"]: p for p in json.loads(
-        (REPO / "data" / "raitbuch2_pages.json").read_text(encoding="utf-8"))}
+        (REPO / "docs" / "data" / "raitbuch2_pages.json").read_text(encoding="utf-8"))}
     docs: dict[str, dict] = {}
     for page in spec:
         if page["source"] == "raitbuch2":
@@ -162,7 +162,7 @@ def resolve_pages() -> list[dict]:
             page["spread"] = True
         else:
             doc = docs.setdefault(page["docId"], json.loads(
-                (REPO / "data" / "transcriptions" / f"{page['docId']}.json").read_text(encoding="utf-8")))
+                (REPO / "docs" / "data" / "transcriptions" / f"{page['docId']}.json").read_text(encoding="utf-8")))
             p = next(x for x in doc["pages"] if x["pageNr"] == page["pageNr"])
             page["iiif"] = p["iiif"]
             page["spread"] = False
@@ -174,7 +174,7 @@ def resolve_pages() -> list[dict]:
 def fewshot_example() -> dict:
     """Reworked inventar example: kind heuristics + uncertain for diacritic-carrying
     words, so the example demonstrates non-empty uncertainty instead of silencing it."""
-    doc = json.loads((REPO / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(encoding="utf-8"))
+    doc = json.loads((REPO / "docs" / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(encoding="utf-8"))
     p = next(x for x in doc["pages"] if x["pageNr"] == FEWSHOT_PAGE)
     lines = []
     for r in p["regions"]:

@@ -75,9 +75,9 @@ def main():
         print(f"  p{p['pageNr']:>3}: {p['status']:<15} {p['imgFileName']}")
 
     # Save Raitbuch 2 page data
-    with open('data/raitbuch2_pages.json', 'w', encoding='utf-8') as f:
+    with open('docs/data/raitbuch2_pages.json', 'w', encoding='utf-8') as f:
         json.dump(rb2_pages, f, ensure_ascii=False, indent=2)
-    print(f'\nSaved {len(rb2_pages)} pages to data/raitbuch2_pages.json')
+    print(f'\nSaved {len(rb2_pages)} pages to docs/data/raitbuch2_pages.json')
 
     # 2. Check transcription status across a sample of documents
     print('\n\n=== Transcription status across collection (sampling) ===\n')

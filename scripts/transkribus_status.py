@@ -118,9 +118,9 @@ def main():
             print(f"    {r['id']:>8} | {r['pages']:>4}p | {r['lines']:>5}L | {r['words']:>6}W | {r['title']}")
 
     # Save results
-    with open('data/transkribus_status.json', 'w', encoding='utf-8') as f:
+    with open('docs/data/transkribus_status.json', 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    print('\nSaved to data/transkribus_status.json')
+    print('\nSaved to docs/data/transkribus_status.json')
 
 if __name__ == '__main__':
     main()

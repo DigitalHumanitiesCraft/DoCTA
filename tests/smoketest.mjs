@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Repo-Wurzel, unabhaengig vom Arbeitsverzeichnis des Aufrufers.
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
 const PORT = 8731;
 const BASE = `http://127.0.0.1:${PORT}/DoCTA/`;
 

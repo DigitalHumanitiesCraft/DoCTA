@@ -4,7 +4,7 @@ Uses networkx spring_layout to compute x/y positions for all nodes.
 Also computes degree and betweenness centrality for the top-200 nodes.
 
 Input: data/persons.json, data/relations.json
-Output: data/network.json
+Output: docs/data/network.json
 """
 import json
 import sys
@@ -23,15 +23,15 @@ BASE = 'c:/Users/chstn/Desktop/data/DHCraft/Projekte/Git/DoCTA'
 
 def main():
     print('Loading data...')
-    with open(f'{BASE}/data/persons.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/persons.json', encoding='utf-8') as f:
         persons = json.load(f)
-    with open(f'{BASE}/data/relations.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/relations.json', encoding='utf-8') as f:
         relations = json.load(f)
-    with open(f'{BASE}/data/places.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/places.json', encoding='utf-8') as f:
         places = json.load(f)
-    with open(f'{BASE}/data/institutions.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/institutions.json', encoding='utf-8') as f:
         institutions = json.load(f)
-    with open(f'{BASE}/data/functions.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/functions.json', encoding='utf-8') as f:
         functions = json.load(f)
 
     print(f'  {len(persons)} persons, {len(relations)} relations')
@@ -107,7 +107,7 @@ def main():
         })
 
     # Save
-    out_path = f'{BASE}/data/network.json'
+    out_path = f'{BASE}/docs/data/network.json'
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(network, f, ensure_ascii=False, indent=1)
 

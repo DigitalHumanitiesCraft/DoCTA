@@ -145,7 +145,7 @@ def load_api_key() -> str:
 
 def build_test_set() -> list[dict]:
     """Assemble the 5 test items from repo data files."""
-    rb = json.loads((REPO / "data" / "raitbuch2_pages.json").read_text(encoding="utf-8"))
+    rb = json.loads((REPO / "docs" / "data" / "raitbuch2_pages.json").read_text(encoding="utf-8"))
     by_nr = {p["pageNr"]: p for p in rb}
     items = []
     for nr in RAITBUCH_PAGES:
@@ -158,7 +158,7 @@ def build_test_set() -> list[dict]:
             "spread": True,
         })
     gt_doc = json.loads(
-        (REPO / "data" / "transcriptions" / f"{GT_DOC}.json").read_text(encoding="utf-8")
+        (REPO / "docs" / "data" / "transcriptions" / f"{GT_DOC}.json").read_text(encoding="utf-8")
     )
     page = next(p for p in gt_doc["pages"] if p["pageNr"] == GT_PAGE)
     gt_lines = [ln["text"] for r in page["regions"] for ln in r["lines"]]
@@ -174,7 +174,7 @@ def build_test_set() -> list[dict]:
 
 def fewshot_example() -> dict:
     doc = json.loads(
-        (REPO / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(encoding="utf-8")
+        (REPO / "docs" / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(encoding="utf-8")
     )
     page = next(p for p in doc["pages"] if p["pageNr"] == FEWSHOT_PAGE)
     lines = [ln["text"] for r in page["regions"] for ln in r["lines"]]

@@ -14,7 +14,7 @@ Sources of the numbers:
 
 Input:  data/persons.json, data/relations.json, data/places.json,
         data/sources.json, data/functions.json, data/source_mapping.json
-Output: data/stats.json
+Output: docs/data/stats.json
 
 Re-run after any change to those input files.
 """
@@ -29,7 +29,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def load(name):
-    with open(f'{BASE}/data/{name}', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/{name}', encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -44,7 +44,7 @@ def main():
         'transcriptions': sum(1 for m in mapping.get('matched', []) if m.get('has_text')),
     }
 
-    out_path = f'{BASE}/data/stats.json'
+    out_path = f'{BASE}/docs/data/stats.json'
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
         f.write('\n')

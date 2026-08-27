@@ -1,7 +1,7 @@
 """Transform the CSV source catalog into clean JSON for the prototype.
 
 Input: sources/quellen-katalog.csv (316 entries with ghost columns, inconsistent dates)
-Output: data/sources.json (clean, with Transkribus links and availability tiers)
+Output: docs/data/sources.json (clean, with Transkribus links and availability tiers)
 """
 import csv
 import json
@@ -102,7 +102,7 @@ def main():
     print(f'Loaded {len(rows)} CSV rows')
 
     # Load Transkribus mapping
-    with open(f'{BASE}/data/source_mapping.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/source_mapping.json', encoding='utf-8') as f:
         tb_mapping = json.load(f)
 
     # Build Transkribus lookup by CSV signatur
@@ -162,7 +162,7 @@ def main():
         categories[kategorie] = categories.get(kategorie, 0) + 1
 
     # Save
-    out_path = f'{BASE}/data/sources.json'
+    out_path = f'{BASE}/docs/data/sources.json'
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(sources, f, ensure_ascii=False, indent=1)
 

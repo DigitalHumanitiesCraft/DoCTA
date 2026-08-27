@@ -46,7 +46,7 @@ This prototype was built using [Promptotyping](https://lisa.gerda-henkel-stiftun
 3. **Distillation**: Compressing findings into optimized knowledge documents
 4. **Implementation**: Iterative code generation with continuous expert validation
 
-The six documents in the Knowledge Vault (`knowledge/`) are the distilled output of this process. They serve as both human-readable documentation and structured context for LLM-assisted development.
+The documents in the Knowledge Vault (`docs/knowledge/`) are the distilled output of this process. They serve as both human-readable documentation and structured context for LLM-assisted development.
 
 Core principle: *Documents as Source of Truth, Code as Disposable Artifact.*
 
@@ -64,15 +64,18 @@ Core principle: *Documents as Source of Truth, Code as Disposable Artifact.*
 
 ```
 DoCTA/
-├── *.html              8 pages (index, pipeline, sources, search, viewer, network, knowledge, help)
-├── css/styles.css      Design system (CSS custom properties, entity/confidence colors)
-├── js/                 ES6 modules (app.js, data-loader.js, utils.js)
-├── lib/                Vendored dependencies
-├── data/               Pre-fetched JSON (SiCProD, Transkribus, computed layouts)
-│   ├── demo/           Pipeline demo data (Thaur A 49.1 entities, relations, network)
-│   └── transcriptions/ 57 inventory transcriptions from Transkribus
-├── knowledge/          Promptotyping documents (7 Markdown files)
-└── scripts/            Python build-time scripts (data fetching, transformation)
+├── docs/               Published site (GitHub Pages serves this folder)
+│   ├── *.html          8 pages (index, pipeline, sources, search, viewer, network, knowledge, help)
+│   ├── css/styles.css  Design system (CSS custom properties, entity/confidence colors)
+│   ├── js/             ES6 modules (app.js, data-loader.js, utils.js)
+│   ├── lib/            Vendored dependencies
+│   ├── data/           Pre-fetched JSON (SiCProD, Transkribus, computed layouts)
+│   │   ├── demo/       Pipeline demo data (Thaur A 49.1 entities, relations, network)
+│   │   └── transcriptions/ Inventory transcriptions from Transkribus
+│   └── knowledge/      Promptotyping documents (Markdown)
+├── experiments/        VLM transcription test case and versioned HTR prompt benchmark
+├── scripts/            Python build-time scripts (data fetching, transformation)
+└── tests/              Smoke and interaction tests against the published site
 ```
 
 ## License

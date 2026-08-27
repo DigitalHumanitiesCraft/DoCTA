@@ -103,9 +103,9 @@ def main():
     print(f'GESAMT:       {len(docs):>3} Dok, {total_pages:>5} Seiten')
 
     # Save full JSON for later
-    with open('data/transkribus_collection.json', 'w', encoding='utf-8') as f:
+    with open('docs/data/transkribus_collection.json', 'w', encoding='utf-8') as f:
         json.dump(docs, f, ensure_ascii=False, indent=2)
-    print('\nFull JSON saved to data/transkribus_collection.json')
+    print('\nFull JSON saved to docs/data/transkribus_collection.json')
 
     # Now get Raitbuch 2 details (fulldoc metadata)
     rb2_id = None

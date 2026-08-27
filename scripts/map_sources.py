@@ -33,7 +33,7 @@ def extract_inv_number(text):
 
 def main():
     # Load Transkribus data
-    with open(f'{BASE}/data/transkribus_status.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/transkribus_status.json', encoding='utf-8') as f:
         tb_docs = json.load(f)
 
     # Load CSV
@@ -164,13 +164,13 @@ def main():
         print(f"  {doc['id']:>8} | {doc.get('pages',0):>4}p | {title}{match_str}")
 
     # Save mapping
-    with open(f'{BASE}/data/source_mapping.json', 'w', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/source_mapping.json', 'w', encoding='utf-8') as f:
         json.dump({
             'matched': matched,
             'unmatched_transkribus': [{'id': d['id'], 'title': d['title']} for d in unmatched_tb],
             'unmatched_csv': unmatched_csv
         }, f, ensure_ascii=False, indent=2)
-    print(f'\nSaved mapping to data/source_mapping.json')
+    print(f'\nSaved mapping to docs/data/source_mapping.json')
 
 if __name__ == '__main__':
     main()

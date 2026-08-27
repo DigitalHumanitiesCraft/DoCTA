@@ -1,6 +1,6 @@
 """Fetch PAGE-XML transcriptions for all 57 inventories with text.
 Converts to simplified JSON: lines with coordinates and text.
-Output: data/transcriptions/{doc_id}.json"""
+Output: docs/data/transcriptions/{doc_id}.json"""
 import urllib.request
 import urllib.parse
 import json
@@ -104,11 +104,11 @@ def main():
     print('Auth OK\n')
 
     # Load status to find docs with text
-    with open(f'{BASE}/data/transkribus_status.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/transkribus_status.json', encoding='utf-8') as f:
         all_docs = json.load(f)
 
     # Load mapping for CSV metadata
-    with open(f'{BASE}/data/source_mapping.json', encoding='utf-8') as f:
+    with open(f'{BASE}/docs/data/source_mapping.json', encoding='utf-8') as f:
         mapping = json.load(f)
 
     mapping_by_id = {m['transkribus_id']: m for m in mapping['matched']}
@@ -116,7 +116,7 @@ def main():
     docs_with_text = [d for d in all_docs if d.get('has_text')]
     print(f'Processing {len(docs_with_text)} documents with transcription text...\n')
 
-    os.makedirs(f'{BASE}/data/transcriptions', exist_ok=True)
+    os.makedirs(f'{BASE}/docs/data/transcriptions', exist_ok=True)
 
     total_pages = 0
     total_lines = 0
@@ -199,7 +199,7 @@ def main():
                 'pages': doc_pages
             }
 
-            with open(f'{BASE}/data/transcriptions/{doc_id}.json', 'w', encoding='utf-8') as f:
+            with open(f'{BASE}/docs/data/transcriptions/{doc_id}.json', 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
 
             total_pages += len(doc_pages)
@@ -216,7 +216,7 @@ def main():
     print(f'Pages: {total_pages}')
     print(f'Lines: {total_lines}')
     print(f'Words: {total_words}')
-    print(f'Output: data/transcriptions/*.json')
+    print(f'Output: docs/data/transcriptions/*.json')
 
 if __name__ == '__main__':
     main()
