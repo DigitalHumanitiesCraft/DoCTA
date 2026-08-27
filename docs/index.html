@@ -30,7 +30,7 @@
 
     <!-- Sources with integrated search -->
     <section class="mb-4" id="sources">
-      <h2 class="h5 mb-3">Sources</h2>
+      <h2 class="visually-hidden">Sources</h2>
 
       <div class="progress-block mb-4">
         <div class="progress-stack" id="progress-bar" role="img" aria-label="Editorial progress"></div>
@@ -253,13 +253,14 @@
     function renderChips(sources) {
       const counts = new Map();
       sources.forEach(s => counts.set(s.kategorie, (counts.get(s.kategorie) || 0) + 1));
-      const chips = [{ value: '', label: 'All', n: sources.length }].concat(
+      // The All chip carries no count; the result-count line already shows it.
+      const chips = [{ value: '', label: 'All', n: null }].concat(
         [...counts.keys()].sort((a, b) => catLabel(a).localeCompare(catLabel(b), 'en'))
           .map(k => ({ value: k, label: catLabel(k), n: counts.get(k) }))
       );
       const row = document.getElementById('category-chips');
       row.innerHTML = chips.map(c =>
-        `<button type="button" class="chip" data-kat="${escapeAttr(c.value)}" aria-pressed="${c.value === katFilter}">${escapeHTML(c.label)}<span class="chip__count tnum">${num(c.n)}</span></button>`
+        `<button type="button" class="chip" data-kat="${escapeAttr(c.value)}" aria-pressed="${c.value === katFilter}">${escapeHTML(c.label)}${c.n != null ? `<span class="chip__count tnum">${num(c.n)}</span>` : ''}</button>`
       ).join('');
     }
 
