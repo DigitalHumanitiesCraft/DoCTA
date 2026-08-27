@@ -4,7 +4,7 @@
  */
 
 const NAV_ITEMS = [
-  { href: 'index.html', label: 'Start', id: 'dashboard' },
+  { href: 'index.html', label: 'Home', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
   { href: 'knowledge.html', label: 'Knowledge', id: 'knowledge' },
@@ -40,7 +40,7 @@ export function initBanner() {
     <span>Work in Progress – Developed with <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a></span>
     <span class="wip-right">
       <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
-      <button class="wip-close" aria-label="Schließen">×</button>
+      <button class="wip-close" aria-label="Close">×</button>
     </span>
   `;
 
@@ -55,9 +55,9 @@ export function initBanner() {
 /**
  * Show a loading indicator in a container.
  * @param {HTMLElement} container
- * @param {string} [message='Daten werden geladen...']
+ * @param {string} [message='Loading data...']
  */
-export function showLoading(container, message = 'Daten werden geladen...') {
+export function showLoading(container, message = 'Loading data...') {
   container.innerHTML = `<div class="loading"><div class="loading__spinner"></div>${message}</div>`;
 }
 

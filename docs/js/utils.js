@@ -72,10 +72,10 @@ export function formatDate(date) {
  */
 export function tierLabel(tier) {
   const labels = {
-    1: 'Transkription',
-    2: 'Digitalisiert',
-    3: 'Im Archiv',
-    4: 'Unsicher',
+    1: 'Transcribed',
+    2: 'Digitized',
+    3: 'Archive only',
+    4: 'Uncertain',
   };
   return labels[tier] || '–';
 }

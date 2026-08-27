@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTR-Benchmark | DoCTA</title>
-  <meta name="description" content="Versioniertes Benchmark der VLM-Transkription: Prompt-Iterationen, CER gegen Referenzseiten, Konsistenz wiederholter Läufe.">
+  <title>HTR Benchmark | DoCTA</title>
+  <meta name="description" content="Versioned benchmark of VLM transcription: prompt iterations, CER against reference pages, consistency of repeated runs.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -25,8 +25,9 @@
 
   <main id="main" class="container py-4">
     <header class="mb-4">
-      <h1>HTR-Benchmark</h1>
-      <p class="text-body-secondary mb-0">Versionierte Prompt-Iterationen der VLM-Transkription, gemessen an Referenzseiten und an der Stabilität wiederholter Läufe. Die Seitenansicht mit Bild-Text-Synopse liegt im <a href="viewer.html">Viewer</a>.</p>
+      <h1>HTR Benchmark</h1>
+      <p class="text-body-secondary mb-2">Versioned prompt iterations of the VLM transcription, measured against reference pages and against the stability of repeated runs. It shows how much current vision-language models already read on Early New High German court records without any training. The page-by-page facsimile view lives in the <a href="viewer.html">viewer</a>.</p>
+      <p class="small mb-0"><span class="badge text-bg-warning">Machine output</span> Everything measured here is a first, fully automatic pass. No human revision has taken place yet; scholarly review turns these drafts into ground truth and edition text.</p>
     </header>
 
     <section class="card mb-4">
@@ -37,16 +38,16 @@
     </section>
 
     <section class="mb-4">
-      <h2 class="h5 mb-2">Referenzseiten</h2>
-      <p class="small text-body-secondary mb-2">Inventarseiten mit Transkribus-Referenz (Status DONE). Zeichenfehlerrate (CER) als Mittel mit Spannweite über die Wiederholungen; fair = symmetrisch normalisiert.</p>
+      <h2 class="h5 mb-2">Reference pages</h2>
+      <p class="small text-body-secondary mb-2">Inventory pages with a Transkribus reference transcription (status DONE). Character error rate (CER) as mean with range over the repetitions; fair = symmetrically normalized.</p>
       <div class="table-responsive">
         <table class="table table-sm table-hover" id="ref-table"></table>
       </div>
     </section>
 
     <section class="mb-4">
-      <h2 class="h5 mb-2">Phänomenseiten ohne Referenz</h2>
-      <p class="small text-body-secondary mb-2">Raitbuch- und Inventarseiten, ausgewählt nach Schrift- und Layoutphänomenen. Gemessen wird die Übereinstimmung der Wiederholungen untereinander, getrennt nach Wort- und Zahltokens.</p>
+      <h2 class="h5 mb-2">Phenomenon pages without reference</h2>
+      <p class="small text-body-secondary mb-2">Account-book and inventory pages selected for script and layout phenomena. Measured by agreement between repeated runs, separately for word and number tokens.</p>
       <div class="table-responsive">
         <table class="table table-sm table-hover" id="cons-table"></table>
       </div>
@@ -54,16 +55,17 @@
 
     <section class="card">
       <div class="card-body">
-        <h2 class="h5 mb-2">Protokoll</h2>
-        <p class="small mb-2">Prompts sind versioniert und nach ihrem ersten Lauf eingefroren; jede Änderung ist eine neue Iteration mit dokumentierter Begründung. Jede Bedingung läuft mehrfach, weil identische Anfragen auch bei Temperatur 0 streuen; eine Rangfolge aus Einzelläufen wäre Rauschen.</p>
-        <p class="small mb-2">Die Referenzen sind selbst Gegenstand der Prüfung: Der Transkribus-Status DONE belegt keine fachliche Abnahme, zwei Referenzseiten haben sich als fast leer erwiesen und fallen aus der Messung. Bekannte Fehlermechanismen des Modells sind der Modernisierungs-Prior, geglättete, arithmetisch stimmige, aber falsche Bilanzen und stiller Zeilenausfall.</p>
-        <p class="small mb-0">Rohdaten, Prompts und Runner: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/experiments/benchmark" target="_blank" rel="noopener">experiments/benchmark</a> im Repositorium. Referenzklassen und Freigabeprotokoll: <a href="knowledge.html">Knowledge Vault</a>, HTR-EVALUATION.</p>
+        <h2 class="h5 mb-2">Protocol</h2>
+        <p class="small mb-2">Prompts are versioned and frozen after their first run; every change is a new iteration with a documented rationale. Each condition runs several times, because identical requests vary even at temperature 0; a ranking from single runs would be noise.</p>
+        <p class="small mb-2">The references are themselves under scrutiny: Transkribus status DONE does not certify scholarly approval, and two reference pages turned out to be nearly empty and are excluded from the measurement. Known model failure modes are a modernization prior, smoothed balances that are arithmetically consistent but wrong, and silent line loss.</p>
+        <p class="small mb-2">How quality improves from here: adjudicated mini ground truth with the project team feeds the next prompt iteration (editor in the loop); domain lexica and controlled vocabularies (such as the Getty AAT for objects) constrain readings as post-processing rather than as prompt bias; and uncertain readings are explicitly marked so that human review starts where the model itself signals doubt.</p>
+        <p class="small mb-0">Raw data, prompts and runner: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/experiments/benchmark" target="_blank" rel="noopener">experiments/benchmark</a> in the repository. Reference classes and approval protocol: <a href="knowledge.html">Knowledge Vault</a>, HTR-EVALUATION.</p>
       </div>
     </section>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Impressum</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>

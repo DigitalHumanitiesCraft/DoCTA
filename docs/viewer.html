@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quellen-Explorer | DoCTA</title>
-  <meta name="description" content="Quellen-Explorer: Digitalisat neben Transkription. 57 Inventare mit Volltext aus dem Tiroler Landesarchiv.">
+  <title>Source Explorer | DoCTA</title>
+  <meta name="description" content="Source explorer: facsimile next to transcription for the inventories of the Tyrolean State Archives.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,16 +28,16 @@
       <!-- Image Panel -->
       <div class="viewer-panel">
         <div class="viewer-panel__header">
-          <span><a href="index.html#quellen" class="text-body-secondary text-decoration-none" style="font-weight:400">&larr; Quellen</a> &middot; Digitalisat</span>
+          <span><a href="index.html#sources" class="text-body-secondary text-decoration-none" style="font-weight:400">&larr; Sources</a> &middot; Facsimile</span>
           <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-outline-secondary btn-sm" id="btn-prev-page" disabled aria-label="Vorherige Seite">←</button>
-            <span id="page-indicator" class="small">Seite 1/1</span>
-            <button class="btn btn-outline-secondary btn-sm" id="btn-next-page" disabled aria-label="Nächste Seite">→</button>
+            <button class="btn btn-outline-secondary btn-sm" id="btn-prev-page" disabled aria-label="Previous page">←</button>
+            <span id="page-indicator" class="small">Page 1/1</span>
+            <button class="btn btn-outline-secondary btn-sm" id="btn-next-page" disabled aria-label="Next page">→</button>
           </div>
         </div>
         <div class="osd-container" id="osd-viewer">
           <div id="osd-placeholder" style="display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:0.875rem;text-align:center;padding:2rem;">
-            Bitte wählen Sie ein Dokument aus der Liste rechts.
+            Please choose a document from the list on the right.
           </div>
         </div>
       </div>
@@ -45,20 +45,20 @@
       <!-- Transcription Panel -->
       <div class="viewer-panel" style="overflow-y:auto">
         <div class="viewer-panel__header">
-          <span>Transkription</span>
-          <select class="form-select form-select-sm" id="doc-selector" aria-label="Dokument auswählen" style="max-width:300px">
-            <option value="">Dokument wählen...</option>
+          <span>Transcription</span>
+          <select class="form-select form-select-sm" id="doc-selector" aria-label="Select document" style="max-width:300px">
+            <option value="">Choose a document...</option>
           </select>
         </div>
         <div id="transcription-container" style="padding:0">
-          <div class="loading">Wählen Sie ein Dokument oder öffnen Sie eine Quelle auf der&nbsp;<a href="index.html#quellen">Startseite</a>.</div>
+          <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
         </div>
       </div>
     </div>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <script src="lib/openseadragon.min.js"></script>
@@ -104,7 +104,7 @@
       const container = document.getElementById('transcription-container');
       const page = doc.pages.find(p => p.pageNr === pageNr);
       if (!page) {
-        container.innerHTML = '<div class="loading text-body-secondary">Keine Transkription für diese Seite</div>';
+        container.innerHTML = '<div class="loading text-body-secondary">No transcription for this page</div>';
         return;
       }
 
@@ -131,7 +131,7 @@
           lineNr++;
           let text = escapeHTML(line.text);
           if (isDemo) {
-            const confLabels = { high: 'sicher', medium: 'prüfenswert', low: 'problematisch' };
+            const confLabels = { high: 'confident', medium: 'check', low: 'problematic' };
             for (const [key, ent] of entityMap) {
               const conf = ent.confidence || 'high';
               const regex = new RegExp(`(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
@@ -154,7 +154,7 @@
       loadImage(page.iiif);
       renderTranscription(currentDoc, page.pageNr);
 
-      document.getElementById('page-indicator').textContent = `Seite ${pageNr + 1}/${currentDoc.pages.length}`;
+      document.getElementById('page-indicator').textContent = `Page ${pageNr + 1}/${currentDoc.pages.length}`;
       document.getElementById('btn-prev-page').disabled = pageNr === 0;
       document.getElementById('btn-next-page').disabled = pageNr === currentDoc.pages.length - 1;
 
@@ -176,7 +176,7 @@
       } catch (err) {
         const errEl = document.createElement('div');
         errEl.className = 'loading text-body-secondary';
-        errEl.textContent = `Dokument ${docId} konnte nicht geladen werden: ${err.message}`;
+        errEl.textContent = `Document ${docId} could not be loaded: ${err.message}`;
         document.getElementById('transcription-container').replaceChildren(errEl);
       }
     }
@@ -209,7 +209,7 @@
         if (!demoInList) {
           const opt = document.createElement('option');
           opt.value = '11328300';
-          opt.textContent = 'Thaur A 49.1 - Inventar Schloss Thaur (Demo)';
+          opt.textContent = 'Thaur A 49.1 - Inventory of Thaur Castle (demo)';
           selector.insertBefore(opt, selector.options[1]);
         }
 

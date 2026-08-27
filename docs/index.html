@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoCTA | Agentische Editionspipeline</title>
-  <meta name="description" content="DoCTA: agentische Editionspipeline für die Hofquellen Sigmunds von Tirol (1427–1496). Von den Transkribus-Digitalisaten zu Forschungsdaten und digitaler Edition.">
+  <title>DoCTA | Agentic Edition Pipeline</title>
+  <meta name="description" content="DoCTA: agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496). From Transkribus facsimiles to research data and a digital edition.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -26,33 +26,33 @@
   <main id="main" class="container py-4">
     <header class="mb-4">
       <h1>Doing Court in the Tyrolean Alps</h1>
-      <p class="text-body-secondary">Agentische Editionspipeline für die Hofquellen Sigmunds von Tirol (1427–1496): von den Transkribus-Digitalisaten des Tiroler Landesarchivs zu verlässlichen Forschungsdaten und einer digitalen Edition</p>
+      <p class="text-body-secondary">An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496): from the Transkribus facsimiles of the Tyrolean State Archives to reliable research data and a digital edition. Account books, inventories, copybooks and court ordinances are treated as one connected corpus.</p>
     </header>
 
     <!-- Pipeline Overview -->
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">Editionspipeline</h2>
-        <p class="small text-body-secondary mb-3">Jede Stufe ist versioniert und überprüfbar; die fachliche Abnahme durch die Projektleitung erzeugt Ground Truth, verbessert die Messbasis und ist zugleich Editionsfortschritt.</p>
+        <h2 class="h5 mb-2">Edition pipeline</h2>
+        <p class="small text-body-secondary mb-3">Every stage is versioned and verifiable. Scholarly review by the project team produces ground truth, improves the measurement base, and directly advances the edition. All machine output is clearly marked as unrevised until a scholar has approved it.</p>
         <div class="pipeline-steps">
-          <a href="#quellen" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Stufe 1</span>
-            <span class="pipeline-step__label">Quellen</span>
+          <a href="#sources" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Stage 1</span>
+            <span class="pipeline-step__label">Sources</span>
           </a>
           <a href="benchmark.html" class="pipeline-step pipeline-step--active">
-            <span class="pipeline-step__number">Stufe 2</span>
-            <span class="pipeline-step__label">VLM-Transkription</span>
+            <span class="pipeline-step__number">Stage 2</span>
+            <span class="pipeline-step__label">VLM transcription</span>
           </a>
           <a href="viewer.html" class="pipeline-step pipeline-step--active">
-            <span class="pipeline-step__number">Stufe 3</span>
-            <span class="pipeline-step__label">Validierung &amp; Ground Truth</span>
+            <span class="pipeline-step__number">Stage 3</span>
+            <span class="pipeline-step__label">Validation &amp; ground truth</span>
           </a>
           <a href="knowledge.html" class="pipeline-step">
-            <span class="pipeline-step__number">Stufe 4</span>
-            <span class="pipeline-step__label">TEI &amp; Forschungsdaten</span>
+            <span class="pipeline-step__number">Stage 4</span>
+            <span class="pipeline-step__label">TEI &amp; research data</span>
           </a>
           <a href="knowledge.html" class="pipeline-step">
-            <span class="pipeline-step__number">Stufe 5</span>
+            <span class="pipeline-step__number">Stage 5</span>
             <span class="pipeline-step__label">Edition</span>
           </a>
         </div>
@@ -66,7 +66,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-sources">–</div>
-              <div class="stat-label">Quellen</div>
+              <div class="stat-label">Sources</div>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-transcriptions">–</div>
-              <div class="stat-label">Transkriptionen</div>
+              <div class="stat-label">Transcriptions</div>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-persons">–</div>
-              <div class="stat-label">Personen (SiCProD)</div>
+              <div class="stat-label">Persons (SiCProD)</div>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-places">–</div>
-              <div class="stat-label">Orte</div>
+              <div class="stat-label">Places</div>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-relations">–</div>
-              <div class="stat-label">Relationen</div>
+              <div class="stat-label">Relations</div>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
           <div class="card text-center">
             <div class="card-body py-3">
               <div class="stat-value" id="stat-functions">–</div>
-              <div class="stat-label">Funktionen</div>
+              <div class="stat-label">Functions</div>
             </div>
           </div>
         </div>
@@ -115,25 +115,25 @@
     </section>
 
     <!-- Sources with integrated search -->
-    <section class="mb-4" id="quellen">
-      <h2 class="h5 mb-2">Quellen</h2>
-      <p class="small text-body-secondary mb-3">Rechnungen, Inventare, Kopialbücher und Hofordnungen aus dem Tiroler Landesarchiv. Quellen mit Volltext öffnen die Synopse aus Digitalisat und Transkription im Viewer.</p>
+    <section class="mb-4" id="sources">
+      <h2 class="h5 mb-2">Sources</h2>
+      <p class="small text-body-secondary mb-3">Account books, inventories, copybooks and court ordinances from the Tyrolean State Archives. Sources with full text open the facsimile–transcription view in the viewer. Several inventories have already been edited and published by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a> on <a href="https://app.transkribus.org/en/sites/inventaria" target="_blank" rel="noopener">Transkribus Sites</a>; those transcriptions are used here with attribution.</p>
 
       <div class="row g-2 mb-3 align-items-center">
         <div class="col-md-5">
-          <input type="search" class="form-control" id="search-input" placeholder="Signatur, Titel oder Datierung suchen..." aria-label="Quellensuche">
+          <input type="search" class="form-control" id="search-input" placeholder="Search shelfmark, title or date..." aria-label="Source search">
         </div>
         <div class="col-md-3">
-          <select class="form-select" id="filter-kategorie" aria-label="Kategorie filtern">
-            <option value="">Alle Kategorien</option>
+          <select class="form-select" id="filter-kategorie" aria-label="Filter by category">
+            <option value="">All categories</option>
           </select>
         </div>
         <div class="col-md-2">
-          <select class="form-select" id="filter-tier" aria-label="Verfügbarkeit filtern">
-            <option value="">Alle Tiers</option>
-            <option value="1">Tier 1: Transkription</option>
-            <option value="2">Tier 2: Digitalisiert</option>
-            <option value="3">Tier 3: Im Archiv</option>
+          <select class="form-select" id="filter-tier" aria-label="Filter by availability">
+            <option value="">All tiers</option>
+            <option value="1">Tier 1: Transcribed</option>
+            <option value="2">Tier 2: Digitized</option>
+            <option value="3">Tier 3: Archive only</option>
           </select>
         </div>
         <div class="col-md-2 text-end">
@@ -142,16 +142,16 @@
       </div>
 
       <div class="table-responsive">
-        <table class="table table-hover table-sm" id="sources-table" aria-label="Quellenübersicht">
+        <table class="table table-hover table-sm" id="sources-table" aria-label="Source overview">
           <thead class="table-light">
             <tr>
-              <th data-sort="kategorie" tabindex="0" aria-sort="none">Kategorie <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="signatur" tabindex="0" aria-sort="none">Signatur <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="titel" tabindex="0" aria-sort="none">Titel <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="datierung" tabindex="0" aria-sort="none">Datierung <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="seiten" tabindex="0" aria-sort="none">Seiten <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="kategorie" tabindex="0" aria-sort="none">Category <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="signatur" tabindex="0" aria-sort="none">Shelfmark <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="datierung" tabindex="0" aria-sort="none">Date <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th data-sort="seiten" tabindex="0" aria-sort="none">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
               <th data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th>Aktion</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="sources-body">
@@ -163,15 +163,15 @@
     <!-- Method -->
     <section class="card">
       <div class="card-body">
-        <h2 class="h5 mb-2">Methode</h2>
-        <p class="small mb-2">DoCTA überführt die Digitalisate der Transkribus-Collection in Forschungsdaten und eine digitale Edition. Vision-Language-Modelle transkribieren, versionierte Prompts mit messbarer Qualität steuern die Erkennung (<a href="benchmark.html">Benchmark</a>), und die fachliche Abnahme bleibt bei der Projektleitung: jede geprüfte Seite wird Ground Truth und zugleich Teil der Edition (<a href="viewer.html">Viewer</a>). Der gesamte Weg ist als <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>-Fallstudie im <a href="knowledge.html">Knowledge Vault</a> dokumentiert.</p>
-        <p class="small text-body-secondary mb-0">Datenquellen: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW), Transkribus (READ-COOP), Tiroler Landesarchiv.</p>
+        <h2 class="h5 mb-2">Method</h2>
+        <p class="small mb-2">DoCTA turns the facsimiles of the Transkribus collection into research data and a digital edition. The digital tools are heuristic instruments in service of the historical research questions: they open up the sources so that different source types can be analysed together. Vision-language models produce first transcriptions without any training, versioned prompts with measured quality steer the recognition (<a href="benchmark.html">benchmark</a>), and scholarly approval stays with the project team: every reviewed page becomes ground truth and part of the edition (<a href="viewer.html">viewer</a>). The whole path is documented as a <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a> case study in the <a href="knowledge.html">Knowledge Vault</a>.</p>
+        <p class="small text-body-secondary mb-0">Data sources: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (Austrian Academy of Sciences), <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria</a> (published inventory editions on Transkribus Sites), Transkribus (READ-COOP), Tyrolean State Archives.</p>
       </div>
     </section>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Impressum</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
@@ -191,13 +191,13 @@
       try {
         const stats = await loadJSON('data/stats.json');
         const missing = STAT_KEYS.filter(key => typeof stats?.[key] !== 'number');
-        if (missing.length) throw new Error(`Unvollständige Kennzahlen: ${missing.join(', ')}`);
+        if (missing.length) throw new Error(`Incomplete stats: ${missing.join(', ')}`);
 
         STAT_KEYS.forEach(key => {
           document.getElementById(`stat-${key}`).textContent = formatNumber(stats[key]);
         });
       } catch (err) {
-        document.getElementById('stats-error').textContent = `Kennzahlen konnten nicht geladen werden: ${err.message}`;
+        document.getElementById('stats-error').textContent = `Stats could not be loaded: ${err.message}`;
         console.error('Failed to load stats:', err);
       }
     }
@@ -208,19 +208,19 @@
 
     function renderTable(sources) {
       const tbody = document.getElementById('sources-body');
-      document.getElementById('result-count').textContent = `${sources.length.toLocaleString('de-AT')} Quellen`;
+      document.getElementById('result-count').textContent = `${sources.length.toLocaleString('en-GB')} sources`;
 
       if (sources.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" class="text-body-secondary text-center py-4">Keine Quellen gefunden</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" class="text-body-secondary text-center py-4">No sources found</td></tr>';
         return;
       }
 
       tbody.innerHTML = sources.map(s => {
         let action = '';
         if (s.transkribus && s.transkribus.has_text) {
-          action = `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Öffnen</a>`;
+          action = `<a href="viewer.html?doc=${s.transkribus.doc_id}" class="btn btn-outline-accent btn-sm">Open</a>`;
         } else if (s.tier === 1 || s.tier === 2) {
-          action = `<span class="small text-body-secondary">Nur Digitalisat</span>`;
+          action = `<span class="small text-body-secondary">Facsimile only</span>`;
         }
         return `<tr>
           <td>${escapeHTML(s.kategorie)}</td>
@@ -342,7 +342,7 @@
         const errTd = document.createElement('td');
         errTd.colSpan = 7;
         errTd.className = 'text-body-secondary text-center py-4';
-        errTd.textContent = `Fehler beim Laden: ${err.message}`;
+        errTd.textContent = `Loading failed: ${err.message}`;
         errTr.appendChild(errTd);
         document.getElementById('sources-body').replaceChildren(errTr);
       }

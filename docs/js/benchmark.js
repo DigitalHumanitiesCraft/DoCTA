@@ -36,22 +36,22 @@ function renderAggregate(summary, excluded) {
     return `<div class="col-12 col-md-6">
       <div class="border rounded p-2">
         <div class="fw-bold mb-1">${esc(it)}</div>
-        <div class="small">CER fair, Referenzseiten: <strong>${pct(cer)}</strong>
-          &nbsp;·&nbsp; Zahlen-Konsistenz Raitbuch: <strong>${nums != null ? nums.toFixed(2) : "–"}</strong>
-          &nbsp;·&nbsp; Wort-Konsistenz: <strong>${words != null ? words.toFixed(2) : "–"}</strong></div>
+        <div class="small">CER fair, reference pages: <strong>${pct(cer)}</strong>
+          &nbsp;·&nbsp; number consistency (account book): <strong>${nums != null ? nums.toFixed(2) : "–"}</strong>
+          &nbsp;·&nbsp; word consistency: <strong>${words != null ? words.toFixed(2) : "–"}</strong></div>
       </div>
     </div>`;
   }).join("");
   $("#agg-note").textContent = (excluded.length
-    ? `Ohne ${excluded.join(", ")}: Referenz fast leer, zur Adjudikation vorgemerkt. ` : "")
-    + `Modell ${summary.model}, Stand ${summary.generated}.`;
+    ? `Excluding ${excluded.join(", ")}: reference nearly empty, flagged for adjudication. ` : "")
+    + `Model ${summary.model}, as of ${summary.generated}.`;
 }
 
 function renderRefTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => p.gt_lines);
-  const head = `<thead class="table-light"><tr><th>Seite</th><th>Folio</th>` +
+  const head = `<thead class="table-light"><tr><th>Page</th><th>Folio</th>` +
     its.map((it) => `<th>CER fair ${esc(it)}</th>`).join("") +
-    its.map((it) => `<th>CER strikt ${esc(it)}</th>`).join("") + `</tr></thead>`;
+    its.map((it) => `<th>CER strict ${esc(it)}</th>`).join("") + `</tr></thead>`;
   const body = rows.map(([id, p]) => {
     const bad = Object.values(p.iterations).some((e) => (e.cer_fair?.mean ?? 0) >= 1);
     return `<tr${bad ? ' class="table-warning"' : ""}><td class="font-monospace small">${esc(id)}</td>` +
@@ -64,10 +64,10 @@ function renderRefTable(summary, its) {
 
 function renderConsTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => !p.gt_lines);
-  const head = `<thead class="table-light"><tr><th>Seite</th><th>Folio</th><th>Phänomene</th>` +
-    its.map((it) => `<th>Wörter ${esc(it)}</th>`).join("") +
-    its.map((it) => `<th>Zahlen ${esc(it)}</th>`).join("") +
-    its.map((it) => `<th>Zeilen ${esc(it)}</th>`).join("") + `</tr></thead>`;
+  const head = `<thead class="table-light"><tr><th>Page</th><th>Folio</th><th>Phenomena</th>` +
+    its.map((it) => `<th>words ${esc(it)}</th>`).join("") +
+    its.map((it) => `<th>numbers ${esc(it)}</th>`).join("") +
+    its.map((it) => `<th>lines ${esc(it)}</th>`).join("") + `</tr></thead>`;
   const body = rows.map(([id, p]) => {
     return `<tr><td class="font-monospace small">${esc(id)}</td>` +
       `<td class="small">${esc(p.folio)}</td>` +
