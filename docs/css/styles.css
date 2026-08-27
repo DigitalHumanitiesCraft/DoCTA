@@ -23,23 +23,24 @@
   --conf-high: #2d7d46;
   --conf-high-bg: #e8f5e9;
   --conf-medium: #8a6100;
-  --conf-medium-dark: #6d4c00;
   --conf-medium-bg: #fff8e1;
   --conf-low: #c62828;
   --conf-low-bg: #ffebee;
 
-  --ent-person: #1565c0;
-  --ent-person-bg: #e3f2fd;
-  --ent-place: #2e7d32;
-  --ent-place-bg: #e8f5e9;
-  --ent-object: #ad4300;
-  --ent-object-bg: #fff3e0;
-  --ent-time: #6a1b9a;
-  --ent-time-bg: #f3e5f5;
-  --ent-institution: #ad4300;
-  --ent-institution-bg: #fff3e0;
-  --ent-function: #6a1b9a;
-  --ent-function-bg: #f3e5f5;
+  /* Entity palette: six muted hues on the warm ground, each foreground at least
+     4.5:1 on its own -bg pair, on --bg-primary and on --surface. */
+  --ent-person: #2b4c7e;
+  --ent-person-bg: #e6ecf4;
+  --ent-place: #2f6446;
+  --ent-place-bg: #e5efe8;
+  --ent-object: #a74320;
+  --ent-object-bg: #f8e9e3;
+  --ent-time: #6d3d78;
+  --ent-time-bg: #f0e8f2;
+  --ent-institution: #175c6d;
+  --ent-institution-bg: #e2eef1;
+  --ent-function: #5d5a1c;
+  --ent-function-bg: #efedda;
 
   --tier-4: #6c6c6c;
   --tier-4-bg: #f0f0f0;
@@ -147,9 +148,46 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .entity--institution { background: var(--ent-institution-bg); color: var(--ent-institution); border-bottom: 2px solid var(--ent-institution); }
 .entity--function { background: var(--ent-function-bg); color: var(--ent-function); border-bottom: 2px solid var(--ent-function); }
 
-/* Confidence is carried by the tooltip text as well as the border style */
-.entity[data-conf="medium"] { border-bottom-style: dashed; }
-.entity[data-conf="low"] { border-bottom-style: dotted; border-bottom-color: var(--conf-low); }
+/* === Provenance chips ===
+   Who produced or verified a layer: human, workflow, llm. Text carries the
+   statement, colour only reinforces it. */
+.prov-chip {
+  display: inline-block;
+  padding: 0.0625rem var(--space-sm);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+  white-space: nowrap;
+  cursor: help;
+}
+
+.prov-chip--human {
+  border-color: var(--conf-high);
+  background: var(--conf-high-bg);
+  color: var(--conf-high);
+}
+
+/* Partly corrected: part of the pages carry a human hand, the rest do not */
+.prov-chip--partial {
+  border-color: var(--conf-medium);
+  background: var(--conf-medium-bg);
+  color: var(--conf-medium);
+}
+
+/* Deterministic pipeline output, no model and no human in the loop */
+.prov-chip--workflow {
+  border-color: var(--ent-person);
+  background: var(--ent-person-bg);
+  color: var(--ent-person);
+}
+
+.prov-chip--llm,
+.prov-chip--machine {
+  border-color: var(--border-custom);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
 
 /* === Transcription Text === */
 .transcription {
@@ -684,9 +722,27 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 .exp-src { font-family: var(--font-source); }
 
-.conf--high { color: var(--conf-high); }
-.conf--medium { color: var(--conf-medium-dark); }
-.conf--low { color: var(--conf-low); }
+/* Attestation: every occurrence links back to the page it was read on */
+.exp-attest {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: baseline;
+}
+
+.exp-attest__count { color: var(--text-muted-custom); }
+
+.exp-attest__link {
+  padding: 0 0.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-light);
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.exp-attest__link:hover,
+.exp-attest__link:focus-visible { text-decoration: underline; color: var(--accent-hover); }
 
 /* Below lg the sidebar overlays the view area on demand. The block sits here
    rather than in the Responsive section because those rules precede these and

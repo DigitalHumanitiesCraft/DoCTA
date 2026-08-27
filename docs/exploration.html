@@ -53,13 +53,39 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML } from './js/utils.js';
+    import { getParams, setParams, escapeHTML, escapeAttr } from './js/utils.js';
 
     initNav('exploration');
     initBanner();
 
     const NODE_HINT = 'Select a node to see its role in the source.';
     const TYPE_LABEL = { person: 'person', place: 'place', object: 'object', time: 'time' };
+
+    /* Provenance names who produced or verified a record. The demo extraction is
+       entirely LLM output; the map carries the other two values so a later,
+       mixed dataset renders without a change here. */
+    const PROV_LABELS = {
+      human: {
+        label: 'Human',
+        title: 'Established or corrected by a scholar',
+      },
+      workflow: {
+        label: 'Workflow',
+        title: 'Produced by a deterministic pipeline step, no model involved',
+      },
+      llm: {
+        label: 'LLM',
+        title: 'Extracted by an LLM agent in the prototype phase; not verified by a scholar',
+      },
+    };
+
+    const DEFAULT_PROVENANCE = 'llm';
+
+    function provChip(prov) {
+      const p = PROV_LABELS[prov] ? prov : DEFAULT_PROVENANCE;
+      const { label, title } = PROV_LABELS[p];
+      return `<span class="prov-chip prov-chip--${p}" title="${escapeAttr(title)}">${escapeHTML(label)}</span>`;
+    }
 
     function typeLegend(types) {
       return types.map(t => `<span class="entity entity--${t}">${TYPE_LABEL[t]}</span>`).join(' ');
@@ -71,16 +97,18 @@
         id: 'network',
         label: 'Network',
         context: () => `<p class="mb-2" id="net-detail" aria-live="polite">${NODE_HINT}</p>` +
-          '<p class="mb-0"><span class="legend-dot legend-person" aria-hidden="true"></span> person &nbsp;' +
+          '<p class="mb-2"><span class="legend-dot legend-person" aria-hidden="true"></span> person &nbsp;' +
           '<span class="legend-dot legend-place" aria-hidden="true"></span> place<br>' +
-          'Node size follows the number of attested relations; edge labels name the relation type from the source.</p>',
+          'Node size follows the number of attested relations; edge labels name the relation type from the source.</p>' +
+          `<p class="mb-0">Provenance ${provChip('llm')} for every node and edge of this network.</p>`,
         render: renderNetwork,
       },
       {
         id: 'entities',
         label: 'Entities',
-        context: () => `<p class="mb-0">${typeLegend(['person', 'place', 'object', 'time'])}<br>` +
-          '<span class="conf--high">high</span> · <span class="conf--medium">medium</span> · <span class="conf--low">low</span> confidence</p>',
+        context: () => `<p class="mb-2">${typeLegend(['person', 'place', 'object', 'time'])}</p>` +
+          `<p class="mb-0">Provenance ${provChip('human')} ${provChip('workflow')} ${provChip('llm')}<br>` +
+          'Every record of this extraction carries LLM provenance.</p>',
         render: renderEntities,
       },
     ];
@@ -215,7 +243,8 @@
         if (!detail) return;
         detail.innerHTML = `<strong>${escapeHTML(d.label)}</strong> (${escapeHTML(d.type)})` +
           (d.role ? ` · ${escapeHTML(d.role)}` : '') +
-          ` · ${degree[d.id] || 0} attested relations in Thaur A 49.1`;
+          ` · ${degree[d.id] || 0} attested relations in Thaur A 49.1 ` +
+          provChip(d.provenance || data.provenance || DEFAULT_PROVENANCE);
       });
       cy.on('tap', evt => {
         if (evt.target !== cy) return;
@@ -230,25 +259,45 @@
 
     async function renderEntities(panel) {
       const data = await loadJSON('data/demo/thaur_entities.json');
+      const srcDocId = data.docId || 11328300;
       const rows = data.entities.map(e => ({
         text: e.text || '',
         normalized: e.normalized || '',
         type: e.type || '',
-        confidence: e.confidence || '',
+        provenance: e.provenance || data.provenance || DEFAULT_PROVENANCE,
         count: typeof e.count === 'number' ? e.count : null,
-        page: typeof e.pageNr === 'number' ? e.pageNr : null,
+        // One record per occurrence in this dataset; the shape carries a list so a
+        // record attested on several pages renders every attestation.
+        occurrences: (Array.isArray(e.occurrences) ? e.occurrences : [e])
+          .filter(o => o && typeof o.pageNr === 'number')
+          .map(o => ({ pageNr: o.pageNr, lineId: o.lineId || null })),
         detail: e.role || e.category || e.isoDate || '',
       }));
 
-      const CONF_RANK = { high: 3, medium: 2, low: 1 };
+      // Every attestation links back to the page it was read on
+      function attestCell(r) {
+        if (!r.occurrences.length) return '';
+        const links = r.occurrences.map(o => {
+          const title = o.lineId
+            ? `Open page ${o.pageNr} in the viewer, line ${o.lineId}`
+            : `Open page ${o.pageNr} in the viewer`;
+          return `<a class="exp-attest__link" href="viewer.html?doc=${encodeURIComponent(srcDocId)}` +
+                 `&amp;page=${o.pageNr}" title="${escapeAttr(title)}">p.&nbsp;${o.pageNr}</a>`;
+        }).join('');
+        const count = r.count !== null && r.count > r.occurrences.length
+          ? `<span class="exp-attest__count">${r.count}×</span>`
+          : '';
+        return `<span class="exp-attest">${count}${links}</span>`;
+      }
+
       const COLUMNS = [
         { key: 'text', label: 'Source form', cell: r => `<span class="exp-src">${escapeHTML(r.text)}</span>` },
         { key: 'normalized', label: 'Normalized', cell: r => escapeHTML(r.normalized) },
         { key: 'type', label: 'Type', cell: r => r.type ? `<span class="entity entity--${escapeHTML(r.type)}">${escapeHTML(TYPE_LABEL[r.type] || r.type)}</span>` : '' },
-        { key: 'confidence', label: 'Confidence', num: true, sort: r => CONF_RANK[r.confidence] || 0,
-          cell: r => `<span class="conf--${escapeHTML(r.confidence)}">${escapeHTML(r.confidence)}</span>` },
+        { key: 'provenance', label: 'Provenance', cell: r => provChip(r.provenance) },
         { key: 'count', label: 'Occurrences', num: true, cell: r => r.count === null ? '' : String(r.count) },
-        { key: 'page', label: 'Page', num: true, cell: r => r.page === null ? '' : String(r.page) },
+        { key: 'attestation', label: 'Attestation', num: true,
+          sort: r => r.occurrences.length ? r.occurrences[0].pageNr : null, cell: attestCell },
         { key: 'detail', label: 'Role or category', cell: r => escapeHTML(r.detail) },
       ];
 

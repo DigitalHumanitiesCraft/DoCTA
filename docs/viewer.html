@@ -122,6 +122,7 @@
     let rotation = 0;
     let entitiesData = null;
     let sourceByDocId = new Map();
+    let registerByDocId = new Map();
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -153,6 +154,32 @@
              `<span${valueClass ? ` class="${valueClass}"` : ''}>${escapeHTML(value)}</span></span>`;
     }
 
+    // Which text layer the reader is looking at: human-corrected pages are the
+    // ones marked DONE in Transkribus, everything else is the unrevised HTR layer.
+    function provenanceChip(docId) {
+      const reg = registerByDocId.get(Number(docId));
+      if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return '';
+      const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
+      const total = reg.pages_total;
+      let state, label, title;
+      if (done >= total) {
+        state = 'human';
+        label = 'Human-corrected';
+        title = `All ${total} pages corrected and marked done in Transkribus`;
+      } else if (done > 0) {
+        state = 'partial';
+        label = `Partly corrected · ${done}/${total} pages`;
+        title = `${done} of ${total} pages corrected and marked done in Transkribus, ` +
+                'the remaining pages are the unrevised Transkribus HTR layer';
+      } else {
+        state = 'machine';
+        label = 'Machine transcription';
+        title = 'Unrevised Transkribus HTR layer, no human correction yet';
+      }
+      return `<span class="prov-chip prov-chip--${state}" id="doc-provenance"` +
+             ` title="${escapeAttr(title)}">${escapeHTML(label)}</span>`;
+    }
+
     function renderDocMeta(docId) {
       const el = document.getElementById('doc-meta');
       const s = sourceByDocId.get(Number(docId));
@@ -173,7 +200,8 @@
       const parts = [
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
         `<span class="doc-meta__cat" title="Source category">${escapeHTML(CATEGORY_EN[s.kategorie] || s.kategorie)}</span>`,
-      ];
+        provenanceChip(docId),
+      ].filter(Boolean);
       el.innerHTML = parts.join('');
       el.hidden = false;
     }
@@ -283,11 +311,10 @@
           }
           let text = escapeHTML(line.text);
           if (isDemo) {
-            const confLabels = { high: 'confident', medium: 'check', low: 'problematic' };
             for (const [key, ent] of entityMap) {
-              const conf = ent.confidence || 'high';
               const regex = new RegExp(`(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-              text = text.replace(regex, `<span class="entity entity--${ent.type}" data-conf="${conf}" title="${escapeHTML(ent.normalized || ent.text)} (${confLabels[conf]})">\$1</span>`);
+              const tip = `${ent.normalized || ent.text} (LLM extraction, unverified)`;
+              text = text.replace(regex, `<span class="entity entity--${ent.type}" title="${escapeAttr(tip)}">\$1</span>`);
             }
           }
           html += `<div class="transcription__line"><span class="transcription__line-nr">${lineNr}</span><span>${text}</span></div>`;
@@ -519,13 +546,16 @@
 
     async function init() {
       try {
-        const [mapping, sources] = await Promise.all([
+        const [mapping, sources, register] = await Promise.all([
           loadJSON('data/source_mapping.json'),
           loadJSON('data/sources.json').catch(() => []),
+          loadJSON('data/pipeline/register_summary.json').catch(() => ({ documents: [] })),
         ]);
         sourceByDocId = new Map(sources
           .filter(s => s.transkribus?.doc_id)
           .map(s => [Number(s.transkribus.doc_id), s]));
+        registerByDocId = new Map((register.documents || [])
+          .map(d => [Number(d.docId), d]));
         const selector = document.getElementById('doc-selector');
 
         const docsWithText = mapping.matched
