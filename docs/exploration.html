@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploration | DoCTA</title>
+  <meta name="description" content="Exploratory view of the content layer of the edited texts: entities and relations extracted from validated transcriptions.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container py-4">
+    <header class="mb-4">
+      <h1>Exploration</h1>
+    </header>
+
+    <section class="card mb-4">
+      <div class="card-body">
+        <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-2">
+          <h2 class="h5 mb-0">Thaur A 49.1 (1471)</h2>
+          <a class="small" href="viewer.html?doc=11328300">Open the source in the viewer</a>
+        </div>
+        <div id="cy-wrap">
+          <div id="cy" role="img" aria-label="Relation network of the Thaur inventory: persons and places connected by attested relations"></div>
+        </div>
+        <p class="small mb-1" id="net-legend">
+          <span class="legend-dot legend-person" aria-hidden="true"></span> person &nbsp;
+          <span class="legend-dot legend-place" aria-hidden="true"></span> place &nbsp;
+          <span class="text-body-secondary">Node size follows the number of attested relations; edge labels name the relation type from the source.</span>
+        </p>
+        <p class="small text-body-secondary mb-0" id="net-detail" aria-live="polite">Select a node to see its role in the source.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-4 border-top small text-body-secondary">
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initNav, initBanner } from './js/app.js';
+    import { loadJSON } from './js/data-loader.js';
+    import { escapeHTML } from './js/utils.js';
+
+    initNav('exploration');
+    initBanner();
+
+    async function init() {
+      const data = await loadJSON('data/demo/thaur_network.json');
+      const degree = {};
+      for (const e of data.edges) {
+        degree[e.source] = (degree[e.source] || 0) + 1;
+        degree[e.target] = (degree[e.target] || 0) + 1;
+      }
+      const elements = [
+        ...data.nodes.map(n => ({ data: { ...n, degree: degree[n.id] || 1 } })),
+        ...data.edges.map(e => ({ data: e })),
+      ];
+
+      const { default: cytoscape } = await import('./lib/cytoscape.esm.min.mjs');
+      const cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements,
+        layout: { name: 'cose', animate: false, padding: 30 },
+        style: [
+          { selector: 'node', style: {
+              'label': 'data(label)', 'text-valign': 'bottom', 'text-halign': 'center',
+              'font-size': '10px', 'text-margin-y': 5, 'text-max-width': '110px', 'text-wrap': 'ellipsis',
+              'width': 'mapData(degree, 1, 8, 14, 34)', 'height': 'mapData(degree, 1, 8, 14, 34)',
+          } },
+          { selector: 'node[type="person"]', style: { 'background-color': '#1565c0' } },
+          { selector: 'node[type="place"]', style: { 'background-color': '#2e7d32', 'shape': 'diamond' } },
+          { selector: 'edge', style: {
+              'width': 1.5, 'line-color': '#b8afa1', 'curve-style': 'bezier',
+              'target-arrow-shape': 'triangle', 'target-arrow-color': '#b8afa1', 'arrow-scale': 0.8,
+              'label': 'data(label)', 'font-size': '7px', 'color': '#6d6252',
+              'text-rotation': 'autorotate', 'text-background-color': '#faf8f5',
+              'text-background-opacity': 0.85, 'text-background-padding': '1px',
+          } },
+          { selector: 'node:selected', style: { 'border-width': 3, 'border-color': '#8b5e3c' } },
+        ],
+      });
+
+      const detail = document.getElementById('net-detail');
+      cy.on('tap', 'node', evt => {
+        const d = evt.target.data();
+        detail.innerHTML = `<strong>${escapeHTML(d.label)}</strong> (${escapeHTML(d.type)})` +
+          (d.role ? ` · ${escapeHTML(d.role)}` : '') +
+          ` · ${degree[d.id] || 0} attested relations in Thaur A 49.1`;
+      });
+      cy.on('tap', evt => {
+        if (evt.target === cy) detail.textContent = 'Select a node to see its role in the source.';
+      });
+    }
+
+    init().catch(err => {
+      document.getElementById('net-detail').textContent = `Network could not be loaded: ${err.message}`;
+    });
+  </script>
+</body>
+</html>

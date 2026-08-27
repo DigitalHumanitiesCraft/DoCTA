@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: 'index.html', label: 'Home', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
+  { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'knowledge.html', label: 'Knowledge', id: 'knowledge' },
   { href: 'about.html', label: 'About', id: 'about' },
 ];
@@ -68,5 +69,5 @@ export function showLoading(container, message = 'Loading data...') {
  */
 export function formatNumber(n) {
   if (n == null) return '–';
-  return n.toLocaleString('de-AT');
+  return n.toLocaleString('en-GB');
 }

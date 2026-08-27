@@ -26,7 +26,6 @@
   <main id="main" class="container py-4">
     <header class="mb-4">
       <h1>Doing Court in the Tyrolean Alps</h1>
-      <p class="text-body-secondary">An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496): from the Transkribus facsimiles of the Tyrolean State Archives to reliable research data and a digital edition. Account books, inventories, copybooks and court ordinances are treated as one connected corpus.</p>
     </header>
 
     <!-- Pipeline Overview -->
@@ -59,65 +58,9 @@
       </div>
     </section>
 
-    <!-- Stats Dashboard -->
-    <section class="mb-4">
-      <div class="row g-3" id="stats-grid">
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-sources">–</div>
-              <div class="stat-label">Sources</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-transcriptions">–</div>
-              <div class="stat-label">Transcriptions</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-persons">–</div>
-              <div class="stat-label">Persons (SiCProD)</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-places">–</div>
-              <div class="stat-label">Places</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-relations">–</div>
-              <div class="stat-label">Relations</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="card text-center">
-            <div class="card-body py-3">
-              <div class="stat-value" id="stat-functions">–</div>
-              <div class="stat-label">Functions</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="small text-body-secondary mt-2 mb-0" id="stats-error"></p>
-    </section>
-
     <!-- Sources with integrated search -->
     <section class="mb-4" id="sources">
-      <h2 class="h5 mb-2">Sources</h2>
-      <p class="small text-body-secondary mb-3">Account books, inventories, copybooks and court ordinances from the Tyrolean State Archives. Sources with full text open the facsimile–transcription view in the viewer. Several inventories have already been edited and published by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a> on <a href="https://app.transkribus.org/en/sites/inventaria" target="_blank" rel="noopener">Transkribus Sites</a>; those transcriptions are used here with attribution.</p>
+      <h2 class="h5 mb-3">Sources</h2>
 
       <div class="row g-2 mb-3 align-items-center">
         <div class="col-md-5">
@@ -137,21 +80,21 @@
           </select>
         </div>
         <div class="col-md-2 text-end">
-          <span class="small text-body-secondary" id="result-count"></span>
+          <span class="small text-body-secondary" id="result-count" role="status" aria-live="polite"></span>
         </div>
       </div>
 
-      <div class="table-responsive">
-        <table class="table table-hover table-sm" id="sources-table" aria-label="Source overview">
+      <div class="table-responsive" tabindex="0" role="region" aria-label="Source overview, scrollable table">
+        <table class="table table-hover table-sm align-middle" id="sources-table">
           <thead class="table-light">
             <tr>
-              <th data-sort="kategorie" tabindex="0" aria-sort="none">Category <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="signatur" tabindex="0" aria-sort="none">Shelfmark <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="datierung" tabindex="0" aria-sort="none">Date <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="seiten" tabindex="0" aria-sort="none">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
-              <th>Action</th>
+              <th scope="col" data-sort="kategorie" tabindex="0" aria-sort="none">Category <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="signatur" tabindex="0" aria-sort="none">Shelfmark <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="titel" tabindex="0" aria-sort="none">Title <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="datierung" tabindex="0" aria-sort="none">Date <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="seiten" tabindex="0" aria-sort="none" class="text-end">Pages <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col" data-sort="tier" tabindex="0" aria-sort="none">Status <span class="sort-icon" aria-hidden="true">↕</span></th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody id="sources-body">
@@ -160,14 +103,6 @@
       </div>
     </section>
 
-    <!-- Method -->
-    <section class="card">
-      <div class="card-body">
-        <h2 class="h5 mb-2">Method</h2>
-        <p class="small mb-2">DoCTA turns the facsimiles of the Transkribus collection into research data and a digital edition. The digital tools are heuristic instruments in service of the historical research questions: they open up the sources so that different source types can be analysed together. Vision-language models produce first transcriptions without any training, versioned prompts with measured quality steer the recognition (<a href="benchmark.html">benchmark</a>), and scholarly approval stays with the project team: every reviewed page becomes ground truth and part of the edition (<a href="viewer.html">viewer</a>). The whole path is documented as a <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a> case study in the <a href="knowledge.html">Knowledge Vault</a>.</p>
-        <p class="small text-body-secondary mb-0">Data sources: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (Austrian Academy of Sciences), <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria</a> (published inventory editions on Transkribus Sites), Transkribus (READ-COOP), Tyrolean State Archives.</p>
-      </div>
-    </section>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
@@ -176,31 +111,12 @@
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
-    import { initNav, initBanner, formatNumber } from './js/app.js';
+    import { initNav, initBanner } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
     import { escapeHTML, tierBadge, formatDate, debounce } from './js/utils.js';
 
     initNav('dashboard');
     initBanner();
-
-    // Precomputed by scripts/build_stats.py (keeps the start page from
-    // downloading ~6.4 MB of JSON just to count entries).
-    const STAT_KEYS = ['persons', 'relations', 'places', 'sources', 'functions', 'transcriptions'];
-
-    async function loadStats() {
-      try {
-        const stats = await loadJSON('data/stats.json');
-        const missing = STAT_KEYS.filter(key => typeof stats?.[key] !== 'number');
-        if (missing.length) throw new Error(`Incomplete stats: ${missing.join(', ')}`);
-
-        STAT_KEYS.forEach(key => {
-          document.getElementById(`stat-${key}`).textContent = formatNumber(stats[key]);
-        });
-      } catch (err) {
-        document.getElementById('stats-error').textContent = `Stats could not be loaded: ${err.message}`;
-        console.error('Failed to load stats:', err);
-      }
-    }
 
     let allSources = [];
     let sortKey = 'signatur';
@@ -227,7 +143,7 @@
           <td class="font-monospace small">${escapeHTML(s.signatur)}</td>
           <td>${escapeHTML(s.titel)}</td>
           <td class="small">${escapeHTML(formatDate(s.datierung))}</td>
-          <td class="small">${s.seiten != null ? s.seiten : '–'}</td>
+          <td class="small num">${s.seiten != null ? s.seiten : '–'}</td>
           <td>${tierBadge(s.tier)}</td>
           <td>${action}</td>
         </tr>`;
@@ -348,7 +264,6 @@
       }
     }
 
-    loadStats();
     initSources();
   </script>
 </body>

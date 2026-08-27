@@ -26,12 +26,12 @@
   <main id="main" class="container py-4">
     <header class="mb-4">
       <h1>HTR Benchmark</h1>
-      <p class="text-body-secondary mb-2">Versioned prompt iterations of the VLM transcription, measured against reference pages and against the stability of repeated runs. It shows how much current vision-language models already read on Early New High German court records without any training. The page-by-page facsimile view lives in the <a href="viewer.html">viewer</a>.</p>
-      <p class="small mb-0"><span class="badge text-bg-warning">Machine output</span> Everything measured here is a first, fully automatic pass. No human revision has taken place yet; scholarly review turns these drafts into ground truth and edition text.</p>
+      <p class="small mb-0"><span class="badge text-bg-warning">Machine output</span> No human revision yet.</p>
     </header>
 
     <section class="card mb-4">
       <div class="card-body py-3">
+        <h2 class="visually-hidden">Summary per prompt iteration</h2>
         <div class="row g-3" id="agg-cards"></div>
         <p class="small text-body-secondary mt-2 mb-0" id="agg-note"></p>
       </div>
@@ -39,29 +39,19 @@
 
     <section class="mb-4">
       <h2 class="h5 mb-2">Reference pages</h2>
-      <p class="small text-body-secondary mb-2">Inventory pages with a Transkribus reference transcription (status DONE). Character error rate (CER) as mean with range over the repetitions; fair = symmetrically normalized.</p>
-      <div class="table-responsive">
-        <table class="table table-sm table-hover" id="ref-table"></table>
+      <div class="table-responsive" tabindex="0" role="region" aria-label="Reference pages, scrollable table">
+        <table class="table table-sm table-hover table-metrics align-middle" id="ref-table"></table>
       </div>
     </section>
 
     <section class="mb-4">
       <h2 class="h5 mb-2">Phenomenon pages without reference</h2>
-      <p class="small text-body-secondary mb-2">Account-book and inventory pages selected for script and layout phenomena. Measured by agreement between repeated runs, separately for word and number tokens.</p>
-      <div class="table-responsive">
-        <table class="table table-sm table-hover" id="cons-table"></table>
+      <div class="table-responsive" tabindex="0" role="region" aria-label="Phenomenon pages, scrollable table">
+        <table class="table table-sm table-hover table-metrics align-middle" id="cons-table"></table>
       </div>
     </section>
 
-    <section class="card">
-      <div class="card-body">
-        <h2 class="h5 mb-2">Protocol</h2>
-        <p class="small mb-2">Prompts are versioned and frozen after their first run; every change is a new iteration with a documented rationale. Each condition runs several times, because identical requests vary even at temperature 0; a ranking from single runs would be noise.</p>
-        <p class="small mb-2">The references are themselves under scrutiny: Transkribus status DONE does not certify scholarly approval, and two reference pages turned out to be nearly empty and are excluded from the measurement. Known model failure modes are a modernization prior, smoothed balances that are arithmetically consistent but wrong, and silent line loss.</p>
-        <p class="small mb-2">How quality improves from here: adjudicated mini ground truth with the project team feeds the next prompt iteration (editor in the loop); domain lexica and controlled vocabularies (such as the Getty AAT for objects) constrain readings as post-processing rather than as prompt bias; and uncertain readings are explicitly marked so that human review starts where the model itself signals doubt.</p>
-        <p class="small mb-0">Raw data, prompts and runner: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/experiments/benchmark" target="_blank" rel="noopener">experiments/benchmark</a> in the repository. Reference classes and approval protocol: <a href="knowledge.html">Knowledge Vault</a>, HTR-EVALUATION.</p>
-      </div>
-    </section>
+    <p class="small text-body-secondary mb-0">Raw data and prompts: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/experiments/benchmark" target="_blank" rel="noopener">experiments/benchmark</a> · Protocol: <a href="knowledge.html#HTR-EVALUATION">HTR Evaluation</a></p>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">

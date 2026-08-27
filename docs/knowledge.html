@@ -26,7 +26,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <aside class="col-lg-3 col-xl-2 border-end py-3 px-3" style="min-height: calc(100vh - 56px); background: #fff;">
+      <aside class="kv-sidebar col-lg-3 col-xl-2 border-end py-3 px-3">
         <h2 class="h6 text-body-secondary mb-3">Knowledge Vault</h2>
         <nav id="kv-nav" aria-label="Knowledge documents"></nav>
       </aside>
@@ -77,44 +77,6 @@
     function showWelcome() {
       contentEl.innerHTML = `
         <h1 class="mb-3">Knowledge Vault</h1>
-        <p class="text-body-secondary mb-4">The Promptotyping knowledge base of the DoCTA project, distilled from the exploration and distillation phases. The documents are working documents and currently in German.</p>
-
-        <div class="row g-3 mb-4">
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Expert in the Loop</h3>
-                <p class="small text-body-secondary mb-0">Categorical confidence (confident / check / problematic) instead of numeric percentages, supporting informed decisions rather than false precision.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Documents as Source of Truth</h3>
-                <p class="small text-body-secondary mb-0">All decisions, data sources and architecture details live in versioned Markdown files; code is disposable, knowledge persists.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Real sources, real data</h3>
-                <p class="small text-body-secondary mb-0">Prosopographic data from SiCProD and transcribed inventories from Transkribus and the published Inventaria editions; the pipeline works on real material.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Static &amp; accessible</h3>
-                <p class="small text-body-secondary mb-0">Vanilla JS, no build process, GitHub Pages: accessible directly in the browser, no installation.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h2 class="h5 mb-3">Documents</h2>
         <div class="list-group">
           ${DOCS.map(d => `
             <a href="#${d.id}" class="list-group-item list-group-item-action">
@@ -133,7 +95,11 @@
 
       // Update active sidebar
       navEl.querySelectorAll('.kv-sidebar-item').forEach(el => {
-        el.classList.toggle('active', el.dataset.doc === id);
+        const isActive = el.dataset.doc === id;
+        el.classList.toggle('active', isActive);
+        // Active state must not rest on colour alone
+        if (isActive) el.setAttribute('aria-current', 'page');
+        else el.removeAttribute('aria-current');
       });
 
       // Show loading
@@ -159,7 +125,10 @@
         loadDoc(hash);
       } else {
         showWelcome();
-        navEl.querySelectorAll('.kv-sidebar-item').forEach(el => el.classList.remove('active'));
+        navEl.querySelectorAll('.kv-sidebar-item').forEach(el => {
+          el.classList.remove('active');
+          el.removeAttribute('aria-current');
+        });
       }
     }
 
