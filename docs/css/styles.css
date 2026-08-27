@@ -211,8 +211,16 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   font-size: var(--text-2xs);
 }
 
-.transcription__line:hover {
+.transcription__line:hover,
+.transcription__line:focus,
+.transcription__line--linked {
   background: var(--accent-light);
+}
+
+.transcription__line:focus { outline: none; }
+.transcription__line:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 /* === Tables === */
@@ -396,6 +404,39 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 /* Fullscreen on the panel keeps the toolbar with the image */
 .viewer-panel:fullscreen { background: var(--osd-backdrop); }
+
+/* === Line regions on the facsimile === */
+/* One SVG per page, sized and rotated by OpenSeadragon; the polygons carry the
+   page's pixel coords and stay hairline at any zoom. */
+.line-overlay {
+  overflow: visible;
+  pointer-events: none;
+}
+
+.line-zone {
+  fill: var(--accent-light);
+  fill-opacity: 0;
+  stroke: var(--accent);
+  stroke-opacity: 0;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.line-overlay--visible .line-zone { stroke-opacity: 0.65; }
+
+.line-zone:hover,
+.line-zone--active {
+  fill-opacity: 0.3;
+  stroke-opacity: 1;
+  stroke-width: 2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .line-zone { transition: fill-opacity 120ms ease, stroke-opacity 120ms ease; }
+}
 
 .osd-placeholder {
   display: flex;

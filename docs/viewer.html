@@ -42,6 +42,10 @@
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.75V2h3.75M10.25 2H14v3.75M14 10.25V14h-3.75M5.75 14H2v-3.75"/></svg>
             </button>
             <span class="viewer-bar-sep" aria-hidden="true"></span>
+            <button type="button" class="vt-btn" id="btn-line-regions" aria-label="Show line regions" aria-pressed="false" title="Show line regions (l)">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2.5" width="12" height="11" rx="1.25"/><path d="M4.5 5.75h7M4.5 8h7M4.5 10.25h4"/></svg>
+            </button>
+            <span class="viewer-bar-sep" aria-hidden="true"></span>
             <button type="button" class="vt-btn" id="btn-rotate-left" aria-label="Rotate 90 degrees counter-clockwise" title="Rotate left">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5h5.25A4.75 4.75 0 1 1 3 10.25"/><path d="M5 2.75 2.5 5.5 5 8.25"/></svg>
             </button>
@@ -219,10 +223,149 @@
         animationTime: reduceMotion ? 0 : 1.2,
         gestureSettingsMouse: { clickToZoom: false, dblClickToZoom: true },
       });
+      viewer.addHandler('open', buildLineOverlay);
+      viewer.addHandler('close', clearLineOverlay);
+    }
+
+    // === Line regions ===
+    // Each page of the export carries polygon coords per line in full-image pixel
+    // space. They become one SVG overlay: a type:image world item is 1 unit wide,
+    // so the overlay rect is 1 x aspect and the SVG viewBox does the scaling.
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    let lineOverlayEl = null;
+    let showLineRegions = false;
+    let activeLineId = null;   // line hovered in the transcription, zone highlighted
+    let linkedLineId = null;   // zone hovered in the image, line highlighted
+
+    function clearLineOverlay() {
+      if (!lineOverlayEl) return;
+      if (viewer) {
+        try { viewer.removeOverlay(lineOverlayEl); } catch { /* overlay already dropped */ }
+      }
+      lineOverlayEl.remove();
+      lineOverlayEl = null;
+      activeLineId = null;
+    }
+
+    function zoneFor(lineId) {
+      return lineOverlayEl
+        ? lineOverlayEl.querySelector(`[data-line-id="${CSS.escape(lineId)}"]`)
+        : null;
+    }
+
+    function lineElFor(lineId) {
+      return document.querySelector(
+        `.transcription__line[data-line-id="${CSS.escape(lineId)}"]`);
+    }
+
+    // "x,y x,y ..." to an SVG points string, dropping malformed pairs
+    function parseCoords(coords) {
+      if (typeof coords !== 'string') return null;
+      const pts = coords.trim().split(/\s+/)
+        .map(p => p.split(','))
+        .filter(p => p.length === 2 && p.every(v => v !== '' && Number.isFinite(Number(v))));
+      return pts.length >= 3 ? pts.map(p => p.join(',')).join(' ') : null;
+    }
+
+    function highlightZone(lineId) {
+      if (activeLineId === lineId) return;
+      if (activeLineId) zoneFor(activeLineId)?.classList.remove('line-zone--active');
+      activeLineId = lineId;
+      if (lineId) zoneFor(lineId)?.classList.add('line-zone--active');
+    }
+
+    function highlightLine(lineId) {
+      if (linkedLineId === lineId) return;
+      if (linkedLineId) lineElFor(linkedLineId)?.classList.remove('transcription__line--linked');
+      linkedLineId = lineId;
+      if (lineId) lineElFor(lineId)?.classList.add('transcription__line--linked');
+    }
+
+    function revealLine(lineId) {
+      const el = lineElFor(lineId);
+      if (!el) return;
+      el.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
+      el.focus({ preventScroll: true });
+    }
+
+    function onZoneOver(e) {
+      const id = e.target instanceof Element ? e.target.getAttribute('data-line-id') : null;
+      if (id) highlightLine(id);
+    }
+
+    function onZoneOut(e) {
+      const id = e.target instanceof Element ? e.target.getAttribute('data-line-id') : null;
+      if (id && id === linkedLineId) highlightLine(null);
+    }
+
+    // OpenSeadragon captures the pointer on the canvas, so a click event never
+    // reaches the polygon. The zone press is completed on the document instead,
+    // and a drag of more than a few pixels stays a pan.
+    let pendingZone = null;
+
+    function onZonePointerDown(e) {
+      const id = e.target instanceof Element ? e.target.getAttribute('data-line-id') : null;
+      pendingZone = id ? { id, x: e.clientX, y: e.clientY } : null;
+    }
+
+    document.addEventListener('pointerup', (e) => {
+      const pending = pendingZone;
+      pendingZone = null;
+      if (!pending) return;
+      if (Math.abs(e.clientX - pending.x) > 4 || Math.abs(e.clientY - pending.y) > 4) return;
+      revealLine(pending.id);
+    });
+    document.addEventListener('pointercancel', () => { pendingZone = null; });
+
+    function buildLineOverlay() {
+      clearLineOverlay();
+      if (!viewer || viewMode !== 'synopsis' || !currentDoc) return;
+      const item = viewer.world.getItemAt(0);
+      const page = currentDoc.pages[currentPage];
+      if (!item || !page) return;
+      const size = item.getContentSize();
+      if (!size.x || !size.y) return;
+
+      const svg = document.createElementNS(SVG_NS, 'svg');
+      svg.setAttribute('class', 'line-overlay');
+      svg.setAttribute('viewBox', `0 0 ${size.x} ${size.y}`);
+      svg.setAttribute('preserveAspectRatio', 'none');
+      svg.setAttribute('aria-hidden', 'true');
+      let count = 0;
+      for (const region of page.regions) {
+        for (const line of region.lines) {
+          const points = parseCoords(line.coords);
+          if (!points) continue;
+          const poly = document.createElementNS(SVG_NS, 'polygon');
+          poly.setAttribute('points', points);
+          poly.setAttribute('class', 'line-zone');
+          poly.setAttribute('data-line-id', line.id);
+          svg.appendChild(poly);
+          count++;
+        }
+      }
+      if (!count) return;
+      svg.classList.toggle('line-overlay--visible', showLineRegions);
+      // Handlers live on the overlay element and go with it when it is removed
+      svg.addEventListener('mouseover', onZoneOver);
+      svg.addEventListener('mouseout', onZoneOut);
+      svg.addEventListener('pointerdown', onZonePointerDown);
+      viewer.addOverlay({
+        element: svg,
+        location: new OpenSeadragon.Rect(0, 0, 1, size.y / size.x),
+      });
+      lineOverlayEl = svg;
+    }
+
+    function setLineRegions(on) {
+      showLineRegions = on;
+      document.getElementById('btn-line-regions').setAttribute('aria-pressed', String(on));
+      lineOverlayEl?.classList.toggle('line-overlay--visible', on);
     }
 
     function loadImage(iiifUrl) {
       if (!viewer) initOSD();
+      clearLineOverlay();
       viewer.open({ type: 'image', url: iiifUrl });
       document.getElementById('osd-viewer').classList.add('osd-active');
       // A new page starts upright; rotation is a per-page inspection aid
@@ -301,13 +444,16 @@
         }
       }
 
+      // The line id keys the coupling with the image overlay; tabindex -1 lets a
+      // zone click move focus to the line without adding a tab stop per line
       let html = '<div class="transcription">';
       for (const region of page.regions) {
         for (const line of region.lines) {
           lineNr++;
+          const key = line.id ? ` data-line-id="${escapeAttr(line.id)}" tabindex="-1"` : '';
           const fol = folioLabel(line.text);
           if (fol) {
-            html += `<div class="transcription__line transcription__line--folio">` +
+            html += `<div class="transcription__line transcription__line--folio"${key}>` +
                     `<span class="transcription__line-nr">${lineNr}</span>` +
                     `<span>${escapeHTML(line.text)}</span></div>`;
             continue;
@@ -320,10 +466,12 @@
               text = text.replace(regex, `<span class="entity entity--${ent.type}" title="${escapeAttr(tip)}">\$1</span>`);
             }
           }
-          html += `<div class="transcription__line"><span class="transcription__line-nr">${lineNr}</span><span>${text}</span></div>`;
+          html += `<div class="transcription__line"${key}><span class="transcription__line-nr">${lineNr}</span><span>${text}</span></div>`;
         }
       }
       html += '</div>';
+      activeLineId = null;
+      linkedLineId = null;
       container.innerHTML = html;
       container.scrollTop = 0;
     }
@@ -450,6 +598,8 @@
       for (const v of VIEWS) {
         document.getElementById(`btn-view-${v}`).setAttribute('aria-pressed', String(v === viewMode));
       }
+      // Reading and TEI have no facsimile; the overlay is rebuilt on the way back
+      if (!isSynopsis) clearLineOverlay();
       document.getElementById('draft-badge').hidden = isSynopsis;
       const dl = document.getElementById('tei-download');
       dl.hidden = viewMode !== 'tei';
@@ -505,10 +655,25 @@
     document.getElementById('btn-view-tei').addEventListener('click', () => setView('tei'));
 
     // The page mark in the reading text is the way back to the facsimile
-    document.getElementById('transcription-container').addEventListener('click', (e) => {
+    const transcriptionContainer = document.getElementById('transcription-container');
+    transcriptionContainer.addEventListener('click', (e) => {
       const mark = e.target.closest('.reading-page__mark');
       if (mark) setView('synopsis', Number(mark.dataset.index));
     });
+
+    // Transcription to image: hover or focus on a line lights up its zone
+    const lineIdOf = (target) => {
+      const el = target instanceof Element
+        ? target.closest('.transcription__line[data-line-id]') : null;
+      return el ? el.getAttribute('data-line-id') : null;
+    };
+    transcriptionContainer.addEventListener('mouseover', (e) => highlightZone(lineIdOf(e.target)));
+    transcriptionContainer.addEventListener('mouseleave', () => highlightZone(null));
+    transcriptionContainer.addEventListener('focusin', (e) => highlightZone(lineIdOf(e.target)));
+    transcriptionContainer.addEventListener('focusout', () => highlightZone(null));
+
+    document.getElementById('btn-line-regions')
+      .addEventListener('click', () => setLineRegions(!showLineRegions));
 
     const pageInput = document.getElementById('page-input');
     function commitPageInput() {
@@ -537,6 +702,7 @@
         case '-': zoomBy(1 / 1.4); break;
         case '0': fitView(); break;
         case 'r': case 'R': rotateBy(90); break;
+        case 'l': case 'L': setLineRegions(!showLineRegions); break;
         default: return;
       }
       e.preventDefault();
