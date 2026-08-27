@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoCTA | Digital Court Studies Prototype</title>
-  <meta name="description" content="DoCTA Prototyp: Digitale Erschließung höfischer Praktiken am Hof Sigmunds von Tirol (1427–1496). 6.288 Personen, 42.893 Relationen, 312 Quellen.">
+  <title>DoCTA | Agentische Editionspipeline</title>
+  <meta name="description" content="DoCTA: agentische Editionspipeline für die Hofquellen Sigmunds von Tirol (1427–1496). Von den Transkribus-Digitalisaten zu Forschungsdaten und digitaler Edition.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -26,34 +26,34 @@
   <main id="main" class="container py-4">
     <header class="mb-4">
       <h1>Doing Court in the Tyrolean Alps</h1>
-      <p class="text-body-secondary">Digitale Erschließung höfischer Praktiken am Hof Sigmunds von Tirol (1427–1496). Methodenprototyp</p>
+      <p class="text-body-secondary">Agentische Editionspipeline für die Hofquellen Sigmunds von Tirol (1427–1496): von den Transkribus-Digitalisaten des Tiroler Landesarchivs zu verlässlichen Forschungsdaten und einer digitalen Edition</p>
     </header>
 
     <!-- Pipeline Overview -->
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">Forschungspipeline</h2>
-        <p class="small text-body-secondary mb-3">Von der handschriftlichen Quelle zum analysierbaren Netzwerk. Jeder Schritt an echtem Material demonstriert.</p>
+        <h2 class="h5 mb-2">Editionspipeline</h2>
+        <p class="small text-body-secondary mb-3">Jede Stufe ist versioniert und überprüfbar; die fachliche Abnahme durch die Projektleitung erzeugt Ground Truth, verbessert die Messbasis und ist zugleich Editionsfortschritt.</p>
         <div class="pipeline-steps">
-          <a href="pipeline.html?step=1" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Schritt 1</span>
-            <span class="pipeline-step__label">Quelle</span>
+          <a href="sources.html" class="pipeline-step pipeline-step--completed">
+            <span class="pipeline-step__number">Stufe 1</span>
+            <span class="pipeline-step__label">Quellen</span>
           </a>
-          <a href="pipeline.html?step=2" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Schritt 2</span>
-            <span class="pipeline-step__label">HTR</span>
+          <a href="benchmark.html" class="pipeline-step pipeline-step--active">
+            <span class="pipeline-step__number">Stufe 2</span>
+            <span class="pipeline-step__label">VLM-Transkription</span>
           </a>
-          <a href="pipeline.html?step=3" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Schritt 3</span>
-            <span class="pipeline-step__label">NER</span>
+          <a href="benchmark.html" class="pipeline-step pipeline-step--active">
+            <span class="pipeline-step__number">Stufe 3</span>
+            <span class="pipeline-step__label">Validierung &amp; Ground Truth</span>
           </a>
-          <a href="pipeline.html?step=4" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Schritt 4</span>
-            <span class="pipeline-step__label">Relationen</span>
+          <a href="knowledge.html" class="pipeline-step">
+            <span class="pipeline-step__number">Stufe 4</span>
+            <span class="pipeline-step__label">TEI &amp; Forschungsdaten</span>
           </a>
-          <a href="pipeline.html?step=5" class="pipeline-step pipeline-step--completed">
-            <span class="pipeline-step__number">Schritt 5</span>
-            <span class="pipeline-step__label">Netzwerk</span>
+          <a href="knowledge.html" class="pipeline-step">
+            <span class="pipeline-step__number">Stufe 5</span>
+            <span class="pipeline-step__label">Edition</span>
           </a>
         </div>
       </div>
@@ -120,10 +120,10 @@
       <h2 class="h5 mb-3">Bereiche erkunden</h2>
       <div class="row g-3">
         <div class="col-md-6 col-lg-4">
-          <a href="pipeline.html" class="card card-clickable h-100">
+          <a href="benchmark.html" class="card card-clickable h-100">
             <div class="card-body">
-              <h3 class="h6 mb-1">Pipeline-Demo</h3>
-              <p class="small text-body-secondary mb-0">Quelle → HTR → NER → Relationen → Netzwerk, Schritt für Schritt an echtem Inventar</p>
+              <h3 class="h6 mb-1">HTR-Benchmark</h3>
+              <p class="small text-body-secondary mb-0">Versionierte Prompt-Iterationen der VLM-Transkription, Bild-Text-Synopse zur fachlichen Abnahme</p>
             </div>
           </a>
         </div>
@@ -131,15 +131,7 @@
           <a href="sources.html" class="card card-clickable h-100">
             <div class="card-body">
               <h3 class="h6 mb-1">Quellenübersicht</h3>
-              <p class="small text-body-secondary mb-0">312 Quellen: Raitbücher, Inventare, Kopialbücher, Hofordnungen. Filterbar und sortierbar</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="search.html" class="card card-clickable h-100">
-            <div class="card-body">
-              <h3 class="h6 mb-1">Facettierte Suche</h3>
-              <p class="small text-body-secondary mb-0">6.288 Personen, 736 Orte, 1.613 Funktionen, 215 Institutionen, durchsuchbar mit Facetten</p>
+              <p class="small text-body-secondary mb-0">Raitbücher, Inventare, Kopialbücher, Hofordnungen. Filterbar und sortierbar</p>
             </div>
           </a>
         </div>
@@ -147,41 +139,41 @@
           <a href="viewer.html" class="card card-clickable h-100">
             <div class="card-body">
               <h3 class="h6 mb-1">Quellen-Explorer</h3>
-              <p class="small text-body-secondary mb-0">Digitalisat neben Transkription. 57 Inventare mit Volltext</p>
+              <p class="small text-body-secondary mb-0">Digitalisat neben Transkription für die Inventare mit Volltext</p>
             </div>
           </a>
         </div>
         <div class="col-md-6 col-lg-4">
-          <a href="network.html" class="card card-clickable h-100">
+          <a href="pipeline.html" class="card card-clickable h-100">
             <div class="card-body">
-              <h3 class="h6 mb-1">Netzwerk-Explorer</h3>
-              <p class="small text-body-secondary mb-0">Interaktiver Beziehungsgraph: Personen, Funktionen, Institutionen</p>
+              <h3 class="h6 mb-1">Pipeline-Demo</h3>
+              <p class="small text-body-secondary mb-0">Quelle → Transkription → Entitäten → Relationen → Netzwerk am Beispiel des Inventars von Schloss Thaur</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="knowledge.html" class="card card-clickable h-100">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Knowledge Vault</h3>
+              <p class="small text-body-secondary mb-0">Promptotyping-Dokumente: Anforderungen, Daten, Entscheidungen, Evaluationsprotokoll</p>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Reviewer Context -->
+    <!-- Method -->
     <section class="card">
       <div class="card-body">
-        <h2 class="h5 mb-2">Für Gutachter</h2>
-        <p class="small">Dieser Prototyp demonstriert die methodische Machbarkeit des DoCTA-Projekts an konkretem Quellenmaterial. Er adressiert die Kritikpunkte des ÖAW-Gutachtens direkt:</p>
-        <ul class="small">
-          <li>Methoden funktionieren auf frühneuhochdeutschen Quellen (Kurrentschrift, Abkürzungen)</li>
-          <li>LLM-Integration in der Pipeline sichtbar (Schritt 3–4)</li>
-          <li>Quellencharakterisierung mit 312 Einträgen und Verfügbarkeitstiers</li>
-          <li>Echte Quellenbeispiele mit Transkription und Entitätserkennung</li>
-          <li>Qualitätsmetriken: Konfidenz-Kategorien (sicher / prüfenswert / problematisch)</li>
-        </ul>
-        <p class="small mb-2"><strong>Empfohlener Einstieg:</strong> <a href="pipeline.html">Pipeline-Demo</a> durchlaufen (5 Schritte, ~3 Min.), dann <a href="search.html">Suche</a> und <a href="network.html">Netzwerk</a> erkunden.</p>
-        <p class="small text-body-secondary mb-0">Datenquellen: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW), Transkribus (READ-COOP), Tiroler Landesarchiv. Methodik und Entscheidungen: <a href="knowledge.html">Knowledge Vault</a>.</p>
+        <h2 class="h5 mb-2">Methode</h2>
+        <p class="small mb-2">DoCTA überführt die Digitalisate der Transkribus-Collection in Forschungsdaten und eine digitale Edition. Vision-Language-Modelle transkribieren, versionierte Prompts mit messbarer Qualität steuern die Erkennung, und die fachliche Abnahme bleibt bei der Projektleitung: jede geprüfte Seite wird Ground Truth und zugleich Teil der Edition. Der gesamte Weg ist als <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin" target="_blank" rel="noopener">Promptotyping</a>-Fallstudie im <a href="knowledge.html">Knowledge Vault</a> dokumentiert.</p>
+        <p class="small text-body-secondary mb-0">Datenquellen: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (ÖAW), Transkribus (READ-COOP), Tiroler Landesarchiv.</p>
       </div>
     </section>
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA Prototyp | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>

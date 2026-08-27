@@ -1,0 +1,800 @@
+{
+ "page": "rb2_p113",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1888,
+    2646
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1889,
+    2646
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 26.6,
+ "timestamp": "2026-08-26T20:19:58+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Dieselbn vorgeschribn ij Fendl j m̄ ist er",
+      "kind": "entry",
+      "uncertain": [
+       "Dieselbn",
+       "Fendl"
+      ]
+     },
+     {
+      "text": "nachmals bezalt / mit namen von herrn",
+      "kind": "entry",
+      "uncertain": [
+       "nachmals",
+       "bezalt"
+      ]
+     },
+     {
+      "text": "Benedicten pharrar zu Tyrol dozemal santz",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicten",
+       "pharrar",
+       "Tyrol",
+       "santz"
+      ]
+     },
+     {
+      "text": "mayster hat er emphangn j m̄",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "j",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "mayster",
+       "emphangn"
+      ]
+     },
+     {
+      "text": "So hat Lienhart von tremel Paurmayster",
+      "kind": "entry",
+      "uncertain": [
+       "Lienhart",
+       "tremel",
+       "Paurmayster"
+      ]
+     },
+     {
+      "text": "herrn Jacobs Trappn Vogt zu Bregentz",
+      "kind": "entry",
+      "uncertain": [
+       "Jacobs",
+       "Trappn",
+       "Bregentz"
+      ]
+     },
+     {
+      "text": "von Fasannennempter wegn aufgericht",
+      "kind": "entry",
+      "uncertain": [
+       "Fasannennempter",
+       "aufgericht"
+      ]
+     },
+     {
+      "text": "ij m̄",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "ij",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "m̄"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "113",
+    "lines": [
+     {
+      "text": "113",
+      "kind": "foliation"
+     },
+     {
+      "text": "~~Dieweile was man mir Lonads~~",
+      "kind": "entry",
+      "uncertain": [
+       "Dieweile",
+       "Lonads"
+      ]
+     },
+     {
+      "text": "Albre von hoff schuldig ist",
+      "kind": "entry",
+      "uncertain": [
+       "Albre",
+       "hoff"
+      ]
+     },
+     {
+      "text": "worden Als mein her der",
+      "kind": "entry"
+     },
+     {
+      "text": "weynegker mit mir abgerait",
+      "kind": "entry",
+      "uncertain": [
+       "weynegker"
+      ]
+     },
+     {
+      "text": "hat an sand veits tag Julios",
+      "kind": "entry",
+      "uncertain": [
+       "veits",
+       "Julios"
+      ]
+     },
+     {
+      "text": "Am erſten hat d Bramberg vo velkirch",
+      "kind": "entry",
+      "uncertain": [
+       "Bramberg",
+       "velkirch"
+      ]
+     },
+     {
+      "text": "zu mir daizt xx lb zu ſindenden",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xx",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "daizt",
+       "ſindenden"
+      ]
+     },
+     {
+      "text": "schlaff d weynegker",
+      "kind": "entry",
+      "uncertain": [
+       "schlaff",
+       "weynegker"
+      ]
+     },
+     {
+      "text": "Demnach hat Erschrauck vnd zwirnendt",
+      "kind": "entry",
+      "uncertain": [
+       "Erschrauck",
+       "zwirnendt"
+      ]
+     },
+     {
+      "text": "dzeit xvij lb am phingst vor",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "dzeit",
+       "phingst"
+      ]
+     },
+     {
+      "text": "petz pauls Ist durch d weynegker",
+      "kind": "entry",
+      "uncertain": [
+       "petz",
+       "pauls",
+       "weynegker"
+      ]
+     },
+     {
+      "text": "geschaffet worden",
+      "kind": "entry"
+     },
+     {
+      "text": "Aber hat Erschrau dzeit xxv ß lh vnd",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxv",
+       "unit": "ß"
+      },
+      "uncertain": [
+       "Erschrau",
+       "dzeit",
+       "lh"
+      ]
+     },
+     {
+      "text": "noch margarethe hat d weynegker",
+      "kind": "entry",
+      "uncertain": [
+       "margarethe",
+       "weynegker"
+      ]
+     },
+     {
+      "text": "uber sich genome",
+      "kind": "entry"
+     },
+     {
+      "text": "Hanns ſenſee am rott vo findn hat",
+      "kind": "entry",
+      "uncertain": [
+       "Hanns",
+       "ſenſee",
+       "rott",
+       "findn"
+      ]
+     },
+     {
+      "text": "dzeit viij ß iij gſ abgerait an",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "ß"
+      },
+      "uncertain": [
+       "dzeit",
+       "gſ"
+      ]
+     },
+     {
+      "text": "sand peters kettenfeier schlaff lebar",
+      "kind": "entry",
+      "uncertain": [
+       "peters",
+       "kettenfeier",
+       "schlaff",
+       "lebar"
+      ]
+     },
+     {
+      "text": "Mez hat Jurgeſtein axnguart von ſand",
+      "kind": "entry",
+      "uncertain": [
+       "Jurgeſtein",
+       "axnguart",
+       "ſand"
+      ]
+     },
+     {
+      "text": "Hanns dzeit xxviij lb ij gſ mit",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "Hanns",
+       "dzeit",
+       "gſ"
+      ]
+     },
+     {
+      "text": "im abgerait am phingst nach sand",
+      "kind": "entry",
+      "uncertain": [
+       "phingst",
+       "sand"
+      ]
+     },
+     {
+      "text": "Julios tag schlaff weynegker selbs",
+      "kind": "entry",
+      "uncertain": [
+       "Julios",
+       "schlaff",
+       "weynegker"
+      ]
+     },
+     {
+      "text": "Aber hat Erschrau dzeit xxij gſ an",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxij",
+       "unit": "gſ"
+      },
+      "uncertain": [
+       "Erschrau",
+       "dzeit",
+       "gſ"
+      ]
+     },
+     {
+      "text": "samcztag nach augustinj Mez iij lb",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "samcztag",
+       "augustinj"
+      ]
+     },
+     {
+      "text": "viij gſ am phingst nach crucis am",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "gſ"
+      },
+      "uncertain": [
+       "gſ",
+       "phingst",
+       "crucis"
+      ]
+     },
+     {
+      "text": "herbst schlaff lebire",
+      "kind": "entry",
+      "uncertain": [
+       "schlaff",
+       "lebire"
+      ]
+     },
+     {
+      "text": "Demnach hat vlreichs tensen dzeit",
+      "kind": "entry",
+      "uncertain": [
+       "vlreichs",
+       "tensen",
+       "dzeit"
+      ]
+     },
+     {
+      "text": "v mc iij ß vj gſ j ff abgerait an",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "v",
+       "unit": "m"
+      },
+      "uncertain": [
+       "gſ",
+       "ff"
+      ]
+     },
+     {
+      "text": "freitag vor Elisabeth schlaff weynegker",
+      "kind": "entry",
+      "uncertain": [
+       "Elisabeth",
+       "schlaff",
+       "weynegker"
+      ]
+     },
+     {
+      "text": "Mez hat cappen ſeind vo furez dzeit",
+      "kind": "entry",
+      "uncertain": [
+       "cappen",
+       "ſeind",
+       "furez",
+       "dzeit"
+      ]
+     },
+     {
+      "text": "x gſ am mitt vor aller heylign tag",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "x",
+       "unit": "gſ"
+      },
+      "uncertain": [
+       "gſ",
+       "mitt",
+       "heylign"
+      ]
+     },
+     {
+      "text": "schlaff trindmasz",
+      "kind": "entry",
+      "uncertain": [
+       "schlaff",
+       "trindmasz"
+      ]
+     },
+     {
+      "text": "So hat lid Dyeterich vo findling selb",
+      "kind": "entry",
+      "uncertain": [
+       "Dyeterich",
+       "findling"
+      ]
+     },
+     {
+      "text": "dort dzeit xxxvij lb viij gſ",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxvij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "dzeit",
+       "gſ"
+      ]
+     },
+     {
+      "text": "hat silich kyming abgerait zu sand",
+      "kind": "entry",
+      "uncertain": [
+       "silich",
+       "kyming",
+       "sand"
+      ]
+     },
+     {
+      "text": "johanns tag zu weyhnachten",
+      "kind": "entry",
+      "uncertain": [
+       "johanns",
+       "weyhnachten"
+      ]
+     },
+     {
+      "text": "Aber ist mind mir schuldig vj mc x lb",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "vj",
+       "unit": "m"
+      },
+      "uncertain": [
+       "mind"
+      ]
+     },
+     {
+      "text": "von der schramee celsten magd als",
+      "kind": "entry",
+      "uncertain": [
+       "schramee",
+       "celsten"
+      ]
+     },
+     {
+      "text": "mand den paulsis vnd sein weib",
+      "kind": "entry",
+      "uncertain": [
+       "paulsis"
+      ]
+     },
+     {
+      "text": "fur rait gsetzet hat vnd hat 3 lust",
+      "kind": "entry",
+      "uncertain": [
+       "gsetzet",
+       "lust"
+      ]
+     },
+     {
+      "text": "seinem abgerait vnd ge hoff",
+      "kind": "entry",
+      "uncertain": [
+       "hoff"
+      ]
+     },
+     {
+      "text": "behaffid auf schlaffen",
+      "kind": "entry",
+      "uncertain": [
+       "behaffid",
+       "schlaffen"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "114",
+    "lines": [
+     {
+      "text": "114",
+      "kind": "foliation"
+     },
+     {
+      "text": "Gratzperg",
+      "kind": "rubric",
+      "uncertain": [
+       "Gratzperg"
+      ]
+     },
+     {
+      "text": "pekmäister",
+      "kind": "rubric",
+      "uncertain": [
+       "pekmäister"
+      ]
+     },
+     {
+      "text": "Zwomayr ist gerait von",
+      "kind": "entry",
+      "uncertain": [
+       "Zwomayr"
+      ]
+     },
+     {
+      "text": "ß lb am Besloer drayer",
+      "kind": "entry",
+      "uncertain": [
+       "Besloer",
+       "drayer"
+      ]
+     },
+     {
+      "text": "montag nach dem heylign",
+      "kind": "entry",
+      "uncertain": [
+       "heylign"
+      ]
+     },
+     {
+      "text": "drei roing auf heintigen",
+      "kind": "entry",
+      "uncertain": [
+       "roing",
+       "heintigen"
+      ]
+     },
+     {
+      "text": "tag Anno domi xc",
+      "kind": "entry",
+      "uncertain": [
+       "xc"
+      ]
+     },
+     {
+      "text": "c d weynegkerſ",
+      "kind": "entry",
+      "uncertain": [
+       "weynegkerſ"
+      ]
+     },
+     {
+      "text": "[...]",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd axnguarnet vnd",
+      "kind": "entry",
+      "uncertain": [
+       "axnguarnet"
+      ]
+     },
+     {
+      "text": "stait a diem",
+      "kind": "entry",
+      "uncertain": [
+       "stait",
+       "diem"
+      ]
+     },
+     {
+      "text": "das Albrendt",
+      "kind": "entry",
+      "uncertain": [
+       "Albrendt"
+      ]
+     },
+     {
+      "text": "m zwayn getreüden",
+      "kind": "entry",
+      "uncertain": [
+       "getreüden"
+      ]
+     },
+     {
+      "text": "stendt d ſo xvij",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "d"
+      }
+     },
+     {
+      "text": "t mit gemelter stater",
+      "kind": "entry",
+      "uncertain": [
+       "gemelter",
+       "stater"
+      ]
+     },
+     {
+      "text": "mit zwaylir gabbrot",
+      "kind": "entry",
+      "uncertain": [
+       "zwaylir",
+       "gabbrot"
+      ]
+     },
+     {
+      "text": "d dar mit vorabschaiden",
+      "kind": "entry",
+      "uncertain": [
+       "vorabschaiden"
+      ]
+     },
+     {
+      "text": "d veranfult . Item",
+      "kind": "entry",
+      "uncertain": [
+       "veranfult"
+      ]
+     },
+     {
+      "text": "d zeigt d anngewist vns",
+      "kind": "entry",
+      "uncertain": [
+       "anngewist"
+      ]
+     },
+     {
+      "text": "n lamb Crentler Clas",
+      "kind": "entry",
+      "uncertain": [
+       "lamb",
+       "Crentler",
+       "Clas"
+      ]
+     },
+     {
+      "text": "zu deyen findn ligt vnd",
+      "kind": "entry",
+      "uncertain": [
+       "findn"
+      ]
+     },
+     {
+      "text": "Stait maints z indiur",
+      "kind": "entry",
+      "uncertain": [
+       "Stait",
+       "maints",
+       "indiur"
+      ]
+     },
+     {
+      "text": "d sumb Regs lxxxxvij mc j lb",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "c",
+       "numeral": "lxxxxvij",
+       "unit": "m"
+      },
+      "uncertain": [
+       "Regs"
+      ]
+     },
+     {
+      "text": "iij gſ",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "gſ"
+      },
+      "uncertain": [
+       "gſ"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Dieselbn vorgeschribn ij Fendl j m̄ ist er",
+  "nachmals bezalt / mit namen von herrn",
+  "Benedicten pharrar zu Tyrol dozemal santz",
+  "mayster hat er emphangn j m̄",
+  "So hat Lienhart von tremel Paurmayster",
+  "herrn Jacobs Trappn Vogt zu Bregentz",
+  "von Fasannennempter wegn aufgericht",
+  "ij m̄",
+  "113",
+  "~~Dieweile was man mir Lonads~~",
+  "Albre von hoff schuldig ist",
+  "worden Als mein her der",
+  "weynegker mit mir abgerait",
+  "hat an sand veits tag Julios",
+  "Am erſten hat d Bramberg vo velkirch",
+  "zu mir daizt xx lb zu ſindenden",
+  "schlaff d weynegker",
+  "Demnach hat Erschrauck vnd zwirnendt",
+  "dzeit xvij lb am phingst vor",
+  "petz pauls Ist durch d weynegker",
+  "geschaffet worden",
+  "Aber hat Erschrau dzeit xxv ß lh vnd",
+  "noch margarethe hat d weynegker",
+  "uber sich genome",
+  "Hanns ſenſee am rott vo findn hat",
+  "dzeit viij ß iij gſ abgerait an",
+  "sand peters kettenfeier schlaff lebar",
+  "Mez hat Jurgeſtein axnguart von ſand",
+  "Hanns dzeit xxviij lb ij gſ mit",
+  "im abgerait am phingst nach sand",
+  "Julios tag schlaff weynegker selbs",
+  "Aber hat Erschrau dzeit xxij gſ an",
+  "samcztag nach augustinj Mez iij lb",
+  "viij gſ am phingst nach crucis am",
+  "herbst schlaff lebire",
+  "Demnach hat vlreichs tensen dzeit",
+  "v mc iij ß vj gſ j ff abgerait an",
+  "freitag vor Elisabeth schlaff weynegker",
+  "Mez hat cappen ſeind vo furez dzeit",
+  "x gſ am mitt vor aller heylign tag",
+  "schlaff trindmasz",
+  "So hat lid Dyeterich vo findling selb",
+  "dort dzeit xxxvij lb viij gſ",
+  "hat silich kyming abgerait zu sand",
+  "johanns tag zu weyhnachten",
+  "Aber ist mind mir schuldig vj mc x lb",
+  "von der schramee celsten magd als",
+  "mand den paulsis vnd sein weib",
+  "fur rait gsetzet hat vnd hat 3 lust",
+  "seinem abgerait vnd ge hoff",
+  "behaffid auf schlaffen",
+  "114",
+  "Gratzperg",
+  "pekmäister",
+  "Zwomayr ist gerait von",
+  "ß lb am Besloer drayer",
+  "montag nach dem heylign",
+  "drei roing auf heintigen",
+  "tag Anno domi xc",
+  "c d weynegkerſ",
+  "[...]",
+  "vnd axnguarnet vnd",
+  "stait a diem",
+  "das Albrendt",
+  "m zwayn getreüden",
+  "stendt d ſo xvij",
+  "t mit gemelter stater",
+  "mit zwaylir gabbrot",
+  "d dar mit vorabschaiden",
+  "d veranfult . Item",
+  "d zeigt d anngewist vns",
+  "n lamb Crentler Clas",
+  "zu deyen findn ligt vnd",
+  "Stait maints z indiur",
+  "d sumb Regs lxxxxvij mc j lb",
+  "iij gſ"
+ ]
+}

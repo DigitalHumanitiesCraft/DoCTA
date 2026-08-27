@@ -1,0 +1,335 @@
+{
+ "page": "rb2_p061",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 14.6,
+ "timestamp": "2026-08-26T20:18:25+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 61v",
+    "lines": [
+     {
+      "text": "Daran hat er emphangn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Von herrn Benedicte Camrermaister hat er",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "emphangen die derselb Camrermaister verait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hat —— xxxviij m(a)r(c)k viij ß",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) dba hat er von demselben Camrermaister emph(an)g(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "dba"
+      ]
+     },
+     {
+      "text": "die derselb Camrermaister verantwurtet miet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "—— lxxxxj m(a)r(c)k viij s(olidos) d(enarios)",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) aber hat jm d(er) Camrermaister aufgebe(n)t xvij m(a)r(c)",
+      "kind": "entry",
+      "uncertain": [
+       "aufgebe(n)t"
+      ]
+     },
+     {
+      "text": "S(u)m(m)a haimnemens",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "fac(it) c xlvij m(a)r(c)k iij s(olidos) d",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Jnnemen vnd aufgeben gegeneinander gelegt vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "aufgehœrt. Dennoch rest meins herrn gnad maister",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hannsn zymm(er)man oder sein aufgeben mit sampt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "schulicher —— x m(a)r(c)k v ß c alls abzugn",
+      "kind": "amount",
+      "uncertain": [
+       "schulicher",
+       "alls abzugn"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 62r",
+    "lines": [
+     {
+      "text": "62",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Gylg Pyschler",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) Anno etc. xc tercio, cernicolu sup(ra) ist mit",
+      "kind": "entry",
+      "uncertain": [
+       "cernicolu sup(ra)"
+      ]
+     },
+     {
+      "text": "Gilgen Pyschler raittung beschribn vmb",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "alle seine vnd seine knecht ackerart warn freytag",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "nach phingsten des voraufgegangs lxxxj jar",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "~~auf hieinnan~~ vnd auch von seins",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "61",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem laist ze wissen das ich ain volkomen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "raittung hab gethan mit dem Erwirdign",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gaistlichen herrn hern Benedicte weyrmayr",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pharrd zu Tyrol meins gnedign herren",
+      "kind": "entry",
+      "uncertain": [
+       "pharrd"
+      ]
+     },
+     {
+      "text": "seins volks schuldag",
+      "kind": "entry",
+      "uncertain": [
+       "schuldag"
+      ]
+     },
+     {
+      "text": "hertzog Sigmunds c kamermaister vnd jm",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dieser zeit warn auf",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "bezalt meins folks rintz auf sand Andreas",
+      "kind": "entry",
+      "uncertain": [
+       "rintz"
+      ]
+     },
+     {
+      "text": "stouendt bringt ij jar",
+      "kind": "entry",
+      "uncertain": [
+       "stouendt"
+      ]
+     },
+     {
+      "text": "tag des lxxxj Jars vnd ist die raittung",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gat bringt xxxij m(a)r(c)k",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "beschehen des nachstn suntags nach mitter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vasten des lxxxij Jars vnd man geit mir",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gelt für die speis vom tag der raittung",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hin für selbander vnd für ain pson",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwaintzig gulden vnd zu sold funfftnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwaintzig guld(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ist jm rants auf Heurige",
+      "kind": "entry",
+      "uncertain": [
+       "rants"
+      ]
+     },
+     {
+      "text": "c pw iiij c",
+      "kind": "amount",
+      "uncertain": [
+       "c pw iiij c"
+      ]
+     },
+     {
+      "text": "Jt(em) So ist meins herrn gnadn in seiner maister",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "werchzeug raittung schuldig worn — clviij m(a)r(c)k iiij ran(isch) ß",
+      "kind": "amount",
+      "uncertain": [
+       "ran(isch)"
+      ]
+     },
+     {
+      "text": "S(u)m(m)a seins aufgebens",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "fac(it) lxxxiiij m(a)r(c)k viij ß",
+      "kind": "amount",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Daran hat er emphangn",
+  "Von herrn Benedicte Camrermaister hat er",
+  "emphangen die derselb Camrermaister verait",
+  "hat —— xxxviij m(a)r(c)k viij ß",
+  "Jt(em) dba hat er von demselben Camrermaister emph(an)g(e)n",
+  "die derselb Camrermaister verantwurtet miet",
+  "—— lxxxxj m(a)r(c)k viij s(olidos) d(enarios)",
+  "Jt(em) aber hat jm d(er) Camrermaister aufgebe(n)t xvij m(a)r(c)",
+  "S(u)m(m)a haimnemens",
+  "fac(it) c xlvij m(a)r(c)k iij s(olidos) d",
+  "Jnnemen vnd aufgeben gegeneinander gelegt vnd",
+  "aufgehœrt. Dennoch rest meins herrn gnad maister",
+  "hannsn zymm(er)man oder sein aufgeben mit sampt",
+  "schulicher —— x m(a)r(c)k v ß c alls abzugn",
+  "62",
+  "Gylg Pyschler",
+  "Jt(em) Anno etc. xc tercio, cernicolu sup(ra) ist mit",
+  "Gilgen Pyschler raittung beschribn vmb",
+  "alle seine vnd seine knecht ackerart warn freytag",
+  "nach phingsten des voraufgegangs lxxxj jar",
+  "~~auf hieinnan~~ vnd auch von seins",
+  "61",
+  "Jtem laist ze wissen das ich ain volkomen",
+  "raittung hab gethan mit dem Erwirdign",
+  "gaistlichen herrn hern Benedicte weyrmayr",
+  "pharrd zu Tyrol meins gnedign herren",
+  "seins volks schuldag",
+  "hertzog Sigmunds c kamermaister vnd jm",
+  "dieser zeit warn auf",
+  "bezalt meins folks rintz auf sand Andreas",
+  "stouendt bringt ij jar",
+  "tag des lxxxj Jars vnd ist die raittung",
+  "gat bringt xxxij m(a)r(c)k",
+  "beschehen des nachstn suntags nach mitter",
+  "vasten des lxxxij Jars vnd man geit mir",
+  "gelt für die speis vom tag der raittung",
+  "hin für selbander vnd für ain pson",
+  "zwaintzig gulden vnd zu sold funfftnd",
+  "zwaintzig guld(en)",
+  "ist jm rants auf Heurige",
+  "c pw iiij c",
+  "Jt(em) So ist meins herrn gnadn in seiner maister",
+  "werchzeug raittung schuldig worn — clviij m(a)r(c)k iiij ran(isch) ß",
+  "S(u)m(m)a seins aufgebens",
+  "fac(it) lxxxiiij m(a)r(c)k viij ß"
+ ]
+}

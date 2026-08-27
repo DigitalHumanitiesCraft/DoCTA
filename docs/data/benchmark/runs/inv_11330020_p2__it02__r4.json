@@ -1,0 +1,358 @@
+{
+ "page": "inv_11330020_p2",
+ "iteration": "it02",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1075,
+    2727
+   ],
+   "sent_px": [
+    1075,
+    2727
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.4,
+ "timestamp": "2026-08-26T20:23:50+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1",
+    "lines": [
+     {
+      "text": "Item In der padmeyst(e)r kamer ist ain pëtt .iiij.",
+      "kind": "entry",
+      "uncertain": [
+       "padmeyst(e)r"
+      ]
+     },
+     {
+      "text": "rauch deckh die alt sein ij rouchene leilach",
+      "kind": "entry",
+      "uncertain": [
+       "rouchene"
+      ]
+     },
+     {
+      "text": "j polster j spanpëtt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der kamer bey der aus ladung sein vier",
+      "kind": "entry",
+      "uncertain": [
+       "aus ladung"
+      ]
+     },
+     {
+      "text": "pëtt zwen polster zwoaj chüjss zway pare",
+      "kind": "entry",
+      "uncertain": [
+       "chüjss"
+      ]
+     },
+     {
+      "text": "leilach Sechs schaffain dekch alt vnd new ain",
+      "kind": "entry",
+      "uncertain": [
+       "schaffain"
+      ]
+     },
+     {
+      "text": "gamlsseine deckh drey spanpëtt zwo truchen",
+      "kind": "entry",
+      "uncertain": [
+       "gamlsseine"
+      ]
+     },
+     {
+      "text": "mit gestrifften pfeeln",
+      "kind": "entry",
+      "uncertain": [
+       "pfeeln"
+      ]
+     },
+     {
+      "text": "Item Im stublein da bey sein zway pëtt zway",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pare leilach ain polster ain chiss drey",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "schäffain dekch ain gamlss deckh ain spanpëtt",
+      "kind": "entry",
+      "uncertain": [
+       "schäffain",
+       "gamlss"
+      ]
+     },
+     {
+      "text": "Item In dem obern ärckher ist zway pëtt zwoaj",
+      "kind": "entry",
+      "uncertain": [
+       "ärckher"
+      ]
+     },
+     {
+      "text": "leilach ain polster ain chůss drey schaffain",
+      "kind": "entry",
+      "uncertain": [
+       "schaffain"
+      ]
+     },
+     {
+      "text": "dekch zwo lambrein gut dekch",
+      "kind": "entry",
+      "uncertain": [
+       "lambrein"
+      ]
+     },
+     {
+      "text": "Item In der dritn kamer ist {ain} ~~zway~~ pëtt ain polst(er)",
+      "kind": "entry",
+      "uncertain": [
+       "dritn",
+       "polst(er)"
+      ]
+     },
+     {
+      "text": "zway rouchene leilach ain pöser polster",
+      "kind": "entry",
+      "uncertain": [
+       "rouchene",
+       "pöser"
+      ]
+     },
+     {
+      "text": "ainent zuech mer ain rauche dekch zwoaj",
+      "kind": "entry",
+      "uncertain": [
+       "ainent"
+      ]
+     },
+     {
+      "text": "pöse dechelt gestreifft",
+      "kind": "entry",
+      "uncertain": [
+       "dechelt"
+      ]
+     },
+     {
+      "text": "Item Darnach In der nachstn kamer vnd",
+      "kind": "entry",
+      "uncertain": [
+       "nachstn"
+      ]
+     },
+     {
+      "text": "sunst allenthalbn sein xxxj kessl grosen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd klain guet vnd pöz vnd ain klain",
+      "kind": "entry",
+      "uncertain": [
+       "pöz"
+      ]
+     },
+     {
+      "text": "kësslein zu dem öl mer iiij par pöze kessl",
+      "kind": "entry",
+      "uncertain": [
+       "kësslein",
+       "pöze"
+      ]
+     },
+     {
+      "text": "zwel erden häfain grose vnd klain ain",
+      "kind": "entry",
+      "uncertain": [
+       "häfain"
+      ]
+     },
+     {
+      "text": "guete lauetschn da man saypn In macht",
+      "kind": "entry",
+      "uncertain": [
+       "lauetschn",
+       "saypn"
+      ]
+     },
+     {
+      "text": "iij mörser zwen stössl mer xxij mittagz",
+      "kind": "entry",
+      "uncertain": [
+       "mittagz"
+      ]
+     },
+     {
+      "text": "vnd klaine zinen schissl vnd ain zimplat",
+      "kind": "entry",
+      "uncertain": [
+       "zimplat"
+      ]
+     },
+     {
+      "text": "vier pare messens pëtt vnd ain messens",
+      "kind": "entry",
+      "uncertain": [
+       "messens"
+      ]
+     },
+     {
+      "text": "gissolkanndl vnd zway kupfferene pëtt",
+      "kind": "entry",
+      "uncertain": [
+       "gissolkanndl",
+       "kupfferene"
+      ]
+     },
+     {
+      "text": "mer xxxj part stënyff gross vnd klain",
+      "kind": "entry",
+      "uncertain": [
+       "stënyff"
+      ]
+     },
+     {
+      "text": "mer xlvij hulzene däller vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "däller"
+      ]
+     },
+     {
+      "text": "tisch Im fleysch gadein vnd vier furchin",
+      "kind": "entry",
+      "uncertain": [
+       "fleysch",
+       "gadein",
+       "furchin"
+      ]
+     },
+     {
+      "text": "pürsten loden velly vnd ain vüctail",
+      "kind": "entry",
+      "uncertain": [
+       "pürsten",
+       "velly",
+       "vüctail"
+      ]
+     },
+     {
+      "text": "mer Im fleysch gadein vnd dritn kamer",
+      "kind": "entry",
+      "uncertain": [
+       "fleysch",
+       "gadein",
+       "dritn"
+      ]
+     },
+     {
+      "text": "viij truchn vnd geänndt",
+      "kind": "entry",
+      "uncertain": [
+       "geänndt"
+      ]
+     },
+     {
+      "text": "Item In der kuchl iij pranthöst x phann",
+      "kind": "entry",
+      "uncertain": [
+       "pranthöst"
+      ]
+     },
+     {
+      "text": "iij phaffnphan iij häln zwoen phann",
+      "kind": "entry",
+      "uncertain": [
+       "phaffnphan",
+       "häln"
+      ]
+     },
+     {
+      "text": "cöst iij pratspiss vnd ain haubt ain",
+      "kind": "entry",
+      "uncertain": [
+       "cöst",
+       "pratspiss",
+       "haubt"
+      ]
+     },
+     {
+      "text": "eyffrsang ain ribeysn funf milch",
+      "kind": "entry",
+      "uncertain": [
+       "eyffrsang",
+       "ribeysn"
+      ]
+     },
+     {
+      "text": "seuffe zway sössl ain mass satz",
+      "kind": "entry",
+      "uncertain": [
+       "seuffe",
+       "sössl",
+       "satz"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Item In der padmeyst(e)r kamer ist ain pëtt .iiij.",
+  "rauch deckh die alt sein ij rouchene leilach",
+  "j polster j spanpëtt",
+  "Item In der kamer bey der aus ladung sein vier",
+  "pëtt zwen polster zwoaj chüjss zway pare",
+  "leilach Sechs schaffain dekch alt vnd new ain",
+  "gamlsseine deckh drey spanpëtt zwo truchen",
+  "mit gestrifften pfeeln",
+  "Item Im stublein da bey sein zway pëtt zway",
+  "pare leilach ain polster ain chiss drey",
+  "schäffain dekch ain gamlss deckh ain spanpëtt",
+  "Item In dem obern ärckher ist zway pëtt zwoaj",
+  "leilach ain polster ain chůss drey schaffain",
+  "dekch zwo lambrein gut dekch",
+  "Item In der dritn kamer ist {ain} ~~zway~~ pëtt ain polst(er)",
+  "zway rouchene leilach ain pöser polster",
+  "ainent zuech mer ain rauche dekch zwoaj",
+  "pöse dechelt gestreifft",
+  "Item Darnach In der nachstn kamer vnd",
+  "sunst allenthalbn sein xxxj kessl grosen",
+  "vnd klain guet vnd pöz vnd ain klain",
+  "kësslein zu dem öl mer iiij par pöze kessl",
+  "zwel erden häfain grose vnd klain ain",
+  "guete lauetschn da man saypn In macht",
+  "iij mörser zwen stössl mer xxij mittagz",
+  "vnd klaine zinen schissl vnd ain zimplat",
+  "vier pare messens pëtt vnd ain messens",
+  "gissolkanndl vnd zway kupfferene pëtt",
+  "mer xxxj part stënyff gross vnd klain",
+  "mer xlvij hulzene däller vnd ain",
+  "tisch Im fleysch gadein vnd vier furchin",
+  "pürsten loden velly vnd ain vüctail",
+  "mer Im fleysch gadein vnd dritn kamer",
+  "viij truchn vnd geänndt",
+  "Item In der kuchl iij pranthöst x phann",
+  "iij phaffnphan iij häln zwoen phann",
+  "cöst iij pratspiss vnd ain haubt ain",
+  "eyffrsang ain ribeysn funf milch",
+  "seuffe zway sössl ain mass satz"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "page": "inv_11330019_p3",
+ "iteration": "it01",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1030,
+    2754
+   ],
+   "sent_px": [
+    1030,
+    2754
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.0,
+ "timestamp": "2026-08-26T20:22:40+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Umschlag / Dorsum",
+    "lines": [
+     {
+      "text": "1478",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "( L. 109 )",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "L: 109.",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "1478",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Cronburg",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ringw(er)ch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Inuentar Roll",
+      "kind": "entry",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1478",
+  "( L. 109 )",
+  "L: 109.",
+  "1478",
+  "Cronburg",
+  "Ringw(er)ch",
+  "Inuentar Roll"
+ ]
+}

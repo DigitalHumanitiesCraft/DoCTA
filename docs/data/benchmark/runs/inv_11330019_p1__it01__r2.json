@@ -1,0 +1,290 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.8,
+ "timestamp": "2026-08-26T20:21:51+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation"
+     },
+     {
+      "text": "Fro(e)nburg",
+      "kind": "rubric",
+      "uncertain": [
+       "Fro(e)nburg"
+      ]
+     },
+     {
+      "text": "V(er)merckt die farund hab",
+      "kind": "entry"
+     },
+     {
+      "text": "ganz plund vnd anders auff",
+      "kind": "entry"
+     },
+     {
+      "text": "Fro(e)nburg Hannsen Camer-",
+      "kind": "entry"
+     },
+     {
+      "text": "maisters phleg(er) da selbs zu-",
+      "kind": "entry"
+     },
+     {
+      "text": "gehörig So Joseph Vlreichen",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreichen"
+      ]
+     },
+     {
+      "text": "an stat meins gnedigen herren",
+      "kind": "entry"
+     },
+     {
+      "text": "vngefehrist eyngenom(m)en hatt an",
+      "kind": "entry"
+     },
+     {
+      "text": "freytag nach Sant Michelstag",
+      "kind": "entry"
+     },
+     {
+      "text": "Anno lxxviij",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) In(e)m kesten ain knieyff ij",
+      "kind": "entry",
+      "uncertain": [
+       "knieyff"
+      ]
+     },
+     {
+      "text": "eyse(n)hüt ij par hentschuch ij",
+      "kind": "entry"
+     },
+     {
+      "text": "par armbzeug iij par wendel-",
+      "kind": "entry"
+     },
+     {
+      "text": "haub(e)n gwannff ij hantsch iij krag(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "gwannff"
+      ]
+     },
+     {
+      "text": "mor ain armbzeug iij schwebenschuch",
+      "kind": "entry"
+     },
+     {
+      "text": "sind nit genast .",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) In der stubn vnd kam(er) da",
+      "kind": "entry"
+     },
+     {
+      "text": "ist ain schribtisch j grosser schrein",
+      "kind": "entry"
+     },
+     {
+      "text": "daronnt lig tuchzeug vj hantsch",
+      "kind": "entry",
+      "uncertain": [
+       "tuchzeug"
+      ]
+     },
+     {
+      "text": "iiij häub vegigel j schmidstuck",
+      "kind": "entry",
+      "uncertain": [
+       "vegigel",
+       "schmidstuck"
+      ]
+     },
+     {
+      "text": "ain schlosser klobi(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "klobi(e)n"
+      ]
+     },
+     {
+      "text": "It(em) mor ain pettstatt darin lyt",
+      "kind": "entry"
+     },
+     {
+      "text": "ain pett ain polst(er) j kuss ij panck-",
+      "kind": "entry"
+     },
+     {
+      "text": "polster iij rauch deck",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) mor ain messig beck vnd ain",
+      "kind": "entry"
+     },
+     {
+      "text": "messig hantvass j keller buech",
+      "kind": "entry"
+     },
+     {
+      "text": "darz sind xxv plandl",
+      "kind": "entry",
+      "uncertain": [
+       "plandl"
+      ]
+     },
+     {
+      "text": "Mor ligt in and pettzeug viij",
+      "kind": "entry"
+     },
+     {
+      "text": "blatt schlos vnd ain groß mals",
+      "kind": "entry",
+      "uncertain": [
+       "mals"
+      ]
+     },
+     {
+      "text": "Rohr",
+      "kind": "entry"
+     },
+     {
+      "text": "Mor vor der kuckey ain tancken",
+      "kind": "entry",
+      "uncertain": [
+       "kuckey",
+       "tancken"
+      ]
+     },
+     {
+      "text": "vnd ain schaffentt ij pfannen",
+      "kind": "entry"
+     },
+     {
+      "text": "drein häfen iij fihzkessel",
+      "kind": "entry",
+      "uncertain": [
+       "fihzkessel"
+      ]
+     },
+     {
+      "text": "It(em) ain armbrost mit aind wendel",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd hat kain seyy",
+      "kind": "entry",
+      "uncertain": [
+       "seyy"
+      ]
+     },
+     {
+      "text": "It(em) auff der wand war statt ain",
+      "kind": "entry",
+      "uncertain": [
+       "wand war statt"
+      ]
+     },
+     {
+      "text": "tuerch ain pestatt dar Iny lyt",
+      "kind": "entry",
+      "uncertain": [
+       "tuerch"
+      ]
+     },
+     {
+      "text": "ain pett ain bolst(er) ij laylach ain",
+      "kind": "entry"
+     },
+     {
+      "text": "rauch deck vnd ain pfol",
+      "kind": "entry"
+     },
+     {
+      "text": "Inv. A 144 / 1",
+      "kind": "marginal"
+     },
+     {
+      "text": "1478 Okt. 2.",
+      "kind": "marginal"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Fro(e)nburg",
+  "V(er)merckt die farund hab",
+  "ganz plund vnd anders auff",
+  "Fro(e)nburg Hannsen Camer-",
+  "maisters phleg(er) da selbs zu-",
+  "gehörig So Joseph Vlreichen",
+  "an stat meins gnedigen herren",
+  "vngefehrist eyngenom(m)en hatt an",
+  "freytag nach Sant Michelstag",
+  "Anno lxxviij",
+  "It(em) In(e)m kesten ain knieyff ij",
+  "eyse(n)hüt ij par hentschuch ij",
+  "par armbzeug iij par wendel-",
+  "haub(e)n gwannff ij hantsch iij krag(e)n",
+  "mor ain armbzeug iij schwebenschuch",
+  "sind nit genast .",
+  "It(em) In der stubn vnd kam(er) da",
+  "ist ain schribtisch j grosser schrein",
+  "daronnt lig tuchzeug vj hantsch",
+  "iiij häub vegigel j schmidstuck",
+  "ain schlosser klobi(e)n",
+  "It(em) mor ain pettstatt darin lyt",
+  "ain pett ain polst(er) j kuss ij panck-",
+  "polster iij rauch deck",
+  "It(em) mor ain messig beck vnd ain",
+  "messig hantvass j keller buech",
+  "darz sind xxv plandl",
+  "Mor ligt in and pettzeug viij",
+  "blatt schlos vnd ain groß mals",
+  "Rohr",
+  "Mor vor der kuckey ain tancken",
+  "vnd ain schaffentt ij pfannen",
+  "drein häfen iij fihzkessel",
+  "It(em) ain armbrost mit aind wendel",
+  "vnd hat kain seyy",
+  "It(em) auff der wand war statt ain",
+  "tuerch ain pestatt dar Iny lyt",
+  "ain pett ain bolst(er) ij laylach ain",
+  "rauch deck vnd ain pfol",
+  "Inv. A 144 / 1",
+  "1478 Okt. 2."
+ ]
+}

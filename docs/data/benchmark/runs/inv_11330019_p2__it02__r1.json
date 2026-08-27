@@ -1,0 +1,547 @@
+{
+ "page": "inv_11330019_p2",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1979,
+    2822
+   ],
+   "sent_px": [
+    1979,
+    2822
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 13.7,
+ "timestamp": "2026-08-26T20:22:30+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Item oben in ainer truchen ligen viij",
+      "kind": "entry",
+      "uncertain": [
+       "truchen"
+      ]
+     },
+     {
+      "text": "Reitsattel guett vnd böß",
+      "kind": "entry",
+      "uncertain": [
+       "Reitsattel"
+      ]
+     },
+     {
+      "text": "Item vnnden Jn dem gewelb",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "sind zwo pettstatt dar jnn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pett ain deckbett iiij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pölster ij küss iiij par pleilach",
+      "kind": "entry",
+      "uncertain": [
+       "pleilach"
+      ]
+     },
+     {
+      "text": "vnd ain golter",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item mer Jn dem selben ge-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "welbe sind vij gepewt woll",
+      "kind": "entry",
+      "uncertain": [
+       "gepewt"
+      ]
+     },
+     {
+      "text": "gut xxiiij stuck flachs talg",
+      "kind": "entry",
+      "uncertain": [
+       "talg"
+      ]
+     },
+     {
+      "text": "Item viij stucken lanng vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "kurtz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xxiiij stuck pfeffer clain",
+      "kind": "entry",
+      "uncertain": [
+       "pfeffer"
+      ]
+     },
+     {
+      "text": "vnd groß ain stuck plei",
+      "kind": "entry",
+      "uncertain": [
+       "plei"
+      ]
+     },
+     {
+      "text": "vnd iiij kessel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item mer in dem selben gewelbe",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "sind zwo truhen dar jnn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ligt allerlay phunt vnd messing",
+      "kind": "entry",
+      "uncertain": [
+       "phunt",
+       "messing"
+      ]
+     },
+     {
+      "text": "zeug sind zwo pettschafft ainer",
+      "kind": "entry",
+      "uncertain": [
+       "pettschafft"
+      ]
+     },
+     {
+      "text": "zwo truchen sind leir zway",
+      "kind": "entry",
+      "uncertain": [
+       "leir"
+      ]
+     },
+     {
+      "text": "klenne pefferne ij kandelin",
+      "kind": "entry",
+      "uncertain": [
+       "pefferne",
+       "kandelin"
+      ]
+     },
+     {
+      "text": "ij tangelgspind iiij schirck",
+      "kind": "entry",
+      "uncertain": [
+       "tangelgspind",
+       "schirck"
+      ]
+     },
+     {
+      "text": "ain grat gabe viij krappis",
+      "kind": "entry",
+      "uncertain": [
+       "grat gabe",
+       "krappis"
+      ]
+     },
+     {
+      "text": "zwo seigeln xv wescherle achse",
+      "kind": "entry",
+      "uncertain": [
+       "seigeln",
+       "wescherle"
+      ]
+     },
+     {
+      "text": "vnd xli eisen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item xv vird wild ochsen häut",
+      "kind": "entry",
+      "uncertain": [
+       "vird"
+      ]
+     },
+     {
+      "text": "schaffel clain vnd groß",
+      "kind": "entry",
+      "uncertain": [
+       "schaffel"
+      ]
+     },
+     {
+      "text": "xxj tellr xxxvij swin peckn",
+      "kind": "entry",
+      "uncertain": [
+       "peckn"
+      ]
+     },
+     {
+      "text": "swinein flaisch vnsunndrig",
+      "kind": "entry",
+      "uncertain": [
+       "vnsunndrig"
+      ]
+     },
+     {
+      "text": "zway phif gedörrt flaisch",
+      "kind": "entry",
+      "uncertain": [
+       "phif"
+      ]
+     },
+     {
+      "text": "Item mer iij hüetlein ain Ring",
+      "kind": "entry",
+      "uncertain": [
+       "hüetlein"
+      ]
+     },
+     {
+      "text": "Item in vntern keller sind iij",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "hafen ij furrgleisen v alt gabil",
+      "kind": "entry",
+      "uncertain": [
+       "furrgleisen",
+       "gabil"
+      ]
+     },
+     {
+      "text": "xvj hergabeln iiij kessel",
+      "kind": "entry",
+      "uncertain": [
+       "hergabeln"
+      ]
+     },
+     {
+      "text": "ain stuck flaisschs vnd alz",
+      "kind": "entry",
+      "uncertain": [
+       "flaisschs"
+      ]
+     },
+     {
+      "text": "pntterich",
+      "kind": "entry",
+      "uncertain": [
+       "pntterich"
+      ]
+     },
+     {
+      "text": "Item mer in dem selben keller",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ist ain vass wein xj dry",
+      "kind": "entry",
+      "uncertain": [
+       "dry"
+      ]
+     },
+     {
+      "text": "ist die wein dar auff gesunten",
+      "kind": "entry",
+      "uncertain": [
+       "gesunten"
+      ]
+     },
+     {
+      "text": "Item v kandelin klain vnd",
+      "kind": "entry",
+      "uncertain": [
+       "kandelin"
+      ]
+     },
+     {
+      "text": "groß",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item So ist vnnden Jm vorhoff",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vij kue zwo kalbeln zway",
+      "kind": "entry",
+      "uncertain": [
+       "kalbeln"
+      ]
+     },
+     {
+      "text": "stuel ain sßwein vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "sßwein"
+      ]
+     },
+     {
+      "text": "prenndtzeyner kall ain",
+      "kind": "entry",
+      "uncertain": [
+       "prenndtzeyner",
+       "kall"
+      ]
+     },
+     {
+      "text": "wagkross",
+      "kind": "entry",
+      "uncertain": [
+       "wagkross"
+      ]
+     },
+     {
+      "text": "Item mer daselbs iij pett j kuelp",
+      "kind": "entry",
+      "uncertain": [
+       "kuelp"
+      ]
+     },
+     {
+      "text": "vnd iiij oppertecken",
+      "kind": "entry",
+      "uncertain": [
+       "oppertecken"
+      ]
+     },
+     {
+      "text": "Item So haft der obgenant Jo-",
+      "kind": "entry",
+      "uncertain": [
+       "Joseph"
+      ]
+     },
+     {
+      "text": "seph auff Krawenburg funden",
+      "kind": "entry",
+      "uncertain": [
+       "Krawenburg"
+      ]
+     },
+     {
+      "text": "das wr of h zů sind geuest",
+      "kind": "entry",
+      "uncertain": [
+       "geuest"
+      ]
+     },
+     {
+      "text": "schlos gehoert",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item hagkenpuechsen viij",
+      "kind": "entry",
+      "uncertain": [
+       "hagkenpuechsen"
+      ]
+     },
+     {
+      "text": "Item hagkenpuexen xxv",
+      "kind": "entry",
+      "uncertain": [
+       "hagkenpuexen"
+      ]
+     },
+     {
+      "text": "Item hagkenpuexen sind aufgemacht ij",
+      "kind": "entry",
+      "uncertain": [
+       "hagkenpuexen",
+       "aufgemacht"
+      ]
+     },
+     {
+      "text": "Item stain puexen ij",
+      "kind": "entry",
+      "uncertain": [
+       "stain puexen"
+      ]
+     },
+     {
+      "text": "Item mer handpuechsen sind mit",
+      "kind": "entry",
+      "uncertain": [
+       "handpuechsen"
+      ]
+     },
+     {
+      "text": "geuaft vij",
+      "kind": "entry",
+      "uncertain": [
+       "geuaft"
+      ]
+     },
+     {
+      "text": "Item drey legen mit pfejlen ligen",
+      "kind": "entry",
+      "uncertain": [
+       "legen",
+       "pfejlen"
+      ]
+     },
+     {
+      "text": "Item gewinden zway klaine tachspil",
+      "kind": "entry",
+      "uncertain": [
+       "gewinden",
+       "tachspil"
+      ]
+     },
+     {
+      "text": "Item mer iij groß morffpuexen",
+      "kind": "entry",
+      "uncertain": [
+       "morffpuexen"
+      ]
+     },
+     {
+      "text": "Item funff morffbuexen vnd",
+      "kind": "entry",
+      "uncertain": [
+       "morffbuexen"
+      ]
+     },
+     {
+      "text": "ij klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item gar altr armproft ain",
+      "kind": "entry",
+      "uncertain": [
+       "armproft"
+      ]
+     },
+     {
+      "text": "seins xj",
+      "kind": "entry",
+      "uncertain": [
+       "seins"
+      ]
+     },
+     {
+      "text": "Item zway rösslij mit pulver",
+      "kind": "entry",
+      "uncertain": [
+       "rösslij",
+       "pulver"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "2",
+  "Item oben in ainer truchen ligen viij",
+  "Reitsattel guett vnd böß",
+  "Item vnnden Jn dem gewelb",
+  "sind zwo pettstatt dar jnn",
+  "pett ain deckbett iiij",
+  "pölster ij küss iiij par pleilach",
+  "vnd ain golter",
+  "Item mer Jn dem selben ge-",
+  "welbe sind vij gepewt woll",
+  "gut xxiiij stuck flachs talg",
+  "Item viij stucken lanng vnd",
+  "kurtz",
+  "Item xxiiij stuck pfeffer clain",
+  "vnd groß ain stuck plei",
+  "vnd iiij kessel",
+  "Item mer in dem selben gewelbe",
+  "sind zwo truhen dar jnn",
+  "ligt allerlay phunt vnd messing",
+  "zeug sind zwo pettschafft ainer",
+  "zwo truchen sind leir zway",
+  "klenne pefferne ij kandelin",
+  "ij tangelgspind iiij schirck",
+  "ain grat gabe viij krappis",
+  "zwo seigeln xv wescherle achse",
+  "vnd xli eisen",
+  "Item xv vird wild ochsen häut",
+  "schaffel clain vnd groß",
+  "xxj tellr xxxvij swin peckn",
+  "swinein flaisch vnsunndrig",
+  "zway phif gedörrt flaisch",
+  "Item mer iij hüetlein ain Ring",
+  "Item in vntern keller sind iij",
+  "hafen ij furrgleisen v alt gabil",
+  "xvj hergabeln iiij kessel",
+  "ain stuck flaisschs vnd alz",
+  "pntterich",
+  "Item mer in dem selben keller",
+  "ist ain vass wein xj dry",
+  "ist die wein dar auff gesunten",
+  "Item v kandelin klain vnd",
+  "groß",
+  "Item So ist vnnden Jm vorhoff",
+  "vij kue zwo kalbeln zway",
+  "stuel ain sßwein vnd ain",
+  "prenndtzeyner kall ain",
+  "wagkross",
+  "Item mer daselbs iij pett j kuelp",
+  "vnd iiij oppertecken",
+  "Item So haft der obgenant Jo-",
+  "seph auff Krawenburg funden",
+  "das wr of h zů sind geuest",
+  "schlos gehoert",
+  "Item hagkenpuechsen viij",
+  "Item hagkenpuexen xxv",
+  "Item hagkenpuexen sind aufgemacht ij",
+  "Item stain puexen ij",
+  "Item mer handpuechsen sind mit",
+  "geuaft vij",
+  "Item drey legen mit pfejlen ligen",
+  "Item gewinden zway klaine tachspil",
+  "Item mer iij groß morffpuexen",
+  "Item funff morffbuexen vnd",
+  "ij klain",
+  "Item gar altr armproft ain",
+  "seins xj",
+  "Item zway rösslij mit pulver"
+ ]
+}

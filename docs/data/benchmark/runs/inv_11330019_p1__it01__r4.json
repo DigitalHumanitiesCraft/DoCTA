@@ -1,0 +1,322 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it01",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.4,
+ "timestamp": "2026-08-26T20:21:49+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Frewnperg",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerkt die farend hab",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gaws plund vnd anders auff",
+      "kind": "entry",
+      "uncertain": [
+       "gaws plund"
+      ]
+     },
+     {
+      "text": "Frewnberg Hanßen kamer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "meisters pfleg(er) da selbst zwo",
+      "kind": "entry",
+      "uncertain": [
+       "zwo"
+      ]
+     },
+     {
+      "text": "gehörig So Josseph vlreichs(un)",
+      "kind": "entry",
+      "uncertain": [
+       "vlreichs(un)"
+      ]
+     },
+     {
+      "text": "an stat meins gnedigen herren",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ingeschribt ingenom(en) hatt an",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "freytag Nach Sant michelstag",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Anno lxxviij^o",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Jnn kesten ain knwfft ij",
+      "kind": "entry",
+      "uncertain": [
+       "knwfft"
+      ]
+     },
+     {
+      "text": "ysenhüt ij par hentschüch ij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "par armbzeug iij par wndere",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "panz gwand ij hanttwart iij krapf",
+      "kind": "entry",
+      "uncertain": [
+       "panz gwand"
+      ]
+     },
+     {
+      "text": "mor ain armbzeug iij schweinßspieß",
+      "kind": "entry",
+      "uncertain": [
+       "schweinßspieß"
+      ]
+     },
+     {
+      "text": "sind nit gewest —",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) Jn der stubn vnd kam(er) da",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ist ain schratteg j grosser schrein",
+      "kind": "entry",
+      "uncertain": [
+       "schratteg"
+      ]
+     },
+     {
+      "text": "darour lig brawzeug vj hanttw(art)",
+      "kind": "entry",
+      "uncertain": [
+       "brawzeug"
+      ]
+     },
+     {
+      "text": "iij hant rigl j schmidstuck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain schlosser kloben",
+      "kind": "entry",
+      "uncertain": [
+       "kloben"
+      ]
+     },
+     {
+      "text": "It(em) mor ain pettstatt darJn ligt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain pett ain polst(er) j küss ij pawl(e)",
+      "kind": "entry",
+      "uncertain": [
+       "pawl(e)"
+      ]
+     },
+     {
+      "text": "polster iij rawch deck —",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) mor ain messig beck vnd ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "messig hantwass(er) j teller büchs",
+      "kind": "entry",
+      "uncertain": [
+       "hantwass(er)"
+      ]
+     },
+     {
+      "text": "dar sind xxx plandl",
+      "kind": "entry",
+      "uncertain": [
+       "plandl"
+      ]
+     },
+     {
+      "text": "Mor ligd in and pettung(e)n vij",
+      "kind": "entry",
+      "uncertain": [
+       "pettung(e)n"
+      ]
+     },
+     {
+      "text": "platt schlos vnd ain groß mals",
+      "kind": "entry",
+      "uncertain": [
+       "mals"
+      ]
+     },
+     {
+      "text": "roß",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Mor vor der kuchj ain truffen",
+      "kind": "entry",
+      "uncertain": [
+       "truffen"
+      ]
+     },
+     {
+      "text": "vnd ain schafftratt ij pfannen",
+      "kind": "entry",
+      "uncertain": [
+       "schafftratt"
+      ]
+     },
+     {
+      "text": "dreier hafen iij sitskessel",
+      "kind": "entry",
+      "uncertain": [
+       "sitskessel"
+      ]
+     },
+     {
+      "text": "It(em) ain armbrost mit aind wind(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "aind"
+      ]
+     },
+     {
+      "text": "v gut kenczcy",
+      "kind": "entry",
+      "uncertain": [
+       "kenczcy"
+      ]
+     },
+     {
+      "text": "It(em) auff der wand war statt ain",
+      "kind": "entry",
+      "uncertain": [
+       "wand war statt"
+      ]
+     },
+     {
+      "text": "{truchl} ain pettstatt darJnj ligt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain pett ain polst(er) ij leylach ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "rawch deck vnd ain pölst",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Inv. A 144/1       1478 Okt. 2.",
+      "kind": "marginal",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Frewnperg",
+  "Vermerkt die farend hab",
+  "gaws plund vnd anders auff",
+  "Frewnberg Hanßen kamer",
+  "meisters pfleg(er) da selbst zwo",
+  "gehörig So Josseph vlreichs(un)",
+  "an stat meins gnedigen herren",
+  "Ingeschribt ingenom(en) hatt an",
+  "freytag Nach Sant michelstag",
+  "Anno lxxviij^o",
+  "It(em) Jnn kesten ain knwfft ij",
+  "ysenhüt ij par hentschüch ij",
+  "par armbzeug iij par wndere",
+  "panz gwand ij hanttwart iij krapf",
+  "mor ain armbzeug iij schweinßspieß",
+  "sind nit gewest —",
+  "It(em) Jn der stubn vnd kam(er) da",
+  "ist ain schratteg j grosser schrein",
+  "darour lig brawzeug vj hanttw(art)",
+  "iij hant rigl j schmidstuck",
+  "ain schlosser kloben",
+  "It(em) mor ain pettstatt darJn ligt",
+  "ain pett ain polst(er) j küss ij pawl(e)",
+  "polster iij rawch deck —",
+  "It(em) mor ain messig beck vnd ain",
+  "messig hantwass(er) j teller büchs",
+  "dar sind xxx plandl",
+  "Mor ligd in and pettung(e)n vij",
+  "platt schlos vnd ain groß mals",
+  "roß",
+  "Mor vor der kuchj ain truffen",
+  "vnd ain schafftratt ij pfannen",
+  "dreier hafen iij sitskessel",
+  "It(em) ain armbrost mit aind wind(e)n",
+  "v gut kenczcy",
+  "It(em) auff der wand war statt ain",
+  "{truchl} ain pettstatt darJnj ligt",
+  "ain pett ain polst(er) ij leylach ain",
+  "rawch deck vnd ain pölst",
+  "Inv. A 144/1       1478 Okt. 2."
+ ]
+}

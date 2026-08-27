@@ -1,0 +1,354 @@
+{
+ "page": "inv_11330020_p1",
+ "iteration": "it01",
+ "repeat": 5,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1068,
+    2719
+   ],
+   "sent_px": [
+    1068,
+    2719
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.6,
+ "timestamp": "2026-08-26T20:23:11+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1440",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Zemerckhen die hab vnd gueter so auf dem",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gschlos Erenfels aus dem gescheft meins g(nädigen) h(errn)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "h(errn) von Burg vnd durch den geistlichen",
+      "kind": "entry",
+      "uncertain": [
+       "Burg"
+      ]
+     },
+     {
+      "text": "herren herren Petern plangken dechant",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zu Inniczingen vnd den thumcust gestaing",
+      "kind": "entry",
+      "uncertain": [
+       "gestaing"
+      ]
+     },
+     {
+      "text": "vnd beschain gewessen auf den hewting tag",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "dato der zwelff aigentlich besicht vnd beschawt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ist worden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m In der kamer bey der stubn ij pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain dechpett zwen haubtpolster vj",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "haubtkhüssen ain pangkpolster ij pangkh-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "khüssen vj lembram dech(e)n alt vnd new",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "x schäffen dech(e)n ij spanpett ain barioln",
+      "kind": "entry",
+      "uncertain": [
+       "barioln"
+      ]
+     },
+     {
+      "text": "xxiiij leylach gute vnd pöse gezäuchent",
+      "kind": "entry",
+      "uncertain": [
+       "gezäuchent"
+      ]
+     },
+     {
+      "text": "vnd drey tuechen ij alte dechleylach am",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "padpente ain rauchs hewffader köll",
+      "kind": "entry",
+      "uncertain": [
+       "padpente",
+       "hewffader",
+       "köll"
+      ]
+     },
+     {
+      "text": "lij tischtüecher vc handtüecher gute vnd",
+      "kind": "entry",
+      "uncertain": [
+       "vc"
+      ]
+     },
+     {
+      "text": "pöse vier ploffe ärmst am vadertail",
+      "kind": "entry",
+      "uncertain": [
+       "ploffe",
+       "ärmst"
+      ]
+     },
+     {
+      "text": "ij handtspigelt am eysenhur j türkhisch t[...]",
+      "kind": "entry",
+      "uncertain": [
+       "eysenhur",
+       "t[...]"
+      ]
+     },
+     {
+      "text": "vnd am harnischkarl vnd güt pettkest",
+      "kind": "entry",
+      "uncertain": [
+       "harnischkarl",
+       "pettkest"
+      ]
+     },
+     {
+      "text": "It(e)m In mein g(nädigen) h(errn) zimmer ist iiij pett iiij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "haubtpolster viij haubtkhüssn vnd ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "tuechen ist schlagen ij spanpett zwo",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "bariolen ij tisch",
+      "kind": "entry",
+      "uncertain": [
+       "bariolen"
+      ]
+     },
+     {
+      "text": "It(e)m In der Richters kamer ain pett ij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "leylach ain rauche dech(e)n ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "j khüssen ain dechpett ain altz fe[...]",
+      "kind": "entry",
+      "uncertain": [
+       "fe[...]"
+      ]
+     },
+     {
+      "text": "steenhsz tüechel ij spanpett j tisch",
+      "kind": "entry",
+      "uncertain": [
+       "steenhsz"
+      ]
+     },
+     {
+      "text": "It(e)m In der harnasch kamer ist beschawt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "worden vnd gefund(e)n iij pett mit",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pösen züechen drey por haubtpolster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "viij haubtkhüst gut vi [...] lechtere xviij",
+      "kind": "entry",
+      "uncertain": [
+       "lechtere"
+      ]
+     },
+     {
+      "text": "schäfflein dech(e)n alt vnd new zwo guet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "lembrem dech(e)n ain wolfs dech(e)n ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gestückelts dechleylach iiij spanpett vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "etlich altez harnasch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m In der nechstn kamer darnach sein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "drey mittlere pett iiij por haubtpolster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd ain por pettl ain khüssen vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vier alt rauch dech(e)n vnd drey",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ganz zerissne dechleylach vnd vier panpett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m In der wachtarkamer j por pettl j polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zwen pöse khüsen ij wuchans leylach zwo",
+      "kind": "entry",
+      "uncertain": [
+       "wuchans"
+      ]
+     },
+     {
+      "text": "por dech(e)n ain lëderms dechel ain lëdremter",
+      "kind": "entry",
+      "uncertain": [
+       "lëderms",
+       "lëdremter"
+      ]
+     },
+     {
+      "text": "polster vnd zwo gar alte dech(e)n ain panpett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Inv. A 201/1",
+      "kind": "marginal",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1440",
+  "Zemerckhen die hab vnd gueter so auf dem",
+  "gschlos Erenfels aus dem gescheft meins g(nädigen) h(errn)",
+  "h(errn) von Burg vnd durch den geistlichen",
+  "herren herren Petern plangken dechant",
+  "zu Inniczingen vnd den thumcust gestaing",
+  "vnd beschain gewessen auf den hewting tag",
+  "dato der zwelff aigentlich besicht vnd beschawt",
+  "ist worden",
+  "It(e)m In der kamer bey der stubn ij pett",
+  "ain dechpett zwen haubtpolster vj",
+  "haubtkhüssen ain pangkpolster ij pangkh-",
+  "khüssen vj lembram dech(e)n alt vnd new",
+  "x schäffen dech(e)n ij spanpett ain barioln",
+  "xxiiij leylach gute vnd pöse gezäuchent",
+  "vnd drey tuechen ij alte dechleylach am",
+  "padpente ain rauchs hewffader köll",
+  "lij tischtüecher vc handtüecher gute vnd",
+  "pöse vier ploffe ärmst am vadertail",
+  "ij handtspigelt am eysenhur j türkhisch t[...]",
+  "vnd am harnischkarl vnd güt pettkest",
+  "It(e)m In mein g(nädigen) h(errn) zimmer ist iiij pett iiij",
+  "haubtpolster viij haubtkhüssn vnd ain",
+  "tuechen ist schlagen ij spanpett zwo",
+  "bariolen ij tisch",
+  "It(e)m In der Richters kamer ain pett ij",
+  "leylach ain rauche dech(e)n ain polster",
+  "j khüssen ain dechpett ain altz fe[...]",
+  "steenhsz tüechel ij spanpett j tisch",
+  "It(e)m In der harnasch kamer ist beschawt",
+  "worden vnd gefund(e)n iij pett mit",
+  "pösen züechen drey por haubtpolster",
+  "viij haubtkhüst gut vi [...] lechtere xviij",
+  "schäfflein dech(e)n alt vnd new zwo guet",
+  "lembrem dech(e)n ain wolfs dech(e)n ain",
+  "gestückelts dechleylach iiij spanpett vnd",
+  "etlich altez harnasch",
+  "It(e)m In der nechstn kamer darnach sein",
+  "drey mittlere pett iiij por haubtpolster",
+  "vnd ain por pettl ain khüssen vnd",
+  "vier alt rauch dech(e)n vnd drey",
+  "ganz zerissne dechleylach vnd vier panpett",
+  "It(e)m In der wachtarkamer j por pettl j polster",
+  "zwen pöse khüsen ij wuchans leylach zwo",
+  "por dech(e)n ain lëderms dechel ain lëdremter",
+  "polster vnd zwo gar alte dech(e)n ain panpett",
+  "Inv. A 201/1"
+ ]
+}

@@ -1,0 +1,493 @@
+{
+ "page": "inv_11328300_p3",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1880,
+    2718
+   ],
+   "sent_px": [
+    1880,
+    2718
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.7,
+ "timestamp": "2026-08-26T20:21:18+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "It(e)m ain pett in der volticze kamer",
+      "kind": "entry",
+      "uncertain": [
+       "volticze"
+      ]
+     },
+     {
+      "text": "It(e)m I klapett",
+      "kind": "entry",
+      "uncertain": [
+       "klapett"
+      ]
+     },
+     {
+      "text": "It(e)m I degen mit seiden gowat",
+      "kind": "entry",
+      "uncertain": [
+       "gowat"
+      ]
+     },
+     {
+      "text": "It(e)m I saber mit gwan[t]",
+      "kind": "entry",
+      "uncertain": [
+       "saber",
+       "gwan[t]"
+      ]
+     },
+     {
+      "text": "It(e)m I rauch degen.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m eij paar leylach in aintwirtz",
+      "kind": "entry",
+      "uncertain": [
+       "aintwirtz"
+      ]
+     },
+     {
+      "text": "It(e)m iiij par phaten",
+      "kind": "entry",
+      "uncertain": [
+       "phaten"
+      ]
+     },
+     {
+      "text": "It(e)m ij par vnderzphaten",
+      "kind": "entry",
+      "uncertain": [
+       "vnderzphaten"
+      ]
+     },
+     {
+      "text": "It(e)m viij schnitzler",
+      "kind": "entry",
+      "uncertain": [
+       "schnitzler"
+      ]
+     },
+     {
+      "text": "It(e)m ij leschtzürcher",
+      "kind": "entry",
+      "uncertain": [
+       "leschtzürcher"
+      ]
+     },
+     {
+      "text": "It(e)m x polstertzwirch",
+      "kind": "entry",
+      "uncertain": [
+       "polstertzwirch"
+      ]
+     },
+     {
+      "text": "It(e)m iiij tischtüecher",
+      "kind": "entry",
+      "uncertain": [
+       "tischtüecher"
+      ]
+     },
+     {
+      "text": "It(e)m viij hwenttüecher",
+      "kind": "entry",
+      "uncertain": [
+       "hwenttüecher"
+      ]
+     },
+     {
+      "text": "It(e)m iij turscher pedtstat",
+      "kind": "entry",
+      "uncertain": [
+       "turscher"
+      ]
+     },
+     {
+      "text": "It(e)m tij essen teller",
+      "kind": "entry",
+      "uncertain": [
+       "tij"
+      ]
+     },
+     {
+      "text": "It(e)m xiij hewfelt gross vnd klain",
+      "kind": "entry",
+      "uncertain": [
+       "hewfelt"
+      ]
+     },
+     {
+      "text": "missende d' gwerch kandl",
+      "kind": "entry",
+      "uncertain": [
+       "gwerch"
+      ]
+     },
+     {
+      "text": "vnd ain plietzkandle",
+      "kind": "entry",
+      "uncertain": [
+       "plietzkandle"
+      ]
+     },
+     {
+      "text": "It(e)m I salz vaszle",
+      "kind": "entry",
+      "uncertain": [
+       "vaszle"
+      ]
+     },
+     {
+      "text": "It(e)m viij stük gschirrl",
+      "kind": "entry",
+      "uncertain": [
+       "gschirrl"
+      ]
+     },
+     {
+      "text": "It(e)m xiij zinen stempfeler gross",
+      "kind": "entry",
+      "uncertain": [
+       "stempfeler"
+      ]
+     },
+     {
+      "text": "vnd klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m j hulzen tellr putzsen mit luttich",
+      "kind": "entry",
+      "uncertain": [
+       "putzsen",
+       "luttich"
+      ]
+     },
+     {
+      "text": "It(e)m eij wiertztüecher",
+      "kind": "entry",
+      "uncertain": [
+       "wiertztüecher"
+      ]
+     },
+     {
+      "text": "It(e)m iiij hwewttüecher",
+      "kind": "entry",
+      "uncertain": [
+       "hwewttüecher"
+      ]
+     },
+     {
+      "text": "It(e)m j kessl darin vil zerregt saut",
+      "kind": "entry",
+      "uncertain": [
+       "zerregt"
+      ]
+     },
+     {
+      "text": "vnd and zerregt ding ligt",
+      "kind": "entry",
+      "uncertain": [
+       "zerregt"
+      ]
+     },
+     {
+      "text": "Pey solcher jnuetari sind ge-",
+      "kind": "entry",
+      "uncertain": [
+       "jnuetari"
+      ]
+     },
+     {
+      "text": "westen Jorig Landsoefft meins",
+      "kind": "entry",
+      "uncertain": [
+       "Jorig",
+       "Landsoefft"
+      ]
+     },
+     {
+      "text": "g(nädigen) h(errn) haussamer Johannes",
+      "kind": "entry",
+      "uncertain": [
+       "haussamer",
+       "Johannes"
+      ]
+     },
+     {
+      "text": "Rösser Notari Jacob hart-",
+      "kind": "entry",
+      "uncertain": [
+       "Rösser",
+       "Jacob",
+       "hartman"
+      ]
+     },
+     {
+      "text": "man Michel drew polt burger",
+      "kind": "entry",
+      "uncertain": [
+       "Michel"
+      ]
+     },
+     {
+      "text": "zu hall Jorg vndertzofer",
+      "kind": "entry",
+      "uncertain": [
+       "Jorg",
+       "vndertzofer"
+      ]
+     },
+     {
+      "text": "vnd Cristoff villenzer",
+      "kind": "entry",
+      "uncertain": [
+       "Cristoff",
+       "villenzer"
+      ]
+     },
+     {
+      "text": "Ich Burckart von Kuenringn hab",
+      "kind": "entry",
+      "uncertain": [
+       "Burckart",
+       "Kuenringn"
+      ]
+     },
+     {
+      "text": "diss obgeschribn harnsskar aller-",
+      "kind": "entry",
+      "uncertain": [
+       "harnsskar"
+      ]
+     },
+     {
+      "text": "maistn bekumē jngemerktt",
+      "kind": "entry",
+      "uncertain": [
+       "jngemerktt"
+      ]
+     },
+     {
+      "text": "stat kamrn von zeff vnd",
+      "kind": "entry",
+      "uncertain": [
+       "zeff"
+      ]
+     },
+     {
+      "text": "welsch kamr kemistmeistert",
+      "kind": "entry",
+      "uncertain": [
+       "kemistmeistert"
+      ]
+     },
+     {
+      "text": "der das mit seiner aignen handt-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gschrifft gestikaben sein gwant =",
+      "kind": "entry",
+      "uncertain": [
+       "gestikaben"
+      ]
+     },
+     {
+      "text": "kumerd an antwurt nach auss-",
+      "kind": "entry",
+      "uncertain": [
+       "kumerd"
+      ]
+     },
+     {
+      "text": "sawen jng Rathinsatz anno 76",
+      "kind": "entry",
+      "uncertain": [
+       "sawen",
+       "Rathinsatz"
+      ]
+     },
+     {
+      "text": "beschriben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem ich hab dem velldenberg geantwurt",
+      "kind": "entry",
+      "uncertain": [
+       "velldenberg"
+      ]
+     },
+     {
+      "text": "ain pett ond ain pollster nach gschäfft meins",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "g(nädigen) h(errn)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "3",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Von dem poling hab ich geent",
+      "kind": "rubric",
+      "uncertain": [
+       "poling",
+       "geent"
+      ]
+     },
+     {
+      "text": "iij pet vnd iiij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd xij küss vnd",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain par leilach das hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der crawtsamms geströffen",
+      "kind": "entry",
+      "uncertain": [
+       "crawtsamms",
+       "geströffen"
+      ]
+     },
+     {
+      "text": "vnd d' leupolt spiez",
+      "kind": "entry",
+      "uncertain": [
+       "leupolt",
+       "spiez"
+      ]
+     },
+     {
+      "text": "Jtem ain klainez pet melt",
+      "kind": "entry",
+      "uncertain": [
+       "klainez",
+       "melt"
+      ]
+     },
+     {
+      "text": "gen hoff geordint",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem ij henszl vnd vergin",
+      "kind": "entry",
+      "uncertain": [
+       "henszl",
+       "vergin"
+      ]
+     },
+     {
+      "text": "der albin",
+      "kind": "entry",
+      "uncertain": [
+       "albin"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(e)m ain pett in der volticze kamer",
+  "It(e)m I klapett",
+  "It(e)m I degen mit seiden gowat",
+  "It(e)m I saber mit gwan[t]",
+  "It(e)m I rauch degen.",
+  "It(e)m eij paar leylach in aintwirtz",
+  "It(e)m iiij par phaten",
+  "It(e)m ij par vnderzphaten",
+  "It(e)m viij schnitzler",
+  "It(e)m ij leschtzürcher",
+  "It(e)m x polstertzwirch",
+  "It(e)m iiij tischtüecher",
+  "It(e)m viij hwenttüecher",
+  "It(e)m iij turscher pedtstat",
+  "It(e)m tij essen teller",
+  "It(e)m xiij hewfelt gross vnd klain",
+  "missende d' gwerch kandl",
+  "vnd ain plietzkandle",
+  "It(e)m I salz vaszle",
+  "It(e)m viij stük gschirrl",
+  "It(e)m xiij zinen stempfeler gross",
+  "vnd klain",
+  "It(e)m j hulzen tellr putzsen mit luttich",
+  "It(e)m eij wiertztüecher",
+  "It(e)m iiij hwewttüecher",
+  "It(e)m j kessl darin vil zerregt saut",
+  "vnd and zerregt ding ligt",
+  "Pey solcher jnuetari sind ge-",
+  "westen Jorig Landsoefft meins",
+  "g(nädigen) h(errn) haussamer Johannes",
+  "Rösser Notari Jacob hart-",
+  "man Michel drew polt burger",
+  "zu hall Jorg vndertzofer",
+  "vnd Cristoff villenzer",
+  "Ich Burckart von Kuenringn hab",
+  "diss obgeschribn harnsskar aller-",
+  "maistn bekumē jngemerktt",
+  "stat kamrn von zeff vnd",
+  "welsch kamr kemistmeistert",
+  "der das mit seiner aignen handt-",
+  "gschrifft gestikaben sein gwant =",
+  "kumerd an antwurt nach auss-",
+  "sawen jng Rathinsatz anno 76",
+  "beschriben",
+  "Jtem ich hab dem velldenberg geantwurt",
+  "ain pett ond ain pollster nach gschäfft meins",
+  "g(nädigen) h(errn)",
+  "3",
+  "Von dem poling hab ich geent",
+  "iij pet vnd iiij polster",
+  "vnd xij küss vnd",
+  "ain par leilach das hat",
+  "der crawtsamms geströffen",
+  "vnd d' leupolt spiez",
+  "Jtem ain klainez pet melt",
+  "gen hoff geordint",
+  "Jtem ij henszl vnd vergin",
+  "der albin"
+ ]
+}

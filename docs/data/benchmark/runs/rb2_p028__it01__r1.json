@@ -1,0 +1,275 @@
+{
+ "page": "rb2_p028",
+ "iteration": "it01",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.0,
+ "timestamp": "2026-08-26T20:17:36+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 27v",
+    "lines": [
+     {
+      "text": "Andre von matran",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota an freytag vorn vns(er) fraw(en)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "tag Assumpc(i)o(n)is Anno d(omi)ni etc lxxiiij in geg(e)n",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "wurt Hanns Camermaister Thomath des alt(e)n",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "kuch(e)nmaister Chunrats pauler Hanns slamma",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd wolfgangs tummel Cannsler . Ist",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "mit Andre dinstch(e)cht Rechenu(n)g beschech(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "dinstch(e)cht"
+      ]
+     },
+     {
+      "text": "der dinstknevcht von Hoffenhof wean pfluegtagk",
+      "kind": "entry",
+      "uncertain": [
+       "dinstknevcht",
+       "Hoffenhof",
+       "pfluegtagk"
+      ]
+     },
+     {
+      "text": "nach des heyligen Crevtz tag Exaltac(i)o(n)is",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "des vergangen lxxij jars vntz auf hewtig(e)n tag",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gefu(e)rt rauch holcz gen Justspurch in meins g(e)n(e)dig(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "Justspurch"
+      ]
+     },
+     {
+      "text": "herrn Schmelczhu(e)ttn /",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Brevngt das er herab gefu(e)rt hat iij^C lxxxxviij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "fu(e)d(e)r / von yedem fu(e)d(e)r xxij d pringt x lb xij ß viij d",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Darzu(o) von gnaden hat man ym zu geschenngk",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "glegt v lb v ß d / Das alles in ainre Summa",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "p(ri)n(n)gt —— xv lb xvij ß",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "Sum(m)a",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Od hat der kham(er)maist(er) Tu(e)mmbel vnnd ander",
+      "kind": "entry",
+      "uncertain": [
+       "Od"
+      ]
+     },
+     {
+      "text": "In Im wag(e)n / als man meins gn(e)dig(e)n herrn altkhorn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "herab gefurt hat —— viij ß",
+      "kind": "amount",
+      "uncertain": []
+     }
+    ]
+   },
+   {
+    "label": "fol. 28r",
+    "lines": [
+     {
+      "text": "28",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m von meinem herren khamermaister hat er",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "emphangen der desselb(e)n khamermaister drauff",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "p(e)t —— xxvij gld xiij ß",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m von Hannswalthauser Saltzmair hat er",
+      "kind": "entry",
+      "uncertain": [
+       "Hannswalthauser"
+      ]
+     },
+     {
+      "text": "emphangen —— x gld vñ",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m vonn Zelln(er) inu hyz hat er emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "vonn",
+       "hyz"
+      ]
+     },
+     {
+      "text": "———— xxxviij gld vñ",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m von Venczlsb(e)n Botheñ dazumal Khelln(er) an",
+      "kind": "entry",
+      "uncertain": [
+       "Venczlsb(e)n",
+       "Botheñ"
+      ]
+     },
+     {
+      "text": "arczat wein viij fuder j ym(e) fur xx gld vñ",
+      "kind": "entry",
+      "uncertain": [
+       "arczat",
+       "ym(e)"
+      ]
+     },
+     {
+      "text": "die desselb Botheñ in tagding meins herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Botheñ"
+      ]
+     },
+     {
+      "text": "gnaden vbergeb(e)n hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(e)m vonn Lewenhucz khnechtn iij lb iiij ß viij d",
+      "kind": "entry",
+      "uncertain": [
+       "Lewenhucz"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Andre von matran",
+  "Nota an freytag vorn vns(er) fraw(en)",
+  "tag Assumpc(i)o(n)is Anno d(omi)ni etc lxxiiij in geg(e)n",
+  "wurt Hanns Camermaister Thomath des alt(e)n",
+  "kuch(e)nmaister Chunrats pauler Hanns slamma",
+  "vnd wolfgangs tummel Cannsler . Ist",
+  "mit Andre dinstch(e)cht Rechenu(n)g beschech(e)n",
+  "der dinstknevcht von Hoffenhof wean pfluegtagk",
+  "nach des heyligen Crevtz tag Exaltac(i)o(n)is",
+  "des vergangen lxxij jars vntz auf hewtig(e)n tag",
+  "gefu(e)rt rauch holcz gen Justspurch in meins g(e)n(e)dig(e)n",
+  "herrn Schmelczhu(e)ttn /",
+  "Brevngt das er herab gefu(e)rt hat iij^C lxxxxviij",
+  "fu(e)d(e)r / von yedem fu(e)d(e)r xxij d pringt x lb xij ß viij d",
+  "Darzu(o) von gnaden hat man ym zu geschenngk",
+  "glegt v lb v ß d / Das alles in ainre Summa",
+  "p(ri)n(n)gt —— xv lb xvij ß",
+  "Sum(m)a",
+  "Od hat der kham(er)maist(er) Tu(e)mmbel vnnd ander",
+  "In Im wag(e)n / als man meins gn(e)dig(e)n herrn altkhorn",
+  "herab gefurt hat —— viij ß",
+  "28",
+  "Daran sein Innemen",
+  "It(e)m von meinem herren khamermaister hat er",
+  "emphangen der desselb(e)n khamermaister drauff",
+  "p(e)t —— xxvij gld xiij ß",
+  "It(e)m von Hannswalthauser Saltzmair hat er",
+  "emphangen —— x gld vñ",
+  "It(e)m vonn Zelln(er) inu hyz hat er emphangen",
+  "———— xxxviij gld vñ",
+  "It(e)m von Venczlsb(e)n Botheñ dazumal Khelln(er) an",
+  "arczat wein viij fuder j ym(e) fur xx gld vñ",
+  "die desselb Botheñ in tagding meins herrn",
+  "gnaden vbergeb(e)n hat",
+  "It(e)m vonn Lewenhucz khnechtn iij lb iiij ß viij d"
+ ]
+}

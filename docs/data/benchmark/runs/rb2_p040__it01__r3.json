@@ -1,0 +1,212 @@
+{
+ "page": "rb2_p040",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.0,
+ "timestamp": "2026-08-26T20:18:00+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [
+     {
+      "text": "Kaſtenn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vphoferin",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Nota Anno die xx purificacio(n)is [...] Jſt",
+      "kind": "entry",
+      "uncertain": [
+       "purificacio(n)is",
+       "[...]"
+      ]
+     },
+     {
+      "text": "berait mit der vphoferin jn gegewartikait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der vorgeſchrib(e)n / vmb alle abgeraite dinge",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ſo ſy mein(e)s herren gnad ſchuldig iſt / ſintz",
+      "kind": "entry",
+      "uncertain": [
+       "ſintz"
+      ]
+     },
+     {
+      "text": "an nechſten veſten ſannd Marteins tag auf",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "heutigen tag / vnd brinngt jn ainer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Su(m)ma ij^C lxxxvij lb iiij ß",
+      "kind": "sum",
+      "uncertain": [
+       "iiij ß"
+      ]
+     },
+     {
+      "text": "Daran Jr Jnnemen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) Die bemelt vphoferin {hat} von hern Benedictn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Cam(er)maiſter empfanngen — ij^C xxvij lb",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jt(em) von Fraingartten ſtleſer hauſtfraw hat ſy",
+      "kind": "entry",
+      "uncertain": [
+       "Fraingartten",
+       "ſtleſer"
+      ]
+     },
+     {
+      "text": "empfang(e)n xx lb / die er auch von deß Cam(er)ers weg(e)n hat aufgeb(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "aufgeb(e)n"
+      ]
+     },
+     {
+      "text": "Jt(em) [...] die viij lb viij ß iij d [...]",
+      "kind": "entry",
+      "uncertain": [
+       "[...]",
+       "[...]"
+      ]
+     },
+     {
+      "text": "die michaln s(einer) G(nad) mein herr ſchuldig was",
+      "kind": "entry",
+      "uncertain": [
+       "s(einer) G(nad)"
+      ]
+     },
+     {
+      "text": "Su(m)ma Jr Jnnemung ſtat",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "ij^C xlvij lb viij ß iij d",
+      "kind": "amount",
+      "uncertain": [
+       "iij d"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Liebhart Deringer",
+      "kind": "rubric",
+      "uncertain": [
+       "Liebhart",
+       "Deringer"
+      ]
+     },
+     {
+      "text": "Der vorgemeltn vphoferin Jnnemen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gegen jrem Außgeb(e)n gegeneinander glegt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd abgetragnen, Dannder iſt ſy mein(e)s herren",
+      "kind": "entry",
+      "uncertain": [
+       "Dannder"
+      ]
+     },
+     {
+      "text": "gnad ſchuldig — lxxxx lb viij ß viij d",
+      "kind": "entry",
+      "uncertain": [
+       "viij d"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Kaſtenn",
+  "vphoferin",
+  "Nota Anno die xx purificacio(n)is [...] Jſt",
+  "berait mit der vphoferin jn gegewartikait",
+  "der vorgeſchrib(e)n / vmb alle abgeraite dinge",
+  "ſo ſy mein(e)s herren gnad ſchuldig iſt / ſintz",
+  "an nechſten veſten ſannd Marteins tag auf",
+  "heutigen tag / vnd brinngt jn ainer",
+  "Su(m)ma ij^C lxxxvij lb iiij ß",
+  "Daran Jr Jnnemen",
+  "Jt(em) Die bemelt vphoferin {hat} von hern Benedictn",
+  "Cam(er)maiſter empfanngen — ij^C xxvij lb",
+  "Jt(em) von Fraingartten ſtleſer hauſtfraw hat ſy",
+  "empfang(e)n xx lb / die er auch von deß Cam(er)ers weg(e)n hat aufgeb(e)n",
+  "Jt(em) [...] die viij lb viij ß iij d [...]",
+  "die michaln s(einer) G(nad) mein herr ſchuldig was",
+  "Su(m)ma Jr Jnnemung ſtat",
+  "ij^C xlvij lb viij ß iij d",
+  "40.",
+  "Liebhart Deringer",
+  "Der vorgemeltn vphoferin Jnnemen",
+  "gegen jrem Außgeb(e)n gegeneinander glegt",
+  "vnd abgetragnen, Dannder iſt ſy mein(e)s herren",
+  "gnad ſchuldig — lxxxx lb viij ß viij d"
+ ]
+}

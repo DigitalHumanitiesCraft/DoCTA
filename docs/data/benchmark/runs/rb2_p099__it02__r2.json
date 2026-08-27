@@ -1,0 +1,291 @@
+{
+ "page": "rb2_p099",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1888,
+    2646
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1889,
+    2646
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 15.0,
+ "timestamp": "2026-08-26T20:19:24+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "verso",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "99r",
+    "lines": [
+     {
+      "text": "99",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Tannzleins fartunng",
+      "kind": "rubric",
+      "uncertain": [
+       "Tannzleins",
+       "fartunng"
+      ]
+     },
+     {
+      "text": "Nota an Sambstag nach Viti",
+      "kind": "entry",
+      "uncertain": [
+       "Sambstag",
+       "Viti"
+      ]
+     },
+     {
+      "text": "anno etc. lxxijten Jnn jngegenwurtikait",
+      "kind": "entry",
+      "uncertain": [
+       "lxxijten",
+       "jngegenwurtikait"
+      ]
+     },
+     {
+      "text": "hern Benedicten Tannbergers, Conradn",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicten",
+       "Tannbergers",
+       "Conradn"
+      ]
+     },
+     {
+      "text": "fadings des alten kriegzmaister schrey",
+      "kind": "entry",
+      "uncertain": [
+       "fadings",
+       "kriegzmaister",
+       "schrey"
+      ]
+     },
+     {
+      "text": "kuechs Trautsoltzers war man faurtunng",
+      "kind": "entry",
+      "uncertain": [
+       "Trautsoltzers",
+       "faurtunng"
+      ]
+     },
+     {
+      "text": "getan mit Jacobn Tannzlein vmb kippf",
+      "kind": "entry",
+      "uncertain": [
+       "Jacobn",
+       "Tannzlein",
+       "kippf"
+      ]
+     },
+     {
+      "text": "so er meynem genedign hern gen hof",
+      "kind": "entry",
+      "uncertain": [
+       "genedign"
+      ]
+     },
+     {
+      "text": "geben durtz vmb allerlai abgeraut",
+      "kind": "entry",
+      "uncertain": [
+       "durtz",
+       "abgeraut"
+      ]
+     },
+     {
+      "text": "Zerung so man Jn seinem diennst Conradt",
+      "kind": "entry",
+      "uncertain": [
+       "Zerung",
+       "diennst",
+       "Conradt"
+      ]
+     },
+     {
+      "text": "getan durtz Zu dem Tzsamm Zu",
+      "kind": "entry",
+      "uncertain": [
+       "durtz",
+       "Tzsamm"
+      ]
+     },
+     {
+      "text": "Hytzratz gethan hat",
+      "kind": "entry",
+      "uncertain": [
+       "Hytzratz"
+      ]
+     },
+     {
+      "text": "Aufgebn",
+      "kind": "rubric",
+      "uncertain": [
+       "Aufgebn"
+      ]
+     },
+     {
+      "text": "Jtem",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Jnn Eysen gen G. dem perckherr Zu",
+      "kind": "entry",
+      "uncertain": [
+       "Eysen",
+       "perckherr"
+      ]
+     },
+     {
+      "text": "meyns genedign hern hannden geben",
+      "kind": "entry",
+      "uncertain": [
+       "genedign"
+      ]
+     },
+     {
+      "text": "kippffer xxij lb vnd hat lb j ß xxij d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "kippffer"
+      ]
+     },
+     {
+      "text": "fuer alles vber den achtzckistn",
+      "kind": "entry",
+      "uncertain": [
+       "achtzckistn"
+      ]
+     },
+     {
+      "text": "4 lb vnd [...] d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "4",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "d"
+      ]
+     },
+     {
+      "text": "Jtem",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dem Conrade Jst man schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Conrade",
+       "schuldig"
+      ]
+     },
+     {
+      "text": "wardn vmb allerlai abgerautt Zerung so",
+      "kind": "entry",
+      "uncertain": [
+       "wardn",
+       "abgerautt",
+       "Zerung"
+      ]
+     },
+     {
+      "text": "man von hof abgeraut hat von der heylign",
+      "kind": "entry",
+      "uncertain": [
+       "abgeraut",
+       "heylign"
+      ]
+     },
+     {
+      "text": "krewtz tag jn Octauis des lxxijten Jars bis auf",
+      "kind": "entry",
+      "uncertain": [
+       "krewtz",
+       "Octauis",
+       "lxxijten"
+      ]
+     },
+     {
+      "text": "den obgeschribn tag fuer xl. mrt.",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xl",
+       "unit": "mrt."
+      },
+      "uncertain": [
+       "obgeschribn",
+       "mrt."
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "99",
+  "Tannzleins fartunng",
+  "Nota an Sambstag nach Viti",
+  "anno etc. lxxijten Jnn jngegenwurtikait",
+  "hern Benedicten Tannbergers, Conradn",
+  "fadings des alten kriegzmaister schrey",
+  "kuechs Trautsoltzers war man faurtunng",
+  "getan mit Jacobn Tannzlein vmb kippf",
+  "so er meynem genedign hern gen hof",
+  "geben durtz vmb allerlai abgeraut",
+  "Zerung so man Jn seinem diennst Conradt",
+  "getan durtz Zu dem Tzsamm Zu",
+  "Hytzratz gethan hat",
+  "Aufgebn",
+  "Jtem",
+  "Jnn Eysen gen G. dem perckherr Zu",
+  "meyns genedign hern hannden geben",
+  "kippffer xxij lb vnd hat lb j ß xxij d",
+  "fuer alles vber den achtzckistn",
+  "4 lb vnd [...] d",
+  "Jtem",
+  "Dem Conrade Jst man schuldig",
+  "wardn vmb allerlai abgerautt Zerung so",
+  "man von hof abgeraut hat von der heylign",
+  "krewtz tag jn Octauis des lxxijten Jars bis auf",
+  "den obgeschribn tag fuer xl. mrt."
+ ]
+}

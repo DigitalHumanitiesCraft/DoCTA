@@ -1,0 +1,264 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it01",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.7,
+ "timestamp": "2026-08-26T20:21:45+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation"
+     },
+     {
+      "text": "Freinperg",
+      "kind": "rubric"
+     },
+     {
+      "text": "V(er)merckt die farennd hab",
+      "kind": "entry"
+     },
+     {
+      "text": "haws plunnd vnnd anders auff",
+      "kind": "entry"
+     },
+     {
+      "text": "Frenberg Hannsen Kamer-",
+      "kind": "entry"
+     },
+     {
+      "text": "maisters pfleg(e)r da selbs zu-",
+      "kind": "entry"
+     },
+     {
+      "text": "gehörig So Joseph pluetl",
+      "kind": "entry"
+     },
+     {
+      "text": "an statt meins gnedigen herren",
+      "kind": "entry"
+     },
+     {
+      "text": "vngeschätzt ingenom hatt an",
+      "kind": "entry"
+     },
+     {
+      "text": "freytag nach Sant michelstag",
+      "kind": "entry"
+     },
+     {
+      "text": "Anno lxxviij",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) Zum Ersten ain khuesst ij",
+      "kind": "entry"
+     },
+     {
+      "text": "eysenhůt ij par henntschůch iij",
+      "kind": "entry"
+     },
+     {
+      "text": "par armbzeug iij par waden-",
+      "kind": "entry"
+     },
+     {
+      "text": "bann gewanndt ij hanntw(er)ckzeug",
+      "kind": "entry"
+     },
+     {
+      "text": "mer ain armbzeug iij pfeilamppus",
+      "kind": "entry",
+      "uncertain": [
+       "pfeilamppus"
+      ]
+     },
+     {
+      "text": "sind nit gewasst",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) In der stuben vnnd kam(e)r da",
+      "kind": "entry"
+     },
+     {
+      "text": "ist ain schreibpult j grosser schrein",
+      "kind": "entry"
+     },
+     {
+      "text": "darauf lig(e)t xxxij pildzeug vj hannt-",
+      "kind": "entry"
+     },
+     {
+      "text": "tůch ij hanndtreg(e)l j schmidstuck",
+      "kind": "entry"
+     },
+     {
+      "text": "ain schlosser kloben",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) mer ain pettstatt darJn lyt",
+      "kind": "entry"
+     },
+     {
+      "text": "ain pett ain polst(e)r j kuss ij panck-",
+      "kind": "entry"
+     },
+     {
+      "text": "polster iij rauch tuech",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) mer ain messig peck vnnd ain",
+      "kind": "entry"
+     },
+     {
+      "text": "messing hanntvass j teller buchs",
+      "kind": "entry"
+     },
+     {
+      "text": "dar sind xxv plater",
+      "kind": "entry"
+     },
+     {
+      "text": "Mer ligt in aind pettcurgell viij",
+      "kind": "entry",
+      "uncertain": [
+       "aind",
+       "pettcurgell"
+      ]
+     },
+     {
+      "text": "blatt schlos vnd ain gros mals-",
+      "kind": "entry",
+      "uncertain": [
+       "mals-"
+      ]
+     },
+     {
+      "text": "slos",
+      "kind": "entry"
+     },
+     {
+      "text": "Mer vor der khuchin ain tancken",
+      "kind": "entry"
+     },
+     {
+      "text": "vnnd ain schaffreitt ij pfannen",
+      "kind": "entry"
+     },
+     {
+      "text": "dreinn hafenn iij schitkessel",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) ain armbrost mit aind wunnd(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "aind"
+      ]
+     },
+     {
+      "text": "hůt kain say",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) auff der vnnd(e)rn worstatt ain",
+      "kind": "entry",
+      "uncertain": [
+       "worstatt"
+      ]
+     },
+     {
+      "text": "turch ain betstatt darJnn ligt",
+      "kind": "entry",
+      "uncertain": [
+       "turch"
+      ]
+     },
+     {
+      "text": "ain pett ain polst(e)r ij leylach ain",
+      "kind": "entry"
+     },
+     {
+      "text": "rauch tuech vnd ain puel",
+      "kind": "entry"
+     },
+     {
+      "text": "Inv. A 144/1",
+      "kind": "marginal"
+     },
+     {
+      "text": "1478 Okt. 2.",
+      "kind": "marginal"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Freinperg",
+  "V(er)merckt die farennd hab",
+  "haws plunnd vnnd anders auff",
+  "Frenberg Hannsen Kamer-",
+  "maisters pfleg(e)r da selbs zu-",
+  "gehörig So Joseph pluetl",
+  "an statt meins gnedigen herren",
+  "vngeschätzt ingenom hatt an",
+  "freytag nach Sant michelstag",
+  "Anno lxxviij",
+  "It(em) Zum Ersten ain khuesst ij",
+  "eysenhůt ij par henntschůch iij",
+  "par armbzeug iij par waden-",
+  "bann gewanndt ij hanntw(er)ckzeug",
+  "mer ain armbzeug iij pfeilamppus",
+  "sind nit gewasst",
+  "It(em) In der stuben vnnd kam(e)r da",
+  "ist ain schreibpult j grosser schrein",
+  "darauf lig(e)t xxxij pildzeug vj hannt-",
+  "tůch ij hanndtreg(e)l j schmidstuck",
+  "ain schlosser kloben",
+  "It(em) mer ain pettstatt darJn lyt",
+  "ain pett ain polst(e)r j kuss ij panck-",
+  "polster iij rauch tuech",
+  "It(em) mer ain messig peck vnnd ain",
+  "messing hanntvass j teller buchs",
+  "dar sind xxv plater",
+  "Mer ligt in aind pettcurgell viij",
+  "blatt schlos vnd ain gros mals-",
+  "slos",
+  "Mer vor der khuchin ain tancken",
+  "vnnd ain schaffreitt ij pfannen",
+  "dreinn hafenn iij schitkessel",
+  "It(em) ain armbrost mit aind wunnd(e)n",
+  "hůt kain say",
+  "It(em) auff der vnnd(e)rn worstatt ain",
+  "turch ain betstatt darJnn ligt",
+  "ain pett ain polst(e)r ij leylach ain",
+  "rauch tuech vnd ain puel",
+  "Inv. A 144/1",
+  "1478 Okt. 2."
+ ]
+}

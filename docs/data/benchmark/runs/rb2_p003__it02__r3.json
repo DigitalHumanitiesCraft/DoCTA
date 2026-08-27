@@ -1,0 +1,339 @@
+{
+ "page": "rb2_p003",
+ "iteration": "it02",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1906,
+    2622
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3813,
+    2622
+   ],
+   "sent_px": [
+    1907,
+    2622
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 18.0,
+ "timestamp": "2026-08-26T20:17:38+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1v",
+    "lines": [
+     {
+      "text": "Ulreich Schütz",
+      "kind": "rubric",
+      "uncertain": [
+       "Ulreich",
+       "Schütz"
+      ]
+     },
+     {
+      "text": "Nota Anno etc xc primo Pauli bekersung hat man",
+      "kind": "entry",
+      "uncertain": [
+       "Anno",
+       "Pauli",
+       "bekersung"
+      ]
+     },
+     {
+      "text": "gerait mit Vlreich Schuͤtzen / vnd meins herrn",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreich",
+       "Schuͤtzen"
+      ]
+     },
+     {
+      "text": "gnad ist Im schuldig sein sold von zwain Jarn",
+      "kind": "entry",
+      "uncertain": [
+       "sold"
+      ]
+     },
+     {
+      "text": "zu dem nachstuergangen Sand Margreten tag",
+      "kind": "entry",
+      "uncertain": [
+       "nachstuergangen",
+       "Sand",
+       "Margreten"
+      ]
+     },
+     {
+      "text": "raitt —— lxxx Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxxx",
+       "unit": "Rhgld"
+      },
+      "uncertain": [
+       "raitt"
+      ]
+     },
+     {
+      "text": "Die hat Im her Benedict camermaister außgeben",
+      "kind": "entry",
+      "uncertain": [
+       "Benedict",
+       "camermaister",
+       "außgeben"
+      ]
+     },
+     {
+      "text": "vnd bezalt ——",
+      "kind": "entry",
+      "uncertain": [
+       "bezalt"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation"
+     },
+     {
+      "text": "Graf Hainrich",
+      "kind": "rubric",
+      "uncertain": [
+       "Hainrich"
+      ]
+     },
+     {
+      "text": "von lupphen",
+      "kind": "rubric",
+      "uncertain": [
+       "lupphen"
+      ]
+     },
+     {
+      "text": "Nota die dnico an pntibz quintis sup[r]a· hat",
+      "kind": "entry",
+      "uncertain": [
+       "dnico",
+       "pntibz",
+       "quintis"
+      ]
+     },
+     {
+      "text": "man mit Cůnraten Stainär anstat Graf hainri[ch]",
+      "kind": "entry",
+      "uncertain": [
+       "Cůnraten",
+       "Stainär",
+       "hainrich"
+      ]
+     },
+     {
+      "text": "von lupphn gerait von der alten Schuld wegen von",
+      "kind": "entry",
+      "uncertain": [
+       "lupphn"
+      ]
+     },
+     {
+      "text": "veldkirch herrůrend/ durch vmb allerlay Gelt vnd Zeurung",
+      "kind": "entry",
+      "uncertain": [
+       "veldkirch"
+      ]
+     },
+     {
+      "text": "Das alles bringt nuz auf heuttigen tag —— viij C vnd",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij",
+       "unit": ""
+      }
+     },
+     {
+      "text": "xxviij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "daran sein Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "DAran hat er emphangen Im ersten von hern Bndrut",
+      "kind": "entry",
+      "uncertain": [
+       "Bndrut"
+      ]
+     },
+     {
+      "text": "Cam[er]maister die diß Cam[er]maister gerait hat —— l Rhgld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "l",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Aber hat er von denselben Camermaister emphange[n] die",
+      "kind": "entry"
+     },
+     {
+      "text": "derselb Camermaister d[er]zceiten wirt —— l Rhgld",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "l",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "Item vnd auf allerlay Zeurung/ die d[er] Camermaister aine",
+      "kind": "entry"
+     },
+     {
+      "text": "d[er]zceiten wirt —— xij Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Auch hat er von hern Jacoben Trapen emphangen an",
+      "kind": "entry",
+      "uncertain": [
+       "Jacoben",
+       "Trapen"
+      ]
+     },
+     {
+      "text": "der Schuld die her Jacob meinis hern gnaden schuld[ig] ist",
+      "kind": "entry",
+      "uncertain": [
+       "Jacob"
+      ]
+     },
+     {
+      "text": "iiij C Rhgld",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iiij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "S[um]ma h[e]rn emphabens",
+      "kind": "sum"
+     },
+     {
+      "text": "v C xij Rhgld",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "v",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "Dannach ist meinis herrn gnad Graf hainrichen schuld[ig]",
+      "kind": "entry",
+      "uncertain": [
+       "hainrichen"
+      ]
+     },
+     {
+      "text": "iij C vnd xvj Rhgld/ die hat Im d[er] bemelt Camermaist[er]",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "iij",
+       "unit": "Rhgld"
+      }
+     },
+     {
+      "text": "/ außgericht/ vnd bezalt",
+      "kind": "entry"
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Ulreich Schütz",
+  "Nota Anno etc xc primo Pauli bekersung hat man",
+  "gerait mit Vlreich Schuͤtzen / vnd meins herrn",
+  "gnad ist Im schuldig sein sold von zwain Jarn",
+  "zu dem nachstuergangen Sand Margreten tag",
+  "raitt —— lxxx Rhgld",
+  "Die hat Im her Benedict camermaister außgeben",
+  "vnd bezalt ——",
+  "3",
+  "Graf Hainrich",
+  "von lupphen",
+  "Nota die dnico an pntibz quintis sup[r]a· hat",
+  "man mit Cůnraten Stainär anstat Graf hainri[ch]",
+  "von lupphn gerait von der alten Schuld wegen von",
+  "veldkirch herrůrend/ durch vmb allerlay Gelt vnd Zeurung",
+  "Das alles bringt nuz auf heuttigen tag —— viij C vnd",
+  "xxviij Rhgld",
+  "daran sein Innemen",
+  "Item",
+  "DAran hat er emphangen Im ersten von hern Bndrut",
+  "Cam[er]maister die diß Cam[er]maister gerait hat —— l Rhgld",
+  "Item",
+  "Aber hat er von denselben Camermaister emphange[n] die",
+  "derselb Camermaister d[er]zceiten wirt —— l Rhgld",
+  "Item vnd auf allerlay Zeurung/ die d[er] Camermaister aine",
+  "d[er]zceiten wirt —— xij Rhgld",
+  "Item",
+  "Auch hat er von hern Jacoben Trapen emphangen an",
+  "der Schuld die her Jacob meinis hern gnaden schuld[ig] ist",
+  "iiij C Rhgld",
+  "S[um]ma h[e]rn emphabens",
+  "v C xij Rhgld",
+  "Dannach ist meinis herrn gnad Graf hainrichen schuld[ig]",
+  "iij C vnd xvj Rhgld/ die hat Im d[er] bemelt Camermaist[er]",
+  "/ außgericht/ vnd bezalt"
+ ]
+}

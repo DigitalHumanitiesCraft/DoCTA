@@ -1,0 +1,74 @@
+{
+ "page": "inv_11328300_p4",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2719
+   ],
+   "sent_px": [
+    965,
+    2719
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 6.2,
+ "timestamp": "2026-08-26T20:21:35+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Umschlag / Dorsum",
+    "lines": [
+     {
+      "text": "Inuentary zedel",
+      "kind": "rubric",
+      "uncertain": [
+       "Inuentary zedel"
+      ]
+     },
+     {
+      "text": "gen thann.",
+      "kind": "rubric",
+      "uncertain": [
+       "gen thann."
+      ]
+     },
+     {
+      "text": "1471",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Lad. 22. lit. r. 8.",
+      "kind": "foliation",
+      "uncertain": [
+       "Lad. 22. lit. r. 8."
+      ]
+     },
+     {
+      "text": "Inv. 749/11",
+      "kind": "foliation",
+      "uncertain": [
+       "Inv. 749/11"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Inuentary zedel",
+  "gen thann.",
+  "1471",
+  "Lad. 22. lit. r. 8.",
+  "Inv. 749/11"
+ ]
+}

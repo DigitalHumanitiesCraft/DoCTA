@@ -1,0 +1,353 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it02",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.4,
+ "timestamp": "2026-08-26T20:21:59+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Froinperg",
+      "kind": "rubric",
+      "uncertain": [
+       "Froinperg"
+      ]
+     },
+     {
+      "text": "V(er)merckt die farendhab",
+      "kind": "rubric",
+      "uncertain": [
+       "farendhab"
+      ]
+     },
+     {
+      "text": "g(e)wer phund vnd anders auff",
+      "kind": "rubric",
+      "uncertain": [
+       "phund"
+      ]
+     },
+     {
+      "text": "Froinberg hannsen cham(er)er",
+      "kind": "rubric",
+      "uncertain": [
+       "hannsen",
+       "cham(er)er"
+      ]
+     },
+     {
+      "text": "weillund pfleg(e)r da selbs zu",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "gehörig So Josseph vlb(er)stain",
+      "kind": "rubric",
+      "uncertain": [
+       "Josseph",
+       "vlb(er)stain"
+      ]
+     },
+     {
+      "text": "an stat meins g(e)nedign herren",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vngeschifft ingenom(e)n hatt an",
+      "kind": "rubric",
+      "uncertain": [
+       "vngeschifft"
+      ]
+     },
+     {
+      "text": "freytag nach sant michelstag",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "anno lxxviij",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) jn aym kesten ainn kneist iiij",
+      "kind": "entry",
+      "uncertain": [
+       "kneist"
+      ]
+     },
+     {
+      "text": "eisenhüt ij par hentschüch iij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "par armbzeug iij par vnnd(e)r",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pain gwand ij hantz(w)erch",
+      "kind": "entry",
+      "uncertain": [
+       "hantz(w)erch"
+      ]
+     },
+     {
+      "text": "mor ein armbzeug iij plecheintzel",
+      "kind": "entry",
+      "uncertain": [
+       "plecheintzel"
+      ]
+     },
+     {
+      "text": "sind nit genast",
+      "kind": "entry",
+      "uncertain": [
+       "genast"
+      ]
+     },
+     {
+      "text": "It(em) Jn der stubn vnd kam(e)r da",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ist ain halbtrug j grosser schrein",
+      "kind": "entry",
+      "uncertain": [
+       "halbtrug"
+      ]
+     },
+     {
+      "text": "darauff lig beubzeug vj hantz(w)erch",
+      "kind": "entry",
+      "uncertain": [
+       "beubzeug",
+       "hantz(w)erch"
+      ]
+     },
+     {
+      "text": "iiij hanntreigel j schmidstuck",
+      "kind": "entry",
+      "uncertain": [
+       "hanntreigel",
+       "schmidstuck"
+      ]
+     },
+     {
+      "text": "ain geschlosser kloben",
+      "kind": "entry",
+      "uncertain": [
+       "kloben"
+      ]
+     },
+     {
+      "text": "It(em) mor ain pettstat dar jn ligt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain pett ain bolst(e)r j kuss ij pank",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "polster iij rauch deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) mor ain messin peck vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "peck"
+      ]
+     },
+     {
+      "text": "messin hantvass j teller buchs",
+      "kind": "entry",
+      "uncertain": [
+       "hantvass",
+       "buchs"
+      ]
+     },
+     {
+      "text": "dar sind xxv plaudl",
+      "kind": "entry",
+      "uncertain": [
+       "plaudl"
+      ]
+     },
+     {
+      "text": "Mor ligt in and pettcamer vij",
+      "kind": "entry",
+      "uncertain": [
+       "and",
+       "pettcamer"
+      ]
+     },
+     {
+      "text": "blatt schlos vnd ain gros mals",
+      "kind": "entry",
+      "uncertain": [
+       "schlos",
+       "mals"
+      ]
+     },
+     {
+      "text": "schos",
+      "kind": "entry",
+      "uncertain": [
+       "schos"
+      ]
+     },
+     {
+      "text": "Mor vor der kuchj ain tanken",
+      "kind": "entry",
+      "uncertain": [
+       "tanken"
+      ]
+     },
+     {
+      "text": "vnd ain schaffcarrt ij pfannen",
+      "kind": "entry",
+      "uncertain": [
+       "schaffcarrt"
+      ]
+     },
+     {
+      "text": "drein hafen iij sitzkessel",
+      "kind": "entry",
+      "uncertain": [
+       "sitzkessel"
+      ]
+     },
+     {
+      "text": "It(em) ain armbrost mit aind winden",
+      "kind": "entry",
+      "uncertain": [
+       "aind",
+       "winden"
+      ]
+     },
+     {
+      "text": "gut stainstay",
+      "kind": "entry",
+      "uncertain": [
+       "stainstay"
+      ]
+     },
+     {
+      "text": "It(em) auff der vnnd(e)r warstatt ain",
+      "kind": "rubric",
+      "uncertain": [
+       "warstatt"
+      ]
+     },
+     {
+      "text": "truch ain pestatt dar jnj ligt",
+      "kind": "entry",
+      "uncertain": [
+       "truch",
+       "pestatt"
+      ]
+     },
+     {
+      "text": "ain pett ain bolst(e)r ij leylach ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "rauch deck vnd ain gold",
+      "kind": "entry",
+      "uncertain": [
+       "gold"
+      ]
+     },
+     {
+      "text": "Inv. A 144 / 1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1478 Okt. 2.",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Froinperg",
+  "V(er)merckt die farendhab",
+  "g(e)wer phund vnd anders auff",
+  "Froinberg hannsen cham(er)er",
+  "weillund pfleg(e)r da selbs zu",
+  "gehörig So Josseph vlb(er)stain",
+  "an stat meins g(e)nedign herren",
+  "vngeschifft ingenom(e)n hatt an",
+  "freytag nach sant michelstag",
+  "anno lxxviij",
+  "It(em) jn aym kesten ainn kneist iiij",
+  "eisenhüt ij par hentschüch iij",
+  "par armbzeug iij par vnnd(e)r",
+  "pain gwand ij hantz(w)erch",
+  "mor ein armbzeug iij plecheintzel",
+  "sind nit genast",
+  "It(em) Jn der stubn vnd kam(e)r da",
+  "ist ain halbtrug j grosser schrein",
+  "darauff lig beubzeug vj hantz(w)erch",
+  "iiij hanntreigel j schmidstuck",
+  "ain geschlosser kloben",
+  "It(em) mor ain pettstat dar jn ligt",
+  "ain pett ain bolst(e)r j kuss ij pank",
+  "polster iij rauch deck",
+  "It(em) mor ain messin peck vnd ain",
+  "messin hantvass j teller buchs",
+  "dar sind xxv plaudl",
+  "Mor ligt in and pettcamer vij",
+  "blatt schlos vnd ain gros mals",
+  "schos",
+  "Mor vor der kuchj ain tanken",
+  "vnd ain schaffcarrt ij pfannen",
+  "drein hafen iij sitzkessel",
+  "It(em) ain armbrost mit aind winden",
+  "gut stainstay",
+  "It(em) auff der vnnd(e)r warstatt ain",
+  "truch ain pestatt dar jnj ligt",
+  "ain pett ain bolst(e)r ij leylach ain",
+  "rauch deck vnd ain gold",
+  "Inv. A 144 / 1",
+  "1478 Okt. 2."
+ ]
+}

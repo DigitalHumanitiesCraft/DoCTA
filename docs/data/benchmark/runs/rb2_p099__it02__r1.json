@@ -1,0 +1,253 @@
+{
+ "page": "rb2_p099",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1888,
+    2646
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    1889,
+    2646
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 15.4,
+ "timestamp": "2026-08-26T20:19:24+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. [verso]",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "99r",
+    "lines": [
+     {
+      "text": "99",
+      "kind": "foliation"
+     },
+     {
+      "text": "Tämnleins Sarturis",
+      "kind": "rubric",
+      "uncertain": [
+       "Tämnleins",
+       "Sarturis"
+      ]
+     },
+     {
+      "text": "Nota an Sambstag nach Viti",
+      "kind": "entry",
+      "uncertain": [
+       "Viti"
+      ]
+     },
+     {
+      "text": "anno etc lxxjmo In Ingegenwertikait",
+      "kind": "entry"
+     },
+     {
+      "text": "hern Benedicten Tämnleins & Cunraden",
+      "kind": "entry",
+      "uncertain": [
+       "Benedicten",
+       "Tämnleins",
+       "Cunraden"
+      ]
+     },
+     {
+      "text": "fadung des alten kůcznmahsers Raitung",
+      "kind": "entry",
+      "uncertain": [
+       "fadung",
+       "kůcznmahsers"
+      ]
+     },
+     {
+      "text": "blibs Traxßland hat man sanntung",
+      "kind": "entry",
+      "uncertain": [
+       "blibs",
+       "Traxßland",
+       "sanntung"
+      ]
+     },
+     {
+      "text": "getan mit Jacoben Tämnlein vmb kippff",
+      "kind": "entry",
+      "uncertain": [
+       "Jacoben",
+       "Tämnlein",
+       "kippff"
+      ]
+     },
+     {
+      "text": "so Er meinem gnedigen herrn gen haf",
+      "kind": "entry",
+      "uncertain": [
+       "haf"
+      ]
+     },
+     {
+      "text": "geben Luch vmb allerlai abgerant",
+      "kind": "entry",
+      "uncertain": [
+       "Luch"
+      ]
+     },
+     {
+      "text": "Zerrung so man Zu seinem dienst Cunradt",
+      "kind": "entry",
+      "uncertain": [
+       "Cunradt"
+      ]
+     },
+     {
+      "text": "getan Luch Zu dem Tzkann Zu",
+      "kind": "entry",
+      "uncertain": [
+       "Luch",
+       "Tzkann"
+      ]
+     },
+     {
+      "text": "Brixen getan hat",
+      "kind": "entry",
+      "uncertain": [
+       "Brixen"
+      ]
+     },
+     {
+      "text": "Außgebn",
+      "kind": "rubric"
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Im Esen an & dem perckhwerch Zu",
+      "kind": "entry",
+      "uncertain": [
+       "Esen",
+       "perckhwerch"
+      ]
+     },
+     {
+      "text": "meins gnedigen herrn Hannden geben",
+      "kind": "entry"
+     },
+     {
+      "text": "kyppffer xxvij C vnd lvij lb j ß xxj d",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "xxvij",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "kyppffer"
+      ]
+     },
+     {
+      "text": "fur alles vber den achtezehnden",
+      "kind": "entry"
+     },
+     {
+      "text": "Julij ——— vnd lxxjmo",
+      "kind": "entry",
+      "uncertain": [
+       "Julij"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "Dem Cunrade Zallt man schuldig",
+      "kind": "entry",
+      "uncertain": [
+       "Cunrade"
+      ]
+     },
+     {
+      "text": "wardt vmb allerlai abgerannt Zerrung &",
+      "kind": "entry"
+     },
+     {
+      "text": "man sein haf abgerant hat von der heyligen",
+      "kind": "entry",
+      "uncertain": [
+       "haf"
+      ]
+     },
+     {
+      "text": "krewcz tag octauas des lxxjmo Jar bis auf",
+      "kind": "entry"
+     },
+     {
+      "text": "den obgeschribn tag fur ——— xl m̄ mit",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xl",
+       "unit": "m̄"
+      },
+      "uncertain": [
+       "m̄",
+       "mit"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "99",
+  "Tämnleins Sarturis",
+  "Nota an Sambstag nach Viti",
+  "anno etc lxxjmo In Ingegenwertikait",
+  "hern Benedicten Tämnleins & Cunraden",
+  "fadung des alten kůcznmahsers Raitung",
+  "blibs Traxßland hat man sanntung",
+  "getan mit Jacoben Tämnlein vmb kippff",
+  "so Er meinem gnedigen herrn gen haf",
+  "geben Luch vmb allerlai abgerant",
+  "Zerrung so man Zu seinem dienst Cunradt",
+  "getan Luch Zu dem Tzkann Zu",
+  "Brixen getan hat",
+  "Außgebn",
+  "Item",
+  "Im Esen an & dem perckhwerch Zu",
+  "meins gnedigen herrn Hannden geben",
+  "kyppffer xxvij C vnd lvij lb j ß xxj d",
+  "fur alles vber den achtezehnden",
+  "Julij ——— vnd lxxjmo",
+  "Item",
+  "Dem Cunrade Zallt man schuldig",
+  "wardt vmb allerlai abgerannt Zerrung &",
+  "man sein haf abgerant hat von der heyligen",
+  "krewcz tag octauas des lxxjmo Jar bis auf",
+  "den obgeschribn tag fur ——— xl m̄ mit"
+ ]
+}

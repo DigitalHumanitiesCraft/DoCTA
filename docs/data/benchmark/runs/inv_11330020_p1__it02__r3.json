@@ -1,0 +1,353 @@
+{
+ "page": "inv_11330020_p1",
+ "iteration": "it02",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1068,
+    2719
+   ],
+   "sent_px": [
+    1068,
+    2719
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.5,
+ "timestamp": "2026-08-26T20:23:18+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Seite 1",
+    "lines": [
+     {
+      "text": "1440",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Zemerckhen die hab und güet so auf dem",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "sclos Gerenfels aus dem gescheft meins gn(edigen)",
+      "kind": "entry",
+      "uncertain": [
+       "Gerenfels"
+      ]
+     },
+     {
+      "text": "h(errn) von Burg und durch den geistlichen",
+      "kind": "entry",
+      "uncertain": [
+       "Burg"
+      ]
+     },
+     {
+      "text": "herren herren Petern planckhen dechant",
+      "kind": "entry",
+      "uncertain": [
+       "Petern",
+       "planckhen"
+      ]
+     },
+     {
+      "text": "zu Impstingen samp den thumcant phlaistain",
+      "kind": "entry",
+      "uncertain": [
+       "Impstingen",
+       "thumcant",
+       "phlaistain"
+      ]
+     },
+     {
+      "text": "und Berrien gewesen auf den hewtigen tag",
+      "kind": "entry",
+      "uncertain": [
+       "Berrien"
+      ]
+     },
+     {
+      "text": "dato der zödl aigentlich besicht und beschawt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ist worden",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der kamer bey der stubn j pett",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ain dekchpett zwen hawptpölster vj",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "hawptkchüfft ain pangkchpolster ij pangkhe",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "thüchlr vj lembrein dekkhe alt und new",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "x schäffein dekch ij spanpett ain karioln",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "xxiiij leylach guett und pöss gezaychent",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "und drey trukhen ij alta degkhlakh ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "padgwant ain rauchs hirschfellins röckl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "lij tischtüecher vc handtüecher guett und",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pöss vier pheffl armst ain vadertail",
+      "kind": "entry",
+      "uncertain": [
+       "pheffl",
+       "vadertail"
+      ]
+     },
+     {
+      "text": "ij handtspiegell ain eschentrüch j tüchtlthüetl",
+      "kind": "entry",
+      "uncertain": [
+       "eschentrüch",
+       "tüchtlthüetl"
+      ]
+     },
+     {
+      "text": "und ain hawptpörl und zwen pölster",
+      "kind": "entry",
+      "uncertain": [
+       "hawptpörl"
+      ]
+     },
+     {
+      "text": "Item In mein gn(edigen) h(errn) Zimer ist iiij pett iiij",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "hawptpölster viij hawptkhüst und ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "trutchen ist dslagin iij spanpett zwo",
+      "kind": "entry",
+      "uncertain": [
+       "dslagin"
+      ]
+     },
+     {
+      "text": "kariolen ij tischt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der hiegters kamer ain pett y",
+      "kind": "rubric",
+      "uncertain": [
+       "hiegters"
+      ]
+     },
+     {
+      "text": "leylach ain rauche dekch ain pölster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "y kchüffs ain dekchpett ain altz fe-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "stewchs rögckl ij spanpett j tisch",
+      "kind": "entry",
+      "uncertain": [
+       "festewchs"
+      ]
+     },
+     {
+      "text": "Item In der harnascht kamer ist beschawt",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "worden und gefundn iij pett mit",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "pösen ziechen drey por hawptpölster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "viij hawptkchüst gut v[nd ...] ergere xviij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "schäffein dekch alt und new zwo guet",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "lambreyn dekch ain wolfs dekch ain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gestübelts deggkhlach iij spanpett und",
+      "kind": "entry",
+      "uncertain": [
+       "gestübelts"
+      ]
+     },
+     {
+      "text": "etlich alter harnasch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der naegstn kamer darnach sein",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "drew unnutze pett iiij por hawptpölster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "und ain por föttel ain khüfst und",
+      "kind": "entry",
+      "uncertain": [
+       "föttel"
+      ]
+     },
+     {
+      "text": "vier alt rauch dekch und drew",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gantz zerissne deggkhlakh und vier panpett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Item In der wachtarkamer j por pett j polster",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "drew pöss khüfftn ij wurchand leylach zwo",
+      "kind": "entry",
+      "uncertain": [
+       "wurchand"
+      ]
+     },
+     {
+      "text": "por dekch ain ledins dekchl ain lederiner",
+      "kind": "entry",
+      "uncertain": [
+       "ledins"
+      ]
+     },
+     {
+      "text": "pölster und zwo gar alte dekch ain panpett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Inv. A 201/1",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1440",
+  "Zemerckhen die hab und güet so auf dem",
+  "sclos Gerenfels aus dem gescheft meins gn(edigen)",
+  "h(errn) von Burg und durch den geistlichen",
+  "herren herren Petern planckhen dechant",
+  "zu Impstingen samp den thumcant phlaistain",
+  "und Berrien gewesen auf den hewtigen tag",
+  "dato der zödl aigentlich besicht und beschawt",
+  "ist worden",
+  "Item In der kamer bey der stubn j pett",
+  "ain dekchpett zwen hawptpölster vj",
+  "hawptkchüfft ain pangkchpolster ij pangkhe",
+  "thüchlr vj lembrein dekkhe alt und new",
+  "x schäffein dekch ij spanpett ain karioln",
+  "xxiiij leylach guett und pöss gezaychent",
+  "und drey trukhen ij alta degkhlakh ain",
+  "padgwant ain rauchs hirschfellins röckl",
+  "lij tischtüecher vc handtüecher guett und",
+  "pöss vier pheffl armst ain vadertail",
+  "ij handtspiegell ain eschentrüch j tüchtlthüetl",
+  "und ain hawptpörl und zwen pölster",
+  "Item In mein gn(edigen) h(errn) Zimer ist iiij pett iiij",
+  "hawptpölster viij hawptkhüst und ain",
+  "trutchen ist dslagin iij spanpett zwo",
+  "kariolen ij tischt",
+  "Item In der hiegters kamer ain pett y",
+  "leylach ain rauche dekch ain pölster",
+  "y kchüffs ain dekchpett ain altz fe-",
+  "stewchs rögckl ij spanpett j tisch",
+  "Item In der harnascht kamer ist beschawt",
+  "worden und gefundn iij pett mit",
+  "pösen ziechen drey por hawptpölster",
+  "viij hawptkchüst gut v[nd ...] ergere xviij",
+  "schäffein dekch alt und new zwo guet",
+  "lambreyn dekch ain wolfs dekch ain",
+  "gestübelts deggkhlach iij spanpett und",
+  "etlich alter harnasch",
+  "Item In der naegstn kamer darnach sein",
+  "drew unnutze pett iiij por hawptpölster",
+  "und ain por föttel ain khüfst und",
+  "vier alt rauch dekch und drew",
+  "gantz zerissne deggkhlakh und vier panpett",
+  "Item In der wachtarkamer j por pett j polster",
+  "drew pöss khüfftn ij wurchand leylach zwo",
+  "por dekch ain ledins dekchl ain lederiner",
+  "pölster und zwo gar alte dekch ain panpett",
+  "Inv. A 201/1"
+ ]
+}

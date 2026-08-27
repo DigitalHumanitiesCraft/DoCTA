@@ -1,8 +1,6 @@
-/* Image-text synopsis viewer for the versioned HTR prompt benchmark.
- * Data: summary.json (metrics, run filenames, GT lines, IIIF URL) plus the
- * individual run files under runs/, fetched lazily and cached.
- * Serve from the repo root (e.g. python -m http.server 8742) so the vendored
- * OpenSeadragon build under docs/lib/ resolves. */
+/* HTR benchmark page: aggregate view plus image-text synopsis.
+ * Data: data/benchmark/summary.json and the run files under data/benchmark/runs/,
+ * exported from experiments/benchmark. Facsimiles load from Transkribus IIIF. */
 
 const state = { summary: null, ids: [], id: null, tab: null, repeat: {} };
 const runCache = new Map();
@@ -15,6 +13,37 @@ function esc(s) {
 }
 
 function page() { return state.summary.pages[state.id]; }
+
+/* ---------- aggregate cards ---------- */
+
+function mean(xs) { return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
+
+function renderAggregate() {
+  const pages = Object.values(state.summary.pages);
+  const its = [...new Set(pages.flatMap((p) => Object.keys(p.iterations)))].sort();
+  const excluded = Object.entries(state.summary.pages)
+    .filter(([, p]) => p.gt_lines && Object.values(p.iterations).some((e) => (e.cer_fair?.mean ?? 0) >= 1))
+    .map(([id]) => id);
+  const validRef = (p) => p.gt_lines && Object.values(p.iterations).every((e) => (e.cer_fair?.mean ?? 0) < 1);
+  const cards = its.map((it) => {
+    const cer = mean(pages.filter(validRef).map((p) => p.iterations[it]?.cer_fair?.mean).filter((x) => x != null));
+    const rb = pages.filter((p) => p.source === "raitbuch2" && p.iterations[it]?.consistency_numbers != null
+      && p.iterations[it].lines.some((n) => n > 1));
+    const nums = mean(rb.map((p) => p.iterations[it].consistency_numbers));
+    const words = mean(rb.map((p) => p.iterations[it].consistency_words));
+    return `<div class="col-12 col-md-6">
+      <div class="border rounded p-2">
+        <div class="fw-bold mb-1">${esc(it)}</div>
+        <div class="small">CER fair, Referenzseiten: <strong>${cer != null ? (cer * 100).toFixed(1) + "%" : "–"}</strong>
+          &nbsp;·&nbsp; Zahlen-Konsistenz Raitbuch: <strong>${nums != null ? nums.toFixed(2) : "–"}</strong>
+          &nbsp;·&nbsp; Wort-Konsistenz: <strong>${words != null ? words.toFixed(2) : "–"}</strong></div>
+      </div>
+    </div>`;
+  }).join("");
+  $("#agg-cards").innerHTML = cards;
+  $("#agg-note").textContent = excluded.length
+    ? `Ohne ${excluded.join(", ")}: Referenz fast leer, zur Adjudikation vorgemerkt.` : "";
+}
 
 /* ---------- transcript rendering ---------- */
 
@@ -34,9 +63,8 @@ function renderLine(line) {
 }
 
 function renderRun(rec) {
-  const prov = `<div class="provenance">${esc(rec.model)} · ${rec.duration_s}s · ` +
-    `Prompt ${esc(rec.iteration)} (${esc(rec.prompt_hash)}) · ${esc(rec.timestamp)}</div>`;
-  let html = prov;
+  let html = `<div class="provenance">${esc(rec.model)} · ${rec.duration_s}s · ` +
+    `Prompt ${esc(rec.iteration)} (${esc(rec.prompt_hash)})</div>`;
   for (const pg of rec.parsed.pages || []) {
     html += `<div class="page-label">${esc(pg.label || "Seite")}</div>`;
     if (!(pg.lines || []).length) { html += `<p class="empty-note">leer gemeldet</p>`; continue; }
@@ -54,7 +82,7 @@ function renderGT() {
 
 async function fetchRun(name) {
   if (!runCache.has(name)) {
-    const r = await fetch(`runs/${name}`);
+    const r = await fetch(`data/benchmark/runs/${name}`);
     runCache.set(name, r.ok ? await r.json() : null);
   }
   return runCache.get(name);
@@ -66,11 +94,11 @@ function runName(it) {
   return runs[idx] ?? null;
 }
 
-/* ---------- metrics table: one row per iteration ---------- */
+/* ---------- per-page metrics ---------- */
 
 function fmtCer(m) {
   if (!m) return "";
-  return `${(m.mean * 100).toFixed(1)}% <span class="meta">(${(m.min * 100).toFixed(1)}–${(m.max * 100).toFixed(1)})</span>`;
+  return `${(m.mean * 100).toFixed(1)}% <span class="text-body-secondary">(${(m.min * 100).toFixed(1)}–${(m.max * 100).toFixed(1)})</span>`;
 }
 
 function renderMetrics() {
@@ -78,7 +106,7 @@ function renderMetrics() {
   const its = Object.keys(p.iterations);
   const hasGT = !!p.gt_lines;
   const head = `<tr><th>Iteration</th><th>k</th><th>Zeilen</th><th>uncertain</th>` +
-    `<th>Konsistenz W&ouml;rter</th><th>Konsistenz Zahlen</th>` +
+    `<th>Konsistenz Wörter</th><th>Konsistenz Zahlen</th>` +
     (hasGT ? `<th>CER fair</th><th>CER strikt</th>` : ``) + `</tr>`;
   const bestFair = hasGT
     ? Math.min(...its.map((it) => p.iterations[it].cer_fair?.mean ?? Infinity)) : null;
@@ -95,7 +123,7 @@ function renderMetrics() {
   $("#metrics").innerHTML = `<table>${head}${rows}</table>`;
 }
 
-/* ---------- tabs and repeat selector ---------- */
+/* ---------- tabs and repeats ---------- */
 
 function tabList() {
   const p = page();
@@ -137,8 +165,7 @@ async function selectTab(key) {
     el.tabIndex = on ? 0 : -1;
   });
   renderRepeatBar();
-  const p = page();
-  const its = Object.keys(p.iterations);
+  const its = Object.keys(page().iterations);
   const box = $("#transcript");
   const runHtml = async (it) => {
     const name = runName(it);
@@ -179,9 +206,7 @@ function selectItem(id) {
   $("#item-select").value = id;
   const p = page();
   $("#page-meta").textContent = `${p.folio} · ${p.source} · ${p.phenomena.join(", ")}`;
-  // Local cache first (runner downloads under images/, gitignored); IIIF as fallback.
-  osd.open({ type: "image", url: `images/${id}.jpg` });
-  osd.addOnceHandler("open-failed", () => osd.open({ type: "image", url: p.iiif, crossOriginPolicy: false }));
+  osd.open({ type: "image", url: p.iiif, crossOriginPolicy: false });
   renderMetrics();
   renderTabs();
   selectTab(p.gt_lines ? "__gtcmp" : Object.keys(p.iterations)[0]);
@@ -193,9 +218,9 @@ function step(delta) {
 }
 
 async function init() {
-  state.summary = await (await fetch("summary.json")).json();
+  state.summary = await (await fetch("data/benchmark/summary.json")).json();
   state.ids = Object.keys(state.summary.pages);
-  $("#generated").textContent = `Stand ${state.summary.generated} · ${state.summary.model}`;
+  renderAggregate();
   const sel = $("#item-select");
   for (const id of state.ids) {
     const p = state.summary.pages[id];

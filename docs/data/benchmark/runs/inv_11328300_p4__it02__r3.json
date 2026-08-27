@@ -1,0 +1,86 @@
+{
+ "page": "inv_11328300_p4",
+ "iteration": "it02",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2719
+   ],
+   "sent_px": [
+    965,
+    2719
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 7.1,
+ "timestamp": "2026-08-26T20:21:41+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "Dorsum",
+    "lines": [
+     {
+      "text": "Inuentarj zedel",
+      "kind": "rubric",
+      "uncertain": [
+       "Inuentarj",
+       "zedel"
+      ]
+     },
+     {
+      "text": "gen Thann.",
+      "kind": "rubric",
+      "uncertain": [
+       "Thann."
+      ]
+     },
+     {
+      "text": "1471",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jacob",
+      "kind": "marginal",
+      "uncertain": [
+       "Jacob"
+      ]
+     },
+     {
+      "text": "Lad. 22. lit. r 8.",
+      "kind": "foliation",
+      "uncertain": [
+       "Lad.",
+       "lit.",
+       "r 8."
+      ]
+     },
+     {
+      "text": "Inv. # 49/11",
+      "kind": "foliation",
+      "uncertain": [
+       "Inv.",
+       "# 49/11"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Inuentarj zedel",
+  "gen Thann.",
+  "1471",
+  "Jacob",
+  "Lad. 22. lit. r 8.",
+  "Inv. # 49/11"
+ ]
+}

@@ -1,0 +1,436 @@
+{
+ "page": "rb2_p113",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 15.1,
+ "timestamp": "2026-08-26T20:19:39+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 113v (leer/Text)",
+    "lines": [
+     {
+      "text": "Derselben vorgechab(e)n ij f(und) l iiij s ist er",
+      "kind": "entry"
+     },
+     {
+      "text": "nachmals bezalt mit namen vo(n) herrn",
+      "kind": "entry"
+     },
+     {
+      "text": "Benedicten pharrar zu Inval dozemal kam(er)-",
+      "kind": "entry"
+     },
+     {
+      "text": "mayster hat er emphang(e)n l iiij",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) So hat Lienhart von roemel kam(er)mayst(er)",
+      "kind": "entry"
+     },
+     {
+      "text": "herrn Jacobs Trapp(e)n vogt zu Brigsn(e)s",
+      "kind": "entry"
+     },
+     {
+      "text": "von Fazansmeintz(e)s weg(e)n aufgericht",
+      "kind": "entry",
+      "uncertain": [
+       "Fazansmeintz(e)s"
+      ]
+     },
+     {
+      "text": "ij tt —— iiij s",
+      "kind": "amount"
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 113r (Zettel) / fol. 114r",
+    "lines": [
+     {
+      "text": "113",
+      "kind": "foliation"
+     },
+     {
+      "text": "Wenigst was man mir dominica",
+      "kind": "rubric"
+     },
+     {
+      "text": "Aller von hoff schuldig ist",
+      "kind": "entry"
+     },
+     {
+      "text": "worden als man ha(?) der",
+      "kind": "entry",
+      "uncertain": [
+       "ha(?)"
+      ]
+     },
+     {
+      "text": "weÿnacht(e)n mit mir abgrait",
+      "kind": "entry"
+     },
+     {
+      "text": "hat an sand veits tag Im lxxv^o",
+      "kind": "entry"
+     },
+     {
+      "text": "Am Ersten hat G Bramberg w racking",
+      "kind": "entry",
+      "uncertain": [
+       "racking"
+      ]
+     },
+     {
+      "text": "zu mir dzert xx lb zu sandende-",
+      "kind": "entry"
+     },
+     {
+      "text": "sluff d weÿnecht(e)",
+      "kind": "entry"
+     },
+     {
+      "text": "Demnach hat tschart vnd zwiernndt",
+      "kind": "entry"
+     },
+     {
+      "text": "dzert xxiiij lb am phingst tag",
+      "kind": "entry"
+     },
+     {
+      "text": "pet(er) pauly Ist dnach d weÿnecht(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "g(e)schafft wordn",
+      "kind": "entry"
+     },
+     {
+      "text": "Aber hat tschart dzert xxv lb snd(?)",
+      "kind": "entry",
+      "uncertain": [
+       "snd(?)"
+      ]
+     },
+     {
+      "text": "noch weÿnechte hat d weÿnecht(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "uber sich genome",
+      "kind": "entry"
+     },
+     {
+      "text": "Hannß pansir ain wirt vo sinden hat",
+      "kind": "entry"
+     },
+     {
+      "text": "dzert xiiij lb iiij gl abgeait an",
+      "kind": "entry"
+     },
+     {
+      "text": "sand peter kettenfeir slluff lebar",
+      "kind": "entry"
+     },
+     {
+      "text": "Mez hat Jungh(er) arnquart von sind",
+      "kind": "entry"
+     },
+     {
+      "text": "hannß dzert xxviij lb iiij gl mit",
+      "kind": "entry"
+     },
+     {
+      "text": "im abgerait am phingst noch lyedi(?)]",
+      "kind": "entry",
+      "uncertain": [
+       "lyedi(?)"
+      ]
+     },
+     {
+      "text": "saluator p(ro) slluff weÿnecht(e) selbs",
+      "kind": "entry"
+     },
+     {
+      "text": "Aber hat tschart dzert xxiiij gl",
+      "kind": "entry"
+     },
+     {
+      "text": "samstag nach augustinj Mez iij lb",
+      "kind": "entry"
+     },
+     {
+      "text": "xxiiij gl am phingst nach ernff am",
+      "kind": "entry"
+     },
+     {
+      "text": "herbst slluff lebar",
+      "kind": "entry"
+     },
+     {
+      "text": "Demnach hat vllrichi tursen dzert",
+      "kind": "entry"
+     },
+     {
+      "text": "v mc iiij lb vj gl j ff abgerait am",
+      "kind": "entry"
+     },
+     {
+      "text": "freitag vor elisabeth slluff weÿnecht(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "Mez hat Tappan seind vo strang dzet",
+      "kind": "entry"
+     },
+     {
+      "text": "j gl am mittwoc aller heiligntay",
+      "kind": "entry"
+     },
+     {
+      "text": "slluff Sandmayst",
+      "kind": "entry"
+     },
+     {
+      "text": "So hat br Dyetreich w sinburg selb",
+      "kind": "entry"
+     },
+     {
+      "text": "drit dzert lxxvij lb viij gl",
+      "kind": "entry"
+     },
+     {
+      "text": "hat pet(er) tyming abgerait zu sind",
+      "kind": "entry"
+     },
+     {
+      "text": "johanns tag zu weihnachtn",
+      "kind": "entry"
+     },
+     {
+      "text": "Aber Ist man mir schuldig xij mc ij lb",
+      "kind": "entry"
+     },
+     {
+      "text": "von der phraunnd erlöst word(e)n als",
+      "kind": "entry"
+     },
+     {
+      "text": "man den zwilch vnd sein pfru(n)d",
+      "kind": "entry"
+     },
+     {
+      "text": "fur recht offnet wat loud hat sluff",
+      "kind": "entry"
+     },
+     {
+      "text": "sandrein abgerait vnd g hoff",
+      "kind": "entry"
+     },
+     {
+      "text": "schafftd auf phrannd",
+      "kind": "entry"
+     },
+     {
+      "text": "114",
+      "kind": "foliation"
+     },
+     {
+      "text": "Gratzpens",
+      "kind": "rubric"
+     },
+     {
+      "text": "pehutsar",
+      "kind": "rubric"
+     },
+     {
+      "text": "Zwoinÿär ist gerait am",
+      "kind": "entry"
+     },
+     {
+      "text": "so le am Besler dravpg",
+      "kind": "entry",
+      "uncertain": [
+       "dravpg"
+      ]
+     },
+     {
+      "text": "arentag nach den heilig(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "drei tonz auf heintz(e)n",
+      "kind": "entry"
+     },
+     {
+      "text": "d tag Anno dom(ini) etc",
+      "kind": "entry"
+     },
+     {
+      "text": "der vngefer",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] gemanet vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] tsait · item",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] vos schir vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] s wam Ottheiden",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] werd(e)n iiij fr vnd iiij",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] t mit gemahe praiten",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] ner zwey(e)r gaidtel j",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] ztar nit vorvesten",
+      "kind": "entry",
+      "uncertain": [
+       "vorvesten"
+      ]
+     },
+     {
+      "text": "[...] t warnheute · Item",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] zwey stain viij vas",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] v lad(e)n Cwintr / Ales",
+      "kind": "entry",
+      "uncertain": [
+       "Cwintr"
+      ]
+     },
+     {
+      "text": "[...] cro sevez furten lost vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] trait mavrh z inder",
+      "kind": "entry"
+     },
+     {
+      "text": "[...] d sein 6 lb c lxxxxvij m^c j ß / iiij d",
+      "kind": "sum"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Derselben vorgechab(e)n ij f(und) l iiij s ist er",
+  "nachmals bezalt mit namen vo(n) herrn",
+  "Benedicten pharrar zu Inval dozemal kam(er)-",
+  "mayster hat er emphang(e)n l iiij",
+  "It(em) So hat Lienhart von roemel kam(er)mayst(er)",
+  "herrn Jacobs Trapp(e)n vogt zu Brigsn(e)s",
+  "von Fazansmeintz(e)s weg(e)n aufgericht",
+  "ij tt —— iiij s",
+  "113",
+  "Wenigst was man mir dominica",
+  "Aller von hoff schuldig ist",
+  "worden als man ha(?) der",
+  "weÿnacht(e)n mit mir abgrait",
+  "hat an sand veits tag Im lxxv^o",
+  "Am Ersten hat G Bramberg w racking",
+  "zu mir dzert xx lb zu sandende-",
+  "sluff d weÿnecht(e)",
+  "Demnach hat tschart vnd zwiernndt",
+  "dzert xxiiij lb am phingst tag",
+  "pet(er) pauly Ist dnach d weÿnecht(e)n",
+  "g(e)schafft wordn",
+  "Aber hat tschart dzert xxv lb snd(?)",
+  "noch weÿnechte hat d weÿnecht(e)n",
+  "uber sich genome",
+  "Hannß pansir ain wirt vo sinden hat",
+  "dzert xiiij lb iiij gl abgeait an",
+  "sand peter kettenfeir slluff lebar",
+  "Mez hat Jungh(er) arnquart von sind",
+  "hannß dzert xxviij lb iiij gl mit",
+  "im abgerait am phingst noch lyedi(?)]",
+  "saluator p(ro) slluff weÿnecht(e) selbs",
+  "Aber hat tschart dzert xxiiij gl",
+  "samstag nach augustinj Mez iij lb",
+  "xxiiij gl am phingst nach ernff am",
+  "herbst slluff lebar",
+  "Demnach hat vllrichi tursen dzert",
+  "v mc iiij lb vj gl j ff abgerait am",
+  "freitag vor elisabeth slluff weÿnecht(e)n",
+  "Mez hat Tappan seind vo strang dzet",
+  "j gl am mittwoc aller heiligntay",
+  "slluff Sandmayst",
+  "So hat br Dyetreich w sinburg selb",
+  "drit dzert lxxvij lb viij gl",
+  "hat pet(er) tyming abgerait zu sind",
+  "johanns tag zu weihnachtn",
+  "Aber Ist man mir schuldig xij mc ij lb",
+  "von der phraunnd erlöst word(e)n als",
+  "man den zwilch vnd sein pfru(n)d",
+  "fur recht offnet wat loud hat sluff",
+  "sandrein abgerait vnd g hoff",
+  "schafftd auf phrannd",
+  "114",
+  "Gratzpens",
+  "pehutsar",
+  "Zwoinÿär ist gerait am",
+  "so le am Besler dravpg",
+  "arentag nach den heilig(e)n",
+  "drei tonz auf heintz(e)n",
+  "d tag Anno dom(ini) etc",
+  "der vngefer",
+  "[...] gemanet vnd",
+  "[...] tsait · item",
+  "[...] vos schir vnd",
+  "[...] s wam Ottheiden",
+  "[...] werd(e)n iiij fr vnd iiij",
+  "[...] t mit gemahe praiten",
+  "[...] ner zwey(e)r gaidtel j",
+  "[...] ztar nit vorvesten",
+  "[...] t warnheute · Item",
+  "[...] zwey stain viij vas",
+  "[...] v lad(e)n Cwintr / Ales",
+  "[...] cro sevez furten lost vnd",
+  "[...] trait mavrh z inder",
+  "[...] d sein 6 lb c lxxxxvij m^c j ß / iiij d"
+ ]
+}

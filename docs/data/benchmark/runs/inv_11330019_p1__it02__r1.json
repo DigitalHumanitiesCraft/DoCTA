@@ -1,0 +1,392 @@
+{
+ "page": "inv_11330019_p1",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    1067,
+    2772
+   ],
+   "sent_px": [
+    1067,
+    2772
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 11.0,
+ "timestamp": "2026-08-26T20:22:00+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Freinperg",
+      "kind": "rubric",
+      "uncertain": [
+       "Freinperg"
+      ]
+     },
+     {
+      "text": "Vermerkt die farundhab",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "haris plumbs vnd anders auff",
+      "kind": "entry",
+      "uncertain": [
+       "haris",
+       "plumbs"
+      ]
+     },
+     {
+      "text": "Freinberg Hannsen Kammer-",
+      "kind": "entry",
+      "uncertain": [
+       "Freinberg",
+       "Hannsen",
+       "Kammer-"
+      ]
+     },
+     {
+      "text": "maisters pflegers da selbs zu-",
+      "kind": "entry",
+      "uncertain": [
+       "maisters"
+      ]
+     },
+     {
+      "text": "gehörig So Joseph vberrumpff",
+      "kind": "entry",
+      "uncertain": [
+       "Joseph",
+       "vberrumpff"
+      ]
+     },
+     {
+      "text": "an stat meins genedigen herrn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vngestifft ingenom hatt an",
+      "kind": "entry",
+      "uncertain": [
+       "vngestifft",
+       "ingenom"
+      ]
+     },
+     {
+      "text": "freitag nach sant michelstag",
+      "kind": "entry",
+      "uncertain": [
+       "sant",
+       "michelstag"
+      ]
+     },
+     {
+      "text": "Anno lxxviij",
+      "kind": "entry",
+      "uncertain": [
+       "lxxviij"
+      ]
+     },
+     {
+      "text": "Item In ain kasten ain knüfft iij",
+      "kind": "entry",
+      "uncertain": [
+       "knüfft"
+      ]
+     },
+     {
+      "text": "eysenhuet ij par hantschuech iiij",
+      "kind": "entry",
+      "uncertain": [
+       "eysenhuet"
+      ]
+     },
+     {
+      "text": "par armbzeug iij par vnd(e)r",
+      "kind": "entry",
+      "uncertain": [
+       "armbzeug"
+      ]
+     },
+     {
+      "text": "harnschgewand ij hantschuech",
+      "kind": "entry",
+      "uncertain": [
+       "harnschgewand"
+      ]
+     },
+     {
+      "text": "mor ain armbzeug iij pfeureisensteck",
+      "kind": "entry",
+      "uncertain": [
+       "mor",
+       "pfeureisensteck"
+      ]
+     },
+     {
+      "text": "sind nit genast.",
+      "kind": "entry",
+      "uncertain": [
+       "genast."
+      ]
+     },
+     {
+      "text": "Item In der stubn vnd kamr da",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "ist ain schubkasten I grosser schrein",
+      "kind": "entry",
+      "uncertain": [
+       "schubkasten"
+      ]
+     },
+     {
+      "text": "darauff lig I ain armbzeug vij hantschuech",
+      "kind": "entry",
+      "uncertain": [
+       "lig",
+       "armbzeug"
+      ]
+     },
+     {
+      "text": "iiij hand rörlein I schmidstuck",
+      "kind": "entry",
+      "uncertain": [
+       "rörlein",
+       "schmidstuck"
+      ]
+     },
+     {
+      "text": "ain schlosser kloben",
+      "kind": "entry",
+      "uncertain": [
+       "kloben"
+      ]
+     },
+     {
+      "text": "Item mor ain pettstatt darin ligt",
+      "kind": "entry",
+      "uncertain": [
+       "mor",
+       "pettstatt"
+      ]
+     },
+     {
+      "text": "ain pett ain bolstr I kuss ij banck-",
+      "kind": "entry",
+      "uncertain": [
+       "pett",
+       "bolstr",
+       "kuss"
+      ]
+     },
+     {
+      "text": "polster iij rauch deck",
+      "kind": "entry",
+      "uncertain": [
+       "polster",
+       "deck"
+      ]
+     },
+     {
+      "text": "Item mor ain messinj beck vnd ain",
+      "kind": "entry",
+      "uncertain": [
+       "mor",
+       "messinj",
+       "beck"
+      ]
+     },
+     {
+      "text": "messinj hantvass I teller buechs",
+      "kind": "entry",
+      "uncertain": [
+       "messinj",
+       "hantvass",
+       "buechs"
+      ]
+     },
+     {
+      "text": "darin sind xxv pfaendll",
+      "kind": "entry",
+      "uncertain": [
+       "pfaendll"
+      ]
+     },
+     {
+      "text": "Mor ligen in ain pettwagen viij",
+      "kind": "entry",
+      "uncertain": [
+       "Mor",
+       "pettwagen"
+      ]
+     },
+     {
+      "text": "platt schlos vnd ain gros mals",
+      "kind": "entry",
+      "uncertain": [
+       "platt",
+       "schlos",
+       "mals"
+      ]
+     },
+     {
+      "text": "poss",
+      "kind": "entry",
+      "uncertain": [
+       "poss"
+      ]
+     },
+     {
+      "text": "Mor vor der kuchj ain truhen",
+      "kind": "rubric",
+      "uncertain": [
+       "Mor",
+       "kuchj",
+       "truhen"
+      ]
+     },
+     {
+      "text": "vnd ain schafftratt ij pfannen",
+      "kind": "entry",
+      "uncertain": [
+       "schafftratt",
+       "pfannen"
+      ]
+     },
+     {
+      "text": "I kreurhafen iij sitszkessel",
+      "kind": "entry",
+      "uncertain": [
+       "kreurhafen",
+       "sitszkessel"
+      ]
+     },
+     {
+      "text": "Item ain armbrost mit ain winden",
+      "kind": "entry",
+      "uncertain": [
+       "armbrost",
+       "winden"
+      ]
+     },
+     {
+      "text": "I karr feurstey",
+      "kind": "entry",
+      "uncertain": [
+       "karr",
+       "feurstey"
+      ]
+     },
+     {
+      "text": "Item auff der wind war statt ain",
+      "kind": "rubric",
+      "uncertain": [
+       "wind",
+       "war",
+       "statt"
+      ]
+     },
+     {
+      "text": "turch ain pestatt darin ligt",
+      "kind": "entry",
+      "uncertain": [
+       "turch",
+       "pestatt"
+      ]
+     },
+     {
+      "text": "ain pett ain bolstr ij leylach ain",
+      "kind": "entry",
+      "uncertain": [
+       "pett",
+       "bolstr",
+       "leylach"
+      ]
+     },
+     {
+      "text": "rauch deck vnd ain goldt",
+      "kind": "entry",
+      "uncertain": [
+       "deck",
+       "goldt"
+      ]
+     },
+     {
+      "text": "Inv. A 144/1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1478 Okt. 2.",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Freinperg",
+  "Vermerkt die farundhab",
+  "haris plumbs vnd anders auff",
+  "Freinberg Hannsen Kammer-",
+  "maisters pflegers da selbs zu-",
+  "gehörig So Joseph vberrumpff",
+  "an stat meins genedigen herrn",
+  "vngestifft ingenom hatt an",
+  "freitag nach sant michelstag",
+  "Anno lxxviij",
+  "Item In ain kasten ain knüfft iij",
+  "eysenhuet ij par hantschuech iiij",
+  "par armbzeug iij par vnd(e)r",
+  "harnschgewand ij hantschuech",
+  "mor ain armbzeug iij pfeureisensteck",
+  "sind nit genast.",
+  "Item In der stubn vnd kamr da",
+  "ist ain schubkasten I grosser schrein",
+  "darauff lig I ain armbzeug vij hantschuech",
+  "iiij hand rörlein I schmidstuck",
+  "ain schlosser kloben",
+  "Item mor ain pettstatt darin ligt",
+  "ain pett ain bolstr I kuss ij banck-",
+  "polster iij rauch deck",
+  "Item mor ain messinj beck vnd ain",
+  "messinj hantvass I teller buechs",
+  "darin sind xxv pfaendll",
+  "Mor ligen in ain pettwagen viij",
+  "platt schlos vnd ain gros mals",
+  "poss",
+  "Mor vor der kuchj ain truhen",
+  "vnd ain schafftratt ij pfannen",
+  "I kreurhafen iij sitszkessel",
+  "Item ain armbrost mit ain winden",
+  "I karr feurstey",
+  "Item auff der wind war statt ain",
+  "turch ain pestatt darin ligt",
+  "ain pett ain bolstr ij leylach ain",
+  "rauch deck vnd ain goldt",
+  "Inv. A 144/1",
+  "1478 Okt. 2."
+ ]
+}

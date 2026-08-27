@@ -1,0 +1,529 @@
+{
+ "page": "inv_11330019_p2",
+ "iteration": "it01",
+ "repeat": 3,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1979,
+    2822
+   ],
+   "sent_px": [
+    1979,
+    2822
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.7,
+ "timestamp": "2026-08-26T20:22:17+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1v",
+    "lines": [
+     {
+      "text": "It(em) oben ain khein ligend viij",
+      "kind": "entry",
+      "uncertain": [
+       "khein",
+       "ligend"
+      ]
+     },
+     {
+      "text": "draissattel gůtt v(nd) böst",
+      "kind": "entry",
+      "uncertain": [
+       "draissattel"
+      ]
+     },
+     {
+      "text": "It(em) vnden In dem gewelb",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "sind Zwo bettstatt dar Inn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iij bett Ain dechbett iiij",
+      "kind": "entry",
+      "uncertain": [
+       "dechbett"
+      ]
+     },
+     {
+      "text": "polster ij küß in paregt",
+      "kind": "entry",
+      "uncertain": [
+       "paregt"
+      ]
+     },
+     {
+      "text": "v(nd) ain polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) mer In dem selben ge-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "welwb sind viij gebaint welsf",
+      "kind": "entry",
+      "uncertain": [
+       "gebaint",
+       "welsf"
+      ]
+     },
+     {
+      "text": "hut xxiij st(u)ck furphes tůch",
+      "kind": "entry",
+      "uncertain": [
+       "furphes"
+      ]
+     },
+     {
+      "text": "Mor viij stückhein laung v(nd)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "kurch",
+      "kind": "entry",
+      "uncertain": [
+       "kurch"
+      ]
+     },
+     {
+      "text": "It(em) xvij stain pfeffer klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "v(nd) groff ain stain pley",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "v(nd) iiij kessel",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) mer In dem selben gewelb",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "sind Zwo trüchen dar Inn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "lxx tell(er)lay pfeur v(nd) miss-",
+      "kind": "entry",
+      "uncertain": [
+       "tell(er)lay",
+       "pfeur",
+       "miss-"
+      ]
+     },
+     {
+      "text": "tell sind vier bettgwäft Mor",
+      "kind": "entry",
+      "uncertain": [
+       "tell",
+       "bettgwäft"
+      ]
+     },
+     {
+      "text": "Zwo truchen sind dar Zway",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "klain truchel ij kandelin",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ij tangelgspünd iiij stüchel",
+      "kind": "entry",
+      "uncertain": [
+       "tangelgspünd",
+       "stüchel"
+      ]
+     },
+     {
+      "text": "ain gratgabe viij bratspis",
+      "kind": "entry",
+      "uncertain": [
+       "gratgabe"
+      ]
+     },
+     {
+      "text": "Zwo slegely xv refftyssen ochsen",
+      "kind": "entry",
+      "uncertain": [
+       "slegely",
+       "refftyssen"
+      ]
+     },
+     {
+      "text": "v(nd) elf essen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) xxv stik welsschs hulcz",
+      "kind": "entry",
+      "uncertain": [
+       "welsschs",
+       "hulcz"
+      ]
+     },
+     {
+      "text": "schaͤffers klain v(nd) groff",
+      "kind": "entry",
+      "uncertain": [
+       "schaͤffers"
+      ]
+     },
+     {
+      "text": "xxj tell(er) xxvij stain barch(et)",
+      "kind": "entry",
+      "uncertain": [
+       "barch(et)"
+      ]
+     },
+     {
+      "text": "schwein flaisch v(n)nderschaidlich",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zway schiff gedoͤrtez flaisch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) mer iij hüetlet ain Ruͦg",
+      "kind": "entry",
+      "uncertain": [
+       "hüetlet",
+       "Ruͦg"
+      ]
+     },
+     {
+      "text": "Mor Im vnter keller sind iij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gawd ij furphes v alt gabi-",
+      "kind": "entry",
+      "uncertain": [
+       "gawd",
+       "furphes",
+       "gabi-"
+      ]
+     },
+     {
+      "text": "ler vj heygabler iij kessl",
+      "kind": "entry",
+      "uncertain": [
+       "heygabler"
+      ]
+     },
+     {
+      "text": "ain stain flaster v(nd) ain",
+      "kind": "entry",
+      "uncertain": [
+       "flaster"
+      ]
+     },
+     {
+      "text": "Guttring",
+      "kind": "entry",
+      "uncertain": [
+       "Guttring"
+      ]
+     },
+     {
+      "text": "It(em) mer In dem selben kell-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "er ain vass wein xj vry",
+      "kind": "entry",
+      "uncertain": [
+       "vry"
+      ]
+     },
+     {
+      "text": "ist die wein dar auff gesunten",
+      "kind": "entry",
+      "uncertain": [
+       "gesunten"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 2r",
+    "lines": [
+     {
+      "text": "2",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) v kandelin klain v(nd)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "groff",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) So ist vnter Im vorhoff",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vij stüc Zwo saldeln Zway",
+      "kind": "entry",
+      "uncertain": [
+       "saldeln"
+      ]
+     },
+     {
+      "text": "pürd ain schwein v(nd) ain",
+      "kind": "entry",
+      "uncertain": [
+       "pürd"
+      ]
+     },
+     {
+      "text": "weinwogren krall ain",
+      "kind": "entry",
+      "uncertain": [
+       "weinwogren",
+       "krall"
+      ]
+     },
+     {
+      "text": "wagn roff",
+      "kind": "entry",
+      "uncertain": [
+       "roff"
+      ]
+     },
+     {
+      "text": "It(em) mer daselbis iij bett j kuelp",
+      "kind": "entry",
+      "uncertain": [
+       "kuelp"
+      ]
+     },
+     {
+      "text": "v(nd) iiij effentöcher",
+      "kind": "entry",
+      "uncertain": [
+       "effentöcher"
+      ]
+     },
+     {
+      "text": "It(em) So hatt der obgemelt Jo-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "seph auff Kerenburg funden",
+      "kind": "entry",
+      "uncertain": [
+       "Kerenburg"
+      ]
+     },
+     {
+      "text": "das Er of h(er)rn zuͦ hindpriess",
+      "kind": "entry",
+      "uncertain": [
+       "hindpriess"
+      ]
+     },
+     {
+      "text": "schlos g(e)hoͤrt —————",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) hagken püchsen viij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Mor hagkenpüchsen xxij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Mor hagkenpüchsen sind aintwerdt ij",
+      "kind": "entry",
+      "uncertain": [
+       "aintwerdt"
+      ]
+     },
+     {
+      "text": "It(em) stain büchsen ij",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) mer hand püchsen sind nit",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gezalt — v",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) drey legelen mit pfeylen leg(e)d",
+      "kind": "entry",
+      "uncertain": [
+       "legelen",
+       "leg(e)d"
+      ]
+     },
+     {
+      "text": "It(em) gemelt Zway klain vachvögel",
+      "kind": "entry",
+      "uncertain": [
+       "vachvögel"
+      ]
+     },
+     {
+      "text": "It(em) mer iij groff mors puechsen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Mor fünff mors puechsen v(nd)",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "iij klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) dor alsz Armproft ain",
+      "kind": "entry",
+      "uncertain": [
+       "Armproft"
+      ]
+     },
+     {
+      "text": "seine xj",
+      "kind": "entry",
+      "uncertain": [
+       "seine"
+      ]
+     },
+     {
+      "text": "It(em) Zway rüfflij mit pech",
+      "kind": "entry",
+      "uncertain": [
+       "rüfflij"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "It(em) oben ain khein ligend viij",
+  "draissattel gůtt v(nd) böst",
+  "It(em) vnden In dem gewelb",
+  "sind Zwo bettstatt dar Inn",
+  "iij bett Ain dechbett iiij",
+  "polster ij küß in paregt",
+  "v(nd) ain polster",
+  "It(em) mer In dem selben ge-",
+  "welwb sind viij gebaint welsf",
+  "hut xxiij st(u)ck furphes tůch",
+  "Mor viij stückhein laung v(nd)",
+  "kurch",
+  "It(em) xvij stain pfeffer klain",
+  "v(nd) groff ain stain pley",
+  "v(nd) iiij kessel",
+  "It(em) mer In dem selben gewelb",
+  "sind Zwo trüchen dar Inn",
+  "lxx tell(er)lay pfeur v(nd) miss-",
+  "tell sind vier bettgwäft Mor",
+  "Zwo truchen sind dar Zway",
+  "klain truchel ij kandelin",
+  "ij tangelgspünd iiij stüchel",
+  "ain gratgabe viij bratspis",
+  "Zwo slegely xv refftyssen ochsen",
+  "v(nd) elf essen",
+  "It(em) xxv stik welsschs hulcz",
+  "schaͤffers klain v(nd) groff",
+  "xxj tell(er) xxvij stain barch(et)",
+  "schwein flaisch v(n)nderschaidlich",
+  "Zway schiff gedoͤrtez flaisch",
+  "It(em) mer iij hüetlet ain Ruͦg",
+  "Mor Im vnter keller sind iij",
+  "gawd ij furphes v alt gabi-",
+  "ler vj heygabler iij kessl",
+  "ain stain flaster v(nd) ain",
+  "Guttring",
+  "It(em) mer In dem selben kell-",
+  "er ain vass wein xj vry",
+  "ist die wein dar auff gesunten",
+  "2",
+  "It(em) v kandelin klain v(nd)",
+  "groff",
+  "It(em) So ist vnter Im vorhoff",
+  "vij stüc Zwo saldeln Zway",
+  "pürd ain schwein v(nd) ain",
+  "weinwogren krall ain",
+  "wagn roff",
+  "It(em) mer daselbis iij bett j kuelp",
+  "v(nd) iiij effentöcher",
+  "It(em) So hatt der obgemelt Jo-",
+  "seph auff Kerenburg funden",
+  "das Er of h(er)rn zuͦ hindpriess",
+  "schlos g(e)hoͤrt —————",
+  "It(em) hagken püchsen viij",
+  "Mor hagkenpüchsen xxij",
+  "Mor hagkenpüchsen sind aintwerdt ij",
+  "It(em) stain büchsen ij",
+  "It(em) mer hand püchsen sind nit",
+  "gezalt — v",
+  "It(em) drey legelen mit pfeylen leg(e)d",
+  "It(em) gemelt Zway klain vachvögel",
+  "It(em) mer iij groff mors puechsen",
+  "Mor fünff mors puechsen v(nd)",
+  "iij klain",
+  "It(em) dor alsz Armproft ain",
+  "seine xj",
+  "It(em) Zway rüfflij mit pech"
+ ]
+}

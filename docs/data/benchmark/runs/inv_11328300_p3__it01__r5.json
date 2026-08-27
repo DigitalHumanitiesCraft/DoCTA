@@ -1,0 +1,464 @@
+{
+ "page": "inv_11328300_p3",
+ "iteration": "it01",
+ "repeat": 5,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1880,
+    2718
+   ],
+   "sent_px": [
+    1880,
+    2718
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 13.9,
+ "timestamp": "2026-08-26T20:21:15+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 3r",
+    "lines": [
+     {
+      "text": "3",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) j pett in der vellhiger kam(e)r",
+      "kind": "entry",
+      "uncertain": [
+       "vellhiger"
+      ]
+     },
+     {
+      "text": "It(em) j klapett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) ij degen mit seiden gonat",
+      "kind": "entry",
+      "uncertain": [
+       "gonat"
+      ]
+     },
+     {
+      "text": "It(em) j gurtl mit gard",
+      "kind": "entry",
+      "uncertain": [
+       "gard"
+      ]
+     },
+     {
+      "text": "It(em) ranari degen.",
+      "kind": "entry",
+      "uncertain": [
+       "ranari"
+      ]
+     },
+     {
+      "text": "It(em) eij paar leylach in aintzuch",
+      "kind": "entry",
+      "uncertain": [
+       "aintzuch"
+      ]
+     },
+     {
+      "text": "It(em) iiij paar pfauren",
+      "kind": "entry",
+      "uncertain": [
+       "pfauren"
+      ]
+     },
+     {
+      "text": "It(em) v paar under pfauren",
+      "kind": "entry",
+      "uncertain": [
+       "pfauren"
+      ]
+     },
+     {
+      "text": "It(em) a[...] schuͤsselcz",
+      "kind": "entry",
+      "uncertain": [
+       "a[...]",
+       "schuͤsselcz"
+      ]
+     },
+     {
+      "text": "It(em) ij lemppeltuͤrchen",
+      "kind": "entry",
+      "uncertain": [
+       "lemppeltuͤrchen"
+      ]
+     },
+     {
+      "text": "It(em) j pfalcztueche(n)",
+      "kind": "entry",
+      "uncertain": [
+       "pfalcztueche(n)"
+      ]
+     },
+     {
+      "text": "It(em) v tischtuecher",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) viij hanttwetuecher",
+      "kind": "entry",
+      "uncertain": [
+       "hanttwetuecher"
+      ]
+     },
+     {
+      "text": "It(em) iiij wasser peckhle.",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) ij eysen kessl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) xvij trinckh gleser grosz vnd klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "wosz sambt d(er) hantzschuͤch kandl",
+      "kind": "entry",
+      "uncertain": [
+       "wosz",
+       "hantzschuͤch"
+      ]
+     },
+     {
+      "text": "vnd aind plechkandl",
+      "kind": "entry",
+      "uncertain": [
+       "aind"
+      ]
+     },
+     {
+      "text": "It(em) j salcz vassle",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) viij von osserkandl",
+      "kind": "entry",
+      "uncertain": [
+       "osserkandl"
+      ]
+     },
+     {
+      "text": "It(em) xvij zinen stechgless grosz",
+      "kind": "entry",
+      "uncertain": [
+       "stechgless"
+      ]
+     },
+     {
+      "text": "vnd klain",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) j hultzen tellr putzsen mit tell(er)n",
+      "kind": "entry",
+      "uncertain": [
+       "putzsen"
+      ]
+     },
+     {
+      "text": "It(em) xij tringringk(er)",
+      "kind": "entry",
+      "uncertain": [
+       "tringringk(er)"
+      ]
+     },
+     {
+      "text": "It(em) iiij hanttuecher",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It(em) j kestel darin vil gerichts buech",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "sind vnd sonnst ding ligen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Bey solcher jnuetari sind ge=",
+      "kind": "entry",
+      "uncertain": [
+       "jnuetari"
+      ]
+     },
+     {
+      "text": "wesen Jorg Sandtpeter meirer",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zů hg. Hanns kramer Thomanus",
+      "kind": "entry",
+      "uncertain": [
+       "Thomanus"
+      ]
+     },
+     {
+      "text": "kroser Senctarj Jacob hartz=",
+      "kind": "entry",
+      "uncertain": [
+       "kroser",
+       "Senctarj"
+      ]
+     },
+     {
+      "text": "man Michel dwer fost knecht",
+      "kind": "entry",
+      "uncertain": [
+       "dwer",
+       "fost"
+      ]
+     },
+     {
+      "text": "zů Hall Jorg Rubensoser",
+      "kind": "entry",
+      "uncertain": [
+       "Rubensoser"
+      ]
+     },
+     {
+      "text": "vnd Cristoff wallenser",
+      "kind": "entry",
+      "uncertain": [
+       "wallenser"
+      ]
+     },
+     {
+      "text": "Jch Burckhart von knöringen hab",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ditz obgeschrib(e)n hauszrat allen",
+      "kind": "entry",
+      "uncertain": [
+       "hauszrat"
+      ]
+     },
+     {
+      "text": "von [...] Hanns ingegenome(n) [...]",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "statt Hannsen von Zeff vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Zeff"
+      ]
+     },
+     {
+      "text": "welche stuͤckh fuͤnidtschwester",
+      "kind": "entry",
+      "uncertain": [
+       "fuͤnidtschwester"
+      ]
+     },
+     {
+      "text": "die das mit seiner aignen handt=",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gschrifft gestaben han grant=",
+      "kind": "entry",
+      "uncertain": [
+       "gestaben",
+       "grant="
+      ]
+     },
+     {
+      "text": "lundt an antwurts nach auffs",
+      "kind": "entry",
+      "uncertain": [
+       "lundt"
+      ]
+     },
+     {
+      "text": "kamen tag Natiuitatis dn(i)c anno 70",
+      "kind": "entry",
+      "uncertain": [
+       "dn(i)c"
+      ]
+     },
+     {
+      "text": "beschrib(e)n",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem jch hab dem velldenperg geantwort",
+      "kind": "entry",
+      "uncertain": [
+       "velldenperg"
+      ]
+     },
+     {
+      "text": "ein pett vnd ein polster nach geschefft mein(er)",
+      "kind": "entry",
+      "uncertain": [
+       "geschefft"
+      ]
+     },
+     {
+      "text": "sely",
+      "kind": "entry",
+      "uncertain": [
+       "sely"
+      ]
+     },
+     {
+      "text": "Jtem dem poling hab ich geb(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "poling"
+      ]
+     },
+     {
+      "text": "iij pett vnd iij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "vnd xij kraut kendl",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ain par leilach das hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der trautkrammer gestriffen",
+      "kind": "entry",
+      "uncertain": [
+       "trautkrammer"
+      ]
+     },
+     {
+      "text": "vnd d(er) lempelt spiess",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem dem Planckh hat man",
+      "kind": "entry",
+      "uncertain": [
+       "Planckh"
+      ]
+     },
+     {
+      "text": "gen hoff geord(e)nt",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "den ij kenssl vnd karrg(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "kenssl",
+       "karrg(e)n"
+      ]
+     },
+     {
+      "text": "der alb(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "alb(e)n"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "3",
+  "It(em) j pett in der vellhiger kam(e)r",
+  "It(em) j klapett",
+  "It(em) ij degen mit seiden gonat",
+  "It(em) j gurtl mit gard",
+  "It(em) ranari degen.",
+  "It(em) eij paar leylach in aintzuch",
+  "It(em) iiij paar pfauren",
+  "It(em) v paar under pfauren",
+  "It(em) a[...] schuͤsselcz",
+  "It(em) ij lemppeltuͤrchen",
+  "It(em) j pfalcztueche(n)",
+  "It(em) v tischtuecher",
+  "It(em) viij hanttwetuecher",
+  "It(em) iiij wasser peckhle.",
+  "It(em) ij eysen kessl",
+  "It(em) xvij trinckh gleser grosz vnd klain",
+  "wosz sambt d(er) hantzschuͤch kandl",
+  "vnd aind plechkandl",
+  "It(em) j salcz vassle",
+  "It(em) viij von osserkandl",
+  "It(em) xvij zinen stechgless grosz",
+  "vnd klain",
+  "It(em) j hultzen tellr putzsen mit tell(er)n",
+  "It(em) xij tringringk(er)",
+  "It(em) iiij hanttuecher",
+  "It(em) j kestel darin vil gerichts buech",
+  "sind vnd sonnst ding ligen",
+  "Bey solcher jnuetari sind ge=",
+  "wesen Jorg Sandtpeter meirer",
+  "zů hg. Hanns kramer Thomanus",
+  "kroser Senctarj Jacob hartz=",
+  "man Michel dwer fost knecht",
+  "zů Hall Jorg Rubensoser",
+  "vnd Cristoff wallenser",
+  "Jch Burckhart von knöringen hab",
+  "ditz obgeschrib(e)n hauszrat allen",
+  "von [...] Hanns ingegenome(n) [...]",
+  "statt Hannsen von Zeff vnd",
+  "welche stuͤckh fuͤnidtschwester",
+  "die das mit seiner aignen handt=",
+  "gschrifft gestaben han grant=",
+  "lundt an antwurts nach auffs",
+  "kamen tag Natiuitatis dn(i)c anno 70",
+  "beschrib(e)n",
+  "Jtem jch hab dem velldenperg geantwort",
+  "ein pett vnd ein polster nach geschefft mein(er)",
+  "sely",
+  "Jtem dem poling hab ich geb(e)n",
+  "iij pett vnd iij polster",
+  "vnd xij kraut kendl",
+  "ain par leilach das hat",
+  "der trautkrammer gestriffen",
+  "vnd d(er) lempelt spiess",
+  "Jtem dem Planckh hat man",
+  "gen hoff geord(e)nt",
+  "den ij kenssl vnd karrg(e)n",
+  "der alb(e)n"
+ ]
+}

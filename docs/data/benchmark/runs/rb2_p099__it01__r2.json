@@ -1,0 +1,229 @@
+{
+ "page": "rb2_p099",
+ "iteration": "it01",
+ "repeat": 2,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3777,
+    2646
+   ],
+   "sent_px": [
+    3500,
+    2452
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 12.0,
+ "timestamp": "2026-08-26T20:19:15+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "98v",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "99r",
+    "lines": [
+     {
+      "text": "99",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Cäm(er)leins Raitung",
+      "kind": "rubric",
+      "uncertain": [
+       "Cäm(er)leins"
+      ]
+     },
+     {
+      "text": "Nota am Sambstag nach Oculi",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "inn der Fast(e)n jm Lxxj^ten Jar Jngegenwertikait",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "h(er)rn B(er)nhart von Cam(er)aw(er) / Conradn",
+      "kind": "entry",
+      "uncertain": [
+       "B(er)nhart",
+       "Cam(er)aw(er)"
+      ]
+     },
+     {
+      "text": "fidir(er) des alten Půchsenmaist(er)s {vnd} Hain-",
+      "kind": "entry",
+      "uncertain": [
+       "fidir(er)"
+      ]
+     },
+     {
+      "text": "reichs Grafenland hat man Hain-",
+      "kind": "entry",
+      "uncertain": [
+       "Grafenland"
+      ]
+     },
+     {
+      "text": "rein von Jacobs Gemachlin vmb kchost",
+      "kind": "entry",
+      "uncertain": [
+       "Gemachlin"
+      ]
+     },
+     {
+      "text": "so er meineme gnedig(e)n h(er)rn gen Hof",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "geben Lunig vmb allerlai abgeraitz",
+      "kind": "entry",
+      "uncertain": [
+       "Lunig"
+      ]
+     },
+     {
+      "text": "Zeung so man Zu seinem diennst Conradn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "getan Lunig Zu dem Caserne Zu-",
+      "kind": "entry",
+      "uncertain": [
+       "Lunig",
+       "Caserne"
+      ]
+     },
+     {
+      "text": "hawn gethon hat",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ausgebn",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Jm Eft(er)tag so dem pauchtůch Zu",
+      "kind": "entry",
+      "uncertain": [
+       "Eft(er)tag",
+       "pauchtůch"
+      ]
+     },
+     {
+      "text": "meins gnedig(e)n h(er)rn hewndten geben",
+      "kind": "entry",
+      "uncertain": [
+       "hewndten"
+      ]
+     },
+     {
+      "text": "khosstt xxvij d vnd het Er j^lb j^ß vij^d",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "habts alles vber den Jnfürtag {j^lb} {viij^ß}",
+      "kind": "entry",
+      "uncertain": [
+       "Jnfürtag"
+      ]
+     },
+     {
+      "text": "4 —— viij d",
+      "kind": "amount",
+      "uncertain": []
+     },
+     {
+      "text": "Jtem",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "Dem Conrade Zeuschmair seinem knechtg-",
+      "kind": "entry",
+      "uncertain": [
+       "Zeuschmair",
+       "knechtg-"
+      ]
+     },
+     {
+      "text": "rauchs vmb allerlai abgeraitz Zeung so",
+      "kind": "entry",
+      "uncertain": [
+       "rauchs"
+      ]
+     },
+     {
+      "text": "man ym hof abgerait hat von der weilsichs",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "kham, vntz occulimei des lxxi^ten Jars bis auf",
+      "kind": "entry",
+      "uncertain": [
+       "occulimei"
+      ]
+     },
+     {
+      "text": "den obgeschribn tag sant —— xl. mt.",
+      "kind": "entry",
+      "uncertain": [
+       "xl. mt."
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "99",
+  "Cäm(er)leins Raitung",
+  "Nota am Sambstag nach Oculi",
+  "inn der Fast(e)n jm Lxxj^ten Jar Jngegenwertikait",
+  "h(er)rn B(er)nhart von Cam(er)aw(er) / Conradn",
+  "fidir(er) des alten Půchsenmaist(er)s {vnd} Hain-",
+  "reichs Grafenland hat man Hain-",
+  "rein von Jacobs Gemachlin vmb kchost",
+  "so er meineme gnedig(e)n h(er)rn gen Hof",
+  "geben Lunig vmb allerlai abgeraitz",
+  "Zeung so man Zu seinem diennst Conradn",
+  "getan Lunig Zu dem Caserne Zu-",
+  "hawn gethon hat",
+  "Ausgebn",
+  "Jtem",
+  "Jm Eft(er)tag so dem pauchtůch Zu",
+  "meins gnedig(e)n h(er)rn hewndten geben",
+  "khosstt xxvij d vnd het Er j^lb j^ß vij^d",
+  "habts alles vber den Jnfürtag {j^lb} {viij^ß}",
+  "4 —— viij d",
+  "Jtem",
+  "Dem Conrade Zeuschmair seinem knechtg-",
+  "rauchs vmb allerlai abgeraitz Zeung so",
+  "man ym hof abgerait hat von der weilsichs",
+  "kham, vntz occulimei des lxxi^ten Jars bis auf",
+  "den obgeschribn tag sant —— xl. mt."
+ ]
+}

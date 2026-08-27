@@ -1,0 +1,305 @@
+{
+ "page": "inv_11330020_p1",
+ "iteration": "it01",
+ "repeat": 4,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1068,
+    2719
+   ],
+   "sent_px": [
+    1068,
+    2719
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 9.9,
+ "timestamp": "2026-08-26T20:23:07+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1440",
+      "kind": "foliation"
+     },
+     {
+      "text": "Zemerckhen die hab vnd guet so auf dem",
+      "kind": "entry"
+     },
+     {
+      "text": "sclos herrnfels aus dem geschefft meins g(nädigen) h(errn)",
+      "kind": "entry"
+     },
+     {
+      "text": "h(errn) von Burg vnd durch den geistlichen",
+      "kind": "entry"
+     },
+     {
+      "text": "herren herren Peteren plangken dechant",
+      "kind": "entry"
+     },
+     {
+      "text": "zu Imstingen sampt den thumratt gelaiting",
+      "kind": "entry",
+      "uncertain": [
+       "Imstingen",
+       "gelaiting"
+      ]
+     },
+     {
+      "text": "vnd beordnt gewessen auf den hewting tag",
+      "kind": "entry",
+      "uncertain": [
+       "beordnt"
+      ]
+     },
+     {
+      "text": "dato der zödl aigentlich besicht vnd beschawt",
+      "kind": "entry"
+     },
+     {
+      "text": "ist worden",
+      "kind": "entry"
+     },
+     {
+      "text": "It(e)m In der kam(e)r bey der stubn ij pett",
+      "kind": "entry"
+     },
+     {
+      "text": "ain dekbpet zwen hawptpölster vj",
+      "kind": "entry"
+     },
+     {
+      "text": "hawptkhws(e)n ain pangkpolster ij pangkhe",
+      "kind": "entry"
+     },
+     {
+      "text": "khüsn vij leinlein degkh alt vnd new",
+      "kind": "entry"
+     },
+     {
+      "text": "x schlaffen dekg ij spanpert ain harioln",
+      "kind": "entry"
+     },
+     {
+      "text": "xxiiij leylach gute vnd pöse gezaychent",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd drey truchen ij alte degglach am",
+      "kind": "entry"
+     },
+     {
+      "text": "padpente ain rauchs hirschkhälbs rökll",
+      "kind": "entry",
+      "uncertain": [
+       "padpente",
+       "hirschkhälbs"
+      ]
+     },
+     {
+      "text": "lij tischtüecher vc handtüecher gute vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "pöse vier plofft armst am vadertail",
+      "kind": "entry",
+      "uncertain": [
+       "plofft",
+       "vadertail"
+      ]
+     },
+     {
+      "text": "ij handtspisell ain losenbut j türckhisch t[...]",
+      "kind": "entry",
+      "uncertain": [
+       "losenbut",
+       "t[...]"
+      ]
+     },
+     {
+      "text": "vnd ain hawspfeill vnd xvij kolben",
+      "kind": "entry"
+     },
+     {
+      "text": "It(e)m In mein g(nädigen) h(errn) zimer ist iiij pett iiij",
+      "kind": "entry"
+     },
+     {
+      "text": "hawptpolster viij hawptkhüsn vnd ain",
+      "kind": "entry"
+     },
+     {
+      "text": "truchen ist vfsclagn iij spanpett zwo",
+      "kind": "entry"
+     },
+     {
+      "text": "hariolen ij tisch",
+      "kind": "entry"
+     },
+     {
+      "text": "It(e)m In der hiezters kamer ain pett y",
+      "kind": "entry",
+      "uncertain": [
+       "hiezters"
+      ]
+     },
+     {
+      "text": "leylach ain rauchs dekg ain polster",
+      "kind": "entry"
+     },
+     {
+      "text": "y khüsn ain dekbpett ain alts [...]",
+      "kind": "entry"
+     },
+     {
+      "text": "steuffts tüechell iij spanpett j tisch",
+      "kind": "entry",
+      "uncertain": [
+       "steuffts"
+      ]
+     },
+     {
+      "text": "It(e)m In der harnascht kamer ist beschawt",
+      "kind": "entry"
+     },
+     {
+      "text": "worden vnd gefundn iiij pett mit",
+      "kind": "entry"
+     },
+     {
+      "text": "pösen ziechn drey por hawptpolster",
+      "kind": "entry"
+     },
+     {
+      "text": "viij hawptkhust gut v(nd) leigere xviij",
+      "kind": "entry",
+      "uncertain": [
+       "leigere"
+      ]
+     },
+     {
+      "text": "staffeln dekg alt vnd new zwo guet",
+      "kind": "entry"
+     },
+     {
+      "text": "leinlein dekg ain wolfs dekg ain",
+      "kind": "entry"
+     },
+     {
+      "text": "gestickchts degglach iij spanpett vnd",
+      "kind": "entry"
+     },
+     {
+      "text": "etl(e)ichs altes harnascht",
+      "kind": "entry"
+     },
+     {
+      "text": "It(e)m In der naegstn kamer darnach sein",
+      "kind": "entry"
+     },
+     {
+      "text": "drey nützers pett iiij por hawptpolster",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd ain por fattil ain khüsn vnd",
+      "kind": "entry",
+      "uncertain": [
+       "fattil"
+      ]
+     },
+     {
+      "text": "vier alt rauch dekg vnd drey",
+      "kind": "entry"
+     },
+     {
+      "text": "gantz zerissne degglach vnd vier panpett",
+      "kind": "entry"
+     },
+     {
+      "text": "It(e)m In der wachtarkamer j por pett j polstar",
+      "kind": "entry"
+     },
+     {
+      "text": "zway pöse küsn y rwchans leylach zwo",
+      "kind": "entry",
+      "uncertain": [
+       "rwchans"
+      ]
+     },
+     {
+      "text": "por dekg ain ledrins dekg ain lederiner",
+      "kind": "entry"
+     },
+     {
+      "text": "polster vnd zwo gar alte dekg ain panpett",
+      "kind": "entry"
+     },
+     {
+      "text": "Inv. A 201/1",
+      "kind": "marginal"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1440",
+  "Zemerckhen die hab vnd guet so auf dem",
+  "sclos herrnfels aus dem geschefft meins g(nädigen) h(errn)",
+  "h(errn) von Burg vnd durch den geistlichen",
+  "herren herren Peteren plangken dechant",
+  "zu Imstingen sampt den thumratt gelaiting",
+  "vnd beordnt gewessen auf den hewting tag",
+  "dato der zödl aigentlich besicht vnd beschawt",
+  "ist worden",
+  "It(e)m In der kam(e)r bey der stubn ij pett",
+  "ain dekbpet zwen hawptpölster vj",
+  "hawptkhws(e)n ain pangkpolster ij pangkhe",
+  "khüsn vij leinlein degkh alt vnd new",
+  "x schlaffen dekg ij spanpert ain harioln",
+  "xxiiij leylach gute vnd pöse gezaychent",
+  "vnd drey truchen ij alte degglach am",
+  "padpente ain rauchs hirschkhälbs rökll",
+  "lij tischtüecher vc handtüecher gute vnd",
+  "pöse vier plofft armst am vadertail",
+  "ij handtspisell ain losenbut j türckhisch t[...]",
+  "vnd ain hawspfeill vnd xvij kolben",
+  "It(e)m In mein g(nädigen) h(errn) zimer ist iiij pett iiij",
+  "hawptpolster viij hawptkhüsn vnd ain",
+  "truchen ist vfsclagn iij spanpett zwo",
+  "hariolen ij tisch",
+  "It(e)m In der hiezters kamer ain pett y",
+  "leylach ain rauchs dekg ain polster",
+  "y khüsn ain dekbpett ain alts [...]",
+  "steuffts tüechell iij spanpett j tisch",
+  "It(e)m In der harnascht kamer ist beschawt",
+  "worden vnd gefundn iiij pett mit",
+  "pösen ziechn drey por hawptpolster",
+  "viij hawptkhust gut v(nd) leigere xviij",
+  "staffeln dekg alt vnd new zwo guet",
+  "leinlein dekg ain wolfs dekg ain",
+  "gestickchts degglach iij spanpett vnd",
+  "etl(e)ichs altes harnascht",
+  "It(e)m In der naegstn kamer darnach sein",
+  "drey nützers pett iiij por hawptpolster",
+  "vnd ain por fattil ain khüsn vnd",
+  "vier alt rauch dekg vnd drey",
+  "gantz zerissne degglach vnd vier panpett",
+  "It(e)m In der wachtarkamer j por pett j polstar",
+  "zway pöse küsn y rwchans leylach zwo",
+  "por dekg ain ledrins dekg ain lederiner",
+  "polster vnd zwo gar alte dekg ain panpett",
+  "Inv. A 201/1"
+ ]
+}

@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: 'index.html', label: 'Dashboard', id: 'dashboard' },
   { href: 'pipeline.html', label: 'Pipeline', id: 'pipeline' },
   { href: 'sources.html', label: 'Quellen', id: 'sources' },
+  { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
   { href: 'search.html', label: 'Suche', id: 'search' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
   { href: 'network.html', label: 'Netzwerk', id: 'network' },

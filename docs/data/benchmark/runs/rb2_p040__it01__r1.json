@@ -1,0 +1,181 @@
+{
+ "page": "rb2_p040",
+ "iteration": "it01",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    3500,
+    2448
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 10.0,
+ "timestamp": "2026-08-26T20:17:50+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 39v",
+    "lines": [
+     {
+      "text": "Custen",
+      "kind": "rubric",
+      "uncertain": [
+       "Custen"
+      ]
+     },
+     {
+      "text": "vphoferin",
+      "kind": "rubric"
+     },
+     {
+      "text": "Nota Anno die xx purificacio(n)is Marie Ist",
+      "kind": "entry",
+      "uncertain": [
+       "xx",
+       "purificacio(n)is"
+      ]
+     },
+     {
+      "text": "berait mit der vphoferin in gegennwurt",
+      "kind": "entry"
+     },
+     {
+      "text": "der vorgestatten / vmb alle abgeraite dingt",
+      "kind": "entry"
+     },
+     {
+      "text": "so sy mein(er) heren gnad schuldig ist / sider",
+      "kind": "entry",
+      "uncertain": [
+       "sider"
+      ]
+     },
+     {
+      "text": "der nagsten veiten samztag vntz auf",
+      "kind": "entry"
+     },
+     {
+      "text": "heuttigen tag / vnd brenngt in ainer",
+      "kind": "entry"
+     },
+     {
+      "text": "Su(m)ma ij^c xxxij lb iij ß x d",
+      "kind": "sum"
+     },
+     {
+      "text": "Daran Jr Innemen",
+      "kind": "rubric"
+     },
+     {
+      "text": "It(em) Die bemelt vphoferin {hat} von hern Benedictn",
+      "kind": "entry"
+     },
+     {
+      "text": "Cam(er)maister empfangen ij lb xxij ß iij d",
+      "kind": "entry"
+     },
+     {
+      "text": "It(em) von Fraugarten Pfleger hauptman hat sy",
+      "kind": "entry",
+      "uncertain": [
+       "Fraugarten"
+      ]
+     },
+     {
+      "text": "empfang(e)n xx lb vntz die er auch vor d(e)r Cam(er)ampträit(u)ng hat aufg(e)b(e)n",
+      "kind": "entry",
+      "uncertain": [
+       "Cam(er)ampträit(u)ng"
+      ]
+     },
+     {
+      "text": "It(em) [...] die viij lb iij ß iiij d v(nd) viij ß",
+      "kind": "entry"
+     },
+     {
+      "text": "die michaln [...] mein(er) hern schuldig was",
+      "kind": "entry"
+     },
+     {
+      "text": "Su(m)ma Jr Innemung hat",
+      "kind": "sum"
+     },
+     {
+      "text": "ij^c xlvj lb iij ß iiij d",
+      "kind": "amount"
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "fol. 40r",
+    "lines": [
+     {
+      "text": "40.",
+      "kind": "foliation"
+     },
+     {
+      "text": "Liebhart Deringer",
+      "kind": "rubric",
+      "uncertain": [
+       "Liebhart Deringer"
+      ]
+     },
+     {
+      "text": "Der vorgemelten vphoferin Innemen",
+      "kind": "entry"
+     },
+     {
+      "text": "gegen Jrem Ausgeben gegeneinander gelegt",
+      "kind": "entry"
+     },
+     {
+      "text": "vnd abgetzogen Dannach ist sy mein(er) herren",
+      "kind": "entry"
+     },
+     {
+      "text": "gnad schuldig —— lxxxv lb iij ß viij d",
+      "kind": "entry"
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "Custen",
+  "vphoferin",
+  "Nota Anno die xx purificacio(n)is Marie Ist",
+  "berait mit der vphoferin in gegennwurt",
+  "der vorgestatten / vmb alle abgeraite dingt",
+  "so sy mein(er) heren gnad schuldig ist / sider",
+  "der nagsten veiten samztag vntz auf",
+  "heuttigen tag / vnd brenngt in ainer",
+  "Su(m)ma ij^c xxxij lb iij ß x d",
+  "Daran Jr Innemen",
+  "It(em) Die bemelt vphoferin {hat} von hern Benedictn",
+  "Cam(er)maister empfangen ij lb xxij ß iij d",
+  "It(em) von Fraugarten Pfleger hauptman hat sy",
+  "empfang(e)n xx lb vntz die er auch vor d(e)r Cam(er)ampträit(u)ng hat aufg(e)b(e)n",
+  "It(em) [...] die viij lb iij ß iiij d v(nd) viij ß",
+  "die michaln [...] mein(er) hern schuldig was",
+  "Su(m)ma Jr Innemung hat",
+  "ij^c xlvj lb iij ß iiij d",
+  "40.",
+  "Liebhart Deringer",
+  "Der vorgemelten vphoferin Innemen",
+  "gegen Jrem Ausgeben gegeneinander gelegt",
+  "vnd abgetzogen Dannach ist sy mein(er) herren",
+  "gnad schuldig —— lxxxv lb iij ß viij d"
+ ]
+}

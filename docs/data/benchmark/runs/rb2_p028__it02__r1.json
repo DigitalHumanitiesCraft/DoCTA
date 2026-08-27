@@ -1,0 +1,417 @@
+{
+ "page": "rb2_p028",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "12b40e81caca73a3",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "left"
+  },
+  {
+   "source_px": [
+    3780,
+    2644
+   ],
+   "sent_px": [
+    1890,
+    2644
+   ],
+   "crop": "right"
+  }
+ ],
+ "duration_s": 14.3,
+ "timestamp": "2026-08-26T20:17:50+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. [1]v",
+    "lines": [
+     {
+      "text": "Andre von Matrai",
+      "kind": "rubric",
+      "uncertain": [
+       "Andre",
+       "Matrai"
+      ]
+     },
+     {
+      "text": "Nota am freitag vor vnser lieben frawen",
+      "kind": "entry",
+      "uncertain": [
+       "freitag"
+      ]
+     },
+     {
+      "text": "tag adnunciacionis Anno domini etc lxxij / in gegen-",
+      "kind": "entry",
+      "uncertain": [
+       "adnunciacionis"
+      ]
+     },
+     {
+      "text": "hait Hanns Camrermaisters / Thomann des alten",
+      "kind": "entry",
+      "uncertain": [
+       "Hanns",
+       "Camrermaisters",
+       "Thomann"
+      ]
+     },
+     {
+      "text": "prukhenmaisters / Burgharts parler Hannsen Camrer",
+      "kind": "entry",
+      "uncertain": [
+       "Burgharts",
+       "parler",
+       "Hannsen"
+      ]
+     },
+     {
+      "text": "vnd wolfgangs Strimbels Camerschrer - Ist",
+      "kind": "entry",
+      "uncertain": [
+       "wolfgangs",
+       "Strimbels",
+       "Camerschrer"
+      ]
+     },
+     {
+      "text": "mit Andren dinkofer Raitung beschriben",
+      "kind": "entry",
+      "uncertain": [
+       "Andren",
+       "dinkofer",
+       "Raitung"
+      ]
+     },
+     {
+      "text": "der drostner von Gossensas / vom phintztag",
+      "kind": "entry",
+      "uncertain": [
+       "drostner",
+       "Gossensas",
+       "phintztag"
+      ]
+     },
+     {
+      "text": "nach des heilligen kreüczs tag Exaltacionis",
+      "kind": "entry",
+      "uncertain": [
+       "Exaltacionis"
+      ]
+     },
+     {
+      "text": "des vergangn lxxj Jars / vntz auf hewtign tag",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gefurt rancz her gen Inspruk in meins gned",
+      "kind": "entry",
+      "uncertain": [
+       "rancz",
+       "Inspruk",
+       "gned"
+      ]
+     },
+     {
+      "text": "herrn beamtleutten /",
+      "kind": "entry",
+      "uncertain": [
+       "beamtleutten"
+      ]
+     },
+     {
+      "text": "Bringt das er herab gefürt hat viij C lxxxxviij",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "C",
+       "numeral": "viij C lxxxxviij",
+       "unit": ""
+      },
+      "uncertain": []
+     },
+     {
+      "text": "subl / von yedem subl xxij d / bringt d xj lb viij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xj lb viij ß",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "subl"
+      ]
+     },
+     {
+      "text": "Darzu von gnaden hat man jm zu pfennig",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "gliczt v lb vj ß / das alles in ainer Summa",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "v lb vj ß",
+       "unit": "lb"
+      },
+      "uncertain": [
+       "gliczt"
+      ]
+     },
+     {
+      "text": "bringt —— d xvij lb",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "lb"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Summa",
+      "kind": "sum",
+      "uncertain": []
+     },
+     {
+      "text": "d xvij lb",
+      "kind": "sum",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xvij",
+       "unit": "lb"
+      },
+      "uncertain": []
+     },
+     {
+      "text": "Es hat der kamrermaister / Strimbel vnd andre",
+      "kind": "entry",
+      "uncertain": [
+       "Strimbel"
+      ]
+     },
+     {
+      "text": "zu jm wägent / als man meins brifzagels allerkos",
+      "kind": "entry",
+      "uncertain": [
+       "brifzagels",
+       "allerkos"
+      ]
+     },
+     {
+      "text": "krancz gefürt hat —— viij d",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "viij",
+       "unit": "d"
+      },
+      "uncertain": [
+       "krancz"
+      ]
+     }
+    ],
+    "empty": false
+   },
+   {
+    "label": "28r",
+    "lines": [
+     {
+      "text": "28",
+      "kind": "foliation"
+     },
+     {
+      "text": "Daran sein Innemen",
+      "kind": "rubric",
+      "uncertain": [
+       "Innemen"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von meinem herren cam̃ermaister hat er",
+      "kind": "entry",
+      "uncertain": [
+       "meinem",
+       "cam̃ermaister"
+      ]
+     },
+     {
+      "text": "emphangen die desselb cam̃ermaister drauff",
+      "kind": "entry",
+      "uncertain": [
+       "cam̃ermaister",
+       "drauff"
+      ]
+     },
+     {
+      "text": "ze —— xxviij m̃ xiij ß",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxviij",
+       "unit": "m̃"
+      },
+      "uncertain": [
+       "ze"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Newstifter Salczmair hat er",
+      "kind": "entry",
+      "uncertain": [
+       "Newstifter",
+       "Salczmair"
+      ]
+     },
+     {
+      "text": "emphangen —— lxx m̃",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "lxx",
+       "unit": "m̃"
+      }
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "vom Hallñar am Ing hat er emphangen",
+      "kind": "entry",
+      "uncertain": [
+       "Hallñar",
+       "Ing"
+      ]
+     },
+     {
+      "text": "—— xxxviij m̃",
+      "kind": "amount",
+      "amount": {
+       "multiplier": "",
+       "numeral": "xxxviij",
+       "unit": "m̃"
+      }
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Vlreichen Riefaid dazumal Keller an",
+      "kind": "entry",
+      "uncertain": [
+       "Vlreichen",
+       "Riefaid",
+       "dazumal",
+       "Keller"
+      ]
+     },
+     {
+      "text": "Meran lxxvij m̃ für j {lb} für xx m̃",
+      "kind": "entry",
+      "uncertain": [
+       "Meran"
+      ]
+     },
+     {
+      "text": "die desselb Riefaid in beuelhnus meins herren",
+      "kind": "entry",
+      "uncertain": [
+       "Riefaid",
+       "beuelhnus"
+      ]
+     },
+     {
+      "text": "gnaden obgelegen hat",
+      "kind": "entry",
+      "uncertain": [
+       "obgelegen"
+      ]
+     },
+     {
+      "text": "Item",
+      "kind": "marginal"
+     },
+     {
+      "text": "von Lienharten Brauchin iij m̃ iij ß",
+      "kind": "entry",
+      "amount": {
+       "multiplier": "",
+       "numeral": "iij",
+       "unit": "m̃"
+      },
+      "uncertain": [
+       "Lienharten",
+       "Brauchin"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "lines": [
+  "Andre von Matrai",
+  "Nota am freitag vor vnser lieben frawen",
+  "tag adnunciacionis Anno domini etc lxxij / in gegen-",
+  "hait Hanns Camrermaisters / Thomann des alten",
+  "prukhenmaisters / Burgharts parler Hannsen Camrer",
+  "vnd wolfgangs Strimbels Camerschrer - Ist",
+  "mit Andren dinkofer Raitung beschriben",
+  "der drostner von Gossensas / vom phintztag",
+  "nach des heilligen kreüczs tag Exaltacionis",
+  "des vergangn lxxj Jars / vntz auf hewtign tag",
+  "gefurt rancz her gen Inspruk in meins gned",
+  "herrn beamtleutten /",
+  "Bringt das er herab gefürt hat viij C lxxxxviij",
+  "subl / von yedem subl xxij d / bringt d xj lb viij ß",
+  "Darzu von gnaden hat man jm zu pfennig",
+  "gliczt v lb vj ß / das alles in ainer Summa",
+  "bringt —— d xvij lb",
+  "Summa",
+  "d xvij lb",
+  "Es hat der kamrermaister / Strimbel vnd andre",
+  "zu jm wägent / als man meins brifzagels allerkos",
+  "krancz gefürt hat —— viij d",
+  "28",
+  "Daran sein Innemen",
+  "Item",
+  "von meinem herren cam̃ermaister hat er",
+  "emphangen die desselb cam̃ermaister drauff",
+  "ze —— xxviij m̃ xiij ß",
+  "Item",
+  "von Newstifter Salczmair hat er",
+  "emphangen —— lxx m̃",
+  "Item",
+  "vom Hallñar am Ing hat er emphangen",
+  "—— xxxviij m̃",
+  "Item",
+  "von Vlreichen Riefaid dazumal Keller an",
+  "Meran lxxvij m̃ für j {lb} für xx m̃",
+  "die desselb Riefaid in beuelhnus meins herren",
+  "gnaden obgelegen hat",
+  "Item",
+  "von Lienharten Brauchin iij m̃ iij ß"
+ ]
+}

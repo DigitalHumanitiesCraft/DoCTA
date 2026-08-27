@@ -1,0 +1,345 @@
+{
+ "page": "inv_11328300_p1",
+ "iteration": "it02",
+ "repeat": 5,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    965,
+    2739
+   ],
+   "sent_px": [
+    965,
+    2739
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 7.9,
+ "timestamp": "2026-08-26T20:20:20+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Inuentarj etlichs haussrats",
+      "kind": "rubric",
+      "uncertain": [
+       "Inuentarj"
+      ]
+     },
+     {
+      "text": "durch Hannsen Ramung",
+      "kind": "rubric",
+      "uncertain": [
+       "durch",
+       "Hannsen",
+       "Ramung"
+      ]
+     },
+     {
+      "text": "Burckhgraffenn an Trosperg",
+      "kind": "rubric",
+      "uncertain": [
+       "Burckhgraffenn",
+       "Trosperg"
+      ]
+     },
+     {
+      "text": "auf dem sloss Tgaras vber-",
+      "kind": "rubric",
+      "uncertain": [
+       "Tgaras"
+      ]
+     },
+     {
+      "text": "genomenn an mitwochen",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "vor Sand Virgili tag",
+      "kind": "rubric",
+      "uncertain": [
+       "Virgili"
+      ]
+     },
+     {
+      "text": "Anno dñi rc lxvij°",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Item in meins g. hern kamer",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "It I pett",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It ij küss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It iiij rauhe deckhe",
+      "kind": "entry",
+      "uncertain": [
+       "deckhe"
+      ]
+     },
+     {
+      "text": "It I pofft strosack",
+      "kind": "entry",
+      "uncertain": [
+       "pofft"
+      ]
+     },
+     {
+      "text": "It iij pett in der vordern celen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "ob der grossen stuben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I strosack",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It ij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It ij rauche deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It iiij pett in der andern celen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It ij strosack",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It ij polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It ain kiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I rauche deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in derselben",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I pett mit parchem vberzogn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "in derselben celen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I kiss",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I polster",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It iij deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It I armbrost darumb sind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zway strefflein",
+      "kind": "entry",
+      "uncertain": [
+       "strefflein"
+      ]
+     },
+     {
+      "text": "It iiij roeffte pett in der vntern hell",
+      "kind": "entry",
+      "uncertain": [
+       "roeffte"
+      ]
+     },
+     {
+      "text": "It iij gesteumbte pett",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbte"
+      ]
+     },
+     {
+      "text": "It iij polster mit roeffen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "roeffen"
+      ]
+     },
+     {
+      "text": "It ain kiss mit roeffen zwiech",
+      "kind": "entry",
+      "uncertain": [
+       "roeffen"
+      ]
+     },
+     {
+      "text": "Die nyn obigen sind",
+      "kind": "entry",
+      "uncertain": [
+       "nyn"
+      ]
+     },
+     {
+      "text": "It iiij gesteumbte polster",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbte"
+      ]
+     },
+     {
+      "text": "It I deck",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It iij deck die nit vberzoget sind",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "It v gesteumbte küss",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbte"
+      ]
+     },
+     {
+      "text": "It I pett mit rauchem vberzog in",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "der waghcell",
+      "kind": "entry",
+      "uncertain": [
+       "waghcell"
+      ]
+     },
+     {
+      "text": "It I gesteumbter polster",
+      "kind": "entry",
+      "uncertain": [
+       "gesteumbter"
+      ]
+     },
+     {
+      "text": "It I roefft kiss",
+      "kind": "entry",
+      "uncertain": [
+       "roefft"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "Inuentarj etlichs haussrats",
+  "durch Hannsen Ramung",
+  "Burckhgraffenn an Trosperg",
+  "auf dem sloss Tgaras vber-",
+  "genomenn an mitwochen",
+  "vor Sand Virgili tag",
+  "Anno dñi rc lxvij°",
+  "Item in meins g. hern kamer",
+  "It I pett",
+  "It I polster",
+  "It ij küss",
+  "It iiij rauhe deckhe",
+  "It I pofft strosack",
+  "It iij pett in der vordern celen",
+  "ob der grossen stuben",
+  "It I strosack",
+  "It ij polster",
+  "It ij rauche deck",
+  "It iiij pett in der andern celen",
+  "It ij strosack",
+  "It ij polster",
+  "It ain kiss",
+  "It I rauche deck",
+  "in derselben",
+  "It I pett mit parchem vberzogn",
+  "in derselben celen",
+  "It I kiss",
+  "It I polster",
+  "It iij deck",
+  "It I armbrost darumb sind",
+  "zway strefflein",
+  "It iiij roeffte pett in der vntern hell",
+  "It iij gesteumbte pett",
+  "It iij polster mit roeffen zwiech",
+  "It ain kiss mit roeffen zwiech",
+  "Die nyn obigen sind",
+  "It iiij gesteumbte polster",
+  "It I deck",
+  "It iij deck die nit vberzoget sind",
+  "It v gesteumbte küss",
+  "It I pett mit rauchem vberzog in",
+  "der waghcell",
+  "It I gesteumbter polster",
+  "It I roefft kiss"
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "page": "inv_11330019_p3",
+ "iteration": "it01",
+ "repeat": 5,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "dd1cccc6e2cffc69",
+ "fewshot": false,
+ "image_info": [
+  {
+   "source_px": [
+    1030,
+    2754
+   ],
+   "sent_px": [
+    1030,
+    2754
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 8.7,
+ "timestamp": "2026-08-26T20:22:50+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "1r",
+    "lines": [
+     {
+      "text": "1478",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "( L. 109 )",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "f. 109.",
+      "kind": "marginal",
+      "uncertain": []
+     },
+     {
+      "text": "1478",
+      "kind": "rubric",
+      "uncertain": []
+     },
+     {
+      "text": "Trauburg",
+      "kind": "entry",
+      "uncertain": [
+       "Trauburg"
+      ]
+     },
+     {
+      "text": "Kranich-",
+      "kind": "entry",
+      "uncertain": [
+       "Kranich-"
+      ]
+     },
+     {
+      "text": "berg",
+      "kind": "entry",
+      "uncertain": [
+       "berg"
+      ]
+     },
+     {
+      "text": "Inuentar",
+      "kind": "entry",
+      "uncertain": [
+       "Inuentar"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1478",
+  "( L. 109 )",
+  "f. 109.",
+  "1478",
+  "Trauburg",
+  "Kranich-",
+  "berg",
+  "Inuentar"
+ ]
+}
