@@ -9,6 +9,7 @@ Data flow (repo-local only, no network):
   docs/data/sources.json             archival metadata (shelfmark, title, dating)
   docs/data/transkribus_status.json  page-status distribution (DONE = corrected)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
+  docs/data/demo/thaur_entities.json prototype named entities of one document
 
 Writes:
   docs/data/tei/<docId>.xml          one file per document with has_text
@@ -26,6 +27,15 @@ Design decisions:
   <p> the source has not been read for. Transkribus text regions are flattened in
   this baseline (lines in reading order of the export); preserving them would mean
   one <ab> per region and is the upgrade path once region types are curated.
+  Every line of a page becomes a <zone> under the surface of that page, and the
+  <lb> of the line points at it, so text and image region stay bound. Zones and
+  lb come from the same iteration over the export, which keeps them in step.
+  The entity layer exists for the one demo document that has a prototype
+  extraction. It is encoded only where the anchor is deterministic, meaning the
+  entity names its line and its surface form occurs there verbatim exactly once;
+  everything else is reported as unencoded instead of being placed by guesswork.
+  The layer carries its own responsibility statement and no certainty attribute,
+  because a confidence value of the extracting agent is not evidence.
   Nothing is invented: an element whose data is absent is omitted rather than
   filled with a placeholder.
   Every file carries its work-step provenance in the header, following the ZBZ
@@ -93,6 +103,16 @@ CORRECTED, PARTLY, MACHINE = (
 # may carry it, because a responsibility declaration asserts a step that ran.
 RESP_TRANSKRIBUS = "resp-transkribus-layer"
 RESP_GENERATION = "resp-tei-generation"
+RESP_ENTITY = "resp-entity-llm"
+
+# Prototype named entities of a single document. The file names the docId it
+# belongs to, so no other document can pick the layer up by accident.
+ENTITY_FILE = DATA / "demo" / "thaur_entities.json"
+
+# Entity types the encoding covers; a type outside this map stays unencoded
+# rather than being forced into an element that does not fit it.
+ENTITY_ELEMENTS = {
+    "person": "persName", "place": "placeName", "object": "objectName"}
 
 
 def _load(path: Path) -> Any:
@@ -130,7 +150,7 @@ def _correction(done_pages: int | None, pages: int | None) -> str:
     return CORRECTED if done_pages >= pages else PARTLY
 
 
-def _resp_stmts(doc: dict, indent: str) -> list[str]:
+def _resp_stmts(doc: dict, indent: str, entities: bool = False) -> list[str]:
     """One respStmt per work step that actually happened for this document."""
     state = doc["correction"]
     if state == CORRECTED:
@@ -150,9 +170,14 @@ def _resp_stmts(doc: dict, indent: str) -> list[str]:
         actor = "Transkribus"
     generation = ("Deterministic TEI generation from the Transkribus export,"
                   " without editorial judgment")
-    steps = ((RESP_TRANSKRIBUS, layer, actor),
+    steps = [(RESP_TRANSKRIBUS, layer, actor),
              (RESP_GENERATION, generation,
-              f"pipeline/build_tei.py (sha256 {script_digest()})"))
+              f"pipeline/build_tei.py (sha256 {script_digest()})")]
+    if entities:
+        steps.append((RESP_ENTITY,
+                      "Named-entity extraction by an LLM agent in the prototype"
+                      " phase, informally reviewed, not verified by a scholar",
+                      "DoCTA prototype extraction"))
     out = []
     for resp_id, resp, name in steps:
         out += [f'{indent}<respStmt xml:id="{resp_id}">',
@@ -162,7 +187,7 @@ def _resp_stmts(doc: dict, indent: str) -> list[str]:
     return out
 
 
-def _editorial_decl(state: str, indent: str) -> list[str]:
+def _editorial_decl(state: str, indent: str, entities: bool = False) -> list[str]:
     """State-dependent editorial declaration; never asserts a step that did not run."""
     if state == MACHINE:
         first = ("The text of this file is unrevised machine transcription."
@@ -184,9 +209,15 @@ def _editorial_decl(state: str, indent: str) -> list[str]:
     second = ("Transcription is diplomatic: the wording and spelling of the"
               " source are kept, nothing is normalised, expanded or corrected,"
               " and lineation follows the source, one lb per written line.")
-    return [f"{indent}<editorialDecl>",
-            f"{indent}  <p>{first} {second}</p>",
-            f"{indent}</editorialDecl>"]
+    out = [f"{indent}<editorialDecl>",
+           f"{indent}  <p>{first} {second}</p>"]
+    if entities:
+        out.append(f"{indent}  <p>The named entities marked in this file are an"
+                   " unverified extraction by an LLM agent from the prototype"
+                   " phase; they have not been checked against the source by a"
+                   " scholar and carry no claim of correctness.</p>")
+    out.append(f"{indent}</editorialDecl>")
+    return out
 
 
 def _origdate(dating: dict) -> str | None:
@@ -233,7 +264,7 @@ def _ms_identifier(signatur: str, doc_id: int, indent: str) -> list[str]:
     return out
 
 
-def _header(doc: dict, date: str) -> list[str]:
+def _header(doc: dict, date: str, entities: bool = False) -> list[str]:
     title = (doc.get("title") or "").strip()
     signatur = doc["shelfmark"]
     category = (doc.get("category") or "").strip()
@@ -243,7 +274,7 @@ def _header(doc: dict, date: str) -> list[str]:
     if title:
         out.append(f'        <title type="main">{_esc(title)}</title>')
     out.append(f'        <title type="shelfmark">{_esc(signatur)}</title>')
-    out += _resp_stmts(doc, "        ")
+    out += _resp_stmts(doc, "        ", entities)
     out += ["      </titleStmt>",
             "      <publicationStmt>",
             f"        <publisher>{_esc(PUBLISHER)}</publisher>",
@@ -269,7 +300,7 @@ def _header(doc: dict, date: str) -> list[str]:
             " Tyrolean territorial administration; this file is produced by the"
             " project's agentic edition pipeline from the Transkribus export.</p>",
             "      </projectDesc>"]
-    out += _editorial_decl(doc["correction"], "      ")
+    out += _editorial_decl(doc["correction"], "      ", entities)
     if category:
         out += ['      <classDecl>',
                 '        <taxonomy xml:id="docta-category">',
@@ -312,8 +343,13 @@ def _facsimile(pages: list[dict], doc_id: int) -> list[str]:
     for page in surfaces:
         out += [f'    <surface xml:id="{_att(_surface_id(doc_id, page))}"'
                 f' n="{page["pageNr"]}">',
-                f'      <graphic url="{_att(page["iiif"])}"/>',
-                "    </surface>"]
+                f'      <graphic url="{_att(page["iiif"])}"/>']
+        for line in _line_records(page):
+            if points := (line.get("coords") or "").strip():
+                zone = _zone_id(doc_id, page["pageNr"], line["id"])
+                out.append(f'      <zone xml:id="{_att(zone)}"'
+                           f' points="{_att(points)}"/>')
+        out.append("    </surface>")
     out.append("  </facsimile>")
     return out
 
@@ -322,40 +358,137 @@ def _surface_id(doc_id: int, page: dict) -> str:
     return f"surface-{doc_id}-{page['pageNr']}"
 
 
-def _page_body(page: dict, doc_id: int) -> list[str]:
+def _zone_id(doc_id: int, page_nr: int, line_id: str) -> str:
+    return f"zone-{doc_id}-{page_nr}-{line_id}"
+
+
+def _page_body(page: dict, doc_id: int, anchors: dict) -> list[str]:
     pb = f'<pb n="{page["pageNr"]}"'
-    if page.get("iiif"):
+    has_surface = bool(page.get("iiif"))
+    if has_surface:
         pb += f' facs="#{_att(_surface_id(doc_id, page))}"'
     out = ["      <ab>", f"        {pb}/>"]
-    for text in _lines(page):
+    for line in _line_records(page):
+        text = (line.get("text") or "").strip()
         if m := FOLIO_LINE.match(text):
             out.append(f'        <milestone unit="folio" n="{_att(m.group(1))}"/>')
         elif m := COVER_LINE.match(text):
             out.append(f'        <milestone unit="cover" n="{_att(m.group(1))}"/>')
         else:
-            out.append(f"        <lb/>{_esc(text)}")
+            # The lb points at a zone only where that zone was actually
+            # emitted, which needs both a surface for the page and coordinates
+            # for the line; a dangling facs reference is worse than none.
+            lb = "<lb/>"
+            if has_surface and (line.get("coords") or "").strip():
+                zone = _zone_id(doc_id, page["pageNr"], line["id"])
+                lb = f'<lb facs="#{_att(zone)}"/>'
+            content = _line_content(text, anchors.get(line["id"]) or [])
+            out.append(f"        {lb}{content}")
     out.append("      </ab>")
     return out
 
 
-def _lines(page: dict) -> list[str]:
-    """Line texts of a page in export order; regions are flattened."""
-    return [(line.get("text") or "").strip()
+def _line_records(page: dict) -> list[dict]:
+    """Line records of a page in export order; regions are flattened.
+
+    Single source of the page-to-line iteration, so zone, lb and entity anchor
+    are derived from the same order and cannot drift apart.
+    """
+    return [line
             for region in page.get("regions") or []
             for line in region.get("lines") or []]
 
 
-def document_xml(doc: dict, pages: list[dict], date: str) -> str:
+def _lines(page: dict) -> list[str]:
+    """Line texts of a page in export order; regions are flattened."""
+    return [(line.get("text") or "").strip() for line in _line_records(page)]
+
+
+def _line_content(text: str, anchors: list[dict]) -> str:
+    """Line text with the entity anchors of that line wrapped inline.
+
+    Escaping is safe by construction: every substring of the raw line passes
+    through _esc before it enters the output, the key through _att, and the
+    element names come from ENTITY_ELEMENTS, so no raw character can escape
+    into markup. Anchors are applied left to right and an anchor overlapping an
+    already consumed span is dropped, which keeps the result deterministic.
+    """
+    if not anchors:
+        return _esc(text)
+    out, pos = [], 0
+    for anchor in sorted(anchors, key=lambda a: a["start"]):
+        if anchor["start"] < pos:
+            continue
+        element = anchor["element"]
+        out += [_esc(text[pos:anchor["start"]]),
+                f'<{element} resp="#{RESP_ENTITY}" key="{_att(anchor["key"])}">',
+                _esc(text[anchor["start"]:anchor["end"]]),
+                f"</{element}>"]
+        pos = anchor["end"]
+    out.append(_esc(text[pos:]))
+    return "".join(out)
+
+
+def _entity_anchors(doc_id: int, pages: list[dict]
+                    ) -> tuple[dict[int, dict[str, list[dict]]],
+                               list[tuple[str, str]]]:
+    """Deterministic inline anchors for the prototype entity layer.
+
+    Returns the anchors per page and line, plus the entities that were not
+    encoded with the reason each one failed. An entity is encoded only when it
+    names a line of this document and its surface form occurs in that line
+    verbatim exactly once; a second occurrence makes the position ambiguous and
+    guessing one would assert a reading that was never established.
+    """
+    if not ENTITY_FILE.exists():
+        return {}, []
+    data = _load(ENTITY_FILE)
+    if data.get("docId") != doc_id:
+        return {}, []
+    texts = {(page["pageNr"], line["id"]): (line.get("text") or "").strip()
+             for page in pages for line in _line_records(page)}
+    anchors: dict[int, dict[str, list[dict]]] = {}
+    skipped: list[tuple[str, str]] = []
+    for entity in data.get("entities") or []:
+        line_id = entity.get("lineId")
+        page_nr = entity.get("pageNr")
+        element = ENTITY_ELEMENTS.get(entity.get("type"))
+        surface = entity.get("text") or ""
+        text = texts.get((page_nr, line_id))
+        if not line_id:
+            skipped.append((entity["id"], "no line reference"))
+        elif element is None:
+            skipped.append((entity["id"],
+                            f"type not encoded ({entity.get('type')})"))
+        elif text is None:
+            skipped.append((entity["id"], "line reference not in the export"))
+        elif not surface or text.count(surface) != 1:
+            skipped.append((entity["id"],
+                            "surface form not exactly once in the line"))
+        else:
+            start = text.index(surface)
+            anchors.setdefault(page_nr, {}).setdefault(line_id, []).append(
+                {"start": start, "end": start + len(surface),
+                 "element": element,
+                 "key": entity.get("normalized") or surface})
+    return anchors, skipped
+
+
+def document_xml(doc: dict, pages: list[dict], date: str,
+                 anchors: dict | None = None) -> str:
     doc_id = doc["docId"]
+    anchors = anchors or {}
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<TEI xmlns="http://www.tei-c.org/ns/1.0"'
            f' xml:id="docta-{doc_id}">']
-    out += _header(doc, date)
+    out += _header(doc, date, bool(anchors))
     out += _facsimile(pages, doc_id)
     out += [f'  <text xml:lang="{TEXT_LANG}">', "    <body>",
             '      <div type="transcription">']
     for page in pages:
-        out += ["  " + line for line in _page_body(page, doc_id)]
+        page_anchors = anchors.get(page["pageNr"]) or {}
+        out += ["  " + line
+                for line in _page_body(page, doc_id, page_anchors)]
     out += ["      </div>", "    </body>", "  </text>", "</TEI>", ""]
     return "\n".join(out)
 
@@ -405,7 +538,12 @@ def build(out_dir: Path, date: str = GENERATION_DATE) -> dict[int, str]:
                   file=sys.stderr)
             continue
         pages = sorted(_load(export)["pages"], key=lambda p: p["pageNr"])
-        xml = document_xml(doc, pages, date)
+        anchors, skipped = _entity_anchors(doc_id, pages)
+        if skipped:
+            print(f"ENTITIES {doc_id}: {len(skipped)} nicht kodiert", file=sys.stderr)
+            for entity_id, reason in skipped:
+                print(f"  {entity_id}: {reason}", file=sys.stderr)
+        xml = document_xml(doc, pages, date, anchors)
         ElementTree.fromstring(xml)  # fail fast on a malformed template result
         result[doc_id] = xml
     for doc_id, xml in result.items():

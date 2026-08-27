@@ -25,6 +25,12 @@ SAMPLES = (11327963, 11328042)
 FULLY_CORRECTED = (11328300, 11330019, 11330020)
 MACHINE_SAMPLE = 11327963
 
+# the one document with a prototype entity extraction, and a document without
+DEMO_DOC = 11328300
+NON_DEMO_DOC = 11327963
+
+XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
+
 
 def _built() -> dict[int, str]:
     with tempfile.TemporaryDirectory() as td:
@@ -113,9 +119,72 @@ def test_header_carries_the_archival_identity() -> None:
             assert origdate is None, f"origDate invented in {doc_id}"
 
 
+def test_zone_per_line_with_coordinates() -> None:
+    """Every exported line with coordinates gets one zone under its surface."""
+    built = _built()
+    for doc_id in SAMPLES:
+        export = bt._load(bt.DATA / "transcriptions" / f"{doc_id}.json")
+        expected = [(page["pageNr"], line["id"], line["coords"])
+                    for page in sorted(export["pages"], key=lambda p: p["pageNr"])
+                    if page.get("iiif")
+                    for line in bt._line_records(page)
+                    if (line.get("coords") or "").strip()]
+        root = ElementTree.fromstring(built[doc_id])
+        zones = [(z.get(XML_ID), z.get("points"))
+                 for z in root.iter(f"{TEI}zone")]
+        assert zones == [(f"zone-{doc_id}-{nr}-{lid}", coords)
+                         for nr, lid, coords in expected], \
+            f"zone set differs in {doc_id}"
+
+
+def test_every_lb_facs_resolves_to_a_zone() -> None:
+    built = _built()
+    for doc_id, xml in built.items():
+        root = ElementTree.fromstring(xml)
+        ids = {z.get(XML_ID) for z in root.iter(f"{TEI}zone")}
+        bound = 0
+        for lb in root.iter(f"{TEI}lb"):
+            facs = lb.get("facs")
+            if facs is None:
+                continue
+            bound += 1
+            assert facs.startswith("#") and facs[1:] in ids, \
+                f"dangling lb facs {facs} in {doc_id}"
+        assert bound, f"no lb bound to a zone in {doc_id}"
+
+
+def test_entity_layer_only_in_the_demo_document() -> None:
+    built = _built()
+    demo = ElementTree.fromstring(built[DEMO_DOC])
+    assert bt.RESP_ENTITY in _resp_ids(demo), "entity respStmt missing in demo"
+    names = [pn for pn in demo.iter(f"{TEI}persName")
+             if pn.get("resp") == f"#{bt.RESP_ENTITY}"]
+    assert names, "no persName bound to the entity responsibility"
+    assert all(pn.get("key") and pn.text for pn in names), \
+        "persName without key or content"
+    decl = "".join(demo.find(f".//{TEI}editorialDecl").itertext())
+    assert "unverified extraction by an LLM agent" in decl
+
+    other = ElementTree.fromstring(built[NON_DEMO_DOC])
+    assert bt.RESP_ENTITY not in _resp_ids(other), "entity respStmt leaked"
+    assert bt.RESP_ENTITY not in built[NON_DEMO_DOC]
+    for tag in ("persName", "placeName", "objectName"):
+        assert not list(other.iter(f"{TEI}{tag}")), f"{tag} leaked into {NON_DEMO_DOC}"
+
+
+def test_no_certainty_attribute_anywhere() -> None:
+    """The extraction reports a confidence; the encoding must not repeat it."""
+    built = _built()
+    for doc_id, xml in built.items():
+        root = ElementTree.fromstring(xml)
+        for element in root.iter():
+            assert "cert" not in element.attrib, \
+                f"cert on {element.tag} in {doc_id}"
+        assert "<certainty" not in xml, f"certainty element in {doc_id}"
+
+
 def _resp_ids(root: ElementTree.Element) -> list[str]:
-    xml_id = "{http://www.w3.org/XML/1998/namespace}id"
-    return [r.get(xml_id) for r in root.iter(f"{TEI}respStmt")]
+    return [r.get(XML_ID) for r in root.iter(f"{TEI}respStmt")]
 
 
 def _changes(root: ElementTree.Element) -> dict[str, ElementTree.Element]:
@@ -127,8 +196,10 @@ def test_every_document_declares_its_work_steps() -> None:
     built = _built()
     for doc_id, xml in built.items():
         root = ElementTree.fromstring(xml)
-        assert _resp_ids(root) == [bt.RESP_TRANSKRIBUS, bt.RESP_GENERATION], \
-            f"respStmt ids differ in {doc_id}"
+        expected = [bt.RESP_TRANSKRIBUS, bt.RESP_GENERATION]
+        if doc_id == DEMO_DOC:
+            expected.append(bt.RESP_ENTITY)
+        assert _resp_ids(root) == expected, f"respStmt ids differ in {doc_id}"
         assert "resp-expert-verification" not in xml, \
             f"verification claimed in {doc_id}"
         names = [n.text for n in root.iter(f"{TEI}name")]
