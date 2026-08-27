@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-26T20:24:39+00:00",
+ "generated": "2026-08-27T05:38:53+00:00",
  "model": "gemini-3.7-flash",
  "pages": {
   "rb2_p003": {
@@ -11,9 +11,17 @@
     "summa",
     "beidseitig"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/NZLKHSGPPSRNYJOODRHTOBER/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p003__it01__r1.json",
+      "rb2_p003__it01__r2.json",
+      "rb2_p003__it01__r3.json"
+     ],
      "lines": [
       32,
       32,
@@ -28,17 +36,24 @@
      "consistency_numbers": 0.357
     },
     "it02": {
-     "k": 2,
+     "k": 3,
+     "runs": [
+      "rb2_p003__it02__r1.json",
+      "rb2_p003__it02__r2.json",
+      "rb2_p003__it02__r3.json"
+     ],
      "lines": [
+      36,
       32,
       35
      ],
      "uncertain": [
+      47,
       74,
       31
      ],
-     "consistency_words": 0.722,
-     "consistency_numbers": 0.8
+     "consistency_words": 0.744,
+     "consistency_numbers": 0.817
     }
    }
   },
@@ -49,9 +64,17 @@
     "unterstrichene-betraege",
     "zahlenkolonnen"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/BVMETMRKBYZJTLHFCURWAFHK/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p028__it01__r1.json",
+      "rb2_p028__it01__r2.json",
+      "rb2_p028__it01__r3.json"
+     ],
      "lines": [
       35,
       35,
@@ -67,6 +90,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p028__it02__r1.json",
+      "rb2_p028__it02__r2.json",
+      "rb2_p028__it02__r3.json"
+     ],
      "lines": [
       41,
       40,
@@ -89,9 +117,17 @@
     "verblasste-rubrik",
     "waehrung-mark"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/XXMJRPTJISTDOPHKTXWAOZKB/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p040__it01__r1.json",
+      "rb2_p040__it01__r2.json",
+      "rb2_p040__it01__r3.json"
+     ],
      "lines": [
       24,
       23,
@@ -107,6 +143,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p040__it02__r1.json",
+      "rb2_p040__it02__r2.json",
+      "rb2_p040__it02__r3.json"
+     ],
      "lines": [
       24,
       24,
@@ -130,9 +171,17 @@
     "zwei-textebenen",
     "fremde-hand"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/KODLSJHNUDENMQQEVAUBQUGY/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p061__it01__r1.json",
+      "rb2_p061__it01__r2.json",
+      "rb2_p061__it01__r3.json"
+     ],
      "lines": [
       48,
       45,
@@ -148,6 +197,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p061__it02__r1.json",
+      "rb2_p061__it02__r2.json",
+      "rb2_p061__it02__r3.json"
+     ],
      "lines": [
       48,
       48,
@@ -170,9 +224,17 @@
     "erledigungsstrich",
     "zahlenkolonnen"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/FVLICSDDSSCCQMLFFKFTGBAM/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p076__it01__r1.json",
+      "rb2_p076__it01__r2.json",
+      "rb2_p076__it01__r3.json"
+     ],
      "lines": [
       32,
       31,
@@ -188,6 +250,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p076__it02__r1.json",
+      "rb2_p076__it02__r2.json",
+      "rb2_p076__it02__r3.json"
+     ],
      "lines": [
       32,
       32,
@@ -208,9 +275,17 @@
    "phenomena": [
     "leer-negativkontrolle"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/EVIDDDOHJESDYFSRDJVIHXVI/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p090__it01__r1.json",
+      "rb2_p090__it01__r2.json",
+      "rb2_p090__it01__r3.json"
+     ],
      "lines": [
       1,
       1,
@@ -226,6 +301,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p090__it02__r1.json",
+      "rb2_p090__it02__r2.json",
+      "rb2_p090__it02__r3.json"
+     ],
      "lines": [
       1,
       1,
@@ -248,9 +328,17 @@
     "verso-nur-geistertext",
     "handwechsel"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/FCCTBHPNKQBSXYURUTFYPZLF/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p099__it01__r1.json",
+      "rb2_p099__it01__r2.json",
+      "rb2_p099__it01__r3.json"
+     ],
      "lines": [
       24,
       26,
@@ -266,6 +354,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p099__it02__r1.json",
+      "rb2_p099__it02__r2.json",
+      "rb2_p099__it02__r3.json"
+     ],
      "lines": [
       26,
       26,
@@ -289,9 +382,17 @@
     "zwei-haende",
     "siegel"
    ],
+   "source": "raitbuch2",
+   "iiif": "https://files.transkribus.eu/iiif/2/BDPGLDAYNCQECDQYOGHNXQVZ/full/max/0/default.jpg",
+   "spread": true,
    "iterations": {
     "it01": {
      "k": 3,
+     "runs": [
+      "rb2_p113__it01__r1.json",
+      "rb2_p113__it01__r2.json",
+      "rb2_p113__it01__r3.json"
+     ],
      "lines": [
       75,
       74,
@@ -307,6 +408,11 @@
     },
     "it02": {
      "k": 3,
+     "runs": [
+      "rb2_p113__it02__r1.json",
+      "rb2_p113__it02__r2.json",
+      "rb2_p113__it02__r3.json"
+     ],
      "lines": [
       76,
       75,
@@ -330,9 +436,19 @@
     "blasse-tinte",
     "item-zeilen"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/EUMSRNPRFDGNNBBJVELBDIVJ/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p1__it01__r1.json",
+      "inv_11328300_p1__it01__r2.json",
+      "inv_11328300_p1__it01__r3.json",
+      "inv_11328300_p1__it01__r4.json",
+      "inv_11328300_p1__it01__r5.json"
+     ],
      "lines": [
       44,
       44,
@@ -362,6 +478,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p1__it02__r1.json",
+      "inv_11328300_p1__it02__r2.json",
+      "inv_11328300_p1__it02__r3.json",
+      "inv_11328300_p1__it02__r4.json",
+      "inv_11328300_p1__it02__r5.json"
+     ],
      "lines": [
       44,
       43,
@@ -389,7 +512,53 @@
      "consistency_words": 0.561,
      "consistency_numbers": 0.547
     }
-   }
+   },
+   "gt_lines": [
+    "[1r]",
+    "Inventori etlichs hawsrats",
+    "durch Hannsen Ramung,",
+    "Burkharten von Knoringen",
+    "auf dem sloss Thawr ũber",
+    "geantwurt an mitichen",
+    "vor Sand Michels tag",
+    "anno Domini etc. LXXImo",
+    "Item in meins gnedigen hern kamer",
+    "I pett.",
+    "Item I polster.",
+    "Item II dekhen.",
+    "Item II polster strosekh.",
+    "Item II pett in dem vordristen erkger",
+    "ob der grossen stuben.",
+    "Item I strosakh.",
+    "Item II polster.",
+    "Item I rawhe dekhen.",
+    "Item IIII pott in dem andern erkger.",
+    "Item II strosekh.",
+    "Item II polster.",
+    "Item III kuss.",
+    "Item I rawhe dekhen.",
+    "Item IIII dekhen.",
+    "Item I pett mit parchant uberzogen.",
+    "In Velbergers erkger.",
+    "Item I kuss.",
+    "Item I polster.",
+    "Item IIII dekhen.",
+    "Item XX armbrost darunder sind",
+    "zweÿ stãhlein.",
+    "Item IIII weÿsse pett in der ynnren hall.",
+    "Item III gestreimbte pett.",
+    "Item III polster mit weissen ziechen.",
+    "Item XIII kuss mit weyssen ziechen",
+    "die nit uberczogen sind.",
+    "Item IIII gestreimbte polster.",
+    "Item VI dekhen.",
+    "Item III dekhen, die nit iii fl wart sind.",
+    "Item V gestreimbt kuss.",
+    "Item I pett mit weissem uberzogen in",
+    "der vorhell.",
+    "Item I gestreimbter polster.",
+    "Item I weiss kuss."
+   ]
   },
   "inv_11328300_p2": {
    "folio": "A 049.1 fol. 1v",
@@ -398,9 +567,19 @@
     "maximale-zeilendichte",
     "lesereihenfolge"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/BGZMCIJJXSDNUGIRLDTNVSLO/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p2__it01__r1.json",
+      "inv_11328300_p2__it01__r2.json",
+      "inv_11328300_p2__it01__r3.json",
+      "inv_11328300_p2__it01__r4.json",
+      "inv_11328300_p2__it01__r5.json"
+     ],
      "lines": [
       85,
       86,
@@ -430,6 +609,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p2__it02__r1.json",
+      "inv_11328300_p2__it02__r2.json",
+      "inv_11328300_p2__it02__r3.json",
+      "inv_11328300_p2__it02__r4.json",
+      "inv_11328300_p2__it02__r5.json"
+     ],
      "lines": [
       85,
       85,
@@ -457,16 +643,111 @@
      "consistency_words": 0.482,
      "consistency_numbers": 0.691
     }
-   }
+   },
+   "gt_lines": [
+    "[1v]",
+    "Item I gestreimbts kũss.",
+    "Item II dekhen.",
+    "Item I pott mit weissem uberzogen in",
+    "der hern kamer.",
+    "Item II gestreimbt polster.",
+    "Item IIII gestreimbt kũss.",
+    "Item II strosekh.",
+    "Item I pett mit ainem gestreimbten ziechen.",
+    "Item I gestreimbt polster.",
+    "Item II weisse kuss.",
+    "Item II dekhen.",
+    "Item I rawhe dekhen.",
+    "Item I weis pett auf dem erkger ob dem tor.",
+    "Item I weissen polster.",
+    "Item II gestreimbte kuss.",
+    "Item III dekhen.",
+    "Item I rawhe dekhen ist nichts wert.",
+    "Item II pratspise in der kuchin.",
+    "Item I rost.",
+    "Item I drÿfuss.",
+    "Ist item XIX hantpuchsen in der harnasch",
+    "kamer.",
+    "Ist item IIII hakgenpuchsen.",
+    "Ist item I michle, kũphren pũchsen.",
+    "Ist item VII eÿsnnen und kuphren puchsen.",
+    "Item etleicher alter harnasch.",
+    "Item I õllkessel gestet XXVI lb perner",
+    "ist gen",
+    "hoff komen.",
+    "Item II kussziechen.",
+    "Den hienachgeschriben hawsrat",
+    "hat der burkraff meinem",
+    "gnedigen herrn zekawffen gegeben.",
+    "Item I segens daman das mit mẽt.",
+    "Item III hakhen.",
+    "Item I eÿsnen wekg.",
+    "Item III eÿsnen mistgabelen.",
+    "Item I temgelgeschier.",
+    "Item I rakgawn.",
+    "Item I stromesser.",
+    "Item I pachtrog.",
+    "Item I wurchpret.",
+    "2[r]",
+    "Item II spanpett.",
+    "Item II sÿdeltruhen.",
+    "Item I strosakh.",
+    "Item III stũel.",
+    "Item I grosser melkasten.",
+    "Item I futerkasten.",
+    "Item II padwannen.",
+    "Item I slittruhen.",
+    "Item II holzslÿten.",
+    "Item I alte lagel.",
+    "Item I fleÿsch peÿl.",
+    "Item I speÿskasten.",
+    "Item XIX krawtprenten.",
+    "Item IIII kessel, klain und gross.",
+    "Item XI phannen.",
+    "Item XVII hulzen schusselen.",
+    "Item I wiltpret vãssel.",
+    "Item II futer wannen.",
+    "Item I alten tẽllerkorb.",
+    "Item X V komat zun rossen hat",
+    "der Kneringer hin.",
+    "Item III zam hat der kneringer hin.",
+    "Item I ganzen wagen.",
+    "Item II phlũg.",
+    "Item II kessel sind in dr albon.",
+    "Vermerkht der",
+    "Beatrix gut.",
+    "Item III pett.",
+    "Item I strosakh.",
+    "Item aber III pett.",
+    "Item I strosakh.",
+    "Item II pettpõlster.",
+    "Item II lydren pankhpolster.",
+    "Item III lydrein pankhkuss.",
+    "Item VI kuss.",
+    "Item III dekhen.",
+    "Item XIIII beslagen loffel in ainem",
+    "futral.",
+    "Item beÿ IIII ellen swãbischer zwilch."
+   ]
   },
   "inv_11328300_p3": {
    "folio": "A 049.1 S. 3",
    "phenomena": [
     "gt-anker"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/XQVAYIVKNFWKDBDXBLPKGNEH/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p3__it01__r1.json",
+      "inv_11328300_p3__it01__r2.json",
+      "inv_11328300_p3__it01__r3.json",
+      "inv_11328300_p3__it01__r4.json",
+      "inv_11328300_p3__it01__r5.json"
+     ],
      "lines": [
       58,
       58,
@@ -496,6 +777,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p3__it02__r1.json",
+      "inv_11328300_p3__it02__r2.json",
+      "inv_11328300_p3__it02__r3.json",
+      "inv_11328300_p3__it02__r4.json",
+      "inv_11328300_p3__it02__r5.json"
+     ],
      "lines": [
       58,
       58,
@@ -523,16 +811,87 @@
      "consistency_words": 0.461,
      "consistency_numbers": 0.463
     }
-   }
+   },
+   "gt_lines": [
+    "[fol.2v]",
+    "Item I pett in des Velbergers kamer.",
+    "Item I dekh pett.",
+    "Item I dekhen mit sÿdn genant.",
+    "Item I sakh mit garen.",
+    "Item I rawhe dekhen.",
+    "Item XII par leÿlach in ainer truhen.",
+    "Item IIII1/2 padphaiten.",
+    "Item VI underphaiten.",
+    "Item V schũrliz.",
+    "Item II kusstziechen.",
+    "Item I polstertziechen.",
+    "Item V tischtũcher.",
+    "Item VIIII hannttũcher.",
+    "Item IIII messen padpekh.",
+    "Item XII zÿnen teller.",
+    "Item XII kandeln gross und klain,",
+    "mitsambt der hangenden kandl",
+    "und ainer plechflachen.",
+    "Item I salzvassel.",
+    "Item I messen gieskãndl.",
+    "Item XIX zinen schusselen gross",
+    "und klain.",
+    "Item I hulczen tellerpuchsen mit telleren.",
+    "Item XII tischtũcher.",
+    "Item IIII hanttucher.",
+    "Item I trũhel darin vil zenicht brief",
+    "und ander zenicht ding ligt.",
+    "Bey solcher invetari sind ge",
+    "wesen: Jörg Randorffer meins",
+    "gnedigen herrn hawskamrer, Hanns",
+    "Wÿser secretari, Jacob Haws",
+    "man, Michel Awer bede birger",
+    "zu Hall, Jorg Bubenhofer",
+    "und Christopf Velberger",
+    "Ich Burkhart von Knŏringen hab",
+    "diss abgeschriben hawsrat allen",
+    "Martin Schintel in gegenwũrtti¬",
+    "khait Hannsen von Elsp und",
+    "Wolfgangen Sumer kamerschraÿbers",
+    "der daz mit seiner aÿgnen hand¬",
+    "geschrifft geschriben hat geantt¬",
+    "wurdt an mittwoch nach unnser",
+    "frawen tag nativitatis anno etc.",
+    "LXX secundo.",
+    "Item ich hab dem Velldenberger geanburt",
+    "ein pett und ein polster nach geschäft meines",
+    "gnedigen herrn.",
+    "[fol.3r]",
+    "Item dem Polinger hab ich geben",
+    "IIII pett und IIII polsteren,",
+    "und VII kchũs und",
+    "ain par leilach, das hät",
+    "der hawskchamrer geschaffen",
+    "und der Leupolt Spies.",
+    "Item ain olcrũeg hat mann",
+    "gen hoff gnommen.",
+    "Item II kraesel sind noch in",
+    "der albem."
+   ]
   },
   "inv_11328300_p4": {
    "folio": "A 049.1 S. 4",
    "phenomena": [
     "gt-anker"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/IDGBALZNDBVSDMQHGLXHBGSK/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p4__it01__r1.json",
+      "inv_11328300_p4__it01__r2.json",
+      "inv_11328300_p4__it01__r3.json",
+      "inv_11328300_p4__it01__r4.json",
+      "inv_11328300_p4__it01__r5.json"
+     ],
      "lines": [
       6,
       5,
@@ -562,6 +921,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11328300_p4__it02__r1.json",
+      "inv_11328300_p4__it02__r2.json",
+      "inv_11328300_p4__it02__r3.json",
+      "inv_11328300_p4__it02__r4.json",
+      "inv_11328300_p4__it02__r5.json"
+     ],
      "lines": [
       5,
       6,
@@ -589,16 +955,31 @@
      "consistency_words": 0.814,
      "consistency_numbers": 0.775
     }
-   }
+   },
+   "gt_lines": [
+    "Inventari zedel",
+    "gen Thawr",
+    "1471"
+   ]
   },
   "inv_11330019_p1": {
    "folio": "A 144.1 S. 1 (Kronburg 1478)",
    "phenomena": [
     "gt-anker"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/BCXWOLWUFVQMQZDZWPLJQNVS/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11330019_p1__it01__r1.json",
+      "inv_11330019_p1__it01__r2.json",
+      "inv_11330019_p1__it01__r3.json",
+      "inv_11330019_p1__it01__r4.json",
+      "inv_11330019_p1__it01__r5.json"
+     ],
      "lines": [
       42,
       42,
@@ -628,6 +1009,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11330019_p1__it02__r1.json",
+      "inv_11330019_p1__it02__r2.json",
+      "inv_11330019_p1__it02__r3.json",
+      "inv_11330019_p1__it02__r4.json",
+      "inv_11330019_p1__it02__r5.json"
+     ],
      "lines": [
       42,
       42,
@@ -655,7 +1043,49 @@
      "consistency_words": 0.617,
      "consistency_numbers": 0.806
     }
-   }
+   },
+   "gt_lines": [
+    "[fol.1r]",
+    "Kronburg",
+    "Vermerkt die farund hab,",
+    "haws plunder und anders auff",
+    "Kronburg, Hannsen Clamer,",
+    "weÿlund phleger, da selbs zu",
+    "gehörig so Joseph Überriner",
+    "an sant meins genedigen herren etc.",
+    "in geschrifft ingenomen hatt an",
+    "freÿtag nach sant Michelstag",
+    "anno LXXVIII.",
+    "Item zum ersten aim kürüss, III",
+    "eÿsenhüt, II par hentschůch, III",
+    "par arm zewg, III par wndere",
+    "bain gwand, II bants, III kragel,",
+    "mer ain armzewg, III schweinspies",
+    "sind nit gevast.",
+    "Item in der stuben und kamer da",
+    "ist ain schribtisch, I grosser schrein,",
+    "darunter lig smid zeug, VI zangen,",
+    "IIII hämer, I veÿhel, I schmidsteck,",
+    "ain schlosser kloben.",
+    "Item mer ain bettstatt darinn ligt",
+    "ain bett, ain bolster, I kuss, II banck",
+    "bolster, III rauch deck.",
+    "Item mer ain messin beck und ain",
+    "messin hantvass, I taller būchß,",
+    "dar sind XXV plandl.",
+    "Mer ligen in ainer bettruchen VII",
+    "blatt schlos und ain gross malen",
+    "sloss.",
+    "Mer vor der kuchin ain trucken",
+    "und ain schaffraitt, II pfannen,",
+    "V erin hafen, III fischkessel.",
+    "Item ain armbrost mit ainer winden",
+    "hat kain sen.",
+    "Item auff der untern wer stett ain",
+    "truch, ain betstatt, dar inn ligt",
+    "ain bett, ain bolster, II leylach, ain",
+    "rauch deck und ain golter."
+   ]
   },
   "inv_11330019_p2": {
    "folio": "A 144.1 S. 2 (zweispaltig)",
@@ -663,9 +1093,19 @@
     "gt-anker",
     "zweispaltig"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/UXFZBFLSWEFOMYMCSZYAPZYS/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11330019_p2__it01__r1.json",
+      "inv_11330019_p2__it01__r2.json",
+      "inv_11330019_p2__it01__r3.json",
+      "inv_11330019_p2__it01__r4.json",
+      "inv_11330019_p2__it01__r5.json"
+     ],
      "lines": [
       67,
       67,
@@ -695,6 +1135,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11330019_p2__it02__r1.json",
+      "inv_11330019_p2__it02__r2.json",
+      "inv_11330019_p2__it02__r3.json",
+      "inv_11330019_p2__it02__r4.json",
+      "inv_11330019_p2__it02__r5.json"
+     ],
      "lines": [
       67,
       67,
@@ -722,16 +1169,96 @@
      "consistency_words": 0.541,
      "consistency_numbers": 0.708
     }
-   }
+   },
+   "gt_lines": [
+    "[fol.1v]",
+    "Item oben im turen ligen VIII",
+    "raissättel gůtt und böst.",
+    "Item wnten in dem gewelem",
+    "sind zwo bettstatt dar inn",
+    "XI bett, ain deckbett, IIII",
+    "bolster, II kuss, III sargen",
+    "und ain golter.",
+    "Item mer im dem selben ge¬",
+    "weltem sind VII gebaist wolf",
+    "hüt, XIIII fr fuschs belg",
+    "mer VII stricken, lanng und",
+    "kurtz.",
+    "Item XIIII zini schisseln, klain",
+    "und grosß, ain zini plan",
+    "und III kessel.",
+    "Item mer in dem selben gewelten",
+    "sind zwo truchen dar inn",
+    "ligt allerlaÿ plunder und māsser¬",
+    "reÿ sind ver bettschafft. Mer",
+    "zuo truchen sind lär. Zwai",
+    "klaine schreinel, II kandelier,",
+    "II tangelgeschiere, III scherren,",
+    "ain gartt gabel, III bratspis,",
+    "zuo sicheln, XV rosseyssen, ochsen",
+    "und esel eyssen.",
+    "Item XXV veld unslit, hültzi",
+    "schisslen klain und gross",
+    "XVI, taller XXVI, zwen bachen",
+    "schweinflaisch, ungeverlich",
+    "zwen spiss gedigen flaisch.",
+    "Item mer III hächelen, ain rüch.",
+    "Mer im untern keller sind IIII",
+    "hawen, II furschleg, V alt gabe-",
+    "len, VI heÿgablen, IIII kessel",
+    "ain czini flaschen und ain",
+    "buttrich.",
+    "Item mer in dem selben keller",
+    "ist ain vass vein, X1/2 uren,",
+    "ist die wenn dar auff gesnitten.",
+    "[fol.2r]",
+    "Item V kanndelen, klain und",
+    "gross.",
+    "Item so ist wntten im vorhoff",
+    "VI küe, zwo kalbelen, zwai",
+    "stierel, ain schwein und ain",
+    "verndzogene kalb, ain",
+    "wagen ross.",
+    "Item mer da selbs III bett, I bolster",
+    "und III eysenstecken.",
+    "Item so hatt der obgemelt Jo¬",
+    "seph auff Kornburg funden",
+    "das meines gnädigen herrn zů siner gnaden",
+    "gslos gehortt.",
+    "Item hagkenpüchsen VIII.",
+    "Mer hagkenpüchsen XXII.",
+    "Mer hagkenpuchsen, sind nit gevast, II.",
+    "Item erin hafen II.",
+    "Item mer handpuchsen, sind nit",
+    "gevast, II.",
+    "Item drÿ legelen mit pfeilen ligen.",
+    "Item gwelem, zwai klaine tarschel.",
+    "Item mer III gross morser puchsen.",
+    "Mer funff morser buchsen und",
+    "III klaine.",
+    "Item der alten armprost ain",
+    "senen XI.",
+    "Item zway vässlÿ mit pulver."
+   ]
   },
   "inv_11330019_p3": {
    "folio": "A 144.1 S. 3",
    "phenomena": [
     "gt-anker"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/NEYETSCLFESBVBQAZLBMBLOW/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11330019_p3__it01__r1.json",
+      "inv_11330019_p3__it01__r2.json",
+      "inv_11330019_p3__it01__r3.json",
+      "inv_11330019_p3__it01__r4.json",
+      "inv_11330019_p3__it01__r5.json"
+     ],
      "lines": [
       7,
       8,
@@ -761,6 +1288,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11330019_p3__it02__r1.json",
+      "inv_11330019_p3__it02__r2.json",
+      "inv_11330019_p3__it02__r3.json",
+      "inv_11330019_p3__it02__r4.json",
+      "inv_11330019_p3__it02__r5.json"
+     ],
      "lines": [
       8,
       7,
@@ -788,7 +1322,13 @@
      "consistency_words": 0.365,
      "consistency_numbers": 1.0
     }
-   }
+   },
+   "gt_lines": [
+    "Inventari zedel",
+    "Kronburg",
+    "Cronburg",
+    "1478"
+   ]
   },
   "inv_11330020_p1": {
    "folio": "A 201.1 fol. 1r (Heinfels 1440)",
@@ -797,9 +1337,19 @@
     "verblasste-blattzone",
     "archivvermerk"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/MEJFQOTLLIGQXVKUCERNSPHH/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11330020_p1__it01__r1.json",
+      "inv_11330020_p1__it01__r2.json",
+      "inv_11330020_p1__it01__r3.json",
+      "inv_11330020_p1__it01__r4.json",
+      "inv_11330020_p1__it01__r5.json"
+     ],
      "lines": [
       47,
       47,
@@ -829,6 +1379,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11330020_p1__it02__r1.json",
+      "inv_11330020_p1__it02__r2.json",
+      "inv_11330020_p1__it02__r3.json",
+      "inv_11330020_p1__it02__r4.json",
+      "inv_11330020_p1__it02__r5.json"
+     ],
      "lines": [
       47,
       47,
@@ -856,7 +1413,55 @@
      "consistency_words": 0.705,
      "consistency_numbers": 0.853
     }
-   }
+   },
+   "gt_lines": [
+    "[fol.1r]",
+    "Zemerkchen die hab und güet so auf dem",
+    "gsloß Hewnfels aus dem geschäft meins gnädgen grafn",
+    "H(einrich) von Görtz und durch den geistlichen",
+    "herren, herren Peteren Plangkhen techant",
+    "zu Innchingen, auch den Chunratt Goltstain",
+    "und Georien Hew̃ssen auf den hewtigen tag",
+    "dato der zödel aigenntlich besicht und beschawt",
+    "ist worden.",
+    "Item in der kamer bey der stuben V pett,",
+    "ain dekhpëtt, zwen hauptpölster, VI",
+    "hauptkuss, ain pangkpolster, II pangkh",
+    "chüss, VII lembrein degkh, alt und new̃,",
+    "X schäffen dëkch, II spanpett, ain kariolen,",
+    "XXIII leylach guete und pöze gezaichent",
+    "und drey truchen, II alte degklach, ain",
+    "padphaitel, ain raucher liechtplabs rökel,",
+    "III tischtücher, IX handttücher gute und",
+    "põse, vier plosse arm(bro)st, ain vadertail,",
+    "II handtschuch, ain eysenhut, i tärthschel",
+    "und ain gambssayl und ain kŏcher.",
+    "Item in meins gnädigen f(ürsten) zimer ist IIII pett, IIII",
+    "hauptpölster, VII hauptküss und ain",
+    "truchen ist verslagen, III spanpett, zwo",
+    "kariolen, III tisch.",
+    "Item in des richters kamer ain pëtt, II",
+    "leylach, ain rauhe dekch, ain polster,",
+    "II chŭss, ain dekchpett, ain altz ge",
+    "streufcz dëgkel, II spanpett, I tisch.",
+    "Item in der harrnasch kamer ist beschawt",
+    "worden und gefunden IIII pett mit",
+    "pösen ziechen, drey pöz hauptpolster,",
+    "VIII hauptkuss gut und ergere, XVIII",
+    "schaffein dekch alt und new, zwo guet",
+    "lembrein dekch, ain wolfs dekch, ain",
+    "gestükelts degklachen, IIII spanpett und",
+    "edtlich alter harnasch.",
+    "Item in der nachsten kamer darnach sein",
+    "drew miterre pëtt, IIII poz hauptpolster",
+    "und ain pöz pëttel, ain chüss und",
+    "vier alt rauch dëkchen und drew",
+    "gantz zerissne dekhlach und vier spanpëtt.",
+    "Item in der wachterkamer I pöz pëttel, I polster,",
+    "zwai pöse küssn, wirchane leilach, zwo",
+    "pöz dëkh, ain lodeins dekhel, ain lidereiner",
+    "polster und zwo gar alte dekhen, ain spanpett."
+   ]
   },
   "inv_11330020_p2": {
    "folio": "A 201.1 S. 2 (Heinfels 1440)",
@@ -864,9 +1469,19 @@
     "gt-anker",
     "aeltere-hand"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/HFAIHNGOTNQXNGWWJOWBYHOM/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 5,
+     "runs": [
+      "inv_11330020_p2__it01__r1.json",
+      "inv_11330020_p2__it01__r2.json",
+      "inv_11330020_p2__it01__r3.json",
+      "inv_11330020_p2__it01__r4.json",
+      "inv_11330020_p2__it01__r5.json"
+     ],
      "lines": [
       39,
       39,
@@ -896,6 +1511,13 @@
     },
     "it02": {
      "k": 5,
+     "runs": [
+      "inv_11330020_p2__it02__r1.json",
+      "inv_11330020_p2__it02__r2.json",
+      "inv_11330020_p2__it02__r3.json",
+      "inv_11330020_p2__it02__r4.json",
+      "inv_11330020_p2__it02__r5.json"
+     ],
      "lines": [
       39,
       39,
@@ -923,7 +1545,49 @@
      "consistency_words": 0.701,
      "consistency_numbers": 0.692
     }
-   }
+   },
+   "gt_lines": [
+    "[fol.1v]",
+    "Item in dez partners kamer ist ain pëtt, IIII",
+    "rauch dekh die alt sein, II wirchane leilach,",
+    "I polster, I spanpett.",
+    "Item in der kamer bey der ander ladung sein vier",
+    "pëtt, zwen polster, zwai chüss, zwai pöze",
+    "leilach, sechs schaffein dekh alt und new, ain",
+    "gambseine dekh, drew spanpett, zwo truchen",
+    "mit geschisten pheylen.",
+    "Item im stublein da bey sein zwai pett, zwai",
+    "poze leilach, ain polster, ain chüss, drey",
+    "schäffein dekh, ain gambss dekch, ain spanpett.",
+    "Item in dem oberen ärgker ist zwai pëtt, zwai",
+    "leilach, ain polster, ain chũß, drei schaffein",
+    "dekch, zwo lembrein gut dekch.",
+    "Item in der dirnn kamer ist zwai ain pëttel, ain polster,",
+    "zwai wirchene leilach, ain pöser polster",
+    "anein ziech, mer ain rauche dekch, zwai",
+    "pöse degkhel gestreift.",
+    "Item darnach in der nachsten kamer und",
+    "sunst allenthalben sein XVI kessel gross",
+    "und klain, guet und pöz und ain klain",
+    "kessel zu dem öl. Mer IIII gar pöze kessel",
+    "zwel erden hafein gross und klain, ain",
+    "gueter laüetschen da man kertzen in macht,",
+    "III mörser, zwen stössel, mer XXII mittere",
+    "und klaine zinenschüssel und ain zinphan,",
+    "vier pöze messene pekh und ain messene",
+    "giess kandel und zwai kupfferene pekh.",
+    "Mer XXXI pott schussel gros und klain.",
+    "Mer XLVIIIl hulczene täler und ain",
+    "tisch im fleisch gadem und vier swein",
+    "pachen loden V ellen und ain virtail.",
+    "Mer im fleischgadem und dirnn kamer",
+    "IIII truhen und grändt.",
+    "Item in der kuchel III prantrött, X phann,",
+    "III pheffer phan, III hälen, zwen phankn¬",
+    "echt, III pratspiss und ain hainczt, ain",
+    "eysenzang, ain ribeysen, funf milch",
+    "schüssel, zwai stötzel, ain wasser gatzen."
+   ]
   },
   "inv_11348659_p1": {
    "folio": "A 273.7 fol. 1r",
@@ -932,9 +1596,16 @@
     "kleinster-schriftgrad",
     "ohne-gliederung"
    ],
+   "source": "inventar",
+   "iiif": "https://files.transkribus.eu/iiif/2/UBQBBACJTFOUVHZQJPHMLSKA/full/max/0/default.jpg",
+   "spread": false,
    "iterations": {
     "it01": {
      "k": 2,
+     "runs": [
+      "inv_11348659_p1__it01__r2.json",
+      "inv_11348659_p1__it01__r3.json"
+     ],
      "lines": [
       63,
       63
@@ -945,6 +1616,23 @@
      ],
      "consistency_words": 0.706,
      "consistency_numbers": 0.875
+    },
+    "it02": {
+     "k": 2,
+     "runs": [
+      "inv_11348659_p1__it02__r1.json",
+      "inv_11348659_p1__it02__r2.json"
+     ],
+     "lines": [
+      63,
+      63
+     ],
+     "uncertain": [
+      61,
+      62
+     ],
+     "consistency_words": 0.687,
+     "consistency_numbers": 0.636
     }
    }
   }

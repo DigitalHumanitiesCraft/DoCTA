@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoCTA HTR-Benchmark: Bild-Text-Synopse</title>
+<link rel="stylesheet" href="../transcription-test/viewer.css">
+<style>
+  /* Benchmark-specific: repeat selector bar and iteration column in metrics */
+  #repeats { display: flex; gap: var(--space-1); padding: var(--space-2) var(--space-3);
+             border-bottom: 1px solid var(--color-border); background: var(--color-surface);
+             font-size: 0.8rem; align-items: center; }
+  #repeats .label { color: var(--color-muted); margin-right: var(--space-1); }
+  #repeats button[aria-pressed="true"] { background: var(--color-accent); color: #fff;
+             border-color: var(--color-accent); }
+  .cer-bad { color: var(--color-accent); font-weight: 700; }
+  .amount-tag { font-family: var(--font-ui); font-size: 0.72rem; color: var(--color-muted); }
+</style>
+</head>
+<body>
+<header class="app">
+  <h1>DoCTA HTR-Benchmark</h1>
+  <span class="pager">
+    <button id="prev" type="button" aria-label="Vorherige Seite">&#8592;</button>
+    <select id="item-select" aria-label="Seite w&auml;hlen"></select>
+    <button id="next" type="button" aria-label="N&auml;chste Seite">&#8594;</button>
+  </span>
+  <span class="meta" id="page-meta"></span>
+  <span class="meta" id="generated"></span>
+</header>
+<div id="metrics" aria-label="Metriken"></div>
+<main>
+  <section id="facsimile" aria-label="Faksimile">
+    <div id="zoombar">
+      <button id="zoom-out" type="button" aria-label="Verkleinern">&#8722;</button>
+      <button id="zoom-fit" type="button" aria-label="Einpassen">Fit</button>
+      <button id="zoom-in" type="button" aria-label="Vergr&ouml;&szlig;ern">+</button>
+    </div>
+    <div id="osd"></div>
+  </section>
+  <section id="panel" aria-label="Transkriptionen">
+    <div id="tabs" role="tablist" aria-label="Iterationen"></div>
+    <div id="repeats"></div>
+    <div id="transcript" role="tabpanel"></div>
+  </section>
+</main>
+<script src="../../docs/lib/openseadragon.min.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>

@@ -244,6 +244,7 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
                              "responseMimeType": "application/json",
                              "responseSchema": response_schema(with_amount)},
     }
+    last_reason = "HTTP"
     for attempt in range(4):
         r = requests.post(f"{API_BASE}/{MODEL}:generateContent",
                           headers={"x-goog-api-key": key, "Content-Type": "application/json"},
@@ -252,12 +253,19 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
             time.sleep(2 ** (attempt + 2))
             continue
         r.raise_for_status()
-        cand = r.json()["candidates"][0]
+        data = r.json()
+        cands = data.get("candidates")
+        if not cands:
+            # No candidate at all (e.g. prompt blocked or transient empty response); retry.
+            last_reason = data.get("promptFeedback", {}).get("blockReason", "no candidates")
+            time.sleep(2 ** (attempt + 2))
+            continue
+        cand = cands[0]
         text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
         if not text:
             raise ValueError(f"leere Antwort, finishReason={cand.get('finishReason')}")
         return json.loads(re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip())
-    raise RuntimeError("Retries erschöpft")
+    raise RuntimeError(f"Retries erschöpft ({last_reason})")
 
 
 def run_one(key: str, page: dict, iteration: str, prompts: dict, repeat: int, fs: dict) -> str:
@@ -367,14 +375,18 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
     summary = {"generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "model": MODEL, "pages": {}}
     for page in pages:
-        entry: dict = {"folio": page["folio"], "phenomena": page["phenomena"], "iterations": {}}
+        entry: dict = {"folio": page["folio"], "phenomena": page["phenomena"],
+                       "source": page["source"], "iiif": page["iiif"], "spread": page["spread"],
+                       "iterations": {}}
+        if page.get("gt_lines"):
+            entry["gt_lines"] = page["gt_lines"]
         for it in iterations:
             runs = sorted(RUNS.glob(f"{page['id']}__{it}__r*.json"))
             if not runs:
                 continue
             recs = [json.loads(f.read_text(encoding="utf-8")) for f in runs]
             texts = ["\n".join(r["lines"]) for r in recs]
-            e: dict = {"k": len(recs),
+            e: dict = {"k": len(recs), "runs": [f.name for f in runs],
                        "lines": [len(r["lines"]) for r in recs],
                        "uncertain": [sum(len(ln.get("uncertain", []) or [])
                                           for pg in r["parsed"]["pages"] for ln in pg.get("lines", []))

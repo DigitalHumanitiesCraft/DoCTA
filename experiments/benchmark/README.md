@@ -16,19 +16,20 @@ Kleines, versioniertes Benchmark für die VLM-Transkription des DoCTA-Bestands (
    - arithmetische Konsistenz der Beträge als Ausschlussfilter (nicht als Korrektheitsnachweis; das Modell glättet Bilanzen)
 6. **Herkunft der Iterationen**: it01 ist der Testlauf vom 2026-08-26 (`../transcription-test/`, Ergebnisse bleiben dort erhalten); it02 synthetisiert die drei Analyseberichte desselben Tages (GT-Fehleranalyse, Raitbuch-Divergenz-Adjudikation, Bestandssichtung); it03 ist nach der Mini-GT-Adjudikation mit der Projektleitung geplant (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich).
 
-## Stand (2026-08-26, Sessionende)
+## Stand (2026-08-27)
 
 - pages.json: 18 Seiten (8 Raitbuch-Phänomenseiten, 9 DONE-GT-Inventarseiten, 1 dichte Inventarseite) + 5 Reserve
 - it01: eingefroren; Ursprungslauf in `../transcription-test/results/`
-- it02: erster Volllauf am 2026-08-26 gestartet (144 Läufe, k=5 auf GT-Seiten, 4 Worker)
-- Runner: `run_benchmark.py`; ein Download-Race der ersten Version ist behoben, von der Kollision betroffene Läufe stehen in `errors.json`
+- it02: Volllauf abgeschlossen; zwei Läufe der dichten Inventarseite `inv_11348659_p1` bleiben offen, die API liefert dort wiederholt keinen Kandidaten (blockReason OTHER), dokumentiert in `errors.json`
+- Runner: `run_benchmark.py` (Download-Race und Kandidaten-Fehlerbehandlung behoben); `summary.json` trägt jetzt IIIF-URL, Quelle, Referenzzeilen und die Run-Dateinamen je Iteration
+- Viewer: `viewer.html` in diesem Ordner, Bild-Text-Synopse über alle Benchmark-Seiten mit Iterations-Tabs, Wiederholungs-Auswahl, Referenz-Vergleich und Metrik-Tabelle; Start mit `python -m http.server 8742` aus dem Repo-Root, dann `http://127.0.0.1:8742/experiments/benchmark/viewer.html`
 
 ## Wiedereinstieg
 
 1. `python run_benchmark.py` füllt fehlende und fehlgeschlagene Läufe nach (skip-if-exists) und schreibt `summary.json`
 2. `python run_benchmark.py --eval` rechnet nur die Auswertung neu
-3. Auswertung lesen: `summary.json` je Seite × Iteration (CER fair/strict auf GT-Seiten mit Spannweite, positionsweise Konsistenz getrennt nach Wort- und Zahl-Tokens, uncertain-Ausbeute, Zeilenzahlen)
-4. Danach offen: Viewer auf das runs-Format umstellen; it03 nach Mini-GT-Adjudikation mit der Projektleitung (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich)
+3. Auswertung lesen: `summary.json` je Seite × Iteration, oder im Viewer (siehe Stand)
+4. Danach offen: Adjudikation der Thaur-Regression und der zwei Referenzseiten mit CER über 100% am Viewer; it03 nach Mini-GT-Adjudikation mit der Projektleitung (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich)
 5. API-Key: `GEMINI_API_KEY` in der Repo-Root-`.env` (gitignored), pro Session vom Operator
 
 Lizenz wie Repo: Code MIT, Dokumente und Daten CC BY 4.0.
