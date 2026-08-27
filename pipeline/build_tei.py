@@ -68,7 +68,10 @@ TEXT_LANG = "gmh"
 
 # A line that is nothing but a folio mark is an editorial reference point of the
 # Transkribus transcription, not text of the source, and becomes a milestone.
-FOLIO_LINE = re.compile(r"^\[fol\.\s*([0-9]+[rv]?)\]$")
+# Corpus forms: "[fol.2r]" (dominant), "[fol. 2r]", bare "[1r]", and the
+# endpaper marks "[us_vorne_r]" etc.; "[- - -]" stays ordinary text.
+FOLIO_LINE = re.compile(r"^\[(?:fol\.\s*)?([0-9]+[rv]?)\]$")
+COVER_LINE = re.compile(r"^\[(us_[a-z]+_[rv])\]$")
 
 FULL_DATE = re.compile(r"^(\d{4})\.(\d{2})\.(\d{2})$")
 YEAR = re.compile(r"^(\d{4})$")
@@ -327,6 +330,8 @@ def _page_body(page: dict, doc_id: int) -> list[str]:
     for text in _lines(page):
         if m := FOLIO_LINE.match(text):
             out.append(f'        <milestone unit="folio" n="{_att(m.group(1))}"/>')
+        elif m := COVER_LINE.match(text):
+            out.append(f'        <milestone unit="cover" n="{_att(m.group(1))}"/>')
         else:
             out.append(f"        <lb/>{_esc(text)}")
     out.append("      </ab>")

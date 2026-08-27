@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 5861f06270c4)</name>
+          <name>pipeline/build_tei.py (sha256 54476abdcf70)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -86,7 +86,7 @@
       <div type="transcription">
         <ab>
           <pb n="1" facs="#surface-11328300-1"/>
-          <lb/>[1r]
+          <milestone unit="folio" n="1r"/>
           <lb/>Inventori etlichs hawsrats
           <lb/>durch Hannsen Ramung,
           <lb/>Burkharten von Knoringen
@@ -133,7 +133,7 @@
         </ab>
         <ab>
           <pb n="2" facs="#surface-11328300-2"/>
-          <lb/>[1v]
+          <milestone unit="folio" n="1v"/>
           <lb/>Item I gestreimbts kũss.
           <lb/>Item II dekhen.
           <lb/>Item I pott mit weissem uberzogen in

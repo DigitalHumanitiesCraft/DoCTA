@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 5861f06270c4)</name>
+          <name>pipeline/build_tei.py (sha256 54476abdcf70)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -186,11 +186,11 @@
         </ab>
         <ab>
           <pb n="3" facs="#surface-11330561-3"/>
-          <lb/>[us_vorne_r]
+          <milestone unit="cover" n="us_vorne_r"/>
         </ab>
         <ab>
           <pb n="4" facs="#surface-11330561-4"/>
-          <lb/>[us_vorne_v]
+          <milestone unit="cover" n="us_vorne_v"/>
         </ab>
         <ab>
           <pb n="5" facs="#surface-11330561-5"/>
@@ -698,11 +698,11 @@
         </ab>
         <ab>
           <pb n="29" facs="#surface-11330561-29"/>
-          <lb/>[us_hinten_r]
+          <milestone unit="cover" n="us_hinten_r"/>
         </ab>
         <ab>
           <pb n="30" facs="#surface-11330561-30"/>
-          <lb/>[us_hinten_v]
+          <milestone unit="cover" n="us_hinten_v"/>
         </ab>
       </div>
     </body>
