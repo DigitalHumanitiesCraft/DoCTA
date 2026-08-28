@@ -1,7 +1,7 @@
 """Tests for the review ingest, runnable with pytest or plain python.
 
-The ingest has no review data in the repository yet, so its input is a fixture
-export built against a temporary copy of the real register.
+The repository holds no review export, so the input is a fixture export built
+against a temporary copy of the real register.
 
 Usage:
   python test_apply_review.py

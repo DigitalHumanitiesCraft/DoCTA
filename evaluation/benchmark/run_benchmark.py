@@ -4,10 +4,10 @@
 # ///
 """HTR prompt benchmark runner: fixed page set, versioned prompt iterations.
 
-Ports the API/image/normalization core from ../../experiments/transcription-test/transcribe_test.py
-and fixes its three known defects: split runs only on real double-page spreads,
-consistency is measured positionwise (not set-Jaccard), and every record carries
-prompt provenance (iteration id + SHA-256 of the exact prompt text).
+The measurement rests on three properties. A run is split into two requests only
+on a real double-page spread, consistency is measured positionwise rather than
+as set overlap, and every record carries prompt provenance, meaning the
+iteration id plus the SHA-256 of the exact prompt text.
 
 Iterations:
   it01  frozen test-day config (v2_structured equivalent): it01 system prompt,
@@ -58,7 +58,7 @@ TIMEOUT = 300
 WORKERS = 4
 FEWSHOT_DOC, FEWSHOT_PAGE = "11327964", 2  # A 49.5, inventar few-shot example
 
-# Frozen it01 instruction (identical to the 2026-08-26 test run).
+# Frozen it01 instruction; a change to the wording is a new iteration.
 IT01_INSTRUCTION = (
     "Transkribiere das Bild vollständig. Antworte als JSON nach dem Schema. "
     "Bei einer Doppelseite zuerst die linke Seite (verso), dann die rechte (recto), "
@@ -203,8 +203,8 @@ def resolve_pages() -> list[dict]:
 
 
 def fewshot_example() -> dict:
-    """Reworked inventar example: kind heuristics + uncertain for diacritic-carrying
-    words, so the example demonstrates non-empty uncertainty instead of silencing it."""
+    """Inventar few-shot example: kind heuristics plus uncertain markers on the
+    diacritic-carrying words, so the example never demonstrates empty uncertainty."""
     doc = json.loads(
         (REPO / "docs" / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(
             encoding="utf-8"
@@ -323,7 +323,6 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
         data = r.json()
         cands = data.get("candidates")
         if not cands:
-            # No candidate at all (e.g. prompt blocked or transient empty response); retry.
             last_reason = data.get("promptFeedback", {}).get(
                 "blockReason", "no candidates"
             )
@@ -574,7 +573,7 @@ def main() -> None:
                 pid, it, r = futs[fut]
                 try:
                     print(fut.result())
-                except Exception as e:  # skip-and-log-and-collect
+                except Exception as e:
                     print(f"FEHLER {pid}/{it}/r{r}: {e}", file=sys.stderr)
                     errors.append(
                         {"page": pid, "iteration": it, "repeat": r, "error": str(e)}

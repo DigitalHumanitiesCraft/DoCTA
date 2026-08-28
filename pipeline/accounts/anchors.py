@@ -1,8 +1,8 @@
 """PAGE-XML import and source-anchor verification for DoCTA accounts.
 
-Unlike the inventory transcription fetcher, the importer keeps every PAGE
-``TextLine`` even when it has no ``TextEquiv``. Region and line polygons,
-baselines and explicit region reading order are retained.
+The importer keeps every PAGE ``TextLine``, including one without a
+``TextEquiv``, and retains region and line polygons, baselines and explicit
+region reading order.
 
 The returned transcription revision is self-contained and requires no network
 access. Hash verification deliberately covers textual identity and line order;

@@ -77,8 +77,8 @@ def _str(value: Any, what: str) -> str:
 def validate(data: Any, origin: str) -> dict[int, dict]:
     """Check the export against the contract and return its pages by number.
 
-    Validation is total: it reports the first violation with the place it sits
-    in, because a half-applied review is worse than a refused one.
+    Reports the first violation with the place it sits in; a half-applied
+    review is worse than a refused one.
     """
     if not isinstance(data, dict):
         raise ReviewError(f"{origin}: kein JSON-Objekt")

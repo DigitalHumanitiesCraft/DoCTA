@@ -40,7 +40,7 @@ export function initNav(activeId) {
 }
 
 /**
- * Compact BETA badge in the navbar, replacing the former full-width banner.
+ * Compact BETA badge in the navbar.
  */
 export function initBanner() {
   const brand = document.querySelector('.navbar-brand');

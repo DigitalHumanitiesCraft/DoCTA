@@ -4,11 +4,10 @@
 # ///
 """Entity extraction with line anchors over human-corrected transcriptions.
 
-The prototype extraction (docs/data/demo/thaur_entities.json) carried a line
-anchor for six of forty-two records, which made deterministic TEI encoding
-impossible for the rest. This runner fixes that: the model sees every line with
-its id, has to name the id it read an entity in, and every returned entity is
-re-checked against that line before it is kept.
+Every entity carries a line anchor, which is what makes deterministic TEI
+encoding possible: the model sees every line with its id, has to name the id it
+read an entity in, and every returned entity is re-checked against that line
+before it is kept.
 
 Two facts about the Transkribus export drive the design. Region ids restart on
 every page, so a bare line id ("r2l3") is ambiguous inside a document and the
@@ -34,8 +33,8 @@ here. Where it is a DoCTA transcription, the output records that in the
 provenance, because the extraction then rests on unrevised machine output and
 the run ids it rests on have to stay readable.
 
-API/retry pattern ported from evaluation/benchmark/run_benchmark.py, including
-the deliberate use of requests over urllib for the retry-and-timeout handling.
+The API call goes through requests rather than urllib, for its retry and
+timeout handling.
 
 Usage:
   python extract_entities.py             # all three documents, skip existing
@@ -401,7 +400,7 @@ def main() -> None:
     for doc_id in doc_ids:
         try:
             results.append(run_one(key, doc_id, system, prompt_hash, args.force))
-        except Exception as e:  # skip-and-log-and-collect
+        except Exception as e:
             print(f"FEHLER {doc_id}: {e}", file=sys.stderr)
             errors.append({"docId": doc_id, "error": str(e)})
     print(f"\n== Bericht (prompt {PROMPT_ID}, hash {prompt_hash}) ==")

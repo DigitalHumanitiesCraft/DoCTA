@@ -67,9 +67,10 @@ VLM_LINE_PREFIX = "v"
 # The one block a VLM transcription has, since no layout analysis divided it.
 VLM_REGION = "vlm"
 
-RAITBUCH2_DOC = 12514730  # "Raitbuch 2"; the CSV/Transkribus matcher covers only
-RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"  # the inventories, so this pair is set here
-# (title and page count agree) to give the rb2_* evaluation runs a document to hang on.
+# "Raitbuch 2", paired here because the CSV/Transkribus matcher covers the
+# inventories only and the rb2_* evaluation runs need a document to hang on.
+RAITBUCH2_DOC = 12514730
+RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"
 
 CONTENT_CLASSES = ("text", "leer", "kassiert", "einlage", "unknown")
 VERIFICATION_STATUS = ("unbearbeitet", "maschinell", "gesichtet", "abgenommen")

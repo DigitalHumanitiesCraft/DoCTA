@@ -1,9 +1,11 @@
 """Precompute network layout for the prototype.
 
-Uses networkx spring_layout to compute x/y positions for all nodes.
-Also computes degree and betweenness centrality for the top-200 nodes.
+The graph covers persons, places, institutions and functions; only the 200
+nodes of highest degree enter the layout, the seeded spring_layout and the
+betweenness centrality, because the full graph neither lays out nor renders.
 
-Input: data/persons.json, data/relations.json
+Input: docs/data/persons.json, relations.json, places.json, institutions.json,
+       functions.json
 Output: docs/data/network.json
 """
 
@@ -42,11 +44,9 @@ def main():
         f"  {len(places)} places, {len(institutions)} institutions, {len(functions)} functions"
     )
 
-    # Build graph
     print("Building graph...")
     G = nx.Graph()
 
-    # Add nodes
     for p in persons:
         name = " ".join(filter(None, [p.get("first_name", ""), p.get("name", "")]))
         G.add_node(f"person-{p['id']}", label=name or "(unbekannt)", type="person")
@@ -61,7 +61,6 @@ def main():
             f"function-{func['id']}", label=func.get("name", ""), type="function"
         )
 
-    # Add edges from relations
     edge_count = 0
     for r in relations:
         src = f"{r['subj_type']}-{r['subj_id']}" if r["subj_id"] else None
@@ -72,7 +71,6 @@ def main():
 
     print(f"  Graph: {G.number_of_nodes()} nodes, {edge_count} edges")
 
-    # Get top-200 by degree
     degree = dict(G.degree())
     top_nodes = sorted(degree.keys(), key=lambda x: degree[x], reverse=True)[:200]
     top_set = set(top_nodes)
@@ -81,19 +79,15 @@ def main():
         f"  Top-200 nodes selected (min degree: {degree[top_nodes[-1]] if top_nodes else 0})"
     )
 
-    # Create subgraph for top-200
     sub = G.subgraph(top_set).copy()
     print(f"  Subgraph: {sub.number_of_nodes()} nodes, {sub.number_of_edges()} edges")
 
-    # Compute layout
     print("Computing layout (spring_layout)...")
     pos = nx.spring_layout(sub, k=2.0, iterations=100, seed=42)
 
-    # Compute betweenness centrality for top nodes
     print("Computing betweenness centrality...")
     betweenness = nx.betweenness_centrality(sub)
 
-    # Build output
     network = {
         "nodes": [],
         "metadata": {
@@ -119,7 +113,6 @@ def main():
             }
         )
 
-    # Save
     out_path = f"{BASE}/docs/data/network.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(network, f, ensure_ascii=False, indent=1)

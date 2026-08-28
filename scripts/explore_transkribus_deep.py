@@ -11,7 +11,7 @@ import urllib.request
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-# Auth — set TRANSKRIBUS_USER and TRANSKRIBUS_PASS as environment variables
+# Credentials come from TRANSKRIBUS_USER and TRANSKRIBUS_PASS in the environment.
 TOKEN_URL = (
     "https://account.readcoop.eu/auth/realms/readcoop/protocol/openid-connect/token"
 )
@@ -46,7 +46,6 @@ def main():
     token = get_token()
     print("Auth OK\n")
 
-    # 1. Get Raitbuch 2 fulldoc — all pages with keys and transcription status
     RB2_ID = 12514730
     print(f"=== Raitbuch 2 (ID {RB2_ID}) — All 123 pages ===\n")
     fulldoc = api_get(token, f"/collections/{COLLECTION_ID}/{RB2_ID}/fulldoc")
@@ -81,7 +80,6 @@ def main():
     for p in rb2_pages[:10]:
         print(f"  p{p['pageNr']:>3}: {p['status']:<15} {p['imgFileName']}")
 
-    # Save Raitbuch 2 page data
     out_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
         "docs",
@@ -92,12 +90,10 @@ def main():
         json.dump(rb2_pages, f, ensure_ascii=False, indent=2)
     print(f"\nSaved {len(rb2_pages)} pages to docs/data/raitbuch2_pages.json")
 
-    # 2. Check transcription status across a sample of documents
     print("\n\n=== Transcription status across collection (sampling) ===\n")
 
     docs = api_get(token, f"/collections/{COLLECTION_ID}/list")
 
-    # Sample: all inventare (first 10), first 3 raitbücher, first 3 other
     sample_ids = []
     inv_count = 0
     rb_count = 0
@@ -130,11 +126,10 @@ def main():
                 statuses[st] = statuses.get(st, 0) + 1
             status_str = ", ".join(f"{s}:{c}" for s, c in sorted(statuses.items()))
             print(f"  {doc_id:>8} | {title:<50} | {status_str}")
-            time.sleep(0.3)  # Rate limit
+            time.sleep(0.3)  # rate limit
         except Exception as e:
             print(f"  {doc_id:>8} | {title:<50} | ERROR: {e}")
 
-    # 3. Get one inventar fulldoc to check if there's actual transcription text
     print("\n\n=== Sample transcription check: Thaur A 49.1 ===\n")
     THAUR_ID = 11328300  # Thaur_TLA Inventare A 49.1_1471, 4 pages
     fd = api_get(token, f"/collections/{COLLECTION_ID}/{THAUR_ID}/fulldoc")
@@ -146,7 +141,6 @@ def main():
             print(f"  Page {p['pageNr']}:")
             print(f"    Status: {t.get('status')}")
             print(f"    Tool: {t.get('toolName', '?')}")
-            # Check if there's a PAGE XML URL
             page_xml_url = t.get("url", t.get("pageXmlUrl", ""))
             if page_xml_url:
                 print(f"    PAGE XML URL: {page_xml_url[:80]}...")

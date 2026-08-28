@@ -10,7 +10,7 @@ import urllib.request
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-# Auth — set TRANSKRIBUS_USER and TRANSKRIBUS_PASS as environment variables
+# Credentials come from TRANSKRIBUS_USER and TRANSKRIBUS_PASS in the environment.
 TOKEN_URL = (
     "https://account.readcoop.eu/auth/realms/readcoop/protocol/openid-connect/token"
 )
@@ -107,7 +107,6 @@ def main():
             token = get_token()
             print(f"  [Re-authenticated at doc {i}]")
 
-    # Summary
     with_text = [r for r in results if r.get("has_text")]
     without_text = [r for r in results if not r.get("has_text") and "error" not in r]
 
@@ -131,7 +130,6 @@ def main():
                 f"    {r['id']:>8} | {r['pages']:>4}p | {r['lines']:>5}L | {r['words']:>6}W | {r['title']}"
             )
 
-    # Save results
     out_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
         "docs",

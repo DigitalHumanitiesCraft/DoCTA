@@ -1,7 +1,7 @@
 """Versioned data contracts for the DoCTA account-book pipeline.
 
 This module is the executable part of the specification in
-``docs/knowledge/ACCOUNTING-ENCODING.md``. It covers exactly the objects the
+``docs/knowledge/accounting-encoding.md``. It covers exactly the objects the
 pipeline already produces and consumes: source anchors, transcription lines and
 revisions, annotation proposals and review decisions. The models form the JSON
 trust boundary shared by transcription, annotation, review, TEI generation and
@@ -12,10 +12,8 @@ in ``anchors.py`` and ``review.py``.
 
 Deliberate omission: the annotation package as a locked accepted selection and
 the Edition Build Manifest stay prose specifications in
-``ACCOUNTING-ENCODING.md``. Both were implemented ahead of any consumer and
-drifted from the specification they claimed to encode, so they were removed.
-Upgrade path: when the publication build exists, implement them against the
-knowledge documents rather than against the removed code.
+``accounting-encoding.md`` until the publication build gives them a consumer;
+implement them against the knowledge documents when it does.
 
 The module makes no network calls. JSON writes are atomic and refuse to replace
 an existing artifact unless the caller explicitly requests it.

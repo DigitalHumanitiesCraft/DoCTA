@@ -1,12 +1,12 @@
-// Lädt jede Seite des Prototyps unter dem Unterpfad /DoCTA/ und sammelt
-// Konsolenfehler, Page-Errors und fehlgeschlagene Netzwerk-Requests.
+// Loads every page of the site and collects console errors, page errors and
+// failed network requests.
 import { chromium } from 'playwright';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Repo-Wurzel, unabhaengig vom Arbeitsverzeichnis des Aufrufers.
+// Repo root, independent of the caller's working directory.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
 const PORT = 8731;
 const BASE = `http://127.0.0.1:${PORT}/DoCTA/`;
@@ -18,8 +18,8 @@ const MIME = {
   '.md': 'text/markdown; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg',
 };
 
-// Serviert das Repo bewusst unter /DoCTA/, damit Pfadfehler auffallen,
-// die auf Domain-Root nicht sichtbar wären.
+// Served under /DoCTA/ like GitHub Pages, so that a path error which stays
+// invisible on a domain root shows up here.
 const server = http.createServer((req, res) => {
   let rel = decodeURIComponent(req.url.split('?')[0]);
   if (!rel.startsWith('/DoCTA/')) { res.writeHead(404); return res.end('outside base'); }
@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
   });
 });
 
-// Seitenliste aus dem Dateisystem, damit eine neue Seite ohne Pflege mitgeprüft wird.
+// Page list from the file system, so a new page is covered without maintenance.
 const PAGES = fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).sort();
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
@@ -62,16 +62,16 @@ for (const page of PAGES) {
   }
   const loadMs = Date.now() - t0;
 
-  // Interne Links einsammeln, um tote Verweise zu finden.
+  // Internal links, to find dead references.
   const links = await p.$$eval('a[href]', as => as.map(a => a.getAttribute('href')))
     .catch(() => []);
 
-  // Bilder ohne alt-Text zählen (Accessibility).
+  // Images without alt text.
   const imgNoAlt = await p.$$eval('img', is => is.filter(i => !i.hasAttribute('alt')).length)
     .catch(() => 0);
   const imgTotal = await p.$$eval('img', is => is.length).catch(() => 0);
 
-  // Sichtbarer Text, um leere/kaputte Renderings zu erkennen.
+  // Visible text, to detect an empty or broken rendering.
   const textLen = await p.evaluate(() => document.body.innerText.trim().length).catch(() => 0);
   const title = await p.title().catch(() => '');
 
@@ -83,7 +83,6 @@ for (const page of PAGES) {
 await browser.close();
 server.close();
 
-// Tote interne Links auflösen
 const exists = f => fs.existsSync(path.join(ROOT, f.split('#')[0].split('?')[0]));
 for (const [, r] of Object.entries(report)) {
   r.deadLinks = r.links.filter(h =>
@@ -93,8 +92,8 @@ for (const [, r] of Object.entries(report)) {
 
 console.log(JSON.stringify(report, null, 1));
 
-// Optionale Daten pro Dokument: eine fehlende Datei ist der Normalfall und wird
-// im Client abgefangen, deshalb kippt sie das Ergebnis nicht.
+// Per-document data is optional: a missing file is the normal case and is caught
+// in the client, so it does not decide the result.
 const OPTIONAL = /\/data\/entities\/|\/data\/tei\//;
 const blocking = Object.entries(report).filter(([, r]) =>
   r.errors.length || r.deadLinks.length || r.failed.some(f => !OPTIONAL.test(f)));

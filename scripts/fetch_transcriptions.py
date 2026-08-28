@@ -1,6 +1,8 @@
-"""Fetch PAGE-XML transcriptions for all 57 inventories with text.
-Converts to simplified JSON: lines with coordinates and text.
-Output: docs/data/transcriptions/{doc_id}.json"""
+"""Fetch the PAGE-XML transcription of every Transkribus document with text.
+
+Converts it to simplified JSON: lines with coordinates and text.
+Output: docs/data/transcriptions/{doc_id}.json
+"""
 
 import io
 import json
@@ -56,7 +58,6 @@ def fetch_xml(token, url):
 def parse_page_xml(xml):
     """Parse PAGE-XML into simplified structure."""
     regions = []
-    # Extract TextRegions
     for region_match in re.finditer(
         r'<TextRegion[^>]*id="([^"]*)"[^>]*(?:type="([^"]*)")?[^>]*>(.*?)</TextRegion>',
         xml,
@@ -66,7 +67,6 @@ def parse_page_xml(xml):
         region_type = region_match.group(2) or ""
         region_body = region_match.group(3)
 
-        # Region coords
         coords_m = re.search(r'<Coords points="([^"]*)"', region_body)
         region_coords = coords_m.group(1) if coords_m else ""
 
@@ -77,15 +77,12 @@ def parse_page_xml(xml):
             line_id = line_match.group(1)
             line_body = line_match.group(2)
 
-            # Line coords
             lc = re.search(r'<Coords points="([^"]*)"', line_body)
             line_coords = lc.group(1) if lc else ""
 
-            # Baseline
             bl = re.search(r'<Baseline points="([^"]*)"', line_body)
             baseline = bl.group(1) if bl else ""
 
-            # Text
             text_m = re.search(r"<Unicode>(.*?)</Unicode>", line_body, re.DOTALL)
             text = text_m.group(1).strip() if text_m else ""
 
@@ -116,11 +113,9 @@ def main():
     token = get_token()
     print("Auth OK\n")
 
-    # Load status to find docs with text
     with open(f"{BASE}/docs/data/transkribus_status.json", encoding="utf-8") as f:
         all_docs = json.load(f)
 
-    # Load mapping for CSV metadata
     with open(f"{BASE}/docs/data/source_mapping.json", encoding="utf-8") as f:
         mapping = json.load(f)
 
@@ -145,7 +140,7 @@ def main():
             flush=True,
         )
 
-        # Re-auth every 40 docs
+        # The access token expires after 300s, so re-authenticate periodically.
         auth_counter += 1
         if auth_counter > 40:
             token = get_token()
@@ -172,7 +167,7 @@ def main():
                 xml_key = t.get("key", "")
 
                 if not xml_key or (t.get("nrOfTranscribedLines", 0) or 0) == 0:
-                    # No text on this page, still include for image reference
+                    # No text on this page; the entry stays for the image reference.
                     doc_pages.append(
                         {
                             "pageNr": page_nr,
@@ -184,7 +179,6 @@ def main():
                     )
                     continue
 
-                # Fetch PAGE XML
                 xml_url = f"https://files.transkribus.eu/Get?id={xml_key}"
                 xml = fetch_xml(token, xml_url)
                 regions = parse_page_xml(xml)
@@ -206,9 +200,8 @@ def main():
                     }
                 )
 
-                time.sleep(0.1)  # Rate limit
+                time.sleep(0.1)  # rate limit
 
-            # Build output
             csv_meta = mapping_by_id.get(doc_id, {})
             output = {
                 "docId": doc_id,

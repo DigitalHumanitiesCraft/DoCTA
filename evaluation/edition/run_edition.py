@@ -78,7 +78,7 @@ def main() -> int:
     for page in pages:
         try:
             print(bench.run_one(key, page, ITERATION, prompts, REPEAT, fewshot))
-        except Exception as exc:  # skip-and-log-and-collect, as in the benchmark
+        except Exception as exc:
             print(f"FEHLER {page['id']}: {exc}", file=sys.stderr)
             errors.append(
                 {

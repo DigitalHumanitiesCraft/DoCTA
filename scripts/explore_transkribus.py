@@ -9,7 +9,7 @@ import urllib.request
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-# Auth — set TRANSKRIBUS_USER and TRANSKRIBUS_PASS as environment variables
+# Credentials come from TRANSKRIBUS_USER and TRANSKRIBUS_PASS in the environment.
 TOKEN_URL = (
     "https://account.readcoop.eu/auth/realms/readcoop/protocol/openid-connect/token"
 )
@@ -46,7 +46,6 @@ def main():
 
     docs = api_get(token, f"/collections/{COLLECTION_ID}/list")
 
-    # Categorize
     inventare = []
     raitbuecher = []
     kopialbuecher = []
@@ -116,7 +115,6 @@ def main():
     for e in sorted(andere, key=lambda x: x["title"]):
         print(f"  {e['id']:>8} | {e['pages']:>4}p | {e['title']}")
 
-    # Summary
     rb_pages = sum(e["pages"] for e in raitbuecher)
     inv_pages = sum(e["pages"] for e in inventare)
     kb_pages = sum(e["pages"] for e in kopialbuecher)
@@ -128,7 +126,6 @@ def main():
     print(f"Andere:       {len(andere):>3} Dok, {other_pages:>5} Seiten")
     print(f"GESAMT:       {len(docs):>3} Dok, {total_pages:>5} Seiten")
 
-    # Save full JSON for later
     out_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
         "docs",
@@ -139,7 +136,6 @@ def main():
         json.dump(docs, f, ensure_ascii=False, indent=2)
     print("\nFull JSON saved to docs/data/transkribus_collection.json")
 
-    # Now get Raitbuch 2 details (fulldoc metadata)
     rb2_id = None
     for e in raitbuecher:
         if e["title"] == "Raitbuch 2":

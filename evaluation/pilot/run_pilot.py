@@ -30,7 +30,7 @@ spec = importlib.util.spec_from_file_location(
 bench = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bench)
 
-# Redirect the runner's output dirs into the pilot folder; images cache is shared.
+# Runs belong to this cohort; the image cache stays shared with the benchmark.
 bench.RUNS = ROOT / "runs"
 
 INV_DOC = "11330060"  # Naudersberg A 152.1: dense text, castle unseen by the benchmark

@@ -1,13 +1,13 @@
-// Klickt auf jeder Seite systematisch durch die interaktiven Elemente und
-// sammelt JS-Fehler und fehlgeschlagene Requests. Navigation wird ausgespart
-// bzw. rückgängig gemacht, damit der Test auf der Zielseite bleibt.
+// Clicks through the interactive elements of every page and collects JS errors
+// and failed requests. A navigation away from the page under test is undone, so
+// the remaining elements are still exercised there.
 import { chromium } from 'playwright';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Repo-Wurzel, unabhaengig vom Arbeitsverzeichnis des Aufrufers.
+// Repo root, independent of the caller's working directory.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
 const PORT = 8733;
 const BASE = `http://127.0.0.1:${PORT}/DoCTA/`;
@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
   });
 });
 
-// Seitenliste aus dem Dateisystem, damit eine neue Seite ohne Pflege mitgeprüft wird.
+// Page list from the file system, so a new page is covered without maintenance.
 const PAGES = fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).sort();
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
@@ -66,7 +66,7 @@ for (const page of PAGES) {
     return false;
   };
 
-  // Buttons und Bootstrap-Toggles ausserhalb der Seitennavigation.
+  // Buttons and Bootstrap toggles outside the site navigation.
   const sel = 'main button:visible, main [data-bs-toggle]:visible, main [role="button"]:visible, ' +
               '.modal button:visible, body > button:visible';
   const buttons = await p.$$(sel);
@@ -135,8 +135,8 @@ await browser.close();
 server.close();
 console.log(JSON.stringify(report, null, 1));
 
-// Optionale Daten pro Dokument: eine fehlende Datei ist der Normalfall und wird
-// im Client abgefangen, deshalb kippt sie das Ergebnis nicht.
+// Per-document data is optional: a missing file is the normal case and is caught
+// in the client, so it does not decide the result.
 const OPTIONAL = /\/data\/entities\/|\/data\/tei\//;
 const blocking = Object.entries(report).filter(([, r]) =>
   r.errors.length || r.failed.some(f => !OPTIONAL.test(f)));

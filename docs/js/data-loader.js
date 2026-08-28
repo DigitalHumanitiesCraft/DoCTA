@@ -18,7 +18,6 @@ function openDB() {
   dbPromise = new Promise((resolve) => {
     try {
       const req = indexedDB.open(DB_NAME, DB_VERSION);
-      // Timeout: fall back to fetch-only if IndexedDB doesn't respond
       const timer = setTimeout(() => {
         console.warn('IndexedDB timeout, falling back to fetch-only');
         resolve(null);
@@ -80,16 +79,13 @@ async function putToCache(key, data) {
  * @returns {Promise<any>}
  */
 export async function loadJSON(path) {
-  // Try cache first
   const cached = await getFromCache(path);
   if (cached) return cached;
 
-  // Fetch
   const resp = await fetch(path);
   if (!resp.ok) throw new Error(`Failed to load ${path}: ${resp.status}`);
   const data = await resp.json();
 
-  // Cache for next time
   putToCache(path, data);
 
   return data;

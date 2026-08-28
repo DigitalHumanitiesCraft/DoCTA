@@ -1,8 +1,8 @@
-"""Precompute the dashboard key figures for the start page.
+"""Precompute the entry counts of the SiCProD exports into one small file.
 
-The dashboard used to fetch persons.json, relations.json, places.json,
-sources.json, functions.json and source_mapping.json (~6.4 MB) just to read
-their lengths. This script does the counting once, offline.
+The counting runs offline so that no page has to load several megabytes of
+entity data to read their lengths. No page of the site loads the output; the
+site computes its figures from sources.json and the register summary.
 
 Sources of the numbers:
   persons        len(data/persons.json)

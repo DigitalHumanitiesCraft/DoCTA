@@ -16,7 +16,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 BASE_API = "https://sicprod.acdh-dev.oeaw.ac.at/apis/api"
 from pathlib import Path
 
-# the SiCProD exports live in docs/data since the site moved to docs/
+# The SiCProD exports are read by the site, so they live below docs/.
 OUT_DIR = str(Path(__file__).resolve().parents[1] / "docs" / "data")
 
 
@@ -33,7 +33,6 @@ def fetch_paginated(endpoint, limit=500):
                 data = json.loads(resp.read().decode("utf-8"))
         except Exception as e:
             print(f"ERROR: {e}")
-            # Retry once after short wait
             time.sleep(2)
             try:
                 with urllib.request.urlopen(req, timeout=30) as resp:
@@ -50,7 +49,7 @@ def fetch_paginated(endpoint, limit=500):
         if not data.get("next"):
             break
         offset += limit
-        time.sleep(0.3)  # Be nice to the server
+        time.sleep(0.3)  # rate limit
 
     return results
 
@@ -130,7 +129,6 @@ def extract_relation_type(url):
 
     e.g. '.../apis_ontology.nimmtteilan/1/?format=json' -> 'nimmtteilan'
     """
-    # URL looks like: .../apis_ontology.{type}/{id}/...
     import re
 
     m = re.search(r"apis_ontology\.(\w+)/\d+/", url)
@@ -185,7 +183,6 @@ def save_json(data, filename):
 def main():
     print("=== SiCProD Data Fetch ===\n")
 
-    # Fetch all entities
     print("1. Persons...")
     raw_persons = fetch_paginated("apis_ontology.person")
     persons = extract_persons(raw_persons)
@@ -211,7 +208,6 @@ def main():
     relations = extract_relations(raw_relations)
     save_json(relations, "relations.json")
 
-    # Summary
     print("\n=== Done ===")
     print(f"  Persons:      {len(persons):>6}")
     print(f"  Places:       {len(places):>6}")
@@ -219,7 +215,6 @@ def main():
     print(f"  Functions:    {len(functions):>6}")
     print(f"  Relations:    {len(relations):>6}")
 
-    # Collect distinct relation types
     rel_types = {}
     for r in relations:
         rt = r["relation_type"]

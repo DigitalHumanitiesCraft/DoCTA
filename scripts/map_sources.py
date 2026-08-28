@@ -36,11 +36,9 @@ def extract_inv_number(text):
 
 
 def main():
-    # Load Transkribus data
     with open(f"{BASE}/docs/data/transkribus_status.json", encoding="utf-8") as f:
         tb_docs = json.load(f)
 
-    # Load CSV
     csv_rows = []
     with open(f"{BASE}/sources/quellen-katalog.csv", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -84,7 +82,6 @@ def main():
         if num:
             tb_by_number.setdefault(num, []).append(doc)
 
-    # Match
     matched = []
     unmatched_tb = []
     unmatched_csv = []
@@ -129,7 +126,6 @@ def main():
                 }
             )
 
-    # Report
     print(f"=== MATCHED: {len(matched)} ===\n")
     for m in matched:
         text_marker = "TEXT" if m["has_text"] else "----"
@@ -155,11 +151,9 @@ def main():
         title = doc["title"]
         if "inventar" in title.lower() or "Inventare" in title:
             continue
-        # Try to find in CSV
         csv_match = None
         tl = title.lower()
         if "raitbuch" in tl:
-            # Extract number
             m = re.search(r"raitbuch\s*(\d+)", tl)
             if m:
                 rb_num = m.group(1)
@@ -172,7 +166,6 @@ def main():
         elif "kopialbuch" in tl or "koialbuch" in tl:
             pass  # Complex matching needed
         elif "hs" in tl.replace("_", " ").lower():
-            # Try Hs number
             m = re.search(r"hs[_\s]*(\d+)", tl)
             if m:
                 hs_num = m.group(1)
@@ -185,7 +178,6 @@ def main():
         match_str = f" → CSV: {csv_match}" if csv_match else ""
         print(f"  {doc['id']:>8} | {doc.get('pages', 0):>4}p | {title}{match_str}")
 
-    # Save mapping
     with open(f"{BASE}/docs/data/source_mapping.json", "w", encoding="utf-8") as f:
         json.dump(
             {

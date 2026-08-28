@@ -11,7 +11,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 BASE_API = "https://sicprod.acdh-dev.oeaw.ac.at/apis/api"
 from pathlib import Path
 
-# the SiCProD exports live in docs/data since the site moved to docs/
+# The SiCProD exports are read by the site, so they live below docs/.
 OUT_DIR = str(Path(__file__).resolve().parents[1] / "docs" / "data")
 
 
@@ -61,7 +61,6 @@ def extract_id_from_url(url):
     return int(m.group(1)) if m else None
 
 
-# Fetch functions
 print("=== Functions ===")
 raw_functions = fetch_paginated("apis_ontology.function")
 functions = []
@@ -79,7 +78,6 @@ with open(f"{OUT_DIR}/functions.json", "w", encoding="utf-8") as fout:
     json.dump(functions, fout, ensure_ascii=False, indent=1)
 print(f"Saved {len(functions)} functions")
 
-# Fetch relations
 print("\n=== Relations (42.893 — this takes a while) ===")
 raw_relations = fetch_paginated("relations.relation")
 relations = []
@@ -101,7 +99,6 @@ with open(f"{OUT_DIR}/relations.json", "w", encoding="utf-8") as fout:
     json.dump(relations, fout, ensure_ascii=False, indent=1)
 print(f"Saved {len(relations)} relations")
 
-# Distinct relation types
 rel_types = {}
 for r in relations:
     rt = r["relation_type"]

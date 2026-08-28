@@ -1,7 +1,7 @@
 """Transform the CSV source catalog into clean JSON for the prototype.
 
-Input: sources/quellen-katalog.csv (316 entries with ghost columns, inconsistent dates)
-Output: docs/data/sources.json (clean, with Transkribus links and availability tiers)
+Input: sources/quellen-katalog.csv, which carries ghost columns and inconsistent dates
+Output: docs/data/sources.json, with Transkribus links and availability tiers
 """
 
 import csv
@@ -85,7 +85,6 @@ def compute_availability_tier(row, tb_mapping):
     """
     signatur = row.get("Signatur", "").strip()
 
-    # Check if in Transkribus mapping (with text)
     for m in tb_mapping.get("matched", []):
         if m["csv_signatur"] == signatur:
             if m["has_text"]:
@@ -106,7 +105,6 @@ def compute_availability_tier(row, tb_mapping):
 
 
 def main():
-    # Load CSV
     rows = []
     with open(f"{BASE}/sources/quellen-katalog.csv", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -114,16 +112,13 @@ def main():
             rows.append(row)
     print(f"Loaded {len(rows)} CSV rows")
 
-    # Load Transkribus mapping
     with open(f"{BASE}/docs/data/source_mapping.json", encoding="utf-8") as f:
         tb_mapping = json.load(f)
 
-    # Build Transkribus lookup by CSV signatur
     tb_by_signatur = {}
     for m in tb_mapping.get("matched", []):
         tb_by_signatur[m["csv_signatur"]] = m
 
-    # Transform
     sources = []
     categories = {}
     for row in rows:
@@ -136,7 +131,7 @@ def main():
         digitalisiert = row.get("Digitalisiert", "").strip()
         transkribiert = row.get("Transkribiert", "").strip()
 
-        # Skip rows with no signatur (empty rows)
+        # An empty trailing row of the CSV carries no signature.
         if not signatur:
             continue
 
@@ -144,7 +139,6 @@ def main():
         pages = parse_pages(digitalisiert)
         tier = compute_availability_tier(row, tb_mapping)
 
-        # Transkribus info
         tb_info = tb_by_signatur.get(signatur)
         transkribus = None
         if tb_info:
@@ -172,7 +166,6 @@ def main():
         sources.append(source)
         categories[kategorie] = categories.get(kategorie, 0) + 1
 
-    # Save
     out_path = f"{BASE}/docs/data/sources.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(sources, f, ensure_ascii=False, indent=1)
