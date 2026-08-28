@@ -38,13 +38,41 @@
 
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">Usage</h2>
+        <h2 class="h5 mb-2">What this prototype demonstrates</h2>
+        <ol class="small mb-0">
+          <li class="mb-2"><strong>Methodical feasibility on the actual source material.</strong> The pipeline runs end to end on the Transkribus collection of the Tyrolean State Archives, from facsimile to validated TEI and aggregated research data. Every artifact on this site is derived from that collection; nothing is mocked.</li>
+          <li class="mb-2"><strong>The methods work on Early New High German manuscripts.</strong> Vision-language models transcribe fifteenth-century Bastarda and Kurrent directly from the page images, and the <a href="benchmark.html">benchmark</a> measures how well, against scholarly reference transcriptions.</li>
+          <li class="mb-2"><strong>How far current models go without any training.</strong> No model is fine-tuned. Transcription quality is steered through versioned, frozen prompt iterations alone, and each iteration is measured under repetition so that progress is attributable to the prompt rather than to run-to-run noise.</li>
+          <li class="mb-0"><strong>How annotation and revision will proceed in practice.</strong> The <a href="viewer.html">viewer</a> contains the working review loop: a scholar records page decisions and line corrections in the browser, the export is ingested into the page register with full provenance, and corrected readings flow into the TEI. Extracted entities are anchored to lines, gathered in a corpus-wide register and published as a JSON-LD graph for <a href="exploration.html">exploration</a>. All machine output is marked unrevised until a scholar approves it.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 mb-2">The pipeline</h2>
+        <ol class="small mb-2">
+          <li>Facsimiles and existing transcriptions come from Transkribus (IIIF); a subset of the inventories carries transcriptions by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a>, named as such wherever they appear.</li>
+          <li>Vision-language models transcribe pages against versioned, frozen prompts; runs are stored append-only with full provenance (prompt version and hash, model, parameters) and are never overwritten.</li>
+          <li>A page register records every page with its content class, verification status and all transcription runs; a better transcription is a new run, never an edit.</li>
+          <li>Scholarly review happens in the viewer; exports are validated as a whole before anything is written, so a stale or inconsistent batch changes nothing.</li>
+          <li>The TEI edition is generated deterministically from register and runs, one file per document plus a corpus-wide entity register, and validated in two stages: TEI conformance and a closed project grammar in which certainty attributes are impossible by construction.</li>
+          <li>The entity layer is aggregated into a JSON-LD graph that records, for every node, where it is attested and which step (model or deterministic workflow) produced it.</li>
+        </ol>
+        <p class="small mb-0">Builders read no clock and make no network calls, so every rebuild is byte-identical; a healthcheck verifies this together with cross-artifact consistency on every commit.</p>
+      </div>
+    </section>
+
+    <section class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 mb-2">Usage guide</h2>
         <ul class="small mb-0">
-          <li>The <a href="index.html">home page</a> lists all sources with search and filters; sources with full text open the facsimile–transcription view in the <a href="viewer.html">viewer</a>.</li>
-          <li>The <a href="viewer.html">viewer</a> offers a facsimile–transcription synopsis and a reading mode over the whole text, and scholarly review and correction take place there.</li>
-          <li>The <a href="benchmark.html">benchmark</a> documents the quality of the VLM transcription across versioned prompt iterations.</li>
-          <li>The <a href="exploration.html">exploration</a> shows the content layer (persons, places, objects) extracted from the sources.</li>
-          <li>The <a href="knowledge.html">Knowledge Vault</a> holds the Promptotyping documents behind the project: requirements, data, decisions, evaluation protocol.</li>
+          <li><strong>Find a source.</strong> The <a href="index.html">home page</a> lists all sources with search, filters and processing stage; sources with full text open in the <a href="viewer.html">viewer</a>.</li>
+          <li><strong>Read a source.</strong> The viewer offers a facsimile–transcription synopsis with line highlighting, a reading mode over the whole text, the TEI encoding with download, and adjustable text size. Chips above the text name the text layer (human-corrected or machine) and its origin.</li>
+          <li><strong>Review a source.</strong> The Review button starts the correction workflow: reviewer initials, a decision per page, corrections per line, exported as JSON for the pipeline.</li>
+          <li><strong>Judge the transcription quality.</strong> The <a href="benchmark.html">benchmark</a> compares prompt iterations on a fixed page set, with links from every measured page to its facsimile and text.</li>
+          <li><strong>Explore the content layer.</strong> The <a href="exploration.html">exploration</a> shows extracted persons, places and objects as a network over the sources and as a sortable table, with provenance on every record.</li>
+          <li><strong>Understand the decisions.</strong> The <a href="knowledge.html">Knowledge Vault</a> holds the Promptotyping documents behind the project: requirements, data, evaluation protocol, design decisions and the decision journal.</li>
         </ul>
       </div>
     </section>
