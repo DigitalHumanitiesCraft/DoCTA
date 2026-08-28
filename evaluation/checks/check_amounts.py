@@ -593,6 +593,48 @@ def page_verdict(run: dict) -> str:
     return "clean" if good else "unverifiable"
 
 
+def coverage_of(runs: list[dict], pages: dict[str, dict[str, str]]) -> dict:
+    """How much of the material the arithmetic reaches at all, per cohort.
+
+    The verdict distribution alone does not say that. Two decided blocks out of three
+    and two out of two hundred are different results, and a cohort whose runs write
+    amounts that no Summa line closes is outside the reach of the check rather than
+    failing it, so both denominators are reported beside the counts.
+    """
+    buckets: dict[str, dict[str, int]] = {}
+
+    def bucket(cohort: str) -> dict[str, int]:
+        return buckets.setdefault(
+            cohort,
+            {
+                "runs": 0,
+                "runs_with_amounts_and_no_sum": 0,
+                "blocks": 0,
+                "decided_blocks": 0,
+                "pages": 0,
+                "pages_with_signal": 0,
+            },
+        )
+
+    cohort_of: dict[str, str] = {}
+    for run in runs:
+        cohort_of[run["page"]] = run["cohort"]
+        data = bucket(run["cohort"])
+        data["runs"] += 1
+        data["blocks"] += len(run["blocks"])
+        data["decided_blocks"] += (
+            run["counts"]["exact-match"] + run["counts"]["mismatch"]
+        )
+        if not run["blocks"] and run["unclosed_amount_runs"]:
+            data["runs_with_amounts_and_no_sum"] += 1
+    for page, cohort in cohort_of.items():
+        data = bucket(cohort)
+        data["pages"] += 1
+        if any(verdict != "unverifiable" for verdict in pages[page].values()):
+            data["pages_with_signal"] += 1
+    return dict(sorted(buckets.items()))
+
+
 def aggregate(runs: list[dict]) -> dict:
     cohorts: dict[str, dict[str, int]] = {}
     for run in runs:
@@ -617,11 +659,19 @@ def aggregate(runs: list[dict]) -> dict:
     for run in runs:
         pages.setdefault(run["page"], {})[f"r{run['repeat']}"] = page_verdict(run)
     # Both selections need at least two repeats to say anything, and hold for any k.
-    single = sorted(
-        p
+    clean_once = {
+        p: r
         for p, r in pages.items()
         if len(r) > 1 and sum(v == "clean" for v in r.values()) == 1
+    }
+    single = sorted(clean_once)
+    # What the counterpart says decides how much the candidate is worth: a repeat that
+    # contradicts the clean one is a real disagreement about the page, a repeat that
+    # decides nothing leaves the clean run unopposed.
+    vs_mismatch = sorted(
+        p for p, r in clean_once.items() if any(v == "mismatch" for v in r.values())
     )
+    vs_unverifiable = sorted(set(clean_once) - set(vs_mismatch))
     all_fail = sorted(
         p
         for p, r in pages.items()
@@ -637,8 +687,11 @@ def aggregate(runs: list[dict]) -> dict:
                 reasons[block["reason"]] = reasons.get(block["reason"], 0) + 1
     return {
         "cohorts": dict(sorted(cohorts.items())),
+        "coverage": coverage_of(runs, pages),
         "pages": dict(sorted(pages.items())),
         "sighting_candidates": single,
+        "sighting_candidates_vs_mismatch": vs_mismatch,
+        "sighting_candidates_vs_unverifiable": vs_unverifiable,
         "all_repeats_mismatch": all_fail,
         "unverifiable_reasons": dict(
             sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0]))
@@ -649,6 +702,33 @@ def aggregate(runs: list[dict]) -> dict:
 
 def format_amount(values: dict[str, int]) -> str:
     return " ".join(f"{v} {k}" for k, v in sorted(values.items())) or "-"
+
+
+def share(part: int, whole: int) -> str:
+    """Count and its share of the denominator, so neither number stands alone."""
+    return f"{part} von {whole}" + (
+        f" ({round(100 * part / whole)} %)" if whole else ""
+    )
+
+
+def sighting_table(aggregate_data: dict, pages: list[str]) -> list[str]:
+    """One repeat column per k, so the table holds for any number of repeats."""
+    if not pages:
+        return ["Keine."]
+    columns = sorted(
+        {key for page in pages for key in aggregate_data["pages"][page]},
+        key=lambda key: int(key[1:]),
+    )
+    rows = [
+        "| Seite | " + " | ".join(columns) + " |",
+        "|---|" + "---|" * len(columns),
+    ]
+    for page in pages:
+        repeats = aggregate_data["pages"][page]
+        rows.append(
+            f"| {page} | " + " | ".join(repeats.get(key, "-") for key in columns) + " |"
+        )
+    return rows
 
 
 def render_markdown(report: dict) -> str:
@@ -673,6 +753,24 @@ def render_markdown(report: dict) -> str:
         )
     out += [
         "",
+        "## Reichweite",
+        "",
+        "Wie viel Material die Probe überhaupt erreicht. Die Verdikt-Verteilung allein "
+        "sagt das nicht, weil zwei entschiedene Blöcke aus drei und zwei aus zweihundert "
+        "dieselbe Zeile ergäben.",
+        "",
+        "| Kohorte | Läufe | Läufe mit Beträgen, aber ohne geschlossenen Block | Blöcke | "
+        "entschiedene Blöcke | Seiten | Seiten mit Befund |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for cohort, data in aggregate_data["coverage"].items():
+        out.append(
+            f"| {cohort} | {data['runs']} | {data['runs_with_amounts_and_no_sum']} | "
+            f"{data['blocks']} | {share(data['decided_blocks'], data['blocks'])} | "
+            f"{data['pages']} | {share(data['pages_with_signal'], data['pages'])} |"
+        )
+    out += [
+        "",
         "## Warum ein Block nicht entscheidet",
         "",
         "| Grund | Blöcke |",
@@ -686,28 +784,20 @@ def render_markdown(report: dict) -> str:
         "",
         "## Seiten, auf denen genau eine Wiederholung aufgeht",
         "",
-        "Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus.",
+        "Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus. "
+        "Getrennt nach dem Verdikt der Gegenprobe, weil ein widersprechender Lauf eine "
+        "Aussage über die Seite macht und ein unverifiable-Lauf keine.",
+        "",
+        "### Gegen einen widersprechenden Lauf",
         "",
     ]
-    if aggregate_data["sighting_candidates"]:
-        columns = sorted(
-            {
-                key
-                for page in aggregate_data["sighting_candidates"]
-                for key in aggregate_data["pages"][page]
-            },
-            key=lambda key: int(key[1:]),
-        )
-        out += [
-            "| Seite | " + " | ".join(columns) + " |",
-            "|---|" + "---|" * len(columns),
-        ]
-        for page in aggregate_data["sighting_candidates"]:
-            repeats = aggregate_data["pages"][page]
-            cells = " | ".join(repeats.get(key, "-") for key in columns)
-            out.append(f"| {page} | {cells} |")
-    else:
-        out.append("Keine.")
+    out += sighting_table(
+        aggregate_data, aggregate_data["sighting_candidates_vs_mismatch"]
+    )
+    out += ["", "### Gegen einen Lauf ohne Befund", ""]
+    out += sighting_table(
+        aggregate_data, aggregate_data["sighting_candidates_vs_unverifiable"]
+    )
     out += ["", "## Seiten, auf denen alle Wiederholungen scheitern", ""]
     out.append(", ".join(aggregate_data["all_repeats_mismatch"]) or "Keine.")
     out += [

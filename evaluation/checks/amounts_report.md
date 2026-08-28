@@ -9,6 +9,15 @@ Posten eines Blocks gegen dessen Summenzeile, je Denomination und ohne angenomme
 | pilot | 40 | 29 | 6 | 4 | 19 | 0 | 29 |
 | pilot2 | 40 | 41 | 3 | 4 | 34 | 1 | 25 |
 
+## Reichweite
+
+Wie viel Material die Probe überhaupt erreicht. Die Verdikt-Verteilung allein sagt das nicht, weil zwei entschiedene Blöcke aus drei und zwei aus zweihundert dieselbe Zeile ergäben.
+
+| Kohorte | Läufe | Läufe mit Beträgen, aber ohne geschlossenen Block | Blöcke | entschiedene Blöcke | Seiten | Seiten mit Befund |
+|---|---|---|---|---|---|---|
+| pilot | 40 | 3 | 29 | 10 von 29 (34 %) | 20 | 5 von 20 (25 %) |
+| pilot2 | 40 | 3 | 41 | 7 von 41 (17 %) | 20 | 5 von 20 (25 %) |
+
 ## Warum ein Block nicht entscheidet
 
 | Grund | Blöcke |
@@ -22,13 +31,20 @@ Posten eines Blocks gegen dessen Summenzeile, je Denomination und ohne angenomme
 
 ## Seiten, auf denen genau eine Wiederholung aufgeht
 
-Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus.
+Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus. Getrennt nach dem Verdikt der Gegenprobe, weil ein widersprechender Lauf eine Aussage über die Seite macht und ein unverifiable-Lauf keine.
+
+### Gegen einen widersprechenden Lauf
+
+| Seite | r1 | r2 |
+|---|---|---|
+| pilot2_rb2_p039 | clean | mismatch |
+
+### Gegen einen Lauf ohne Befund
 
 | Seite | r1 | r2 |
 |---|---|---|
 | pilot2_rb2_p025 | unverifiable | clean |
 | pilot2_rb2_p030 | clean | unverifiable |
-| pilot2_rb2_p039 | clean | mismatch |
 
 ## Seiten, auf denen alle Wiederholungen scheitern
 

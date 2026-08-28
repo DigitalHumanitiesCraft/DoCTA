@@ -24,6 +24,10 @@ Two cohorts, two repeats per page, iteration it02 throughout.
 
 `pilot2_summary.json` is the source of truth for page counts, run counts and all metrics.
 
+## Metric state
+
+Since 2026-08-28 the summary carries the corrected metric of the benchmark runner, meaning the symmetric agreement, the numeral classification before the v/u collapse, and a missing value instead of a zero where a token class is absent from both repeats. `pilot2_summary_oldmetric.json` preserves the figures as they were originally published; the runs themselves are untouched and were never requested again.
+
 ## Rerunning
 
 1. `python run_pilot2.py` fills in missing runs (skip-if-exists via the benchmark runner) and writes the summary

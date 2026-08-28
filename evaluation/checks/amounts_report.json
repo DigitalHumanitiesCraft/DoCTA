@@ -3105,6 +3105,24 @@
     "unclosed_amount_runs": 25
    }
   },
+  "coverage": {
+   "pilot": {
+    "runs": 40,
+    "runs_with_amounts_and_no_sum": 3,
+    "blocks": 29,
+    "decided_blocks": 10,
+    "pages": 20,
+    "pages_with_signal": 5
+   },
+   "pilot2": {
+    "runs": 40,
+    "runs_with_amounts_and_no_sum": 3,
+    "blocks": 41,
+    "decided_blocks": 7,
+    "pages": 20,
+    "pages_with_signal": 5
+   }
+  },
   "pages": {
    "pilot2_rb2_p022": {
     "r1": "unverifiable",
@@ -3271,6 +3289,13 @@
    "pilot2_rb2_p025",
    "pilot2_rb2_p030",
    "pilot2_rb2_p039"
+  ],
+  "sighting_candidates_vs_mismatch": [
+   "pilot2_rb2_p039"
+  ],
+  "sighting_candidates_vs_unverifiable": [
+   "pilot2_rb2_p025",
+   "pilot2_rb2_p030"
   ],
   "all_repeats_mismatch": [
    "pilot_rb2_p015"

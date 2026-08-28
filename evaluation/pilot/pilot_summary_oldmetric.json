@@ -19,8 +19,8 @@
     0.2224,
     0.2189
    ],
-   "consistency_words": 0.691,
-   "consistency_numbers": 0.545
+   "consistency_words": 0.688,
+   "consistency_numbers": 0.6
   },
   "pilot_inv_11330060_p2": {
    "source": "inventar",
@@ -39,8 +39,8 @@
     0.1016,
     0.1061
    ],
-   "consistency_words": 0.747,
-   "consistency_numbers": null
+   "consistency_words": 0.743,
+   "consistency_numbers": 0.0
   },
   "pilot_inv_11330060_p3": {
    "source": "inventar",
@@ -59,7 +59,7 @@
     0.1834,
     0.202
    ],
-   "consistency_words": 0.646,
+   "consistency_words": 0.639,
    "consistency_numbers": 1.0
   },
   "pilot_inv_11330060_p4": {
@@ -79,7 +79,7 @@
     0.1865,
     0.1827
    ],
-   "consistency_words": 0.676,
+   "consistency_words": 0.686,
    "consistency_numbers": 0.5
   },
   "pilot_inv_11330060_p5": {
@@ -99,7 +99,7 @@
     0.1677,
     0.1753
    ],
-   "consistency_words": 0.602,
+   "consistency_words": 0.613,
    "consistency_numbers": 0.75
   },
   "pilot_inv_11330060_p6": {
@@ -119,8 +119,8 @@
     0.3025,
     0.3081
    ],
-   "consistency_words": 0.522,
-   "consistency_numbers": 0.727
+   "consistency_words": 0.518,
+   "consistency_numbers": 0.857
   },
   "pilot_inv_11330060_p7": {
    "source": "inventar",
@@ -139,8 +139,8 @@
     0.1741,
     0.2444
    ],
-   "consistency_words": 0.598,
-   "consistency_numbers": 0.8
+   "consistency_words": 0.591,
+   "consistency_numbers": 1.0
   },
   "pilot_inv_11330060_p8": {
    "source": "inventar",
@@ -159,7 +159,7 @@
     37.0,
     53.0
    ],
-   "consistency_words": 0.545,
+   "consistency_words": 0.75,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p002": {
@@ -174,8 +174,8 @@
     66,
     63
    ],
-   "consistency_words": 0.768,
-   "consistency_numbers": 0.452
+   "consistency_words": 0.747,
+   "consistency_numbers": 0.5
   },
   "pilot_rb2_p003": {
    "source": "raitbuch2",
@@ -189,8 +189,8 @@
     48,
     64
    ],
-   "consistency_words": 0.816,
-   "consistency_numbers": 0.643
+   "consistency_words": 0.813,
+   "consistency_numbers": 0.667
   },
   "pilot_rb2_p004": {
    "source": "raitbuch2",
@@ -204,8 +204,8 @@
     54,
     65
    ],
-   "consistency_words": 0.727,
-   "consistency_numbers": 0.5
+   "consistency_words": 0.702,
+   "consistency_numbers": 0.571
   },
   "pilot_rb2_p005": {
    "source": "raitbuch2",
@@ -219,8 +219,8 @@
     43,
     67
    ],
-   "consistency_words": 0.705,
-   "consistency_numbers": 0.873
+   "consistency_words": 0.702,
+   "consistency_numbers": 0.935
   },
   "pilot_rb2_p006": {
    "source": "raitbuch2",
@@ -234,8 +234,8 @@
     22,
     35
    ],
-   "consistency_words": 0.789,
-   "consistency_numbers": 0.88
+   "consistency_words": 0.787,
+   "consistency_numbers": 0.833
   },
   "pilot_rb2_p007": {
    "source": "raitbuch2",
@@ -249,7 +249,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p008": {
@@ -264,7 +264,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p009": {
@@ -279,7 +279,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p010": {
@@ -294,7 +294,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p011": {
@@ -309,7 +309,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p012": {
@@ -324,7 +324,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   },
   "pilot_rb2_p013": {
@@ -339,8 +339,8 @@
     30,
     50
    ],
-   "consistency_words": 0.532,
-   "consistency_numbers": 0.78
+   "consistency_words": 0.581,
+   "consistency_numbers": 0.8
   },
   "pilot_rb2_p014": {
    "source": "raitbuch2",
@@ -354,8 +354,8 @@
     30,
     17
    ],
-   "consistency_words": 0.697,
-   "consistency_numbers": 0.682
+   "consistency_words": 0.694,
+   "consistency_numbers": 0.789
   },
   "pilot_rb2_p015": {
    "source": "raitbuch2",
@@ -369,8 +369,8 @@
     42,
     81
    ],
-   "consistency_words": 0.714,
-   "consistency_numbers": 0.667
+   "consistency_words": 0.694,
+   "consistency_numbers": 0.9
   },
   "pilot_rb2_p016": {
    "source": "raitbuch2",
@@ -385,7 +385,7 @@
     59
    ],
    "consistency_words": 0.667,
-   "consistency_numbers": 0.8
+   "consistency_numbers": 0.821
   },
   "pilot_rb2_p017": {
    "source": "raitbuch2",
@@ -399,8 +399,8 @@
     68,
     48
    ],
-   "consistency_words": 0.646,
-   "consistency_numbers": 0.543
+   "consistency_words": 0.63,
+   "consistency_numbers": 0.679
   },
   "pilot_rb2_p018": {
    "source": "raitbuch2",
@@ -414,8 +414,8 @@
     54,
     30
    ],
-   "consistency_words": 0.646,
-   "consistency_numbers": 0.441
+   "consistency_words": 0.629,
+   "consistency_numbers": 0.55
   },
   "pilot_rb2_p019": {
    "source": "raitbuch2",
@@ -429,8 +429,8 @@
     45,
     43
    ],
-   "consistency_words": 0.742,
-   "consistency_numbers": 0.571
+   "consistency_words": 0.716,
+   "consistency_numbers": 0.704
   },
   "pilot_rb2_p020": {
    "source": "raitbuch2",
@@ -444,8 +444,8 @@
     21,
     39
    ],
-   "consistency_words": 0.678,
-   "consistency_numbers": 0.581
+   "consistency_words": 0.672,
+   "consistency_numbers": 0.615
   },
   "pilot_rb2_p021": {
    "source": "raitbuch2",
@@ -459,7 +459,7 @@
     0,
     0
    ],
-   "consistency_words": null,
+   "consistency_words": 0.0,
    "consistency_numbers": 1.0
   }
  }

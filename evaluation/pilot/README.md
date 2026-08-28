@@ -9,6 +9,10 @@ Zwei Kohorten, zwei Bewertungsmodi, je 2 Wiederholungen pro Seite:
 1. **Inventar-Volldokument**: Naudersberg A 152.1 (docId 11330060, 8 Seiten), eine im Benchmark nicht vorkommende Burg. Bewertung je Seite als CER fair gegen die Transkribus-Arbeitstranskription. Das ist ein Vergleichssignal gegen eine ungeprüfte Referenz und kein Ground-Truth-Maß; systematische Abweichungen können auch auf Seiten der Arbeitstranskription liegen (zwei Konventionen im Bestand).
 2. **Raitbuch-Abschnitt**: zwanzig aufeinanderfolgende Doppelseiten vom Buchbeginn (pageNr 2–21), inklusive Leer- und Übergangsseiten. Bewertung über Selbstkonsistenz der beiden Wiederholungen (positionsweise Token-Übereinstimmung, getrennt nach Wort- und Zahltokens); Seiten mit niedriger Zahlen-Konsistenz sind Sichtungskandidaten.
 
+## Metrikstand
+
+`pilot_summary.json` trägt seit dem 2026-08-28 die korrigierte Metrik des Benchmark-Runners, also die symmetrische Übereinstimmung, die Zahlklassifikation vor der v/u-Angleichung und den fehlenden Wert statt einer Null, wo eine Tokenklasse auf beiden Seiten fehlt. Damit verschwinden unter anderem die sieben falschen Nullen der Leerseiten. `pilot_summary_oldmetric.json` bewahrt die Zahlen in der Form, in der sie ursprünglich publiziert wurden; die Läufe selbst sind unverändert und wurden nicht neu angefragt.
+
 ## Nutzung
 
 1. `python run_pilot.py` fährt fehlende Läufe nach (skip-if-exists über den Benchmark-Runner) und schreibt `pilot_summary.json`

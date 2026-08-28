@@ -102,6 +102,73 @@ def test_a_malformed_review_export_is_a_finding_and_not_a_crash() -> None:
     assert "broken.json" in hits[0].message
 
 
+def _benchmark_page(cer_mean: float, degenerate: bool | None) -> dict:
+    page: dict = {
+        "reference_class": "transkribus-done",
+        "reference_chars": 38,
+        "iterations": {
+            "it02": {
+                "k": 2,
+                "lines": [8, 8],
+                "cer_fair": {"mean": cer_mean},
+                "consistency_words": 0.5,
+                "consistency_numbers": 0.5,
+            }
+        },
+    }
+    if degenerate is not None:
+        page["reference_degenerate"] = degenerate
+    return page
+
+
+def test_a_degenerate_reference_without_its_flag_is_caught() -> None:
+    """The exclusion is a data property. A page the flag misses would have to be
+    excluded by its measured rate again, which is what the flag replaces."""
+    summary = {"pages": {"inv_x_p1": _benchmark_page(1.4, None)}}
+    findings = cp._check_benchmark_metrics(summary)
+    hits = [f for f in findings if f.check == "metrics.degenerate-unflagged"]
+    assert hits, f"the unflagged degenerate reference went unnoticed: {findings}"
+    assert all(f.severity == cp.FAIL for f in hits), hits
+
+
+def test_a_flagged_degenerate_reference_is_reported_and_does_not_fail() -> None:
+    findings = cp._check_benchmark_metrics(
+        {"pages": {"inv_x_p1": _benchmark_page(1.4, True)}}
+    )
+    assert [f.check for f in findings] == ["metrics.degenerate-reference"]
+    assert findings[0].severity == cp.INFO
+
+
+def test_a_consistency_outside_its_range_is_caught_in_the_benchmark() -> None:
+    page = _benchmark_page(0.3, False)
+    page["iterations"]["it02"]["consistency_numbers"] = 1.4
+    findings = cp._check_benchmark_metrics({"pages": {"inv_x_p1": page}})
+    hits = [f for f in findings if f.check == "metrics.consistency"]
+    assert hits, f"the out-of-range value went unnoticed: {findings}"
+    assert all(f.severity == cp.FAIL for f in hits), hits
+
+
+def test_a_drifted_site_copy_of_the_benchmark_summary_is_caught() -> None:
+    """docs/data/benchmark/summary.json is copied by hand, so only this check
+    keeps the published figures and the measured ones the same."""
+    with tempfile.TemporaryDirectory() as td:
+        stale = Path(td) / "summary.json"
+        stale.write_text('{"pages": {}}', encoding="utf-8")
+        original = cp.SITE_BENCHMARK_SUMMARY
+        cp.SITE_BENCHMARK_SUMMARY = stale
+        try:
+            findings = cp._check_benchmark_copy()
+        finally:
+            cp.SITE_BENCHMARK_SUMMARY = original
+
+    assert [f.check for f in findings] == ["metrics.benchmark-copy"], findings
+    assert findings[0].severity == cp.FAIL
+
+
+def test_the_committed_site_copy_matches_its_source() -> None:
+    assert cp._check_benchmark_copy() == []
+
+
 def test_a_crashing_check_becomes_a_finding_and_the_run_continues() -> None:
     """One unreadable input must not take the whole report down with it."""
 

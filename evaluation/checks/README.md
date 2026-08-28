@@ -30,8 +30,10 @@ The check reads the run files already in the repository, makes no network call a
 
 ## Report
 
-`amounts_report.json` and `amounts_report.md` are written next to the script and are regenerated on every run. The Markdown report is German, like the other evaluation reports. It carries the per-cohort counts, the reasons a block did not decide, the pages on which exactly one repeat adds up, the pages on which every repeat fails, the unparsed tokens with their frequency and the individual decided blocks with both totals.
+`amounts_report.json` and `amounts_report.md` are written next to the script and are regenerated on every run. The Markdown report is German, like the other evaluation reports. It carries the per-cohort counts, the reach of the check, the reasons a block did not decide, the pages on which exactly one repeat adds up, the pages on which every repeat fails, the unparsed tokens with their frequency and the individual decided blocks with both totals.
 
-The section on pages where exactly one repeat adds up is the operative one. Those pages are the sighting candidates, the places where a targeted reading at the image decides between two machine transcriptions at low cost.
+Reach is reported per cohort with both numerator and denominator, decided blocks against all blocks, pages carrying any signal against all pages, and the runs that write amounts which no Summa line closes. A verdict distribution alone does not say how much material the check reaches, and two decided blocks out of three read like two out of two hundred without the denominator.
+
+The section on pages where exactly one repeat adds up is the operative one. Those pages are the sighting candidates, the places where a targeted reading at the image decides between two machine transcriptions at low cost. It is split by what the counterpart says, because a repeat that contradicts the clean one is a disagreement about the page, while a repeat that decides nothing leaves the clean run unopposed.
 
 License as for the repository: code MIT, documents and data CC BY 4.0.

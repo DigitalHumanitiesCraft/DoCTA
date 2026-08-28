@@ -233,6 +233,42 @@ def test_single_item_block_is_not_a_check() -> None:
     assert verdicts(page)[0]["reason"] == "single item, arithmetic is trivial"
 
 
+def test_coverage_counts_both_numerator_and_denominator() -> None:
+    """Reach is a fraction. Without the denominators a cohort where the parser
+    decides two blocks of three reads like one where it decides two of two hundred.
+    """
+    report = ca.build_report(DEFAULT_DIRS)
+    coverage = report["aggregate"]["coverage"]
+    assert set(coverage) == set(report["aggregate"]["cohorts"])
+    for cohort, data in coverage.items():
+        totals = report["aggregate"]["cohorts"][cohort]
+        assert data["blocks"] == totals["blocks"], cohort
+        assert data["decided_blocks"] == totals["exact-match"] + totals["mismatch"]
+        assert data["runs"] == totals["runs"], cohort
+        assert 0 <= data["decided_blocks"] <= data["blocks"], cohort
+        assert 0 <= data["pages_with_signal"] <= data["pages"], cohort
+        assert 0 <= data["runs_with_amounts_and_no_sum"] <= data["runs"], cohort
+    assert sum(d["pages"] for d in coverage.values()) == len(
+        report["aggregate"]["pages"]
+    )
+
+
+def test_sighting_candidates_split_by_the_counterpart_and_stay_the_same_set() -> None:
+    """A clean run against a contradicting one says more than a clean run against
+    one that decides nothing, and the split must lose no candidate."""
+    aggregate = ca.build_report(DEFAULT_DIRS)["aggregate"]
+    against_mismatch = aggregate["sighting_candidates_vs_mismatch"]
+    against_nothing = aggregate["sighting_candidates_vs_unverifiable"]
+    assert not set(against_mismatch) & set(against_nothing)
+    assert (
+        sorted(against_mismatch + against_nothing) == aggregate["sighting_candidates"]
+    )
+    for page in against_mismatch:
+        assert "mismatch" in aggregate["pages"][page].values(), page
+    for page in against_nothing:
+        assert "mismatch" not in aggregate["pages"][page].values(), page
+
+
 def test_report_is_idempotent() -> None:
     report = ca.build_report(DEFAULT_DIRS)
     with tempfile.TemporaryDirectory() as tmp:

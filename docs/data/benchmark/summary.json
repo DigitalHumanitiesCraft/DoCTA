@@ -1,6 +1,11 @@
 {
- "generated": "2026-08-28T14:02:52+00:00",
+ "generated": "2026-08-28T15:43:35+00:00",
  "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "normalisation_profile": {
+  "fair": "docta-fair-v2",
+  "strict": "docta-strict-v2"
+ },
  "pages": {
   "rb2_p003": {
    "folio": "fol. 2v-3r",
@@ -14,6 +19,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/NZLKHSGPPSRNYJOODRHTOBER/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -27,13 +33,32 @@
       32,
       32
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       8,
       6,
       12
      ],
-     "consistency_words": 0.702,
-     "consistency_numbers": 0.307
+     "consistency_words": 0.689,
+     "consistency_numbers": 0.339
     },
     "it02": {
      "k": 3,
@@ -47,13 +72,32 @@
       32,
       35
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       47,
       74,
       31
      ],
-     "consistency_words": 0.76,
-     "consistency_numbers": 0.709
+     "consistency_words": 0.759,
+     "consistency_numbers": 0.721
     }
    }
   },
@@ -67,6 +111,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/BVMETMRKBYZJTLHFCURWAFHK/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -80,13 +125,32 @@
       35,
       35
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       15,
       20,
       16
      ],
-     "consistency_words": 0.522,
-     "consistency_numbers": 0.452
+     "consistency_words": 0.528,
+     "consistency_numbers": 0.47
     },
     "it02": {
      "k": 3,
@@ -100,13 +164,32 @@
       40,
       40
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       50,
       51,
       73
      ],
-     "consistency_words": 0.622,
-     "consistency_numbers": 0.697
+     "consistency_words": 0.621,
+     "consistency_numbers": 0.723
     }
    }
   },
@@ -120,6 +203,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/XXMJRPTJISTDOPHKTXWAOZKB/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -133,13 +217,32 @@
       23,
       24
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       7,
       10,
       15
      ],
-     "consistency_words": 0.514,
-     "consistency_numbers": 0.612
+     "consistency_words": 0.548,
+     "consistency_numbers": 0.67
     },
     "it02": {
      "k": 3,
@@ -153,13 +256,32 @@
       24,
       24
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       46,
       43,
       32
      ],
-     "consistency_words": 0.559,
-     "consistency_numbers": 0.711
+     "consistency_words": 0.554,
+     "consistency_numbers": 0.704
     }
    }
   },
@@ -174,6 +296,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/KODLSJHNUDENMQQEVAUBQUGY/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -187,13 +310,32 @@
       45,
       45
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       27,
       19,
       12
      ],
-     "consistency_words": 0.651,
-     "consistency_numbers": 0.483
+     "consistency_words": 0.656,
+     "consistency_numbers": 0.506
     },
     "it02": {
      "k": 3,
@@ -207,13 +349,33 @@
       48,
       48
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       73,
       102,
       48
      ],
-     "consistency_words": 0.669,
-     "consistency_numbers": 0.599
+     "consistency_words": 0.674,
+     "consistency_numbers": 0.582
     }
    }
   },
@@ -227,6 +389,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/FVLICSDDSSCCQMLFFKFTGBAM/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -240,13 +403,32 @@
       31,
       31
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       19,
       32,
       19
      ],
-     "consistency_words": 0.64,
-     "consistency_numbers": 0.506
+     "consistency_words": 0.637,
+     "consistency_numbers": 0.488
     },
     "it02": {
      "k": 3,
@@ -260,13 +442,32 @@
       32,
       32
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       67,
       65,
       44
      ],
      "consistency_words": 0.677,
-     "consistency_numbers": 0.765
+     "consistency_numbers": 0.732
     }
    }
   },
@@ -278,6 +479,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/EVIDDDOHJESDYFSRDJVIHXVI/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -290,6 +492,25 @@
       1,
       1,
       1
+     ],
+     "empty_parts": [
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
      ],
      "uncertain": [
       0,
@@ -311,6 +532,25 @@
       1,
       1
      ],
+     "empty_parts": [
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       0,
       0,
@@ -331,6 +571,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/FCCTBHPNKQBSXYURUTFYPZLF/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -344,13 +585,32 @@
       26,
       24
      ],
+     "empty_parts": [
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       13,
       18,
       16
      ],
-     "consistency_words": 0.464,
-     "consistency_numbers": 0.133
+     "consistency_words": 0.452,
+     "consistency_numbers": 0.176
     },
     "it02": {
      "k": 3,
@@ -364,13 +624,32 @@
       26,
       26
      ],
+     "empty_parts": [
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ],
+      [
+       true,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       28,
       45,
       30
      ],
-     "consistency_words": 0.522,
-     "consistency_numbers": 0.583
+     "consistency_words": 0.519,
+     "consistency_numbers": 0.537
     }
    }
   },
@@ -385,6 +664,7 @@
    "source": "raitbuch2",
    "iiif": "https://files.transkribus.eu/iiif/2/BDPGLDAYNCQECDQYOGHNXQVZ/full/max/0/default.jpg",
    "spread": true,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 3,
@@ -398,13 +678,34 @@
       74,
       74
      ],
+     "empty_parts": [
+      [
+       false,
+       false,
+       false
+      ],
+      [
+       false,
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       30,
       29,
       8
      ],
      "consistency_words": 0.409,
-     "consistency_numbers": 0.567
+     "consistency_numbers": 0.546
     },
     "it02": {
      "k": 3,
@@ -418,13 +719,35 @@
       75,
       76
      ],
+     "empty_parts": [
+      [
+       false,
+       false,
+       false
+      ],
+      [
+       false,
+       false,
+       false
+      ],
+      [
+       false,
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       141,
       123,
       94
      ],
-     "consistency_words": 0.506,
-     "consistency_numbers": 0.558
+     "consistency_words": 0.504,
+     "consistency_numbers": 0.588
     }
    }
   },
@@ -439,6 +762,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/EUMSRNPRFDGNNBBJVELBDIVJ/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -456,6 +780,30 @@
       43,
       44
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       20,
       42,
@@ -464,17 +812,33 @@
       39
      ],
      "cer_fair": {
-      "mean": 0.2419,
-      "min": 0.2306,
-      "max": 0.2465
+      "mean": 0.2429,
+      "min": 0.2323,
+      "max": 0.2463,
+      "dist": [
+       246,
+       233,
+       247,
+       245,
+       247
+      ],
+      "ref_len": 1003
      },
      "cer_strict": {
-      "mean": 0.4512,
-      "min": 0.429,
-      "max": 0.4798
+      "mean": 0.4517,
+      "min": 0.4301,
+      "max": 0.4812,
+      "dist": [
+       499,
+       446,
+       461,
+       469,
+       467
+      ],
+      "ref_len": 1037
      },
-     "consistency_words": 0.572,
-     "consistency_numbers": 0.65
+     "consistency_words": 0.588,
+     "consistency_numbers": 0.665
     },
     "it02": {
      "k": 5,
@@ -492,6 +856,30 @@
       43,
       45
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       41,
       45,
@@ -500,17 +888,33 @@
       21
      ],
      "cer_fair": {
-      "mean": 0.3101,
-      "min": 0.2982,
-      "max": 0.325
+      "mean": 0.3097,
+      "min": 0.3001,
+      "max": 0.323,
+      "dist": [
+       301,
+       317,
+       324,
+       305,
+       306
+      ],
+      "ref_len": 1003
      },
      "cer_strict": {
-      "mean": 0.4157,
-      "min": 0.3781,
-      "max": 0.4453
+      "mean": 0.4145,
+      "min": 0.379,
+      "max": 0.4426,
+      "dist": [
+       428,
+       431,
+       459,
+       438,
+       393
+      ],
+      "ref_len": 1037
      },
-     "consistency_words": 0.57,
-     "consistency_numbers": 0.5
+     "consistency_words": 0.559,
+     "consistency_numbers": 0.494
     }
    },
    "gt_lines": [
@@ -558,7 +962,9 @@
     "der vorhell.",
     "Item I gestreimbter polster.",
     "Item I weiss kuss."
-   ]
+   ],
+   "reference_chars": 1003,
+   "reference_degenerate": false
   },
   "inv_11328300_p2": {
    "folio": "A 049.1 fol. 1v",
@@ -570,6 +976,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/BGZMCIJJXSDNUGIRLDTNVSLO/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -587,6 +994,35 @@
       86,
       85
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       71,
       43,
@@ -595,17 +1031,33 @@
       53
      ],
      "cer_fair": {
-      "mean": 0.3157,
-      "min": 0.3083,
-      "max": 0.3224
+      "mean": 0.3156,
+      "min": 0.3082,
+      "max": 0.3224,
+      "dist": [
+       590,
+       586,
+       564,
+       571,
+       577
+      ],
+      "ref_len": 1830
      },
      "cer_strict": {
-      "mean": 0.485,
-      "min": 0.477,
-      "max": 0.4974
+      "mean": 0.4841,
+      "min": 0.4764,
+      "max": 0.4963,
+      "dist": [
+       945,
+       907,
+       928,
+       913,
+       916
+      ],
+      "ref_len": 1904
      },
-     "consistency_words": 0.503,
-     "consistency_numbers": 0.718
+     "consistency_words": 0.5,
+     "consistency_numbers": 0.699
     },
     "it02": {
      "k": 5,
@@ -623,6 +1075,35 @@
       80,
       80
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       48,
       125,
@@ -631,17 +1112,33 @@
       144
      ],
      "cer_fair": {
-      "mean": 0.3005,
-      "min": 0.287,
-      "max": 0.3137
+      "mean": 0.3003,
+      "min": 0.2863,
+      "max": 0.3137,
+      "dist": [
+       524,
+       554,
+       574,
+       525,
+       571
+      ],
+      "ref_len": 1830
      },
      "cer_strict": {
-      "mean": 0.4263,
-      "min": 0.383,
-      "max": 0.4666
+      "mean": 0.425,
+      "min": 0.3813,
+      "max": 0.4659,
+      "dist": [
+       875,
+       887,
+       780,
+       726,
+       778
+      ],
+      "ref_len": 1904
      },
-     "consistency_words": 0.488,
-     "consistency_numbers": 0.654
+     "consistency_words": 0.48,
+     "consistency_numbers": 0.663
     }
    },
    "gt_lines": [
@@ -728,7 +1225,9 @@
     "Item XIIII beslagen loffel in ainem",
     "futral.",
     "Item beÿ IIII ellen swãbischer zwilch."
-   ]
+   ],
+   "reference_chars": 1830,
+   "reference_degenerate": false
   },
   "inv_11328300_p3": {
    "folio": "A 049.1 S. 3",
@@ -738,6 +1237,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/XQVAYIVKNFWKDBDXBLPKGNEH/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -755,6 +1255,32 @@
       58,
       58
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       48,
       60,
@@ -765,15 +1291,31 @@
      "cer_fair": {
       "mean": 0.3155,
       "min": 0.2806,
-      "max": 0.4159
+      "max": 0.4159,
+      "dist": [
+       621,
+       432,
+       441,
+       419,
+       442
+      ],
+      "ref_len": 1493
      },
      "cer_strict": {
       "mean": 0.434,
       "min": 0.3978,
-      "max": 0.5238
+      "max": 0.5238,
+      "dist": [
+       802,
+       609,
+       625,
+       633,
+       653
+      ],
+      "ref_len": 1531
      },
      "consistency_words": 0.47,
-     "consistency_numbers": 0.583
+     "consistency_numbers": 0.577
     },
     "it02": {
      "k": 5,
@@ -791,6 +1333,30 @@
       58,
       58
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       49,
       62,
@@ -801,15 +1367,31 @@
      "cer_fair": {
       "mean": 0.3029,
       "min": 0.2766,
-      "max": 0.3349
+      "max": 0.3349,
+      "dist": [
+       500,
+       441,
+       413,
+       449,
+       458
+      ],
+      "ref_len": 1493
      },
      "cer_strict": {
       "mean": 0.398,
       "min": 0.3743,
-      "max": 0.4415
+      "max": 0.4415,
+      "dist": [
+       611,
+       612,
+       573,
+       575,
+       676
+      ],
+      "ref_len": 1531
      },
-     "consistency_words": 0.46,
-     "consistency_numbers": 0.453
+     "consistency_words": 0.448,
+     "consistency_numbers": 0.488
     }
    },
    "gt_lines": [
@@ -872,7 +1454,9 @@
     "gen hoff gnommen.",
     "Item II kraesel sind noch in",
     "der albem."
-   ]
+   ],
+   "reference_chars": 1493,
+   "reference_degenerate": false
   },
   "inv_11328300_p4": {
    "folio": "A 049.1 S. 4",
@@ -882,6 +1466,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/IDGBALZNDBVSDMQHGLXHBGSK/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -899,6 +1484,30 @@
       6,
       5
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       4,
       5,
@@ -909,14 +1518,30 @@
      "cer_fair": {
       "mean": 1.0133,
       "min": 0.9,
-      "max": 1.1
+      "max": 1.1,
+      "dist": [
+       33,
+       29,
+       30,
+       33,
+       27
+      ],
+      "ref_len": 30
      },
      "cer_strict": {
       "mean": 1.4134,
       "min": 1.2667,
-      "max": 1.5667
+      "max": 1.5667,
+      "dist": [
+       44,
+       39,
+       47,
+       44,
+       38
+      ],
+      "ref_len": 30
      },
-     "consistency_words": 0.703,
+     "consistency_words": 0.711,
      "consistency_numbers": 0.9
     },
     "it02": {
@@ -935,6 +1560,30 @@
       5,
       6
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       4,
       4,
@@ -945,14 +1594,30 @@
      "cer_fair": {
       "mean": 0.98,
       "min": 0.9,
-      "max": 1.1
+      "max": 1.1,
+      "dist": [
+       28,
+       33,
+       32,
+       27,
+       27
+      ],
+      "ref_len": 30
      },
      "cer_strict": {
       "mean": 1.3533,
       "min": 1.2667,
-      "max": 1.4333
+      "max": 1.4333,
+      "dist": [
+       38,
+       43,
+       43,
+       38,
+       41
+      ],
+      "ref_len": 30
      },
-     "consistency_words": 0.814,
+     "consistency_words": 0.823,
      "consistency_numbers": 0.775
     }
    },
@@ -960,7 +1625,9 @@
     "Inventari zedel",
     "gen Thawr",
     "1471"
-   ]
+   ],
+   "reference_chars": 30,
+   "reference_degenerate": true
   },
   "inv_11330019_p1": {
    "folio": "A 144.1 S. 1 (Kronburg 1478)",
@@ -970,6 +1637,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/BCXWOLWUFVQMQZDZWPLJQNVS/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -987,6 +1655,30 @@
       41,
       42
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       7,
       16,
@@ -997,15 +1689,31 @@
      "cer_fair": {
       "mean": 0.2044,
       "min": 0.1949,
-      "max": 0.214
+      "max": 0.214,
+      "dist": [
+       229,
+       214,
+       235,
+       226,
+       218
+      ],
+      "ref_len": 1098
      },
      "cer_strict": {
       "mean": 0.3267,
       "min": 0.3155,
-      "max": 0.3462
+      "max": 0.3462,
+      "dist": [
+       368,
+       360,
+       395,
+       374,
+       367
+      ],
+      "ref_len": 1141
      },
-     "consistency_words": 0.593,
-     "consistency_numbers": 0.786
+     "consistency_words": 0.591,
+     "consistency_numbers": 0.789
     },
     "it02": {
      "k": 5,
@@ -1023,6 +1731,30 @@
       42,
       42
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       68,
       37,
@@ -1033,15 +1765,31 @@
      "cer_fair": {
       "mean": 0.2062,
       "min": 0.194,
-      "max": 0.2259
+      "max": 0.2259,
+      "dist": [
+       248,
+       216,
+       216,
+       239,
+       213
+      ],
+      "ref_len": 1098
      },
      "cer_strict": {
       "mean": 0.3161,
       "min": 0.3094,
-      "max": 0.3208
+      "max": 0.3208,
+      "dist": [
+       353,
+       366,
+       361,
+       365,
+       358
+      ],
+      "ref_len": 1141
      },
-     "consistency_words": 0.617,
-     "consistency_numbers": 0.78
+     "consistency_words": 0.612,
+     "consistency_numbers": 0.779
     }
    },
    "gt_lines": [
@@ -1085,7 +1833,9 @@
     "truch, ain betstatt, dar inn ligt",
     "ain bett, ain bolster, II leylach, ain",
     "rauch deck und ain golter."
-   ]
+   ],
+   "reference_chars": 1098,
+   "reference_degenerate": false
   },
   "inv_11330019_p2": {
    "folio": "A 144.1 S. 2 (zweispaltig)",
@@ -1096,6 +1846,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/UXFZBFLSWEFOMYMCSZYAPZYS/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -1113,6 +1864,35 @@
       67,
       67
      ],
+     "empty_parts": [
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       31,
       49,
@@ -1123,15 +1903,31 @@
      "cer_fair": {
       "mean": 0.2437,
       "min": 0.231,
-      "max": 0.2558
+      "max": 0.2558,
+      "dist": [
+       416,
+       433,
+       391,
+       403,
+       420
+      ],
+      "ref_len": 1693
      },
      "cer_strict": {
       "mean": 0.3853,
       "min": 0.3746,
-      "max": 0.3991
+      "max": 0.3991,
+      "dist": [
+       702,
+       674,
+       689,
+       659,
+       665
+      ],
+      "ref_len": 1759
      },
-     "consistency_words": 0.519,
-     "consistency_numbers": 0.698
+     "consistency_words": 0.516,
+     "consistency_numbers": 0.718
     },
     "it02": {
      "k": 5,
@@ -1149,6 +1945,32 @@
       67,
       67
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false,
+       false
+      ],
+      [
+       false,
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       60,
       70,
@@ -1159,15 +1981,31 @@
      "cer_fair": {
       "mean": 0.2488,
       "min": 0.231,
-      "max": 0.2711
+      "max": 0.2711,
+      "dist": [
+       431,
+       404,
+       459,
+       391,
+       421
+      ],
+      "ref_len": 1693
      },
      "cer_strict": {
       "mean": 0.3569,
       "min": 0.3348,
-      "max": 0.3894
+      "max": 0.3894,
+      "dist": [
+       629,
+       623,
+       685,
+       589,
+       613
+      ],
+      "ref_len": 1759
      },
-     "consistency_words": 0.542,
-     "consistency_numbers": 0.643
+     "consistency_words": 0.546,
+     "consistency_numbers": 0.66
     }
    },
    "gt_lines": [
@@ -1239,7 +2077,9 @@
     "Item der alten armprost ain",
     "senen XI.",
     "Item zway vässlÿ mit pulver."
-   ]
+   ],
+   "reference_chars": 1693,
+   "reference_degenerate": false
   },
   "inv_11330019_p3": {
    "folio": "A 144.1 S. 3",
@@ -1249,6 +2089,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/NEYETSCLFESBVBQAZLBMBLOW/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -1266,6 +2107,30 @@
       7,
       8
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       0,
       3,
@@ -1276,15 +2141,31 @@
      "cer_fair": {
       "mean": 1.1579,
       "min": 1.0,
-      "max": 1.3158
+      "max": 1.3158,
+      "dist": [
+       41,
+       44,
+       50,
+       47,
+       38
+      ],
+      "ref_len": 38
      },
      "cer_strict": {
       "mean": 1.379,
       "min": 1.2105,
-      "max": 1.6053
+      "max": 1.6053,
+      "dist": [
+       50,
+       49,
+       61,
+       56,
+       46
+      ],
+      "ref_len": 38
      },
-     "consistency_words": 0.135,
-     "consistency_numbers": 0.933
+     "consistency_words": 0.127,
+     "consistency_numbers": 0.964
     },
     "it02": {
      "k": 5,
@@ -1302,6 +2183,30 @@
       7,
       7
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       3,
       3,
@@ -1312,14 +2217,30 @@
      "cer_fair": {
       "mean": 1.0474,
       "min": 0.8421,
-      "max": 1.2895
+      "max": 1.2895,
+      "dist": [
+       44,
+       32,
+       32,
+       49,
+       42
+      ],
+      "ref_len": 38
      },
      "cer_strict": {
       "mean": 1.2158,
       "min": 0.9474,
-      "max": 1.4211
+      "max": 1.4211,
+      "dist": [
+       50,
+       36,
+       41,
+       54,
+       50
+      ],
+      "ref_len": 38
      },
-     "consistency_words": 0.365,
+     "consistency_words": 0.373,
      "consistency_numbers": 1.0
     }
    },
@@ -1328,7 +2249,9 @@
     "Kronburg",
     "Cronburg",
     "1478"
-   ]
+   ],
+   "reference_chars": 38,
+   "reference_degenerate": true
   },
   "inv_11330020_p1": {
    "folio": "A 201.1 fol. 1r (Heinfels 1440)",
@@ -1340,6 +2263,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/MEJFQOTLLIGQXVKUCERNSPHH/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -1357,6 +2281,30 @@
       47,
       47
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       21,
       23,
@@ -1367,15 +2315,31 @@
      "cer_fair": {
       "mean": 0.1732,
       "min": 0.1672,
-      "max": 0.1782
+      "max": 0.1782,
+      "dist": [
+       295,
+       306,
+       297,
+       287,
+       302
+      ],
+      "ref_len": 1717
      },
      "cer_strict": {
       "mean": 0.284,
       "min": 0.2747,
-      "max": 0.2943
+      "max": 0.2943,
+      "dist": [
+       500,
+       510,
+       508,
+       490,
+       525
+      ],
+      "ref_len": 1784
      },
-     "consistency_words": 0.648,
-     "consistency_numbers": 0.851
+     "consistency_words": 0.649,
+     "consistency_numbers": 0.828
     },
     "it02": {
      "k": 5,
@@ -1393,6 +2357,30 @@
       47,
       47
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       21,
       11,
@@ -1403,15 +2391,31 @@
      "cer_fair": {
       "mean": 0.1593,
       "min": 0.1462,
-      "max": 0.1666
+      "max": 0.1666,
+      "dist": [
+       283,
+       286,
+       283,
+       251,
+       265
+      ],
+      "ref_len": 1717
      },
      "cer_strict": {
       "mean": 0.2562,
       "min": 0.2483,
-      "max": 0.2679
+      "max": 0.2679,
+      "dist": [
+       478,
+       475,
+       443,
+       445,
+       444
+      ],
+      "ref_len": 1784
      },
-     "consistency_words": 0.703,
-     "consistency_numbers": 0.843
+     "consistency_words": 0.702,
+     "consistency_numbers": 0.846
     }
    },
    "gt_lines": [
@@ -1461,7 +2465,9 @@
     "zwai pöse küssn, wirchane leilach, zwo",
     "pöz dëkh, ain lodeins dekhel, ain lidereiner",
     "polster und zwo gar alte dekhen, ain spanpett."
-   ]
+   ],
+   "reference_chars": 1717,
+   "reference_degenerate": false
   },
   "inv_11330020_p2": {
    "folio": "A 201.1 S. 2 (Heinfels 1440)",
@@ -1472,6 +2478,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/HFAIHNGOTNQXNGWWJOWBYHOM/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "transkribus-done",
    "iterations": {
     "it01": {
      "k": 5,
@@ -1489,6 +2496,30 @@
       39,
       39
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       15,
       14,
@@ -1499,15 +2530,31 @@
      "cer_fair": {
       "mean": 0.1458,
       "min": 0.134,
-      "max": 0.1618
+      "max": 0.1618,
+      "dist": [
+       206,
+       202,
+       224,
+       244,
+       223
+      ],
+      "ref_len": 1508
      },
      "cer_strict": {
       "mean": 0.2453,
       "min": 0.235,
-      "max": 0.2561
+      "max": 0.2561,
+      "dist": [
+       367,
+       380,
+       385,
+       400,
+       384
+      ],
+      "ref_len": 1562
      },
-     "consistency_words": 0.644,
-     "consistency_numbers": 0.731
+     "consistency_words": 0.645,
+     "consistency_numbers": 0.73
     },
     "it02": {
      "k": 5,
@@ -1525,6 +2572,30 @@
       39,
       39
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
      "uncertain": [
       43,
       29,
@@ -1535,15 +2606,31 @@
      "cer_fair": {
       "mean": 0.1327,
       "min": 0.124,
-      "max": 0.1379
+      "max": 0.1379,
+      "dist": [
+       197,
+       208,
+       201,
+       208,
+       187
+      ],
+      "ref_len": 1508
      },
      "cer_strict": {
       "mean": 0.2325,
       "min": 0.2183,
-      "max": 0.2465
+      "max": 0.2465,
+      "dist": [
+       341,
+       385,
+       379,
+       363,
+       348
+      ],
+      "ref_len": 1562
      },
-     "consistency_words": 0.705,
-     "consistency_numbers": 0.649
+     "consistency_words": 0.706,
+     "consistency_numbers": 0.659
     }
    },
    "gt_lines": [
@@ -1587,7 +2674,9 @@
     "echt, III pratspiss und ain hainczt, ain",
     "eysenzang, ain ribeysen, funf milch",
     "schüssel, zwai stötzel, ain wasser gatzen."
-   ]
+   ],
+   "reference_chars": 1508,
+   "reference_degenerate": false
   },
   "inv_11348659_p1": {
    "folio": "A 273.7 fol. 1r",
@@ -1599,6 +2688,7 @@
    "source": "inventar",
    "iiif": "https://files.transkribus.eu/iiif/2/UBQBBACJTFOUVHZQJPHMLSKA/full/max/0/default.jpg",
    "spread": false,
+   "reference_class": "self-consistency",
    "iterations": {
     "it01": {
      "k": 2,
@@ -1610,12 +2700,24 @@
       63,
       63
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false
+     ],
      "uncertain": [
       50,
       0
      ],
-     "consistency_words": 0.707,
-     "consistency_numbers": 0.778
+     "consistency_words": 0.705,
+     "consistency_numbers": 0.875
     },
     "it02": {
      "k": 2,
@@ -1627,12 +2729,24 @@
       63,
       63
      ],
+     "empty_parts": [
+      [
+       false
+      ],
+      [
+       false
+      ]
+     ],
+     "empty": [
+      false,
+      false
+     ],
      "uncertain": [
       61,
       62
      ],
-     "consistency_words": 0.687,
-     "consistency_numbers": 0.636
+     "consistency_words": 0.686,
+     "consistency_numbers": 0.737
     }
    }
   }

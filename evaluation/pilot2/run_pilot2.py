@@ -148,8 +148,9 @@ def evaluate(pages: list[dict]) -> dict:
             e["ref_lines"] = len(page["ref_lines"])
             e["cer_fair_vs_working"] = [round(x, 4) for x in fair]
         toks = [bench.normalize(t, "fair").split() for t in texts]
+        raw = [bench.normalize(t, "fair-raw").split() for t in texts]
         if len(toks) >= 2:
-            w, n = bench.positionwise(toks[0], toks[1])
+            w, n = bench.positionwise(toks[0], toks[1], raw[0], raw[1])
             e["consistency_words"], e["consistency_numbers"] = w, n
         out["pages"][page["id"]] = e
     (ROOT / "pilot2_summary.json").write_text(

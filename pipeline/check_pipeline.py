@@ -53,6 +53,8 @@ PROMPTS = PIPELINE_DIR / "prompts"
 SUMMARY = DATA / "pipeline" / "register_summary.json"
 SITE_TRANSCRIPTIONS = DATA / "pipeline" / "transcriptions"
 EVALUATION = REPO_ROOT / "evaluation"
+BENCHMARK_SUMMARY = EVALUATION / "benchmark" / "summary.json"
+SITE_BENCHMARK_SUMMARY = DATA / "benchmark" / "summary.json"
 
 TEI_NS = "{http://www.tei-c.org/ns/1.0}"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
@@ -665,7 +667,11 @@ def check_metrics() -> list[Finding]:
             continue
         for page_id, page in load_json(path)["pages"].items():
             out += _check_metric_page(cohort, page_id, page)
-    return out
+    if not BENCHMARK_SUMMARY.exists():
+        out.append(_fail("metrics.summary", f"{BENCHMARK_SUMMARY.name} is missing"))
+    else:
+        out += _check_benchmark_metrics(load_json(BENCHMARK_SUMMARY))
+    return out + _check_benchmark_copy()
 
 
 def _check_metric_page(cohort: str, page_id: str, page: dict) -> list[Finding]:
@@ -697,6 +703,77 @@ def _check_metric_page(cohort: str, page_id: str, page: dict) -> list[Finding]:
             )
         )
     return out
+
+
+def _check_benchmark_metrics(summary: dict) -> list[Finding]:
+    """The benchmark summary, whose metrics sit one level deeper than the pilots'.
+
+    A degenerate reference is reported from the flag the summary persists, never from
+    the measured rate. A page whose rate says degenerate while the flag does not is a
+    defect of the criterion behind the flag, and therefore a FAIL rather than a report.
+    """
+    out: list[Finding] = []
+    for page_id, page in summary["pages"].items():
+        degenerate = page.get("reference_degenerate") is True
+        if degenerate:
+            out.append(
+                _info(
+                    "metrics.degenerate-reference",
+                    f"benchmark {page_id}: reference is"
+                    f" {page.get('reference_chars')} normalised characters",
+                )
+            )
+        for iteration, entry in (page.get("iterations") or {}).items():
+            where = f"benchmark {page_id} {iteration}"
+            for field in ("consistency_words", "consistency_numbers"):
+                value = entry.get(field)
+                if value is not None and not 0.0 <= value <= 1.0:
+                    out.append(
+                        _fail("metrics.consistency", f"{where}: {field} is {value}")
+                    )
+            rate = (entry.get("cer_fair") or {}).get("mean")
+            if rate is not None and rate > 1 and not degenerate:
+                out.append(
+                    _fail(
+                        "metrics.degenerate-unflagged",
+                        f"{where}: cer_fair {rate} is above one and the page"
+                        " carries no reference_degenerate flag",
+                    )
+                )
+            lines = entry.get("lines") or []
+            if len(lines) > 1 and max(lines) - min(lines) > REPEAT_DIVERGENCE:
+                out.append(
+                    _info(
+                        "metrics.repeat-divergence",
+                        f"{where}: repeats report {lines} lines,"
+                        " a third run would decide",
+                    )
+                )
+    return out
+
+
+def _check_benchmark_copy() -> list[Finding]:
+    """The site copy of the benchmark summary against its source.
+
+    docs/data/benchmark/summary.json is copied by hand from the evaluation folder, so
+    nothing but this check keeps the published figures and the measured ones the same.
+    """
+    if not SITE_BENCHMARK_SUMMARY.exists():
+        return [
+            _fail(
+                "metrics.benchmark-copy",
+                "docs/data/benchmark/summary.json is missing",
+            )
+        ]
+    if BENCHMARK_SUMMARY.read_bytes() != SITE_BENCHMARK_SUMMARY.read_bytes():
+        return [
+            _fail(
+                "metrics.benchmark-copy",
+                "docs/data/benchmark/summary.json is not byte-identical to"
+                " evaluation/benchmark/summary.json",
+            )
+        ]
+    return []
 
 
 # ==================================== schema =================================

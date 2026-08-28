@@ -173,6 +173,8 @@ The reference check also holds the projection flag `has_tei` against the TEI dir
 
 The reference check runs over the entity layer as well. Every `@ref` of a document has to resolve to an `xml:id` of `register.xml`, and the register and `graph.jsonld` have to name the same entities, since both take their ids from `entity_index.py`. An entry that no document points at is reported as INFO rather than as a defect, because an entity whose anchor was not placeable keeps its register entry on purpose.
 
+The metrics check covers all three evaluation summaries, the two pilots and the benchmark. For the benchmark it reads the degenerate reference from the `reference_degenerate` flag the summary persists, never from the measured rate, and a page whose rate exceeds one while the flag is absent is a FAIL, because the criterion behind the flag then missed a case a consumer would have to exclude by value again. The same check holds `evaluation/benchmark/summary.json` and its site copy `docs/data/benchmark/summary.json` byte for byte, since that copy is made by hand and nothing else keeps the published figures and the measured ones together.
+
 A finding is FAIL or INFO and carries the id of the check that raised it. INFO is a fact worth seeing that is not a defect, such as a page whose reference transcription is degenerate, a repeat pair whose line counts diverge far enough to want a third run, or a document that sits in one set and not in another for a reason already settled in the data. Only FAIL decides the exit code.
 
 ```

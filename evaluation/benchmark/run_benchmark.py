@@ -32,6 +32,7 @@ Usage:
 
 import base64
 import concurrent.futures
+import difflib
 import hashlib
 import io
 import json
@@ -62,7 +63,24 @@ TEMPERATURE = 0.0
 TIMEOUT = 300
 WORKERS = 4
 ATTEMPTS = 4
-FEWSHOT_DOC, FEWSHOT_PAGE = "11327964", 2  # A 49.5, inventar few-shot example
+# A 49.5, inventar few-shot example. The document is in neither pages.json nor
+# the page sets of pilot and pilot2, so no measured page has seen its own text.
+FEWSHOT_DOC, FEWSHOT_PAGE = "11327964", 2
+
+# Version id of the measuring instrument, written into every summary. A change to
+# normalize(), to the token classification or to the agreement formula raises the
+# version of every profile it touches, because summaries of different versions are
+# not comparable. Frozen prompts and runs are unaffected by such a change.
+# v2: numeral classification before the v/u collapse, all folio-marker spellings
+# stripped, symmetric agreement (2026-08-28).
+NORMALISATION_PROFILE = {"fair": "docta-fair-v2", "strict": "docta-strict-v2"}
+
+# A fair-normalised reference below this length is a cover-label export of a page
+# whose image carries a full text: every edit distance exceeds it and the CER then
+# measures the reference, not the run. The threshold sits in a gap of an order of
+# magnitude, the two flagged pages normalise to 30 and 38 characters and the
+# shortest informative reference of the set to 1006.
+DEGENERATE_REF_CHARS = 100
 
 # Frozen it01 instruction; a change to the wording is a new iteration.
 IT01_INSTRUCTION = (
@@ -257,6 +275,17 @@ def fewshot_example() -> dict:
     }
 
 
+def fewshot_hash(fs: dict) -> str:
+    """Digest of the few-shot answer exactly as it goes into the request.
+
+    The block is assembled at runtime from the Transkribus export instead of being
+    frozen in a prompt document, so `prompt_hash` does not cover it; a run that
+    used it pins it here.
+    """
+    payload = json.dumps(fs["answer"], ensure_ascii=False)
+    return hashlib.sha256(payload.encode()).hexdigest()[:16]
+
+
 _fetch_lock = threading.Lock()
 
 
@@ -357,6 +386,7 @@ def run_one(
         return f"SKIP {out.name}"
     cfg = prompts[iteration]
     system = cfg[page["source"]]
+    uses_fewshot = iteration == "it02" and page["source"] == "inventar"
     img_path = fetch_image(page["id"], page["iiif"])
     t0 = time.time()
     parsed_pages, infos = [], []
@@ -369,7 +399,7 @@ def run_one(
             "right": " Dies ist die RECHTE Hälfte einer Doppelseite (recto).",
         }.get(crop, "")
         contents = []
-        if iteration == "it02" and page["source"] == "inventar":
+        if uses_fewshot:
             ex_part, _ = image_part(fetch_image(fs["image_id"], fs["iiif"]))
             contents += [
                 {"role": "user", "parts": [ex_part, {"text": cfg["instruction"]}]},
@@ -394,7 +424,8 @@ def run_one(
         "prompt_hash": hashlib.sha256(
             (system + cfg["instruction"]).encode()
         ).hexdigest()[:16],
-        "fewshot": iteration == "it02" and page["source"] == "inventar",
+        "fewshot": uses_fewshot,
+        "fewshot_hash": fewshot_hash(fs) if uses_fewshot else None,
         "image_info": infos,
         "duration_s": round(time.time() - t0, 1),
         "timestamp": datetime.now(UTC).isoformat(timespec="seconds"),
@@ -432,18 +463,37 @@ UNITS = {
 }
 
 
+# Every folio-marker spelling the exports carry. Beside the long [fol.1r] the
+# Inventaria transcriptions use the short [1r]/[1v] and, once mid-reference in
+# inv_11328300_p2, the malformed 2[r] with the leaf number outside the bracket.
+# All of them are page furniture and are stripped from reference and hypothesis
+# alike; a marker left in on one side alone is counted as a transcription error.
+# The alternatives are narrow on purpose: [...] and [---], which mark content a
+# run lost, and a bracketed expansion inside a word (sup[r]a, unnse[r], It[em])
+# must survive untouched, so the two short forms have to stand as their own
+# whitespace-delimited token.
+FOLIO_MARKER = (
+    r"\[\s*fol\.?[^\]]*\]"  # [fol.1r], [fol. 7r], [fol.]
+    r"|(?<!\S)\[\s*\d+\s*[rv]?\s*\](?!\S)"  # [1r], [12v], [3]
+    r"|(?<!\S)\d+\s*\[\s*[rv]\s*\](?!\S)"  # 2[r], leaf number outside the bracket
+)
+FOLIO_MARKER_RE = re.compile(FOLIO_MARKER, re.IGNORECASE)
+FOLIO_LINE_RE = re.compile(rf"^\s*(?:{FOLIO_MARKER})\s*$", re.IGNORECASE)
+
+
 def normalize(text: str, profile: str) -> str:
     """Three profiles. `strict` keeps the characters as transcribed, `fair`
     additionally collapses v/u and j/i for the CER, and `fair-raw` stops right
     before that collapse. `fair-raw` exists for token classification, because the
     collapse turns every Roman numeral carrying a v or j (vij, xxv) into a letter
     string no numeral pattern matches. Both fair variants split into the same
-    tokens, the collapse maps letter to letter and touches no whitespace."""
-    lines = [
-        ln for ln in text.splitlines() if not re.match(r"^\s*\[fol\.?[^\]]*\]\s*$", ln)
-    ]
+    tokens, the collapse maps letter to letter and touches no whitespace.
+
+    Folio markers are removed in every profile, before the branch, so the two CER
+    profiles see the same page furniture removed."""
+    lines = [ln for ln in text.splitlines() if not FOLIO_LINE_RE.match(ln)]
     text = " ".join(lines) if lines else text
-    text = re.sub(r"\[fol\.?[^\]]*\]", "", text).replace("¬", "")
+    text = FOLIO_MARKER_RE.sub("", text).replace("¬", "")
     text = unicodedata.normalize("NFC", text)
     if profile == "strict":
         return re.sub(r"\s+", " ", text).strip()
@@ -482,32 +532,44 @@ def is_numberish(tok: str) -> bool:
 
 
 def positionwise(
-    a: list[str], b: list[str], a_raw: list[str]
+    a: list[str], b: list[str], a_raw: list[str], b_raw: list[str]
 ) -> tuple[float | None, float | None]:
-    """Aligned token agreement via SequenceMatcher, split word vs number/currency.
+    """Symmetric aligned token agreement, split word vs number/currency.
 
-    Alignment runs on the fair tokens `a` and `b`, classification on `a_raw`, the
-    same tokens before the v/u collapse. Positions correspond, both come from one
-    text. A side without tokens of its class yields None rather than zero, because
-    a page carrying no numeral is not a page whose numerals disagree; two empty
+    Agreement per class is 2*matches/(|a| + |b|) over the tokens of that class,
+    the Dice form, so agreement(a, b) equals agreement(b, a). Taking both
+    denominators from the first repeat, as this did before 2026-08-28, made the
+    value a recall against whichever repeat happened to come first.
+
+    Alignment runs on the fair tokens `a` and `b`, classification on `a_raw` and
+    `b_raw`, the same tokens before the v/u collapse; positions correspond,
+    each pair comes from one text. A matched pair counts for a class only where
+    both sides carry that class, so no numerator can exceed its denominator. A
+    class with no tokens on either side yields None rather than zero, because a
+    page carrying no numeral is not a page whose numerals disagree; two empty
     repeats agree.
     """
-    import difflib
-
-    numeric = [is_numberish(tok) for tok in a_raw]
-    sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
+    # Equal denominators are not enough for symmetry: difflib picks one of several
+    # equally long alignments and the choice depends on argument order, which moves
+    # matched positions between the two classes. Orienting the pair deterministically
+    # before alignment is what makes agreement(a, b) and agreement(b, a) one value.
+    if (len(a), a) > (len(b), b):
+        a, b, a_raw, b_raw = b, a, b_raw, a_raw
+    num_a = [is_numberish(tok) for tok in a_raw]
+    num_b = [is_numberish(tok) for tok in b_raw]
+    tot_n = sum(num_a) + sum(num_b)
+    tot_w = (len(num_a) - sum(num_a)) + (len(num_b) - sum(num_b))
     eq_w = eq_n = 0
-    tot_n = sum(numeric)
-    tot_w = len(numeric) - tot_n
-    for blk in sm.get_matching_blocks():
+    for blk in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_matching_blocks():
         for k in range(blk.size):
-            if numeric[blk.a + k]:
+            hit_a, hit_b = num_a[blk.a + k], num_b[blk.b + k]
+            if hit_a and hit_b:
                 eq_n += 1
-            else:
+            elif not hit_a and not hit_b:
                 eq_w += 1
     # two empty repeats agree; any other class without tokens has nothing to say
-    words = round(eq_w / tot_w, 3) if tot_w else (1.0 if not a and not b else None)
-    return (words, round(eq_n / tot_n, 3) if tot_n else None)
+    words = round(2 * eq_w / tot_w, 3) if tot_w else (1.0 if not a and not b else None)
+    return (words, round(2 * eq_n / tot_n, 3) if tot_n else None)
 
 
 def mean_defined(values: list[float | None]) -> float | None:
@@ -520,19 +582,33 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
     summary = {
         "generated": datetime.now(UTC).isoformat(timespec="seconds"),
         "model": MODEL,
+        "temperature": TEMPERATURE,
+        "normalisation_profile": NORMALISATION_PROFILE,
         "pages": {},
     }
     for page in pages:
+        reference = "\n".join(page.get("gt_lines") or [])
         entry: dict = {
             "folio": page["folio"],
             "phenomena": page["phenomena"],
             "source": page["source"],
             "iiif": page["iiif"],
             "spread": page["spread"],
+            # what the page is measured against at all: a formal Transkribus-DONE
+            # transcription, or nothing but the agreement of its own repeats
+            "reference_class": "transkribus-done"
+            if page.get("gt_lines")
+            else "self-consistency",
             "iterations": {},
         }
         if page.get("gt_lines"):
             entry["gt_lines"] = page["gt_lines"]
+            # the criterion of the exclusion, persisted beside its input, so a
+            # consumer excludes by this property and never by a measured CER
+            entry["reference_chars"] = len(normalize(reference, "fair"))
+            entry["reference_degenerate"] = (
+                entry["reference_chars"] < DEGENERATE_REF_CHARS
+            )
         for it in iterations:
             runs = sorted(
                 RUNS.glob(f"{page['id']}__{it}__r*.json"),
@@ -546,6 +622,16 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
                 "k": len(recs),
                 "runs": [f.name for f in runs],
                 "lines": [len(r["lines"]) for r in recs],
+                # one flag per image part, so a spread reports verso and recto
+                "empty_parts": [
+                    [pg.get("empty") is True for pg in r["parsed"]["pages"]]
+                    for r in recs
+                ],
+                "empty": [
+                    bool(r["parsed"]["pages"])
+                    and all(pg.get("empty") is True for pg in r["parsed"]["pages"])
+                    for r in recs
+                ],
                 "uncertain": [
                     sum(
                         len(ln.get("uncertain", []) or [])
@@ -556,28 +642,24 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
                 ],
             }
             if page.get("gt_lines"):
-                ref = "\n".join(page["gt_lines"])
-                fair = [
-                    cer(normalize(t, "fair"), normalize(ref, "fair")) for t in texts
-                ]
-                strict = [
-                    cer(normalize(t, "strict"), normalize(ref, "strict")) for t in texts
-                ]
-                e["cer_fair"] = {
-                    "mean": round(sum(fair) / len(fair), 4),
-                    "min": min(fair),
-                    "max": max(fair),
-                }
-                e["cer_strict"] = {
-                    "mean": round(sum(strict) / len(strict), 4),
-                    "min": min(strict),
-                    "max": max(strict),
-                }
+                # dist and ref_len travel with the rate, so a reader can see what
+                # a CER above one rests on without recomputing the normalisation
+                for field, profile in (("cer_fair", "fair"), ("cer_strict", "strict")):
+                    ref_norm = normalize(reference, profile)
+                    dist = [levenshtein(normalize(t, profile), ref_norm) for t in texts]
+                    rates = [round(d / max(len(ref_norm), 1), 4) for d in dist]
+                    e[field] = {
+                        "mean": round(sum(rates) / len(rates), 4),
+                        "min": min(rates),
+                        "max": max(rates),
+                        "dist": dist,
+                        "ref_len": len(ref_norm),
+                    }
             toks = [normalize(t, "fair").split() for t in texts]
             raw = [normalize(t, "fair-raw").split() for t in texts]
             pairs = [(i, j) for i in range(len(toks)) for j in range(i + 1, len(toks))]
             if pairs:
-                agr = [positionwise(toks[i], toks[j], raw[i]) for i, j in pairs]
+                agr = [positionwise(toks[i], toks[j], raw[i], raw[j]) for i, j in pairs]
                 e["consistency_words"] = mean_defined([w for w, _ in agr])
                 e["consistency_numbers"] = mean_defined([n for _, n in agr])
             entry["iterations"][it] = e
