@@ -91,6 +91,12 @@
           </div>
           <button type="button" class="review-toggle" id="btn-review" aria-pressed="false"
                   title="Review mode: correct lines and record a decision for this page">Review</button>
+          <div class="view-toggle" role="group" aria-label="Transcription text size">
+            <button type="button" class="view-toggle__btn" id="btn-font-dec"
+                    title="Smaller text" aria-label="Smaller text">A&minus;</button>
+            <button type="button" class="view-toggle__btn" id="btn-font-inc"
+                    title="Larger text" aria-label="Larger text">A+</button>
+          </div>
           <span class="badge text-bg-warning" id="draft-badge" hidden>Unrevised draft</span>
           <a class="tei-download" id="tei-download" href="data/tei/" download hidden>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.75 7.25 8 10.5l3.25-3.25M2.5 13h11"/></svg>
@@ -152,6 +158,7 @@
     let viewMode = 'synopsis';
     let rotation = 0;
     let entityIndex = null;   // entities of the loaded document, or null
+    let entityInfo = null;    // the loaded extraction incl. model, or null
     let sourceByDocId = new Map();
     let registerByDocId = new Map();
 
@@ -475,6 +482,38 @@
       try { window.localStorage.removeItem(key); } catch { /* nothing stored */ }
     }
 
+    // === Transcription text size ===
+    // Steps around the 1rem default; the choice is a per-browser convenience
+    // and survives via localStorage where that is available.
+    const FONT_KEY = 'docta-viewer-textsize';
+    const FONT_STEPS = ['0.8125rem', '0.875rem', '0.9375rem', '1rem',
+                        '1.0625rem', '1.125rem', '1.25rem', '1.375rem'];
+    const FONT_DEFAULT = 3;
+    let fontIdx = (() => {
+      const stored = Number.parseInt(lsGet(FONT_KEY) ?? '', 10);
+      return Number.isInteger(stored) && stored >= 0 && stored < FONT_STEPS.length
+        ? stored : FONT_DEFAULT;
+    })();
+
+    const btnFontDec = document.getElementById('btn-font-dec');
+    const btnFontInc = document.getElementById('btn-font-inc');
+
+    function applyFontSize() {
+      document.documentElement.style.setProperty(
+        '--transcription-size', FONT_STEPS[fontIdx]);
+      btnFontDec.disabled = fontIdx === 0;
+      btnFontInc.disabled = fontIdx === FONT_STEPS.length - 1;
+      lsSet(FONT_KEY, String(fontIdx));
+    }
+
+    btnFontDec.addEventListener('click', () => {
+      if (fontIdx > 0) { fontIdx--; applyFontSize(); }
+    });
+    btnFontInc.addEventListener('click', () => {
+      if (fontIdx < FONT_STEPS.length - 1) { fontIdx++; applyFontSize(); }
+    });
+    applyFontSize();
+
     function currentPageNr() {
       return currentDoc ? currentDoc.pages[currentPage]?.pageNr : null;
     }
@@ -747,16 +786,79 @@
       return { byText, regex: new RegExp(pattern, 'gi') };
     }
 
-    // One pass over the line: inserted markup is never searched again
+    // One pass over the line: inserted markup is never searched again. The
+    // structured tooltip replaces the plain title; the aria-label carries the
+    // same content for screen readers.
+    const ENTITY_TYPE_LABELS = { person: 'Person', place: 'Place',
+                                 object: 'Object', time: 'Date' };
+
+    function entityModel() {
+      return (entityInfo && entityInfo.model) || 'LLM';
+    }
+
+    function entityTipText(ent) {
+      const head = ent.normalized || ent.text;
+      const date = ent.date ? ` (${ent.date})` : '';
+      const type = ENTITY_TYPE_LABELS[ent.type] || ent.type;
+      return `${head}${date}, ${type}. Extracted by ${entityModel()},` +
+             ' not verified by a scholar.';
+    }
+
     function markEntities(escapedText) {
       return escapedText.replace(entityIndex.regex, (match) => {
         const ent = entityIndex.byText.get(match.toLowerCase());
         if (!ent) return match;
-        const tip = `${ent.normalized || ent.text} (LLM extraction, unverified)`;
         return `<span class="entity entity--${escapeAttr(ent.type)}"` +
-               ` title="${escapeAttr(tip)}">${match}</span>`;
+               ` data-ent-key="${escapeAttr(match.toLowerCase())}"` +
+               ` aria-label="${escapeAttr(entityTipText(ent))}">${match}</span>`;
       });
     }
+
+    // Legend above the transcription: colour to type, and the provenance of the
+    // marks with the model named. Rendered only while marks are on screen.
+    function entityLegend() {
+      const present = new Set(
+        [...entityIndex.byText.values()].map(e => e.type));
+      const chips = Object.keys(ENTITY_TYPE_LABELS)
+        .filter(t => present.has(t))
+        .map(t => `<span class="entity entity--${escapeAttr(t)}">` +
+                  `${escapeHTML(ENTITY_TYPE_LABELS[t])}</span>`)
+        .join('');
+      return `<div class="ent-legend">${chips}<span class="ent-legend__prov">` +
+             `\u{1F916} ${escapeHTML(entityModel())} extraction &middot;` +
+             ` ⚠ not verified by a scholar</span></div>`;
+    }
+
+    // One shared tooltip element; screen readers use the span's aria-label
+    const entTip = document.createElement('div');
+    entTip.className = 'ent-tip';
+    entTip.hidden = true;
+    entTip.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(entTip);
+
+    function showEntityTip(target) {
+      const ent = entityIndex && entityIndex.byText.get(target.dataset.entKey);
+      if (!ent) return;
+      const date = ent.date ? ` &middot; ${escapeHTML(ent.date)}` : '';
+      const type = ENTITY_TYPE_LABELS[ent.type] || ent.type;
+      entTip.innerHTML =
+        `<span class="ent-tip__head">${escapeHTML(ent.normalized || ent.text)}` +
+        `${date}</span> &middot; ${escapeHTML(type)}` +
+        `<span class="ent-tip__prov">\u{1F916} ${escapeHTML(entityModel())}` +
+        ' &middot; ⚠ not verified by a scholar</span>';
+      entTip.hidden = false;
+      const rect = target.getBoundingClientRect();
+      entTip.style.left = `${Math.max(8, Math.min(rect.left,
+        window.innerWidth - entTip.offsetWidth - 8))}px`;
+      entTip.style.top = `${rect.bottom + 6}px`;
+    }
+
+    document.addEventListener('mouseover', (e) => {
+      const target = e.target.closest ? e.target.closest('.entity[data-ent-key]') : null;
+      if (target) showEntityTip(target);
+      else if (!entTip.hidden) entTip.hidden = true;
+    });
+    document.addEventListener('scroll', () => { entTip.hidden = true; }, true);
 
     function renderTranscription(doc, pageNr) {
       const container = document.getElementById('transcription-container');
@@ -780,7 +882,8 @@
       // original it was made against, so a changed export drops it silently
       const corrections = reviewCorrections(pageNr);
 
-      let html = '<div class="transcription">';
+      let html = entityIndex ? entityLegend() : '';
+      html += '<div class="transcription">';
       for (const region of page.regions) {
         for (const line of region.lines) {
           lineNr++;
@@ -975,6 +1078,7 @@
           loadEntities(docId),
         ]);
         currentDoc = doc;
+        entityInfo = entities;
         entityIndex = buildEntityIndex(entities);
         let startPage;
         if (pageNr !== undefined) {

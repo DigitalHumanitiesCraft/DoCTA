@@ -67,6 +67,8 @@
   --text-sm: 0.875rem;
   --text-xs: 0.8125rem;
   --text-2xs: 0.6875rem;
+  /* User-adjustable via the A-/A+ control in the viewer */
+  --transcription-size: 1rem;
 
   /* Bootstrap overrides: .text-body-secondary defaults to a grey that misses
      4.5:1 on the warm background, so it is bound to the project token. */
@@ -129,6 +131,37 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .entity--institution { background: var(--ent-institution-bg); color: var(--ent-institution); border-bottom: 2px solid var(--ent-institution); }
 .entity--function { background: var(--ent-function-bg); color: var(--ent-function); border-bottom: 2px solid var(--ent-function); }
 
+/* Legend above the transcription: which colour is which type, and that the
+   marks are an unverified model product, with the model named */
+.ent-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs) var(--space-md);
+  padding: var(--space-sm) var(--space-lg) 0;
+  background: var(--surface);
+  font-size: var(--text-2xs);
+  color: var(--text-secondary);
+}
+.ent-legend .entity { font-size: var(--text-2xs); padding: 0.05rem 0.35em; }
+.ent-legend__prov { color: var(--text-muted-custom); }
+
+/* One shared tooltip for entity marks; a plain title cannot carry structure */
+.ent-tip {
+  position: fixed;
+  z-index: 1080;
+  max-width: 20rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: var(--text-xs);
+  line-height: 1.45;
+  pointer-events: none;
+}
+.ent-tip__head { font-weight: 600; }
+.ent-tip__prov { display: block; margin-top: 0.15rem; opacity: 0.85; }
+
 /* === Provenance chips ===
    Who produced or verified a layer: human, workflow, llm. Text carries the
    statement, colour only reinforces it. */
@@ -171,11 +204,16 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 }
 
 /* === Transcription Text === */
+/* White ground and full contrast for the reading surface; the page background
+   stays warm around it */
+#transcription-container { background: var(--surface); }
+
 .transcription {
   font-family: var(--font-source);
-  font-size: var(--text-xs);
-  line-height: 1.8;
+  font-size: var(--transcription-size);
+  line-height: 1.75;
   padding: var(--space-lg);
+  background: var(--surface);
 }
 
 /* The transparent left border reserves the place of the correction marker, so a
@@ -1079,7 +1117,7 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 .reading-line {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.02rem;
+  font-size: var(--transcription-size);
   line-height: 1.7;
 }
 

@@ -106,6 +106,7 @@ export const DEMO_DOC_ID = 11328300;
  * @property {number|null} pageNr
  * @property {string|null} lineId
  * @property {string} detail - role, category or ISO date, whichever the record carries
+ * @property {string|null} date - ISO date where the extraction resolved one
  * @property {number|null} count
  * @property {Array<{pageNr: number, lineId: string|null}>} occurrences
  */
@@ -122,6 +123,9 @@ function normalizeEntities(raw, docId) {
   const prov = raw.provenance;
   const provenance = (typeof prov === 'string' && prov) ||
     (prov && typeof prov.source === 'string' && prov.source) || 'llm';
+  // The pipeline files name the extracting model; the demo file predates that
+  // and stays null, which the display renders as a bare LLM label.
+  const model = (prov && typeof prov === 'object' && prov.model) || null;
   const entities = (Array.isArray(raw.entities) ? raw.entities : []).map(e => ({
     text: e.text || '',
     normalized: e.normalized || '',
@@ -129,6 +133,7 @@ function normalizeEntities(raw, docId) {
     pageNr: typeof e.pageNr === 'number' ? e.pageNr : null,
     lineId: e.lineId || null,
     detail: e.role || e.category || e.isoDate || '',
+    date: e.isoDate || null,
     count: typeof e.count === 'number' ? e.count : null,
     // One record per occurrence in both files; the list shape carries a record
     // attested on several pages without a change here.
@@ -136,7 +141,7 @@ function normalizeEntities(raw, docId) {
       .filter(o => o && typeof o.pageNr === 'number')
       .map(o => ({ pageNr: o.pageNr, lineId: o.lineId || null })),
   }));
-  return { docId: Number(raw.docId ?? docId), provenance, entities };
+  return { docId: Number(raw.docId ?? docId), provenance, model, entities };
 }
 
 /**
