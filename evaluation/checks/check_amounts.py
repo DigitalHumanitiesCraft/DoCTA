@@ -26,6 +26,10 @@ Two multiplier marks scale the immediately preceding Roman group:
   multiply by one hundred: `iij C` = 300, `xij C xx` = 1220.
 * `m` multiplies by one thousand: `m vj C lxxxxiiij` = 1694, `vij m ij c xv` = 7215.
 
+An attached mark is detached from its group except where the token reads as a
+subtractive numeral, `xc` = 90 and `ixc` = 89, which is the one form in which `c`
+follows a group without multiplying it.
+
 A mark that follows no Roman group contributes its own Roman value instead, so a
 leading `c` is 100 and a leading `m` is 1000.
 
@@ -146,7 +150,11 @@ LOST_TOKEN = "␦"  # sentinel: survives tokenization, marks content the run los
 ROMAN_VALUES = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
 ROMAN_RE = re.compile(r"^[ivxlcdm]+$")
 DIGIT_RE = re.compile(r"^\d+$")
-SUM_HEAD_RE = re.compile(r"^(summa|suma|sma|smha|sm|sum)\b|^(summa|suma|sma|smha|sm)")
+# A Summa spelling as its own token, or a longer spelling glued to what follows.
+# The bare `sm` is deliberately absent from the second alternative: without a word
+# boundary it would make a Summa head of every line starting with those letters.
+SUM_HEAD_RE = re.compile(r"^(summa|suma|sma|smha|sm|sum)\b|^(summa|suma|sma|smha)")
+SUBTRACTIVE_BEFORE = {"c": "x", "m": "c"}  # digit a subtractive form puts before a mark
 MAX_SUBSET_ITEMS = 12  # bounds the 2**n subset search of a mismatching block
 
 
@@ -180,6 +188,17 @@ def roman_value(token: str) -> int | None:
     return total
 
 
+def _detach_mark(match: re.Match[str]) -> str:
+    """Split a trailing multiplier mark off its group, unless the token is a
+    subtractive numeral, where the mark is a Roman digit: `xc` is 90 and not
+    10 x 100, `vjc` stays 6 x 100.
+    """
+    group, mark = match.group(1), match.group(2)
+    if group[-1:].lower() == SUBTRACTIVE_BEFORE[mark.lower()]:
+        return match.group(0)
+    return f"{group} {mark}"
+
+
 def tokenize(text: str) -> list[str]:
     """Split an amount string into value, mark, denomination and residual tokens."""
     text = unicodedata.normalize("NFC", text)
@@ -189,7 +208,7 @@ def tokenize(text: str) -> list[str]:
     text = re.sub(r"[{}()\[\]]", " ", text)
     # Detach a trailing multiplier mark from its group (`vjc`, `iiijC`, `iijm`), but
     # leave a group that is Roman hundreds or thousands itself (`cccc`) intact.
-    text = re.sub(r"\b([ivxlj]+)([cCmM])\b", r"\1 \2", text)
+    text = re.sub(r"\b([ivxlj]+)([cCmM])\b", _detach_mark, text)
     raw = [t for t in re.split(r"[\s.·/,;|]+", text) if t]
     tokens: list[str] = []
     index = 0
@@ -520,7 +539,6 @@ def check_run(path: Path) -> dict:
     return {
         "run": path.name,
         "cohort": path.parent.parent.name,
-        "docId": record.get("page", ""),
         "page": record.get("page", ""),
         "repeat": record.get("repeat"),
         "iteration": record.get("iteration", ""),
@@ -598,15 +616,16 @@ def aggregate(runs: list[dict]) -> dict:
     pages: dict[str, dict[str, str]] = {}
     for run in runs:
         pages.setdefault(run["page"], {})[f"r{run['repeat']}"] = page_verdict(run)
+    # Both selections need at least two repeats to say anything, and hold for any k.
     single = sorted(
         p
         for p, r in pages.items()
-        if len(r) == 2 and sum(v == "clean" for v in r.values()) == 1
+        if len(r) > 1 and sum(v == "clean" for v in r.values()) == 1
     )
-    both_fail = sorted(
+    all_fail = sorted(
         p
         for p, r in pages.items()
-        if len(r) == 2 and all(v == "mismatch" for v in r.values())
+        if len(r) > 1 and all(v == "mismatch" for v in r.values())
     )
     tokens: dict[str, int] = {}
     reasons: dict[str, int] = {}
@@ -620,7 +639,7 @@ def aggregate(runs: list[dict]) -> dict:
         "cohorts": dict(sorted(cohorts.items())),
         "pages": dict(sorted(pages.items())),
         "sighting_candidates": single,
-        "both_repeats_mismatch": both_fail,
+        "all_repeats_mismatch": all_fail,
         "unverifiable_reasons": dict(
             sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0]))
         ),
@@ -671,16 +690,26 @@ def render_markdown(report: dict) -> str:
         "",
     ]
     if aggregate_data["sighting_candidates"]:
-        out += ["| Seite | r1 | r2 |", "|---|---|---|"]
+        columns = sorted(
+            {
+                key
+                for page in aggregate_data["sighting_candidates"]
+                for key in aggregate_data["pages"][page]
+            },
+            key=lambda key: int(key[1:]),
+        )
+        out += [
+            "| Seite | " + " | ".join(columns) + " |",
+            "|---|" + "---|" * len(columns),
+        ]
         for page in aggregate_data["sighting_candidates"]:
             repeats = aggregate_data["pages"][page]
-            out.append(
-                f"| {page} | {repeats.get('r1', '-')} | {repeats.get('r2', '-')} |"
-            )
+            cells = " | ".join(repeats.get(key, "-") for key in columns)
+            out.append(f"| {page} | {cells} |")
     else:
         out.append("Keine.")
-    out += ["", "## Seiten, auf denen beide Wiederholungen scheitern", ""]
-    out.append(", ".join(aggregate_data["both_repeats_mismatch"]) or "Keine.")
+    out += ["", "## Seiten, auf denen alle Wiederholungen scheitern", ""]
+    out.append(", ".join(aggregate_data["all_repeats_mismatch"]) or "Keine.")
     out += [
         "",
         "## Nicht geparste Tokens",

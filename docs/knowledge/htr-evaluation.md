@@ -107,6 +107,14 @@ The benchmark measures on hand-picked phenomenon pages. The pilot under `evaluat
 
 The inventory cohort is the more informative of the two, because it shows what happens when the prompt meets a hand it has not been tuned on. Its CER values sit visibly above those of the benchmark's reference pages, and part of that gap is attributable to the reference rather than to the model.
 
+### Metric correction of 28.08.2026
+
+The self-consistency measure classified every Roman numeral carrying a `v` or a `j` as a word token. The fair normalisation collapses `v` to `u` and `j` to `i` before the numeral pattern is applied, and that pattern knew neither letter, so common forms such as `vij` and `xxv` left the number metric and landed in the word metric. Numberishness is now decided on the token before the collapse, and the benchmark summary has been recomputed from the run files on disk.
+
+The direction of the change is uniform. Number consistency falls on most pages and word consistency rises slightly, because the numerals that moved are the least stable tokens of a page. A page whose repeats carry no numeral token at all now reports no value where it previously reported zero, which removes a class of false review candidates. Prompts, runs and iterations are untouched, so the correction changes the measurement and not the material.
+
+The pilot and pilot2 summaries keep the figures of the old metric. Both experiments are closed, their runs are not repeated, and a recomputed figure would suggest a comparability with the benchmark that the differing page sets do not support.
+
 ## Suitability by research purpose
 
 | Purpose | Current status | Consequence |

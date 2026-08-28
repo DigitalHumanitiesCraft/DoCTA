@@ -14,8 +14,11 @@ Iterations:
         full spread image, no few-shot. Baseline.
   it02  core + text-type prompt module, folio-split for raitbuch spreads,
         amount object in the schema, reworked few-shot for inventories
-        (example answer shows non-empty uncertain fields and kind variety;
-        uncertain in the example = words carrying combining diacritics).
+        (example answer shows non-empty uncertain fields and kind variety).
+        The example marks words carrying a combining diacritic; where the page
+        has none, as the configured one does, the longest word of the three
+        longest-worded entry lines is marked instead, because an all-empty
+        uncertain field was measured to suppress markers in the answer.
 
 Repeats: k=5 on pages with formal Transkribus-DONE ground truth, k=3 otherwise
 (identical requests at temperature 0 were measured to spread by 5.5 CER points).
@@ -32,8 +35,10 @@ import concurrent.futures
 import hashlib
 import io
 import json
+import os
 import re
 import sys
+import threading
 import time
 import unicodedata
 from datetime import UTC, datetime
@@ -56,6 +61,7 @@ MAX_SIDE = 3500
 TEMPERATURE = 0.0
 TIMEOUT = 300
 WORKERS = 4
+ATTEMPTS = 4
 FEWSHOT_DOC, FEWSHOT_PAGE = "11327964", 2  # A 49.5, inventar few-shot example
 
 # Frozen it01 instruction; a change to the wording is a new iteration.
@@ -227,7 +233,7 @@ def fewshot_example() -> dict:
                 if any(
                     unicodedata.combining(c) for c in unicodedata.normalize("NFD", w)
                 )
-                or any(ch in w for ch in "ůw̋ẘ")
+                or any(ch in w for ch in "ůẘ")
             ][:2]
             lines.append({"text": t, "kind": kind, "uncertain": unc})
     # The example must demonstrate a non-empty uncertain field (an empty one was
@@ -251,7 +257,7 @@ def fewshot_example() -> dict:
     }
 
 
-_fetch_lock = __import__("threading").Lock()
+_fetch_lock = threading.Lock()
 
 
 def fetch_image(image_id: str, url: str) -> Path:
@@ -268,7 +274,7 @@ def fetch_image(image_id: str, url: str) -> Path:
             headers={"User-Agent": "DoCTA-benchmark (office@dhcraft.org)"},
         )
         r.raise_for_status()
-        tmp = path.with_suffix(f".tmp{__import__('threading').get_ident()}")
+        tmp = path.with_suffix(f".tmp{os.getpid()}_{threading.get_ident()}")
         tmp.write_bytes(r.content)
         tmp.replace(path)
     return path
@@ -308,8 +314,10 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
             "responseSchema": response_schema(with_amount),
         },
     }
-    last_reason = "HTTP"
-    for attempt in range(4):
+    last_reason = "keine Antwort"
+    for attempt in range(ATTEMPTS):
+        # backoff only between attempts; after the last one the caller gives up anyway
+        backoff = 2 ** (attempt + 2) if attempt < ATTEMPTS - 1 else 0
         r = requests.post(
             f"{API_BASE}/{MODEL}:generateContent",
             headers={"x-goog-api-key": key, "Content-Type": "application/json"},
@@ -317,7 +325,8 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
             timeout=TIMEOUT,
         )
         if r.status_code in (429, 500, 503):
-            time.sleep(2 ** (attempt + 2))
+            last_reason = f"HTTP {r.status_code}"
+            time.sleep(backoff)
             continue
         r.raise_for_status()
         data = r.json()
@@ -326,7 +335,7 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
             last_reason = data.get("promptFeedback", {}).get(
                 "blockReason", "no candidates"
             )
-            time.sleep(2 ** (attempt + 2))
+            time.sleep(backoff)
             continue
         cand = cands[0]
         text = "".join(
@@ -393,8 +402,13 @@ def run_one(
         "lines": [ln["text"] for pg in parsed_pages for ln in pg.get("lines", [])],
     }
     RUNS.mkdir(exist_ok=True)
-    tmp = out.with_suffix(".tmp")
+    # process- and thread-unique tmp name, and a last existence check, so a
+    # concurrent runner never replaces a finished run with a half-written one
+    tmp = out.with_suffix(f".tmp{os.getpid()}_{threading.get_ident()}")
     tmp.write_text(json.dumps(record, ensure_ascii=False, indent=1), encoding="utf-8")
+    if out.exists():
+        tmp.unlink()
+        return f"SKIP {out.name}"
     tmp.replace(out)
     return f"OK {out.name} ({record['duration_s']}s, {len(record['lines'])} Zeilen)"
 
@@ -419,6 +433,12 @@ UNITS = {
 
 
 def normalize(text: str, profile: str) -> str:
+    """Three profiles. `strict` keeps the characters as transcribed, `fair`
+    additionally collapses v/u and j/i for the CER, and `fair-raw` stops right
+    before that collapse. `fair-raw` exists for token classification, because the
+    collapse turns every Roman numeral carrying a v or j (vij, xxv) into a letter
+    string no numeral pattern matches. Both fair variants split into the same
+    tokens, the collapse maps letter to letter and touches no whitespace."""
     lines = [
         ln for ln in text.splitlines() if not re.match(r"^\s*\[fol\.?[^\]]*\]\s*$", ln)
     ]
@@ -432,7 +452,8 @@ def normalize(text: str, profile: str) -> str:
     )
     text = re.sub(r"\(([^)]*)\)", r"\1", text).lower()
     text = re.sub(r"~~|\{|\}|\[\.*\]|\[---\]|\[|\]", "", text)
-    text = text.replace("v", "u").replace("j", "i")
+    if profile == "fair":
+        text = text.replace("v", "u").replace("j", "i")
     text = re.sub(r"[^\w\s]", "", text)
     return re.sub(r"\s+", " ", text).strip()
 
@@ -454,29 +475,45 @@ def cer(hyp: str, ref: str) -> float:
 
 
 def is_numberish(tok: str) -> bool:
+    """Expects a `fair-raw` token, where `j` is still the final-`i` variant of a
+    Roman numeral and `v` is still `v`."""
     t = tok.lower().strip("^°")
-    return bool(re.fullmatch(r"[ivxlcdm]+|\d+", t)) or t in UNITS or "^" in tok
+    return bool(re.fullmatch(r"[ivxlcdmj]+|\d+", t)) or t in UNITS or "^" in tok
 
 
-def positionwise(a: list[str], b: list[str]) -> tuple[float, float]:
-    """Aligned token agreement via SequenceMatcher, split word vs number/currency."""
+def positionwise(
+    a: list[str], b: list[str], a_raw: list[str]
+) -> tuple[float | None, float | None]:
+    """Aligned token agreement via SequenceMatcher, split word vs number/currency.
+
+    Alignment runs on the fair tokens `a` and `b`, classification on `a_raw`, the
+    same tokens before the v/u collapse. Positions correspond, both come from one
+    text. A side without tokens of its class yields None rather than zero, because
+    a page carrying no numeral is not a page whose numerals disagree; two empty
+    repeats agree.
+    """
     import difflib
 
+    numeric = [is_numberish(tok) for tok in a_raw]
     sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
-    eq_w = eq_n = tot_w = tot_n = 0
-    for tok in a:
-        if is_numberish(tok):
-            tot_n += 1
-        else:
-            tot_w += 1
+    eq_w = eq_n = 0
+    tot_n = sum(numeric)
+    tot_w = len(numeric) - tot_n
     for blk in sm.get_matching_blocks():
         for k in range(blk.size):
-            tok = a[blk.a + k]
-            if is_numberish(tok):
+            if numeric[blk.a + k]:
                 eq_n += 1
             else:
                 eq_w += 1
-    return (round(eq_w / max(tot_w, 1), 3), round(eq_n / max(tot_n, 1), 3))
+    # two empty repeats agree; any other class without tokens has nothing to say
+    words = round(eq_w / tot_w, 3) if tot_w else (1.0 if not a and not b else None)
+    return (words, round(eq_n / tot_n, 3) if tot_n else None)
+
+
+def mean_defined(values: list[float | None]) -> float | None:
+    """Mean over the pairs where the metric is defined, None where none is."""
+    seen = [v for v in values if v is not None]
+    return round(sum(seen) / len(seen), 3) if seen else None
 
 
 def evaluate(pages: list[dict], iterations: list[str]) -> dict:
@@ -497,7 +534,10 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
         if page.get("gt_lines"):
             entry["gt_lines"] = page["gt_lines"]
         for it in iterations:
-            runs = sorted(RUNS.glob(f"{page['id']}__{it}__r*.json"))
+            runs = sorted(
+                RUNS.glob(f"{page['id']}__{it}__r*.json"),
+                key=lambda p: int(p.stem.rsplit("__r", 1)[1]),
+            )
             if not runs:
                 continue
             recs = [json.loads(f.read_text(encoding="utf-8")) for f in runs]
@@ -534,11 +574,12 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
                     "max": max(strict),
                 }
             toks = [normalize(t, "fair").split() for t in texts]
+            raw = [normalize(t, "fair-raw").split() for t in texts]
             pairs = [(i, j) for i in range(len(toks)) for j in range(i + 1, len(toks))]
             if pairs:
-                agr = [positionwise(toks[i], toks[j]) for i, j in pairs]
-                e["consistency_words"] = round(sum(a for a, _ in agr) / len(agr), 3)
-                e["consistency_numbers"] = round(sum(b for _, b in agr) / len(agr), 3)
+                agr = [positionwise(toks[i], toks[j], raw[i]) for i, j in pairs]
+                e["consistency_words"] = mean_defined([w for w, _ in agr])
+                e["consistency_numbers"] = mean_defined([n for _, n in agr])
             entry["iterations"][it] = e
         summary["pages"][page["id"]] = entry
     (ROOT / "summary.json").write_text(
@@ -547,10 +588,33 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
     return summary
 
 
+def newest_run_timestamp() -> str | None:
+    """Timestamp of the newest run record on disk. Artifacts are dated from the
+    data, never from the clock, so a rewrite without new runs stays identical."""
+    stamps = [
+        json.loads(path.read_text(encoding="utf-8")).get("timestamp")
+        for path in RUNS.glob("*.json")
+    ]
+    return max((s for s in stamps if s), default=None)
+
+
+def parse_only(argv: list[str], known: list[str]) -> str | None:
+    """Iteration named by `--only`, exiting when the value is missing or unknown."""
+    if "--only" not in argv:
+        return None
+    index = argv.index("--only") + 1
+    if index >= len(argv):
+        sys.exit(f"FEHLER: --only braucht eine Iteration ({', '.join(known)})")
+    name = argv[index]
+    if name not in known:
+        sys.exit(f"FEHLER: unbekannte Iteration {name!r} (bekannt: {', '.join(known)})")
+    return name
+
+
 def main() -> None:
     eval_only = "--eval" in sys.argv
-    only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
     prompts = build_prompts()
+    only = parse_only(sys.argv, list(prompts))
     iterations = [only] if only else list(prompts)
     pages = resolve_pages()
     if not eval_only:
@@ -578,11 +642,18 @@ def main() -> None:
                     errors.append(
                         {"page": pid, "iteration": it, "repeat": r, "error": str(e)}
                     )
-        if errors:
-            (ROOT / "errors.json").write_text(
-                json.dumps(errors, ensure_ascii=False, indent=1), encoding="utf-8"
-            )
-    summary = evaluate(pages, ["it01", "it02"])
+        # always written, so a blockage cleared by a later fill does not linger
+        stamp = newest_run_timestamp()
+        report: dict = {}
+        if stamp is not None:
+            report["run_timestamp"] = stamp
+        report["errors"] = errors
+        (ROOT / "errors.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+    # --only limits which runs are produced; the summary always covers every
+    # iteration, otherwise a partial fill would drop the others from summary.json
+    summary = evaluate(pages, list(prompts))
     print("\n== Zusammenfassung (GT-Seiten) ==")
     for pid, e in summary["pages"].items():
         for it, m in e["iterations"].items():

@@ -21,6 +21,7 @@ ROOT = Path(__file__).parent
 REPO = ROOT.parent.parent
 PILOT2 = REPO / "evaluation" / "pilot2" / "runs"
 PILOT = REPO / "evaluation" / "pilot" / "runs"
+DEFAULT_DIRS = (PILOT, PILOT2)
 
 
 def amount(numeral: str, multiplier: str = "", unit: str = "") -> dict[str, int]:
@@ -33,6 +34,28 @@ def test_roman_forms() -> None:
     assert ca.roman_value("lxxxxiiij") == 94
     assert ca.roman_value("cccc") == 400
     assert ca.roman_value("dreizehn") is None
+
+
+def test_subtractive_c_is_not_a_multiplier() -> None:
+    """`xc` is 90, not ten hundred; only a group ending in `x` reads that way."""
+    assert ca.tokenize("xc") == ["xc"]
+    assert amount("xc") == {"?": 90}
+    assert amount("ixc") == {"?": 89}
+    assert amount("xc lb") == {"lb": 90}
+    # the multiplier reading stays intact for every other group
+    assert ca.tokenize("vjc") == ["vj", "c"]
+    assert ca.tokenize("iijm") == ["iij", "m"]
+    assert amount("vjc", "", "gld") == {"gld": 600}
+    assert amount("iiijC", "", "gld") == {"gld": 400}
+    assert amount("iijm c", "", "gld") == {"gld": 3100}  # 3 x 1000 + 100
+
+
+def test_sum_head_needs_a_summa_spelling() -> None:
+    """The boundary-free alternative catches a glued Summa, not any `sm` word."""
+    head = ca.Line(0, "Smaviij lb", "entry", None, False)
+    assert ca.is_sum_head(head)
+    assert ca.is_sum_head(ca.Line(0, "Sm̃a", "entry", None, False))
+    assert not ca.is_sum_head(ca.Line(0, "Smid der wagner", "entry", None, False))
 
 
 def test_parse_real_amounts() -> None:
@@ -113,7 +136,7 @@ def test_review_case_p025_verso_exact_match() -> None:
     assert block["sum_total"] == {"gld": 1694}
 
 
-def test_review_case_p030_recto_exact_match() -> None:
+def test_review_case_p030_recto_subset_match() -> None:
     """1220 + 67 = 1287, verified against the image for r1.
 
     The block carries a third amount line, `vnd munz c l iiij duc ...`, which is not
@@ -221,9 +244,6 @@ def test_report_is_idempotent() -> None:
             assert (first / name).read_bytes() == (second / name).read_bytes(), name
 
 
-DEFAULT_DIRS = (PILOT, PILOT2)
-
-
 def main() -> int:
     tests = [
         value for name, value in sorted(globals().items()) if name.startswith("test_")
@@ -233,9 +253,9 @@ def main() -> int:
         try:
             test()
             print(f"ok   {test.__name__}")
-        except AssertionError as error:
+        except Exception as error:  # a broken test is a failure, not a crash
             failed += 1
-            print(f"FAIL {test.__name__}: {error}")
+            print(f"FAIL {test.__name__}: {error!r}")
     print(f"\n{len(tests) - failed}/{len(tests)} bestanden")
     return 1 if failed else 0
 

@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-27T05:38:53+00:00",
+ "generated": "2026-08-28T14:02:52+00:00",
  "model": "gemini-3.7-flash",
  "pages": {
   "rb2_p003": {
@@ -32,8 +32,8 @@
       6,
       12
      ],
-     "consistency_words": 0.684,
-     "consistency_numbers": 0.357
+     "consistency_words": 0.702,
+     "consistency_numbers": 0.307
     },
     "it02": {
      "k": 3,
@@ -52,8 +52,8 @@
       74,
       31
      ],
-     "consistency_words": 0.744,
-     "consistency_numbers": 0.817
+     "consistency_words": 0.76,
+     "consistency_numbers": 0.709
     }
    }
   },
@@ -85,8 +85,8 @@
       20,
       16
      ],
-     "consistency_words": 0.515,
-     "consistency_numbers": 0.478
+     "consistency_words": 0.522,
+     "consistency_numbers": 0.452
     },
     "it02": {
      "k": 3,
@@ -105,8 +105,8 @@
       51,
       73
      ],
-     "consistency_words": 0.61,
-     "consistency_numbers": 0.78
+     "consistency_words": 0.622,
+     "consistency_numbers": 0.697
     }
    }
   },
@@ -138,8 +138,8 @@
       10,
       15
      ],
-     "consistency_words": 0.521,
-     "consistency_numbers": 0.611
+     "consistency_words": 0.514,
+     "consistency_numbers": 0.612
     },
     "it02": {
      "k": 3,
@@ -158,8 +158,8 @@
       43,
       32
      ],
-     "consistency_words": 0.561,
-     "consistency_numbers": 0.753
+     "consistency_words": 0.559,
+     "consistency_numbers": 0.711
     }
    }
   },
@@ -192,8 +192,8 @@
       19,
       12
      ],
-     "consistency_words": 0.646,
-     "consistency_numbers": 0.482
+     "consistency_words": 0.651,
+     "consistency_numbers": 0.483
     },
     "it02": {
      "k": 3,
@@ -212,7 +212,7 @@
       102,
       48
      ],
-     "consistency_words": 0.668,
+     "consistency_words": 0.669,
      "consistency_numbers": 0.599
     }
    }
@@ -245,8 +245,8 @@
       32,
       19
      ],
-     "consistency_words": 0.631,
-     "consistency_numbers": 0.54
+     "consistency_words": 0.64,
+     "consistency_numbers": 0.506
     },
     "it02": {
      "k": 3,
@@ -265,8 +265,8 @@
       65,
       44
      ],
-     "consistency_words": 0.675,
-     "consistency_numbers": 0.781
+     "consistency_words": 0.677,
+     "consistency_numbers": 0.765
     }
    }
   },
@@ -296,7 +296,7 @@
       0,
       0
      ],
-     "consistency_words": 0.0,
+     "consistency_words": null,
      "consistency_numbers": 1.0
     },
     "it02": {
@@ -316,7 +316,7 @@
       0,
       0
      ],
-     "consistency_words": 0.0,
+     "consistency_words": null,
      "consistency_numbers": 1.0
     }
    }
@@ -349,8 +349,8 @@
       18,
       16
      ],
-     "consistency_words": 0.457,
-     "consistency_numbers": 0.167
+     "consistency_words": 0.464,
+     "consistency_numbers": 0.133
     },
     "it02": {
      "k": 3,
@@ -370,7 +370,7 @@
       30
      ],
      "consistency_words": 0.522,
-     "consistency_numbers": 0.6
+     "consistency_numbers": 0.583
     }
    }
   },
@@ -403,8 +403,8 @@
       29,
       8
      ],
-     "consistency_words": 0.413,
-     "consistency_numbers": 0.581
+     "consistency_words": 0.409,
+     "consistency_numbers": 0.567
     },
     "it02": {
      "k": 3,
@@ -423,8 +423,8 @@
       123,
       94
      ],
-     "consistency_words": 0.51,
-     "consistency_numbers": 0.543
+     "consistency_words": 0.506,
+     "consistency_numbers": 0.558
     }
    }
   },
@@ -473,8 +473,8 @@
       "min": 0.429,
       "max": 0.4798
      },
-     "consistency_words": 0.567,
-     "consistency_numbers": 0.691
+     "consistency_words": 0.572,
+     "consistency_numbers": 0.65
     },
     "it02": {
      "k": 5,
@@ -509,8 +509,8 @@
       "min": 0.3781,
       "max": 0.4453
      },
-     "consistency_words": 0.561,
-     "consistency_numbers": 0.547
+     "consistency_words": 0.57,
+     "consistency_numbers": 0.5
     }
    },
    "gt_lines": [
@@ -604,8 +604,8 @@
       "min": 0.477,
       "max": 0.4974
      },
-     "consistency_words": 0.494,
-     "consistency_numbers": 0.79
+     "consistency_words": 0.503,
+     "consistency_numbers": 0.718
     },
     "it02": {
      "k": 5,
@@ -640,8 +640,8 @@
       "min": 0.383,
       "max": 0.4666
      },
-     "consistency_words": 0.482,
-     "consistency_numbers": 0.691
+     "consistency_words": 0.488,
+     "consistency_numbers": 0.654
     }
    },
    "gt_lines": [
@@ -772,8 +772,8 @@
       "min": 0.3978,
       "max": 0.5238
      },
-     "consistency_words": 0.473,
-     "consistency_numbers": 0.573
+     "consistency_words": 0.47,
+     "consistency_numbers": 0.583
     },
     "it02": {
      "k": 5,
@@ -808,8 +808,8 @@
       "min": 0.3743,
       "max": 0.4415
      },
-     "consistency_words": 0.461,
-     "consistency_numbers": 0.463
+     "consistency_words": 0.46,
+     "consistency_numbers": 0.453
     }
    },
    "gt_lines": [
@@ -1005,7 +1005,7 @@
       "max": 0.3462
      },
      "consistency_words": 0.593,
-     "consistency_numbers": 0.832
+     "consistency_numbers": 0.786
     },
     "it02": {
      "k": 5,
@@ -1041,7 +1041,7 @@
       "max": 0.3208
      },
      "consistency_words": 0.617,
-     "consistency_numbers": 0.806
+     "consistency_numbers": 0.78
     }
    },
    "gt_lines": [
@@ -1130,8 +1130,8 @@
       "min": 0.3746,
       "max": 0.3991
      },
-     "consistency_words": 0.529,
-     "consistency_numbers": 0.695
+     "consistency_words": 0.519,
+     "consistency_numbers": 0.698
     },
     "it02": {
      "k": 5,
@@ -1166,8 +1166,8 @@
       "min": 0.3348,
       "max": 0.3894
      },
-     "consistency_words": 0.541,
-     "consistency_numbers": 0.708
+     "consistency_words": 0.542,
+     "consistency_numbers": 0.643
     }
    },
    "gt_lines": [
@@ -1374,7 +1374,7 @@
       "min": 0.2747,
       "max": 0.2943
      },
-     "consistency_words": 0.652,
+     "consistency_words": 0.648,
      "consistency_numbers": 0.851
     },
     "it02": {
@@ -1410,8 +1410,8 @@
       "min": 0.2483,
       "max": 0.2679
      },
-     "consistency_words": 0.705,
-     "consistency_numbers": 0.853
+     "consistency_words": 0.703,
+     "consistency_numbers": 0.843
     }
    },
    "gt_lines": [
@@ -1506,8 +1506,8 @@
       "min": 0.235,
       "max": 0.2561
      },
-     "consistency_words": 0.641,
-     "consistency_numbers": 0.786
+     "consistency_words": 0.644,
+     "consistency_numbers": 0.731
     },
     "it02": {
      "k": 5,
@@ -1542,8 +1542,8 @@
       "min": 0.2183,
       "max": 0.2465
      },
-     "consistency_words": 0.701,
-     "consistency_numbers": 0.692
+     "consistency_words": 0.705,
+     "consistency_numbers": 0.649
     }
    },
    "gt_lines": [
@@ -1614,8 +1614,8 @@
       50,
       0
      ],
-     "consistency_words": 0.706,
-     "consistency_numbers": 0.875
+     "consistency_words": 0.707,
+     "consistency_numbers": 0.778
     },
     "it02": {
      "k": 2,

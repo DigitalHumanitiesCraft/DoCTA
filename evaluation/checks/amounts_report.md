@@ -30,7 +30,7 @@ Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus.
 | pilot2_rb2_p030 | clean | unverifiable |
 | pilot2_rb2_p039 | clean | mismatch |
 
-## Seiten, auf denen beide Wiederholungen scheitern
+## Seiten, auf denen alle Wiederholungen scheitern
 
 pilot_rb2_p015
 

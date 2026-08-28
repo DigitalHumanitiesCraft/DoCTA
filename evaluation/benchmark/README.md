@@ -10,18 +10,21 @@ Kleines, versioniertes Benchmark für die VLM-Transkription des DoCTA-Bestands (
 4. **Wiederholungen**: k >= 3 pro Bedingung, auf GT-Seiten k = 5. Befund aus Iteration 01: identische Requests streuen bei Temperatur 0 um bis zu 5,5 CER-Punkte; eine Rangfolge aus Einzelläufen ist Rauschen.
 5. **Messgrößen**, stratifiziert nach Seite und Zone (Rubrik, Fließtext, Beträge), nie nur als Aggregat:
    - CER fair/strict gegen die DONE-GT-Seiten (Normalisierungsprofil dokumentiert im Runner)
-   - positionsweise Token-Übereinstimmung zwischen Wiederholungen, getrennt für Worttokens und Zahl-/Währungstokens (Selbstkonsistenz; Jaccard-Overlap hat sich als irreführend erwiesen)
+   - positionsweise Token-Übereinstimmung zwischen Wiederholungen, getrennt für Worttokens und Zahl-/Währungstokens (Selbstkonsistenz; Jaccard-Overlap hat sich als irreführend erwiesen). Ob ein Token eine Zahl ist, entscheidet seine Form vor der v/u- und j/i-Angleichung des fair-Profils, sonst fällt jedes Zahlzeichen mit `v` oder `j` aus der Zahlmetrik. Eine Seite ohne Zahltokens meldet keinen Wert statt einer Null
    - Ausbeute und Präzision der uncertain-Marker
    - Zeilenausfall gegen GT bzw. zwischen Wiederholungen
    - arithmetische Konsistenz der Beträge als Ausschlussfilter (nicht als Korrektheitsnachweis; das Modell glättet Bilanzen)
 6. **Herkunft der Iterationen**: it01 ist der Testlauf vom 2026-08-26 (`../../experiments/transcription-test/`, Ergebnisse bleiben dort erhalten); it02 synthetisiert die drei Analyseberichte desselben Tages (GT-Fehleranalyse, Raitbuch-Divergenz-Adjudikation, Bestandssichtung); it03 ist nach der Mini-GT-Adjudikation mit der Projektleitung geplant (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich).
 
-## Stand (2026-08-27)
+## Stand (2026-08-28)
 
 - pages.json: 18 Seiten (8 Raitbuch-Phänomenseiten, 9 DONE-GT-Inventarseiten, 1 dichte Inventarseite) + 5 Reserve
 - it01: eingefroren; Ursprungslauf in `../../experiments/transcription-test/results/`
 - it02: Volllauf abgeschlossen; zwei Läufe der dichten Inventarseite `inv_11348659_p1` bleiben offen, die API liefert dort wiederholt keinen Kandidaten (blockReason OTHER), dokumentiert in `errors.json`
 - Runner: `run_benchmark.py` (Download-Race und Kandidaten-Fehlerbehandlung behoben); `summary.json` trägt jetzt IIIF-URL, Quelle, Referenzzeilen und die Run-Dateinamen je Iteration
+- Metrik-Korrektur 2026-08-28: die Zahlmetrik erfasst jetzt auch Zahlzeichen mit `v` und `j` (`vij`, `xxv`), die vorher in die Wortmetrik fielen. `summary.json` ist neu gerechnet; die Zahlkonsistenz sinkt dadurch auf den meisten Seiten und die Wortkonsistenz steigt leicht, weil die verschobenen Tokens die instabilsten der Seite sind. Die Prompts sind unverändert, die Läufe ebenso. Die Pilot-Summaries bleiben auf der alten Metrik, weil beide Experimente abgeschlossen sind
+- `errors.json` wird bei jedem Füllauf geschrieben, auch wenn nichts fehlschlug, und trägt den Zeitstempel des neuesten Laufs auf Platte; ein behobener Blocker bleibt so nicht als Altlast stehen
+- `--only` prüft den Iterationsnamen; die Auswertung deckt danach weiterhin alle Iterationen ab, damit ein Teil-Füllauf `summary.json` nicht beschneidet
 - Viewer: `viewer.html` in diesem Ordner, Bild-Text-Synopse über alle Benchmark-Seiten mit Iterations-Tabs, Wiederholungs-Auswahl, Referenz-Vergleich und Metrik-Tabelle; Start mit `python -m http.server 8742` aus dem Repo-Root, dann `http://127.0.0.1:8742/evaluation/benchmark/viewer.html`
 
 ## Wiedereinstieg

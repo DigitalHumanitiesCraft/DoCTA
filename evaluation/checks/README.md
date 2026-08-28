@@ -30,7 +30,7 @@ The check reads the run files already in the repository, makes no network call a
 
 ## Report
 
-`amounts_report.json` and `amounts_report.md` are written next to the script and are regenerated on every run. The Markdown report is German, like the other evaluation reports. It carries the per-cohort counts, the reasons a block did not decide, the pages on which exactly one repeat adds up, the pages on which both repeats fail, the unparsed tokens with their frequency and the individual decided blocks with both totals.
+`amounts_report.json` and `amounts_report.md` are written next to the script and are regenerated on every run. The Markdown report is German, like the other evaluation reports. It carries the per-cohort counts, the reasons a block did not decide, the pages on which exactly one repeat adds up, the pages on which every repeat fails, the unparsed tokens with their frequency and the individual decided blocks with both totals.
 
 The section on pages where exactly one repeat adds up is the operative one. Those pages are the sighting candidates, the places where a targeted reading at the image decides between two machine transcriptions at low cost.
 
