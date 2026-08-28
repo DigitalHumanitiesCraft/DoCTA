@@ -124,7 +124,7 @@ The gender distribution is heavily male, with a small female group and a residue
 
 A Python script (`scripts/fetch_sicprod.py`) retrieves all entities page by page and the relations as an edge list. Output: `data/persons.json`, `data/places.json`, `data/institutions.json`, `data/functions.json`, `data/relations.json`, on the order of a few megabytes raw and roughly a megabyte gzipped.
 
-A second script (`scripts/compute_layout.py`) pre-computes a network layout with networkx and writes `data/network.json`. That file is an exploration artifact from the prototype phase and is loaded by no current page.
+A second script pre-computed a network layout with networkx into `data/network.json`. Script and file were removed in August 2026; the exploration layer draws its own layout in the browser, and the SiCProD exports above are all that the court network needs when it returns.
 
 ## 2. Source catalogue (CSV)
 

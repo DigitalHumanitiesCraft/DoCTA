@@ -85,7 +85,7 @@ The current graph is small, a few hundred nodes at most with objects switched on
 
 The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in design.md and applies again when the court network returns as a view over edited text. At that size SVG marks become the bottleneck and a Canvas renderer is the upgrade path.
 
-Layout pre-computation exists as `scripts/compute_layout.py`, which writes `data/network.json`; no page loads that file, because the layout runs fast enough in the browser and a live simulation lets a filter change re-lay the graph.
+Layout pre-computation was tried once, as a script writing a `data/network.json` with fixed node positions. It was removed in August 2026 together with its output, because the layout runs fast enough in the browser and a live simulation lets a filter change re-lay the graph, which a frozen layout cannot.
 
 ## Document viewer: OpenSeadragon
 
@@ -201,7 +201,7 @@ The site computes the figures it shows in the browser, from the source catalogue
 
 Two of the collection scripts write files that are still in use. `explore_transkribus.py` writes `data/transkribus_collection.json`, which `index.html` loads for the first-page thumbnails of documents the register does not know, and which `transform_sources.py` reads for the page counts. `transkribus_status.py` writes `data/transkribus_status.json`, which no page loads but which `build_register.py` and `build_tei.py` read as the source of the Transkribus workflow status, and `fetch_transcriptions.py` and `map_sources.py` read as their document list.
 
-Exploration and helper scripts whose output nothing consumes: `compute_layout.py` writing `data/network.json`, `explore_transkribus_deep.py` and `fetch_remaining.py`. They document how the data situation was established and stay in the repository for that reason.
+One exploration script has no consumer for its output: `explore_transkribus_deep.py`. It documents how the data situation was established and stays in the repository for that reason.
 
 ## Tests
 

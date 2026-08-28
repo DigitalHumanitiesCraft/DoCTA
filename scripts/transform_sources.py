@@ -30,10 +30,12 @@ CIRCA = re.compile(r"\bca\b", re.IGNORECASE)
 # century carries the unit.
 CENTURY_RANGE = re.compile(r"(\d{1,2})\.\s*(?:Jh\.?)?\s*-\s*(\d{1,2})\.\s*Jh")
 CENTURY = re.compile(r"(\d{1,2})\.\s*Jh")
-# Anchored, so a leading hint such as "ca. (1450) 1600-1850" still falls through
-# to the single-year branch instead of silently changing meaning.
-YEAR_RANGE = re.compile(r"(\d{4})\s*-\s*(\d{4})")
 YEAR = re.compile(r"\d{4}")
+# A year in brackets is the finding aid's conjectural hint about the earliest
+# content ("ca. (1450) 1600-1850"), not an endpoint of the span. Such a dating
+# is not a plain range, so a raw carrying one stays out of range detection and
+# keeps the single-year reading of its first named year.
+PAREN_YEAR = re.compile(r"\(\s*\d{4}\s*\)")
 
 
 def _dating(raw, start, end, circa):
@@ -44,13 +46,14 @@ def normalize_date(raw):
     """Normalize date strings to consistent format.
 
     Handles: '1487-1594', '1495 (ca.)', '15. Jh.', '13. Jh.-17. Jh.',
-             '15.-18. Jh.', '-1564', '1479', '1470-1479', etc.
+             '15.-18. Jh.', '-1564', '1229-', '1479', 'ca. 1300-1900', etc.
     Returns: {'raw': original, 'start': int|None, 'end': int|None, 'circa': bool}
 
     A leading dash is the finding aid's "bis", an open start rather than a
-    negative year, so start stays None and the named year is the end. The site
-    sorts a source without a start alongside the undated ones and prints the
-    raw string.
+    negative year, so start stays None and the named year is the end. A trailing
+    dash is the open end of the same convention and is read symmetrically, with
+    the named year as start and no end. The site sorts by start and prints the
+    raw string wherever one bound is missing.
     """
     if not raw or not raw.strip():
         return _dating("", None, None, False)
@@ -61,6 +64,7 @@ def normalize_date(raw):
     circa = bool(CIRCA.search(raw_norm))
     open_start = raw_norm.startswith("-")
     body = raw_norm[1:].strip() if open_start else raw_norm
+    open_end = body.endswith("-")
 
     # Century range: "13. Jh.-17. Jh.", "15.-18. Jh."
     if m := CENTURY_RANGE.search(body):
@@ -73,14 +77,24 @@ def normalize_date(raw):
         start = None if open_start else (century - 1) * 100 + 1
         return _dating(raw, start, century * 100, True)
 
-    # Range: "1487-1594"
-    if m := YEAR_RANGE.match(body):
-        return _dating(raw, int(m.group(1)), int(m.group(2)), circa)
+    # Range: "1487-1594", and the same span through the decorations the finding
+    # aid puts between the two years, a month ("1477.04-1478.04"), a "(ca.)"
+    # suffix ("1280 (ca.)-1480 (ca.)") or a "ca." prefix ("ca. 1300-1900"). The
+    # first and the last year name the span; a dash has to stand between them,
+    # so "1450 ca" or a day-level date never reads as a range.
+    found = list(YEAR.finditer(body))
+    if len(found) >= 2 and not PAREN_YEAR.search(body):
+        first, last = found[0], found[-1]
+        if "-" in body[first.end() : last.start()]:
+            return _dating(raw, int(first.group()), int(last.group()), circa)
 
-    # Single year with optional prefix/suffix: "1479", "-1564", "1495 (ca.)"
-    if m := YEAR.search(body):
-        year = int(m.group())
-        return _dating(raw, None if open_start else year, year, circa)
+    # Single year with optional prefix/suffix: "1479", "1495 (ca.)", and the
+    # open ends "-1564" and "1229-".
+    if found:
+        year = int(found[0].group())
+        if open_start:
+            return _dating(raw, None, year, circa)
+        return _dating(raw, year, None if open_end else year, circa)
 
     return _dating(raw, None, None, False)
 

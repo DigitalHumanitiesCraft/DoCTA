@@ -112,7 +112,6 @@ They stay in the repository because they document how the data situation was est
 | `data/transkribus_collection.json` | The full collection with document metadata |
 | `data/transkribus_status.json` | Transcription status of every document in the collection |
 | `data/raitbuch2_pages.json` | Page list of account book 2 with IIIF keys |
-| `data/network.json` | Pre-computed network layout from the prototype phase (see architecture.md) |
 
 ## Evaluation (`evaluation/`) and experiments (`experiments/`)
 

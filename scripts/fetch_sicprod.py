@@ -3,8 +3,8 @@
 API: https://sicprod.acdh-dev.oeaw.ac.at/apis/api/
 No auth needed (public API).
 
-This is the complete fetch tool; fetch_remaining.py was the resume path of a
-run that had already written the entity files.
+This is the complete fetch: every endpoint the exports under docs/data/ come
+from is retrieved by this one run.
 
 A pagination that does not complete is a data loss risk, so an endpoint that
 fails after its retry aborts the run with a nonzero exit and writes nothing for

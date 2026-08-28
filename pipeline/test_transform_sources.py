@@ -34,17 +34,25 @@ CASES = [
     ("1323-1560 (ca.)", 1323, 1560, True),
     ("1495 (ca.)", 1495, 1495, True),
     ("1450 ca", 1450, 1450, True),
-    # Unchanged behaviour, recorded rather than endorsed: a range whose first
-    # year is followed by anything other than the dash (a month, a "(ca.)"
-    # suffix) or preceded by a "ca." prefix collapses to its first year.
-    ("1477.04-1478.04", 1477, 1477, False),
-    ("1280 (ca.)-1480 (ca.)", 1280, 1280, True),
-    ("ca. 1300-1900", 1300, 1300, True),
+    # A range spans its first and its last year through the decorations the
+    # finding aid writes between them: a month, a "(ca.)" suffix, a "ca."
+    # prefix.
+    ("1477.04-1478.04", 1477, 1478, False),
+    ("1280 (ca.)-1480 (ca.)", 1280, 1480, True),
+    ("1289 (ca.)-1569", 1289, 1569, True),
+    ("ca. 1300-1900", 1300, 1900, True),
+    ("ca. 1500-1520", 1500, 1520, True),
+    # A bracketed year is a conjectural hint about the earliest content, not an
+    # endpoint, so the raw stays out of range detection.
     ("ca. (1450) 1600-1850", 1450, 1450, True),
-    # An open end keeps the named year on both sides, unchanged behaviour.
-    ("1229-", 1229, 1229, False),
-    ("1450 (ca.)-", 1450, 1450, True),
+    # A trailing dash is the open end, symmetric to the leading "bis".
+    ("1229-", 1229, None, False),
+    ("1327-", 1327, None, False),
+    ("1450 (ca.)-", 1450, None, True),
+    # An open end written out in words names one year only and stays closed.
     ("ca. 1280-laufend", 1280, 1280, True),
+    # A day-level date carries no second year and never reads as a range.
+    ("1471.09.25", 1471, 1471, False),
     # Centuries: the span runs from the first year of the first century to the
     # last year of the last.
     ("15. Jh.", 1401, 1500, True),

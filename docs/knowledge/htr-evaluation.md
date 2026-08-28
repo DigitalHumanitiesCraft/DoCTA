@@ -96,7 +96,9 @@ Across the account-book pages the repetitions of one and the same prompt differ 
 |------|-------------|------------------|
 | fol. 1v–2r | Names, dates and amounts vary strongly | Structure recognisable, individual values unchecked |
 | fol. 2v–3r | Main names relatively stable, amounts and formulae change | Good basis for adjudication, not research data |
-| fol. 39v–40r | Lowest agreement between repetitions | Difficult page, targeted image details required |
+| fol. 39v–40r | Mixed show-through and a faded rubric; agreement in the middle of the field | Structure readable, rubric and currency unchecked |
+| fol. 98v–99r | Lowest number consistency of the whole set under iteration 01, raised markedly by iteration 02 | Amounts of the extreme show-through page are unusable without checking |
+| fol. 112v–113r | Lowest word consistency of the account-book pages under both iterations | Inserted leaf, overlapping written surfaces and two hands; targeted image details required |
 | fol. 89v–90r | All structured variants recognise the blank page | Blank-page and layout triage works |
 
 Consistency between runs measures agreement between outputs. It does not measure historical correctness. Model consensus and arithmetic plausibility are reference-free hints for prioritising human checking, nothing more.
