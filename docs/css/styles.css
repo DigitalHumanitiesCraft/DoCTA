@@ -1723,3 +1723,139 @@ body[data-review="on"] .transcription__line[data-line-id]:not(.transcription__li
   font-size: var(--text-xs);
   line-height: 1.6;
 }
+
+/* === Entity register view (exploration.html, ?view=register) ===
+   The corpus-wide register of the extraction layer, one tab per entity type.
+   The tabs reuse the dot of the network filter chips, so a type carries the
+   same shape and hue in both views, and the tab label names it in words. */
+.reg-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+  gap: var(--space-xs);
+  margin: var(--space-sm) var(--space-md) 0;
+}
+
+.reg-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.2rem var(--space-sm);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted-custom);
+  font-size: var(--text-xs);
+}
+
+.reg-tab[aria-selected="true"] {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* The chip dot dims with an unpressed filter; here the tab state is carried by
+   the whole chip, so the type mark stays at full strength. */
+.reg-tab .net-filter__dot { opacity: 1; }
+
+.reg-tab__n {
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  color: var(--text-muted-custom);
+}
+
+/* Only the active type's list scrolls, the tabs and the provenance line stay */
+.reg-lists {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.reg-panel { display: none; }
+
+.reg-panel.is-active {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+.reg-list {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reg-entry {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.reg-entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.reg-entry__name {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+/* The citable address of the entry in data/tei/register.xml */
+.reg-entry__id {
+  font-family: var(--font-source);
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+
+.reg-entry__id:hover,
+.reg-entry__id:focus-visible { color: var(--accent); }
+
+.reg-entry__docs {
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+  white-space: nowrap;
+}
+
+.reg-entry__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-sm);
+  margin-top: var(--space-xs);
+  font-size: var(--text-xs);
+}
+
+.reg-entry__key {
+  flex: none;
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted-custom);
+}
+
+.reg-att {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reg-empty {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted-custom);
+}

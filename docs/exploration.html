@@ -102,6 +102,7 @@
     const VIEWS = [
       { id: 'network', label: 'Network', render: renderNetwork },
       { id: 'entities', label: 'Entities', render: renderEntities },
+      { id: 'register', label: 'Register', render: renderRegister },
     ];
 
     const layout = document.getElementById('exp-layout');
@@ -413,6 +414,228 @@
         draw();
       }, 150));
       await load(srcDocId);
+    }
+
+    /* The register view shows the corpus-wide entity index, the same entries the
+       TEI standOff file data/tei/register.xml holds and under the same ids, so
+       an entry read here is citable in the edition. One tab per entity type;
+       within a tab the entries stand alphabetically by normalised form. */
+    const REG_TYPES = [
+      { key: 'person', rdf: 'docta:Person', label: 'Persons' },
+      { key: 'place', rdf: 'docta:Place', label: 'Places' },
+      { key: 'object', rdf: 'docta:Object', label: 'Objects' },
+    ];
+    const REGISTER_FILE = 'data/tei/register.xml';
+
+    async function renderRegister(panel, controls) {
+      const graph = await getGraph();
+      const records = graph['@graph'] || [];
+      const docById = new Map(records
+        .filter(r => r['@type'] === 'docta:Document')
+        .map(d => [Number(d.transkribusDocId), d]));
+      const docLabel = id => docById.get(Number(id))?.label || `Document ${id}`;
+      // Place and year distinguish the sources; the shelfmark stays in the title
+      const shortDoc = label => String(label).split(',')[0].trim();
+
+      const byType = new Map(REG_TYPES.map(t => [t.key, []]));
+      for (const r of records) {
+        const t = REG_TYPES.find(x => x.rdf === r['@type']);
+        if (!t) continue;
+        const atts = r.attestation || [];
+        const inDocs = (r.attestedIn || []).length
+          ? new Set(r.attestedIn).size
+          : new Set(atts.map(a => a.docId)).size;
+        byType.get(t.key).push({
+          // The graph id and the xml:id of the register entry are the same
+          // string; only the JSON-LD prefix separates them.
+          id: String(r['@id']).replace(/^docta:/, ''),
+          label: String(r.label || ''),
+          forms: r.attestedForm || [],
+          atts,
+          inDocs,
+          search: [r.label, ...(r.attestedForm || [])].join(' ').toLowerCase(),
+        });
+      }
+      for (const list of byType.values()) {
+        list.sort((a, b) => a.label.localeCompare(b.label, 'de'));
+      }
+
+      controls.innerHTML =
+        '<div class="exp-ctrl"><label class="exp-ctrl__legend" for="reg-filter">Filter</label>' +
+        '<input type="search" class="exp-input" id="reg-filter" autocomplete="off" ' +
+        'placeholder="Normalized or attested form" aria-describedby="reg-filter-hint">' +
+        '<span class="visually-hidden" id="reg-filter-hint">Filters the register by the ' +
+        'normalized form and by the spellings attested in the sources.</span></div>';
+      const filterInput = controls.querySelector('#reg-filter');
+
+      panel.innerHTML =
+        '<p class="exp-basis" id="reg-basis"></p>' +
+        '<div class="reg-tabs" role="tablist" aria-label="Entity types" id="reg-tabs"></div>' +
+        '<p class="exp-facts"><span class="exp-facts__items"></span>' +
+        '<span class="exp-facts__count"></span></p>' +
+        '<div class="reg-lists" id="reg-lists"></div>' +
+        '<div class="visually-hidden" aria-live="polite" id="reg-live"></div>';
+      const basis = panel.querySelector('#reg-basis');
+      const tablistEl = panel.querySelector('#reg-tabs');
+      const factsItems = panel.querySelector('.exp-facts__items');
+      const countEl = panel.querySelector('.exp-facts__count');
+      const lists = panel.querySelector('#reg-lists');
+      const live = panel.querySelector('#reg-live');
+
+      /* Same statement as the entities view, made once for the whole register:
+         a model produced these entries and no scholar has verified them. The
+         icons are the shared ones, sparkle for the model, dashed circle for the
+         missing verification. */
+      const ident = Array.isArray(graph.provenance?.identification)
+        ? graph.provenance.identification : [];
+      const uniq = key => [...new Set(ident.map(e => e[key]).filter(Boolean))];
+      const models = uniq('model');
+      const prompts = uniq('prompt');
+      const dates = uniq('date').sort();
+      const dateSpan = dates.length > 1 ? `${dates[0]}–${dates[dates.length - 1]}` : (dates[0] || '');
+      basis.innerHTML = `Extraction ${provChip('llm')}` +
+        (models.length
+          ? ` <span class="ent-key ent-key--prov">${ICON_AI}${escapeHTML(models.join(', '))}</span>`
+          : '') +
+        `<span class="ent-key ent-key--prov">${ICON_UNVERIFIED}not verified</span>` +
+        (prompts.length
+          ? ` &middot; Prompt ${escapeHTML(prompts.join(', '))}${dateSpan ? `, ${escapeHTML(dateSpan)}` : ''}`
+          : '') +
+        ` &middot; Encoded as <a href="${REGISTER_FILE}">${REGISTER_FILE}</a>`;
+      factsItems.innerHTML = '<span class="exp-facts__item">' +
+        '<span class="exp-facts__key">Citable address</span>' +
+        `<span class="exp-src">${REGISTER_FILE}#&lt;id&gt;</span></span>`;
+
+      for (const t of REG_TYPES) {
+        const tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = 'reg-tab';
+        tab.id = `reg-tab-${t.key}`;
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-controls', `reg-panel-${t.key}`);
+        tab.setAttribute('aria-selected', 'false');
+        tab.tabIndex = -1;
+        // The dot repeats the shape and hue of the network filter chips, so the
+        // same entity type reads the same in both views; the label carries it
+        // without colour.
+        tab.innerHTML = `<span class="net-filter__dot net-filter__dot--${t.key}" aria-hidden="true"></span>` +
+          `${escapeHTML(t.label)} <span class="reg-tab__n"></span>`;
+        tab.addEventListener('click', () => select(t.key));
+        tablistEl.appendChild(tab);
+
+        const p = document.createElement('div');
+        p.className = 'reg-panel';
+        p.id = `reg-panel-${t.key}`;
+        p.setAttribute('role', 'tabpanel');
+        p.setAttribute('aria-labelledby', tab.id);
+        p.tabIndex = 0;
+        lists.appendChild(p);
+
+        t.tab = tab;
+        t.host = p;
+        t.countEl = tab.querySelector('.reg-tab__n');
+      }
+
+      tablistEl.addEventListener('keydown', evt => {
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+        const i = REG_TYPES.findIndex(t => t.tab === document.activeElement);
+        if (i < 0) return;
+        let next = null;
+        if (evt.key in step) next = (i + step[evt.key] + REG_TYPES.length) % REG_TYPES.length;
+        else if (evt.key === 'Home') next = 0;
+        else if (evt.key === 'End') next = REG_TYPES.length - 1;
+        if (next === null) return;
+        evt.preventDefault();
+        select(REG_TYPES[next].key);
+        REG_TYPES[next].tab.focus();
+      });
+
+      // Every attestation keeps the route back to the facsimile; the line the
+      // form was read in is named in the link title, where it does not crowd
+      // the list of pages.
+      function attHTML(e) {
+        if (!e.atts.length) return '';
+        return '<ul class="reg-att">' + e.atts.map(a => {
+          const href = `viewer.html?doc=${encodeURIComponent(a.docId)}&page=${encodeURIComponent(a.page)}`;
+          const where = `${docLabel(a.docId)}, page ${a.page}`;
+          const title = `Open ${where} in the viewer` +
+            (a.line ? `, line ${a.line}` : '') + (a.form ? `, “${a.form}”` : '');
+          return `<li><a class="exp-attest__link" href="${escapeAttr(href)}" ` +
+            `title="${escapeAttr(title)}">${escapeHTML(shortDoc(docLabel(a.docId)))} ` +
+            `p.&nbsp;${escapeHTML(String(a.page))}</a></li>`;
+        }).join('') + '</ul>';
+      }
+
+      function entryHTML(e) {
+        const forms = e.forms.length
+          ? '<div class="reg-entry__row"><span class="reg-entry__key">Spellings</span>' +
+            `<span class="exp-src">${escapeHTML(e.forms.join(', '))}</span></div>`
+          : '';
+        return '<li class="reg-entry"><div class="reg-entry__head">' +
+          `<h3 class="reg-entry__name">${escapeHTML(e.label)}</h3>` +
+          `<a class="reg-entry__id" href="${REGISTER_FILE}#${escapeAttr(e.id)}" ` +
+          `title="${escapeAttr(`Entry ${e.id} in the TEI entity register`)}">#${escapeHTML(e.id)}</a>` +
+          `<span class="reg-entry__docs">in ${e.inDocs} document${e.inDocs === 1 ? '' : 's'}</span>` +
+          '</div>' + forms +
+          '<div class="reg-entry__row"><span class="reg-entry__key">Attested</span>' +
+          attHTML(e) + '</div></li>';
+      }
+
+      let active = REG_TYPES[0].key;
+      let query = '';
+
+      function draw() {
+        let shown = 0;
+        let total = 0;
+        for (const t of REG_TYPES) {
+          const all = byType.get(t.key);
+          const list = query ? all.filter(e => e.search.includes(query)) : all;
+          // The heading carries the panel for a screen reader and puts the entry
+          // names of the list at a level below it.
+          t.host.innerHTML = `<h2 class="visually-hidden">${escapeHTML(t.label)} in the entity register</h2>` +
+            (list.length
+              ? `<ul class="reg-list">${list.map(entryHTML).join('')}</ul>`
+              : `<p class="reg-empty">${all.length
+                ? 'No entry matches the filter.' : 'No entry of this type in the register.'}</p>`);
+          t.countEl.textContent = String(list.length);
+          if (t.key === active) {
+            shown = list.length;
+            total = all.length;
+          }
+        }
+        const label = REG_TYPES.find(t => t.key === active).label.toLowerCase();
+        const count = query
+          ? `${shown} of ${total} ${label}`
+          : `${total} ${label}`;
+        countEl.textContent = count;
+        live.textContent = `${count} shown.`;
+      }
+
+      function select(key) {
+        active = REG_TYPES.some(t => t.key === key) ? key : REG_TYPES[0].key;
+        for (const t of REG_TYPES) {
+          const on = t.key === active;
+          t.tab.setAttribute('aria-selected', String(on));
+          t.tab.tabIndex = on ? 0 : -1;
+          t.host.classList.toggle('is-active', on);
+        }
+        setParams({ type: active });
+        draw();
+      }
+
+      filterInput.addEventListener('input', debounce(() => {
+        query = filterInput.value.trim().toLowerCase();
+        setParams({ q: query });
+        draw();
+      }, 150));
+
+      // The tab and the filter are part of the address of the view
+      const start = getParams();
+      if (start.q) {
+        filterInput.value = start.q;
+        query = start.q.trim().toLowerCase();
+      }
+      select(start.type);
     }
 
     const requested = getParams().view;
