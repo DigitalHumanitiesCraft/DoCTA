@@ -1,6 +1,8 @@
-# Iteration 02 — Baustein Rechnungsbuch (Entwurf, zur Operator-Durchsicht)
+# Iteration 02 — Baustein Rechnungsbuch (eingefroren)
 
 Wird an it02_kern.md angehängt, wenn die Seite aus einem Raitbuch stammt.
+
+Seit dem ersten Lauf eingefroren und in Benchmark, Pilot und Editionsstrecke produktiv. Änderungen nur als neue Iteration.
 
 ```
 TEXTSORTE: RAITBUCH (RECHNUNGSBUCH)

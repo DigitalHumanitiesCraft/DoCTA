@@ -1,6 +1,8 @@
-# Iteration 02 — Baustein Inventar (Entwurf, zur Operator-Durchsicht)
+# Iteration 02 — Baustein Inventar (eingefroren)
 
 Wird an it02_kern.md angehängt, wenn die Seite aus einem Burgeninventar stammt.
+
+Seit dem ersten Lauf eingefroren und in Benchmark, Pilot und Editionsstrecke produktiv. Änderungen nur als neue Iteration.
 
 ```
 TEXTSORTE: BURGENINVENTAR

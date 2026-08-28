@@ -664,8 +664,12 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
                 e["consistency_numbers"] = mean_defined([n for _, n in agr])
             entry["iterations"][it] = e
         summary["pages"][page["id"]] = entry
+    # LF regardless of platform, so the file and its site copy stay byte-identical
+    # whichever working copy wrote them
     (ROOT / "summary.json").write_text(
-        json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8"
+        json.dumps(summary, ensure_ascii=False, indent=1),
+        encoding="utf-8",
+        newline="\n",
     )
     return summary
 

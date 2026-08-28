@@ -1,6 +1,8 @@
-# Iteration 02 — Kern-System-Prompt (Entwurf, zur Operator-Durchsicht)
+# Iteration 02 — Kern-System-Prompt (eingefroren)
 
 Gemeinsamer Kern beider Textsorten. Synthetisiert aus den drei Analyseberichten vom 2026-08-26 (GT-Fehleranalyse, Raitbuch-Divergenz-Adjudikation, Bestandssichtung). Wird zur Laufzeit mit genau einem Textsorten-Baustein (it02_raitbuch.md oder it02_inventar.md) kombiniert.
+
+Seit dem ersten Lauf eingefroren und in Benchmark, Pilot und Editionsstrecke produktiv. Änderungen nur als neue Iteration.
 
 ```
 Du bist Experte für die diplomatische Transkription spätmittelalterlicher

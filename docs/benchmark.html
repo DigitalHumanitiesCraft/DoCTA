@@ -27,8 +27,9 @@
     <header class="mb-4">
       <h1>HTR Benchmark</h1>
       <p class="mb-2">How well does a vision-language model read these hands? A fixed set of pages is transcribed by
-        frozen prompt iterations, each page several times, and measured against human reference transcriptions where
-        they exist.</p>
+        frozen prompt iterations, each page several times, and measured against the Transkribus transcripts that carry
+        workflow status DONE in the collection of the Inventaria project. DONE records a completed workflow step, so
+        every error rate on this page is a comparison signal awaiting editorial adjudication.</p>
       <p class="small text-body-secondary mb-2" id="intro-facts"></p>
       <p class="small mb-0"><span class="badge badge-draft">Machine output</span> No human revision yet.</p>
     </header>
@@ -36,7 +37,8 @@
     <section class="mb-4">
       <h2 class="h5 mb-3">The iterations compared</h2>
       <div class="row g-3" id="agg-cards"></div>
-      <p class="small mt-3 mb-1" id="agg-examples"></p>
+      <p class="small mt-3 mb-1" id="agg-paired"></p>
+      <p class="small mb-1" id="agg-examples"></p>
       <p class="small text-body-secondary mb-0" id="agg-note"></p>
     </section>
 
@@ -44,10 +46,13 @@
       <summary class="fw-semibold">What the measures mean</summary>
       <dl class="small mt-2 mb-0 ps-1">
         <dt>Reading the figures</dt>
-        <dd>CER is an error rate against the human reference, so lower is better; consistency is the agreement between
-          the repeated runs of one page on a scale from 0 to 1, so higher is better. A figure is marked as the better
-          one only where it leads the other iteration by more than one CER point, or by more than 0.05 in consistency.
-          Smaller differences lie inside the scatter of the repeated runs and stay unmarked.</dd>
+        <dd>CER is an error rate against the reference transcript, so lower is better; consistency is the agreement
+          between the repeated runs of one page on a scale from 0 to 1, so higher is better. The headline CER of an
+          iteration sums the edit distances of all its runs and divides by the summed reference length, so a dense
+          folio weighs more than a short one; the page mean below it weighs every page alike. Where the two aggregates
+          disagree, the difference comes from the length distribution of the page set. The comparison of the two
+          iterations is stated as a paired count over the reference pages, each page compared with itself, which needs
+          no threshold on the difference of two averages.</dd>
         <dt>Prompt iteration</dt>
         <dd>A system prompt frozen after its first run. it01 is the baseline prompt of 2026-08-26; it02 splits a shared
           core prompt from one genre module per text type, inventory or account book, synthesized from three analysis
@@ -56,18 +61,27 @@
         <dt>Repeated runs (k)</dt>
         <dd>The same request to the same model at temperature 0 does not return the same text. In the first iteration
           identical requests scattered by up to 5.5 CER points, so a ranking built on single runs is noise. Every page
-          is therefore transcribed several times per iteration, most often on the pages carrying a human reference.</dd>
+          is therefore transcribed several times per iteration, most often on the pages carrying a reference.</dd>
+        <dt>Reference transcript</dt>
+        <dd>The pages with an error rate are measured against the Transkribus transcript that carries workflow status
+          DONE in the collection of the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria
+          project</a> (Univ. Salzburg / Innsbruck). DONE marks a completed workflow step in Transkribus. Editorial
+          approval for an evaluation corpus is a separate decision that these pages have not passed, so a systematic
+          deviation may originate in either of the two compared texts.</dd>
         <dt>CER fair</dt>
-        <dd>Character error rate against the human reference transcription from the Inventaria edition, measured after
-          the normalization profile documented in the runner, which forgives allograph and spacing conventions of the
-          writing hand. 0% would be an exact match after normalization.</dd>
+        <dd>Character error rate against that transcript, measured after the normalization profile documented in the
+          runner, which forgives allograph and spacing conventions of the writing hand. 0% would be an exact match
+          after normalization.</dd>
         <dt>CER strict</dt>
-        <dd>The same comparison against that Inventaria reference on exact characters, with no normalization. It sits
-          above CER fair and shows how much of the agreement rests on the normalization rather than on the reading.</dd>
+        <dd>The same comparison on exact characters, with no normalization. It sits above CER fair and shows how much
+          of the agreement rests on the normalization rather than on the reading.</dd>
         <dt>Word and number consistency</dt>
         <dd>Position-wise agreement of tokens between the repeated runs of one page, once over word tokens and once
           over number and currency tokens. This is self-consistency, not correctness: all runs can agree on the same
-          wrong reading. The number measure carries weight on the account-book pages, where the amounts are the point.</dd>
+          wrong reading. The number measure carries weight on the account-book pages, where the amounts are the point.
+          On the seven reference pages the word agreement ranks the pages the way the fair error rate does, Spearman
+          −0.93 for it01 and −0.79 for it02 at n = 7 (exact permutation p 0.007 and 0.048, measured 2026-08-28), which
+          is what licenses using agreement to prioritise pages that carry no reference at all.</dd>
         <dt>Lines</dt>
         <dd>The line counts of the individual runs. A spread between them signals that the model segments the page
           differently from run to run.</dd>
@@ -78,9 +92,10 @@
       <h2 class="h5 mb-1">Reference pages</h2>
       <p class="small text-body-secondary mb-2" id="ref-note"></p>
       <p class="small text-body-secondary mb-2">A yellow row marked
-        <span class="flag" aria-hidden="true">⚠</span> is left out of the aggregate above because the human reference
-        there is a handful of words on an otherwise empty leaf, which drives the error rate past 100% and empties it of
-        meaning; these pages await scholarly adjudication.</p>
+        <span class="flag" aria-hidden="true">⚠</span> is left out of the aggregate above. The exported reference there
+        is a cover label of a few words while the image carries a full page, so the summary flags it as a reference too
+        short to carry an error rate and every consumer excludes it by that data field rather than by the value it
+        measured; these pages await scholarly adjudication.</p>
       <div class="table-responsive" tabindex="0" role="region" aria-label="Reference pages, scrollable table">
         <table class="table table-sm table-hover table-metrics align-middle" id="ref-table"></table>
       </div>

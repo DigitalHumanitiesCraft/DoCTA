@@ -28,6 +28,19 @@ Blattmarken kommen im Bestand in drei Schreibweisen vor, lang `[fol.1r]`, kurz `
 
 Zwei Referenzseiten sind Deckblattetiketten, deren Transkribus-Export drei beziehungsweise vier Zeilen führt, während das Bild eine volle Seite trägt. Ihre CER liegt über 100 % und misst damit die Referenz statt des Laufs. `summary.json` markiert sie je Seite als `reference_degenerate`, berechnet aus `reference_chars`, der Länge der fair-normalisierten Referenz; unter 100 Zeichen gilt eine Referenz als entartet. Die Schwelle liegt in einer Lücke von einer Größenordnung, die beiden markierten Seiten normalisieren auf 30 und 38 Zeichen, die kürzeste tragfähige Referenz des Sets auf 1006. Ein Konsument schließt so über eine Dateneigenschaft aus und nie über den gemessenen Wert.
 
+## Sekundäranalyse
+
+`analyze_summary.py` rechnet aus `summary.json` und den Läufen die Aussagen, die eine Ratentabelle allein nicht trägt, und schreibt sie nach `analysis.json` und `analysis.md` (deutscher Bericht). Es liest ausschließlich von Platte, macht keinen Netzaufruf und liest keine Uhr; der Zeitstempel im Ergebnis ist der `generated`-Stand des ausgewerteten Summary, zwei Läufe über dasselbe Summary sind also byte-identisch. Grundlage sind die Referenzseiten ohne `reference_degenerate`.
+
+Vier Auswertungen:
+
+- Spearman-Rangkorrelation von Wort- und Zahlkonsistenz gegen die faire CER je Iteration, mit exaktem Permutations-p über alle 5040 Umordnungen der sieben Seiten
+- der gepaarte Seitenvergleich it01 gegen it02 mit Vorzeichenzählung und exaktem Binomialtest, dazu die längengewichtete Mikro-CER neben dem ungewichteten Seitenmittel
+- Präzision und Recall der uncertain-Marker gegen ein Token-Alignment auf die Referenz, mit der Basisrate nicht alignierter Tokens als Vergleichsmaßstab. Das Alignment ist eine Näherung, der Bericht sagt das an Ort und Stelle
+- ein abgeleiteter Triage-Arbeitspunkt, die Wortkonsistenz-Schwelle, die das schlechteste CER-Drittel einsammelt
+
+Die Statistik-Helfer sind in `../checks/test_analyze_summary.py` gegen von Hand nachrechenbare Werte geprüft, und derselbe Test hält `analysis.json` und `analysis.md` gegen einen Neubau aus dem danebenliegenden Summary.
+
 ## Few-Shot
 
 Das Few-Shot-Beispiel (`FEWSHOT_DOC` 11327964, A 49.5, Seite 2) steht in keiner der drei Seitenmengen von Benchmark, Pilot und Pilot 2. Keine gemessene Seite hat also ihre eigene Referenztranskription im Prompt gesehen. Das Beispiel wird zur Laufzeit aus dem Export gebaut statt als Prompt-Datei eingefroren, deshalb deckt `prompt_hash` es nicht ab; jeder neue Lauf trägt zusätzlich `fewshot_hash`, den Hash des tatsächlich gesendeten Blocks. Bestehende Läufe bleiben unverändert.
@@ -36,11 +49,12 @@ Das Few-Shot-Beispiel (`FEWSHOT_DOC` 11327964, A 49.5, Seite 2) steht in keiner 
 
 - pages.json: 18 Seiten (8 Raitbuch-Phänomenseiten, 9 DONE-GT-Inventarseiten, 1 dichte Inventarseite) + 5 Reserve
 - it01: eingefroren; Ursprungslauf in `../../experiments/transcription-test/results/`
-- it02: Volllauf abgeschlossen; zwei Läufe der dichten Inventarseite `inv_11348659_p1` bleiben offen, die API liefert dort wiederholt keinen Kandidaten (blockReason OTHER), dokumentiert in `errors.json`
+- it02: eingefroren und produktiv (Benchmark, Pilot, Pilot 2, Editionsstrecke); die drei Prompt-Dokumente tragen das seit 2026-08-28 im Kopf, der zusammengebaute Prompt bleibt davon unberührt, weil `extract_prompt` nur den ersten Codeblock liest. Volllauf abgeschlossen; zwei Läufe der dichten Inventarseite `inv_11348659_p1` bleiben offen, die API liefert dort wiederholt keinen Kandidaten (blockReason OTHER), dokumentiert in `errors.json`
 - Runner: `run_benchmark.py` (Download-Race und Kandidaten-Fehlerbehandlung behoben); `summary.json` trägt jetzt IIIF-URL, Quelle, Referenzzeilen und die Run-Dateinamen je Iteration
 - Metrik-Korrektur 2026-08-28, erster Schritt: die Zahlmetrik erfasst jetzt auch Zahlzeichen mit `v` und `j` (`vij`, `xxv`), die vorher in die Wortmetrik fielen. Die Zahlkonsistenz sinkt dadurch auf den meisten Seiten und die Wortkonsistenz steigt leicht, weil die verschobenen Tokens die instabilsten der Seite sind
 - Methodenrevision 2026-08-28, zweiter Schritt: symmetrische Übereinstimmung, alle Blattmarken-Schreibweisen entfernt, Profil-Versionierung, `reference_degenerate` als Dateneigenschaft, Editierdistanz und Referenzlänge je Lauf, `empty` je Lauf. Prompts und Läufe sind unverändert, `summary.json` ist neu gerechnet. Die CER bewegt sich allein auf `inv_11328300_p1` und `inv_11328300_p2`, den beiden Seiten mit kurzer Blattmarke in der Referenz. Auch die Pilot-Summaries sind auf die korrigierte Metrik neu gerechnet; die ursprünglich publizierten Zahlen stehen als `pilot_summary_oldmetric.json` und `pilot2_summary_oldmetric.json` daneben
-- `summary.json` und die Site-Kopie `docs/data/benchmark/summary.json` müssen byte-identisch sein, `pipeline/check_pipeline.py` prüft das als FAIL
+- `summary.json` und die Site-Kopie `docs/data/benchmark/summary.json` müssen byte-identisch sein, `pipeline/check_pipeline.py` prüft das als FAIL. `evaluate()` schreibt seit 2026-08-28 mit `newline="\n"`, sonst trägt eine Windows-Arbeitskopie CRLF in die Datei und die Kopie hängt vom Rechner ab, der sie geschrieben hat. Die Pilot-Summaries tragen die alten CRLF-Enden weiter; ihr Inhalt ist eingecheckt und richtig, und ihre Kohorten laufen nicht mehr
+- Sekundäranalyse: `analyze_summary.py` schreibt `analysis.json` und `analysis.md` (Korrelation Konsistenz gegen CER, gepaarter Iterationsvergleich, uncertain-Präzision, Triage-Schwelle)
 - `errors.json` wird bei jedem Füllauf geschrieben, auch wenn nichts fehlschlug, und trägt den Zeitstempel des neuesten Laufs auf Platte; ein behobener Blocker bleibt so nicht als Altlast stehen. Der `--eval`-Pfad schreibt die Datei nicht, die eingecheckte Fassung trägt deshalb noch die ältere reine Listenform und bekommt die Zeitstempel-Form beim nächsten Füllauf
 - `--only` prüft den Iterationsnamen; die Auswertung deckt danach weiterhin alle Iterationen ab, damit ein Teil-Füllauf `summary.json` nicht beschneidet
 - Viewer: `viewer.html` in diesem Ordner, Bild-Text-Synopse über alle Benchmark-Seiten mit Iterations-Tabs, Wiederholungs-Auswahl, Referenz-Vergleich und Metrik-Tabelle; Start mit `python -m http.server 8742` aus dem Repo-Root, dann `http://127.0.0.1:8742/evaluation/benchmark/viewer.html`
@@ -49,8 +63,9 @@ Das Few-Shot-Beispiel (`FEWSHOT_DOC` 11327964, A 49.5, Seite 2) steht in keiner 
 
 1. `python run_benchmark.py` füllt fehlende und fehlgeschlagene Läufe nach (skip-if-exists) und schreibt `summary.json`
 2. `python run_benchmark.py --eval` rechnet nur die Auswertung neu
-3. Auswertung lesen: `summary.json` je Seite × Iteration, oder im Viewer (siehe Stand)
-4. Danach offen: Adjudikation der Thaur-Regression und der zwei Referenzseiten mit CER über 100% am Viewer; it03 nach Mini-GT-Adjudikation mit der Projektleitung (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich)
-5. API-Key: `GEMINI_API_KEY` in der Repo-Root-`.env` (gitignored), pro Session vom Operator
+3. `python analyze_summary.py` rechnet die Sekundäranalyse neu (`analysis.json`, `analysis.md`)
+4. Auswertung lesen: `summary.json` je Seite × Iteration, oder im Viewer (siehe Stand)
+5. Danach offen: Adjudikation der Thaur-Regression und der zwei entarteten Referenzseiten am Viewer; ein it01-Lauf über die Pilot-Seitenmengen als fehlender Out-of-Sample-Vergleich; it03 nach Mini-GT-Adjudikation mit der Projektleitung (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich)
+6. API-Key: `GEMINI_API_KEY` in der Repo-Root-`.env` (gitignored), pro Session vom Operator
 
 Lizenz wie Repo: Code MIT, Dokumente und Daten CC BY 4.0.
