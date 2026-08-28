@@ -1276,6 +1276,15 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 .src-cat { font-size: var(--text-xs); color: var(--text-muted-custom); }
 
+/* Provenance line above the entity table: extraction layer and text basis */
+.exp-basis {
+  margin: var(--space-sm) var(--space-md) 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted-custom);
+}
+.exp-basis a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
+.exp-basis a:hover { color: var(--accent); }
+
 /* Attribution of the transcription's origin, right under the category */
 .src-credit {
   display: block;

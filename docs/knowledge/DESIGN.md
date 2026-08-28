@@ -42,9 +42,9 @@ The limits in the prototype code were fifty neighbours in the ego view and seven
 
 The dedicated network page and the faceted search over SiCProD were removed when the site was consolidated in August 2026. The exported SiCProD data stay in `data/` and are currently loaded by no page. The design decisions above hold for the day the court network returns as a view over edited text.
 
-### The relation network of an edited source
+### The entity network of the extracted sources
 
-`exploration.html` shows an LLM-produced extraction layer over the Transkribus working transcription of the Thaur inventory A 49.1. The extraction has no scholarly verification status. The graph is small enough that a `cose` layout over the whole set is the right answer and progressive disclosure would only add friction. Node size follows the number of extracted relations, edge labels carry the proposed relation type, and selecting a node names its proposed role. Every node keeps a route back to the facsimile through the viewer.
+`exploration.html` shows the aggregated entity layer of every document with an extraction, drawn with D3 from `data/graph.jsonld`. The single-source Cytoscape demo network over the Thaur inventory, with hand-made typed relations and always-on edge labels, was replaced on 2026-08-28: the displayed relations are now only what the data derivably holds, attestation of an entity in a document and co-occurrence of two entities in one transcription line, and edge labels are gone in favour of tooltips and a detail card. Typed relations return only when a relation extraction with full provenance exists. The graph is small enough for a live force layout over the whole set; node size follows the number of attestations, and every attestation keeps a route back to the facsimile through the viewer.
 
 ## 4. Rule-bound review status
 
@@ -82,4 +82,4 @@ The six entity hues are muted against the warm ground `#faf8f5`, and each foregr
 
 The palette replaced a set of saturated Material hues. Three of those values survive as the XML syntax colours of the TEI display, `--tei-tag` `#6a1b9a`, `--tei-attr` `#1565c0` and `--tei-val` `#2e7d32`, where they carry no entity meaning at all.
 
-The entity colours have to agree in three places, the badge classes in `css/styles.css`, the Cytoscape node styles and the legend on the page carrying the graph.
+The entity colours have to agree in three places, the badge classes in `css/styles.css`, the D3 node fills (read from the same CSS tokens at runtime) and the legend controls on the page carrying the graph.

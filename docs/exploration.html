@@ -245,6 +245,14 @@
         { key: 'detail', label: 'Role or category', cell: r => escapeHTML(r.detail) },
       ];
 
+      // One line above the table names both layers of the data: who extracted
+      // the records and whose transcription they were read from.
+      const basis = document.createElement('p');
+      basis.className = 'exp-basis';
+      panel.appendChild(basis);
+      const summary = await loadJSON('data/pipeline/register_summary.json').catch(() => null);
+      const regByDocId = new Map((summary?.documents || []).map(d => [Number(d.docId), d]));
+
       const wrap = document.createElement('div');
       wrap.className = 'exp-table-wrap';
       wrap.tabIndex = 0;
@@ -293,6 +301,14 @@
         // The extraction carries one provenance for all its records
         provenance = data && PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
         rows = data ? data.entities : [];
+        const reg = regByDocId.get(Number(docId));
+        const model = data?.model ? ` (${escapeHTML(data.model)}, not verified)` : '';
+        const textBasis = reg?.transcription_by === 'Inventaria'
+          ? `<a href="${escapeAttr(reg.edition_url || 'https://www.inventaria.at/')}" target="_blank"` +
+            ` rel="noopener" title="Opens the published edition on Transkribus Sites">` +
+            `transcription by the Inventaria project</a>`
+          : 'Transkribus transcription layer';
+        basis.innerHTML = `Extraction ${provChip(provenance)}${model} &middot; Text basis: ${textBasis}`;
         draw();
       }
 
