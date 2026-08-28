@@ -9,7 +9,7 @@ const STORE_NAME = 'data';
 // Cache key of the shipped data. Raise it whenever the shape of a file under
 // data/ changes, otherwise a returning browser keeps serving the old shape from
 // IndexedDB and the page renders against a contract that no longer holds.
-const DATA_VERSION = '2026-08-28d';
+const DATA_VERSION = '2026-08-28e';
 
 let dbPromise = null;
 

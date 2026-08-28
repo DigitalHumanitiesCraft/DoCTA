@@ -63,12 +63,9 @@ RUN_SOURCES = ("transkribus", "vlm", "human")
 
 # Documents that appear in one set and not in another for a reason already settled in the
 # data, so their absence is not a coverage gap:
-#   11328660, 11328744  the CSV entry pairs two shelfmarks (A 125.3-4, A 142.1-2) and the
-#                       Transkribus block sits on neither, so source_mapping matches them
-#                       while sources.json carries no transkribus block for the pair
 #   12514730            Raitbuch 2, paired in build_register.py itself because the
 #                       CSV-to-Transkribus matcher covers the inventories only
-KNOWN_ORPHANS = (11328660, 11328744, br.RAITBUCH2_DOC)
+KNOWN_ORPHANS = (br.RAITBUCH2_DOC,)
 
 # Evaluation run records are numerous and uniform; a sample proves the shape.
 RUN_SAMPLE = 20
@@ -227,9 +224,9 @@ def _check_pages(
 def check_coverage() -> list[Finding]:
     """The three document sets against each other, orphans reported in each direction."""
     sources = {
-        entry["transkribus"]["doc_id"]
+        doc["doc_id"]
         for entry in _load(DATA / "sources.json")
-        if entry.get("transkribus")
+        for doc in entry.get("transkribus_docs") or ()
     }
     mapping = {
         entry["transkribus_id"]

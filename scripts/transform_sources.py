@@ -2,6 +2,16 @@
 
 Input: sources/quellen-katalog.csv, which carries ghost columns and inconsistent dates
 Output: docs/data/sources.json, with Transkribus links and availability tiers
+
+Two figures per source that used to be one. `catalogue_extent` is the archival
+statement of the finding aid, in an explicit unit; `digital_images` is the number
+of scans the Transkribus documents of the shelfmark hold. They are different
+units and were mixed under the old `seiten` field.
+
+`--migrate` rewrites an existing docs/data/sources.json into the current schema
+without reading the CSV, which is project-internal and absent from the public
+clone. Both paths run through the same schema code, which is why the mode lives
+here instead of in a second script.
 """
 
 import csv
@@ -63,9 +73,13 @@ def normalize_date(raw):
 
 
 def parse_pages(digitalisiert):
-    """Extract page count from Digitalisiert column.
+    """Extract the catalogue extent from the Digitalisiert column.
 
-    The column contains page counts (not boolean), e.g. '123', '45 S.', etc.
+    The column contains an extent, not a boolean, e.g. '123', '45 S.'. What that
+    extent counts is not stated in the column, which is why the value is wrapped
+    by catalogue_extent() with an explicit unit. The first integer of a free-text
+    cell can be an artifact of the cell rather than an extent (A 194.1 yields 1
+    for a document of 40 scans), so the raw cell travels with the value.
     """
     if not digitalisiert or not digitalisiert.strip():
         return None
@@ -73,6 +87,72 @@ def parse_pages(digitalisiert):
     if m:
         return int(m.group(1))
     return None
+
+
+# Shelfmark families whose catalogue unit the source audit settled.
+ACCOUNT_BOOK = re.compile(r"^TLA Raitbuch \d+$")
+SIDE_COUNTING = re.compile(r"Inventare A 0(?:06|24)\.")
+
+
+def catalogue_unit(signatur, value, digital_images):
+    """The unit of a catalogue extent: written sides, images, or undecided.
+
+    Account-book volumes: the catalogue figure equals the counted scans of the
+    Transkribus volume for 22 of 25 entries, so the catalogue counts openings,
+    which are one image each.
+    A 006 and A 024 personal inventories: an even figure of roughly twice the
+    images counts written sides, two per opening.
+    Everywhere else the evidence does not decide and the unit stays unknown; the
+    figure is then an archival statement of unnamed unit and nothing more.
+    """
+    if ACCOUNT_BOOK.match(signatur):
+        return "bilder"
+    if (
+        SIDE_COUNTING.search(signatur)
+        and value % 2 == 0
+        and digital_images > 0
+        and 1.5 * digital_images <= value <= 2.5 * digital_images
+    ):
+        return "seiten"
+    return "unbekannt"
+
+
+def catalogue_extent(signatur, value, raw, digital_images):
+    """The archival extent with its unit named, or None where the catalogue is silent."""
+    if value is None:
+        return None
+    return {
+        "value": value,
+        "unit": catalogue_unit(signatur, value, digital_images),
+        "raw": raw,
+    }
+
+
+def transkribus_docs(signatur, matched, images_by_doc):
+    """Every Transkribus document of a shelfmark, in the order of the mapping.
+
+    Two catalogue rows pair two shelfmarks and carry two documents each
+    (A 125.3-4, A 142.1-2). Keying by shelfmark into a dict dropped one of the
+    two silently, so the mapping is filtered rather than indexed.
+    """
+    docs = []
+    for m in matched:
+        if m["csv_signatur"] != signatur:
+            continue
+        doc_id = m["transkribus_id"]
+        docs.append(
+            {
+                "doc_id": doc_id,
+                "title": m["transkribus_title"],
+                # Scans of the document, from the collection metadata where it
+                # knows the document, otherwise from the mapping record.
+                "pages": images_by_doc.get(doc_id, m["pages"]),
+                "lines": m["lines"],
+                "words": m["words"],
+                "has_text": m["has_text"],
+            }
+        )
+    return docs
 
 
 def compute_availability_tier(row, tb_mapping):
@@ -104,74 +184,120 @@ def compute_availability_tier(row, tb_mapping):
     return 3
 
 
-def main():
+OUT_PATH = f"{BASE}/docs/data/sources.json"
+
+
+def load_json(name):
+    with open(f"{BASE}/docs/data/{name}", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def build_source(signatur, base, extent_value, extent_raw, matched, images_by_doc):
+    """One source entry: archival metadata, catalogue extent, Transkribus documents."""
+    docs = transkribus_docs(signatur, matched, images_by_doc)
+    return {
+        "signatur": signatur,
+        "kategorie": base["kategorie"],
+        "titel": base["titel"],
+        "datierung": base["datierung"],
+        "art": base["art"],
+        "projekt": base["projekt"],
+        "catalogue_extent": catalogue_extent(
+            signatur, extent_value, extent_raw, sum(d["pages"] for d in docs)
+        ),
+        "transkribiert": base["transkribiert"],
+        "tier": base["tier"],
+        "transkribus_docs": docs,
+        "digital_images": sum(d["pages"] for d in docs),
+    }
+
+
+def from_csv(matched, images_by_doc, tb_mapping):
     rows = []
     with open(f"{BASE}/sources/quellen-katalog.csv", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
+        for row in csv.DictReader(f):
             rows.append(row)
     print(f"Loaded {len(rows)} CSV rows")
 
-    with open(f"{BASE}/docs/data/source_mapping.json", encoding="utf-8") as f:
-        tb_mapping = json.load(f)
-
-    tb_by_signatur = {}
-    for m in tb_mapping.get("matched", []):
-        tb_by_signatur[m["csv_signatur"]] = m
-
     sources = []
-    categories = {}
     for row in rows:
         signatur = row.get("Signatur", "").strip()
-        kategorie = row.get("Kategorie", "").strip()
-        titel = row.get("Titel", "").strip()
-        datierung = row.get("Datierung", "").strip()
-        art = row.get("Art", "").strip()
-        projekt = row.get("Projekt", "").strip()
-        digitalisiert = row.get("Digitalisiert", "").strip()
-        transkribiert = row.get("Transkribiert", "").strip()
-
         # An empty trailing row of the CSV carries no signature.
         if not signatur:
             continue
-
-        date = normalize_date(datierung)
-        pages = parse_pages(digitalisiert)
-        tier = compute_availability_tier(row, tb_mapping)
-
-        tb_info = tb_by_signatur.get(signatur)
-        transkribus = None
-        if tb_info:
-            transkribus = {
-                "doc_id": tb_info["transkribus_id"],
-                "title": tb_info["transkribus_title"],
-                "pages": tb_info["pages"],
-                "lines": tb_info["lines"],
-                "words": tb_info["words"],
-                "has_text": tb_info["has_text"],
-            }
-
-        source = {
-            "signatur": signatur,
-            "kategorie": kategorie,
-            "titel": titel,
-            "datierung": date,
-            "art": art,
-            "projekt": projekt,
-            "seiten": pages,
-            "transkribiert": transkribiert,
-            "tier": tier,
-            "transkribus": transkribus,
+        digitalisiert = row.get("Digitalisiert", "").strip()
+        base = {
+            "kategorie": row.get("Kategorie", "").strip(),
+            "titel": row.get("Titel", "").strip(),
+            "datierung": normalize_date(row.get("Datierung", "").strip()),
+            "art": row.get("Art", "").strip(),
+            "projekt": row.get("Projekt", "").strip(),
+            "transkribiert": row.get("Transkribiert", "").strip(),
+            "tier": compute_availability_tier(row, tb_mapping),
         }
-        sources.append(source)
-        categories[kategorie] = categories.get(kategorie, 0) + 1
+        sources.append(
+            build_source(
+                signatur,
+                base,
+                parse_pages(digitalisiert),
+                digitalisiert or None,
+                matched,
+                images_by_doc,
+            )
+        )
+    return sources
 
-    out_path = f"{BASE}/docs/data/sources.json"
-    with open(out_path, "w", encoding="utf-8") as f:
+
+def from_existing(matched, images_by_doc):
+    """Rewrite the existing sources.json into the current schema, without the CSV."""
+    sources = []
+    for entry in load_json("sources.json"):
+        base = {
+            k: entry[k]
+            for k in (
+                "kategorie",
+                "titel",
+                "datierung",
+                "art",
+                "projekt",
+                "transkribiert",
+                "tier",
+            )
+        }
+        old = entry.get("catalogue_extent")
+        value = old["value"] if old else entry.get("seiten")
+        # The catalogue cell the value was parsed from cannot be recovered here:
+        # sources/quellen-katalog.csv is project-internal and absent from this
+        # clone. raw stays null until a run with the CSV present fills it.
+        raw = old["raw"] if old else None
+        sources.append(
+            build_source(entry["signatur"], base, value, raw, matched, images_by_doc)
+        )
+    return sources
+
+
+def main():
+    migrate = "--migrate" in sys.argv
+    tb_mapping = load_json("source_mapping.json")
+    matched = tb_mapping.get("matched", [])
+    images_by_doc = {
+        c["docId"]: c["nrOfPages"] for c in load_json("transkribus_collection.json")
+    }
+
+    sources = (
+        from_existing(matched, images_by_doc)
+        if migrate
+        else from_csv(matched, images_by_doc, tb_mapping)
+    )
+
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(sources, f, ensure_ascii=False, indent=1)
 
-    print(f"\nSaved {len(sources)} sources to {out_path}")
+    print(f"\nSaved {len(sources)} sources to {OUT_PATH}")
     print("\nCategories:")
+    categories = {}
+    for s in sources:
+        categories[s["kategorie"]] = categories.get(s["kategorie"], 0) + 1
     for cat, count in sorted(categories.items(), key=lambda x: -x[1]):
         print(f"  {cat:<30} {count:>4}")
 
@@ -183,7 +309,21 @@ def main():
         labels = {1: "Transkription", 2: "Digitalisiert", 3: "Im Archiv", 4: "Unsicher"}
         print(f"  Tier {tier} ({labels.get(tier, '?')}): {tier_counts[tier]}")
 
-    print(f"\nWith Transkribus link: {sum(1 for s in sources if s['transkribus'])}")
+    linked = [s for s in sources if s["transkribus_docs"]]
+    print(
+        f"\nWith Transkribus documents: {len(linked)} rows, "
+        f"{sum(len(s['transkribus_docs']) for s in linked)} documents, "
+        f"{sum(s['digital_images'] for s in linked)} images"
+    )
+    units = {}
+    for s in sources:
+        if s["catalogue_extent"]:
+            u = s["catalogue_extent"]["unit"]
+            units[u] = units.get(u, 0) + 1
+    print(
+        "Catalogue extent units: "
+        + ", ".join(f"{u}={n}" for u, n in sorted(units.items()))
+    )
 
 
 if __name__ == "__main__":

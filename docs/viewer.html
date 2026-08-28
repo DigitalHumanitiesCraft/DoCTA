@@ -1295,9 +1295,10 @@
           loadJSON('data/sources.json').catch(() => []),
           loadJSON('data/pipeline/register_summary.json').catch(() => ({ documents: [] })),
         ]);
+        // A shelfmark can pair two Transkribus documents, so every one of them
+        // resolves to its source row rather than only the first.
         sourceByDocId = new Map(sources
-          .filter(s => s.transkribus?.doc_id)
-          .map(s => [Number(s.transkribus.doc_id), s]));
+          .flatMap(s => (s.transkribus_docs || []).map(d => [Number(d.doc_id), s])));
         registerByDocId = new Map((register.documents || [])
           .map(d => [Number(d.docId), d]));
         const selector = document.getElementById('doc-selector');

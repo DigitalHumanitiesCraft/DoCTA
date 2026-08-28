@@ -52,7 +52,7 @@
             <option value="signatur">Sort by shelfmark</option>
             <option value="titel">Sort by title</option>
             <option value="datierung">Sort by date</option>
-            <option value="seiten">Sort by pages</option>
+            <option value="extent">Sort by extent</option>
             <option value="tier">Sort by progress</option>
           </select>
         </div>
@@ -106,14 +106,17 @@
     // A source without an entry there counts as not yet encoded.
     let teiDocIds = new Set();
 
+    // A shelfmark can pair two Transkribus documents (A 125.3-4, A 142.1-2), so
+    // every document of a row is inspected wherever one document would decide.
+    const docsOf = (s) => s.transkribus_docs || [];
+
     // Pipeline progress per source: filled = reached, outline = pending.
     // Edited stays pending for the whole corpus until that stage ships.
     function stageIcons(s) {
-      const docId = s.transkribus?.doc_id;
       const stages = [
         { key: 'F', label: 'Facsimile', done: s.tier === 1 || s.tier === 2 },
-        { key: 'H', label: 'HTR text', done: !!(s.transkribus && s.transkribus.has_text) },
-        { key: 'T', label: 'TEI', done: docId != null && teiDocIds.has(Number(docId)) },
+        { key: 'H', label: 'HTR text', done: docsOf(s).some(d => d.has_text) },
+        { key: 'T', label: 'TEI', done: docsOf(s).some(d => teiDocIds.has(Number(d.doc_id))) },
         { key: 'E', label: 'Edited', done: false },
       ];
       return `<span class="stages">` + stages.map(st =>
@@ -133,8 +136,8 @@
     // the register projection names them and the viewer can open them.
     let vlmDocIds = new Set();
 
-    const hasText = (s) => !!(s.transkribus &&
-      (s.transkribus.has_text || vlmDocIds.has(Number(s.transkribus.doc_id))));
+    const docHasText = (d) => d.has_text || vlmDocIds.has(Number(d.doc_id));
+    const hasText = (s) => docsOf(s).some(docHasText);
 
     // Availability groups the list before any user-chosen sort: full text, then
     // digitized facsimile, then sources known only from the finding aid.
@@ -143,8 +146,7 @@
     // Scaled IIIF variant of the first written page; the image stays external.
     // The thumbnail is presentational, the title link carries the row target.
     function thumbMarkup(s) {
-      const docId = s.transkribus?.doc_id;
-      const t = docId ? thumbByDocId.get(Number(docId)) : null;
+      const t = docsOf(s).map(d => thumbByDocId.get(Number(d.doc_id))).find(Boolean);
       if (t) {
         const src = t.thumb.replace('/full/max/', '/full/,120/');
         return `<img class="src-thumb" src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async">`;
@@ -153,17 +155,38 @@
       return `<span class="src-thumb src-thumb--empty" aria-hidden="true">${escapeHTML(initial)}</span>`;
     }
 
+    // What the row states about size, in two units kept apart. The scan count is
+    // what the project holds; the catalogue extent is the archival statement of
+    // the finding aid and appears only where it says something different.
+    const UNIT_WORD = { seiten: 'sides', bilder: 'images' };
+
+    function extentMarkup(s) {
+      const n = s.digital_images || 0;
+      const cat = s.catalogue_extent;
+      const out = [];
+      if (n > 0) {
+        out.push(`<span class="tnum" title="Digital images in Transkribus">${num(n)} scan${n === 1 ? '' : 's'}</span>`);
+      }
+      if (cat && cat.value != null && cat.value !== n) {
+        const unit = UNIT_WORD[cat.unit];
+        const hint = unit ? '' : ', unit not stated';
+        out.push(`<span class="tnum" title="${escapeAttr('Extent recorded in the archival finding aid' + hint)}">` +
+          `catalogue ${num(cat.value)}${unit ? ' ' + unit : ''}</span>`);
+      }
+      return out;
+    }
+
     function rowMarkup(s) {
-      const pages = s.seiten != null ? `${num(s.seiten)} page${s.seiten === 1 ? '' : 's'}` : '';
       const meta = [
         `<span class="src-sig">${escapeHTML(s.signatur)}</span>`,
         `<span class="src-date" title="${escapeAttr('Dating: ' + (s.datierung?.raw || 'unknown'))}">${escapeHTML(formatDate(s.datierung))}</span>`,
-        pages ? `<span class="tnum">${pages}</span>` : '',
+        ...extentMarkup(s),
       ].filter(Boolean).join('<span class="src-meta__sep" aria-hidden="true">·</span>');
-      const title = hasText(s)
-        ? `<a class="src-title" href="viewer.html?doc=${encodeURIComponent(s.transkribus.doc_id)}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
+      const target = docsOf(s).find(docHasText);
+      const title = target
+        ? `<a class="src-title" href="viewer.html?doc=${encodeURIComponent(target.doc_id)}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
         : `<span class="src-title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`;
-      const edition = editionByDocId.get(Number(s.transkribus?.doc_id));
+      const edition = docsOf(s).map(d => editionByDocId.get(Number(d.doc_id))).find(Boolean);
       const credit = edition
         ? `<a class="src-credit" href="${escapeAttr(edition.url || 'https://www.inventaria.at/')}"` +
           ` target="_blank" rel="noopener" title="Transcription by the Inventaria project` +
@@ -193,7 +216,9 @@
 
     function sortValue(s, key) {
       if (key === 'datierung') return s.datierung.start || 0;
-      if (key === 'seiten') return s.seiten || 0;
+      // Scans first, because that is the figure the row shows; a source without
+      // them sorts by the catalogue extent, which is all the finding aid gives.
+      if (key === 'extent') return s.digital_images || s.catalogue_extent?.value || 0;
       if (key === 'tier') return s.tier;
       return s[key];
     }
@@ -237,39 +262,39 @@
       renderList(getFilteredSources());
     }
 
-    // Corpus-wide editorial progress over pages. Verification counts come from the
-    // register, pages of sources outside the register count as untranscribed.
+    // Corpus-wide editorial progress in one unit end to end: digital images.
+    // Numerator and denominator both come from the register, which tracks every
+    // digitized document and counts scans. The catalogue extent stays out of it;
+    // it is an archival statement in another unit, and dividing sides by
+    // openings is what this bar used to do. Without the register the sources
+    // still know their scan count, which keeps the bar meaningful but empty.
     function renderProgress(sources, register) {
-      const totalPages = sources.reduce((acc, s) => acc + (s.seiten || 0), 0);
-      const docIds = new Set(sources.filter(s => s.transkribus).map(s => Number(s.transkribus.doc_id)));
+      const docs = (register && register.documents) || [];
+      const totalImages = docs.length
+        ? docs.reduce((acc, d) => acc + (d.pages_total || 0), 0)
+        : sources.reduce((acc, s) => acc + (s.digital_images || 0), 0);
       const v = { abgenommen: 0, gesichtet: 0, maschinell: 0 };
       let pagesWithText = 0;
-      if (register) {
-        register.documents
-          .filter(d => docIds.has(Number(d.docId)))
-          .forEach(d => {
-            pagesWithText += d.pages_with_text || 0;
-            Object.keys(v).forEach(k => { v[k] += (d.verification && d.verification[k]) || 0; });
-          });
-      }
+      docs.forEach(d => {
+        pagesWithText += d.pages_with_text || 0;
+        Object.keys(v).forEach(k => { v[k] += (d.verification && d.verification[k]) || 0; });
+      });
       const verified = v.abgenommen + v.gesichtet + v.maschinell;
       const segments = [
         { cls: 'approved', label: 'approved', n: v.abgenommen },
         { cls: 'reviewed', label: 'reviewed', n: v.gesichtet },
         { cls: 'machine', label: 'machine-checked', n: v.maschinell },
-        { cls: 'text', label: 'pages with machine text', n: Math.max(0, pagesWithText - verified) },
-        // The remainder counts finding-aid pages, most of them not yet scanned;
-        // naming that keeps the big number from reading as a transcription backlog
-        { cls: 'none', label: 'not yet transcribed or unscanned', n: Math.max(0, totalPages - pagesWithText) },
+        { cls: 'text', label: 'images with machine text', n: Math.max(0, pagesWithText - verified) },
+        { cls: 'none', label: 'scanned, not yet transcribed', n: Math.max(0, totalImages - pagesWithText) },
       ].filter(seg => seg.n > 0);
 
       const bar = document.getElementById('progress-bar');
-      const pct = (n) => totalPages > 0 ? (n / totalPages) * 100 : 0;
+      const pct = (n) => totalImages > 0 ? (n / totalImages) * 100 : 0;
       bar.innerHTML = segments.map(seg =>
         `<span class="progress-seg progress-seg--${seg.cls}" style="width:${pct(seg.n).toFixed(3)}%"></span>`
       ).join('');
       const summary = segments.map(seg => `${num(seg.n)} ${seg.label}`).join(', ');
-      bar.setAttribute('aria-label', `Editorial progress over ${num(totalPages)} corpus pages: ${summary}`);
+      bar.setAttribute('aria-label', `Editorial progress over ${num(totalImages)} digital images: ${summary}`);
 
       document.getElementById('progress-legend').innerHTML = segments.map(seg =>
         `<li class="progress-legend__item"><span class="progress-swatch progress-seg--${seg.cls}" aria-hidden="true"></span><span class="tnum">${num(seg.n)}</span> ${escapeHTML(seg.label)}</li>`

@@ -142,9 +142,23 @@ Of twenty-four columns only eight carry content.
 | Datierung | Date or period | **More than ten formats, en dash and hyphen used inconsistently** |
 | Art | Mostly "Einzelstück" (single item) | The Repertorium rows misuse the field for extent |
 | Projekt | SiCProD, Inventaria, DoCTA or empty | Fine |
-| Digitalisiert | **A page count, not a boolean** | Column name misleading |
+| Digitalisiert | **An extent figure in free text** | Column name suggests a boolean, and the unit of the figure is nowhere stated |
 | Transkribiert | Only "Inventaria" or empty | Column name misleading |
 | Spalte3 to Spalte18 | **Entirely empty** | Excel export artifacts |
+
+### Cleaned schema (`data/sources.json`)
+
+One entry per catalogue row. Shelfmark, category, title, normalised dating, form, project and the Transkribiert flag pass through unchanged from the CSV. Two fields carry the extent, and they are in different units, which is why they are separate.
+
+| Field | Meaning |
+|-------|---------|
+| `catalogue_extent` | The archival statement of the finding aid, or `null` where the catalogue gives none. `value` is the integer parsed from the Digitalisiert cell, `raw` is that cell verbatim so the parse stays checkable, `unit` is one of `seiten` (written sides), `bilder` (images or openings) and `unbekannt`. |
+| `transkribus_docs` | Every Transkribus document of the shelfmark, with `doc_id`, `title`, `pages`, `lines`, `words` and `has_text`. Two rows carry two documents each (A 125.3-4, A 142.1-2); an earlier version indexed by shelfmark and silently dropped the second. The first entry is the document a deep link opens. |
+| `digital_images` | Sum of the scans of those documents, from `nrOfPages` of the collection metadata. Zero where Transkribus holds nothing under the shelfmark. |
+
+The unit of `catalogue_extent` is derived rather than recorded, because the CSV never states it. Account-book volumes get `bilder`, the A 006 and A 024 personal inventories get `seiten` where the figure is even and near twice the image count, and everything else stays `unbekannt`. A parse artifact stays visible instead of being smoothed over. A 194.1 carries `value` 1 against 40 scans, because the first integer of its Digitalisiert cell means something other than an extent.
+
+The site shows the scan count as the primary figure per source and the catalogue extent beside it where the two diverge. The editorial progress bar counts digital images end to end and leaves the catalogue extent out of its denominator; an earlier version summed catalogue figures into the denominator while the numerator came from the register, which divided written sides by openings wherever the units differed.
 
 ### Availability pyramid
 
@@ -194,12 +208,20 @@ The catalogue CSV gives different values.
 | Count | Volumes | Pages | Origin |
 |-------|---------|-------|--------|
 | **Transkribus (canonical)** | **26** | **8,561** | Collection 2197991, counted scans |
-| CSV and `data/sources.json` | 25 | 8,750 | Catalogue entries with a page figure in the Digitalisiert column |
+| CSV and `data/sources.json` | 25 | 8,750 | Catalogue entries with an extent figure in the Digitalisiert column |
 
-The CSV lists 25 entries (numbered 00 to 26, omitting 23 and 25, which the catalogue records as identical with 22 and 26). Transkribus counts the volumes individually and therefore arrives at 26. The page counts diverge because the CSV values are catalogue statements while the Transkribus values are counted scans. Where a defensible figure is needed, Transkribus governs.
+The CSV lists 25 entries (numbered 00 to 26, omitting 23 and 25, which the catalogue records as identical with 22 and 26). Transkribus counts the volumes individually and therefore arrives at 26.
 
-| No. | Date | Pages (CSV) | Note |
-|-----|------|-------------|------|
+The two page figures count the same thing. Compared volume by volume, 22 of the 25 catalogue entries equal the counted scans exactly, including the two volumes Transkribus splits across two documents (15 as 24 + 328, 20 as 43 + 396, both summing to the catalogue figure). The gap of 189 comes from coverage and grouping.
+
+- Volume 00, 241 catalogue images, has no Transkribus document at all
+- Volumes 22, 24 and 26 hold more scans than the catalogue records (517 against 494, 371 against 355, 308 against 294)
+- Volume 17 differs by a single image (468 against 469)
+
+An account-book image is one opening, meaning two written sides photographed together. The same holds for the A 006 booklets, where the catalogue counts the written sides and therefore reaches roughly twice the number of images. A figure that mixes the two units means nothing, and `data/sources.json` mixed them until the extent was split into `catalogue_extent` and `digital_images`. Where a defensible figure is needed, Transkribus governs.
+
+| No. | Date | Images (CSV) | Note |
+|-----|------|--------------|------|
 | 00 | 1454–1457 | 241 | "Raitbuch von Konrad Vintler" |
 | 01 | 1460–1461 | 331 | |
 | **02** | **1462–1463** | **123** | **The volume the project works on** |
@@ -222,7 +244,7 @@ Among them a coherent cluster on Sigismund's wedding of 1484. The page figures a
 
 **Account book 2** is available as an image and layout source. Transkribus holds no text for it. Machine transcriptions from the benchmark and the pilot exist and are marked as unrevised model output.
 
-Script output: `data/sources.json`, the cleaned catalogue as JSON for the source table on the home page.
+Script output: `data/sources.json`, the cleaned catalogue as JSON for the source table on the home page, in the schema described above. `scripts/transform_sources.py --migrate` rewrites that file into the current schema without the CSV, which is project-internal and missing from the public clone; a `catalogue_extent.raw` of `null` marks a value that reached the file that way.
 
 ## 3. Transkribus collection 2197991
 
