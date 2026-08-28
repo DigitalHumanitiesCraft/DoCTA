@@ -20,8 +20,8 @@ export function initNav(activeId) {
   const nav = document.getElementById('main-nav');
   if (!nav) return;
 
-  // --nav-height sizes the knowledge sidebar against the viewport; measure the
-  // real navbar instead of trusting the token's guess, or the column overshoots.
+  // --nav-height anchors sticky elements below the real navbar; measure it
+  // instead of trusting the token's guess, or they overshoot.
   const navbar = document.querySelector('.navbar');
   if (navbar && 'ResizeObserver' in window) {
     const setNavHeight = () =>

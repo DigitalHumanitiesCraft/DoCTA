@@ -42,7 +42,7 @@ These four refusals are the reason the project works without a build process. Re
 
 | Pattern | Implemented in | Note |
 |---|---|---|
-| Knowledge vault as its own page | `knowledge.html` | Sidebar plus Markdown rendering through marked.js, hash routing |
+| Knowledge vault as its own page | removed 28.08.2026 | Rendered the Markdown documents with marked.js and hash routing; withdrawn because the knowledge base addresses agents and repository readers, and site visitors were not its audience |
 | Rule-bound review status instead of percentages | Extraction views, CSS tokens | See section 4 |
 | CSS custom properties as design tokens | `css/styles.css` | Colours, spacing, typography, radii |
 | IndexedDB caching | `js/data-loader.js` | With a timeout, `onblocked` handling and a fallback |

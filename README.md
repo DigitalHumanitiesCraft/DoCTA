@@ -24,7 +24,7 @@ DoCTA/
 │   ├── *.html              index, viewer, exploration, benchmark, knowledge, about
 │   ├── css/, js/, lib/     Design tokens, shared ES6 modules, vendored dependencies
 │   ├── data/               Pre-processed JSON read by the site
-│   └── knowledge/          The Promptotyping knowledge base, rendered by knowledge.html
+│   └── knowledge/          The Promptotyping knowledge base, Markdown read in the repository
 ├── evaluation/
 │   ├── benchmark/          Versioned prompt benchmark: page set, prompts, runs, metrics
 │   ├── pilot/              The benchmark prompts on continuous, uncurated material

@@ -48,10 +48,9 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 | `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source, plus a reading mode over the whole document text |
 | `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
-| `knowledge.html` | Knowledge vault, rendering these Markdown documents |
 | `about.html` | About the project, data sources, imprint |
 
-Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. `knowledge.html` is the one deliberate exception. It stays out of the navigation bar and is reached from the About page and by direct URL, because the knowledge base addresses agents and returning readers rather than a first visitor.
+Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. The knowledge base itself has no page on the site since 28.08.2026; it lives as Markdown under `docs/knowledge/` and addresses agents and repository readers, while the About page links to it on GitHub.
 
 ## Network visualisation: D3
 
