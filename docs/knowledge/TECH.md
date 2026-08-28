@@ -9,9 +9,11 @@ The site is static and served by GitHub Pages from `docs/` on `main`. It uses va
 | Library | Vendored | File |
 |---------|----------|------|
 | Bootstrap | 5.3.3 | `lib/bootstrap.min.css`, `lib/bootstrap.bundle.min.js` |
-| Cytoscape.js | 3.30.4 | `lib/cytoscape.esm.min.mjs` |
+| D3 | 7.9.0 | `lib/d3.v7.min.js` |
 | OpenSeadragon | 4.1.1 | `lib/openseadragon.min.js` |
 | marked | 15.0.12 | `lib/marked.min.js` |
+
+D3 comes from `https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js`, the single-file UMD dist build of the release, vendored on 2026-08-28 and licensed ISC. Cytoscape.js 3.30.4 was vendored until the same day, when the network view moved to D3 and `lib/cytoscape.esm.min.mjs` was deleted; no page loads it any more.
 
 The pins lag behind upstream. That is deliberate. The versions are frozen since they worked, and without a package manager an upgrade means editing files by hand and retesting every page.
 
@@ -21,39 +23,47 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 |------|---------|
 | `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
 | `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source, plus a reading mode over the whole document text |
-| `exploration.html` | The relation network extracted by an LLM from a Transkribus working transcription |
+| `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `knowledge.html` | Knowledge vault, rendering these Markdown documents |
 | `about.html` | About the project, data sources, imprint |
 
 Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. `knowledge.html` is the one deliberate exception. It stays out of the navigation bar and is reached from the About page and by direct URL, because the knowledge base addresses agents and returning readers rather than a first visitor.
 
-## Network visualisation: Cytoscape.js
+## Network visualisation: D3
 
-### Why Cytoscape.js
+### Why D3
 
-| Library | Renderer | Node ceiling | ESM support | Graph algorithms |
-|---------|----------|--------------|-------------|------------------|
-| **Cytoscape.js** | Canvas, WebGL from 3.31 | High, with WebGL | Yes, ESM build | Yes (BFS, PageRank, betweenness, communities) |
-| Sigma.js v3 | WebGL native | High | Problematic without npm | Through graphology |
-| vis.js | Canvas | Low | UMD build | No |
-| D3.js | SVG or Canvas | Low with SVG | Yes | No |
+The network view on `exploration.html` reads `data/graph.jsonld`, the aggregated graph over every document that carries an entity extraction. It draws entity and document nodes with two kinds of edge, attestation of an entity in a document and co-occurrence of two entities in one transcription line.
 
-Loading it:
+Cytoscape.js held this view until August 2026 and was replaced. The demo file it read was hand-made, and its default styling put a label on every edge, which made the canvas unreadable at a few dozen nodes. The requirement that replaced it is readability under a filter, so what the layout needs is direct control over force parameters, node shapes, label rules and hit areas. D3 gives that control in one force simulation with an SVG scene graph; the built-in graph algorithms of Cytoscape were never used.
+
+| Library | Renderer | Node ceiling | Control over layout and marks | Graph algorithms |
+|---------|----------|--------------|-------------------------------|------------------|
+| **D3 7** | SVG (Canvas possible) | Some thousands with SVG | Full, forces and marks are written out | None built in |
+| Cytoscape.js | Canvas, WebGL from 3.31 | High, with WebGL | Through a style sheet and layout presets | Yes (BFS, PageRank, betweenness, communities) |
+| Sigma.js v3 | WebGL native | High | Through graphology | Through graphology |
+| vis.js | Canvas | Low | Low | No |
+
+Loading it as a classic script keeps the runtime free of a bundler, because the pinned single-file dist build is UMD:
 
 ```html
-<script type="module">
-  import cytoscape from './lib/cytoscape.esm.min.mjs';
-</script>
+<script src="lib/d3.v7.min.js"></script>
 ```
+
+The view code lives in `js/network.js` as an ES module and reads the global `d3`.
+
+### What keeps the view readable
+
+Object entities outnumber persons and places by an order of magnitude, so they start hidden and are switched on through the type filter. Edges carry no labels at all; the pair, the count and the loci of an edge live in the detail card that a click opens. Labels stand permanently on persons, places and documents and on objects attested more than once, with the remaining object labels appearing on hover. The collision force reserves extra radius for a labelled node, which spreads labels apart without a label-placement pass. Under `prefers-reduced-motion` the simulation is stepped to convergence synchronously and the settled layout is painted once.
 
 ### Scale and the two graph problems
 
-The current graph on `exploration.html` is the extracted relation network of a single source. It is small, so `cose` over the whole set renders immediately and no progressive disclosure is needed.
+The current graph is small, a few hundred nodes at most with objects switched on, so a live force layout over the whole set is fast enough and needs no progressive disclosure.
 
-The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in DESIGN.md and applies again when the court network returns as a view over edited text.
+The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in DESIGN.md and applies again when the court network returns as a view over edited text. At that size SVG marks become the bottleneck and a Canvas renderer is the upgrade path.
 
-Two performance measures were planned in the prototype phase and never became necessary. Labels shown only on hover and above a zoom threshold stayed unnecessary at the node counts actually displayed. Layout pre-computation exists as `scripts/compute_layout.py`, which writes `data/network.json`; no page loads that file, because Cytoscape computes a layout for these node counts fast enough in the browser and a live layout allows switching between layout algorithms. The WebGL renderer is unavailable to the vendored 3.30.4 in any case, and Canvas suffices.
+Layout pre-computation exists as `scripts/compute_layout.py`, which writes `data/network.json`; no page loads that file, because the layout runs fast enough in the browser and a live simulation lets a filter change re-lay the graph.
 
 ## Document viewer: OpenSeadragon
 
@@ -102,11 +112,13 @@ DoCTA/
 │   │   ├── app.js          Navigation, banner, footer
 │   │   ├── benchmark.js    Benchmark tables from data/benchmark/summary.json
 │   │   ├── data-loader.js  Fetch JSON, IndexedDB cache
+│   │   ├── network.js      D3 force network over data/graph.jsonld
 │   │   └── utils.js        Formatting, sorting, escaping
 │   ├── data/               Pre-processed JSON, git-tracked
 │   │   ├── benchmark/      Published export of the prompt benchmark, the summary
 │   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
 │   │   ├── entities/       Line-anchored entities per document, input to the TEI build
+│   │   ├── graph.jsonld    Aggregated entity graph over all extracted documents
 │   │   ├── pipeline/       register_summary.json, the site projection of the register
 │   │   ├── tei/            Generated TEI P5, one file per document
 │   │   └── transcriptions/ Inventory transcriptions from Transkribus PAGE XML

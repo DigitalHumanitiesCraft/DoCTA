@@ -27,20 +27,17 @@
     <h1 class="visually-hidden">Exploration workbench</h1>
     <div class="exp-layout" id="exp-layout">
       <aside class="exp-sidebar" id="exp-sidebar">
-        <div class="exp-views" role="tablist" aria-orientation="vertical" aria-label="Views" id="exp-views"></div>
-
-        <div class="exp-block exp-scope">
-          <span class="exp-scope__title">Thaur A 49.1 (1471)</span>
-          <a href="viewer.html?doc=11328300">Open the source in the viewer</a>
-        </div>
-
-        <div class="exp-block exp-context" id="exp-context"></div>
+        <div class="exp-controls" id="exp-controls"></div>
       </aside>
 
-      <section class="exp-main" id="exp-main-area">
-        <button type="button" class="vt-btn exp-sidebar-toggle d-lg-none" id="btn-sidebar" aria-controls="exp-sidebar" aria-expanded="false" aria-label="Toggle the view sidebar" title="Toggle the view sidebar">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4h11M2.5 8h11M2.5 12h11"/></svg>
-        </button>
+      <section class="exp-main">
+        <div class="exp-bar">
+          <button type="button" class="vt-btn exp-sidebar-toggle d-lg-none" id="btn-sidebar" aria-controls="exp-sidebar" aria-expanded="false" aria-label="Toggle the filter sidebar" title="Toggle the filter sidebar">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4h11M2.5 8h11M2.5 12h11"/></svg>
+          </button>
+          <div class="view-toggle exp-views" role="tablist" aria-label="Views" id="exp-views"></div>
+        </div>
+        <div class="exp-stage" id="exp-main-area"></div>
       </section>
     </div>
   </main>
@@ -56,21 +53,25 @@
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
+  <script src="lib/d3.v7.min.js"></script>
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
-    import { loadJSON, loadEntities, DEMO_DOC_ID } from './js/data-loader.js';
+    import { loadJSON, loadEntities } from './js/data-loader.js';
     import { getParams, setParams, escapeHTML, escapeAttr } from './js/utils.js';
+    import { createNetworkView } from './js/network.js';
 
     initNav('exploration');
     initBanner();
 
-    // The workbench is scoped to one source; the sidebar link names the same one.
-    const SCOPE_DOC_ID = DEMO_DOC_ID;
-
-    const NODE_HINT = 'Select a node to see its role in the source.';
     const TYPE_LABEL = { person: 'person', place: 'place', object: 'object', time: 'time' };
 
-    /* Provenance names who produced or verified a record. The demo extraction is
+    /* The aggregated graph is the shared source of both views: it names the
+       documents that carry an extraction and holds the provenance of every
+       record. One load serves the network and the source select of the table. */
+    let graphPromise = null;
+    const getGraph = () => (graphPromise ??= loadJSON('data/graph.jsonld'));
+
+    /* Provenance names who produced or verified a record. The extraction is
        entirely LLM output; the map carries the other two values so a later,
        mixed dataset renders without a change here. */
     const PROV_LABELS = {
@@ -96,41 +97,22 @@
       return `<span class="prov-chip prov-chip--${p}" title="${escapeAttr(title)}">${escapeHTML(label)}</span>`;
     }
 
-    function typeLegend(types) {
-      return types.map(t => `<span class="entity entity--${t}">${TYPE_LABEL[t]}</span>`).join(' ');
-    }
-
-    /* One registration per view: an entry here plus its render function. */
+    /* One registration per view: an entry here plus its render function, which
+       fills the view panel and its own controls block in the sidebar. */
     const VIEWS = [
-      {
-        id: 'network',
-        label: 'Network',
-        context: () => `<p class="mb-2" id="net-detail" aria-live="polite">${NODE_HINT}</p>` +
-          '<p class="mb-2"><span class="legend-dot legend-person" aria-hidden="true"></span> person &nbsp;' +
-          '<span class="legend-dot legend-place" aria-hidden="true"></span> place<br>' +
-          'Node size follows the number of attested relations; edge labels name the relation type from the source.</p>' +
-          `<p class="mb-0">Provenance ${provChip('llm')} for every node and edge of this network.</p>`,
-        render: renderNetwork,
-      },
-      {
-        id: 'entities',
-        label: 'Entities',
-        context: () => `<p class="mb-2">${typeLegend(['person', 'place', 'object', 'time'])}</p>` +
-          `<p class="mb-0">Provenance ${provChip('human')} ${provChip('workflow')} ${provChip('llm')}<br>` +
-          'Every record of this extraction carries LLM provenance.</p>',
-        render: renderEntities,
-      },
+      { id: 'network', label: 'Network', render: renderNetwork },
+      { id: 'entities', label: 'Entities', render: renderEntities },
     ];
 
     const layout = document.getElementById('exp-layout');
     const tablist = document.getElementById('exp-views');
     const mainArea = document.getElementById('exp-main-area');
-    const context = document.getElementById('exp-context');
+    const controlsHost = document.getElementById('exp-controls');
 
     for (const view of VIEWS) {
       const tab = document.createElement('button');
       tab.type = 'button';
-      tab.className = 'exp-view-btn';
+      tab.className = 'view-toggle__btn';
       tab.id = `tab-${view.id}`;
       tab.setAttribute('role', 'tab');
       tab.textContent = view.label;
@@ -148,8 +130,14 @@
       panel.setAttribute('aria-labelledby', tab.id);
       mainArea.appendChild(panel);
 
+      const ctrl = document.createElement('div');
+      ctrl.className = 'exp-controls__set';
+      ctrl.id = `controls-${view.id}`;
+      controlsHost.appendChild(ctrl);
+
       view.tab = tab;
       view.panel = panel;
+      view.controls = ctrl;
       view.ready = false;
     }
 
@@ -174,14 +162,17 @@
         v.tab.setAttribute('aria-selected', String(on));
         v.tab.tabIndex = on ? 0 : -1;
         v.panel.classList.toggle('is-active', on);
+        v.controls.classList.toggle('is-active', on);
       }
-      context.innerHTML = view.context();
       setParams({ view: view.id });
       layout.classList.remove('exp-layout--sidebar-open');
       toggleBtn.setAttribute('aria-expanded', 'false');
       if (!view.ready) {
         view.ready = true;
-        view.render(view.panel).catch(err => {
+        view.render(view.panel, view.controls).then(api => {
+          view.onShow = api && api.onShow;
+          if (view.onShow) view.onShow();
+        }).catch(err => {
           view.panel.innerHTML = `<p class="p-3 mb-0">${escapeHTML(view.label)} could not be loaded: ${escapeHTML(err.message)}</p>`;
         });
       } else if (view.onShow) {
@@ -195,108 +186,37 @@
       toggleBtn.setAttribute('aria-expanded', String(open));
     });
 
-    async function renderNetwork(panel) {
-      const data = await loadJSON('data/demo/thaur_network.json');
-      const degree = {};
-      for (const e of data.edges) {
-        degree[e.source] = (degree[e.source] || 0) + 1;
-        degree[e.target] = (degree[e.target] || 0) + 1;
-      }
-      const elements = [
-        ...data.nodes.map(n => ({ data: { ...n, degree: degree[n.id] || 1 } })),
-        ...data.edges.map(e => ({ data: e })),
-      ];
-
-      const cyEl = document.createElement('div');
-      cyEl.id = 'cy';
-      cyEl.setAttribute('role', 'img');
-      cyEl.setAttribute('aria-label', 'Relation network of the Thaur inventory: persons and places connected by attested relations');
-      panel.appendChild(cyEl);
-
-      const tools = document.createElement('div');
-      tools.className = 'exp-tools';
-      tools.innerHTML = '<button type="button" class="vt-btn" id="btn-net-fit" aria-label="Fit the network to the view" title="Fit to view">' +
-        '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.75V2h3.75M10.25 2H14v3.75M14 10.25V14h-3.75M5.75 14H2v-3.75"/></svg></button>';
-      panel.appendChild(tools);
-
-      const css = getComputedStyle(document.documentElement);
-      const token = name => css.getPropertyValue(name).trim();
-
-      const { default: cytoscape } = await import('./lib/cytoscape.esm.min.mjs');
-      const cy = cytoscape({
-        container: cyEl,
-        elements,
-        layout: { name: 'cose', animate: false, padding: 30 },
-        style: [
-          { selector: 'node', style: {
-              'label': 'data(label)', 'text-valign': 'bottom', 'text-halign': 'center',
-              'font-size': '10px', 'text-margin-y': 5, 'text-max-width': '110px', 'text-wrap': 'ellipsis',
-              'width': 'mapData(degree, 1, 8, 14, 34)', 'height': 'mapData(degree, 1, 8, 14, 34)',
-          } },
-          { selector: 'node[type="person"]', style: { 'background-color': token('--ent-person') } },
-          { selector: 'node[type="place"]', style: { 'background-color': token('--ent-place'), 'shape': 'diamond' } },
-          { selector: 'edge', style: {
-              'width': 1.5, 'line-color': token('--border-custom'), 'curve-style': 'bezier',
-              'target-arrow-shape': 'triangle', 'target-arrow-color': token('--border-custom'), 'arrow-scale': 0.8,
-              'label': 'data(label)', 'font-size': '7px', 'color': token('--text-muted-custom'),
-              'text-rotation': 'autorotate', 'text-background-color': token('--bg-primary'),
-              'text-background-opacity': 0.85, 'text-background-padding': '1px',
-          } },
-          { selector: 'node:selected', style: { 'border-width': 3, 'border-color': token('--accent') } },
-        ],
-      });
-
-      // Canvas and keyboard list write the same panel, which is the aria-live region
-      function showNode(d) {
-        const detail = document.getElementById('net-detail');
-        if (!detail) return;
-        detail.innerHTML = `<strong>${escapeHTML(d.label)}</strong> (${escapeHTML(d.type)})` +
-          (d.role ? ` · ${escapeHTML(d.role)}` : '') +
-          ` · ${degree[d.id] || 0} attested relations in Thaur A 49.1 ` +
-          provChip(d.provenance || data.provenance || DEFAULT_PROVENANCE);
-      }
-
-      cy.on('tap', 'node', evt => showNode(evt.target.data()));
-      cy.on('tap', evt => {
-        if (evt.target !== cy) return;
-        const detail = document.getElementById('net-detail');
-        if (detail) detail.textContent = NODE_HINT;
-      });
-
-      // Keyboard equivalent of the canvas: every node is reachable by tab and
-      // reports into the same panel. The list shows itself once focus enters it.
-      const nodeList = document.createElement('div');
-      nodeList.className = 'visually-hidden-focusable p-3';
-      nodeList.innerHTML = '<h2 class="h6">Network nodes</h2><ul class="list-unstyled mb-0">' +
-        data.nodes.map(n =>
-          `<li><button type="button" class="btn btn-link btn-sm p-0" data-node-id="${escapeAttr(n.id)}">` +
-          `${escapeHTML(n.label)} (${escapeHTML(n.type)})</button></li>`).join('') +
-        '</ul>';
-      const nodeById = new Map(data.nodes.map(n => [n.id, n]));
-      const reportNode = (target) => {
-        const btn = target instanceof Element ? target.closest('[data-node-id]') : null;
-        const node = btn && nodeById.get(btn.dataset.nodeId);
-        if (node) showNode({ ...node, degree: degree[node.id] || 1 });
-      };
-      nodeList.addEventListener('focusin', evt => reportNode(evt.target));
-      nodeList.addEventListener('click', evt => reportNode(evt.target));
-      panel.appendChild(nodeList);
-
-      const fit = () => { cy.resize(); cy.fit(undefined, 30); };
-      document.getElementById('btn-net-fit').addEventListener('click', fit);
-      VIEWS.find(v => v.id === 'network').onShow = fit;
+    /* The network view lives in its own module; it fills the panel and its
+       controls block, and reports the fit handler back for a view switch. */
+    async function renderNetwork(panel, controls) {
+      const graph = await getGraph();
+      return createNetworkView(panel, controls, graph);
     }
 
-    async function renderEntities(panel) {
-      const data = await loadEntities(SCOPE_DOC_ID);
-      if (!data) {
-        panel.innerHTML = '<p class="p-3 mb-0">No entity extraction for this source yet.</p>';
-        return;
-      }
-      const srcDocId = data.docId;
-      // The extraction carries one provenance for all its records
-      const provenance = PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
-      const rows = data.entities;
+    /* The table reads one source at a time; the source select in the sidebar
+       lists the documents that carry an extraction, which the graph names. */
+    async function renderEntities(panel, controls) {
+      const graph = await getGraph();
+      const docs = (graph['@graph'] || [])
+        .filter(r => r['@type'] === 'docta:Document')
+        .sort((a, b) => String(a.label).localeCompare(String(b.label), 'de'));
+
+      controls.innerHTML =
+        '<div class="exp-ctrl"><label class="exp-ctrl__legend" for="ent-source">Source</label>' +
+        '<select class="exp-select" id="ent-source">' +
+        docs.map(d => `<option value="${escapeAttr(String(d.transkribusDocId))}">` +
+          `${escapeHTML(d.label)}</option>`).join('') +
+        '</select></div>' +
+        '<div class="exp-ctrl"><a class="vt-btn exp-ctrl__btn" id="ent-open" href="#">' +
+        '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" ' +
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M6.5 2.5H2.5v11h11v-4M9.5 2.5H13.5v4M13.5 2.5L7 9"/></svg> Open in the viewer</a></div>';
+      const sourceSel = controls.querySelector('#ent-source');
+      const openLink = controls.querySelector('#ent-open');
+
+      let srcDocId = docs.length ? docs[0].transkribusDocId : null;
+      let provenance = DEFAULT_PROVENANCE;
+      let rows = [];
 
       // Every attestation links back to the page it was read on
       function attestCell(r) {
@@ -334,6 +254,11 @@
         '</tr></thead><tbody id="ent-rows"></tbody></table>';
       panel.appendChild(wrap);
 
+      const live = document.createElement('div');
+      live.className = 'visually-hidden';
+      live.setAttribute('aria-live', 'polite');
+      panel.appendChild(live);
+
       const body = wrap.querySelector('#ent-rows');
       let sortKey = 'type';
       let dir = 1;
@@ -349,13 +274,26 @@
           if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * dir;
           return String(va).localeCompare(String(vb), 'de') * dir;
         });
-        body.innerHTML = sorted.map(r => '<tr>' +
-          COLUMNS.map(c => `<td${c.num ? ' class="num"' : ''}>${c.cell(r)}</td>`).join('') + '</tr>').join('');
+        body.innerHTML = sorted.length
+          ? sorted.map(r => '<tr>' +
+              COLUMNS.map(c => `<td${c.num ? ' class="num"' : ''}>${c.cell(r)}</td>`).join('') + '</tr>').join('')
+          : `<tr><td colspan="${COLUMNS.length}">No entity extraction for this source yet.</td></tr>`;
         for (const th of wrap.querySelectorAll('thead th')) {
           const on = th.dataset.key === sortKey;
           th.setAttribute('aria-sort', on ? (dir === 1 ? 'ascending' : 'descending') : 'none');
           th.querySelector('.exp-sort__mark').textContent = on ? (dir === 1 ? '▲' : '▼') : '';
         }
+        live.textContent = `${sorted.length} entity records shown.`;
+      }
+
+      async function load(docId) {
+        srcDocId = docId;
+        openLink.href = `viewer.html?doc=${encodeURIComponent(docId)}`;
+        const data = await loadEntities(docId);
+        // The extraction carries one provenance for all its records
+        provenance = data && PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
+        rows = data ? data.entities : [];
+        draw();
       }
 
       wrap.querySelector('thead').addEventListener('click', evt => {
@@ -366,7 +304,8 @@
         draw();
       });
 
-      draw();
+      sourceSel.addEventListener('change', () => { load(Number(sourceSel.value)); });
+      await load(srcDocId);
     }
 
     const requested = getParams().view;

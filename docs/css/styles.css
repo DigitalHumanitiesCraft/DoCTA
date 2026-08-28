@@ -130,6 +130,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .entity--time { background: var(--ent-time-bg); color: var(--ent-time); border-bottom: 2px solid var(--ent-time); }
 .entity--institution { background: var(--ent-institution-bg); color: var(--ent-institution); border-bottom: 2px solid var(--ent-institution); }
 .entity--function { background: var(--ent-function-bg); color: var(--ent-function); border-bottom: 2px solid var(--ent-function); }
+.entity--document { background: var(--bg-secondary); color: var(--text-primary); border-bottom: 2px solid var(--text-primary); }
 
 /* Entity key in the doc-meta strip: a colour dot per type, then the
    provenance of the marks with the model named, icons in meta style */
@@ -670,47 +671,91 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   border-right: 1px solid var(--border-custom);
 }
 
-.exp-views {
+/* View switcher at the top of the view area, same control as the viewer's
+   Synopsis/Reading/TEI toggle, with the tab pattern kept */
+.exp-bar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: var(--viewer-bar-height);
+  padding: 0 var(--space-sm);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-custom);
+}
+
+.exp-stage {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Sidebar: controls only, one set per view */
+.exp-controls__set { display: none; }
+.exp-controls__set.is-active {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-lg);
 }
 
-.exp-view-btn {
-  text-align: left;
-  padding: 0.375rem var(--space-md);
-  border: 1px solid transparent;
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: var(--text-sm);
-}
-
-.exp-view-btn:hover { background: var(--accent-light); color: var(--accent); }
-
-.exp-view-btn[aria-selected="true"] {
-  background: var(--surface);
-  border-color: var(--border-custom);
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.exp-block {
+.exp-ctrl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 0;
+  padding: 0;
+  border: 0;
   border-top: 1px solid var(--border-custom);
   padding-top: var(--space-md);
-  font-size: var(--text-xs);
-  color: var(--text-secondary);
 }
 
-.exp-scope__title {
-  display: block;
+.exp-controls__set > .exp-ctrl:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.exp-ctrl__legend {
+  float: none;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-2xs);
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted-custom);
+}
+
+.exp-select {
+  width: 100%;
+  padding: 0.3rem var(--space-sm);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
   color: var(--text-primary);
+  font-size: var(--text-xs);
+}
+
+/* Same visual family as the viewer tool button, but a full-width labelled row */
+.exp-ctrl__btn.vt-btn {
+  justify-content: flex-start;
+  gap: 0.4em;
+  width: 100%;
+  height: auto;
+  padding: 0.3rem var(--space-sm);
+  border-color: var(--border-custom);
+  background: var(--surface);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  text-decoration: none;
 }
 
 .exp-main {
   position: relative;
   display: flex;
+  flex-direction: column;
   min-width: 0;
   min-height: 0;
 }
@@ -724,30 +769,255 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 .exp-panel.is-active { display: flex; flex-direction: column; }
 
-#cy {
+/* === Network view (D3 force layout in exploration.html) === */
+.net-wrap {
+  position: relative;
+  display: flex;
   flex: 1 1 auto;
+  min-width: 0;
   min-height: 0;
-  background: var(--bg-primary);
 }
 
-.exp-tools {
+.net-svg {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  background: var(--bg-primary);
+  cursor: grab;
+  touch-action: none;
+}
+
+.net-svg:active { cursor: grabbing; }
+
+/* Edges carry no labels: the pair, the count and the loci live in the detail
+   card, which is what keeps the canvas readable at these node counts. */
+.net-link {
+  fill: none;
+  stroke: var(--border-custom);
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.net-linkg--cooc .net-link {
+  stroke: var(--accent);
+  stroke-opacity: 0.5;
+}
+
+.net-linkg--attest .net-link { stroke-opacity: 0.8; }
+
+.net-linkg.is-selected .net-link {
+  stroke: var(--accent-hover);
+  stroke-opacity: 1;
+}
+
+/* Invisible fat line under each edge, so a 1px edge stays clickable */
+.net-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 10;
+  cursor: pointer;
+}
+
+.net-node { cursor: pointer; }
+
+.net-node__shape {
+  stroke: var(--bg-primary);
+  stroke-width: 1.5;
+}
+
+.net-node.is-selected .net-node__shape {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.net-label {
+  font-size: 10px;
+  fill: var(--text-primary);
+  text-anchor: middle;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--bg-primary);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* Objects are many and mostly hapax; only the recurring ones carry a standing
+   label, the rest name themselves on hover. */
+.net-node--object .net-label { opacity: 0; }
+.net-node--object.is-labelled .net-label,
+.net-node--object:hover .net-label { opacity: 1; }
+.net-node--document .net-label { font-weight: 600; }
+
+/* Keyboard equivalent of the canvas: hidden until focus enters it, then an
+   overlay list of every rendered node. */
+.net-list:focus-within {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow-y: auto;
+  padding: var(--space-md);
+  background: var(--surface);
+}
+
+.net-card {
   position: absolute;
   top: var(--space-sm);
   right: var(--space-sm);
-  z-index: 2;
+  z-index: 4;
   display: flex;
-  gap: 2px;
-  padding: 1px;
+  flex-direction: column;
+  width: min(22rem, calc(100% - 1rem));
+  max-height: calc(100% - 1rem);
   background: var(--surface);
   border: 1px solid var(--border-custom);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 12px rgb(44 36 22 / 0.16);
 }
 
+.net-card[hidden] { display: none; }
+
+.net-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.net-card__title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.net-card__close {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  line-height: 0;
+}
+
+.net-card__close:hover {
+  background: var(--accent-light);
+  border-color: var(--border-custom);
+  color: var(--accent);
+}
+
+.net-card__close svg { width: 13px; height: 13px; }
+
+.net-card__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-md);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.net-card__row {
+  display: flex;
+  gap: var(--space-sm);
+  padding: 0.15rem 0;
+}
+
+.net-card__key {
+  flex: 0 0 5.5rem;
+  color: var(--text-muted-custom);
+}
+
+.net-card__sub {
+  margin: var(--space-md) 0 var(--space-xs);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted-custom);
+}
+
+.net-att {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.net-att li { padding: 0.1rem 0; }
+.net-att__meta { color: var(--text-muted-custom); }
+
+/* Provenance is part of every card: who identified the record, who merged it */
+.net-prov {
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border-light);
+}
+
+.net-prov__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: 0.1rem 0;
+}
+
+.net-prov__key {
+  flex: 0 0 5.5rem;
+  color: var(--text-muted-custom);
+}
+
+.net-prov__gen {
+  margin-top: var(--space-xs);
+  font-family: var(--font-source);
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+}
+
+/* Type filters double as the legend: the dot repeats the canvas shape */
+.net-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.net-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.2rem var(--space-sm);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted-custom);
+  font-size: var(--text-xs);
+}
+
+.net-filter[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.net-filter__dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  flex: none;
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.net-filter[aria-pressed="true"] .net-filter__dot { opacity: 1; }
+.net-filter__dot--person { background: var(--ent-person); }
+.net-filter__dot--place { background: var(--ent-place); border-radius: 1px; transform: rotate(45deg); }
+.net-filter__dot--object { background: var(--ent-object); }
+.net-filter__dot--document { background: var(--text-primary); border-radius: 1px; }
+
 .exp-sidebar-toggle {
-  position: absolute;
-  top: var(--space-sm);
-  left: var(--space-sm);
-  z-index: 3;
+  flex: none;
   background: var(--surface);
   border-color: var(--border-custom);
 }
@@ -837,18 +1107,9 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
     background: var(--surface);
   }
   .exp-layout--sidebar-open .exp-sidebar { display: flex; }
-  .exp-sidebar-toggle { z-index: 6; }
+  /* The bar sits above the sidebar overlay, so its toggle stays reachable */
+  .exp-bar { position: relative; z-index: 6; }
 }
-
-.legend-dot {
-  display: inline-block;
-  width: 0.7em;
-  height: 0.7em;
-  border-radius: 50%;
-  vertical-align: baseline;
-}
-.legend-person { background: var(--ent-person); }
-.legend-place { background: var(--ent-place); transform: rotate(45deg); border-radius: 2px; }
 
 /* Compact BETA badge in the navbar (replaces the former banner) */
 .beta-badge {
@@ -1064,7 +1325,9 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 .view-toggle__btn + .view-toggle__btn { border-left: 1px solid var(--border-custom); }
 .view-toggle__btn:hover { background: var(--bg-secondary); color: var(--accent); }
-.view-toggle__btn[aria-pressed="true"] {
+/* The exploration switcher is the same control run as an ARIA tablist */
+.view-toggle__btn[aria-pressed="true"],
+.view-toggle__btn[aria-selected="true"] {
   background: var(--accent-light);
   color: var(--accent);
   font-weight: 600;
