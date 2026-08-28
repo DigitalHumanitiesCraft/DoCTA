@@ -49,10 +49,10 @@ from pathlib import Path
 from typing import Any
 
 import build_register as br
+from io_paths import PIPELINE_DIR, load_json, write_json
 
-ROOT = Path(__file__).parent
-REVIEWS = ROOT / "reviews"
-REGISTER = ROOT / "pages"
+REVIEWS = PIPELINE_DIR / "reviews"
+REGISTER = PIPELINE_DIR / "pages"
 
 SOURCE = "docta-viewer"
 # A review may only assert one of the two human states; the machine states of
@@ -238,7 +238,7 @@ def _review_files(targets: list[Path]) -> list[Path]:
 def _read(path: Path) -> Any:
     """Parse a review export, reporting a broken file as a refusal."""
     try:
-        return br._load(path)
+        return load_json(path)
     except json.JSONDecodeError as exc:
         raise ReviewError(f"{path.name}: kein lesbares JSON ({exc})") from exc
 
@@ -271,7 +271,7 @@ def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> li
         log += apply_document(registers[register_path], review, pages, path.name)
     if not dry_run:
         for register_path, register in registers.items():
-            br._write(register_path, register)
+            write_json(register_path, register)
     return log
 
 

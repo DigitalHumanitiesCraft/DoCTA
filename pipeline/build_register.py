@@ -6,7 +6,9 @@ is (content class), how far it has been verified, and which transcription runs
 exist for it.
 
 Data flow (repo-local only, no network):
-  docs/data/source_mapping.json      matched CSV entry <-> Transkribus doc
+  docs/data/source_mapping.json      matched CSV entry <-> Transkribus doc, and
+                                     the Inventaria attribution of a transcription
+  docs/data/inventaria_mapping.json  deep links to the published Inventaria edition
   docs/data/sources.json             archival metadata (shelfmark, dating, tier)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
   docs/data/raitbuch2_pages.json     page list of Raitbuch 2 (no export yet)
@@ -37,6 +39,11 @@ Design decisions:
   so its lines are given synthetic ids v1, v2, ... in the order the run reported
   them. The measuring cohorts keep the null id of a bare VLM reading, because
   nothing downstream addresses a single line of theirs.
+  The register is the first consumer of every shared input table, so the loaders
+  of those tables live here and TEI generation, the graph and the healthcheck
+  read them through this module: matched_mapping, sources_by_signature,
+  status_by_id, inventaria_ids and edition_links. The same holds for the export
+  shape, which is walked through iter_lines and addressed by line_key.
 
 Usage:
   python build_register.py             # rebuild pipeline/documents.json and pipeline/pages/
@@ -44,20 +51,18 @@ Usage:
 """
 
 import argparse
-import json
 import re
 import sys
 from collections import Counter
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Any
 
-ROOT = Path(__file__).parent
-REPO = ROOT.parent
-DATA = REPO / "docs" / "data"
-BENCHMARK_RUNS = REPO / "evaluation" / "benchmark" / "runs"
-PILOT_RUNS = REPO / "evaluation" / "pilot" / "runs"
-PILOT2_RUNS = REPO / "evaluation" / "pilot2" / "runs"
-EDITION_RUNS = REPO / "evaluation" / "edition" / "runs"
+from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, write_json
+
+BENCHMARK_RUNS = REPO_ROOT / "evaluation" / "benchmark" / "runs"
+PILOT_RUNS = REPO_ROOT / "evaluation" / "pilot" / "runs"
+PILOT2_RUNS = REPO_ROOT / "evaluation" / "pilot2" / "runs"
+EDITION_RUNS = REPO_ROOT / "evaluation" / "edition" / "runs"
 
 # The cohort that produces edition text rather than measurements.
 EDITION = "edition"
@@ -72,6 +77,10 @@ VLM_REGION = "vlm"
 RAITBUCH2_DOC = 12514730
 RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"
 
+# Value of csv_transkribiert in the source mapping for a document the Inventaria
+# project (www.inventaria.at) transcribed.
+INVENTARIA_FLAG = "Inventaria"
+
 CONTENT_CLASSES = ("text", "leer", "kassiert", "einlage", "unknown")
 VERIFICATION_STATUS = ("unbearbeitet", "maschinell", "gesichtet", "abgenommen")
 
@@ -80,21 +89,68 @@ RUN_ID = re.compile(
 )
 
 
-def _load(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+def matched_mapping() -> list[dict]:
+    """The matched CSV-to-Transkribus pairs, the document set of the pipeline."""
+    return load_json(DATA / "source_mapping.json")["matched"]
 
 
-def _write(path: Path, payload: Any) -> None:
-    # Write through a sibling temp file and replace, so an interrupted run
-    # cannot leave a truncated register behind.
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(".tmp")
-    tmp.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=1) + "\n",
-        encoding="utf-8",
-        newline="\n",
-    )
-    tmp.replace(path)
+def status_by_id() -> dict[int, dict]:
+    """Transkribus page-status distribution per document id."""
+    return {d["id"]: d for d in load_json(DATA / "transkribus_status.json")}
+
+
+def sources_by_signature() -> dict[str, dict]:
+    """Archival source register by shelfmark, which is what the mapping joins on."""
+    return {s["signatur"]: s for s in load_json(DATA / "sources.json")}
+
+
+def inventaria_ids() -> set[int]:
+    """Documents whose transcription the Inventaria project made.
+
+    Single derivation of the attribution from the source mapping. The site
+    projection, the TEI header and the JSON-LD graph all name that origin, so
+    they read it here and cannot disagree about who transcribed a document.
+    """
+    path = DATA / "source_mapping.json"
+    if not path.exists():
+        return set()
+    return {
+        m["transkribus_id"]
+        for m in load_json(path).get("matched", [])
+        if m.get("csv_transkribiert") == INVENTARIA_FLAG
+    }
+
+
+def edition_links() -> dict[int, str]:
+    """Deep links to the published Inventaria edition, by document id.
+
+    Harvested by scripts/harvest_inventaria_mapping.py. An attributed document
+    without an entry keeps its attribution and carries no link.
+    """
+    path = DATA / "inventaria_mapping.json"
+    if not path.exists():
+        return {}
+    return {d["docId"]: d["url"] for d in load_json(path).get("documents", [])}
+
+
+def iter_lines(page: dict) -> Iterator[dict]:
+    """Lines of a page in export order, across its regions.
+
+    Single definition of the page-to-line iteration of the export shape. Zone,
+    lb, entity anchor, register run and healthcheck all read a page through it,
+    so they cannot walk it in different orders.
+    """
+    for region in page.get("regions") or []:
+        yield from region.get("lines") or []
+
+
+def line_key(page_nr: int, line_id: str) -> str:
+    """Page-qualified line id, the key an entity anchor addresses a line by.
+
+    Region ids restart on every page, so a bare line id is ambiguous inside a
+    document.
+    """
+    return f"p{page_nr}_{line_id}"
 
 
 def review_runs(page: dict) -> list[dict]:
@@ -159,7 +215,7 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
         if not folder.is_dir():
             continue
         for f in sorted(folder.glob("*.json")):
-            rec = _load(f)
+            rec = load_json(f)
             key = _page_key(rec["page"])
             if key is None:
                 skipped.append(f"{cohort}/{f.name}")
@@ -213,15 +269,13 @@ def _vlm_lines(texts: list[str], cohort: str) -> list[dict]:
 
 def _documents() -> list[dict]:
     """One entry per document that has a Transkribus doc_id."""
-    mapping = _load(DATA / "source_mapping.json")["matched"]
-    sources = _load(DATA / "sources.json")
-    by_signatur = {s["signatur"]: s for s in sources}
+    by_signatur = sources_by_signature()
     # Per-document page-status distribution from the Transkribus collection;
     # DONE pages are human-corrected, everything else is machine layer.
-    status_by_id = {d["id"]: d for d in _load(DATA / "transkribus_status.json")}
+    statuses = status_by_id()
 
     docs: list[dict] = []
-    for entry in mapping:
+    for entry in matched_mapping():
         docs.append(
             _document(
                 entry["transkribus_id"],
@@ -229,7 +283,7 @@ def _documents() -> list[dict]:
                 entry["csv_signatur"],
                 entry.get("pages") or 0,
                 bool(entry.get("has_text")),
-                status_by_id.get(entry["transkribus_id"]),
+                statuses.get(entry["transkribus_id"]),
             )
         )
     rb2 = by_signatur.get(RAITBUCH2_SIGNATUR)
@@ -238,9 +292,9 @@ def _documents() -> list[dict]:
             RAITBUCH2_DOC,
             rb2,
             RAITBUCH2_SIGNATUR,
-            len(_load(DATA / "raitbuch2_pages.json")),
+            len(load_json(DATA / "raitbuch2_pages.json")),
             False,
-            status_by_id.get(RAITBUCH2_DOC),
+            statuses.get(RAITBUCH2_DOC),
         )
     )
     docs.sort(key=lambda d: d["docId"])
@@ -285,11 +339,11 @@ def _pages(doc: dict, runs: dict[tuple[int, int], list[dict]]) -> list[dict]:
     doc_id = doc["docId"]
     export = DATA / "transcriptions" / f"{doc_id}.json"
     if export.exists():
-        entries = [_page_from_export(p) for p in _load(export)["pages"]]
+        entries = [_page_from_export(p) for p in load_json(export)["pages"]]
     elif doc_id == RAITBUCH2_DOC:
         entries = [
             {"pageNr": p["pageNr"], "iiif": p.get("iiif_url"), "lines": []}
-            for p in _load(DATA / "raitbuch2_pages.json")
+            for p in load_json(DATA / "raitbuch2_pages.json")
         ]
     else:
         # No export, so no page list either; the images DoCTA transcribes on are
@@ -337,7 +391,7 @@ def _edition_images() -> dict[tuple[int, int], str]:
     path = DATA / "edition_pages.json"
     if not path.exists():
         return {}
-    return {(e["docId"], e["pageNr"]): e["iiif"] for e in _load(path)["pages"]}
+    return {(e["docId"], e["pageNr"]): e["iiif"] for e in load_json(path)["pages"]}
 
 
 def vlm_transcription(doc: dict, pages: list[dict]) -> dict | None:
@@ -417,13 +471,15 @@ def transcription_of(
     """
     export = DATA / "transcriptions" / f"{doc_id}.json"
     if export.exists():
-        data = _load(export)
+        data = load_json(export)
         data["pages"] = sorted(data["pages"], key=lambda p: p["pageNr"])
         return data
-    path = (register_dir or ROOT / "pages") / f"{doc_id}.json"
+    path = (register_dir or PIPELINE_DIR / "pages") / f"{doc_id}.json"
     if not path.exists():
         return None
-    return vlm_transcription({"docId": doc_id, "title": title}, _load(path)["pages"])
+    return vlm_transcription(
+        {"docId": doc_id, "title": title}, load_json(path)["pages"]
+    )
 
 
 def _empty_evidence(page_runs: list[dict]) -> dict | None:
@@ -443,11 +499,7 @@ def _empty_evidence(page_runs: list[dict]) -> dict | None:
 
 
 def _page_from_export(page: dict) -> dict:
-    lines = [
-        {"id": ln["id"], "text": ln["text"]}
-        for region in page.get("regions", [])
-        for ln in region.get("lines", [])
-    ]
+    lines = [{"id": ln["id"], "text": ln["text"]} for ln in iter_lines(page)]
     return {"pageNr": page["pageNr"], "iiif": page.get("iiif"), "lines": lines}
 
 
@@ -461,7 +513,7 @@ def _carry_review_state(source_dir: Path, doc_id: int, pages: list[dict]) -> Non
     path = source_dir / "pages" / f"{doc_id}.json"
     if not path.exists():
         return
-    by_nr = {p["pageNr"]: p for p in _load(path)["pages"]}
+    by_nr = {p["pageNr"]: p for p in load_json(path)["pages"]}
     for page in pages:
         old = by_nr.get(page["pageNr"])
         if old is None:
@@ -488,9 +540,11 @@ def build(
     for doc_id, pages in pages_by_doc.items():
         _carry_review_state(carry_from or out_dir, doc_id, pages)
 
-    _write(out_dir / "documents.json", docs)
+    write_json(out_dir / "documents.json", docs)
     for doc_id, pages in pages_by_doc.items():
-        _write(out_dir / "pages" / f"{doc_id}.json", {"docId": doc_id, "pages": pages})
+        write_json(
+            out_dir / "pages" / f"{doc_id}.json", {"docId": doc_id, "pages": pages}
+        )
     return docs, pages_by_doc
 
 
@@ -504,27 +558,11 @@ def project(
     the whole site projection moves as one and a healthcheck rebuild stays
     inside its temporary directory.
     """
-    # Attribution source: which documents carry a transcription made by the
-    # Inventaria project (www.inventaria.at). The site must name that origin
-    # wherever such a transcription is displayed, so the flag travels in the
-    # projection instead of being joined client-side.
-    mapping_path = DATA / "source_mapping.json"
-    inventaria_ids: set[int] = set()
-    if mapping_path.exists():
-        inventaria_ids = {
-            m["transkribus_id"]
-            for m in _load(mapping_path).get("matched", [])
-            if m.get("csv_transkribiert") == "Inventaria"
-        }
-    # Deep links to the published edition of each document on Transkribus
-    # Sites, harvested by scripts/harvest_inventaria_mapping.py; a flagged
-    # document without an entry stays attributed without a deep link.
-    edition_path = DATA / "inventaria_mapping.json"
-    edition_urls: dict[int, str] = {}
-    if edition_path.exists():
-        edition_urls = {
-            d["docId"]: d["url"] for d in _load(edition_path).get("documents", [])
-        }
+    # The site must name the Inventaria origin wherever such a transcription is
+    # displayed, so the attribution and its deep link travel in the projection
+    # instead of being joined client-side.
+    inventaria = inventaria_ids()
+    edition_urls = edition_links()
     summary = []
     for doc in docs:
         pages = pages_by_doc[doc["docId"]]
@@ -533,7 +571,7 @@ def project(
         # file the viewer loads and the wording of its provenance chip.
         transcription = vlm_transcription(doc, pages)
         if transcription is not None:
-            _write(
+            write_json(
                 out_path.parent / "transcriptions" / f"{doc['docId']}.json",
                 transcription,
             )
@@ -583,13 +621,13 @@ def project(
                 # fallback for the one hand-made extraction stays client-side
                 "has_entities": (DATA / "entities" / f"{doc['docId']}.json").exists(),
                 "transcription_by": (
-                    "Inventaria" if doc["docId"] in inventaria_ids else None
+                    INVENTARIA_FLAG if doc["docId"] in inventaria else None
                 ),
                 "edition_url": edition_urls.get(doc["docId"]),
             }
         )
     payload = {"documents": summary}
-    _write(out_path, payload)
+    write_json(out_path, payload)
     return payload
 
 
@@ -598,7 +636,7 @@ def main() -> None:
     ap.add_argument(
         "--out",
         type=Path,
-        default=ROOT,
+        default=PIPELINE_DIR,
         help="register target directory (default: pipeline/)",
     )
     ap.add_argument(

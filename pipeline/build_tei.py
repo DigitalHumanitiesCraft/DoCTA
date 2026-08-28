@@ -73,21 +73,17 @@ Usage:
 
 import argparse
 import hashlib
-import json
 import re
 import sys
 from pathlib import Path
-from typing import Any
 from xml.etree import ElementTree
 
 import build_register as br
 import entity_index as ei
+from io_paths import DATA, PIPELINE_DIR, load_json, write_text
 
-ROOT = Path(__file__).parent
-REPO = ROOT.parent
-DATA = REPO / "docs" / "data"
 TEI_OUT = DATA / "tei"
-REGISTER = ROOT / "pages"
+REGISTER = PIPELINE_DIR / "pages"
 
 # Hand-maintained default. A run without --date backdates every file it writes,
 # and nothing catches it: check_pipeline reads the date from the files on disk,
@@ -156,11 +152,11 @@ TRANSKRIBUS_LAYER, VLM_LAYER = "transkribus", "vlm"
 # The project whose transcription campaign produced most of the Transkribus
 # layer of this corpus. Its transcriptions are cited with attribution wherever
 # they are displayed or evaluated, so the header names it and links its
-# published edition where one is known.
+# published edition where one is known. Which documents carry that attribution
+# and which link belongs to them is read through build_register, the same
+# derivation the site projection and the graph use.
 INVENTARIA_NAME = "Inventaria project"
 INVENTARIA_URL = "https://www.inventaria.at/"
-INVENTARIA_FLAG = "Inventaria"  # value of csv_transkribiert in source_mapping
-INVENTARIA_MAPPING = DATA / "inventaria_mapping.json"
 
 # Per-document entity files of the extraction. Each names the docId it belongs
 # to, so no other document can pick the layer up by accident; a document without
@@ -184,19 +180,6 @@ REGISTER_LISTS = (
     ("place", "listPlace", "place", "placeName", ""),
     ("object", "list", "item", "term", ' type="objects"'),
 )
-
-
-def _load(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def _write(path: Path, text: str) -> None:
-    # Write through a sibling temp file and replace, so an interrupted run
-    # cannot leave a truncated TEI file behind.
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(".tmp")
-    tmp.write_text(text, encoding="utf-8", newline="\n")
-    tmp.replace(path)
 
 
 def _esc(text: str) -> str:
@@ -512,7 +495,7 @@ def _review(doc_id: int, register_dir: Path) -> dict:
     path = register_dir / f"{doc_id}.json"
     if not path.exists():
         return {"pages": [], "texts": {}, "complete": False}
-    register = _load(path)["pages"]
+    register = load_json(path)["pages"]
     pages, texts = [], {}
     for page in register:
         verification = page.get("verification") or {}
@@ -716,7 +699,7 @@ def _facsimile(
             f' n="{page["pageNr"]}">',
             f'      <graphic url="{_att(page["iiif"])}"/>',
         ]
-        for line in _line_records(page):
+        for line in br.iter_lines(page):
             # A folio or cover line becomes a milestone without facs in the
             # body, so its zone would reference nothing; the effective text
             # decides, because a review can turn a line into or out of a mark.
@@ -778,19 +761,6 @@ def _ab_id(doc_id: int, page_nr: int, region: dict) -> str:
     return f"ab-{doc_id}-{page_nr}-{region['id']}"
 
 
-def _line_records(page: dict) -> list[dict]:
-    """Line records of a page in export order, across its regions.
-
-    Single source of the page-to-line iteration, so zone, lb and entity anchor
-    are derived from the same order and cannot drift apart.
-    """
-    return [
-        line
-        for region in page.get("regions") or []
-        for line in region.get("lines") or []
-    ]
-
-
 def _line_text(line: dict, review_texts: dict | None = None) -> str:
     """Effective text of a line: the reviewed reading where one exists."""
     if review_texts and line.get("id") in review_texts:
@@ -837,7 +807,7 @@ def _entity_data(doc_id: int) -> dict | None:
     path = ENTITY_DIR / f"{doc_id}.json"
     if not path.exists():
         return None
-    data = _load(path)
+    data = load_json(path)
     return data if data.get("docId") == doc_id else None
 
 
@@ -878,7 +848,7 @@ def _entity_anchors(
     texts = {
         (page["pageNr"], line["id"]): _line_text(line, review_texts.get(page["pageNr"]))
         for page in pages
-        for line in _line_records(page)
+        for line in br.iter_lines(page)
     }
     anchors: dict[int, dict[str, list[dict]]] = {}
     skipped: list[tuple[str, str]] = []
@@ -1093,17 +1063,17 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
     A document never carries both: the edition track transcribes exactly the
     documents without an export.
     """
-    mapping = _load(DATA / "source_mapping.json")["matched"]
-    by_signatur = {s["signatur"]: s for s in _load(DATA / "sources.json")}
+    by_signatur = br.sources_by_signature()
     # Same source as build_register.py: a DONE page is human-corrected in
     # Transkribus, everything else is the automated recognition layer.
-    status_by_id = {d["id"]: d for d in _load(DATA / "transkribus_status.json")}
-    editions = _edition_links()
+    statuses = br.status_by_id()
+    inventaria = br.inventaria_ids()
+    editions = br.edition_links()
     docs: list[dict] = []
-    for entry in mapping:
+    for entry in br.matched_mapping():
         doc_id = entry["transkribus_id"]
         source = by_signatur.get(entry["csv_signatur"]) or {}
-        status = status_by_id.get(doc_id) or {}
+        status = statuses.get(doc_id) or {}
         done, pages = status.get("done_pages"), status.get("pages")
         layer = None
         if entry.get("has_text"):
@@ -1114,10 +1084,7 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
             continue
         # The attribution is a statement about a Transkribus transcription, so a
         # text DoCTA produced itself never picks it up from the source mapping.
-        attributed = (
-            entry.get("csv_transkribiert") == INVENTARIA_FLAG
-            and layer == TRANSKRIBUS_LAYER
-        )
+        attributed = doc_id in inventaria and layer == TRANSKRIBUS_LAYER
         doc = {
             "docId": doc_id,
             "shelfmark": entry["csv_signatur"],
@@ -1140,26 +1107,12 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
     return docs
 
 
-def _edition_links() -> dict[int, str]:
-    """Deep links to the published Inventaria edition of a document.
-
-    The two sources are the ones the site projection in build_register.py reads:
-    the flag csv_transkribiert of the source mapping names the documents, this
-    file holds the link of each. A flagged document without an entry stays
-    attributed and carries no link.
-    """
-    if not INVENTARIA_MAPPING.exists():
-        return {}
-    documents = _load(INVENTARIA_MAPPING).get("documents", [])
-    return {d["docId"]: d["url"] for d in documents}
-
-
 def _first_edition_run(doc_id: int, register_dir: Path) -> dict | None:
     """The edition run of the first transcribed page, or None for no such run."""
     path = register_dir / f"{doc_id}.json"
     if not path.exists():
         return None
-    for page in sorted(_load(path)["pages"], key=lambda p: p["pageNr"]):
+    for page in sorted(load_json(path)["pages"], key=lambda p: p["pageNr"]):
         if run := br.newest_edition_run(page):
             return run
     return None
@@ -1217,13 +1170,13 @@ def build(
         ElementTree.fromstring(xml)  # fail fast on a malformed template result
         result[doc_id] = xml
     for doc_id, xml in result.items():
-        _write(out_dir / f"{doc_id}.xml", xml)
+        write_text(out_dir / f"{doc_id}.xml", xml)
     # An empty extraction layer leaves no register: a standOff without a list is
     # not TEI, and an empty register would claim a step that produced nothing.
     if entries:
         xml = register_xml(entries, date)
         ElementTree.fromstring(xml)
-        _write(out_dir / REGISTER_FILE, xml)
+        write_text(out_dir / REGISTER_FILE, xml)
     return result
 
 

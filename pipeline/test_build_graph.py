@@ -3,6 +3,7 @@
 import json
 
 import build_graph as bg
+import build_register as br
 
 
 def _write_extraction(tmp_path, doc_id, title, entities):
@@ -111,6 +112,14 @@ def test_build_is_deterministic(tmp_path):
     assert first == second
 
 
+def test_out_writes_the_graph_beside_the_repository(tmp_path):
+    """--out is what lets the healthcheck rebuild the graph outside the tree."""
+    target = tmp_path / "graph.jsonld"
+    assert bg.main(["--out", str(target)]) == 0
+    assert json.loads(target.read_text(encoding="utf-8"))["@graph"]
+    assert not (tmp_path / "docs").exists()
+
+
 def test_real_corpus_builds_and_every_member_resolves():
     payload = bg.build()
     nodes = _by_id(payload)
@@ -120,7 +129,7 @@ def test_real_corpus_builds_and_every_member_resolves():
     # The attribution travels on the node of every document whose transcription
     # the Inventaria project made, and on no other; a document DoCTA transcribed
     # itself must not pick up a foreign attribution.
-    inventaria = bg._transcription_attribution()
+    inventaria = br.inventaria_ids()
     docs = [n for n in payload["@graph"] if n["@type"] == "docta:Document"]
     assert docs, "no document node in the graph"
     for node in docs:

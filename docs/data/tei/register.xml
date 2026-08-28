@@ -10,7 +10,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic assembly of the register from the extraction files, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 5781ae1fbe72)</name>
+          <name>pipeline/build_tei.py (sha256 814f011f047c)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>

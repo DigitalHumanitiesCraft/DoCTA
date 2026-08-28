@@ -163,7 +163,7 @@ python validate_tei.py --schema schema/docta.rng  # one schema only
 
 ### The healthcheck
 
-`check_pipeline.py` checks the cross-artifact specifications that no single pipeline script can verify on its own. It checks the register against the export and against its own vocabularies, the three document sets against each other, the entity files, review exports and evaluation runs against their data specifications, the provenance rules that keep a model's self-assessment out of the edition data, the resolution of every cross-reference, the value ranges of the evaluation summaries, both schema stages, and finally the generators against themselves by rebuilding register and TEI into a temporary directory and comparing byte for byte.
+`check_pipeline.py` checks the cross-artifact specifications that no single pipeline script can verify on its own. It checks the register against the export and against its own vocabularies, the three document sets against each other, the entity files, review exports and evaluation runs against their data specifications, the provenance rules that keep a model's self-assessment out of the edition data, the resolution of every cross-reference, the value ranges of the evaluation summaries, both schema stages, and finally the generators against themselves by rebuilding register, TEI and the JSON-LD graph into a temporary directory and comparing byte for byte.
 
 The site transcriptions under `docs/data/pipeline/transcriptions/` are part of that comparison, in both directions like the TEI, so a drifted one and a stale one are both found. The projection writes them into the directory of the projection file it was given, which is what keeps a healthcheck rebuild inside its temporary directory.
 

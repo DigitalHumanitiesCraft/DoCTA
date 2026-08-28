@@ -10,21 +10,25 @@ Typed relations between entities (who hands over to whom) are deliberately
 absent, because no pipeline step establishes them yet. When a relation
 extraction with full provenance exists, its output joins this graph as
 further link resources.
+
+Usage:
+  python build_graph.py              # write docs/data/graph.jsonld
+  python build_graph.py --out PATH   # write elsewhere, as the healthcheck does
 """
 
 from __future__ import annotations
 
+import argparse
 import itertools
-import json
 import re
 import sys
 from pathlib import Path
 
 import build_register as br
 import entity_index as ei
+from io_paths import DATA, write_json
 
-ROOT = Path(__file__).resolve().parent.parent
-GRAPH_FILE = ROOT / "docs" / "data" / "graph.jsonld"
+GRAPH_FILE = DATA / "graph.jsonld"
 
 NS = "docta:"
 TYPE_CLASS = {
@@ -60,25 +64,11 @@ def _document_label(extraction: dict) -> str:
     return title
 
 
-def _transcription_attribution() -> set[int]:
-    """Documents whose transcription was made by the Inventaria project.
-
-    The attribution must reach every consumer of the graph, so it is carried
-    on the document nodes rather than left to a client-side join.
-    """
-    mapping_path = ROOT / "docs" / "data" / "source_mapping.json"
-    if not mapping_path.exists():
-        return set()
-    data = json.loads(mapping_path.read_text(encoding="utf-8"))
-    return {
-        m["transkribus_id"]
-        for m in data.get("matched", [])
-        if m.get("csv_transkribiert") == "Inventaria"
-    }
-
-
 def _document_nodes(extractions: list[dict]) -> list[dict]:
-    inventaria = _transcription_attribution()
+    # The attribution must reach every consumer of the graph, so it is carried
+    # on the document nodes rather than left to a client-side join. It is the
+    # same derivation the site projection and the TEI header read.
+    inventaria = br.inventaria_ids()
     nodes = []
     for ex in extractions:
         node = {
@@ -89,7 +79,7 @@ def _document_nodes(extractions: list[dict]) -> list[dict]:
             "tei": f"tei/{ex['docId']}.xml",
         }
         if ex["docId"] in inventaria:
-            node["transcriptionBy"] = "Inventaria"
+            node["transcriptionBy"] = br.INVENTARIA_FLAG
         nodes.append(node)
     return nodes
 
@@ -172,11 +162,19 @@ def build(entity_dir: Path = ei.ENTITY_DIR) -> dict:
     }
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument(
+        "--out",
+        type=Path,
+        default=GRAPH_FILE,
+        help=f"target file (default: {GRAPH_FILE.name} in docs/data/)",
+    )
+    args = ap.parse_args(argv)
     payload = build()
-    br._write(GRAPH_FILE, payload)
+    write_json(args.out, payload)
     graph = payload["@graph"]
-    print(f"graph.jsonld: {len(graph)} resources")
+    print(f"{args.out.name}: {len(graph)} resources")
     return 0
 
 

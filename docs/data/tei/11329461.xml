@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 5781ae1fbe72)</name>
+          <name>pipeline/build_tei.py (sha256 814f011f047c)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>

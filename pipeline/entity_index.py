@@ -8,13 +8,13 @@ same id, so the index is built here once and imported everywhere.
 
 from __future__ import annotations
 
-import json
 import re
 import unicodedata
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-ENTITY_DIR = ROOT / "docs" / "data" / "entities"
+from io_paths import DATA, load_json
+
+ENTITY_DIR = DATA / "entities"
 
 # Types that become index entries. Time stays out by decision: the extraction
 # resolves no calendar dates yet, and an unresolved date is not an entity entry.
@@ -51,8 +51,7 @@ def _line_sort_key(line_id: str | None) -> tuple:
 
 def load_extractions(entity_dir: Path = ENTITY_DIR) -> list[dict]:
     """The per-document extraction files, in stable docId order."""
-    files = sorted(entity_dir.glob("*.json"))
-    extractions = [json.loads(p.read_text(encoding="utf-8")) for p in files]
+    extractions = [load_json(p) for p in sorted(entity_dir.glob("*.json"))]
     return sorted(extractions, key=lambda ex: ex.get("docId") or 0)
 
 

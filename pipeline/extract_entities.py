@@ -50,18 +50,16 @@ import sys
 import time
 import unicodedata
 from datetime import date
-from pathlib import Path
 
 import build_register as br
 import requests
+from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, fenced_block, load_json
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
-ROOT = Path(__file__).parent
-REPO = ROOT.parent
-TRANSCRIPTIONS = REPO / "docs" / "data" / "transcriptions"
-OUT_DIR = REPO / "docs" / "data" / "entities"
+TRANSCRIPTIONS = DATA / "transcriptions"
+OUT_DIR = DATA / "entities"
 
 MODEL = "gemini-3.7-flash"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
@@ -104,7 +102,7 @@ RESPONSE_SCHEMA = {
 
 
 def load_api_key() -> str:
-    env = REPO / ".env"
+    env = REPO_ROOT / ".env"
     if not env.exists():
         sys.exit("FEHLER: .env nicht gefunden")
     for line in env.read_text(encoding="utf-8").splitlines():
@@ -113,37 +111,26 @@ def load_api_key() -> str:
     sys.exit("FEHLER: GEMINI_API_KEY nicht in .env gefunden")
 
 
-def extract_prompt(md_path: Path) -> str:
-    """A prompt document's payload is its first fenced code block."""
-    m = re.search(r"```\n(.*?)\n```", md_path.read_text(encoding="utf-8"), re.DOTALL)
-    if not m:
-        sys.exit(f"FEHLER: kein Codeblock in {md_path.name}")
-    return m.group(1)
-
-
 def load_lines(doc: dict) -> dict[str, dict]:
     """Page-qualified line index, in document order.
 
-    Key is "p<pageNr>_<lineId>"; the value keeps pageNr, the native lineId, the
-    raw text and the running order used for the derived entity ids.
+    Key is the page-qualified line id; the value keeps pageNr, the native
+    lineId, the raw text and the running order used for the derived entity ids.
     """
     index: dict[str, dict] = {}
     order = 0
     for page in doc["pages"]:
-        for region in page["regions"]:
-            for line in region["lines"]:
-                key = f"p{page['pageNr']}_{line['id']}"
-                if key in index:
-                    sys.exit(
-                        f"FEHLER: doppelte Zeilen-ID {key} in Dokument {doc['docId']}"
-                    )
-                index[key] = {
-                    "pageNr": page["pageNr"],
-                    "lineId": line["id"],
-                    "text": line["text"],
-                    "order": order,
-                }
-                order += 1
+        for line in br.iter_lines(page):
+            key = br.line_key(page["pageNr"], line["id"])
+            if key in index:
+                sys.exit(f"FEHLER: doppelte Zeilen-ID {key} in Dokument {doc['docId']}")
+            index[key] = {
+                "pageNr": page["pageNr"],
+                "lineId": line["id"],
+                "text": line["text"],
+                "order": order,
+            }
+            order += 1
     return index
 
 
@@ -152,9 +139,8 @@ def serialize(doc: dict) -> str:
     out: list[str] = [f"DOKUMENT: {doc['title']}"]
     for page in doc["pages"]:
         out.append(f"\n== Seite {page['pageNr']} ==")
-        for region in page["regions"]:
-            for line in region["lines"]:
-                out.append(f"p{page['pageNr']}_{line['id']}\t{line['text']}")
+        for line in br.iter_lines(page):
+            out.append(f"{br.line_key(page['pageNr'], line['id'])}\t{line['text']}")
     return "\n".join(out)
 
 
@@ -297,7 +283,7 @@ def assert_verbatim(entities: list[dict], index: dict[str, dict]) -> None:
     Raises instead of asserting, so the check also holds under python -O.
     """
     for e in entities:
-        line = index[f"p{e['pageNr']}_{e['lineId']}"]
+        line = index[br.line_key(e["pageNr"], e["lineId"])]
         if e["text"] not in line["text"]:
             raise ValueError(f"{e['id']}: {e['text']!r} nicht in {line['lineId']}")
         if "confidence" in e:
@@ -311,17 +297,10 @@ def _title(doc_id: int) -> str | None:
     the register takes it from the document index, so the extraction file and
     the graph label the document the way the source register does.
     """
-    path = ROOT / "documents.json"
+    path = PIPELINE_DIR / "documents.json"
     if not path.exists():
         return None
-    doc = next(
-        (
-            d
-            for d in json.loads(path.read_text(encoding="utf-8"))
-            if d["docId"] == doc_id
-        ),
-        None,
-    )
+    doc = next((d for d in load_json(path) if d["docId"] == doc_id), None)
     return (doc or {}).get("title")
 
 
@@ -329,7 +308,7 @@ def run_one(key: str, doc_id: int, system: str, prompt_hash: str, force: bool) -
     out_path = OUT_DIR / f"{doc_id}.json"
     if out_path.exists() and not force:
         print(f"SKIP {out_path.name} (existiert, --force zum Neuladen)")
-        return json.loads(out_path.read_text(encoding="utf-8"))
+        return load_json(out_path)
     doc = br.transcription_of(doc_id, title=_title(doc_id))
     if doc is None:
         sys.exit(f"FEHLER: keine Transkription fuer Dokument {doc_id}")
@@ -360,6 +339,9 @@ def run_one(key: str, doc_id: int, system: str, prompt_hash: str, force: bool) -
         "entities": entities,
         "rejected": rejected,
     }
+    # Written here rather than through io_paths.write_json: an extraction file is
+    # research data the committed corpus already holds in this serialisation, and
+    # the shared writer would rewrite every one of them on the next run.
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     tmp = out_path.with_suffix(".tmp")
     tmp.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -392,7 +374,7 @@ def main() -> None:
     )
     args = ap.parse_args()
     doc_ids = args.doc or list(DOC_IDS + VLM_DOC_IDS)
-    system = extract_prompt(ROOT / "prompts" / f"{PROMPT_ID}.md")
+    system = fenced_block(PIPELINE_DIR / "prompts" / f"{PROMPT_ID}.md")
     prompt_hash = hashlib.sha256(system.encode()).hexdigest()[:12]
     key = load_api_key()
     errors = []

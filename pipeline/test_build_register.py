@@ -13,6 +13,7 @@ from pathlib import Path
 
 import apply_review as ar
 import build_register as br
+from io_paths import load_json, write_json
 
 
 def _build(tmp: Path) -> tuple[list[dict], dict[int, list[dict]]]:
@@ -185,7 +186,7 @@ def test_export_pages_appear_exactly_once() -> None:
         assert len(registered) == len(pages_by_doc[doc_id]), (
             f"duplicate pages in {doc_id}"
         )
-        pages = br._load(export)["pages"]
+        pages = load_json(export)["pages"]
         assert sorted(registered) == sorted(p["pageNr"] for p in pages), (
             f"page set differs in {doc_id}"
         )
@@ -242,7 +243,7 @@ def test_rebuild_preserves_ingested_review_state() -> None:
             if any(p["runs"] for p in pages)
         )
         path = out / "pages" / f"{doc_id}.json"
-        register = br._load(path)
+        register = load_json(path)
         page = next(p for p in register["pages"] if p["runs"])
         review_run = {
             "id": f"review:{doc_id}-{page['pageNr']}-2026-09-01-AB",
@@ -257,10 +258,10 @@ def test_rebuild_preserves_ingested_review_state() -> None:
             "reviewer": "AB",
             "date": "2026-09-01",
         }
-        br._write(path, register)
+        write_json(path, register)
         _build(out)  # rebuild over a register that now holds a review
         rebuilt = next(
-            p for p in br._load(path)["pages"] if p["pageNr"] == page["pageNr"]
+            p for p in load_json(path)["pages"] if p["pageNr"] == page["pageNr"]
         )
         assert review_run in rebuilt["runs"], "review run lost on rebuild"
         assert rebuilt["verification"]["status"] == "gesichtet"
@@ -271,7 +272,7 @@ def test_rebuild_preserves_ingested_review_state() -> None:
 def _review_export(pages_dir: Path, out: Path) -> Path:
     """A viewer export correcting the first exported line the register holds."""
     for path in sorted(pages_dir.glob("*.json")):
-        payload = br._load(path)
+        payload = load_json(path)
         for page in payload["pages"]:
             run = next(
                 (
@@ -346,7 +347,7 @@ def test_a_rebuild_elsewhere_reproduces_the_register_it_carries_from() -> None:
         reviewed = [
             p
             for path in (target / "pages").glob("*.json")
-            for p in br._load(path)["pages"]
+            for p in load_json(path)["pages"]
             if br.review_runs(p)
         ]
         assert reviewed, "the carried review run did not reach the rebuild"

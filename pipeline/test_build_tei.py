@@ -17,6 +17,7 @@ import apply_review as ar
 import build_register as br
 import build_tei as bt
 import entity_index as ei
+from io_paths import load_json
 
 TEI = "{http://www.tei-c.org/ns/1.0}"
 
@@ -268,7 +269,7 @@ def test_one_ab_per_text_region() -> None:
     """Regions of the export survive as blocks; nothing is flattened away."""
     built = _built()
     for doc_id in SAMPLES:
-        export = bt._load(bt.DATA / "transcriptions" / f"{doc_id}.json")
+        export = load_json(bt.DATA / "transcriptions" / f"{doc_id}.json")
         expected = [
             f"ab-{doc_id}-{page['pageNr']}-{region['id']}"
             for page in sorted(export["pages"], key=lambda p: p["pageNr"])
@@ -319,7 +320,7 @@ def test_zone_per_line_with_coordinates() -> None:
     folio and cover lines become milestones without facs and get none."""
     built = _built()
     for doc_id in SAMPLES:
-        export = bt._load(bt.DATA / "transcriptions" / f"{doc_id}.json")
+        export = load_json(bt.DATA / "transcriptions" / f"{doc_id}.json")
         expected = [
             (page["pageNr"], line["id"], line["coords"])
             for page in sorted(export["pages"], key=lambda p: p["pageNr"])
@@ -868,7 +869,7 @@ def _decl(root: ElementTree.Element) -> str:
 def test_the_attribution_reads_the_source_mapping_and_the_edition_links() -> None:
     """Same two sources as the site projection in build_register.py, so the TEI
     and the site cannot disagree about who made a transcription."""
-    mapping = bt._load(bt.DATA / "source_mapping.json")["matched"]
+    mapping = load_json(bt.DATA / "source_mapping.json")["matched"]
     expected = {
         m["transkribus_id"]
         for m in mapping
@@ -876,7 +877,7 @@ def test_the_attribution_reads_the_source_mapping_and_the_edition_links() -> Non
     }
     links = {
         d["docId"]: d["url"]
-        for d in bt._load(bt.DATA / "inventaria_mapping.json")["documents"]
+        for d in load_json(bt.DATA / "inventaria_mapping.json")["documents"]
     }
     assert expected, "no attributed document in the mapping, the check proves nothing"
 
@@ -1147,7 +1148,7 @@ def _review_build(tmp: Path, pages: dict) -> tuple[dict[int, str], dict[int, str
 
 
 def _base_text(tmp: Path, page_nr: int, line_id: str) -> str:
-    payload = br._load(tmp / "pages" / f"{REVIEW_DOC}.json")
+    payload = load_json(tmp / "pages" / f"{REVIEW_DOC}.json")
     page = next(p for p in payload["pages"] if p["pageNr"] == page_nr)
     run = next(r for r in page["runs"] if r["source"] == "transkribus")
     return next(ln["text"] for ln in run["lines"] if ln["id"] == line_id)
@@ -1221,7 +1222,7 @@ def test_a_fully_accepted_document_reports_approval() -> None:
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         br.build(tmp)
-        count = len(br._load(tmp / "pages" / f"{REVIEW_DOC}.json")["pages"])
+        count = len(load_json(tmp / "pages" / f"{REVIEW_DOC}.json")["pages"])
         _, after = _review_build(
             tmp,
             {
@@ -1247,7 +1248,7 @@ def test_a_document_reviewed_in_mixed_states_stays_partly_reviewed() -> None:
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         br.build(tmp)
-        count = len(br._load(tmp / "pages" / f"{REVIEW_DOC}.json")["pages"])
+        count = len(load_json(tmp / "pages" / f"{REVIEW_DOC}.json")["pages"])
         _, after = _review_build(
             tmp,
             {

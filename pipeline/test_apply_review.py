@@ -13,6 +13,7 @@ from pathlib import Path
 
 import apply_review as ar
 import build_register as br
+from io_paths import load_json
 
 DOC = 11327963
 PAGE = 2
@@ -27,7 +28,7 @@ def _register(tmp: Path) -> Path:
 
 
 def _page(pages_dir: Path, page_nr: int = PAGE) -> dict:
-    payload = br._load(pages_dir / f"{DOC}.json")
+    payload = load_json(pages_dir / f"{DOC}.json")
     return next(p for p in payload["pages"] if p["pageNr"] == page_nr)
 
 
@@ -378,7 +379,7 @@ def test_an_edition_run_is_the_review_base_of_a_document_docta_transcribed() -> 
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         pages_dir = _register(tmp)
-        register = br._load(pages_dir / f"{EDITION_DOC}.json")
+        register = load_json(pages_dir / f"{EDITION_DOC}.json")
         page = next(p for p in register["pages"] if br.edition_runs(p))
         assert not [r for r in page["runs"] if r["source"] == "transkribus"]
         run = br.newest_edition_run(page)
@@ -414,7 +415,7 @@ def test_an_edition_run_is_the_review_base_of_a_document_docta_transcribed() -> 
         ar.ingest([path], pages_dir)
         written = next(
             p
-            for p in br._load(pages_dir / f"{EDITION_DOC}.json")["pages"]
+            for p in load_json(pages_dir / f"{EDITION_DOC}.json")["pages"]
             if p["pageNr"] == page["pageNr"]
         )
         review = br.newest_review_run(written)

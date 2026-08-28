@@ -40,21 +40,19 @@ import build_graph as bg
 import build_register as br
 import build_tei as bt
 import validate_tei as vt
+from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, fenced_block, load_json, write_json
 
-ROOT = Path(__file__).resolve().parent
-REPO = ROOT.parent
-DATA = REPO / "docs" / "data"
 TEI_DIR = DATA / "tei"
 ENTITY_DIR = DATA / "entities"
 GRAPH = DATA / "graph.jsonld"
 TRANSCRIPTIONS = DATA / "transcriptions"
-REGISTER = ROOT / "pages"
-DOCUMENTS = ROOT / "documents.json"
-REVIEWS = ROOT / "reviews"
-PROMPTS = ROOT / "prompts"
+REGISTER = PIPELINE_DIR / "pages"
+DOCUMENTS = PIPELINE_DIR / "documents.json"
+REVIEWS = PIPELINE_DIR / "reviews"
+PROMPTS = PIPELINE_DIR / "prompts"
 SUMMARY = DATA / "pipeline" / "register_summary.json"
 SITE_TRANSCRIPTIONS = DATA / "pipeline" / "transcriptions"
-EVALUATION = REPO / "evaluation"
+EVALUATION = REPO_ROOT / "evaluation"
 
 TEI_NS = "{http://www.tei-c.org/ns/1.0}"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
@@ -105,10 +103,6 @@ def _info(check: str, message: str) -> Finding:
     return Finding(check, INFO, message)
 
 
-def _load(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
 def _register_files() -> list[Path]:
     return sorted(REGISTER.glob("*.json"))
 
@@ -121,7 +115,7 @@ def check_contract() -> list[Finding]:
     out: list[Finding] = []
     seen_runs: dict[str, str] = {}
     for path in _register_files():
-        payload = _load(path)
+        payload = load_json(path)
         doc_id = payload["docId"]
         page_nrs = [p["pageNr"] for p in payload["pages"]]
         for nr, count in _counts(page_nrs).items():
@@ -135,7 +129,7 @@ def check_contract() -> list[Finding]:
                 )
         export = TRANSCRIPTIONS / f"{doc_id}.json"
         if export.exists():
-            exported = {p["pageNr"] for p in _load(export)["pages"]}
+            exported = {p["pageNr"] for p in load_json(export)["pages"]}
             missing = sorted(exported - set(page_nrs))
             if missing:
                 out.append(
@@ -225,14 +219,14 @@ def check_coverage() -> list[Finding]:
     """The three document sets against each other, orphans reported in each direction."""
     sources = {
         doc["doc_id"]
-        for entry in _load(DATA / "sources.json")
+        for entry in load_json(DATA / "sources.json")
         for doc in entry.get("transkribus_docs") or ()
     }
     mapping = {
         entry["transkribus_id"]
-        for entry in _load(DATA / "source_mapping.json")["matched"]
+        for entry in load_json(DATA / "source_mapping.json")["matched"]
     }
-    register = {doc["docId"] for doc in _load(DOCUMENTS)}
+    register = {doc["docId"] for doc in load_json(DOCUMENTS)}
 
     out: list[Finding] = []
     pairs = (
@@ -264,7 +258,7 @@ def check_json() -> list[Finding]:
 def _check_entities() -> list[Finding]:
     out: list[Finding] = []
     for path in sorted(ENTITY_DIR.glob("*.json")):
-        data = _load(path)
+        data = load_json(path)
         doc_id = data.get("docId")
         prov = data.get("provenance") or {}
         for field in ("source", "model", "prompt", "prompt_hash", "date"):
@@ -299,7 +293,7 @@ def _check_entities() -> list[Finding]:
                     )
                 )
                 continue
-            key = f"p{entity['pageNr']}_{entity['lineId']}"
+            key = br.line_key(entity["pageNr"], entity["lineId"])
             line = lines.get(key)
             if line is None:
                 out.append(
@@ -331,10 +325,9 @@ def _transcription_lines(doc_id: Any) -> dict[str, str] | None:
     if doc is None:
         return None
     return {
-        f"p{page['pageNr']}_{line['id']}": line["text"]
+        br.line_key(page["pageNr"], line["id"]): line["text"]
         for page in doc["pages"]
-        for region in page.get("regions") or []
-        for line in region.get("lines") or []
+        for line in br.iter_lines(page)
     }
 
 
@@ -344,7 +337,7 @@ def _check_reviews() -> list[Finding]:
     out: list[Finding] = []
     for path in sorted(REVIEWS.glob("*.json")):
         try:
-            data = _load(path)
+            data = load_json(path)
         except json.JSONDecodeError as exc:
             out.append(_fail("json.review-parse", f"{path.name}: {exc}"))
             continue
@@ -372,7 +365,7 @@ def _check_runs() -> list[Finding]:
     out: list[Finding] = []
     for path in files[::step][:RUN_SAMPLE]:
         try:
-            record = _load(path)
+            record = load_json(path)
         except json.JSONDecodeError as exc:
             out.append(_fail("json.run-parse", f"{path.name}: {exc}"))
             continue
@@ -414,7 +407,7 @@ def check_provenance() -> list[Finding]:
                     )
                 )
     for path in _register_files():
-        payload = _load(path)
+        payload = load_json(path)
         for page in payload["pages"]:
             for run in page.get("runs") or []:
                 if not run.get("source"):
@@ -453,7 +446,7 @@ def _check_tei_flag() -> list[Finding]:
     if not SUMMARY.exists():
         return [_fail("referential.projection", f"{SUMMARY.name} is missing")]
     out: list[Finding] = []
-    for entry in _load(SUMMARY)["documents"]:
+    for entry in load_json(SUMMARY)["documents"]:
         exists = (TEI_DIR / f"{entry['docId']}.xml").exists()
         if entry["has_tei"] != exists:
             out.append(
@@ -493,7 +486,7 @@ def _graph_entity_ids() -> set[str] | None:
     classes = set(bg.TYPE_CLASS.values())
     return {
         node["@id"].split(":", 1)[-1]
-        for node in _load(GRAPH)["@graph"]
+        for node in load_json(GRAPH)["@graph"]
         if node.get("@type") in classes
     }
 
@@ -580,7 +573,7 @@ def _check_thumbs() -> list[Finding]:
     if not SUMMARY.exists():
         return [_fail("referential.projection", f"{SUMMARY.name} is missing")]
     out: list[Finding] = []
-    for entry in _load(SUMMARY)["documents"]:
+    for entry in load_json(SUMMARY)["documents"]:
         doc_id = entry["docId"]
         if entry["thumb"] is None and entry["thumb_page"] is None:
             continue
@@ -594,7 +587,7 @@ def _check_thumbs() -> list[Finding]:
             )
             continue
         page = next(
-            (p for p in _load(path)["pages"] if p["pageNr"] == entry["thumb_page"]),
+            (p for p in load_json(path)["pages"] if p["pageNr"] == entry["thumb_page"]),
             None,
         )
         if page is None:
@@ -617,20 +610,25 @@ def _check_thumbs() -> list[Finding]:
 
 
 def _prompt_hash(prompt_id: str) -> str | None:
-    """sha256-12 of the frozen prompt, which is the first fenced block of its document."""
+    """sha256-12 of the frozen prompt, which is the first fenced block of its document.
+
+    None where the prompt has no frozen file at all, which covers a document
+    without a fenced block as well; the finding below names both cases.
+    """
     path = PROMPTS / f"{prompt_id}.md"
     if not path.exists():
         return None
-    match = re.search(r"```\n(.*?)\n```", path.read_text(encoding="utf-8"), re.DOTALL)
-    if not match:
+    try:
+        block = fenced_block(path)
+    except ValueError:
         return None
-    return hashlib.sha256(match.group(1).encode()).hexdigest()[:12]
+    return hashlib.sha256(block.encode()).hexdigest()[:12]
 
 
 def _check_prompt_hashes() -> list[Finding]:
     out: list[Finding] = []
     for path in sorted(ENTITY_DIR.glob("*.json")):
-        prov = _load(path).get("provenance") or {}
+        prov = load_json(path).get("provenance") or {}
         prompt_id = prov.get("prompt")
         expected = _prompt_hash(prompt_id) if prompt_id else None
         if expected is None:
@@ -665,7 +663,7 @@ def check_metrics() -> list[Finding]:
         if not path.exists():
             out.append(_fail("metrics.summary", f"{name} is missing"))
             continue
-        for page_id, page in _load(path)["pages"].items():
+        for page_id, page in load_json(path)["pages"].items():
             out += _check_metric_page(cohort, page_id, page)
     return out
 
@@ -731,8 +729,8 @@ def _tei_date() -> str:
 
 
 def check_idempotence() -> list[Finding]:
-    """A rebuild of register and TEI must reproduce the working tree byte for
-    byte, and the working tree must hold nothing the rebuild does not produce."""
+    """A rebuild of register, TEI and graph must reproduce the working tree byte
+    for byte, and the working tree must hold nothing the rebuild does not produce."""
     out: list[Finding] = []
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
@@ -741,11 +739,13 @@ def check_idempotence() -> list[Finding]:
             # builder cannot derive from its inputs, so the rebuild into the
             # empty temp directory is pointed at the working tree for it;
             # without that it would reproduce a register nobody has reviewed.
-            docs, pages_by_doc = br.build(tmp, carry_from=ROOT)
+            docs, pages_by_doc = br.build(tmp, carry_from=PIPELINE_DIR)
             br.project(docs, pages_by_doc, tmp / "register_summary.json")
             bt.build(tmp / "tei", _tei_date())
+            write_json(tmp / GRAPH.name, bg.build())
         out += _compare(DOCUMENTS, tmp / "documents.json")
         out += _compare(SUMMARY, tmp / "register_summary.json")
+        out += _compare(GRAPH, tmp / GRAPH.name)
         for path in sorted((tmp / "pages").glob("*.json")):
             out += _compare(REGISTER / path.name, path)
         # The site transcriptions of the documents DoCTA transcribed itself are
