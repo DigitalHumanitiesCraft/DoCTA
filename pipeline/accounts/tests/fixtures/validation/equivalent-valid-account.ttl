@@ -1,0 +1,15 @@
+# Same technical graph as valid-account.ttl, with different order and prefixes.
+@prefix b: <https://gams.uni-graz.at/o:depcha.bookkeeping#> .
+@prefix d: <https://dhcraft.org/DoCTA/ns#> .
+@prefix i: <https://dhcraft.org/DoCTA/id/fixture/> .
+@prefix p: <http://www.w3.org/ns/prov#> .
+
+i:money-1 a b:Money .
+i:org-1 a b:EconomicAgent .
+i:person-1 a b:EconomicAgent .
+i:transfer-1 p:wasDerivedFrom i:anchor-1 ; b:transfers i:money-1 ;
+    b:to i:org-1 ; b:from i:person-1 ; a b:Transfer .
+i:transaction-1 p:wasDerivedFrom i:anchor-1 ; b:consistsOf i:transfer-1 ;
+    b:entry i:entry-1 ; a b:Transaction .
+i:entry-1 p:wasDerivedFrom i:anchor-1 ; a b:Entry .
+i:anchor-1 a d:SourceAnchor .

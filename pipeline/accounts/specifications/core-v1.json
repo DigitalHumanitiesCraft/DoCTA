@@ -1,0 +1,109 @@
+{
+ "specificationId": "docta-accounts-core",
+ "version": "1.0.0",
+ "jsonConvention": "camelCase",
+ "additionalProperties": false,
+ "models": {
+  "SourceAnchor": [
+   "documentId",
+   "scanNumber",
+   "side",
+   "regionId",
+   "lineId",
+   "start",
+   "end",
+   "quote",
+   "transcriptionRevisionId",
+   "transcriptionSha256"
+  ],
+  "TranscriptionLine": [
+   "id",
+   "anchor",
+   "text",
+   "regionPolygon",
+   "linePolygon",
+   "baseline",
+   "regionReadingOrder",
+   "lineReadingOrder",
+   "readingOrder"
+  ],
+  "TranscriptionRevision": [
+   "id",
+   "documentId",
+   "verification",
+   "publication",
+   "lines",
+   "sha256"
+  ],
+  "AnnotationProposal": [
+   "id",
+   "kind",
+   "anchor",
+   "payload",
+   "transcriptionRevisionId",
+   "transcriptionSha256",
+   "editorialStatus",
+   "createdBy",
+   "createdAt",
+   "provenance"
+  ],
+  "ReviewDecision": [
+   "id",
+   "proposalId",
+   "outcome",
+   "reviewer",
+   "decidedAt",
+   "transcriptionRevisionId",
+   "transcriptionSha256",
+   "note"
+  ],
+  "AnnotationSet": [
+   "id",
+   "transcriptionRevisionId",
+   "transcriptionSha256",
+   "proposalIds",
+   "decisionIds",
+   "editorialStatus",
+   "publication",
+   "createdAt",
+   "sha256"
+  ],
+  "EditionBuildManifest": [
+   "id",
+   "profile",
+   "transcriptionRevisionIds",
+   "annotationSetIds",
+   "artifactHashes",
+   "specificationVersions",
+   "publication",
+   "createdAt",
+   "sha256"
+  ]
+ },
+ "vocabularies": {
+  "verification": [
+   "unreviewed",
+   "facsimile-reviewed",
+   "facsimile-verified"
+  ],
+  "editorialDecision": [
+   "proposed",
+   "accepted",
+   "rejected",
+   "ambiguous",
+   "withheld",
+   "stale",
+   "superseded"
+  ],
+  "publication": [
+   "unpublished",
+   "published",
+   "withdrawn"
+  ],
+  "side": [
+   "left",
+   "right",
+   "single"
+  ]
+ }
+}

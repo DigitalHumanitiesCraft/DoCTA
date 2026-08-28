@@ -1,0 +1,18 @@
+# Synthetic negative fixture: Entry without source anchor.
+@prefix bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#> .
+@prefix docta: <https://dhcraft.org/DoCTA/ns#> .
+@prefix ex: <https://dhcraft.org/DoCTA/id/fixture/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+ex:anchor-1 a docta:SourceAnchor .
+ex:entry-1 a bk:Entry .
+ex:transaction-1 a bk:Transaction ;
+    bk:entry ex:entry-1 ;
+    bk:consistsOf ex:transfer-1 ;
+    prov:wasDerivedFrom ex:anchor-1 .
+ex:transfer-1 a bk:Transfer ;
+    bk:from ex:person-1 ;
+    bk:transfers ex:money-1 ;
+    prov:wasDerivedFrom ex:anchor-1 .
+ex:person-1 a bk:EconomicAgent .
+ex:money-1 a bk:Money .

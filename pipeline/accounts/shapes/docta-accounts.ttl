@@ -1,0 +1,124 @@
+@prefix bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#> .
+@prefix docta: <https://dhcraft.org/DoCTA/ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+docta:EntryShape
+    a sh:NodeShape ;
+    sh:targetClass bk:Entry ;
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:minCount 1 ;
+        sh:class docta:SourceAnchor ;
+        sh:severity sh:Violation ;
+        sh:message "An Entry requires a source anchor."@en
+    ] .
+
+docta:TransactionShape
+    a sh:NodeShape ;
+    sh:targetClass bk:Transaction ;
+    sh:property [
+        sh:path bk:entry ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class bk:Entry ;
+        sh:severity sh:Violation ;
+        sh:message "A Transaction requires exactly one Entry."@en
+    ] ;
+    sh:property [
+        sh:path bk:consistsOf ;
+        sh:minCount 1 ;
+        sh:class bk:Transfer ;
+        sh:severity sh:Violation ;
+        sh:message "A Transaction requires at least one Transfer."@en
+    ] ;
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:minCount 1 ;
+        sh:class docta:SourceAnchor ;
+        sh:severity sh:Violation ;
+        sh:message "A Transaction requires a source anchor."@en
+    ] .
+
+docta:TransferShape
+    a sh:NodeShape ;
+    sh:targetClass bk:Transfer ;
+    sh:property [
+        sh:path bk:transfers ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:message "A Transfer requires at least one resource."@en
+    ] ;
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:minCount 1 ;
+        sh:class docta:SourceAnchor ;
+        sh:severity sh:Violation ;
+        sh:message "A Transfer requires a source anchor."@en
+    ] ;
+    sh:or (
+        [
+            sh:property [
+                sh:path bk:from ;
+                sh:minCount 1
+            ]
+        ]
+        [
+            sh:property [
+                sh:path bk:to ;
+                sh:minCount 1
+            ]
+        ]
+    ) ;
+    sh:severity sh:Violation ;
+    sh:message "A Transfer requires at least one source-attested party."@en ;
+    sh:property [
+        sh:path bk:from ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "The source does not establish a from-agent for this Transfer."@en
+    ] ;
+    sh:property [
+        sh:path bk:from ;
+        sh:maxCount 1 ;
+        sh:class bk:EconomicAgent ;
+        sh:severity sh:Violation ;
+        sh:message "A stated from-agent must be one EconomicAgent."@en
+    ] ;
+    sh:property [
+        sh:path bk:to ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "The source does not establish a to-agent for this Transfer."@en
+    ] ;
+    sh:property [
+        sh:path bk:to ;
+        sh:maxCount 1 ;
+        sh:class bk:EconomicAgent ;
+        sh:severity sh:Violation ;
+        sh:message "A stated to-agent must be one EconomicAgent."@en
+    ] .
+
+docta:TransferredResourceShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf bk:transfers ;
+    sh:or (
+        [ sh:class bk:Money ]
+        [ sh:class bk:MoneyAmount ]
+        [ sh:class bk:EconomicResource ]
+        [ sh:class bk:EconomicGood ]
+        [ sh:class bk:Service ]
+        [ sh:class bk:Right ]
+    ) ;
+    sh:severity sh:Violation ;
+    sh:message "A transferred resource requires a supported bookkeeping class."@en .
+
+docta:SourceAnchorShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf prov:wasDerivedFrom ;
+    sh:class docta:SourceAnchor ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+    sh:message "Source anchors must be named IRIs of class docta:SourceAnchor."@en .

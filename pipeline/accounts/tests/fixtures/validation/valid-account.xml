@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="source-rb2-fixture">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>DoCTA accounting validation fixture</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Technical test data; not a scholarly publication.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Synthetic source created solely for deterministic validation tests.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>This fixture carries no scholarly verification or historical assertion.</p>
+      </projectDesc>
+      <listPrefixDef>
+        <prefixDef ident="bk" matchPattern="([A-Za-z]+)"
+          replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1"/>
+      </listPrefixDef>
+      <unitDecl>
+        <unitDef xml:id="unit-star" type="capacity">
+          <label>Star</label>
+        </unitDef>
+        <unitDef xml:id="unit-lb" type="currency">
+          <label>Pfund Pfennig</label>
+        </unitDef>
+        <unitDef xml:id="unit-d" type="currency">
+          <label>Pfennig</label>
+        </unitDef>
+      </unitDecl>
+      <classDecl>
+        <taxonomy xml:id="tax-goods">
+          <desc>Technical goods hierarchy.</desc>
+          <category xml:id="good-grain">
+            <catDesc>Grain</catDesc>
+            <category xml:id="good-rye">
+              <catDesc>Rye</catDesc>
+            </category>
+          </category>
+        </taxonomy>
+        <taxonomy xml:id="tax-source-rubrics">
+          <desc>Technical source-rubric hierarchy.</desc>
+          <category xml:id="rubric-expenses">
+            <catDesc>Expenses rubric</catDesc>
+          </category>
+        </taxonomy>
+        <taxonomy xml:id="tax-account-categories">
+          <desc>Technical analytical account hierarchy.</desc>
+          <category xml:id="account-provisions">
+            <catDesc>Provisions</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-rb2-p1" n="1">
+      <graphic url="https://example.invalid/docta/technical-fixture.jpg"/>
+      <zone xml:id="zone-rb2-p1-l1" points="0,0 100,0 100,20 0,20"/>
+    </surface>
+  </facsimile>
+  <standOff>
+    <listPerson>
+      <person xml:id="person-hans">
+        <persName>Hans</persName>
+      </person>
+    </listPerson>
+    <listOrg>
+      <org xml:id="org-household">
+        <orgName>Household</orgName>
+      </org>
+    </listOrg>
+    <listPlace>
+      <place xml:id="place-rattenberg">
+        <placeName>Rattenberg</placeName>
+      </place>
+    </listPlace>
+  </standOff>
+  <text xml:lang="gmh">
+    <body>
+      <div type="accounts">
+        <pb n="1" facs="#surface-rb2-p1"/>
+        <ab xml:id="ab-rb2-p1-r1">
+          <lb xml:id="line-rb2-p1-r1-l1" facs="#zone-rb2-p1-l1"/>
+          <seg xml:id="entry-rb2-p1-e1" ana="bk:Entry"
+            corresp="#line-rb2-p1-r1-l1" type="rubric-expenses"
+            subtype="account-provisions">Item
+            <seg xml:id="transaction-rb2-p1-t1" ana="bk:Transaction"
+              corresp="#line-rb2-p1-r1-l1">
+              <date ana="bk:when" when="1462-01-01">anno lxij</date>
+              <placeName ref="#place-rattenberg" ana="bk:where">Rattenberg</placeName>
+              <seg xml:id="transfer-rb2-p1-x1" ana="bk:Transfer"
+                corresp="#line-rb2-p1-r1-l1">von
+                <persName ref="#person-hans" ana="bk:from">Hannsen</persName>
+                an die
+                <orgName ref="#org-household" ana="bk:to">hofhaltung</orgName>
+                <measure xml:id="measure-rb2-p1-m1" ana="bk:EconomicGood"
+                  quantity="2" unitRef="#unit-star" commodity="good-rye">ij star roggen</measure>
+              </seg>
+              <seg xml:id="transfer-rb2-p1-x2" ana="bk:Transfer"
+                corresp="#line-rb2-p1-r1-l1">
+                <orgName ref="#org-household" ana="bk:from">hofhaltung</orgName>
+                <persName ref="#person-hans" ana="bk:to">Hannsen</persName>
+                <measureGrp xml:id="measure-rb2-p1-m2" ana="bk:Money">
+                  <measure xml:id="measure-rb2-p1-m2a" ana="bk:Money"
+                    quantity="6" unitRef="#unit-lb">vj lb.</measure>
+                  <measure xml:id="measure-rb2-p1-m2b" ana="bk:Money"
+                    quantity="4" unitRef="#unit-d">iiij d.</measure>
+                </measureGrp>
+              </seg>
+            </seg>
+          </seg>
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Narrow Relax NG contract for the DoCTA accounting pilot.
+
+  TEI conformance is checked separately against the vendored TEI P5 schema.
+  This schema deliberately admits only the inline accounting structure emitted
+  by the pilot builder and the three project taxonomies used by that structure.
+-->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:tei="http://www.tei-c.org/ns/1.0"
+         ns="http://www.tei-c.org/ns/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+  <define name="xml.id">
+    <data type="token">
+      <param name="pattern">[A-Za-z_][A-Za-z0-9._-]*</param>
+    </data>
+  </define>
+
+  <define name="local.ref">
+    <data type="token">
+      <param name="pattern">#[A-Za-z_][A-Za-z0-9._-]*</param>
+    </data>
+  </define>
+
+  <define name="source.id">
+    <data type="token">
+      <param name="pattern">source-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="surface.id">
+    <data type="token">
+      <param name="pattern">surface-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="zone.id">
+    <data type="token">
+      <param name="pattern">zone-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="line.id">
+    <data type="token">
+      <param name="pattern">line-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="entry.id">
+    <data type="token">
+      <param name="pattern">entry-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="transaction.id">
+    <data type="token">
+      <param name="pattern">transaction-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="transfer.id">
+    <data type="token">
+      <param name="pattern">transfer-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <define name="measure.id">
+    <data type="token">
+      <param name="pattern">measure-[A-Za-z0-9._-]+</param>
+    </data>
+  </define>
+
+  <start>
+    <element name="TEI">
+      <attribute name="xml:id"><ref name="source.id"/></attribute>
+      <ref name="teiHeader"/>
+      <ref name="facsimile"/>
+      <ref name="standOff"/>
+      <ref name="text"/>
+    </element>
+  </start>
+
+  <define name="teiHeader">
+    <element name="teiHeader">
+      <element name="fileDesc">
+        <element name="titleStmt">
+          <element name="title"><text/></element>
+        </element>
+        <element name="publicationStmt">
+          <element name="p"><text/></element>
+        </element>
+        <element name="sourceDesc">
+          <element name="p"><text/></element>
+        </element>
+      </element>
+      <element name="encodingDesc">
+        <element name="projectDesc">
+          <element name="p"><text/></element>
+        </element>
+        <element name="listPrefixDef">
+          <element name="prefixDef">
+            <attribute name="ident"><value>bk</value></attribute>
+            <attribute name="matchPattern"><text/></attribute>
+            <attribute name="replacementPattern"><text/></attribute>
+            <empty/>
+          </element>
+        </element>
+        <ref name="unitDecl"/>
+        <ref name="classDecl"/>
+      </element>
+    </element>
+  </define>
+
+  <define name="unitDecl">
+    <element name="unitDecl">
+      <oneOrMore>
+        <element name="unitDef">
+          <attribute name="xml:id">
+            <data type="token"><param name="pattern">unit-[A-Za-z0-9._-]+</param></data>
+          </attribute>
+          <optional><attribute name="type"><text/></attribute></optional>
+          <oneOrMore><element name="label"><text/></element></oneOrMore>
+          <optional><element name="desc"><text/></element></optional>
+        </element>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <define name="classDecl">
+    <element name="classDecl">
+      <ref name="goods.taxonomy"/>
+      <ref name="rubrics.taxonomy"/>
+      <ref name="accounts.taxonomy"/>
+    </element>
+  </define>
+
+  <define name="goods.taxonomy">
+    <element name="taxonomy">
+      <attribute name="xml:id"><value>tax-goods</value></attribute>
+      <element name="desc"><text/></element>
+      <oneOrMore><ref name="goods.category"/></oneOrMore>
+    </element>
+  </define>
+
+  <define name="goods.category">
+    <element name="category">
+      <attribute name="xml:id">
+        <data type="token"><param name="pattern">good-[A-Za-z0-9._-]+</param></data>
+      </attribute>
+      <element name="catDesc"><text/></element>
+      <zeroOrMore><ref name="goods.category"/></zeroOrMore>
+    </element>
+  </define>
+
+  <define name="rubrics.taxonomy">
+    <element name="taxonomy">
+      <attribute name="xml:id"><value>tax-source-rubrics</value></attribute>
+      <element name="desc"><text/></element>
+      <oneOrMore><ref name="rubrics.category"/></oneOrMore>
+    </element>
+  </define>
+
+  <define name="rubrics.category">
+    <element name="category">
+      <attribute name="xml:id">
+        <data type="token"><param name="pattern">rubric-[A-Za-z0-9._-]+</param></data>
+      </attribute>
+      <element name="catDesc"><text/></element>
+      <zeroOrMore><ref name="rubrics.category"/></zeroOrMore>
+    </element>
+  </define>
+
+  <define name="accounts.taxonomy">
+    <element name="taxonomy">
+      <attribute name="xml:id"><value>tax-account-categories</value></attribute>
+      <element name="desc"><text/></element>
+      <oneOrMore><ref name="accounts.category"/></oneOrMore>
+    </element>
+  </define>
+
+  <define name="accounts.category">
+    <element name="category">
+      <attribute name="xml:id">
+        <data type="token"><param name="pattern">account-[A-Za-z0-9._-]+</param></data>
+      </attribute>
+      <element name="catDesc"><text/></element>
+      <zeroOrMore><ref name="accounts.category"/></zeroOrMore>
+    </element>
+  </define>
+
+  <define name="facsimile">
+    <element name="facsimile">
+      <oneOrMore>
+        <element name="surface">
+          <attribute name="xml:id"><ref name="surface.id"/></attribute>
+          <attribute name="n"><text/></attribute>
+          <element name="graphic">
+            <attribute name="url"><data type="anyURI"/></attribute>
+            <empty/>
+          </element>
+          <oneOrMore>
+            <element name="zone">
+              <attribute name="xml:id"><ref name="zone.id"/></attribute>
+              <attribute name="points"><text/></attribute>
+              <empty/>
+            </element>
+          </oneOrMore>
+        </element>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <define name="standOff">
+    <element name="standOff">
+      <element name="listPerson">
+        <oneOrMore>
+          <element name="person">
+            <attribute name="xml:id"><ref name="xml.id"/></attribute>
+            <element name="persName"><text/></element>
+          </element>
+        </oneOrMore>
+      </element>
+      <element name="listOrg">
+        <oneOrMore>
+          <element name="org">
+            <attribute name="xml:id"><ref name="xml.id"/></attribute>
+            <element name="orgName"><text/></element>
+          </element>
+        </oneOrMore>
+      </element>
+      <element name="listPlace">
+        <oneOrMore>
+          <element name="place">
+            <attribute name="xml:id"><ref name="xml.id"/></attribute>
+            <element name="placeName"><text/></element>
+          </element>
+        </oneOrMore>
+      </element>
+    </element>
+  </define>
+
+  <define name="text">
+    <element name="text">
+      <attribute name="xml:lang"><text/></attribute>
+      <element name="body">
+        <element name="div">
+          <attribute name="type"><value>accounts</value></attribute>
+          <oneOrMore>
+            <group>
+              <element name="pb">
+                <attribute name="n"><text/></attribute>
+                <attribute name="facs"><ref name="local.ref"/></attribute>
+                <empty/>
+              </element>
+              <oneOrMore>
+                <element name="ab">
+                  <attribute name="xml:id"><ref name="xml.id"/></attribute>
+                  <mixed>
+                    <zeroOrMore>
+                      <choice>
+                        <ref name="lb"/>
+                        <ref name="entry"/>
+                      </choice>
+                    </zeroOrMore>
+                  </mixed>
+                </element>
+              </oneOrMore>
+            </group>
+          </oneOrMore>
+        </element>
+      </element>
+    </element>
+  </define>
+
+  <define name="lb">
+    <element name="lb">
+      <attribute name="xml:id"><ref name="line.id"/></attribute>
+      <attribute name="facs"><ref name="local.ref"/></attribute>
+      <empty/>
+    </element>
+  </define>
+
+  <define name="entry">
+    <element name="seg">
+      <attribute name="xml:id"><ref name="entry.id"/></attribute>
+      <attribute name="ana"><value>bk:Entry</value></attribute>
+      <attribute name="corresp"><ref name="local.ref"/></attribute>
+      <optional><attribute name="type"><text/></attribute></optional>
+      <optional><attribute name="subtype"><text/></attribute></optional>
+      <mixed>
+        <oneOrMore>
+          <choice>
+            <ref name="lb"/>
+            <ref name="transaction"/>
+            <ref name="inline.annotation"/>
+          </choice>
+        </oneOrMore>
+      </mixed>
+    </element>
+  </define>
+
+  <define name="transaction">
+    <element name="seg">
+      <attribute name="xml:id"><ref name="transaction.id"/></attribute>
+      <attribute name="ana"><value>bk:Transaction</value></attribute>
+      <attribute name="corresp"><ref name="local.ref"/></attribute>
+      <mixed>
+        <oneOrMore>
+          <choice>
+            <ref name="lb"/>
+            <ref name="transfer"/>
+            <ref name="inline.annotation"/>
+          </choice>
+        </oneOrMore>
+      </mixed>
+    </element>
+  </define>
+
+  <define name="transfer">
+    <element name="seg">
+      <attribute name="xml:id"><ref name="transfer.id"/></attribute>
+      <attribute name="ana"><value>bk:Transfer</value></attribute>
+      <attribute name="corresp"><ref name="local.ref"/></attribute>
+      <mixed>
+        <oneOrMore>
+          <choice>
+            <ref name="lb"/>
+            <ref name="inline.annotation"/>
+          </choice>
+        </oneOrMore>
+      </mixed>
+    </element>
+  </define>
+
+  <define name="inline.annotation">
+    <choice>
+      <ref name="persName"/>
+      <ref name="orgName"/>
+      <ref name="placeName"/>
+      <ref name="date"/>
+      <ref name="measure"/>
+      <ref name="measureGrp"/>
+    </choice>
+  </define>
+
+  <define name="agent.ana">
+    <choice>
+      <value>bk:AgentMention</value>
+      <value>bk:from</value>
+      <value>bk:to</value>
+    </choice>
+  </define>
+
+  <define name="persName">
+    <element name="persName">
+      <attribute name="ref"><ref name="local.ref"/></attribute>
+      <optional><attribute name="ana"><ref name="agent.ana"/></attribute></optional>
+      <text/>
+    </element>
+  </define>
+
+  <define name="orgName">
+    <element name="orgName">
+      <attribute name="ref"><ref name="local.ref"/></attribute>
+      <optional><attribute name="ana"><ref name="agent.ana"/></attribute></optional>
+      <text/>
+    </element>
+  </define>
+
+  <define name="placeName">
+    <element name="placeName">
+      <attribute name="ref"><ref name="local.ref"/></attribute>
+      <optional><attribute name="ana"><value>bk:where</value></attribute></optional>
+      <text/>
+    </element>
+  </define>
+
+  <define name="date">
+    <element name="date">
+      <attribute name="ana"><value>bk:when</value></attribute>
+      <optional><attribute name="when"><text/></attribute></optional>
+      <text/>
+    </element>
+  </define>
+
+  <define name="resource.ana">
+    <choice>
+      <value>bk:Money</value>
+      <value>bk:EconomicGood</value>
+      <value>bk:Service</value>
+      <value>bk:Right</value>
+    </choice>
+  </define>
+
+  <define name="measure">
+    <element name="measure">
+      <attribute name="xml:id"><ref name="measure.id"/></attribute>
+      <attribute name="ana"><ref name="resource.ana"/></attribute>
+      <optional><attribute name="quantity"><text/></attribute></optional>
+      <attribute name="unitRef"><ref name="local.ref"/></attribute>
+      <optional><attribute name="commodity"><text/></attribute></optional>
+      <text/>
+    </element>
+  </define>
+
+  <define name="measureGrp">
+    <element name="measureGrp">
+      <attribute name="xml:id"><ref name="measure.id"/></attribute>
+      <attribute name="ana"><ref name="resource.ana"/></attribute>
+      <mixed><oneOrMore><ref name="measure"/></oneOrMore></mixed>
+    </element>
+  </define>
+
+</grammar>
