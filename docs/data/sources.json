@@ -203,8 +203,8 @@
   "titel": "Übersicht über das, was die oö. Kammer den Beamten und Dienern an Sold, Dienst-, Wart-, Gnadengeld, Provision etc. bis zum Tod Kaiser Ferdinands I. schuldig geblieben ist",
   "datierung": {
    "raw": "-1564",
-   "start": -1564,
-   "end": -1564,
+   "start": null,
+   "end": 1564,
    "circa": false
   },
   "art": "Einzelstück",
@@ -563,8 +563,8 @@
   "titel": "Alphabetisch nach Namen geordnete Sammlung von Notizen zur Geschichte von Schlössern, Gerichten, Herrschaften, Städten und bekannten Personen vom 13. bis 17. Jh.: R-Z",
   "datierung": {
    "raw": "-1765",
-   "start": -1765,
-   "end": -1765,
+   "start": null,
+   "end": 1765,
    "circa": false
   },
   "art": "Einzelstück",
@@ -581,7 +581,7 @@
   "titel": "Alphabetisch nach Namen geordnete Sammlung von Notizen zur Geschichte von Schlössern, Gerichten, Herrschaften, Städten und bekannten Personen vom 13. bis 17. Jh.: Varia",
   "datierung": {
    "raw": "-17. Jh.",
-   "start": 1601,
+   "start": null,
    "end": 1700,
    "circa": true
   },
@@ -600,7 +600,7 @@
   "datierung": {
    "raw": "13. Jh.-17. Jh.",
    "start": 1201,
-   "end": 1300,
+   "end": 1700,
    "circa": true
   },
   "art": "Einzelstück",
@@ -725,8 +725,8 @@
   "titel": "Streitschrift über den Konflikt zwischen Kardinal Nikolaus Cusanus und Herzog Sigmund von Österreich: \"Handlung zwischen Cardinal Niclausen von Cusa, Bischof zu Brixen und Herzog Sigmund zu Oesterreich\"",
   "datierung": {
    "raw": "-1600",
-   "start": -1600,
-   "end": -1600,
+   "start": null,
+   "end": 1600,
    "circa": false
   },
   "art": "Einzelstück",
@@ -4230,8 +4230,8 @@
   "titel": "Webhofer Silvia, Katharina von Sachsen, Erzherzog Sigmunds zweite Gemahlin. Ihr Leben an der Seite des Tiroler Landesfürsten (Dissertation)",
   "datierung": {
    "raw": "-1595",
-   "start": -1595,
-   "end": -1595,
+   "start": null,
+   "end": 1595,
    "circa": false
   },
   "art": "Einzelstück",
@@ -5096,7 +5096,7 @@
   "datierung": {
    "raw": "13. Jh.-14. Jh.",
    "start": 1201,
-   "end": 1300,
+   "end": 1400,
    "circa": true
   },
   "art": "Einzelstück",
@@ -5222,7 +5222,7 @@
   "datierung": {
    "raw": "13. Jh.-17. Jh.",
    "start": 1201,
-   "end": 1300,
+   "end": 1700,
    "circa": true
   },
   "art": "Einzelstück",
@@ -5240,7 +5240,7 @@
   "datierung": {
    "raw": "13. Jh.-17. Jh.",
    "start": 1201,
-   "end": 1300,
+   "end": 1700,
    "circa": true
   },
   "art": "Einzelstück",
@@ -5974,7 +5974,7 @@
   "datierung": {
    "raw": "15. Jh.-17. Jh.",
    "start": 1401,
-   "end": 1500,
+   "end": 1700,
    "circa": true
   },
   "art": "Einzelstück",
@@ -6171,7 +6171,7 @@
   "titel": "Repertorium zu den Ambraser Mobilien",
   "datierung": {
    "raw": "15.–18. Jh.",
-   "start": 1701,
+   "start": 1401,
    "end": 1800,
    "circa": true
   },

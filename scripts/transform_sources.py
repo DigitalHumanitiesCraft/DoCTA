@@ -19,57 +19,70 @@ import io
 import json
 import re
 import sys
-
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-
 from pathlib import Path
 
 BASE = str(Path(__file__).resolve().parents[1])
+
+# "ca" as a word, so "ca.", "(ca.)" and a trailing bare "ca" all count while an
+# incidental letter pair inside a longer word does not.
+CIRCA = re.compile(r"\bca\b", re.IGNORECASE)
+# "13. Jh.-17. Jh." and the split form "15.-18. Jh.", where only the second
+# century carries the unit.
+CENTURY_RANGE = re.compile(r"(\d{1,2})\.\s*(?:Jh\.?)?\s*-\s*(\d{1,2})\.\s*Jh")
+CENTURY = re.compile(r"(\d{1,2})\.\s*Jh")
+# Anchored, so a leading hint such as "ca. (1450) 1600-1850" still falls through
+# to the single-year branch instead of silently changing meaning.
+YEAR_RANGE = re.compile(r"(\d{4})\s*-\s*(\d{4})")
+YEAR = re.compile(r"\d{4}")
+
+
+def _dating(raw, start, end, circa):
+    return {"raw": raw, "start": start, "end": end, "circa": circa}
 
 
 def normalize_date(raw):
     """Normalize date strings to consistent format.
 
-    Handles: '1487-1594', '1495 (ca.)', '15. Jh.', '-1564', '1479',
-             '1470-1479', '1490 (ca.)', etc.
+    Handles: '1487-1594', '1495 (ca.)', '15. Jh.', '13. Jh.-17. Jh.',
+             '15.-18. Jh.', '-1564', '1479', '1470-1479', etc.
     Returns: {'raw': original, 'start': int|None, 'end': int|None, 'circa': bool}
+
+    A leading dash is the finding aid's "bis", an open start rather than a
+    negative year, so start stays None and the named year is the end. The site
+    sorts a source without a start alongside the undated ones and prints the
+    raw string.
     """
     if not raw or not raw.strip():
-        return {"raw": "", "start": None, "end": None, "circa": False}
+        return _dating("", None, None, False)
 
     raw = raw.strip()
     # Normalize dashes (en-dash → hyphen)
     raw_norm = raw.replace("\u2013", "-").replace("\u2014", "-")
-    circa = "ca." in raw_norm or "ca" in raw_norm
+    circa = bool(CIRCA.search(raw_norm))
+    open_start = raw_norm.startswith("-")
+    body = raw_norm[1:].strip() if open_start else raw_norm
 
-    # Try range: 1487-1594
-    m = re.match(r"(-?\d{4})\s*-\s*(\d{4})", raw_norm)
-    if m:
-        return {
-            "raw": raw,
-            "start": int(m.group(1)),
-            "end": int(m.group(2)),
-            "circa": circa,
-        }
+    # Century range: "13. Jh.-17. Jh.", "15.-18. Jh."
+    if m := CENTURY_RANGE.search(body):
+        first, last = int(m.group(1)), int(m.group(2))
+        return _dating(raw, (first - 1) * 100 + 1, last * 100, True)
 
-    # Try single year with optional prefix/suffix: 1479, -1564, 1495 (ca.)
-    m = re.search(r"(-?\d{4})", raw_norm)
-    if m:
-        year = int(m.group(1))
-        return {"raw": raw, "start": year, "end": year, "circa": circa}
-
-    # Century: "15. Jh."
-    m = re.search(r"(\d+)\.\s*Jh", raw_norm)
-    if m:
+    # Single century: "15. Jh."
+    if m := CENTURY.search(body):
         century = int(m.group(1))
-        return {
-            "raw": raw,
-            "start": (century - 1) * 100 + 1,
-            "end": century * 100,
-            "circa": True,
-        }
+        start = None if open_start else (century - 1) * 100 + 1
+        return _dating(raw, start, century * 100, True)
 
-    return {"raw": raw, "start": None, "end": None, "circa": False}
+    # Range: "1487-1594"
+    if m := YEAR_RANGE.match(body):
+        return _dating(raw, int(m.group(1)), int(m.group(2)), circa)
+
+    # Single year with optional prefix/suffix: "1479", "-1564", "1495 (ca.)"
+    if m := YEAR.search(body):
+        year = int(m.group())
+        return _dating(raw, None if open_start else year, year, circa)
+
+    return _dating(raw, None, None, False)
 
 
 def parse_pages(digitalisiert):
@@ -249,7 +262,13 @@ def from_csv(matched, images_by_doc, tb_mapping):
 
 
 def from_existing(matched, images_by_doc):
-    """Rewrite the existing sources.json into the current schema, without the CSV."""
+    """Rewrite the existing sources.json into the current schema, without the CSV.
+
+    datierung is recomputed from its own raw string rather than copied, so a
+    correction to normalize_date reaches the published file on the migrate path
+    too. The raw string is the archival statement and survives every rewrite,
+    which makes repeated runs idempotent.
+    """
     sources = []
     for entry in load_json("sources.json"):
         base = {
@@ -257,13 +276,13 @@ def from_existing(matched, images_by_doc):
             for k in (
                 "kategorie",
                 "titel",
-                "datierung",
                 "art",
                 "projekt",
                 "transkribiert",
                 "tier",
             )
         }
+        base["datierung"] = normalize_date(entry["datierung"].get("raw", ""))
         old = entry.get("catalogue_extent")
         value = old["value"] if old else entry.get("seiten")
         # The catalogue cell the value was parsed from cannot be recovered here:
@@ -277,6 +296,9 @@ def from_existing(matched, images_by_doc):
 
 
 def main():
+    # Console UTF-8 belongs to the entry point; importing the module (the tests
+    # do) must not rewrap somebody else's stdout.
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
     migrate = "--migrate" in sys.argv
     tb_mapping = load_json("source_mapping.json")
     matched = tb_mapping.get("matched", [])
@@ -290,7 +312,8 @@ def main():
         else from_csv(matched, images_by_doc, tb_mapping)
     )
 
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
+    # LF on every platform, the line ending .gitattributes pins for the repo.
+    with open(OUT_PATH, "w", encoding="utf-8", newline="\n") as f:
         json.dump(sources, f, ensure_ascii=False, indent=1)
 
     print(f"\nSaved {len(sources)} sources to {OUT_PATH}")

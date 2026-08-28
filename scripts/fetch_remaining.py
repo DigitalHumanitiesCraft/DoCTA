@@ -1,4 +1,12 @@
-"""Fetch remaining SiCProD data: functions and relations."""
+"""Fetch remaining SiCProD data: functions and relations.
+
+The resume path of a fetch whose entity files were already written; the complete
+tool is fetch_sicprod.py, which this script duplicates for the two endpoints that
+were still missing.
+
+A pagination that does not complete aborts the run with a nonzero exit and writes
+nothing, because a truncated file is indistinguishable from a complete export.
+"""
 
 import io
 import json
@@ -11,7 +19,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 BASE_API = "https://sicprod.acdh-dev.oeaw.ac.at/apis/api"
 from pathlib import Path
 
-# The SiCProD exports are read by the site, so they live below docs/.
+# No page loads the SiCProD exports since the site was consolidated. They stay
+# under docs/data/ as committed provenance of the data behind the removed court
+# network, retained for its return (docs/knowledge/design.md).
 OUT_DIR = str(Path(__file__).resolve().parents[1] / "docs" / "data")
 
 
@@ -31,12 +41,13 @@ def fetch_paginated(endpoint, limit=500):
                 with urllib.request.urlopen(req, timeout=60) as resp:
                     data = json.loads(resp.read().decode("utf-8"))
                 break
-            except Exception:
-                print(f"retry {attempt + 1}...", end=" ", flush=True)
+            except Exception as e:
+                print(f"retry {attempt + 1} after {e}...", end=" ", flush=True)
                 time.sleep(3)
         if data is None:
-            print(f"FAILED after {retries} retries")
-            break
+            raise RuntimeError(
+                f"{endpoint} offset={offset} failed after {retries} retries"
+            )
         batch = data.get("results", [])
         results.extend(batch)
         count = data.get("count", 0)

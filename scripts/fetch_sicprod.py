@@ -1,7 +1,15 @@
-"""Fetch all SiCProD entities and relations as static JSON for the prototype.
+"""Fetch all SiCProD entities and relations as static JSON.
 
 API: https://sicprod.acdh-dev.oeaw.ac.at/apis/api/
 No auth needed (public API).
+
+This is the complete fetch tool; fetch_remaining.py was the resume path of a
+run that had already written the entity files.
+
+A pagination that does not complete is a data loss risk, so an endpoint that
+fails after its retry aborts the run with a nonzero exit and writes nothing for
+that endpoint. A partial file would look like a complete export. Endpoints saved
+before the abort keep their own complete files.
 """
 
 import io
@@ -16,30 +24,37 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 BASE_API = "https://sicprod.acdh-dev.oeaw.ac.at/apis/api"
 from pathlib import Path
 
-# The SiCProD exports are read by the site, so they live below docs/.
+# No page loads the SiCProD exports since the site was consolidated. They stay
+# under docs/data/ as committed provenance of the data behind the removed court
+# network, retained for its return (docs/knowledge/design.md).
 OUT_DIR = str(Path(__file__).resolve().parents[1] / "docs" / "data")
 
 
 def fetch_paginated(endpoint, limit=500):
-    """Fetch all results from a paginated API endpoint."""
+    """Fetch all results from a paginated API endpoint.
+
+    Raises RuntimeError when a page cannot be fetched, because a truncated
+    result set is indistinguishable from a complete one downstream.
+    """
     results = []
     offset = 0
     while True:
         url = f"{BASE_API}/{endpoint}/?format=json&limit={limit}&offset={offset}"
         print(f"  Fetching {endpoint} offset={offset}...", end=" ")
+        req = urllib.request.Request(url, headers={"Accept": "application/json"})
         try:
-            req = urllib.request.Request(url, headers={"Accept": "application/json"})
             with urllib.request.urlopen(req, timeout=30) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
         except Exception as e:
-            print(f"ERROR: {e}")
+            print(f"ERROR: {e}", file=sys.stderr)
             time.sleep(2)
             try:
                 with urllib.request.urlopen(req, timeout=30) as resp:
                     data = json.loads(resp.read().decode("utf-8"))
             except Exception as e2:
-                print(f"FATAL: {e2}")
-                break
+                raise RuntimeError(
+                    f"{endpoint} offset={offset} failed after one retry: {e2}"
+                ) from e2
 
         batch = data.get("results", [])
         results.extend(batch)
@@ -225,4 +240,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except RuntimeError as e:
+        print(f"FATAL: {e}", file=sys.stderr)
+        sys.exit(1)
