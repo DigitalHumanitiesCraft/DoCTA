@@ -219,6 +219,18 @@ Two transcription conventions are present in the stock. Any comparison across do
 
 **Account books.** All 26 volumes are digitized. Six volumes (nos. 1 to 6) have a layout analysis with baselines and regions; the remaining twenty carry the status `NEW`. No volume holds transcription text in Transkribus. Machine transcriptions live outside Transkribus under `evaluation/`, and they are unrevised model output.
 
+### Rights and reuse of third-party material
+
+Publication is not a licence. Material that is freely accessible on the web but carries no open licence is used in three tiers, and the rule is the same for every third-party source.
+
+1. **Reference**, always permitted and the default. A direct link to the official publication plus a full citation in DoCTA, while the data itself stays where it is published.
+2. **Quotation**, narrowly permitted. Small excerpts or screenshots where a concrete scholarly explanation requires them, always with full attribution; § 42f UrhG (AT) permits quotation only to the extent that this purpose justifies.
+3. **Copying and republishing**, only with an open licence on the material or written permission from the rights holders. Until granted, a full copy stays local, unversioned and secured against public access, and only aggregate figures derived from it (error rates, error classes) are published.
+
+Three precisions govern the Inventaria case. The Inventaria annotation collection is treated as a potentially protected database (§§ 76c–76d UrhG); sui generis protection presupposes a substantial investment in obtaining, verifying or presenting the contents, which is plausible for a scholarly annotation collection but has not been legally determined, so the cautious reading governs. The repository's CC BY 4.0 licence does not automatically capture third-party material that is clearly marked as excluded, but inclusion would still require its own authorization and create licence ambiguity; third-party material is therefore marked as such wherever it appears (attribution chips, citation lines, this document). A local research copy rests on § 42h UrhG, automated scholarly analysis under lawful access with storage secured for the research purpose; that is no general permission for arbitrary internal reuse, and such a copy never enters the repository or the website.
+
+The base transcriptions of the Inventaria-transcribed inventories came into the repository through the shared Transkribus collection and are attributed wherever they are displayed or evaluated. The written permission sought from the Inventaria project covers this existing use and the planned use of the published annotations as evaluation ground truth; once granted, the permission and its licence terms are recorded in `JOURNAL.md`.
+
 ### Account books in the collection
 
 | No. | Doc ID | Pages | Status |
