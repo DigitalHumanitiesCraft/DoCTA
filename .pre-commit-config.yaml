@@ -1,0 +1,24 @@
+# Local system hooks only: building the remote hook environments fails on this
+# machine (Windows Store Python hits MAX_PATH while seeding virtualenv). The
+# venv's own tools cover the same ground: ruff for lint and format, and the
+# pipeline healthcheck as the actual gate, which validates JSON artifacts, both
+# TEI schemas and the byte-identical rebuild on its own.
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check --fix
+        entry: ./.venv/Scripts/ruff.exe check --fix
+        language: system
+        types_or: [python]
+      - id: ruff-format
+        name: ruff format
+        entry: ./.venv/Scripts/ruff.exe format
+        language: system
+        types_or: [python]
+      - id: docta-healthcheck
+        name: DoCTA pipeline healthcheck (both schemas, byte-identical rebuild)
+        entry: ./.venv/Scripts/python.exe pipeline/check_pipeline.py
+        language: system
+        pass_filenames: false
+        always_run: true

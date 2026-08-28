@@ -36,7 +36,7 @@ import re
 import sys
 import time
 import unicodedata
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import requests
@@ -111,8 +111,12 @@ def response_schema(with_amount: bool) -> dict:
                     "properties": {
                         "label": {"type": "string"},
                         "empty": {"type": "boolean"},
-                        "lines": {"type": "array",
-                                  "items": LINE_SCHEMA_AMOUNT if with_amount else LINE_SCHEMA_BASE},
+                        "lines": {
+                            "type": "array",
+                            "items": LINE_SCHEMA_AMOUNT
+                            if with_amount
+                            else LINE_SCHEMA_BASE,
+                        },
                     },
                     "required": ["label", "lines"],
                 },
@@ -145,36 +149,67 @@ def build_prompts() -> dict:
     rb = extract_prompt(ROOT / "prompts" / "it02_raitbuch.md")
     inv = extract_prompt(ROOT / "prompts" / "it02_inventar.md")
     return {
-        "it01": {"raitbuch2": it01, "inventar": it01, "instruction": IT01_INSTRUCTION, "amount": False},
-        "it02": {"raitbuch2": kern + "\n\n" + rb, "inventar": kern + "\n\n" + inv,
-                 "instruction": IT02_INSTRUCTION, "amount": True},
+        "it01": {
+            "raitbuch2": it01,
+            "inventar": it01,
+            "instruction": IT01_INSTRUCTION,
+            "amount": False,
+        },
+        "it02": {
+            "raitbuch2": kern + "\n\n" + rb,
+            "inventar": kern + "\n\n" + inv,
+            "instruction": IT02_INSTRUCTION,
+            "amount": True,
+        },
     }
 
 
 def resolve_pages() -> list[dict]:
     spec = json.loads((ROOT / "pages.json").read_text(encoding="utf-8"))["pages"]
-    rb = {p["pageNr"]: p for p in json.loads(
-        (REPO / "docs" / "data" / "raitbuch2_pages.json").read_text(encoding="utf-8"))}
+    rb = {
+        p["pageNr"]: p
+        for p in json.loads(
+            (REPO / "docs" / "data" / "raitbuch2_pages.json").read_text(
+                encoding="utf-8"
+            )
+        )
+    }
     docs: dict[str, dict] = {}
     for page in spec:
         if page["source"] == "raitbuch2":
             page["iiif"] = rb[page["pageNr"]]["iiif_url"]
             page["spread"] = True
         else:
-            doc = docs.setdefault(page["docId"], json.loads(
-                (REPO / "docs" / "data" / "transcriptions" / f"{page['docId']}.json").read_text(encoding="utf-8")))
+            doc = docs.setdefault(
+                page["docId"],
+                json.loads(
+                    (
+                        REPO
+                        / "docs"
+                        / "data"
+                        / "transcriptions"
+                        / f"{page['docId']}.json"
+                    ).read_text(encoding="utf-8")
+                ),
+            )
             p = next(x for x in doc["pages"] if x["pageNr"] == page["pageNr"])
             page["iiif"] = p["iiif"]
             page["spread"] = False
             if page.get("gt"):
-                page["gt_lines"] = [ln["text"] for r in p["regions"] for ln in r["lines"]]
+                page["gt_lines"] = [
+                    ln["text"] for r in p["regions"] for ln in r["lines"]
+                ]
     return spec
 
 
 def fewshot_example() -> dict:
     """Reworked inventar example: kind heuristics + uncertain for diacritic-carrying
     words, so the example demonstrates non-empty uncertainty instead of silencing it."""
-    doc = json.loads((REPO / "docs" / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(encoding="utf-8"))
+    doc = json.loads(
+        (REPO / "docs" / "data" / "transcriptions" / f"{FEWSHOT_DOC}.json").read_text(
+            encoding="utf-8"
+        )
+    )
     p = next(x for x in doc["pages"] if x["pageNr"] == FEWSHOT_PAGE)
     lines = []
     for r in p["regions"]:
@@ -186,19 +221,34 @@ def fewshot_example() -> dict:
                 kind = "rubric"
             else:
                 kind = "entry"
-            unc = [w for w in t.split()
-                   if any(unicodedata.combining(c) for c in unicodedata.normalize("NFD", w))
-                   or any(ch in w for ch in "ůw̋ẘ")][:2]
+            unc = [
+                w
+                for w in t.split()
+                if any(
+                    unicodedata.combining(c) for c in unicodedata.normalize("NFD", w)
+                )
+                or any(ch in w for ch in "ůw̋ẘ")
+            ][:2]
             lines.append({"text": t, "kind": kind, "uncertain": unc})
     # The example must demonstrate a non-empty uncertain field (an empty one was
     # measured to suppress markers by ~60%); fall back to the rarest lexemes.
     if not any(ln["uncertain"] for ln in lines):
-        entries = [ln for ln in lines if ln["kind"] == "entry" and len(ln["text"].split()) > 1]
-        for ln in sorted(entries, key=lambda x: -max(len(w) for w in x["text"].split()))[:3]:
+        entries = [
+            ln for ln in lines if ln["kind"] == "entry" and len(ln["text"].split()) > 1
+        ]
+        for ln in sorted(
+            entries, key=lambda x: -max(len(w) for w in x["text"].split())
+        )[:3]:
             ln["uncertain"] = [max(ln["text"].split(), key=len)]
-    answer = {"pages": [{"label": f"Seite {FEWSHOT_PAGE}", "empty": False, "lines": lines}],
-              "notes": "Fachwissenschaftliche Referenztranskription (Transkribus)."}
-    return {"iiif": p["iiif"], "answer": answer, "image_id": f"fewshot_{FEWSHOT_DOC}_p{FEWSHOT_PAGE}"}
+    answer = {
+        "pages": [{"label": f"Seite {FEWSHOT_PAGE}", "empty": False, "lines": lines}],
+        "notes": "Fachwissenschaftliche Referenztranskription (Transkribus).",
+    }
+    return {
+        "iiif": p["iiif"],
+        "answer": answer,
+        "image_id": f"fewshot_{FEWSHOT_DOC}_p{FEWSHOT_PAGE}",
+    }
 
 
 _fetch_lock = __import__("threading").Lock()
@@ -212,7 +262,11 @@ def fetch_image(image_id: str, url: str) -> Path:
     with _fetch_lock:
         if path.exists():
             return path
-        r = requests.get(url, timeout=180, headers={"User-Agent": "DoCTA-benchmark (office@dhcraft.org)"})
+        r = requests.get(
+            url,
+            timeout=180,
+            headers={"User-Agent": "DoCTA-benchmark (office@dhcraft.org)"},
+        )
         r.raise_for_status()
         tmp = path.with_suffix(f".tmp{__import__('threading').get_ident()}")
         tmp.write_bytes(r.content)
@@ -232,23 +286,36 @@ def image_part(path: Path, crop: str | None = None) -> tuple[dict, dict]:
         img = img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
     buf = io.BytesIO()
     img.convert("RGB").save(buf, format="JPEG", quality=90)
-    return ({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(buf.getvalue()).decode()}},
-            {"source_px": list(orig), "sent_px": list(img.size), "crop": crop})
+    return (
+        {
+            "inline_data": {
+                "mime_type": "image/jpeg",
+                "data": base64.b64encode(buf.getvalue()).decode(),
+            }
+        },
+        {"source_px": list(orig), "sent_px": list(img.size), "crop": crop},
+    )
 
 
 def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dict:
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": contents,
-        "generationConfig": {"temperature": TEMPERATURE, "maxOutputTokens": 32768,
-                             "responseMimeType": "application/json",
-                             "responseSchema": response_schema(with_amount)},
+        "generationConfig": {
+            "temperature": TEMPERATURE,
+            "maxOutputTokens": 32768,
+            "responseMimeType": "application/json",
+            "responseSchema": response_schema(with_amount),
+        },
     }
     last_reason = "HTTP"
     for attempt in range(4):
-        r = requests.post(f"{API_BASE}/{MODEL}:generateContent",
-                          headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                          json=body, timeout=TIMEOUT)
+        r = requests.post(
+            f"{API_BASE}/{MODEL}:generateContent",
+            headers={"x-goog-api-key": key, "Content-Type": "application/json"},
+            json=body,
+            timeout=TIMEOUT,
+        )
         if r.status_code in (429, 500, 503):
             time.sleep(2 ** (attempt + 2))
             continue
@@ -257,18 +324,26 @@ def call_gemini(key: str, system: str, contents: list, with_amount: bool) -> dic
         cands = data.get("candidates")
         if not cands:
             # No candidate at all (e.g. prompt blocked or transient empty response); retry.
-            last_reason = data.get("promptFeedback", {}).get("blockReason", "no candidates")
+            last_reason = data.get("promptFeedback", {}).get(
+                "blockReason", "no candidates"
+            )
             time.sleep(2 ** (attempt + 2))
             continue
         cand = cands[0]
-        text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
+        text = "".join(
+            p.get("text", "") for p in cand.get("content", {}).get("parts", [])
+        )
         if not text:
             raise ValueError(f"leere Antwort, finishReason={cand.get('finishReason')}")
-        return json.loads(re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip())
+        return json.loads(
+            re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
+        )
     raise RuntimeError(f"Retries erschöpft ({last_reason})")
 
 
-def run_one(key: str, page: dict, iteration: str, prompts: dict, repeat: int, fs: dict) -> str:
+def run_one(
+    key: str, page: dict, iteration: str, prompts: dict, repeat: int, fs: dict
+) -> str:
     out = RUNS / f"{page['id']}__{iteration}__r{repeat}.json"
     if out.exists():
         return f"SKIP {out.name}"
@@ -281,25 +356,40 @@ def run_one(key: str, page: dict, iteration: str, prompts: dict, repeat: int, fs
     crops = ("left", "right") if (iteration == "it02" and page["spread"]) else (None,)
     for crop in crops:
         part, info = image_part(img_path, crop=crop)
-        label = {"left": " Dies ist die LINKE Hälfte einer Doppelseite (verso).",
-                 "right": " Dies ist die RECHTE Hälfte einer Doppelseite (recto)."}.get(crop, "")
+        label = {
+            "left": " Dies ist die LINKE Hälfte einer Doppelseite (verso).",
+            "right": " Dies ist die RECHTE Hälfte einer Doppelseite (recto).",
+        }.get(crop, "")
         contents = []
         if iteration == "it02" and page["source"] == "inventar":
             ex_part, _ = image_part(fetch_image(fs["image_id"], fs["iiif"]))
-            contents += [{"role": "user", "parts": [ex_part, {"text": cfg["instruction"]}]},
-                         {"role": "model", "parts": [{"text": json.dumps(fs["answer"], ensure_ascii=False)}]}]
-        contents.append({"role": "user", "parts": [part, {"text": cfg["instruction"] + label}]})
+            contents += [
+                {"role": "user", "parts": [ex_part, {"text": cfg["instruction"]}]},
+                {
+                    "role": "model",
+                    "parts": [{"text": json.dumps(fs["answer"], ensure_ascii=False)}],
+                },
+            ]
+        contents.append(
+            {"role": "user", "parts": [part, {"text": cfg["instruction"] + label}]}
+        )
         parsed = call_gemini(key, system, contents, cfg["amount"])
         parsed_pages += parsed.get("pages", [])
         infos.append(info)
     merged = {"pages": parsed_pages}
     record = {
-        "page": page["id"], "iteration": iteration, "repeat": repeat,
-        "model": MODEL, "temperature": TEMPERATURE,
-        "prompt_hash": hashlib.sha256((system + cfg["instruction"]).encode()).hexdigest()[:16],
+        "page": page["id"],
+        "iteration": iteration,
+        "repeat": repeat,
+        "model": MODEL,
+        "temperature": TEMPERATURE,
+        "prompt_hash": hashlib.sha256(
+            (system + cfg["instruction"]).encode()
+        ).hexdigest()[:16],
         "fewshot": iteration == "it02" and page["source"] == "inventar",
-        "image_info": infos, "duration_s": round(time.time() - t0, 1),
-        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "image_info": infos,
+        "duration_s": round(time.time() - t0, 1),
+        "timestamp": datetime.now(UTC).isoformat(timespec="seconds"),
         "parsed": merged,
         "lines": [ln["text"] for pg in parsed_pages for ln in pg.get("lines", [])],
     }
@@ -312,17 +402,35 @@ def run_one(key: str, page: dict, iteration: str, prompts: dict, repeat: int, fs
 
 # ---------- Evaluation ----------
 
-UNITS = {"gld", "rhgld", "lb", "tt", "ß", "d", "kr", "hl", "m", "marck", "mark", "fl", "pfd"}
+UNITS = {
+    "gld",
+    "rhgld",
+    "lb",
+    "tt",
+    "ß",
+    "d",
+    "kr",
+    "hl",
+    "m",
+    "marck",
+    "mark",
+    "fl",
+    "pfd",
+}
 
 
 def normalize(text: str, profile: str) -> str:
-    lines = [ln for ln in text.splitlines() if not re.match(r"^\s*\[fol\.?[^\]]*\]\s*$", ln)]
+    lines = [
+        ln for ln in text.splitlines() if not re.match(r"^\s*\[fol\.?[^\]]*\]\s*$", ln)
+    ]
     text = " ".join(lines) if lines else text
     text = re.sub(r"\[fol\.?[^\]]*\]", "", text).replace("¬", "")
     text = unicodedata.normalize("NFC", text)
     if profile == "strict":
         return re.sub(r"\s+", " ", text).strip()
-    text = "".join(c for c in unicodedata.normalize("NFD", text) if not unicodedata.combining(c))
+    text = "".join(
+        c for c in unicodedata.normalize("NFD", text) if not unicodedata.combining(c)
+    )
     text = re.sub(r"\(([^)]*)\)", r"\1", text).lower()
     text = re.sub(r"~~|\{|\}|\[\.*\]|\[---\]|\[|\]", "", text)
     text = text.replace("v", "u").replace("j", "i")
@@ -354,6 +462,7 @@ def is_numberish(tok: str) -> bool:
 def positionwise(a: list[str], b: list[str]) -> tuple[float, float]:
     """Aligned token agreement via SequenceMatcher, split word vs number/currency."""
     import difflib
+
     sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
     eq_w = eq_n = tot_w = tot_n = 0
     for tok in a:
@@ -372,12 +481,20 @@ def positionwise(a: list[str], b: list[str]) -> tuple[float, float]:
 
 
 def evaluate(pages: list[dict], iterations: list[str]) -> dict:
-    summary = {"generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-               "model": MODEL, "pages": {}}
+    summary = {
+        "generated": datetime.now(UTC).isoformat(timespec="seconds"),
+        "model": MODEL,
+        "pages": {},
+    }
     for page in pages:
-        entry: dict = {"folio": page["folio"], "phenomena": page["phenomena"],
-                       "source": page["source"], "iiif": page["iiif"], "spread": page["spread"],
-                       "iterations": {}}
+        entry: dict = {
+            "folio": page["folio"],
+            "phenomena": page["phenomena"],
+            "source": page["source"],
+            "iiif": page["iiif"],
+            "spread": page["spread"],
+            "iterations": {},
+        }
         if page.get("gt_lines"):
             entry["gt_lines"] = page["gt_lines"]
         for it in iterations:
@@ -386,17 +503,37 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
                 continue
             recs = [json.loads(f.read_text(encoding="utf-8")) for f in runs]
             texts = ["\n".join(r["lines"]) for r in recs]
-            e: dict = {"k": len(recs), "runs": [f.name for f in runs],
-                       "lines": [len(r["lines"]) for r in recs],
-                       "uncertain": [sum(len(ln.get("uncertain", []) or [])
-                                          for pg in r["parsed"]["pages"] for ln in pg.get("lines", []))
-                                      for r in recs]}
+            e: dict = {
+                "k": len(recs),
+                "runs": [f.name for f in runs],
+                "lines": [len(r["lines"]) for r in recs],
+                "uncertain": [
+                    sum(
+                        len(ln.get("uncertain", []) or [])
+                        for pg in r["parsed"]["pages"]
+                        for ln in pg.get("lines", [])
+                    )
+                    for r in recs
+                ],
+            }
             if page.get("gt_lines"):
                 ref = "\n".join(page["gt_lines"])
-                fair = [cer(normalize(t, "fair"), normalize(ref, "fair")) for t in texts]
-                strict = [cer(normalize(t, "strict"), normalize(ref, "strict")) for t in texts]
-                e["cer_fair"] = {"mean": round(sum(fair) / len(fair), 4), "min": min(fair), "max": max(fair)}
-                e["cer_strict"] = {"mean": round(sum(strict) / len(strict), 4), "min": min(strict), "max": max(strict)}
+                fair = [
+                    cer(normalize(t, "fair"), normalize(ref, "fair")) for t in texts
+                ]
+                strict = [
+                    cer(normalize(t, "strict"), normalize(ref, "strict")) for t in texts
+                ]
+                e["cer_fair"] = {
+                    "mean": round(sum(fair) / len(fair), 4),
+                    "min": min(fair),
+                    "max": max(fair),
+                }
+                e["cer_strict"] = {
+                    "mean": round(sum(strict) / len(strict), 4),
+                    "min": min(strict),
+                    "max": max(strict),
+                }
             toks = [normalize(t, "fair").split() for t in texts]
             pairs = [(i, j) for i in range(len(toks)) for j in range(i + 1, len(toks))]
             if pairs:
@@ -405,7 +542,9 @@ def evaluate(pages: list[dict], iterations: list[str]) -> dict:
                 e["consistency_numbers"] = round(sum(b for _, b in agr) / len(agr), 3)
             entry["iterations"][it] = e
         summary["pages"][page["id"]] = entry
-    (ROOT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
+    (ROOT / "summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8"
+    )
     return summary
 
 
@@ -427,29 +566,40 @@ def main() -> None:
         print(f"{len(jobs)} Läufe geplant ({len(pages)} Seiten × {iterations} × k)")
         errors = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as ex:
-            futs = {ex.submit(run_one, key, p, it, prompts, r, fs): (p["id"], it, r) for p, it, r in jobs}
+            futs = {
+                ex.submit(run_one, key, p, it, prompts, r, fs): (p["id"], it, r)
+                for p, it, r in jobs
+            }
             for fut in concurrent.futures.as_completed(futs):
                 pid, it, r = futs[fut]
                 try:
                     print(fut.result())
                 except Exception as e:  # skip-and-log-and-collect
                     print(f"FEHLER {pid}/{it}/r{r}: {e}", file=sys.stderr)
-                    errors.append({"page": pid, "iteration": it, "repeat": r, "error": str(e)})
+                    errors.append(
+                        {"page": pid, "iteration": it, "repeat": r, "error": str(e)}
+                    )
         if errors:
-            (ROOT / "errors.json").write_text(json.dumps(errors, ensure_ascii=False, indent=1), encoding="utf-8")
+            (ROOT / "errors.json").write_text(
+                json.dumps(errors, ensure_ascii=False, indent=1), encoding="utf-8"
+            )
     summary = evaluate(pages, ["it01", "it02"])
     print("\n== Zusammenfassung (GT-Seiten) ==")
     for pid, e in summary["pages"].items():
         for it, m in e["iterations"].items():
             if "cer_fair" in m:
-                print(f"{pid} {it}: fair {m['cer_fair']['mean']} ({m['cer_fair']['min']}-{m['cer_fair']['max']}) "
-                      f"konsistenz w={m.get('consistency_words')} n={m.get('consistency_numbers')}")
+                print(
+                    f"{pid} {it}: fair {m['cer_fair']['mean']} ({m['cer_fair']['min']}-{m['cer_fair']['max']}) "
+                    f"konsistenz w={m.get('consistency_words')} n={m.get('consistency_numbers')}"
+                )
     print("\n== Konsistenz (Seiten ohne GT) ==")
     for pid, e in summary["pages"].items():
         for it, m in e["iterations"].items():
             if "cer_fair" not in m:
-                print(f"{pid} {it}: w={m.get('consistency_words')} n={m.get('consistency_numbers')} "
-                      f"zeilen={m['lines']} uncertain={m['uncertain']}")
+                print(
+                    f"{pid} {it}: w={m.get('consistency_words')} n={m.get('consistency_numbers')} "
+                    f"zeilen={m['lines']} uncertain={m['uncertain']}"
+                )
 
 
 if __name__ == "__main__":

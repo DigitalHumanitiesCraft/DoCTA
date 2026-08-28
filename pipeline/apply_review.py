@@ -119,8 +119,9 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
             seen.add(line_id)
             for field in ("original", "corrected"):
                 if not isinstance(line.get(field), str):
-                    raise ReviewError(f"{where}, Zeile {line_id}:"
-                                      f" {field} fehlt oder ist kein Text")
+                    raise ReviewError(
+                        f"{where}, Zeile {line_id}: {field} fehlt oder ist kein Text"
+                    )
         out[int(key)] = page
     return out
 
@@ -140,8 +141,9 @@ def base_lines(page: dict, exclude_id: str) -> list[dict]:
     return []
 
 
-def _corrected_lines(base: list[dict], corrections: list[dict],
-                     where: str) -> list[dict]:
+def _corrected_lines(
+    base: list[dict], corrections: list[dict], where: str
+) -> list[dict]:
     """Full line list of the page with the reported corrections applied.
 
     Refuses a correction whose reported original no longer matches the base, so
@@ -157,15 +159,18 @@ def _corrected_lines(base: list[dict], corrections: list[dict],
             raise ReviewError(
                 f"{where}: Zeile {line_id} ist veraltet, das Register haelt"
                 f" {by_id[line_id]!r}, der Export meldet"
-                f" {correction['original']!r}")
+                f" {correction['original']!r}"
+            )
         replacements[line_id] = correction["corrected"]
-    return [{"id": line["id"],
-             "text": replacements.get(line["id"], line["text"])}
-            for line in base]
+    return [
+        {"id": line["id"], "text": replacements.get(line["id"], line["text"])}
+        for line in base
+    ]
 
 
-def apply_document(register: dict, review: dict, pages: dict[int, dict],
-                   origin: str) -> list[str]:
+def apply_document(
+    register: dict, review: dict, pages: dict[int, dict], origin: str
+) -> list[str]:
     """Write one validated review into the register payload. Returns a log."""
     doc_id = review["docId"]
     reviewer = review["reviewer"]
@@ -190,17 +195,23 @@ def apply_document(register: dict, review: dict, pages: dict[int, dict],
                 "date": date,
                 "lines": _corrected_lines(base, entry["lines"], where),
             }
-            existing = next((i for i, r in enumerate(page["runs"])
-                             if r.get("id") == run_id), None)
+            existing = next(
+                (i for i, r in enumerate(page["runs"]) if r.get("id") == run_id), None
+            )
             if existing is None:
                 page["runs"].append(run)
             else:
                 page["runs"][existing] = run
-            log.append(f"  Seite {page_nr}: {len(entry['lines'])} Zeilen"
-                       f" korrigiert -> {run_id}")
+            log.append(
+                f"  Seite {page_nr}: {len(entry['lines'])} Zeilen"
+                f" korrigiert -> {run_id}"
+            )
         if status is not None:
-            page["verification"] = {"status": status, "reviewer": reviewer,
-                                    "date": date}
+            page["verification"] = {
+                "status": status,
+                "reviewer": reviewer,
+                "date": date,
+            }
             log.append(f"  Seite {page_nr}: {status} ({reviewer}, {date})")
     return log
 
@@ -217,8 +228,7 @@ def _review_files(targets: list[Path]) -> list[Path]:
     return files
 
 
-def ingest(targets: list[Path], register_dir: Path,
-           dry_run: bool = False) -> list[str]:
+def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> list[str]:
     """Apply every review file below targets, all or nothing.
 
     Every file of the batch is validated and applied in memory before any
@@ -239,8 +249,7 @@ def ingest(targets: list[Path], register_dir: Path,
         register_path = register_dir / f"{doc_id}.json"
         if register_path not in registers:
             if not register_path.exists():
-                raise ReviewError(
-                    f"{path.name}: kein Register fuer Dokument {doc_id}")
+                raise ReviewError(f"{path.name}: kein Register fuer Dokument {doc_id}")
             registers[register_path] = br._load(register_path)
         log.append(f"{path.name} -> {register_path.name}")
         log += apply_document(registers[register_path], review, pages, path.name)
@@ -252,12 +261,21 @@ def ingest(targets: list[Path], register_dir: Path,
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("targets", nargs="*", type=Path,
-                    help=f"review files or directories (default: {REVIEWS})")
-    ap.add_argument("--register", type=Path, default=REGISTER,
-                    help="register page directory (default: pipeline/pages/)")
-    ap.add_argument("--dry-run", action="store_true",
-                    help="validate and report without writing")
+    ap.add_argument(
+        "targets",
+        nargs="*",
+        type=Path,
+        help=f"review files or directories (default: {REVIEWS})",
+    )
+    ap.add_argument(
+        "--register",
+        type=Path,
+        default=REGISTER,
+        help="register page directory (default: pipeline/pages/)",
+    )
+    ap.add_argument(
+        "--dry-run", action="store_true", help="validate and report without writing"
+    )
     args = ap.parse_args()
 
     targets = args.targets or [REVIEWS]
@@ -272,8 +290,10 @@ def main() -> int:
     for entry in log:
         print(entry)
     mode = " (dry run)" if args.dry_run else ""
-    print(f"OK Reviews: {sum(1 for e in log if not e.startswith('  '))}"
-          f" Datei(en) uebernommen{mode}")
+    print(
+        f"OK Reviews: {sum(1 for e in log if not e.startswith('  '))}"
+        f" Datei(en) uebernommen{mode}"
+    )
     return 0
 
 

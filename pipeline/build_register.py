@@ -66,8 +66,11 @@ def _load(path: Path) -> Any:
 
 def _write(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n",
-                    encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def review_runs(page: dict) -> list[dict]:
@@ -76,8 +79,9 @@ def review_runs(page: dict) -> list[dict]:
     Single definition of what a review run is; apply_review, build_tei and the
     healthcheck all select on it, so the prefix cannot drift apart.
     """
-    return [r for r in page.get("runs") or []
-            if str(r.get("id", "")).startswith("review:")]
+    return [
+        r for r in page.get("runs") or [] if str(r.get("id", "")).startswith("review:")
+    ]
 
 
 def newest_review_run(page: dict, exclude_id: str | None = None) -> dict | None:
@@ -101,8 +105,11 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
     """Collect VLM runs from both evaluation cohorts, keyed by (docId, pageNr)."""
     runs: dict[tuple[int, int], list[dict]] = {}
     skipped: list[str] = []
-    for cohort, folder in (("benchmark", BENCHMARK_RUNS), ("pilot", PILOT_RUNS),
-                           ("pilot2", PILOT2_RUNS)):
+    for cohort, folder in (
+        ("benchmark", BENCHMARK_RUNS),
+        ("pilot", PILOT_RUNS),
+        ("pilot2", PILOT2_RUNS),
+    ):
         if not folder.is_dir():
             continue
         for f in sorted(folder.glob("*.json")):
@@ -114,27 +121,31 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
             parsed = rec.get("parsed") or {}
             parts = [p.get("empty") is True for p in parsed.get("pages") or []]
             empty = bool(parts) and all(parts)
-            runs.setdefault(key, []).append({
-                "id": f"{cohort}:{f.stem}",
-                "source": "vlm",
-                "model": rec.get("model"),
-                "prompt": rec.get("iteration"),
-                "prompt_hash": rec.get("prompt_hash"),
-                "repeat": rec.get("repeat"),
-                "date": rec.get("timestamp"),
-                "empty": empty,
-                # per image part in the order the run reported them; a raitbuch
-                # page is a spread and is sent as verso and recto
-                "empty_parts": parts,
-                # uniform line shape across all runs; a VLM run reports bare
-                # text and has no layout line identity, so its id stays null
-                "lines": [{"id": None, "text": t} for t in rec.get("lines") or []],
-            })
+            runs.setdefault(key, []).append(
+                {
+                    "id": f"{cohort}:{f.stem}",
+                    "source": "vlm",
+                    "model": rec.get("model"),
+                    "prompt": rec.get("iteration"),
+                    "prompt_hash": rec.get("prompt_hash"),
+                    "repeat": rec.get("repeat"),
+                    "date": rec.get("timestamp"),
+                    "empty": empty,
+                    # per image part in the order the run reported them; a raitbuch
+                    # page is a spread and is sent as verso and recto
+                    "empty_parts": parts,
+                    # uniform line shape across all runs; a VLM run reports bare
+                    # text and has no layout line identity, so its id stays null
+                    "lines": [{"id": None, "text": t} for t in rec.get("lines") or []],
+                }
+            )
     for key in runs:
         runs[key].sort(key=lambda r: r["id"])
     if skipped:
-        print(f"WARNUNG unaufloesbare Run-Seiten-Kennungen: {len(skipped)}",
-              file=sys.stderr)
+        print(
+            f"WARNUNG unaufloesbare Run-Seiten-Kennungen: {len(skipped)}",
+            file=sys.stderr,
+        )
         for name in skipped:
             print(f"  SKIP {name}", file=sys.stderr)
     return runs
@@ -151,22 +162,39 @@ def _documents() -> list[dict]:
 
     docs: list[dict] = []
     for entry in mapping:
-        docs.append(_document(entry["transkribus_id"],
-                              by_signatur.get(entry["csv_signatur"]),
-                              entry["csv_signatur"],
-                              entry.get("pages") or 0,
-                              bool(entry.get("has_text")),
-                              status_by_id.get(entry["transkribus_id"])))
+        docs.append(
+            _document(
+                entry["transkribus_id"],
+                by_signatur.get(entry["csv_signatur"]),
+                entry["csv_signatur"],
+                entry.get("pages") or 0,
+                bool(entry.get("has_text")),
+                status_by_id.get(entry["transkribus_id"]),
+            )
+        )
     rb2 = by_signatur.get(RAITBUCH2_SIGNATUR)
-    docs.append(_document(RAITBUCH2_DOC, rb2, RAITBUCH2_SIGNATUR,
-                          len(_load(DATA / "raitbuch2_pages.json")), False,
-                          status_by_id.get(RAITBUCH2_DOC)))
+    docs.append(
+        _document(
+            RAITBUCH2_DOC,
+            rb2,
+            RAITBUCH2_SIGNATUR,
+            len(_load(DATA / "raitbuch2_pages.json")),
+            False,
+            status_by_id.get(RAITBUCH2_DOC),
+        )
+    )
     docs.sort(key=lambda d: d["docId"])
     return docs
 
 
-def _document(doc_id: int, source: dict | None, signatur: str,
-              pages: int, has_text: bool, status: dict | None = None) -> dict:
+def _document(
+    doc_id: int,
+    source: dict | None,
+    signatur: str,
+    pages: int,
+    has_text: bool,
+    status: dict | None = None,
+) -> dict:
     dating = (source or {}).get("datierung") or {}
     return {
         "docId": doc_id,
@@ -198,37 +226,44 @@ def _pages(doc: dict, runs: dict[tuple[int, int], list[dict]]) -> list[dict]:
     if export.exists():
         entries = [_page_from_export(p) for p in _load(export)["pages"]]
     elif doc_id == RAITBUCH2_DOC:
-        entries = [{"pageNr": p["pageNr"], "iiif": p.get("iiif_url"), "lines": []}
-                   for p in _load(DATA / "raitbuch2_pages.json")]
+        entries = [
+            {"pageNr": p["pageNr"], "iiif": p.get("iiif_url"), "lines": []}
+            for p in _load(DATA / "raitbuch2_pages.json")
+        ]
     else:
-        entries = [{"pageNr": n, "iiif": None, "lines": []}
-                   for n in range(1, doc["pages"] + 1)]
+        entries = [
+            {"pageNr": n, "iiif": None, "lines": []} for n in range(1, doc["pages"] + 1)
+        ]
 
     pages = []
     for e in sorted(entries, key=lambda x: x["pageNr"]):
         page_runs: list[dict] = []
         if e["lines"]:
-            page_runs.append({
-                "id": "transkribus",
-                "source": "transkribus",
-                "model": None,
-                "prompt": None,
-                "prompt_hash": None,
-                "repeat": None,
-                "date": None,
-                "empty": None,
-                "empty_parts": None,
-                "lines": e["lines"],
-            })
+            page_runs.append(
+                {
+                    "id": "transkribus",
+                    "source": "transkribus",
+                    "model": None,
+                    "prompt": None,
+                    "prompt_hash": None,
+                    "repeat": None,
+                    "date": None,
+                    "empty": None,
+                    "empty_parts": None,
+                    "lines": e["lines"],
+                }
+            )
         page_runs.extend(runs.get((doc_id, e["pageNr"]), []))
-        pages.append({
-            "pageNr": e["pageNr"],
-            "iiif": e["iiif"],
-            "content_class": "text" if e["lines"] else "unknown",
-            "empty_evidence": _empty_evidence(page_runs),
-            "verification": {"status": "unbearbeitet"},
-            "runs": page_runs,
-        })
+        pages.append(
+            {
+                "pageNr": e["pageNr"],
+                "iiif": e["iiif"],
+                "content_class": "text" if e["lines"] else "unknown",
+                "empty_evidence": _empty_evidence(page_runs),
+                "verification": {"status": "unbearbeitet"},
+                "runs": page_runs,
+            }
+        )
     return pages
 
 
@@ -239,8 +274,9 @@ def _empty_evidence(page_runs: list[dict]) -> dict | None:
     "partial" means at least one part of a spread was reported empty. The
     evidence never changes content_class; adjudication is a later step.
     """
-    reporting = [r for r in page_runs
-                 if r["source"] == "vlm" and any(r["empty_parts"] or [])]
+    reporting = [
+        r for r in page_runs if r["source"] == "vlm" and any(r["empty_parts"] or [])
+    ]
     if not reporting:
         return None
     scope = "full" if all(r["empty"] for r in reporting) else "partial"
@@ -248,9 +284,11 @@ def _empty_evidence(page_runs: list[dict]) -> dict | None:
 
 
 def _page_from_export(page: dict) -> dict:
-    lines = [{"id": ln["id"], "text": ln["text"]}
-             for region in page.get("regions", [])
-             for ln in region.get("lines", [])]
+    lines = [
+        {"id": ln["id"], "text": ln["text"]}
+        for region in page.get("regions", [])
+        for ln in region.get("lines", [])
+    ]
     return {"pageNr": page["pageNr"], "iiif": page.get("iiif"), "lines": lines}
 
 
@@ -285,13 +323,13 @@ def build(out_dir: Path) -> tuple[list[dict], dict[int, list[dict]]]:
 
     _write(out_dir / "documents.json", docs)
     for doc_id, pages in pages_by_doc.items():
-        _write(out_dir / "pages" / f"{doc_id}.json",
-               {"docId": doc_id, "pages": pages})
+        _write(out_dir / "pages" / f"{doc_id}.json", {"docId": doc_id, "pages": pages})
     return docs, pages_by_doc
 
 
-def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
-            out_path: Path) -> dict:
+def project(
+    docs: list[dict], pages_by_doc: dict[int, list[dict]], out_path: Path
+) -> dict:
     """Compact per-document projection for the site, loadable in one fetch."""
     summary = []
     for doc in docs:
@@ -300,30 +338,36 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
         # First written page as the document's thumbnail source; the site
         # requests a scaled IIIF variant at runtime, no image enters the repo.
         first_text = next(
-            (p for p in pages if p["content_class"] == "text" and p["iiif"]), None)
-        summary.append({
-            "docId": doc["docId"],
-            "shelfmark": doc["shelfmark"],
-            "title": doc["title"],
-            "pages_total": len(pages),
-            "pages_with_text": sum(1 for p in pages if p["content_class"] == "text"),
-            "pages_with_vlm_runs": sum(
-                1 for p in pages if any(r["source"] == "vlm" for r in p["runs"])),
-            "pages_with_empty_evidence": sum(
-                1 for p in pages if p["empty_evidence"]),
-            "verification": {s: status.get(s, 0) for s in VERIFICATION_STATUS},
-            "thumb": first_text["iiif"] if first_text else None,
-            "thumb_page": first_text["pageNr"] if first_text else None,
-            "done_pages": doc.get("done_pages"),
-            # same predicate as build_tei.py: a TEI file exists for every
-            # matched document with text and an export on disk
-            "has_tei": bool(doc["has_text"]) and
-            (DATA / "transcriptions" / f"{doc['docId']}.json").exists(),
-            # lets the site skip the per-document entity probe; the demo
-            # fallback for the one hand-made extraction stays client-side
-            "has_entities":
-            (DATA / "entities" / f"{doc['docId']}.json").exists(),
-        })
+            (p for p in pages if p["content_class"] == "text" and p["iiif"]), None
+        )
+        summary.append(
+            {
+                "docId": doc["docId"],
+                "shelfmark": doc["shelfmark"],
+                "title": doc["title"],
+                "pages_total": len(pages),
+                "pages_with_text": sum(
+                    1 for p in pages if p["content_class"] == "text"
+                ),
+                "pages_with_vlm_runs": sum(
+                    1 for p in pages if any(r["source"] == "vlm" for r in p["runs"])
+                ),
+                "pages_with_empty_evidence": sum(
+                    1 for p in pages if p["empty_evidence"]
+                ),
+                "verification": {s: status.get(s, 0) for s in VERIFICATION_STATUS},
+                "thumb": first_text["iiif"] if first_text else None,
+                "thumb_page": first_text["pageNr"] if first_text else None,
+                "done_pages": doc.get("done_pages"),
+                # same predicate as build_tei.py: a TEI file exists for every
+                # matched document with text and an export on disk
+                "has_tei": bool(doc["has_text"])
+                and (DATA / "transcriptions" / f"{doc['docId']}.json").exists(),
+                # lets the site skip the per-document entity probe; the demo
+                # fallback for the one hand-made extraction stays client-side
+                "has_entities": (DATA / "entities" / f"{doc['docId']}.json").exists(),
+            }
+        )
     payload = {"documents": summary}
     _write(out_path, payload)
     return payload
@@ -331,12 +375,20 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--out", type=Path, default=ROOT,
-                    help="register target directory (default: pipeline/)")
-    ap.add_argument("--project", action="store_true",
-                    help="also write the site projection to docs/data/pipeline/")
-    ap.add_argument("--project-out", type=Path,
-                    default=DATA / "pipeline" / "register_summary.json")
+    ap.add_argument(
+        "--out",
+        type=Path,
+        default=ROOT,
+        help="register target directory (default: pipeline/)",
+    )
+    ap.add_argument(
+        "--project",
+        action="store_true",
+        help="also write the site projection to docs/data/pipeline/",
+    )
+    ap.add_argument(
+        "--project-out", type=Path, default=DATA / "pipeline" / "register_summary.json"
+    )
     args = ap.parse_args()
 
     docs, pages_by_doc = build(args.out)

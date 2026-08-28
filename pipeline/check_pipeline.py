@@ -28,16 +28,17 @@ import json
 import re
 import sys
 import tempfile
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import apply_review as ar  # noqa: E402
-import build_register as br  # noqa: E402
-import build_tei as bt  # noqa: E402
-import validate_tei as vt  # noqa: E402
+import apply_review as ar
+import build_register as br
+import build_tei as bt
+import validate_tei as vt
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
@@ -68,8 +69,16 @@ KNOWN_ORPHANS = (11328660, 11328744, br.RAITBUCH2_DOC)
 
 # Evaluation run records are numerous and uniform; a sample proves the shape.
 RUN_SAMPLE = 20
-RUN_KEYS = ("page", "iteration", "repeat", "model", "prompt_hash", "timestamp",
-            "lines", "parsed")
+RUN_KEYS = (
+    "page",
+    "iteration",
+    "repeat",
+    "model",
+    "prompt_hash",
+    "timestamp",
+    "lines",
+    "parsed",
+)
 
 # Line-count spread between the repeats of one page above which a third run is worth
 # having; a report, not a defect.
@@ -106,6 +115,7 @@ def _register_files() -> list[Path]:
 
 # ================================== contract =================================
 
+
 def check_contract() -> list[Finding]:
     """The register against the export and against its own vocabularies."""
     out: list[Finding] = []
@@ -116,17 +126,25 @@ def check_contract() -> list[Finding]:
         page_nrs = [p["pageNr"] for p in payload["pages"]]
         for nr, count in _counts(page_nrs).items():
             if count > 1:
-                out.append(_fail("contract.page-duplicate",
-                                 f"document {doc_id} page {nr} appears {count} times"
-                                 " in the register"))
+                out.append(
+                    _fail(
+                        "contract.page-duplicate",
+                        f"document {doc_id} page {nr} appears {count} times"
+                        " in the register",
+                    )
+                )
         export = TRANSCRIPTIONS / f"{doc_id}.json"
         if export.exists():
             exported = {p["pageNr"] for p in _load(export)["pages"]}
             missing = sorted(exported - set(page_nrs))
             if missing:
-                out.append(_fail("contract.page-missing",
-                                 f"document {doc_id} export pages not in the register:"
-                                 f" {missing}"))
+                out.append(
+                    _fail(
+                        "contract.page-missing",
+                        f"document {doc_id} export pages not in the register:"
+                        f" {missing}",
+                    )
+                )
         out += _check_pages(doc_id, payload["pages"], seen_runs)
     return out
 
@@ -138,69 +156,105 @@ def _counts(values: list[Any]) -> dict[Any, int]:
     return counts
 
 
-def _check_pages(doc_id: int, pages: list[dict], seen_runs: dict[str, str]) -> list[Finding]:
+def _check_pages(
+    doc_id: int, pages: list[dict], seen_runs: dict[str, str]
+) -> list[Finding]:
     out: list[Finding] = []
     for page in pages:
         where = f"document {doc_id} page {page['pageNr']}"
         if page["content_class"] not in br.CONTENT_CLASSES:
-            out.append(_fail("contract.content-class",
-                             f"{where}: content_class {page['content_class']!r}"))
+            out.append(
+                _fail(
+                    "contract.content-class",
+                    f"{where}: content_class {page['content_class']!r}",
+                )
+            )
         status = (page.get("verification") or {}).get("status")
         if status not in br.VERIFICATION_STATUS:
-            out.append(_fail("contract.verification-status",
-                             f"{where}: verification status {status!r}"))
+            out.append(
+                _fail(
+                    "contract.verification-status",
+                    f"{where}: verification status {status!r}",
+                )
+            )
         ids_here: set[str] = set()
         for run in page.get("runs") or []:
             run_id = run.get("id")
             if run.get("source") not in RUN_SOURCES:
-                out.append(_fail("contract.run-source",
-                                 f"{where}, run {run_id}: source {run.get('source')!r}"))
+                out.append(
+                    _fail(
+                        "contract.run-source",
+                        f"{where}, run {run_id}: source {run.get('source')!r}",
+                    )
+                )
             if run_id in ids_here:
-                out.append(_fail("contract.run-duplicate",
-                                 f"{where}: run id {run_id!r} twice on one page"))
+                out.append(
+                    _fail(
+                        "contract.run-duplicate",
+                        f"{where}: run id {run_id!r} twice on one page",
+                    )
+                )
             ids_here.add(run_id)
             # "transkribus" is the export run of every page and is unique per page;
             # every other run id names one evaluation or review record corpus-wide.
             if run_id != "transkribus":
                 if run_id in seen_runs:
-                    out.append(_fail("contract.run-duplicate",
-                                     f"run id {run_id!r} in {where} and in"
-                                     f" {seen_runs[run_id]}"))
+                    out.append(
+                        _fail(
+                            "contract.run-duplicate",
+                            f"run id {run_id!r} in {where} and in {seen_runs[run_id]}",
+                        )
+                    )
                 seen_runs[run_id] = where
             for line in run.get("lines") or []:
                 if set(line) != {"id", "text"}:
-                    out.append(_fail("contract.run-lines",
-                                     f"{where}, run {run_id}: line keys"
-                                     f" {sorted(line)}"))
+                    out.append(
+                        _fail(
+                            "contract.run-lines",
+                            f"{where}, run {run_id}: line keys {sorted(line)}",
+                        )
+                    )
                     break
     return out
 
 
 # ================================== coverage =================================
 
+
 def check_coverage() -> list[Finding]:
     """The three document sets against each other, orphans reported in each direction."""
-    sources = {entry["transkribus"]["doc_id"]
-               for entry in _load(DATA / "sources.json") if entry.get("transkribus")}
-    mapping = {entry["transkribus_id"]
-               for entry in _load(DATA / "source_mapping.json")["matched"]}
+    sources = {
+        entry["transkribus"]["doc_id"]
+        for entry in _load(DATA / "sources.json")
+        if entry.get("transkribus")
+    }
+    mapping = {
+        entry["transkribus_id"]
+        for entry in _load(DATA / "source_mapping.json")["matched"]
+    }
     register = {doc["docId"] for doc in _load(DOCUMENTS)}
 
     out: list[Finding] = []
-    pairs = (("sources", sources, "mapping", mapping),
-             ("mapping", mapping, "sources", sources),
-             ("mapping", mapping, "register", register),
-             ("register", register, "mapping", mapping))
+    pairs = (
+        ("sources", sources, "mapping", mapping),
+        ("mapping", mapping, "sources", sources),
+        ("mapping", mapping, "register", register),
+        ("register", register, "mapping", mapping),
+    )
     for left_name, left, right_name, right in pairs:
         for doc_id in sorted(left - right):
             severity = _info if doc_id in KNOWN_ORPHANS else _fail
-            out.append(severity("coverage.orphan",
-                                f"document {doc_id} is in {left_name} and not in"
-                                f" {right_name}"))
+            out.append(
+                severity(
+                    "coverage.orphan",
+                    f"document {doc_id} is in {left_name} and not in {right_name}",
+                )
+            )
     return out
 
 
 # ================================ json contracts =============================
+
 
 def check_json() -> list[Finding]:
     """Entity files, review exports and evaluation runs against their contracts."""
@@ -215,31 +269,54 @@ def _check_entities() -> list[Finding]:
         prov = data.get("provenance") or {}
         for field in ("source", "model", "prompt", "prompt_hash", "date"):
             if not prov.get(field):
-                out.append(_fail("json.entity-provenance",
-                                 f"{path.name}: provenance field {field} missing"))
+                out.append(
+                    _fail(
+                        "json.entity-provenance",
+                        f"{path.name}: provenance field {field} missing",
+                    )
+                )
         lines = _transcription_lines(doc_id)
         if lines is None:
-            out.append(_fail("json.entity-doc",
-                             f"{path.name}: no transcription for document {doc_id}"))
+            out.append(
+                _fail(
+                    "json.entity-doc",
+                    f"{path.name}: no transcription for document {doc_id}",
+                )
+            )
             continue
         for entity in data.get("entities") or []:
-            missing = [f for f in ("id", "text", "normalized", "type", "pageNr",
-                                   "lineId") if entity.get(f) in (None, "")]
+            missing = [
+                f
+                for f in ("id", "text", "normalized", "type", "pageNr", "lineId")
+                if entity.get(f) in (None, "")
+            ]
             if missing:
-                out.append(_fail("json.entity-fields",
-                                 f"{path.name}, entity {entity.get('id')}: fields"
-                                 f" {missing} missing"))
+                out.append(
+                    _fail(
+                        "json.entity-fields",
+                        f"{path.name}, entity {entity.get('id')}: fields"
+                        f" {missing} missing",
+                    )
+                )
                 continue
             key = f"p{entity['pageNr']}_{entity['lineId']}"
             line = lines.get(key)
             if line is None:
-                out.append(_fail("json.entity-anchor",
-                                 f"{path.name}, entity {entity['id']}: line {key} is"
-                                 " not in the transcription"))
+                out.append(
+                    _fail(
+                        "json.entity-anchor",
+                        f"{path.name}, entity {entity['id']}: line {key} is"
+                        " not in the transcription",
+                    )
+                )
             elif entity["text"] not in line:
-                out.append(_fail("json.entity-verbatim",
-                                 f"{path.name}, entity {entity['id']}:"
-                                 f" {entity['text']!r} not verbatim in line {key}"))
+                out.append(
+                    _fail(
+                        "json.entity-verbatim",
+                        f"{path.name}, entity {entity['id']}:"
+                        f" {entity['text']!r} not verbatim in line {key}",
+                    )
+                )
     return out
 
 
@@ -248,10 +325,12 @@ def _transcription_lines(doc_id: Any) -> dict[str, str] | None:
     path = TRANSCRIPTIONS / f"{doc_id}.json"
     if not path.exists():
         return None
-    return {f"p{page['pageNr']}_{line['id']}": line["text"]
-            for page in _load(path)["pages"]
-            for region in page.get("regions") or []
-            for line in region.get("lines") or []}
+    return {
+        f"p{page['pageNr']}_{line['id']}": line["text"]
+        for page in _load(path)["pages"]
+        for region in page.get("regions") or []
+        for line in region.get("lines") or []
+    }
 
 
 def _check_reviews() -> list[Finding]:
@@ -267,8 +346,11 @@ def _check_reviews() -> list[Finding]:
 
 
 def _evaluation_runs() -> list[Path]:
-    return sorted(p for cohort in ("benchmark", "pilot", "pilot2")
-                  for p in (EVALUATION / cohort / "runs").glob("*.json"))
+    return sorted(
+        p
+        for cohort in ("benchmark", "pilot", "pilot2")
+        for p in (EVALUATION / cohort / "runs").glob("*.json")
+    )
 
 
 def _check_runs() -> list[Finding]:
@@ -292,6 +374,7 @@ def _check_runs() -> list[Finding]:
 
 # ============================ provenance regression ==========================
 
+
 def check_provenance() -> list[Finding]:
     """No confidence value anywhere and no certainty attribute in the TEI.
 
@@ -302,30 +385,42 @@ def check_provenance() -> list[Finding]:
     for folder in (ENTITY_DIR, TEI_DIR):
         for path in sorted(folder.glob("*")):
             if path.is_file() and "confidence" in path.read_text(encoding="utf-8"):
-                out.append(_fail("provenance.confidence",
-                                 f"{path.name}: carries the string 'confidence'"))
+                out.append(
+                    _fail(
+                        "provenance.confidence",
+                        f"{path.name}: carries the string 'confidence'",
+                    )
+                )
     from lxml import etree
 
     for path in sorted(TEI_DIR.glob("*.xml")):
         for element in etree.parse(str(path)).getroot().iter():
             bare = {name.rsplit("}", 1)[-1] for name in element.attrib}
             if "cert" in bare:
-                out.append(_fail("provenance.cert",
-                                 f"{path.name}: {etree.QName(element).localname}"
-                                 " carries @cert"))
+                out.append(
+                    _fail(
+                        "provenance.cert",
+                        f"{path.name}: {etree.QName(element).localname} carries @cert",
+                    )
+                )
     for path in _register_files():
         payload = _load(path)
         for page in payload["pages"]:
             for run in page.get("runs") or []:
                 if not run.get("source"):
-                    out.append(_fail("provenance.run-source",
-                                     f"document {payload['docId']} page"
-                                     f" {page['pageNr']}: run {run.get('id')!r}"
-                                     " carries no source"))
+                    out.append(
+                        _fail(
+                            "provenance.run-source",
+                            f"document {payload['docId']} page"
+                            f" {page['pageNr']}: run {run.get('id')!r}"
+                            " carries no source",
+                        )
+                    )
     return out
 
 
 # ================================= referential ===============================
+
 
 def check_referential() -> list[Finding]:
     """Every pointer resolves: TEI @facs, projection thumbnails, prompt hashes."""
@@ -342,9 +437,13 @@ def _check_facs() -> list[Finding]:
         for element in root.iter():
             facs = element.get("facs")
             if facs and facs.lstrip("#") not in ids:
-                out.append(_fail("referential.facs",
-                                 f"{path.name}: {etree.QName(element).localname}"
-                                 f" @facs {facs} resolves to nothing"))
+                out.append(
+                    _fail(
+                        "referential.facs",
+                        f"{path.name}: {etree.QName(element).localname}"
+                        f" @facs {facs} resolves to nothing",
+                    )
+                )
     return out
 
 
@@ -358,19 +457,33 @@ def _check_thumbs() -> list[Finding]:
             continue
         path = REGISTER / f"{doc_id}.json"
         if not path.exists():
-            out.append(_fail("referential.thumb",
-                             f"document {doc_id}: no register file for the thumbnail"))
+            out.append(
+                _fail(
+                    "referential.thumb",
+                    f"document {doc_id}: no register file for the thumbnail",
+                )
+            )
             continue
-        page = next((p for p in _load(path)["pages"]
-                     if p["pageNr"] == entry["thumb_page"]), None)
+        page = next(
+            (p for p in _load(path)["pages"] if p["pageNr"] == entry["thumb_page"]),
+            None,
+        )
         if page is None:
-            out.append(_fail("referential.thumb",
-                             f"document {doc_id}: thumb_page {entry['thumb_page']}"
-                             " is not a page of the register"))
+            out.append(
+                _fail(
+                    "referential.thumb",
+                    f"document {doc_id}: thumb_page {entry['thumb_page']}"
+                    " is not a page of the register",
+                )
+            )
         elif page["iiif"] != entry["thumb"]:
-            out.append(_fail("referential.thumb",
-                             f"document {doc_id} page {entry['thumb_page']}: thumb URL"
-                             " differs from the register"))
+            out.append(
+                _fail(
+                    "referential.thumb",
+                    f"document {doc_id} page {entry['thumb_page']}: thumb URL"
+                    " differs from the register",
+                )
+            )
     return out
 
 
@@ -392,22 +505,33 @@ def _check_prompt_hashes() -> list[Finding]:
         prompt_id = prov.get("prompt")
         expected = _prompt_hash(prompt_id) if prompt_id else None
         if expected is None:
-            out.append(_fail("referential.prompt",
-                             f"{path.name}: prompt {prompt_id!r} has no frozen file"))
+            out.append(
+                _fail(
+                    "referential.prompt",
+                    f"{path.name}: prompt {prompt_id!r} has no frozen file",
+                )
+            )
         elif expected != prov.get("prompt_hash"):
-            out.append(_fail("referential.prompt-hash",
-                             f"{path.name}: prompt_hash {prov.get('prompt_hash')!r}"
-                             f" does not match {prompt_id} ({expected})"))
+            out.append(
+                _fail(
+                    "referential.prompt-hash",
+                    f"{path.name}: prompt_hash {prov.get('prompt_hash')!r}"
+                    f" does not match {prompt_id} ({expected})",
+                )
+            )
     return out
 
 
 # =================================== metrics =================================
 
+
 def check_metrics() -> list[Finding]:
     """Value ranges of the evaluation summaries, plus two reportable states."""
     out: list[Finding] = []
-    for cohort, name in (("pilot", "pilot_summary.json"),
-                         ("pilot2", "pilot2_summary.json")):
+    for cohort, name in (
+        ("pilot", "pilot_summary.json"),
+        ("pilot2", "pilot2_summary.json"),
+    ):
         path = EVALUATION / cohort / name
         if not path.exists():
             out.append(_fail("metrics.summary", f"{name} is missing"))
@@ -422,24 +546,34 @@ def _check_metric_page(cohort: str, page_id: str, page: dict) -> list[Finding]:
     for field in ("consistency_words", "consistency_numbers"):
         value = page.get(field)
         if value is not None and not 0.0 <= value <= 1.0:
-            out.append(_fail("metrics.consistency",
-                             f"{cohort} {page_id}: {field} is {value}"))
+            out.append(
+                _fail("metrics.consistency", f"{cohort} {page_id}: {field} is {value}")
+            )
     for value in page.get("cer_fair_vs_working") or []:
         if value > 1:
             # a CER above one means the reference is shorter than the edit distance,
             # which says something about the reference and not about the run
-            out.append(_info("metrics.degenerate-reference",
-                             f"{cohort} {page_id}: cer_fair_vs_working {value}"))
+            out.append(
+                _info(
+                    "metrics.degenerate-reference",
+                    f"{cohort} {page_id}: cer_fair_vs_working {value}",
+                )
+            )
             break
     lines = page.get("lines") or []
     if len(lines) > 1 and max(lines) - min(lines) > REPEAT_DIVERGENCE:
-        out.append(_info("metrics.repeat-divergence",
-                         f"{cohort} {page_id}: repeats report {lines} lines,"
-                         " a third run would decide"))
+        out.append(
+            _info(
+                "metrics.repeat-divergence",
+                f"{cohort} {page_id}: repeats report {lines} lines,"
+                " a third run would decide",
+            )
+        )
     return out
 
 
 # ==================================== schema =================================
+
 
 def check_schema() -> list[Finding]:
     """Both validation stages of validate_tei.py, reported as one finding on failure."""
@@ -454,12 +588,14 @@ def check_schema() -> list[Finding]:
 
 # ================================= idempotence ===============================
 
+
 def _tei_date() -> str:
     """Generation date of the committed TEI, so the rebuild compares against
     the date the files actually carry instead of the script constant."""
     for path in sorted(TEI_DIR.glob("*.xml")):
-        m = re.search(r'<date when="(\d{4}-\d{2}-\d{2})">', path.read_text(
-            encoding="utf-8"))
+        m = re.search(
+            r'<date when="(\d{4}-\d{2}-\d{2})">', path.read_text(encoding="utf-8")
+        )
         if m:
             return m.group(1)
     return bt.GENERATION_DATE
@@ -484,32 +620,49 @@ def check_idempotence() -> list[Finding]:
             out += _compare(TEI_DIR / name, tmp / "tei" / name, "tei")
         rebuilt_pages = {p.name for p in (tmp / "pages").glob("*.json")}
         rebuilt_tei = {f"{doc_id}.xml" for doc_id in built}
-        for name in sorted({p.name for p in REGISTER.glob("*.json")}
-                           - rebuilt_pages):
-            out.append(_fail("idempotence.orphan",
-                             f"pages/{name}: the working tree has it, the"
-                             " rebuild does not produce it"))
-        for name in sorted({p.name for p in TEI_DIR.glob("*.xml")}
-                           - rebuilt_tei):
-            out.append(_fail("idempotence.orphan",
-                             f"tei/{name}: the working tree has it, the"
-                             " rebuild does not produce it"))
+        for name in sorted({p.name for p in REGISTER.glob("*.json")} - rebuilt_pages):
+            out.append(
+                _fail(
+                    "idempotence.orphan",
+                    f"pages/{name}: the working tree has it, the"
+                    " rebuild does not produce it",
+                )
+            )
+        for name in sorted({p.name for p in TEI_DIR.glob("*.xml")} - rebuilt_tei):
+            out.append(
+                _fail(
+                    "idempotence.orphan",
+                    f"tei/{name}: the working tree has it, the"
+                    " rebuild does not produce it",
+                )
+            )
     return out
 
 
 def _compare(current: Path, rebuilt: Path, what: str) -> list[Finding]:
     if not current.exists():
-        return [_fail("idempotence.missing",
-                      f"{current.name}: the rebuild writes it, the working tree has it"
-                      " not")]
+        return [
+            _fail(
+                "idempotence.missing",
+                f"{current.name}: the rebuild writes it, the working tree has it not",
+            )
+        ]
     if current.read_bytes() == rebuilt.read_bytes():
         return []
     if what == "register" and _only_review_state(current, rebuilt):
-        return [_info("idempotence.review-state",
-                      f"{current.name}: differs from the rebuild only in ingested"
-                      " review state, which a rebuild does not reproduce")]
-    return [_fail("idempotence.drift",
-                  f"{current.name}: the rebuild does not reproduce the working tree")]
+        return [
+            _info(
+                "idempotence.review-state",
+                f"{current.name}: differs from the rebuild only in ingested"
+                " review state, which a rebuild does not reproduce",
+            )
+        ]
+    return [
+        _fail(
+            "idempotence.drift",
+            f"{current.name}: the rebuild does not reproduce the working tree",
+        )
+    ]
 
 
 def _only_review_state(current: Path, rebuilt: Path) -> bool:
@@ -531,10 +684,13 @@ def _strip_reviews(payload: dict) -> dict:
     pages = []
     for page in payload["pages"]:
         reviews = br.review_runs(page)
-        pages.append({**page,
-                      "verification": {"status": "unbearbeitet"},
-                      "runs": [r for r in page.get("runs") or []
-                               if r not in reviews]})
+        pages.append(
+            {
+                **page,
+                "verification": {"status": "unbearbeitet"},
+                "runs": [r for r in page.get("runs") or [] if r not in reviews],
+            }
+        )
     return {**payload, "pages": pages}
 
 
@@ -572,8 +728,9 @@ def run(skip: set[str] | None = None) -> list[Finding]:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--skip", action="append", default=[],
-                    help="check id to leave out, repeatable")
+    ap.add_argument(
+        "--skip", action="append", default=[], help="check id to leave out, repeatable"
+    )
     ap.add_argument("--list", action="store_true", help="print the check ids and exit")
     args = ap.parse_args(argv)
 

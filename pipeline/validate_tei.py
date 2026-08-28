@@ -42,10 +42,18 @@ MISSING_TOOLS_MESSAGE = (
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tei-dir", type=Path, default=DEFAULT_TEI_DIR)
-    parser.add_argument("--schema", type=Path, default=None,
-                        help="validate against this schema only, instead of both stages")
-    parser.add_argument("--max-errors", type=int, default=DEFAULT_MAX_ERRORS,
-                        help="errors reported per invalid file")
+    parser.add_argument(
+        "--schema",
+        type=Path,
+        default=None,
+        help="validate against this schema only, instead of both stages",
+    )
+    parser.add_argument(
+        "--max-errors",
+        type=int,
+        default=DEFAULT_MAX_ERRORS,
+        help="errors reported per invalid file",
+    )
     return parser.parse_args(argv)
 
 
@@ -53,7 +61,9 @@ def collect_files(tei_dir: Path) -> list[Path]:
     return sorted(tei_dir.glob("*.xml"))
 
 
-def validate_with_lxml(files: list[Path], schema_path: Path, max_errors: int) -> list[Path]:
+def validate_with_lxml(
+    files: list[Path], schema_path: Path, max_errors: int
+) -> list[Path]:
     from lxml import etree
 
     relaxng = etree.RelaxNG(etree.parse(str(schema_path)))
@@ -76,12 +86,16 @@ def validate_with_lxml(files: list[Path], schema_path: Path, max_errors: int) ->
     return invalid
 
 
-def validate_with_jing(files: list[Path], schema_path: Path, max_errors: int) -> list[Path]:
+def validate_with_jing(
+    files: list[Path], schema_path: Path, max_errors: int
+) -> list[Path]:
     invalid: list[Path] = []
     for path in files:
         result = subprocess.run(
             ["jing", str(schema_path), str(path)],
-            capture_output=True, text=True, check=False,
+            capture_output=True,
+            text=True,
+            check=False,
         )
         if result.returncode == 0:
             continue
@@ -103,15 +117,18 @@ def _validator():
     return validate_with_lxml
 
 
-def run_stage(label: str, files: list[Path], schema_path: Path,
-              max_errors: int) -> list[Path]:
+def run_stage(
+    label: str, files: list[Path], schema_path: Path, max_errors: int
+) -> list[Path]:
     """One validation stage, reported on its own line. Returns the invalid files."""
     validate = _validator()
     if validate is None:  # pragma: no cover - guarded in main
         raise RuntimeError(MISSING_TOOLS_MESSAGE)
     invalid = validate(files, schema_path, max_errors)
-    print(f"{label}: {len(files) - len(invalid)}/{len(files)} files valid"
-          f" against {schema_path.name}")
+    print(
+        f"{label}: {len(files) - len(invalid)}/{len(files)} files valid"
+        f" against {schema_path.name}"
+    )
     return invalid
 
 

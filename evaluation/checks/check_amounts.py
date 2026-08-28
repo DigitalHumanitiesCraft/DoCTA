@@ -94,24 +94,44 @@ import json
 import re
 import sys
 import unicodedata
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, NamedTuple
+from typing import NamedTuple
 
 sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).parent
 REPO = ROOT.parent.parent
-DEFAULT_RUN_DIRS = (REPO / "evaluation" / "pilot" / "runs", REPO / "evaluation" / "pilot2" / "runs")
+DEFAULT_RUN_DIRS = (
+    REPO / "evaluation" / "pilot" / "runs",
+    REPO / "evaluation" / "pilot2" / "runs",
+)
 RUN_GLOB = "*rb2*.json"
 
 # Denomination normalization. Keys are matched on a lowercased, NFC-normalized token.
 # `m` and `c` are deliberately absent: they are resolved positionally (see docstring).
 UNIT_MAP = {
-    "gld": "gld", "gl": "gld", "guld": "gld", "gulden": "gld", "rhgld": "gld", "rhgl": "gld",
-    "duc": "duc", "dut": "duc", "ducat": "duc", "ducatn": "duc", "ducaten": "duc",
-    "m̄": "m", "m̅": "m", "m̃": "m", "mr": "m", "mrk": "m", "mark": "m", "marck": "m",
+    "gld": "gld",
+    "gl": "gld",
+    "guld": "gld",
+    "gulden": "gld",
+    "rhgld": "gld",
+    "rhgl": "gld",
+    "duc": "duc",
+    "dut": "duc",
+    "ducat": "duc",
+    "ducatn": "duc",
+    "ducaten": "duc",
+    "m̄": "m",
+    "m̅": "m",
+    "m̃": "m",
+    "mr": "m",
+    "mrk": "m",
+    "mark": "m",
+    "marck": "m",
     "lb": "lb",
-    "ß": "ß", "s": "ß",
+    "ß": "ß",
+    "s": "ß",
     "d": "d",
     "hl": "hl",
 }
@@ -174,7 +194,10 @@ def tokenize(text: str) -> list[str]:
     tokens: list[str] = []
     index = 0
     while index < len(raw):
-        pair = (raw[index].lower(), raw[index + 1].lower() if index + 1 < len(raw) else "")
+        pair = (
+            raw[index].lower(),
+            raw[index + 1].lower() if index + 1 < len(raw) else "",
+        )
         if pair in UNIT_PHRASES:
             tokens.append(pair[1])
             index += 2
@@ -184,7 +207,9 @@ def tokenize(text: str) -> list[str]:
     return tokens
 
 
-def parse_amount(numeral: str, multiplier: str = "", unit: str = "", text: str = "") -> Amount:
+def parse_amount(
+    numeral: str, multiplier: str = "", unit: str = "", text: str = ""
+) -> Amount:
     """Parse the amount object of a line into denomination totals.
 
     `multiplier` marks that the numeral does not already carry are inserted into it;
@@ -196,8 +221,8 @@ def parse_amount(numeral: str, multiplier: str = "", unit: str = "", text: str =
     tokens = tokenize(numeral)
     values: dict[str, int] = {}
     unparsed: list[str] = []
-    group = 0          # Roman tokens accumulated since the last mark or denomination
-    running = 0        # scaled groups since the last denomination
+    group = 0  # Roman tokens accumulated since the last mark or denomination
+    running = 0  # scaled groups since the last denomination
     assigned = False
 
     def flush(denomination: str) -> None:
@@ -223,7 +248,9 @@ def parse_amount(numeral: str, multiplier: str = "", unit: str = "", text: str =
             group = 0
             continue
         if token == THOUSAND_MARK:
-            if group and not any(later in HUNDRED_MARKS for later in lowered[position + 1:]):
+            if group and not any(
+                later in HUNDRED_MARKS for later in lowered[position + 1 :]
+            ):
                 flush("m")
             else:
                 running += (group or 1) * 1000
@@ -241,10 +268,15 @@ def parse_amount(numeral: str, multiplier: str = "", unit: str = "", text: str =
     if rest:
         fallback = None
         if not assigned:
-            candidates = {UNIT_MAP[t.lower()] for t in tokenize(unit or "") if t.lower() in UNIT_MAP}
+            candidates = {
+                UNIT_MAP[t.lower()]
+                for t in tokenize(unit or "")
+                if t.lower() in UNIT_MAP
+            }
             fallback = candidates.pop() if len(candidates) == 1 else None
-        values["?" if fallback is None else fallback] = values.get(
-            "?" if fallback is None else fallback, 0) + rest
+        values["?" if fallback is None else fallback] = (
+            values.get("?" if fallback is None else fallback, 0) + rest
+        )
     return Amount(values=values, unparsed=unparsed)
 
 
@@ -272,8 +304,13 @@ def _apply_multiplier(numeral: str, multiplier: str, text: str = "") -> str:
     leading = [m for m in missing if m.rstrip("cCmM")]
     bare = [m for m in missing if not m.rstrip("cCmM")]
     flat_text = _flatten(text)
-    before = [m for m in bare
-              if re.search(rf"(^|\s){m.lower()}\s+{re.escape(_flatten(head))}(\s|$)", flat_text)]
+    before = [
+        m
+        for m in bare
+        if re.search(
+            rf"(^|\s){m.lower()}\s+{re.escape(_flatten(head))}(\s|$)", flat_text
+        )
+    ]
     after = [m for m in bare if m not in before]
     return " ".join([*leading, *before, head, *after, tail]).strip()
 
@@ -299,8 +336,12 @@ class Block(NamedTuple):
 def line_amount(line: dict) -> tuple[Amount | None, bool]:
     obj = line.get("amount")
     if isinstance(obj, dict) and (obj.get("numeral") or obj.get("multiplier")):
-        return parse_amount(obj.get("numeral", ""), obj.get("multiplier", ""),
-                            obj.get("unit", ""), line.get("text", "")), False
+        return parse_amount(
+            obj.get("numeral", ""),
+            obj.get("multiplier", ""),
+            obj.get("unit", ""),
+            line.get("text", ""),
+        ), False
     return None, line.get("kind") == "amount"
 
 
@@ -308,8 +349,15 @@ def read_lines(page: dict) -> list[Line]:
     lines = []
     for index, raw in enumerate(page.get("lines") or []):
         amount, unreadable = line_amount(raw)
-        lines.append(Line(index=index, text=raw.get("text", ""), kind=raw.get("kind", ""),
-                          amount=amount, unreadable=unreadable))
+        lines.append(
+            Line(
+                index=index,
+                text=raw.get("text", ""),
+                kind=raw.get("kind", ""),
+                amount=amount,
+                unreadable=unreadable,
+            )
+        )
     return lines
 
 
@@ -330,11 +378,15 @@ def find_blocks(page: dict) -> list[Block]:
         line = lines[index]
         if is_sum_head(line):
             totals, index = collect_total(lines, index)
-            blocks.append(Block(page_label=label, items=items, head=line, total_lines=totals))
+            blocks.append(
+                Block(page_label=label, items=items, head=line, total_lines=totals)
+            )
             items = []
             continue
         if line.kind in {"rubric", "foliation"} and items:
-            blocks.append(Block(page_label=label, items=items, head=None, total_lines=[]))
+            blocks.append(
+                Block(page_label=label, items=items, head=None, total_lines=[])
+            )
             items = []
         if line.amount is not None or line.unreadable:
             items.append(line)
@@ -401,7 +453,9 @@ def subset_exact(items: list[Amount], target: dict[str, int]) -> list[int] | Non
 def judge(block: Block) -> dict:
     """Verdict for one block, with both totals and the reason where it does not decide."""
     item_amounts = [line.amount for line in block.items if line.amount is not None]
-    total_amounts = [line.amount for line in block.total_lines if line.amount is not None]
+    total_amounts = [
+        line.amount for line in block.total_lines if line.amount is not None
+    ]
     items = merge(item_amounts)
     total = merge(total_amounts)
     result: dict = {
@@ -415,7 +469,9 @@ def judge(block: Block) -> dict:
         "sum_total": dict(sorted(total.values.items())),
         "unparsed": sorted(set(items.unparsed) | set(total.unparsed)),
     }
-    unreadable = [line.text for line in (*block.items, *block.total_lines) if line.unreadable]
+    unreadable = [
+        line.text for line in (*block.items, *block.total_lines) if line.unreadable
+    ]
 
     def undecided(reason: str) -> dict:
         return {**result, "verdict": "unverifiable", "reason": reason}
@@ -484,9 +540,17 @@ def counts_of(blocks: list[dict]) -> dict[str, int]:
 
 
 def build_report(run_dirs: Iterable[Path]) -> dict:
-    paths = sorted((p for d in run_dirs for p in Path(d).glob(RUN_GLOB)), key=lambda p: (p.parent.parent.name, p.name))
+    paths = sorted(
+        (p for d in run_dirs for p in Path(d).glob(RUN_GLOB)),
+        key=lambda p: (p.parent.parent.name, p.name),
+    )
     runs = [check_run(path) for path in paths]
-    return {"tool": "check_amounts", "run_glob": RUN_GLOB, "runs": runs, "aggregate": aggregate(runs)}
+    return {
+        "tool": "check_amounts",
+        "run_glob": RUN_GLOB,
+        "runs": runs,
+        "aggregate": aggregate(runs),
+    }
 
 
 def page_verdict(run: dict) -> str:
@@ -496,8 +560,16 @@ def page_verdict(run: dict) -> str:
     subset adds up does not count as a contradiction, because there the block carries
     an amount line that is not an addend rather than a wrong amount.
     """
-    good = sum(1 for b in run["blocks"] if b["verdict"] == "exact-match" or b.get("subset_exact"))
-    bad = sum(1 for b in run["blocks"] if b["verdict"] == "mismatch" and not b.get("subset_exact"))
+    good = sum(
+        1
+        for b in run["blocks"]
+        if b["verdict"] == "exact-match" or b.get("subset_exact")
+    )
+    bad = sum(
+        1
+        for b in run["blocks"]
+        if b["verdict"] == "mismatch" and not b.get("subset_exact")
+    )
     if bad:
         return "mismatch"
     return "clean" if good else "unverifiable"
@@ -506,9 +578,18 @@ def page_verdict(run: dict) -> str:
 def aggregate(runs: list[dict]) -> dict:
     cohorts: dict[str, dict[str, int]] = {}
     for run in runs:
-        bucket = cohorts.setdefault(run["cohort"], {"runs": 0, "blocks": 0, "exact-match": 0,
-                                                    "mismatch": 0, "unverifiable": 0, "subset-only": 0,
-                                                    "unclosed_amount_runs": 0})
+        bucket = cohorts.setdefault(
+            run["cohort"],
+            {
+                "runs": 0,
+                "blocks": 0,
+                "exact-match": 0,
+                "mismatch": 0,
+                "unverifiable": 0,
+                "subset-only": 0,
+                "unclosed_amount_runs": 0,
+            },
+        )
         bucket["runs"] += 1
         bucket["blocks"] += len(run["blocks"])
         bucket["unclosed_amount_runs"] += run["unclosed_amount_runs"]
@@ -517,10 +598,16 @@ def aggregate(runs: list[dict]) -> dict:
     pages: dict[str, dict[str, str]] = {}
     for run in runs:
         pages.setdefault(run["page"], {})[f"r{run['repeat']}"] = page_verdict(run)
-    single = sorted(p for p, r in pages.items()
-                    if len(r) == 2 and sum(v == "clean" for v in r.values()) == 1)
-    both_fail = sorted(p for p, r in pages.items() if len(r) == 2
-                       and all(v == "mismatch" for v in r.values()))
+    single = sorted(
+        p
+        for p, r in pages.items()
+        if len(r) == 2 and sum(v == "clean" for v in r.values()) == 1
+    )
+    both_fail = sorted(
+        p
+        for p, r in pages.items()
+        if len(r) == 2 and all(v == "mismatch" for v in r.values())
+    )
     tokens: dict[str, int] = {}
     reasons: dict[str, int] = {}
     for run in runs:
@@ -534,7 +621,9 @@ def aggregate(runs: list[dict]) -> dict:
         "pages": dict(sorted(pages.items())),
         "sighting_candidates": single,
         "both_repeats_mismatch": both_fail,
-        "unverifiable_reasons": dict(sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "unverifiable_reasons": dict(
+            sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0]))
+        ),
         "unparsed_tokens": dict(sorted(tokens.items(), key=lambda kv: (-kv[1], kv[0]))),
     }
 
@@ -545,40 +634,73 @@ def format_amount(values: dict[str, int]) -> str:
 
 def render_markdown(report: dict) -> str:
     aggregate_data = report["aggregate"]
-    out = ["# Arithmetische Probe der Raitbuch-Transkriptionen", "",
-           "Posten eines Blocks gegen dessen Summenzeile, je Denomination und ohne "
-           "angenommene Umrechnung. Erzeugt von `check_amounts.py`.", "",
-           "## Kohorten", "",
-           "| Kohorte | Läufe | Blöcke | exact-match | mismatch | unverifiable | davon Teilmengen-Treffer | "
-           "Betragsläufe ohne Summenzeile |",
-           "|---|---|---|---|---|---|---|---|"]
+    out = [
+        "# Arithmetische Probe der Raitbuch-Transkriptionen",
+        "",
+        "Posten eines Blocks gegen dessen Summenzeile, je Denomination und ohne "
+        "angenommene Umrechnung. Erzeugt von `check_amounts.py`.",
+        "",
+        "## Kohorten",
+        "",
+        "| Kohorte | Läufe | Blöcke | exact-match | mismatch | unverifiable | davon Teilmengen-Treffer | "
+        "Betragsläufe ohne Summenzeile |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
     for cohort, data in aggregate_data["cohorts"].items():
-        out.append(f"| {cohort} | {data['runs']} | {data['blocks']} | {data['exact-match']} | "
-                   f"{data['mismatch']} | {data['unverifiable']} | {data['subset-only']} | "
-                   f"{data['unclosed_amount_runs']} |")
-    out += ["", "## Warum ein Block nicht entscheidet", "", "| Grund | Blöcke |", "|---|---|"]
-    out += [f"| {reason} | {count} |" for reason, count in aggregate_data["unverifiable_reasons"].items()]
-    out += ["", "## Seiten, auf denen genau eine Wiederholung aufgeht", "",
-            "Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus.", ""]
+        out.append(
+            f"| {cohort} | {data['runs']} | {data['blocks']} | {data['exact-match']} | "
+            f"{data['mismatch']} | {data['unverifiable']} | {data['subset-only']} | "
+            f"{data['unclosed_amount_runs']} |"
+        )
+    out += [
+        "",
+        "## Warum ein Block nicht entscheidet",
+        "",
+        "| Grund | Blöcke |",
+        "|---|---|",
+    ]
+    out += [
+        f"| {reason} | {count} |"
+        for reason, count in aggregate_data["unverifiable_reasons"].items()
+    ]
+    out += [
+        "",
+        "## Seiten, auf denen genau eine Wiederholung aufgeht",
+        "",
+        "Kandidaten für eine gezielte Bildlektüre; die Probe weist dort einen Lauf aus.",
+        "",
+    ]
     if aggregate_data["sighting_candidates"]:
         out += ["| Seite | r1 | r2 |", "|---|---|---|"]
         for page in aggregate_data["sighting_candidates"]:
             repeats = aggregate_data["pages"][page]
-            out.append(f"| {page} | {repeats.get('r1', '-')} | {repeats.get('r2', '-')} |")
+            out.append(
+                f"| {page} | {repeats.get('r1', '-')} | {repeats.get('r2', '-')} |"
+            )
     else:
         out.append("Keine.")
     out += ["", "## Seiten, auf denen beide Wiederholungen scheitern", ""]
     out.append(", ".join(aggregate_data["both_repeats_mismatch"]) or "Keine.")
-    out += ["", "## Nicht geparste Tokens", "",
-            "Tokens, die der Parser nicht liest und deshalb auch nicht rät.", ""]
+    out += [
+        "",
+        "## Nicht geparste Tokens",
+        "",
+        "Tokens, die der Parser nicht liest und deshalb auch nicht rät.",
+        "",
+    ]
     if aggregate_data["unparsed_tokens"]:
         out += ["| Token | Läufe |", "|---|---|"]
-        out += [f"| `{token}` | {count} |" for token, count in aggregate_data["unparsed_tokens"].items()]
+        out += [
+            f"| `{token}` | {count} |"
+            for token, count in aggregate_data["unparsed_tokens"].items()
+        ]
     else:
         out.append("Keine.")
     out += ["", "## Blöcke mit Befund", ""]
     for run in report["runs"]:
-        decided = [b for b in run["blocks"] if b["verdict"] in {"exact-match", "mismatch"}]
+        decided = [
+            b for b in run["blocks"] if b["verdict"] in {"exact-match", "mismatch"}
+        ]
         if not decided:
             continue
         out.append(f"### {run['run']}")
@@ -587,9 +709,11 @@ def render_markdown(report: dict) -> str:
             note = ""
             if block.get("subset_exact"):
                 note = f" (Teilmenge der Zeilen {block['subset_exact']} geht auf)"
-            out.append(f"- {block['verdict']}{note}: Posten {format_amount(block['items_total'])} "
-                       f"gegen Summe {format_amount(block['sum_total'])} "
-                       f"[{block['page_label']}, „{block['head_text']}“]")
+            out.append(
+                f"- {block['verdict']}{note}: Posten {format_amount(block['items_total'])} "
+                f"gegen Summe {format_amount(block['sum_total'])} "
+                f"[{block['page_label']}, „{block['head_text']}“]"
+            )
         out.append("")
     return "\n".join(out).rstrip() + "\n"
 
@@ -598,15 +722,20 @@ def write_reports(report: dict, out_dir: Path) -> tuple[Path, Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
     json_path = out_dir / "amounts_report.json"
     md_path = out_dir / "amounts_report.md"
-    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=1, sort_keys=False) + "\n",
-                         encoding="utf-8", newline="\n")
+    json_path.write_text(
+        json.dumps(report, ensure_ascii=False, indent=1, sort_keys=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     md_path.write_text(render_markdown(report), encoding="utf-8", newline="\n")
     return json_path, md_path
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--runs", action="append", type=Path, help="run directory (repeatable)")
+    parser.add_argument(
+        "--runs", action="append", type=Path, help="run directory (repeatable)"
+    )
     parser.add_argument("--out", type=Path, default=ROOT, help="report directory")
     args = parser.parse_args()
     report = build_report(args.runs or DEFAULT_RUN_DIRS)

@@ -34,3 +34,14 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "PTH", "RUF"]
 ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# Historical one-off fetch and transform scripts: the stdout re-wrap statement
+# precedes the imports (E402) and os.path/open idioms stay as written (PTH).
+"scripts/*" = ["E402", "PTH"]
+# Deliberate typographic multiplication sign in German console output.
+"evaluation/benchmark/run_benchmark.py" = ["RUF001"]
+# The en dash in SEPARATORS is a token of the source material, never a typo.
+"evaluation/checks/check_amounts.py" = ["RUF001"]
+# Frozen experiment; the ambiguous loop name stays as run.
+"experiments/**" = ["E741"]

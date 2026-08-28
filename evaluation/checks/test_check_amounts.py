@@ -54,16 +54,22 @@ def test_parse_real_amounts() -> None:
     assert amount("vij m ij c xv", "m", "lb") == {"lb": 7215}
     # pilot2_rb2_p027__it02__r1.json, verso: the trailing viij carries no denomination
     assert amount("ij m iiij c xlvij lb iiij ß j d viij", "m / c", "lb, ß, d") == {
-        "lb": 2447, "ß": 4, "d": 1, "?": 8}
+        "lb": 2447,
+        "ß": 4,
+        "d": 1,
+        "?": 8,
+    }
     # pilot2_rb2_p031__it02__r2.json: multiplier carried only by the multiplier field
     assert amount("lxxj", "ijC", "duc") == {"duc": 271}
     # pilot2_rb2_p039__it02__r1.json, 39r: the same field, but the text shows the mark
     # standing before the group, so it is the Roman 100 and not a hundredfold
-    assert ca.parse_amount("lxxij", "C", "lb", "bleibt hat C lxxij lb xiij ß ix d").values == {
-        "lb": 172}
+    assert ca.parse_amount(
+        "lxxij", "C", "lb", "bleibt hat C lxxij lb xiij ß ix d"
+    ).values == {"lb": 172}
     # pilot2_rb2_p024__it02__r1.json, verso: the same field with the mark behind the group
-    assert ca.parse_amount("viij liij", "C", "guld",
-                           "benant Soldner —— viijC liij guld ij ß v d").values == {"gld": 853}
+    assert ca.parse_amount(
+        "viij liij", "C", "guld", "benant Soldner —— viijC liij guld ij ß v d"
+    ).values == {"gld": 853}
     # pilot2_rb2_p040__it02__r1.json, 40r: mark with abbreviation stroke is the
     # denomination; the declared unit `hl` does not claim the trailing viij
     assert amount("lxxxv m̄ ix ß viij", "", "hl") == {"m": 85, "ß": 9, "?": 8}
@@ -75,14 +81,20 @@ def test_unparsed_is_never_guessed() -> None:
     assert parsed.unparsed == ["tt"]
     assert parsed.values == {"gld": 8}
     # pilot_rb2_p006__it02__r1.json, 6r: a German number word stays unread
-    assert ca.parse_amount("dreizehn", "", "gld") == ca.Amount(values={}, unparsed=["dreizehn"])
+    assert ca.parse_amount("dreizehn", "", "gld") == ca.Amount(
+        values={}, unparsed=["dreizehn"]
+    )
     # pilot2_rb2_p040__it02__r1.json, verso: lost content marked by the run itself
-    assert "..." in ca.parse_amount("viij ... vij ... iiij ... xxvij", "", "mr").unparsed
+    assert (
+        "..." in ca.parse_amount("viij ... vij ... iiij ... xxvij", "", "mr").unparsed
+    )
 
 
 def page_of(run: str, index: int) -> dict:
     directory = PILOT2 if run.startswith("pilot2") else PILOT
-    return json.loads((directory / run).read_text(encoding="utf-8"))["parsed"]["pages"][index]
+    return json.loads((directory / run).read_text(encoding="utf-8"))["parsed"]["pages"][
+        index
+    ]
 
 
 def verdicts(page: dict) -> list[dict]:
@@ -91,8 +103,11 @@ def verdicts(page: dict) -> list[dict]:
 
 def test_review_case_p025_verso_exact_match() -> None:
     """300 + 700 + 694 = 1694, verified against the image for r2."""
-    block = next(v for v in verdicts(page_of("pilot2_rb2_p025__it02__r2.json", 0))
-                 if v["head_text"].startswith("Summa"))
+    block = next(
+        v
+        for v in verdicts(page_of("pilot2_rb2_p025__it02__r2.json", 0))
+        if v["head_text"].startswith("Summa")
+    )
     assert block["verdict"] == "exact-match", block
     assert block["items_total"] == {"gld": 1694}
     assert block["sum_total"] == {"gld": 1694}
@@ -105,12 +120,18 @@ def test_review_case_p030_recto_exact_match() -> None:
     an addend. The full set therefore mismatches and the checker reports the one
     subset that adds up, instead of silently accepting the block.
     """
-    block = next(v for v in verdicts(page_of("pilot2_rb2_p030__it02__r1.json", 1))
-                 if v["sum_total"] == {"duc": 1287})
+    block = next(
+        v
+        for v in verdicts(page_of("pilot2_rb2_p030__it02__r1.json", 1))
+        if v["sum_total"] == {"duc": 1287}
+    )
     assert block["verdict"] == "mismatch", block
     assert block["items_total"] == {"duc": 1441}
     assert block["subset_exact"] is not None
-    items = [ca.parse_amount("xij C xx", "C", "duc"), ca.parse_amount("lxvij", "", "duc")]
+    items = [
+        ca.parse_amount("xij C xx", "C", "duc"),
+        ca.parse_amount("lxvij", "", "duc"),
+    ]
     assert ca.merge(items).values == {"duc": 1287}
 
 
@@ -119,13 +140,22 @@ def test_constructed_mismatch() -> None:
         "label": "test",
         "lines": [
             {"text": "Item", "kind": "marginal"},
-            {"text": "iij C Rhgld", "kind": "amount",
-             "amount": {"multiplier": "C", "numeral": "iij", "unit": "Rhgld"}},
-            {"text": "vij C Rhgld", "kind": "amount",
-             "amount": {"multiplier": "C", "numeral": "vij", "unit": "Rhgld"}},
+            {
+                "text": "iij C Rhgld",
+                "kind": "amount",
+                "amount": {"multiplier": "C", "numeral": "iij", "unit": "Rhgld"},
+            },
+            {
+                "text": "vij C Rhgld",
+                "kind": "amount",
+                "amount": {"multiplier": "C", "numeral": "vij", "unit": "Rhgld"},
+            },
             {"text": "Summa", "kind": "sum"},
-            {"text": "m Rhgld", "kind": "amount",
-             "amount": {"multiplier": "", "numeral": "m j", "unit": "Rhgld"}},
+            {
+                "text": "m Rhgld",
+                "kind": "amount",
+                "amount": {"multiplier": "", "numeral": "m j", "unit": "Rhgld"},
+            },
         ],
     }
     block = verdicts(page)[0]
@@ -139,9 +169,21 @@ def test_unverifiable_on_differing_denominations() -> None:
     page = {
         "label": "test",
         "lines": [
-            {"text": "x lb", "kind": "amount", "amount": {"numeral": "x", "unit": "lb"}},
-            {"text": "v lb", "kind": "amount", "amount": {"numeral": "v", "unit": "lb"}},
-            {"text": "Summa xv ß", "kind": "sum", "amount": {"numeral": "xv", "unit": "ß"}},
+            {
+                "text": "x lb",
+                "kind": "amount",
+                "amount": {"numeral": "x", "unit": "lb"},
+            },
+            {
+                "text": "v lb",
+                "kind": "amount",
+                "amount": {"numeral": "v", "unit": "lb"},
+            },
+            {
+                "text": "Summa xv ß",
+                "kind": "sum",
+                "amount": {"numeral": "xv", "unit": "ß"},
+            },
         ],
     }
     block = verdicts(page)[0]
@@ -153,8 +195,16 @@ def test_single_item_block_is_not_a_check() -> None:
     page = {
         "label": "test",
         "lines": [
-            {"text": "x lb", "kind": "amount", "amount": {"numeral": "x", "unit": "lb"}},
-            {"text": "Summa x lb", "kind": "sum", "amount": {"numeral": "x", "unit": "lb"}},
+            {
+                "text": "x lb",
+                "kind": "amount",
+                "amount": {"numeral": "x", "unit": "lb"},
+            },
+            {
+                "text": "Summa x lb",
+                "kind": "sum",
+                "amount": {"numeral": "x", "unit": "lb"},
+            },
         ],
     }
     assert verdicts(page)[0]["reason"] == "single item, arithmetic is trivial"
@@ -175,7 +225,9 @@ DEFAULT_DIRS = (PILOT, PILOT2)
 
 
 def main() -> int:
-    tests = [value for name, value in sorted(globals().items()) if name.startswith("test_")]
+    tests = [
+        value for name, value in sorted(globals().items()) if name.startswith("test_")
+    ]
     failed = 0
     for test in tests:
         try:

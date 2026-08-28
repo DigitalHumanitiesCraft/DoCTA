@@ -122,9 +122,15 @@ def load_lines(doc: dict) -> dict[str, dict]:
             for line in region["lines"]:
                 key = f"p{page['pageNr']}_{line['id']}"
                 if key in index:
-                    sys.exit(f"FEHLER: doppelte Zeilen-ID {key} in Dokument {doc['docId']}")
-                index[key] = {"pageNr": page["pageNr"], "lineId": line["id"],
-                              "text": line["text"], "order": order}
+                    sys.exit(
+                        f"FEHLER: doppelte Zeilen-ID {key} in Dokument {doc['docId']}"
+                    )
+                index[key] = {
+                    "pageNr": page["pageNr"],
+                    "lineId": line["id"],
+                    "text": line["text"],
+                    "order": order,
+                }
                 order += 1
     return index
 
@@ -144,16 +150,22 @@ def call_gemini(key: str, system: str, user: str) -> dict:
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": user}]}],
-        "generationConfig": {"temperature": TEMPERATURE, "candidateCount": 1,
-                             "maxOutputTokens": 32768,
-                             "responseMimeType": "application/json",
-                             "responseSchema": RESPONSE_SCHEMA},
+        "generationConfig": {
+            "temperature": TEMPERATURE,
+            "candidateCount": 1,
+            "maxOutputTokens": 32768,
+            "responseMimeType": "application/json",
+            "responseSchema": RESPONSE_SCHEMA,
+        },
     }
     last_reason = "HTTP"
     for attempt in range(4):
-        r = requests.post(f"{API_BASE}/{MODEL}:generateContent",
-                          headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                          json=body, timeout=TIMEOUT)
+        r = requests.post(
+            f"{API_BASE}/{MODEL}:generateContent",
+            headers={"x-goog-api-key": key, "Content-Type": "application/json"},
+            json=body,
+            timeout=TIMEOUT,
+        )
         if r.status_code in (429, 500, 503):
             time.sleep(2 ** (attempt + 2))
             continue
@@ -161,14 +173,20 @@ def call_gemini(key: str, system: str, user: str) -> dict:
         data = r.json()
         cands = data.get("candidates")
         if not cands:
-            last_reason = data.get("promptFeedback", {}).get("blockReason", "no candidates")
+            last_reason = data.get("promptFeedback", {}).get(
+                "blockReason", "no candidates"
+            )
             time.sleep(2 ** (attempt + 2))
             continue
         cand = cands[0]
-        text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
+        text = "".join(
+            p.get("text", "") for p in cand.get("content", {}).get("parts", [])
+        )
         if not text:
             raise ValueError(f"leere Antwort, finishReason={cand.get('finishReason')}")
-        return json.loads(re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip())
+        return json.loads(
+            re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
+        )
     raise RuntimeError(f"Retries erschöpft ({last_reason})")
 
 
@@ -205,8 +223,13 @@ def validate(raw: list[dict], index: dict[str, dict]) -> tuple[list[dict], list[
         key = str(item.get("lineId", "")).strip()
         surface = str(item.get("text", "")).strip()
         etype = str(item.get("type", "")).strip()
-        record = {"lineId": key, "text": surface, "normalized": item.get("normalized", ""),
-                  "type": etype, "role": item.get("role", "")}
+        record = {
+            "lineId": key,
+            "text": surface,
+            "normalized": item.get("normalized", ""),
+            "type": etype,
+            "role": item.get("role", ""),
+        }
         if etype not in TYPES:
             rejected.append({**record, "reason": "type_invalid"})
             continue
@@ -216,27 +239,43 @@ def validate(raw: list[dict], index: dict[str, dict]) -> tuple[list[dict], list[
         line = index[key]
         found = locate(line["text"], surface)
         if found is None:
-            rejected.append({**record, "reason": "not_verbatim", "lineText": line["text"]})
+            rejected.append(
+                {**record, "reason": "not_verbatim", "lineText": line["text"]}
+            )
             continue
         dedupe = (key, found, etype)
         if dedupe in seen:
             rejected.append({**record, "reason": "duplicate"})
             continue
         seen.add(dedupe)
-        kept.append({"text": found, "normalized": str(item.get("normalized", "")).strip() or found,
-                     "type": etype, "pageNr": line["pageNr"], "lineId": line["lineId"],
-                     "role": str(item.get("role", "")).strip(),
-                     "_order": (line["order"], line["text"].index(found))})
+        kept.append(
+            {
+                "text": found,
+                "normalized": str(item.get("normalized", "")).strip() or found,
+                "type": etype,
+                "pageNr": line["pageNr"],
+                "lineId": line["lineId"],
+                "role": str(item.get("role", "")).strip(),
+                "_order": (line["order"], line["text"].index(found)),
+            }
+        )
     kept.sort(key=lambda e: e["_order"])
     counters: dict[str, int] = {}
     out: list[dict] = []
     for entity in kept:
         prefix = ID_PREFIX[entity["type"]]
         counters[prefix] = counters.get(prefix, 0) + 1
-        out.append({"id": f"{prefix}{counters[prefix]}", "text": entity["text"],
-                    "normalized": entity["normalized"], "type": entity["type"],
-                    "pageNr": entity["pageNr"], "lineId": entity["lineId"],
-                    "role": entity["role"]})
+        out.append(
+            {
+                "id": f"{prefix}{counters[prefix]}",
+                "text": entity["text"],
+                "normalized": entity["normalized"],
+                "type": entity["type"],
+                "pageNr": entity["pageNr"],
+                "lineId": entity["lineId"],
+                "role": entity["role"],
+            }
+        )
     return out, rejected
 
 
@@ -248,8 +287,7 @@ def assert_verbatim(entities: list[dict], index: dict[str, dict]) -> None:
     for e in entities:
         line = index[f"p{e['pageNr']}_{e['lineId']}"]
         if e["text"] not in line["text"]:
-            raise ValueError(
-                f"{e['id']}: {e['text']!r} nicht in {line['lineId']}")
+            raise ValueError(f"{e['id']}: {e['text']!r} nicht in {line['lineId']}")
         if "confidence" in e:
             raise ValueError(f"{e['id']}: Konfidenzfeld in der Ausgabe")
 
@@ -270,8 +308,13 @@ def run_one(key: str, doc_id: int, system: str, prompt_hash: str, force: bool) -
     result = {
         "docId": doc_id,
         "title": doc["title"],
-        "provenance": {"source": "llm", "model": MODEL, "prompt": PROMPT_ID,
-                       "prompt_hash": prompt_hash, "date": date.today().isoformat()},
+        "provenance": {
+            "source": "llm",
+            "model": MODEL,
+            "prompt": PROMPT_ID,
+            "prompt_hash": prompt_hash,
+            "date": date.today().isoformat(),
+        },
         "entities": entities,
         "rejected": rejected,
     }
@@ -299,8 +342,12 @@ def report(result: dict) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--doc", type=int, action="append", help="nur diese docId (mehrfach möglich)")
-    ap.add_argument("--force", action="store_true", help="bestehende Ausgabe überschreiben")
+    ap.add_argument(
+        "--doc", type=int, action="append", help="nur diese docId (mehrfach möglich)"
+    )
+    ap.add_argument(
+        "--force", action="store_true", help="bestehende Ausgabe überschreiben"
+    )
     args = ap.parse_args()
     doc_ids = args.doc or list(DOC_IDS)
     system = extract_prompt(ROOT / "prompts" / f"{PROMPT_ID}.md")

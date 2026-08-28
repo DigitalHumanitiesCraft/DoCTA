@@ -1,0 +1,4 @@
+# One line-ending convention for every platform: the generators pin LF, the
+# byte-identity checks of the pipeline depend on it, so git must not translate.
+* text=auto eol=lf
+*.png binary
