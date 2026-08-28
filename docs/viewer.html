@@ -190,6 +190,17 @@
       // Name who corrected: for the attributed documents that work is the
       // Inventaria project's, and "human-corrected" must not leave it open.
       const by = reg.transcription_by === 'Inventaria' ? ' by the Inventaria project' : '';
+      // A document Transkribus holds no text for was transcribed by DoCTA
+      // itself; naming the Transkribus HTR layer here would be wrong.
+      if (reg.transcription_source === 'vlm') {
+        return {
+          state: 'machine',
+          label: 'Machine transcription · DoCTA',
+          title: 'Unrevised transcription produced by the DoCTA pipeline with a ' +
+                 'vision-language model. Transkribus holds no transcription of this ' +
+                 'source, and no page has been read against the scan by a scholar',
+        };
+      }
       if (done >= total) {
         return {
           state: 'human',
@@ -254,19 +265,46 @@
       let attribution = '';
       if (reg?.transcription_by === 'Inventaria') {
         const url = reg.edition_url || 'https://www.inventaria.at/';
-        const label = reg.edition_url
+        // The claim must match the layer on screen: "edited" only where every
+        // page is corrected; an unrevised working layer names Inventaria as
+        // its origin and points to their published edition without borrowing
+        // its editorial status.
+        const edited = reg.pages_total > 0 && (reg.done_pages || 0) >= reg.pages_total;
+        const label = edited && reg.edition_url
           ? 'Edited and published by the Inventaria project &middot; open the edition'
-          : 'Transcription: Inventaria project &middot; inventaria.at';
+          : `Transcription: Inventaria project${reg.edition_url ? ' &middot; published edition' : ' &middot; inventaria.at'}`;
+        const title = edited
+          ? 'This document was transcribed, edited and published by the Inventaria project' +
+            ' (University of Salzburg / University of Innsbruck); the link opens the published' +
+            ' edition on Transkribus Sites. DoCTA uses it with attribution.'
+          : 'The working transcription of this document comes from the Inventaria project' +
+            ' (University of Salzburg / University of Innsbruck); the text shown here is the' +
+            ' unrevised layer. The link opens their published edition on Transkribus Sites.';
+        const bookIcon =
+          '<svg class="meta-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor"' +
+          ' stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+          '<path d="M8 3.5C6.9 2.6 5.3 2.2 2.5 2.2v10.6c2.8 0 4.4.4 5.5 1.3 1.1-.9 2.7-1.3 5.5-1.3V2.2c-2.8 0-4.4.4-5.5 1.3z"/>' +
+          '<path d="M8 3.5v10.6"/></svg>';
         attribution =
-          `<a class="doc-meta__cat" href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
-          ` title="This document was transcribed, edited and published by the Inventaria project` +
-          ` (University of Salzburg / University of Innsbruck); the link opens the published` +
-          ` edition on Transkribus Sites. DoCTA uses it with attribution.">${label}</a>`;
+          `<a class="doc-meta__edition" href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
+          ` title="${escapeAttr(title)}">${bookIcon}${label}</a>`;
       }
+      // A DoCTA transcription can cover part of its document, because a source
+      // without a Transkribus export has no page list and the pipeline may hold
+      // an image reference for some of its pages only. The pager would show the
+      // transcribed pages as if they were the whole document, so the strip says
+      // how much of the source is here.
+      const prov = currentDoc?.provenance;
+      const coverage = (prov && prov.pagesTranscribed < prov.pagesInDocument)
+        ? `<span class="doc-meta__cat" title="The remaining pages have no page image` +
+          ` reference in the pipeline and are untranscribed.">` +
+          `${prov.pagesTranscribed} of ${prov.pagesInDocument} pages transcribed</span>`
+        : '';
       const parts = [
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
         `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,
         provenanceChip(docId),
+        coverage,
         attribution,
       ].filter(Boolean);
       el.innerHTML = parts.join('');
@@ -1136,8 +1174,14 @@
       try {
         // Entities are optional per document and are awaited with the text, so
         // the first render already carries the marks instead of racing them in
+        // Where the text of this document lives: the Transkribus export, or the
+        // projection of DoCTA's own transcription for a source without one.
+        const source = registerByDocId.get(Number(docId))?.transcription_source;
+        const path = source === 'vlm'
+          ? `data/pipeline/transcriptions/${docId}.json`
+          : `data/transcriptions/${docId}.json`;
         const [doc, entities] = await Promise.all([
-          loadJSON(`data/transcriptions/${docId}.json`),
+          loadJSON(path),
           loadEntities(docId),
         ]);
         currentDoc = doc;
@@ -1259,8 +1303,11 @@
           .map(d => [Number(d.docId), d]));
         const selector = document.getElementById('doc-selector');
 
+        // Every document that carries a text, whether Transkribus exported it
+        // or DoCTA transcribed it itself; the register says which.
         const docsWithText = mapping.matched
-          .filter(m => m.has_text)
+          .filter(m => m.has_text ||
+            registerByDocId.get(Number(m.transkribus_id))?.transcription_source === 'vlm')
           .sort((a, b) => a.csv_signatur.localeCompare(b.csv_signatur));
 
         for (const doc of docsWithText) {

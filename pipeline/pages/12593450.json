@@ -3,13 +3,133 @@
  "pages": [
   {
    "pageNr": 1,
-   "iiif": null,
+   "iiif": "https://files.transkribus.eu/iiif/2/RREYWGKJGGOFGDNTGGCVETIL/full/max/0/default.jpg",
    "content_class": "unknown",
    "empty_evidence": null,
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "edition:edition_inv_12593450_p1__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-28T08:27:50+00:00",
+     "empty": false,
+     "empty_parts": [
+      false
+     ],
+     "lines": [
+      {
+       "id": "v1",
+       "text": "1"
+      },
+      {
+       "id": "v2",
+       "text": "In der jar zal man zelt von cristi"
+      },
+      {
+       "id": "v3",
+       "text": "geburt tausent vierhundert vnd"
+      },
+      {
+       "id": "v4",
+       "text": "lxxxviiij jar Auf den sporn[...]"
+      },
+      {
+       "id": "v5",
+       "text": "an sand Jeronimus abend hat vor ph[- - -] nach dem"
+      },
+      {
+       "id": "v6",
+       "text": "d[er] kayserlich hof mitsambt noch d[er]"
+      },
+      {
+       "id": "v7",
+       "text": "vogt vnd pfleger vff Land[sberg?]"
+      },
+      {
+       "id": "v8",
+       "text": "Hannß d[er] Rorer"
+      },
+      {
+       "id": "v9",
+       "text": "Item ein silberin kopf auf ein fuos"
+      },
+      {
+       "id": "v10",
+       "text": "Item ein beslagnd doffl mit silber"
+      },
+      {
+       "id": "v11",
+       "text": "Item ein silberins klain glokl"
+      },
+      {
+       "id": "v12",
+       "text": "xxiij klain silberin schüßl"
+      },
+      {
+       "id": "v13",
+       "text": "Item ein silberin schäurlin"
+      },
+      {
+       "id": "v14",
+       "text": "Item ij groß silberin pech"
+      },
+      {
+       "id": "v15",
+       "text": "Item ein halb maizz silberin pech"
+      },
+      {
+       "id": "v16",
+       "text": "Item ein wappen"
+      },
+      {
+       "id": "v17",
+       "text": "Item ein samettasche mit brief"
+      },
+      {
+       "id": "v18",
+       "text": "Item ein schachpretstöcklein mit stain"
+      },
+      {
+       "id": "v19",
+       "text": "Item ein wöchlis federein"
+      },
+      {
+       "id": "v20",
+       "text": "Item ein rauchs foln"
+      },
+      {
+       "id": "v21",
+       "text": "Item I disch mit granit aufgemalt geschilt"
+      },
+      {
+       "id": "v22",
+       "text": "Item ein silberi ziergertl doppel"
+      },
+      {
+       "id": "v23",
+       "text": "Inv. A 24/1"
+      },
+      {
+       "id": "v24",
+       "text": "Zu „Hauskamreramt“"
+      },
+      {
+       "id": "v25",
+       "text": "1489 April 11."
+      },
+      {
+       "id": "v26",
+       "text": "Sch. A. I, 7621"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

@@ -2,6 +2,30 @@
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
+## About-page reframing (28.08.2026)
+
+The About page no longer presents the prototype as a response to reviewers or as proof of a predetermined methodological claim. It begins with the historical research scope, identifies the questions tested by the prototype, states the current coverage and separates the provenance of source editions from DoCTA annotations. The digital workflow is described as research infrastructure for comparative source analysis. Technical reproducibility guarantees remain documented in the Knowledge Vault rather than in the public project description.
+
+## A document DoCTA transcribes itself, end to end (28.08.2026)
+
+Until now every text in the pipeline came from Transkribus, and the whole chain was built on that assumption. The edition track breaks it. Document 12593450 (A 024.1, one sheet, 1489) has no Transkribus transcription, and the pipeline now produces its text itself, encodes it, extracts entities from it and shows it in the viewer, with DoCTA named as the responsible party at every step. Document 12647153 (A 006.8) takes the same route for its first page.
+
+Five decisions were needed, and each one had an alternative that was rejected for a stated reason.
+
+**A fifth responsibility, `resp-vlm-transcription`.** The closed list in `schema/docta.rng` held one transcription step, `resp-transkribus-layer`, whose prose names the Transkribus recognition layer. Reusing it for a text produced by our own model would have asserted a work step that never ran on that source, which is exactly what the closed list exists to prevent. The new value names the model and the prompt iteration in its `name`. The status axis stays as it was, and such a document reports `machine-unrevised`, because that axis measures how far a text has been revised and a model reading is unrevised whichever model produced it.
+
+**Synthetic line ids `v1`, `v2`, ... for edition runs.** A review decision, an entity anchor and an `lb` all address a single line, and a vision model returns text without layout identity. The ids are assigned deterministically at register build from the line order of the run, they are relative to that run, and the register says so. Only the edition cohort gets them; a benchmark or pilot run keeps `null`, since it is measured as a whole and nothing addresses a line of it. The alternative, minting ids for every VLM run, would have rewritten hundreds of measuring runs to no purpose.
+
+**A separate run cohort `edition`.** The benchmark and the pilots repeat every page because they measure; this cohort transcribes each page once, because a second reading would raise the question which of the two is the edition text and nothing in the pipeline answers that. Its runs are append-only like every other cohort, and it writes no summary file, since without repeats and without a reference there is no metric to compute.
+
+**A site projection instead of a fake export.** `docs/data/transcriptions/` is the Transkribus export and nothing else writes into it. The viewer therefore reads a document DoCTA transcribed from `docs/data/pipeline/transcriptions/<docId>.json`, generated beside the register projection and carrying its provenance and the state `machine-unrevised`. `source_mapping.json` keeps `has_text: false` for these documents, because that field states what Transkribus holds.
+
+**No entry in the content-class vocabulary.** A page carrying an edition run stays `unknown`. What a page holds is settled on the scan in an adjudication step, and that step has not run; recording the transcription as a run asserts nothing beyond what happened. The consequence is visible in the site figures, where such a page is not counted as a page with text.
+
+The TEI files carry no zones for these documents and their `lb` elements stay unbound, because no layout analysis produced a polygon. The facsimile stays, with the IIIF URL of the page the model actually read, and the body has one `<ab>` per page rather than an invented region structure.
+
+What is not done is the rest of document 12647153. A document without a Transkribus export carries no page list, so the only image key the repository holds for it is the first page, from `transkribus_collection.json`. The keys of pages 2 to 6 need an authenticated Transkribus `fulldoc` call, and no environment of this repository currently holds `TRANSKRIBUS_USER` and `TRANSKRIBUS_PASS`. The five pages stay empty in the register until that call runs.
+
 ## Phase status (as of 26.08.2026)
 
 | Phase | State | Result |

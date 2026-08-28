@@ -3,13 +3,154 @@
  "pages": [
   {
    "pageNr": 1,
-   "iiif": null,
+   "iiif": "https://files.transkribus.eu/iiif/2/YVUFPASEUZXKRSXERYPMTXFT/full/max/0/default.jpg",
    "content_class": "unknown",
-   "empty_evidence": null,
+   "empty_evidence": {
+    "method": "vlm",
+    "runs": 1,
+    "scope": "partial"
+   },
    "verification": {
     "status": "unbearbeitet"
    },
-   "runs": []
+   "runs": [
+    {
+     "id": "edition:edition_inv_12647153_p1__it02__r1",
+     "source": "vlm",
+     "model": "gemini-3.7-flash",
+     "prompt": "it02",
+     "prompt_hash": "bcd3dc9cb8554f26",
+     "repeat": 1,
+     "date": "2026-08-28T08:28:14+00:00",
+     "empty": false,
+     "empty_parts": [
+      true,
+      false
+     ],
+     "lines": [
+      {
+       "id": "v1",
+       "text": "55."
+      },
+      {
+       "id": "v2",
+       "text": "Vermerckt das Silbergeschirr"
+      },
+      {
+       "id": "v3",
+       "text": "so Martin diethorn durch Hannsen"
+      },
+      {
+       "id": "v4",
+       "text": "Arnolden inngeantwortet ist ingegen-"
+      },
+      {
+       "id": "v5",
+       "text": "wurtigkait her Degn fuchs von fuchsperg"
+      },
+      {
+       "id": "v6",
+       "text": "Pauls Liechtenstainer Ruprechts"
+      },
+      {
+       "id": "v7",
+       "text": "Ruestmauls harstkamers vnd"
+      },
+      {
+       "id": "v8",
+       "text": "Casparn Lathsneider Chamrermen"
+      },
+      {
+       "id": "v9",
+       "text": "furs Arnn Inßprugg am Sunttag"
+      },
+      {
+       "id": "v10",
+       "text": "nach sand Bartholomeestag Anno etc."
+      },
+      {
+       "id": "v11",
+       "text": "Octogesimoseptimo"
+      },
+      {
+       "id": "v12",
+       "text": "Am ersten dreiundtzwaintzigk groß"
+      },
+      {
+       "id": "v13",
+       "text": "Teller"
+      },
+      {
+       "id": "v14",
+       "text": "Vier flache Teller mit vergultn"
+      },
+      {
+       "id": "v15",
+       "text": "krantzen"
+      },
+      {
+       "id": "v16",
+       "text": "Zehen mittlere Teller"
+      },
+      {
+       "id": "v17",
+       "text": "Zehen klaine Teller zu Salcz"
+      },
+      {
+       "id": "v18",
+       "text": "Zwelff klaine tieffe Teller auch"
+      },
+      {
+       "id": "v19",
+       "text": "zu Salcz"
+      },
+      {
+       "id": "v20",
+       "text": "Zway Busseckh vberainander gedeckt"
+      },
+      {
+       "id": "v21",
+       "text": "mit ainem vergultn Decken knoph"
+      },
+      {
+       "id": "v22",
+       "text": "Ain Turbins Busseck vergult inn-"
+      },
+      {
+       "id": "v23",
+       "text": "wendig mit ainem Schild darinn ein"
+      },
+      {
+       "id": "v24",
+       "text": "swarcz Adler"
+      },
+      {
+       "id": "v25",
+       "text": "Aber ein Busseckle mit ainer vergultn"
+      },
+      {
+       "id": "v26",
+       "text": "Tumnen vnd ain Schild darinn / mit"
+      },
+      {
+       "id": "v27",
+       "text": "drey Kleebletern ein kron oben darauf"
+      },
+      {
+       "id": "v28",
+       "text": "Aber ein Busseck in ainer Dronn"
+      },
+      {
+       "id": "v29",
+       "text": "drey Schildt / mit ainem rot vnd / swartzn"
+      },
+      {
+       "id": "v30",
+       "text": "Adler vnd Schlern"
+      }
+     ]
+    }
+   ]
   },
   {
    "pageNr": 2,

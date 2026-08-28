@@ -34,9 +34,18 @@ def slugify(text: str) -> str:
 
 
 def _line_sort_key(line_id: str | None) -> tuple:
+    """Reading order of a line id, over both id shapes the corpus knows.
+
+    "r2l3" is a Transkribus layout line, "v3" a line of a DoCTA transcription,
+    which numbers its lines straight through the page. The two never meet in one
+    document, because a document carries one text layer.
+    """
     match = re.fullmatch(r"r(\d+)l(\d+)", line_id or "")
     if match:
         return (0, int(match.group(1)), int(match.group(2)), "")
+    match = re.fullmatch(r"v(\d+)", line_id or "")
+    if match:
+        return (0, 0, int(match.group(1)), "")
     return (1, 0, 0, line_id or "")
 
 

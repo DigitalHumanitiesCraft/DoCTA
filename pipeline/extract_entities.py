@@ -24,8 +24,15 @@ id plus its verbatim surface form.
 
 Data flow (network only for the Gemini API):
   docs/data/transcriptions/<docId>.json   Transkribus export: pages, regions, lines
+  pipeline/pages/<docId>.json             page register, for a document whose text
+                                          DoCTA transcribed itself (no export)
   pipeline/prompts/entities_it01.md       frozen system prompt (first code block)
   -> docs/data/entities/<docId>.json      entities plus the rejected list
+
+Which layer a document's text comes from is decided in build_register.py and not
+here. Where it is a DoCTA transcription, the output records that in the
+provenance, because the extraction then rests on unrevised machine output and
+the run ids it rests on have to stay readable.
 
 API/retry pattern ported from evaluation/benchmark/run_benchmark.py, including
 the deliberate use of requests over urllib for the retry-and-timeout handling.
@@ -46,6 +53,7 @@ import unicodedata
 from datetime import date
 from pathlib import Path
 
+import build_register as br
 import requests
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -65,6 +73,11 @@ PROMPT_ID = "entities_it01"
 # Documents whose transcription layer is human-corrected in Transkribus and
 # therefore validated ground for an extraction with line anchors.
 DOC_IDS = (11328300, 11330019, 11330020)
+
+# Documents DoCTA transcribed itself. The line ids are the synthetic ids of the
+# edition run, and the anchors sit in unrevised machine output, which the output
+# file records in its provenance instead of leaving it to be inferred.
+VLM_DOC_IDS = (12593450,)
 
 TYPES = ("person", "place", "object", "time")
 ID_PREFIX = {"person": "p", "place": "pl", "object": "o", "time": "t"}
@@ -292,29 +305,59 @@ def assert_verbatim(entities: list[dict], index: dict[str, dict]) -> None:
             raise ValueError(f"{e['id']}: Konfidenzfeld in der Ausgabe")
 
 
+def _title(doc_id: int) -> str | None:
+    """Archival title of a document, for a transcription that carries none.
+
+    The Transkribus export brings its own title; a transcription assembled from
+    the register takes it from the document index, so the extraction file and
+    the graph label the document the way the source register does.
+    """
+    path = ROOT / "documents.json"
+    if not path.exists():
+        return None
+    doc = next(
+        (
+            d
+            for d in json.loads(path.read_text(encoding="utf-8"))
+            if d["docId"] == doc_id
+        ),
+        None,
+    )
+    return (doc or {}).get("title")
+
+
 def run_one(key: str, doc_id: int, system: str, prompt_hash: str, force: bool) -> dict:
     out_path = OUT_DIR / f"{doc_id}.json"
     if out_path.exists() and not force:
         print(f"SKIP {out_path.name} (existiert, --force zum Neuladen)")
         return json.loads(out_path.read_text(encoding="utf-8"))
-    src = TRANSCRIPTIONS / f"{doc_id}.json"
-    if not src.exists():
-        sys.exit(f"FEHLER: Transkription {src.name} fehlt")
-    doc = json.loads(src.read_text(encoding="utf-8"))
+    doc = br.transcription_of(doc_id, title=_title(doc_id))
+    if doc is None:
+        sys.exit(f"FEHLER: keine Transkription fuer Dokument {doc_id}")
     index = load_lines(doc)
     parsed = call_gemini(key, system, serialize(doc))
     entities, rejected = validate(parsed.get("entities", []), index)
     assert_verbatim(entities, index)
+    provenance = {
+        "source": "llm",
+        "model": MODEL,
+        "prompt": PROMPT_ID,
+        "prompt_hash": prompt_hash,
+        "date": date.today().isoformat(),
+    }
+    # What the extraction read. Named only where that is a DoCTA transcription,
+    # because there the anchors sit in unrevised machine output and the runs
+    # they rest on have to stay identifiable.
+    if basis := (doc.get("provenance") or {}).get("runs"):
+        provenance["basis"] = {
+            "transcription": "vlm",
+            "state": "machine-unrevised",
+            "runs": basis,
+        }
     result = {
         "docId": doc_id,
         "title": doc["title"],
-        "provenance": {
-            "source": "llm",
-            "model": MODEL,
-            "prompt": PROMPT_ID,
-            "prompt_hash": prompt_hash,
-            "date": date.today().isoformat(),
-        },
+        "provenance": provenance,
         "entities": entities,
         "rejected": rejected,
     }
@@ -349,7 +392,7 @@ def main() -> None:
         "--force", action="store_true", help="bestehende Ausgabe überschreiben"
     )
     args = ap.parse_args()
-    doc_ids = args.doc or list(DOC_IDS)
+    doc_ids = args.doc or list(DOC_IDS + VLM_DOC_IDS)
     system = extract_prompt(ROOT / "prompts" / f"{PROMPT_ID}.md")
     prompt_hash = hashlib.sha256(system.encode()).hexdigest()[:12]
     key = load_api_key()

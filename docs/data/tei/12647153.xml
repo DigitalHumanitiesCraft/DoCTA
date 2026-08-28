@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-12647153">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Inventar des Silbergeschirrs, das Martein Aichorn anvertraut ist</title>
+        <title type="shelfmark">AT-TLA/BBÄ MIB - Inventare A 006.8 (und .9)</title>
+        <respStmt xml:id="resp-vlm-transcription">
+          <resp>Vision-language model transcription produced by the DoCTA pipeline; unrevised machine output</resp>
+          <name>DoCTA edition run (gemini-3.7-flash, prompt it02)</name>
+        </respStmt>
+        <respStmt xml:id="resp-tei-generation">
+          <resp>Deterministic TEI generation from the DoCTA edition runs held in the page register, without editorial judgment</resp>
+          <name>pipeline/build_tei.py (sha256 52f59939392f)</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-28">2026-08-28</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <repository>Tiroler Landesarchiv</repository>
+            <collection>AT-TLA/BBÄ MIB</collection>
+            <idno>Inventare A 006.8 (und .9)</idno>
+            <altIdentifier type="transkribus">
+              <idno>12647153</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <history>
+            <origin><origDate when="1487-08-26">1487.08.26</origDate></origin>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the DoCTA edition runs held in the page register.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>The text of this file is unrevised machine transcription. Transkribus holds no transcription of this source, so the DoCTA pipeline transcribed the page images itself with a vision-language model, and every reading is that model's own. Nothing here has been read against the scan by a scholar, so the file is not a citable edition text. It covers 1 of the 6 pages of the source, the pages the pipeline holds an image reference for; the remaining pages are untranscribed. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="docta-category">
+          <desc>Archival category of the source, taken from the DoCTA source register.</desc>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="gmh">Early New High German, tagged with the Middle High German code as the nearest registered approximation.</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="#docta-category">
+          <term>Personeninventar</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-08-28" who="#resp-tei-generation">Generated from the DoCTA edition runs held in the page register by the DoCTA pipeline.</change>
+      <change n="transcription-summary" status="machine-unrevised">Transcription stream (state): machine-unrevised</change>
+      <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
+    </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="surface-12647153-1" n="1">
+      <graphic url="https://files.transkribus.eu/iiif/2/YVUFPASEUZXKRSXERYPMTXFT/full/max/0/default.jpg"/>
+    </surface>
+  </facsimile>
+  <text xml:lang="gmh">
+    <body>
+      <div type="transcription">
+        <pb n="1" facs="#surface-12647153-1"/>
+        <ab xml:id="ab-12647153-1-vlm">
+          <lb/>55.
+          <lb/>Vermerckt das Silbergeschirr
+          <lb/>so Martin diethorn durch Hannsen
+          <lb/>Arnolden inngeantwortet ist ingegen-
+          <lb/>wurtigkait her Degn fuchs von fuchsperg
+          <lb/>Pauls Liechtenstainer Ruprechts
+          <lb/>Ruestmauls harstkamers vnd
+          <lb/>Casparn Lathsneider Chamrermen
+          <lb/>furs Arnn Inßprugg am Sunttag
+          <lb/>nach sand Bartholomeestag Anno etc.
+          <lb/>Octogesimoseptimo
+          <lb/>Am ersten dreiundtzwaintzigk groß
+          <lb/>Teller
+          <lb/>Vier flache Teller mit vergultn
+          <lb/>krantzen
+          <lb/>Zehen mittlere Teller
+          <lb/>Zehen klaine Teller zu Salcz
+          <lb/>Zwelff klaine tieffe Teller auch
+          <lb/>zu Salcz
+          <lb/>Zway Busseckh vberainander gedeckt
+          <lb/>mit ainem vergultn Decken knoph
+          <lb/>Ain Turbins Busseck vergult inn-
+          <lb/>wendig mit ainem Schild darinn ein
+          <lb/>swarcz Adler
+          <lb/>Aber ein Busseckle mit ainer vergultn
+          <lb/>Tumnen vnd ain Schild darinn / mit
+          <lb/>drey Kleebletern ein kron oben darauf
+          <lb/>Aber ein Busseck in ainer Dronn
+          <lb/>drey Schildt / mit ainem rot vnd / swartzn
+          <lb/>Adler vnd Schlern
+        </ab>
+      </div>
+    </body>
+  </text>
+</TEI>

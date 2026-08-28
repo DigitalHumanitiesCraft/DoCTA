@@ -10,14 +10,18 @@ Data flow (repo-local only, no network):
   docs/data/sources.json             archival metadata (shelfmark, dating, tier)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
   docs/data/raitbuch2_pages.json     page list of Raitbuch 2 (no export yet)
+  docs/data/edition_pages.json       page images of the documents DoCTA transcribes
   evaluation/benchmark/runs/*.json   VLM runs on the benchmark page set
   evaluation/pilot/runs/*.json       VLM runs on the pilot cohorts
   evaluation/pilot2/runs/*.json      VLM runs on the pilot-2 cohorts
+  evaluation/edition/runs/*.json     VLM runs of the edition track
 
 Writes:
   pipeline/documents.json            one entry per document
   pipeline/pages/<docId>.json        one entry per page
   docs/data/pipeline/register_summary.json   compact projection for the site (--project)
+  docs/data/pipeline/transcriptions/<docId>.json   the text of a document DoCTA
+                                     transcribed itself, for the site (--project)
 
 Design decisions:
   Runs are immutable and provenance-tagged. A run is identified by its origin
@@ -29,6 +33,10 @@ Design decisions:
   content_class stays "unknown" where no export text exists; an empty page can
   only be established from the scan, which is a later pipeline step. VLM reports
   of an empty page are recorded as empty_evidence without changing the class.
+  A run of the edition cohort is the one VLM run whose lines become edition text,
+  so its lines are given synthetic ids v1, v2, ... in the order the run reported
+  them. The measuring cohorts keep the null id of a bare VLM reading, because
+  nothing downstream addresses a single line of theirs.
 
 Usage:
   python build_register.py             # rebuild pipeline/documents.json and pipeline/pages/
@@ -49,6 +57,15 @@ DATA = REPO / "docs" / "data"
 BENCHMARK_RUNS = REPO / "evaluation" / "benchmark" / "runs"
 PILOT_RUNS = REPO / "evaluation" / "pilot" / "runs"
 PILOT2_RUNS = REPO / "evaluation" / "pilot2" / "runs"
+EDITION_RUNS = REPO / "evaluation" / "edition" / "runs"
+
+# The cohort that produces edition text rather than measurements.
+EDITION = "edition"
+# Line ids of an edition run, run-relative and assigned here; a VLM reading has
+# no layout identity of its own.
+VLM_LINE_PREFIX = "v"
+# The one block a VLM transcription has, since no layout analysis divided it.
+VLM_REGION = "vlm"
 
 RAITBUCH2_DOC = 12514730  # "Raitbuch 2"; the CSV/Transkribus matcher covers only
 RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"  # the inventories, so this pair is set here
@@ -57,7 +74,9 @@ RAITBUCH2_SIGNATUR = "TLA Raitbuch 02"  # the inventories, so this pair is set h
 CONTENT_CLASSES = ("text", "leer", "kassiert", "einlage", "unknown")
 VERIFICATION_STATUS = ("unbearbeitet", "maschinell", "gesichtet", "abgenommen")
 
-RUN_ID = re.compile(r"^(?:pilot2?_)?(?:inv_(?P<doc>\d+)|(?P<book>rb2))_p(?P<page>\d+)$")
+RUN_ID = re.compile(
+    r"^(?:pilot2?_|edition_)?(?:inv_(?P<doc>\d+)|(?P<book>rb2))_p(?P<page>\d+)$"
+)
 
 
 def _load(path: Path) -> Any:
@@ -92,6 +111,27 @@ def newest_review_run(page: dict, exclude_id: str | None = None) -> dict | None:
     return max(runs, key=lambda r: (r.get("date") or "", r["id"]))
 
 
+def edition_runs(page: dict) -> list[dict]:
+    """Edition-cohort runs of a register page, in stored order."""
+    return [
+        r
+        for r in page.get("runs") or []
+        if str(r.get("id", "")).startswith(f"{EDITION}:")
+    ]
+
+
+def newest_edition_run(page: dict) -> dict | None:
+    """The edition run whose lines are the text of the page, by date then id.
+
+    A page can accumulate edition runs like any other, and the newest one is the
+    reading the pipeline carries forward; the older ones stay in the register.
+    """
+    runs = edition_runs(page)
+    if not runs:
+        return None
+    return max(runs, key=lambda r: (r.get("date") or "", r["id"]))
+
+
 def _page_key(page_id: str) -> tuple[int, int] | None:
     """Resolve an evaluation page id such as pilot_rb2_p002 to (docId, pageNr)."""
     m = RUN_ID.match(page_id)
@@ -109,6 +149,7 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
         ("benchmark", BENCHMARK_RUNS),
         ("pilot", PILOT_RUNS),
         ("pilot2", PILOT2_RUNS),
+        (EDITION, EDITION_RUNS),
     ):
         if not folder.is_dir():
             continue
@@ -136,7 +177,9 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
                     "empty_parts": parts,
                     # uniform line shape across all runs; a VLM run reports bare
                     # text and has no layout line identity, so its id stays null
-                    "lines": [{"id": None, "text": t} for t in rec.get("lines") or []],
+                    # outside the edition cohort, whose lines are addressed by
+                    # review, entity anchor and TEI and therefore get one here
+                    "lines": _vlm_lines(rec.get("lines") or [], cohort),
                 }
             )
     for key in runs:
@@ -149,6 +192,18 @@ def _vlm_runs() -> dict[tuple[int, int], list[dict]]:
         for name in skipped:
             print(f"  SKIP {name}", file=sys.stderr)
     return runs
+
+
+def _vlm_lines(texts: list[str], cohort: str) -> list[dict]:
+    """Line records of a VLM run, with a synthetic id in the edition cohort.
+
+    The id is the position of the line in the run, so it is stable for a given
+    run file and says nothing about the layout of the page, which the model did
+    not analyse.
+    """
+    if cohort != EDITION:
+        return [{"id": None, "text": t} for t in texts]
+    return [{"id": f"{VLM_LINE_PREFIX}{n}", "text": t} for n, t in enumerate(texts, 1)]
 
 
 def _documents() -> list[dict]:
@@ -231,8 +286,12 @@ def _pages(doc: dict, runs: dict[tuple[int, int], list[dict]]) -> list[dict]:
             for p in _load(DATA / "raitbuch2_pages.json")
         ]
     else:
+        # No export, so no page list either; the images DoCTA transcribes on are
+        # the ones named in the edition page table, the rest stay without a URL.
+        images = _edition_images()
         entries = [
-            {"pageNr": n, "iiif": None, "lines": []} for n in range(1, doc["pages"] + 1)
+            {"pageNr": n, "iiif": images.get((doc_id, n)), "lines": []}
+            for n in range(1, doc["pages"] + 1)
         ]
 
     pages = []
@@ -265,6 +324,100 @@ def _pages(doc: dict, runs: dict[tuple[int, int], list[dict]]) -> list[dict]:
             }
         )
     return pages
+
+
+def _edition_images() -> dict[tuple[int, int], str]:
+    """(docId, pageNr) to IIIF URL, from the edition page table."""
+    path = DATA / "edition_pages.json"
+    if not path.exists():
+        return {}
+    return {(e["docId"], e["pageNr"]): e["iiif"] for e in _load(path)["pages"]}
+
+
+def vlm_transcription(doc: dict, pages: list[dict]) -> dict | None:
+    """The text of a document DoCTA transcribed itself, in the export shape.
+
+    One block per page, the lines of the newest edition run of that page, and no
+    coordinates, because a vision model reads text and analyses no layout. The
+    shape is the one the Transkribus export carries, so TEI generation, entity
+    extraction and the viewer read one structure whatever produced the text.
+    Returns None for a document without a single edition run.
+    """
+    out_pages, runs = [], []
+    for page in sorted(pages, key=lambda p: p["pageNr"]):
+        run = newest_edition_run(page)
+        if run is None:
+            continue
+        runs.append(run)
+        out_pages.append(
+            {
+                "pageNr": page["pageNr"],
+                "iiif": page["iiif"],
+                "run": run["id"],
+                "regions": [
+                    {
+                        "id": VLM_REGION,
+                        "type": "",
+                        "coords": "",
+                        "lines": [
+                            {
+                                "id": line["id"],
+                                "text": line["text"],
+                                "coords": "",
+                                "baseline": "",
+                            }
+                            for line in run["lines"]
+                        ],
+                    }
+                ],
+            }
+        )
+    if not out_pages:
+        return None
+    first = runs[0]
+    return {
+        "docId": doc["docId"],
+        "title": doc["title"],
+        "provenance": {
+            "source": "vlm",
+            "state": "machine-unrevised",
+            "model": first["model"],
+            "prompt": first["prompt"],
+            "prompt_hash": first["prompt_hash"],
+            "runs": [p["run"] for p in out_pages],
+            # A page the pipeline has no image reference for cannot be
+            # transcribed, so a file may cover part of its document; the ratio
+            # travels with the text instead of being inferred from its length.
+            "pagesTranscribed": len(out_pages),
+            "pagesInDocument": len(pages),
+            "note": "Unrevised vision-model transcription produced by the DoCTA"
+            " pipeline. No page has been read against the scan by a scholar.",
+        },
+        "totalPages": len(out_pages),
+        "totalLines": sum(len(p["regions"][0]["lines"]) for p in out_pages),
+        "pages": out_pages,
+    }
+
+
+def transcription_of(
+    doc_id: int, register_dir: Path | None = None, title: str | None = None
+) -> dict | None:
+    """The transcription of a document, whichever layer carries it.
+
+    The Transkribus export where one exists, the DoCTA edition runs of the page
+    register otherwise, both in the export shape. This is the single place that
+    answers where the text of a document comes from; TEI generation, entity
+    extraction and the healthcheck all ask here.
+    """
+    export = DATA / "transcriptions" / f"{doc_id}.json"
+    if export.exists():
+        data = _load(export)
+        data["pages"] = sorted(data["pages"], key=lambda p: p["pageNr"])
+        return data
+    path = (register_dir or ROOT / "pages") / f"{doc_id}.json"
+    if not path.exists():
+        return None
+    return vlm_transcription({"docId": doc_id, "title": title}, _load(path)["pages"])
 
 
 def _empty_evidence(page_runs: list[dict]) -> dict | None:
@@ -330,7 +483,13 @@ def build(out_dir: Path) -> tuple[list[dict], dict[int, list[dict]]]:
 def project(
     docs: list[dict], pages_by_doc: dict[int, list[dict]], out_path: Path
 ) -> dict:
-    """Compact per-document projection for the site, loadable in one fetch."""
+    """Compact per-document projection for the site, loadable in one fetch.
+
+    The transcription files of the documents DoCTA transcribed itself are
+    written beside it, into a transcriptions/ folder of the same directory, so
+    the whole site projection moves as one and a healthcheck rebuild stays
+    inside its temporary directory.
+    """
     # Attribution source: which documents carry a transcription made by the
     # Inventaria project (www.inventaria.at). The site must name that origin
     # wherever such a transcription is displayed, so the flag travels in the
@@ -356,11 +515,23 @@ def project(
     for doc in docs:
         pages = pages_by_doc[doc["docId"]]
         status = Counter(p["verification"]["status"] for p in pages)
+        # Where the text of this document comes from, which decides both the
+        # file the viewer loads and the wording of its provenance chip.
+        transcription = vlm_transcription(doc, pages)
+        if transcription is not None:
+            _write(
+                out_path.parent / "transcriptions" / f"{doc['docId']}.json",
+                transcription,
+            )
+        has_export = (DATA / "transcriptions" / f"{doc['docId']}.json").exists()
         # First written page as the document's thumbnail source; the site
         # requests a scaled IIIF variant at runtime, no image enters the repo.
+        # A document DoCTA transcribed itself has no page classed as text, since
+        # that class needs the adjudication step, so its first transcribed page
+        # stands in; the page is written either way.
         first_text = next(
             (p for p in pages if p["content_class"] == "text" and p["iiif"]), None
-        )
+        ) or next((p for p in pages if edition_runs(p) and p["iiif"]), None)
         summary.append(
             {
                 "docId": doc["docId"],
@@ -381,9 +552,17 @@ def project(
                 "thumb_page": first_text["pageNr"] if first_text else None,
                 "done_pages": doc.get("done_pages"),
                 # same predicate as build_tei.py: a TEI file exists for every
-                # matched document with text and an export on disk
-                "has_tei": bool(doc["has_text"])
-                and (DATA / "transcriptions" / f"{doc['docId']}.json").exists(),
+                # matched document with a Transkribus export on disk and for
+                # every document DoCTA transcribed itself
+                "has_tei": (bool(doc["has_text"]) and has_export)
+                or transcription is not None,
+                # "transkribus" for the export layer, "vlm" for a text DoCTA
+                # produced itself, null for a document with no text at all
+                "transcription_source": (
+                    "transkribus"
+                    if bool(doc["has_text"]) and has_export
+                    else ("vlm" if transcription is not None else None)
+                ),
                 # lets the site skip the per-document entity probe; the demo
                 # fallback for the one hand-made extraction stays client-side
                 "has_entities": (DATA / "entities" / f"{doc['docId']}.json").exists(),

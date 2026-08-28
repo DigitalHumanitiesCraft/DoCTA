@@ -1,0 +1,249 @@
+{
+ "page": "edition_inv_12593450_p1",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    2598,
+    3847
+   ],
+   "sent_px": [
+    2364,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 27.9,
+ "timestamp": "2026-08-28T08:27:50+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 1r",
+    "lines": [
+     {
+      "text": "1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "In der jar zal man zelt von cristi",
+      "kind": "rubric",
+      "uncertain": [
+       "cristi"
+      ]
+     },
+     {
+      "text": "geburt tausent vierhundert vnd",
+      "kind": "rubric",
+      "uncertain": [
+       "tausent",
+       "vierhundert"
+      ]
+     },
+     {
+      "text": "lxxxviiij jar Auf den sporn[...]",
+      "kind": "rubric",
+      "uncertain": [
+       "lxxxviiij",
+       "sporn[...]"
+      ]
+     },
+     {
+      "text": "an sand Jeronimus abend hat vor ph[- - -] nach dem",
+      "kind": "rubric",
+      "uncertain": [
+       "Jeronimus",
+       "abend",
+       "ph[- - -]"
+      ]
+     },
+     {
+      "text": "d[er] kayserlich hof mitsambt noch d[er]",
+      "kind": "rubric",
+      "uncertain": [
+       "kayserlich",
+       "mitsambt"
+      ]
+     },
+     {
+      "text": "vogt vnd pfleger vff Land[sberg?]",
+      "kind": "rubric",
+      "uncertain": [
+       "Land[sberg?]"
+      ]
+     },
+     {
+      "text": "Hannß d[er] Rorer",
+      "kind": "rubric",
+      "uncertain": [
+       "Hannß",
+       "Rorer"
+      ]
+     },
+     {
+      "text": "Item ein silberin kopf auf ein fuos",
+      "kind": "entry",
+      "uncertain": [
+       "kopf",
+       "fuos"
+      ]
+     },
+     {
+      "text": "Item ein beslagnd doffl mit silber",
+      "kind": "entry",
+      "uncertain": [
+       "doffl"
+      ]
+     },
+     {
+      "text": "Item ein silberins klain glokl",
+      "kind": "entry",
+      "uncertain": [
+       "glokl"
+      ]
+     },
+     {
+      "text": "xxiij klain silberin schüßl",
+      "kind": "entry",
+      "uncertain": [
+       "xxiij",
+       "schüßl"
+      ]
+     },
+     {
+      "text": "Item ein silberin schäurlin",
+      "kind": "entry",
+      "uncertain": [
+       "schäurlin"
+      ]
+     },
+     {
+      "text": "Item ij groß silberin pech",
+      "kind": "entry",
+      "uncertain": [
+       "pech"
+      ]
+     },
+     {
+      "text": "Item ein halb maizz silberin pech",
+      "kind": "entry",
+      "uncertain": [
+       "maizz",
+       "pech"
+      ]
+     },
+     {
+      "text": "Item ein wappen",
+      "kind": "entry",
+      "uncertain": [
+       "wappen"
+      ]
+     },
+     {
+      "text": "Item ein samettasche mit brief",
+      "kind": "entry",
+      "uncertain": [
+       "samettasche",
+       "brief"
+      ]
+     },
+     {
+      "text": "Item ein schachpretstöcklein mit stain",
+      "kind": "entry",
+      "uncertain": [
+       "schachpretstöcklein",
+       "stain"
+      ]
+     },
+     {
+      "text": "Item ein wöchlis federein",
+      "kind": "entry",
+      "uncertain": [
+       "wöchlis",
+       "federein"
+      ]
+     },
+     {
+      "text": "Item ein rauchs foln",
+      "kind": "entry",
+      "uncertain": [
+       "foln"
+      ]
+     },
+     {
+      "text": "Item I disch mit granit aufgemalt geschilt",
+      "kind": "entry",
+      "uncertain": [
+       "granit",
+       "aufgemalt",
+       "geschilt"
+      ]
+     },
+     {
+      "text": "Item ein silberi ziergertl doppel",
+      "kind": "entry",
+      "uncertain": [
+       "ziergertl",
+       "doppel"
+      ]
+     },
+     {
+      "text": "Inv. A 24/1",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Zu „Hauskamreramt“",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "1489 April 11.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Sch. A. I, 7621",
+      "kind": "foliation",
+      "uncertain": []
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "1",
+  "In der jar zal man zelt von cristi",
+  "geburt tausent vierhundert vnd",
+  "lxxxviiij jar Auf den sporn[...]",
+  "an sand Jeronimus abend hat vor ph[- - -] nach dem",
+  "d[er] kayserlich hof mitsambt noch d[er]",
+  "vogt vnd pfleger vff Land[sberg?]",
+  "Hannß d[er] Rorer",
+  "Item ein silberin kopf auf ein fuos",
+  "Item ein beslagnd doffl mit silber",
+  "Item ein silberins klain glokl",
+  "xxiij klain silberin schüßl",
+  "Item ein silberin schäurlin",
+  "Item ij groß silberin pech",
+  "Item ein halb maizz silberin pech",
+  "Item ein wappen",
+  "Item ein samettasche mit brief",
+  "Item ein schachpretstöcklein mit stain",
+  "Item ein wöchlis federein",
+  "Item ein rauchs foln",
+  "Item I disch mit granit aufgemalt geschilt",
+  "Item ein silberi ziergertl doppel",
+  "Inv. A 24/1",
+  "Zu „Hauskamreramt“",
+  "1489 April 11.",
+  "Sch. A. I, 7621"
+ ]
+}

@@ -128,11 +128,19 @@ REVIEWED, APPROVED = "partly-reviewed", "approved"
 REVIEWED_STATUS = ("gesichtet", "abgenommen")
 
 # A responsibility is declared only for a step that actually ran; the
-# verification statement therefore appears only in a file with a review layer.
+# verification statement therefore appears only in a file with a review layer,
+# and exactly one of the two transcription responsibilities is declared, the one
+# naming the layer the file actually carries.
 RESP_TRANSKRIBUS = "resp-transkribus-layer"
+RESP_VLM = "resp-vlm-transcription"
 RESP_GENERATION = "resp-tei-generation"
 RESP_VERIFICATION = "resp-expert-verification"
 RESP_ENTITY = "resp-entity-llm"
+
+# Text layers a document file can carry. "transkribus" is the export, "vlm" the
+# transcription the DoCTA pipeline produced itself for a source Transkribus
+# holds no text for.
+TRANSKRIBUS_LAYER, VLM_LAYER = "transkribus", "vlm"
 
 # Prototype named entities of a single document. The file names the docId it
 # belongs to, so no other document can pick the layer up by accident.
@@ -196,36 +204,57 @@ def _correction(done_pages: int | None, pages: int | None) -> str:
     return CORRECTED if done_pages >= pages else PARTLY
 
 
+def _generation_source(doc: dict) -> str:
+    """What the deterministic generation read, named the same in resp and change."""
+    if doc.get("layer") == VLM_LAYER:
+        return "the DoCTA edition runs held in the page register"
+    return "the Transkribus export"
+
+
 def _resp_stmts(
     doc: dict, indent: str, entities: bool = False, reviewed: bool = False
 ) -> list[str]:
     """One respStmt per work step that actually happened for this document."""
     state = doc["correction"]
-    if state == CORRECTED:
-        layer = (
-            "Transcription corrected page by page and marked done in"
-            " Transkribus (human-corrected layer)"
+    if doc.get("layer") == VLM_LAYER:
+        # The transcription is DoCTA's own model output; naming Transkribus here
+        # would attribute a reading to a step that never ran on this source.
+        transcription = (
+            RESP_VLM,
+            "Vision-language model transcription produced by the DoCTA"
+            " pipeline; unrevised machine output",
+            f"DoCTA edition run ({doc['model']}, prompt {doc['prompt']})",
         )
+    elif state == CORRECTED:
         # The DONE marks were set by the editors of the Transkribus collection,
         # not by DoCTA; the neutral role avoids a false attribution.
-        actor = "Editors of the Transkribus collection"
+        transcription = (
+            RESP_TRANSKRIBUS,
+            "Transcription corrected page by page and marked done in"
+            " Transkribus (human-corrected layer)",
+            "Editors of the Transkribus collection",
+        )
     elif state == PARTLY:
-        layer = (
+        transcription = (
+            RESP_TRANSKRIBUS,
             "Transcription corrected page by page and marked done in"
             f" Transkribus for {doc['done_pages']} of {doc['pages']} pages"
             " (human-corrected layer); the remaining pages carry the"
-            " unrevised automated recognition layer"
+            " unrevised automated recognition layer",
+            "Editors of the Transkribus collection and Transkribus",
         )
-        actor = "Editors of the Transkribus collection and Transkribus"
     else:
-        layer = "Automated text recognition layer from Transkribus, unrevised"
-        actor = "Transkribus"
+        transcription = (
+            RESP_TRANSKRIBUS,
+            "Automated text recognition layer from Transkribus, unrevised",
+            "Transkribus",
+        )
     generation = (
-        "Deterministic TEI generation from the Transkribus export,"
+        f"Deterministic TEI generation from {_generation_source(doc)},"
         " without editorial judgment"
     )
     steps = [
-        (RESP_TRANSKRIBUS, layer, actor),
+        transcription,
         (
             RESP_GENERATION,
             generation,
@@ -280,10 +309,11 @@ _REMAINDER = {
 
 
 def _editorial_decl(
-    state: str, indent: str, entities: bool = False, review: dict | None = None
+    doc: dict, indent: str, entities: bool = False, review: dict | None = None
 ) -> list[str]:
     """Stream-dependent editorial declaration; never asserts a step that did
     not run and never contradicts the transcription-summary status."""
+    state = doc["correction"]
     reviewed = bool(review and review["pages"])
     if reviewed and review["complete"]:
         first = (
@@ -301,6 +331,25 @@ def _editorial_decl(
             f" pages. {_REMAINDER[state]} The file is not yet a citable"
             " edition text."
         )
+    elif doc.get("layer") == VLM_LAYER:
+        first = (
+            "The text of this file is unrevised machine transcription."
+            " Transkribus holds no transcription of this source, so the"
+            " DoCTA pipeline transcribed the page images itself with a"
+            " vision-language model, and every reading is that model's"
+            " own. Nothing here has been read against the scan by a"
+            " scholar, so the file is not a citable edition text."
+        )
+        # A source without an export carries no page list, so the pipeline may
+        # hold an image reference for part of its pages only. Saying which part
+        # keeps the file from reading as the whole document.
+        covered, total = doc.get("covered"), doc.get("pages")
+        if covered and total and covered < total:
+            first += (
+                f" It covers {covered} of the {total} pages of the source,"
+                " the pages the pipeline holds an image reference for; the"
+                " remaining pages are untranscribed."
+            )
     elif state == MACHINE:
         first = (
             "The text of this file is unrevised machine transcription."
@@ -478,10 +527,10 @@ def _header(
         "      <projectDesc>",
         "        <p>DoCTA edits the inventories and account books of the"
         " Tyrolean territorial administration; this file is produced by the"
-        " project's agentic edition pipeline from the Transkribus export.</p>",
+        f" project's agentic edition pipeline from {_generation_source(doc)}.</p>",
         "      </projectDesc>",
     ]
-    out += _editorial_decl(doc["correction"], "      ", entities, review)
+    out += _editorial_decl(doc, "      ", entities, review)
     if category:
         out += [
             "      <classDecl>",
@@ -514,7 +563,7 @@ def _header(
         "    </profileDesc>",
         "    <revisionDesc>",
         f'      <change when="{_att(date)}" who="#{RESP_GENERATION}">Generated'
-        " from the Transkribus export by the DoCTA pipeline.</change>",
+        f" from {_generation_source(doc)} by the DoCTA pipeline.</change>",
     ]
     for page in review["pages"]:
         when = f' when="{_att(page["date"])}"' if page.get("date") else ""
@@ -924,8 +973,14 @@ def register_xml(entries: list[dict], date: str) -> str:
     return "\n".join(out)
 
 
-def _documents() -> list[dict]:
-    """Documents with a Transkribus export, joined to their archival metadata."""
+def _documents(register_dir: Path = REGISTER) -> list[dict]:
+    """Documents that carry a text, joined to their archival metadata.
+
+    Two text layers reach this point. A Transkribus export, which is the normal
+    case, and the DoCTA edition runs of a source Transkribus holds no text for.
+    A document never carries both: the edition track transcribes exactly the
+    documents without an export.
+    """
     mapping = _load(DATA / "source_mapping.json")["matched"]
     by_signatur = {s["signatur"]: s for s in _load(DATA / "sources.json")}
     # Same source as build_register.py: a DONE page is human-corrected in
@@ -933,25 +988,67 @@ def _documents() -> list[dict]:
     status_by_id = {d["id"]: d for d in _load(DATA / "transkribus_status.json")}
     docs: list[dict] = []
     for entry in mapping:
-        if not entry.get("has_text"):
-            continue
+        doc_id = entry["transkribus_id"]
         source = by_signatur.get(entry["csv_signatur"]) or {}
-        status = status_by_id.get(entry["transkribus_id"]) or {}
+        status = status_by_id.get(doc_id) or {}
         done, pages = status.get("done_pages"), status.get("pages")
-        docs.append(
-            {
-                "docId": entry["transkribus_id"],
-                "shelfmark": entry["csv_signatur"],
-                "title": source.get("titel"),
-                "category": source.get("kategorie"),
-                "dating": source.get("datierung") or {},
-                "done_pages": done,
-                "pages": pages,
-                "correction": _correction(done, pages),
-            }
-        )
+        layer = None
+        if entry.get("has_text"):
+            layer = TRANSKRIBUS_LAYER
+        elif run := _first_edition_run(doc_id, register_dir):
+            layer = VLM_LAYER
+        if layer is None:
+            continue
+        doc = {
+            "docId": doc_id,
+            "shelfmark": entry["csv_signatur"],
+            "title": source.get("titel"),
+            "category": source.get("kategorie"),
+            "dating": source.get("datierung") or {},
+            "done_pages": done,
+            "pages": pages,
+            "correction": _correction(done, pages),
+            "layer": layer,
+        }
+        if layer == VLM_LAYER:
+            # The header names the model and the prompt that produced the text,
+            # so the responsibility statement is specific about what ran.
+            doc |= {"model": run["model"], "prompt": run["prompt"]}
+        docs.append(doc)
     docs.sort(key=lambda d: d["docId"])
     return docs
+
+
+def _first_edition_run(doc_id: int, register_dir: Path) -> dict | None:
+    """The edition run of the first transcribed page, or None for no such run."""
+    path = register_dir / f"{doc_id}.json"
+    if not path.exists():
+        return None
+    for page in sorted(_load(path)["pages"], key=lambda p: p["pageNr"]):
+        if run := br.newest_edition_run(page):
+            return run
+    return None
+
+
+def _pages_of(doc: dict, register_dir: Path) -> list[dict] | None:
+    """The pages of a document in export shape, from whichever layer it carries.
+
+    A VLM document has no export, so its pages are assembled from the edition
+    runs of the register by build_register.vlm_transcription, which produces the
+    same shape; everything downstream therefore reads one structure.
+    """
+    doc_id = doc["docId"]
+    export = DATA / "transcriptions" / f"{doc_id}.json"
+    # The layer the header declares and the text the file carries must be the
+    # same thing, so a missing export is a skip and never a fallback.
+    if doc["layer"] == TRANSKRIBUS_LAYER and not export.exists():
+        print(f"SKIP {doc_id}: kein Export unter {export.name}", file=sys.stderr)
+        return None
+    transcription = br.transcription_of(doc_id, register_dir, doc.get("title"))
+    if transcription is None:
+        print(f"SKIP {doc_id}: keine Transkription", file=sys.stderr)
+        return None
+    return transcription["pages"]
 
 
 def build(
@@ -967,13 +1064,14 @@ def build(
     entries = ei.build_index(ei.load_extractions())
     slugs = {(e["type"], e["normalized"]): e["id"] for e in entries}
     result: dict[int, str] = {}
-    for doc in _documents():
+    for doc in _documents(register_dir):
         doc_id = doc["docId"]
-        export = DATA / "transcriptions" / f"{doc_id}.json"
-        if not export.exists():
-            print(f"SKIP {doc_id}: kein Export unter {export.name}", file=sys.stderr)
+        pages = _pages_of(doc, register_dir)
+        if pages is None:
             continue
-        pages = sorted(_load(export)["pages"], key=lambda p: p["pageNr"])
+        # How much of the source this file carries; the editorial declaration
+        # says so where a page of the document stayed untranscribed.
+        doc["covered"] = len(pages)
         review = _review(doc_id, register_dir)
         anchors, skipped = _entity_anchors(doc_id, pages, review["texts"], slugs)
         if skipped:

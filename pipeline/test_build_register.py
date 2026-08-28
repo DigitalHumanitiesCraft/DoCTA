@@ -32,6 +32,7 @@ PAGE_KEY_CASES = (
     ("pilot2_inv_123_p4", (123, 4)),
     ("pilot_inv_11348659_p10", (11348659, 10)),
     ("inv_11348659_p1", (11348659, 1)),
+    ("edition_inv_12593450_p1", (12593450, 1)),
     # everything the pattern does not resolve stays unresolved instead of being
     # guessed onto a document
     ("inv_11348659", None),
@@ -150,6 +151,26 @@ def test_the_newest_review_run_is_decided_by_date_then_id() -> None:
         )
 
 
+def test_only_an_edition_run_gets_synthetic_line_ids() -> None:
+    """The cohort that produces edition text names its lines; measuring runs do not.
+
+    A review, an entity anchor and the TEI address a single line, which needs an
+    id; a benchmark repeat is read as a whole and keeps the null of a bare VLM
+    reading.
+    """
+    texts = ["erste zeile", "zweite zeile"]
+    assert br._vlm_lines(texts, br.EDITION) == [
+        {"id": "v1", "text": "erste zeile"},
+        {"id": "v2", "text": "zweite zeile"},
+    ]
+    for cohort in ("benchmark", "pilot", "pilot2"):
+        assert br._vlm_lines(texts, cohort) == [
+            {"id": None, "text": "erste zeile"},
+            {"id": None, "text": "zweite zeile"},
+        ], cohort
+    assert br._vlm_lines([], br.EDITION) == []
+
+
 # --------------------------------------------------------- integration tests
 
 
@@ -246,6 +267,64 @@ def test_rebuild_preserves_ingested_review_state() -> None:
         assert rebuilt["verification"]["status"] == "gesichtet"
         ids = [r["id"] for r in rebuilt["runs"]]
         assert len(ids) == len(set(ids)), "review run duplicated on rebuild"
+
+
+EDITION_DOC = 12593450  # A 024.1, one page, transcribed by DoCTA itself
+
+
+def test_a_document_without_an_export_carries_its_edition_run() -> None:
+    """The edition cohort reaches the register, with an image and named lines."""
+    with tempfile.TemporaryDirectory() as td:
+        _, pages_by_doc = _build(Path(td))
+    pages = pages_by_doc[EDITION_DOC]
+    page = next(p for p in pages if p["pageNr"] == 1)
+    runs = br.edition_runs(page)
+    assert len(runs) == 1, "the edition run of the page is missing"
+    assert br.newest_edition_run(page) is runs[0]
+    assert page["iiif"], "no page image for a page that was transcribed"
+    assert runs[0]["source"] == "vlm" and runs[0]["model"]
+    ids = [line["id"] for line in runs[0]["lines"]]
+    assert ids == [f"v{n}" for n in range(1, len(ids) + 1)], "line ids are not v1..vn"
+    # The class stays unknown: what a page holds is settled on the scan, and no
+    # adjudication step has run for this document.
+    assert page["content_class"] == "unknown"
+
+
+def test_the_site_transcription_mirrors_the_edition_run() -> None:
+    """The projection carries the text of the newest edition run, page by page,
+    marked as unrevised machine output and without invented layout data."""
+    with tempfile.TemporaryDirectory() as td:
+        out = Path(td)
+        docs, pages_by_doc = _build(out)
+        br.project(docs, pages_by_doc, out / "register_summary.json")
+        written = json.loads(
+            (out / "transcriptions" / f"{EDITION_DOC}.json").read_text(encoding="utf-8")
+        )
+        # Exactly the documents DoCTA transcribed itself get such a file; a
+        # document with a Transkribus export is read from the export.
+        assert {int(p.stem) for p in (out / "transcriptions").glob("*.json")} == {
+            doc_id
+            for doc_id, pages in pages_by_doc.items()
+            if any(br.edition_runs(p) for p in pages)
+        }
+    doc = next(d for d in docs if d["docId"] == EDITION_DOC)
+    assert written == br.vlm_transcription(doc, pages_by_doc[EDITION_DOC])
+    assert written["provenance"]["state"] == "machine-unrevised"
+    assert written["provenance"]["runs"] == [
+        br.newest_edition_run(pages_by_doc[EDITION_DOC][0])["id"]
+    ]
+    for page in written["pages"]:
+        regions = page["regions"]
+        assert [r["id"] for r in regions] == [br.VLM_REGION], "one block per page"
+        run = br.newest_edition_run(
+            next(p for p in pages_by_doc[EDITION_DOC] if p["pageNr"] == page["pageNr"])
+        )
+        assert [ln["text"] for ln in regions[0]["lines"]] == [
+            ln["text"] for ln in run["lines"]
+        ]
+        assert not any(ln["coords"] for ln in regions[0]["lines"]), (
+            "a vision model analyses no layout, so it claims no coordinates"
+        )
 
 
 def test_projection_matches_register() -> None:

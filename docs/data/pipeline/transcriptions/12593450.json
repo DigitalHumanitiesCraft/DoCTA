@@ -1,0 +1,191 @@
+{
+ "docId": 12593450,
+ "title": "Inventare des Hauskämmeramtes in Innsbruck",
+ "provenance": {
+  "source": "vlm",
+  "state": "machine-unrevised",
+  "model": "gemini-3.7-flash",
+  "prompt": "it02",
+  "prompt_hash": "bcd3dc9cb8554f26",
+  "runs": [
+   "edition:edition_inv_12593450_p1__it02__r1"
+  ],
+  "pagesTranscribed": 1,
+  "pagesInDocument": 1,
+  "note": "Unrevised vision-model transcription produced by the DoCTA pipeline. No page has been read against the scan by a scholar."
+ },
+ "totalPages": 1,
+ "totalLines": 26,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/RREYWGKJGGOFGDNTGGCVETIL/full/max/0/default.jpg",
+   "run": "edition:edition_inv_12593450_p1__it02__r1",
+   "regions": [
+    {
+     "id": "vlm",
+     "type": "",
+     "coords": "",
+     "lines": [
+      {
+       "id": "v1",
+       "text": "1",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v2",
+       "text": "In der jar zal man zelt von cristi",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v3",
+       "text": "geburt tausent vierhundert vnd",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v4",
+       "text": "lxxxviiij jar Auf den sporn[...]",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v5",
+       "text": "an sand Jeronimus abend hat vor ph[- - -] nach dem",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v6",
+       "text": "d[er] kayserlich hof mitsambt noch d[er]",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v7",
+       "text": "vogt vnd pfleger vff Land[sberg?]",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v8",
+       "text": "Hannß d[er] Rorer",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v9",
+       "text": "Item ein silberin kopf auf ein fuos",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v10",
+       "text": "Item ein beslagnd doffl mit silber",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v11",
+       "text": "Item ein silberins klain glokl",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v12",
+       "text": "xxiij klain silberin schüßl",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v13",
+       "text": "Item ein silberin schäurlin",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v14",
+       "text": "Item ij groß silberin pech",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v15",
+       "text": "Item ein halb maizz silberin pech",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v16",
+       "text": "Item ein wappen",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v17",
+       "text": "Item ein samettasche mit brief",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v18",
+       "text": "Item ein schachpretstöcklein mit stain",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v19",
+       "text": "Item ein wöchlis federein",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v20",
+       "text": "Item ein rauchs foln",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v21",
+       "text": "Item I disch mit granit aufgemalt geschilt",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v22",
+       "text": "Item ein silberi ziergertl doppel",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v23",
+       "text": "Inv. A 24/1",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v24",
+       "text": "Zu „Hauskamreramt“",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v25",
+       "text": "1489 April 11.",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v26",
+       "text": "Sch. A. I, 7621",
+       "coords": "",
+       "baseline": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

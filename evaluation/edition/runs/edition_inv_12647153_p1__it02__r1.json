@@ -1,0 +1,258 @@
+{
+ "page": "edition_inv_12647153_p1",
+ "iteration": "it02",
+ "repeat": 1,
+ "model": "gemini-3.7-flash",
+ "temperature": 0.0,
+ "prompt_hash": "bcd3dc9cb8554f26",
+ "fewshot": true,
+ "image_info": [
+  {
+   "source_px": [
+    2311,
+    4324
+   ],
+   "sent_px": [
+    1871,
+    3500
+   ],
+   "crop": null
+  }
+ ],
+ "duration_s": 21.9,
+ "timestamp": "2026-08-28T08:28:14+00:00",
+ "parsed": {
+  "pages": [
+   {
+    "label": "fol. 54v (leer)",
+    "lines": [],
+    "empty": true
+   },
+   {
+    "label": "fol. 55r",
+    "lines": [
+     {
+      "text": "55.",
+      "kind": "foliation",
+      "uncertain": []
+     },
+     {
+      "text": "Vermerckt das Silbergeschirr",
+      "kind": "rubric",
+      "uncertain": [
+       "Silbergeschirr"
+      ]
+     },
+     {
+      "text": "so Martin diethorn durch Hannsen",
+      "kind": "entry",
+      "uncertain": [
+       "diethorn"
+      ]
+     },
+     {
+      "text": "Arnolden inngeantwortet ist ingegen-",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "wurtigkait her Degn fuchs von fuchsperg",
+      "kind": "entry",
+      "uncertain": [
+       "Degn",
+       "fuchs",
+       "fuchsperg"
+      ]
+     },
+     {
+      "text": "Pauls Liechtenstainer Ruprechts",
+      "kind": "entry",
+      "uncertain": [
+       "Liechtenstainer"
+      ]
+     },
+     {
+      "text": "Ruestmauls harstkamers vnd",
+      "kind": "entry",
+      "uncertain": [
+       "Ruestmauls",
+       "harstkamers"
+      ]
+     },
+     {
+      "text": "Casparn Lathsneider Chamrermen",
+      "kind": "entry",
+      "uncertain": [
+       "Lathsneider",
+       "Chamrermen"
+      ]
+     },
+     {
+      "text": "furs Arnn Inßprugg am Sunttag",
+      "kind": "entry",
+      "uncertain": [
+       "Arnn",
+       "Inßprugg"
+      ]
+     },
+     {
+      "text": "nach sand Bartholomeestag Anno etc.",
+      "kind": "entry",
+      "uncertain": [
+       "Bartholomeestag"
+      ]
+     },
+     {
+      "text": "Octogesimoseptimo",
+      "kind": "entry",
+      "uncertain": [
+       "Octogesimoseptimo"
+      ]
+     },
+     {
+      "text": "Am ersten dreiundtzwaintzigk groß",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Teller",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Vier flache Teller mit vergultn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "krantzen",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zehen mittlere Teller",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zehen klaine Teller zu Salcz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zwelff klaine tieffe Teller auch",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "zu Salcz",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Zway Busseckh vberainander gedeckt",
+      "kind": "entry",
+      "uncertain": [
+       "Busseckh"
+      ]
+     },
+     {
+      "text": "mit ainem vergultn Decken knoph",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Ain Turbins Busseck vergult inn-",
+      "kind": "entry",
+      "uncertain": [
+       "Turbins",
+       "Busseck"
+      ]
+     },
+     {
+      "text": "wendig mit ainem Schild darinn ein",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "swarcz Adler",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Aber ein Busseckle mit ainer vergultn",
+      "kind": "entry",
+      "uncertain": [
+       "Busseckle"
+      ]
+     },
+     {
+      "text": "Tumnen vnd ain Schild darinn / mit",
+      "kind": "entry",
+      "uncertain": [
+       "Tumnen"
+      ]
+     },
+     {
+      "text": "drey Kleebletern ein kron oben darauf",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Aber ein Busseck in ainer Dronn",
+      "kind": "entry",
+      "uncertain": [
+       "Busseck",
+       "Dronn"
+      ]
+     },
+     {
+      "text": "drey Schildt / mit ainem rot vnd / swartzn",
+      "kind": "entry",
+      "uncertain": []
+     },
+     {
+      "text": "Adler vnd Schlern",
+      "kind": "entry",
+      "uncertain": [
+       "Schlern"
+      ]
+     }
+    ],
+    "empty": false
+   }
+  ]
+ },
+ "lines": [
+  "55.",
+  "Vermerckt das Silbergeschirr",
+  "so Martin diethorn durch Hannsen",
+  "Arnolden inngeantwortet ist ingegen-",
+  "wurtigkait her Degn fuchs von fuchsperg",
+  "Pauls Liechtenstainer Ruprechts",
+  "Ruestmauls harstkamers vnd",
+  "Casparn Lathsneider Chamrermen",
+  "furs Arnn Inßprugg am Sunttag",
+  "nach sand Bartholomeestag Anno etc.",
+  "Octogesimoseptimo",
+  "Am ersten dreiundtzwaintzigk groß",
+  "Teller",
+  "Vier flache Teller mit vergultn",
+  "krantzen",
+  "Zehen mittlere Teller",
+  "Zehen klaine Teller zu Salcz",
+  "Zwelff klaine tieffe Teller auch",
+  "zu Salcz",
+  "Zway Busseckh vberainander gedeckt",
+  "mit ainem vergultn Decken knoph",
+  "Ain Turbins Busseck vergult inn-",
+  "wendig mit ainem Schild darinn ein",
+  "swarcz Adler",
+  "Aber ein Busseckle mit ainer vergultn",
+  "Tumnen vnd ain Schild darinn / mit",
+  "drey Kleebletern ein kron oben darauf",
+  "Aber ein Busseck in ainer Dronn",
+  "drey Schildt / mit ainem rot vnd / swartzn",
+  "Adler vnd Schlern"
+ ]
+}

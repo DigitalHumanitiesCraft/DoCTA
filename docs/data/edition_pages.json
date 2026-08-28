@@ -1,0 +1,19 @@
+{
+ "note": "Page images of the documents DoCTA transcribes itself. A document without a Transkribus text export carries no page list, so the images its own transcription runs on are named here. Every key is the fimgstore key of the document entry in transkribus_collection.json, which is the image of the first page; the keys of the further pages need an authenticated Transkribus fulldoc call and are absent until that runs.",
+ "pages": [
+  {
+   "docId": 12593450,
+   "pageNr": 1,
+   "imgKey": "RREYWGKJGGOFGDNTGGCVETIL",
+   "iiif": "https://files.transkribus.eu/iiif/2/RREYWGKJGGOFGDNTGGCVETIL/full/max/0/default.jpg",
+   "origin": "transkribus_collection.json, document 12593450, url key"
+  },
+  {
+   "docId": 12647153,
+   "pageNr": 1,
+   "imgKey": "YVUFPASEUZXKRSXERYPMTXFT",
+   "iiif": "https://files.transkribus.eu/iiif/2/YVUFPASEUZXKRSXERYPMTXFT/full/max/0/default.jpg",
+   "origin": "transkribus_collection.json, document 12647153, url key"
+  }
+ ]
+}

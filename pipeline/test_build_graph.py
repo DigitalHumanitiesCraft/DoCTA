@@ -117,7 +117,15 @@ def test_real_corpus_builds_and_every_member_resolves():
     for node in payload["@graph"]:
         for ref in node.get("member", []) + node.get("attestedIn", []):
             assert ref in nodes, f"dangling reference {ref}"
-    # The extracted documents carry Inventaria transcriptions; the attribution
-    # must travel on their nodes.
+    # The attribution travels on the node of every document whose transcription
+    # the Inventaria project made, and on no other; a document DoCTA transcribed
+    # itself must not pick up a foreign attribution.
+    inventaria = bg._transcription_attribution()
     docs = [n for n in payload["@graph"] if n["@type"] == "docta:Document"]
-    assert docs and all(d.get("transcriptionBy") == "Inventaria" for d in docs)
+    assert docs, "no document node in the graph"
+    for node in docs:
+        expected = "Inventaria" if node["transkribusDocId"] in inventaria else None
+        assert node.get("transcriptionBy") == expected, (
+            f"wrong attribution on {node['@id']}"
+        )
+    assert any(n.get("transcriptionBy") == "Inventaria" for n in docs)

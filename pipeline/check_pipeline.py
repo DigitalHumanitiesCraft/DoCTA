@@ -53,6 +53,7 @@ DOCUMENTS = ROOT / "documents.json"
 REVIEWS = ROOT / "reviews"
 PROMPTS = ROOT / "prompts"
 SUMMARY = DATA / "pipeline" / "register_summary.json"
+SITE_TRANSCRIPTIONS = DATA / "pipeline" / "transcriptions"
 EVALUATION = REPO / "evaluation"
 
 TEI_NS = "{http://www.tei-c.org/ns/1.0}"
@@ -323,13 +324,18 @@ def _check_entities() -> list[Finding]:
 
 
 def _transcription_lines(doc_id: Any) -> dict[str, str] | None:
-    """Page-qualified line index of one export, the key extract_entities.py anchors on."""
-    path = TRANSCRIPTIONS / f"{doc_id}.json"
-    if not path.exists():
+    """Page-qualified line index of one document, the key entity anchors use.
+
+    Whichever layer carries the text, the export or the DoCTA edition runs; the
+    same function answers that for the extraction, so the check anchors on the
+    text the extraction actually read.
+    """
+    doc = br.transcription_of(doc_id, REGISTER)
+    if doc is None:
         return None
     return {
         f"p{page['pageNr']}_{line['id']}": line["text"]
-        for page in _load(path)["pages"]
+        for page in doc["pages"]
         for region in page.get("regions") or []
         for line in region.get("lines") or []
     }
@@ -350,7 +356,7 @@ def _check_reviews() -> list[Finding]:
 def _evaluation_runs() -> list[Path]:
     return sorted(
         p
-        for cohort in ("benchmark", "pilot", "pilot2")
+        for cohort in ("benchmark", "pilot", "pilot2", br.EDITION)
         for p in (EVALUATION / cohort / "runs").glob("*.json")
     )
 
@@ -703,6 +709,24 @@ def check_idempotence() -> list[Finding]:
         out += _compare(SUMMARY, tmp / "register_summary.json", "projection")
         for path in sorted((tmp / "pages").glob("*.json")):
             out += _compare(REGISTER / path.name, path, "register")
+        # The site transcriptions of the documents DoCTA transcribed itself are
+        # part of the projection and are compared in both directions like the
+        # TEI, so a stale one is found as well as a drifted one.
+        rebuilt_site = {p.name for p in (tmp / "transcriptions").glob("*.json")}
+        for name in sorted(rebuilt_site):
+            out += _compare(
+                SITE_TRANSCRIPTIONS / name, tmp / "transcriptions" / name, "projection"
+            )
+        for name in sorted(
+            {p.name for p in SITE_TRANSCRIPTIONS.glob("*.json")} - rebuilt_site
+        ):
+            out.append(
+                _fail(
+                    "idempotence.orphan",
+                    f"pipeline/transcriptions/{name}: the working tree has it,"
+                    " the rebuild does not produce it",
+                )
+            )
         # The TEI side is compared over the glob rather than over the returned
         # document ids, so register.xml is covered like any other file and an
         # orphan is found in both directions.

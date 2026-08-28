@@ -1,0 +1,183 @@
+{
+ "docId": 12593450,
+ "title": "Inventare des Hauskämmeramtes in Innsbruck",
+ "provenance": {
+  "source": "llm",
+  "model": "gemini-3.7-flash",
+  "prompt": "entities_it01",
+  "prompt_hash": "01e61e025161",
+  "date": "2026-08-28",
+  "basis": {
+   "transcription": "vlm",
+   "state": "machine-unrevised",
+   "runs": [
+    "edition:edition_inv_12593450_p1__it02__r1"
+   ]
+  }
+ },
+ "entities": [
+  {
+   "id": "t1",
+   "text": "lxxxviiij jar",
+   "normalized": "1489",
+   "type": "time",
+   "pageNr": 1,
+   "lineId": "v4",
+   "role": ""
+  },
+  {
+   "id": "t2",
+   "text": "sand Jeronimus abend",
+   "normalized": "Sankt Hieronymus Abend",
+   "type": "time",
+   "pageNr": 1,
+   "lineId": "v5",
+   "role": ""
+  },
+  {
+   "id": "pl1",
+   "text": "Land[sberg?]",
+   "normalized": "Landsberg",
+   "type": "place",
+   "pageNr": 1,
+   "lineId": "v7",
+   "role": ""
+  },
+  {
+   "id": "p1",
+   "text": "Hannß d[er] Rorer",
+   "normalized": "Hans Rorer",
+   "type": "person",
+   "pageNr": 1,
+   "lineId": "v8",
+   "role": "Vogt und Pfleger"
+  },
+  {
+   "id": "o1",
+   "text": "silberin kopf auf ein fuos",
+   "normalized": "silberner Kopf auf einem Fuß",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v9",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o2",
+   "text": "beslagnd doffl mit silber",
+   "normalized": "beschlagene Tafel mit Silber",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v10",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o3",
+   "text": "silberins klain glokl",
+   "normalized": "silbernes kleines Glöcklein",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v11",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o4",
+   "text": "klain silberin schüßl",
+   "normalized": "kleine silberne Schüssel",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v12",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o5",
+   "text": "silberin schäurlin",
+   "normalized": "silbernes Schäuerlein",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v13",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o6",
+   "text": "groß silberin pech",
+   "normalized": "großer silberner Becher",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v14",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o7",
+   "text": "halb maizz silberin pech",
+   "normalized": "halbmäßiger silberner Becher",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v15",
+   "role": "Tafelgeschirr"
+  },
+  {
+   "id": "o8",
+   "text": "wappen",
+   "normalized": "Wappen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v16",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o9",
+   "text": "samettasche mit brief",
+   "normalized": "Samttasche mit Briefen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v17",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o10",
+   "text": "schachpretstöcklein mit stain",
+   "normalized": "Schachbrettstöcklein mit Steinen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v18",
+   "role": "Hausrat"
+  },
+  {
+   "id": "o11",
+   "text": "wöchlis federein",
+   "normalized": "Wöchlein Federlein",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v19",
+   "role": "Textilien"
+  },
+  {
+   "id": "o12",
+   "text": "rauchs foln",
+   "normalized": "rauhes Fohlen",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v20",
+   "role": "Textilien"
+  },
+  {
+   "id": "o13",
+   "text": "disch mit granit aufgemalt geschilt",
+   "normalized": "Tisch mit Granit aufgemalt geschildert",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v21",
+   "role": "Möbel"
+  },
+  {
+   "id": "o14",
+   "text": "silberi ziergertl doppel",
+   "normalized": "silberner Ziergürtel doppel",
+   "type": "object",
+   "pageNr": 1,
+   "lineId": "v22",
+   "role": "Schmuck"
+  }
+ ],
+ "rejected": []
+}

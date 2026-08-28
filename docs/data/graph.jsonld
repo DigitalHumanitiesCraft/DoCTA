@@ -72,6 +72,21 @@
     "prompt_hash": "01e61e025161",
     "date": "2026-08-27",
     "docId": 11330020
+   },
+   {
+    "source": "llm",
+    "model": "gemini-3.7-flash",
+    "prompt": "entities_it01",
+    "prompt_hash": "01e61e025161",
+    "date": "2026-08-28",
+    "basis": {
+     "transcription": "vlm",
+     "state": "machine-unrevised",
+     "runs": [
+      "edition:edition_inv_12593450_p1__it02__r1"
+     ]
+    },
+    "docId": 12593450
    }
   ],
   "aggregation": {
@@ -104,6 +119,13 @@
    "transkribusDocId": 11330020,
    "tei": "tei/11330020.xml",
    "transcriptionBy": "Inventaria"
+  },
+  {
+   "@id": "docta:doc-12593450",
+   "@type": "docta:Document",
+   "label": "Inventare des Hauskämmeramtes in Innsbruck",
+   "transkribusDocId": 12593450,
+   "tei": "tei/12593450.xml"
   },
   {
    "@id": "docta:obj-alter-harnisch",
@@ -4133,6 +4155,28 @@
    ]
   },
   {
+   "@id": "docta:obj-samttasche-mit-briefen",
+   "@type": "docta:Object",
+   "label": "Samttasche mit Briefen",
+   "attestedForm": [
+    "samettasche mit brief"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v17",
+     "form": "samettasche mit brief"
+    }
+   ]
+  },
+  {
    "@id": "docta:obj-sarge",
    "@type": "docta:Object",
    "label": "Sarge",
@@ -4151,6 +4195,28 @@
      "page": 2,
      "line": "r2l6",
      "form": "sargen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schachbrettstoecklein-mit-steinen",
+   "@type": "docta:Object",
+   "label": "Schachbrettstöcklein mit Steinen",
+   "attestedForm": [
+    "schachpretstöcklein mit stain"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v18",
+     "form": "schachpretstöcklein mit stain"
     }
    ]
   },
@@ -5112,6 +5178,28 @@
    ]
   },
   {
+   "@id": "docta:obj-tisch-mit-granit-aufgemalt-geschildert",
+   "@type": "docta:Object",
+   "label": "Tisch mit Granit aufgemalt geschildert",
+   "attestedForm": [
+    "disch mit granit aufgemalt geschilt"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v21",
+     "form": "disch mit granit aufgemalt geschilt"
+    }
+   ]
+  },
+  {
    "@id": "docta:obj-tischtuch",
    "@type": "docta:Object",
    "label": "Tischtuch",
@@ -5428,6 +5516,28 @@
    ]
   },
   {
+   "@id": "docta:obj-wappen",
+   "@type": "docta:Object",
+   "label": "Wappen",
+   "attestedForm": [
+    "wappen"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v16",
+     "form": "wappen"
+    }
+   ]
+  },
+  {
    "@id": "docta:obj-wasserkelle",
    "@type": "docta:Object",
    "label": "Wasserkelle",
@@ -5614,6 +5724,28 @@
      "page": 1,
      "line": "r3l26",
      "form": "wolfs dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-woechlein-federlein",
+   "@type": "docta:Object",
+   "label": "Wöchlein Federlein",
+   "attestedForm": [
+    "wöchlis federein"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v19",
+     "form": "wöchlis federein"
     }
    ]
   },
@@ -5817,6 +5949,28 @@
    ]
   },
   {
+   "@id": "docta:obj-beschlagene-tafel-mit-silber",
+   "@type": "docta:Object",
+   "label": "beschlagene Tafel mit Silber",
+   "attestedForm": [
+    "beslagnd doffl mit silber"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v10",
+     "form": "beslagnd doffl mit silber"
+    }
+   ]
+  },
+  {
    "@id": "docta:obj-gestueckeltes-decklaken",
    "@type": "docta:Object",
    "label": "gestückeltes Decklaken",
@@ -5835,6 +5989,72 @@
      "page": 1,
      "line": "r3l27",
      "form": "gestükelts degklachen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-grosser-silberner-becher",
+   "@type": "docta:Object",
+   "label": "großer silberner Becher",
+   "attestedForm": [
+    "groß silberin pech"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v14",
+     "form": "groß silberin pech"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-halbmaessiger-silberner-becher",
+   "@type": "docta:Object",
+   "label": "halbmäßiger silberner Becher",
+   "attestedForm": [
+    "halb maizz silberin pech"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v15",
+     "form": "halb maizz silberin pech"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kleine-silberne-schuessel",
+   "@type": "docta:Object",
+   "label": "kleine silberne Schüssel",
+   "attestedForm": [
+    "klain silberin schüßl"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v12",
+     "form": "klain silberin schüßl"
     }
    ]
   },
@@ -5907,6 +6127,116 @@
      "page": 2,
      "line": "r2l17",
      "form": "rauche dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-rauhes-fohlen",
+   "@type": "docta:Object",
+   "label": "rauhes Fohlen",
+   "attestedForm": [
+    "rauchs foln"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v20",
+     "form": "rauchs foln"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-silberner-kopf-auf-einem-fuss",
+   "@type": "docta:Object",
+   "label": "silberner Kopf auf einem Fuß",
+   "attestedForm": [
+    "silberin kopf auf ein fuos"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v9",
+     "form": "silberin kopf auf ein fuos"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-silberner-zierguertel-doppel",
+   "@type": "docta:Object",
+   "label": "silberner Ziergürtel doppel",
+   "attestedForm": [
+    "silberi ziergertl doppel"
+   ],
+   "role": [
+    "Schmuck"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v22",
+     "form": "silberi ziergertl doppel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-silbernes-schaeuerlein",
+   "@type": "docta:Object",
+   "label": "silbernes Schäuerlein",
+   "attestedForm": [
+    "silberin schäurlin"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v13",
+     "form": "silberin schäurlin"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-silbernes-kleines-gloecklein",
+   "@type": "docta:Object",
+   "label": "silbernes kleines Glöcklein",
+   "attestedForm": [
+    "silberins klain glokl"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v11",
+     "form": "silberins klain glokl"
     }
    ]
   },
@@ -6092,6 +6422,28 @@
      "page": 1,
      "line": "r2l2",
      "form": "Hannsen Ramung"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-hans-rorer",
+   "@type": "docta:Person",
+   "label": "Hans Rorer",
+   "attestedForm": [
+    "Hannß d[er] Rorer"
+   ],
+   "role": [
+    "Vogt und Pfleger"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v8",
+     "form": "Hannß d[er] Rorer"
     }
    ]
   },
@@ -6585,6 +6937,25 @@
      "page": 3,
      "line": "r1l3",
      "form": "Cronburg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-landsberg",
+   "@type": "docta:Place",
+   "label": "Landsberg",
+   "attestedForm": [
+    "Land[sberg?]"
+   ],
+   "attestedIn": [
+    "docta:doc-12593450"
+   ],
+   "attestation": [
+    {
+     "docId": 12593450,
+     "page": 1,
+     "line": "v7",
+     "form": "Land[sberg?]"
     }
    ]
   },

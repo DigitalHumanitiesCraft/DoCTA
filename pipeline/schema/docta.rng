@@ -73,10 +73,14 @@
     </data>
   </define>
 
-  <!-- The closed list of work steps a file may declare a responsibility for. -->
+  <!-- The closed list of work steps a file may declare a responsibility for.
+       The two transcription steps are alternatives: a file carries either the
+       Transkribus layer or the vision-model transcription the DoCTA pipeline
+       produced for a source Transkribus holds no text for. -->
   <define name="resp.id">
     <choice>
       <value>resp-transkribus-layer</value>
+      <value>resp-vlm-transcription</value>
       <value>resp-tei-generation</value>
       <value>resp-entity-llm</value>
       <value>resp-expert-verification</value>

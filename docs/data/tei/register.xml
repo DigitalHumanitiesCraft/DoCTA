@@ -10,7 +10,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic assembly of the register from the extraction files, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 e6a2585bc5de)</name>
+          <name>pipeline/build_tei.py (sha256 52f59939392f)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -67,6 +67,10 @@
       <person xml:id="per-hans-ramung">
         <persName>Hans Ramung</persName>
         <persName type="attested">Hannsen Ramung</persName>
+      </person>
+      <person xml:id="per-hans-rorer">
+        <persName>Hans Rorer</persName>
+        <persName type="attested">Hannß d[er] Rorer</persName>
       </person>
       <person xml:id="per-hans-weiser">
         <persName>Hans Weiser</persName>
@@ -160,6 +164,10 @@
         <placeName type="attested">Cronburg</placeName>
         <placeName type="attested">Kornburg</placeName>
         <placeName type="attested">Kronburg</placeName>
+      </place>
+      <place xml:id="pl-landsberg">
+        <placeName>Landsberg</placeName>
+        <placeName type="attested">Land[sberg?]</placeName>
       </place>
       <place xml:id="pl-schloss-thaur">
         <placeName>Schloss Thaur</placeName>
@@ -797,9 +805,17 @@
         <term>Salzfass</term>
         <term type="attested">salzvassel</term>
       </item>
+      <item xml:id="obj-samttasche-mit-briefen">
+        <term>Samttasche mit Briefen</term>
+        <term type="attested">samettasche mit brief</term>
+      </item>
       <item xml:id="obj-sarge">
         <term>Sarge</term>
         <term type="attested">sargen</term>
+      </item>
+      <item xml:id="obj-schachbrettstoecklein-mit-steinen">
+        <term>Schachbrettstöcklein mit Steinen</term>
+        <term type="attested">schachpretstöcklein mit stain</term>
       </item>
       <item xml:id="obj-schaffreite">
         <term>Schaffreite</term>
@@ -956,6 +972,10 @@
         <term>Tisch</term>
         <term type="attested">tisch</term>
       </item>
+      <item xml:id="obj-tisch-mit-granit-aufgemalt-geschildert">
+        <term>Tisch mit Granit aufgemalt geschildert</term>
+        <term type="attested">disch mit granit aufgemalt geschilt</term>
+      </item>
       <item xml:id="obj-tischtuch">
         <term>Tischtuch</term>
         <term type="attested">tischtücher</term>
@@ -1005,6 +1025,10 @@
         <term>Wagenross</term>
         <term type="attested">wagen ross</term>
       </item>
+      <item xml:id="obj-wappen">
+        <term>Wappen</term>
+        <term type="attested">wappen</term>
+      </item>
       <item xml:id="obj-wasserkelle">
         <term>Wasserkelle</term>
         <term type="attested">wasser gatzen</term>
@@ -1038,6 +1062,10 @@
       <item xml:id="obj-wolfsfelldecke">
         <term>Wolfsfelldecke</term>
         <term type="attested">wolfs dekch</term>
+      </item>
+      <item xml:id="obj-woechlein-federlein">
+        <term>Wöchlein Federlein</term>
+        <term type="attested">wöchlis federein</term>
       </item>
       <item xml:id="obj-zange">
         <term>Zange</term>
@@ -1074,9 +1102,25 @@
         <term>Zinnteller</term>
         <term type="attested">zÿnen teller</term>
       </item>
+      <item xml:id="obj-beschlagene-tafel-mit-silber">
+        <term>beschlagene Tafel mit Silber</term>
+        <term type="attested">beslagnd doffl mit silber</term>
+      </item>
       <item xml:id="obj-gestueckeltes-decklaken">
         <term>gestückeltes Decklaken</term>
         <term type="attested">gestükelts degklachen</term>
+      </item>
+      <item xml:id="obj-grosser-silberner-becher">
+        <term>großer silberner Becher</term>
+        <term type="attested">groß silberin pech</term>
+      </item>
+      <item xml:id="obj-halbmaessiger-silberner-becher">
+        <term>halbmäßiger silberner Becher</term>
+        <term type="attested">halb maizz silberin pech</term>
+      </item>
+      <item xml:id="obj-kleine-silberne-schuessel">
+        <term>kleine silberne Schüssel</term>
+        <term type="attested">klain silberin schüßl</term>
       </item>
       <item xml:id="obj-lederner-polster">
         <term>lederner Polster</term>
@@ -1089,6 +1133,26 @@
         <term type="attested">rauch dëkchen</term>
         <term type="attested">rauche dekch</term>
         <term type="attested">rauhe dekch</term>
+      </item>
+      <item xml:id="obj-rauhes-fohlen">
+        <term>rauhes Fohlen</term>
+        <term type="attested">rauchs foln</term>
+      </item>
+      <item xml:id="obj-silberner-kopf-auf-einem-fuss">
+        <term>silberner Kopf auf einem Fuß</term>
+        <term type="attested">silberin kopf auf ein fuos</term>
+      </item>
+      <item xml:id="obj-silberner-zierguertel-doppel">
+        <term>silberner Ziergürtel doppel</term>
+        <term type="attested">silberi ziergertl doppel</term>
+      </item>
+      <item xml:id="obj-silbernes-schaeuerlein">
+        <term>silbernes Schäuerlein</term>
+        <term type="attested">silberin schäurlin</term>
+      </item>
+      <item xml:id="obj-silbernes-kleines-gloecklein">
+        <term>silbernes kleines Glöcklein</term>
+        <term type="attested">silberins klain glokl</term>
       </item>
       <item xml:id="obj-oelkessel">
         <term>Ölkessel</term>

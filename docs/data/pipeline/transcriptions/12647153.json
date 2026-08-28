@@ -1,0 +1,215 @@
+{
+ "docId": 12647153,
+ "title": "Inventar des Silbergeschirrs, das Martein Aichorn anvertraut ist",
+ "provenance": {
+  "source": "vlm",
+  "state": "machine-unrevised",
+  "model": "gemini-3.7-flash",
+  "prompt": "it02",
+  "prompt_hash": "bcd3dc9cb8554f26",
+  "runs": [
+   "edition:edition_inv_12647153_p1__it02__r1"
+  ],
+  "pagesTranscribed": 1,
+  "pagesInDocument": 6,
+  "note": "Unrevised vision-model transcription produced by the DoCTA pipeline. No page has been read against the scan by a scholar."
+ },
+ "totalPages": 1,
+ "totalLines": 30,
+ "pages": [
+  {
+   "pageNr": 1,
+   "iiif": "https://files.transkribus.eu/iiif/2/YVUFPASEUZXKRSXERYPMTXFT/full/max/0/default.jpg",
+   "run": "edition:edition_inv_12647153_p1__it02__r1",
+   "regions": [
+    {
+     "id": "vlm",
+     "type": "",
+     "coords": "",
+     "lines": [
+      {
+       "id": "v1",
+       "text": "55.",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v2",
+       "text": "Vermerckt das Silbergeschirr",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v3",
+       "text": "so Martin diethorn durch Hannsen",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v4",
+       "text": "Arnolden inngeantwortet ist ingegen-",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v5",
+       "text": "wurtigkait her Degn fuchs von fuchsperg",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v6",
+       "text": "Pauls Liechtenstainer Ruprechts",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v7",
+       "text": "Ruestmauls harstkamers vnd",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v8",
+       "text": "Casparn Lathsneider Chamrermen",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v9",
+       "text": "furs Arnn Inßprugg am Sunttag",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v10",
+       "text": "nach sand Bartholomeestag Anno etc.",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v11",
+       "text": "Octogesimoseptimo",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v12",
+       "text": "Am ersten dreiundtzwaintzigk groß",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v13",
+       "text": "Teller",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v14",
+       "text": "Vier flache Teller mit vergultn",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v15",
+       "text": "krantzen",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v16",
+       "text": "Zehen mittlere Teller",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v17",
+       "text": "Zehen klaine Teller zu Salcz",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v18",
+       "text": "Zwelff klaine tieffe Teller auch",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v19",
+       "text": "zu Salcz",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v20",
+       "text": "Zway Busseckh vberainander gedeckt",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v21",
+       "text": "mit ainem vergultn Decken knoph",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v22",
+       "text": "Ain Turbins Busseck vergult inn-",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v23",
+       "text": "wendig mit ainem Schild darinn ein",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v24",
+       "text": "swarcz Adler",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v25",
+       "text": "Aber ein Busseckle mit ainer vergultn",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v26",
+       "text": "Tumnen vnd ain Schild darinn / mit",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v27",
+       "text": "drey Kleebletern ein kron oben darauf",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v28",
+       "text": "Aber ein Busseck in ainer Dronn",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v29",
+       "text": "drey Schildt / mit ainem rot vnd / swartzn",
+       "coords": "",
+       "baseline": ""
+      },
+      {
+       "id": "v30",
+       "text": "Adler vnd Schlern",
+       "coords": "",
+       "baseline": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

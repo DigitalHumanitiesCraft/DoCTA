@@ -246,8 +246,8 @@ def test_no_mark_is_left_in_the_body_text() -> None:
 def test_one_pb_and_one_surface_per_page() -> None:
     built = _built()
     for doc_id, xml in built.items():
-        export = bt._load(bt.DATA / "transcriptions" / f"{doc_id}.json")
-        page_numbers = [str(p["pageNr"]) for p in export["pages"]]
+        source = br.transcription_of(doc_id, bt.REGISTER)
+        page_numbers = [str(p["pageNr"]) for p in source["pages"]]
         root = ElementTree.fromstring(xml)
         pbs = [pb.get("n") for pb in root.iter(f"{TEI}pb")]
         surfaces = [s.get("n") for s in root.iter(f"{TEI}surface")]
@@ -346,6 +346,12 @@ def test_every_zone_is_referenced_by_an_lb() -> None:
 
 
 def test_every_lb_facs_resolves_to_a_zone() -> None:
+    """An lb points at a zone or at nothing, never at a missing one.
+
+    A document whose text DoCTA transcribed itself has no layout analysis and
+    therefore no zone at all, so its lines are unbound by construction; every
+    document that has zones must bind lines to them.
+    """
     built = _built()
     for doc_id, xml in built.items():
         root = ElementTree.fromstring(xml)
@@ -359,7 +365,7 @@ def test_every_lb_facs_resolves_to_a_zone() -> None:
             assert facs.startswith("#") and facs[1:] in ids, (
                 f"dangling lb facs {facs} in {doc_id}"
             )
-        assert bound, f"no lb bound to a zone in {doc_id}"
+        assert bool(bound) == bool(ids), f"zones and bound lines disagree in {doc_id}"
 
 
 def _marked_entities(root: ElementTree.Element) -> list[ElementTree.Element]:
@@ -790,11 +796,19 @@ def _changes(root: ElementTree.Element) -> dict[str, ElementTree.Element]:
 
 
 def test_every_document_declares_its_work_steps() -> None:
-    """Each file names the two steps that ran, and claims no verification step."""
+    """Each file names the two steps that ran, and claims no verification step.
+
+    Which transcription step that is depends on the layer: the Transkribus one
+    where an export carries the text, DoCTA's own where the pipeline produced it.
+    """
     built = _built()
+    layers = {d["docId"]: d["layer"] for d in bt._documents()}
     for doc_id, xml in built.items():
         root = ElementTree.fromstring(xml)
-        expected = [bt.RESP_TRANSKRIBUS, bt.RESP_GENERATION]
+        transcription = (
+            bt.RESP_VLM if layers[doc_id] == bt.VLM_LAYER else bt.RESP_TRANSKRIBUS
+        )
+        expected = [transcription, bt.RESP_GENERATION]
         if _has_entities(doc_id):
             expected.append(bt.RESP_ENTITY)
         assert _resp_ids(root) == expected, f"respStmt ids differ in {doc_id}"
@@ -826,6 +840,63 @@ def test_correction_state_decides_wording_and_status() -> None:
     decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
     assert "unrevised machine transcription" in decl
     assert _changes(root)["transcription-summary"].get("status") == bt.MACHINE
+
+
+def test_a_docta_transcription_declares_its_own_step_and_no_layout() -> None:
+    """A document Transkribus holds no text for carries DoCTA's own layer.
+
+    Its responsibility names the model instead of Transkribus, its declaration
+    says the reading is the model's own, and it asserts no image region, because
+    no layout analysis ran on the page.
+    """
+    built = _built()
+    doc = next(d for d in bt._documents() if d["layer"] == bt.VLM_LAYER)
+    doc_id = doc["docId"]
+    root = ElementTree.fromstring(built[doc_id])
+
+    ids = _resp_ids(root)
+    assert bt.RESP_VLM in ids and bt.RESP_TRANSKRIBUS not in ids
+    resp = root.find(f".//{TEI}respStmt/{TEI}resp").text
+    assert resp.startswith("Vision-language model transcription")
+    name = root.find(f".//{TEI}respStmt/{TEI}name").text
+    assert doc["model"] in name and doc["prompt"] in name
+
+    decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
+    assert "Transkribus holds no transcription of this source" in decl
+    assert "unrevised machine transcription" in decl
+    assert _changes(root)["transcription-summary"].get("status") == bt.MACHINE
+
+    assert not list(root.iter(f"{TEI}zone")), "zones without a layout analysis"
+    assert all(lb.get("facs") is None for lb in root.iter(f"{TEI}lb"))
+    # The page image is referenced all the same; it is what was transcribed.
+    assert [g.get("url") for g in root.iter(f"{TEI}graphic")], "no facsimile"
+
+    register = br.transcription_of(doc_id, bt.REGISTER)
+    for page in register["pages"]:
+        block = f"ab-{doc_id}-{page['pageNr']}-{br.VLM_REGION}"
+        assert root.find(f'.//{TEI}ab[@{XML_ID}="{block}"]') is not None, block
+    expected = sum(len(r["lines"]) for p in register["pages"] for r in p["regions"])
+    assert sum(1 for _ in root.iter(f"{TEI}lb")) == expected, "line count differs"
+
+
+def test_a_partly_transcribed_document_says_how_much_it_covers() -> None:
+    """A file carrying part of its source states the ratio, a complete one does not.
+
+    Without the sentence the file reads as the whole document, since a source
+    without an export has no page list to compare its page count against.
+    """
+    built = _built()
+    for doc in bt._documents():
+        if doc["layer"] != bt.VLM_LAYER:
+            continue
+        pages = br.transcription_of(doc["docId"], bt.REGISTER)["pages"]
+        root = ElementTree.fromstring(built[doc["docId"]])
+        decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
+        covered, total = len(pages), doc["pages"]
+        if covered < total:
+            assert f"It covers {covered} of the {total} pages" in decl, doc["docId"]
+        else:
+            assert "It covers" not in decl, doc["docId"]
 
 
 def test_revision_desc_carries_both_stream_summaries() -> None:
