@@ -105,4 +105,4 @@ The six entity hues are muted against the warm ground `#faf8f5`, and each foregr
 
 The palette replaced a set of saturated Material hues. Three of those values survive as the XML syntax colours of the TEI display, `--tei-tag` `#6a1b9a`, `--tei-attr` `#1565c0` and `--tei-val` `#2e7d32`, where they carry no entity meaning at all.
 
-The entity colours have to agree in three places, the badge classes in `css/styles.css`, the D3 node fills (read from the same CSS tokens at runtime) and the legend controls on the page carrying the graph.
+The entity colours have to agree in three places, the badge classes in `css/styles.css`, the D3 node fills (read from the same CSS tokens at runtime) and the legend controls on the page carrying the graph. Since 28.08.2026 shape is a fourth axis of the same rule: object nodes are triangles rather than circles in another hue, and the D3 marks, the filter chips and the legend carry the same shape, because meaning must not rest on colour alone.

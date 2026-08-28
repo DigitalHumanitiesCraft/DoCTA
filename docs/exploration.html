@@ -57,7 +57,7 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON, loadEntities } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML, escapeAttr } from './js/utils.js';
+    import { getParams, setParams, escapeHTML, escapeAttr, debounce } from './js/utils.js';
     import { createNetworkView } from './js/network.js';
 
     initNav('exploration');
@@ -207,41 +207,66 @@
         docs.map(d => `<option value="${escapeAttr(String(d.transkribusDocId))}">` +
           `${escapeHTML(d.label)}</option>`).join('') +
         '</select></div>' +
+        '<div class="exp-ctrl"><label class="exp-ctrl__legend" for="ent-filter">Filter</label>' +
+        '<input type="search" class="exp-input" id="ent-filter" autocomplete="off" ' +
+        'placeholder="Source or normalized form" ' +
+        'aria-describedby="ent-filter-hint"><span class="visually-hidden" id="ent-filter-hint">' +
+        'Filters the table by the form read in the source and by the normalized form.</span></div>' +
         '<div class="exp-ctrl"><a class="vt-btn exp-ctrl__btn" id="ent-open" href="#">' +
         '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" ' +
         'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
         '<path d="M6.5 2.5H2.5v11h11v-4M9.5 2.5H13.5v4M13.5 2.5L7 9"/></svg> Open in the viewer</a></div>';
       const sourceSel = controls.querySelector('#ent-source');
+      const filterInput = controls.querySelector('#ent-filter');
       const openLink = controls.querySelector('#ent-open');
 
       let srcDocId = docs.length ? docs[0].transkribusDocId : null;
       let provenance = DEFAULT_PROVENANCE;
       let rows = [];
+      let query = '';
 
-      // Every attestation links back to the page it was read on
-      function attestCell(r) {
+      const pageHref = pageNr =>
+        `viewer.html?doc=${encodeURIComponent(srcDocId)}&amp;page=${pageNr}`;
+
+      const pageTitle = o => (o.lineId
+        ? `Open page ${o.pageNr} in the viewer, line ${o.lineId}`
+        : `Open page ${o.pageNr} in the viewer`);
+
+      // Every attestation links back to the page it was read on. Without the
+      // line the same markup serves as the one value above the table, where a
+      // line of the first record would be a false statement about all of them.
+      function attestCell(r, withLine = true) {
         if (!r.occurrences.length) return '';
-        const links = r.occurrences.map(o => {
-          const title = o.lineId
-            ? `Open page ${o.pageNr} in the viewer, line ${o.lineId}`
-            : `Open page ${o.pageNr} in the viewer`;
-          return `<a class="exp-attest__link" href="viewer.html?doc=${encodeURIComponent(srcDocId)}` +
-                 `&amp;page=${o.pageNr}" title="${escapeAttr(title)}">p.&nbsp;${o.pageNr}</a>`;
-        }).join('');
+        const links = r.occurrences.map(o =>
+          `<a class="exp-attest__link" href="${pageHref(o.pageNr)}" ` +
+          `title="${escapeAttr(withLine ? pageTitle(o) : `Open page ${o.pageNr} in the viewer`)}">` +
+          `p.&nbsp;${o.pageNr}</a>`).join('');
         const count = r.count !== null && r.count > r.occurrences.length
           ? `<span class="exp-attest__count">${r.count}×</span>`
           : '';
         return `<span class="exp-attest">${count}${links}</span>`;
       }
 
+      /* The row itself leads back to the facsimile, so the route survives the
+         suppression of the attestation column on a single-page source. */
+      function sourceCell(r) {
+        const form = `<span class="exp-src">${escapeHTML(r.text)}</span>`;
+        const o = r.occurrences[0];
+        if (!o) return form;
+        return `<a class="exp-rowlink" href="${pageHref(o.pageNr)}" ` +
+               `title="${escapeAttr(pageTitle(o))}">${form}</a>`;
+      }
+
       const COLUMNS = [
-        { key: 'text', label: 'Source form', cell: r => `<span class="exp-src">${escapeHTML(r.text)}</span>` },
+        { key: 'text', label: 'Source form', cell: sourceCell },
         { key: 'normalized', label: 'Normalized', cell: r => escapeHTML(r.normalized) },
         { key: 'type', label: 'Type', cell: r => r.type ? `<span class="entity entity--${escapeAttr(r.type)}">${escapeHTML(TYPE_LABEL[r.type] || r.type)}</span>` : '' },
         { key: 'provenance', label: 'Provenance', sort: () => provenance, cell: () => provChip(provenance) },
         { key: 'count', label: 'Occurrences', num: true, cell: r => r.count === null ? '' : String(r.count) },
         { key: 'attestation', label: 'Attestation', num: true,
-          sort: r => r.occurrences.length ? r.occurrences[0].pageNr : null, cell: attestCell },
+          sort: r => r.occurrences.length ? r.occurrences[0].pageNr : null, cell: attestCell,
+          uniq: r => r.occurrences.map(o => o.pageNr).join(' '),
+          summary: r => attestCell(r, false) },
         { key: 'detail', label: 'Role or category', cell: r => escapeHTML(r.detail) },
       ];
 
@@ -253,13 +278,22 @@
       const summary = await loadJSON('data/pipeline/register_summary.json').catch(() => null);
       const regByDocId = new Map((summary?.documents || []).map(d => [Number(d.docId), d]));
 
+      /* A column whose value is the same in every record of the source says
+         nothing per row. It is dropped and its one value named here once; the
+         record count sits at the other end of the same line. */
+      const factsLine = document.createElement('p');
+      factsLine.className = 'exp-facts';
+      factsLine.innerHTML = '<span class="exp-facts__items"></span>' +
+        '<span class="exp-facts__count"></span>';
+      panel.appendChild(factsLine);
+      const factsItems = factsLine.querySelector('.exp-facts__items');
+      const countEl = factsLine.querySelector('.exp-facts__count');
+
       const wrap = document.createElement('div');
       wrap.className = 'exp-table-wrap';
       wrap.tabIndex = 0;
-      wrap.innerHTML = '<table class="exp-table"><thead><tr>' +
-        COLUMNS.map(c => `<th scope="col" data-key="${c.key}" aria-sort="none">` +
-          `<button type="button" class="exp-sort" data-key="${c.key}">${c.label} <span class="exp-sort__mark" aria-hidden="true"></span></button></th>`).join('') +
-        '</tr></thead><tbody id="ent-rows"></tbody></table>';
+      wrap.innerHTML = '<table class="exp-table"><thead></thead>' +
+        '<tbody id="ent-rows"></tbody></table>';
       panel.appendChild(wrap);
 
       const live = document.createElement('div');
@@ -267,14 +301,47 @@
       live.setAttribute('aria-live', 'polite');
       panel.appendChild(live);
 
+      const head = wrap.querySelector('thead');
       const body = wrap.querySelector('#ent-rows');
+      let columns = COLUMNS;
       let sortKey = 'type';
       let dir = 1;
 
+      /* Uniformity is decided over the whole source, not over the filtered
+         subset, so the columns do not jump while the reader types. */
+      function splitColumns() {
+        if (rows.length < 2) return { cols: COLUMNS, facts: [] };
+        const cols = [];
+        const facts = [];
+        for (const c of COLUMNS) {
+          // What the reader sees decides, not markup that differs only in a
+          // per-record title attribute.
+          const key = c.uniq || c.cell;
+          const first = key(rows[0]);
+          if (!rows.every(r => key(r) === first)) cols.push(c);
+          else {
+            const html = (c.summary || c.cell)(rows[0]);
+            if (html.trim()) facts.push({ label: c.label, html });
+          }
+        }
+        return cols.length ? { cols, facts } : { cols: COLUMNS, facts: [] };
+      }
+
+      function renderHead() {
+        head.innerHTML = '<tr>' + columns.map(c =>
+          `<th scope="col" data-key="${c.key}" aria-sort="none">` +
+          `<button type="button" class="exp-sort" data-key="${c.key}">${c.label} ` +
+          '<span class="exp-sort__mark" aria-hidden="true"></span></button></th>').join('') + '</tr>';
+      }
+
+      const matches = r => !query ||
+        r.text.toLowerCase().includes(query) || r.normalized.toLowerCase().includes(query);
+
       function draw() {
-        const col = COLUMNS.find(c => c.key === sortKey);
-        const value = col.sort || (r => r[sortKey]);
-        const sorted = rows.slice().sort((a, b) => {
+        const col = columns.find(c => c.key === sortKey) || columns[0];
+        sortKey = col.key;
+        const value = col.sort || (r => r[col.key]);
+        const sorted = rows.filter(matches).sort((a, b) => {
           const va = value(a);
           const vb = value(b);
           if (va === null || va === '') return 1;
@@ -282,16 +349,23 @@
           if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * dir;
           return String(va).localeCompare(String(vb), 'de') * dir;
         });
+        const empty = rows.length
+          ? 'No record matches the filter.'
+          : 'No entity extraction for this source yet.';
         body.innerHTML = sorted.length
           ? sorted.map(r => '<tr>' +
-              COLUMNS.map(c => `<td${c.num ? ' class="num"' : ''}>${c.cell(r)}</td>`).join('') + '</tr>').join('')
-          : `<tr><td colspan="${COLUMNS.length}">No entity extraction for this source yet.</td></tr>`;
-        for (const th of wrap.querySelectorAll('thead th')) {
+              columns.map(c => `<td${c.num ? ' class="num"' : ''}>${c.cell(r)}</td>`).join('') + '</tr>').join('')
+          : `<tr><td class="exp-table__empty" colspan="${columns.length}">${empty}</td></tr>`;
+        for (const th of head.querySelectorAll('th')) {
           const on = th.dataset.key === sortKey;
           th.setAttribute('aria-sort', on ? (dir === 1 ? 'ascending' : 'descending') : 'none');
           th.querySelector('.exp-sort__mark').textContent = on ? (dir === 1 ? '▲' : '▼') : '';
         }
-        live.textContent = `${sorted.length} entity records shown.`;
+        const count = query
+          ? `${sorted.length} of ${rows.length} records`
+          : `${rows.length} record${rows.length === 1 ? '' : 's'}`;
+        countEl.textContent = count;
+        live.textContent = `${count} shown.`;
       }
 
       async function load(docId) {
@@ -309,10 +383,18 @@
             `transcription by the Inventaria project</a>`
           : 'Transkribus transcription layer';
         basis.innerHTML = `Extraction ${provChip(provenance)}${model} &middot; Text basis: ${textBasis}`;
+
+        const split = splitColumns();
+        columns = split.cols;
+        factsItems.innerHTML = split.facts.map(f =>
+          `<span class="exp-facts__item"><span class="exp-facts__key">${escapeHTML(f.label)}</span>` +
+          `${f.html}</span>`).join('');
+        factsItems.hidden = !split.facts.length;
+        renderHead();
         draw();
       }
 
-      wrap.querySelector('thead').addEventListener('click', evt => {
+      head.addEventListener('click', evt => {
         const btn = evt.target.closest('.exp-sort');
         if (!btn) return;
         if (btn.dataset.key === sortKey) dir = -dir;
@@ -321,6 +403,10 @@
       });
 
       sourceSel.addEventListener('change', () => { load(Number(sourceSel.value)); });
+      filterInput.addEventListener('input', debounce(() => {
+        query = filterInput.value.trim().toLowerCase();
+        draw();
+      }, 150));
       await load(srcDocId);
     }
 

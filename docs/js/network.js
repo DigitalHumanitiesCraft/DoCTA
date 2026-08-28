@@ -246,6 +246,8 @@ export function createNetworkView(panel, controls, graph) {
     '<g class="net-layer net-layer--cooc"></g>' +
     '<g class="net-layer net-layer--nodes"></g>' +
     '</g></svg>' +
+    '<div class="net-legend" id="net-legend" hidden></div>' +
+    '<div class="ent-tip net-tip" id="net-tip" hidden></div>' +
     '<div class="net-card" id="net-card" role="dialog" aria-labelledby="net-card-title" tabindex="-1" hidden>' +
     '<div class="net-card__head"><h2 class="net-card__title" id="net-card-title"></h2>' +
     '<button type="button" class="net-card__close" id="net-card-close" ' +
@@ -263,6 +265,8 @@ export function createNetworkView(panel, controls, graph) {
   const layerAttest = svg.select('.net-layer--attest');
   const layerCooc = svg.select('.net-layer--cooc');
   const layerNodes = svg.select('.net-layer--nodes');
+  const legendEl = wrap.querySelector('#net-legend');
+  const tipEl = wrap.querySelector('#net-tip');
   const card = wrap.querySelector('#net-card');
   const cardTitle = wrap.querySelector('#net-card-title');
   const cardBody = wrap.querySelector('#net-card-body');
@@ -308,6 +312,76 @@ export function createNetworkView(panel, controls, graph) {
     for (const t of TYPES) out[t.key] = css.getPropertyValue(t.token).trim();
     out.bg = css.getPropertyValue('--bg-primary').trim();
     return out;
+  }
+
+  // --- tooltip --------------------------------------------------------------
+  /* A native <title> appears after a delay and cannot carry structure, and the
+     svg is role="img", so its titles reach no assistive technology anyway. This
+     is the same floating tooltip the viewer uses for entity marks. */
+  function tipRows(head, ...rows) {
+    return `<span class="ent-tip__head">${escapeHTML(head)}</span>` +
+      rows.filter(Boolean).map(r => `<span class="ent-tip__prov">${escapeHTML(r)}</span>`).join('') +
+      '<span class="ent-tip__prov net-tip__hint">Click for details, attestations and provenance</span>';
+  }
+
+  function moveTip(evt) {
+    const pad = 14;
+    const box = tipEl.getBoundingClientRect();
+    const x = evt.clientX + pad + box.width > window.innerWidth - 8
+      ? evt.clientX - pad - box.width : evt.clientX + pad;
+    const y = evt.clientY + pad + box.height > window.innerHeight - 8
+      ? evt.clientY - pad - box.height : evt.clientY + pad;
+    tipEl.style.left = `${Math.max(8, x)}px`;
+    tipEl.style.top = `${Math.max(8, y)}px`;
+  }
+
+  function showTip(html, evt) {
+    tipEl.innerHTML = html;
+    tipEl.hidden = false;
+    moveTip(evt);
+  }
+
+  const hideTip = () => { tipEl.hidden = true; };
+
+  function nodeTip(d) {
+    const typeLabel = TYPES.find(t => t.key === d.type)?.label || d.type;
+    if (d.kind === 'document') {
+      return tipRows(d.label, `${typeLabel} · Transkribus ${d.docId}`,
+        d.res.transcriptionBy ? `Transcription: ${d.res.transcriptionBy}` : '',
+        `${d.count} entity attestation${d.count === 1 ? '' : 's'}`);
+    }
+    const inDocs = (d.res?.attestedIn || []).length;
+    const roles = d.res?.role || [];
+    return tipRows(d.label,
+      `${typeLabel} · ${d.count} attestation${d.count === 1 ? '' : 's'}` +
+        (inDocs ? ` in ${inDocs} document${inDocs === 1 ? '' : 's'}` : ''),
+      roles.length ? roles.join(', ') : '');
+  }
+
+  function linkTip(l) {
+    const kind = l.kind === 'cooc'
+      ? 'Co-occurrence in one transcription line'
+      : 'Attestation of an entity in a document';
+    return tipRows(`${l.source.label} — ${l.target.label}`, `${kind} · ${l.count}×`);
+  }
+
+  // --- neighbourhood isolation ---------------------------------------------
+  /* Hovering or keyboard-focusing a node dims everything outside its immediate
+     neighbourhood, which is the only way to read a single node's relations in a
+     layout this dense. Dimming is reversible and carries no meaning of its own. */
+  const idOf = x => (typeof x === 'object' && x !== null ? x.id : x);
+  let neighbours = new Map();
+
+  function isolate(n) {
+    if (!nodeSel) return;
+    const near = n ? neighbours.get(n.id) : null;
+    nodeSel.classed('is-dim', d => !!near && !near.has(d.id));
+    nodeSel.classed('is-near', d => !!near && near.has(d.id) && d !== n);
+    nodeSel.classed('is-focus', d => d === n);
+    if (linkSel) {
+      linkSel.classed('is-dim', l => !!n && idOf(l.source) !== n.id && idOf(l.target) !== n.id);
+      linkSel.classed('is-near', l => !!n && (idOf(l.source) === n.id || idOf(l.target) === n.id));
+    }
   }
 
   // --- model of the current filter -----------------------------------------
@@ -410,7 +484,9 @@ export function createNetworkView(panel, controls, graph) {
   cardClose.addEventListener('click', closeCard);
   // Escape closes wherever focus sits, as long as this view is the visible one
   document.addEventListener('keydown', evt => {
-    if (evt.key === 'Escape' && !card.hidden && panel.classList.contains('is-active')) closeCard();
+    if (evt.key !== 'Escape' || !panel.classList.contains('is-active')) return;
+    hideTip();
+    if (!card.hidden) closeCard();
   });
 
   function nodeCardHTML(n) {
@@ -482,7 +558,7 @@ export function createNetworkView(panel, controls, graph) {
   const zoom = d3.zoom().scaleExtent([0.1, 8])
     .on('zoom', evt => {
       zoomG.attr('transform', evt.transform);
-      if (evt.sourceEvent) autoFit = false;
+      if (evt.sourceEvent) { autoFit = false; hideTip(); }
     });
   svg.call(zoom);
   svg.on('dblclick.zoom', null);
@@ -509,6 +585,7 @@ export function createNetworkView(panel, controls, graph) {
   let selected = null;
   let nodeSel = null;
   let linkSel = null;
+  let nodeById = new Map();
 
   function paintSelection() {
     if (nodeSel) nodeSel.classed('is-selected', d => selected === d);
@@ -529,6 +606,14 @@ export function createNetworkView(panel, controls, graph) {
     const colors = palette();
     const { w, h } = size();
 
+    // Adjacency for the isolation, built while the endpoints are still ids
+    neighbours = new Map(nodes.map(n => [n.id, new Set([n.id])]));
+    for (const l of links) {
+      neighbours.get(idOf(l.source))?.add(idOf(l.target));
+      neighbours.get(idOf(l.target))?.add(idOf(l.source));
+    }
+    hideTip();
+
     layerAttest.selectAll('*').remove();
     layerCooc.selectAll('*').remove();
     layerNodes.selectAll('*').remove();
@@ -546,12 +631,16 @@ export function createNetworkView(panel, controls, graph) {
       })
       .on('click', (evt, l) => {
         evt.stopPropagation();
+        hideTip();
         selected = l;
         paintSelection();
         const a = l.source.label;
         const b = l.target.label;
         openCard(`${a} — ${b}`, linkCardHTML(l), null);
-      });
+      })
+      .on('pointerenter', (evt, l) => showTip(linkTip(l), evt))
+      .on('pointermove', moveTip)
+      .on('pointerleave', hideTip);
 
     const attestSel = drawLinks(layerAttest, attest, 'net-linkg--attest', () => 1);
     const coocSel = drawLinks(layerCooc, cooc, 'net-linkg--cooc', l => coocWidth(l.count));
@@ -571,22 +660,16 @@ export function createNetworkView(panel, controls, graph) {
         const r = d.r * 1.2;
         g.append('path').attr('class', 'net-node__shape')
           .attr('d', `M0,${-r}L${r},0L0,${r}L${-r},0Z`).attr('fill', fill);
+      } else if (d.type === 'object') {
+        // Own shape rather than a differently coloured circle: the type has to
+        // stay legible without colour, and person is the circle.
+        const r = d.r * 1.3;
+        g.append('path').attr('class', 'net-node__shape')
+          .attr('d', `M0,${-r}L${(r * 0.87).toFixed(2)},${(r * 0.5).toFixed(2)}` +
+            `L${(-r * 0.87).toFixed(2)},${(r * 0.5).toFixed(2)}Z`).attr('fill', fill);
       } else {
         g.append('circle').attr('class', 'net-node__shape').attr('r', d.r).attr('fill', fill);
       }
-      const typeLabel = TYPES.find(t => t.key === d.type)?.label || d.type;
-      // The hover title answers the first questions without a click: what is
-      // this, how often and where is it attested, which role does it carry.
-      const tip = [`${typeLabel}: ${d.label}`];
-      if (d.type !== 'document') {
-        const inDocs = (d.res?.attestedIn || []).length;
-        tip.push(`${d.count} attestation${d.count === 1 ? '' : 's'}` +
-          (inDocs ? ` in ${inDocs} document${inDocs === 1 ? '' : 's'}` : ''));
-        const roles = d.res?.role || [];
-        if (roles.length) tip.push(roles.join(', '));
-      }
-      tip.push('click for details and provenance');
-      g.append('title').text(tip.join(' · '));
       const label = g.append('text').attr('class', 'net-label').attr('y', d.r + 11).text(d.text);
       // Exact advance width in the rendered font; the estimate stays as fallback
       // for a panel that is not displayed yet and reports zero.
@@ -595,9 +678,15 @@ export function createNetworkView(panel, controls, graph) {
     });
 
     nodeSel
-      .on('click', (evt, d) => { evt.stopPropagation(); selectNode(d, null); })
+      .on('click', (evt, d) => { evt.stopPropagation(); hideTip(); selectNode(d, null); })
       // Bring the hovered node to the front so its label is not covered
-      .on('pointerenter', function () { this.parentNode.appendChild(this); })
+      .on('pointerenter', function (evt, d) {
+        this.parentNode.appendChild(this);
+        isolate(d);
+        showTip(nodeTip(d), evt);
+      })
+      .on('pointermove', moveTip)
+      .on('pointerleave', () => { isolate(null); hideTip(); })
       .call(d3.drag()
         .on('start', (evt, d) => {
           autoFit = false;
@@ -652,14 +741,6 @@ export function createNetworkView(panel, controls, graph) {
       // settle only delays the point where the labels are readable.
       .alphaDecay(0.05);
 
-    /* The two edge kinds differ only by weight and colour on the canvas, so
-       each one names itself on hover. forceLink has resolved the endpoints to
-       node objects by now, which is what the text needs. */
-    attestSel.append('title').text(l =>
-      `Attestation: ${l.source.label} attested in ${l.target.label}, ${l.count}×`);
-    coocSel.append('title').text(l =>
-      `Co-occurrence in one transcription line: ${l.source.label} and ${l.target.label}, ${l.count}×`);
-
     const settle = () => {
       separateLabels(nodes);
       ticked();
@@ -683,25 +764,38 @@ export function createNetworkView(panel, controls, graph) {
       });
     }
 
+    /* Legend of what is on the canvas: the shape and colour of each node type
+       currently drawn, and the two edge kinds, which the canvas distinguishes
+       only by weight and colour. Shapes carry the type on their own, colour
+       repeats it. Only what is actually drawn is listed. */
+    const drawnTypes = new Set(nodes.map(n => n.type));
+    const edgeKinds = [
+      attest.length ? ['attest', 'Attested in a document'] : null,
+      cooc.length ? ['cooc', 'Together in one transcription line'] : null,
+    ].filter(Boolean);
+    legendEl.hidden = !nodes.length;
+    legendEl.innerHTML = '<h2 class="visually-hidden">Legend of the network</h2>' +
+      '<ul class="net-legend__list">' +
+      TYPES.filter(t => drawnTypes.has(t.key)).map(t =>
+        `<li class="net-legend__item"><span class="net-legend__mark ` +
+        `net-legend__mark--${escapeAttr(t.key)}" aria-hidden="true"></span>` +
+        `${escapeHTML(t.label)}</li>`).join('') +
+      edgeKinds.map(([k, label]) =>
+        `<li class="net-legend__item"><span class="net-legend__edge ` +
+        `net-legend__edge--${k}" aria-hidden="true"></span>${escapeHTML(label)}</li>`).join('') +
+      '</ul>';
+
     // Keyboard equivalent of the canvas: every node reachable by tab, opening
-    // the same detail card and reporting into the live region.
-    listEl.innerHTML = '<h2 class="h6">Network nodes</h2><ul class="list-unstyled mb-0">' +
+    // the same detail card, isolating the same neighbourhood as a hover does
+    // and reporting into the live region.
+    listEl.innerHTML = '<h2 class="h6">Network nodes, keyboard equivalent of the canvas</h2>' +
+      '<ul class="list-unstyled mb-0">' +
       nodes.map(n => `<li><button type="button" class="btn btn-link btn-sm p-0" ` +
         `data-node-id="${escapeAttr(n.id)}">${escapeHTML(n.label)} ` +
         `(${escapeHTML(TYPES.find(t => t.key === n.type)?.label || n.type)}, ` +
         `${escapeHTML(String(n.count))}×)</button></li>`).join('') +
       '</ul>';
-    const nodeById = new Map(nodes.map(n => [n.id, n]));
-    listEl.onfocusin = evt => {
-      const btn = evt.target.closest('[data-node-id]');
-      const n = btn && nodeById.get(btn.dataset.nodeId);
-      if (n) status.textContent = `${n.label}, ${n.type}, ${n.count} attestations`;
-    };
-    listEl.onclick = evt => {
-      const btn = evt.target.closest('[data-node-id]');
-      const n = btn && nodeById.get(btn.dataset.nodeId);
-      if (n) selectNode(n, btn);
-    };
+    nodeById = new Map(nodes.map(n => [n.id, n]));
 
     svgEl.dataset.nodeCount = String(nodes.length);
     svgEl.dataset.linkCount = String(links.length);
@@ -709,6 +803,34 @@ export function createNetworkView(panel, controls, graph) {
   }
 
   svg.on('click', () => closeCard());
+  svg.on('pointerleave', () => { isolate(null); hideTip(); });
+
+  /* Listeners of the keyboard list are registered once, on the container that
+     survives every redraw. An `onfocusin` property assignment is accepted by
+     the DOM but registers nothing, so this has to go through addEventListener. */
+  const listNode = evt => {
+    const btn = evt.target.closest('[data-node-id]');
+    return btn ? [btn, nodeById.get(btn.dataset.nodeId)] : [null, null];
+  };
+
+  listEl.addEventListener('focusin', evt => {
+    const [, n] = listNode(evt);
+    if (!n) return;
+    isolate(n);
+    const rel = (neighbours.get(n.id)?.size || 1) - 1;
+    status.textContent = `${n.label}, ${n.type}, ` +
+      `${n.count} attestation${n.count === 1 ? '' : 's'}, ` +
+      `${rel} direct relation${rel === 1 ? '' : 's'}`;
+  });
+
+  listEl.addEventListener('focusout', evt => {
+    if (!listEl.contains(evt.relatedTarget)) isolate(null);
+  });
+
+  listEl.addEventListener('click', evt => {
+    const [btn, n] = listNode(evt);
+    if (n) selectNode(n, btn);
+  });
 
   filterHost.addEventListener('click', evt => {
     const btn = evt.target.closest('[data-type]');

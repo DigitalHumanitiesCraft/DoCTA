@@ -42,6 +42,7 @@
         <ul class="progress-legend" id="progress-legend"></ul>
       </div>
 
+      <div class="list-controls">
       <div class="row g-2 mb-2 align-items-center">
         <div class="col-md-5">
           <input type="search" class="form-control" id="search-input" placeholder="Search shelfmark, title or date..." aria-label="Source search">
@@ -75,6 +76,7 @@
           <span class="stage" title="TEI">T<span class="visually-hidden"> TEI</span></span>
           <span class="stage" title="edited">E<span class="visually-hidden"> edited</span></span>
         </span>
+      </div>
       </div>
       <ul class="src-list" id="sources-list"></ul>
     </section>
@@ -127,7 +129,12 @@
     let sortKey = 'signatur';
     let katFilter = '';
 
-    const hasText = (s) => !!(s.transkribus && s.transkribus.has_text);
+    // Documents DoCTA transcribed itself carry no Transkribus text export;
+    // the register projection names them and the viewer can open them.
+    let vlmDocIds = new Set();
+
+    const hasText = (s) => !!(s.transkribus &&
+      (s.transkribus.has_text || vlmDocIds.has(Number(s.transkribus.doc_id))));
 
     // Availability groups the list before any user-chosen sort: full text, then
     // digitized facsimile, then sources known only from the finding aid.
@@ -303,9 +310,10 @@
 
     async function initSources() {
       try {
-        const [sources, register] = await Promise.all([
+        const [sources, register, collection] = await Promise.all([
           loadJSON('data/sources.json'),
           loadJSON('data/pipeline/register_summary.json').catch(() => null),
+          loadJSON('data/transkribus_collection.json').catch(() => null),
         ]);
         allSources = sources;
         if (register) {
@@ -318,6 +326,19 @@
           editionByDocId = new Map(register.documents
             .filter(d => d.transcription_by === 'Inventaria')
             .map(d => [Number(d.docId), { url: d.edition_url || null }]));
+          vlmDocIds = new Set(register.documents
+            .filter(d => d.transcription_source === 'vlm')
+            .map(d => Number(d.docId)));
+        }
+        // The register knows only documents with a text layer. Every document
+        // of the collection has a first-page image, so the collection metadata
+        // fills the thumbnails the register cannot provide.
+        if (Array.isArray(collection)) {
+          for (const c of collection) {
+            if (c.docId && c.thumbUrl && !thumbByDocId.has(Number(c.docId))) {
+              thumbByDocId.set(Number(c.docId), { thumb: c.thumbUrl });
+            }
+          }
         }
 
         renderProgress(allSources, register);

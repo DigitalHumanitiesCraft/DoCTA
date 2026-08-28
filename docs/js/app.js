@@ -54,8 +54,9 @@ export function initBanner() {
   badge.title = 'Experimental agentic edition pipeline. This Promptotyping environment tests ' +
     'model-assisted transcription and annotation of fifteenth-century court records. ' +
     'Machine-generated content remains provisional until scholarly review and acceptance.';
+  // The sticky navbar is already a containing block for the absolutely
+  // positioned badge; the position-relative utility would kill the stickiness.
   const navbar = document.querySelector('.navbar');
-  navbar?.classList.add('position-relative');
   (navbar || brand.parentElement).appendChild(badge);
 }
 

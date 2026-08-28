@@ -96,6 +96,13 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 }
 
 /* === Navbar === */
+/* Bootstrap's .sticky-top loses against .navbar's own position on this build;
+   the doubled selector settles it, the navbar must actually stick. */
+.navbar.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
 .navbar-brand {
   color: var(--accent) !important;
   font-weight: 700 !important;
@@ -698,7 +705,8 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--text-muted-custom);
 }
 
-.exp-select {
+.exp-select,
+.exp-input {
   width: 100%;
   padding: 0.3rem var(--space-sm);
   border: 1px solid var(--border-custom);
@@ -983,8 +991,90 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .net-filter[aria-pressed="true"] .net-filter__dot { opacity: 1; }
 .net-filter__dot--person { background: var(--ent-person); }
 .net-filter__dot--place { background: var(--ent-place); border-radius: 1px; transform: rotate(45deg); }
-.net-filter__dot--object { background: var(--ent-object); }
+.net-filter__dot--object {
+  background: var(--ent-object);
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
 .net-filter__dot--document { background: var(--text-primary); border-radius: 1px; }
+
+/* Legend on the canvas: each drawn node type with its own shape, and the two
+   edge kinds, which the canvas separates only by weight and colour. The shape
+   carries the type by itself; the hue repeats it. Same shapes as the filter
+   chips and the D3 marks, all three read the entity tokens. */
+.net-legend {
+  position: absolute;
+  left: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 3;
+  max-width: 15rem;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-md);
+  font-size: var(--text-2xs);
+  color: var(--text-secondary);
+}
+
+.net-legend__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.net-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+}
+
+.net-legend__mark {
+  width: 0.6rem;
+  height: 0.6rem;
+  flex: none;
+}
+
+.net-legend__mark--person { background: var(--ent-person); border-radius: 50%; }
+.net-legend__mark--place { background: var(--ent-place); transform: rotate(45deg); }
+.net-legend__mark--object {
+  background: var(--ent-object);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.net-legend__mark--document { background: var(--text-primary); }
+
+.net-legend__edge {
+  width: 1.1rem;
+  height: 0;
+  flex: none;
+  border-top: 2px solid var(--border-custom);
+}
+
+.net-legend__edge--cooc { border-top-width: 3px; border-top-color: var(--accent); }
+
+/* Floating tooltip of the canvas, the shared .ent-tip look of the viewer */
+.net-tip { max-width: 17rem; }
+.net-tip__hint { font-size: var(--text-2xs); opacity: 0.7; }
+
+/* Hover or keyboard focus isolates a node's neighbourhood: everything outside
+   it recedes. Reversible emphasis, no meaning of its own. */
+.net-node,
+.net-linkg { transition: opacity 120ms ease; }
+.net-node.is-dim { opacity: 0.15; }
+.net-linkg.is-dim { opacity: 0.12; }
+/* An object carries no standing label; while its neighbourhood is isolated it
+   names itself, for the keyboard route as much as for the pointer. */
+.net-node.is-near .net-label,
+.net-node.is-focus .net-label { opacity: 1; }
+.net-node.is-focus .net-node__shape { stroke: var(--accent); stroke-width: 3; }
+.net-linkg.is-near .net-link { stroke: var(--accent-hover); stroke-opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .net-node,
+  .net-linkg { transition: none; }
+}
 
 .exp-sidebar-toggle {
   flex: none;
@@ -1012,12 +1102,16 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   vertical-align: top;
 }
 
+/* The header stays put while the body scrolls. Under border-collapse the
+   bottom border of a sticky cell is not painted over the scrolled rows, so the
+   separating line comes from the shadow. */
 .exp-table thead th {
   position: sticky;
   top: 0;
   z-index: 1;
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-custom);
+  box-shadow: 0 1px 0 var(--border-custom);
   white-space: nowrap;
 }
 
@@ -1058,6 +1152,60 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 .exp-attest__link:hover,
 .exp-attest__link:focus-visible { text-decoration: underline; color: var(--accent-hover); }
+
+/* Every row that carries a page anchor leads back to the facsimile. The dotted
+   rule marks the source form as a link without turning the column into one. */
+.exp-rowlink {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--border-custom);
+  text-underline-offset: 2px;
+}
+
+.exp-rowlink:hover,
+.exp-rowlink:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* What is the same for every record of the selected source is stated once,
+   instead of repeating down a column: the column is dropped and its one value
+   named here, with the live record count at the other end of the line. */
+.exp-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin: var(--space-xs) var(--space-md) var(--space-sm);
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+}
+
+.exp-facts__items[hidden] { display: none; }
+
+.exp-facts__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-md);
+}
+
+.exp-facts__item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+
+.exp-facts__key {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.exp-facts__count { white-space: nowrap; }
+
+.exp-table__empty { color: var(--text-muted-custom); }
 
 /* Below lg the sidebar overlays the view area on demand. The block sits here
    rather than in the Responsive section because those rules precede these and
@@ -1280,12 +1428,18 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
   margin-bottom: var(--space-xs);
   font-size: var(--text-xs);
   color: var(--text-muted-custom);
-  /* Stays visible under the navbar while the list scrolls, so the letters
-     keep explaining the stage column they sit over */
+}
+
+/* Search, sort, category chips and the stage key travel as one block: they
+   stick under the navbar while the list scrolls, on a solid ground so no row
+   shows through. The 1px overlap closes rounding gaps against the navbar. */
+.list-controls {
   position: sticky;
-  top: var(--nav-height);
-  z-index: 10;
+  top: calc(var(--nav-height) - 1px);
+  z-index: 100;
   background: var(--bg-primary);
+  padding-top: var(--space-sm);
+  border-bottom: 1px solid var(--border-light);
 }
 .src-list-head .stage { cursor: help; }
 
