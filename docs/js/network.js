@@ -575,7 +575,18 @@ export function createNetworkView(panel, controls, graph) {
         g.append('circle').attr('class', 'net-node__shape').attr('r', d.r).attr('fill', fill);
       }
       const typeLabel = TYPES.find(t => t.key === d.type)?.label || d.type;
-      g.append('title').text(`${typeLabel}: ${d.label}`);
+      // The hover title answers the first questions without a click: what is
+      // this, how often and where is it attested, which role does it carry.
+      const tip = [`${typeLabel}: ${d.label}`];
+      if (d.type !== 'document') {
+        const inDocs = (d.res?.attestedIn || []).length;
+        tip.push(`${d.count} attestation${d.count === 1 ? '' : 's'}` +
+          (inDocs ? ` in ${inDocs} document${inDocs === 1 ? '' : 's'}` : ''));
+        const roles = d.res?.role || [];
+        if (roles.length) tip.push(roles.join(', '));
+      }
+      tip.push('click for details and provenance');
+      g.append('title').text(tip.join(' · '));
       const label = g.append('text').attr('class', 'net-label').attr('y', d.r + 11).text(d.text);
       // Exact advance width in the rendered font; the estimate stays as fallback
       // for a panel that is not displayed yet and reports zero.

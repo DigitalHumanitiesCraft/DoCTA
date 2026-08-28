@@ -110,6 +110,9 @@
 
     let allSources = [];
     let thumbByDocId = new Map();
+    // Attribution per document: who made the transcription and, where
+    // published, the deep link to that edition on Transkribus Sites.
+    let editionByDocId = new Map();
     let sortKey = 'signatur';
     let katFilter = '';
 
@@ -142,10 +145,16 @@
       const title = hasText(s)
         ? `<a class="src-title" href="viewer.html?doc=${encodeURIComponent(s.transkribus.doc_id)}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
         : `<span class="src-title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`;
+      const edition = editionByDocId.get(Number(s.transkribus?.doc_id));
+      const credit = edition
+        ? `<a class="src-credit" href="${escapeAttr(edition.url || 'https://www.inventaria.at/')}"` +
+          ` target="_blank" rel="noopener" title="Transcription by the Inventaria project` +
+          `${edition.url ? '; the link opens the published edition on Transkribus Sites' : ' (inventaria.at)'}">Inventaria</a>`
+        : '';
       return `<li class="src-row">
         ${thumbMarkup(s)}
         <div class="src-main">${title}<div class="src-meta">${meta}</div></div>
-        <div class="src-cat">${escapeHTML(catLabel(s.kategorie))}</div>
+        <div class="src-cat">${escapeHTML(catLabel(s.kategorie))}${credit}</div>
         <div class="src-stages">${stageIcons(s)}</div>
       </li>`;
     }
@@ -291,6 +300,9 @@
           teiDocIds = new Set(register.documents
             .filter(d => d.has_tei)
             .map(d => Number(d.docId)));
+          editionByDocId = new Map(register.documents
+            .filter(d => d.transcription_by === 'Inventaria')
+            .map(d => [Number(d.docId), { url: d.edition_url || null }]));
         }
 
         renderProgress(allSources, register);

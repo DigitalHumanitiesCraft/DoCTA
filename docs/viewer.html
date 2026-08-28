@@ -187,18 +187,21 @@
       if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
       const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
       const total = reg.pages_total;
+      // Name who corrected: for the attributed documents that work is the
+      // Inventaria project's, and "human-corrected" must not leave it open.
+      const by = reg.transcription_by === 'Inventaria' ? ' by the Inventaria project' : '';
       if (done >= total) {
         return {
           state: 'human',
-          label: 'Human-corrected',
-          title: `All ${total} pages corrected and marked done in Transkribus`,
+          label: `Human-corrected${by ? ' (Inventaria)' : ''}`,
+          title: `All ${total} pages corrected${by} and marked done in Transkribus`,
         };
       }
       if (done > 0) {
         return {
           state: 'partial',
           label: `Partly corrected · ${done}/${total} pages`,
-          title: `${done} of ${total} pages corrected and marked done in Transkribus, ` +
+          title: `${done} of ${total} pages corrected${by} and marked done in Transkribus, ` +
                  'the remaining pages are the unrevised Transkribus HTR layer',
         };
       }
@@ -245,12 +248,21 @@
       // Inventaria project and is used with citation, so the origin is named
       // right where the transcription is shown.
       const reg = registerByDocId.get(Number(docId));
-      const attribution = reg?.transcription_by === 'Inventaria'
-        ? `<a class="doc-meta__cat" href="https://www.inventaria.at/" target="_blank" rel="noopener"` +
-          ` title="The transcription of this document was created by the Inventaria project` +
-          ` and is published on Transkribus Sites (inventaria.at); DoCTA uses it with attribution">` +
-          `Transcription: Inventaria project &middot; Univ. Salzburg / Univ. Innsbruck &middot; inventaria.at</a>`
-        : '';
+      // The wording states outright what Inventaria did; with a harvested
+      // deep link the chip opens the published edition itself, without one
+      // it falls back to the project site.
+      let attribution = '';
+      if (reg?.transcription_by === 'Inventaria') {
+        const url = reg.edition_url || 'https://www.inventaria.at/';
+        const label = reg.edition_url
+          ? 'Edited and published by the Inventaria project &middot; open the edition'
+          : 'Transcription: Inventaria project &middot; inventaria.at';
+        attribution =
+          `<a class="doc-meta__cat" href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
+          ` title="This document was transcribed, edited and published by the Inventaria project` +
+          ` (University of Salzburg / University of Innsbruck); the link opens the published` +
+          ` edition on Transkribus Sites. DoCTA uses it with attribution.">${label}</a>`;
+      }
       const parts = [
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
         `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,

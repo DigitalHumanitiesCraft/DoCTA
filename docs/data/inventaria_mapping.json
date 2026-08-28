@@ -1,0 +1,292 @@
+{
+ "provenance": {
+  "source": "workflow",
+  "generator": "scripts/harvest_inventaria_mapping.py",
+  "endpoint": "https://api-sites.transkribus.eu/search/hierarchy",
+  "method": "IIIF image keys shared between the page register and the published site identify the same document",
+  "fetched": "2026-08-28T08:14:54+00:00"
+ },
+ "site": "https://app.transkribus.org/en/sites/inventaria",
+ "documents": [
+  {
+   "docId": 11327963,
+   "siteDocId": 16698276,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698276/detail"
+  },
+  {
+   "docId": 11327964,
+   "siteDocId": 16698275,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698275/detail"
+  },
+  {
+   "docId": 11327987,
+   "siteDocId": 16698235,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698235/detail"
+  },
+  {
+   "docId": 11328042,
+   "siteDocId": 16019875,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019875/detail"
+  },
+  {
+   "docId": 11328043,
+   "siteDocId": 16019835,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019835/detail"
+  },
+  {
+   "docId": 11328279,
+   "siteDocId": 16698178,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698178/detail"
+  },
+  {
+   "docId": 11328280,
+   "siteDocId": 16698177,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698177/detail"
+  },
+  {
+   "docId": 11328281,
+   "siteDocId": 16698037,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698037/detail"
+  },
+  {
+   "docId": 11328299,
+   "siteDocId": 16698017,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698017/detail"
+  },
+  {
+   "docId": 11328300,
+   "siteDocId": 11721916,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721916/detail"
+  },
+  {
+   "docId": 11328660,
+   "siteDocId": 11319341,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319341/detail"
+  },
+  {
+   "docId": 11328661,
+   "siteDocId": 11721879,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721879/detail"
+  },
+  {
+   "docId": 11328720,
+   "siteDocId": 16698179,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698179/detail"
+  },
+  {
+   "docId": 11328721,
+   "siteDocId": 11319404,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319404/detail"
+  },
+  {
+   "docId": 11328722,
+   "siteDocId": 11318519,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11318519/detail"
+  },
+  {
+   "docId": 11328727,
+   "siteDocId": 15747823,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/15747823/detail"
+  },
+  {
+   "docId": 11328739,
+   "siteDocId": 16018375,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16018375/detail"
+  },
+  {
+   "docId": 11328742,
+   "siteDocId": 11319402,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319402/detail"
+  },
+  {
+   "docId": 11328744,
+   "siteDocId": 16019455,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019455/detail"
+  },
+  {
+   "docId": 11328745,
+   "siteDocId": 16019317,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019317/detail"
+  },
+  {
+   "docId": 11328746,
+   "siteDocId": 16019098,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019098/detail"
+  },
+  {
+   "docId": 11328999,
+   "siteDocId": 11721797,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721797/detail"
+  },
+  {
+   "docId": 11329059,
+   "siteDocId": 11319439,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319439/detail"
+  },
+  {
+   "docId": 11329060,
+   "siteDocId": 11319403,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319403/detail"
+  },
+  {
+   "docId": 11329061,
+   "siteDocId": 11721918,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721918/detail"
+  },
+  {
+   "docId": 11329062,
+   "siteDocId": 15747943,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/15747943/detail"
+  },
+  {
+   "docId": 11329279,
+   "siteDocId": 11319419,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319419/detail"
+  },
+  {
+   "docId": 11329281,
+   "siteDocId": 16019295,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019295/detail"
+  },
+  {
+   "docId": 11329339,
+   "siteDocId": 11721798,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721798/detail"
+  },
+  {
+   "docId": 11329419,
+   "siteDocId": 15747804,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/15747804/detail"
+  },
+  {
+   "docId": 11329459,
+   "siteDocId": 15747743,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/15747743/detail"
+  },
+  {
+   "docId": 11329460,
+   "siteDocId": 15747903,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/15747903/detail"
+  },
+  {
+   "docId": 11329461,
+   "siteDocId": 16019495,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019495/detail"
+  },
+  {
+   "docId": 11329462,
+   "siteDocId": 11721855,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721855/detail"
+  },
+  {
+   "docId": 11329479,
+   "siteDocId": 16019296,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16019296/detail"
+  },
+  {
+   "docId": 11329621,
+   "siteDocId": 11319421,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319421/detail"
+  },
+  {
+   "docId": 11329900,
+   "siteDocId": 16724876,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16724876/detail"
+  },
+  {
+   "docId": 11329901,
+   "siteDocId": 11721880,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721880/detail"
+  },
+  {
+   "docId": 11330019,
+   "siteDocId": 11721579,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721579/detail"
+  },
+  {
+   "docId": 11330020,
+   "siteDocId": 11721696,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721696/detail"
+  },
+  {
+   "docId": 11330022,
+   "siteDocId": 11319381,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319381/detail"
+  },
+  {
+   "docId": 11330060,
+   "siteDocId": 11319400,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11319400/detail"
+  },
+  {
+   "docId": 11330119,
+   "siteDocId": 11721878,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721878/detail"
+  },
+  {
+   "docId": 11330219,
+   "siteDocId": 15748103,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/15748103/detail"
+  },
+  {
+   "docId": 11330560,
+   "siteDocId": 16698018,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698018/detail"
+  },
+  {
+   "docId": 11330561,
+   "siteDocId": 11721836,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721836/detail"
+  },
+  {
+   "docId": 11330759,
+   "siteDocId": 16698256,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698256/detail"
+  },
+  {
+   "docId": 11330760,
+   "siteDocId": 16697975,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16697975/detail"
+  },
+  {
+   "docId": 11348480,
+   "siteDocId": 16698239,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/16698239/detail"
+  },
+  {
+   "docId": 11348481,
+   "siteDocId": 11721796,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721796/detail"
+  },
+  {
+   "docId": 11348482,
+   "siteDocId": 11721876,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721876/detail"
+  },
+  {
+   "docId": 11348540,
+   "siteDocId": 11721857,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721857/detail"
+  },
+  {
+   "docId": 11348659,
+   "siteDocId": 11721817,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721817/detail"
+  },
+  {
+   "docId": 11348660,
+   "siteDocId": 11721819,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721819/detail"
+  },
+  {
+   "docId": 11348799,
+   "siteDocId": 11721917,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721917/detail"
+  },
+  {
+   "docId": 11797015,
+   "siteDocId": 11721697,
+   "url": "https://app.transkribus.org/en/sites/inventaria/doc/11721697/detail"
+  }
+ ]
+}

@@ -343,6 +343,15 @@ def project(
             for m in _load(mapping_path).get("matched", [])
             if m.get("csv_transkribiert") == "Inventaria"
         }
+    # Deep links to the published edition of each document on Transkribus
+    # Sites, harvested by scripts/harvest_inventaria_mapping.py; a flagged
+    # document without an entry stays attributed without a deep link.
+    edition_path = DATA / "inventaria_mapping.json"
+    edition_urls: dict[int, str] = {}
+    if edition_path.exists():
+        edition_urls = {
+            d["docId"]: d["url"] for d in _load(edition_path).get("documents", [])
+        }
     summary = []
     for doc in docs:
         pages = pages_by_doc[doc["docId"]]
@@ -381,6 +390,7 @@ def project(
                 "transcription_by": (
                     "Inventaria" if doc["docId"] in inventaria_ids else None
                 ),
+                "edition_url": edition_urls.get(doc["docId"]),
             }
         )
     payload = {"documents": summary}

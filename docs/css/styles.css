@@ -333,13 +333,16 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .viewer-panel__header {
   flex: 0 0 auto;
   min-height: var(--viewer-bar-height);
-  padding: 0 var(--space-md);
+  padding: var(--space-2xs) var(--space-md);
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-custom);
   font-size: var(--text-xs);
   display: flex;
+  /* The bar wraps rather than pushing view buttons out of sight when the
+     entity key and the document selector compete for width */
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-2xs) var(--space-sm);
 }
 
 .viewer-panel__title {
@@ -1273,6 +1276,16 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 .src-cat { font-size: var(--text-xs); color: var(--text-muted-custom); }
 
+/* Attribution of the transcription's origin, right under the category */
+.src-credit {
+  display: block;
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+.src-credit:hover { color: var(--accent); }
+
 .src-stages { justify-self: end; }
 
 @media (max-width: 767.98px) {
@@ -1314,8 +1327,8 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 }
 
 .view-toggle__btn {
-  height: 1.75rem;
-  padding: 0 var(--space-sm);
+  height: 1.55rem;
+  padding: 0 0.5rem;
   border: none;
   background: transparent;
   color: var(--text-secondary);
@@ -1420,8 +1433,8 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
    Review mode sits inside the synopsis: a bar for the decision on the page and
    an editable text layer over the transcription lines. */
 .review-toggle {
-  height: 1.75rem;
-  padding: 0 var(--space-sm);
+  height: 1.55rem;
+  padding: 0 0.5rem;
   border: 1px solid var(--border-custom);
   border-radius: var(--radius-sm);
   background: transparent;
