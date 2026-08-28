@@ -42,15 +42,8 @@
     </div>
   </main>
 
-  <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0 footer-line"><span>DoCTA</span> <span class="footer-sep">·</span>
-      <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft</a>
-      <span class="footer-sep">·</span>
-      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
-      <span class="footer-sep">·</span>
-      <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
-      <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a></p>
-  </footer>
+  <!-- Filled by initFooter() in js/app.js, one definition for every page -->
+  <footer class="text-center py-4 border-top small text-body-secondary"></footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script src="lib/d3.v7.min.js"></script>
@@ -169,11 +162,15 @@
       layout.classList.remove('exp-layout--sidebar-open');
       toggleBtn.setAttribute('aria-expanded', 'false');
       if (!view.ready) {
+        // Set before the render so a second activation does not start it twice,
+        // and taken back when it fails, or the failure would be cached as ready
+        // and the view would never render again.
         view.ready = true;
         view.render(view.panel, view.controls).then(api => {
           view.onShow = api && api.onShow;
           if (view.onShow) view.onShow();
         }).catch(err => {
+          view.ready = false;
           view.panel.innerHTML = `<p class="p-3 mb-0">${escapeHTML(view.label)} could not be loaded: ${escapeHTML(err.message)}</p>`;
         });
       } else if (view.onShow) {
@@ -369,10 +366,16 @@
         live.textContent = `${count} shown.`;
       }
 
+      let loadToken = 0;
+
       async function load(docId) {
-        srcDocId = docId;
+        const token = ++loadToken;
         openLink.href = `viewer.html?doc=${encodeURIComponent(docId)}`;
         const data = await loadEntities(docId);
+        // A later source wins over a slow response; without this the rows of the
+        // earlier source would land under the source id already selected.
+        if (token !== loadToken) return;
+        srcDocId = docId;
         // The extraction carries one provenance for all its records
         provenance = data && PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
         rows = data ? data.entities : [];
@@ -408,7 +411,15 @@
         draw();
       });
 
-      sourceSel.addEventListener('change', () => { load(Number(sourceSel.value)); });
+      // A failed source switch is reported in the table, where the reader looks
+      const showLoadError = err => {
+        body.innerHTML = `<tr><td class="exp-table__empty" colspan="${columns.length}">` +
+          `Entities of this source could not be loaded: ${escapeHTML(err.message)}</td></tr>`;
+      };
+
+      sourceSel.addEventListener('change', () => {
+        load(Number(sourceSel.value)).catch(showLoadError);
+      });
       filterInput.addEventListener('input', debounce(() => {
         query = filterInput.value.trim().toLowerCase();
         draw();

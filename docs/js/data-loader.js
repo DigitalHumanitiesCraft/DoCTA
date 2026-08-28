@@ -1,5 +1,5 @@
 /**
- * DoCTA Prototype - Data Loading Module
+ * DoCTA - Data Loading Module
  * Fetches JSON data with IndexedDB caching.
  */
 

@@ -1,5 +1,5 @@
 /**
- * DoCTA Prototype - Shared Utilities
+ * DoCTA - Shared Utilities
  */
 
 /**

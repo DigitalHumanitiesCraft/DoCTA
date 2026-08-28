@@ -806,8 +806,7 @@ export function createNetworkView(panel, controls, graph) {
   svg.on('pointerleave', () => { isolate(null); hideTip(); });
 
   /* Listeners of the keyboard list are registered once, on the container that
-     survives every redraw. An `onfocusin` property assignment is accepted by
-     the DOM but registers nothing, so this has to go through addEventListener. */
+     survives every redraw. */
   const listNode = evt => {
     const btn = evt.target.closest('[data-node-id]');
     return btn ? [btn, nodeById.get(btn.dataset.nodeId)] : [null, null];

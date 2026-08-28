@@ -1,6 +1,6 @@
 /**
- * DoCTA Prototype - Shared Application Module
- * Navigation, global state, page initialization.
+ * DoCTA - Shared Application Module
+ * Navigation, banner and footer, shared by every page of the site.
  */
 
 const NAV_ITEMS = [
@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
-  // Knowledge stays reachable via About and direct URL; About sits flush right.
+  // About sits flush right and carries the link into the knowledge base.
   { href: 'about.html', label: 'About', id: 'about', end: true },
 ];
 

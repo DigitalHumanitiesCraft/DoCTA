@@ -14,8 +14,9 @@ const ITERATION_NOTE = {
   it02: "shared core prompt + genre module",
 };
 
-/* Reference page ids encode the Transkribus document and its page number,
- * which is exactly what the viewer takes as query parameters. */
+/* Inventory page ids encode the Transkribus document and its page number, which
+ * is exactly what the viewer takes as query parameters. A page id of another set
+ * (the account book) matches nothing here and stays plain text. */
 const PAGE_ID = /^inv_(\d+)_p(\d+)$/;
 
 function mean(xs) { return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
@@ -66,8 +67,8 @@ const MIN_LEAD = { cer: 0.01, consistency: 0.05 };
 const MEASURES = [
   { key: "cer_fair", label: "CER fair", scope: "reference pages", dir: -1, lead: MIN_LEAD.cer, fmt: pct },
   { key: "cer_strict", label: "CER strict", scope: "reference pages", dir: -1, lead: MIN_LEAD.cer, fmt: pct },
-  { key: "words", label: "Word consistency", scope: "account book", dir: 1, lead: MIN_LEAD.consistency, fmt: two },
-  { key: "numbers", label: "Number consistency", scope: "account book", dir: 1, lead: MIN_LEAD.consistency, fmt: two },
+  { key: "words", label: "Word consistency", scope: "pages without reference", dir: 1, lead: MIN_LEAD.consistency, fmt: two },
+  { key: "numbers", label: "Number consistency", scope: "pages without reference", dir: 1, lead: MIN_LEAD.consistency, fmt: two },
 ];
 
 /* Index of the best value across iterations, -1 when nothing is comparable or
@@ -86,7 +87,9 @@ function renderAggregate(summary, its, excluded) {
   const pages = Object.values(summary.pages);
   const refs = pages.filter(validRef);
   const stats = its.map((it) => {
-    const cons = pages.filter((p) => p.source === "raitbuch2" && validCons(p.iterations[it]));
+    // A page without a human reference is where agreement is the measure at all,
+    // the same test the phenomenon table below uses to select its rows.
+    const cons = pages.filter((p) => !p.gt_lines && validCons(p.iterations[it]));
     return {
       it,
       cer_fair: mean(refs.map((p) => p.iterations[it]?.cer_fair?.mean).filter((x) => x != null)),

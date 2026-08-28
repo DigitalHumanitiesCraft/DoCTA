@@ -83,15 +83,8 @@
 
   </main>
 
-  <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0 footer-line"><span>DoCTA</span> <span class="footer-sep">·</span>
-      <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft</a>
-      <span class="footer-sep">·</span>
-      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
-      <span class="footer-sep">·</span>
-      <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
-      <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a></p>
-  </footer>
+  <!-- Filled by initFooter() in js/app.js, one definition for every page -->
+  <footer class="text-center py-4 border-top small text-body-secondary"></footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
@@ -148,6 +141,8 @@
     function thumbMarkup(s) {
       const t = docsOf(s).map(d => thumbByDocId.get(Number(d.doc_id))).find(Boolean);
       if (t) {
+        // The stored URL is a IIIF image request in the /full/max/ form; a URL of
+        // another shape passes through unchanged and loads at its own size.
         const src = t.thumb.replace('/full/max/', '/full/,120/');
         return `<img class="src-thumb" src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async">`;
       }
@@ -215,7 +210,9 @@
     }
 
     function sortValue(s, key) {
-      if (key === 'datierung') return s.datierung.start || 0;
+      // A source the finding aid leaves undated sorts to the end instead of
+      // ahead of every dated one; the shelfmark then decides the order.
+      if (key === 'datierung') return s.datierung?.start || Number.MAX_SAFE_INTEGER;
       // Scans first, because that is the figure the row shows; a source without
       // them sorts by the catalogue extent, which is all the finding aid gives.
       if (key === 'extent') return s.digital_images || s.catalogue_extent?.value || 0;
@@ -233,7 +230,7 @@
         filtered = filtered.filter(s =>
           s.signatur.toLowerCase().includes(query) ||
           s.titel.toLowerCase().includes(query) ||
-          (s.datierung.raw || '').toLowerCase().includes(query)
+          (s.datierung?.raw || '').toLowerCase().includes(query)
         );
       }
 

@@ -139,7 +139,10 @@ function renderRepeatBar() {
     b.addEventListener("click", () => { state.repeat[b.dataset.it] = +b.dataset.i; selectTab(state.tab); }));
 }
 
+let tabRequest = 0;
+
 async function selectTab(key) {
+  const token = ++tabRequest;
   state.tab = key;
   document.querySelectorAll("[role=tab]").forEach((el) => {
     const on = el.dataset.key === key;
@@ -155,15 +158,19 @@ async function selectTab(key) {
     const rec = name && await fetchRun(name);
     return rec ? renderRun(rec) : `<p class="empty-note">kein Lauf vorhanden</p>`;
   };
-  if (key === "__gt") box.innerHTML = renderGT();
+  let html;
+  if (key === "__gt") html = renderGT();
   else if (key === "__cmp" && its.length >= 2) {
-    box.innerHTML = `<div class="compare"><div><h3>${esc(its[0])}</h3>${await runHtml(its[0])}</div>` +
+    html = `<div class="compare"><div><h3>${esc(its[0])}</h3>${await runHtml(its[0])}</div>` +
       `<div><h3>${esc(its[1])}</h3>${await runHtml(its[1])}</div></div>`;
   } else if (key === "__gtcmp") {
     const it = its[its.length - 1];
-    box.innerHTML = `<div class="compare"><div><h3>Referenz</h3>${renderGT()}</div>` +
+    html = `<div class="compare"><div><h3>Referenz</h3>${renderGT()}</div>` +
       `<div><h3>${esc(it)}</h3>${await runHtml(it)}</div></div>`;
-  } else box.innerHTML = await runHtml(key);
+  } else html = await runHtml(key);
+  // A later page or tab wins over a slow run fetch, so the panes cannot mix
+  if (token !== tabRequest) return;
+  box.innerHTML = html;
 }
 
 function renderTabs() {
@@ -190,6 +197,9 @@ function selectItem(id) {
   const p = page();
   $("#page-meta").textContent = `${p.folio} · ${p.source} · ${p.phenomena.join(", ")}`;
   // Local cache first (runner downloads under images/, gitignored); IIIF as fallback.
+  // The fallback of the previous page is dropped first, or the handlers pile up
+  // and a later failure opens every earlier page's IIIF URL in turn.
+  osd.removeAllHandlers("open-failed");
   osd.open({ type: "image", url: `images/${id}.jpg` });
   osd.addOnceHandler("open-failed", () => osd.open({ type: "image", url: p.iiif, crossOriginPolicy: false }));
   renderMetrics();

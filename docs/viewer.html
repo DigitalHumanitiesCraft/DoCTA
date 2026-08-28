@@ -125,28 +125,22 @@
           <button type="button" class="review-btn" id="btn-review-clear"
                   title="Remove the stored decision and all line corrections of this page">Clear page</button>
         </div>
-        <div id="transcription-container">
+        <div id="transcription-container" tabindex="0" role="region"
+             aria-label="Transcription, scrollable">
           <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0 footer-line"><span>DoCTA</span> <span class="footer-sep">·</span>
-      <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft</a>
-      <span class="footer-sep">·</span>
-      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
-      <span class="footer-sep">·</span>
-      <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
-      <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a></p>
-  </footer>
+  <!-- Filled by initFooter() in js/app.js, one definition for every page -->
+  <footer class="text-center py-4 border-top small text-body-secondary"></footer>
 
   <script src="lib/openseadragon.min.js"></script>
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
-    import { loadJSON, loadEntities, DEMO_DOC_ID } from './js/data-loader.js';
+    import { loadJSON, loadEntities } from './js/data-loader.js';
     import { getParams, setParams, escapeHTML, escapeAttr, catLabel, ICON_AI, ICON_UNVERIFIED } from './js/utils.js';
 
     initNav('viewer');
@@ -164,19 +158,15 @@
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const metaIcon = (paths) =>
-      `<svg class="doc-meta__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"` +
-      ` stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
-
-    const META_ICONS = {
-      title: metaIcon('<path d="M4 2h5l3 3v9H4z"/><path d="M9 2v3h3"/>'),
-    };
-
-    // field: what the tooltip names, tip: appended to it where the value is truncated
-    function metaItem(field, label, value, valueClass = '', tip = '') {
-      return `<span class="doc-meta__item" title="${escapeAttr(label + tip)}"` +
-             ` aria-label="${escapeAttr(`${label}: ${value}`)}">${META_ICONS[field]}` +
-             `<span${valueClass ? ` class="${valueClass}"` : ''}>${escapeHTML(value)}</span></span>`;
+    // The archival title of the document, with a document icon. The strip
+    // truncates the value, so the tooltip repeats it in full; the visible text
+    // is the accessible name, no aria-label competes with it.
+    function titleItem(value) {
+      return `<span class="doc-meta__item" title="${escapeAttr(`Archival title: ${value}`)}">` +
+             '<svg class="doc-meta__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"' +
+             ' stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+             '<path d="M4 2h5l3 3v9H4z"/><path d="M9 2v3h3"/></svg>' +
+             `<span class="doc-meta__title">${escapeHTML(value)}</span></span>`;
     }
 
     // Which text layer the reader is looking at: human-corrected pages are the
@@ -233,12 +223,20 @@
              ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
     }
 
-    // The badge repeats the provenance where the doc-meta strip is not in view.
+    // The badge carries the machine-output marking in every view, including the
+    // synopsis: the provenance chip beside it can be absent (no source row, no
+    // register entry), and losing the chip must never mean losing the marking.
     // A document the register does not know counts as unrevised machine text.
     function updateDraftBadge() {
       const badge = document.getElementById('draft-badge');
       const corrected = currentDoc && provenanceState(currentDoc.docId)?.state === 'human';
-      badge.hidden = viewMode === 'synopsis' || !currentDoc || corrected;
+      badge.hidden = !currentDoc || corrected;
+      // Reading mode shows the exported text only; local review corrections live
+      // in the synopsis, and the badge says so instead of implying they are here.
+      badge.title = viewMode === 'reading'
+        ? 'Unrevised machine transcription. Local corrections made in review mode are ' +
+          'not shown here; they stay in the synopsis until they are exported.'
+        : 'Unrevised machine transcription, not approved by a scholar.';
     }
 
     function renderDocMeta(docId) {
@@ -301,20 +299,18 @@
       const coverage = (prov && prov.pagesTranscribed < prov.pagesInDocument)
         ? `<span class="doc-meta__cat" title="The remaining pages have no page image` +
           ` reference in the pipeline and are untranscribed.">` +
-          `${prov.pagesTranscribed} of ${prov.pagesInDocument} pages transcribed</span>`
+          `${escapeHTML(String(prov.pagesTranscribed))} of ` +
+          `${escapeHTML(String(prov.pagesInDocument))} pages transcribed</span>`
         : '';
       const parts = [
-        metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
+        titleItem(s.titel),
         `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,
         provenanceChip(docId),
         coverage,
         attribution,
       ].filter(Boolean);
       // The entity key sits in this strip beside the Text chip, so the two
-      // provenance layers read side by side. This supersedes the earlier
-      // review decision that boxed it into the toolbar: with its Entities
-      // label the key grew into the toolbar's longest item and forced the
-      // document selector onto a wrapped second line.
+      // provenance layers read side by side.
       const legend = entityIndex
         ? `<span class="doc-meta__entities">${entityLegend()}</span>`
         : '';
@@ -437,6 +433,9 @@
       if (!item || !page) return;
       const size = item.getContentSize();
       if (!size.x || !size.y) return;
+      // A page of the export can arrive without layout analysis; there is then
+      // no polygon to draw and the overlay stays away.
+      if (!Array.isArray(page.regions)) return;
 
       const svg = document.createElementNS(SVG_NS, 'svg');
       svg.setAttribute('class', 'line-overlay');
@@ -445,7 +444,7 @@
       svg.setAttribute('aria-hidden', 'true');
       let count = 0;
       for (const region of page.regions) {
-        for (const line of region.lines) {
+        for (const line of region.lines || []) {
           const points = parseCoords(line.coords);
           if (!points) continue;
           const poly = document.createElementNS(SVG_NS, 'polygon');
@@ -535,7 +534,17 @@
     // They leave through an explicit JSON export that the pipeline ingests; the
     // site itself is static and writes nothing back.
     const REVIEWER_KEY = 'docta-review-reviewer';
+    // The two human review states of the register vocabulary, in the German
+    // wording the data specification uses. pipeline/apply_review.py accepts
+    // exactly these two values plus null (REVIEW_STATUS there); the machine
+    // states of the register are not reachable from the viewer. Any change here
+    // is a change of the export contract and belongs in both places.
     const STATUS_LABEL = { gesichtet: 'Reviewed', abgenommen: 'Approved' };
+    // Shape version of the stored draft. Raise it when the store no longer
+    // satisfies what loadReview() keeps, so a stale draft is dropped instead of
+    // being exported against the contract.
+    const REVIEW_VERSION = 1;
+    const REVIEW_DATE = /^\d{4}-\d{2}-\d{2}$/;
     let reviewMode = false;
 
     const reviewKey = (docId) => `docta-review-${docId}`;
@@ -591,20 +600,32 @@
       return currentDoc ? currentDoc.pages[currentPage]?.pageNr : null;
     }
 
+    // A stored draft is read back entry by entry: a page that still satisfies the
+    // export contract (a known status or none, an ISO date, a line list) is kept,
+    // anything else is dropped rather than carried into an export.
     function loadReview(docId) {
       const raw = lsGet(reviewKey(docId));
       if (!raw) return null;
       let data;
       try { data = JSON.parse(raw); } catch { return null; }
       if (!data || typeof data !== 'object' || typeof data.pages !== 'object' || !data.pages) return null;
-      return data;
+      const pages = {};
+      for (const [key, page] of Object.entries(data.pages)) {
+        if (!page || typeof page !== 'object') continue;
+        const status = page.status ?? null;
+        if (status !== null && !(status in STATUS_LABEL)) continue;
+        if (typeof page.date !== 'string' || !REVIEW_DATE.test(page.date)) continue;
+        if (!Array.isArray(page.lines)) continue;
+        pages[key] = { ...page, status };
+      }
+      return { ...data, version: REVIEW_VERSION, pages };
     }
 
     function reviewStore() {
       const docId = Number(currentDoc.docId);
       const stored = loadReview(docId);
       if (stored) return stored;
-      return { docId, reviewer: initialsValue(), pages: {} };
+      return { version: REVIEW_VERSION, docId, reviewer: initialsValue(), pages: {} };
     }
 
     function saveReview(store) {
@@ -669,15 +690,30 @@
       return false;
     }
 
-    function setStatus(next) {
+    // The vocabulary is ordered: "abgenommen" implies "gesichtet" and is stored
+    // alone. Approved therefore toggles between itself and no decision, while
+    // Reviewed only ever toggles the lower state; on an approved page it leaves
+    // the decision alone, because a press on a button that reads as pressed must
+    // not silently downgrade an approval into the export.
+    function nextStatus(current, pressed) {
+      if (pressed === 'abgenommen') return current === 'abgenommen' ? null : 'abgenommen';
+      if (current === 'abgenommen') return current;
+      return current === 'gesichtet' ? null : 'gesichtet';
+    }
+
+    function setStatus(pressed) {
       if (!currentDoc || viewMode !== 'synopsis') return;
       if (!requireInitials()) return;
       const pageNr = currentPageNr();
       if (pageNr == null) return;
       const store = reviewStore();
       const page = ensurePage(store, pageNr);
-      // The vocabulary is ordered, "abgenommen" is stored alone and implies reviewed
-      page.status = page.status === next ? null : next;
+      const next = nextStatus(page.status, pressed);
+      if (next === page.status && pressed === 'gesichtet') {
+        reviewHint.textContent = 'Approved already implies reviewed. Clear the approval to change it.';
+        return;
+      }
+      page.status = next;
       page.date = today();
       store.reviewer = initialsValue();
       prunePage(store, pageNr);
@@ -700,7 +736,8 @@
     function exportReview() {
       if (!currentDoc) return;
       const docId = Number(currentDoc.docId);
-      const store = loadReview(docId) || { docId, reviewer: initialsValue(), pages: {} };
+      const store = loadReview(docId) ||
+        { version: REVIEW_VERSION, docId, reviewer: initialsValue(), pages: {} };
       const payload = { ...store, exported: new Date().toISOString(), source: 'docta-viewer' };
       const url = URL.createObjectURL(
         new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }));
@@ -766,6 +803,21 @@
       if (on && !reviewBar.hidden && initialsValue().length < 2) initialsInput.focus();
     }
 
+    // One line after a correction, in the same shape renderTranscription gives
+    // it. Only this line is touched: a full re-render would detach the element
+    // whose blur committed the edit, and the click that caused the blur would
+    // land in a dropped subtree instead of opening the next line.
+    function updateLineEl(lineEl, original, corrected) {
+      const span = lineEl.querySelector('.transcription__line-text');
+      if (!span) return;
+      let text = escapeHTML(corrected ?? original);
+      if (entityIndex && corrected == null) text = markEntities(text);
+      span.innerHTML = text;
+      lineEl.classList.toggle('transcription__line--corrected', corrected != null);
+      if (corrected == null) lineEl.removeAttribute('title');
+      else lineEl.title = `Original: ${original}`;
+    }
+
     function commitCorrection(lineEl, rawValue) {
       const id = lineEl.dataset.lineId;
       const pageNr = currentPageNr();
@@ -777,7 +829,8 @@
       const idx = page.lines.findIndex(l => l && l.id === id);
       // An emptied line is treated as a withdrawn correction; a blank reading is
       // not expressible here and would be indistinguishable from a mis-click
-      if (value === original || value === '') {
+      const withdrawn = value === original || value === '';
+      if (withdrawn) {
         if (idx < 0) return;
         page.lines.splice(idx, 1);
       } else if (idx >= 0) {
@@ -789,9 +842,9 @@
       if (initialsValue().length >= 2) store.reviewer = initialsValue();
       prunePage(store, pageNr);
       saveReview(store);
-      renderTranscription(currentDoc, pageNr);
+      updateLineEl(lineEl, original, withdrawn ? null : value);
       syncReviewUI();
-      lineElFor(id)?.focus({ preventScroll: true });
+      lineEl.focus({ preventScroll: true });
     }
 
     function beginEdit(lineEl) {
@@ -877,11 +930,19 @@
              ' not verified by a scholar.';
     }
 
+    // Deliberate double escaping: the index is keyed on the escaped and lowercased
+    // form (buildEntityIndex), the input here is already escaped line text, and
+    // escapeAttr on the key escapes it a second time so it survives as an
+    // attribute value. showEntityTip reads it back through dataset.entKey and
+    // looks it up in the same escaped key space, so both sides must keep this
+    // shape; escaping only once on one side breaks the tooltip lookup silently.
+    // role="mark" is what carries the aria-label: on a bare span the name maps
+    // to a generic role and browsers drop it.
     function markEntities(escapedText) {
       return escapedText.replace(entityIndex.regex, (match) => {
         const ent = entityIndex.byText.get(match.toLowerCase());
         if (!ent) return match;
-        return `<span class="entity entity--${escapeAttr(ent.type)}"` +
+        return `<span class="entity entity--${escapeAttr(ent.type)}" role="mark" tabindex="0"` +
                ` data-ent-key="${escapeAttr(match.toLowerCase())}"` +
                ` aria-label="${escapeAttr(entityTipText(ent))}">${match}</span>`;
       });
@@ -935,10 +996,26 @@
       entTip.style.top = `${rect.bottom + 6}px`;
     }
 
+    const entityAt = (node) =>
+      (node && node.closest) ? node.closest('.entity[data-ent-key]') : null;
+
+    // Pointer and keyboard reach the tip alike: the marks are focusable, so
+    // focus opens it and Escape closes it without leaving the line.
     document.addEventListener('mouseover', (e) => {
-      const target = e.target.closest ? e.target.closest('.entity[data-ent-key]') : null;
+      const target = entityAt(e.target);
       if (target) showEntityTip(target);
       else if (!entTip.hidden) entTip.hidden = true;
+    });
+    document.addEventListener('focusin', (e) => {
+      const target = entityAt(e.target);
+      if (target) showEntityTip(target);
+      else if (!entTip.hidden) entTip.hidden = true;
+    });
+    document.addEventListener('focusout', (e) => {
+      if (entityAt(e.target)) entTip.hidden = true;
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !entTip.hidden) entTip.hidden = true;
     });
     document.addEventListener('scroll', () => { entTip.hidden = true; }, true);
 
@@ -954,12 +1031,10 @@
       let lineNr = 0;
       for (const p of doc.pages) {
         if (p.pageNr < pageNr) {
-          for (const r of p.regions) lineNr += r.lines.length;
+          for (const r of p.regions || []) lineNr += (r.lines || []).length;
         }
       }
 
-      // The line id keys the coupling with the image overlay; tabindex -1 lets a
-      // zone click move focus to the line without adding a tab stop per line
       // A stored correction replaces the text of its line; it is bound to the
       // original it was made against, so a changed export drops it silently
       const corrections = reviewCorrections(pageNr);
@@ -968,12 +1043,14 @@
       // A layout region boundary becomes a paragraph gap: heading, preamble
       // and list blocks of the source read as blocks, straight from the
       // Transkribus segmentation, with no interpretation added here.
-      for (const [ri, region] of page.regions.entries()) {
+      for (const [ri, region] of (page.regions || []).entries()) {
         let firstInRegion = true;
-        for (const line of region.lines) {
+        for (const line of region.lines || []) {
           lineNr++;
           const regionStart = ri > 0 && firstInRegion ? ' transcription__line--region-start' : '';
           firstInRegion = false;
+          // The line id keys the coupling with the image overlay; tabindex -1 lets
+          // a zone click move focus to the line without adding a tab stop per line
           const lineAttr = line.id ? ` data-line-id="${escapeAttr(line.id)}" tabindex="-1"` : '';
           const fol = folioLabel(line.text);
           if (fol) {
@@ -1007,7 +1084,7 @@
       const container = document.getElementById('transcription-container');
       const out = [];
       doc.pages.forEach((page, idx) => {
-        const regions = page.regions.filter(r => r.lines.length);
+        const regions = (page.regions || []).filter(r => (r.lines || []).length);
         if (!regions.length) return;
         out.push('<section class="reading-page">');
         out.push(`<button type="button" class="reading-page__mark" data-index="${idx}"` +
@@ -1097,10 +1174,22 @@
       return Math.max(0, Math.min(currentDoc.pages.length - 1, n));
     }
 
+    // The page unit of the interface and of the URL is the page number of the
+    // document, which a document with a gap in its numbering does not share with
+    // the index in pages[]. Everything the reader sees or links is a pageNr, and
+    // this is the one place where it becomes an index.
+    function pageIndexOf(nr) {
+      return currentDoc ? currentDoc.pages.findIndex(p => p.pageNr === nr) : -1;
+    }
+
+    const currentPageNrOr = (fallback) =>
+      currentDoc?.pages[currentPage]?.pageNr ?? fallback;
+
     function updatePager() {
       const pageInput = document.getElementById('page-input');
-      pageInput.value = String(currentPage + 1);
-      pageInput.max = String(currentDoc.pages.length);
+      pageInput.value = String(currentPageNrOr(currentPage + 1));
+      pageInput.max = String(currentDoc.pages[currentDoc.pages.length - 1]?.pageNr ??
+                             currentDoc.pages.length);
       document.getElementById('page-total').textContent = `/ ${currentDoc.pages.length}`;
       document.getElementById('btn-prev-page').disabled = currentPage === 0;
       document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
@@ -1109,14 +1198,15 @@
     function syncParams() {
       setParams({
         doc: String(currentDoc.docId),
-        page: String(currentPage + 1),
+        page: String(currentPageNrOr(currentPage + 1)),
         view: viewMode === 'synopsis' ? '' : viewMode,
       });
     }
 
-    function setPage(pageNr) {
+    // idx: index in pages[], not a page number
+    function setPage(idx) {
       if (!currentDoc) return;
-      currentPage = clampPage(pageNr);
+      currentPage = clampPage(idx);
       updatePager();
       syncParams();
       if (viewMode !== 'synopsis') { syncReviewUI(); return; }
@@ -1142,8 +1232,8 @@
 
     const VIEWS = ['synopsis', 'reading', 'tei'];
 
-    // pageNr: optional 0-based page to land on when returning to the synopsis
-    function setView(mode, pageNr) {
+    // pageIdx: optional index in pages[] to land on when returning to the synopsis
+    function setView(mode, pageIdx) {
       viewMode = VIEWS.includes(mode) ? mode : 'synopsis';
       const isSynopsis = viewMode === 'synopsis';
       document.body.dataset.view = viewMode;
@@ -1161,43 +1251,50 @@
         syncReviewUI();
         return;
       }
-      if (pageNr !== undefined) currentPage = clampPage(pageNr);
+      if (pageIdx !== undefined) currentPage = clampPage(pageIdx);
       renderCurrentView();
     }
 
-    // pageNr: 1-based start page. Omit to take it from the URL (deep link into a page).
+    let docRequest = 0;
+
+    // pageNr: page number of the document to start on. Omit to take it from the
+    // URL (deep link into a page); an unknown number falls back to the first page.
     async function loadDocument(docId, pageNr) {
+      const token = ++docRequest;
       try {
         // Deep links arrive copy-pasted; a stray trailing dot or space in the
         // doc parameter must not turn into a nonexistent file path.
         docId = String(parseInt(docId, 10));
-        // Entities are optional per document and are awaited with the text, so
-        // the first render already carries the marks instead of racing them in
         // Where the text of this document lives: the Transkribus export, or the
         // projection of DoCTA's own transcription for a source without one.
         const source = registerByDocId.get(Number(docId))?.transcription_source;
         const path = source === 'vlm'
           ? `data/pipeline/transcriptions/${docId}.json`
           : `data/transcriptions/${docId}.json`;
+        // Entities are optional per document and are awaited with the text, so
+        // the first render already carries the marks instead of racing them in.
         const [doc, entities] = await Promise.all([
           loadJSON(path),
           loadEntities(docId),
         ]);
+        // A later document switch wins over a slow response
+        if (token !== docRequest) return;
+        if (!Array.isArray(doc.pages) || !doc.pages.length) {
+          throw new Error('the transcription holds no page');
+        }
         currentDoc = doc;
         entityInfo = entities;
         entityIndex = buildEntityIndex(entities);
-        let startPage;
-        if (pageNr !== undefined) {
-          startPage = pageNr - 1;
-        } else {
-          const parsed = parseInt(getParams().page || '1', 10);
-          startPage = Number.isFinite(parsed) ? parsed - 1 : 0;
-        }
+        const wanted = pageNr !== undefined
+          ? Number(pageNr)
+          : parseInt(getParams().page || '', 10);
+        const idx = Number.isFinite(wanted) ? pageIndexOf(wanted) : -1;
         renderDocMeta(docId);
         // A document switch keeps the current view
-        currentPage = clampPage(startPage);
+        currentPage = clampPage(idx >= 0 ? idx : 0);
         renderCurrentView();
       } catch (err) {
+        if (token !== docRequest) return;
         const errEl = document.createElement('div');
         errEl.className = 'loading text-body-secondary';
         errEl.textContent = `Document ${docId} could not be loaded: ${err.message}`;
@@ -1251,11 +1348,14 @@
       .addEventListener('click', () => setLineRegions(!showLineRegions));
 
     const pageInput = document.getElementById('page-input');
+    // The field takes a page number of the document; a number the document does
+    // not carry leaves the current page in place.
     function commitPageInput() {
       if (!currentDoc) return;
       const n = parseInt(pageInput.value, 10);
-      if (Number.isFinite(n)) setPage(n - 1);
-      else pageInput.value = String(currentPage + 1);
+      const idx = Number.isFinite(n) ? pageIndexOf(n) : -1;
+      if (idx >= 0) setPage(idx);
+      else updatePager();
     }
     pageInput.addEventListener('change', commitPageInput);
     pageInput.addEventListener('keydown', (e) => {
@@ -1268,7 +1368,8 @@
       const t = e.target;
       if (t instanceof HTMLElement &&
           (t.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName))) return;
-      // Reading and TEI have no facsimile and no page unit; the arrows scroll the text
+      // Reading and TEI have no facsimile and no page unit, so the arrow keys are
+      // left to the focused transcription container, which scrolls with them
       if (viewMode !== 'synopsis') return;
       switch (e.key) {
         case 'ArrowLeft': setPage(currentPage - 1); break;
@@ -1315,14 +1416,6 @@
           opt.value = doc.transkribus_id;
           opt.textContent = `${doc.csv_signatur} - ${doc.csv_titel}`;
           selector.appendChild(opt);
-        }
-
-        const demoInList = docsWithText.find(d => d.transkribus_id === DEMO_DOC_ID);
-        if (!demoInList) {
-          const opt = document.createElement('option');
-          opt.value = String(DEMO_DOC_ID);
-          opt.textContent = 'Thaur A 49.1 - Inventory of Thaur Castle (demo)';
-          selector.insertBefore(opt, selector.options[1]);
         }
 
         const params = getParams();
