@@ -71,8 +71,14 @@ export function escapeAttr(str) {
  * @returns {string}
  */
 export function formatDate(date) {
-  if (!date || !date.raw) return '–';
-  return date.raw;
+  if (!date || (!date.raw && date.start == null)) return '–';
+  const circa = date.circa ? 'c. ' : '';
+  // A span of years reads as a range with an en dash; a single date keeps the
+  // archival day-level form of the finding aid (e.g. 1471.09.25).
+  if (date.start != null && date.end != null && date.start !== date.end) {
+    return `${circa}${date.start}–${date.end}`;
+  }
+  return circa + (date.raw || String(date.start));
 }
 
 /**

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | DoCTA</title>
-  <meta name="description" content="About DoCTA: project, usage, data sources, license and imprint.">
+  <meta name="description" content="About DoCTA: historical research scope, methodological questions, digital workflow, data sources and rights.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -30,42 +30,45 @@
 
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">Project</h2>
-        <p class="small mb-2">DoCTA (Doing Court in the Tyrolean Alps) studies court practices at the court of Sigismund of Tyrol (1427–1496) from account books, inventories, copybooks and court ordinances held by the Tyrolean State Archives. This site is the digital component of the project: an agentic edition pipeline that turns the Transkribus facsimiles into reliable research data and a digital edition. The digital tools are heuristic instruments for the historical research questions; the goal is to open up different source types for joint analysis.</p>
+        <h2 class="h5 mb-2" id="project">Project</h2>
+        <p class="small mb-2">DoCTA (Doing Court in the Tyrolean Alps) investigates practices, social relations and material culture at the court of Sigismund of Tyrol (1427–1496). The project brings together account books, inventories, copybooks and court ordinances held by the Tyrolean State Archives. These source types record different aspects of court life and follow different documentary conventions. Their joint analysis is intended to connect information about persons, places, objects and practices across the surviving records.</p>
+        <p class="small mb-2">The digital component supports this historical research by preparing the sources for comparative analysis. It combines facsimiles, existing scholarly transcriptions, experimental machine transcription, semantic annotation and editorial review in a shared working environment.</p>
         <p class="small mb-0">Project lead: University of Salzburg. Digital implementation: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a>. The development path is documented as a <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a> case study in the <a href="knowledge.html">Knowledge Vault</a>.</p>
       </div>
     </section>
 
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">What this prototype demonstrates</h2>
-        <ol class="small mb-0">
-          <li class="mb-2"><strong>Methodical feasibility on the actual source material.</strong> The pipeline runs end to end on the Transkribus collection of the Tyrolean State Archives, from facsimile to validated TEI and aggregated research data. Every artifact on this site is derived from that collection; nothing is mocked.</li>
-          <li class="mb-2"><strong>The methods work on Early New High German manuscripts.</strong> Vision-language models transcribe fifteenth-century Bastarda and Kurrent directly from the page images, and the <a href="benchmark.html">benchmark</a> measures how well, against scholarly reference transcriptions.</li>
-          <li class="mb-2"><strong>How far current models go without any training.</strong> No model is fine-tuned. Transcription quality is steered through versioned, frozen prompt iterations alone, and each iteration is measured under repetition so that progress is attributable to the prompt rather than to run-to-run noise.</li>
-          <li class="mb-0"><strong>How annotation and revision will proceed in practice.</strong> The <a href="viewer.html">viewer</a> contains the working review loop: a scholar records page decisions and line corrections in the browser, the export is ingested into the page register with full provenance, and corrected readings flow into the TEI. Extracted entities are anchored to lines, gathered in a corpus-wide register and published as a JSON-LD graph for <a href="exploration.html">exploration</a>. All machine output is marked unrevised until a scholar approves it.</li>
-        </ol>
+        <h2 class="h5 mb-2" id="questions">Questions addressed by the prototype</h2>
+        <p class="small mb-2">The current prototype provides a test environment for the following questions:</p>
+        <ul class="small mb-0">
+          <li class="mb-2">How can heterogeneous court records be represented in a shared analytical framework while preserving the structure and provenance of each source?</li>
+          <li class="mb-2">What transcription quality can current vision-language models achieve on fifteenth-century Early New High German manuscripts without project-specific training? The <a href="benchmark.html">benchmark</a> measures this against scholarly reference transcriptions.</li>
+          <li class="mb-2">Which forms of scholarly review, controlled vocabulary and source-level evidence are required to turn machine-generated proposals into accepted research data?</li>
+          <li class="mb-0">Which connections between persons, places, objects and court practices become visible when information from different sources is brought together?</li>
+        </ul>
       </div>
     </section>
 
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">The pipeline</h2>
-        <ol class="small mb-2">
-          <li>Facsimiles and existing transcriptions come from Transkribus (IIIF); a subset of the inventories carries transcriptions by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a>, named as such wherever they appear.</li>
-          <li>Vision-language models transcribe pages against versioned, frozen prompts; runs are stored append-only with full provenance (prompt version and hash, model, parameters) and are never overwritten.</li>
-          <li>A page register records every page with its content class, verification status and all transcription runs; a better transcription is a new run, never an edit.</li>
-          <li>Scholarly review happens in the viewer; exports are validated as a whole before anything is written, so a stale or inconsistent batch changes nothing.</li>
-          <li>The TEI edition is generated deterministically from register and runs, one file per document plus a corpus-wide entity register, and validated in two stages: TEI conformance and a closed project grammar in which certainty attributes are impossible by construction.</li>
-          <li>The entity layer is aggregated into a JSON-LD graph that records, for every node, where it is attested and which step (model or deterministic workflow) produced it.</li>
-        </ol>
-        <p class="small mb-0">Builders read no clock and make no network calls, so every rebuild is byte-identical; a healthcheck verifies this together with cross-artifact consistency on every commit.</p>
+        <h2 class="h5 mb-2" id="current-scope">Current scope</h2>
+        <p class="small mb-2">The prototype currently works with published inventory transcriptions, experimental machine transcriptions of account-book pages and prosopographic records from <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a>. Published <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria</a> editions are identified and cited at document level. Machine-generated transcriptions and entity annotations remain marked as unrevised until they have been checked against the facsimile and accepted by a scholar.</p>
+        <p class="small mb-0">The present entity layer is exploratory. It tests how references to persons, places and objects can be anchored to individual source lines, reviewed and combined across documents. Historical interpretation and the systematic comparison of all source types remain part of the continuing research.</p>
       </div>
     </section>
 
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">Usage guide</h2>
+        <h2 class="h5 mb-2" id="digital-workflow">Digital workflow</h2>
+        <p class="small mb-2">Facsimiles and available transcriptions are registered with their source and editorial provenance. Vision-language models produce experimental transcriptions for material without an existing text layer. Each transcription version remains traceable to its origin and processing step.</p>
+        <p class="small mb-0">The <a href="viewer.html">viewer</a> places facsimile and transcription side by side and supports page-level decisions and line-level corrections. Reviewed text can be transferred into the page register and used to generate TEI documents. Entity annotations remain anchored to the source lines from which they were derived and can be inspected through the <a href="exploration.html">exploration</a> interface. The technical guarantees behind this workflow are documented in the <a href="knowledge.html">Knowledge Vault</a>.</p>
+      </div>
+    </section>
+
+    <section class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 mb-2" id="usage-guide">Usage guide</h2>
         <ul class="small mb-0">
           <li><strong>Find a source.</strong> The <a href="index.html">home page</a> lists all sources with search, filters and processing stage; sources with full text open in the <a href="viewer.html">viewer</a>.</li>
           <li><strong>Read a source.</strong> The viewer offers a facsimile–transcription synopsis with line highlighting, a reading mode over the whole text, the TEI encoding with download, and adjustable text size. Chips above the text name the text layer (human-corrected or machine) and its origin.</li>
@@ -79,15 +82,15 @@
 
     <section class="card mb-4">
       <div class="card-body">
-        <h2 class="h5 mb-2">Data sources and rights</h2>
-        <p class="small mb-2">Prosopographic data: <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a> (Austrian Academy of Sciences). Several inventories have already been edited and published by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a> on <a href="https://app.transkribus.org/en/sites/inventaria" target="_blank" rel="noopener">Transkribus Sites</a>; where their published transcriptions appear here, they are used with attribution to Inventaria. Facsimiles and further transcriptions: Transkribus (READ-COOP). The historical source material is property of the Tyrolean State Archives; IIIF images are served by Transkribus.</p>
-        <p class="small mb-0">License: source code MIT, research data and knowledge documents CC BY 4.0. Repository: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">github.com/DigitalHumanitiesCraft/DoCTA</a>.</p>
+        <h2 class="h5 mb-2" id="data-rights">Data sources and rights</h2>
+        <p class="small mb-2">Facsimiles are provided through Transkribus from holdings of the Tyrolean State Archives. Published inventory editions and transcriptions produced by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a> on <a href="https://app.transkribus.org/en/sites/inventaria" target="_blank" rel="noopener">Transkribus Sites</a> are cited and linked at document level. Prosopographic records are derived from <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a>. Annotations and derived data produced within DoCTA carry separate provenance information so that their origin remains distinguishable from the source editions.</p>
+        <p class="small mb-0">Source code is licensed under the MIT License. Research data and knowledge documents produced by DoCTA are published under CC BY 4.0 where the rights of the underlying source material permit this. Repository: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">github.com/DigitalHumanitiesCraft/DoCTA</a>.</p>
       </div>
     </section>
 
     <section class="card">
       <div class="card-body">
-        <h2 class="h5 mb-2">Imprint</h2>
+        <h2 class="h5 mb-2" id="imprint">Imprint</h2>
         <p class="small mb-0">Digital Humanities Craft OG<br>
         Web: <a href="https://dhcraft.org" target="_blank" rel="noopener">dhcraft.org</a><br>
         Email: <a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>

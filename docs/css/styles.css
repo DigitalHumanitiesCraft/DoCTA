@@ -1291,6 +1291,50 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .exp-basis a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
 .exp-basis a:hover { color: var(--accent); }
 
+/* Disclaimer line under the home title: calm prose, no warning banner */
+.hero-note {
+  margin: var(--space-2xs) 0 0;
+  max-width: 62rem;
+  font-size: var(--text-xs);
+  color: var(--text-muted-custom);
+}
+.hero-note a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
+.hero-note a:hover { color: var(--accent); }
+.hero-note__more { white-space: nowrap; }
+
+/* Key for the F/H/T/E stage letters, next to the result count */
+.stage-key {
+  font-size: var(--text-2xs);
+  color: var(--text-muted-custom);
+  white-space: nowrap;
+}
+.stage-key__item { margin-left: 0.45rem; }
+
+/* Edition attribution chip: accent-tinted so the origin of the text layer
+   catches the eye among the neutral category and status chips */
+.doc-meta__edition {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--text-2xs);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.doc-meta__edition:hover { text-decoration: underline; }
+
+/* Dating in the source row: tabular figures, a shade stronger than the rest
+   of the meta line, so the eye can scan the list chronologically */
+.src-date {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
 /* Attribution of the transcription's origin, right under the category */
 .src-credit {
   display: block;

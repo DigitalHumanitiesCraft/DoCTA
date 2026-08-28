@@ -26,6 +26,11 @@
   <main id="main" class="container py-4">
     <header class="mb-4">
       <h1>Doing Court in the Tyrolean Alps</h1>
+      <p class="hero-note"><strong>Experimental agentic edition pipeline.</strong>
+        This <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
+        environment tests model-assisted transcription and annotation of fifteenth-century court
+        records. Machine-generated content remains provisional until scholarly review and acceptance.
+        <a class="hero-note__more" href="about.html#questions">Questions, scope and workflow &rarr;</a></p>
     </header>
 
     <!-- Sources with integrated search -->
@@ -60,6 +65,9 @@
         </div>
         <div class="col-md-2 text-md-end">
           <span class="small text-body-secondary" id="result-count" role="status" aria-live="polite"></span>
+          <span class="stage-key" title="Pipeline stage of each source, filled when reached">Stages:
+            <span class="stage-key__item">F facsimile</span> <span class="stage-key__item">H HTR text</span>
+            <span class="stage-key__item">T TEI</span> <span class="stage-key__item">E edited</span></span>
         </div>
       </div>
 
@@ -139,7 +147,7 @@
       const pages = s.seiten != null ? `${num(s.seiten)} page${s.seiten === 1 ? '' : 's'}` : '';
       const meta = [
         `<span class="src-sig">${escapeHTML(s.signatur)}</span>`,
-        `<span>${escapeHTML(formatDate(s.datierung))}</span>`,
+        `<span class="src-date" title="${escapeAttr('Dating: ' + (s.datierung?.raw || 'unknown'))}">${escapeHTML(formatDate(s.datierung))}</span>`,
         pages ? `<span class="tnum">${pages}</span>` : '',
       ].filter(Boolean).join('<span class="src-meta__sep" aria-hidden="true">·</span>');
       const title = hasText(s)
@@ -237,7 +245,9 @@
         { cls: 'reviewed', label: 'reviewed', n: v.gesichtet },
         { cls: 'machine', label: 'machine-checked', n: v.maschinell },
         { cls: 'text', label: 'pages with machine text', n: Math.max(0, pagesWithText - verified) },
-        { cls: 'none', label: 'not yet transcribed', n: Math.max(0, totalPages - pagesWithText) },
+        // The remainder counts finding-aid pages, most of them not yet scanned;
+        // naming that keeps the big number from reading as a transcription backlog
+        { cls: 'none', label: 'not yet transcribed or unscanned', n: Math.max(0, totalPages - pagesWithText) },
       ].filter(seg => seg.n > 0);
 
       const bar = document.getElementById('progress-bar');
