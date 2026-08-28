@@ -114,6 +114,28 @@ def test_stale_review_is_refused() -> None:
             "register was touched by a refused review"
 
 
+def test_a_refused_file_blocks_the_whole_batch() -> None:
+    """Ingest is all-or-nothing across files: nothing is written before every
+    file of the batch has validated and applied in memory."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        good = review_file(tmp, pages_dir)
+        bad_dir = tmp / "bad"
+        bad_dir.mkdir()
+        bad = review_file(bad_dir, pages_dir,
+                          original="something else entirely")
+        before = (pages_dir / f"{DOC}.json").read_bytes()
+        try:
+            ar.ingest([good, bad], pages_dir)
+        except ar.ReviewError:
+            pass
+        else:
+            raise AssertionError("stale file was accepted")
+        assert (pages_dir / f"{DOC}.json").read_bytes() == before, \
+            "an earlier file of a refused batch was written"
+
+
 def test_a_later_review_builds_on_the_earlier_one() -> None:
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)

@@ -152,22 +152,42 @@ def test_header_carries_the_archival_identity() -> None:
             assert origdate is None, f"origDate invented in {doc_id}"
 
 
+# Independent re-statement of the folio and cover mark forms from the corpus
+# ("[fol.2r]", "[fol. 2r]", bare "[1r]", "[us_vorne_r]"), written out here so
+# the test does not borrow the generator's own regexes.
+MARK_LINE = re.compile(r"^\[(?:fol\.\s*)?[0-9]+[rv]?\]$|^\[us_[a-z]+_[rv]\]$")
+
+
 def test_zone_per_line_with_coordinates() -> None:
-    """Every exported line with coordinates gets one zone under its surface."""
+    """Every exported line with coordinates gets one zone under its surface;
+    folio and cover lines become milestones without facs and get none."""
     built = _built()
     for doc_id in SAMPLES:
         export = bt._load(bt.DATA / "transcriptions" / f"{doc_id}.json")
         expected = [(page["pageNr"], line["id"], line["coords"])
                     for page in sorted(export["pages"], key=lambda p: p["pageNr"])
                     if page.get("iiif")
-                    for line in bt._line_records(page)
-                    if (line.get("coords") or "").strip()]
+                    for region in page.get("regions") or []
+                    for line in region.get("lines") or []
+                    if (line.get("coords") or "").strip()
+                    and not MARK_LINE.match((line.get("text") or "").strip())]
         root = ElementTree.fromstring(built[doc_id])
         zones = [(z.get(XML_ID), z.get("points"))
                  for z in root.iter(f"{TEI}zone")]
         assert zones == [(f"zone-{doc_id}-{nr}-{lid}", coords)
                          for nr, lid, coords in expected], \
             f"zone set differs in {doc_id}"
+
+
+def test_every_zone_is_referenced_by_an_lb() -> None:
+    """No zone is dead layout data: each one is the target of exactly one lb."""
+    built = _built()
+    for doc_id, xml in built.items():
+        root = ElementTree.fromstring(xml)
+        zone_ids = {z.get(XML_ID) for z in root.iter(f"{TEI}zone")}
+        referenced = {lb.get("facs")[1:] for lb in root.iter(f"{TEI}lb")
+                      if lb.get("facs")}
+        assert zone_ids == referenced, f"orphan or dangling zones in {doc_id}"
 
 
 def test_every_lb_facs_resolves_to_a_zone() -> None:
@@ -345,6 +365,11 @@ def test_a_reviewed_page_carries_the_reviewed_text() -> None:
     assert resp.find(f"{TEI}name").text == \
         "DoCTA reviewer (initials in the revision log)"
 
+    decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
+    assert "Part of the pages of this file has been read" in decl
+    assert "The text of this file is unrevised machine transcription." \
+        not in decl, "editorialDecl contradicts the partly-reviewed stream"
+
     changes = [c for c in root.iter(f"{TEI}change") if c.get("n") == "review"]
     assert len(changes) == 1, "expected one review entry per reviewed page"
     change = changes[0]
@@ -377,6 +402,8 @@ def test_a_fully_accepted_document_reports_approval() -> None:
                 if c.get("n") == "review"]) == count
     decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
     assert "Every page of this file has been read against the scan" in decl
+    assert "unrevised machine transcription" not in decl, \
+        "editorialDecl contradicts the approved stream"
 
 
 def test_generation_date_comes_from_the_argument() -> None:

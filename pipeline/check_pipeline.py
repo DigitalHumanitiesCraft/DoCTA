@@ -454,15 +454,27 @@ def check_schema() -> list[Finding]:
 
 # ================================= idempotence ===============================
 
+def _tei_date() -> str:
+    """Generation date of the committed TEI, so the rebuild compares against
+    the date the files actually carry instead of the script constant."""
+    for path in sorted(TEI_DIR.glob("*.xml")):
+        m = re.search(r'<date when="(\d{4}-\d{2}-\d{2})">', path.read_text(
+            encoding="utf-8"))
+        if m:
+            return m.group(1)
+    return bt.GENERATION_DATE
+
+
 def check_idempotence() -> list[Finding]:
-    """A rebuild of register and TEI must reproduce the working tree byte for byte."""
+    """A rebuild of register and TEI must reproduce the working tree byte for
+    byte, and the working tree must hold nothing the rebuild does not produce."""
     out: list[Finding] = []
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         with contextlib.redirect_stderr(io.StringIO()):
             docs, pages_by_doc = br.build(tmp)
             br.project(docs, pages_by_doc, tmp / "register_summary.json")
-            built = bt.build(tmp / "tei")
+            built = bt.build(tmp / "tei", _tei_date())
         out += _compare(DOCUMENTS, tmp / "documents.json", "register")
         out += _compare(SUMMARY, tmp / "register_summary.json", "projection")
         for path in sorted((tmp / "pages").glob("*.json")):
@@ -470,6 +482,18 @@ def check_idempotence() -> list[Finding]:
         for doc_id in built:
             name = f"{doc_id}.xml"
             out += _compare(TEI_DIR / name, tmp / "tei" / name, "tei")
+        rebuilt_pages = {p.name for p in (tmp / "pages").glob("*.json")}
+        rebuilt_tei = {f"{doc_id}.xml" for doc_id in built}
+        for name in sorted({p.name for p in REGISTER.glob("*.json")}
+                           - rebuilt_pages):
+            out.append(_fail("idempotence.orphan",
+                             f"pages/{name}: the working tree has it, the"
+                             " rebuild does not produce it"))
+        for name in sorted({p.name for p in TEI_DIR.glob("*.xml")}
+                           - rebuilt_tei):
+            out.append(_fail("idempotence.orphan",
+                             f"tei/{name}: the working tree has it, the"
+                             " rebuild does not produce it"))
     return out
 
 
@@ -506,10 +530,11 @@ def _only_review_state(current: Path, rebuilt: Path) -> bool:
 def _strip_reviews(payload: dict) -> dict:
     pages = []
     for page in payload["pages"]:
+        reviews = br.review_runs(page)
         pages.append({**page,
                       "verification": {"status": "unbearbeitet"},
                       "runs": [r for r in page.get("runs") or []
-                               if not str(r.get("id", "")).startswith("review:")]})
+                               if r not in reviews]})
     return {**payload, "pages": pages}
 
 

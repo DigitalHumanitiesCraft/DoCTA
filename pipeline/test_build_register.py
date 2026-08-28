@@ -63,6 +63,32 @@ def test_pilot_empty_page_carries_vlm_evidence() -> None:
     assert any(r["source"] == "vlm" and r["prompt"] == "it02" for r in page["runs"])
 
 
+def test_rebuild_preserves_ingested_review_state() -> None:
+    """A rebuild keeps what apply_review.py wrote, the one non-derivable state."""
+    with tempfile.TemporaryDirectory() as td:
+        out = Path(td)
+        _, pages_by_doc = _build(out)
+        doc_id = next(d for d, pages in sorted(pages_by_doc.items())
+                      if any(p["runs"] for p in pages))
+        path = out / "pages" / f"{doc_id}.json"
+        register = br._load(path)
+        page = next(p for p in register["pages"] if p["runs"])
+        review_run = {"id": f"review:{doc_id}-{page['pageNr']}-2026-09-01-AB",
+                      "source": "human", "reviewer": "AB", "date": "2026-09-01",
+                      "lines": [{"id": "l1", "text": "korrigiert"}]}
+        page["runs"].append(review_run)
+        page["verification"] = {"status": "gesichtet", "reviewer": "AB",
+                                "date": "2026-09-01"}
+        br._write(path, register)
+        _build(out)  # rebuild over a register that now holds a review
+        rebuilt = next(p for p in br._load(path)["pages"]
+                       if p["pageNr"] == page["pageNr"])
+        assert review_run in rebuilt["runs"], "review run lost on rebuild"
+        assert rebuilt["verification"]["status"] == "gesichtet"
+        ids = [r["id"] for r in rebuilt["runs"]]
+        assert len(ids) == len(set(ids)), "review run duplicated on rebuild"
+
+
 def test_vocabularies_and_transkribus_run() -> None:
     with tempfile.TemporaryDirectory() as td:
         docs, pages_by_doc = _build(Path(td))

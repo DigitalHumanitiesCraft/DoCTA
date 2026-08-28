@@ -125,20 +125,15 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
     return out
 
 
-def _review_runs(page: dict) -> list[dict]:
-    return [r for r in page.get("runs") or []
-            if str(r.get("id", "")).startswith("review:")]
-
-
 def base_lines(page: dict, exclude_id: str) -> list[dict]:
     """The line list the review was made on, without the run it replaces.
 
     Newest earlier review run first, Transkribus run otherwise; a page with
     neither has no text to review against.
     """
-    earlier = [r for r in _review_runs(page) if r["id"] != exclude_id]
+    earlier = br.newest_review_run(page, exclude_id)
     if earlier:
-        return list(max(earlier, key=lambda r: (r.get("date") or "", r["id"]))["lines"])
+        return list(earlier["lines"])
     for run in page.get("runs") or []:
         if run.get("source") == "transkribus":
             return list(run["lines"])
@@ -224,22 +219,33 @@ def _review_files(targets: list[Path]) -> list[Path]:
 
 def ingest(targets: list[Path], register_dir: Path,
            dry_run: bool = False) -> list[str]:
-    """Apply every review file below targets. Raises on the first violation."""
+    """Apply every review file below targets, all or nothing.
+
+    Every file of the batch is validated and applied in memory before any
+    register file is written, so a refused file leaves the register untouched
+    even when earlier files of the same batch were fine. Later files of a
+    batch see the changes of earlier ones, because documents are shared in
+    memory.
+    """
     files = _review_files(targets)
     if not files:
         return []
     log: list[str] = []
+    registers: dict[Path, dict] = {}
     for path in files:
         review = br._load(path)
         pages = validate(review, path.name)
         doc_id = review["docId"]
         register_path = register_dir / f"{doc_id}.json"
-        if not register_path.exists():
-            raise ReviewError(f"{path.name}: kein Register fuer Dokument {doc_id}")
-        register = br._load(register_path)
+        if register_path not in registers:
+            if not register_path.exists():
+                raise ReviewError(
+                    f"{path.name}: kein Register fuer Dokument {doc_id}")
+            registers[register_path] = br._load(register_path)
         log.append(f"{path.name} -> {register_path.name}")
-        log += apply_document(register, review, pages, path.name)
-        if not dry_run:
+        log += apply_document(registers[register_path], review, pages, path.name)
+    if not dry_run:
+        for register_path, register in registers.items():
             br._write(register_path, register)
     return log
 

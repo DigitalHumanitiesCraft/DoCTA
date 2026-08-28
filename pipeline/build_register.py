@@ -70,6 +70,24 @@ def _write(path: Path, payload: Any) -> None:
                     encoding="utf-8")
 
 
+def review_runs(page: dict) -> list[dict]:
+    """Review runs of a register page, in stored order.
+
+    Single definition of what a review run is; apply_review, build_tei and the
+    healthcheck all select on it, so the prefix cannot drift apart.
+    """
+    return [r for r in page.get("runs") or []
+            if str(r.get("id", "")).startswith("review:")]
+
+
+def newest_review_run(page: dict, exclude_id: str | None = None) -> dict | None:
+    """The newest review run of a page by date then id, optionally excluding one."""
+    runs = [r for r in review_runs(page) if r["id"] != exclude_id]
+    if not runs:
+        return None
+    return max(runs, key=lambda r: (r.get("date") or "", r["id"]))
+
+
 def _page_key(page_id: str) -> tuple[int, int] | None:
     """Resolve an evaluation page id such as pilot_rb2_p002 to (docId, pageNr)."""
     m = RUN_ID.match(page_id)
@@ -236,11 +254,34 @@ def _page_from_export(page: dict) -> dict:
     return {"pageNr": page["pageNr"], "iiif": page.get("iiif"), "lines": lines}
 
 
+def _carry_review_state(out_dir: Path, doc_id: int, pages: list[dict]) -> None:
+    """Carry the ingested review state of an existing register into a rebuild.
+
+    Verification and review runs come from apply_review.py and are the one part
+    of a page the builder cannot derive from its inputs; a rebuild that dropped
+    them would destroy reviewer work without leaving a trace.
+    """
+    path = out_dir / "pages" / f"{doc_id}.json"
+    if not path.exists():
+        return
+    by_nr = {p["pageNr"]: p for p in _load(path)["pages"]}
+    for page in pages:
+        old = by_nr.get(page["pageNr"])
+        if old is None:
+            continue
+        page["runs"] += review_runs(old)
+        verification = old.get("verification") or {}
+        if verification.get("status") in ("gesichtet", "abgenommen"):
+            page["verification"] = verification
+
+
 def build(out_dir: Path) -> tuple[list[dict], dict[int, list[dict]]]:
     """Build the register and write it below out_dir. Deterministic and re-runnable."""
     runs = _vlm_runs()
     docs = _documents()
     pages_by_doc = {d["docId"]: _pages(d, runs) for d in docs}
+    for doc_id, pages in pages_by_doc.items():
+        _carry_review_state(out_dir, doc_id, pages)
 
     _write(out_dir / "documents.json", docs)
     for doc_id, pages in pages_by_doc.items():
@@ -274,6 +315,10 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
             "thumb": first_text["iiif"] if first_text else None,
             "thumb_page": first_text["pageNr"] if first_text else None,
             "done_pages": doc.get("done_pages"),
+            # same predicate as build_tei.py: a TEI file exists for every
+            # matched document with text and an export on disk
+            "has_tei": bool(doc["has_text"]) and
+            (DATA / "transcriptions" / f"{doc['docId']}.json").exists(),
         })
     payload = {"documents": summary}
     _write(out_path, payload)

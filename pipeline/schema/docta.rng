@@ -160,8 +160,8 @@
         <element name="p"><text/></element>
       </element>
       <element name="editorialDecl">
-        <!-- state paragraph, plus the review and the entity paragraph where
-             those layers exist -->
+        <!-- state paragraph, carrying the review state where that layer
+             exists, plus the entity paragraph where one exists -->
         <element name="p"><text/></element>
         <optional><element name="p"><text/></element></optional>
         <optional><element name="p"><text/></element></optional>

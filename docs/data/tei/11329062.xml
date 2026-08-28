@@ -11,12 +11,12 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
+          <name>pipeline/build_tei.py (sha256 c6fd8cdab746)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-08-27">2026-08-27</date>
+        <date when="2026-08-28">2026-08-28</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -62,7 +62,7 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-08-27" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
+      <change when="2026-08-28" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
       <change n="transcription-summary" status="machine-unrevised">Transcription stream (state): machine-unrevised</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>
@@ -70,7 +70,6 @@
   <facsimile>
     <surface xml:id="surface-11329062-1" n="1">
       <graphic url="https://files.transkribus.eu/iiif/2/ZBNESPVDXSDQGKSCNQMVFQWD/full/max/0/default.jpg"/>
-      <zone xml:id="zone-11329062-1-r1l1" points="2106,231 2327,222 2329,272 2108,281"/>
       <zone xml:id="zone-11329062-1-r2l1" points="649,663 722,671 795,671 868,671 941,671 1015,671 1088,667 1161,671 1234,671 1307,671 1381,675 1454,675 1527,675 1600,675 1673,675 1747,671 1820,667 1893,667 1966,667 2039,664 2113,655 2113,540 2039,549 1966,552 1893,552 1820,552 1747,556 1673,560 1600,560 1527,560 1454,560 1381,560 1307,556 1234,556 1161,556 1088,552 1015,556 941,556 868,556 795,556 722,556 649,548"/>
       <zone xml:id="zone-11329062-1-r2l2" points="415,827 497,835 580,836 663,839 746,839 829,843 912,846 995,847 1078,847 1161,851 1244,847 1326,847 1409,847 1492,841 1575,839 1658,839 1741,837 1824,835 1907,835 1990,832 2073,811 2073,699 1990,720 1907,723 1824,723 1741,725 1658,727 1575,727 1492,729 1409,735 1326,735 1244,735 1161,739 1078,735 995,735 912,734 829,731 746,727 663,727 580,724 497,723 415,715"/>
       <zone xml:id="zone-11329062-1-r2l3" points="451,988 522,991 593,992 664,997 735,997 807,997 878,999 949,1001 1020,1001 1091,1001 1163,1001 1234,999 1305,997 1376,997 1447,997 1519,993 1590,997 1661,997 1732,994 1803,992 1875,976 1875,864 1803,880 1732,882 1661,885 1590,885 1519,881 1447,885 1376,885 1305,885 1234,887 1163,889 1091,889 1020,889 949,889 878,887 807,885 735,885 664,885 593,880 522,879 451,876"/>
@@ -92,7 +91,6 @@
     </surface>
     <surface xml:id="surface-11329062-2" n="2">
       <graphic url="https://files.transkribus.eu/iiif/2/PNIRMOYYNLJLTLAHXGHCNKBH/full/max/0/default.jpg"/>
-      <zone xml:id="zone-11329062-2-r1l1" points="2088,166 2299,159 2300,209 2089,216"/>
       <zone xml:id="zone-11329062-2-r2l1" points="986,478 1027,479 1068,485 1109,496 1151,502 1192,507 1233,512 1275,515 1316,516 1357,516 1399,513 1440,508 1481,506 1522,505 1564,505 1605,510 1646,516 1688,519 1729,520 1770,520 1812,520 1812,405 1770,405 1729,405 1688,404 1646,401 1605,395 1564,390 1522,390 1481,391 1440,393 1399,398 1357,401 1316,401 1275,400 1233,397 1192,392 1151,387 1109,381 1068,370 1027,364 986,363"/>
       <zone xml:id="zone-11329062-2-r3l1" points="397,570 580,570 633,574 712,571 791,576 869,578 948,587 1027,592 1106,597 1185,598 1263,602 1342,605 1421,606 1657,606 1736,607 1815,612 1894,617 1973,614 1973,729 1894,732 1815,727 1736,722 1657,721 1421,721 1342,720 1263,717 1185,713 1106,712 1027,707 948,702 869,693 791,691 712,686 633,689 554,683 475,678 397,665"/>
       <zone xml:id="zone-11329062-2-r3l2" points="353,795 538,779 755,783 2315,835 2315,938 2237,944 353,910"/>
@@ -121,7 +119,6 @@
     </surface>
     <surface xml:id="surface-11329062-3" n="3">
       <graphic url="https://files.transkribus.eu/iiif/2/FIAGCXLAUZWFGOHDPJQYEQLU/full/max/0/default.jpg"/>
-      <zone xml:id="zone-11329062-3-r1l1" points="2022,189 2241,192 2240,242 2021,239"/>
       <zone xml:id="zone-11329062-3-r2l1" points="160,359 321,323 493,323 940,327 1009,331 1009,448 665,448 424,443 321,440 162,409"/>
       <zone xml:id="zone-11329062-3-r2l2" points="167,594 321,554 698,514 802,510 984,507 1036,507 1036,624 439,677 321,671 169,644"/>
       <zone xml:id="zone-11329062-3-r2l3" points="181,804 390,751 725,737 762,736 911,736 1023,744 1097,750 1135,755 1135,872 501,872 390,868 189,853"/>
@@ -154,7 +151,6 @@
     </surface>
     <surface xml:id="surface-11329062-4" n="4">
       <graphic url="https://files.transkribus.eu/iiif/2/MWTKNCZVMJPPFOOPODFDZHLY/full/max/0/default.jpg"/>
-      <zone xml:id="zone-11329062-4-r1l1" points="2219,344 2413,337 2415,387 2221,394"/>
     </surface>
   </facsimile>
   <text xml:lang="gmh">

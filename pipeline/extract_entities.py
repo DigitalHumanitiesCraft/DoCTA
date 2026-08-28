@@ -241,11 +241,17 @@ def validate(raw: list[dict], index: dict[str, dict]) -> tuple[list[dict], list[
 
 
 def assert_verbatim(entities: list[dict], index: dict[str, dict]) -> None:
-    """Definition of Done: every kept entity occurs verbatim in its named line."""
+    """Definition of Done: every kept entity occurs verbatim in its named line.
+
+    Raises instead of asserting, so the check also holds under python -O.
+    """
     for e in entities:
         line = index[f"p{e['pageNr']}_{e['lineId']}"]
-        assert e["text"] in line["text"], f"{e['id']}: {e['text']!r} nicht in {line['lineId']}"
-        assert "confidence" not in e, f"{e['id']}: Konfidenzfeld in der Ausgabe"
+        if e["text"] not in line["text"]:
+            raise ValueError(
+                f"{e['id']}: {e['text']!r} nicht in {line['lineId']}")
+        if "confidence" in e:
+            raise ValueError(f"{e['id']}: Konfidenzfeld in der Ausgabe")
 
 
 def run_one(key: str, doc_id: int, system: str, prompt_hash: str, force: bool) -> dict:

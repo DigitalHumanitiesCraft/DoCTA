@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 65bb85526c1e)</name>
+          <name>pipeline/build_tei.py (sha256 c6fd8cdab746)</name>
         </respStmt>
         <respStmt xml:id="resp-entity-llm">
           <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar</resp>
@@ -20,7 +20,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-08-27">2026-08-27</date>
+        <date when="2026-08-28">2026-08-28</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -67,7 +67,7 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-08-27" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
+      <change when="2026-08-28" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
       <change n="transcription-summary" status="human-corrected">Transcription stream (state): human-corrected</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>
@@ -75,7 +75,6 @@
   <facsimile>
     <surface xml:id="surface-11330020-1" n="1">
       <graphic url="https://files.transkribus.eu/iiif/2/MEJFQOTLLIGQXVKUCERNSPHH/full/max/0/default.jpg"/>
-      <zone xml:id="zone-11330020-1-r1l1" points="992,64 1029,64 1029,114 992,114"/>
       <zone xml:id="zone-11330020-1-r2l1" points="116,168 155,167 194,167 234,166 273,166 313,165 352,165 392,164 431,164 471,164 510,163 549,163 589,163 628,162 668,162 707,162 747,162 786,162 826,163 865,163 905,163 905,133 865,133 826,133 786,132 747,132 707,132 668,132 628,132 589,133 549,133 510,133 471,134 431,134 392,134 352,135 313,135 273,136 234,136 194,137 155,137 116,138"/>
       <zone xml:id="zone-11330020-1-r2l2" points="131,209 171,208 212,207 252,206 293,205 334,203 374,202 415,201 456,201 496,200 537,199 578,199 618,199 659,199 700,200 740,201 781,202 822,204 862,207 903,210 944,214 944,184 903,180 862,177 822,174 781,172 740,171 700,170 659,169 618,169 578,169 537,169 496,170 456,171 415,171 374,172 334,173 293,175 252,176 212,177 171,178 131,179"/>
       <zone xml:id="zone-11330020-1-r2l3" points="117,244 157,244 197,243 238,243 278,242 319,241 359,240 399,239 440,238 480,237 521,237 561,236 601,236 642,236 682,236 723,237 763,238 803,240 844,243 884,245 925,249 925,219 884,215 844,213 803,210 763,208 723,207 682,206 642,206 601,206 561,206 521,207 480,207 440,208 399,209 359,210 319,211 278,212 238,213 197,213 157,214 117,214"/>
@@ -124,7 +123,6 @@
     </surface>
     <surface xml:id="surface-11330020-2" n="2">
       <graphic url="https://files.transkribus.eu/iiif/2/HFAIHNGOTNQXNGWWJOWBYHOM/full/max/0/default.jpg"/>
-      <zone xml:id="zone-11330020-2-r1l1" points="87,58 117,58 117,108 87,108"/>
       <zone xml:id="zone-11330020-2-r2l1" points="136,192 174,193 212,193 250,193 288,193 326,193 364,192 402,192 440,191 478,190 516,189 554,189 592,188 630,188 668,188 706,188 744,188 782,189 820,190 858,192 896,194 896,164 858,162 820,160 782,159 744,158 706,158 668,158 630,158 592,158 554,159 516,159 478,160 440,161 402,162 364,162 326,163 288,163 250,163 212,163 174,163 136,162"/>
       <zone xml:id="zone-11330020-2-r2l2" points="203,234 239,234 275,234 311,234 347,234 383,233 419,233 456,232 492,231 528,231 564,231 600,230 636,230 672,231 709,231 745,232 781,233 817,235 853,237 889,240 926,243 926,213 889,210 853,207 817,205 781,203 745,202 709,201 672,201 636,200 600,200 564,201 528,201 492,201 456,202 419,203 383,203 347,204 311,204 275,204 239,204 203,204"/>
       <zone xml:id="zone-11330020-2-r2l3" points="200,270 225,272 250,275 275,276 300,276 325,275 350,274 375,272 400,271 425,269 450,268 475,268 500,268 525,269 525,239 500,238 475,238 450,238 425,239 400,241 375,242 350,244 325,245 300,246 275,246 250,245 225,242 200,240"/>
