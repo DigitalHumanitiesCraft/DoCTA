@@ -1,6 +1,33 @@
-# JOURNAL: Decisions, Exploration, Open Questions
+---
+title: Journal
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: active
+language: en
+version: "1.0"
+created: 2026-02-18
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+template:
+  name: Vorlage Journal
+  version: 0.4
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
+related: [INDEX, project, handoff]
+---
+
+# Journal
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
+
+## Knowledge base refactored onto the Promptotyping convention (28.08.2026)
+
+The knowledge folder now follows the naming contract of the Promptotyping documents convention, lowercase canonical function names with `INDEX.md` as the registered uppercase exception. `REQUIREMENTS.md` became `specification.md` and `TECH.md` became `architecture.md`, because the convention names these functions canonically; `CONTEXT.md` became `domain-knowledge.md`, matching the template slug of the Domain Knowledge function; the remaining documents kept their names in lowercase. Every hand-written document carries the frontmatter core of the convention (`title`, `project`, `method`, `status`, `created`, `updated`) with `version: "1.0"` as the repo-wide schema version, and documents with a catalogue template reference it in a `template:` field. Two documents the convention triggers unconditionally were added, `project.md` as the charter, distilled from the former INDEX state section and the README, and `handoff.md` as the standing process inbox. `INDEX.md` was rewritten as navigation plus glossary with a document register of routing questions; its phase narrative moved to `project.md`. The knowledge viewer strips frontmatter before rendering and keeps the old uppercase hash anchors working through a redirect map. The alternative, keeping the historical uppercase names, was rejected because the file name is the primary routing signal for agents and the convention is what the method site itself practises.
 
 ## About-page reframing (28.08.2026)
 
@@ -56,7 +83,7 @@ The inventories in the collection carry working transcriptions. Three documents 
 
 ### Methodological decision
 
-The production decision is taken per task. Category survey, diplomatic transcription and the reading of amounts receive separate checks. The next model comparison uses the same held-out account-book set for the current configuration, a stronger vision-language model and a specialised Transkribus model. Divergences are presented with image details for scholarly adjudication. The full review contract is in `HTR-EVALUATION.md`.
+The production decision is taken per task. Category survey, diplomatic transcription and the reading of amounts receive separate checks. The next model comparison uses the same held-out account-book set for the current configuration, a stronger vision-language model and a specialised Transkribus model. Divergences are presented with image details for scholarly adjudication. The full review contract is in `htr-evaluation.md`.
 
 ## Decisions (17.02.2026)
 
@@ -128,11 +155,11 @@ The source documents named below are project-internal and are not contained in t
 
 | Gap | Source document (project-internal) | Now captured in |
 |-----|------------------------------------|-----------------|
-| Epistemic asymmetry | `sources/coocr-htr-epistemologie.md` | CONTEXT.md |
-| Sequencing of phase 1 | `sources/strategische-planung.md` | REQUIREMENTS.md |
-| The project lead's own wording of the requirements | `sources/requirements-projektleitung.md` | REQUIREMENTS.md |
-| Entity category discrepancy | `sources/fwf-proposal-2025.md` against SiCPAS | CONTEXT.md |
-| Open source questions on account book 2 | `sources/raitbuch-2-analyse.md` | DATA.md |
+| Epistemic asymmetry | `sources/coocr-htr-epistemologie.md` | domain-knowledge.md |
+| Sequencing of phase 1 | `sources/strategische-planung.md` | specification.md |
+| The project lead's own wording of the requirements | `sources/requirements-projektleitung.md` | specification.md |
+| Entity category discrepancy | `sources/fwf-proposal-2025.md` against SiCPAS | domain-knowledge.md |
+| Open source questions on account book 2 | `sources/raitbuch-2-analyse.md` | data.md |
 
 ### Deliberately not captured, proposal level rather than code
 
@@ -147,7 +174,7 @@ The source documents named below are project-internal and are not contained in t
 | The Transkribus API in the browser | CORS blocks it, and OAuth2 in the client is insecure | Pre-fetch with Python |
 | SiCProD events as a source of practice data | Only 28 major events | Everyday practices come from the account books |
 | SiCProD salaries as a source of financial data | No amounts, only links | Financial data come from the account books |
-| Reading the SVG model diagram | 742 KB on a single line | The content was carried over as text into CONTEXT.md |
+| Reading the SVG model diagram | 742 KB on a single line | The content was carried over as text into domain-knowledge.md |
 | Reading the PDF on Windows | pdftoppm unavailable | Agent-based extraction |
 | Transkribus authentication | The initial authentication failed with 401; it succeeded after correcting the credentials | Take credentials directly from the user |
 | The "correction" of the funding body (18.02.2026) | A review round classified the correct references to the funding body as errors and replaced them project-wide with "FWF". Reverted on 05.08.2026: APART-GSK is a programme of the body originally named, and the review of the first submission was that body's review. | A review can turn a correct statement into a wrong one. Proper names of funding programmes and institutions are checked against an external source rather than against the majority of occurrences inside the repository. |
@@ -170,7 +197,7 @@ The collection holds documents that the catalogue CSV does not mark as transcrib
 
 - Twelve copybooks, 2,224 pages, images only
 - Court and regiment ordinances, TLA_HS_208.1 and 208.2, 149 pages
-- The wedding cluster: Hs. 2466 with 33, Hs. 2467 with 58, Hs. 2468 with 19 and Hs. 2469 with 54 scans. These are counted scans from Transkribus. For the same four volumes the CSV states 60, 100, 35 and 140 pages, which are catalogue statements. Both sets are real; which of them represents the complete volume is unresolved (see DATA.md on the court ordinances).
+- The wedding cluster: Hs. 2466 with 33, Hs. 2467 with 58, Hs. 2468 with 19 and Hs. 2469 with 54 scans. These are counted scans from Transkribus. For the same four volumes the CSV states 60, 100, 35 and 140 pages, which are catalogue statements. Both sets are real; which of them represents the complete volume is unresolved (see data.md on the court ordinances).
 - Further manuscripts: Hs. 113 with 133, Hs. 324 with 86, Hs. 514 with 16, Hs. 792 with 7 and Hs. 5087.1+2 with 218 pages
 
 ## Open points (consolidated)

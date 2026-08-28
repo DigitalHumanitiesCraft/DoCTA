@@ -1,4 +1,27 @@
-# CONTEXT: Domain Knowledge, Methods, Epistemology
+---
+title: Domain Knowledge
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-02-18
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+template:
+  name: Vorlage Domänenwissen
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/domain-knowledge
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-domain-knowledge
+related: [INDEX, project, data, editorial-model]
+---
+
+# Domain Knowledge
 
 ## Hypothesis
 
@@ -107,7 +130,7 @@ It models events formally as trigger verb, then agent, then patient. The annotat
 | Event | event | Major events only, no everyday practices |
 | Relation | relations | Relation types have to be mapped onto SiCPAS |
 
-Current counts for the exported entities are in `data/stats.json`; see DATA.md for the quality of each entity type.
+Current counts for the exported entities are in `data/stats.json`; see data.md for the quality of each entity type.
 
 ## Cooperation partners
 
@@ -144,7 +167,7 @@ The domain expert takes the decision about validity. The research tool supplies 
 | Facsimile-verified | Human comparison of image and text | Evidence for the named transcription scope |
 | Editorially accepted | Decision by the project lead or a named domain expert | Accepted edition data |
 
-A model acting as judge can prioritise contradictions and conspicuous passages. It confers no truth status and no release status on an output. For transcription the reference classes and metrics of `HTR-EVALUATION.md` apply.
+A model acting as judge can prioritise contradictions and conspicuous passages. It confers no truth status and no release status on an output. For transcription the reference classes and metrics of `htr-evaluation.md` apply.
 
 ### Methodological positioning
 

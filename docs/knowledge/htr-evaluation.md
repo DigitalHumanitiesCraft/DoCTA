@@ -1,10 +1,30 @@
+---
+title: HTR Evaluation
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-08-27
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+related: [INDEX, data, specification, editorial-model]
+---
+
 # HTR Evaluation
 
 ## Scope
 
 This document sets out how DoCTA produces machine transcriptions, compares them and releases them for scholarly use. HTR serves here as an umbrella term. A vision-language model processes a whole page image; Transkribus recognises text on the basis of a layout and line structure. Both produce candidate text, and neither produces an edition.
 
-The pipeline rests on one asymmetry, argued in CONTEXT.md: a model cannot tell you how good its own output is. Everything below follows from that. Measurement replaces self-assessment, repetition replaces a single run, and a scholar decides at the facsimile what counts as read.
+The measuring cohorts, benchmark, pilot and pilot2, repeat every page because they measure. The edition cohort under `evaluation/edition/` stands outside that measurement. It transcribes each page once for edition use, writes no summary and computes no metric, and its text enters register and TEI as unrevised machine output under the same release rule as every other model transcription.
+
+The pipeline rests on one asymmetry, argued in domain-knowledge.md: a model cannot tell you how good its own output is. Everything below follows from that. Measurement replaces self-assessment, repetition replaces a single run, and a scholar decides at the facsimile what counts as read.
 
 ## Reference classes
 

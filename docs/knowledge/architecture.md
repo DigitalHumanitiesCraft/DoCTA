@@ -1,4 +1,27 @@
-# TECH: Architecture, Libraries, Project Structure
+---
+title: Architecture
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-02-18
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+template:
+  name: Vorlage Architecture
+  version: 0.4
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-architecture
+related: [INDEX, specification, design, data]
+---
+
+# Architecture
 
 ## Constraint
 
@@ -61,7 +84,7 @@ Object entities outnumber persons and places by an order of magnitude, so they s
 
 The current graph is small, a few hundred nodes at most with objects switched on, so a live force layout over the whole set is fast enough and needs no progressive disclosure. The cost that is already noticeable is the filter change: every toggle rebuilds the node and edge DOM, runs a fresh simulation and finishes with the label-separation pass, which is why switching the 212 objects on takes a moment (operator observation, 2026-08-28). The head-room in this architecture, in the order to use it: seed the simulation with the previous positions instead of starting cold, cache settled positions per filter state, cap the label pass by iteration budget, and only then a Canvas renderer when node counts grow past what SVG carries.
 
-The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in DESIGN.md and applies again when the court network returns as a view over edited text. At that size SVG marks become the bottleneck and a Canvas renderer is the upgrade path.
+The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in design.md and applies again when the court network returns as a view over edited text. At that size SVG marks become the bottleneck and a Canvas renderer is the upgrade path.
 
 Layout pre-computation exists as `scripts/compute_layout.py`, which writes `data/network.json`; no page loads that file, because the layout runs fast enough in the browser and a live simulation lets a filter change re-lay the graph.
 
@@ -81,7 +104,7 @@ The transcription panel is separate HTML beside the viewer. A synchronisation ov
 
 No library is needed. `Array.filter()` with `Map` and `Set` handles the data volumes involved. The logic sits inline in the page that uses it, as plain functions over a small filter-state object, rather than as a class.
 
-The source search on the home page filters over category, availability tier and free text. A faceted search across the SiCProD entities ran in the prototype phase with facets for entity type, gender, function and place type. Institution was never usable as a facet, because almost all institution records carry no type (see DATA.md), and a period slider fails on the heterogeneous and often missing datings.
+The source search on the home page filters over category, availability tier and free text. A faceted search across the SiCProD entities ran in the prototype phase with facets for entity type, gender, function and place type. Institution was never usable as a facet, because almost all institution records carry no type (see data.md), and a period slider fails on the heterogeneous and often missing datings.
 
 ## Data loading
 

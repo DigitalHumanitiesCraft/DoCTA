@@ -1,14 +1,32 @@
-# Accounting Encoding Specification
+---
+title: Accounting Encoding
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-08-28
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+related: [INDEX, editorial-model, architecture]
+---
+
+# Accounting Encoding
 
 ## Scope and status
 
-This document specifies how the DoCTA account-book pilot represents the objects defined in `EDITORIAL-MODEL.md` as JSON, inline TEI and RDF. It also assigns each validation rule to JSON Schema, RELAX NG, Schematron, deterministic pipeline checks or SHACL.
+This document specifies how the DoCTA account-book pilot represents the objects defined in `editorial-model.md` as JSON, inline TEI and RDF. It also assigns each validation rule to JSON Schema, RELAX NG, Schematron, deterministic pipeline checks or SHACL.
 
 The document defines an intended pilot specification. No current DoCTA account-book transcription, accounting annotation, TEI file or RDF graph has been facsimile-verified and editorially accepted under this specification. Existing model runs remain unrevised machine output.
 
 The pilot uses a hand-written project RELAX NG schema and a separate Schematron schema. A TEI ODD is deferred beyond the pilot. The schema sources, generated artefacts and validator versions must remain pinned and reproducible.
 
-Part of this specification has an executable counterpart in `pipeline/accounts/`, the module that turns those rules into code a test can hold to. Implemented there are the PAGE-derived anchoring and its identity and digest rules, the JSON records for Transcription Revision, annotation proposal and review decision with the status axes of `EDITORIAL-MODEL.md` kept separate, the staleness rule that invalidates an anchor when its text digest changes, and the validation of TEI and RDF against the project RELAX NG, the Schematron rules and the SHACL shapes.
+Part of this specification has an executable counterpart in `pipeline/accounts/`, the module that turns those rules into code a test can hold to. Implemented there are the PAGE-derived anchoring and its identity and digest rules, the JSON records for Transcription Revision, annotation proposal and review decision with the status axes of `editorial-model.md` kept separate, the staleness rule that invalidates an anchor when its text digest changes, and the validation of TEI and RDF against the project RELAX NG, the Schematron rules and the SHACL shapes.
 
 The remainder is prose specification. Annotation Sets and their set hash, the Edition Build Manifest, and the generation and comparison steps of the deterministic build below, from TEI generation through the byte-for-byte clean rebuild, describe an intended build that does not exist yet. A set hash and a manifest are testable only against the build that reads them, so they stay specification until such a consumer is written, and this document remains the authority for their form.
 

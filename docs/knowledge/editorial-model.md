@@ -1,3 +1,21 @@
+---
+title: Editorial Model
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-08-28
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+related: [INDEX, accounting-encoding, htr-evaluation]
+---
+
 # Editorial Model
 
 ## Scope and status
@@ -6,7 +24,7 @@ This document defines the editorial objects, evidence relations and responsible 
 
 The model describes an intended specification. The present DoCTA account-book material consists of unrevised machine transcriptions and has no facsimile-verified or editorially accepted accounting layer. Conformance to this document will require implementation and scholarly acceptance.
 
-`HTR-EVALUATION.md` remains authoritative for recognition experiments, metrics and test-set design. `ACCOUNTING-ENCODING.md` defines the machine-readable representations of the objects introduced here.
+`htr-evaluation.md` remains authoritative for recognition experiments, metrics and test-set design. `accounting-encoding.md` defines the machine-readable representations of the objects introduced here.
 
 ## Editorial layers
 

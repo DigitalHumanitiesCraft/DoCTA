@@ -1,6 +1,36 @@
-# DATA: Sources, Structure, Quality
+---
+title: Data
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-02-18
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+template:
+  name: Vorlage Datengrundlage
+  version: 0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/data
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data
+knowledge-sources:
+  institutions:
+    Digital Humanities Craft OG: https://dhcraft.org
+  datasets:
+    SiCProD: https://sicprod.acdh-dev.oeaw.ac.at/
+    Transkribus collection 2197991: https://app.transkribus.org/collection/2197991
+    Inventaria edition: https://www.inventaria.at/
+related: [INDEX, specification, htr-evaluation, domain-knowledge]
+---
 
-This document describes the data DoCTA works with, what each source can carry and where it breaks. Counts of the exported data are held in `data/stats.json`, which the site reads; figures given here characterise the collections at the stated verification date and are snapshots, not live values.
+# Data
+
+This document describes the data DoCTA works with, what each source can carry and where it breaks. The site computes the figures it shows in the browser from `data/sources.json` and the register projection; figures given here characterise the collections at the stated verification date and are snapshots rather than live values.
 
 ## 1. SiCProD API
 
@@ -179,7 +209,7 @@ The CSV lists 25 entries (numbered 00 to 26, omitting 23 and 25, which the catal
 
 ### Court ordinances (11 catalogue entries)
 
-Among them a coherent cluster on Sigismund's wedding of 1484. The page figures are catalogue statements from the CSV; in brackets stands the counted number of scans in the Transkribus collection, which is consistently lower (see JOURNAL.md). Which of the two counts represents the complete volume is unresolved.
+Among them a coherent cluster on Sigismund's wedding of 1484. The page figures are catalogue statements from the CSV; in brackets stands the counted number of scans in the Transkribus collection, which is consistently lower (see journal.md). Which of the two counts represents the complete volume is unresolved.
 
 - Hs. 2466: "Notl der hochzeit", register of invitations, 60 pp. per CSV (33 scans)
 - Hs. 2467: "Rescribent der hochzeit", instructions to the court offices, 100 pp. per CSV (58 scans)
@@ -215,7 +245,7 @@ Several of the castle inventories were edited and published by the **Inventaria*
 
 The wider inventory stock in the collection is a different matter. The catalogue marks 55 inventories as transcribed; 57 documents actually carry text, two of them missing from the CSV marking (A 125.3-4 and A 142.1-2, each with two Transkribus document IDs). Three documents carry the Transkribus workflow status `DONE`, the rest `IN_PROGRESS`. The workflow status is not a scholarly approval and must never be used as a substitute for one. The canonical description of the stock is therefore **inventories with working transcriptions**, with a small `DONE` subset used as a reference anchor in the benchmark.
 
-Two transcription conventions are present in the stock. Any comparison across documents needs a convention partition and a versioned adapter onto the DoCTA data contract. Reference classes and evaluation rules are in `HTR-EVALUATION.md`.
+Two transcription conventions are present in the stock. Any comparison across documents needs a convention partition and a versioned adapter onto the DoCTA data contract. Reference classes and evaluation rules are in `htr-evaluation.md`.
 
 **Account books.** All 26 volumes are digitized. Six volumes (nos. 1 to 6) have a layout analysis with baselines and regions; the remaining twenty carry the status `NEW`. No volume holds transcription text in Transkribus. Machine transcriptions live outside Transkribus under `evaluation/`, and they are unrevised model output.
 
@@ -229,7 +259,7 @@ Publication is not a licence. Material that is freely accessible on the web but 
 
 Three precisions govern the Inventaria case. The Inventaria annotation collection is treated as a potentially protected database (§§ 76c–76d UrhG); sui generis protection presupposes a substantial investment in obtaining, verifying or presenting the contents, which is plausible for a scholarly annotation collection but has not been legally determined, so the cautious reading governs. The repository's CC BY 4.0 licence does not automatically capture third-party material that is clearly marked as excluded, but inclusion would still require its own authorization and create licence ambiguity; third-party material is therefore marked as such wherever it appears (attribution chips, citation lines, this document). A local research copy rests on § 42h UrhG, automated scholarly analysis under lawful access with storage secured for the research purpose; that is no general permission for arbitrary internal reuse, and such a copy never enters the repository or the website.
 
-The base transcriptions of the Inventaria-transcribed inventories came into the repository through the shared Transkribus collection and are attributed wherever they are displayed or evaluated. The written permission sought from the Inventaria project covers this existing use and the planned use of the published annotations as evaluation ground truth; once granted, the permission and its licence terms are recorded in `JOURNAL.md`.
+The base transcriptions of the Inventaria-transcribed inventories came into the repository through the shared Transkribus collection and are attributed wherever they are displayed or evaluated. The written permission sought from the Inventaria project covers this existing use and the planned use of the published annotations as evaluation ground truth; once granted, the permission and its licence terms are recorded in `journal.md`.
 
 ### Account books in the collection
 
@@ -338,7 +368,7 @@ The collection metadata `data/transkribus_collection.json` and `data/transkribus
 
 Openings from account book 2 form the core of the versioned prompt benchmark under `evaluation/benchmark/`; the page set was chosen from a visual survey of all 123 openings so that each selected page represents a distinct phenomenon (rule structure, name rubrics, columns of figures, cancellation crosses, faded rubrics, blank and transitional pages). The pilot under `evaluation/pilot/` runs the same prompts over a stretch of consecutive openings from the start of the volume.
 
-The models reliably recognise blank pages, the division of an opening into its two halves and the coarse entry structure. Personal names, dates and monetary amounts vary between repeated runs of the same prompt, and the amounts are precisely what account-book research depends on. All model output is therefore treated as an unrevised proposal. Edition use requires facsimile verification and an explicit editorial decision. The full argument and the current measurements are in `HTR-EVALUATION.md` and in `data/benchmark/summary.json`.
+The models reliably recognise blank pages, the division of an opening into its two halves and the coarse entry structure. Personal names, dates and monetary amounts vary between repeated runs of the same prompt, and the amounts are precisely what account-book research depends on. All model output is therefore treated as an unrevised proposal. Edition use requires facsimile verification and an explicit editorial decision. The full argument and the current measurements are in `htr-evaluation.md` and in `data/benchmark/summary.json`.
 
 ### First category identified
 

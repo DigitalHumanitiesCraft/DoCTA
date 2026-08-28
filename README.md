@@ -29,8 +29,9 @@ DoCTA/
 │   ├── benchmark/          Versioned prompt benchmark: page set, prompts, runs, metrics
 │   ├── pilot/              The benchmark prompts on continuous, uncurated material
 │   ├── pilot2/             The same frozen configuration on a wider slice of unseen material
-│   └── checks/             Reference-free checks over transcription runs, currently the
-│                           arithmetic probe of the account-book amounts
+│   ├── checks/             Reference-free checks over transcription runs, currently the
+│   │                       arithmetic probe of the account-book amounts
+│   └── edition/            The pipeline's own per-page VLM transcriptions for edition use
 ├── experiments/
 │   └── transcription-test/ The frozen first VLM transcription test of 26.08.2026
 ├── pipeline/               Page register (one entry per page with content class, empty
@@ -43,7 +44,7 @@ DoCTA/
 └── tests/                  Playwright smoke and interaction tests against the published site
 ```
 
-The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. Details are in `docs/knowledge/TECH.md`.
+The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. Details are in `docs/knowledge/architecture.md`.
 
 The figures the site shows are computed in the browser from the source catalogue in `docs/data/sources.json` and the register projection in `docs/data/pipeline/register_summary.json`, so no count is hard-coded in a page. Benchmark results live in `evaluation/benchmark/summary.json`, with the published export under `docs/data/benchmark/`.
 
@@ -54,15 +55,15 @@ The figures the site shows are computed in the browser from the source catalogue
 | Document | Content |
 |----------|---------|
 | `INDEX.md` | Map of content and reading order |
-| `DATA.md` | Data sources, structure and quality |
-| `HTR-EVALUATION.md` | Reference classes, benchmark protocol, metrics, release rule |
-| `REQUIREMENTS.md` | Goals, constraints, review criticism and how it was answered |
-| `CONTEXT.md` | Domain knowledge, the SiCPAS model, methods, epistemology |
-| `EDITORIAL-MODEL.md` | Editorial objects, evidence relations and responsible decisions of the account-book pilot |
-| `ACCOUNTING-ENCODING.md` | How those objects are represented as JSON, TEI and RDF, and which rule is checked by which validator |
-| `TECH.md` | Architecture and implementation |
-| `DESIGN.md` | Design and interaction decisions, including what was rejected |
-| `JOURNAL.md` | Dated log of decisions, exploration results and open questions |
+| `data.md` | Data sources, structure and quality |
+| `htr-evaluation.md` | Reference classes, benchmark protocol, metrics, release rule |
+| `specification.md` | Goals, constraints, review criticism and how it was answered |
+| `domain-knowledge.md` | Domain knowledge, the SiCPAS model, methods, epistemology |
+| `editorial-model.md` | Editorial objects, evidence relations and responsible decisions of the account-book pilot |
+| `accounting-encoding.md` | How those objects are represented as JSON, TEI and RDF, and which rule is checked by which validator |
+| `architecture.md` | Architecture and implementation |
+| `design.md` | Design and interaction decisions, including what was rejected |
+| `journal.md` | Dated log of decisions, exploration results and open questions |
 
 ## Data sources
 

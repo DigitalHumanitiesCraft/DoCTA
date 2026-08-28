@@ -57,17 +57,26 @@
     initBanner();
 
     const DOCS = [
-      { id: 'INDEX',        file: 'knowledge/INDEX.md',        title: 'Overview',          desc: 'Map of content, phase status' },
-      { id: 'REQUIREMENTS', file: 'knowledge/REQUIREMENTS.md', title: 'Requirements',       desc: 'Review critique, goals, constraints' },
-      { id: 'DATA',         file: 'knowledge/DATA.md',         title: 'Data',               desc: 'SiCProD, CSV, Transkribus, quality' },
-      { id: 'HTR-EVALUATION', file: 'knowledge/HTR-EVALUATION.md', title: 'HTR Evaluation', desc: 'Transcription, references, review specification' },
-      { id: 'CONTEXT',      file: 'knowledge/CONTEXT.md',      title: 'Context',            desc: 'Data model, praxeology, BeNASch' },
-      { id: 'EDITORIAL-MODEL', file: 'knowledge/EDITORIAL-MODEL.md', title: 'Editorial Model', desc: 'Editorial objects, evidence, decisions' },
-      { id: 'ACCOUNTING-ENCODING', file: 'knowledge/ACCOUNTING-ENCODING.md', title: 'Accounting Encoding', desc: 'Machine-readable accounts specification' },
-      { id: 'TECH',         file: 'knowledge/TECH.md',         title: 'Tech',               desc: 'Architecture, libraries, design system' },
-      { id: 'DESIGN',       file: 'knowledge/DESIGN.md',       title: 'Design',             desc: 'Design decisions and rejected alternatives' },
-      { id: 'JOURNAL',      file: 'knowledge/JOURNAL.md',      title: 'Journal',            desc: 'Decisions, exploration, dead ends' },
+      { id: 'index',        file: 'knowledge/INDEX.md',        title: 'Overview',          desc: 'Map of content and reading order' },
+      { id: 'project',      file: 'knowledge/project.md',      title: 'Project',            desc: 'Charter: what, for whom, on what material' },
+      { id: 'specification', file: 'knowledge/specification.md', title: 'Specification',    desc: 'Review critique, goals, constraints' },
+      { id: 'data',         file: 'knowledge/data.md',         title: 'Data',               desc: 'SiCProD, CSV, Transkribus, quality' },
+      { id: 'htr-evaluation', file: 'knowledge/htr-evaluation.md', title: 'HTR Evaluation', desc: 'Transcription, references, review specification' },
+      { id: 'domain-knowledge', file: 'knowledge/domain-knowledge.md', title: 'Domain Knowledge', desc: 'Data model, praxeology, BeNASch' },
+      { id: 'editorial-model', file: 'knowledge/editorial-model.md', title: 'Editorial Model', desc: 'Editorial objects, evidence, decisions' },
+      { id: 'accounting-encoding', file: 'knowledge/accounting-encoding.md', title: 'Accounting Encoding', desc: 'Machine-readable accounts specification' },
+      { id: 'architecture', file: 'knowledge/architecture.md', title: 'Architecture',       desc: 'Libraries, project structure, design system' },
+      { id: 'design',       file: 'knowledge/design.md',       title: 'Design',             desc: 'Design decisions and rejected alternatives' },
+      { id: 'journal',      file: 'knowledge/journal.md',      title: 'Journal',            desc: 'Decisions, exploration, dead ends' },
+      { id: 'handoff',      file: 'knowledge/handoff.md',      title: 'Handoff',            desc: 'Open handoff points (process inbox)' },
     ];
+    // Legacy uppercase anchors from before the lowercase naming contract
+    const LEGACY_IDS = {
+      'INDEX': 'index', 'REQUIREMENTS': 'specification', 'DATA': 'data',
+      'HTR-EVALUATION': 'htr-evaluation', 'CONTEXT': 'domain-knowledge',
+      'EDITORIAL-MODEL': 'editorial-model', 'ACCOUNTING-ENCODING': 'accounting-encoding',
+      'TECH': 'architecture', 'DESIGN': 'design', 'JOURNAL': 'journal',
+    };
 
     const navEl = document.getElementById('kv-nav');
     const contentEl = document.getElementById('kv-content');
@@ -117,7 +126,8 @@
         if (!cache[id]) {
           const resp = await fetch(doc.file);
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          cache[id] = await resp.text();
+          // Strip YAML frontmatter; marked would render it as literal text
+          cache[id] = (await resp.text()).replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
         }
         contentEl.innerHTML = marked.parse(cache[id]);
       } catch (err) {
@@ -128,7 +138,8 @@
 
     // Hash routing
     function onHash() {
-      const hash = location.hash.replace('#', '');
+      let hash = location.hash.replace('#', '');
+      if (LEGACY_IDS[hash]) hash = LEGACY_IDS[hash];
       if (hash && DOCS.find(d => d.id === hash)) {
         loadDoc(hash);
       } else {

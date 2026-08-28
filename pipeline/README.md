@@ -179,13 +179,13 @@ python test_check_pipeline.py        # or: pytest pipeline/test_check_pipeline.p
 
 ## The accounts module
 
-`accounts/` is the executable part of the account-book encoding specification. `docs/knowledge/ACCOUNTING-ENCODING.md` and `docs/knowledge/EDITORIAL-MODEL.md` are the specification; this module implements the part of it that a test can hold to, and it carries its own fixtures, schemas and tests.
+`accounts/` is the executable part of the account-book encoding specification. `docs/knowledge/accounting-encoding.md` and `docs/knowledge/editorial-model.md` are the specification; this module implements the part of it that a test can hold to, and it carries its own fixtures, schemas and tests.
 
 Implemented are four things. `anchors.py` reads PAGE XML into source anchors and lines. `models.py` holds the pydantic models `SourceAnchor`, `TranscriptionLine`, `TranscriptionRevision`, `AnnotationProposal` and `ReviewDecision` with the separate status axes of the editorial model, so verification, editorial decision, formal validation and publication stay four independent fields. `review.py` supplies `proposal_is_stale`, `stale_proposal_ids` and `make_review_decision`, which is the machinery that makes a proposal fall out of date when the text it points into changes. `validate_tei.py` and `validate_rdf.py` run the account-book artefacts against the project RELAX NG, the Schematron rules and the SHACL shapes in `accounts/schema/` and `accounts/shapes/`.
 
 The qualified line identity is the source, the document, the page, the region and the line, and the text digest is taken over that identity together with the text. The side of an opening, verso or recto, is derived from the page geometry and stays out of both. A derived value in an identifier would let a change in the geometry heuristic rename a line and invalidate every anchor pointing at it, which is exactly what the identity is supposed to prevent.
 
-Annotation Sets, the Edition Build Manifest and the generation steps of the deterministic build, from TEI generation through the byte-for-byte clean rebuild, remain prose specification in `ACCOUNTING-ENCODING.md`. A set hash and a manifest are testable only against the build that reads them, and that build does not exist yet; they enter the module with their first consumer.
+Annotation Sets, the Edition Build Manifest and the generation steps of the deterministic build, from TEI generation through the byte-for-byte clean rebuild, remain prose specification in `accounting-encoding.md`. A set hash and a manifest are testable only against the build that reads them, and that build does not exist yet; they enter the module with their first consumer.
 
 ## Known gaps in the input data
 

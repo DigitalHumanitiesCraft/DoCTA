@@ -1,4 +1,27 @@
-# DESIGN: Design and Interaction Decisions
+---
+title: Design
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-08-05
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+template:
+  name: Vorlage Design
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/design
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-design
+related: [INDEX, architecture, specification]
+---
+
+# Design
 
 This document records which design options were considered and which were rejected, each with its reason. Under the Promptotyping principle the decision logic is the reproducible part; the code is disposable.
 
@@ -50,7 +73,7 @@ The dedicated network page and the faceted search over SiCProD were removed when
 
 Extracted entities and relations carry the values secure, worth checking and problematic. The current implementation still takes that grading from the model output and therefore holds no epistemic validity of its own.
 
-The next iteration binds the display to documented workflow states. Secure presupposes a deterministic check or a scholarly verification. Worth checking marks an open comparison against image or source. Problematic marks a recognised contradiction, a strong divergence between models or a violated rule. Percentage self-assessments produced by a language model are never displayed. See CONTEXT.md on epistemic asymmetry and HTR-EVALUATION.md on the review contract.
+The next iteration binds the display to documented workflow states. Secure presupposes a deterministic check or a scholarly verification. Worth checking marks an open comparison against image or source. Problematic marks a recognised contradiction, a strong divergence between models or a violated rule. Percentage self-assessments produced by a language model are never displayed. See domain-knowledge.md on epistemic asymmetry and htr-evaluation.md on the review contract.
 
 ## 5. Rejected and open
 

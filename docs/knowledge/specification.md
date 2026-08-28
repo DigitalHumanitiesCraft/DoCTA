@@ -1,4 +1,27 @@
-# REQUIREMENTS: Goals, Constraints, Success Criteria
+---
+title: Specification
+project:
+  name: DoCTA
+  repository: https://github.com/DigitalHumanitiesCraft/DoCTA
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+language: en
+version: "1.0"
+created: 2026-02-18
+updated: 2026-08-28
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Fable 5)
+template:
+  name: Vorlage Specification
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
+related: [INDEX, project, data, htr-evaluation]
+---
+
+# Specification
 
 ## Project frame
 
@@ -75,7 +98,7 @@ The first submission was rejected in its then form, and the review addressed pri
 | 6 | Sources not sufficiently characterised | The source catalogue is categorised, filterable and sortable, with an availability tier per source. | Code |
 | 7 | No exemplary source excerpts | Real inventory pages with working transcription, entities and a source link. Reference status is now stated explicitly. | Code |
 | 8 | Project plan too generic | A working pipeline is the specific plan. Each stage is shown on concrete material. | Code |
-| 9 | Evaluation of technical procedures missing | The versioned prompt benchmark measures each prompt iteration with repetitions, stratified metrics and full provenance. `HTR-EVALUATION.md` defines reference classes, task-specific metrics and the release rule. | Code and method |
+| 9 | Evaluation of technical procedures missing | The versioned prompt benchmark measures each prompt iteration with repetitions, stratified metrics and full provenance. `htr-evaluation.md` defines reference classes, task-specific metrics and the release rule. | Code and method |
 | 10 | No fulfilment criteria for the hypotheses | Raw counts on the home page evidence data availability. Fulfilment criteria for historical hypotheses must be formulated per research question in the proposal, as observable evidence together with a refutation criterion. | Text and method |
 
 Seven points are addressed directly in code. Point 9 has moved from a first test to a running measuring instrument. Points 2, 5 and 10 need explicit work in the proposal text and cannot be answered by building anything.
@@ -88,7 +111,7 @@ Seven points are addressed directly in code. Point 9 has moved from a first test
 | CER and WER on account book 2 | No editorially accepted ground-truth transcription exists. Only variant stability, structural observation and scholarly spot checks are available. |
 | Derived rates (relation coverage, source coverage, network metrics) | Only raw counts are shown. A rate needs a defined denominator, that is, an answer to what counts as fully covered, and that has not been fixed methodologically. |
 
-The full review specification is in `HTR-EVALUATION.md`.
+The full review specification is in `htr-evaluation.md`.
 
 ## Success criteria
 
@@ -101,4 +124,4 @@ The full review specification is in `HTR-EVALUATION.md`.
 ## Open questions
 
 - Whether bilingual presentation in German and English is needed is unresolved. The site is currently English; the source material and the working documents are German.
-- Which case study the resubmission builds on is not decided (see CONTEXT.md).
+- Which case study the resubmission builds on is not decided (see domain-knowledge.md).
