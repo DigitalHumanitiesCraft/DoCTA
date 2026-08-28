@@ -499,6 +499,12 @@ def _check_entity_refs() -> list[Finding]:
         if path.name == bt.REGISTER_FILE:
             continue
         for element in etree.parse(str(path)).getroot().iter():
+            # A marked entity is what points into the register, and the entity
+            # responsibility is what identifies one; the header carries @ref of
+            # its own, on the name of an attributed project, which addresses
+            # that project and not a register entry.
+            if element.get("resp") != f"#{bt.RESP_ENTITY}":
+                continue
             ref = element.get("ref")
             if not ref:
                 continue

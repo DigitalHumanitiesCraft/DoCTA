@@ -5,7 +5,9 @@ the Transkribus export into a diplomatic, line-faithful TEI file per document,
 honest about the fact that the text is unrevised machine transcription.
 
 Data flow (repo-local only, no network):
-  docs/data/source_mapping.json      matched CSV entry <-> Transkribus doc
+  docs/data/source_mapping.json      matched CSV entry <-> Transkribus doc, and
+                                     the Inventaria attribution of a transcription
+  docs/data/inventaria_mapping.json  deep links to the published Inventaria edition
   docs/data/sources.json             archival metadata (shelfmark, title, dating)
   docs/data/transkribus_status.json  page-status distribution (DONE = corrected)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
@@ -56,6 +58,12 @@ Design decisions:
   pattern: one respStmt per step that actually happened, a digest pinning the
   generating script version, and per-stream status entries in revisionDesc. A
   responsibility is never declared for a step that did not run.
+  Most of the corpus carries a transcription the Inventaria project made in
+  Transkribus. That origin is named in the header of every such file, with the
+  published edition linked where the harvest found it, and the wording follows
+  the DONE page count of Transkribus. DONE is a workflow status of that
+  platform; the DoCTA review of a page against the facsimile is a separate axis
+  and is never derived from it.
 
 Usage:
   python build_tei.py                  # write docs/data/tei/
@@ -133,6 +141,7 @@ REVIEWED_STATUS = ("gesichtet", "abgenommen")
 # naming the layer the file actually carries.
 RESP_TRANSKRIBUS = "resp-transkribus-layer"
 RESP_VLM = "resp-vlm-transcription"
+RESP_INVENTARIA = "resp-inventaria-transcription"
 RESP_GENERATION = "resp-tei-generation"
 RESP_VERIFICATION = "resp-expert-verification"
 RESP_ENTITY = "resp-entity-llm"
@@ -141,6 +150,15 @@ RESP_ENTITY = "resp-entity-llm"
 # transcription the DoCTA pipeline produced itself for a source Transkribus
 # holds no text for.
 TRANSKRIBUS_LAYER, VLM_LAYER = "transkribus", "vlm"
+
+# The project whose transcription campaign produced most of the Transkribus
+# layer of this corpus. Its transcriptions are cited with attribution wherever
+# they are displayed or evaluated, so the header names it and links its
+# published edition where one is known.
+INVENTARIA_NAME = "Inventaria project"
+INVENTARIA_URL = "https://www.inventaria.at/"
+INVENTARIA_FLAG = "Inventaria"  # value of csv_transkribiert in source_mapping
+INVENTARIA_MAPPING = DATA / "inventaria_mapping.json"
 
 # Prototype named entities of a single document. The file names the docId it
 # belongs to, so no other document can pick the layer up by accident.
@@ -211,6 +229,39 @@ def _generation_source(doc: dict) -> str:
     return "the Transkribus export"
 
 
+def _inventaria_resp(doc: dict) -> tuple[str, str, str, str] | None:
+    """The Inventaria attribution of this document, or None where it has none.
+
+    The wording follows the DONE page count of Transkribus and says outright
+    that DONE is a status of that platform, so the statement cannot be read as a
+    verification DoCTA carried out.
+    """
+    if not doc.get("inventaria"):
+        return None
+    state = doc["correction"]
+    platform = (
+        "; done is a workflow status of that platform and records a step of"
+        " the Inventaria project"
+    )
+    if state == CORRECTED:
+        resp = (
+            "Transcription produced and corrected by the Inventaria project,"
+            f" marked done in Transkribus{platform}"
+        )
+    elif state == PARTLY:
+        resp = (
+            "Transcription produced and corrected by the Inventaria project,"
+            f" marked done in Transkribus for {doc['done_pages']} of"
+            f" {doc['pages']} pages{platform}"
+        )
+    else:
+        resp = (
+            "Transcription campaign of the Inventaria project in Transkribus,"
+            " no page marked done there"
+        )
+    return (RESP_INVENTARIA, resp, INVENTARIA_NAME, INVENTARIA_URL)
+
+
 def _resp_stmts(
     doc: dict, indent: str, entities: bool = False, reviewed: bool = False
 ) -> list[str]:
@@ -253,20 +304,27 @@ def _resp_stmts(
         f"Deterministic TEI generation from {_generation_source(doc)},"
         " without editorial judgment"
     )
-    steps = [
-        transcription,
+    # The fourth field is the @ref of the name, which only an institutional
+    # actor with a stable URL carries.
+    steps: list[tuple[str, str, str, str | None]] = [(*transcription, None)]
+    # The attribution qualifies the Transkribus layer, so it stands next to it.
+    if attribution := _inventaria_resp(doc):
+        steps.append(attribution)
+    steps.append(
         (
             RESP_GENERATION,
             generation,
             f"pipeline/build_tei.py (sha256 {script_digest()})",
-        ),
-    ]
+            None,
+        )
+    )
     if reviewed:
         steps.append(
             (
                 RESP_VERIFICATION,
                 "Page-level scholarly review and correction in the DoCTA viewer",
                 "DoCTA reviewer (initials in the revision log)",
+                None,
             )
         )
     if entities:
@@ -276,14 +334,16 @@ def _resp_stmts(
                 "Named-entity extraction by an LLM agent in the prototype"
                 " phase, informally reviewed, not verified by a scholar",
                 "DoCTA prototype extraction",
+                None,
             )
         )
     out = []
-    for resp_id, resp, name in steps:
+    for resp_id, resp, name, name_ref in steps:
+        ref = f' ref="{_att(name_ref)}"' if name_ref else ""
         out += [
             f'{indent}<respStmt xml:id="{resp_id}">',
             f"{indent}  <resp>{_esc(resp)}</resp>",
-            f"{indent}  <name>{_esc(name)}</name>",
+            f"{indent}  <name{ref}>{_esc(name)}</name>",
             f"{indent}</respStmt>",
         ]
     return out
@@ -306,6 +366,49 @@ _REMAINDER = {
         " and marked done in Transkribus."
     ),
 }
+
+
+# The second and third sentence of an attributed declaration: DONE belongs to
+# the Transkribus workflow, and the DoCTA review of a page against the facsimile
+# is a state of its own that the register holds.
+_AXES = (
+    "That done status is a workflow status of Transkribus and records a step"
+    " of the Inventaria project. DoCTA has not independently verified the"
+    " text against the facsimile, and the DoCTA review status of a page is a"
+    " separate axis recorded in the page register."
+)
+
+
+def _inventaria_decl(doc: dict) -> str:
+    """State paragraph of a document the Inventaria project transcribed."""
+    state = doc["correction"]
+    if state == CORRECTED:
+        return (
+            "The transcription of this file was produced by the Inventaria"
+            " project and corrected page by page in Transkribus, where every"
+            f" page of it is marked done. {_AXES} The TEI encoding is"
+            " machine-generated, so the file is not yet a citable DoCTA"
+            " edition text."
+        )
+    if state == PARTLY:
+        return (
+            "The transcription of this file was produced by the Inventaria"
+            f" project in Transkribus, where {doc['done_pages']} of its"
+            f" {doc['pages']} pages are corrected and marked done; the"
+            " remaining pages carry the unrevised automated recognition layer"
+            f" of the same campaign, and every reading there is provisional."
+            f" {_AXES} The TEI encoding is machine-generated, so the file is"
+            " not yet a citable DoCTA edition text."
+        )
+    return (
+        "The text of this file comes from the transcription campaign of the"
+        " Inventaria project in Transkribus, where no page of it is marked"
+        " done. It is therefore unrevised machine transcription and every"
+        " reading is provisional. DoCTA has not read it against the facsimile"
+        " either, and the DoCTA review status of a page is a separate axis"
+        " recorded in the page register. The file is not a citable edition"
+        " text."
+    )
 
 
 def _editorial_decl(
@@ -350,6 +453,11 @@ def _editorial_decl(
                 " the pages the pipeline holds an image reference for; the"
                 " remaining pages are untranscribed."
             )
+    elif doc.get("inventaria"):
+        # Naming the origin is what keeps the declaration true: for a document
+        # marked done in Transkribus the generic machine-transcription wording
+        # below would be factually wrong.
+        first = _inventaria_decl(doc)
     elif state == MACHINE:
         first = (
             "The text of this file is unrevised machine transcription."
@@ -519,8 +627,15 @@ def _header(
             f"            <origin>{origdate}</origin>",
             "          </history>",
         ]
+    out.append("        </msDesc>")
+    if edition := doc.get("edition_url"):
+        out += [
+            "        <bibl>",
+            f'          <ref target="{_att(edition)}">Published edition of this'
+            " inventory by the Inventaria project on Transkribus Sites</ref>",
+            "        </bibl>",
+        ]
     out += [
-        "        </msDesc>",
         "      </sourceDesc>",
         "    </fileDesc>",
         "    <encodingDesc>",
@@ -986,6 +1101,7 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
     # Same source as build_register.py: a DONE page is human-corrected in
     # Transkribus, everything else is the automated recognition layer.
     status_by_id = {d["id"]: d for d in _load(DATA / "transkribus_status.json")}
+    editions = _edition_links()
     docs: list[dict] = []
     for entry in mapping:
         doc_id = entry["transkribus_id"]
@@ -999,6 +1115,12 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
             layer = VLM_LAYER
         if layer is None:
             continue
+        # The attribution is a statement about a Transkribus transcription, so a
+        # text DoCTA produced itself never picks it up from the source mapping.
+        attributed = (
+            entry.get("csv_transkribiert") == INVENTARIA_FLAG
+            and layer == TRANSKRIBUS_LAYER
+        )
         doc = {
             "docId": doc_id,
             "shelfmark": entry["csv_signatur"],
@@ -1009,6 +1131,8 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
             "pages": pages,
             "correction": _correction(done, pages),
             "layer": layer,
+            "inventaria": attributed,
+            "edition_url": editions.get(doc_id) if attributed else None,
         }
         if layer == VLM_LAYER:
             # The header names the model and the prompt that produced the text,
@@ -1017,6 +1141,20 @@ def _documents(register_dir: Path = REGISTER) -> list[dict]:
         docs.append(doc)
     docs.sort(key=lambda d: d["docId"])
     return docs
+
+
+def _edition_links() -> dict[int, str]:
+    """Deep links to the published Inventaria edition of a document.
+
+    The two sources are the ones the site projection in build_register.py reads:
+    the flag csv_transkribiert of the source mapping names the documents, this
+    file holds the link of each. A flagged document without an entry stays
+    attributed and carries no link.
+    """
+    if not INVENTARIA_MAPPING.exists():
+        return {}
+    documents = _load(INVENTARIA_MAPPING).get("documents", [])
+    return {d["docId"]: d["url"] for d in documents}
 
 
 def _first_edition_run(doc_id: int, register_dir: Path) -> dict | None:

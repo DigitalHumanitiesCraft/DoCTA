@@ -76,11 +76,15 @@
   <!-- The closed list of work steps a file may declare a responsibility for.
        The two transcription steps are alternatives: a file carries either the
        Transkribus layer or the vision-model transcription the DoCTA pipeline
-       produced for a source Transkribus holds no text for. -->
+       produced for a source Transkribus holds no text for.
+       resp-inventaria-transcription attributes the Transkribus layer to the
+       project that produced it and stands beside that step, never in place of
+       it. -->
   <define name="resp.id">
     <choice>
       <value>resp-transkribus-layer</value>
       <value>resp-vlm-transcription</value>
+      <value>resp-inventaria-transcription</value>
       <value>resp-tei-generation</value>
       <value>resp-entity-llm</value>
       <value>resp-expert-verification</value>
@@ -123,7 +127,12 @@
             <element name="respStmt">
               <attribute name="xml:id"><ref name="resp.id"/></attribute>
               <element name="resp"><text/></element>
-              <element name="name"><text/></element>
+              <!-- @ref only where the actor is an institution with a stable
+                   URL; a person or a script carries a bare name. -->
+              <element name="name">
+                <optional><attribute name="ref"><ref name="url"/></attribute></optional>
+                <text/>
+              </element>
             </element>
           </oneOrMore>
         </element>
@@ -137,6 +146,16 @@
               </element>
             </optional>
           </element>
+          <!-- The published edition of this source, where the transcription
+               comes from a project that published one. -->
+          <optional>
+            <element name="bibl">
+              <element name="ref">
+                <attribute name="target"><ref name="url"/></attribute>
+                <text/>
+              </element>
+            </element>
+          </optional>
         </element>
       </element>
       <ref name="encodingDesc"/>

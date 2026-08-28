@@ -29,6 +29,11 @@ SAMPLES = (11327963, 11328042)
 FULLY_CORRECTED = (11328300, 11330019, 11330020)
 MACHINE_SAMPLE = 11327963
 
+# a document of the Inventaria campaign with no page marked done in Transkribus,
+# and the one attributed document the edition-link harvest found no entry for
+ATTRIBUTED_MACHINE = 11327963
+ATTRIBUTED_WITHOUT_LINK = 11329439
+
 # the document carrying the prototype entity extraction, and one without any
 DEMO_DOC = 11328300
 NON_DEMO_DOC = 11327963
@@ -803,12 +808,16 @@ def test_every_document_declares_its_work_steps() -> None:
     """
     built = _built()
     layers = {d["docId"]: d["layer"] for d in bt._documents()}
+    attributed = {d["docId"]: bool(d["inventaria"]) for d in bt._documents()}
     for doc_id, xml in built.items():
         root = ElementTree.fromstring(xml)
         transcription = (
             bt.RESP_VLM if layers[doc_id] == bt.VLM_LAYER else bt.RESP_TRANSKRIBUS
         )
-        expected = [transcription, bt.RESP_GENERATION]
+        expected = [transcription]
+        if attributed[doc_id]:
+            expected.append(bt.RESP_INVENTARIA)
+        expected.append(bt.RESP_GENERATION)
         if _has_entities(doc_id):
             expected.append(bt.RESP_ENTITY)
         assert _resp_ids(root) == expected, f"respStmt ids differ in {doc_id}"
@@ -840,6 +849,185 @@ def test_correction_state_decides_wording_and_status() -> None:
     decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
     assert "unrevised machine transcription" in decl
     assert _changes(root)["transcription-summary"].get("status") == bt.MACHINE
+
+
+# ------------------------------------------------- Inventaria attribution
+# 57 of the transcribed documents carry a transcription the Inventaria project
+# made in Transkribus. The header has to name that project and, where the
+# harvest found one, link the published edition.
+
+
+def _resp_of(root: ElementTree.Element, resp_id: str) -> ElementTree.Element | None:
+    return next(
+        (r for r in root.iter(f"{TEI}respStmt") if r.get(XML_ID) == resp_id), None
+    )
+
+
+def _decl(root: ElementTree.Element) -> str:
+    return "".join(root.find(f".//{TEI}editorialDecl").itertext())
+
+
+def test_the_attribution_reads_the_source_mapping_and_the_edition_links() -> None:
+    """Same two sources as the site projection in build_register.py, so the TEI
+    and the site cannot disagree about who made a transcription."""
+    mapping = bt._load(bt.DATA / "source_mapping.json")["matched"]
+    expected = {
+        m["transkribus_id"]
+        for m in mapping
+        if m.get("csv_transkribiert") == "Inventaria"
+    }
+    links = {
+        d["docId"]: d["url"]
+        for d in bt._load(bt.DATA / "inventaria_mapping.json")["documents"]
+    }
+    assert expected, "no attributed document in the mapping, the check proves nothing"
+
+    docs = bt._documents()
+    for doc in docs:
+        # a text DoCTA produced itself is never an Inventaria transcription,
+        # whatever the mapping says about the source
+        attributed = doc["docId"] in expected and doc["layer"] == bt.TRANSKRIBUS_LAYER
+        assert doc["inventaria"] == attributed, f"wrong attribution on {doc['docId']}"
+        assert doc["edition_url"] == (
+            links.get(doc["docId"]) if attributed else None
+        ), f"wrong edition link on {doc['docId']}"
+    assert any(d["inventaria"] for d in docs)
+    assert any(not d["inventaria"] for d in docs), "no unattributed counter-example"
+    # a flagged document without a harvested entry stays attributed and links to
+    # nothing, rather than losing its attribution with the link
+    without = next(d for d in docs if d["docId"] == ATTRIBUTED_WITHOUT_LINK)
+    assert without["inventaria"] and without["edition_url"] is None
+
+
+def test_an_attributed_document_names_the_inventaria_project() -> None:
+    """The attribution stands beside the Transkribus layer it qualifies and
+    weakens none of the responsibilities already declared."""
+    built = _built()
+    docs = {d["docId"]: d for d in bt._documents()}
+    seen = 0
+    for doc_id, xml in built.items():
+        root = ElementTree.fromstring(xml)
+        resp = _resp_of(root, bt.RESP_INVENTARIA)
+        if not docs[doc_id]["inventaria"]:
+            assert resp is None, f"attribution invented in {doc_id}"
+            continue
+        seen += 1
+        ids = _resp_ids(root)
+        assert ids.index(bt.RESP_INVENTARIA) == ids.index(bt.RESP_TRANSKRIBUS) + 1, (
+            f"attribution not beside the transkribus layer in {doc_id}"
+        )
+        name = resp.find(f"{TEI}name")
+        assert name.text == "Inventaria project", f"wrong name in {doc_id}"
+        assert name.get("ref") == bt.INVENTARIA_URL, f"wrong name ref in {doc_id}"
+        assert "Inventaria project" in resp.find(f"{TEI}resp").text
+    assert seen, "no attributed document in the corpus, the check proves nothing"
+
+
+def test_a_fully_done_attributed_document_is_not_called_unrevised() -> None:
+    """A document the Inventaria project corrected page by page must not be
+    presented as unrevised machine output, and DoCTA must not claim the
+    verification the done status is not."""
+    built = _built()
+    docs = {d["docId"]: d for d in bt._documents()}
+    for doc_id in FULLY_CORRECTED:
+        assert docs[doc_id]["inventaria"], f"{doc_id} lost its attribution"
+        root = ElementTree.fromstring(built[doc_id])
+        resp = _resp_of(root, bt.RESP_INVENTARIA).find(f"{TEI}resp").text
+        assert "produced and corrected by the Inventaria project" in resp
+        assert "marked done in Transkribus" in resp
+        assert "pages" not in resp, f"page split claimed on a full document: {resp}"
+
+        decl = _decl(root)
+        assert "unrevised machine transcription" not in decl, doc_id
+        assert "Automated text recognition" not in decl, doc_id
+        assert "produced by the Inventaria project" in decl, doc_id
+        # the two status axes stay separate
+        assert "workflow status of Transkribus" in decl, doc_id
+        assert "DoCTA has not independently verified" in decl, doc_id
+
+
+def test_an_attributed_document_without_a_done_page_says_so() -> None:
+    """No page marked done means the campaign produced the text and no one
+    corrected it; the file keeps saying that it is machine transcription."""
+    built = _built()
+    root = ElementTree.fromstring(built[ATTRIBUTED_MACHINE])
+    resp = _resp_of(root, bt.RESP_INVENTARIA).find(f"{TEI}resp").text
+    assert resp == (
+        "Transcription campaign of the Inventaria project in Transkribus,"
+        " no page marked done there"
+    )
+    decl = _decl(root)
+    assert "transcription campaign of the Inventaria project" in decl
+    assert "no page of it is marked done" in decl
+    assert "unrevised machine transcription" in decl
+    assert _changes(root)["transcription-summary"].get("status") == bt.MACHINE
+
+
+# A document corrected for part of its pages, which the corpus does not have;
+# the split wording can only be exercised against a written-out case.
+PARTLY_DOC = {
+    "docId": 99999999,
+    "correction": bt.PARTLY,
+    "done_pages": 3,
+    "pages": 8,
+    "layer": bt.TRANSKRIBUS_LAYER,
+    "inventaria": True,
+    "edition_url": "https://app.transkribus.org/en/sites/inventaria/doc/1/detail",
+}
+
+
+def test_a_partly_done_attributed_document_states_the_split() -> None:
+    resp = "\n".join(bt._resp_stmts(PARTLY_DOC, ""))
+    assert "resp-inventaria-transcription" in resp
+    assert "marked done in Transkribus for 3 of 8 pages" in resp
+    # the pre-existing Transkribus responsibility keeps its own split wording
+    assert "for 3 of 8 pages (human-corrected layer)" in resp
+
+    decl = "\n".join(bt._editorial_decl(PARTLY_DOC, ""))
+    assert "3 of its 8 pages are corrected and marked done" in decl
+    assert "unrevised automated recognition layer" in decl
+    assert "workflow status of Transkribus" in decl
+    assert "DoCTA has not independently verified" in decl
+
+
+def test_the_published_edition_travels_as_a_bibl() -> None:
+    """Where the harvest found the published edition, the source description
+    links it; a document without a link carries no empty bibl."""
+    built = _built()
+    docs = {d["docId"]: d for d in bt._documents()}
+    linked = 0
+    for doc_id, xml in built.items():
+        root = ElementTree.fromstring(xml)
+        source = root.find(f".//{TEI}sourceDesc")
+        bibl = source.find(f"{TEI}bibl")
+        url = docs[doc_id]["edition_url"]
+        if url is None:
+            assert bibl is None, f"bibl without an edition link in {doc_id}"
+            continue
+        linked += 1
+        ref = bibl.find(f"{TEI}ref")
+        assert ref.get("target") == url, f"wrong edition target in {doc_id}"
+        assert "Inventaria project" in ref.text and "edition" in ref.text
+        # the archival description stays first and is not displaced by the link
+        assert [el.tag for el in source] == [f"{TEI}msDesc", f"{TEI}bibl"]
+    assert linked, "no edition link in the corpus, the check proves nothing"
+    assert (
+        ElementTree.fromstring(built[ATTRIBUTED_WITHOUT_LINK]).find(f".//{TEI}bibl")
+        is None
+    )
+
+
+def test_an_unattributed_document_keeps_its_own_wording() -> None:
+    built = _built()
+    docs = [d for d in bt._documents() if not d["inventaria"]]
+    assert docs, "no unattributed document, the check proves nothing"
+    for doc in docs:
+        xml = built[doc["docId"]]
+        root = ElementTree.fromstring(xml)
+        assert bt.RESP_INVENTARIA not in xml, f"attribution leaked into {doc['docId']}"
+        assert "Inventaria" not in xml, f"Inventaria named in {doc['docId']}"
+        assert root.find(f".//{TEI}bibl") is None
+        assert "unrevised machine transcription" in _decl(root)
 
 
 def test_a_docta_transcription_declares_its_own_step_and_no_layout() -> None:

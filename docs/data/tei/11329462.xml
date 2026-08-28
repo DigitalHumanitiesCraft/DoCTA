@@ -9,9 +9,13 @@
           <resp>Automated text recognition layer from Transkribus, unrevised</resp>
           <name>Transkribus</name>
         </respStmt>
+        <respStmt xml:id="resp-inventaria-transcription">
+          <resp>Transcription campaign of the Inventaria project in Transkribus, no page marked done there</resp>
+          <name ref="https://www.inventaria.at/">Inventaria project</name>
+        </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 52f59939392f)</name>
+          <name>pipeline/build_tei.py (sha256 7d9e91d7b32a)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -36,6 +40,9 @@
             <origin><origDate when="1485-02-23">1485.02.23</origDate></origin>
           </history>
         </msDesc>
+        <bibl>
+          <ref target="https://app.transkribus.org/en/sites/inventaria/doc/11721855/detail">Published edition of this inventory by the Inventaria project on Transkribus Sites</ref>
+        </bibl>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
@@ -43,7 +50,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The text of this file is unrevised machine transcription. It was produced by automated text recognition and has not been reviewed, so every reading is provisional and the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>The text of this file comes from the transcription campaign of the Inventaria project in Transkribus, where no page of it is marked done. It is therefore unrevised machine transcription and every reading is provisional. DoCTA has not read it against the facsimile either, and the DoCTA review status of a page is a separate axis recorded in the page register. The file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
       </editorialDecl>
       <classDecl>
         <taxonomy xml:id="docta-category">

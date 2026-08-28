@@ -9,9 +9,13 @@
           <resp>Transcription corrected page by page and marked done in Transkribus (human-corrected layer)</resp>
           <name>Editors of the Transkribus collection</name>
         </respStmt>
+        <respStmt xml:id="resp-inventaria-transcription">
+          <resp>Transcription produced and corrected by the Inventaria project, marked done in Transkribus; done is a workflow status of that platform and records a step of the Inventaria project</resp>
+          <name ref="https://www.inventaria.at/">Inventaria project</name>
+        </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 52f59939392f)</name>
+          <name>pipeline/build_tei.py (sha256 7d9e91d7b32a)</name>
         </respStmt>
         <respStmt xml:id="resp-entity-llm">
           <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar</resp>
@@ -40,6 +44,9 @@
             <origin><origDate when="1440">1440</origDate></origin>
           </history>
         </msDesc>
+        <bibl>
+          <ref target="https://app.transkribus.org/en/sites/inventaria/doc/11721696/detail">Published edition of this inventory by the Inventaria project on Transkribus Sites</ref>
+        </bibl>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
@@ -47,7 +54,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The transcription of this file was corrected page by page in Transkribus and marked done there. The TEI encoding is machine-generated and scholarly review within DoCTA is still pending, so the file is not yet a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>The transcription of this file was produced by the Inventaria project and corrected page by page in Transkribus, where every page of it is marked done. That done status is a workflow status of Transkribus and records a step of the Inventaria project. DoCTA has not independently verified the text against the facsimile, and the DoCTA review status of a page is a separate axis recorded in the page register. The TEI encoding is machine-generated, so the file is not yet a citable DoCTA edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
         <p>The named entities marked in this file are an unverified extraction by an LLM agent from the prototype phase; they have not been checked against the source by a scholar and carry no claim of correctness.</p>
       </editorialDecl>
       <classDecl>
