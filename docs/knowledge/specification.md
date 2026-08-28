@@ -121,6 +121,10 @@ The full review specification is in `htr-evaluation.md`.
 4. Quality statements comprise evidence and decision status per mention and assertion, the availability tiers of the sources, and clearly marked experimental transcription metrics with their reference class.
 5. The seven directly code-addressable points of review criticism are answered.
 
+## Planned: annotation curation in the viewer
+
+Announced in the feedback response of 28.08.2026 and next in line after the transcription review: the editor-in-the-loop of the review mode extends to the entity annotations. Machine entity proposals are already anchored to the source line; the viewer gains their direct correction and confirmation, with source line, model provenance, review status and the reasoned correction preserved for every assignment. Reconciliation targets are SiCProD for persons and functions, Wikidata and the GND additionally for persons and for places, and the Inventaria terminology together with the Getty Art & Architecture Thesaurus for object names and controlled object categories. Confirmed corrections may feed later extraction runs. Two decisions are open and belong to the project lead: the priority object categories, and the order in which the reconciliation sources are consulted.
+
 ## Open questions
 
 - Whether bilingual presentation in German and English is needed is unresolved. The site is currently English; the source material and the working documents are German.

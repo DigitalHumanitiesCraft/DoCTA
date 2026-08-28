@@ -38,6 +38,10 @@ The digital component is an agentic edition pipeline. It turns facsimiles of fif
 
 Two commitments hold everywhere. All model output remains unrevised machine transcription until a scholar approves it, and is marked as such wherever it is displayed. Every derived artifact carries its provenance, down to the model, prompt iteration and work step that produced it.
 
+## Proposed next form: a working edition
+
+Proposed to the project lead on 28.08.2026 and not yet confirmed: DoCTA develops into a working edition, a shared working environment tailored to the project lead's research and material, in which account books, inventories, court ordinances, copybooks and further court sources are brought together for indexing and comparative analysis. In a resubmission this takes the form of a service arrangement, Digital Humanities Craft supporting the work with the already developed environment, while the centre of gravity stays with the historical research. The transcription review in the viewer is the model for the next step, an editor-in-the-loop for the annotations, specified in `specification.md`.
+
 ## Who it is for
 
 The historical project lead at the University of Salzburg reads, reviews and accepts transcriptions and sets the scholarly requirements. Digital Humanities Craft OG builds and maintains the digital component. Reviewers of a planned FWF resubmission are the third audience; for them the prototype makes the proposed methods checkable on the real material. The public About page carries the reviewer-facing framing, and `specification.md` holds the requirements together with the review criticism of the first submission and how it was answered.
