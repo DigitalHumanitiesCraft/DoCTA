@@ -17,7 +17,9 @@ same URL and update the release line above.
 Hand-written in this repository, neither vendored nor generated. It implements the DoCTA
 encoding specification, admitting exactly the elements, attributes and structures that
 `pipeline/build_tei.py` emits, with the closed lists of the pipeline (responsibility ids, stream statuses, milestone
-units, entity elements) enumerated and the id shapes given as patterns. Free text and values
+units, entity elements) enumerated and the id shapes given as patterns. Its start is a choice
+over the two file shapes of `docs/data/tei/`, the document TEI and the corpus-wide entity
+register `register.xml`. Free text and values
 that legitimately vary (titles, prose, dates, zone points, URLs) stay unconstrained.
 
 The grammar is derived from the generator, so the generator is its source of truth. A change

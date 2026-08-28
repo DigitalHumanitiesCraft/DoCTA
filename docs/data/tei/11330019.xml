@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 6bacf2235c91)</name>
+          <name>pipeline/build_tei.py (sha256 e6a2585bc5de)</name>
         </respStmt>
         <respStmt xml:id="resp-entity-llm">
           <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar</resp>
@@ -200,49 +200,49 @@
           <milestone unit="folio" n="1r"/>
         </ab>
         <ab xml:id="ab-11330019-1-r2">
-          <lb facs="#zone-11330019-1-r2l1"/><placeName resp="#resp-entity-llm" key="Kronburg">Kronburg</placeName>
+          <lb facs="#zone-11330019-1-r2l1"/><placeName resp="#resp-entity-llm" ref="register.xml#pl-kronburg">Kronburg</placeName>
         </ab>
         <ab xml:id="ab-11330019-1-r3">
           <lb facs="#zone-11330019-1-r3l1"/>Vermerkt die farund hab,
           <lb facs="#zone-11330019-1-r3l2"/>haws plunder und anders auff
-          <lb facs="#zone-11330019-1-r3l3"/><placeName resp="#resp-entity-llm" key="Kronburg">Kronburg</placeName>, <persName resp="#resp-entity-llm" key="Hans Clamer">Hannsen Clamer</persName>,
+          <lb facs="#zone-11330019-1-r3l3"/><placeName resp="#resp-entity-llm" ref="register.xml#pl-kronburg">Kronburg</placeName>, <persName resp="#resp-entity-llm" ref="register.xml#per-hans-clamer">Hannsen Clamer</persName>,
           <lb facs="#zone-11330019-1-r3l4"/>weÿlund phleger, da selbs zu
-          <lb facs="#zone-11330019-1-r3l5"/>gehörig so <persName resp="#resp-entity-llm" key="Joseph Überreiner">Joseph Überriner</persName>
+          <lb facs="#zone-11330019-1-r3l5"/>gehörig so <persName resp="#resp-entity-llm" ref="register.xml#per-joseph-ueberreiner">Joseph Überriner</persName>
           <lb facs="#zone-11330019-1-r3l6"/>an sant meins genedigen herren etc.
           <lb facs="#zone-11330019-1-r3l7"/>in geschrifft ingenomen hatt an
           <lb facs="#zone-11330019-1-r3l8"/>freÿtag nach sant Michelstag
           <lb facs="#zone-11330019-1-r3l9"/>anno LXXVIII.
         </ab>
         <ab xml:id="ab-11330019-1-r4">
-          <lb facs="#zone-11330019-1-r4l1"/>Item zum ersten aim <objectName resp="#resp-entity-llm" key="Kürass">kürüss</objectName>, III
-          <lb facs="#zone-11330019-1-r4l2"/><objectName resp="#resp-entity-llm" key="Eisenhut">eÿsenhüt</objectName>, II par <objectName resp="#resp-entity-llm" key="Handschuhe">hentschůch</objectName>, III
-          <lb facs="#zone-11330019-1-r4l3"/>par <objectName resp="#resp-entity-llm" key="Armzeug">arm zewg</objectName>, III par <objectName resp="#resp-entity-llm" key="Unterer Beinzeuggurt">wndere</objectName>
-          <lb facs="#zone-11330019-1-r4l4"/><objectName resp="#resp-entity-llm" key="Beingewand">bain gwand</objectName>, II <objectName resp="#resp-entity-llm" key="Panzer">bants</objectName>, III <objectName resp="#resp-entity-llm" key="Kragen">kragel</objectName>,
-          <lb facs="#zone-11330019-1-r4l5"/>mer ain <objectName resp="#resp-entity-llm" key="Armzeug">armzewg</objectName>, III <objectName resp="#resp-entity-llm" key="Schweinespieß">schweinspies</objectName>
+          <lb facs="#zone-11330019-1-r4l1"/>Item zum ersten aim <term resp="#resp-entity-llm" ref="register.xml#obj-kuerass">kürüss</term>, III
+          <lb facs="#zone-11330019-1-r4l2"/><term resp="#resp-entity-llm" ref="register.xml#obj-eisenhut">eÿsenhüt</term>, II par <term resp="#resp-entity-llm" ref="register.xml#obj-handschuhe">hentschůch</term>, III
+          <lb facs="#zone-11330019-1-r4l3"/>par <term resp="#resp-entity-llm" ref="register.xml#obj-armzeug">arm zewg</term>, III par <term resp="#resp-entity-llm" ref="register.xml#obj-unterer-beinzeuggurt">wndere</term>
+          <lb facs="#zone-11330019-1-r4l4"/><term resp="#resp-entity-llm" ref="register.xml#obj-beingewand">bain gwand</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-panzer">bants</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-kragen">kragel</term>,
+          <lb facs="#zone-11330019-1-r4l5"/>mer ain <term resp="#resp-entity-llm" ref="register.xml#obj-armzeug">armzewg</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-schweinespiess">schweinspies</term>
           <lb facs="#zone-11330019-1-r4l6"/>sind nit gevast.
           <lb facs="#zone-11330019-1-r4l7"/>Item in der stuben und kamer da
-          <lb facs="#zone-11330019-1-r4l8"/>ist ain <objectName resp="#resp-entity-llm" key="Schreibtisch">schribtisch</objectName>, I grosser <objectName resp="#resp-entity-llm" key="Schrein">schrein</objectName>,
-          <lb facs="#zone-11330019-1-r4l9"/>darunter lig <objectName resp="#resp-entity-llm" key="Schmiedzeug">smid zeug</objectName>, VI <objectName resp="#resp-entity-llm" key="Zange">zangen</objectName>,
-          <lb facs="#zone-11330019-1-r4l10"/>IIII <objectName resp="#resp-entity-llm" key="Hammer">hämer</objectName>, I <objectName resp="#resp-entity-llm" key="Feile">veÿhel</objectName>, I <objectName resp="#resp-entity-llm" key="Schmiedstock">schmidsteck</objectName>,
-          <lb facs="#zone-11330019-1-r4l11"/>ain <objectName resp="#resp-entity-llm" key="Schlosserkloben">schlosser kloben</objectName>.
-          <lb facs="#zone-11330019-1-r4l12"/>Item mer ain <objectName resp="#resp-entity-llm" key="Bettstatt">bettstatt</objectName> darinn ligt
-          <lb facs="#zone-11330019-1-r4l13"/>ain <objectName resp="#resp-entity-llm" key="Bett">bett</objectName>, ain <objectName resp="#resp-entity-llm" key="Polster">bolster</objectName>, I <objectName resp="#resp-entity-llm" key="Kissen">kuss</objectName>, II <objectName resp="#resp-entity-llm" key="Bankpolster">banck</objectName>
-          <lb facs="#zone-11330019-1-r4l14"/><objectName resp="#resp-entity-llm" key="Polster">bolster</objectName>, III <objectName resp="#resp-entity-llm" key="Rauchdecke">rauch deck</objectName>.
-          <lb facs="#zone-11330019-1-r4l15"/>Item mer ain <objectName resp="#resp-entity-llm" key="Messingbecken">messin beck</objectName> und ain
-          <lb facs="#zone-11330019-1-r4l16"/><objectName resp="#resp-entity-llm" key="Messinghandfass">messin hantvass</objectName>, I <objectName resp="#resp-entity-llm" key="Tellerbüchse">taller būchß</objectName>,
-          <lb facs="#zone-11330019-1-r4l17"/>dar sind XXV <objectName resp="#resp-entity-llm" key="Pfännlein">plandl</objectName>.
-          <lb facs="#zone-11330019-1-r4l18"/>Mer ligen in ainer <objectName resp="#resp-entity-llm" key="Bettruhe">bettruchen</objectName> VII
-          <lb facs="#zone-11330019-1-r4l19"/><objectName resp="#resp-entity-llm" key="Blattschloss">blatt schlos</objectName> und ain gross <objectName resp="#resp-entity-llm" key="Vorhängeschloss">malen</objectName>
-          <lb facs="#zone-11330019-1-r4l20"/><objectName resp="#resp-entity-llm" key="Schloss">sloss</objectName>.
-          <lb facs="#zone-11330019-1-r4l21"/>Mer vor der kuchin ain <objectName resp="#resp-entity-llm" key="Truhe">trucken</objectName>
-          <lb facs="#zone-11330019-1-r4l22"/>und ain <objectName resp="#resp-entity-llm" key="Schaffreite">schaffraitt</objectName>, II <objectName resp="#resp-entity-llm" key="Pfanne">pfannen</objectName>,
-          <lb facs="#zone-11330019-1-r4l23"/>V <objectName resp="#resp-entity-llm" key="Eherner Hafen">erin hafen</objectName>, III <objectName resp="#resp-entity-llm" key="Fischkessel">fischkessel</objectName>.
-          <lb facs="#zone-11330019-1-r4l24"/>Item ain <objectName resp="#resp-entity-llm" key="Armbrust">armbrost</objectName> mit ainer <objectName resp="#resp-entity-llm" key="Winde">winden</objectName>
-          <lb facs="#zone-11330019-1-r4l25"/>hat kain <objectName resp="#resp-entity-llm" key="Sehne">sen</objectName>.
+          <lb facs="#zone-11330019-1-r4l8"/>ist ain <term resp="#resp-entity-llm" ref="register.xml#obj-schreibtisch">schribtisch</term>, I grosser <term resp="#resp-entity-llm" ref="register.xml#obj-schrein">schrein</term>,
+          <lb facs="#zone-11330019-1-r4l9"/>darunter lig <term resp="#resp-entity-llm" ref="register.xml#obj-schmiedzeug">smid zeug</term>, VI <term resp="#resp-entity-llm" ref="register.xml#obj-zange">zangen</term>,
+          <lb facs="#zone-11330019-1-r4l10"/>IIII <term resp="#resp-entity-llm" ref="register.xml#obj-hammer">hämer</term>, I <term resp="#resp-entity-llm" ref="register.xml#obj-feile">veÿhel</term>, I <term resp="#resp-entity-llm" ref="register.xml#obj-schmiedstock">schmidsteck</term>,
+          <lb facs="#zone-11330019-1-r4l11"/>ain <term resp="#resp-entity-llm" ref="register.xml#obj-schlosserkloben">schlosser kloben</term>.
+          <lb facs="#zone-11330019-1-r4l12"/>Item mer ain <term resp="#resp-entity-llm" ref="register.xml#obj-bettstatt">bettstatt</term> darinn ligt
+          <lb facs="#zone-11330019-1-r4l13"/>ain <term resp="#resp-entity-llm" ref="register.xml#obj-bett">bett</term>, ain <term resp="#resp-entity-llm" ref="register.xml#obj-polster">bolster</term>, I <term resp="#resp-entity-llm" ref="register.xml#obj-kissen">kuss</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-bankpolster">banck</term>
+          <lb facs="#zone-11330019-1-r4l14"/><term resp="#resp-entity-llm" ref="register.xml#obj-polster">bolster</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-rauchdecke">rauch deck</term>.
+          <lb facs="#zone-11330019-1-r4l15"/>Item mer ain <term resp="#resp-entity-llm" ref="register.xml#obj-messingbecken">messin beck</term> und ain
+          <lb facs="#zone-11330019-1-r4l16"/><term resp="#resp-entity-llm" ref="register.xml#obj-messinghandfass">messin hantvass</term>, I <term resp="#resp-entity-llm" ref="register.xml#obj-tellerbuechse">taller būchß</term>,
+          <lb facs="#zone-11330019-1-r4l17"/>dar sind XXV <term resp="#resp-entity-llm" ref="register.xml#obj-pfaennlein">plandl</term>.
+          <lb facs="#zone-11330019-1-r4l18"/>Mer ligen in ainer <term resp="#resp-entity-llm" ref="register.xml#obj-bettruhe">bettruchen</term> VII
+          <lb facs="#zone-11330019-1-r4l19"/><term resp="#resp-entity-llm" ref="register.xml#obj-blattschloss">blatt schlos</term> und ain gross <term resp="#resp-entity-llm" ref="register.xml#obj-vorhaengeschloss">malen</term>
+          <lb facs="#zone-11330019-1-r4l20"/><term resp="#resp-entity-llm" ref="register.xml#obj-schloss">sloss</term>.
+          <lb facs="#zone-11330019-1-r4l21"/>Mer vor der kuchin ain <term resp="#resp-entity-llm" ref="register.xml#obj-truhe">trucken</term>
+          <lb facs="#zone-11330019-1-r4l22"/>und ain <term resp="#resp-entity-llm" ref="register.xml#obj-schaffreite">schaffraitt</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-pfanne">pfannen</term>,
+          <lb facs="#zone-11330019-1-r4l23"/>V <term resp="#resp-entity-llm" ref="register.xml#obj-eherner-hafen">erin hafen</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-fischkessel">fischkessel</term>.
+          <lb facs="#zone-11330019-1-r4l24"/>Item ain <term resp="#resp-entity-llm" ref="register.xml#obj-armbrust">armbrost</term> mit ainer <term resp="#resp-entity-llm" ref="register.xml#obj-winde">winden</term>
+          <lb facs="#zone-11330019-1-r4l25"/>hat kain <term resp="#resp-entity-llm" ref="register.xml#obj-sehne">sen</term>.
           <lb facs="#zone-11330019-1-r4l26"/>Item auff der untern wer stett ain
-          <lb facs="#zone-11330019-1-r4l27"/><objectName resp="#resp-entity-llm" key="Truhe">truch</objectName>, ain <objectName resp="#resp-entity-llm" key="Bettstatt">betstatt</objectName>, dar inn ligt
-          <lb facs="#zone-11330019-1-r4l28"/>ain <objectName resp="#resp-entity-llm" key="Bett">bett</objectName>, ain <objectName resp="#resp-entity-llm" key="Polster">bolster</objectName>, II <objectName resp="#resp-entity-llm" key="Leintuch">leylach</objectName>, ain
-          <lb facs="#zone-11330019-1-r4l29"/><objectName resp="#resp-entity-llm" key="Rauchdecke">rauch deck</objectName> und ain <objectName resp="#resp-entity-llm" key="Kolter">golter</objectName>.
+          <lb facs="#zone-11330019-1-r4l27"/><term resp="#resp-entity-llm" ref="register.xml#obj-truhe">truch</term>, ain <term resp="#resp-entity-llm" ref="register.xml#obj-bettstatt">betstatt</term>, dar inn ligt
+          <lb facs="#zone-11330019-1-r4l28"/>ain <term resp="#resp-entity-llm" ref="register.xml#obj-bett">bett</term>, ain <term resp="#resp-entity-llm" ref="register.xml#obj-polster">bolster</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-leintuch">leylach</term>, ain
+          <lb facs="#zone-11330019-1-r4l29"/><term resp="#resp-entity-llm" ref="register.xml#obj-rauchdecke">rauch deck</term> und ain <term resp="#resp-entity-llm" ref="register.xml#obj-kolter">golter</term>.
         </ab>
         <pb n="2" facs="#surface-11330019-2"/>
         <ab xml:id="ab-11330019-2-r1">
@@ -250,82 +250,82 @@
         </ab>
         <ab xml:id="ab-11330019-2-r2">
           <lb facs="#zone-11330019-2-r2l1"/>Item oben im turen ligen VIII
-          <lb facs="#zone-11330019-2-r2l2"/><objectName resp="#resp-entity-llm" key="Reitsattel">raissättel</objectName> gůtt und böst.
+          <lb facs="#zone-11330019-2-r2l2"/><term resp="#resp-entity-llm" ref="register.xml#obj-reitsattel">raissättel</term> gůtt und böst.
           <lb facs="#zone-11330019-2-r2l3"/>Item wnten in dem gewelem
-          <lb facs="#zone-11330019-2-r2l4"/>sind zwo <objectName resp="#resp-entity-llm" key="Bettstatt">bettstatt</objectName> dar inn
-          <lb facs="#zone-11330019-2-r2l5"/>XI bett, ain <objectName resp="#resp-entity-llm" key="Deckbett">deckbett</objectName>, IIII
-          <lb facs="#zone-11330019-2-r2l6"/><objectName resp="#resp-entity-llm" key="Polster">bolster</objectName>, II <objectName resp="#resp-entity-llm" key="Kissen">kuss</objectName>, III <objectName resp="#resp-entity-llm" key="Sarge">sargen</objectName>
-          <lb facs="#zone-11330019-2-r2l7"/>und ain <objectName resp="#resp-entity-llm" key="Kolter">golter</objectName>.
+          <lb facs="#zone-11330019-2-r2l4"/>sind zwo <term resp="#resp-entity-llm" ref="register.xml#obj-bettstatt">bettstatt</term> dar inn
+          <lb facs="#zone-11330019-2-r2l5"/>XI bett, ain <term resp="#resp-entity-llm" ref="register.xml#obj-deckbett">deckbett</term>, IIII
+          <lb facs="#zone-11330019-2-r2l6"/><term resp="#resp-entity-llm" ref="register.xml#obj-polster">bolster</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-kissen">kuss</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-sarge">sargen</term>
+          <lb facs="#zone-11330019-2-r2l7"/>und ain <term resp="#resp-entity-llm" ref="register.xml#obj-kolter">golter</term>.
           <lb facs="#zone-11330019-2-r2l8"/>Item mer im dem selben ge¬
-          <lb facs="#zone-11330019-2-r2l9"/>weltem sind VII <objectName resp="#resp-entity-llm" key="Gespannter Wolfbalg">gebaist wolf</objectName>
-          <lb facs="#zone-11330019-2-r2l10"/><objectName resp="#resp-entity-llm" key="Haut">hüt</objectName>, XIIII fr <objectName resp="#resp-entity-llm" key="Fuchsbalg">fuschs belg</objectName>
-          <lb facs="#zone-11330019-2-r2l11"/>mer VII <objectName resp="#resp-entity-llm" key="Strick">stricken</objectName>, lanng und
+          <lb facs="#zone-11330019-2-r2l9"/>weltem sind VII <term resp="#resp-entity-llm" ref="register.xml#obj-gespannter-wolfbalg">gebaist wolf</term>
+          <lb facs="#zone-11330019-2-r2l10"/><term resp="#resp-entity-llm" ref="register.xml#obj-haut">hüt</term>, XIIII fr <term resp="#resp-entity-llm" ref="register.xml#obj-fuchsbalg">fuschs belg</term>
+          <lb facs="#zone-11330019-2-r2l11"/>mer VII <term resp="#resp-entity-llm" ref="register.xml#obj-strick">stricken</term>, lanng und
           <lb facs="#zone-11330019-2-r2l12"/>kurtz.
-          <lb facs="#zone-11330019-2-r2l13"/>Item XIIII <objectName resp="#resp-entity-llm" key="Zinnschüssel">zini schisseln</objectName>, klain
-          <lb facs="#zone-11330019-2-r2l14"/>und grosß, ain <objectName resp="#resp-entity-llm" key="Zinnplatte">zini plan</objectName>
-          <lb facs="#zone-11330019-2-r2l15"/>und III <objectName resp="#resp-entity-llm" key="Kessel">kessel</objectName>.
+          <lb facs="#zone-11330019-2-r2l13"/>Item XIIII <term resp="#resp-entity-llm" ref="register.xml#obj-zinnschuessel">zini schisseln</term>, klain
+          <lb facs="#zone-11330019-2-r2l14"/>und grosß, ain <term resp="#resp-entity-llm" ref="register.xml#obj-zinnplatte">zini plan</term>
+          <lb facs="#zone-11330019-2-r2l15"/>und III <term resp="#resp-entity-llm" ref="register.xml#obj-kessel">kessel</term>.
           <lb facs="#zone-11330019-2-r2l16"/>Item mer in dem selben gewelten
-          <lb facs="#zone-11330019-2-r2l17"/>sind zwo <objectName resp="#resp-entity-llm" key="Truhe">truchen</objectName> dar inn
+          <lb facs="#zone-11330019-2-r2l17"/>sind zwo <term resp="#resp-entity-llm" ref="register.xml#obj-truhe">truchen</term> dar inn
           <lb facs="#zone-11330019-2-r2l18"/>ligt allerlaÿ plunder und māsser¬
           <lb facs="#zone-11330019-2-r2l19"/>reÿ sind ver bettschafft. Mer
-          <lb facs="#zone-11330019-2-r2l20"/>zuo <objectName resp="#resp-entity-llm" key="Truhe">truchen</objectName> sind lär. Zwai
-          <lb facs="#zone-11330019-2-r2l21"/>klaine <objectName resp="#resp-entity-llm" key="Schreinlein">schreinel</objectName>, II <objectName resp="#resp-entity-llm" key="Kandelaber">kandelier</objectName>,
-          <lb facs="#zone-11330019-2-r2l22"/>II <objectName resp="#resp-entity-llm" key="Dengelgeschirr">tangelgeschiere</objectName>, III <objectName resp="#resp-entity-llm" key="Schere">scherren</objectName>,
-          <lb facs="#zone-11330019-2-r2l23"/>ain <objectName resp="#resp-entity-llm" key="Gartengabel">gartt gabel</objectName>, III <objectName resp="#resp-entity-llm" key="Bratspieß">bratspis</objectName>,
-          <lb facs="#zone-11330019-2-r2l24"/>zuo <objectName resp="#resp-entity-llm" key="Sichel">sicheln</objectName>, XV <objectName resp="#resp-entity-llm" key="Rosseisen">rosseyssen</objectName>, <objectName resp="#resp-entity-llm" key="Ochseneisen">ochsen</objectName>
-          <lb facs="#zone-11330019-2-r2l25"/>und <objectName resp="#resp-entity-llm" key="Eseleisen">esel eyssen</objectName>.
-          <lb facs="#zone-11330019-2-r2l26"/>Item XXV veld <objectName resp="#resp-entity-llm" key="Unschlitt">unslit</objectName>, <objectName resp="#resp-entity-llm" key="Holzschüssel">hültzi</objectName>
-          <lb facs="#zone-11330019-2-r2l27"/><objectName resp="#resp-entity-llm" key="Schüssel">schisslen</objectName> klain und gross
-          <lb facs="#zone-11330019-2-r2l28"/>XVI, <objectName resp="#resp-entity-llm" key="Teller">taller</objectName> XXVI, zwen bachen
-          <lb facs="#zone-11330019-2-r2l29"/><objectName resp="#resp-entity-llm" key="Schweinefleisch">schweinflaisch</objectName>, ungeverlich
-          <lb facs="#zone-11330019-2-r2l30"/>zwen spiss <objectName resp="#resp-entity-llm" key="Gediegenes Fleisch">gedigen flaisch</objectName>.
-          <lb facs="#zone-11330019-2-r2l31"/>Item mer III <objectName resp="#resp-entity-llm" key="Hechel">hächelen</objectName>, ain <objectName resp="#resp-entity-llm" key="Rüch">rüch</objectName>.
+          <lb facs="#zone-11330019-2-r2l20"/>zuo <term resp="#resp-entity-llm" ref="register.xml#obj-truhe">truchen</term> sind lär. Zwai
+          <lb facs="#zone-11330019-2-r2l21"/>klaine <term resp="#resp-entity-llm" ref="register.xml#obj-schreinlein">schreinel</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-kandelaber">kandelier</term>,
+          <lb facs="#zone-11330019-2-r2l22"/>II <term resp="#resp-entity-llm" ref="register.xml#obj-dengelgeschirr">tangelgeschiere</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-schere">scherren</term>,
+          <lb facs="#zone-11330019-2-r2l23"/>ain <term resp="#resp-entity-llm" ref="register.xml#obj-gartengabel">gartt gabel</term>, III <term resp="#resp-entity-llm" ref="register.xml#obj-bratspiess">bratspis</term>,
+          <lb facs="#zone-11330019-2-r2l24"/>zuo <term resp="#resp-entity-llm" ref="register.xml#obj-sichel">sicheln</term>, XV <term resp="#resp-entity-llm" ref="register.xml#obj-rosseisen">rosseyssen</term>, <term resp="#resp-entity-llm" ref="register.xml#obj-ochseneisen">ochsen</term>
+          <lb facs="#zone-11330019-2-r2l25"/>und <term resp="#resp-entity-llm" ref="register.xml#obj-eseleisen">esel eyssen</term>.
+          <lb facs="#zone-11330019-2-r2l26"/>Item XXV veld <term resp="#resp-entity-llm" ref="register.xml#obj-unschlitt">unslit</term>, <term resp="#resp-entity-llm" ref="register.xml#obj-holzschuessel">hültzi</term>
+          <lb facs="#zone-11330019-2-r2l27"/><term resp="#resp-entity-llm" ref="register.xml#obj-schuessel">schisslen</term> klain und gross
+          <lb facs="#zone-11330019-2-r2l28"/>XVI, <term resp="#resp-entity-llm" ref="register.xml#obj-teller">taller</term> XXVI, zwen bachen
+          <lb facs="#zone-11330019-2-r2l29"/><term resp="#resp-entity-llm" ref="register.xml#obj-schweinefleisch">schweinflaisch</term>, ungeverlich
+          <lb facs="#zone-11330019-2-r2l30"/>zwen spiss <term resp="#resp-entity-llm" ref="register.xml#obj-gediegenes-fleisch">gedigen flaisch</term>.
+          <lb facs="#zone-11330019-2-r2l31"/>Item mer III <term resp="#resp-entity-llm" ref="register.xml#obj-hechel">hächelen</term>, ain <term resp="#resp-entity-llm" ref="register.xml#obj-ruech">rüch</term>.
           <lb facs="#zone-11330019-2-r2l32"/>Mer im untern keller sind IIII
-          <lb facs="#zone-11330019-2-r2l33"/><objectName resp="#resp-entity-llm" key="Haue">hawen</objectName>, II <objectName resp="#resp-entity-llm" key="Vorschlaghammer">furschleg</objectName>, V alt <objectName resp="#resp-entity-llm" key="Gabel">gabe-</objectName>
-          <lb facs="#zone-11330019-2-r2l34"/>len, VI <objectName resp="#resp-entity-llm" key="Heugabel">heÿgablen</objectName>, IIII <objectName resp="#resp-entity-llm" key="Kessel">kessel</objectName>
-          <lb facs="#zone-11330019-2-r2l35"/>ain <objectName resp="#resp-entity-llm" key="Zinnflasche">czini flaschen</objectName> und ain
-          <lb facs="#zone-11330019-2-r2l36"/><objectName resp="#resp-entity-llm" key="Buttrich">buttrich</objectName>.
+          <lb facs="#zone-11330019-2-r2l33"/><term resp="#resp-entity-llm" ref="register.xml#obj-haue">hawen</term>, II <term resp="#resp-entity-llm" ref="register.xml#obj-vorschlaghammer">furschleg</term>, V alt <term resp="#resp-entity-llm" ref="register.xml#obj-gabel">gabe-</term>
+          <lb facs="#zone-11330019-2-r2l34"/>len, VI <term resp="#resp-entity-llm" ref="register.xml#obj-heugabel">heÿgablen</term>, IIII <term resp="#resp-entity-llm" ref="register.xml#obj-kessel">kessel</term>
+          <lb facs="#zone-11330019-2-r2l35"/>ain <term resp="#resp-entity-llm" ref="register.xml#obj-zinnflasche">czini flaschen</term> und ain
+          <lb facs="#zone-11330019-2-r2l36"/><term resp="#resp-entity-llm" ref="register.xml#obj-buttrich">buttrich</term>.
           <lb facs="#zone-11330019-2-r2l37"/>Item mer in dem selben keller
-          <lb facs="#zone-11330019-2-r2l38"/>ist ain <objectName resp="#resp-entity-llm" key="Fass Wein">vass vein</objectName>, X1/2 uren,
+          <lb facs="#zone-11330019-2-r2l38"/>ist ain <term resp="#resp-entity-llm" ref="register.xml#obj-fass-wein">vass vein</term>, X1/2 uren,
           <lb facs="#zone-11330019-2-r2l39"/>ist die wenn dar auff gesnitten.
         </ab>
         <ab xml:id="ab-11330019-2-r3">
           <milestone unit="folio" n="2r"/>
         </ab>
         <ab xml:id="ab-11330019-2-r4">
-          <lb facs="#zone-11330019-2-r4l1"/>Item V <objectName resp="#resp-entity-llm" key="Kandel">kanndelen</objectName>, klain und
+          <lb facs="#zone-11330019-2-r4l1"/>Item V <term resp="#resp-entity-llm" ref="register.xml#obj-kandel">kanndelen</term>, klain und
           <lb facs="#zone-11330019-2-r4l2"/>gross.
           <lb facs="#zone-11330019-2-r4l3"/>Item so ist wntten im vorhoff
-          <lb facs="#zone-11330019-2-r4l4"/>VI <objectName resp="#resp-entity-llm" key="Kuh">küe</objectName>, zwo <objectName resp="#resp-entity-llm" key="Kälbchen">kalbelen</objectName>, zwai
-          <lb facs="#zone-11330019-2-r4l5"/><objectName resp="#resp-entity-llm" key="Stierlein">stierel</objectName>, ain <objectName resp="#resp-entity-llm" key="Schwein">schwein</objectName> und ain
-          <lb facs="#zone-11330019-2-r4l6"/><objectName resp="#resp-entity-llm" key="Verndzogenes Kalb">verndzogene kalb</objectName>, ain
-          <lb facs="#zone-11330019-2-r4l7"/><objectName resp="#resp-entity-llm" key="Wagenross">wagen ross</objectName>.
-          <lb facs="#zone-11330019-2-r4l8"/>Item mer da selbs III <objectName resp="#resp-entity-llm" key="Bett">bett</objectName>, I <objectName resp="#resp-entity-llm" key="Polster">bolster</objectName>
-          <lb facs="#zone-11330019-2-r4l9"/>und III <objectName resp="#resp-entity-llm" key="Eisenstecken">eysenstecken</objectName>.
-          <lb facs="#zone-11330019-2-r4l10"/>Item so hatt der obgemelt <persName resp="#resp-entity-llm" key="Joseph Überreiner">Jo</persName>¬
-          <lb facs="#zone-11330019-2-r4l11"/><persName resp="#resp-entity-llm" key="Joseph Überreiner">seph</persName> auff <placeName resp="#resp-entity-llm" key="Kronburg">Kornburg</placeName> funden
+          <lb facs="#zone-11330019-2-r4l4"/>VI <term resp="#resp-entity-llm" ref="register.xml#obj-kuh">küe</term>, zwo <term resp="#resp-entity-llm" ref="register.xml#obj-kaelbchen">kalbelen</term>, zwai
+          <lb facs="#zone-11330019-2-r4l5"/><term resp="#resp-entity-llm" ref="register.xml#obj-stierlein">stierel</term>, ain <term resp="#resp-entity-llm" ref="register.xml#obj-schwein">schwein</term> und ain
+          <lb facs="#zone-11330019-2-r4l6"/><term resp="#resp-entity-llm" ref="register.xml#obj-verndzogenes-kalb">verndzogene kalb</term>, ain
+          <lb facs="#zone-11330019-2-r4l7"/><term resp="#resp-entity-llm" ref="register.xml#obj-wagenross">wagen ross</term>.
+          <lb facs="#zone-11330019-2-r4l8"/>Item mer da selbs III <term resp="#resp-entity-llm" ref="register.xml#obj-bett">bett</term>, I <term resp="#resp-entity-llm" ref="register.xml#obj-polster">bolster</term>
+          <lb facs="#zone-11330019-2-r4l9"/>und III <term resp="#resp-entity-llm" ref="register.xml#obj-eisenstecken">eysenstecken</term>.
+          <lb facs="#zone-11330019-2-r4l10"/>Item so hatt der obgemelt <persName resp="#resp-entity-llm" ref="register.xml#per-joseph-ueberreiner">Jo</persName>¬
+          <lb facs="#zone-11330019-2-r4l11"/><persName resp="#resp-entity-llm" ref="register.xml#per-joseph-ueberreiner">seph</persName> auff <placeName resp="#resp-entity-llm" ref="register.xml#pl-kronburg">Kornburg</placeName> funden
           <lb facs="#zone-11330019-2-r4l12"/>das meines gnädigen herrn zů siner gnaden
           <lb facs="#zone-11330019-2-r4l13"/>gslos gehortt.
-          <lb facs="#zone-11330019-2-r4l14"/>Item <objectName resp="#resp-entity-llm" key="Hakenbüchse">hagkenpüchsen</objectName> VIII.
-          <lb facs="#zone-11330019-2-r4l15"/>Mer <objectName resp="#resp-entity-llm" key="Hakenbüchse">hagkenpüchsen</objectName> XXII.
-          <lb facs="#zone-11330019-2-r4l16"/>Mer <objectName resp="#resp-entity-llm" key="Hakenbüchse">hagkenpuchsen</objectName>, sind nit gevast, II.
-          <lb facs="#zone-11330019-2-r4l17"/>Item <objectName resp="#resp-entity-llm" key="Eherner Hafen">erin hafen</objectName> II.
-          <lb facs="#zone-11330019-2-r4l18"/>Item mer <objectName resp="#resp-entity-llm" key="Handbüchse">handpuchsen</objectName>, sind nit
+          <lb facs="#zone-11330019-2-r4l14"/>Item <term resp="#resp-entity-llm" ref="register.xml#obj-hakenbuechse">hagkenpüchsen</term> VIII.
+          <lb facs="#zone-11330019-2-r4l15"/>Mer <term resp="#resp-entity-llm" ref="register.xml#obj-hakenbuechse">hagkenpüchsen</term> XXII.
+          <lb facs="#zone-11330019-2-r4l16"/>Mer <term resp="#resp-entity-llm" ref="register.xml#obj-hakenbuechse">hagkenpuchsen</term>, sind nit gevast, II.
+          <lb facs="#zone-11330019-2-r4l17"/>Item <term resp="#resp-entity-llm" ref="register.xml#obj-eherner-hafen">erin hafen</term> II.
+          <lb facs="#zone-11330019-2-r4l18"/>Item mer <term resp="#resp-entity-llm" ref="register.xml#obj-handbuechse">handpuchsen</term>, sind nit
           <lb facs="#zone-11330019-2-r4l19"/>gevast, II.
-          <lb facs="#zone-11330019-2-r4l20"/>Item drÿ <objectName resp="#resp-entity-llm" key="Legel">legelen</objectName> mit <objectName resp="#resp-entity-llm" key="Pfeil">pfeilen</objectName> ligen.
-          <lb facs="#zone-11330019-2-r4l21"/>Item gwelem, zwai klaine <objectName resp="#resp-entity-llm" key="Tartsche">tarschel</objectName>.
-          <lb facs="#zone-11330019-2-r4l22"/>Item mer III gross <objectName resp="#resp-entity-llm" key="Mörserbüchse">morser puchsen</objectName>.
-          <lb facs="#zone-11330019-2-r4l23"/>Mer funff <objectName resp="#resp-entity-llm" key="Mörserbüchse">morser buchsen</objectName> und
+          <lb facs="#zone-11330019-2-r4l20"/>Item drÿ <term resp="#resp-entity-llm" ref="register.xml#obj-legel">legelen</term> mit <term resp="#resp-entity-llm" ref="register.xml#obj-pfeil">pfeilen</term> ligen.
+          <lb facs="#zone-11330019-2-r4l21"/>Item gwelem, zwai klaine <term resp="#resp-entity-llm" ref="register.xml#obj-tartsche">tarschel</term>.
+          <lb facs="#zone-11330019-2-r4l22"/>Item mer III gross <term resp="#resp-entity-llm" ref="register.xml#obj-moerserbuechse">morser puchsen</term>.
+          <lb facs="#zone-11330019-2-r4l23"/>Mer funff <term resp="#resp-entity-llm" ref="register.xml#obj-moerserbuechse">morser buchsen</term> und
           <lb facs="#zone-11330019-2-r4l24"/>III klaine.
-          <lb facs="#zone-11330019-2-r4l25"/>Item der alten <objectName resp="#resp-entity-llm" key="Armbrust">armprost</objectName> ain
-          <lb facs="#zone-11330019-2-r4l26"/><objectName resp="#resp-entity-llm" key="Sehne">senen</objectName> XI.
-          <lb facs="#zone-11330019-2-r4l27"/>Item zway <objectName resp="#resp-entity-llm" key="Fässlein">vässlÿ</objectName> mit <objectName resp="#resp-entity-llm" key="Schießpulver">pulver</objectName>.
+          <lb facs="#zone-11330019-2-r4l25"/>Item der alten <term resp="#resp-entity-llm" ref="register.xml#obj-armbrust">armprost</term> ain
+          <lb facs="#zone-11330019-2-r4l26"/><term resp="#resp-entity-llm" ref="register.xml#obj-sehne">senen</term> XI.
+          <lb facs="#zone-11330019-2-r4l27"/>Item zway <term resp="#resp-entity-llm" ref="register.xml#obj-faesslein">vässlÿ</term> mit <term resp="#resp-entity-llm" ref="register.xml#obj-schiesspulver">pulver</term>.
         </ab>
         <pb n="3" facs="#surface-11330019-3"/>
         <ab xml:id="ab-11330019-3-r1">
           <lb facs="#zone-11330019-3-r1l1"/>Inventari zedel
-          <lb facs="#zone-11330019-3-r1l2"/><placeName resp="#resp-entity-llm" key="Kronburg">Kronburg</placeName>
-          <lb facs="#zone-11330019-3-r1l3"/><placeName resp="#resp-entity-llm" key="Kronburg">Cronburg</placeName>
+          <lb facs="#zone-11330019-3-r1l2"/><placeName resp="#resp-entity-llm" ref="register.xml#pl-kronburg">Kronburg</placeName>
+          <lb facs="#zone-11330019-3-r1l3"/><placeName resp="#resp-entity-llm" ref="register.xml#pl-kronburg">Cronburg</placeName>
           <lb facs="#zone-11330019-3-r1l4"/>1478
         </ab>
       </div>

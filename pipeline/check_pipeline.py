@@ -36,6 +36,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import apply_review as ar
+import build_graph as bg
 import build_register as br
 import build_tei as bt
 import validate_tei as vt
@@ -45,6 +46,7 @@ REPO = ROOT.parent
 DATA = REPO / "docs" / "data"
 TEI_DIR = DATA / "tei"
 ENTITY_DIR = DATA / "entities"
+GRAPH = DATA / "graph.jsonld"
 TRANSCRIPTIONS = DATA / "transcriptions"
 REGISTER = ROOT / "pages"
 DOCUMENTS = ROOT / "documents.json"
@@ -423,8 +425,10 @@ def check_provenance() -> list[Finding]:
 
 
 def check_referential() -> list[Finding]:
-    """Every pointer resolves: TEI @facs, projection thumbnails, prompt hashes."""
-    return _check_facs() + _check_thumbs() + _check_prompt_hashes()
+    """Every pointer resolves: TEI @facs and @ref, thumbnails, prompt hashes."""
+    return (
+        _check_facs() + _check_entity_refs() + _check_thumbs() + _check_prompt_hashes()
+    )
 
 
 def _check_facs() -> list[Finding]:
@@ -444,6 +448,90 @@ def _check_facs() -> list[Finding]:
                         f" @facs {facs} resolves to nothing",
                     )
                 )
+    return out
+
+
+def _graph_entity_ids() -> set[str] | None:
+    """Entity node ids of the JSON-LD graph, without the namespace prefix."""
+    if not GRAPH.exists():
+        return None
+    classes = set(bg.TYPE_CLASS.values())
+    return {
+        node["@id"].split(":", 1)[-1]
+        for node in _load(GRAPH)["@graph"]
+        if node.get("@type") in classes
+    }
+
+
+def _check_entity_refs() -> list[Finding]:
+    """The entity register against the documents that point into it.
+
+    A dangling @ref is a defect. An entry no document points at is not: an
+    entity whose anchor could not be placed deterministically stays unencoded in
+    the text and keeps its register entry, which is where the extraction remains
+    readable. The register and the JSON-LD graph must name the same entities,
+    because both take their ids from entity_index.py.
+    """
+    from lxml import etree
+
+    register = TEI_DIR / bt.REGISTER_FILE
+    if not register.exists():
+        return [_fail("referential.register", f"{bt.REGISTER_FILE} is missing")]
+    root = etree.parse(str(register)).getroot()
+    # entries only; the responsibility ids and the file id of the register are
+    # not entities and are no target of an entity @ref
+    ids = {
+        el.get(XML_ID)
+        for tag in ("person", "place", "item")
+        for el in root.iter(f"{TEI_NS}{tag}")
+        if el.get(XML_ID)
+    }
+
+    out: list[Finding] = []
+    used: set[str] = set()
+    for path in sorted(TEI_DIR.glob("*.xml")):
+        if path.name == bt.REGISTER_FILE:
+            continue
+        for element in etree.parse(str(path)).getroot().iter():
+            ref = element.get("ref")
+            if not ref:
+                continue
+            target = ref.split("#", 1)[-1]
+            used.add(target)
+            if target not in ids:
+                out.append(
+                    _fail(
+                        "referential.entity-ref",
+                        f"{path.name}: @ref {ref} resolves to nothing in"
+                        f" {bt.REGISTER_FILE}",
+                    )
+                )
+    graph_ids = _graph_entity_ids()
+    if graph_ids is None:
+        out.append(_fail("referential.entity-graph", f"{GRAPH.name} is missing"))
+    else:
+        for entity_id in sorted(ids - graph_ids):
+            out.append(
+                _fail(
+                    "referential.entity-graph",
+                    f"{entity_id} is in {bt.REGISTER_FILE} and not in {GRAPH.name}",
+                )
+            )
+        for entity_id in sorted(graph_ids - ids):
+            out.append(
+                _fail(
+                    "referential.entity-graph",
+                    f"{entity_id} is in {GRAPH.name} and not in {bt.REGISTER_FILE}",
+                )
+            )
+    if unused := sorted(ids - used):
+        out.append(
+            _info(
+                "referential.entity-unused",
+                f"{len(unused)} register entries no document points at, their"
+                f" anchors were not placeable, first: {unused[:3]}",
+            )
+        )
     return out
 
 
@@ -610,16 +698,19 @@ def check_idempotence() -> list[Finding]:
         with contextlib.redirect_stderr(io.StringIO()):
             docs, pages_by_doc = br.build(tmp)
             br.project(docs, pages_by_doc, tmp / "register_summary.json")
-            built = bt.build(tmp / "tei", _tei_date())
+            bt.build(tmp / "tei", _tei_date())
         out += _compare(DOCUMENTS, tmp / "documents.json", "register")
         out += _compare(SUMMARY, tmp / "register_summary.json", "projection")
         for path in sorted((tmp / "pages").glob("*.json")):
             out += _compare(REGISTER / path.name, path, "register")
-        for doc_id in built:
-            name = f"{doc_id}.xml"
+        # The TEI side is compared over the glob rather than over the returned
+        # document ids, so register.xml is covered like any other file and an
+        # orphan is found in both directions.
+        rebuilt_tei = {p.name for p in (tmp / "tei").glob("*.xml")}
+        current_tei = {p.name for p in TEI_DIR.glob("*.xml")}
+        for name in sorted(rebuilt_tei):
             out += _compare(TEI_DIR / name, tmp / "tei" / name, "tei")
         rebuilt_pages = {p.name for p in (tmp / "pages").glob("*.json")}
-        rebuilt_tei = {f"{doc_id}.xml" for doc_id in built}
         for name in sorted({p.name for p in REGISTER.glob("*.json")} - rebuilt_pages):
             out.append(
                 _fail(
@@ -628,7 +719,7 @@ def check_idempotence() -> list[Finding]:
                     " rebuild does not produce it",
                 )
             )
-        for name in sorted({p.name for p in TEI_DIR.glob("*.xml")} - rebuilt_tei):
+        for name in sorted(current_tei - rebuilt_tei):
             out.append(
                 _fail(
                     "idempotence.orphan",

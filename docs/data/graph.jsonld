@@ -1,0 +1,8713 @@
+{
+ "@context": {
+  "@version": 1.1,
+  "docta": "https://dhcraft.org/DoCTA/ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "label": {
+   "@id": "rdfs:label"
+  },
+  "attestedForm": {
+   "@id": "docta:attestedForm",
+   "@container": "@set"
+  },
+  "role": {
+   "@id": "docta:role",
+   "@container": "@set"
+  },
+  "attestedIn": {
+   "@id": "docta:attestedIn",
+   "@type": "@id",
+   "@container": "@set"
+  },
+  "attestation": {
+   "@id": "docta:attestation",
+   "@type": "@json"
+  },
+  "member": {
+   "@id": "docta:member",
+   "@type": "@id",
+   "@container": "@set"
+  },
+  "count": {
+   "@id": "docta:count"
+  },
+  "transkribusDocId": {
+   "@id": "docta:transkribusDocId"
+  },
+  "transcriptionBy": {
+   "@id": "docta:transcriptionBy"
+  },
+  "tei": {
+   "@id": "docta:tei"
+  },
+  "provenance": {
+   "@id": "docta:provenance",
+   "@type": "@json"
+  }
+ },
+ "@id": "docta:graph",
+ "label": "DoCTA entity graph over the extracted inventory transcriptions",
+ "provenance": {
+  "identification": [
+   {
+    "source": "llm",
+    "model": "gemini-3.7-flash",
+    "prompt": "entities_it01",
+    "prompt_hash": "01e61e025161",
+    "date": "2026-08-27",
+    "docId": 11328300
+   },
+   {
+    "source": "llm",
+    "model": "gemini-3.7-flash",
+    "prompt": "entities_it01",
+    "prompt_hash": "01e61e025161",
+    "date": "2026-08-27",
+    "docId": 11330019
+   },
+   {
+    "source": "llm",
+    "model": "gemini-3.7-flash",
+    "prompt": "entities_it01",
+    "prompt_hash": "01e61e025161",
+    "date": "2026-08-27",
+    "docId": 11330020
+   }
+  ],
+  "aggregation": {
+   "source": "workflow",
+   "generator": "pipeline/build_graph.py",
+   "method": "entities merged by type and normalized form; links are attestation in a document and co-occurrence in a transcription line"
+  }
+ },
+ "@graph": [
+  {
+   "@id": "docta:doc-11328300",
+   "@type": "docta:Document",
+   "label": "Thaur, TLA Inventare A 49.1 (1471)",
+   "transkribusDocId": 11328300,
+   "tei": "tei/11328300.xml",
+   "transcriptionBy": "Inventaria"
+  },
+  {
+   "@id": "docta:doc-11330019",
+   "@type": "docta:Document",
+   "label": "Kronburg, TLA Inventare A 144.1 (1478)",
+   "transkribusDocId": 11330019,
+   "tei": "tei/11330019.xml",
+   "transcriptionBy": "Inventaria"
+  },
+  {
+   "@id": "docta:doc-11330020",
+   "@type": "docta:Document",
+   "label": "Heinfels, TLA Inventare A 201.1 (1440)",
+   "transkribusDocId": 11330020,
+   "tei": "tei/11330020.xml",
+   "transcriptionBy": "Inventaria"
+  },
+  {
+   "@id": "docta:obj-alter-harnisch",
+   "@type": "docta:Object",
+   "label": "Alter Harnisch",
+   "attestedForm": [
+    "alter harnasch"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l26",
+     "form": "alter harnasch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-armbrust",
+   "@type": "docta:Object",
+   "label": "Armbrust",
+   "attestedForm": [
+    "arm(bro)st",
+    "armbrost",
+    "armprost"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l22",
+     "form": "armbrost"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l24",
+     "form": "armbrost"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l25",
+     "form": "armprost"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l10",
+     "form": "arm(bro)st"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-armzeug",
+   "@type": "docta:Object",
+   "label": "Armzeug",
+   "attestedForm": [
+    "arm zewg",
+    "armzewg"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l3",
+     "form": "arm zewg"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l5",
+     "form": "armzewg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-backtrog",
+   "@type": "docta:Object",
+   "label": "Backtrog",
+   "attestedForm": [
+    "pachtrog"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l8",
+     "form": "pachtrog"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-badewanne",
+   "@type": "docta:Object",
+   "label": "Badewanne",
+   "attestedForm": [
+    "padwannen"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l7",
+     "form": "padwannen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-badpfeit",
+   "@type": "docta:Object",
+   "label": "Badpfeit",
+   "attestedForm": [
+    "padphaitel"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l8",
+     "form": "padphaitel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-badpfoit",
+   "@type": "docta:Object",
+   "label": "Badpfoit",
+   "attestedForm": [
+    "padphaiten"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l7",
+     "form": "padphaiten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bankkissen",
+   "@type": "docta:Object",
+   "label": "Bankkissen",
+   "attestedForm": [
+    "chüss",
+    "pangkh"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l3",
+     "form": "pangkh"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l4",
+     "form": "chüss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bankpolster",
+   "@type": "docta:Object",
+   "label": "Bankpolster",
+   "attestedForm": [
+    "banck",
+    "pangkpolster"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13",
+     "form": "banck"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l3",
+     "form": "pangkpolster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-beingewand",
+   "@type": "docta:Object",
+   "label": "Beingewand",
+   "attestedForm": [
+    "bain gwand"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l4",
+     "form": "bain gwand"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-beschlagener-loeffel",
+   "@type": "docta:Object",
+   "label": "Beschlagener Löffel",
+   "attestedForm": [
+    "beslagen loffel"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l10",
+     "form": "beslagen loffel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bett",
+   "@type": "docta:Object",
+   "label": "Bett",
+   "attestedForm": [
+    "bett",
+    "pett",
+    "pott",
+    "pëtt"
+   ],
+   "role": [
+    "Möbel",
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l2",
+     "form": "pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l6",
+     "form": "pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l11",
+     "form": "pott"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l1",
+     "form": "pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l3",
+     "form": "pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l1",
+     "form": "pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r5l2",
+     "form": "pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l2",
+     "form": "pett"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13",
+     "form": "bett"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l28",
+     "form": "bett"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l5",
+     "form": "bett"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l8",
+     "form": "bett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l1",
+     "form": "pett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l13",
+     "form": "pett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l17",
+     "form": "pëtt"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l22",
+     "form": "pett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l30",
+     "form": "pëtt"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l1",
+     "form": "pëtt"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l5",
+     "form": "pëtt"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l9",
+     "form": "pett"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l12",
+     "form": "pëtt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bett-mit-barchent-ueberzogen",
+   "@type": "docta:Object",
+   "label": "Bett mit Barchent überzogen",
+   "attestedForm": [
+    "pett mit parchant uberzogen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l17",
+     "form": "pett mit parchant uberzogen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bett-mit-einem-gestreiften-ziechen",
+   "@type": "docta:Object",
+   "label": "Bett mit einem gestreiften Ziechen",
+   "attestedForm": [
+    "pett mit ainem gestreimbten ziechen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l8",
+     "form": "pett mit ainem gestreimbten ziechen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bett-mit-weissem-ueberzug",
+   "@type": "docta:Object",
+   "label": "Bett mit weißem Überzug",
+   "attestedForm": [
+    "pett mit weissem uberzogen",
+    "pott mit weissem uberzogen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l33",
+     "form": "pett mit weissem uberzogen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l3",
+     "form": "pott mit weissem uberzogen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bettchen",
+   "@type": "docta:Object",
+   "label": "Bettchen",
+   "attestedForm": [
+    "pëttel"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l31",
+     "form": "pëttel"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l34",
+     "form": "pëttel"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l15",
+     "form": "pëttel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bettpolster",
+   "@type": "docta:Object",
+   "label": "Bettpolster",
+   "attestedForm": [
+    "pettpõlster"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l5",
+     "form": "pettpõlster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bettruhe",
+   "@type": "docta:Object",
+   "label": "Bettruhe",
+   "attestedForm": [
+    "bettruchen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l18",
+     "form": "bettruchen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bettstatt",
+   "@type": "docta:Object",
+   "label": "Bettstatt",
+   "attestedForm": [
+    "betstatt",
+    "bettstatt"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l12",
+     "form": "bettstatt"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l27",
+     "form": "betstatt"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l4",
+     "form": "bettstatt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-blattschloss",
+   "@type": "docta:Object",
+   "label": "Blattschloss",
+   "attestedForm": [
+    "blatt schlos"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l19",
+     "form": "blatt schlos"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-blechflasche",
+   "@type": "docta:Object",
+   "label": "Blechflasche",
+   "attestedForm": [
+    "plechflachen"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l18",
+     "form": "plechflachen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-brandroste",
+   "@type": "docta:Object",
+   "label": "Brandroste",
+   "attestedForm": [
+    "prantrött"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l35",
+     "form": "prantrött"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-bratspiess",
+   "@type": "docta:Object",
+   "label": "Bratspieß",
+   "attestedForm": [
+    "bratspis",
+    "pratspise",
+    "pratspiss"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l18",
+     "form": "pratspise"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l23",
+     "form": "bratspis"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l37",
+     "form": "pratspiss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-brief",
+   "@type": "docta:Object",
+   "label": "Brief",
+   "attestedForm": [
+    "brief"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l26",
+     "form": "brief"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-buttrich",
+   "@type": "docta:Object",
+   "label": "Buttrich",
+   "attestedForm": [
+    "buttrich"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l36",
+     "form": "buttrich"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-deckbett",
+   "@type": "docta:Object",
+   "label": "Deckbett",
+   "attestedForm": [
+    "deckbett",
+    "dekchpett",
+    "dekh pett",
+    "dekhpëtt"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l2",
+     "form": "dekh pett"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l5",
+     "form": "deckbett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l2",
+     "form": "dekhpëtt"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l19",
+     "form": "dekchpett"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-decke",
+   "@type": "docta:Object",
+   "label": "Decke",
+   "attestedForm": [
+    "dekhen",
+    "dëkh"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l4",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l16",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l21",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l30",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l31",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l2",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l11",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l16",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l9",
+     "form": "dekhen"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l36",
+     "form": "dëkh"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l37",
+     "form": "dekhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-decke-mit-seide-genaeht",
+   "@type": "docta:Object",
+   "label": "Decke mit Seide genäht",
+   "attestedForm": [
+    "dekhen mit sÿdn genant"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l3",
+     "form": "dekhen mit sÿdn genant"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-deckel",
+   "@type": "docta:Object",
+   "label": "Deckel",
+   "attestedForm": [
+    "degkhel",
+    "dëgkel"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l20",
+     "form": "dëgkel"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l18",
+     "form": "degkhel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-decklaken",
+   "@type": "docta:Object",
+   "label": "Decklaken",
+   "attestedForm": [
+    "degklach",
+    "dekhlach"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l7",
+     "form": "degklach"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l33",
+     "form": "dekhlach"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-dengelgeschirr",
+   "@type": "docta:Object",
+   "label": "Dengelgeschirr",
+   "attestedForm": [
+    "tangelgeschiere",
+    "temgelgeschier"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l5",
+     "form": "temgelgeschier"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l22",
+     "form": "tangelgeschiere"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-dreifuss",
+   "@type": "docta:Object",
+   "label": "Dreifuß",
+   "attestedForm": [
+    "drÿfuss"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l20",
+     "form": "drÿfuss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eherner-hafen",
+   "@type": "docta:Object",
+   "label": "Eherner Hafen",
+   "attestedForm": [
+    "erin hafen"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l23",
+     "form": "erin hafen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l17",
+     "form": "erin hafen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eisenhut",
+   "@type": "docta:Object",
+   "label": "Eisenhut",
+   "attestedForm": [
+    "eysenhut",
+    "eÿsenhüt"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l2",
+     "form": "eÿsenhüt"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l11",
+     "form": "eysenhut"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eisenstecken",
+   "@type": "docta:Object",
+   "label": "Eisenstecken",
+   "attestedForm": [
+    "eysenstecken"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l9",
+     "form": "eysenstecken"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eisenzange",
+   "@type": "docta:Object",
+   "label": "Eisenzange",
+   "attestedForm": [
+    "eysenzang"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l38",
+     "form": "eysenzang"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eiserne-mistgabel",
+   "@type": "docta:Object",
+   "label": "Eiserne Mistgabel",
+   "attestedForm": [
+    "eÿsnen mistgabelen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l4",
+     "form": "eÿsnen mistgabelen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eiserne-und-kupferne-buechsen",
+   "@type": "docta:Object",
+   "label": "Eiserne und kupferne Büchsen",
+   "attestedForm": [
+    "eÿsnnen und kuphren puchsen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l25",
+     "form": "eÿsnnen und kuphren puchsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eiserner-keil",
+   "@type": "docta:Object",
+   "label": "Eiserner Keil",
+   "attestedForm": [
+    "eÿsnen wekg"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l3",
+     "form": "eÿsnen wekg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-eseleisen",
+   "@type": "docta:Object",
+   "label": "Eseleisen",
+   "attestedForm": [
+    "esel eyssen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l25",
+     "form": "esel eyssen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-fass-wein",
+   "@type": "docta:Object",
+   "label": "Fass Wein",
+   "attestedForm": [
+    "vass vein"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l38",
+     "form": "vass vein"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-feile",
+   "@type": "docta:Object",
+   "label": "Feile",
+   "attestedForm": [
+    "veÿhel"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l10",
+     "form": "veÿhel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-feuerbock",
+   "@type": "docta:Object",
+   "label": "Feuerbock",
+   "attestedForm": [
+    "hainczt"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l37",
+     "form": "hainczt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-fischkessel",
+   "@type": "docta:Object",
+   "label": "Fischkessel",
+   "attestedForm": [
+    "fischkessel"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l23",
+     "form": "fischkessel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-fleischbeil",
+   "@type": "docta:Object",
+   "label": "Fleischbeil",
+   "attestedForm": [
+    "fleÿsch peÿl"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l11",
+     "form": "fleÿsch peÿl"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-fuchsbalg",
+   "@type": "docta:Object",
+   "label": "Fuchsbalg",
+   "attestedForm": [
+    "fuschs belg"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l10",
+     "form": "fuschs belg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-futteral",
+   "@type": "docta:Object",
+   "label": "Futteral",
+   "attestedForm": [
+    "futral"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l11",
+     "form": "futral"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-futterkasten",
+   "@type": "docta:Object",
+   "label": "Futterkasten",
+   "attestedForm": [
+    "futerkasten"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l6",
+     "form": "futerkasten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-futterwanne",
+   "@type": "docta:Object",
+   "label": "Futterwanne",
+   "attestedForm": [
+    "futer wannen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l18",
+     "form": "futer wannen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-faesslein",
+   "@type": "docta:Object",
+   "label": "Fässlein",
+   "attestedForm": [
+    "vässlÿ"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l27",
+     "form": "vässlÿ"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gabel",
+   "@type": "docta:Object",
+   "label": "Gabel",
+   "attestedForm": [
+    "gabe-"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l33",
+     "form": "gabe-"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gamsfelldecke",
+   "@type": "docta:Object",
+   "label": "Gamsfelldecke",
+   "attestedForm": [
+    "gambseine dekh",
+    "gambss dekch"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l7",
+     "form": "gambseine dekh"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l11",
+     "form": "gambss dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gamsseil",
+   "@type": "docta:Object",
+   "label": "Gamsseil",
+   "attestedForm": [
+    "gambssayl"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l12",
+     "form": "gambssayl"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gartengabel",
+   "@type": "docta:Object",
+   "label": "Gartengabel",
+   "attestedForm": [
+    "gartt gabel"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l23",
+     "form": "gartt gabel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gediegenes-fleisch",
+   "@type": "docta:Object",
+   "label": "Gediegenes Fleisch",
+   "attestedForm": [
+    "gedigen flaisch"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l30",
+     "form": "gedigen flaisch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gespannter-wolfbalg",
+   "@type": "docta:Object",
+   "label": "Gespannter Wolfbalg",
+   "attestedForm": [
+    "gebaist wolf"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l9",
+     "form": "gebaist wolf"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gestreifter-polster",
+   "@type": "docta:Object",
+   "label": "Gestreifter Polster",
+   "attestedForm": [
+    "gestreimbt polster",
+    "gestreimbte polster",
+    "gestreimbter polster"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l29",
+     "form": "gestreimbte polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l35",
+     "form": "gestreimbter polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l5",
+     "form": "gestreimbt polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l9",
+     "form": "gestreimbt polster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gestreiftes-bett",
+   "@type": "docta:Object",
+   "label": "Gestreiftes Bett",
+   "attestedForm": [
+    "gestreimbte pett"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l25",
+     "form": "gestreimbte pett"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gestreiftes-kissen",
+   "@type": "docta:Object",
+   "label": "Gestreiftes Kissen",
+   "attestedForm": [
+    "gestreimbt kuss",
+    "gestreimbt kũss",
+    "gestreimbte kuss",
+    "gestreimbts kũss"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l32",
+     "form": "gestreimbt kuss"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l1",
+     "form": "gestreimbts kũss"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l6",
+     "form": "gestreimbt kũss"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l15",
+     "form": "gestreimbte kuss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-grand",
+   "@type": "docta:Object",
+   "label": "Grand",
+   "attestedForm": [
+    "grändt"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l34",
+     "form": "grändt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hafen",
+   "@type": "docta:Object",
+   "label": "Hafen",
+   "attestedForm": [
+    "hafein"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l23",
+     "form": "hafein"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hahl",
+   "@type": "docta:Object",
+   "label": "Hahl",
+   "attestedForm": [
+    "hälen"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l36",
+     "form": "hälen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-haken",
+   "@type": "docta:Object",
+   "label": "Haken",
+   "attestedForm": [
+    "hakhen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l2",
+     "form": "hakhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hakenbuechse",
+   "@type": "docta:Object",
+   "label": "Hakenbüchse",
+   "attestedForm": [
+    "hagkenpuchsen",
+    "hagkenpüchsen",
+    "hakgenpuchsen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l23",
+     "form": "hakgenpuchsen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l14",
+     "form": "hagkenpüchsen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l15",
+     "form": "hagkenpüchsen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l16",
+     "form": "hagkenpuchsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hammer",
+   "@type": "docta:Object",
+   "label": "Hammer",
+   "attestedForm": [
+    "hämer"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l10",
+     "form": "hämer"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-handbuechse",
+   "@type": "docta:Object",
+   "label": "Handbüchse",
+   "attestedForm": [
+    "handpuchsen",
+    "hantpuchsen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l21",
+     "form": "hantpuchsen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l18",
+     "form": "handpuchsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-handschuh",
+   "@type": "docta:Object",
+   "label": "Handschuh",
+   "attestedForm": [
+    "handtschuch"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l11",
+     "form": "handtschuch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-handschuhe",
+   "@type": "docta:Object",
+   "label": "Handschuhe",
+   "attestedForm": [
+    "hentschůch"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l2",
+     "form": "hentschůch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-handtuch",
+   "@type": "docta:Object",
+   "label": "Handtuch",
+   "attestedForm": [
+    "handttücher",
+    "hannttũcher",
+    "hanttucher"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l13",
+     "form": "hannttũcher"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l25",
+     "form": "hanttucher"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l9",
+     "form": "handttücher"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-harnisch",
+   "@type": "docta:Object",
+   "label": "Harnisch",
+   "attestedForm": [
+    "harnasch"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l28",
+     "form": "harnasch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-haue",
+   "@type": "docta:Object",
+   "label": "Haue",
+   "attestedForm": [
+    "hawen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l33",
+     "form": "hawen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hauptkissen",
+   "@type": "docta:Object",
+   "label": "Hauptkissen",
+   "attestedForm": [
+    "hauptkuss",
+    "hauptküss"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l3",
+     "form": "hauptkuss"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l14",
+     "form": "hauptküss"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l24",
+     "form": "hauptkuss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hauptpolster",
+   "@type": "docta:Object",
+   "label": "Hauptpolster",
+   "attestedForm": [
+    "hauptpolster",
+    "hauptpölster"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l2",
+     "form": "hauptpölster"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l14",
+     "form": "hauptpölster"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l23",
+     "form": "hauptpolster"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l30",
+     "form": "hauptpolster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hausrat",
+   "@type": "docta:Object",
+   "label": "Hausrat",
+   "attestedForm": [
+    "hawsrat",
+    "hawsrats"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r2l1",
+     "form": "hawsrats"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r5l1",
+     "form": "hawsrat"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r4l2",
+     "form": "hawsrat"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-haut",
+   "@type": "docta:Object",
+   "label": "Haut",
+   "attestedForm": [
+    "hüt"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l10",
+     "form": "hüt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hechel",
+   "@type": "docta:Object",
+   "label": "Hechel",
+   "attestedForm": [
+    "hächelen"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l31",
+     "form": "hächelen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-heugabel",
+   "@type": "docta:Object",
+   "label": "Heugabel",
+   "attestedForm": [
+    "heÿgablen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l34",
+     "form": "heÿgablen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-holzschlitten",
+   "@type": "docta:Object",
+   "label": "Holzschlitten",
+   "attestedForm": [
+    "holzslÿten"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l9",
+     "form": "holzslÿten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-holzschuessel",
+   "@type": "docta:Object",
+   "label": "Holzschüssel",
+   "attestedForm": [
+    "hültzi"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l26",
+     "form": "hültzi"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-holzteller",
+   "@type": "docta:Object",
+   "label": "Holzteller",
+   "attestedForm": [
+    "hulczene täler"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l30",
+     "form": "hulczene täler"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-haengende-kanne",
+   "@type": "docta:Object",
+   "label": "Hängende Kanne",
+   "attestedForm": [
+    "hangenden kandl"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l17",
+     "form": "hangenden kandl"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hoelzerne-schuessel",
+   "@type": "docta:Object",
+   "label": "Hölzerne Schüssel",
+   "attestedForm": [
+    "hulzen schusselen"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l16",
+     "form": "hulzen schusselen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-hoelzerne-tellerbuechse",
+   "@type": "docta:Object",
+   "label": "Hölzerne Tellerbüchse",
+   "attestedForm": [
+    "hulczen tellerpuchsen"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l23",
+     "form": "hulczen tellerpuchsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kandel",
+   "@type": "docta:Object",
+   "label": "Kandel",
+   "attestedForm": [
+    "kanndelen"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l1",
+     "form": "kanndelen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kandelaber",
+   "@type": "docta:Object",
+   "label": "Kandelaber",
+   "attestedForm": [
+    "kandelier"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l21",
+     "form": "kandelier"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kanne",
+   "@type": "docta:Object",
+   "label": "Kanne",
+   "attestedForm": [
+    "kandeln"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l16",
+     "form": "kandeln"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kariolbett",
+   "@type": "docta:Object",
+   "label": "Kariolbett",
+   "attestedForm": [
+    "kariolen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l5",
+     "form": "kariolen"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l16",
+     "form": "kariolen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kessel",
+   "@type": "docta:Object",
+   "label": "Kessel",
+   "attestedForm": [
+    "kessel"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l14",
+     "form": "kessel"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l25",
+     "form": "kessel"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l15",
+     "form": "kessel"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l34",
+     "form": "kessel"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l20",
+     "form": "kessel"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l22",
+     "form": "kessel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kissen",
+   "@type": "docta:Object",
+   "label": "Kissen",
+   "attestedForm": [
+    "chũß",
+    "chüss",
+    "chŭss",
+    "kchũs",
+    "kuss",
+    "küssn"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l14",
+     "form": "kuss"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l19",
+     "form": "kuss"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l8",
+     "form": "kuss"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l3",
+     "form": "kchũs"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13",
+     "form": "kuss"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l6",
+     "form": "kuss"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l19",
+     "form": "chŭss"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l31",
+     "form": "chüss"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l35",
+     "form": "küssn"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l5",
+     "form": "chüss"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l10",
+     "form": "chüss"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13",
+     "form": "chũß"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kissen-mit-weissen-ziechen",
+   "@type": "docta:Object",
+   "label": "Kissen mit weißen Ziechen",
+   "attestedForm": [
+    "kuss mit weyssen ziechen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l27",
+     "form": "kuss mit weyssen ziechen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kissenzieche",
+   "@type": "docta:Object",
+   "label": "Kissenzieche",
+   "attestedForm": [
+    "kusstziechen",
+    "kussziechen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r4l1",
+     "form": "kussziechen"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l10",
+     "form": "kusstziechen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kolter",
+   "@type": "docta:Object",
+   "label": "Kolter",
+   "attestedForm": [
+    "golter"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l29",
+     "form": "golter"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l7",
+     "form": "golter"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kragen",
+   "@type": "docta:Object",
+   "label": "Kragen",
+   "attestedForm": [
+    "kragel"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l4",
+     "form": "kragel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-krautbrente",
+   "@type": "docta:Object",
+   "label": "Krautbrente",
+   "attestedForm": [
+    "krawtprenten"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l13",
+     "form": "krawtprenten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kraeusel",
+   "@type": "docta:Object",
+   "label": "Kräusel",
+   "attestedForm": [
+    "kraesel"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l9",
+     "form": "kraesel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kuh",
+   "@type": "docta:Object",
+   "label": "Kuh",
+   "attestedForm": [
+    "küe"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l4",
+     "form": "küe"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kummet",
+   "@type": "docta:Object",
+   "label": "Kummet",
+   "attestedForm": [
+    "komat"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l20",
+     "form": "komat"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kupferbecken",
+   "@type": "docta:Object",
+   "label": "Kupferbecken",
+   "attestedForm": [
+    "kupfferene pekh"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l28",
+     "form": "kupfferene pekh"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kupferne-buechse",
+   "@type": "docta:Object",
+   "label": "Kupferne Büchse",
+   "attestedForm": [
+    "kũphren pũchsen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l24",
+     "form": "kũphren pũchsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kaelbchen",
+   "@type": "docta:Object",
+   "label": "Kälbchen",
+   "attestedForm": [
+    "kalbelen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l4",
+     "form": "kalbelen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-koecher",
+   "@type": "docta:Object",
+   "label": "Köcher",
+   "attestedForm": [
+    "kŏcher"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l12",
+     "form": "kŏcher"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-kuerass",
+   "@type": "docta:Object",
+   "label": "Kürass",
+   "attestedForm": [
+    "kürüss"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l1",
+     "form": "kürüss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-lagel",
+   "@type": "docta:Object",
+   "label": "Lagel",
+   "attestedForm": [
+    "lagel"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l10",
+     "form": "lagel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-lammfelldecke",
+   "@type": "docta:Object",
+   "label": "Lammfelldecke",
+   "attestedForm": [
+    "lembrein degkh",
+    "lembrein dekch",
+    "lembrein gut dekch"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l4",
+     "form": "lembrein degkh"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l26",
+     "form": "lembrein dekch"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l14",
+     "form": "lembrein gut dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-lauetsche",
+   "@type": "docta:Object",
+   "label": "Lauetsche",
+   "attestedForm": [
+    "laüetschen"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l24",
+     "form": "laüetschen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-lederner-bankpolster",
+   "@type": "docta:Object",
+   "label": "Lederner Bankpolster",
+   "attestedForm": [
+    "lydren pankhpolster"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l6",
+     "form": "lydren pankhpolster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-ledernes-bankkissen",
+   "@type": "docta:Object",
+   "label": "Ledernes Bankkissen",
+   "attestedForm": [
+    "lydrein pankhkuss"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l7",
+     "form": "lydrein pankhkuss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-legel",
+   "@type": "docta:Object",
+   "label": "Legel",
+   "attestedForm": [
+    "legelen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l20",
+     "form": "legelen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-leintuch",
+   "@type": "docta:Object",
+   "label": "Leintuch",
+   "attestedForm": [
+    "leilach",
+    "leylach",
+    "leÿlach"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l6",
+     "form": "leÿlach"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l4",
+     "form": "leilach"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l28",
+     "form": "leylach"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l6",
+     "form": "leylach"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l18",
+     "form": "leylach"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l35",
+     "form": "leilach"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l2",
+     "form": "leilach"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l6",
+     "form": "leilach"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l10",
+     "form": "leilach"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13",
+     "form": "leilach"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l16",
+     "form": "leilach"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-loden",
+   "@type": "docta:Object",
+   "label": "Loden",
+   "attestedForm": [
+    "loden"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l32",
+     "form": "loden"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-lodendekel",
+   "@type": "docta:Object",
+   "label": "Lodendekel",
+   "attestedForm": [
+    "lodeins dekhel"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l36",
+     "form": "lodeins dekhel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-mehlkasten",
+   "@type": "docta:Object",
+   "label": "Mehlkasten",
+   "attestedForm": [
+    "melkasten"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l5",
+     "form": "melkasten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-messing-badbecken",
+   "@type": "docta:Object",
+   "label": "Messing-Badbecken",
+   "attestedForm": [
+    "messen padpekh"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l14",
+     "form": "messen padpekh"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-messing-giesskanne",
+   "@type": "docta:Object",
+   "label": "Messing-Gießkanne",
+   "attestedForm": [
+    "messen gieskãndl"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l20",
+     "form": "messen gieskãndl"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-messingbecken",
+   "@type": "docta:Object",
+   "label": "Messingbecken",
+   "attestedForm": [
+    "messene pekh",
+    "messin beck"
+   ],
+   "role": [
+    "Hausrat",
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l15",
+     "form": "messin beck"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l27",
+     "form": "messene pekh"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-messinggiesskanne",
+   "@type": "docta:Object",
+   "label": "Messinggießkanne",
+   "attestedForm": [
+    "giess kandel",
+    "messene"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l27",
+     "form": "messene"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l28",
+     "form": "giess kandel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-messinghandfass",
+   "@type": "docta:Object",
+   "label": "Messinghandfass",
+   "attestedForm": [
+    "messin hantvass"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l16",
+     "form": "messin hantvass"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-milchschuessel",
+   "@type": "docta:Object",
+   "label": "Milchschüssel",
+   "attestedForm": [
+    "milch",
+    "schüssel"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l38",
+     "form": "milch"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l39",
+     "form": "schüssel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-moerser",
+   "@type": "docta:Object",
+   "label": "Mörser",
+   "attestedForm": [
+    "mörser"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l25",
+     "form": "mörser"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-moerserbuechse",
+   "@type": "docta:Object",
+   "label": "Mörserbüchse",
+   "attestedForm": [
+    "morser buchsen",
+    "morser puchsen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l22",
+     "form": "morser puchsen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l23",
+     "form": "morser buchsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-ochseneisen",
+   "@type": "docta:Object",
+   "label": "Ochseneisen",
+   "attestedForm": [
+    "ochsen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l24",
+     "form": "ochsen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-panzer",
+   "@type": "docta:Object",
+   "label": "Panzer",
+   "attestedForm": [
+    "bants"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l4",
+     "form": "bants"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-pfanne",
+   "@type": "docta:Object",
+   "label": "Pfanne",
+   "attestedForm": [
+    "pfannen",
+    "phann",
+    "phannen"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l15",
+     "form": "phannen"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l22",
+     "form": "pfannen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l35",
+     "form": "phann"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-pfannenknecht",
+   "@type": "docta:Object",
+   "label": "Pfannenknecht",
+   "attestedForm": [
+    "echt",
+    "phankn¬"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l36",
+     "form": "phankn¬"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l37",
+     "form": "echt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-pfefferpfanne",
+   "@type": "docta:Object",
+   "label": "Pfefferpfanne",
+   "attestedForm": [
+    "pheffer phan"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l36",
+     "form": "pheffer phan"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-pfeil",
+   "@type": "docta:Object",
+   "label": "Pfeil",
+   "attestedForm": [
+    "pfeilen",
+    "pheylen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l20",
+     "form": "pfeilen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l8",
+     "form": "pheylen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-pflug",
+   "@type": "docta:Object",
+   "label": "Pflug",
+   "attestedForm": [
+    "phlũg"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l24",
+     "form": "phlũg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-pfaennlein",
+   "@type": "docta:Object",
+   "label": "Pfännlein",
+   "attestedForm": [
+    "plandl"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l17",
+     "form": "plandl"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-polster",
+   "@type": "docta:Object",
+   "label": "Polster",
+   "attestedForm": [
+    "bolster",
+    "polster",
+    "polsteren"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l3",
+     "form": "polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l9",
+     "form": "polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l13",
+     "form": "polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l20",
+     "form": "polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r5l2",
+     "form": "polster"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l2",
+     "form": "polsteren"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13",
+     "form": "bolster"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l14",
+     "form": "bolster"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l28",
+     "form": "bolster"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l6",
+     "form": "bolster"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l8",
+     "form": "bolster"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l18",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l34",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l3",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l5",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l10",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l15",
+     "form": "polster"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l16",
+     "form": "polster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-polster-mit-weissen-ziechen",
+   "@type": "docta:Object",
+   "label": "Polster mit weißen Ziechen",
+   "attestedForm": [
+    "polster mit weissen ziechen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l26",
+     "form": "polster mit weissen ziechen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-polsterstrohsaecke",
+   "@type": "docta:Object",
+   "label": "Polsterstrohsäcke",
+   "attestedForm": [
+    "polster strosekh"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l5",
+     "form": "polster strosekh"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-polsterzieche",
+   "@type": "docta:Object",
+   "label": "Polsterzieche",
+   "attestedForm": [
+    "polstertziechen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l11",
+     "form": "polstertziechen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-rakeisen",
+   "@type": "docta:Object",
+   "label": "Rakeisen",
+   "attestedForm": [
+    "rakgawn"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l6",
+     "form": "rakgawn"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-rauchdecke",
+   "@type": "docta:Object",
+   "label": "Rauchdecke",
+   "attestedForm": [
+    "rauch deck"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l14",
+     "form": "rauch deck"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l29",
+     "form": "rauch deck"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-rauhe-decke",
+   "@type": "docta:Object",
+   "label": "Rauhe Decke",
+   "attestedForm": [
+    "rawhe dekhen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l10",
+     "form": "rawhe dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l15",
+     "form": "rawhe dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l12",
+     "form": "rawhe dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l17",
+     "form": "rawhe dekhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l5",
+     "form": "rawhe dekhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-reibeisen",
+   "@type": "docta:Object",
+   "label": "Reibeisen",
+   "attestedForm": [
+    "ribeysen"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l38",
+     "form": "ribeysen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-reitsattel",
+   "@type": "docta:Object",
+   "label": "Reitsattel",
+   "attestedForm": [
+    "raissättel"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l2",
+     "form": "raissättel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-rosseisen",
+   "@type": "docta:Object",
+   "label": "Rosseisen",
+   "attestedForm": [
+    "rosseyssen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l24",
+     "form": "rosseyssen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-rost",
+   "@type": "docta:Object",
+   "label": "Rost",
+   "attestedForm": [
+    "rost"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l19",
+     "form": "rost"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-roecklein",
+   "@type": "docta:Object",
+   "label": "Röcklein",
+   "attestedForm": [
+    "rökel"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l8",
+     "form": "rökel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-ruech",
+   "@type": "docta:Object",
+   "label": "Rüch",
+   "attestedForm": [
+    "rüch"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l31",
+     "form": "rüch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-sack-mit-garn",
+   "@type": "docta:Object",
+   "label": "Sack mit Garn",
+   "attestedForm": [
+    "sakh mit garen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l4",
+     "form": "sakh mit garen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-salzfass",
+   "@type": "docta:Object",
+   "label": "Salzfass",
+   "attestedForm": [
+    "salzvassel"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l19",
+     "form": "salzvassel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-sarge",
+   "@type": "docta:Object",
+   "label": "Sarge",
+   "attestedForm": [
+    "sargen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l6",
+     "form": "sargen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schaffreite",
+   "@type": "docta:Object",
+   "label": "Schaffreite",
+   "attestedForm": [
+    "schaffraitt"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l22",
+     "form": "schaffraitt"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schafwolldecke",
+   "@type": "docta:Object",
+   "label": "Schafwolldecke",
+   "attestedForm": [
+    "dekch",
+    "schaffein",
+    "schaffein dekch",
+    "schaffein dekh",
+    "schäffein dekh",
+    "schäffen dëkch"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l5",
+     "form": "schäffen dëkch"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l25",
+     "form": "schaffein dekch"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l6",
+     "form": "schaffein dekh"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l11",
+     "form": "schäffein dekh"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13",
+     "form": "schaffein"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l14",
+     "form": "dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schere",
+   "@type": "docta:Object",
+   "label": "Schere",
+   "attestedForm": [
+    "scherren"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l22",
+     "form": "scherren"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schiesspulver",
+   "@type": "docta:Object",
+   "label": "Schießpulver",
+   "attestedForm": [
+    "pulver"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l27",
+     "form": "pulver"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schlittruhe",
+   "@type": "docta:Object",
+   "label": "Schlittruhe",
+   "attestedForm": [
+    "slittruhen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l8",
+     "form": "slittruhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schloss",
+   "@type": "docta:Object",
+   "label": "Schloss",
+   "attestedForm": [
+    "sloss"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l20",
+     "form": "sloss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schlosserkloben",
+   "@type": "docta:Object",
+   "label": "Schlosserkloben",
+   "attestedForm": [
+    "schlosser kloben"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l11",
+     "form": "schlosser kloben"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schmiedstock",
+   "@type": "docta:Object",
+   "label": "Schmiedstock",
+   "attestedForm": [
+    "schmidsteck"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l10",
+     "form": "schmidsteck"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schmiedzeug",
+   "@type": "docta:Object",
+   "label": "Schmiedzeug",
+   "attestedForm": [
+    "smid zeug"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l9",
+     "form": "smid zeug"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schreibtisch",
+   "@type": "docta:Object",
+   "label": "Schreibtisch",
+   "attestedForm": [
+    "schribtisch"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l8",
+     "form": "schribtisch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schrein",
+   "@type": "docta:Object",
+   "label": "Schrein",
+   "attestedForm": [
+    "schrein"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l8",
+     "form": "schrein"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schreinlein",
+   "@type": "docta:Object",
+   "label": "Schreinlein",
+   "attestedForm": [
+    "schreinel"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l21",
+     "form": "schreinel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schurz",
+   "@type": "docta:Object",
+   "label": "Schurz",
+   "attestedForm": [
+    "schũrliz"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l9",
+     "form": "schũrliz"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schwein",
+   "@type": "docta:Object",
+   "label": "Schwein",
+   "attestedForm": [
+    "schwein"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l5",
+     "form": "schwein"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schweinefleisch",
+   "@type": "docta:Object",
+   "label": "Schweinefleisch",
+   "attestedForm": [
+    "schweinflaisch"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l29",
+     "form": "schweinflaisch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schweinespiess",
+   "@type": "docta:Object",
+   "label": "Schweinespieß",
+   "attestedForm": [
+    "schweinspies"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l5",
+     "form": "schweinspies"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schwaebischer-zwilch",
+   "@type": "docta:Object",
+   "label": "Schwäbischer Zwilch",
+   "attestedForm": [
+    "swãbischer zwilch"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l12",
+     "form": "swãbischer zwilch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-schuessel",
+   "@type": "docta:Object",
+   "label": "Schüssel",
+   "attestedForm": [
+    "pott schussel",
+    "schisslen"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l27",
+     "form": "schisslen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l29",
+     "form": "pott schussel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-sedeltruhe",
+   "@type": "docta:Object",
+   "label": "Sedeltruhe",
+   "attestedForm": [
+    "sÿdeltruhen"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l2",
+     "form": "sÿdeltruhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-sehne",
+   "@type": "docta:Object",
+   "label": "Sehne",
+   "attestedForm": [
+    "sen",
+    "senen"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l25",
+     "form": "sen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l26",
+     "form": "senen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-sense",
+   "@type": "docta:Object",
+   "label": "Sense",
+   "attestedForm": [
+    "segens"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l1",
+     "form": "segens"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-sichel",
+   "@type": "docta:Object",
+   "label": "Sichel",
+   "attestedForm": [
+    "sicheln"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l24",
+     "form": "sicheln"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-spannbett",
+   "@type": "docta:Object",
+   "label": "Spannbett",
+   "attestedForm": [
+    "spanpett",
+    "spanpëtt"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l1",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l5",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l15",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l20",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l27",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l33",
+     "form": "spanpëtt"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l37",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l3",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l7",
+     "form": "spanpett"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l11",
+     "form": "spanpett"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-speisekasten",
+   "@type": "docta:Object",
+   "label": "Speisekasten",
+   "attestedForm": [
+    "speÿskasten"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l12",
+     "form": "speÿskasten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-stierlein",
+   "@type": "docta:Object",
+   "label": "Stierlein",
+   "attestedForm": [
+    "stierel"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l5",
+     "form": "stierel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-strick",
+   "@type": "docta:Object",
+   "label": "Strick",
+   "attestedForm": [
+    "stricken"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l11",
+     "form": "stricken"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-strohmesser",
+   "@type": "docta:Object",
+   "label": "Strohmesser",
+   "attestedForm": [
+    "stromesser"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l7",
+     "form": "stromesser"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-strohsack",
+   "@type": "docta:Object",
+   "label": "Strohsack",
+   "attestedForm": [
+    "strosakh"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l8",
+     "form": "strosakh"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l3",
+     "form": "strosakh"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l2",
+     "form": "strosakh"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r10l4",
+     "form": "strosakh"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-strohsaecke",
+   "@type": "docta:Object",
+   "label": "Strohsäcke",
+   "attestedForm": [
+    "strosekh"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l12",
+     "form": "strosekh"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l7",
+     "form": "strosekh"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-stuhl",
+   "@type": "docta:Object",
+   "label": "Stuhl",
+   "attestedForm": [
+    "stũel"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l4",
+     "form": "stũel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-stoessel",
+   "@type": "docta:Object",
+   "label": "Stößel",
+   "attestedForm": [
+    "stössel",
+    "stötzel"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l25",
+     "form": "stössel"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l39",
+     "form": "stötzel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-tartsche",
+   "@type": "docta:Object",
+   "label": "Tartsche",
+   "attestedForm": [
+    "tarschel",
+    "tärthschel"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l21",
+     "form": "tarschel"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l11",
+     "form": "tärthschel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-teller",
+   "@type": "docta:Object",
+   "label": "Teller",
+   "attestedForm": [
+    "taller",
+    "telleren"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l23",
+     "form": "telleren"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l28",
+     "form": "taller"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-tellerbuechse",
+   "@type": "docta:Object",
+   "label": "Tellerbüchse",
+   "attestedForm": [
+    "taller būchß"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l16",
+     "form": "taller būchß"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-tellerkorb",
+   "@type": "docta:Object",
+   "label": "Tellerkorb",
+   "attestedForm": [
+    "tẽllerkorb"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l19",
+     "form": "tẽllerkorb"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-tisch",
+   "@type": "docta:Object",
+   "label": "Tisch",
+   "attestedForm": [
+    "tisch"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l16",
+     "form": "tisch"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l20",
+     "form": "tisch"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l31",
+     "form": "tisch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-tischtuch",
+   "@type": "docta:Object",
+   "label": "Tischtuch",
+   "attestedForm": [
+    "tischtücher",
+    "tischtũcher"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l12",
+     "form": "tischtũcher"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l24",
+     "form": "tischtũcher"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l9",
+     "form": "tischtücher"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-truhe",
+   "@type": "docta:Object",
+   "label": "Truhe",
+   "attestedForm": [
+    "truch",
+    "truchen",
+    "trucken",
+    "truhen",
+    "trũhel"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l6",
+     "form": "truhen"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l26",
+     "form": "trũhel"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l21",
+     "form": "trucken"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l27",
+     "form": "truch"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l17",
+     "form": "truchen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l20",
+     "form": "truchen"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l7",
+     "form": "truchen"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l15",
+     "form": "truchen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l7",
+     "form": "truchen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l34",
+     "form": "truhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-unschlitt",
+   "@type": "docta:Object",
+   "label": "Unschlitt",
+   "attestedForm": [
+    "unslit"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l26",
+     "form": "unslit"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-unterer-beinzeuggurt",
+   "@type": "docta:Object",
+   "label": "Unterer Beinzeuggurt",
+   "attestedForm": [
+    "wndere"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l3",
+     "form": "wndere"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-unterpfoit",
+   "@type": "docta:Object",
+   "label": "Unterpfoit",
+   "attestedForm": [
+    "underphaiten"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l8",
+     "form": "underphaiten"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-verndzogenes-kalb",
+   "@type": "docta:Object",
+   "label": "Verndzogenes Kalb",
+   "attestedForm": [
+    "verndzogene kalb"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l6",
+     "form": "verndzogene kalb"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-vorderteil",
+   "@type": "docta:Object",
+   "label": "Vorderteil",
+   "attestedForm": [
+    "vadertail"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l10",
+     "form": "vadertail"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-vorhaengeschloss",
+   "@type": "docta:Object",
+   "label": "Vorhängeschloss",
+   "attestedForm": [
+    "malen"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l19",
+     "form": "malen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-vorschlaghammer",
+   "@type": "docta:Object",
+   "label": "Vorschlaghammer",
+   "attestedForm": [
+    "furschleg"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l33",
+     "form": "furschleg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-wagen",
+   "@type": "docta:Object",
+   "label": "Wagen",
+   "attestedForm": [
+    "wagen"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l23",
+     "form": "wagen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-wagenross",
+   "@type": "docta:Object",
+   "label": "Wagenross",
+   "attestedForm": [
+    "wagen ross"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l7",
+     "form": "wagen ross"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-wasserkelle",
+   "@type": "docta:Object",
+   "label": "Wasserkelle",
+   "attestedForm": [
+    "wasser gatzen"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l39",
+     "form": "wasser gatzen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-weisser-polster",
+   "@type": "docta:Object",
+   "label": "Weißer Polster",
+   "attestedForm": [
+    "weissen polster"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l14",
+     "form": "weissen polster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-weisses-bett",
+   "@type": "docta:Object",
+   "label": "Weißes Bett",
+   "attestedForm": [
+    "weis pett",
+    "weÿsse pett"
+   ],
+   "role": [
+    "Möbel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l24",
+     "form": "weÿsse pett"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l13",
+     "form": "weis pett"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-weisses-kissen",
+   "@type": "docta:Object",
+   "label": "Weißes Kissen",
+   "attestedForm": [
+    "weiss kuss",
+    "weisse kuss"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l36",
+     "form": "weiss kuss"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r2l10",
+     "form": "weisse kuss"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-wildbretfaesschen",
+   "@type": "docta:Object",
+   "label": "Wildbretfässchen",
+   "attestedForm": [
+    "wiltpret vãssel"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l17",
+     "form": "wiltpret vãssel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-winde",
+   "@type": "docta:Object",
+   "label": "Winde",
+   "attestedForm": [
+    "winden"
+   ],
+   "role": [
+    "Waffen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l24",
+     "form": "winden"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-wirkbrett",
+   "@type": "docta:Object",
+   "label": "Wirkbrett",
+   "attestedForm": [
+    "wurchpret"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r6l9",
+     "form": "wurchpret"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-wolfsfelldecke",
+   "@type": "docta:Object",
+   "label": "Wolfsfelldecke",
+   "attestedForm": [
+    "wolfs dekch"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l26",
+     "form": "wolfs dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zange",
+   "@type": "docta:Object",
+   "label": "Zange",
+   "attestedForm": [
+    "zangen"
+   ],
+   "role": [
+    "Wirtschaftsgerät"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l9",
+     "form": "zangen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zaum",
+   "@type": "docta:Object",
+   "label": "Zaum",
+   "attestedForm": [
+    "zam"
+   ],
+   "role": [
+    "Landwirtschaft"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l22",
+     "form": "zam"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zieche",
+   "@type": "docta:Object",
+   "label": "Zieche",
+   "attestedForm": [
+    "ziech",
+    "ziechen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l23",
+     "form": "ziechen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l17",
+     "form": "ziech"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zinnflasche",
+   "@type": "docta:Object",
+   "label": "Zinnflasche",
+   "attestedForm": [
+    "czini flaschen"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l35",
+     "form": "czini flaschen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zinnpfanne",
+   "@type": "docta:Object",
+   "label": "Zinnpfanne",
+   "attestedForm": [
+    "zinphan"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l26",
+     "form": "zinphan"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zinnplatte",
+   "@type": "docta:Object",
+   "label": "Zinnplatte",
+   "attestedForm": [
+    "zini plan"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l14",
+     "form": "zini plan"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zinnschuessel",
+   "@type": "docta:Object",
+   "label": "Zinnschüssel",
+   "attestedForm": [
+    "zinen schusselen",
+    "zinenschüssel",
+    "zini schisseln"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300",
+    "docta:doc-11330019",
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l21",
+     "form": "zinen schusselen"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l13",
+     "form": "zini schisseln"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l26",
+     "form": "zinenschüssel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-zinnteller",
+   "@type": "docta:Object",
+   "label": "Zinnteller",
+   "attestedForm": [
+    "zÿnen teller"
+   ],
+   "role": [
+    "Tafelgeschirr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l15",
+     "form": "zÿnen teller"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-gestueckeltes-decklaken",
+   "@type": "docta:Object",
+   "label": "gestückeltes Decklaken",
+   "attestedForm": [
+    "gestükelts degklachen"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l27",
+     "form": "gestükelts degklachen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-lederner-polster",
+   "@type": "docta:Object",
+   "label": "lederner Polster",
+   "attestedForm": [
+    "lidereiner",
+    "polster"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l36",
+     "form": "lidereiner"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l37",
+     "form": "polster"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-raue-decke",
+   "@type": "docta:Object",
+   "label": "raue Decke",
+   "attestedForm": [
+    "rauch dekh",
+    "rauch dëkchen",
+    "rauche dekch",
+    "rauhe dekch"
+   ],
+   "role": [
+    "Textilien"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l18",
+     "form": "rauhe dekch"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l32",
+     "form": "rauch dëkchen"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l2",
+     "form": "rauch dekh"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l17",
+     "form": "rauche dekch"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-oelkessel",
+   "@type": "docta:Object",
+   "label": "Ölkessel",
+   "attestedForm": [
+    "õllkessel"
+   ],
+   "role": [
+    "Küche"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r3l1",
+     "form": "õllkessel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:obj-oelkrug",
+   "@type": "docta:Object",
+   "label": "Ölkrug",
+   "attestedForm": [
+    "olcrũeg"
+   ],
+   "role": [
+    "Hausrat"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l7",
+     "form": "olcrũeg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-beatrix",
+   "@type": "docta:Person",
+   "label": "Beatrix",
+   "attestedForm": [
+    "Beatrix"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r9l2",
+     "form": "Beatrix"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-burkhart-von-knoeringen",
+   "@type": "docta:Person",
+   "label": "Burkhart von Knöringen",
+   "attestedForm": [
+    "Burkhart von Knŏringen",
+    "Burkharten von Knoringen",
+    "Kneringer",
+    "kneringer"
+   ],
+   "role": [
+    "Burggraf"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r2l3",
+     "form": "Burkharten von Knoringen"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l21",
+     "form": "Kneringer"
+    },
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l22",
+     "form": "kneringer"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r4l1",
+     "form": "Burkhart von Knŏringen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-christoph-velberger",
+   "@type": "docta:Person",
+   "label": "Christoph Velberger",
+   "attestedForm": [
+    "Christopf Velberger"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l7",
+     "form": "Christopf Velberger"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-georg-heuss",
+   "@type": "docta:Person",
+   "label": "Georg Heuss",
+   "attestedForm": [
+    "Georien Hew̃ssen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l6",
+     "form": "Georien Hew̃ssen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-hans-clamer",
+   "@type": "docta:Person",
+   "label": "Hans Clamer",
+   "attestedForm": [
+    "Hannsen Clamer"
+   ],
+   "role": [
+    "Pfleger"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r3l3",
+     "form": "Hannsen Clamer"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-hans-ramung",
+   "@type": "docta:Person",
+   "label": "Hans Ramung",
+   "attestedForm": [
+    "Hannsen Ramung"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r2l2",
+     "form": "Hannsen Ramung"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-hans-weiser",
+   "@type": "docta:Person",
+   "label": "Hans Weiser",
+   "attestedForm": [
+    "Hanns",
+    "Wÿser"
+   ],
+   "role": [
+    "secretari"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l3",
+     "form": "Hanns"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l4",
+     "form": "Wÿser"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-hans-von-elsb",
+   "@type": "docta:Person",
+   "label": "Hans von Elsb",
+   "attestedForm": [
+    "Hannsen von Elsp"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r4l4",
+     "form": "Hannsen von Elsp"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-heinrich-von-goerz",
+   "@type": "docta:Person",
+   "label": "Heinrich von Görz",
+   "attestedForm": [
+    "H(einrich) von Görtz"
+   ],
+   "role": [
+    "Graf von Görz"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l3",
+     "form": "H(einrich) von Görtz"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-jakob-hausmann",
+   "@type": "docta:Person",
+   "label": "Jakob Hausmann",
+   "attestedForm": [
+    "Jacob Haws"
+   ],
+   "role": [
+    "Bürger zu Hall"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l4",
+     "form": "Jacob Haws"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-joseph-ueberreiner",
+   "@type": "docta:Person",
+   "label": "Joseph Überreiner",
+   "attestedForm": [
+    "Jo",
+    "Joseph Überriner",
+    "seph"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r3l5",
+     "form": "Joseph Überriner"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l10",
+     "form": "Jo"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l11",
+     "form": "seph"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-joerg-bubenhofer",
+   "@type": "docta:Person",
+   "label": "Jörg Bubenhofer",
+   "attestedForm": [
+    "Jorg Bubenhofer"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l6",
+     "form": "Jorg Bubenhofer"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-joerg-randorfer",
+   "@type": "docta:Person",
+   "label": "Jörg Randorfer",
+   "attestedForm": [
+    "Jörg Randorffer"
+   ],
+   "role": [
+    "hawskamrer"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l2",
+     "form": "Jörg Randorffer"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-konrad-goldstein",
+   "@type": "docta:Person",
+   "label": "Konrad Goldstein",
+   "attestedForm": [
+    "Chunratt Goltstain"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l5",
+     "form": "Chunratt Goltstain"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-leupold-spies",
+   "@type": "docta:Person",
+   "label": "Leupold Spies",
+   "attestedForm": [
+    "Leupolt Spies"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l6",
+     "form": "Leupolt Spies"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-martin-schintel",
+   "@type": "docta:Person",
+   "label": "Martin Schintel",
+   "attestedForm": [
+    "Martin Schintel"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r4l3",
+     "form": "Martin Schintel"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-michel-auer",
+   "@type": "docta:Person",
+   "label": "Michel Auer",
+   "attestedForm": [
+    "Michel Awer"
+   ],
+   "role": [
+    "Bürger zu Hall"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l5",
+     "form": "Michel Awer"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-peter-plangger",
+   "@type": "docta:Person",
+   "label": "Peter Plangger",
+   "attestedForm": [
+    "Peteren Plangkhen"
+   ],
+   "role": [
+    "Dechant zu Innichen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l4",
+     "form": "Peteren Plangkhen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-polinger",
+   "@type": "docta:Person",
+   "label": "Polinger",
+   "attestedForm": [
+    "Polinger"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l1",
+     "form": "Polinger"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-velberger",
+   "@type": "docta:Person",
+   "label": "Velberger",
+   "attestedForm": [
+    "Velbergers",
+    "Velldenberger"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r3l18",
+     "form": "Velbergers"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l1",
+     "form": "Velbergers"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r5l1",
+     "form": "Velldenberger"
+    }
+   ]
+  },
+  {
+   "@id": "docta:per-wolfgang-sumer",
+   "@type": "docta:Person",
+   "label": "Wolfgang Sumer",
+   "attestedForm": [
+    "Wolfgangen Sumer"
+   ],
+   "role": [
+    "kamerschraÿber"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r4l5",
+     "form": "Wolfgangen Sumer"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-alpe",
+   "@type": "docta:Place",
+   "label": "Alpe",
+   "attestedForm": [
+    "albem",
+    "albon"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l25",
+     "form": "albon"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l10",
+     "form": "albem"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-hall-in-tirol",
+   "@type": "docta:Place",
+   "label": "Hall in Tirol",
+   "attestedForm": [
+    "Hall"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l6",
+     "form": "Hall"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-heinfels",
+   "@type": "docta:Place",
+   "label": "Heinfels",
+   "attestedForm": [
+    "Hewnfels"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l2",
+     "form": "Hewnfels"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-hof",
+   "@type": "docta:Place",
+   "label": "Hof",
+   "attestedForm": [
+    "hoff"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r3l3",
+     "form": "hoff"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l8",
+     "form": "hoff"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-innichen",
+   "@type": "docta:Place",
+   "label": "Innichen",
+   "attestedForm": [
+    "Innchingen"
+   ],
+   "attestedIn": [
+    "docta:doc-11330020"
+   ],
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l5",
+     "form": "Innchingen"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-kronburg",
+   "@type": "docta:Place",
+   "label": "Kronburg",
+   "attestedForm": [
+    "Cronburg",
+    "Kornburg",
+    "Kronburg"
+   ],
+   "attestedIn": [
+    "docta:doc-11330019"
+   ],
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r2l1",
+     "form": "Kronburg"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r3l3",
+     "form": "Kronburg"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l11",
+     "form": "Kornburg"
+    },
+    {
+     "docId": 11330019,
+     "page": 3,
+     "line": "r1l2",
+     "form": "Kronburg"
+    },
+    {
+     "docId": 11330019,
+     "page": 3,
+     "line": "r1l3",
+     "form": "Cronburg"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-schloss-thaur",
+   "@type": "docta:Place",
+   "label": "Schloss Thaur",
+   "attestedForm": [
+    "sloss Thawr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 1,
+     "line": "r2l4",
+     "form": "sloss Thawr"
+    }
+   ]
+  },
+  {
+   "@id": "docta:pl-thaur",
+   "@type": "docta:Place",
+   "label": "Thaur",
+   "attestedForm": [
+    "Thawr"
+   ],
+   "attestedIn": [
+    "docta:doc-11328300"
+   ],
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 4,
+     "line": "r1l2",
+     "form": "Thawr"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-armbrust--obj-vorderteil",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-armbrust",
+    "docta:obj-vorderteil"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l10"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-armbrust--obj-winde",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-armbrust",
+    "docta:obj-winde"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l24"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-armzeug--obj-schweinespiess",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-armzeug",
+    "docta:obj-schweinespiess"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-armzeug--obj-unterer-beinzeuggurt",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-armzeug",
+    "docta:obj-unterer-beinzeuggurt"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l3"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-badpfeit--obj-roecklein",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-badpfeit",
+    "docta:obj-roecklein"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l8"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankkissen--obj-bankpolster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankkissen",
+    "docta:obj-bankpolster"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l3"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankkissen--obj-hauptkissen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankkissen",
+    "docta:obj-hauptkissen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l3"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankkissen--obj-lammfelldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankkissen",
+    "docta:obj-lammfelldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l4"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankpolster--obj-bett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankpolster",
+    "docta:obj-bett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankpolster--obj-hauptkissen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankpolster",
+    "docta:obj-hauptkissen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l3"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankpolster--obj-kissen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankpolster",
+    "docta:obj-kissen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bankpolster--obj-polster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bankpolster",
+    "docta:obj-polster"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-beingewand--obj-kragen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-beingewand",
+    "docta:obj-kragen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l4"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-beingewand--obj-panzer",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-beingewand",
+    "docta:obj-panzer"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l4"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bett--obj-deckbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bett",
+    "docta:obj-deckbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bett--obj-hauptpolster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bett",
+    "docta:obj-hauptpolster"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l30"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bett--obj-kissen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bett",
+    "docta:obj-kissen"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bett--obj-leintuch",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bett",
+    "docta:obj-leintuch"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l28"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bett--obj-polster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bett",
+    "docta:obj-polster"
+   ],
+   "count": 6,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r5l2"
+    },
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r7l2"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13"
+    },
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l28"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l8"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bett--per-velberger",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bett",
+    "docta:per-velberger"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l1"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bettchen--obj-kissen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bettchen",
+    "docta:obj-kissen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l31"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bettchen--obj-polster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bettchen",
+    "docta:obj-polster"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l34"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l15"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bettstatt--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bettstatt",
+    "docta:obj-truhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l27"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-blattschloss--obj-vorhaengeschloss",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-blattschloss",
+    "docta:obj-vorhaengeschloss"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l19"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-brandroste--obj-pfanne",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-brandroste",
+    "docta:obj-pfanne"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l35"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bratspiess--obj-feuerbock",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bratspiess",
+    "docta:obj-feuerbock"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l37"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bratspiess--obj-gartengabel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bratspiess",
+    "docta:obj-gartengabel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l23"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-bratspiess--obj-pfannenknecht",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-bratspiess",
+    "docta:obj-pfannenknecht"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l37"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-brief--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-brief",
+    "docta:obj-truhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l26"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-deckbett--obj-hauptpolster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-deckbett",
+    "docta:obj-hauptpolster"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l2"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-deckbett--obj-kissen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-deckbett",
+    "docta:obj-kissen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l19"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-decke--obj-lederner-polster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-decke",
+    "docta:obj-lederner-polster"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l36"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l37"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-decke--obj-lodendekel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-decke",
+    "docta:obj-lodendekel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l36"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-decke--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-decke",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l37"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-deckel--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-deckel",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l20"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-deckel--obj-tisch",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-deckel",
+    "docta:obj-tisch"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l20"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-decklaken--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-decklaken",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l33"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-decklaken--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-decklaken",
+    "docta:obj-truhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l7"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-dengelgeschirr--obj-schere",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-dengelgeschirr",
+    "docta:obj-schere"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l22"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-eherner-hafen--obj-fischkessel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-eherner-hafen",
+    "docta:obj-fischkessel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l23"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-eisenhut--obj-handschuh",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-eisenhut",
+    "docta:obj-handschuh"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-eisenhut--obj-handschuhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-eisenhut",
+    "docta:obj-handschuhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l2"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-eisenhut--obj-tartsche",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-eisenhut",
+    "docta:obj-tartsche"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-eisenzange--obj-milchschuessel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-eisenzange",
+    "docta:obj-milchschuessel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l38"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-eisenzange--obj-reibeisen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-eisenzange",
+    "docta:obj-reibeisen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l38"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-faesslein--obj-schiesspulver",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-faesslein",
+    "docta:obj-schiesspulver"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l27"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-feile--obj-hammer",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-feile",
+    "docta:obj-hammer"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l10"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-feile--obj-schmiedstock",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-feile",
+    "docta:obj-schmiedstock"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l10"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-feuerbock--obj-pfannenknecht",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-feuerbock",
+    "docta:obj-pfannenknecht"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l37"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-fuchsbalg--obj-haut",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-fuchsbalg",
+    "docta:obj-haut"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l10"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gabel--obj-haue",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gabel",
+    "docta:obj-haue"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l33"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gabel--obj-vorschlaghammer",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gabel",
+    "docta:obj-vorschlaghammer"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l33"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gamsfelldecke--obj-schafwolldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gamsfelldecke",
+    "docta:obj-schafwolldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gamsfelldecke--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gamsfelldecke",
+    "docta:obj-spannbett"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l7"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gamsfelldecke--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gamsfelldecke",
+    "docta:obj-truhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l7"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gamsseil--obj-koecher",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gamsseil",
+    "docta:obj-koecher"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l12"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-gestueckeltes-decklaken--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-gestueckeltes-decklaken",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l27"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-grand--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-grand",
+    "docta:obj-truhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l34"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hahl--obj-pfannenknecht",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hahl",
+    "docta:obj-pfannenknecht"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l36"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hahl--obj-pfefferpfanne",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hahl",
+    "docta:obj-pfefferpfanne"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l36"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hammer--obj-schmiedstock",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hammer",
+    "docta:obj-schmiedstock"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l10"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-handschuh--obj-tartsche",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-handschuh",
+    "docta:obj-tartsche"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-handtuch--obj-tischtuch",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-handtuch",
+    "docta:obj-tischtuch"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l9"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-haue--obj-vorschlaghammer",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-haue",
+    "docta:obj-vorschlaghammer"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l33"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hauptkissen--obj-hauptpolster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hauptkissen",
+    "docta:obj-hauptpolster"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l14"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hauptpolster--obj-zieche",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hauptpolster",
+    "docta:obj-zieche"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l23"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hechel--obj-ruech",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hechel",
+    "docta:obj-ruech"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l31"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-heugabel--obj-kessel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-heugabel",
+    "docta:obj-kessel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l34"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-hoelzerne-tellerbuechse--obj-teller",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-hoelzerne-tellerbuechse",
+    "docta:obj-teller"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l23"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-holzschuessel--obj-unschlitt",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-holzschuessel",
+    "docta:obj-unschlitt"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l26"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kaelbchen--obj-kuh",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kaelbchen",
+    "docta:obj-kuh"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l4"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kandelaber--obj-schreinlein",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kandelaber",
+    "docta:obj-schreinlein"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l21"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kariolbett--obj-schafwolldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kariolbett",
+    "docta:obj-schafwolldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kariolbett--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kariolbett",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kariolbett--obj-tisch",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kariolbett",
+    "docta:obj-tisch"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l16"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kessel--pl-alpe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kessel",
+    "docta:pl-alpe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l25"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kissen--obj-leintuch",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kissen",
+    "docta:obj-leintuch"
+   ],
+   "count": 3,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l35"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l10"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kissen--obj-polster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kissen",
+    "docta:obj-polster"
+   ],
+   "count": 5,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l13"
+    },
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l6"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l5"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l10"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kissen--obj-sarge",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kissen",
+    "docta:obj-sarge"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l6"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kissen--obj-schafwolldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kissen",
+    "docta:obj-schafwolldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kolter--obj-rauchdecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kolter",
+    "docta:obj-rauchdecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l29"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kragen--obj-panzer",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kragen",
+    "docta:obj-panzer"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l4"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-kupferbecken--obj-messinggiesskanne",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-kupferbecken",
+    "docta:obj-messinggiesskanne"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l28"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-lammfelldecke--obj-schafwolldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-lammfelldecke",
+    "docta:obj-schafwolldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l14"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-lammfelldecke--obj-wolfsfelldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-lammfelldecke",
+    "docta:obj-wolfsfelldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l26"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-lederner-polster--obj-lodendekel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-lederner-polster",
+    "docta:obj-lodendekel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l36"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-lederner-polster--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-lederner-polster",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l37"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-legel--obj-pfeil",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-legel",
+    "docta:obj-pfeil"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l20"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-leintuch--obj-polster",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-leintuch",
+    "docta:obj-polster"
+   ],
+   "count": 5,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l28"
+    },
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l18"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l10"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l16"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-leintuch--obj-raue-decke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-leintuch",
+    "docta:obj-raue-decke"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l18"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l2"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-leintuch--obj-schafwolldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-leintuch",
+    "docta:obj-schafwolldecke"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l6"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-leintuch--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-leintuch",
+    "docta:obj-truhe"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r2l6"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-messingbecken--obj-messinggiesskanne",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-messingbecken",
+    "docta:obj-messinggiesskanne"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l27"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-messinghandfass--obj-tellerbuechse",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-messinghandfass",
+    "docta:obj-tellerbuechse"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l16"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-milchschuessel--obj-reibeisen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-milchschuessel",
+    "docta:obj-reibeisen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l38"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-milchschuessel--obj-stoessel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-milchschuessel",
+    "docta:obj-stoessel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l39"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-milchschuessel--obj-wasserkelle",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-milchschuessel",
+    "docta:obj-wasserkelle"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l39"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-moerser--obj-stoessel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-moerser",
+    "docta:obj-stoessel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l25"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-ochseneisen--obj-rosseisen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-ochseneisen",
+    "docta:obj-rosseisen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l24"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-ochseneisen--obj-sichel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-ochseneisen",
+    "docta:obj-sichel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l24"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-pfanne--obj-schaffreite",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-pfanne",
+    "docta:obj-schaffreite"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l22"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-pfannenknecht--obj-pfefferpfanne",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-pfannenknecht",
+    "docta:obj-pfefferpfanne"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l36"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-polster--obj-rauchdecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-polster",
+    "docta:obj-rauchdecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l14"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-polster--obj-raue-decke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-polster",
+    "docta:obj-raue-decke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l18"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-polster--obj-sarge",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-polster",
+    "docta:obj-sarge"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l6"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-polster--obj-schafwolldecke",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-polster",
+    "docta:obj-schafwolldecke"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l13"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-polster--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-polster",
+    "docta:obj-spannbett"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l3"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-raue-decke--obj-zieche",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-raue-decke",
+    "docta:obj-zieche"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l17"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-rosseisen--obj-sichel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-rosseisen",
+    "docta:obj-sichel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r2l24"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-schafwolldecke--obj-spannbett",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-schafwolldecke",
+    "docta:obj-spannbett"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l5"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-schmiedzeug--obj-zange",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-schmiedzeug",
+    "docta:obj-zange"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l9"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-schreibtisch--obj-schrein",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-schreibtisch",
+    "docta:obj-schrein"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r4l8"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-schwein--obj-stierlein",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-schwein",
+    "docta:obj-stierlein"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l5"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-spannbett--obj-tisch",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-spannbett",
+    "docta:obj-tisch"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l20"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-spannbett--obj-truhe",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-spannbett",
+    "docta:obj-truhe"
+   ],
+   "count": 2,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r3l15"
+    },
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l7"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-stoessel--obj-wasserkelle",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-stoessel",
+    "docta:obj-wasserkelle"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l39"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-zaum--per-burkhart-von-knoeringen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-zaum",
+    "docta:per-burkhart-von-knoeringen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 2,
+     "line": "r8l22"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-obj-zinnpfanne--obj-zinnschuessel",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:obj-zinnpfanne",
+    "docta:obj-zinnschuessel"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 2,
+     "line": "r2l26"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-per-hans-clamer--pl-kronburg",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:per-hans-clamer",
+    "docta:pl-kronburg"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 1,
+     "line": "r3l3"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-per-hans-weiser--per-jakob-hausmann",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:per-hans-weiser",
+    "docta:per-jakob-hausmann"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l4"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-per-joerg-bubenhofer--pl-hall-in-tirol",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:per-joerg-bubenhofer",
+    "docta:pl-hall-in-tirol"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11328300,
+     "page": 3,
+     "line": "r3l6"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-per-joseph-ueberreiner--pl-kronburg",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:per-joseph-ueberreiner",
+    "docta:pl-kronburg"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330019,
+     "page": 2,
+     "line": "r4l11"
+    }
+   ]
+  },
+  {
+   "@id": "docta:cooc-per-konrad-goldstein--pl-innichen",
+   "@type": "docta:LineCoOccurrence",
+   "member": [
+    "docta:per-konrad-goldstein",
+    "docta:pl-innichen"
+   ],
+   "count": 1,
+   "attestation": [
+    {
+     "docId": 11330020,
+     "page": 1,
+     "line": "r2l5"
+    }
+   ]
+  }
+ ]
+}

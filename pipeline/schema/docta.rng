@@ -8,11 +8,17 @@
   it. TEI conformance is the separate first stage against tei_all.rng; this
   grammar is deliberately narrower than TEI and is not a substitute for it.
 
-  Two things it is meant to make impossible. A certainty claim about the source
-  (no @cert anywhere, no <certainty>, no @precision), because the confidence a
-  model reports is a self-assessment and not evidence. And a responsibility or
-  status value outside the closed lists of the pipeline, because a free value
-  would let a work step be asserted that never ran.
+  The directory holds two file shapes, so the start is a choice: one document
+  TEI per transcribed source, and the single corpus-wide entity register
+  register.xml, into which every marked entity of a document points with @ref.
+
+  Three things it is meant to make impossible. A certainty claim about the
+  source (no @cert anywhere, no <certainty>, no @precision), because the
+  confidence a model reports is a self-assessment and not evidence. A
+  responsibility or status value outside the closed lists of the pipeline,
+  because a free value would let a work step be asserted that never ran. And a
+  normalised form written onto the entity itself (no @key), because the identity
+  of an entity lives in the register and nowhere else.
 
   Free text content and values that legitimately vary (titles, prose, dates,
   zone points, URLs) stay unconstrained or loosely patterned.
@@ -48,6 +54,25 @@
     <data type="token"><param name="pattern">https?://[^\s]+</param></data>
   </define>
 
+  <!-- Register ids, one slug shape per entity type, produced by
+       pipeline/entity_index.py and shared with docs/data/graph.jsonld. -->
+  <define name="person.id">
+    <data type="token"><param name="pattern">per-[a-z0-9]+(-[a-z0-9]+)*</param></data>
+  </define>
+  <define name="place.id">
+    <data type="token"><param name="pattern">pl-[a-z0-9]+(-[a-z0-9]+)*</param></data>
+  </define>
+  <define name="object.id">
+    <data type="token"><param name="pattern">obj-[a-z0-9]+(-[a-z0-9]+)*</param></data>
+  </define>
+  <!-- The one pointer shape an entity may carry: into the register file, at an
+       id of one of the three entity lists. -->
+  <define name="entity.ref">
+    <data type="token">
+      <param name="pattern">register\.xml#(per|pl|obj)-[a-z0-9]+(-[a-z0-9]+)*</param>
+    </data>
+  </define>
+
   <!-- The closed list of work steps a file may declare a responsibility for. -->
   <define name="resp.id">
     <choice>
@@ -59,13 +84,20 @@
   </define>
 
   <start>
+    <choice>
+      <ref name="document.TEI"/>
+      <ref name="register.TEI"/>
+    </choice>
+  </start>
+
+  <define name="document.TEI">
     <element name="TEI">
       <attribute name="xml:id"><ref name="docta.id"/></attribute>
       <ref name="teiHeader"/>
       <optional><ref name="facsimile"/></optional>
       <ref name="text"/>
     </element>
-  </start>
+  </define>
 
   <!-- ================================ header ============================= -->
 
@@ -91,21 +123,7 @@
             </element>
           </oneOrMore>
         </element>
-        <element name="publicationStmt">
-          <element name="publisher"><text/></element>
-          <element name="date">
-            <attribute name="when"><text/></attribute>
-            <text/>
-          </element>
-          <element name="availability">
-            <attribute name="status"><value>free</value></attribute>
-            <element name="licence">
-              <attribute name="target"><ref name="url"/></attribute>
-              <text/>
-            </element>
-            <element name="p"><text/></element>
-          </element>
-        </element>
+        <ref name="publicationStmt"/>
         <element name="sourceDesc">
           <element name="msDesc">
             <ref name="msIdentifier"/>
@@ -120,6 +138,26 @@
       <ref name="encodingDesc"/>
       <ref name="profileDesc"/>
       <ref name="revisionDesc"/>
+    </element>
+  </define>
+
+  <!-- Identical in both file shapes: same publisher, same licence, same date
+       source, so it is stated once. -->
+  <define name="publicationStmt">
+    <element name="publicationStmt">
+      <element name="publisher"><text/></element>
+      <element name="date">
+        <attribute name="when"><text/></attribute>
+        <text/>
+      </element>
+      <element name="availability">
+        <attribute name="status"><value>free</value></attribute>
+        <element name="licence">
+          <attribute name="target"><ref name="url"/></attribute>
+          <text/>
+        </element>
+        <element name="p"><text/></element>
+      </element>
     </element>
   </define>
 
@@ -329,18 +367,138 @@
     </element>
   </define>
 
-  <!-- An entity carries its responsibility and its normalised form and nothing
-       else. No @cert, no @certainty, no @precision, no nesting. -->
+  <!-- An entity carries its responsibility and a pointer into the register and
+       nothing else. An object of these inventories is a common noun, so it is a
+       <term> and not a name. No @key, because the normalised form lives in the
+       register entry; no @cert, no @certainty, no @precision, no nesting. -->
   <define name="entity">
     <element>
       <choice>
         <name>persName</name>
         <name>placeName</name>
-        <name>objectName</name>
+        <name>term</name>
       </choice>
       <attribute name="resp"><value>#resp-entity-llm</value></attribute>
-      <attribute name="key"><text/></attribute>
+      <attribute name="ref"><ref name="entity.ref"/></attribute>
       <text/>
+    </element>
+  </define>
+
+  <!-- ============================== register ============================= -->
+
+  <!-- register.xml: the corpus-wide entity index as standOff, one entry per
+       distinct entity of the extraction layer. It carries no transcription, so
+       it has neither facsimile nor text, and its header declares the two steps
+       that produced it and nothing else. -->
+  <define name="register.TEI">
+    <element name="TEI">
+      <attribute name="xml:id"><value>docta-register</value></attribute>
+      <ref name="register.header"/>
+      <ref name="standOff"/>
+    </element>
+  </define>
+
+  <define name="register.header">
+    <element name="teiHeader">
+      <element name="fileDesc">
+        <element name="titleStmt">
+          <element name="title">
+            <attribute name="type"><value>main</value></attribute>
+            <text/>
+          </element>
+          <oneOrMore>
+            <element name="respStmt">
+              <attribute name="xml:id"><ref name="resp.id"/></attribute>
+              <element name="resp"><text/></element>
+              <element name="name"><text/></element>
+            </element>
+          </oneOrMore>
+        </element>
+        <ref name="publicationStmt"/>
+        <!-- The register has no archival source of its own; the paragraph says
+             so rather than describing a manuscript that is not there. -->
+        <element name="sourceDesc">
+          <element name="p"><text/></element>
+        </element>
+      </element>
+      <element name="encodingDesc">
+        <element name="projectDesc">
+          <element name="p"><text/></element>
+        </element>
+        <element name="editorialDecl">
+          <element name="p"><text/></element>
+          <element name="p"><text/></element>
+        </element>
+      </element>
+      <element name="revisionDesc">
+        <element name="change">
+          <attribute name="when"><text/></attribute>
+          <attribute name="who"><value>#resp-tei-generation</value></attribute>
+          <text/>
+        </element>
+        <element name="change">
+          <attribute name="n"><value>register-summary</value></attribute>
+          <attribute name="status"><value>machine-generated</value></attribute>
+          <text/>
+        </element>
+      </element>
+    </element>
+  </define>
+
+  <!-- One list per entity type, each entry holding the normalised form first
+       and then the spellings attested in the transcriptions. A list is absent
+       when the extraction yielded no entity of that type. -->
+  <define name="standOff">
+    <element name="standOff">
+      <optional>
+        <element name="listPerson">
+          <oneOrMore>
+            <element name="person">
+              <attribute name="xml:id"><ref name="person.id"/></attribute>
+              <element name="persName"><text/></element>
+              <oneOrMore>
+                <element name="persName">
+                  <attribute name="type"><value>attested</value></attribute>
+                  <text/>
+                </element>
+              </oneOrMore>
+            </element>
+          </oneOrMore>
+        </element>
+      </optional>
+      <optional>
+        <element name="listPlace">
+          <oneOrMore>
+            <element name="place">
+              <attribute name="xml:id"><ref name="place.id"/></attribute>
+              <element name="placeName"><text/></element>
+              <oneOrMore>
+                <element name="placeName">
+                  <attribute name="type"><value>attested</value></attribute>
+                  <text/>
+                </element>
+              </oneOrMore>
+            </element>
+          </oneOrMore>
+        </element>
+      </optional>
+      <optional>
+        <element name="list">
+          <attribute name="type"><value>objects</value></attribute>
+          <oneOrMore>
+            <element name="item">
+              <attribute name="xml:id"><ref name="object.id"/></attribute>
+              <element name="term"><text/></element>
+              <oneOrMore>
+                <element name="term">
+                  <attribute name="type"><value>attested</value></attribute>
+                  <text/>
+                </element>
+              </oneOrMore>
+            </element>
+          </oneOrMore>
+        </element>
+      </optional>
     </element>
   </define>
 

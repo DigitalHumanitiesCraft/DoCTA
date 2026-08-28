@@ -34,6 +34,9 @@ XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 # every mutation below has something in the document to attach to.
 SOURCE = vt.DEFAULT_TEI_DIR / "11328300.xml"
 
+# The corpus-wide entity register, the second file shape the grammar admits.
+REGISTER = vt.DEFAULT_TEI_DIR / "register.xml"
+
 Mutation = Callable[[etree._ElementTree], None]
 
 
@@ -72,6 +75,27 @@ def _element_outside_the_grammar(document: etree._ElementTree) -> None:
     etree.SubElement(ab, f"{NS}seg").text = "an editorial segment"
 
 
+def _key_on_a_persname(document: etree._ElementTree) -> None:
+    """The identity of an entity lives in the register, never on the entity."""
+    document.find(".//tei:text//tei:persName", TEI).set("key", "Hans Ramung")
+
+
+def _entity_without_a_register_reference(document: etree._ElementTree) -> None:
+    del document.find(".//tei:text//tei:persName", TEI).attrib["ref"]
+
+
+def _entity_reference_into_another_file(document: etree._ElementTree) -> None:
+    document.find(".//tei:text//tei:persName", TEI).set(
+        "ref", "https://example.org/authority#per-hans-ramung"
+    )
+
+
+def _object_name_instead_of_a_term(document: etree._ElementTree) -> None:
+    """An object of these inventories is a common noun and stays a term."""
+    term = document.find(".//tei:text//tei:term[@resp]", TEI)
+    term.tag = f"{NS}objectName"
+
+
 MUTATIONS: tuple[tuple[str, Mutation], ...] = (
     ("cert on a persName", _cert_on_a_persname),
     ("cert on an ab", _cert_on_an_ab),
@@ -80,11 +104,42 @@ MUTATIONS: tuple[tuple[str, Mutation], ...] = (
     ("unknown milestone unit", _unknown_milestone_unit),
     ("unknown stream status", _unknown_stream_status),
     ("element outside the grammar", _element_outside_the_grammar),
+    ("key on a persName", _key_on_a_persname),
+    ("entity without a register reference", _entity_without_a_register_reference),
+    ("entity reference into another file", _entity_reference_into_another_file),
+    ("objectName instead of a term", _object_name_instead_of_a_term),
 )
 
 
-def _mutated(tmp_path: Path, mutate: Mutation) -> Path:
-    document = etree.parse(str(SOURCE))
+def _unknown_register_id(document: etree._ElementTree) -> None:
+    document.find(".//tei:person", TEI).set(XML_ID, "person-1")
+
+
+def _register_entry_without_an_attested_spelling(
+    document: etree._ElementTree,
+) -> None:
+    person = document.find(".//tei:person", TEI)
+    for name in person.findall("tei:persName[@type='attested']", TEI):
+        person.remove(name)
+
+
+def _list_outside_the_register_grammar(document: etree._ElementTree) -> None:
+    standoff = document.find(".//tei:standOff", TEI)
+    etree.SubElement(standoff, f"{NS}listOrg")
+
+
+REGISTER_MUTATIONS: tuple[tuple[str, Mutation], ...] = (
+    ("register id outside the slug shape", _unknown_register_id),
+    (
+        "entry without an attested spelling",
+        _register_entry_without_an_attested_spelling,
+    ),
+    ("list outside the register grammar", _list_outside_the_register_grammar),
+)
+
+
+def _mutated(tmp_path: Path, mutate: Mutation, source: Path = SOURCE) -> Path:
+    document = etree.parse(str(source))
     mutate(document)
     path = tmp_path / "mutated.xml"
     document.write(str(path), encoding="utf-8", xml_declaration=True)
@@ -96,10 +151,11 @@ def _invalid(paths: list[Path], schema: Path) -> list[Path]:
     return vt.validate_with_lxml(paths, schema, vt.DEFAULT_MAX_ERRORS)
 
 
-def test_the_control_file_exists_and_passes_the_project_schema() -> None:
+def test_the_control_files_exist_and_pass_the_project_schema() -> None:
     """Without a passing control every rejection below would be meaningless."""
     assert SOURCE.is_file(), f"generated TEI file missing: {SOURCE}"
-    assert _invalid([SOURCE], vt.DOCTA_SCHEMA) == []
+    assert REGISTER.is_file(), f"generated entity register missing: {REGISTER}"
+    assert _invalid([SOURCE, REGISTER], vt.DOCTA_SCHEMA) == []
 
 
 @pytest.mark.parametrize(
@@ -109,6 +165,18 @@ def test_the_project_schema_refuses_what_the_generator_never_emits(
     tmp_path: Path, mutate: Mutation
 ) -> None:
     path = _mutated(tmp_path, mutate)
+    assert _invalid([path], vt.DOCTA_SCHEMA) == [path]
+
+
+@pytest.mark.parametrize(
+    "mutate",
+    [m for _, m in REGISTER_MUTATIONS],
+    ids=[name for name, _ in REGISTER_MUTATIONS],
+)
+def test_the_project_schema_refuses_a_register_outside_the_contract(
+    tmp_path: Path, mutate: Mutation
+) -> None:
+    path = _mutated(tmp_path, mutate, REGISTER)
     assert _invalid([path], vt.DOCTA_SCHEMA) == [path]
 
 

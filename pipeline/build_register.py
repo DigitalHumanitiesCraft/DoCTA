@@ -331,6 +331,18 @@ def project(
     docs: list[dict], pages_by_doc: dict[int, list[dict]], out_path: Path
 ) -> dict:
     """Compact per-document projection for the site, loadable in one fetch."""
+    # Attribution source: which documents carry a transcription made by the
+    # Inventaria project (www.inventaria.at). The site must name that origin
+    # wherever such a transcription is displayed, so the flag travels in the
+    # projection instead of being joined client-side.
+    mapping_path = DATA / "source_mapping.json"
+    inventaria_ids: set[int] = set()
+    if mapping_path.exists():
+        inventaria_ids = {
+            m["transkribus_id"]
+            for m in _load(mapping_path).get("matched", [])
+            if m.get("csv_transkribiert") == "Inventaria"
+        }
     summary = []
     for doc in docs:
         pages = pages_by_doc[doc["docId"]]
@@ -366,6 +378,9 @@ def project(
                 # lets the site skip the per-document entity probe; the demo
                 # fallback for the one hand-made extraction stays client-side
                 "has_entities": (DATA / "entities" / f"{doc['docId']}.json").exists(),
+                "transcription_by": (
+                    "Inventaria" if doc["docId"] in inventaria_ids else None
+                ),
             }
         )
     payload = {"documents": summary}

@@ -15,6 +15,8 @@ Data flow (repo-local only, no network):
 
 Writes:
   docs/data/tei/<docId>.xml          one file per document with has_text
+  docs/data/tei/register.xml         corpus-wide entity register the documents
+                                     point into with @ref
 
 Design decisions:
   The TEI is written as a hand-built string template rather than through an XML
@@ -37,10 +39,15 @@ Design decisions:
   Every line of a page becomes a <zone> under the surface of that page, and the
   <lb> of the line points at it, so text and image region stay bound. Zones and
   lb come from the same iteration over the export, which keeps them in step.
-  The entity layer exists for the one demo document that has a prototype
-  extraction. It is encoded only where the anchor is deterministic, meaning the
-  entity names its line and its surface form occurs there verbatim exactly once;
-  everything else is reported as unencoded instead of being placed by guesswork.
+  The entity layer exists for the documents that have an extraction. It is
+  encoded only where the anchor is deterministic, meaning the entity names its
+  line and its surface form occurs there verbatim exactly once; everything else
+  is reported as unencoded instead of being placed by guesswork. An anchored
+  entity points with @ref into the corpus-wide register.xml rather than carrying
+  a normalised form of its own, so one entity attested in several documents is
+  one register entry. The register ids come from pipeline/entity_index.py, which
+  is also what docs/data/graph.jsonld names its nodes by, so the TEI and the
+  graph address the same entities.
   The layer carries its own responsibility statement and no certainty attribute,
   because a confidence value of the extracting agent is not evidence.
   Nothing is invented: an element whose data is absent is omitted rather than
@@ -67,6 +74,7 @@ from typing import Any
 from xml.etree import ElementTree
 
 import build_register as br
+import entity_index as ei
 
 ROOT = Path(__file__).parent
 REPO = ROOT.parent
@@ -135,8 +143,22 @@ ENTITY_FILE = DATA / "demo" / "thaur_entities.json"
 ENTITY_DIR = DATA / "entities"
 
 # Entity types the encoding covers; a type outside this map stays unencoded
-# rather than being forced into an element that does not fit it.
-ENTITY_ELEMENTS = {"person": "persName", "place": "placeName", "object": "objectName"}
+# rather than being forced into an element that does not fit it. An object of
+# these inventories is a common noun and becomes <term>, never a proper name.
+ENTITY_ELEMENTS = {"person": "persName", "place": "placeName", "object": "term"}
+
+# The corpus-wide entity register the documents point into. The file name is
+# part of every @ref, so it is a relative reference within docs/data/tei/.
+REGISTER_FILE = "register.xml"
+REGISTER_ID = "docta-register"
+
+# Register list per entity type: the list element, the entry element and the
+# element carrying the name. Objects are common nouns and live in a plain list.
+REGISTER_LISTS = (
+    ("person", "listPerson", "person", "persName", ""),
+    ("place", "listPlace", "place", "placeName", ""),
+    ("object", "list", "item", "term", ' type="objects"'),
+)
 
 
 def _load(path: Path) -> Any:
@@ -618,10 +640,11 @@ def _line_content(text: str, anchors: list[dict]) -> str:
     """Line text with the entity anchors of that line wrapped inline.
 
     Escaping is safe by construction: every substring of the raw line passes
-    through _esc before it enters the output, the key through _att, and the
-    element names come from ENTITY_ELEMENTS, so no raw character can escape
-    into markup. Anchors are applied left to right and an anchor overlapping an
-    already consumed span is dropped, which keeps the result deterministic.
+    through _esc before it enters the output, the register reference through
+    _att, and the element names come from ENTITY_ELEMENTS, so no raw character
+    can escape into markup. Anchors are applied left to right and an anchor
+    overlapping an already consumed span is dropped, which keeps the result
+    deterministic.
     """
     if not anchors:
         return _esc(text)
@@ -632,7 +655,7 @@ def _line_content(text: str, anchors: list[dict]) -> str:
         element = anchor["element"]
         out += [
             _esc(text[pos : anchor["start"]]),
-            f'<{element} resp="#{RESP_ENTITY}" key="{_att(anchor["key"])}">',
+            f'<{element} resp="#{RESP_ENTITY}" ref="{_att(anchor["ref"])}">',
             _esc(text[anchor["start"] : anchor["end"]]),
             f"</{element}>",
         ]
@@ -657,8 +680,24 @@ def _entity_data(doc_id: int) -> dict | None:
     return data if data.get("docId") == doc_id else None
 
 
+def entity_slugs() -> dict[tuple[str, str], str]:
+    """(type, normalized) of an extracted entity to its register id.
+
+    Built from the same extraction files the anchors are cut against, so an
+    anchored entity always has an entry; the lookup below still guards, because
+    a silent drop would encode an entity pointing at nothing.
+    """
+    return {
+        (entry["type"], entry["normalized"]): entry["id"]
+        for entry in ei.build_index(ei.load_extractions())
+    }
+
+
 def _entity_anchors(
-    doc_id: int, pages: list[dict], review_texts: dict | None = None
+    doc_id: int,
+    pages: list[dict],
+    review_texts: dict | None = None,
+    slugs: dict[tuple[str, str], str] | None = None,
 ) -> tuple[dict[int, dict[str, list[dict]]], list[tuple[str, str]]]:
     """Deterministic inline anchors for the prototype entity layer.
 
@@ -671,6 +710,7 @@ def _entity_anchors(
     data = _entity_data(doc_id)
     if data is None:
         return {}, []
+    slugs = entity_slugs() if slugs is None else slugs
     # Anchors are cut against the text the file will carry, so a corrected line
     # is matched on its reviewed reading and never on the superseded one.
     review_texts = review_texts or {}
@@ -696,13 +736,22 @@ def _entity_anchors(
         elif not surface or text.count(surface) != 1:
             skipped.append((entity["id"], "surface form not exactly once in the line"))
         else:
+            # entity_index.py keys an entry by the same fallback, so the two
+            # sides of the lookup cannot drift apart for the same input.
+            key = (entity["type"], entity.get("normalized") or surface)
+            slug = slugs.get(key)
+            if slug is None:
+                raise ValueError(
+                    f"document {doc_id}, entity {entity['id']}: {key} has no entry"
+                    " in the corpus entity index"
+                )
             start = text.index(surface)
             anchors.setdefault(page_nr, {}).setdefault(line_id, []).append(
                 {
                     "start": start,
                     "end": start + len(surface),
                     "element": element,
-                    "key": entity.get("normalized") or surface,
+                    "ref": f"{REGISTER_FILE}#{slug}",
                     "entity_id": entity["id"],
                 }
             )
@@ -755,6 +804,126 @@ def document_xml(
     return "\n".join(out)
 
 
+# The register declares the two steps that produced it and no other. The entity
+# responsibility covers the identification of an entity and the merging of its
+# spelling variants under one normalised form, because the extraction reported
+# both; the generation responsibility covers nothing but the deterministic
+# assembly of the file.
+REGISTER_RESP = (
+    (
+        RESP_ENTITY,
+        "Named-entity extraction by an LLM agent in the prototype phase,"
+        " informally reviewed, not verified by a scholar; the same step"
+        " supplied the normalised form under which the attested spellings"
+        " of an entry are merged",
+        "DoCTA prototype extraction",
+    ),
+    (
+        RESP_GENERATION,
+        "Deterministic assembly of the register from the extraction files,"
+        " without editorial judgment",
+        None,  # filled with the script digest at build time
+    ),
+)
+
+
+def _register_header(date: str) -> list[str]:
+    out = [
+        "  <teiHeader>",
+        "    <fileDesc>",
+        "      <titleStmt>",
+        '        <title type="main">DoCTA entity register</title>',
+    ]
+    for resp_id, resp, name in REGISTER_RESP:
+        name = name or f"pipeline/build_tei.py (sha256 {script_digest()})"
+        out += [
+            f'        <respStmt xml:id="{resp_id}">',
+            f"          <resp>{_esc(resp)}</resp>",
+            f"          <name>{_esc(name)}</name>",
+            "        </respStmt>",
+        ]
+    out += [
+        "      </titleStmt>",
+        "      <publicationStmt>",
+        f"        <publisher>{_esc(PUBLISHER)}</publisher>",
+        f'        <date when="{_att(date)}">{_esc(date)}</date>',
+        '        <availability status="free">',
+        f'          <licence target="{LICENCE_URL}">{_esc(LICENCE_NAME)}</licence>',
+        "          <p>The licence covers the encoded register. The facsimile"
+        " images are held by the archive and are referenced by IIIF URL, not"
+        " redistributed here.</p>",
+        "        </availability>",
+        "      </publicationStmt>",
+        "      <sourceDesc>",
+        "        <p>The register has no source of its own. Its entries are"
+        " derived from the named-entity extractions of the transcribed"
+        " documents, and each document names its own archival source.</p>",
+        "      </sourceDesc>",
+        "    </fileDesc>",
+        "    <encodingDesc>",
+        "      <projectDesc>",
+        "        <p>DoCTA edits the inventories and account books of the"
+        " Tyrolean territorial administration; this file is the corpus-wide"
+        " entity register its documents point into, produced by the project's"
+        " agentic edition pipeline.</p>",
+        "      </projectDesc>",
+        "      <editorialDecl>",
+        "        <p>One entry stands for one entity of the extraction layer,"
+        " named by the normalised form the extraction reported and carrying"
+        " the attested spellings as they stand in the transcriptions. The"
+        " responsibility resp-entity-llm covers both steps of that entry, the"
+        " identification of the entity in a line and the merging of its"
+        " spelling variants under one normalised form; the generation of the"
+        " file itself is deterministic and adds no editorial judgment.</p>",
+        "        <p>The register is an unverified extraction by an LLM agent"
+        " from the prototype phase; it has not been checked against the source"
+        " by a scholar and carries no claim of correctness. No certainty value"
+        " is recorded anywhere, because a self-assessment of the extracting"
+        " agent is not evidence about the source.</p>",
+        "      </editorialDecl>",
+        "    </encodingDesc>",
+        "    <revisionDesc>",
+        f'      <change when="{_att(date)}" who="#{RESP_GENERATION}">Generated'
+        " from the entity extractions by the DoCTA pipeline.</change>",
+        '      <change n="register-summary" status="machine-generated">Entity'
+        " register stream (state): machine-generated</change>",
+        "    </revisionDesc>",
+        "  </teiHeader>",
+    ]
+    return out
+
+
+def register_xml(entries: list[dict], date: str) -> str:
+    """The corpus-wide entity register as a standOff TEI file.
+
+    Ids, normalised forms and attested spellings come from entity_index.py, so
+    an entity carries the same identifier here, in the document TEIs and in the
+    JSON-LD graph.
+    """
+    out = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="{REGISTER_ID}">',
+    ]
+    out += _register_header(date)
+    out.append("  <standOff>")
+    for etype, list_el, item_el, name_el, list_att in REGISTER_LISTS:
+        typed = [entry for entry in entries if entry["type"] == etype]
+        if not typed:
+            continue
+        out.append(f"    <{list_el}{list_att}>")
+        for entry in typed:
+            out.append(f'      <{item_el} xml:id="{_att(entry["id"])}">')
+            out.append(f"        <{name_el}>{_esc(entry['normalized'])}</{name_el}>")
+            for form in entry["forms"]:
+                out.append(
+                    f'        <{name_el} type="attested">{_esc(form)}</{name_el}>'
+                )
+            out.append(f"      </{item_el}>")
+        out.append(f"    </{list_el}>")
+    out += ["  </standOff>", "</TEI>", ""]
+    return "\n".join(out)
+
+
 def _documents() -> list[dict]:
     """Documents with a Transkribus export, joined to their archival metadata."""
     mapping = _load(DATA / "source_mapping.json")["matched"]
@@ -788,12 +957,15 @@ def _documents() -> list[dict]:
 def build(
     out_dir: Path, date: str = GENERATION_DATE, register_dir: Path = REGISTER
 ) -> dict[int, str]:
-    """Build one TEI file per transcribed document. Deterministic and re-runnable.
+    """Build one TEI file per transcribed document, plus the entity register.
 
-    Every document is re-parsed before it is written; a malformed result is a
-    contract violation of the generator and fails the whole run rather than
-    leaving a broken file on disk.
+    Deterministic and re-runnable. Every file is re-parsed before it is written;
+    a malformed result is a contract violation of the generator and fails the
+    whole run rather than leaving a broken file on disk. The returned mapping
+    holds the document files; the register is written beside them.
     """
+    entries = ei.build_index(ei.load_extractions())
+    slugs = {(e["type"], e["normalized"]): e["id"] for e in entries}
     result: dict[int, str] = {}
     for doc in _documents():
         doc_id = doc["docId"]
@@ -803,7 +975,7 @@ def build(
             continue
         pages = sorted(_load(export)["pages"], key=lambda p: p["pageNr"])
         review = _review(doc_id, register_dir)
-        anchors, skipped = _entity_anchors(doc_id, pages, review["texts"])
+        anchors, skipped = _entity_anchors(doc_id, pages, review["texts"], slugs)
         if skipped:
             print(f"ENTITIES {doc_id}: {len(skipped)} nicht kodiert", file=sys.stderr)
             for entity_id, reason in skipped:
@@ -813,6 +985,12 @@ def build(
         result[doc_id] = xml
     for doc_id, xml in result.items():
         _write(out_dir / f"{doc_id}.xml", xml)
+    # An empty extraction layer leaves no register: a standOff without a list is
+    # not TEI, and an empty register would claim a step that produced nothing.
+    if entries:
+        xml = register_xml(entries, date)
+        ElementTree.fromstring(xml)
+        _write(out_dir / REGISTER_FILE, xml)
     return result
 
 
@@ -838,7 +1016,8 @@ def main() -> None:
     args = ap.parse_args()
 
     built = build(args.out, args.date, args.register)
-    print(f"OK TEI: {len(built)} Dokumente -> {args.out}")
+    register = "" if not (args.out / REGISTER_FILE).exists() else f" + {REGISTER_FILE}"
+    print(f"OK TEI: {len(built)} Dokumente{register} -> {args.out}")
 
 
 if __name__ == "__main__":

@@ -18,6 +18,7 @@ from xml.etree import ElementTree
 import apply_review as ar
 import build_register as br
 import build_tei as bt
+import entity_index as ei
 
 TEI = "{http://www.tei-c.org/ns/1.0}"
 
@@ -361,6 +362,15 @@ def test_every_lb_facs_resolves_to_a_zone() -> None:
         assert bound, f"no lb bound to a zone in {doc_id}"
 
 
+def _marked_entities(root: ElementTree.Element) -> list[ElementTree.Element]:
+    """Elements bound to the entity responsibility, whatever their tag.
+
+    Tag alone would not do it: <term> also carries the archival category in the
+    header, so the responsibility is what separates a marked entity from it.
+    """
+    return [el for el in root.iter() if el.get("resp") == f"#{bt.RESP_ENTITY}"]
+
+
 def test_entity_layer_only_where_an_extraction_exists() -> None:
     built = _built()
     assert _has_entities(DEMO_DOC), "the prototype extraction disappeared"
@@ -369,15 +379,20 @@ def test_entity_layer_only_where_an_extraction_exists() -> None:
             continue
         root = ElementTree.fromstring(xml)
         assert bt.RESP_ENTITY in _resp_ids(root), f"entity respStmt missing in {doc_id}"
-        names = [
-            pn
-            for pn in root.iter(f"{TEI}persName")
-            if pn.get("resp") == f"#{bt.RESP_ENTITY}"
-        ]
-        assert names, f"no persName bound to the entity responsibility in {doc_id}"
-        assert all(pn.get("key") and pn.text for pn in names), (
-            f"persName without key or content in {doc_id}"
+        marked = _marked_entities(root)
+        assert marked, f"no entity bound to the entity responsibility in {doc_id}"
+        assert {el.tag for el in marked} <= {
+            f"{TEI}persName",
+            f"{TEI}placeName",
+            f"{TEI}term",
+        }, f"entity element outside the encoding in {doc_id}"
+        assert all(el.get("key") is None for el in marked), (
+            f"a normalised form written onto the entity in {doc_id}"
         )
+        assert all(
+            el.text and (el.get("ref") or "").startswith(f"{bt.REGISTER_FILE}#")
+            for el in marked
+        ), f"entity without a register reference or content in {doc_id}"
         decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
         assert "unverified extraction by an LLM agent" in decl
 
@@ -385,8 +400,89 @@ def test_entity_layer_only_where_an_extraction_exists() -> None:
     other = ElementTree.fromstring(built[NON_DEMO_DOC])
     assert bt.RESP_ENTITY not in _resp_ids(other), "entity respStmt leaked"
     assert bt.RESP_ENTITY not in built[NON_DEMO_DOC]
+    assert not _marked_entities(other), f"entity leaked into {NON_DEMO_DOC}"
     for tag in ("persName", "placeName", "objectName"):
         assert not list(other.iter(f"{TEI}{tag}")), f"{tag} leaked into {NON_DEMO_DOC}"
+
+
+# ------------------------------------------------------------------- register
+
+
+def _register(tmp: Path) -> ElementTree.Element:
+    return ElementTree.fromstring((tmp / bt.REGISTER_FILE).read_text(encoding="utf-8"))
+
+
+def test_the_register_carries_the_ids_of_the_entity_index() -> None:
+    """The register, the document refs and graph.jsonld share one id space, so
+    the register must hold exactly what entity_index.py produces."""
+    entries = ei.build_index(ei.load_extractions())
+    assert entries, "the entity index is empty, the check proves nothing"
+    root = ElementTree.fromstring(bt.register_xml(entries, "2026-08-28"))
+
+    got = {}
+    for tag in ("person", "place", "item"):
+        for el in root.iter(f"{TEI}{tag}"):
+            names = list(el)
+            got[el.get(XML_ID)] = (
+                names[0].text,
+                [n.text for n in names[1:]],
+            )
+            assert names[0].get("type") is None, "normalised form marked attested"
+            assert all(n.get("type") == "attested" for n in names[1:]), (
+                f"unmarked spelling in {el.get(XML_ID)}"
+            )
+    assert got == {
+        entry["id"]: (entry["normalized"], entry["forms"]) for entry in entries
+    }
+    assert root.get(XML_ID) == bt.REGISTER_ID
+    assert root.find(f"{TEI}standOff") is not None, "the entries are not standOff"
+
+
+def test_every_document_reference_resolves_in_the_register() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        built = bt.build(tmp)
+        register = _register(tmp)
+    ids = {
+        el.get(XML_ID)
+        for tag in ("person", "place", "item")
+        for el in register.iter(f"{TEI}{tag}")
+    }
+    refs = 0
+    for doc_id, xml in built.items():
+        root = ElementTree.fromstring(xml)
+        for element in _marked_entities(root):
+            ref = element.get("ref")
+            refs += 1
+            file_name, _, target = ref.partition("#")
+            assert file_name == bt.REGISTER_FILE, f"foreign register in {doc_id}"
+            assert target in ids, f"dangling @ref {ref} in {doc_id}"
+    assert refs, "no entity reference in the corpus, the check proves nothing"
+
+
+def test_the_register_is_byte_identical_on_a_rebuild() -> None:
+    with tempfile.TemporaryDirectory() as a, tempfile.TemporaryDirectory() as b:
+        bt.build(Path(a))
+        bt.build(Path(b))
+        first, second = Path(a) / bt.REGISTER_FILE, Path(b) / bt.REGISTER_FILE
+        assert first.is_file(), "no register written"
+        assert first.read_bytes() == second.read_bytes(), "register drift"
+
+
+def test_an_anchored_entity_without_an_index_entry_fails_the_build() -> None:
+    """Both sides read the same extraction files, so this cannot happen; a
+    silent drop would leave an entity encoded that points at nothing."""
+    entities = [_entity("p1", "person", "Hannsen Ramung", "Hans Ramung", 1, "r1l1")]
+    original = bt._entity_data
+    bt._entity_data = lambda doc_id: {"docId": doc_id, "entities": entities}
+    try:
+        bt._entity_anchors(MINI_DOC, MINI_PAGES, None, {})
+    except ValueError as exc:
+        assert "entity index" in str(exc), f"unhelpful error: {exc}"
+    else:
+        raise AssertionError("an entity without an index entry was encoded")
+    finally:
+        bt._entity_data = original
 
 
 # A hand-built export standing in for two pages of two regions. No document of
@@ -455,6 +551,23 @@ def _entity(
     }
 
 
+# Register ids of the synthetic layer, in the shape entity_index.py produces
+# them; the anchor step looks an entity up by (type, normalised form).
+MINI_SLUGS = {
+    ("person", "Hans Ramung"): "per-hans-ramung",
+    ("person", "Ramung"): "per-ramung",
+    ("person", "Burkharten von Knoringen"): "per-burkharten-von-knoringen",
+    ("place", "Thaur"): "pl-thaur",
+    ("place", "Schloss Thaur"): "pl-schloss-thaur",
+    ("object", "Kessel"): "obj-kessel",
+    ("object", "Napf"): "obj-napf",
+}
+
+
+def _ref(slug: str) -> str:
+    return f"{bt.REGISTER_FILE}#{slug}"
+
+
 def _anchors(
     entities: list[dict], review_texts: dict | None = None
 ) -> tuple[dict, list[tuple[str, str]]]:
@@ -467,7 +580,7 @@ def _anchors(
     original = bt._entity_data
     bt._entity_data = lambda doc_id: {"docId": doc_id, "entities": entities}
     try:
-        return bt._entity_anchors(MINI_DOC, MINI_PAGES, review_texts)
+        return bt._entity_anchors(MINI_DOC, MINI_PAGES, review_texts, MINI_SLUGS)
     finally:
         bt._entity_data = original
 
@@ -490,14 +603,14 @@ def test_an_entity_anchors_where_its_form_sits_once_in_the_named_line() -> None:
                     "start": 0,
                     "end": 14,
                     "element": "persName",
-                    "key": "Hans Ramung",
+                    "ref": _ref("per-hans-ramung"),
                     "entity_id": "p1",
                 },
                 {
                     "start": 18,
                     "end": 23,
                     "element": "placeName",
-                    "key": "Thaur",
+                    "ref": _ref("pl-thaur"),
                     "entity_id": "pl1",
                 },
             ],
@@ -505,8 +618,8 @@ def test_an_entity_anchors_where_its_form_sits_once_in_the_named_line() -> None:
                 {
                     "start": 9,
                     "end": 30,
-                    "element": "objectName",
-                    "key": "Kessel",
+                    "element": "term",
+                    "ref": _ref("obj-kessel"),
                     "entity_id": "o1",
                 }
             ],
@@ -515,19 +628,19 @@ def test_an_entity_anchors_where_its_form_sits_once_in_the_named_line() -> None:
                     "start": 0,
                     "end": 11,
                     "element": "placeName",
-                    "key": "Schloss Thaur",
+                    "ref": _ref("pl-schloss-thaur"),
                     "entity_id": "pl2",
                 }
             ],
         },
-        # no normalised form: the surface form itself becomes the key
+        # no normalised form: the surface form itself identifies the entry
         2: {
             "r1l1": [
                 {
                     "start": 0,
                     "end": 24,
                     "element": "persName",
-                    "key": "Burkharten von Knoringen",
+                    "ref": _ref("per-burkharten-von-knoringen"),
                     "entity_id": "p2",
                 }
             ]
@@ -577,7 +690,7 @@ def test_two_overlapping_entities_keep_the_first_and_report_the_second() -> None
                     "start": 0,
                     "end": 14,
                     "element": "persName",
-                    "key": "Hans Ramung",
+                    "ref": _ref("per-hans-ramung"),
                     "entity_id": "p1",
                 }
             ]
@@ -601,7 +714,7 @@ def test_an_anchor_is_cut_against_the_reviewed_text() -> None:
                     "start": 0,
                     "end": 14,
                     "element": "persName",
-                    "key": "Hans Ramung",
+                    "ref": _ref("per-hans-ramung"),
                     "entity_id": "p1",
                 }
             ]
@@ -620,14 +733,14 @@ def test_an_anchor_is_cut_against_the_reviewed_text() -> None:
                     "start": 5,
                     "end": 19,
                     "element": "persName",
-                    "key": "Hans Ramung",
+                    "ref": _ref("per-hans-ramung"),
                     "entity_id": "p1",
                 },
                 {
                     "start": 23,
                     "end": 28,
                     "element": "placeName",
-                    "key": "Thaur",
+                    "ref": _ref("pl-thaur"),
                     "entity_id": "pl1",
                 },
             ]
@@ -638,14 +751,15 @@ def test_an_anchor_is_cut_against_the_reviewed_text() -> None:
 def test_line_content_wraps_the_anchors_and_escapes_everything_else() -> None:
     text = "Hannsen Ramung & Thawr"
     anchors = [
-        {"start": 0, "end": 14, "element": "persName", "key": 'Hans "Ramung"'},
-        {"start": 17, "end": 22, "element": "placeName", "key": "Thaur"},
+        {"start": 0, "end": 14, "element": "persName", "ref": _ref("per-hans-ramung")},
+        {"start": 17, "end": 22, "element": "placeName", "ref": _ref("pl-thaur")},
     ]
     assert bt._line_content(text, anchors) == (
-        '<persName resp="#resp-entity-llm" key="Hans &quot;Ramung&quot;">'
+        '<persName resp="#resp-entity-llm" ref="register.xml#per-hans-ramung">'
         "Hannsen Ramung</persName>"
         " &amp; "
-        '<placeName resp="#resp-entity-llm" key="Thaur">Thawr</placeName>'
+        '<placeName resp="#resp-entity-llm" ref="register.xml#pl-thaur">'
+        "Thawr</placeName>"
     )
     assert bt._line_content(text, []) == "Hannsen Ramung &amp; Thawr"
 

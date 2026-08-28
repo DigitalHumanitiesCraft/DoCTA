@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-register">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">DoCTA entity register</title>
+        <respStmt xml:id="resp-entity-llm">
+          <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar; the same step supplied the normalised form under which the attested spellings of an entry are merged</resp>
+          <name>DoCTA prototype extraction</name>
+        </respStmt>
+        <respStmt xml:id="resp-tei-generation">
+          <resp>Deterministic assembly of the register from the extraction files, without editorial judgment</resp>
+          <name>pipeline/build_tei.py (sha256 e6a2585bc5de)</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Digital Humanities Craft OG</publisher>
+        <date when="2026-08-28">2026-08-28</date>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
+          <p>The licence covers the encoded register. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>The register has no source of its own. Its entries are derived from the named-entity extractions of the transcribed documents, and each document names its own archival source.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is the corpus-wide entity register its documents point into, produced by the project's agentic edition pipeline.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>One entry stands for one entity of the extraction layer, named by the normalised form the extraction reported and carrying the attested spellings as they stand in the transcriptions. The responsibility resp-entity-llm covers both steps of that entry, the identification of the entity in a line and the merging of its spelling variants under one normalised form; the generation of the file itself is deterministic and adds no editorial judgment.</p>
+        <p>The register is an unverified extraction by an LLM agent from the prototype phase; it has not been checked against the source by a scholar and carries no claim of correctness. No certainty value is recorded anywhere, because a self-assessment of the extracting agent is not evidence about the source.</p>
+      </editorialDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2026-08-28" who="#resp-tei-generation">Generated from the entity extractions by the DoCTA pipeline.</change>
+      <change n="register-summary" status="machine-generated">Entity register stream (state): machine-generated</change>
+    </revisionDesc>
+  </teiHeader>
+  <standOff>
+    <listPerson>
+      <person xml:id="per-beatrix">
+        <persName>Beatrix</persName>
+        <persName type="attested">Beatrix</persName>
+      </person>
+      <person xml:id="per-burkhart-von-knoeringen">
+        <persName>Burkhart von Knöringen</persName>
+        <persName type="attested">Burkhart von Knŏringen</persName>
+        <persName type="attested">Burkharten von Knoringen</persName>
+        <persName type="attested">Kneringer</persName>
+        <persName type="attested">kneringer</persName>
+      </person>
+      <person xml:id="per-christoph-velberger">
+        <persName>Christoph Velberger</persName>
+        <persName type="attested">Christopf Velberger</persName>
+      </person>
+      <person xml:id="per-georg-heuss">
+        <persName>Georg Heuss</persName>
+        <persName type="attested">Georien Hew̃ssen</persName>
+      </person>
+      <person xml:id="per-hans-clamer">
+        <persName>Hans Clamer</persName>
+        <persName type="attested">Hannsen Clamer</persName>
+      </person>
+      <person xml:id="per-hans-ramung">
+        <persName>Hans Ramung</persName>
+        <persName type="attested">Hannsen Ramung</persName>
+      </person>
+      <person xml:id="per-hans-weiser">
+        <persName>Hans Weiser</persName>
+        <persName type="attested">Hanns</persName>
+        <persName type="attested">Wÿser</persName>
+      </person>
+      <person xml:id="per-hans-von-elsb">
+        <persName>Hans von Elsb</persName>
+        <persName type="attested">Hannsen von Elsp</persName>
+      </person>
+      <person xml:id="per-heinrich-von-goerz">
+        <persName>Heinrich von Görz</persName>
+        <persName type="attested">H(einrich) von Görtz</persName>
+      </person>
+      <person xml:id="per-jakob-hausmann">
+        <persName>Jakob Hausmann</persName>
+        <persName type="attested">Jacob Haws</persName>
+      </person>
+      <person xml:id="per-joseph-ueberreiner">
+        <persName>Joseph Überreiner</persName>
+        <persName type="attested">Jo</persName>
+        <persName type="attested">Joseph Überriner</persName>
+        <persName type="attested">seph</persName>
+      </person>
+      <person xml:id="per-joerg-bubenhofer">
+        <persName>Jörg Bubenhofer</persName>
+        <persName type="attested">Jorg Bubenhofer</persName>
+      </person>
+      <person xml:id="per-joerg-randorfer">
+        <persName>Jörg Randorfer</persName>
+        <persName type="attested">Jörg Randorffer</persName>
+      </person>
+      <person xml:id="per-konrad-goldstein">
+        <persName>Konrad Goldstein</persName>
+        <persName type="attested">Chunratt Goltstain</persName>
+      </person>
+      <person xml:id="per-leupold-spies">
+        <persName>Leupold Spies</persName>
+        <persName type="attested">Leupolt Spies</persName>
+      </person>
+      <person xml:id="per-martin-schintel">
+        <persName>Martin Schintel</persName>
+        <persName type="attested">Martin Schintel</persName>
+      </person>
+      <person xml:id="per-michel-auer">
+        <persName>Michel Auer</persName>
+        <persName type="attested">Michel Awer</persName>
+      </person>
+      <person xml:id="per-peter-plangger">
+        <persName>Peter Plangger</persName>
+        <persName type="attested">Peteren Plangkhen</persName>
+      </person>
+      <person xml:id="per-polinger">
+        <persName>Polinger</persName>
+        <persName type="attested">Polinger</persName>
+      </person>
+      <person xml:id="per-velberger">
+        <persName>Velberger</persName>
+        <persName type="attested">Velbergers</persName>
+        <persName type="attested">Velldenberger</persName>
+      </person>
+      <person xml:id="per-wolfgang-sumer">
+        <persName>Wolfgang Sumer</persName>
+        <persName type="attested">Wolfgangen Sumer</persName>
+      </person>
+    </listPerson>
+    <listPlace>
+      <place xml:id="pl-alpe">
+        <placeName>Alpe</placeName>
+        <placeName type="attested">albem</placeName>
+        <placeName type="attested">albon</placeName>
+      </place>
+      <place xml:id="pl-hall-in-tirol">
+        <placeName>Hall in Tirol</placeName>
+        <placeName type="attested">Hall</placeName>
+      </place>
+      <place xml:id="pl-heinfels">
+        <placeName>Heinfels</placeName>
+        <placeName type="attested">Hewnfels</placeName>
+      </place>
+      <place xml:id="pl-hof">
+        <placeName>Hof</placeName>
+        <placeName type="attested">hoff</placeName>
+      </place>
+      <place xml:id="pl-innichen">
+        <placeName>Innichen</placeName>
+        <placeName type="attested">Innchingen</placeName>
+      </place>
+      <place xml:id="pl-kronburg">
+        <placeName>Kronburg</placeName>
+        <placeName type="attested">Cronburg</placeName>
+        <placeName type="attested">Kornburg</placeName>
+        <placeName type="attested">Kronburg</placeName>
+      </place>
+      <place xml:id="pl-schloss-thaur">
+        <placeName>Schloss Thaur</placeName>
+        <placeName type="attested">sloss Thawr</placeName>
+      </place>
+      <place xml:id="pl-thaur">
+        <placeName>Thaur</placeName>
+        <placeName type="attested">Thawr</placeName>
+      </place>
+    </listPlace>
+    <list type="objects">
+      <item xml:id="obj-alter-harnisch">
+        <term>Alter Harnisch</term>
+        <term type="attested">alter harnasch</term>
+      </item>
+      <item xml:id="obj-armbrust">
+        <term>Armbrust</term>
+        <term type="attested">arm(bro)st</term>
+        <term type="attested">armbrost</term>
+        <term type="attested">armprost</term>
+      </item>
+      <item xml:id="obj-armzeug">
+        <term>Armzeug</term>
+        <term type="attested">arm zewg</term>
+        <term type="attested">armzewg</term>
+      </item>
+      <item xml:id="obj-backtrog">
+        <term>Backtrog</term>
+        <term type="attested">pachtrog</term>
+      </item>
+      <item xml:id="obj-badewanne">
+        <term>Badewanne</term>
+        <term type="attested">padwannen</term>
+      </item>
+      <item xml:id="obj-badpfeit">
+        <term>Badpfeit</term>
+        <term type="attested">padphaitel</term>
+      </item>
+      <item xml:id="obj-badpfoit">
+        <term>Badpfoit</term>
+        <term type="attested">padphaiten</term>
+      </item>
+      <item xml:id="obj-bankkissen">
+        <term>Bankkissen</term>
+        <term type="attested">chüss</term>
+        <term type="attested">pangkh</term>
+      </item>
+      <item xml:id="obj-bankpolster">
+        <term>Bankpolster</term>
+        <term type="attested">banck</term>
+        <term type="attested">pangkpolster</term>
+      </item>
+      <item xml:id="obj-beingewand">
+        <term>Beingewand</term>
+        <term type="attested">bain gwand</term>
+      </item>
+      <item xml:id="obj-beschlagener-loeffel">
+        <term>Beschlagener Löffel</term>
+        <term type="attested">beslagen loffel</term>
+      </item>
+      <item xml:id="obj-bett">
+        <term>Bett</term>
+        <term type="attested">bett</term>
+        <term type="attested">pett</term>
+        <term type="attested">pott</term>
+        <term type="attested">pëtt</term>
+      </item>
+      <item xml:id="obj-bett-mit-barchent-ueberzogen">
+        <term>Bett mit Barchent überzogen</term>
+        <term type="attested">pett mit parchant uberzogen</term>
+      </item>
+      <item xml:id="obj-bett-mit-einem-gestreiften-ziechen">
+        <term>Bett mit einem gestreiften Ziechen</term>
+        <term type="attested">pett mit ainem gestreimbten ziechen</term>
+      </item>
+      <item xml:id="obj-bett-mit-weissem-ueberzug">
+        <term>Bett mit weißem Überzug</term>
+        <term type="attested">pett mit weissem uberzogen</term>
+        <term type="attested">pott mit weissem uberzogen</term>
+      </item>
+      <item xml:id="obj-bettchen">
+        <term>Bettchen</term>
+        <term type="attested">pëttel</term>
+      </item>
+      <item xml:id="obj-bettpolster">
+        <term>Bettpolster</term>
+        <term type="attested">pettpõlster</term>
+      </item>
+      <item xml:id="obj-bettruhe">
+        <term>Bettruhe</term>
+        <term type="attested">bettruchen</term>
+      </item>
+      <item xml:id="obj-bettstatt">
+        <term>Bettstatt</term>
+        <term type="attested">betstatt</term>
+        <term type="attested">bettstatt</term>
+      </item>
+      <item xml:id="obj-blattschloss">
+        <term>Blattschloss</term>
+        <term type="attested">blatt schlos</term>
+      </item>
+      <item xml:id="obj-blechflasche">
+        <term>Blechflasche</term>
+        <term type="attested">plechflachen</term>
+      </item>
+      <item xml:id="obj-brandroste">
+        <term>Brandroste</term>
+        <term type="attested">prantrött</term>
+      </item>
+      <item xml:id="obj-bratspiess">
+        <term>Bratspieß</term>
+        <term type="attested">bratspis</term>
+        <term type="attested">pratspise</term>
+        <term type="attested">pratspiss</term>
+      </item>
+      <item xml:id="obj-brief">
+        <term>Brief</term>
+        <term type="attested">brief</term>
+      </item>
+      <item xml:id="obj-buttrich">
+        <term>Buttrich</term>
+        <term type="attested">buttrich</term>
+      </item>
+      <item xml:id="obj-deckbett">
+        <term>Deckbett</term>
+        <term type="attested">deckbett</term>
+        <term type="attested">dekchpett</term>
+        <term type="attested">dekh pett</term>
+        <term type="attested">dekhpëtt</term>
+      </item>
+      <item xml:id="obj-decke">
+        <term>Decke</term>
+        <term type="attested">dekhen</term>
+        <term type="attested">dëkh</term>
+      </item>
+      <item xml:id="obj-decke-mit-seide-genaeht">
+        <term>Decke mit Seide genäht</term>
+        <term type="attested">dekhen mit sÿdn genant</term>
+      </item>
+      <item xml:id="obj-deckel">
+        <term>Deckel</term>
+        <term type="attested">degkhel</term>
+        <term type="attested">dëgkel</term>
+      </item>
+      <item xml:id="obj-decklaken">
+        <term>Decklaken</term>
+        <term type="attested">degklach</term>
+        <term type="attested">dekhlach</term>
+      </item>
+      <item xml:id="obj-dengelgeschirr">
+        <term>Dengelgeschirr</term>
+        <term type="attested">tangelgeschiere</term>
+        <term type="attested">temgelgeschier</term>
+      </item>
+      <item xml:id="obj-dreifuss">
+        <term>Dreifuß</term>
+        <term type="attested">drÿfuss</term>
+      </item>
+      <item xml:id="obj-eherner-hafen">
+        <term>Eherner Hafen</term>
+        <term type="attested">erin hafen</term>
+      </item>
+      <item xml:id="obj-eisenhut">
+        <term>Eisenhut</term>
+        <term type="attested">eysenhut</term>
+        <term type="attested">eÿsenhüt</term>
+      </item>
+      <item xml:id="obj-eisenstecken">
+        <term>Eisenstecken</term>
+        <term type="attested">eysenstecken</term>
+      </item>
+      <item xml:id="obj-eisenzange">
+        <term>Eisenzange</term>
+        <term type="attested">eysenzang</term>
+      </item>
+      <item xml:id="obj-eiserne-mistgabel">
+        <term>Eiserne Mistgabel</term>
+        <term type="attested">eÿsnen mistgabelen</term>
+      </item>
+      <item xml:id="obj-eiserne-und-kupferne-buechsen">
+        <term>Eiserne und kupferne Büchsen</term>
+        <term type="attested">eÿsnnen und kuphren puchsen</term>
+      </item>
+      <item xml:id="obj-eiserner-keil">
+        <term>Eiserner Keil</term>
+        <term type="attested">eÿsnen wekg</term>
+      </item>
+      <item xml:id="obj-eseleisen">
+        <term>Eseleisen</term>
+        <term type="attested">esel eyssen</term>
+      </item>
+      <item xml:id="obj-fass-wein">
+        <term>Fass Wein</term>
+        <term type="attested">vass vein</term>
+      </item>
+      <item xml:id="obj-feile">
+        <term>Feile</term>
+        <term type="attested">veÿhel</term>
+      </item>
+      <item xml:id="obj-feuerbock">
+        <term>Feuerbock</term>
+        <term type="attested">hainczt</term>
+      </item>
+      <item xml:id="obj-fischkessel">
+        <term>Fischkessel</term>
+        <term type="attested">fischkessel</term>
+      </item>
+      <item xml:id="obj-fleischbeil">
+        <term>Fleischbeil</term>
+        <term type="attested">fleÿsch peÿl</term>
+      </item>
+      <item xml:id="obj-fuchsbalg">
+        <term>Fuchsbalg</term>
+        <term type="attested">fuschs belg</term>
+      </item>
+      <item xml:id="obj-futteral">
+        <term>Futteral</term>
+        <term type="attested">futral</term>
+      </item>
+      <item xml:id="obj-futterkasten">
+        <term>Futterkasten</term>
+        <term type="attested">futerkasten</term>
+      </item>
+      <item xml:id="obj-futterwanne">
+        <term>Futterwanne</term>
+        <term type="attested">futer wannen</term>
+      </item>
+      <item xml:id="obj-faesslein">
+        <term>Fässlein</term>
+        <term type="attested">vässlÿ</term>
+      </item>
+      <item xml:id="obj-gabel">
+        <term>Gabel</term>
+        <term type="attested">gabe-</term>
+      </item>
+      <item xml:id="obj-gamsfelldecke">
+        <term>Gamsfelldecke</term>
+        <term type="attested">gambseine dekh</term>
+        <term type="attested">gambss dekch</term>
+      </item>
+      <item xml:id="obj-gamsseil">
+        <term>Gamsseil</term>
+        <term type="attested">gambssayl</term>
+      </item>
+      <item xml:id="obj-gartengabel">
+        <term>Gartengabel</term>
+        <term type="attested">gartt gabel</term>
+      </item>
+      <item xml:id="obj-gediegenes-fleisch">
+        <term>Gediegenes Fleisch</term>
+        <term type="attested">gedigen flaisch</term>
+      </item>
+      <item xml:id="obj-gespannter-wolfbalg">
+        <term>Gespannter Wolfbalg</term>
+        <term type="attested">gebaist wolf</term>
+      </item>
+      <item xml:id="obj-gestreifter-polster">
+        <term>Gestreifter Polster</term>
+        <term type="attested">gestreimbt polster</term>
+        <term type="attested">gestreimbte polster</term>
+        <term type="attested">gestreimbter polster</term>
+      </item>
+      <item xml:id="obj-gestreiftes-bett">
+        <term>Gestreiftes Bett</term>
+        <term type="attested">gestreimbte pett</term>
+      </item>
+      <item xml:id="obj-gestreiftes-kissen">
+        <term>Gestreiftes Kissen</term>
+        <term type="attested">gestreimbt kuss</term>
+        <term type="attested">gestreimbt kũss</term>
+        <term type="attested">gestreimbte kuss</term>
+        <term type="attested">gestreimbts kũss</term>
+      </item>
+      <item xml:id="obj-grand">
+        <term>Grand</term>
+        <term type="attested">grändt</term>
+      </item>
+      <item xml:id="obj-hafen">
+        <term>Hafen</term>
+        <term type="attested">hafein</term>
+      </item>
+      <item xml:id="obj-hahl">
+        <term>Hahl</term>
+        <term type="attested">hälen</term>
+      </item>
+      <item xml:id="obj-haken">
+        <term>Haken</term>
+        <term type="attested">hakhen</term>
+      </item>
+      <item xml:id="obj-hakenbuechse">
+        <term>Hakenbüchse</term>
+        <term type="attested">hagkenpuchsen</term>
+        <term type="attested">hagkenpüchsen</term>
+        <term type="attested">hakgenpuchsen</term>
+      </item>
+      <item xml:id="obj-hammer">
+        <term>Hammer</term>
+        <term type="attested">hämer</term>
+      </item>
+      <item xml:id="obj-handbuechse">
+        <term>Handbüchse</term>
+        <term type="attested">handpuchsen</term>
+        <term type="attested">hantpuchsen</term>
+      </item>
+      <item xml:id="obj-handschuh">
+        <term>Handschuh</term>
+        <term type="attested">handtschuch</term>
+      </item>
+      <item xml:id="obj-handschuhe">
+        <term>Handschuhe</term>
+        <term type="attested">hentschůch</term>
+      </item>
+      <item xml:id="obj-handtuch">
+        <term>Handtuch</term>
+        <term type="attested">handttücher</term>
+        <term type="attested">hannttũcher</term>
+        <term type="attested">hanttucher</term>
+      </item>
+      <item xml:id="obj-harnisch">
+        <term>Harnisch</term>
+        <term type="attested">harnasch</term>
+      </item>
+      <item xml:id="obj-haue">
+        <term>Haue</term>
+        <term type="attested">hawen</term>
+      </item>
+      <item xml:id="obj-hauptkissen">
+        <term>Hauptkissen</term>
+        <term type="attested">hauptkuss</term>
+        <term type="attested">hauptküss</term>
+      </item>
+      <item xml:id="obj-hauptpolster">
+        <term>Hauptpolster</term>
+        <term type="attested">hauptpolster</term>
+        <term type="attested">hauptpölster</term>
+      </item>
+      <item xml:id="obj-hausrat">
+        <term>Hausrat</term>
+        <term type="attested">hawsrat</term>
+        <term type="attested">hawsrats</term>
+      </item>
+      <item xml:id="obj-haut">
+        <term>Haut</term>
+        <term type="attested">hüt</term>
+      </item>
+      <item xml:id="obj-hechel">
+        <term>Hechel</term>
+        <term type="attested">hächelen</term>
+      </item>
+      <item xml:id="obj-heugabel">
+        <term>Heugabel</term>
+        <term type="attested">heÿgablen</term>
+      </item>
+      <item xml:id="obj-holzschlitten">
+        <term>Holzschlitten</term>
+        <term type="attested">holzslÿten</term>
+      </item>
+      <item xml:id="obj-holzschuessel">
+        <term>Holzschüssel</term>
+        <term type="attested">hültzi</term>
+      </item>
+      <item xml:id="obj-holzteller">
+        <term>Holzteller</term>
+        <term type="attested">hulczene täler</term>
+      </item>
+      <item xml:id="obj-haengende-kanne">
+        <term>Hängende Kanne</term>
+        <term type="attested">hangenden kandl</term>
+      </item>
+      <item xml:id="obj-hoelzerne-schuessel">
+        <term>Hölzerne Schüssel</term>
+        <term type="attested">hulzen schusselen</term>
+      </item>
+      <item xml:id="obj-hoelzerne-tellerbuechse">
+        <term>Hölzerne Tellerbüchse</term>
+        <term type="attested">hulczen tellerpuchsen</term>
+      </item>
+      <item xml:id="obj-kandel">
+        <term>Kandel</term>
+        <term type="attested">kanndelen</term>
+      </item>
+      <item xml:id="obj-kandelaber">
+        <term>Kandelaber</term>
+        <term type="attested">kandelier</term>
+      </item>
+      <item xml:id="obj-kanne">
+        <term>Kanne</term>
+        <term type="attested">kandeln</term>
+      </item>
+      <item xml:id="obj-kariolbett">
+        <term>Kariolbett</term>
+        <term type="attested">kariolen</term>
+      </item>
+      <item xml:id="obj-kessel">
+        <term>Kessel</term>
+        <term type="attested">kessel</term>
+      </item>
+      <item xml:id="obj-kissen">
+        <term>Kissen</term>
+        <term type="attested">chũß</term>
+        <term type="attested">chüss</term>
+        <term type="attested">chŭss</term>
+        <term type="attested">kchũs</term>
+        <term type="attested">kuss</term>
+        <term type="attested">küssn</term>
+      </item>
+      <item xml:id="obj-kissen-mit-weissen-ziechen">
+        <term>Kissen mit weißen Ziechen</term>
+        <term type="attested">kuss mit weyssen ziechen</term>
+      </item>
+      <item xml:id="obj-kissenzieche">
+        <term>Kissenzieche</term>
+        <term type="attested">kusstziechen</term>
+        <term type="attested">kussziechen</term>
+      </item>
+      <item xml:id="obj-kolter">
+        <term>Kolter</term>
+        <term type="attested">golter</term>
+      </item>
+      <item xml:id="obj-kragen">
+        <term>Kragen</term>
+        <term type="attested">kragel</term>
+      </item>
+      <item xml:id="obj-krautbrente">
+        <term>Krautbrente</term>
+        <term type="attested">krawtprenten</term>
+      </item>
+      <item xml:id="obj-kraeusel">
+        <term>Kräusel</term>
+        <term type="attested">kraesel</term>
+      </item>
+      <item xml:id="obj-kuh">
+        <term>Kuh</term>
+        <term type="attested">küe</term>
+      </item>
+      <item xml:id="obj-kummet">
+        <term>Kummet</term>
+        <term type="attested">komat</term>
+      </item>
+      <item xml:id="obj-kupferbecken">
+        <term>Kupferbecken</term>
+        <term type="attested">kupfferene pekh</term>
+      </item>
+      <item xml:id="obj-kupferne-buechse">
+        <term>Kupferne Büchse</term>
+        <term type="attested">kũphren pũchsen</term>
+      </item>
+      <item xml:id="obj-kaelbchen">
+        <term>Kälbchen</term>
+        <term type="attested">kalbelen</term>
+      </item>
+      <item xml:id="obj-koecher">
+        <term>Köcher</term>
+        <term type="attested">kŏcher</term>
+      </item>
+      <item xml:id="obj-kuerass">
+        <term>Kürass</term>
+        <term type="attested">kürüss</term>
+      </item>
+      <item xml:id="obj-lagel">
+        <term>Lagel</term>
+        <term type="attested">lagel</term>
+      </item>
+      <item xml:id="obj-lammfelldecke">
+        <term>Lammfelldecke</term>
+        <term type="attested">lembrein degkh</term>
+        <term type="attested">lembrein dekch</term>
+        <term type="attested">lembrein gut dekch</term>
+      </item>
+      <item xml:id="obj-lauetsche">
+        <term>Lauetsche</term>
+        <term type="attested">laüetschen</term>
+      </item>
+      <item xml:id="obj-lederner-bankpolster">
+        <term>Lederner Bankpolster</term>
+        <term type="attested">lydren pankhpolster</term>
+      </item>
+      <item xml:id="obj-ledernes-bankkissen">
+        <term>Ledernes Bankkissen</term>
+        <term type="attested">lydrein pankhkuss</term>
+      </item>
+      <item xml:id="obj-legel">
+        <term>Legel</term>
+        <term type="attested">legelen</term>
+      </item>
+      <item xml:id="obj-leintuch">
+        <term>Leintuch</term>
+        <term type="attested">leilach</term>
+        <term type="attested">leylach</term>
+        <term type="attested">leÿlach</term>
+      </item>
+      <item xml:id="obj-loden">
+        <term>Loden</term>
+        <term type="attested">loden</term>
+      </item>
+      <item xml:id="obj-lodendekel">
+        <term>Lodendekel</term>
+        <term type="attested">lodeins dekhel</term>
+      </item>
+      <item xml:id="obj-mehlkasten">
+        <term>Mehlkasten</term>
+        <term type="attested">melkasten</term>
+      </item>
+      <item xml:id="obj-messing-badbecken">
+        <term>Messing-Badbecken</term>
+        <term type="attested">messen padpekh</term>
+      </item>
+      <item xml:id="obj-messing-giesskanne">
+        <term>Messing-Gießkanne</term>
+        <term type="attested">messen gieskãndl</term>
+      </item>
+      <item xml:id="obj-messingbecken">
+        <term>Messingbecken</term>
+        <term type="attested">messene pekh</term>
+        <term type="attested">messin beck</term>
+      </item>
+      <item xml:id="obj-messinggiesskanne">
+        <term>Messinggießkanne</term>
+        <term type="attested">giess kandel</term>
+        <term type="attested">messene</term>
+      </item>
+      <item xml:id="obj-messinghandfass">
+        <term>Messinghandfass</term>
+        <term type="attested">messin hantvass</term>
+      </item>
+      <item xml:id="obj-milchschuessel">
+        <term>Milchschüssel</term>
+        <term type="attested">milch</term>
+        <term type="attested">schüssel</term>
+      </item>
+      <item xml:id="obj-moerser">
+        <term>Mörser</term>
+        <term type="attested">mörser</term>
+      </item>
+      <item xml:id="obj-moerserbuechse">
+        <term>Mörserbüchse</term>
+        <term type="attested">morser buchsen</term>
+        <term type="attested">morser puchsen</term>
+      </item>
+      <item xml:id="obj-ochseneisen">
+        <term>Ochseneisen</term>
+        <term type="attested">ochsen</term>
+      </item>
+      <item xml:id="obj-panzer">
+        <term>Panzer</term>
+        <term type="attested">bants</term>
+      </item>
+      <item xml:id="obj-pfanne">
+        <term>Pfanne</term>
+        <term type="attested">pfannen</term>
+        <term type="attested">phann</term>
+        <term type="attested">phannen</term>
+      </item>
+      <item xml:id="obj-pfannenknecht">
+        <term>Pfannenknecht</term>
+        <term type="attested">echt</term>
+        <term type="attested">phankn¬</term>
+      </item>
+      <item xml:id="obj-pfefferpfanne">
+        <term>Pfefferpfanne</term>
+        <term type="attested">pheffer phan</term>
+      </item>
+      <item xml:id="obj-pfeil">
+        <term>Pfeil</term>
+        <term type="attested">pfeilen</term>
+        <term type="attested">pheylen</term>
+      </item>
+      <item xml:id="obj-pflug">
+        <term>Pflug</term>
+        <term type="attested">phlũg</term>
+      </item>
+      <item xml:id="obj-pfaennlein">
+        <term>Pfännlein</term>
+        <term type="attested">plandl</term>
+      </item>
+      <item xml:id="obj-polster">
+        <term>Polster</term>
+        <term type="attested">bolster</term>
+        <term type="attested">polster</term>
+        <term type="attested">polsteren</term>
+      </item>
+      <item xml:id="obj-polster-mit-weissen-ziechen">
+        <term>Polster mit weißen Ziechen</term>
+        <term type="attested">polster mit weissen ziechen</term>
+      </item>
+      <item xml:id="obj-polsterstrohsaecke">
+        <term>Polsterstrohsäcke</term>
+        <term type="attested">polster strosekh</term>
+      </item>
+      <item xml:id="obj-polsterzieche">
+        <term>Polsterzieche</term>
+        <term type="attested">polstertziechen</term>
+      </item>
+      <item xml:id="obj-rakeisen">
+        <term>Rakeisen</term>
+        <term type="attested">rakgawn</term>
+      </item>
+      <item xml:id="obj-rauchdecke">
+        <term>Rauchdecke</term>
+        <term type="attested">rauch deck</term>
+      </item>
+      <item xml:id="obj-rauhe-decke">
+        <term>Rauhe Decke</term>
+        <term type="attested">rawhe dekhen</term>
+      </item>
+      <item xml:id="obj-reibeisen">
+        <term>Reibeisen</term>
+        <term type="attested">ribeysen</term>
+      </item>
+      <item xml:id="obj-reitsattel">
+        <term>Reitsattel</term>
+        <term type="attested">raissättel</term>
+      </item>
+      <item xml:id="obj-rosseisen">
+        <term>Rosseisen</term>
+        <term type="attested">rosseyssen</term>
+      </item>
+      <item xml:id="obj-rost">
+        <term>Rost</term>
+        <term type="attested">rost</term>
+      </item>
+      <item xml:id="obj-roecklein">
+        <term>Röcklein</term>
+        <term type="attested">rökel</term>
+      </item>
+      <item xml:id="obj-ruech">
+        <term>Rüch</term>
+        <term type="attested">rüch</term>
+      </item>
+      <item xml:id="obj-sack-mit-garn">
+        <term>Sack mit Garn</term>
+        <term type="attested">sakh mit garen</term>
+      </item>
+      <item xml:id="obj-salzfass">
+        <term>Salzfass</term>
+        <term type="attested">salzvassel</term>
+      </item>
+      <item xml:id="obj-sarge">
+        <term>Sarge</term>
+        <term type="attested">sargen</term>
+      </item>
+      <item xml:id="obj-schaffreite">
+        <term>Schaffreite</term>
+        <term type="attested">schaffraitt</term>
+      </item>
+      <item xml:id="obj-schafwolldecke">
+        <term>Schafwolldecke</term>
+        <term type="attested">dekch</term>
+        <term type="attested">schaffein</term>
+        <term type="attested">schaffein dekch</term>
+        <term type="attested">schaffein dekh</term>
+        <term type="attested">schäffein dekh</term>
+        <term type="attested">schäffen dëkch</term>
+      </item>
+      <item xml:id="obj-schere">
+        <term>Schere</term>
+        <term type="attested">scherren</term>
+      </item>
+      <item xml:id="obj-schiesspulver">
+        <term>Schießpulver</term>
+        <term type="attested">pulver</term>
+      </item>
+      <item xml:id="obj-schlittruhe">
+        <term>Schlittruhe</term>
+        <term type="attested">slittruhen</term>
+      </item>
+      <item xml:id="obj-schloss">
+        <term>Schloss</term>
+        <term type="attested">sloss</term>
+      </item>
+      <item xml:id="obj-schlosserkloben">
+        <term>Schlosserkloben</term>
+        <term type="attested">schlosser kloben</term>
+      </item>
+      <item xml:id="obj-schmiedstock">
+        <term>Schmiedstock</term>
+        <term type="attested">schmidsteck</term>
+      </item>
+      <item xml:id="obj-schmiedzeug">
+        <term>Schmiedzeug</term>
+        <term type="attested">smid zeug</term>
+      </item>
+      <item xml:id="obj-schreibtisch">
+        <term>Schreibtisch</term>
+        <term type="attested">schribtisch</term>
+      </item>
+      <item xml:id="obj-schrein">
+        <term>Schrein</term>
+        <term type="attested">schrein</term>
+      </item>
+      <item xml:id="obj-schreinlein">
+        <term>Schreinlein</term>
+        <term type="attested">schreinel</term>
+      </item>
+      <item xml:id="obj-schurz">
+        <term>Schurz</term>
+        <term type="attested">schũrliz</term>
+      </item>
+      <item xml:id="obj-schwein">
+        <term>Schwein</term>
+        <term type="attested">schwein</term>
+      </item>
+      <item xml:id="obj-schweinefleisch">
+        <term>Schweinefleisch</term>
+        <term type="attested">schweinflaisch</term>
+      </item>
+      <item xml:id="obj-schweinespiess">
+        <term>Schweinespieß</term>
+        <term type="attested">schweinspies</term>
+      </item>
+      <item xml:id="obj-schwaebischer-zwilch">
+        <term>Schwäbischer Zwilch</term>
+        <term type="attested">swãbischer zwilch</term>
+      </item>
+      <item xml:id="obj-schuessel">
+        <term>Schüssel</term>
+        <term type="attested">pott schussel</term>
+        <term type="attested">schisslen</term>
+      </item>
+      <item xml:id="obj-sedeltruhe">
+        <term>Sedeltruhe</term>
+        <term type="attested">sÿdeltruhen</term>
+      </item>
+      <item xml:id="obj-sehne">
+        <term>Sehne</term>
+        <term type="attested">sen</term>
+        <term type="attested">senen</term>
+      </item>
+      <item xml:id="obj-sense">
+        <term>Sense</term>
+        <term type="attested">segens</term>
+      </item>
+      <item xml:id="obj-sichel">
+        <term>Sichel</term>
+        <term type="attested">sicheln</term>
+      </item>
+      <item xml:id="obj-spannbett">
+        <term>Spannbett</term>
+        <term type="attested">spanpett</term>
+        <term type="attested">spanpëtt</term>
+      </item>
+      <item xml:id="obj-speisekasten">
+        <term>Speisekasten</term>
+        <term type="attested">speÿskasten</term>
+      </item>
+      <item xml:id="obj-stierlein">
+        <term>Stierlein</term>
+        <term type="attested">stierel</term>
+      </item>
+      <item xml:id="obj-strick">
+        <term>Strick</term>
+        <term type="attested">stricken</term>
+      </item>
+      <item xml:id="obj-strohmesser">
+        <term>Strohmesser</term>
+        <term type="attested">stromesser</term>
+      </item>
+      <item xml:id="obj-strohsack">
+        <term>Strohsack</term>
+        <term type="attested">strosakh</term>
+      </item>
+      <item xml:id="obj-strohsaecke">
+        <term>Strohsäcke</term>
+        <term type="attested">strosekh</term>
+      </item>
+      <item xml:id="obj-stuhl">
+        <term>Stuhl</term>
+        <term type="attested">stũel</term>
+      </item>
+      <item xml:id="obj-stoessel">
+        <term>Stößel</term>
+        <term type="attested">stössel</term>
+        <term type="attested">stötzel</term>
+      </item>
+      <item xml:id="obj-tartsche">
+        <term>Tartsche</term>
+        <term type="attested">tarschel</term>
+        <term type="attested">tärthschel</term>
+      </item>
+      <item xml:id="obj-teller">
+        <term>Teller</term>
+        <term type="attested">taller</term>
+        <term type="attested">telleren</term>
+      </item>
+      <item xml:id="obj-tellerbuechse">
+        <term>Tellerbüchse</term>
+        <term type="attested">taller būchß</term>
+      </item>
+      <item xml:id="obj-tellerkorb">
+        <term>Tellerkorb</term>
+        <term type="attested">tẽllerkorb</term>
+      </item>
+      <item xml:id="obj-tisch">
+        <term>Tisch</term>
+        <term type="attested">tisch</term>
+      </item>
+      <item xml:id="obj-tischtuch">
+        <term>Tischtuch</term>
+        <term type="attested">tischtücher</term>
+        <term type="attested">tischtũcher</term>
+      </item>
+      <item xml:id="obj-truhe">
+        <term>Truhe</term>
+        <term type="attested">truch</term>
+        <term type="attested">truchen</term>
+        <term type="attested">trucken</term>
+        <term type="attested">truhen</term>
+        <term type="attested">trũhel</term>
+      </item>
+      <item xml:id="obj-unschlitt">
+        <term>Unschlitt</term>
+        <term type="attested">unslit</term>
+      </item>
+      <item xml:id="obj-unterer-beinzeuggurt">
+        <term>Unterer Beinzeuggurt</term>
+        <term type="attested">wndere</term>
+      </item>
+      <item xml:id="obj-unterpfoit">
+        <term>Unterpfoit</term>
+        <term type="attested">underphaiten</term>
+      </item>
+      <item xml:id="obj-verndzogenes-kalb">
+        <term>Verndzogenes Kalb</term>
+        <term type="attested">verndzogene kalb</term>
+      </item>
+      <item xml:id="obj-vorderteil">
+        <term>Vorderteil</term>
+        <term type="attested">vadertail</term>
+      </item>
+      <item xml:id="obj-vorhaengeschloss">
+        <term>Vorhängeschloss</term>
+        <term type="attested">malen</term>
+      </item>
+      <item xml:id="obj-vorschlaghammer">
+        <term>Vorschlaghammer</term>
+        <term type="attested">furschleg</term>
+      </item>
+      <item xml:id="obj-wagen">
+        <term>Wagen</term>
+        <term type="attested">wagen</term>
+      </item>
+      <item xml:id="obj-wagenross">
+        <term>Wagenross</term>
+        <term type="attested">wagen ross</term>
+      </item>
+      <item xml:id="obj-wasserkelle">
+        <term>Wasserkelle</term>
+        <term type="attested">wasser gatzen</term>
+      </item>
+      <item xml:id="obj-weisser-polster">
+        <term>Weißer Polster</term>
+        <term type="attested">weissen polster</term>
+      </item>
+      <item xml:id="obj-weisses-bett">
+        <term>Weißes Bett</term>
+        <term type="attested">weis pett</term>
+        <term type="attested">weÿsse pett</term>
+      </item>
+      <item xml:id="obj-weisses-kissen">
+        <term>Weißes Kissen</term>
+        <term type="attested">weiss kuss</term>
+        <term type="attested">weisse kuss</term>
+      </item>
+      <item xml:id="obj-wildbretfaesschen">
+        <term>Wildbretfässchen</term>
+        <term type="attested">wiltpret vãssel</term>
+      </item>
+      <item xml:id="obj-winde">
+        <term>Winde</term>
+        <term type="attested">winden</term>
+      </item>
+      <item xml:id="obj-wirkbrett">
+        <term>Wirkbrett</term>
+        <term type="attested">wurchpret</term>
+      </item>
+      <item xml:id="obj-wolfsfelldecke">
+        <term>Wolfsfelldecke</term>
+        <term type="attested">wolfs dekch</term>
+      </item>
+      <item xml:id="obj-zange">
+        <term>Zange</term>
+        <term type="attested">zangen</term>
+      </item>
+      <item xml:id="obj-zaum">
+        <term>Zaum</term>
+        <term type="attested">zam</term>
+      </item>
+      <item xml:id="obj-zieche">
+        <term>Zieche</term>
+        <term type="attested">ziech</term>
+        <term type="attested">ziechen</term>
+      </item>
+      <item xml:id="obj-zinnflasche">
+        <term>Zinnflasche</term>
+        <term type="attested">czini flaschen</term>
+      </item>
+      <item xml:id="obj-zinnpfanne">
+        <term>Zinnpfanne</term>
+        <term type="attested">zinphan</term>
+      </item>
+      <item xml:id="obj-zinnplatte">
+        <term>Zinnplatte</term>
+        <term type="attested">zini plan</term>
+      </item>
+      <item xml:id="obj-zinnschuessel">
+        <term>Zinnschüssel</term>
+        <term type="attested">zinen schusselen</term>
+        <term type="attested">zinenschüssel</term>
+        <term type="attested">zini schisseln</term>
+      </item>
+      <item xml:id="obj-zinnteller">
+        <term>Zinnteller</term>
+        <term type="attested">zÿnen teller</term>
+      </item>
+      <item xml:id="obj-gestueckeltes-decklaken">
+        <term>gestückeltes Decklaken</term>
+        <term type="attested">gestükelts degklachen</term>
+      </item>
+      <item xml:id="obj-lederner-polster">
+        <term>lederner Polster</term>
+        <term type="attested">lidereiner</term>
+        <term type="attested">polster</term>
+      </item>
+      <item xml:id="obj-raue-decke">
+        <term>raue Decke</term>
+        <term type="attested">rauch dekh</term>
+        <term type="attested">rauch dëkchen</term>
+        <term type="attested">rauche dekch</term>
+        <term type="attested">rauhe dekch</term>
+      </item>
+      <item xml:id="obj-oelkessel">
+        <term>Ölkessel</term>
+        <term type="attested">õllkessel</term>
+      </item>
+      <item xml:id="obj-oelkrug">
+        <term>Ölkrug</term>
+        <term type="attested">olcrũeg</term>
+      </item>
+    </list>
+  </standOff>
+</TEI>
