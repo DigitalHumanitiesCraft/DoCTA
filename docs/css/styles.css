@@ -1302,13 +1302,19 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .hero-note a:hover { color: var(--accent); }
 .hero-note__more { white-space: nowrap; }
 
-/* Key for the F/H/T/E stage letters, next to the result count */
+/* Key for the F/H/T/E stage letters, next to the result count. The letter is
+   the same mark as on a source row (see .stage below), the label plain text.
+   Items wrap as whole letter-plus-label pairs, the column is narrow. */
 .stage-key {
+  display: block;
   font-size: var(--text-2xs);
   color: var(--text-muted-custom);
+}
+.stage-key__item {
+  display: inline-block;
+  margin-left: 0.45rem;
   white-space: nowrap;
 }
-.stage-key__item { margin-left: 0.45rem; }
 
 /* Edition attribution chip: accent-tinted so the origin of the text layer
    catches the eye among the neutral category and status chips */
@@ -1357,7 +1363,8 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 /* Pipeline stage marks on a source row */
 .stages { display: inline-flex; gap: 3px; }
-.stage {
+.stage,
+.stage-key__mark {
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.35rem; height: 1.35rem;
   border-radius: 4px;
@@ -1366,6 +1373,14 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 }
 .stage--done { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
 .stage--todo { color: var(--text-muted-custom); background: transparent; }
+
+/* Same mark, scaled down to sit on the legend line */
+.stage-key__mark {
+  width: 1.15rem; height: 1.15rem;
+  font-size: var(--text-2xs);
+  vertical-align: -0.3em;
+  margin-right: 0.1rem;
+}
 
 /* === Reading and TEI mode in the viewer === */
 /* Both fold the facsimile pane away and give the text the full panel width. */
