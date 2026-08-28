@@ -11,9 +11,9 @@ Usage:
 
 Exit code 0 only when every file parses and validates in every stage that ran.
 
-Requires lxml (pinned in this environment: lxml 5.3.0, libxml2 2.11.7). Without lxml the
-script falls back to the `jing` CLI if it is on PATH, and otherwise exits with a message
-naming what to install.
+Requires lxml, whose version bound lives in pyproject.toml. Without lxml the script falls
+back to the `jing` CLI if it is on PATH, and otherwise exits with a message naming what to
+install.
 """
 
 from __future__ import annotations
@@ -100,7 +100,10 @@ def validate_with_jing(
         if result.returncode == 0:
             continue
         invalid.append(path)
-        lines = [line for line in result.stdout.splitlines() if line.strip()]
+        # jing writes its diagnostics to stderr; stdout stays in the read so a
+        # build of jing that reports there is covered too.
+        diagnostics = f"{result.stderr}\n{result.stdout}"
+        lines = [line for line in diagnostics.splitlines() if line.strip()]
         for line in lines[:max_errors]:
             print(line)
         if len(lines) > max_errors:
@@ -160,4 +163,5 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
     sys.exit(main())

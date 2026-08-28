@@ -4,7 +4,7 @@ The register is the data backbone of the agentic edition pipeline. It holds one 
 
 ## Layout
 
-`documents.json` is a list of document entries. Each carries `docId`, `shelfmark` (archival signature), `title`, `dating` (`raw`, `start`, `end`), `category`, `pages`, `tier`, `has_text`, `transkribus_statuses`, a count of pages per Transkribus page status, `done_pages`, how many of them carry the status DONE, `provenance` (currently always `transkribus`) and `attribution`, which stays `null` until the published edition list allows an attribution such as `inventaria`.
+`documents.json` is a list of document entries. Each carries `docId`, `shelfmark` (archival signature), `title`, `dating` (`raw`, `start`, `end`), `category`, `pages`, `tier`, `has_text`, `transkribus_statuses`, a count of pages per Transkribus page status, `done_pages`, how many of them carry the status DONE, `provenance` (currently always `transkribus`) and `attribution`, which is unused and always `null`; who made a transcription is derived in the site projection from the `csv_transkribiert` flag of the source mapping.
 
 `pages/<docId>.json` holds `docId` and a `pages` list. Each page entry carries `pageNr`, the `iiif` image URL where one is known, `content_class`, `empty_evidence`, `verification` and `runs`.
 
@@ -66,7 +66,7 @@ The browser viewer lets a reviewer read a page against its scan, mark it `gesich
 
 The status of a page becomes its `verification` together with the initials and the date. The corrections of a page become a new run `review:<docId>-<pageNr>-<date>-<reviewer>` with `source` `human`. That run carries the full line list of the page with the corrections applied, so it is readable on its own and the transcription it produced can be reconstructed without replaying a diff. Re-applying the newest export of a page replaces its run in place, which makes the ingest idempotent for that export. An older export of the same page is a different matter, because the corrections it reports were written against a base text that the newer export has since replaced; it fails the check on the reported original and is refused.
 
-A review is written against the base text it was made on, meaning the newest earlier review run of the page or, where none exists, the Transkribus run. Every corrected line must still carry its reported `original` in that base. Where it does not, the export was taken before another change, and the ingest refuses instead of overwriting work with a stale reading. The same refusal covers a line or a page the register does not know and every violation of the review specification above.
+A review is written against the base text it was made on, meaning the newest earlier review run of the page, where none exists the Transkribus run, and for a document DoCTA transcribed itself the newest edition run, whose synthetic line ids are what the viewer addresses there. Every corrected line must still carry its reported `original` in that base. Where it does not, the export was taken before another change, and the ingest refuses instead of overwriting work with a stale reading. The same refusal covers a line or a page the register does not know and every violation of the review specification above.
 
 Validation and writing are separate phases over the whole invocation. Every file passed to a run is validated first, and the register is written only when all of them pass. A single bad file therefore leaves the register untouched and the run exits nonzero, so a batch never lands half applied and a rerun after the fix has nothing to unpick. `--dry-run` stops after the validation phase and reports what would be written.
 
@@ -76,7 +76,7 @@ A page marked reviewed without a single correction records the verification and 
 python apply_review.py                       # ingest pipeline/reviews/
 python apply_review.py review-11327963.json  # one or more files
 python apply_review.py DIR --dry-run         # validate and report only
-python test_apply_review.py                  # or: pytest pipeline/test_apply_review.py
+pytest pipeline/test_apply_review.py
 ```
 
 ## Rebuilding
@@ -84,12 +84,12 @@ python test_apply_review.py                  # or: pytest pipeline/test_apply_re
 ```
 python build_register.py             # write documents.json and pages/
 python build_register.py --project   # additionally write the site projection
-python test_build_register.py        # or: pytest pipeline/test_build_register.py
+pytest pipeline/test_build_register.py
 ```
 
 The builder reads only files already in the repository and makes no network calls; Transkribus exports and evaluation runs are its input. It is deterministic, so a rebuild over an existing register reproduces the same bytes, which the test suite checks.
 
-The review state is the one thing the rebuild cannot derive from those inputs, since it was written by `apply_review.py` from a viewer export. The builder therefore reads the existing register before it writes and carries that state over, meaning every page whose `verification` differs from `unbearbeitet` together with the `review:` runs of that page. A rebuild after new Transkribus data leaves the reviewed pages as they stand and destroys no review.
+The review state is the one thing the rebuild cannot derive from those inputs, since it was written by `apply_review.py` from a viewer export. The builder therefore reads the existing register before it writes and carries that state over, meaning every page whose `verification` differs from `unbearbeitet` together with the `review:` runs of that page. A rebuild after new Transkribus data leaves the reviewed pages as they stand and destroys no review. Which register the state is carried from is a parameter of `build`, defaulting to the directory it writes into. The healthcheck builds into a temporary directory and points that parameter at `pipeline/`, so its byte comparison runs against the reviewed working tree instead of against a register nobody has reviewed.
 
 The projection at `docs/data/pipeline/register_summary.json` is the compact view for the site: per document the identity fields plus page counts by state, small enough to load in one fetch. It is generated output and never edited by hand. `transcription_source` says where the text of a document comes from, `transkribus` for the export, `vlm` for a text DoCTA produced itself, `null` for a document with no text at all, and the viewer reads both the file it loads and the wording of its provenance chip off that field.
 
@@ -125,7 +125,7 @@ A document whose text DoCTA transcribed itself has no layout analysis behind it,
 
 A line that became a milestone gets no zone at all. Folio and cover marks are reference points the transcriber wrote into the text, so they carry no `@facs` and leave no surface region behind; emitting a zone for them would assert an image region for something the source does not hold. Zones therefore count the read lines of a page.
 
-An entity layer is read per document from `docs/data/entities/<docId>.json`, and the prototype extraction in `docs/data/demo/thaur_entities.json` serves the one document it names as long as no per-document file exists for it. Both sources carry the same schema and state the docId they belong to, so no document can pick a layer up by accident, and a document with neither file simply has no entity layer. The layer is encoded inline as `<persName>`, `<placeName>` and `<term>`, each one pointing with `@ref` at its entry in the corpus-wide register described below; an object of these inventories is a common noun, which is why it becomes a `<term>` and never a name. The normalised form itself is written nowhere in the document file, so `@key` is absent and one entity attested in several documents is one register entry rather than a form repeated per occurrence. A file with an entity layer declares a further responsibility, `resp-entity-llm`, which says in plain words that an LLM agent produced the extraction in the prototype phase and that no scholar has verified it; every marked entity points at that responsibility through `@resp`, and its `editorialDecl` repeats the state for a reader of the file. No certainty attribute is emitted anywhere, because the confidence value the extraction reports is a self-assessment of the extracting agent and not evidence about the source. An entity is encoded only where its position is deterministic, meaning it names the line it sits in and its surface form occurs in that line verbatim, case-sensitive, exactly once. An entity without a line reference, of a type the encoding does not cover, or whose form is absent or ambiguous in its line is left unencoded and reported per run with its reason, because placing it would assert a reading that was never established. Two entities whose spans overlap in the same line are the fourth such case. The encoding admits no nesting, so one of them is left out, and it appears in the same report with its reason instead of vanishing silently.
+An entity layer is read per document from `docs/data/entities/<docId>.json`. The file states the docId it belongs to, so no document can pick a layer up by accident, and a document without such a file simply has no entity layer. The same directory is what `entity_index.py` builds the register ids from, so the encoded anchors and the register entries cannot address different extractions. The layer is encoded inline as `<persName>`, `<placeName>` and `<term>`, each one pointing with `@ref` at its entry in the corpus-wide register described below; an object of these inventories is a common noun, which is why it becomes a `<term>` and never a name. The normalised form itself is written nowhere in the document file, so `@key` is absent and one entity attested in several documents is one register entry rather than a form repeated per occurrence. A file with an entity layer declares a further responsibility, `resp-entity-llm`, which says in plain words that an LLM agent produced the extraction in the prototype phase and that no scholar has verified it; every marked entity points at that responsibility through `@resp`, and its `editorialDecl` repeats the state for a reader of the file. No certainty attribute is emitted anywhere, because the confidence value the extraction reports is a self-assessment of the extracting agent and not evidence about the source. An entity is encoded only where its position is deterministic, meaning it names the line it sits in and its surface form occurs in that line verbatim, case-sensitive, exactly once. An entity without a line reference, of a type the encoding does not cover, or whose form is absent or ambiguous in its line is left unencoded and reported per run with its reason, because placing it would assert a reading that was never established. Two entities whose spans overlap in the same line are the fourth such case. The encoding admits no nesting, so one of them is left out, and it appears in the same report with its reason instead of vanishing silently.
 
 ### The entity register
 
@@ -145,7 +145,7 @@ The generation date comes from `--date` and never from the clock, so a rebuild w
 python build_tei.py                  # write docs/data/tei/
 python build_tei.py --date 2026-09-01
 python build_tei.py --register DIR   # read the register elsewhere
-python test_build_tei.py             # or: pytest pipeline/test_build_tei.py
+pytest pipeline/test_build_tei.py
 ```
 
 ## Quality gates
@@ -169,6 +169,8 @@ The site transcriptions under `docs/data/pipeline/transcriptions/` are part of t
 
 That rebuild also answers the opposite question, which files the working tree holds that the rebuild no longer produces. A page file of a document that has left the collection, or a TEI file whose document lost its export, survives in the tree and is invisible to a comparison that only walks the freshly built side. Such orphans are reported by name, so a stale artifact is removed rather than published. The TEI side is compared over the glob of `docs/data/tei/*.xml` rather than over a list of document ids, which covers `register.xml` like any other file. For that comparison the check takes the generation date from the files on disk instead of from a constant in its own source, so the two sides differ only where the content differs and a rebuild after a date change needs no edit to the check.
 
+The reference check also holds the projection flag `has_tei` against the TEI directory in both directions, because the projection derives the flag from the register while `build_tei.py` iterates the source mapping; a document paired outside that mapping would otherwise carry the flag with no file behind it and the site would offer a TEI view that resolves to nothing.
+
 The reference check runs over the entity layer as well. Every `@ref` of a document has to resolve to an `xml:id` of `register.xml`, and the register and `graph.jsonld` have to name the same entities, since both take their ids from `entity_index.py`. An entry that no document points at is reported as INFO rather than as a defect, because an entity whose anchor was not placeable keeps its register entry on purpose.
 
 A finding is FAIL or INFO and carries the id of the check that raised it. INFO is a fact worth seeing that is not a defect, such as a page whose reference transcription is degenerate, a repeat pair whose line counts diverge far enough to want a third run, or a document that sits in one set and not in another for a reason already settled in the data. Only FAIL decides the exit code.
@@ -176,7 +178,7 @@ A finding is FAIL or INFO and carries the id of the check that raised it. INFO i
 ```
 python check_pipeline.py             # every check, exit 0 only when clean
 python check_pipeline.py --list      # the check ids
-python test_check_pipeline.py        # or: pytest pipeline/test_check_pipeline.py
+pytest pipeline/test_check_pipeline.py
 ```
 
 ## The accounts module

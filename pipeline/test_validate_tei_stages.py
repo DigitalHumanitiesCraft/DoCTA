@@ -184,8 +184,10 @@ def test_the_project_schema_refuses_a_register_outside_the_contract(
 def test_a_certainty_claim_is_valid_tei_and_still_refused(tmp_path: Path) -> None:
     """The two stages answer different questions, which is why both exist.
 
-    Marked slow because loading tei_all.rng costs seconds; the pre-commit hook
-    runs the slow marker, the ordinary test run stays fast.
+    Marked slow because loading tei_all.rng costs seconds; the ordinary test run
+    stays fast and the marker is run explicitly with `pytest -m slow`. The same
+    ground is covered on every commit by check_pipeline.py, which the pre-commit
+    hook runs and which validates against both schemas itself.
     """
     path = _mutated(tmp_path, _cert_on_a_persname)
     assert _invalid([SOURCE, path], vt.TEI_SCHEMA) == []

@@ -42,6 +42,7 @@ Usage:
 """
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -100,7 +101,9 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
             raise ReviewError(f"{where}: Seitenschluessel ist keine Seitenzahl")
         if not isinstance(page, dict):
             raise ReviewError(f"{where}: kein Objekt")
-        status = page.get("status")
+        if "status" not in page:
+            raise ReviewError(f"{where}: status fehlt")
+        status = page["status"]
         if status is not None and status not in REVIEW_STATUS:
             raise ReviewError(f"{where}: status {status!r} ist kein Reviewstatus")
         date = page.get("date")
@@ -129,8 +132,9 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
 def base_lines(page: dict, exclude_id: str) -> list[dict]:
     """The line list the review was made on, without the run it replaces.
 
-    Newest earlier review run first, Transkribus run otherwise; a page with
-    neither has no text to review against.
+    Newest earlier review run first, then the Transkribus run, then the newest
+    edition run, which is the base of a document DoCTA transcribed itself; a
+    page with none of the three has no text to review against.
     """
     earlier = br.newest_review_run(page, exclude_id)
     if earlier:
@@ -138,6 +142,9 @@ def base_lines(page: dict, exclude_id: str) -> list[dict]:
     for run in page.get("runs") or []:
         if run.get("source") == "transkribus":
             return list(run["lines"])
+    edition = br.newest_edition_run(page)
+    if edition:
+        return list(edition["lines"])
     return []
 
 
@@ -228,6 +235,14 @@ def _review_files(targets: list[Path]) -> list[Path]:
     return files
 
 
+def _read(path: Path) -> Any:
+    """Parse a review export, reporting a broken file as a refusal."""
+    try:
+        return br._load(path)
+    except json.JSONDecodeError as exc:
+        raise ReviewError(f"{path.name}: kein lesbares JSON ({exc})") from exc
+
+
 def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> list[str]:
     """Apply every review file below targets, all or nothing.
 
@@ -235,7 +250,8 @@ def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> li
     register file is written, so a refused file leaves the register untouched
     even when earlier files of the same batch were fine. Later files of a
     batch see the changes of earlier ones, because documents are shared in
-    memory.
+    memory. The writing phase itself runs file by file, each one atomic, so no
+    register file is ever half written.
     """
     files = _review_files(targets)
     if not files:
@@ -243,14 +259,14 @@ def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> li
     log: list[str] = []
     registers: dict[Path, dict] = {}
     for path in files:
-        review = br._load(path)
+        review = _read(path)
         pages = validate(review, path.name)
         doc_id = review["docId"]
         register_path = register_dir / f"{doc_id}.json"
         if register_path not in registers:
             if not register_path.exists():
                 raise ReviewError(f"{path.name}: kein Register fuer Dokument {doc_id}")
-            registers[register_path] = br._load(register_path)
+            registers[register_path] = _read(register_path)
         log.append(f"{path.name} -> {register_path.name}")
         log += apply_document(registers[register_path], review, pages, path.name)
     if not dry_run:

@@ -11,8 +11,7 @@ Data flow (repo-local only, no network):
   docs/data/sources.json             archival metadata (shelfmark, title, dating)
   docs/data/transkribus_status.json  page-status distribution (DONE = corrected)
   docs/data/transcriptions/*.json    Transkribus export: pages, IIIF, lines
-  docs/data/demo/thaur_entities.json prototype named entities of one document
-  docs/data/entities/<docId>.json    named entities of a document, same schema
+  docs/data/entities/<docId>.json    named entities of a document
   pipeline/pages/<docId>.json        page register: verification and review runs
 
 Writes:
@@ -90,6 +89,9 @@ DATA = REPO / "docs" / "data"
 TEI_OUT = DATA / "tei"
 REGISTER = ROOT / "pages"
 
+# Hand-maintained default. A run without --date backdates every file it writes,
+# and nothing catches it: check_pipeline reads the date from the files on disk,
+# so a rebuild at the stale default compares clean against itself.
 GENERATION_DATE = "2026-08-28"
 
 REPOSITORY = "Tiroler Landesarchiv"
@@ -160,12 +162,9 @@ INVENTARIA_URL = "https://www.inventaria.at/"
 INVENTARIA_FLAG = "Inventaria"  # value of csv_transkribiert in source_mapping
 INVENTARIA_MAPPING = DATA / "inventaria_mapping.json"
 
-# Prototype named entities of a single document. The file names the docId it
-# belongs to, so no other document can pick the layer up by accident.
-ENTITY_FILE = DATA / "demo" / "thaur_entities.json"
-
-# Per-document entity files of the running extraction, same schema as the
-# prototype file; a document without one keeps no entity layer.
+# Per-document entity files of the extraction. Each names the docId it belongs
+# to, so no other document can pick the layer up by accident; a document without
+# one keeps no entity layer.
 ENTITY_DIR = DATA / "entities"
 
 # Entity types the encoding covers; a type outside this map stays unencoded
@@ -192,8 +191,12 @@ def _load(path: Path) -> Any:
 
 
 def _write(path: Path, text: str) -> None:
+    # Write through a sibling temp file and replace, so an interrupted run
+    # cannot leave a truncated TEI file behind.
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8", newline="\n")
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(text, encoding="utf-8", newline="\n")
+    tmp.replace(path)
 
 
 def _esc(text: str) -> str:
@@ -795,11 +798,6 @@ def _line_text(line: dict, review_texts: dict | None = None) -> str:
     return (line.get("text") or "").strip()
 
 
-def _lines(page: dict, review_texts: dict | None = None) -> list[str]:
-    """Line texts of a page in export order, across its regions."""
-    return [_line_text(line, review_texts) for line in _line_records(page)]
-
-
 def _line_content(text: str, anchors: list[dict]) -> str:
     """Line text with the entity anchors of that line wrapped inline.
 
@@ -829,17 +827,16 @@ def _line_content(text: str, anchors: list[dict]) -> str:
 
 
 def _entity_data(doc_id: int) -> dict | None:
-    """The entity extraction of this document, from the per-document file first.
+    """The entity extraction of this document, or None where it has none.
 
-    Both sources carry the same schema and name the docId they belong to, so no
-    document can pick a layer up by accident. A document with neither file has
-    no entity layer, which is the normal case.
+    The file names the docId it belongs to, so no document can pick a layer up
+    by accident. A document without such a file has no entity layer, which is
+    the normal case. ENTITY_DIR is also what entity_index.py builds the register
+    ids from, so the two sides cannot address different extractions.
     """
     path = ENTITY_DIR / f"{doc_id}.json"
     if not path.exists():
-        path = ENTITY_FILE
-        if not path.exists():
-            return None
+        return None
     data = _load(path)
     return data if data.get("docId") == doc_id else None
 

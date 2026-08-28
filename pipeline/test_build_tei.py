@@ -1,16 +1,14 @@
-"""Tests for the TEI builder, runnable with pytest or plain python.
+"""Tests for the TEI builder.
 
 Integration tests against the real repo data; the TEI stage has no fixtures of
 its own, its input is the Transkribus export in the repository.
 
 Usage:
-  python test_build_tei.py
   pytest pipeline/test_build_tei.py
 """
 
 import json
 import re
-import sys
 import tempfile
 from pathlib import Path
 from xml.etree import ElementTree
@@ -1278,23 +1276,3 @@ def test_generation_date_comes_from_the_argument() -> None:
     xml = next(iter(built.values()))
     assert f'<change when="2026-09-01" who="#{bt.RESP_GENERATION}">' in xml
     assert '<date when="2026-09-01">' in xml
-
-
-def main() -> int:
-    failed = 0
-    for name, fn in sorted(globals().items()):
-        if not name.startswith("test_"):
-            continue
-        try:
-            fn()
-            print(f"OK   {name}")
-        except AssertionError as exc:
-            failed += 1
-            print(f"FEHLER {name}: {exc}", file=sys.stderr)
-    print(f"{'FEHLER' if failed else 'OK'}: {failed} fehlgeschlagen")
-    return 1 if failed else 0
-
-
-if __name__ == "__main__":
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.exit(main())

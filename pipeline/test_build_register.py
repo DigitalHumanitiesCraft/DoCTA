@@ -1,18 +1,17 @@
-"""Tests for the page register builder, runnable with pytest or plain python.
+"""Tests for the page register builder.
 
 Integration tests against the real repo data; the register has no fixtures of
 its own, its input is the repo.
 
 Usage:
-  python test_build_register.py
   pytest pipeline/test_build_register.py
 """
 
 import json
-import sys
 import tempfile
 from pathlib import Path
 
+import apply_review as ar
 import build_register as br
 
 
@@ -269,6 +268,90 @@ def test_rebuild_preserves_ingested_review_state() -> None:
         assert len(ids) == len(set(ids)), "review run duplicated on rebuild"
 
 
+def _review_export(pages_dir: Path, out: Path) -> Path:
+    """A viewer export correcting the first exported line the register holds."""
+    for path in sorted(pages_dir.glob("*.json")):
+        payload = br._load(path)
+        for page in payload["pages"]:
+            run = next(
+                (
+                    r
+                    for r in page["runs"]
+                    if r["source"] == "transkribus" and r["lines"]
+                ),
+                None,
+            )
+            if run is None:
+                continue
+            line = run["lines"][0]
+            out.write_text(
+                json.dumps(
+                    {
+                        "docId": payload["docId"],
+                        "reviewer": "AB",
+                        "pages": {
+                            str(page["pageNr"]): {
+                                "status": "gesichtet",
+                                "date": "2026-09-01",
+                                "lines": [
+                                    {
+                                        "id": line["id"],
+                                        "original": line["text"],
+                                        "corrected": line["text"] + " [korrigiert]",
+                                    }
+                                ],
+                            }
+                        },
+                        "exported": "2026-09-01T10:15:00Z",
+                        "source": "docta-viewer",
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            return out
+    raise AssertionError("no exported line in the register to review")
+
+
+def test_a_rebuild_elsewhere_reproduces_the_register_it_carries_from() -> None:
+    """What the healthcheck does: build into an empty directory and still
+    reproduce the reviewed working tree, register and projection alike.
+
+    Without carry_from the rebuild finds no review state in its own empty
+    target, so both the page file and the projection would diverge as soon as
+    one review has been ingested.
+    """
+    with (
+        tempfile.TemporaryDirectory() as a,
+        tempfile.TemporaryDirectory() as b,
+        tempfile.TemporaryDirectory() as c,
+    ):
+        source, target = Path(a), Path(b)
+        _build(source)
+        ar.ingest(
+            [_review_export(source / "pages", Path(c) / "r.json")], source / "pages"
+        )
+
+        docs, pages = br.build(source)
+        br.project(docs, pages, source / "register_summary.json")
+        docs, pages = br.build(target, carry_from=source)
+        br.project(docs, pages, target / "register_summary.json")
+
+        written = sorted(source.rglob("*.json"))
+        assert written, "the source register is empty"
+        for first in written:
+            second = target / first.relative_to(source)
+            assert second.exists(), f"the rebuild does not produce {first.name}"
+            assert first.read_bytes() == second.read_bytes(), f"drift in {first.name}"
+        reviewed = [
+            p
+            for path in (target / "pages").glob("*.json")
+            for p in br._load(path)["pages"]
+            if br.review_runs(p)
+        ]
+        assert reviewed, "the carried review run did not reach the rebuild"
+
+
 EDITION_DOC = 12593450  # A 024.1, one page, transcribed by DoCTA itself
 
 
@@ -339,23 +422,3 @@ def test_projection_matches_register() -> None:
         pages = pages_by_doc[entry["docId"]]
         assert entry["pages_total"] == len(pages)
         assert sum(entry["verification"].values()) == entry["pages_total"]
-
-
-def main() -> int:
-    failed = 0
-    for name, fn in sorted(globals().items()):
-        if not name.startswith("test_"):
-            continue
-        try:
-            fn()
-            print(f"OK   {name}")
-        except AssertionError as exc:
-            failed += 1
-            print(f"FEHLER {name}: {exc}", file=sys.stderr)
-    print(f"{'FEHLER' if failed else 'OK'}: {failed} fehlgeschlagen")
-    return 1 if failed else 0
-
-
-if __name__ == "__main__":
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.exit(main())

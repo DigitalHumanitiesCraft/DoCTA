@@ -85,12 +85,16 @@ def _load(path: Path) -> Any:
 
 
 def _write(path: Path, payload: Any) -> None:
+    # Write through a sibling temp file and replace, so an interrupted run
+    # cannot leave a truncated register behind.
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(
         json.dumps(payload, ensure_ascii=False, indent=1) + "\n",
         encoding="utf-8",
         newline="\n",
     )
+    tmp.replace(path)
 
 
 def review_runs(page: dict) -> list[dict]:
@@ -266,7 +270,8 @@ def _document(
         "tier": (source or {}).get("tier"),
         "has_text": has_text,
         "provenance": "transkribus",
-        # reserved for "inventaria" once the published edition list is available
+        # unused; the Inventaria attribution is derived in project() from the
+        # csv_transkribiert flag of the source mapping
         "attribution": None,
         # Page-status distribution in Transkribus (DONE = human-corrected);
         # per-page assignment needs the authenticated status fetch.
@@ -446,14 +451,14 @@ def _page_from_export(page: dict) -> dict:
     return {"pageNr": page["pageNr"], "iiif": page.get("iiif"), "lines": lines}
 
 
-def _carry_review_state(out_dir: Path, doc_id: int, pages: list[dict]) -> None:
+def _carry_review_state(source_dir: Path, doc_id: int, pages: list[dict]) -> None:
     """Carry the ingested review state of an existing register into a rebuild.
 
     Verification and review runs come from apply_review.py and are the one part
     of a page the builder cannot derive from its inputs; a rebuild that dropped
     them would destroy reviewer work without leaving a trace.
     """
-    path = out_dir / "pages" / f"{doc_id}.json"
+    path = source_dir / "pages" / f"{doc_id}.json"
     if not path.exists():
         return
     by_nr = {p["pageNr"]: p for p in _load(path)["pages"]}
@@ -467,13 +472,21 @@ def _carry_review_state(out_dir: Path, doc_id: int, pages: list[dict]) -> None:
             page["verification"] = verification
 
 
-def build(out_dir: Path) -> tuple[list[dict], dict[int, list[dict]]]:
-    """Build the register and write it below out_dir. Deterministic and re-runnable."""
+def build(
+    out_dir: Path, carry_from: Path | None = None
+) -> tuple[list[dict], dict[int, list[dict]]]:
+    """Build the register and write it below out_dir. Deterministic and re-runnable.
+
+    The review state is read from carry_from, which defaults to out_dir, so a
+    rebuild in place keeps its own reviews. A rebuild into an empty directory
+    has to be pointed at the register it is meant to reproduce, otherwise it
+    finds no review state and diverges from the tree it is compared against.
+    """
     runs = _vlm_runs()
     docs = _documents()
     pages_by_doc = {d["docId"]: _pages(d, runs) for d in docs}
     for doc_id, pages in pages_by_doc.items():
-        _carry_review_state(out_dir, doc_id, pages)
+        _carry_review_state(carry_from or out_dir, doc_id, pages)
 
     _write(out_dir / "documents.json", docs)
     for doc_id, pages in pages_by_doc.items():
@@ -552,9 +565,11 @@ def project(
                 "thumb": first_text["iiif"] if first_text else None,
                 "thumb_page": first_text["pageNr"] if first_text else None,
                 "done_pages": doc.get("done_pages"),
-                # same predicate as build_tei.py: a TEI file exists for every
-                # matched document with a Transkribus export on disk and for
-                # every document DoCTA transcribed itself
+                # A TEI file exists for every matched document with a
+                # Transkribus export on disk and for every document DoCTA
+                # transcribed itself. build_tei.py iterates the source mapping
+                # alone, so a document paired outside it could carry the flag
+                # without a file; check_pipeline holds the two sides together.
                 "has_tei": (bool(doc["has_text"]) and has_export)
                 or transcription is not None,
                 # "transkribus" for the export layer, "vlm" for a text DoCTA

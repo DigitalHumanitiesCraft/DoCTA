@@ -1,15 +1,13 @@
-"""Tests for the review ingest, runnable with pytest or plain python.
+"""Tests for the review ingest.
 
 The repository holds no review export, so the input is a fixture export built
 against a temporary copy of the real register.
 
 Usage:
-  python test_apply_review.py
   pytest pipeline/test_apply_review.py
 """
 
 import json
-import sys
 import tempfile
 from pathlib import Path
 
@@ -289,6 +287,8 @@ def test_contract_violations_are_refused() -> None:
         broken(pages=[]),
         broken(pages={"one": page}),
         broken(pages={str(PAGE): {**page, "status": "maschinell"}}),
+        # the key must be there; apply_document reads it and null is a decision
+        broken(pages={str(PAGE): {k: v for k, v in page.items() if k != "status"}}),
         broken(pages={str(PAGE): {**page, "date": "03.09.2026"}}),
         broken(pages={str(PAGE): {**page, "lines": "none"}}),
         broken(pages={str(PAGE): {**page, "lines": [{"id": "r2l1"}]}}),
@@ -351,21 +351,76 @@ def test_a_directory_is_ingested_and_dry_run_writes_nothing() -> None:
         assert _page(pages_dir)["verification"]["status"] == "gesichtet"
 
 
-def main() -> int:
-    failed = 0
-    for name, fn in sorted(globals().items()):
-        if not name.startswith("test_"):
-            continue
+def test_a_malformed_export_is_refused_as_a_review_error() -> None:
+    """A broken export is a contract violation like any other, not a traceback."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        path = tmp / "broken.json"
+        path.write_text('{"docId": 11327963, "pages":', encoding="utf-8")
+        before = (pages_dir / f"{DOC}.json").read_bytes()
         try:
-            fn()
-            print(f"OK   {name}")
-        except AssertionError as exc:
-            failed += 1
-            print(f"FEHLER {name}: {exc}", file=sys.stderr)
-    print(f"{'FEHLER' if failed else 'OK'}: {failed} fehlgeschlagen")
-    return 1 if failed else 0
+            ar.ingest([path], pages_dir)
+        except ar.ReviewError as exc:
+            assert "kein lesbares JSON" in str(exc) and path.name in str(exc)
+        else:
+            raise AssertionError("a malformed export was accepted")
+        assert (pages_dir / f"{DOC}.json").read_bytes() == before
 
 
-if __name__ == "__main__":
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.exit(main())
+EDITION_DOC = 12593450  # A 024.1, transcribed by DoCTA itself, no Transkribus run
+
+
+def test_an_edition_run_is_the_review_base_of_a_document_docta_transcribed() -> None:
+    """A document of the edition track carries no Transkribus run, so its newest
+    edition run is what a correction is written against; without that fallback
+    exactly those documents could not be reviewed with corrections at all."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        register = br._load(pages_dir / f"{EDITION_DOC}.json")
+        page = next(p for p in register["pages"] if br.edition_runs(p))
+        assert not [r for r in page["runs"] if r["source"] == "transkribus"]
+        run = br.newest_edition_run(page)
+        assert ar.base_lines(page, "review:none") == run["lines"]
+
+        line = run["lines"][0]
+        path = tmp / f"review-{EDITION_DOC}.json"
+        path.write_text(
+            json.dumps(
+                {
+                    "docId": EDITION_DOC,
+                    "reviewer": REVIEWER,
+                    "pages": {
+                        str(page["pageNr"]): {
+                            "status": "gesichtet",
+                            "date": DATE,
+                            "lines": [
+                                {
+                                    "id": line["id"],
+                                    "original": line["text"],
+                                    "corrected": "korrigierte Lesung",
+                                }
+                            ],
+                        }
+                    },
+                    "exported": f"{DATE}T10:15:00Z",
+                    "source": "docta-viewer",
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        ar.ingest([path], pages_dir)
+        written = next(
+            p
+            for p in br._load(pages_dir / f"{EDITION_DOC}.json")["pages"]
+            if p["pageNr"] == page["pageNr"]
+        )
+        review = br.newest_review_run(written)
+        assert review is not None, "no review run was written"
+        assert [ln["id"] for ln in review["lines"]] == [
+            ln["id"] for ln in run["lines"]
+        ], "the review run must carry the full page"
+        assert review["lines"][0]["text"] == "korrigierte Lesung"
+        assert written["verification"]["status"] == "gesichtet"

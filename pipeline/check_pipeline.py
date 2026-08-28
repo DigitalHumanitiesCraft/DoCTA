@@ -344,7 +344,12 @@ def _check_reviews() -> list[Finding]:
     out: list[Finding] = []
     for path in sorted(REVIEWS.glob("*.json")):
         try:
-            ar.validate(_load(path), path.name)
+            data = _load(path)
+        except json.JSONDecodeError as exc:
+            out.append(_fail("json.review-parse", f"{path.name}: {exc}"))
+            continue
+        try:
+            ar.validate(data, path.name)
         except ar.ReviewError as exc:
             out.append(_fail("json.review-contract", str(exc)))
     return out
@@ -430,8 +435,35 @@ def check_provenance() -> list[Finding]:
 def check_referential() -> list[Finding]:
     """Every pointer resolves: TEI @facs and @ref, thumbnails, prompt hashes."""
     return (
-        _check_facs() + _check_entity_refs() + _check_thumbs() + _check_prompt_hashes()
+        _check_facs()
+        + _check_entity_refs()
+        + _check_thumbs()
+        + _check_tei_flag()
+        + _check_prompt_hashes()
     )
+
+
+def _check_tei_flag() -> list[Finding]:
+    """has_tei of the projection against the TEI directory, in both directions.
+
+    The projection derives the flag from the register, build_tei.py iterates the
+    source mapping; a document paired outside that mapping would carry the flag
+    with no file behind it, and the site would offer a TEI view that 404s.
+    """
+    if not SUMMARY.exists():
+        return [_fail("referential.projection", f"{SUMMARY.name} is missing")]
+    out: list[Finding] = []
+    for entry in _load(SUMMARY)["documents"]:
+        exists = (TEI_DIR / f"{entry['docId']}.xml").exists()
+        if entry["has_tei"] != exists:
+            out.append(
+                _fail(
+                    "referential.has-tei",
+                    f"document {entry['docId']}: has_tei is {entry['has_tei']}"
+                    f" and the TEI file {'exists' if exists else 'is missing'}",
+                )
+            )
+    return out
 
 
 def _check_facs() -> list[Finding]:
@@ -705,21 +737,23 @@ def check_idempotence() -> list[Finding]:
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         with contextlib.redirect_stderr(io.StringIO()):
-            docs, pages_by_doc = br.build(tmp)
+            # The ingested review state is the one part of the register the
+            # builder cannot derive from its inputs, so the rebuild into the
+            # empty temp directory is pointed at the working tree for it;
+            # without that it would reproduce a register nobody has reviewed.
+            docs, pages_by_doc = br.build(tmp, carry_from=ROOT)
             br.project(docs, pages_by_doc, tmp / "register_summary.json")
             bt.build(tmp / "tei", _tei_date())
-        out += _compare(DOCUMENTS, tmp / "documents.json", "register")
-        out += _compare(SUMMARY, tmp / "register_summary.json", "projection")
+        out += _compare(DOCUMENTS, tmp / "documents.json")
+        out += _compare(SUMMARY, tmp / "register_summary.json")
         for path in sorted((tmp / "pages").glob("*.json")):
-            out += _compare(REGISTER / path.name, path, "register")
+            out += _compare(REGISTER / path.name, path)
         # The site transcriptions of the documents DoCTA transcribed itself are
         # part of the projection and are compared in both directions like the
         # TEI, so a stale one is found as well as a drifted one.
         rebuilt_site = {p.name for p in (tmp / "transcriptions").glob("*.json")}
         for name in sorted(rebuilt_site):
-            out += _compare(
-                SITE_TRANSCRIPTIONS / name, tmp / "transcriptions" / name, "projection"
-            )
+            out += _compare(SITE_TRANSCRIPTIONS / name, tmp / "transcriptions" / name)
         for name in sorted(
             {p.name for p in SITE_TRANSCRIPTIONS.glob("*.json")} - rebuilt_site
         ):
@@ -736,7 +770,7 @@ def check_idempotence() -> list[Finding]:
         rebuilt_tei = {p.name for p in (tmp / "tei").glob("*.xml")}
         current_tei = {p.name for p in TEI_DIR.glob("*.xml")}
         for name in sorted(rebuilt_tei):
-            out += _compare(TEI_DIR / name, tmp / "tei" / name, "tei")
+            out += _compare(TEI_DIR / name, tmp / "tei" / name)
         rebuilt_pages = {p.name for p in (tmp / "pages").glob("*.json")}
         for name in sorted({p.name for p in REGISTER.glob("*.json")} - rebuilt_pages):
             out.append(
@@ -757,7 +791,7 @@ def check_idempotence() -> list[Finding]:
     return out
 
 
-def _compare(current: Path, rebuilt: Path, what: str) -> list[Finding]:
+def _compare(current: Path, rebuilt: Path) -> list[Finding]:
     if not current.exists():
         return [
             _fail(
@@ -767,49 +801,12 @@ def _compare(current: Path, rebuilt: Path, what: str) -> list[Finding]:
         ]
     if current.read_bytes() == rebuilt.read_bytes():
         return []
-    if what == "register" and _only_review_state(current, rebuilt):
-        return [
-            _info(
-                "idempotence.review-state",
-                f"{current.name}: differs from the rebuild only in ingested"
-                " review state, which a rebuild does not reproduce",
-            )
-        ]
     return [
         _fail(
             "idempotence.drift",
             f"{current.name}: the rebuild does not reproduce the working tree",
         )
     ]
-
-
-def _only_review_state(current: Path, rebuilt: Path) -> bool:
-    """True when the difference is confined to what apply_review.py writes.
-
-    A review ingest is the one legitimate way the register moves away from its rebuild,
-    because the viewer decision is not derivable from the export.
-    """
-    try:
-        left, right = _load(current), _load(rebuilt)
-    except json.JSONDecodeError:
-        return False
-    if not isinstance(left, dict) or "pages" not in left:
-        return False
-    return _strip_reviews(left) == _strip_reviews(right)
-
-
-def _strip_reviews(payload: dict) -> dict:
-    pages = []
-    for page in payload["pages"]:
-        reviews = br.review_runs(page)
-        pages.append(
-            {
-                **page,
-                "verification": {"status": "unbearbeitet"},
-                "runs": [r for r in page.get("runs") or [] if r not in reviews],
-            }
-        )
-    return {**payload, "pages": pages}
 
 
 # ==================================== runner =================================
@@ -834,7 +831,12 @@ def run(skip: set[str] | None = None) -> list[Finding]:
         if name in skip:
             print(f"SKIP {name}")
             continue
-        result = check()
+        try:
+            result = check()
+        except Exception as exc:
+            # One malformed input must not take the whole report down; the
+            # crash is itself a finding and still decides the exit code.
+            result = [_fail(f"{name}.crashed", f"{type(exc).__name__}: {exc}")]
         for finding in result:
             print(finding)
         failures = sum(1 for f in result if f.severity == FAIL)
