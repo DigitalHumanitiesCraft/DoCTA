@@ -97,6 +97,7 @@
             <button type="button" class="view-toggle__btn" id="btn-font-inc"
                     title="Larger text" aria-label="Larger text">A+</button>
           </div>
+          <span class="ent-key-group border rounded px-2 py-1" id="ent-legend-box" hidden></span>
           <span class="badge text-bg-warning" id="draft-badge" hidden>Unrevised draft</span>
           <a class="tei-download" id="tei-download" href="data/tei/" download hidden>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.75 7.25 8 10.5l3.25-3.25M2.5 13h11"/></svg>
@@ -240,14 +241,29 @@
       facsTitle.title = identity;
       // The strip stays one line: archival title plus the category as quiet chip.
       // Page count is omitted, the pager already shows it.
+      // Attribution: the text layer of these documents was made by the
+      // Inventaria project and is used with citation, so the origin is named
+      // right where the transcription is shown.
+      const reg = registerByDocId.get(Number(docId));
+      const attribution = reg?.transcription_by === 'Inventaria'
+        ? `<a class="doc-meta__cat" href="https://www.inventaria.at/" target="_blank" rel="noopener"` +
+          ` title="The transcription of this document was created by the Inventaria project` +
+          ` and is published on Transkribus Sites (inventaria.at); DoCTA uses it with attribution">` +
+          `Transcription: Inventaria project &middot; Univ. Salzburg / Univ. Innsbruck &middot; inventaria.at</a>`
+        : '';
       const parts = [
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
         `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,
         provenanceChip(docId),
-        entityIndex ? entityLegend() : '',
+        attribution,
       ].filter(Boolean);
       el.innerHTML = parts.join('');
       el.hidden = false;
+      // The entity key lives in the toolbar between the text-size buttons and
+      // the document selector, boxed on its own as requested at review.
+      const legendBox = document.getElementById('ent-legend-box');
+      legendBox.innerHTML = entityIndex ? entityLegend() : '';
+      legendBox.hidden = !entityIndex;
     }
 
     function initOSD() {

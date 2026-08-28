@@ -26,26 +26,79 @@
   <main id="main" class="container py-4">
     <header class="mb-4">
       <h1>HTR Benchmark</h1>
+      <p class="mb-2">How well does a vision-language model read these hands? A fixed set of pages is transcribed by
+        frozen prompt iterations, each page several times, and the output is measured against human reference
+        transcriptions where they exist. A prompt is never edited; a change becomes a new iteration, so the results of
+        every earlier one stay comparable.</p>
+      <p class="small text-body-secondary mb-2" id="intro-facts"></p>
       <p class="small mb-0"><span class="badge text-bg-warning">Machine output</span> No human revision yet.</p>
     </header>
 
-    <section class="card mb-4">
+    <section class="card mb-3">
       <div class="card-body py-3">
-        <h2 class="visually-hidden">Summary per prompt iteration</h2>
+        <h2 class="h5 mb-3">The iterations compared</h2>
         <div class="row g-3" id="agg-cards"></div>
-        <p class="small text-body-secondary mt-2 mb-0" id="agg-note"></p>
+        <p class="small text-body-secondary mt-3 mb-1">CER is an error rate against the human reference, so lower is
+          better. Consistency is the agreement between the repeated runs of one page on a scale from 0 to 1, so higher
+          is better.</p>
+        <p class="small mb-0" id="agg-examples"></p>
+        <p class="small text-body-secondary mt-1 mb-0" id="agg-note"></p>
       </div>
     </section>
 
+    <details class="mb-4">
+      <summary class="fw-semibold">What the measures mean</summary>
+      <dl class="small mt-2 mb-0 ps-1">
+        <dt>Prompt iteration</dt>
+        <dd>A system prompt frozen after its first run. it01 is the baseline prompt of 2026-08-26; it02 splits a shared
+          core prompt from one genre module per text type, inventory or account book, synthesized from three analysis
+          reports of the same day. Later iterations are added, never edits of an earlier one.</dd>
+        <dt>Repeated runs (k)</dt>
+        <dd>The same request to the same model at temperature 0 does not return the same text. In the first iteration
+          identical requests scattered by up to 5.5 CER points, so a ranking built on single runs is noise. Every page
+          is therefore transcribed several times per iteration, most often on the pages carrying a human reference.</dd>
+        <dt>CER fair</dt>
+        <dd>Character error rate against the human reference transcription from the Inventaria edition, measured after
+          the normalization profile documented in the runner, which forgives allograph and spacing conventions of the
+          writing hand. 0% would be an exact match after normalization.</dd>
+        <dt>CER strict</dt>
+        <dd>The same comparison against that Inventaria reference on exact characters, with no normalization. It sits
+          above CER fair and shows how much of the agreement rests on the normalization rather than on the reading.</dd>
+        <dt>Word and number consistency</dt>
+        <dd>Position-wise agreement of tokens between the repeated runs of one page, once over word tokens and once
+          over number and currency tokens. This is self-consistency, not correctness: all runs can agree on the same
+          wrong reading. The number measure carries weight on the account-book pages, where the amounts are the point.</dd>
+        <dt>Lines</dt>
+        <dd>The line counts of the individual runs. A spread between them signals that the model segments the page
+          differently from run to run.</dd>
+      </dl>
+    </details>
+
     <section class="mb-4">
-      <h2 class="h5 mb-2">Reference pages</h2>
+      <h2 class="h5 mb-1">Reference pages</h2>
+      <p class="small text-body-secondary mb-2" id="ref-note"></p>
+      <p class="small text-body-secondary mb-2">The human reference transcriptions these pages are measured against
+        come from the Inventaria project of the University of Salzburg and the University of Innsbruck, published at
+        <a href="https://www.inventaria.at/" target="_blank" rel="noopener">inventaria.at</a>.</p>
+      <p class="small text-body-secondary mb-2">A yellow row marked
+        <span class="flag" aria-hidden="true">⚠</span> holds figures that do not measure what the column says and is
+        left out of the aggregate above. Here the human reference of the page is a handful of words on an otherwise
+        empty leaf, so the error rate rises above 100% and says nothing about the transcription. These pages await
+        scholarly adjudication.</p>
       <div class="table-responsive" tabindex="0" role="region" aria-label="Reference pages, scrollable table">
         <table class="table table-sm table-hover table-metrics align-middle" id="ref-table"></table>
       </div>
+      <p class="small text-body-secondary mt-2 mb-0">Page ids open the page in the viewer, folios open the facsimile.</p>
     </section>
 
     <section class="mb-4">
-      <h2 class="h5 mb-2">Phenomenon pages without reference</h2>
+      <h2 class="h5 mb-1">Phenomenon pages without reference</h2>
+      <p class="small text-body-secondary mb-2" id="cons-note"></p>
+      <p class="small text-body-secondary mb-2">A yellow row marked
+        <span class="flag" aria-hidden="true">⚠</span> again holds figures that do not measure what the column says.
+        Here every run returned at most one line, so the page holds next to no text and agreement between such runs is
+        meaningless. The row carries no weight in the aggregate above; on the empty page of the set that outcome is the
+        intended negative control.</p>
       <div class="table-responsive" tabindex="0" role="region" aria-label="Phenomenon pages, scrollable table">
         <table class="table table-sm table-hover table-metrics align-middle" id="cons-table"></table>
       </div>

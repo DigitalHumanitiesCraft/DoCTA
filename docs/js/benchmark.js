@@ -1,19 +1,28 @@
 /* HTR benchmark results page: aggregates and per-page tables from
  * data/benchmark/summary.json (exported from evaluation/benchmark).
- * The image-text synopsis lives in the viewer, not here. */
+ * Every figure on the page comes from that file at runtime; nothing is
+ * hard-coded here. The image-text synopsis lives in the viewer, not here. */
 
-import { escapeHTML } from './utils.js';
+import { escapeHTML, escapeAttr } from './utils.js';
 
 const $ = (sel) => document.querySelector(sel);
+
+/* Short human description per frozen prompt iteration. An iteration the map
+ * does not know keeps its bare id, so a future it03 needs no code change. */
+const ITERATION_NOTE = {
+  it01: "baseline system prompt",
+  it02: "shared core prompt + genre module",
+};
+
+/* Reference page ids encode the Transkribus document and its page number,
+ * which is exactly what the viewer takes as query parameters. */
+const PAGE_ID = /^inv_(\d+)_p(\d+)$/;
 
 function mean(xs) { return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
 
 function pct(x) { return x != null ? (x * 100).toFixed(1) + "%" : "–"; }
 
-function fmtCer(m) {
-  if (!m) return "–";
-  return `${(m.mean * 100).toFixed(1)}% <span class="text-body-secondary">(${(m.min * 100).toFixed(1)}–${(m.max * 100).toFixed(1)})</span>`;
-}
+function two(x) { return x != null ? x.toFixed(2) : "–"; }
 
 function range(xs) {
   if (!xs || !xs.length) return "–";
@@ -21,28 +30,111 @@ function range(xs) {
   return lo === hi ? String(lo) : `${lo}–${hi}`;
 }
 
-function renderAggregate(summary, excluded) {
+function pageLink(id) {
+  const m = PAGE_ID.exec(id);
+  if (!m) return escapeHTML(id);
+  return `<a href="viewer.html?doc=${encodeURIComponent(m[1])}&amp;page=${encodeURIComponent(m[2])}"` +
+    ` title="Open this page in the viewer">${escapeHTML(id)}</a>`;
+}
+
+function folioLink(p) {
+  const label = escapeHTML(p.folio);
+  if (!p.iiif) return label;
+  return `<a href="${escapeAttr(p.iiif)}" target="_blank" rel="noopener"` +
+    ` title="Facsimile image, opens in a new tab">${label}</a>`;
+}
+
+/* A page counts towards the CER aggregate only while its error rate stays
+ * below 100%; above that the reference is too short for the measure to mean
+ * anything (see the legend above the reference table). */
+const validRef = (p) => p.gt_lines && Object.values(p.iterations).every((e) => (e.cer_fair?.mean ?? 0) < 1);
+
+/* Repeated runs of a page that produced at most one line each carry no
+ * agreement information; the same test decides aggregate and row flag. */
+const validCons = (e) => e && e.consistency_numbers != null && e.lines.some((n) => n > 1);
+
+function kRange(entries) {
+  const ks = entries.map((e) => e.k).filter((k) => k != null);
+  return ks.length ? range(ks) : "–";
+}
+
+const MEASURES = [
+  { key: "cer_fair", label: "CER fair", scope: "reference pages", dir: -1, fmt: pct },
+  { key: "cer_strict", label: "CER strict", scope: "reference pages", dir: -1, fmt: pct },
+  { key: "words", label: "Word consistency", scope: "account book", dir: 1, fmt: two },
+  { key: "numbers", label: "Number consistency", scope: "account book", dir: 1, fmt: two },
+];
+
+/* Index of the best value across iterations, -1 when nothing is comparable or
+ * all iterations tie. Direction is per measure: CER down, agreement up. */
+function bestIndex(values, dir) {
+  if (!dir) return -1;
+  const defined = values.filter((v) => v != null);
+  if (defined.length < 2) return -1;
+  const target = dir < 0 ? Math.min(...defined) : Math.max(...defined);
+  if (defined.every((v) => v === target)) return -1;
+  return values.findIndex((v) => v === target);
+}
+
+function renderAggregate(summary, its, excluded) {
   const pages = Object.values(summary.pages);
-  const its = [...new Set(pages.flatMap((p) => Object.keys(p.iterations)))].sort();
-  const validRef = (p) => p.gt_lines && Object.values(p.iterations).every((e) => (e.cer_fair?.mean ?? 0) < 1);
-  $("#agg-cards").innerHTML = its.map((it) => {
-    const cer = mean(pages.filter(validRef).map((p) => p.iterations[it]?.cer_fair?.mean).filter((x) => x != null));
-    const rb = pages.filter((p) => p.source === "raitbuch2" && p.iterations[it]?.consistency_numbers != null
-      && p.iterations[it].lines.some((n) => n > 1));
-    const nums = mean(rb.map((p) => p.iterations[it].consistency_numbers));
-    const words = mean(rb.map((p) => p.iterations[it].consistency_words));
+  const refs = pages.filter(validRef);
+  const stats = its.map((it) => {
+    const cons = pages.filter((p) => p.source === "raitbuch2" && validCons(p.iterations[it]));
+    return {
+      it,
+      cer_fair: mean(refs.map((p) => p.iterations[it]?.cer_fair?.mean).filter((x) => x != null)),
+      cer_strict: mean(refs.map((p) => p.iterations[it]?.cer_strict?.mean).filter((x) => x != null)),
+      words: mean(cons.map((p) => p.iterations[it].consistency_words)),
+      numbers: mean(cons.map((p) => p.iterations[it].consistency_numbers)),
+    };
+  });
+  const best = Object.fromEntries(
+    MEASURES.map((m) => [m.key, bestIndex(stats.map((s) => s[m.key]), m.dir)])
+  );
+
+  $("#agg-cards").innerHTML = stats.map((s, i) => {
+    const rows = MEASURES.map((m) => {
+      const marker = best[m.key] === i
+        ? ` <span class="badge text-bg-light border fw-normal">better</span>`
+        : "";
+      return `<div class="d-flex justify-content-between align-items-baseline gap-3 border-top py-1">
+        <dt class="fw-normal text-body-secondary">${escapeHTML(m.label)}
+          <span class="text-body-tertiary">· ${escapeHTML(m.scope)}</span></dt>
+        <dd class="mb-0 text-end text-nowrap"><span class="tnum${best[m.key] === i ? " fw-bold" : ""}">${m.fmt(s[m.key])}</span>${marker}</dd>
+      </div>`;
+    }).join("");
     return `<div class="col-12 col-md-6">
-      <div class="border rounded p-2">
-        <div class="fw-bold mb-1">${escapeHTML(it)}</div>
-        <div class="small">CER fair, reference pages: <strong class="tnum">${pct(cer)}</strong>
-          &nbsp;·&nbsp; number consistency (account book): <strong class="tnum">${nums != null ? nums.toFixed(2) : "–"}</strong>
-          &nbsp;·&nbsp; word consistency: <strong class="tnum">${words != null ? words.toFixed(2) : "–"}</strong></div>
+      <div class="border rounded p-3 h-100">
+        <div class="fw-bold">${escapeHTML(s.it)}</div>
+        <div class="small text-body-secondary mb-2">${escapeHTML(ITERATION_NOTE[s.it] || "frozen prompt iteration")}</div>
+        <dl class="small mb-0">${rows}</dl>
       </div>
     </div>`;
   }).join("");
-  $("#agg-note").textContent = (excluded.length
-    ? `Excluding ${excluded.join(", ")}: reference nearly empty, flagged for adjudication. ` : "")
-    + `Model ${summary.model}, as of ${summary.generated}.`;
+
+  renderExamples(summary, its);
+  $("#agg-note").innerHTML = excluded.length
+    ? `Left out of these figures: ${excluded.map(pageLink).join(", ")} – the reference is nearly empty there, see the note above the table.`
+    : "";
+}
+
+/* One concrete anchor for the aggregate: which reference page the model reads
+ * best and which it reads worst, averaged over the iterations. */
+function renderExamples(summary, its) {
+  const scored = Object.entries(summary.pages)
+    .filter(([, p]) => validRef(p))
+    .map(([id, p]) => ({
+      id, p, cer: mean(its.map((it) => p.iterations[it]?.cer_fair?.mean).filter((x) => x != null)),
+    }))
+    .filter((e) => e.cer != null)
+    .sort((a, b) => a.cer - b.cer);
+  if (scored.length < 2) { $("#agg-examples").innerHTML = ""; return; }
+  const lo = scored[0], hi = scored[scored.length - 1];
+  $("#agg-examples").innerHTML =
+    `Read best: ${pageLink(lo.id)} <span class="text-body-secondary">(${escapeHTML(lo.p.folio)}, ` +
+    `${pct(lo.cer)} CER fair across iterations)</span>. ` +
+    `Hardest: ${pageLink(hi.id)} <span class="text-body-secondary">(${escapeHTML(hi.p.folio)}, ${pct(hi.cer)})</span>.`;
 }
 
 /* The metric tables repeat the same measures once per prompt iteration. Two
@@ -50,53 +142,130 @@ function renderAggregate(summary, excluded) {
  * iterations side by side instead of decoding a flat run of column labels. */
 function metricHead(fixed, its, measures) {
   const top = fixed.map((f) => `<th scope="col" rowspan="2">${escapeHTML(f)}</th>`).join("") +
-    its.map((it) => `<th scope="colgroup" colspan="${measures.length}" class="col-group group-start">${escapeHTML(it)}</th>`).join("");
+    its.map((it) => {
+      const note = ITERATION_NOTE[it] ? ` (${ITERATION_NOTE[it]})` : "";
+      return `<th scope="colgroup" colspan="${measures.length}" class="col-group group-start"` +
+        ` title="${escapeAttr(`Prompt iteration ${it}${note}`)}">${escapeHTML(it)}</th>`;
+    }).join("");
   const sub = its.map(() =>
-    measures.map((m, i) => `<th scope="col"${i === 0 ? ' class="group-start"' : ""}>${escapeHTML(m)}</th>`).join("")
+    measures.map((m, i) => `<th scope="col"${i === 0 ? ' class="group-start"' : ""}` +
+      ` title="${escapeAttr(m.title)}">${escapeHTML(m.label)}</th>`).join("")
   ).join("");
   return `<thead class="table-light"><tr>${top}</tr><tr>${sub}</tr></thead>`;
 }
 
-function metricCells(its, cellsFor) {
-  return its.map((it) =>
-    cellsFor(it).map((v, i) => `<td class="num${i === 0 ? " group-start" : ""}">${v}</td>`).join("")
-  ).join("");
+/* Cells of one row across all iterations. Values are collected first so the
+ * better iteration can be marked per measure; a flagged row is not compared,
+ * because its numbers do not measure what the column header says. */
+function metricCells(its, measures, cellFor, compare) {
+  const cells = its.map((it) => measures.map((m) => cellFor(it, m)));
+  const best = measures.map((m, i) =>
+    compare ? bestIndex(cells.map((c) => c[i].value), m.dir) : -1);
+  return its.map((_, ii) => measures.map((m, i) => {
+    const c = cells[ii][i];
+    const cls = `num${i === 0 ? " group-start" : ""}${best[i] === ii ? " fw-bold" : ""}`;
+    // The tooltip is a mouse affordance, so the same text is also read out
+    const attr = c.hint ? ` title="${escapeAttr(c.hint)}"` : "";
+    const spoken = c.hint ? `<span class="visually-hidden">, ${escapeHTML(c.hint)}</span>` : "";
+    return `<td class="${cls}"${attr}>${c.text}${spoken}</td>`;
+  }).join("")).join("");
 }
 
 function renderRefTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => p.gt_lines);
-  const head = metricHead(["Page", "Folio"], its, ["CER fair", "CER strict"]);
+  const measures = [
+    {
+      key: "cer_fair", label: "CER fair", dir: -1,
+      title: "Character error rate against the human reference transcription from the Inventaria edition, after the documented normalization profile. Lower is better.",
+    },
+    {
+      key: "cer_strict", label: "CER strict", dir: -1,
+      title: "Character error rate against the same Inventaria reference on exact characters, without normalization. Lower is better.",
+    },
+  ];
+  const head = metricHead(["Page", "Folio"], its, measures);
   const body = rows.map(([id, p]) => {
     const bad = Object.values(p.iterations).some((e) => (e.cer_fair?.mean ?? 0) >= 1);
     // The warning row tint alone carries no meaning for non-sighted readers
-    const flag = bad ? ` <span class="flag" title="Reference nearly empty, flagged for adjudication">⚠<span class="visually-hidden"> flagged for adjudication</span></span>` : "";
+    const flag = bad
+      ? ` <span class="flag" title="Reference nearly empty, error rate not meaningful, awaiting adjudication">⚠<span class="visually-hidden"> flagged, reference nearly empty</span></span>`
+      : "";
     return `<tr${bad ? ' class="table-warning"' : ""}>` +
-      `<th scope="row">${escapeHTML(id)}${flag}</th>` +
-      `<td class="small">${escapeHTML(p.folio)}</td>` +
-      metricCells(its, (it) => [fmtCer(p.iterations[it]?.cer_fair), fmtCer(p.iterations[it]?.cer_strict)]) +
+      `<th scope="row">${pageLink(id)}${flag}</th>` +
+      `<td class="small">${folioLink(p)}</td>` +
+      metricCells(its, measures, (it, m) => {
+        const v = p.iterations[it]?.[m.key];
+        if (!v) return { value: null, text: "–", hint: "" };
+        return {
+          value: v.mean,
+          text: pct(v.mean),
+          hint: `range over ${p.iterations[it].k} runs: ${pct(v.min)} to ${pct(v.max)}`,
+        };
+      }, !bad) +
       `</tr>`;
   }).join("");
   $("#ref-table").innerHTML =
-    `<caption class="visually-hidden">Character error rate per reference page and prompt iteration</caption>` +
+    `<caption class="visually-hidden">Character error rate per reference page and prompt iteration, mean over the repeated runs</caption>` +
     head + `<tbody>${body}</tbody>`;
+  $("#ref-note").textContent =
+    `${rows.length} pages with a human reference transcription · ` +
+    `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration · ` +
+    `mean over those runs, the spread is in the cell tooltip.`;
 }
 
 function renderConsTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => !p.gt_lines);
-  const head = metricHead(["Page", "Folio", "Phenomena"], its, ["words", "numbers", "lines"]);
+  const measures = [
+    {
+      key: "consistency_words", label: "words", dir: 1,
+      title: "Position-wise agreement of word tokens between the repeated runs, 0 to 1. Higher is more stable, which is not the same as correct.",
+    },
+    {
+      key: "consistency_numbers", label: "numbers", dir: 1,
+      title: "The same agreement restricted to number and currency tokens, 0 to 1. Higher is more stable.",
+    },
+    {
+      key: "lines", label: "lines", dir: 0,
+      title: "Line count of the individual runs. A spread signals unstable segmentation of the page.",
+    },
+  ];
+  const head = metricHead(["Page", "Folio", "Phenomena"], its, measures);
   const body = rows.map(([id, p]) => {
-    return `<tr><th scope="row">${escapeHTML(id)}</th>` +
-      `<td class="small">${escapeHTML(p.folio)}</td>` +
+    const bad = Object.values(p.iterations).every((e) => !e.lines.some((n) => n > 1));
+    const flag = bad
+      ? ` <span class="flag" title="Every run returned at most one line, agreement not meaningful">⚠<span class="visually-hidden"> flagged, at most one line per run</span></span>`
+      : "";
+    return `<tr${bad ? ' class="table-warning"' : ""}>` +
+      `<th scope="row">${pageLink(id)}${flag}</th>` +
+      `<td class="small">${folioLink(p)}</td>` +
       `<td class="small text-body-secondary">${escapeHTML(p.phenomena.join(", "))}</td>` +
-      metricCells(its, (it) => [
-        p.iterations[it]?.consistency_words ?? "–",
-        p.iterations[it]?.consistency_numbers ?? "–",
-        range(p.iterations[it]?.lines),
-      ]) + `</tr>`;
+      metricCells(its, measures, (it, m) => {
+        const e = p.iterations[it];
+        if (!e) return { value: null, text: "–", hint: "" };
+        if (m.key === "lines") {
+          return { value: null, text: range(e.lines), hint: `line count per run: ${e.lines.join(", ")}` };
+        }
+        const v = e[m.key];
+        return { value: v ?? null, text: two(v), hint: `over ${e.k} runs` };
+      }, !bad) + `</tr>`;
   }).join("");
   $("#cons-table").innerHTML =
-    `<caption class="visually-hidden">Agreement between repeated runs per page and prompt iteration</caption>` +
+    `<caption class="visually-hidden">Agreement between the repeated runs per page and prompt iteration</caption>` +
     head + `<tbody>${body}</tbody>`;
+  $("#cons-note").textContent =
+    `${rows.length} pages chosen for one phenomenon each, without a human reference · ` +
+    `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration · ` +
+    `agreement between those runs, higher is more stable.`;
+}
+
+function renderIntro(summary, its) {
+  const pages = Object.values(summary.pages);
+  const refs = pages.filter((p) => p.gt_lines).length;
+  const entries = pages.flatMap((p) => its.map((it) => p.iterations[it]).filter(Boolean));
+  $("#intro-facts").textContent =
+    `Model ${summary.model} · ${its.length} prompt iterations (${its.join(", ")}) · ` +
+    `${pages.length} pages, ${refs} of them with a human reference transcription · ` +
+    `${kRange(entries)} runs per page and iteration · data as of ${summary.generated.slice(0, 10)}.`;
 }
 
 async function init() {
@@ -106,9 +275,10 @@ async function init() {
     const summary = await res.json();
     const its = [...new Set(Object.values(summary.pages).flatMap((p) => Object.keys(p.iterations)))].sort();
     const excluded = Object.entries(summary.pages)
-      .filter(([, p]) => p.gt_lines && Object.values(p.iterations).some((e) => (e.cer_fair?.mean ?? 0) >= 1))
+      .filter(([, p]) => p.gt_lines && !validRef(p))
       .map(([id]) => id);
-    renderAggregate(summary, excluded);
+    renderIntro(summary, its);
+    renderAggregate(summary, its, excluded);
     renderRefTable(summary, its);
     renderConsTable(summary, its);
   } catch (err) {
