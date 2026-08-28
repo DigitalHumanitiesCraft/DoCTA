@@ -21,7 +21,7 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 |------|---------|
 | `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
 | `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source, plus a reading mode over the whole document text |
-| `exploration.html` | The relation network extracted from a validated transcription |
+| `exploration.html` | The relation network extracted by an LLM from a Transkribus working transcription |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `knowledge.html` | Knowledge vault, rendering these Markdown documents |
 | `about.html` | About the project, data sources, imprint |

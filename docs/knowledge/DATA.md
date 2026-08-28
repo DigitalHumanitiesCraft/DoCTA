@@ -9,7 +9,7 @@ Public, no authentication, JSON via `?format=json`. Paginated with `?limit=500&o
 
 SiCProD is the prosopographical database of Sigismund's court, built at the University of Innsbruck together with the Tyrolean State Archives and a partner research infrastructure. It supplies the persons, places, offices and relations the edition can link against.
 
-### Entities (verified 17.02.2026)
+### Entity API state checked 17.02.2026
 
 | Type | Endpoint | Quality |
 |------|----------|---------|
@@ -196,7 +196,7 @@ Script output: `data/sources.json`, the cleaned catalogue as JSON for the source
 
 ## 3. Transkribus collection 2197991
 
-### Overview (verified 17.02.2026)
+### API overview checked 17.02.2026
 
 **Collection ID:** 2197991
 **URL:** https://app.transkribus.org/collection/2197991
@@ -243,7 +243,7 @@ Relevant endpoints:
 - `GET /collections/{colId}/{docId}/fulldoc` returns all pages with metadata and PAGE XML URLs
 - PAGE XML: `https://files.transkribus.eu/Get?id={KEY}` (auth header required)
 
-### Images via IIIF (verified)
+### IIIF image access checked
 
 ```
 https://files.transkribus.eu/iiif/2/{KEY}/full/{width},{height}/0/default.jpg
@@ -304,7 +304,7 @@ The collection metadata `data/transkribus_collection.json` and `data/transkribus
 | Date | 1462–1463 (exact boundaries to be clarified) |
 | IIIF example (fol. 0v-1r) | `https://files.transkribus.eu/iiif/2/ISMVDKARQUBRQTZVDEQSWVHR/full/max/0/default.jpg` |
 
-### Confirmed structural elements (visually verified)
+### Structural elements checked against facsimiles
 
 | Element | Description |
 |---------|-------------|
@@ -326,7 +326,7 @@ The collection metadata `data/transkribus_collection.json` and `data/transkribus
 
 Openings from account book 2 form the core of the versioned prompt benchmark under `evaluation/benchmark/`; the page set was chosen from a visual survey of all 123 openings so that each selected page represents a distinct phenomenon (rule structure, name rubrics, columns of figures, cancellation crosses, faded rubrics, blank and transitional pages). The pilot under `evaluation/pilot/` runs the same prompts over a stretch of consecutive openings from the start of the volume.
 
-The models reliably recognise blank pages, the division of an opening into its two halves and the coarse entry structure. Personal names, dates and monetary amounts vary between repeated runs of the same prompt, and the amounts are precisely what account-book research depends on. All model output is therefore treated as an unrevised proposal until a scholar has reviewed it against the facsimile. The full argument and the current measurements are in `HTR-EVALUATION.md` and in `data/benchmark/summary.json`.
+The models reliably recognise blank pages, the division of an opening into its two halves and the coarse entry structure. Personal names, dates and monetary amounts vary between repeated runs of the same prompt, and the amounts are precisely what account-book research depends on. All model output is therefore treated as an unrevised proposal. Edition use requires facsimile verification and an explicit editorial decision. The full argument and the current measurements are in `HTR-EVALUATION.md` and in `data/benchmark/summary.json`.
 
 ### First category identified
 

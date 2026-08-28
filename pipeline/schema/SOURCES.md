@@ -14,8 +14,8 @@ same URL and update the release line above.
 
 ## docta.rng
 
-Hand-written in this repository, neither vendored nor generated. It pins the DoCTA encoding
-contract, admitting exactly the elements, attributes and structures that
+Hand-written in this repository, neither vendored nor generated. It implements the DoCTA
+encoding specification, admitting exactly the elements, attributes and structures that
 `pipeline/build_tei.py` emits, with the closed lists of the pipeline (responsibility ids, stream statuses, milestone
 units, entity elements) enumerated and the id shapes given as patterns. Free text and values
 that legitimately vary (titles, prose, dates, zone points, URLs) stay unconstrained.
@@ -25,7 +25,8 @@ to what `build_tei.py` emits is a change to this schema, and the two-stage run o
 `validate_tei.py` is what keeps them in step. Being narrower than TEI, it never replaces
 `tei_all.rng`; TEI conformance stays the first stage.
 
-An ODD is the upgrade path. As soon as the project needs human-readable encoding guidelines
-alongside the machine check, or a customisation that documents its own constraints, the
-contract should be written as a TEI ODD and both the schema and the prose generated from it.
-Until then a hand-written RelaxNG is the smaller instrument for the same check.
+An ODD remains an optional later consolidation path. It becomes useful if DoCTA publishes a
+reusable TEI customisation and adopts a pinned ODD generation toolchain. The accounting pilot
+uses a human-readable encoding specification together with hand-written Relax NG and
+Schematron schemas. Generated and hand-written schemas must never be maintained as competing
+normative sources.

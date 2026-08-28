@@ -140,15 +140,15 @@ The domain expert takes the decision about validity. The research tool supplies 
 |--------|--------|----------|
 | Generated | HTR or a vision-language model | A model proposal with full provenance |
 | Automatically checked | Rules, schemas, sums and model comparison | Marked consistency or divergence |
-| Agentically checked | Palaeographic, linguistic, structural and domain-specific critique | A reasoned checking hint |
-| Verified at the facsimile | Human comparison of image and text | A verified reference |
-| Scholarly accepted | The project lead or a named domain expert | Released research data |
+| Agentically reviewed | Palaeographic, linguistic, structural and domain-specific critique | A reasoned review signal |
+| Facsimile-verified | Human comparison of image and text | Evidence for the named transcription scope |
+| Editorially accepted | Decision by the project lead or a named domain expert | Accepted edition data |
 
 A model acting as judge can prioritise contradictions and conspicuous passages. It confers no truth status and no release status on an output. For transcription the reference classes and metrics of `HTR-EVALUATION.md` apply.
 
 ### Methodological positioning
 
-Language models serve as prototyping instruments whose outputs are systematically validated by domain expertise. Promptotyping is the iterative method that keeps this under source-critical control. This position still has to be written out as a short text module for the planned resubmission.
+Language models serve as prototyping instruments whose outputs are reviewed against source evidence and accepted through accountable domain expertise. Promptotyping is the iterative method that keeps this under source-critical control. This position still has to be written out as a short text module for the planned resubmission.
 
 ## Resource URLs
 

@@ -12,7 +12,7 @@
 
 ## What the work has to deliver
 
-The present goal is an agentic edition pipeline. The Transkribus facsimiles of the Tyrolean State Archives, covering account books (Raitbücher), inventories, copybooks and court ordinances, are turned into research data and a simple digital edition. Every stage is versioned and verifiable, machine output is marked as unrevised until a scholar has approved it, and each approved page is at once evaluation base and edition progress.
+The present goal is an agentic edition pipeline. The Transkribus facsimiles of the Tyrolean State Archives, covering account books (Raitbücher), inventories, copybooks and court ordinances, are turned into research data and a simple digital edition. Every stage is versioned and verifiable. Machine output remains marked as unrevised until it has been checked against the facsimile and editorially accepted. An accepted page becomes evaluation data only when it is assigned to a named evaluation corpus.
 
 This is a reframing of the earlier goal rather than a replacement of it. The prototype of February 2026 had to convince a reviewer that the methods work; the pipeline has to actually produce the data. The requirements of the project lead below are unchanged by that shift, and the ten points of review criticism remain the checklist the eventual resubmission has to satisfy.
 
@@ -85,17 +85,17 @@ Seven points are addressed directly in code. Point 9 has moved from a first test
 | Object | State |
 |--------|-------|
 | CER on inventories | Measured against the small set of pages carrying formal `DONE` status. The convention assignment of the wider stock is unresolved. |
-| CER and WER on account book 2 | No approved account-book reference exists. Only variant stability, structural observation and scholarly spot checks are available. |
+| CER and WER on account book 2 | No editorially accepted ground-truth transcription exists. Only variant stability, structural observation and scholarly spot checks are available. |
 | Derived rates (relation coverage, source coverage, network metrics) | Only raw counts are shown. A rate needs a defined denominator, that is, an answer to what counts as fully covered, and that has not been fixed methodologically. |
 
-The full review contract is in `HTR-EVALUATION.md`.
+The full review specification is in `HTR-EVALUATION.md`.
 
 ## Success criteria
 
 1. A reader opens the site and understands within minutes what the project does methodologically and where it stands.
 2. The project lead can explore her research questions on real data.
-3. The pipeline visibly runs from facsimile through machine transcription and measurement to a scholar-approved page.
-4. Quality statements comprise review status per entity and relation, the availability tiers of the sources, and clearly marked experimental transcription metrics with their reference class.
+3. The pipeline visibly runs from facsimile through machine transcription and measurement to an editorially accepted edition page.
+4. Quality statements comprise evidence and decision status per mention and assertion, the availability tiers of the sources, and clearly marked experimental transcription metrics with their reference class.
 5. The seven directly code-addressable points of review criticism are answered.
 
 ## Open questions

@@ -44,7 +44,7 @@ The dedicated network page and the faceted search over SiCProD were removed when
 
 ### The relation network of an edited source
 
-`exploration.html` shows what the pipeline itself produces, the entities and relations extracted from one validated transcription, currently the Thaur inventory A 49.1. The graph is small enough that a `cose` layout over the whole set is the right answer and progressive disclosure would only add friction. Node size follows the number of attested relations, edge labels carry the relation type as the source gives it, and selecting a node names its role in that source. Every node keeps a route back to the facsimile through the viewer.
+`exploration.html` shows an LLM-produced extraction layer over the Transkribus working transcription of the Thaur inventory A 49.1. The extraction has no scholarly verification status. The graph is small enough that a `cose` layout over the whole set is the right answer and progressive disclosure would only add friction. Node size follows the number of extracted relations, edge labels carry the proposed relation type, and selecting a node names its proposed role. Every node keeps a route back to the facsimile through the viewer.
 
 ## 4. Rule-bound review status
 
@@ -60,7 +60,7 @@ The next iteration binds the display to documented workflow states. Secure presu
 | A period filter as a slider | Not built | The datings in SiCProD are too heterogeneous for a continuous axis |
 | A German and English bilingual site | Resolved by the August 2026 refactor | The site and the knowledge base are English throughout; German remains for shelfmarks, source titles and quoted source text |
 | A line overlay in the viewer, coupling image and transcription | Open | The coordinates are ready in `data/transcriptions/*.json` under `regions[].lines[].coords` |
-| A separate edition page | Folded into the viewer, 2026-08-27 | The page duplicated the viewer while no approved edition text exists. The viewer now carries a reading mode over the whole document text; a dedicated edition page returns once approved TEI text is available |
+| A separate edition page | Folded into the viewer, 2026-08-27 | The page duplicated the viewer while no accepted edition text exists. The viewer now carries a reading mode over the whole document text; a dedicated edition page returns once editorially accepted TEI text is available |
 
 ## 6. Colour system
 

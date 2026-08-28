@@ -12,12 +12,12 @@ The label "ground truth" is used sparingly and never loosely. Of the inventory t
 
 | Reference class | Meaning | Permitted use |
 |-----------------|---------|---------------|
-| Formally approved ground truth | Image, line assignment and transcription have been checked by a scholar and versioned | Model comparison and defensible CER/WER |
-| Verified reference | A sample was checked against the image but has no formal corpus status yet | Development comparison, with the status stated |
-| Working transcription | Text exists, convention or approval is unresolved | Error hunting and selection of adjudication points |
-| Model output | An automatically produced proposal | Inspection, comparison, manual correction |
+| Editorially accepted ground-truth transcription | Image, line assignment and transcription have been facsimile-verified, versioned and accepted for a named evaluation corpus | Model comparison and defensible CER/WER |
+| Facsimile-verified reference transcription | A sample was checked against the image but has no accepted evaluation-corpus status | Development comparison, with the status stated |
+| Provisional reference transcription | Text exists, while convention or editorial acceptance remains unresolved | Error hunting and selection of adjudication points |
+| Unrevised machine transcription | An automatically produced proposal | Inspection, comparison and manual correction |
 
-Where a metric is reported without a formally approved reference, it is a comparison signal and not a quality figure. The pilot's CER against a working transcription is the clearest case: a systematic deviation there may equally lie on the side of the reference.
+Where a metric is reported without an editorially accepted ground-truth transcription, it is a comparison signal and not a quality figure. The pilot's CER against a provisional reference transcription is the clearest case. A systematic deviation may originate in either compared text.
 
 ## The prompt benchmark
 
@@ -37,7 +37,7 @@ Two findings from iteration 01 shaped this design and are worth stating as metho
 
 | Object | Metric or procedure | Purpose |
 |--------|---------------------|---------|
-| Character sequence | Strict CER against `DONE` reference pages | Diplomatic proximity without hidden normalisation |
+| Character sequence | Strict CER against reference transcriptions, with their reference class stated | Diplomatic proximity without hidden normalisation |
 | Convention differences | CER under a documented normalisation profile | Comparison after explicitly stated equivalences |
 | Word recognition and order | WER and bag-of-words WER | Separating recognition errors from reading-order errors |
 | Layout | Line coverage, region assignment, reading order | Checking page structure |
@@ -45,7 +45,7 @@ Two findings from iteration 01 shaped this design and are worth stating as metho
 | Uncertainty marking | Yield and precision of the model's uncertain markers | Whether the model flags what it in fact got wrong |
 | Line loss | Missing lines against reference, or between repetitions | Detecting silent omission |
 | Amounts | Exact match of value, unit and booking line; arithmetic consistency as an exclusion filter | Research-relevant accounting accuracy |
-| Correction effort | Number of scholarly interventions per accepted page | Practical comparability of procedures |
+| Correction effort | Number of scholarly interventions per editorially accepted page | Practical comparability of procedures |
 
 Arithmetic consistency of the amounts is used as an exclusion filter and never as proof of correctness. The models smooth balances, so a sum that adds up may have been made to add up.
 
@@ -68,7 +68,7 @@ The origin run, preserved under `experiments/transcription-test/`, processed fou
 
 Few-shot prompting gave the best character accuracy, image enhancement the best word overlap, and splitting the page into halves made things clearly worse. A single inventory page carries no decision for the account books, because hand, layout and text type differ. These numbers are kept as a historical record of the first test; they are not comparable with later iterations, which use a different page set and a different consistency measure.
 
-### Account book pages without ground truth
+### Account book pages without ground-truth transcriptions
 
 Across the account-book pages the repetitions of one and the same prompt differ materially. The models usually recognise headings, the division of the opening and the entry structure. Personal names, years and monetary amounts change between runs, and the amounts are what accounting research depends on. Iteration 02 raised number-token consistency substantially on several pages while also producing far more uncertain markers, which is the intended trade: the model is asked to admit doubt rather than to guess fluently.
 
@@ -104,7 +104,7 @@ The inventory cohort is the more informative of the two, because it shows what h
 3. Every page of the held-out test set is processed both with a specialised HTR base model and with the current model configuration. The Text Titan I ter model is the obvious first Transkribus baseline candidate; its published vendor figures do not replace a direct comparison on DoCTA material.
 4. Regional crops are used deliberately for difficult names, marginal columns and amounts, rather than as a general strategy.
 5. Divergences between systems produce a divergence list with image detail, line reference and competing readings. The scholar decides directly at the facsimile.
-6. Raw output, automatically checked text and scholarly accepted text remain separate data states. Every downstream step carries the review status and the provenance with it.
+6. Unrevised machine output, formally checked text and accepted edition text remain separate data states. Every downstream step carries the evidence and decision status together with its provenance.
 
 A stronger vision-language model is compared on the same held-out page set. Model family and general vendor description are not sufficient grounds for a choice. Training a project-specific HTR model is considered only once enough corrected account-book lines exist and a separate test set can be preserved.
 

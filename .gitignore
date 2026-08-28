@@ -1,8 +1,11 @@
 # Python
+.venv/
 __pycache__/
 *.pyc
 *.pyo
 .env
+.ruff_cache/
+.pytest_cache/
 
 # IDE / AI tools
 .vscode/
@@ -15,9 +18,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Credentials
-scripts/.env
 
 # Raw research inputs (contain sensitive reviewer reports)
 sources/
@@ -33,8 +33,6 @@ package-lock.json
 
 # HTR experiments: cached IIIF images are re-obtainable and must never be committed (TLA/Transkribus image rights)
 experiments/transcription-test/images/
-evaluation/benchmark/images/
 evaluation/**/images/
 experiments/**/*.tmp*
 evaluation/**/*.tmp*
-__pycache__/
