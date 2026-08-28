@@ -195,7 +195,7 @@
       if (reg.transcription_source === 'vlm') {
         return {
           state: 'machine',
-          label: 'Machine transcription · DoCTA',
+          label: 'Text: Machine transcription · DoCTA',
           title: 'Unrevised transcription produced by the DoCTA pipeline with a ' +
                  'vision-language model. Transkribus holds no transcription of this ' +
                  'source, and no page has been read against the scan by a scholar',
@@ -204,22 +204,26 @@
       if (done >= total) {
         return {
           state: 'human',
-          label: `Human-corrected${by ? ' (Inventaria)' : ''}`,
+          label: `Text: Human-corrected${by ? ' (Inventaria)' : ''}`,
           title: `All ${total} pages corrected${by} and marked done in Transkribus`,
         };
       }
       if (done > 0) {
         return {
           state: 'partial',
-          label: `Partly corrected · ${done}/${total} pages`,
+          label: `Text: Partly corrected · ${done}/${total} pages`,
           title: `${done} of ${total} pages corrected${by} and marked done in Transkribus, ` +
                  'the remaining pages are the unrevised Transkribus HTR layer',
         };
       }
+      // Absence of the done status documents nothing about actual correction
+      // work; the chip states the origin and what the status does not record.
       return {
         state: 'machine',
-        label: 'Machine transcription',
-        title: 'Unrevised Transkribus HTR layer, no human correction yet',
+        label: 'Text: Transkribus HTR · no correction recorded',
+        title: 'Text layer exported from Transkribus. No page of this document ' +
+               'is marked done there, so no human correction is documented; the ' +
+               'text may have been worked on without the status being set',
       };
     }
 
@@ -906,9 +910,12 @@
                   `<span class="ent-key__dot ent-key__dot--${escapeAttr(t)}"></span>` +
                   `${escapeHTML(ENTITY_TYPE_LABELS[t])}</span>`)
         .join('');
+      // The leading label binds model and verification state to the entity
+      // layer; without it they read as statements about the text layer, whose
+      // own provenance chip sits in the doc-meta strip below.
       return `<span class="ent-key-group" title="Entity marks:` +
              ` ${escapeAttr(entityModel())} extraction, not verified by a` +
-             ` scholar">${chips}` +
+             ` scholar"><span class="ent-key">Entities</span>${chips}` +
              `<span class="ent-key ent-key--prov">${ICON_AI}` +
              `${escapeHTML(entityModel())}</span>` +
              `<span class="ent-key ent-key--prov">${ICON_UNVERIFIED}` +
