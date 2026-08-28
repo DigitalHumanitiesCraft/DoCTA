@@ -192,7 +192,9 @@ Consistent with coOCR/HTR, an external reference project developed by DHCraft.
 
 The site computes the figures it shows in the browser, from the source catalogue in `data/sources.json` and the register projection in `data/pipeline/register_summary.json`, both of which it loads anyway. `build_stats.py` and its `data/stats.json` are left over from the prototype phase and have no consumer; the file stays as an exploration artifact. The pipeline scripts that write `data/pipeline/`, `data/tei/` and `data/entities/` live in `pipeline/` and are documented in `pipeline/README.md`.
 
-Exploration and helper scripts whose output no page loads: `compute_layout.py` writing `data/network.json`, `explore_transkribus.py`, `explore_transkribus_deep.py`, `transkribus_status.py` writing `data/transkribus_collection.json` and `data/transkribus_status.json`, and `fetch_remaining.py`. They document how the data situation was established and stay in the repository for that reason.
+Two of the collection scripts write files that are still in use. `explore_transkribus.py` writes `data/transkribus_collection.json`, which `index.html` loads for the first-page thumbnails of documents the register does not know, and which `transform_sources.py` reads for the page counts. `transkribus_status.py` writes `data/transkribus_status.json`, which no page loads but which `build_register.py` and `build_tei.py` read as the source of the Transkribus workflow status, and `fetch_transcriptions.py` and `map_sources.py` read as their document list.
+
+Exploration and helper scripts whose output nothing consumes: `compute_layout.py` writing `data/network.json`, `explore_transkribus_deep.py` and `fetch_remaining.py`. They document how the data situation was established and stay in the repository for that reason.
 
 ## Tests
 

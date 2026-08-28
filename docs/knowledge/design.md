@@ -95,13 +95,11 @@ All colours live in the token block at the top of `css/styles.css`; no raw hex v
 | Place | `--ent-place` | `#2f6446` | `#e5efe8` |
 | Object | `--ent-object` | `#a74320` | `#f8e9e3` |
 | Time | `--ent-time` | `#6d3d78` | `#f0e8f2` |
-| Institution | `--ent-institution` | `#175c6d` | `#e2eef1` |
-| Function | `--ent-function` | `#5d5a1c` | `#efedda` |
 | Review status secure | `--conf-high` | `#2d7d46` | `#e8f5e9` |
 | Review status worth checking | `--conf-medium` | `#8a6100` | `#fff8e1` |
 | Review status problematic | `--conf-low` | `#c62828` | `#ffebee` |
 
-The six entity hues are muted against the warm ground `#faf8f5`, and each foreground holds at least 4.5:1 on its own background pair, on the page background and on the white surface. Every entity type carries a distinct hue, so a shared value can no longer make two types indistinguishable where the extraction views and the SiCProD data meet.
+The entity hues are muted against the warm ground `#faf8f5`, and each foreground holds at least 4.5:1 on its own background pair, on the page background and on the white surface. Every type of the extraction vocabulary carries a hue of its own, so a shared value can no longer make two types indistinguishable. The prototype phase additionally held hues for institution and function, the two SiCProD types; they left the token block together with the page that rendered them.
 
 The palette replaced a set of saturated Material hues. Three of those values survive as the XML syntax colours of the TEI display, `--tei-tag` `#6a1b9a`, `--tei-attr` `#1565c0` and `--tei-val` `#2e7d32`, where they carry no entity meaning at all.
 

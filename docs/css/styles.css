@@ -1,7 +1,8 @@
 /* DoCTA - Project-Specific Styles
    Bootstrap 5.3 handles: layout, nav, grid, cards, tables, forms, buttons, utilities.
-   This file adds: project palette, entity badges, pipeline strip, metric
-   tables, transcription, viewer, knowledge vault, banner.
+   This file adds: project palette, entity marks, provenance chips, metric
+   tables, transcription and viewer layout, the exploration workbench with its
+   network, table and register views, and the source list of the home page.
    All colours live in the token block below; no raw hex outside it. */
 
 /* === Tokens === */
@@ -27,7 +28,7 @@
   --conf-low: #c62828;
   --conf-low-bg: #ffebee;
 
-  /* Entity palette: six muted hues on the warm ground, each foreground at least
+  /* Entity palette: four muted hues on the warm ground, each foreground at least
      4.5:1 on its own -bg pair, on --bg-primary and on --surface. */
   --ent-person: #2b4c7e;
   --ent-person-bg: #e6ecf4;
@@ -37,11 +38,6 @@
   --ent-object-bg: #f8e9e3;
   --ent-time: #6d3d78;
   --ent-time-bg: #f0e8f2;
-  --ent-institution: #175c6d;
-  --ent-institution-bg: #e2eef1;
-  --ent-function: #5d5a1c;
-  --ent-function-bg: #efedda;
-
 
   --osd-backdrop: #1a1a1a;
 
@@ -51,18 +47,22 @@
   --tei-val: #2e7d32;
 
   --font-source: 'Courier New', 'Consolas', monospace;
+  /* Starting guess only: js/app.js measures the rendered navbar and overwrites
+     this on :root through a ResizeObserver. */
   --nav-height: 56px;
   --viewer-bar-height: 2.5rem;
 
+  --space-2xs: 0.125rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 0.75rem;
   --space-lg: 1rem;
-  --space-xl: 1.5rem;
 
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-pill: 999px;
+
+  --shadow-card: 0 2px 12px rgb(44 36 22 / 0.16);
 
   --text-sm: 0.875rem;
   --text-xs: 0.8125rem;
@@ -96,27 +96,23 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 }
 
 /* === Navbar === */
-/* Bootstrap's .sticky-top loses against .navbar's own position on this build;
-   the doubled selector settles it, the navbar must actually stick. */
-.navbar.sticky-top {
-  position: sticky;
-  top: 0;
+/* Bootstrap carries the navbar colours in its own variables, so the project
+   palette is bound to them and every state stays inside Bootstrap's cascade. */
+.navbar {
+  --bs-navbar-brand-color: var(--accent);
+  --bs-navbar-brand-hover-color: var(--accent);
+  --bs-navbar-color: var(--text-secondary);
+  --bs-navbar-hover-color: var(--accent);
+  --bs-navbar-active-color: var(--accent);
 }
 
 .navbar-brand {
-  color: var(--accent) !important;
-  font-weight: 700 !important;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .navbar .nav-link {
-  color: var(--text-secondary);
   font-size: var(--text-sm);
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--accent) !important;
 }
 
 .navbar .nav-link.active {
@@ -135,8 +131,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .entity--place { background: var(--ent-place-bg); color: var(--ent-place); border-bottom: 2px solid var(--ent-place); }
 .entity--object { background: var(--ent-object-bg); color: var(--ent-object); border-bottom: 2px solid var(--ent-object); }
 .entity--time { background: var(--ent-time-bg); color: var(--ent-time); border-bottom: 2px solid var(--ent-time); }
-.entity--institution { background: var(--ent-institution-bg); color: var(--ent-institution); border-bottom: 2px solid var(--ent-institution); }
-.entity--function { background: var(--ent-function-bg); color: var(--ent-function); border-bottom: 2px solid var(--ent-function); }
 .entity--document { background: var(--bg-secondary); color: var(--text-primary); border-bottom: 2px solid var(--text-primary); }
 
 /* Entity key in the doc-meta strip: a colour dot per type, then the
@@ -176,7 +170,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   z-index: 1080;
   max-width: 20rem;
   padding: 0.4rem 0.6rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   background: var(--text-primary);
   color: var(--bg-primary);
   font-size: var(--text-xs);
@@ -303,22 +297,27 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .table-metrics .flag { color: var(--conf-low); cursor: help; }
 
 /* === Viewer Layout (Two-Panel) === */
-/* The viewer page owns the full viewport: only the transcription pane scrolls,
-   so navbar and footer stay put and no second scrollbar appears on <body>. */
-.viewer-page {
+/* The viewer page and the exploration workbench own the full viewport: only
+   their inner regions scroll, so navbar and footer stay put and no second
+   scrollbar appears on <body>. */
+.viewer-page,
+.exp-page {
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-.viewer-page > main {
+.viewer-page > main,
+.exp-page > main {
   flex: 1 1 auto;
   min-height: 0;
 }
 
 .viewer-page > .navbar,
-.viewer-page > footer { flex: 0 0 auto; }
+.viewer-page > footer,
+.exp-page > .navbar,
+.exp-page > footer { flex: 0 0 auto; }
 
 .viewer-layout {
   display: grid;
@@ -595,13 +594,12 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--on-accent);
 }
 
-/* === Responsive === */
+/* === Responsive: viewer layout === */
 @media (max-width: 991.98px) {
   .viewer-layout {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .kv-sidebar { min-height: 0; }
 }
 
 
@@ -616,23 +614,8 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 }
 
 /* === Exploration Workbench (exploration.html) === */
-/* Same full-viewport regime as the viewer: sidebar and view area own the
-   remaining height, only their inner regions scroll. */
-.exp-page {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.exp-page > main {
-  flex: 1 1 auto;
-  min-height: 0;
-}
-
-.exp-page > .navbar,
-.exp-page > footer { flex: 0 0 auto; }
-
+/* The full-viewport regime of .exp-page is shared with the viewer and set in
+   the viewer section; sidebar and view area own the remaining height. */
 .exp-layout {
   position: relative;
   display: grid;
@@ -852,7 +835,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   background: var(--surface);
   border: 1px solid var(--border-custom);
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 12px rgb(44 36 22 / 0.16);
+  box-shadow: var(--shadow-card);
 }
 
 .net-card[hidden] { display: none; }
@@ -908,7 +891,9 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   padding: 0.15rem 0;
 }
 
-.net-card__key {
+/* Label column of the card rows and of the provenance rows below them */
+.net-card__key,
+.net-prov__key {
   flex: 0 0 5.5rem;
   color: var(--text-muted-custom);
 }
@@ -943,11 +928,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   align-items: baseline;
   gap: var(--space-sm);
   padding: 0.1rem 0;
-}
-
-.net-prov__key {
-  flex: 0 0 5.5rem;
-  color: var(--text-muted-custom);
 }
 
 .net-prov__gen {
@@ -1074,11 +1054,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .net-node.is-focus .net-node__shape { stroke: var(--accent); stroke-width: 3; }
 .net-linkg.is-near .net-link { stroke: var(--accent-hover); stroke-opacity: 1; }
 
-@media (prefers-reduced-motion: reduce) {
-  .net-node,
-  .net-linkg { transition: none; }
-}
-
+/* === Exploration: sidebar toggle and table view === */
 .exp-sidebar-toggle {
   flex: none;
   background: var(--surface);
@@ -1232,14 +1208,15 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   .exp-bar { position: relative; z-index: 6; }
 }
 
-/* Compact BETA badge in the navbar (replaces the former banner) */
+/* === Beta badge ===
+   Compact BETA mark in the navbar, inserted by js/app.js. */
 .beta-badge {
-  font-size: var(--text-2xs, 0.65rem);
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--accent);
   border: 1px solid var(--accent);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 1px 5px;
 }
 @media (min-width: 992px) {
@@ -1250,7 +1227,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   .beta-badge { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); }
 }
 
-/* Shared footer */
+/* === Shared footer === */
 .footer-line { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; }
 .footer-sep { color: var(--border-custom); }
 .footer-brand { display: inline-flex; align-items: center; gap: 4px; }
@@ -1394,13 +1371,15 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 .src-cat { font-size: var(--text-xs); color: var(--text-muted-custom); }
 
-/* Display segmentation: layout regions read as paragraphs, "Item" lines as
-   entries in the reading text. Presentation only, the data holds lines. */
+/* === Display segmentation in the viewer ===
+   Layout regions read as paragraphs, "Item" lines as entries in the reading
+   text. Presentation only, the data holds lines. */
 .transcription__line--region-start { margin-top: 0.9em; }
 .reading-line--region-start { margin-top: 1.1em; }
 .reading-line--entry { margin-top: 0.55em; }
 
-/* Provenance line above the entity table: extraction layer and text basis */
+/* === Exploration: extraction provenance line ===
+   Above the entity table: extraction layer and text basis */
 .exp-basis {
   margin: var(--space-sm) var(--space-md) 0;
   font-size: var(--text-xs);
@@ -1409,7 +1388,8 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .exp-basis a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
 .exp-basis a:hover { color: var(--accent); }
 
-/* Disclaimer line under the home title: calm prose, no warning banner */
+/* === Home page note ===
+   Disclaimer line under the home title: calm prose, no warning banner */
 .hero-note {
   margin: var(--space-2xs) 0 0;
   max-width: 62rem;
@@ -1420,7 +1400,8 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .hero-note a:hover { color: var(--accent); }
 .hero-note__more { white-space: nowrap; }
 
-/* Slim line above the source list: live result count on the left, the F/H/T/E
+/* === Source list controls (index) ===
+   Slim line above the source list: live result count on the left, the F/H/T/E
    key letters on the right, sitting exactly over the stage column of the rows.
    The 1px compensates the list border so the letters align with the row chips. */
 .src-list-head {
@@ -1446,15 +1427,16 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 }
 .src-list-head .stage { cursor: help; }
 
-/* Edition attribution chip: accent-tinted so the origin of the text layer
-   catches the eye among the neutral category and status chips */
+/* === Edition attribution chip (viewer meta strip) ===
+   Accent-tinted so the origin of the text layer catches the eye among the
+   neutral category and status chips */
 .doc-meta__edition {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
   padding: 0.1rem 0.55rem;
   border: 1px solid var(--accent);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--accent-light);
   color: var(--accent);
   font-size: var(--text-2xs);
@@ -1463,7 +1445,8 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 }
 .doc-meta__edition:hover { text-decoration: underline; }
 
-/* Dating in the source row: tabular figures, a shade stronger than the rest
+/* === Source row details (index) ===
+   Dating in the source row: tabular figures, a shade stronger than the rest
    of the meta line, so the eye can scan the list chronologically */
 .src-date {
   font-variant-numeric: tabular-nums;
@@ -1496,7 +1479,7 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .stage {
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.35rem; height: 1.35rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-size: 0.68rem; font-weight: 700;
   border: 1px solid var(--border-custom);
 }

@@ -35,10 +35,11 @@ node tests/interaction-test.mjs
 
 ## Was sie prüfen
 
-**smoketest.mjs** lädt jede Seite der Site, derzeit sechs, und meldet pro Seite Konsolenfehler,
-nicht abgefangene Ausnahmen, fehlgeschlagene Netzwerk-Requests, HTTP-Status ab 400, interne Links,
-die auf keine Datei zeigen, Bilder ohne `alt`-Attribut und die Ladezeit. Erwartet ist überall null;
-jeder Befund macht den Lauf rot.
+**smoketest.mjs** lädt jede Seite der Site und meldet pro Seite Konsolenfehler, nicht abgefangene
+Ausnahmen, fehlgeschlagene Netzwerk-Requests, HTTP-Status ab 400, interne Links, die auf keine Datei
+zeigen, Bilder ohne `alt`-Attribut und die Ladezeit. Den Exit-Code kippen davon Konsolenfehler samt
+Ausnahmen, tote interne Links und fehlgeschlagene Requests außerhalb der erwarteten Sonden. Fehlende
+`alt`-Attribute und die Ladezeit stehen nur im Report.
 
 **interaction-test.mjs** klickt auf jeder Seite durch Schaltflächen, Auswahlfelder, Suchfelder und
 Kontrollkästchen und sammelt dabei dieselben Fehlerarten. Navigation wird ausgespart oder rückgängig
@@ -48,8 +49,9 @@ nicht.
 
 ## Grenzen
 
-Beide messen sichtbaren Text und Netzwerkverkehr. Was im Canvas gerendert wird (Cytoscape im
-Netzwerk-Explorer, OpenSeadragon im Viewer), erfassen sie nicht. Für den Graphen lässt sich die
-Cytoscape-Instanz im Browser über die Container-Eigenschaft `_cyreg.cy` auslesen und dann `nodes()`
-und `edges()` zählen; so wurde die Abweichung zwischen angezeigter und beschrifteter Knotenzahl
-gefunden.
+Beide messen sichtbaren Text und Netzwerkverkehr. Was im Canvas gerendert wird, erfassen sie nicht;
+im Viewer zeichnet OpenSeadragon das Faksimile dorthin. Der Netzwerk-Explorer läuft seit dem
+28.08.2026 auf D3 und zeichnet SVG, seine Marken stehen damit im DOM. Im Browser zählt
+`document.querySelectorAll('.net-node')` die gezeichneten Knoten, `.net-node.is-labelled` die
+dauerhaft beschrifteten und `.net-linkg` die Kanten; so fällt eine Abweichung zwischen angezeigter
+und beschrifteter Knotenzahl auf.

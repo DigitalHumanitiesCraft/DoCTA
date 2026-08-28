@@ -24,7 +24,7 @@ testpaths = ["pipeline", "evaluation/checks"]
 python_files = ["test_*.py"]
 pythonpath = ["."]
 markers = [
-    "slow: full working-tree healthcheck; excluded by default, run via -m slow or the pre-commit hook",
+    "slow: full working-tree healthcheck; excluded by default, run explicitly via -m slow",
 ]
 addopts = "-m \"not slow\""
 
