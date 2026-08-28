@@ -33,17 +33,17 @@
         <h2 class="h5 mb-2" id="project">Project</h2>
         <p class="small mb-2">DoCTA (Doing Court in the Tyrolean Alps) investigates practices, social relations and material culture at the court of Sigismund of Tyrol (1427–1496). The project brings together account books, inventories, copybooks and court ordinances held by the Tyrolean State Archives. These source types record different aspects of court life and follow different documentary conventions. Their joint analysis is intended to connect information about persons, places, objects and practices across the surviving records.</p>
         <p class="small mb-2">The digital component supports this historical research by preparing the sources for comparative analysis. It combines facsimiles, existing scholarly transcriptions, experimental machine transcription, semantic annotation and editorial review in a shared working environment.</p>
-        <p class="small mb-0">Project lead: University of Salzburg. Digital implementation: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a>. The development path is documented as a <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a> case study in the <a href="knowledge.html">Knowledge Vault</a>.</p>
+        <p class="small mb-0">Project lead: University of Salzburg. Digital implementation: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a>. The development path is documented as a <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a> case study in the <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/docs/knowledge" target="_blank" rel="noopener">knowledge base of the repository</a>.</p>
       </div>
     </section>
 
     <section class="card mb-4">
       <div class="card-body">
         <h2 class="h5 mb-2" id="questions">Questions addressed by the prototype</h2>
-        <p class="small mb-2">The current prototype provides a test environment for the following questions:</p>
+        <p class="small mb-2">The historical research questions concern court practices, social relations and material culture. The prototype tests the technical and editorial conditions required to investigate them across heterogeneous sources, and it provides a test environment for the following questions:</p>
         <ul class="small mb-0">
           <li class="mb-2">How can heterogeneous court records be represented in a shared analytical framework while preserving the structure and provenance of each source?</li>
-          <li class="mb-2">What transcription quality can current vision-language models achieve on fifteenth-century Early New High German manuscripts without project-specific training? The <a href="benchmark.html">benchmark</a> measures this against scholarly reference transcriptions.</li>
+          <li class="mb-2">What transcription quality can current vision-language models achieve on fifteenth-century Early New High German manuscripts without project-specific training? The <a href="benchmark.html">benchmark</a> compares model outputs with selected reference transcriptions whose provenance and editorial status are documented.</li>
           <li class="mb-2">Which forms of scholarly review, controlled vocabulary and source-level evidence are required to turn machine-generated proposals into accepted research data?</li>
           <li class="mb-0">Which connections between persons, places, objects and court practices become visible when information from different sources is brought together?</li>
         </ul>
@@ -53,7 +53,7 @@
     <section class="card mb-4">
       <div class="card-body">
         <h2 class="h5 mb-2" id="current-scope">Current scope</h2>
-        <p class="small mb-2">The prototype currently works with published inventory transcriptions, experimental machine transcriptions of account-book pages and prosopographic records from <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a>. Published <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria</a> editions are identified and cited at document level. Machine-generated transcriptions and entity annotations remain marked as unrevised until they have been checked against the facsimile and accepted by a scholar.</p>
+        <p class="small mb-2">The prototype references published <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria</a> editions and uses selected material from them where permission or the applicable legal framework permits it. Alongside these it works with experimental machine transcriptions of account-book pages and with prosopographic records from <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a>. Inventaria editions are identified and cited at document level. Machine-generated transcriptions and entity annotations remain marked as unrevised until they have been checked against the facsimile and accepted by a scholar.</p>
         <p class="small mb-0">The present entity layer is exploratory. It tests how references to persons, places and objects can be anchored to individual source lines, reviewed and combined across documents. Historical interpretation and the systematic comparison of all source types remain part of the continuing research.</p>
       </div>
     </section>
@@ -62,7 +62,8 @@
       <div class="card-body">
         <h2 class="h5 mb-2" id="digital-workflow">Digital workflow</h2>
         <p class="small mb-2">Facsimiles and available transcriptions are registered with their source and editorial provenance. Vision-language models produce experimental transcriptions for material without an existing text layer. Each transcription version remains traceable to its origin and processing step.</p>
-        <p class="small mb-0">The <a href="viewer.html">viewer</a> places facsimile and transcription side by side and supports page-level decisions and line-level corrections. Reviewed text can be transferred into the page register and used to generate TEI documents. Entity annotations remain anchored to the source lines from which they were derived and can be inspected through the <a href="exploration.html">exploration</a> interface. The technical guarantees behind this workflow are documented in the <a href="knowledge.html">Knowledge Vault</a>.</p>
+        <p class="small mb-2">The <a href="viewer.html">viewer</a> places facsimile and transcription side by side and supports page-level decisions and line-level corrections. Reviewed text can be transferred into the page register and used to generate TEI documents. Entity annotations remain anchored to the source lines from which they were derived and can be inspected through the <a href="exploration.html">exploration</a> interface. The technical guarantees behind this workflow are documented in the <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/docs/knowledge" target="_blank" rel="noopener">knowledge base of the repository</a>.</p>
+        <p class="small mb-0">This working environment rests on the capabilities of current frontier vision-language models and on advance funding of the proposal preparation. What the models produce here stays experimental and is marked as such throughout the site.</p>
       </div>
     </section>
 
@@ -75,7 +76,7 @@
           <li><strong>Review a source.</strong> The Review button starts the correction workflow: reviewer initials, a decision per page, corrections per line, exported as JSON for the pipeline.</li>
           <li><strong>Judge the transcription quality.</strong> The <a href="benchmark.html">benchmark</a> compares prompt iterations on a fixed page set, with links from every measured page to its facsimile and text.</li>
           <li><strong>Explore the content layer.</strong> The <a href="exploration.html">exploration</a> shows extracted persons, places and objects as a network over the sources and as a sortable table, with provenance on every record.</li>
-          <li><strong>Understand the decisions.</strong> The <a href="knowledge.html">Knowledge Vault</a> holds the Promptotyping documents behind the project: requirements, data, evaluation protocol, design decisions and the decision journal.</li>
+          <li><strong>Understand the decisions.</strong> The <a href="https://github.com/DigitalHumanitiesCraft/DoCTA/tree/main/docs/knowledge" target="_blank" rel="noopener">knowledge base of the repository</a> holds the Promptotyping documents behind the project: requirements, data, evaluation protocol, design decisions and the decision journal.</li>
         </ul>
       </div>
     </section>
@@ -83,7 +84,8 @@
     <section class="card mb-4">
       <div class="card-body">
         <h2 class="h5 mb-2" id="data-rights">Data sources and rights</h2>
-        <p class="small mb-2">Facsimiles are provided through Transkribus from holdings of the Tyrolean State Archives. Published inventory editions and transcriptions produced by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a> on <a href="https://app.transkribus.org/en/sites/inventaria" target="_blank" rel="noopener">Transkribus Sites</a> are cited and linked at document level. Prosopographic records are derived from <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a>. Annotations and derived data produced within DoCTA carry separate provenance information so that their origin remains distinguishable from the source editions.</p>
+        <p class="small mb-2">Facsimiles are accessed through Transkribus and originate from holdings of the Tyrolean State Archives. Their public display follows the applicable rights and permissions. Published inventory editions and transcriptions produced by the <a href="https://www.inventaria.at/" target="_blank" rel="noopener">Inventaria project</a> on <a href="https://app.transkribus.org/en/sites/inventaria" target="_blank" rel="noopener">Transkribus Sites</a> are cited and linked at document level. Prosopographic records are derived from <a href="https://sicprod.acdh-dev.oeaw.ac.at" target="_blank" rel="noopener">SiCProD</a>. Annotations and derived data produced within DoCTA carry separate provenance information so that their origin remains distinguishable from the source editions.</p>
+        <p class="small mb-2">Downloads offered by the site, including the TEI encoding of a source, contain data generated or authorised by DoCTA. Third-party source material remains subject to its original rights and licensing conditions.</p>
         <p class="small mb-0">Source code is licensed under the MIT License. Research data and knowledge documents produced by DoCTA are published under CC BY 4.0 where the rights of the underlying source material permit this. Repository: <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">github.com/DigitalHumanitiesCraft/DoCTA</a>.</p>
       </div>
     </section>
