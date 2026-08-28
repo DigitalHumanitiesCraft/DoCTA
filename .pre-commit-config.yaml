@@ -16,6 +16,17 @@ repos:
         entry: ./.venv/Scripts/ruff.exe format
         language: system
         types_or: [python]
+      # Stand-in for the upstream check-added-large-files, which cannot be
+      # installed here: it asks git for the newly added files itself, so the
+      # large files already tracked (tei_all.rng, the SiCProD exports) stay
+      # untouched and `pre-commit run --all-files` sees nothing staged.
+      - id: no-large-added-files
+        name: block newly added files over 1 MB
+        entry: ./.venv/Scripts/python.exe -c 'import subprocess,sys; from pathlib import Path; A=subprocess.run("git diff --cached --name-only --diff-filter=A".split(),capture_output=True,text=True).stdout.split(); sys.exit("\n".join(p for p in A if Path(p).is_file() and Path(p).stat().st_size > 1048576) or 0)'
+        language: system
+        pass_filenames: false
+        always_run: true
+
       - id: docta-healthcheck
         name: DoCTA pipeline healthcheck (both schemas, byte-identical rebuild)
         entry: ./.venv/Scripts/python.exe pipeline/check_pipeline.py

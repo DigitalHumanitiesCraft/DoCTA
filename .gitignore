@@ -22,8 +22,10 @@ desktop.ini
 # Raw research inputs (contain sensitive reviewer reports)
 sources/
 
-# Internal working documents
-temp/
+# Internal working documents: correspondence drafts in output/, facsimile
+# screenshots in tmp/ and docs/screenshots/ (TLA/Transkribus image rights)
+tmp/
+output/
 docs/screenshots/
 
 # Node/npm (only used for Playwright testing, not part of the project)
