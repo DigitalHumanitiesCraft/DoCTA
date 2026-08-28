@@ -39,22 +39,35 @@ def _base_text(pages_dir: Path, line_id: str) -> str:
     return next(ln["text"] for ln in run["lines"] if ln["id"] == line_id)
 
 
-def review_file(tmp: Path, pages_dir: Path, line_id: str = "r2l1",
-                corrected: str = "Auf dem klainen estrich",
-                original: str | None = None,
-                status: str | None = "gesichtet") -> Path:
+def review_file(
+    tmp: Path,
+    pages_dir: Path,
+    line_id: str = "r2l1",
+    corrected: str = "Auf dem klainen estrich",
+    original: str | None = None,
+    status: str | None = "gesichtet",
+) -> Path:
     """One viewer export against the current base text of the register."""
     payload = {
         "docId": DOC,
         "reviewer": REVIEWER,
-        "pages": {str(PAGE): {
-            "status": status,
-            "date": DATE,
-            "lines": [{"id": line_id,
-                       "original": (original if original is not None
-                                    else _base_text(pages_dir, line_id)),
-                       "corrected": corrected}],
-        }},
+        "pages": {
+            str(PAGE): {
+                "status": status,
+                "date": DATE,
+                "lines": [
+                    {
+                        "id": line_id,
+                        "original": (
+                            original
+                            if original is not None
+                            else _base_text(pages_dir, line_id)
+                        ),
+                        "corrected": corrected,
+                    }
+                ],
+            }
+        },
         "exported": f"{DATE}T10:15:00Z",
         "source": "docta-viewer",
     }
@@ -69,16 +82,20 @@ def test_review_becomes_a_run_and_a_verification() -> None:
         pages_dir = _register(tmp)
         ar.ingest([review_file(tmp, pages_dir)], pages_dir)
         page = _page(pages_dir)
-        assert page["verification"] == {"status": "gesichtet",
-                                        "reviewer": REVIEWER, "date": DATE}
+        assert page["verification"] == {
+            "status": "gesichtet",
+            "reviewer": REVIEWER,
+            "date": DATE,
+        }
         runs = [r for r in page["runs"] if r["source"] == "human"]
         assert len(runs) == 1, "expected exactly one review run"
         run = runs[0]
         assert run["id"] == f"review:{DOC}-{PAGE}-{DATE}-{REVIEWER}"
         assert run["reviewer"] == REVIEWER and run["date"] == DATE
         base = next(r for r in page["runs"] if r["source"] == "transkribus")
-        assert [ln["id"] for ln in run["lines"]] == \
-            [ln["id"] for ln in base["lines"]], "run must carry the full page"
+        assert [ln["id"] for ln in run["lines"]] == [
+            ln["id"] for ln in base["lines"]
+        ], "run must carry the full page"
         corrected = {ln["id"]: ln["text"] for ln in run["lines"]}
         assert corrected["r2l1"] == "Auf dem klainen estrich"
         untouched = [ln for ln in base["lines"] if ln["id"] != "r2l1"]
@@ -93,8 +110,9 @@ def test_reapplying_the_same_review_changes_nothing() -> None:
         ar.ingest([path], pages_dir)
         once = (pages_dir / f"{DOC}.json").read_bytes()
         ar.ingest([path], pages_dir)
-        assert (pages_dir / f"{DOC}.json").read_bytes() == once, \
+        assert (pages_dir / f"{DOC}.json").read_bytes() == once, (
             "re-applying a review must be a no-op"
+        )
 
 
 def test_stale_review_is_refused() -> None:
@@ -110,8 +128,9 @@ def test_stale_review_is_refused() -> None:
             assert "veraltet" in str(exc), f"unexpected refusal: {exc}"
         else:
             raise AssertionError("stale review was applied")
-        assert (pages_dir / f"{DOC}.json").read_bytes() == before, \
+        assert (pages_dir / f"{DOC}.json").read_bytes() == before, (
             "register was touched by a refused review"
+        )
 
 
 def test_a_refused_file_blocks_the_whole_batch() -> None:
@@ -123,8 +142,7 @@ def test_a_refused_file_blocks_the_whole_batch() -> None:
         good = review_file(tmp, pages_dir)
         bad_dir = tmp / "bad"
         bad_dir.mkdir()
-        bad = review_file(bad_dir, pages_dir,
-                          original="something else entirely")
+        bad = review_file(bad_dir, pages_dir, original="something else entirely")
         before = (pages_dir / f"{DOC}.json").read_bytes()
         try:
             ar.ingest([good, bad], pages_dir)
@@ -132,8 +150,67 @@ def test_a_refused_file_blocks_the_whole_batch() -> None:
             pass
         else:
             raise AssertionError("stale file was accepted")
-        assert (pages_dir / f"{DOC}.json").read_bytes() == before, \
+        assert (pages_dir / f"{DOC}.json").read_bytes() == before, (
             "an earlier file of a refused batch was written"
+        )
+
+
+def test_one_stale_page_refuses_the_whole_file() -> None:
+    """Refusal is per file, not per page. The valid page of the same export is
+    not written either, so a rerun after the fix has nothing to unpick."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        path = tmp / f"review-{DOC}.json"
+        path.write_text(
+            json.dumps(
+                {
+                    "docId": DOC,
+                    "reviewer": REVIEWER,
+                    "pages": {
+                        str(PAGE): {
+                            "status": "gesichtet",
+                            "date": DATE,
+                            "lines": [
+                                {
+                                    "id": "r2l1",
+                                    "original": _base_text(pages_dir, "r2l1"),
+                                    "corrected": "Auf dem klainen estrich",
+                                }
+                            ],
+                        },
+                        "3": {
+                            "status": "abgenommen",
+                            "date": DATE,
+                            "lines": [
+                                {
+                                    "id": "r1l1",
+                                    "original": "eine ueberholte Lesung",
+                                    "corrected": "[fol. 2r]",
+                                }
+                            ],
+                        },
+                    },
+                    "exported": f"{DATE}T10:15:00Z",
+                    "source": "docta-viewer",
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        before = (pages_dir / f"{DOC}.json").read_bytes()
+        try:
+            ar.ingest([path], pages_dir)
+        except ar.ReviewError as exc:
+            assert "Seite 3" in str(exc) and "veraltet" in str(exc), (
+                f"unexpected refusal: {exc}"
+            )
+        else:
+            raise AssertionError("a stale page was applied")
+        assert (pages_dir / f"{DOC}.json").read_bytes() == before, (
+            "the valid page of a refused file was written"
+        )
+        assert _page(pages_dir)["verification"] == {"status": "unbearbeitet"}
 
 
 def test_a_later_review_builds_on_the_earlier_one() -> None:
@@ -145,11 +222,13 @@ def test_a_later_review_builds_on_the_earlier_one() -> None:
         payload = json.loads((tmp / f"review-{DOC}.json").read_text("utf-8"))
         payload["pages"][str(PAGE)]["date"] = "2026-09-04"
         payload["pages"][str(PAGE)]["lines"] = [
-            {"id": "r2l1", "original": "Auf dem klainen estrich",
-             "corrected": "Auf dem klainen Estrich"},
+            {
+                "id": "r2l1",
+                "original": "Auf dem klainen estrich",
+                "corrected": "Auf dem klainen Estrich",
+            },
         ]
-        second.write_text(json.dumps(payload, ensure_ascii=False),
-                          encoding="utf-8")
+        second.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
         ar.ingest([second], pages_dir)
         runs = [r for r in _page(pages_dir)["runs"] if r["source"] == "human"]
         assert len(runs) == 2, "a second review is a second run"
@@ -162,12 +241,20 @@ def test_review_without_corrections_records_only_the_verification() -> None:
         tmp = Path(td)
         pages_dir = _register(tmp)
         path = tmp / "plain.json"
-        path.write_text(json.dumps({
-            "docId": DOC, "reviewer": REVIEWER,
-            "pages": {str(PAGE): {"status": "abgenommen", "date": DATE,
-                                  "lines": []}},
-            "exported": f"{DATE}T10:15:00Z", "source": "docta-viewer",
-        }), encoding="utf-8")
+        path.write_text(
+            json.dumps(
+                {
+                    "docId": DOC,
+                    "reviewer": REVIEWER,
+                    "pages": {
+                        str(PAGE): {"status": "abgenommen", "date": DATE, "lines": []}
+                    },
+                    "exported": f"{DATE}T10:15:00Z",
+                    "source": "docta-viewer",
+                }
+            ),
+            encoding="utf-8",
+        )
         ar.ingest([path], pages_dir)
         page = _page(pages_dir)
         assert page["verification"]["status"] == "abgenommen"
@@ -176,11 +263,19 @@ def test_review_without_corrections_records_only_the_verification() -> None:
 
 def test_contract_violations_are_refused() -> None:
     """Every field of the export contract is checked before anything is written."""
-    good = {"docId": DOC, "reviewer": REVIEWER,
-            "pages": {str(PAGE): {"status": "gesichtet", "date": DATE,
-                                  "lines": [{"id": "r2l1", "original": "a",
-                                             "corrected": "b"}]}},
-            "exported": f"{DATE}T10:15:00Z", "source": "docta-viewer"}
+    good = {
+        "docId": DOC,
+        "reviewer": REVIEWER,
+        "pages": {
+            str(PAGE): {
+                "status": "gesichtet",
+                "date": DATE,
+                "lines": [{"id": "r2l1", "original": "a", "corrected": "b"}],
+            }
+        },
+        "exported": f"{DATE}T10:15:00Z",
+        "source": "docta-viewer",
+    }
     ar.validate(good, "fixture")  # the fixture itself must pass
 
     def broken(**changes: object) -> dict:
@@ -197,9 +292,17 @@ def test_contract_violations_are_refused() -> None:
         broken(pages={str(PAGE): {**page, "date": "03.09.2026"}}),
         broken(pages={str(PAGE): {**page, "lines": "none"}}),
         broken(pages={str(PAGE): {**page, "lines": [{"id": "r2l1"}]}}),
-        broken(pages={str(PAGE): {**page, "lines": [
-            {"id": "r2l1", "original": "a", "corrected": "b"},
-            {"id": "r2l1", "original": "b", "corrected": "c"}]}}),
+        broken(
+            pages={
+                str(PAGE): {
+                    **page,
+                    "lines": [
+                        {"id": "r2l1", "original": "a", "corrected": "b"},
+                        {"id": "r2l1", "original": "b", "corrected": "c"},
+                    ],
+                }
+            }
+        ),
     ]
     for case in cases:
         try:

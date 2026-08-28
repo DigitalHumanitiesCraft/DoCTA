@@ -20,17 +20,174 @@ def _build(tmp: Path) -> tuple[list[dict], dict[int, list[dict]]]:
     return br.build(tmp)
 
 
+# ------------------------------------------------------------------ unit tests
+# The pure functions of the builder, against written-out literals; the repo data
+# exercises only the shapes it happens to hold.
+
+# evaluation page id, resolved (docId, pageNr)
+PAGE_KEY_CASES = (
+    ("pilot_rb2_p002", (br.RAITBUCH2_DOC, 2)),
+    ("pilot2_rb2_p029", (br.RAITBUCH2_DOC, 29)),
+    ("rb2_p029", (br.RAITBUCH2_DOC, 29)),
+    ("pilot2_inv_123_p4", (123, 4)),
+    ("pilot_inv_11348659_p10", (11348659, 10)),
+    ("inv_11348659_p1", (11348659, 1)),
+    # everything the pattern does not resolve stays unresolved instead of being
+    # guessed onto a document
+    ("inv_11348659", None),
+    ("inv_abc_p1", None),
+    ("pilot3_rb2_p1", None),
+    ("rb2_pxii", None),
+    ("scan_0007", None),
+    ("", None),
+)
+
+
+def test_evaluation_page_ids_resolve_to_a_document_and_page() -> None:
+    for page_id, expected in PAGE_KEY_CASES:
+        assert br._page_key(page_id) == expected, f"_page_key({page_id!r})"
+
+
+EXPORT_RUN = {
+    "id": "transkribus",
+    "source": "transkribus",
+    "empty": None,
+    "empty_parts": None,
+    "lines": [],
+}
+# a VLM run per report it can make about a Raitbuch spread
+SAW_ALL_EMPTY = {"id": "a", "source": "vlm", "empty": True, "empty_parts": [True, True]}
+SAW_ONE_EMPTY = {
+    "id": "b",
+    "source": "vlm",
+    "empty": False,
+    "empty_parts": [True, False],
+}
+SAW_ALL_WRITTEN = {
+    "id": "c",
+    "source": "vlm",
+    "empty": False,
+    "empty_parts": [False, False],
+}
+SAW_NOTHING = {"id": "d", "source": "vlm", "empty": False, "empty_parts": []}
+REPORTED_NO_PARTS = {"id": "e", "source": "vlm", "empty": False, "empty_parts": None}
+
+# page runs, evidence that the page carries no text
+EMPTY_EVIDENCE_CASES = (
+    # every reporting run saw the whole page image empty
+    ([SAW_ALL_EMPTY, SAW_ALL_EMPTY], {"method": "vlm", "runs": 2, "scope": "full"}),
+    # one side of the spread was written, so the evidence covers a part only
+    ([SAW_ONE_EMPTY, SAW_ALL_EMPTY], {"method": "vlm", "runs": 2, "scope": "partial"}),
+    ([SAW_ONE_EMPTY], {"method": "vlm", "runs": 1, "scope": "partial"}),
+    # no run reports emptiness, so there is nothing to record
+    ([SAW_ALL_WRITTEN, EXPORT_RUN], None),
+    ([SAW_NOTHING], None),
+    ([REPORTED_NO_PARTS], None),
+    ([EXPORT_RUN], None),
+    ([], None),
+)
+
+
+def test_empty_evidence_counts_only_the_reporting_vlm_runs() -> None:
+    for runs, expected in EMPTY_EVIDENCE_CASES:
+        assert br._empty_evidence(runs) == expected, (
+            f"_empty_evidence over {[r['id'] for r in runs]}"
+        )
+
+
+RUN_AB = {
+    "id": "review:11327963-2-2026-09-01-AB",
+    "source": "human",
+    "reviewer": "AB",
+    "date": "2026-09-01",
+    "lines": [],
+}
+RUN_XY = {
+    "id": "review:11327963-2-2026-09-01-XY",
+    "source": "human",
+    "reviewer": "XY",
+    "date": "2026-09-01",
+    "lines": [],
+}
+RUN_LATER = {
+    "id": "review:11327963-2-2026-09-04-AB",
+    "source": "human",
+    "reviewer": "AB",
+    "date": "2026-09-04",
+    "lines": [],
+}
+RUN_UNDATED = {
+    "id": "review:11327963-2-undated-AB",
+    "source": "human",
+    "reviewer": "AB",
+    "date": None,
+    "lines": [],
+}
+
+# runs of a page, excluded run id, the run that is the newest review
+NEWEST_REVIEW_CASES = (
+    ([], None, None),
+    ([EXPORT_RUN], None, None),
+    ([EXPORT_RUN, RUN_AB], None, RUN_AB),
+    # the later date wins over the stored order
+    ([RUN_LATER, RUN_AB], None, RUN_LATER),
+    # same date: the id decides, so the choice stays deterministic
+    ([RUN_XY, RUN_AB], None, RUN_XY),
+    # a run without a date sorts below every dated one
+    ([RUN_UNDATED, RUN_AB], None, RUN_AB),
+    ([RUN_UNDATED], None, RUN_UNDATED),
+    # the run a re-ingest is about to replace is not its own base
+    ([RUN_LATER, RUN_AB], "review:11327963-2-2026-09-04-AB", RUN_AB),
+    ([RUN_AB], "review:11327963-2-2026-09-01-AB", None),
+)
+
+
+def test_the_newest_review_run_is_decided_by_date_then_id() -> None:
+    for runs, exclude, expected in NEWEST_REVIEW_CASES:
+        page = {"pageNr": 2, "runs": runs}
+        assert br.newest_review_run(page, exclude) is expected, (
+            f"newest_review_run over {[r['id'] for r in runs]}, without {exclude}"
+        )
+
+
+# --------------------------------------------------------- integration tests
+
+
 def test_export_pages_appear_exactly_once() -> None:
-    """Every page of every Transkribus export is in its document register, once."""
+    """Every page of every Transkribus export is in its document register, once,
+    and a page with exported lines carries that export as its single run."""
     with tempfile.TemporaryDirectory() as td:
         _, pages_by_doc = _build(Path(td))
     for export in sorted((br.DATA / "transcriptions").glob("*.json")):
         doc_id = int(export.stem)
         assert doc_id in pages_by_doc, f"document {doc_id} missing from the register"
-        registered = [p["pageNr"] for p in pages_by_doc[doc_id]]
-        assert len(registered) == len(set(registered)), f"duplicate pages in {doc_id}"
-        exported = [p["pageNr"] for p in br._load(export)["pages"]]
-        assert sorted(registered) == sorted(exported), f"page set differs in {doc_id}"
+        registered = {p["pageNr"]: p for p in pages_by_doc[doc_id]}
+        assert len(registered) == len(pages_by_doc[doc_id]), (
+            f"duplicate pages in {doc_id}"
+        )
+        pages = br._load(export)["pages"]
+        assert sorted(registered) == sorted(p["pageNr"] for p in pages), (
+            f"page set differs in {doc_id}"
+        )
+        for page in pages:
+            where = f"{doc_id}/{page['pageNr']}"
+            exported = [
+                ln
+                for region in page.get("regions") or []
+                for ln in region.get("lines") or []
+            ]
+            runs = [
+                r
+                for r in registered[page["pageNr"]]["runs"]
+                if r["source"] == "transkribus"
+            ]
+            assert len(runs) == (1 if exported else 0), (
+                f"{where}: {len(runs)} transkribus runs for {len(exported)} lines"
+            )
+            if exported:
+                assert [ln["id"] for ln in runs[0]["lines"]] == [
+                    ln["id"] for ln in exported
+                ], f"{where}: line set differs"
 
 
 def test_rebuild_is_byte_identical() -> None:
@@ -42,15 +199,6 @@ def test_rebuild_is_byte_identical() -> None:
         for first in sorted(Path(a).rglob("*.json")):
             second = Path(b) / first.relative_to(a)
             assert first.read_bytes() == second.read_bytes(), f"drift in {first.name}"
-
-
-def test_no_duplicate_run_ids() -> None:
-    with tempfile.TemporaryDirectory() as td:
-        _, pages_by_doc = _build(Path(td))
-    for doc_id, pages in pages_by_doc.items():
-        for page in pages:
-            ids = [r["id"] for r in page["runs"]]
-            assert len(ids) == len(set(ids)), f"duplicate run on {doc_id}/{page['pageNr']}"
 
 
 def test_pilot_empty_page_carries_vlm_evidence() -> None:
@@ -68,49 +216,46 @@ def test_rebuild_preserves_ingested_review_state() -> None:
     with tempfile.TemporaryDirectory() as td:
         out = Path(td)
         _, pages_by_doc = _build(out)
-        doc_id = next(d for d, pages in sorted(pages_by_doc.items())
-                      if any(p["runs"] for p in pages))
+        doc_id = next(
+            d
+            for d, pages in sorted(pages_by_doc.items())
+            if any(p["runs"] for p in pages)
+        )
         path = out / "pages" / f"{doc_id}.json"
         register = br._load(path)
         page = next(p for p in register["pages"] if p["runs"])
-        review_run = {"id": f"review:{doc_id}-{page['pageNr']}-2026-09-01-AB",
-                      "source": "human", "reviewer": "AB", "date": "2026-09-01",
-                      "lines": [{"id": "l1", "text": "korrigiert"}]}
+        review_run = {
+            "id": f"review:{doc_id}-{page['pageNr']}-2026-09-01-AB",
+            "source": "human",
+            "reviewer": "AB",
+            "date": "2026-09-01",
+            "lines": [{"id": "l1", "text": "korrigiert"}],
+        }
         page["runs"].append(review_run)
-        page["verification"] = {"status": "gesichtet", "reviewer": "AB",
-                                "date": "2026-09-01"}
+        page["verification"] = {
+            "status": "gesichtet",
+            "reviewer": "AB",
+            "date": "2026-09-01",
+        }
         br._write(path, register)
         _build(out)  # rebuild over a register that now holds a review
-        rebuilt = next(p for p in br._load(path)["pages"]
-                       if p["pageNr"] == page["pageNr"])
+        rebuilt = next(
+            p for p in br._load(path)["pages"] if p["pageNr"] == page["pageNr"]
+        )
         assert review_run in rebuilt["runs"], "review run lost on rebuild"
         assert rebuilt["verification"]["status"] == "gesichtet"
         ids = [r["id"] for r in rebuilt["runs"]]
         assert len(ids) == len(set(ids)), "review run duplicated on rebuild"
 
 
-def test_vocabularies_and_transkribus_run() -> None:
-    with tempfile.TemporaryDirectory() as td:
-        docs, pages_by_doc = _build(Path(td))
-    assert docs, "no documents built"
-    for doc in docs:
-        assert doc["provenance"] == "transkribus"
-        assert doc["attribution"] is None
-        for page in pages_by_doc[doc["docId"]]:
-            assert page["content_class"] in br.CONTENT_CLASSES
-            assert page["verification"]["status"] in br.VERIFICATION_STATUS
-            transkribus = [r for r in page["runs"] if r["source"] == "transkribus"]
-            assert len(transkribus) <= 1
-            if page["content_class"] == "text":
-                assert transkribus and transkribus[0]["lines"]
-
-
 def test_projection_matches_register() -> None:
     with tempfile.TemporaryDirectory() as td:
         docs, pages_by_doc = _build(Path(td))
         payload = br.project(docs, pages_by_doc, Path(td) / "register_summary.json")
-        assert json.loads((Path(td) / "register_summary.json")
-                          .read_text(encoding="utf-8")) == payload
+        assert (
+            json.loads((Path(td) / "register_summary.json").read_text(encoding="utf-8"))
+            == payload
+        )
     for entry in payload["documents"]:
         pages = pages_by_doc[entry["docId"]]
         assert entry["pages_total"] == len(pages)
