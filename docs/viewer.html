@@ -97,7 +97,6 @@
             <button type="button" class="view-toggle__btn" id="btn-font-inc"
                     title="Larger text" aria-label="Larger text">A+</button>
           </div>
-          <span class="ent-key-group border rounded px-2 py-1" id="ent-legend-box" hidden></span>
           <span class="badge text-bg-warning" id="draft-badge" hidden>Unrevised draft</span>
           <a class="tei-download" id="tei-download" href="data/tei/" download hidden>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.75 7.25 8 10.5l3.25-3.25M2.5 13h11"/></svg>
@@ -311,13 +310,16 @@
         coverage,
         attribution,
       ].filter(Boolean);
-      el.innerHTML = parts.join('');
+      // The entity key sits in this strip beside the Text chip, so the two
+      // provenance layers read side by side. This supersedes the earlier
+      // review decision that boxed it into the toolbar: with its Entities
+      // label the key grew into the toolbar's longest item and forced the
+      // document selector onto a wrapped second line.
+      const legend = entityIndex
+        ? `<span class="doc-meta__entities">${entityLegend()}</span>`
+        : '';
+      el.innerHTML = parts.join('') + legend;
       el.hidden = false;
-      // The entity key lives in the toolbar between the text-size buttons and
-      // the document selector, boxed on its own as requested at review.
-      const legendBox = document.getElementById('ent-legend-box');
-      legendBox.innerHTML = entityIndex ? entityLegend() : '';
-      legendBox.hidden = !entityIndex;
     }
 
     function initOSD() {

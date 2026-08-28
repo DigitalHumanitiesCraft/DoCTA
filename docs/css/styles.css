@@ -345,11 +345,11 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   border-bottom: 1px solid var(--border-custom);
   font-size: var(--text-xs);
   display: flex;
-  /* The bar wraps rather than pushing view buttons out of sight when the
-     entity key and the document selector compete for width */
+  /* The bar wraps rather than pushing view buttons out of sight on narrow
+     panels; the wider column gap keeps the button groups readable */
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-2xs) var(--space-sm);
+  gap: var(--space-2xs) var(--space-md);
 }
 
 .viewer-panel__title {
@@ -382,6 +382,9 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   margin-left: auto;
   font-size: var(--text-xs);
 }
+
+/* Entity key at the right end of the meta strip, opposite the text chips */
+.doc-meta__entities { margin-left: auto; flex: 0 0 auto; }
 
 .viewer-tools,
 .viewer-pager {
