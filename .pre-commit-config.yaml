@@ -27,6 +27,16 @@ repos:
         pass_filenames: false
         always_run: true
 
+      # The fast suite runs on every commit. Its fixtures are data files as
+      # much as code, so a commit that touches no Python still has to pass it.
+      # The slow rebuild healthcheck stays its own hook below.
+      - id: pytest
+        name: pytest (fast suite)
+        entry: ./.venv/Scripts/python.exe -m pytest -q
+        language: system
+        pass_filenames: false
+        always_run: true
+
       - id: docta-healthcheck
         name: DoCTA pipeline healthcheck (both schemas, byte-identical rebuild)
         entry: ./.venv/Scripts/python.exe pipeline/check_pipeline.py

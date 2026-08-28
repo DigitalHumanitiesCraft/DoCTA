@@ -207,6 +207,16 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--conf-medium);
 }
 
+/* The machine-output marking, the same semantic as the partial chip and drawn
+   from the same token pair instead of Bootstrap's warning colour, which was the
+   one marker painted outside the project palette. Foreground on background is
+   5.2:1, so the badge text carries the statement on its own. */
+.badge-draft {
+  border: 1px solid var(--conf-medium);
+  background: var(--conf-medium-bg);
+  color: var(--conf-medium);
+}
+
 /* Deterministic pipeline output, no model and no human in the loop */
 .prov-chip--workflow {
   border-color: var(--ent-person);

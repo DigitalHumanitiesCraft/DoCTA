@@ -36,11 +36,47 @@ const server = http.createServer((req, res) => {
 // Page list from the file system, so a new page is covered without maintenance.
 const PAGES = fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).sort();
 
+// The deep links of the site are addresses in their own right. A view or a page
+// reached only through the URL is what a citation points at, and no plain page
+// load covers that. The document behind them comes from the data on disk, so a
+// changed corpus does not leave a dead id in the test.
+function linkTarget() {
+  const tei = fs.readdirSync(path.join(ROOT, 'data', 'tei'))
+    .filter(f => /^\d+\.xml$/.test(f)).map(f => f.slice(0, -4)).sort();
+  for (const id of tei) {
+    const file = path.join(ROOT, 'data', 'transcriptions', `${id}.json`);
+    if (!fs.existsSync(file)) continue;
+    const pages = JSON.parse(fs.readFileSync(file, 'utf8')).pages || [];
+    if (!pages.length) continue;
+    return { docId: id, pageNr: pages[Math.min(2, pages.length - 1)].pageNr };
+  }
+  return null;
+}
+
+// nonempty: a selector that has to match an element carrying content, so a view
+// that renders an empty shell counts as a finding rather than as a pass.
+const target = linkTarget();
+const DEEP_LINKS = [
+  ...(target ? [
+    { url: `viewer.html?doc=${target.docId}&view=tei`, nonempty: ['pre.tei-source'] },
+    { url: `viewer.html?doc=${target.docId}&page=${target.pageNr}`,
+      nonempty: ['.transcription__line'],
+      check: async p => (await p.locator('#page-input').inputValue()) === String(target.pageNr)
+        ? [] : ['the pager does not stand on the linked page'] },
+  ] : []),
+  ...['register', 'network', 'entities'].map(view => ({
+    url: `exploration.html?view=${view}`,
+    nonempty: [`#tab-${view}[aria-selected="true"]`, `#panel-${view}`],
+  })),
+];
+
+const TARGETS = [...PAGES.map(url => ({ url })), ...DEEP_LINKS];
+
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
 const browser = await chromium.launch();
 const report = {};
 
-for (const page of PAGES) {
+for (const { url: page, nonempty = [], check } of TARGETS) {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const p = await ctx.newPage();
   const errors = [], warnings = [], failed = [], slow = [];
@@ -75,8 +111,21 @@ for (const page of PAGES) {
   const textLen = await p.evaluate(() => document.body.innerText.trim().length).catch(() => 0);
   const title = await p.title().catch(() => '');
 
+  // What the address promised has to be on the page. An element that is only a
+  // shell, with neither text nor a child, does not count as rendered.
+  const missing = [];
+  for (const sel of nonempty) {
+    const filled = await p.waitForSelector(sel, { timeout: 8000 })
+      .then(el => el.evaluate(e => e.childElementCount > 0 || e.innerText.trim().length > 0))
+      .catch(() => null);
+    if (filled === null) missing.push(`${sel} is absent`);
+    else if (!filled) missing.push(`${sel} rendered empty`);
+  }
+  if (check) missing.push(...await check(p).catch(e => [String(e).slice(0, 120)]));
+
   report[page] = { loadMs, title, textLen, errors, warnings: warnings.slice(0, 5),
-                   failed: [...new Set(failed)], links: [...new Set(links)], imgNoAlt, imgTotal };
+                   failed: [...new Set(failed)], links: [...new Set(links)], imgNoAlt, imgTotal,
+                   missing };
   await ctx.close();
 }
 
@@ -95,8 +144,11 @@ console.log(JSON.stringify(report, null, 1));
 // Per-document data is optional: a missing file is the normal case and is caught
 // in the client, so it does not decide the result.
 const OPTIONAL = /\/data\/entities\/|\/data\/tei\//;
+// The length of the rendered text is a gate. A page that renders nothing is
+// broken even when it threw no error.
 const blocking = Object.entries(report).filter(([, r]) =>
-  r.errors.length || r.deadLinks.length || r.failed.some(f => !OPTIONAL.test(f)));
+  r.errors.length || r.deadLinks.length || r.missing.length || !r.textLen ||
+  r.failed.some(f => !OPTIONAL.test(f)));
 if (blocking.length) {
   console.error('FAIL: ' + blocking.map(([pg]) => pg).join(', '));
   process.exitCode = 1;

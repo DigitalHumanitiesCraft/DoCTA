@@ -1,0 +1,41 @@
+# The Python gates of the repository, run on a clean machine. The pre-commit
+# config cannot serve as the CI entry point, because its hooks call the Windows
+# venv by path, so CI invokes the same tools directly. The pipeline scripts
+# anchor their paths at their own file location and read no clock, which is what
+# makes the byte-identical rebuild comparable across operating systems.
+#
+# The Playwright suites under tests/ are deliberately absent. They would add a
+# browser download to every run, and they are gated locally before a push.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Format
+        run: uv run ruff format --check .
+
+      - name: Tests
+        run: uv run pytest -q
+
+      - name: Clean-rebuild healthcheck
+        run: uv run pytest -q -m slow
+
+      - name: Cross-artifact healthcheck
+        run: uv run python pipeline/check_pipeline.py

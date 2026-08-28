@@ -58,7 +58,10 @@ function renderRun(rec) {
 
 function renderGT() {
   const gt = page().gt_lines || [];
-  return `<div class="provenance">Transkribus-Referenz (Status DONE)</div>` +
+  // Die Referenz stammt vom Inventaria-Projekt; wo sie angezeigt oder gemessen
+  // wird, steht die Zuschreibung dabei, Transkribus ist nur die Plattform.
+  return `<div class="provenance">Inventaria-Referenz ` +
+    `(Univ. Salzburg/Innsbruck), Status DONE in Transkribus</div>` +
     `<ol>${gt.map((t) => renderLine({ text: t })).join("")}</ol>`;
 }
 
