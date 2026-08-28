@@ -57,7 +57,7 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON, loadEntities } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML, escapeAttr, debounce } from './js/utils.js';
+    import { getParams, setParams, escapeHTML, escapeAttr, debounce, ICON_AI, ICON_UNVERIFIED } from './js/utils.js';
     import { createNetworkView } from './js/network.js';
 
     initNav('exploration');
@@ -376,7 +376,12 @@
         provenance = data && PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
         rows = data ? data.entities : [];
         const reg = regByDocId.get(Number(docId));
-        const model = data?.model ? ` (${escapeHTML(data.model)}, not verified)` : '';
+        // Same iconography as the viewer's entity legend: sparkle for the
+        // model, dashed circle for the missing scholarly verification.
+        const model = data?.model
+          ? ` <span class="ent-key ent-key--prov">${ICON_AI}${escapeHTML(data.model)}</span>` +
+            `<span class="ent-key ent-key--prov">${ICON_UNVERIFIED}not verified</span>`
+          : '';
         const textBasis = reg?.transcription_by === 'Inventaria'
           ? `<a href="${escapeAttr(reg.edition_url || 'https://www.inventaria.at/')}" target="_blank"` +
             ` rel="noopener" title="Opens the published edition on Transkribus Sites">` +

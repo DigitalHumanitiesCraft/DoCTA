@@ -115,3 +115,16 @@ export function catLabel(kategorie) {
 export function formatCount(n) {
   return n == null ? '–' : n.toLocaleString('en-GB');
 }
+
+/* Shared provenance icons: a sparkle for a model product, a dashed circle for
+   missing scholarly verification. One definition, used by every page that
+   states machine provenance, so the iconography cannot drift. */
+export const ICON_AI =
+  '<svg class="meta-ico" viewBox="0 0 16 16" fill="currentColor"' +
+  ' aria-hidden="true"><path d="M8 1.8 9.3 5.2 12.7 6.5 9.3 7.8 8 11.2' +
+  ' 6.7 7.8 3.3 6.5 6.7 5.2z"/><path d="m12.9 10.2.7 1.9 1.9.7-1.9.7' +
+  '-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg>';
+export const ICON_UNVERIFIED =
+  '<svg class="meta-ico" viewBox="0 0 16 16" fill="none"' +
+  ' stroke="currentColor" stroke-width="1.5" aria-hidden="true">' +
+  '<circle cx="8" cy="8" r="6.2" stroke-dasharray="2.6 2.1"/></svg>';

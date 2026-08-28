@@ -148,7 +148,7 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON, loadEntities, DEMO_DOC_ID } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML, escapeAttr, catLabel } from './js/utils.js';
+    import { getParams, setParams, escapeHTML, escapeAttr, catLabel, ICON_AI, ICON_UNVERIFIED } from './js/utils.js';
 
     initNav('viewer');
     initBanner();
@@ -884,19 +884,6 @@
                ` aria-label="${escapeAttr(entityTipText(ent))}">${match}</span>`;
       });
     }
-
-    // Inline SVG icons for the provenance of the marks: a sparkle for the model
-    // product, a dashed circle for the missing verification. Stroke style and
-    // size follow the other meta icons.
-    const ICON_AI =
-      '<svg class="meta-ico" viewBox="0 0 16 16" fill="currentColor"' +
-      ' aria-hidden="true"><path d="M8 1.8 9.3 5.2 12.7 6.5 9.3 7.8 8 11.2' +
-      ' 6.7 7.8 3.3 6.5 6.7 5.2z"/><path d="m12.9 10.2.7 1.9 1.9.7-1.9.7' +
-      '-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg>';
-    const ICON_UNVERIFIED =
-      '<svg class="meta-ico" viewBox="0 0 16 16" fill="none"' +
-      ' stroke="currentColor" stroke-width="1.5" aria-hidden="true">' +
-      '<circle cx="8" cy="8" r="6.2" stroke-dasharray="2.6 2.1"/></svg>';
 
     // Entity key for the doc-meta strip: one colour dot per type present, then
     // the provenance with the model named. Sits beside the category and
