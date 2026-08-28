@@ -172,7 +172,10 @@
 
     function renderList(sources) {
       const list = document.getElementById('sources-list');
-      document.getElementById('result-count').textContent = `${num(sources.length)} sources`;
+      // Unfiltered, the All chip already carries the total; the counter only
+      // speaks when a search or filter narrows the list.
+      document.getElementById('result-count').textContent =
+        sources.length === allSources.length ? '' : `${num(sources.length)} of ${num(allSources.length)} sources`;
 
       if (sources.length === 0) {
         list.innerHTML = '<li class="src-empty text-body-secondary">No sources found</li>';
