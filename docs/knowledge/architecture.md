@@ -134,8 +134,13 @@ DoCTA/
 │   │   ├── app.js          Navigation, banner, footer
 │   │   ├── benchmark.js    Benchmark tables from data/benchmark/summary.json
 │   │   ├── data-loader.js  Fetch JSON, IndexedDB cache
+│   │   ├── entity-view.js  Attestation links and provenance badges, shared by
+│   │   │                   viewer, network and register
 │   │   ├── network.js      D3 force network over data/graph.jsonld
-│   │   └── utils.js        Formatting, sorting, escaping
+│   │   ├── utils.js        Formatting, sorting, escaping, localStorage
+│   │   ├── viewer-render.js  Transcription, reading text, TEI, entity marks
+│   │   └── viewer-review.js  Curation view: stored decisions, line editor,
+│   │                       the JSON export apply_review.py ingests
 │   ├── data/               Pre-processed JSON, git-tracked
 │   │   ├── benchmark/      Published export of the prompt benchmark, the summary
 │   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
@@ -164,7 +169,9 @@ DoCTA/
 └── tests/                  Smoke and interaction tests against the published site
 ```
 
-The module layout departs from the original plan. One module per page was planned (`network-view.js`, `search-engine.js`, `source-table.js`, `document-viewer.js`, `pipeline-demo.js`). What was built is different. Page-specific JavaScript sits as `<script type="module">` directly in its HTML file, and `js/` holds only what several pages share. Without a build process each module costs an additional HTTP request, and the code of one page is used by no other. Reading one file is enough to understand one page.
+The module layout departs from the original plan, and it has moved twice. One module per page was planned (`network-view.js`, `search-engine.js`, `source-table.js`, `document-viewer.js`, `pipeline-demo.js`). What was built first was the opposite rule, page-specific JavaScript as `<script type="module">` directly in its HTML file, with `js/` holding only what several pages share. The reason was the missing build step, since each module costs an additional HTTP request while the code of one page is used by no other.
+
+That reason stopped deciding on 28.08.2026. The viewer's inline script had become the largest body of front-end code in the repository, past the point where reading one file explains one page, and inline code is code that no linter reads and no test can import. The rule since then splits by weight. Small page wiring stays inline, meaning the collection of DOM handles, the listeners of a page's own controls, and the orchestration that holds the page state. Substantial view logic lives in a module under `js/`, meaning whatever builds markup from data, carries a contract with the pipeline, or is worth a test of its own. `viewer.html` accordingly keeps the OpenSeadragon wiring, the line overlay, the pager and the URL state, while its transcription rendering sits in `js/viewer-render.js` and its curation view in `js/viewer-review.js`; that module takes the DOM handles of the review bar and a context callback from the page and holds no page state itself. `js/entity-view.js` holds what the viewer, the network and the register say alike about an entity record, its attestation links and its machine provenance. The handful of additional requests is accepted for this.
 
 The planned folder `images/` for sample facsimiles does not exist either. Facsimiles load at runtime from the Transkribus IIIF URLs, and no image material lives in the repository.
 

@@ -11,6 +11,7 @@
  */
 
 import { escapeHTML, escapeAttr } from './utils.js';
+import { shortDoc, documentIndex, attestationList } from './entity-view.js';
 
 const TYPES = [
   { key: 'person', rdf: 'docta:Person', label: 'Person', token: '--ent-person' },
@@ -45,11 +46,6 @@ function partition(graph) {
   }
   docs.sort((a, b) => String(a.label).localeCompare(String(b.label), 'de'));
   return { docs, entities, coocs };
-}
-
-/** Short name of a document for the dense parts of the detail card. */
-function shortDoc(label) {
-  return String(label || '').split(',')[0].trim();
 }
 
 /**
@@ -205,18 +201,10 @@ function provenanceHTML(graph, docIds, bases = []) {
     '</div>';
 }
 
-/** One attestation as a link into the viewer; the line stays plain text. */
-function attestationsHTML(atts, docLabel) {
-  return '<ul class="net-att">' + atts.map(a => {
-    const href = `viewer.html?doc=${encodeURIComponent(a.docId)}&page=${encodeURIComponent(a.page)}`;
-    const title = `Open ${docLabel(a.docId)}, page ${a.page} in the viewer`;
-    const meta = [a.line ? `line ${a.line}` : '', a.form ? `“${a.form}”` : '']
-      .filter(Boolean).join(' · ');
-    return `<li><a class="exp-attest__link" href="${escapeAttr(href)}" ` +
-      `title="${escapeAttr(title)}">${escapeHTML(shortDoc(docLabel(a.docId)))} p. ${escapeHTML(String(a.page))}</a>` +
-      (meta ? ` <span class="net-att__meta">${escapeHTML(meta)}</span>` : '') + '</li>';
-  }).join('') + '</ul>';
-}
+/* The detail card has room beside the link, so the line and the attested
+   form stand there as visible meta text rather than in the link title. */
+const attestationsHTML = (atts, docLabel) =>
+  attestationList(atts, docLabel, { className: 'net-att', detail: 'meta' });
 
 /**
  * Build the network view into `panel` with its controls in `controls`.
@@ -227,8 +215,7 @@ function attestationsHTML(atts, docLabel) {
  */
 export function createNetworkView(panel, controls, graph) {
   const { docs, entities, coocs } = partition(graph);
-  const docById = new Map(docs.map(d => [d.transkribusDocId, d]));
-  const docLabel = id => docById.get(Number(id))?.label || `Document ${id}`;
+  const { byId: docById, label: docLabel } = documentIndex(docs);
   /* The transcriptions the extraction read are not this project's own work;
      the graph names their origin per document, the card repeats it. */
   const basisOf = docIds => [...new Set([...docIds]

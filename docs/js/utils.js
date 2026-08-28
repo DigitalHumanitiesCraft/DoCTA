@@ -116,9 +116,29 @@ export function formatCount(n) {
   return n == null ? '–' : n.toLocaleString('en-GB');
 }
 
+/**
+ * localStorage may be unavailable (private mode, blocked site data) or full; a
+ * view that uses it stays functional and simply carries no stored state.
+ * @param {string} key
+ * @returns {string|null}
+ */
+export function lsGet(key) {
+  try { return window.localStorage.getItem(key); } catch { return null; }
+}
+
+/**
+ * @param {string} key
+ * @param {string} value
+ * @returns {boolean} false when the value could not be stored
+ */
+export function lsSet(key, value) {
+  try { window.localStorage.setItem(key, value); return true; } catch { return false; }
+}
+
 /* Shared provenance icons: a sparkle for a model product, a dashed circle for
-   missing scholarly verification. One definition, used by every page that
-   states machine provenance, so the iconography cannot drift. */
+   missing scholarly verification. One definition, and the badge that pairs them
+   is assembled once in entity-view.js, so neither the iconography nor its
+   markup can drift between the pages that state machine provenance. */
 export const ICON_AI =
   '<svg class="meta-ico" viewBox="0 0 16 16" fill="currentColor"' +
   ' aria-hidden="true"><path d="M8 1.8 9.3 5.2 12.7 6.5 9.3 7.8 8 11.2' +

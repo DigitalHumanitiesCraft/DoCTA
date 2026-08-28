@@ -50,8 +50,10 @@
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON, loadEntities } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML, escapeAttr, debounce, ICON_AI, ICON_UNVERIFIED } from './js/utils.js';
+    import { getParams, setParams, escapeHTML, escapeAttr, debounce } from './js/utils.js';
     import { createNetworkView } from './js/network.js';
+    import { documentIndex, attestationList, attestationLink, viewerHref,
+             provenanceBadges } from './js/entity-view.js';
 
     initNav('exploration');
     initBanner();
@@ -223,22 +225,22 @@
       let rows = [];
       let query = '';
 
-      const pageHref = pageNr =>
-        `viewer.html?doc=${encodeURIComponent(srcDocId)}&amp;page=${pageNr}`;
+      const pageHref = pageNr => viewerHref(srcDocId, pageNr);
 
       const pageTitle = o => (o.lineId
         ? `Open page ${o.pageNr} in the viewer, line ${o.lineId}`
         : `Open page ${o.pageNr} in the viewer`);
 
-      // Every attestation links back to the page it was read on. Without the
-      // line the same markup serves as the one value above the table, where a
-      // line of the first record would be a false statement about all of them.
+      // Every attestation links back to the page it was read on. The table sits
+      // on one source, so the link names the page alone. Without the line the
+      // same markup serves as the one value above the table, where a line of
+      // the first record would be a false statement about all of them.
       function attestCell(r, withLine = true) {
         if (!r.occurrences.length) return '';
-        const links = r.occurrences.map(o =>
-          `<a class="exp-attest__link" href="${pageHref(o.pageNr)}" ` +
-          `title="${escapeAttr(withLine ? pageTitle(o) : `Open page ${o.pageNr} in the viewer`)}">` +
-          `p.&nbsp;${o.pageNr}</a>`).join('');
+        const links = r.occurrences.map(o => attestationLink(
+          pageHref(o.pageNr),
+          withLine ? pageTitle(o) : `Open page ${o.pageNr} in the viewer`,
+          `p.&nbsp;${o.pageNr}`)).join('');
         const count = r.count !== null && r.count > r.occurrences.length
           ? `<span class="exp-attest__count">${r.count}×</span>`
           : '';
@@ -251,7 +253,7 @@
         const form = `<span class="exp-src">${escapeHTML(r.text)}</span>`;
         const o = r.occurrences[0];
         if (!o) return form;
-        return `<a class="exp-rowlink" href="${pageHref(o.pageNr)}" ` +
+        return `<a class="exp-rowlink" href="${escapeAttr(pageHref(o.pageNr))}" ` +
                `title="${escapeAttr(pageTitle(o))}">${form}</a>`;
       }
 
@@ -380,12 +382,8 @@
         provenance = data && PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
         rows = data ? data.entities : [];
         const reg = regByDocId.get(Number(docId));
-        // Same iconography as the viewer's entity legend: sparkle for the
-        // model, dashed circle for the missing scholarly verification.
-        const model = data?.model
-          ? ` <span class="ent-key ent-key--prov">${ICON_AI}${escapeHTML(data.model)}</span>` +
-            `<span class="ent-key ent-key--prov">${ICON_UNVERIFIED}not verified</span>`
-          : '';
+        // The extraction records one model for all its records, or none at all
+        const model = data?.model ? ` ${provenanceBadges(data.model)}` : '';
         const textBasis = reg?.transcription_by === 'Inventaria'
           ? `<a href="${escapeAttr(reg.edition_url || 'https://www.inventaria.at/')}" target="_blank"` +
             ` rel="noopener" title="Opens the published edition on Transkribus Sites">` +
@@ -441,12 +439,8 @@
     async function renderRegister(panel, controls) {
       const graph = await getGraph();
       const records = graph['@graph'] || [];
-      const docById = new Map(records
-        .filter(r => r['@type'] === 'docta:Document')
-        .map(d => [Number(d.transkribusDocId), d]));
-      const docLabel = id => docById.get(Number(id))?.label || `Document ${id}`;
-      // Place and year distinguish the sources; the shelfmark stays in the title
-      const shortDoc = label => String(label).split(',')[0].trim();
+      const { label: docLabel } = documentIndex(
+        records.filter(r => r['@type'] === 'docta:Document'));
 
       const byType = new Map(REG_TYPES.map(t => [t.key, []]));
       for (const r of records) {
@@ -494,9 +488,7 @@
       const live = panel.querySelector('#reg-live');
 
       /* Same statement as the entities view, made once for the whole register:
-         a model produced these entries and no scholar has verified them. The
-         icons are the shared ones, sparkle for the model, dashed circle for the
-         missing verification. */
+         a model produced these entries and no scholar has verified them. */
       const ident = Array.isArray(graph.provenance?.identification)
         ? graph.provenance.identification : [];
       const uniq = key => [...new Set(ident.map(e => e[key]).filter(Boolean))];
@@ -505,10 +497,7 @@
       const dates = uniq('date').sort();
       const dateSpan = dates.length > 1 ? `${dates[0]}–${dates[dates.length - 1]}` : (dates[0] || '');
       basis.innerHTML = `Extraction ${provChip('llm')}` +
-        (models.length
-          ? ` <span class="ent-key ent-key--prov">${ICON_AI}${escapeHTML(models.join(', '))}</span>`
-          : '') +
-        `<span class="ent-key ent-key--prov">${ICON_UNVERIFIED}not verified</span>` +
+        (models.length ? ' ' : '') + provenanceBadges(models.join(', ')) +
         (prompts.length
           ? ` &middot; Prompt ${escapeHTML(prompts.join(', '))}${dateSpan ? `, ${escapeHTML(dateSpan)}` : ''}`
           : '') +
@@ -564,18 +553,9 @@
       // Every attestation keeps the route back to the facsimile; the line the
       // form was read in is named in the link title, where it does not crowd
       // the list of pages.
-      function attHTML(e) {
-        if (!e.atts.length) return '';
-        return '<ul class="reg-att">' + e.atts.map(a => {
-          const href = `viewer.html?doc=${encodeURIComponent(a.docId)}&page=${encodeURIComponent(a.page)}`;
-          const where = `${docLabel(a.docId)}, page ${a.page}`;
-          const title = `Open ${where} in the viewer` +
-            (a.line ? `, line ${a.line}` : '') + (a.form ? `, “${a.form}”` : '');
-          return `<li><a class="exp-attest__link" href="${escapeAttr(href)}" ` +
-            `title="${escapeAttr(title)}">${escapeHTML(shortDoc(docLabel(a.docId)))} ` +
-            `p.&nbsp;${escapeHTML(String(a.page))}</a></li>`;
-        }).join('') + '</ul>';
-      }
+      const attHTML = e => (e.atts.length
+        ? attestationList(e.atts, docLabel, { className: 'reg-att', detail: 'title' })
+        : '');
 
       function entryHTML(e) {
         const forms = e.forms.length
