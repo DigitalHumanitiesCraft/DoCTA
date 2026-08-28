@@ -63,18 +63,19 @@
             <option value="3">Archive only</option>
           </select>
         </div>
-        <div class="col-md-2 text-md-end">
-          <span class="small text-body-secondary" id="result-count" role="status" aria-live="polite"></span>
-          <span class="stage-key" title="Pipeline stage of each source, filled when reached">Stages:
-            <span class="stage-key__item"><span class="stage-key__mark">F</span> facsimile</span>
-            <span class="stage-key__item"><span class="stage-key__mark">H</span> HTR text</span>
-            <span class="stage-key__item"><span class="stage-key__mark">T</span> TEI</span>
-            <span class="stage-key__item"><span class="stage-key__mark">E</span> edited</span></span>
-        </div>
       </div>
 
       <div class="chip-row mb-3" id="category-chips" role="group" aria-label="Filter by category"></div>
 
+      <div class="src-list-head">
+        <span id="result-count" role="status" aria-live="polite"></span>
+        <span class="stages" title="Pipeline stage of each source, filled when reached">
+          <span class="stage" title="facsimile">F<span class="visually-hidden"> facsimile</span></span>
+          <span class="stage" title="HTR text">H<span class="visually-hidden"> HTR text</span></span>
+          <span class="stage" title="TEI">T<span class="visually-hidden"> TEI</span></span>
+          <span class="stage" title="edited">E<span class="visually-hidden"> edited</span></span>
+        </span>
+      </div>
       <ul class="src-list" id="sources-list"></ul>
     </section>
 
@@ -268,8 +269,7 @@
     function renderChips(sources) {
       const counts = new Map();
       sources.forEach(s => counts.set(s.kategorie, (counts.get(s.kategorie) || 0) + 1));
-      // The All chip carries no count; the result-count line already shows it.
-      const chips = [{ value: '', label: 'All', n: null }].concat(
+      const chips = [{ value: '', label: 'All', n: sources.length }].concat(
         [...counts.keys()].sort((a, b) => catLabel(a).localeCompare(catLabel(b), 'en'))
           .map(k => ({ value: k, label: catLabel(k), n: counts.get(k) }))
       );
