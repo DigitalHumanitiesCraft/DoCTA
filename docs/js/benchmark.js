@@ -58,21 +58,27 @@ function kRange(entries) {
   return ks.length ? range(ks) : "–";
 }
 
+/* A lead smaller than this is not called better anywhere on the page: one CER
+ * point, or 0.05 of agreement, both well inside the scatter of repeated runs
+ * at temperature 0. The rule is stated for the reader in the details block. */
+const MIN_LEAD = { cer: 0.01, consistency: 0.05 };
+
 const MEASURES = [
-  { key: "cer_fair", label: "CER fair", scope: "reference pages", dir: -1, fmt: pct },
-  { key: "cer_strict", label: "CER strict", scope: "reference pages", dir: -1, fmt: pct },
-  { key: "words", label: "Word consistency", scope: "account book", dir: 1, fmt: two },
-  { key: "numbers", label: "Number consistency", scope: "account book", dir: 1, fmt: two },
+  { key: "cer_fair", label: "CER fair", scope: "reference pages", dir: -1, lead: MIN_LEAD.cer, fmt: pct },
+  { key: "cer_strict", label: "CER strict", scope: "reference pages", dir: -1, lead: MIN_LEAD.cer, fmt: pct },
+  { key: "words", label: "Word consistency", scope: "account book", dir: 1, lead: MIN_LEAD.consistency, fmt: two },
+  { key: "numbers", label: "Number consistency", scope: "account book", dir: 1, lead: MIN_LEAD.consistency, fmt: two },
 ];
 
 /* Index of the best value across iterations, -1 when nothing is comparable or
- * all iterations tie. Direction is per measure: CER down, agreement up. */
-function bestIndex(values, dir) {
+ * the lead over the runner-up stays inside the noise. Direction is per
+ * measure: CER down, agreement up. */
+function bestIndex(values, dir, lead = 0) {
   if (!dir) return -1;
-  const defined = values.filter((v) => v != null);
+  const defined = values.filter((v) => v != null).sort((a, b) => (dir < 0 ? a - b : b - a));
   if (defined.length < 2) return -1;
-  const target = dir < 0 ? Math.min(...defined) : Math.max(...defined);
-  if (defined.every((v) => v === target)) return -1;
+  const [target, runnerUp] = defined;
+  if (Math.abs(runnerUp - target) <= lead) return -1;
   return values.findIndex((v) => v === target);
 }
 
@@ -90,7 +96,7 @@ function renderAggregate(summary, its, excluded) {
     };
   });
   const best = Object.fromEntries(
-    MEASURES.map((m) => [m.key, bestIndex(stats.map((s) => s[m.key]), m.dir)])
+    MEASURES.map((m) => [m.key, bestIndex(stats.map((s) => s[m.key]), m.dir, m.lead)])
   );
 
   $("#agg-cards").innerHTML = stats.map((s, i) => {
@@ -98,7 +104,7 @@ function renderAggregate(summary, its, excluded) {
       const marker = best[m.key] === i
         ? ` <span class="badge text-bg-light border fw-normal">better</span>`
         : "";
-      return `<div class="d-flex justify-content-between align-items-baseline gap-3 border-top py-1">
+      return `<div class="d-flex justify-content-between align-items-baseline gap-3">
         <dt class="fw-normal text-body-secondary">${escapeHTML(m.label)}
           <span class="text-body-tertiary">· ${escapeHTML(m.scope)}</span></dt>
         <dd class="mb-0 text-end text-nowrap"><span class="tnum${best[m.key] === i ? " fw-bold" : ""}">${m.fmt(s[m.key])}</span>${marker}</dd>
@@ -107,15 +113,15 @@ function renderAggregate(summary, its, excluded) {
     return `<div class="col-12 col-md-6">
       <div class="border rounded p-3 h-100">
         <div class="fw-bold">${escapeHTML(s.it)}</div>
-        <div class="small text-body-secondary mb-2">${escapeHTML(ITERATION_NOTE[s.it] || "frozen prompt iteration")}</div>
-        <dl class="small mb-0">${rows}</dl>
+        <div class="small text-body-secondary mb-3">${escapeHTML(ITERATION_NOTE[s.it] || "frozen prompt iteration")}</div>
+        <dl class="small mb-0 d-grid gap-2">${rows}</dl>
       </div>
     </div>`;
   }).join("");
 
   renderExamples(summary, its);
   $("#agg-note").innerHTML = excluded.length
-    ? `Left out of these figures: ${excluded.map(pageLink).join(", ")} – the reference is nearly empty there, see the note above the table.`
+    ? `Excluded: ${excluded.map(pageLink).join(", ")} – reference nearly empty, see the table note.`
     : "";
 }
 
@@ -160,7 +166,7 @@ function metricHead(fixed, its, measures) {
 function metricCells(its, measures, cellFor, compare) {
   const cells = its.map((it) => measures.map((m) => cellFor(it, m)));
   const best = measures.map((m, i) =>
-    compare ? bestIndex(cells.map((c) => c[i].value), m.dir) : -1);
+    compare ? bestIndex(cells.map((c) => c[i].value), m.dir, m.lead) : -1);
   return its.map((_, ii) => measures.map((m, i) => {
     const c = cells[ii][i];
     const cls = `num${i === 0 ? " group-start" : ""}${best[i] === ii ? " fw-bold" : ""}`;
@@ -175,11 +181,11 @@ function renderRefTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => p.gt_lines);
   const measures = [
     {
-      key: "cer_fair", label: "CER fair", dir: -1,
+      key: "cer_fair", label: "CER fair", dir: -1, lead: MIN_LEAD.cer,
       title: "Character error rate against the human reference transcription from the Inventaria edition, after the documented normalization profile. Lower is better.",
     },
     {
-      key: "cer_strict", label: "CER strict", dir: -1,
+      key: "cer_strict", label: "CER strict", dir: -1, lead: MIN_LEAD.cer,
       title: "Character error rate against the same Inventaria reference on exact characters, without normalization. Lower is better.",
     },
   ];
@@ -207,21 +213,25 @@ function renderRefTable(summary, its) {
   $("#ref-table").innerHTML =
     `<caption class="visually-hidden">Character error rate per reference page and prompt iteration, mean over the repeated runs</caption>` +
     head + `<tbody>${body}</tbody>`;
-  $("#ref-note").textContent =
-    `${rows.length} pages with a human reference transcription · ` +
+  // The Inventaria attribution belongs on the same line as the scope of the
+  // table, because it says whose transcription the error rate is measured on.
+  $("#ref-note").innerHTML =
+    `${rows.length} pages · ` +
     `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration · ` +
-    `mean over those runs, the spread is in the cell tooltip.`;
+    `human references from the Inventaria project (Univ. Salzburg / Innsbruck), published at ` +
+    `<a href="https://www.inventaria.at/" target="_blank" rel="noopener">inventaria.at</a> · ` +
+    `spread in the cell tooltip`;
 }
 
 function renderConsTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => !p.gt_lines);
   const measures = [
     {
-      key: "consistency_words", label: "words", dir: 1,
+      key: "consistency_words", label: "words", dir: 1, lead: MIN_LEAD.consistency,
       title: "Position-wise agreement of word tokens between the repeated runs, 0 to 1. Higher is more stable, which is not the same as correct.",
     },
     {
-      key: "consistency_numbers", label: "numbers", dir: 1,
+      key: "consistency_numbers", label: "numbers", dir: 1, lead: MIN_LEAD.consistency,
       title: "The same agreement restricted to number and currency tokens, 0 to 1. Higher is more stable.",
     },
     {
