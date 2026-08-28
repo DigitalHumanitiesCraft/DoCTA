@@ -1172,6 +1172,9 @@
     // pageNr: 1-based start page. Omit to take it from the URL (deep link into a page).
     async function loadDocument(docId, pageNr) {
       try {
+        // Deep links arrive copy-pasted; a stray trailing dot or space in the
+        // doc parameter must not turn into a nonexistent file path.
+        docId = String(parseInt(docId, 10));
         // Entities are optional per document and are awaited with the text, so
         // the first render already carries the marks instead of racing them in
         // Where the text of this document lives: the Transkribus export, or the
