@@ -319,6 +319,10 @@ def project(docs: list[dict], pages_by_doc: dict[int, list[dict]],
             # matched document with text and an export on disk
             "has_tei": bool(doc["has_text"]) and
             (DATA / "transcriptions" / f"{doc['docId']}.json").exists(),
+            # lets the site skip the per-document entity probe; the demo
+            # fallback for the one hand-made extraction stays client-side
+            "has_entities":
+            (DATA / "entities" / f"{doc['docId']}.json").exists(),
         })
     payload = {"documents": summary}
     _write(out_path, payload)

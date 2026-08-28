@@ -17,18 +17,28 @@ let osd = null;
 
 const $ = (sel) => document.querySelector(sel);
 
+/* Escapes text and attribute values alike, so a quote in the data cannot break
+ * out of an attribute. */
 function esc(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* One alternation over all uncertain words, applied in a single pass, so
+ * inserted markup is never searched again. Longest first, or a longer word is
+ * cut short by a shorter one contained in it. */
+function markUncertain(text, words) {
+  const html = esc(text);
+  const keys = [...new Set((words || []).filter(Boolean).map((w) => esc(w)))]
+    .sort((a, b) => b.length - a.length);
+  if (!keys.length) return html;
+  const re = new RegExp(keys.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "g");
+  return html.replace(re, (m) => `<mark class="uncertain">${m}</mark>`);
 }
 
 /** Render a transcript line, marking uncertain words. */
 function renderLine(line) {
-  let html = esc(line.text || "");
-  for (const w of line.uncertain || []) {
-    if (!w) continue;
-    const escaped = esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    html = html.replace(new RegExp(escaped, "g"), `<mark class="uncertain">${esc(w)}</mark>`);
-  }
+  const html = markUncertain(line.text || "", line.uncertain);
   const kind = (line.kind || "entry").toLowerCase();
   return `<li class="kind-${esc(kind)}">${html}</li>`;
 }
@@ -134,6 +144,12 @@ function renderTabs(item) {
     b.addEventListener("click", () => selectTab(t.key));
     el.appendChild(b);
   }
+}
+
+/* Registered once on the tab strip, which outlives its buttons; registering it
+ * per render stacked one handler per page switch. */
+function initTabKeys() {
+  const el = $("#tabs");
   el.addEventListener("keydown", (e) => {
     const all = [...el.querySelectorAll("[role=tab]")];
     const i = all.findIndex((x) => x.dataset.key === state.tab);
@@ -179,6 +195,7 @@ function init() {
   sel.addEventListener("change", () => selectItem(sel.value));
   $("#prev").addEventListener("click", () => step(-1));
   $("#next").addEventListener("click", () => step(1));
+  initTabKeys();
 
   osd = OpenSeadragon({
     id: "osd",

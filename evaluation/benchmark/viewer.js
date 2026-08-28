@@ -10,8 +10,23 @@ let osd = null;
 
 const $ = (sel) => document.querySelector(sel);
 
+/* Escapes text and attribute values alike, so a quote in the data cannot break
+ * out of an attribute. */
 function esc(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* One alternation over all uncertain words, applied in a single pass, so
+ * inserted markup is never searched again. Longest first, or a longer word is
+ * cut short by a shorter one contained in it. */
+function markUncertain(text, words) {
+  const html = esc(text);
+  const keys = [...new Set((words || []).filter(Boolean).map((w) => esc(w)))]
+    .sort((a, b) => b.length - a.length);
+  if (!keys.length) return html;
+  const re = new RegExp(keys.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "g");
+  return html.replace(re, (m) => `<mark class="uncertain">${m}</mark>`);
 }
 
 function page() { return state.summary.pages[state.id]; }
@@ -19,12 +34,7 @@ function page() { return state.summary.pages[state.id]; }
 /* ---------- transcript rendering ---------- */
 
 function renderLine(line) {
-  let html = esc(line.text || "");
-  for (const w of line.uncertain || []) {
-    if (!w) continue;
-    const escaped = esc(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    html = html.replace(new RegExp(escaped, "g"), `<mark class="uncertain">${esc(w)}</mark>`);
-  }
+  let html = markUncertain(line.text || "", line.uncertain);
   if (line.amount && (line.amount.numeral || line.amount.unit)) {
     const a = line.amount;
     html += ` <span class="amount-tag">[${esc([a.multiplier, a.numeral, a.unit].filter(Boolean).join(" "))}]</span>`;
@@ -193,7 +203,14 @@ function step(delta) {
 }
 
 async function init() {
-  state.summary = await (await fetch("summary.json")).json();
+  try {
+    const res = await fetch("summary.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    state.summary = await res.json();
+  } catch (err) {
+    $("#metrics").textContent = `summary.json konnte nicht geladen werden: ${err.message}`;
+    return;
+  }
   state.ids = Object.keys(state.summary.pages);
   $("#generated").textContent = `Stand ${state.summary.generated} · ${state.summary.model}`;
   const sel = $("#item-select");

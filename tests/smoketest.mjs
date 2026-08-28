@@ -33,8 +33,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const PAGES = ['index.html', 'viewer.html', 'exploration.html',
-               'benchmark.html', 'knowledge.html', 'about.html'];
+// Seitenliste aus dem Dateisystem, damit eine neue Seite ohne Pflege mitgeprüft wird.
+const PAGES = fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).sort();
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
 const browser = await chromium.launch();
@@ -85,10 +85,20 @@ server.close();
 
 // Tote interne Links auflösen
 const exists = f => fs.existsSync(path.join(ROOT, f.split('#')[0].split('?')[0]));
-for (const [pg, r] of Object.entries(report)) {
+for (const [, r] of Object.entries(report)) {
   r.deadLinks = r.links.filter(h =>
     h && !/^(https?:|mailto:|#|javascript:)/.test(h) && !exists(h));
   delete r.links;
 }
 
 console.log(JSON.stringify(report, null, 1));
+
+// Optionale Daten pro Dokument: eine fehlende Datei ist der Normalfall und wird
+// im Client abgefangen, deshalb kippt sie das Ergebnis nicht.
+const OPTIONAL = /\/data\/entities\/|\/data\/tei\//;
+const blocking = Object.entries(report).filter(([, r]) =>
+  r.errors.length || r.deadLinks.length || r.failed.some(f => !OPTIONAL.test(f)));
+if (blocking.length) {
+  console.error('FAIL: ' + blocking.map(([pg]) => pg).join(', '));
+  process.exitCode = 1;
+}

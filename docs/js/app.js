@@ -20,8 +20,8 @@ export function initNav(activeId) {
   const nav = document.getElementById('main-nav');
   if (!nav) return;
 
-  // The sticky table header offsets by --nav-height; measure the real navbar
-  // instead of trusting the token's guess, or rows peek through the gap.
+  // --nav-height sizes the knowledge sidebar against the viewport; measure the
+  // real navbar instead of trusting the token's guess, or the column overshoots.
   const navbar = document.querySelector('.navbar');
   if (navbar && 'ResizeObserver' in window) {
     const setNavHeight = () =>
@@ -82,23 +82,4 @@ function initFooter(activeId) {
     <span class="footer-sep">·</span>
     <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>${about}
   </p>`;
-}
-
-/**
- * Show a loading indicator in a container.
- * @param {HTMLElement} container
- * @param {string} [message='Loading data...']
- */
-export function showLoading(container, message = 'Loading data...') {
-  container.innerHTML = `<div class="loading"><div class="loading__spinner"></div>${message}</div>`;
-}
-
-/**
- * Format a number with locale-aware separators.
- * @param {number} n
- * @returns {string}
- */
-export function formatNumber(n) {
-  if (n == null) return '–';
-  return n.toLocaleString('en-GB');
 }

@@ -4,7 +4,7 @@ The register is the data backbone of the agentic edition pipeline. It holds one 
 
 ## Layout
 
-`documents.json` is a list of document entries: `docId`, `shelfmark` (archival signature), `title`, `dating` (`raw`, `start`, `end`), `category`, `pages`, `tier`, `has_text`, `provenance` (currently always `transkribus`) and `attribution`, which stays `null` until the published edition list allows an attribution such as `inventaria`.
+`documents.json` is a list of document entries. Each carries `docId`, `shelfmark` (archival signature), `title`, `dating` (`raw`, `start`, `end`), `category`, `pages`, `tier`, `has_text`, `transkribus_statuses`, a count of pages per Transkribus page status, `done_pages`, how many of them carry the status DONE, `provenance` (currently always `transkribus`) and `attribution`, which stays `null` until the published edition list allows an attribution such as `inventaria`.
 
 `pages/<docId>.json` holds `docId` and a `pages` list. Each page entry carries `pageNr`, the `iiif` image URL where one is known, `content_class`, `empty_evidence`, `verification` and `runs`.
 
@@ -39,11 +39,13 @@ A page only reaches a class other than `unknown` on evidence. The Transkribus ex
 
 ## Runs
 
-A run is one transcription of one page from one source, and runs are immutable. A run is never edited or removed; a better transcription is a new run. Each run carries `id`, `source`, `date` and `lines`, a machine run additionally `model`, `prompt`, `prompt_hash`, `repeat`, `empty` and `empty_parts`, a review run additionally `reviewer`.
+A run is one transcription of one page from one source, and runs are immutable. A run is never edited or removed; a better transcription is a new run.
+
+Every run carries `id`, `source`, `date`, `lines` and the six model fields `model`, `prompt`, `prompt_hash`, `repeat`, `empty` and `empty_parts`, so a consumer reads one shape whatever the origin. The Transkribus run carries all six as `null`, because the export names no recognition model, was not produced by a repeat and reports no emptiness of its own. A review run additionally carries `reviewer`.
 
 `lines` is a list of `{"id", "text"}` objects in reading order. The id is the Transkribus layout line id where the run knows one and `null` where it does not, which is the case for every VLM run, since a vision model returns text without layout identity. The ids are what lets a review address a single line of a page.
 
-The run id encodes the origin and makes rebuilds stable. The Transkribus export is the single run `transkribus` on a page; a model run is `benchmark:<run file stem>` or `pilot:<run file stem>`, so its record in `evaluation/` remains the source of truth for everything the register does not repeat (image handling, duration, full structured output). `empty` is true only when the model reported every part of the page image empty; `empty_parts` lists the flag per image part in the order the run reported them, which for a Raitbuch spread means verso and recto.
+The run id encodes the origin and makes rebuilds stable. The Transkribus export is the single run `transkribus` on a page; a model run is `benchmark:<run file stem>`, `pilot:<run file stem>` or `pilot2:<run file stem>`, so its record in `evaluation/` remains the source of truth for everything the register does not repeat (image handling, duration, full structured output). `empty` is true only when the model reported every part of the page image empty; `empty_parts` lists the flag per image part in the order the run reported them, which for a Raitbuch spread means verso and recto.
 
 ## Review ingest
 
@@ -56,9 +58,11 @@ The browser viewer lets a reviewer read a page against its scan, mark it `gesich
  "exported": "2026-09-03T10:15:00Z", "source": "docta-viewer"}
 ```
 
-The status of a page becomes its `verification` together with the initials and the date. The corrections of a page become a new run `review:<docId>-<pageNr>-<date>-<reviewer>` with `source` `human`. That run carries the full line list of the page with the corrections applied, so it is readable on its own and the transcription it produced can be reconstructed without replaying a diff. Re-applying the same export replaces the run in place, which makes the ingest idempotent and lets a viewer export be re-sent without care.
+The status of a page becomes its `verification` together with the initials and the date. The corrections of a page become a new run `review:<docId>-<pageNr>-<date>-<reviewer>` with `source` `human`. That run carries the full line list of the page with the corrections applied, so it is readable on its own and the transcription it produced can be reconstructed without replaying a diff. Re-applying the newest export of a page replaces its run in place, which makes the ingest idempotent for that export. An older export of the same page is a different matter, because the corrections it reports were written against a base text that the newer export has since replaced; it fails the check on the reported original and is refused.
 
-A review is written against the base text it was made on, meaning the newest earlier review run of the page or, where none exists, the Transkribus run. Every corrected line must still carry its reported `original` in that base. Where it does not, the export was taken before another change, and the ingest refuses the whole file with a nonzero exit instead of overwriting work with a stale reading. The same refusal covers a line or a page the register does not know and every violation of the review specification above.
+A review is written against the base text it was made on, meaning the newest earlier review run of the page or, where none exists, the Transkribus run. Every corrected line must still carry its reported `original` in that base. Where it does not, the export was taken before another change, and the ingest refuses instead of overwriting work with a stale reading. The same refusal covers a line or a page the register does not know and every violation of the review specification above.
+
+Validation and writing are separate phases over the whole invocation. Every file passed to a run is validated first, and the register is written only when all of them pass. A single bad file therefore leaves the register untouched and the run exits nonzero, so a batch never lands half applied and a rerun after the fix has nothing to unpick. `--dry-run` stops after the validation phase and reports what would be written.
 
 A page marked reviewed without a single correction records the verification and no run, because there is no new transcription to record.
 
@@ -79,6 +83,8 @@ python test_build_register.py        # or: pytest pipeline/test_build_register.p
 
 The builder reads only files already in the repository and makes no network calls; Transkribus exports and evaluation runs are its input. It is deterministic, so a rebuild over an existing register reproduces the same bytes, which the test suite checks.
 
+The review state is the one thing the rebuild cannot derive from those inputs, since it was written by `apply_review.py` from a viewer export. The builder therefore reads the existing register before it writes and carries that state over, meaning every page whose `verification` differs from `unbearbeitet` together with the `review:` runs of that page. A rebuild after new Transkribus data leaves the reviewed pages as they stand and destroys no review.
+
 The projection at `docs/data/pipeline/register_summary.json` is the compact view for the site: per document the identity fields plus page counts by state, small enough to load in one fetch. It is generated output and never edited by hand.
 
 ## TEI baseline
@@ -97,11 +103,13 @@ The register is read from `pipeline/pages/` and can be pointed elsewhere with `-
 
 ### Structure
 
-The encoding is diplomatic and follows the page, the text region and the line. Each page opens with a `<pb>` whose `@facs` points at a `<surface>` in the `<facsimile>` section, and that surface carries the IIIF URL of the scan as a `<graphic>`. Images are referenced and never copied into the repository. Each text region of the export becomes one `<ab>` under that `<pb>`, carrying the region id of the layout analysis in `xml:id` as `ab-<docId>-<pageNr>-<regionId>`, so a block of the TEI and a block of the layout analysis stay addressable in both directions. Every transcribed line becomes an `<lb/>` followed by its text, so the line count of a TEI file equals the line count of the export, which the test suite checks. A line that consists only of a folio mark such as `[fol.3v]` is a reference point of the transcription rather than text of the source and becomes `<milestone unit="folio" n="3v"/>`.
+The encoding is diplomatic and follows the page, the text region and the line. Each page opens with a `<pb>` whose `@facs` points at a `<surface>` in the `<facsimile>` section, and that surface carries the IIIF URL of the scan as a `<graphic>`. Images are referenced and never copied into the repository. Each text region of the export becomes one `<ab>` under that `<pb>`, carrying the region id of the layout analysis in `xml:id` as `ab-<docId>-<pageNr>-<regionId>`, so a block of the TEI and a block of the layout analysis stay addressable in both directions. Every transcribed line becomes an `<lb/>` followed by its text, so the line count of a TEI file equals the line count of the export, which the test suite checks. A line that consists only of a folio mark such as `[fol.3v]` is a reference point of the transcription rather than text of the source and becomes `<milestone unit="folio" n="3v"/>`; a line marking a cover or pastedown becomes `<milestone unit="cover"/>` with the corresponding `@n`.
 
-Each line of the export also becomes a `<zone>` under the surface of its page, carrying the line polygon of the Transkribus layout analysis verbatim in `@points`, and the `<lb>` of that line points at the zone through `@facs`, so a text line and its image region are bound in both directions. Zones and `lb` are derived from the same iteration over the export, which is what keeps them in step; a line without coordinates gets no zone and its `lb` stays unbound rather than carrying a dangling reference. A folio milestone takes no `@facs`, because it marks a reference point of the transcription and not a read line.
+Each transcribed line of the export also becomes a `<zone>` under the surface of its page, carrying the line polygon of the Transkribus layout analysis verbatim in `@points`, and the `<lb>` of that line points at the zone through `@facs`, so a text line and its image region are bound in both directions. Zones and `lb` are derived from the same iteration over the export, which is what keeps them in step; a line without coordinates gets no zone and its `lb` stays unbound rather than carrying a dangling reference.
 
-An entity layer is read per document from `docs/data/entities/<docId>.json`, and the prototype extraction in `docs/data/demo/thaur_entities.json` serves the one document it names as long as no per-document file exists for it. Both sources carry the same schema and state the docId they belong to, so no document can pick a layer up by accident, and a document with neither file simply has no entity layer. The layer is encoded inline as `<persName>`, `<placeName>` and `<objectName>` with the normalised form in `@key`. A file with an entity layer declares a further responsibility, `resp-entity-llm`, which says in plain words that an LLM agent produced the extraction in the prototype phase and that no scholar has verified it; every marked entity points at that responsibility through `@resp`, and its `editorialDecl` repeats the state for a reader of the file. No certainty attribute is emitted anywhere, because the confidence value the extraction reports is a self-assessment of the extracting agent and not evidence about the source. An entity is encoded only where its position is deterministic, meaning it names the line it sits in and its surface form occurs in that line verbatim, case-sensitive, exactly once. An entity without a line reference, of a type the encoding does not cover, or whose form is absent or ambiguous in its line is left unencoded and reported per run with its reason, because placing it would assert a reading that was never established.
+A line that became a milestone gets no zone at all. Folio and cover marks are reference points the transcriber wrote into the text, so they carry no `@facs` and leave no surface region behind; emitting a zone for them would assert an image region for something the source does not hold. Zones therefore count the read lines of a page.
+
+An entity layer is read per document from `docs/data/entities/<docId>.json`, and the prototype extraction in `docs/data/demo/thaur_entities.json` serves the one document it names as long as no per-document file exists for it. Both sources carry the same schema and state the docId they belong to, so no document can pick a layer up by accident, and a document with neither file simply has no entity layer. The layer is encoded inline as `<persName>`, `<placeName>` and `<objectName>` with the normalised form in `@key`. A file with an entity layer declares a further responsibility, `resp-entity-llm`, which says in plain words that an LLM agent produced the extraction in the prototype phase and that no scholar has verified it; every marked entity points at that responsibility through `@resp`, and its `editorialDecl` repeats the state for a reader of the file. No certainty attribute is emitted anywhere, because the confidence value the extraction reports is a self-assessment of the extracting agent and not evidence about the source. An entity is encoded only where its position is deterministic, meaning it names the line it sits in and its surface form occurs in that line verbatim, case-sensitive, exactly once. An entity without a line reference, of a type the encoding does not cover, or whose form is absent or ambiguous in its line is left unencoded and reported per run with its reason, because placing it would assert a reading that was never established. Two entities whose spans overlap in the same line are the fourth such case. The encoding admits no nesting, so one of them is left out, and it appears in the same report with its reason instead of vanishing silently.
 
 Structure beyond the page and the region is not asserted. The body holds a single `<div type="transcription">` with `<pb>` and `<ab>` blocks, because the export gives no paragraph or section boundaries that an unread transcription could justify. The `<ab>` element avoids claiming a `<p>` the source has not been read for; a region type curated later can be added as an attribute on the block that already exists.
 
@@ -118,7 +126,7 @@ python test_build_tei.py             # or: pytest pipeline/test_build_tei.py
 
 ## Quality gates
 
-Two gates stand between the generators and a commit, and both are run before every commit.
+Two gates stand between the generators and a commit, the two-stage schema validation and the cross-artifact healthcheck. Both are wired into the pre-commit hook configured in `.pre-commit-config.yaml`, which is what actually runs them; `uv run pre-commit run --all-files` reproduces that run by hand. The healthcheck's clean rebuild is slow, so under pytest it sits behind the `slow` marker and runs with `uv run pytest -m slow` and in the hook, while the ordinary test run stays fast.
 
 ### The two schemas
 
@@ -133,6 +141,8 @@ python validate_tei.py --schema schema/docta.rng  # one schema only
 
 `check_pipeline.py` checks the cross-artifact specifications that no single pipeline script can verify on its own. It checks the register against the export and against its own vocabularies, the three document sets against each other, the entity files, review exports and evaluation runs against their data specifications, the provenance rules that keep a model's self-assessment out of the edition data, the resolution of every cross-reference, the value ranges of the evaluation summaries, both schema stages, and finally the generators against themselves by rebuilding register and TEI into a temporary directory and comparing byte for byte.
 
+That rebuild also answers the opposite question, which files the working tree holds that the rebuild no longer produces. A page file of a document that has left the collection, or a TEI file whose document lost its export, survives in the tree and is invisible to a comparison that only walks the freshly built side. Such orphans are reported by name, so a stale artifact is removed rather than published. For the TEI comparison the check takes the generation date from the files on disk instead of from a constant in its own source, so the two sides differ only where the content differs and a rebuild after a date change needs no edit to the check.
+
 A finding is FAIL or INFO and carries the id of the check that raised it. INFO is a fact worth seeing that is not a defect, such as a page whose reference transcription is degenerate, a repeat pair whose line counts diverge far enough to want a third run, or a document that sits in one set and not in another for a reason already settled in the data. Only FAIL decides the exit code.
 
 ```
@@ -140,6 +150,16 @@ python check_pipeline.py             # every check, exit 0 only when clean
 python check_pipeline.py --list      # the check ids
 python test_check_pipeline.py        # or: pytest pipeline/test_check_pipeline.py
 ```
+
+## The accounts module
+
+`accounts/` is the executable part of the account-book encoding specification. `docs/knowledge/ACCOUNTING-ENCODING.md` and `docs/knowledge/EDITORIAL-MODEL.md` are the specification; this module implements the part of it that a test can hold to, and it carries its own fixtures, schemas and tests.
+
+Implemented are four things. `anchors.py` reads PAGE XML into source anchors and lines. `models.py` holds the pydantic models `SourceAnchor`, `TranscriptionLine`, `TranscriptionRevision`, `AnnotationProposal` and `ReviewDecision` with the separate status axes of the editorial model, so verification, editorial decision, formal validation and publication stay four independent fields. `review.py` supplies `proposal_is_stale`, `stale_proposal_ids` and `make_review_decision`, which is the machinery that makes a proposal fall out of date when the text it points into changes. `validate_tei.py` and `validate_rdf.py` run the account-book artefacts against the project RELAX NG, the Schematron rules and the SHACL shapes in `accounts/schema/` and `accounts/shapes/`.
+
+The qualified line identity is the source, the document, the page, the region and the line, and the text digest is taken over that identity together with the text. The side of an opening, verso or recto, is derived from the page geometry and stays out of both. A derived value in an identifier would let a change in the geometry heuristic rename a line and invalidate every anchor pointing at it, which is exactly what the identity is supposed to prevent.
+
+Annotation Sets, the Edition Build Manifest and the generation steps of the deterministic build, from TEI generation through the byte-for-byte clean rebuild, remain prose specification in `ACCOUNTING-ENCODING.md`. A set hash and a manifest are testable only against the build that reads them, and that build does not exist yet; they enter the module with their first consumer.
 
 ## Known gaps in the input data
 

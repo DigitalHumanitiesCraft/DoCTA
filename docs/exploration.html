@@ -46,17 +46,26 @@
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0 footer-line"><span>DoCTA</span> <span class="footer-sep">·</span>
+      <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
+      <span class="footer-sep">·</span>
+      <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
+      <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
-    import { loadJSON } from './js/data-loader.js';
+    import { loadJSON, loadEntities, DEMO_DOC_ID } from './js/data-loader.js';
     import { getParams, setParams, escapeHTML, escapeAttr } from './js/utils.js';
 
     initNav('exploration');
     initBanner();
+
+    // The workbench is scoped to one source; the sidebar link names the same one.
+    const SCOPE_DOC_ID = DEMO_DOC_ID;
 
     const NODE_HINT = 'Select a node to see its role in the source.';
     const TYPE_LABEL = { person: 'person', place: 'place', object: 'object', time: 'time' };
@@ -237,20 +246,41 @@
         ],
       });
 
-      cy.on('tap', 'node', evt => {
-        const d = evt.target.data();
+      // Canvas and keyboard list write the same panel, which is the aria-live region
+      function showNode(d) {
         const detail = document.getElementById('net-detail');
         if (!detail) return;
         detail.innerHTML = `<strong>${escapeHTML(d.label)}</strong> (${escapeHTML(d.type)})` +
           (d.role ? ` · ${escapeHTML(d.role)}` : '') +
           ` · ${degree[d.id] || 0} attested relations in Thaur A 49.1 ` +
           provChip(d.provenance || data.provenance || DEFAULT_PROVENANCE);
-      });
+      }
+
+      cy.on('tap', 'node', evt => showNode(evt.target.data()));
       cy.on('tap', evt => {
         if (evt.target !== cy) return;
         const detail = document.getElementById('net-detail');
         if (detail) detail.textContent = NODE_HINT;
       });
+
+      // Keyboard equivalent of the canvas: every node is reachable by tab and
+      // reports into the same panel. The list shows itself once focus enters it.
+      const nodeList = document.createElement('div');
+      nodeList.className = 'visually-hidden-focusable p-3';
+      nodeList.innerHTML = '<h2 class="h6">Network nodes</h2><ul class="list-unstyled mb-0">' +
+        data.nodes.map(n =>
+          `<li><button type="button" class="btn btn-link btn-sm p-0" data-node-id="${escapeAttr(n.id)}">` +
+          `${escapeHTML(n.label)} (${escapeHTML(n.type)})</button></li>`).join('') +
+        '</ul>';
+      const nodeById = new Map(data.nodes.map(n => [n.id, n]));
+      const reportNode = (target) => {
+        const btn = target instanceof Element ? target.closest('[data-node-id]') : null;
+        const node = btn && nodeById.get(btn.dataset.nodeId);
+        if (node) showNode({ ...node, degree: degree[node.id] || 1 });
+      };
+      nodeList.addEventListener('focusin', evt => reportNode(evt.target));
+      nodeList.addEventListener('click', evt => reportNode(evt.target));
+      panel.appendChild(nodeList);
 
       const fit = () => { cy.resize(); cy.fit(undefined, 30); };
       document.getElementById('btn-net-fit').addEventListener('click', fit);
@@ -258,21 +288,15 @@
     }
 
     async function renderEntities(panel) {
-      const data = await loadJSON('data/demo/thaur_entities.json');
-      const srcDocId = data.docId || 11328300;
-      const rows = data.entities.map(e => ({
-        text: e.text || '',
-        normalized: e.normalized || '',
-        type: e.type || '',
-        provenance: e.provenance || data.provenance || DEFAULT_PROVENANCE,
-        count: typeof e.count === 'number' ? e.count : null,
-        // One record per occurrence in this dataset; the shape carries a list so a
-        // record attested on several pages renders every attestation.
-        occurrences: (Array.isArray(e.occurrences) ? e.occurrences : [e])
-          .filter(o => o && typeof o.pageNr === 'number')
-          .map(o => ({ pageNr: o.pageNr, lineId: o.lineId || null })),
-        detail: e.role || e.category || e.isoDate || '',
-      }));
+      const data = await loadEntities(SCOPE_DOC_ID);
+      if (!data) {
+        panel.innerHTML = '<p class="p-3 mb-0">No entity extraction for this source yet.</p>';
+        return;
+      }
+      const srcDocId = data.docId;
+      // The extraction carries one provenance for all its records
+      const provenance = PROV_LABELS[data.provenance] ? data.provenance : DEFAULT_PROVENANCE;
+      const rows = data.entities;
 
       // Every attestation links back to the page it was read on
       function attestCell(r) {
@@ -293,8 +317,8 @@
       const COLUMNS = [
         { key: 'text', label: 'Source form', cell: r => `<span class="exp-src">${escapeHTML(r.text)}</span>` },
         { key: 'normalized', label: 'Normalized', cell: r => escapeHTML(r.normalized) },
-        { key: 'type', label: 'Type', cell: r => r.type ? `<span class="entity entity--${escapeHTML(r.type)}">${escapeHTML(TYPE_LABEL[r.type] || r.type)}</span>` : '' },
-        { key: 'provenance', label: 'Provenance', cell: r => provChip(r.provenance) },
+        { key: 'type', label: 'Type', cell: r => r.type ? `<span class="entity entity--${escapeAttr(r.type)}">${escapeHTML(TYPE_LABEL[r.type] || r.type)}</span>` : '' },
+        { key: 'provenance', label: 'Provenance', sort: () => provenance, cell: () => provChip(provenance) },
         { key: 'count', label: 'Occurrences', num: true, cell: r => r.count === null ? '' : String(r.count) },
         { key: 'attestation', label: 'Attestation', num: true,
           sort: r => r.occurrences.length ? r.occurrences[0].pageNr : null, cell: attestCell },

@@ -27,18 +27,25 @@ DoCTA/
 │   └── knowledge/          The Promptotyping knowledge base, rendered by knowledge.html
 ├── evaluation/
 │   ├── benchmark/          Versioned prompt benchmark: page set, prompts, runs, metrics
-│   └── pilot/              The benchmark prompts on continuous, uncurated material
+│   ├── pilot/              The benchmark prompts on continuous, uncurated material
+│   ├── pilot2/             The same frozen configuration on a wider slice of unseen material
+│   └── checks/             Reference-free checks over transcription runs, currently the
+│                           arithmetic probe of the account-book amounts
 ├── experiments/
 │   └── transcription-test/ The frozen first VLM transcription test of 26.08.2026
-├── pipeline/               Page register: one entry per page with content class, empty
-│                           evidence, verification status and provenance-tagged runs
+├── pipeline/               Page register (one entry per page with content class, empty
+│   │                       evidence, verification status and provenance-tagged runs),
+│   │                       TEI generation, validation and the cross-artifact healthcheck
+│   ├── accounts/           Executable part of the account-book encoding specification
+│   ├── prompts/            Prompts used by the pipeline's extraction scripts
+│   └── schema/             Vendored TEI P5 grammar and the project schema docta.rng
 ├── scripts/                Python build-time scripts for data fetching and transformation
 └── tests/                  Playwright smoke and interaction tests against the published site
 ```
 
 The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. Details are in `docs/knowledge/TECH.md`.
 
-Current figures for the exported data live in `docs/data/stats.json` and are rendered by the site. Benchmark results live in `evaluation/benchmark/summary.json`, with the published export under `docs/data/benchmark/`.
+The figures the site shows are computed in the browser from the source catalogue in `docs/data/sources.json` and the register projection in `docs/data/pipeline/register_summary.json`, so no count is hard-coded in a page. Benchmark results live in `evaluation/benchmark/summary.json`, with the published export under `docs/data/benchmark/`.
 
 ## Knowledge base
 
@@ -51,6 +58,8 @@ Current figures for the exported data live in `docs/data/stats.json` and are ren
 | `HTR-EVALUATION.md` | Reference classes, benchmark protocol, metrics, release rule |
 | `REQUIREMENTS.md` | Goals, constraints, review criticism and how it was answered |
 | `CONTEXT.md` | Domain knowledge, the SiCPAS model, methods, epistemology |
+| `EDITORIAL-MODEL.md` | Editorial objects, evidence relations and responsible decisions of the account-book pilot |
+| `ACCOUNTING-ENCODING.md` | How those objects are represented as JSON, TEI and RDF, and which rule is checked by which validator |
 | `TECH.md` | Architecture and implementation |
 | `DESIGN.md` | Design and interaction decisions, including what was rejected |
 | `JOURNAL.md` | Dated log of decisions, exploration results and open questions |

@@ -29,8 +29,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const PAGES = ['index.html', 'viewer.html', 'exploration.html',
-               'benchmark.html', 'knowledge.html', 'about.html'];
+// Seitenliste aus dem Dateisystem, damit eine neue Seite ohne Pflege mitgeprüft wird.
+const PAGES = fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).sort();
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
 const browser = await chromium.launch();
@@ -134,3 +134,13 @@ for (const page of PAGES) {
 await browser.close();
 server.close();
 console.log(JSON.stringify(report, null, 1));
+
+// Optionale Daten pro Dokument: eine fehlende Datei ist der Normalfall und wird
+// im Client abgefangen, deshalb kippt sie das Ergebnis nicht.
+const OPTIONAL = /\/data\/entities\/|\/data\/tei\//;
+const blocking = Object.entries(report).filter(([, r]) =>
+  r.errors.length || r.failed.some(f => !OPTIONAL.test(f)));
+if (blocking.length) {
+  console.error('FAIL: ' + blocking.map(([pg]) => pg).join(', '));
+  process.exitCode = 1;
+}

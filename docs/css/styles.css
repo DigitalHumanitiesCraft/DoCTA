@@ -1,6 +1,6 @@
 /* DoCTA - Project-Specific Styles
    Bootstrap 5.3 handles: layout, nav, grid, cards, tables, forms, buttons, utilities.
-   This file adds: project palette, tier and entity badges, pipeline strip, metric
+   This file adds: project palette, entity badges, pipeline strip, metric
    tables, transcription, viewer, knowledge vault, banner.
    All colours live in the token block below; no raw hex outside it. */
 
@@ -42,8 +42,6 @@
   --ent-function: #5d5a1c;
   --ent-function-bg: #efedda;
 
-  --tier-4: #6c6c6c;
-  --tier-4-bg: #f0f0f0;
 
   --osd-backdrop: #1a1a1a;
 
@@ -115,23 +113,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .navbar .nav-link.active {
   font-weight: 600;
 }
-
-/* === Tier Badges === */
-.tier {
-  display: inline-block;
-  padding: 0.125rem var(--space-sm);
-  border-radius: var(--radius-pill);
-  font-size: var(--text-2xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.tier--1 { background: var(--conf-high-bg); color: var(--conf-high); }
-.tier--2 { background: var(--conf-medium-bg); color: var(--conf-medium); }
-.tier--3 { background: var(--conf-low-bg); color: var(--conf-low); }
-.tier--4 { background: var(--tier-4-bg); color: var(--tier-4); }
 
 /* === Entity Tags === */
 .entity {
@@ -560,7 +541,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* === WIP Banner === */
 /* === Skip to Content === */
 .skip-link {
   position: absolute;
@@ -673,9 +653,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   font-weight: 600;
   color: var(--text-primary);
 }
-
-.exp-context__row { margin-bottom: var(--space-xs); }
-.exp-context__label { color: var(--text-muted-custom); }
 
 .exp-main {
   position: relative;

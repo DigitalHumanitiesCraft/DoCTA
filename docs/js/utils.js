@@ -76,25 +76,36 @@ export function formatDate(date) {
 }
 
 /**
- * Get tier label.
- * @param {number} tier
+ * Archival titles and shelfmarks stay in their original German; the closed
+ * category vocabulary of sources.json gets an English display label.
+ */
+const CATEGORY_EN = {
+  'Anderes': 'Other',
+  'Burgeninventar': 'Castle inventory',
+  'Hof- und Speiseordnungen': 'Court and table ordinances',
+  'Kircheninventar': 'Church inventory',
+  'Kopialbuch': 'Copybook',
+  'Landtagsakten': 'Diet records',
+  'Literatur': 'Literature',
+  'Personeninventar': 'Personal inventory',
+  'Rechnungen': 'Accounts',
+  'Repertorium': 'Repertory',
+};
+
+/**
+ * English label for a source category, the source term where none is known.
+ * @param {string} kategorie
  * @returns {string}
  */
-export function tierLabel(tier) {
-  const labels = {
-    1: 'Transcribed',
-    2: 'Digitized',
-    3: 'Archive only',
-    4: 'Uncertain',
-  };
-  return labels[tier] || '–';
+export function catLabel(kategorie) {
+  return CATEGORY_EN[kategorie] || kategorie;
 }
 
 /**
- * Create a tier badge HTML string.
- * @param {number} tier
+ * Counts in the interface read in the page language, not the reader's locale.
+ * @param {number|null|undefined} n
  * @returns {string}
  */
-export function tierBadge(tier) {
-  return `<span class="tier tier--${tier}">${tierLabel(tier)}</span>`;
+export function formatCount(n) {
+  return n == null ? '–' : n.toLocaleString('en-GB');
 }

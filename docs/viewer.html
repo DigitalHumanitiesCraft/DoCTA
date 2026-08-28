@@ -127,15 +127,21 @@
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0 footer-line"><span>DoCTA</span> <span class="footer-sep">·</span>
+      <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
+      <span class="footer-sep">·</span>
+      <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
+      <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a></p>
   </footer>
 
   <script src="lib/openseadragon.min.js"></script>
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
-    import { loadJSON } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML, escapeAttr } from './js/utils.js';
+    import { loadJSON, loadEntities, DEMO_DOC_ID } from './js/data-loader.js';
+    import { getParams, setParams, escapeHTML, escapeAttr, catLabel } from './js/utils.js';
 
     initNav('viewer');
     initBanner();
@@ -145,24 +151,11 @@
     let currentPage = 0;
     let viewMode = 'synopsis';
     let rotation = 0;
-    let entitiesData = null;
+    let entityIndex = null;   // entities of the loaded document, or null
     let sourceByDocId = new Map();
     let registerByDocId = new Map();
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    loadJSON('data/demo/thaur_entities.json').then(data => {
-      entitiesData = data;
-    }).catch(() => {});
-
-    const CATEGORY_EN = {
-      'Anderes': 'Other', 'Burgeninventar': 'Castle inventory',
-      'Hof- und Speiseordnungen': 'Court and table ordinances',
-      'Kircheninventar': 'Church inventory', 'Kopialbuch': 'Copybook',
-      'Landtagsakten': 'Diet records', 'Literatur': 'Literature',
-      'Personeninventar': 'Personal inventory', 'Rechnungen': 'Accounts',
-      'Repertorium': 'Repertory',
-    };
 
     const metaIcon = (paths) =>
       `<svg class="doc-meta__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"` +
@@ -181,28 +174,46 @@
 
     // Which text layer the reader is looking at: human-corrected pages are the
     // ones marked DONE in Transkribus, everything else is the unrevised HTR layer.
-    function provenanceChip(docId) {
+    function provenanceState(docId) {
       const reg = registerByDocId.get(Number(docId));
-      if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return '';
+      if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
       const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
       const total = reg.pages_total;
-      let state, label, title;
       if (done >= total) {
-        state = 'human';
-        label = 'Human-corrected';
-        title = `All ${total} pages corrected and marked done in Transkribus`;
-      } else if (done > 0) {
-        state = 'partial';
-        label = `Partly corrected · ${done}/${total} pages`;
-        title = `${done} of ${total} pages corrected and marked done in Transkribus, ` +
-                'the remaining pages are the unrevised Transkribus HTR layer';
-      } else {
-        state = 'machine';
-        label = 'Machine transcription';
-        title = 'Unrevised Transkribus HTR layer, no human correction yet';
+        return {
+          state: 'human',
+          label: 'Human-corrected',
+          title: `All ${total} pages corrected and marked done in Transkribus`,
+        };
       }
-      return `<span class="prov-chip prov-chip--${state}" id="doc-provenance"` +
-             ` title="${escapeAttr(title)}">${escapeHTML(label)}</span>`;
+      if (done > 0) {
+        return {
+          state: 'partial',
+          label: `Partly corrected · ${done}/${total} pages`,
+          title: `${done} of ${total} pages corrected and marked done in Transkribus, ` +
+                 'the remaining pages are the unrevised Transkribus HTR layer',
+        };
+      }
+      return {
+        state: 'machine',
+        label: 'Machine transcription',
+        title: 'Unrevised Transkribus HTR layer, no human correction yet',
+      };
+    }
+
+    function provenanceChip(docId) {
+      const prov = provenanceState(docId);
+      if (!prov) return '';
+      return `<span class="prov-chip prov-chip--${prov.state}" id="doc-provenance"` +
+             ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
+    }
+
+    // The badge repeats the provenance where the doc-meta strip is not in view.
+    // A document the register does not know counts as unrevised machine text.
+    function updateDraftBadge() {
+      const badge = document.getElementById('draft-badge');
+      const corrected = currentDoc && provenanceState(currentDoc.docId)?.state === 'human';
+      badge.hidden = viewMode === 'synopsis' || !currentDoc || corrected;
     }
 
     function renderDocMeta(docId) {
@@ -224,7 +235,7 @@
       // Page count is omitted, the pager already shows it.
       const parts = [
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
-        `<span class="doc-meta__cat" title="Source category">${escapeHTML(CATEGORY_EN[s.kategorie] || s.kategorie)}</span>`,
+        `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,
         provenanceChip(docId),
       ].filter(Boolean);
       el.innerHTML = parts.join('');
@@ -716,6 +727,37 @@
       lsSet(REVIEWER_KEY, initialsValue());
     });
 
+    // === Entity marks in the transcription ===
+    // Objects are left unmarked, they are the bulk of an inventory and marking
+    // them would colour whole pages. The keys are escaped like the line text, so
+    // one alternation matches against the already escaped markup.
+    function buildEntityIndex(data) {
+      if (!data || !data.entities.length) return null;
+      const byText = new Map();
+      for (const ent of data.entities) {
+        if (ent.type === 'object' || !ent.text.trim()) continue;
+        byText.set(escapeHTML(ent.text.trim()).toLowerCase(), ent);
+      }
+      if (!byText.size) return null;
+      // Longest first, so a name is not cut short by a shorter alternative
+      const pattern = [...byText.keys()]
+        .sort((a, b) => b.length - a.length)
+        .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+        .join('|');
+      return { byText, regex: new RegExp(pattern, 'gi') };
+    }
+
+    // One pass over the line: inserted markup is never searched again
+    function markEntities(escapedText) {
+      return escapedText.replace(entityIndex.regex, (match) => {
+        const ent = entityIndex.byText.get(match.toLowerCase());
+        if (!ent) return match;
+        const tip = `${ent.normalized || ent.text} (LLM extraction, unverified)`;
+        return `<span class="entity entity--${escapeAttr(ent.type)}"` +
+               ` title="${escapeAttr(tip)}">${match}</span>`;
+      });
+    }
+
     function renderTranscription(doc, pageNr) {
       const container = document.getElementById('transcription-container');
       const page = doc.pages.find(p => p.pageNr === pageNr);
@@ -723,16 +765,6 @@
         container.innerHTML = '<div class="loading text-body-secondary">No transcription for this page</div>';
         container.scrollTop = 0;
         return;
-      }
-
-      const isDemo = doc.docId === 11328300;
-      const entityMap = new Map();
-      if (isDemo && entitiesData) {
-        for (const ent of entitiesData.entities) {
-          if (ent.type !== 'object') {
-            entityMap.set(ent.text.toLowerCase(), ent);
-          }
-        }
       }
 
       let lineNr = 0;
@@ -752,10 +784,10 @@
       for (const region of page.regions) {
         for (const line of region.lines) {
           lineNr++;
-          const key = line.id ? ` data-line-id="${escapeAttr(line.id)}" tabindex="-1"` : '';
+          const lineAttr = line.id ? ` data-line-id="${escapeAttr(line.id)}" tabindex="-1"` : '';
           const fol = folioLabel(line.text);
           if (fol) {
-            html += `<div class="transcription__line transcription__line--folio"${key}>` +
+            html += `<div class="transcription__line transcription__line--folio"${lineAttr}>` +
                     `<span class="transcription__line-nr">${lineNr}</span>` +
                     `<span class="transcription__line-text">${escapeHTML(line.text)}</span></div>`;
             continue;
@@ -763,16 +795,10 @@
           const stored = line.id ? corrections.get(line.id) : null;
           const corr = stored && stored.original === line.text ? stored : null;
           let text = escapeHTML(corr ? corr.corrected : line.text);
-          if (isDemo && !corr) {
-            for (const [key, ent] of entityMap) {
-              const regex = new RegExp(`(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-              const tip = `${ent.normalized || ent.text} (LLM extraction, unverified)`;
-              text = text.replace(regex, `<span class="entity entity--${ent.type}" title="${escapeAttr(tip)}">\$1</span>`);
-            }
-          }
+          if (entityIndex && !corr) text = markEntities(text);
           const mark = corr ? ' transcription__line--corrected' : '';
           const title = corr ? ` title="${escapeAttr(`Original: ${line.text}`)}"` : '';
-          html += `<div class="transcription__line${mark}"${key}${title}` +
+          html += `<div class="transcription__line${mark}"${lineAttr}${title}` +
                   ` data-original="${escapeAttr(line.text)}">` +
                   `<span class="transcription__line-nr">${lineNr}</span>` +
                   `<span class="transcription__line-text">${text}</span></div>`;
@@ -852,6 +878,19 @@
         ? '<div class="loading text-body-secondary">No TEI for this document.</div>'
         : `<pre class="tei-source">${highlightTEI(xml)}</pre>`;
       container.scrollTop = 0;
+      updateTeiDownload();
+    }
+
+    // The link offers what the TEI view has actually shown; before the fetch and
+    // for a document without TEI the cache holds no text and the link stays away.
+    function updateTeiDownload() {
+      const dl = document.getElementById('tei-download');
+      const xml = currentDoc ? teiCache.get(String(currentDoc.docId)) : undefined;
+      dl.hidden = viewMode !== 'tei' || xml == null;
+      if (currentDoc) {
+        dl.href = `data/tei/${currentDoc.docId}.xml`;
+        dl.setAttribute('download', `${currentDoc.docId}.xml`);
+      }
     }
 
     function clampPage(n) {
@@ -891,6 +930,8 @@
     // Renders whatever the current mode shows, from the page the mode still holds
     function renderCurrentView() {
       if (!currentDoc) return;
+      updateDraftBadge();
+      updateTeiDownload();
       if (viewMode === 'synopsis') { setPage(currentPage); return; }
       updatePager();
       syncParams();
@@ -912,13 +953,8 @@
       }
       // Reading and TEI have no facsimile; the overlay is rebuilt on the way back
       if (!isSynopsis) clearLineOverlay();
-      document.getElementById('draft-badge').hidden = isSynopsis;
-      const dl = document.getElementById('tei-download');
-      dl.hidden = viewMode !== 'tei';
-      if (currentDoc) {
-        dl.href = `data/tei/${currentDoc.docId}.xml`;
-        dl.setAttribute('download', `${currentDoc.docId}.xml`);
-      }
+      updateDraftBadge();
+      updateTeiDownload();
 
       if (!currentDoc) {
         setParams({ view: isSynopsis ? '' : viewMode });
@@ -932,7 +968,14 @@
     // pageNr: 1-based start page. Omit to take it from the URL (deep link into a page).
     async function loadDocument(docId, pageNr) {
       try {
-        currentDoc = await loadJSON(`data/transcriptions/${docId}.json`);
+        // Entities are optional per document and are awaited with the text, so
+        // the first render already carries the marks instead of racing them in
+        const [doc, entities] = await Promise.all([
+          loadJSON(`data/transcriptions/${docId}.json`),
+          loadEntities(docId),
+        ]);
+        currentDoc = doc;
+        entityIndex = buildEntityIndex(entities);
         let startPage;
         if (pageNr !== undefined) {
           startPage = pageNr - 1;
@@ -941,9 +984,6 @@
           startPage = Number.isFinite(parsed) ? parsed - 1 : 0;
         }
         renderDocMeta(docId);
-        const dl = document.getElementById('tei-download');
-        dl.href = `data/tei/${docId}.xml`;
-        dl.setAttribute('download', `${docId}.xml`);
         // A document switch keeps the current view
         currentPage = clampPage(startPage);
         renderCurrentView();
@@ -1063,10 +1103,10 @@
           selector.appendChild(opt);
         }
 
-        const demoInList = docsWithText.find(d => d.transkribus_id === 11328300);
+        const demoInList = docsWithText.find(d => d.transkribus_id === DEMO_DOC_ID);
         if (!demoInList) {
           const opt = document.createElement('option');
-          opt.value = '11328300';
+          opt.value = String(DEMO_DOC_ID);
           opt.textContent = 'Thaur A 49.1 - Inventory of Thaur Castle (demo)';
           selector.insertBefore(opt, selector.options[1]);
         }
@@ -1084,6 +1124,12 @@
         }
       } catch (err) {
         console.error('Failed to load source mapping:', err);
+        const selector = document.getElementById('doc-selector');
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = `Document list could not be loaded: ${err.message}`;
+        selector.replaceChildren(opt);
+        selector.disabled = true;
       }
     }
 

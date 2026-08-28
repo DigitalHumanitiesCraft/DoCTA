@@ -64,15 +64,22 @@ The next iteration binds the display to documented workflow states. Secure presu
 
 ## 6. Colour system
 
-| Meaning | Value |
-|---|---|
-| Person | `#1565c0` |
-| Place | `#2e7d32` |
-| Function | `#6a1b9a` |
-| Institution | `#e65100` |
-| Object | `#e65100` |
-| Review status secure | `#2d7d46` |
-| Review status worth checking | `#c68a00` |
-| Review status problematic | `#c62828` |
+All colours live in the token block at the top of `css/styles.css`; no raw hex value stands anywhere else in the stylesheet.
 
-The entity colours have to agree in three places: the badge classes in `css/styles.css`, the Cytoscape node styles and the legend on the page carrying the graph. Object and institution currently share a value. That goes unnoticed because objects appear only in the extraction views and institutions only in the SiCProD data, which no page currently renders. Merging those views would force the conflict to be resolved.
+| Meaning | Token | Foreground | Background |
+|---|---|---|---|
+| Person | `--ent-person` | `#2b4c7e` | `#e6ecf4` |
+| Place | `--ent-place` | `#2f6446` | `#e5efe8` |
+| Object | `--ent-object` | `#a74320` | `#f8e9e3` |
+| Time | `--ent-time` | `#6d3d78` | `#f0e8f2` |
+| Institution | `--ent-institution` | `#175c6d` | `#e2eef1` |
+| Function | `--ent-function` | `#5d5a1c` | `#efedda` |
+| Review status secure | `--conf-high` | `#2d7d46` | `#e8f5e9` |
+| Review status worth checking | `--conf-medium` | `#8a6100` | `#fff8e1` |
+| Review status problematic | `--conf-low` | `#c62828` | `#ffebee` |
+
+The six entity hues are muted against the warm ground `#faf8f5`, and each foreground holds at least 4.5:1 on its own background pair, on the page background and on the white surface. Every entity type carries a distinct hue, so a shared value can no longer make two types indistinguishable where the extraction views and the SiCProD data meet.
+
+The palette replaced a set of saturated Material hues. Three of those values survive as the XML syntax colours of the TEI display, `--tei-tag` `#6a1b9a`, `--tei-attr` `#1565c0` and `--tei-val` `#2e7d32`, where they carry no entity meaning at all.
+
+The entity colours have to agree in three places, the badge classes in `css/styles.css`, the Cytoscape node styles and the legend on the page carrying the graph.

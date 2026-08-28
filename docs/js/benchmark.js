@@ -1,12 +1,10 @@
 /* HTR benchmark results page: aggregates and per-page tables from
- * data/benchmark/summary.json (exported from experiments/benchmark).
+ * data/benchmark/summary.json (exported from evaluation/benchmark).
  * The image-text synopsis lives in the viewer, not here. */
 
-const $ = (sel) => document.querySelector(sel);
+import { escapeHTML } from './utils.js';
 
-function esc(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
+const $ = (sel) => document.querySelector(sel);
 
 function mean(xs) { return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
 
@@ -35,7 +33,7 @@ function renderAggregate(summary, excluded) {
     const words = mean(rb.map((p) => p.iterations[it].consistency_words));
     return `<div class="col-12 col-md-6">
       <div class="border rounded p-2">
-        <div class="fw-bold mb-1">${esc(it)}</div>
+        <div class="fw-bold mb-1">${escapeHTML(it)}</div>
         <div class="small">CER fair, reference pages: <strong class="tnum">${pct(cer)}</strong>
           &nbsp;·&nbsp; number consistency (account book): <strong class="tnum">${nums != null ? nums.toFixed(2) : "–"}</strong>
           &nbsp;·&nbsp; word consistency: <strong class="tnum">${words != null ? words.toFixed(2) : "–"}</strong></div>
@@ -51,10 +49,10 @@ function renderAggregate(summary, excluded) {
  * header rows group them: iteration above, measure below, so a reader compares
  * iterations side by side instead of decoding a flat run of column labels. */
 function metricHead(fixed, its, measures) {
-  const top = fixed.map((f) => `<th scope="col" rowspan="2">${esc(f)}</th>`).join("") +
-    its.map((it) => `<th scope="colgroup" colspan="${measures.length}" class="col-group group-start">${esc(it)}</th>`).join("");
+  const top = fixed.map((f) => `<th scope="col" rowspan="2">${escapeHTML(f)}</th>`).join("") +
+    its.map((it) => `<th scope="colgroup" colspan="${measures.length}" class="col-group group-start">${escapeHTML(it)}</th>`).join("");
   const sub = its.map(() =>
-    measures.map((m, i) => `<th scope="col"${i === 0 ? ' class="group-start"' : ""}>${esc(m)}</th>`).join("")
+    measures.map((m, i) => `<th scope="col"${i === 0 ? ' class="group-start"' : ""}>${escapeHTML(m)}</th>`).join("")
   ).join("");
   return `<thead class="table-light"><tr>${top}</tr><tr>${sub}</tr></thead>`;
 }
@@ -73,8 +71,8 @@ function renderRefTable(summary, its) {
     // The warning row tint alone carries no meaning for non-sighted readers
     const flag = bad ? ` <span class="flag" title="Reference nearly empty, flagged for adjudication">⚠<span class="visually-hidden"> flagged for adjudication</span></span>` : "";
     return `<tr${bad ? ' class="table-warning"' : ""}>` +
-      `<th scope="row">${esc(id)}${flag}</th>` +
-      `<td class="small">${esc(p.folio)}</td>` +
+      `<th scope="row">${escapeHTML(id)}${flag}</th>` +
+      `<td class="small">${escapeHTML(p.folio)}</td>` +
       metricCells(its, (it) => [fmtCer(p.iterations[it]?.cer_fair), fmtCer(p.iterations[it]?.cer_strict)]) +
       `</tr>`;
   }).join("");
@@ -87,9 +85,9 @@ function renderConsTable(summary, its) {
   const rows = Object.entries(summary.pages).filter(([, p]) => !p.gt_lines);
   const head = metricHead(["Page", "Folio", "Phenomena"], its, ["words", "numbers", "lines"]);
   const body = rows.map(([id, p]) => {
-    return `<tr><th scope="row">${esc(id)}</th>` +
-      `<td class="small">${esc(p.folio)}</td>` +
-      `<td class="small text-body-secondary">${esc(p.phenomena.join(", "))}</td>` +
+    return `<tr><th scope="row">${escapeHTML(id)}</th>` +
+      `<td class="small">${escapeHTML(p.folio)}</td>` +
+      `<td class="small text-body-secondary">${escapeHTML(p.phenomena.join(", "))}</td>` +
       metricCells(its, (it) => [
         p.iterations[it]?.consistency_words ?? "–",
         p.iterations[it]?.consistency_numbers ?? "–",
@@ -102,14 +100,23 @@ function renderConsTable(summary, its) {
 }
 
 async function init() {
-  const summary = await (await fetch("data/benchmark/summary.json")).json();
-  const its = [...new Set(Object.values(summary.pages).flatMap((p) => Object.keys(p.iterations)))].sort();
-  const excluded = Object.entries(summary.pages)
-    .filter(([, p]) => p.gt_lines && Object.values(p.iterations).some((e) => (e.cer_fair?.mean ?? 0) >= 1))
-    .map(([id]) => id);
-  renderAggregate(summary, excluded);
-  renderRefTable(summary, its);
-  renderConsTable(summary, its);
+  try {
+    const res = await fetch("data/benchmark/summary.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const summary = await res.json();
+    const its = [...new Set(Object.values(summary.pages).flatMap((p) => Object.keys(p.iterations)))].sort();
+    const excluded = Object.entries(summary.pages)
+      .filter(([, p]) => p.gt_lines && Object.values(p.iterations).some((e) => (e.cer_fair?.mean ?? 0) >= 1))
+      .map(([id]) => id);
+    renderAggregate(summary, excluded);
+    renderRefTable(summary, its);
+    renderConsTable(summary, its);
+  } catch (err) {
+    const msg = document.createElement("p");
+    msg.className = "col-12 mb-0 text-body-secondary";
+    msg.textContent = `Benchmark results could not be loaded: ${err.message}`;
+    $("#agg-cards").replaceChildren(msg);
+  }
 }
 
 init();

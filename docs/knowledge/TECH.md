@@ -26,7 +26,7 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 | `knowledge.html` | Knowledge vault, rendering these Markdown documents |
 | `about.html` | About the project, data sources, imprint |
 
-Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place.
+Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. `knowledge.html` is the one deliberate exception. It stays out of the navigation bar and is reached from the About page and by direct URL, because the knowledge base addresses agents and returning readers rather than a first visitor.
 
 ## Network visualisation: Cytoscape.js
 
@@ -75,7 +75,7 @@ The source search on the home page filters over category, availability tier and 
 
 ## Data loading
 
-Every page loads only the JSON files it needs. `js/data-loader.js` exports `loadJSON(path)` and `loadAll(pathMap)`, caching per file in IndexedDB and versioning the cache through the constant `DATA_VERSION`.
+Every page loads only the JSON files it needs. `js/data-loader.js` exports `loadJSON(path)`, caching per file in IndexedDB and versioning the cache through the constant `DATA_VERSION`.
 
 ```javascript
 export async function loadJSON(path) {
@@ -104,18 +104,28 @@ DoCTA/
 │   │   ├── data-loader.js  Fetch JSON, IndexedDB cache
 │   │   └── utils.js        Formatting, sorting, escaping
 │   ├── data/               Pre-processed JSON, git-tracked
-│   │   ├── benchmark/      Published export of the prompt benchmark
+│   │   ├── benchmark/      Published export of the prompt benchmark, the summary
 │   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
+│   │   ├── entities/       Line-anchored entities per document, input to the TEI build
+│   │   ├── pipeline/       register_summary.json, the site projection of the register
+│   │   ├── tei/            Generated TEI P5, one file per document
 │   │   └── transcriptions/ Inventory transcriptions from Transkribus PAGE XML
 │   ├── lib/                Vendored dependencies
 │   └── knowledge/          This knowledge base
 ├── evaluation/
 │   ├── benchmark/          Versioned prompt benchmark: pages, prompts, runs, metrics
-│   └── pilot/              The benchmark prompts on continuous, uncurated material
+│   ├── pilot/              The benchmark prompts on continuous, uncurated material
+│   ├── pilot2/             The same configuration on a wider slice of unseen material
+│   └── checks/             Reference-free checks over the runs, currently the
+│                           arithmetic probe of the account-book amounts
 ├── experiments/
 │   └── transcription-test/ The frozen first VLM transcription test of 26.08.2026
-├── pipeline/               Page register: per-page content class, empty evidence,
-│                           verification status, provenance-tagged transcription runs
+├── pipeline/               Page register (per-page content class, empty evidence,
+│   │                       verification status, provenance-tagged transcription runs),
+│   │                       TEI generation, validation, healthcheck
+│   ├── accounts/           Executable part of the account-book encoding specification
+│   ├── prompts/            Prompts of the pipeline's extraction scripts
+│   └── schema/             Vendored tei_all.rng and the project schema docta.rng
 ├── scripts/                Python build-time scripts
 └── tests/                  Smoke and interaction tests against the published site
 ```
@@ -144,13 +154,15 @@ Consistent with coOCR/HTR, an external reference project developed by DHCraft.
 | `transform_sources.py` | Source catalogue CSV plus `data/source_mapping.json` | `data/sources.json` |
 | `fetch_transcriptions.py` | Transkribus API over OAuth2 | `data/transcriptions/{id}.json` |
 | `map_sources.py` | Transkribus titles plus catalogue shelfmarks | `data/source_mapping.json` |
-| `build_stats.py` | The exported JSON files | `data/stats.json`, the single source of truth for the figures the site shows |
+| `build_stats.py` | The exported JSON files | `data/stats.json`, currently read by no page |
+
+The site computes the figures it shows in the browser, from the source catalogue in `data/sources.json` and the register projection in `data/pipeline/register_summary.json`, both of which it loads anyway. `build_stats.py` and its `data/stats.json` are left over from the prototype phase and have no consumer; the file stays as an exploration artifact. The pipeline scripts that write `data/pipeline/`, `data/tei/` and `data/entities/` live in `pipeline/` and are documented in `pipeline/README.md`.
 
 Exploration and helper scripts whose output no page loads: `compute_layout.py` writing `data/network.json`, `explore_transkribus.py`, `explore_transkribus_deep.py`, `transkribus_status.py` writing `data/transkribus_collection.json` and `data/transkribus_status.json`, and `fetch_remaining.py`. They document how the data situation was established and stay in the repository for that reason.
 
 ## Tests
 
-`tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.
+`tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. Both derive their page list from the `*.html` files in `docs/`, so a new page is covered without an edit to the tests, and both exit nonzero on the first finding, which makes them usable as a gate rather than as a report to read. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.
 
 ## coOCR/HTR as a reference
 

@@ -71,41 +71,36 @@
   </main>
 
   <footer class="text-center py-4 border-top small text-body-secondary">
-    <p class="mb-0">DoCTA | Digital Humanities Craft OG | <a href="about.html">About &amp; Imprint</a> | <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="mb-0 footer-line"><span>DoCTA</span> <span class="footer-sep">·</span>
+      <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">GitHub</a>
+      <span class="footer-sep">·</span>
+      <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
+      <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a></p>
   </footer>
 
   <script src="lib/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initNav, initBanner } from './js/app.js';
     import { loadJSON } from './js/data-loader.js';
-    import { escapeHTML, escapeAttr, formatDate, debounce } from './js/utils.js';
+    import { escapeHTML, escapeAttr, formatDate, debounce, catLabel, formatCount as num } from './js/utils.js';
 
     initNav('dashboard');
     initBanner();
 
-    // Archival titles and shelfmarks stay in their original German; the closed
-    // category vocabulary gets an English display label with the source term.
-    const CATEGORY_EN = {
-      'Anderes': 'Other',
-      'Burgeninventar': 'Castle inventory',
-      'Hof- und Speiseordnungen': 'Court and table ordinances',
-      'Kircheninventar': 'Church inventory',
-      'Kopialbuch': 'Copybook',
-      'Landtagsakten': 'Diet records',
-      'Literatur': 'Literature',
-      'Personeninventar': 'Personal inventory',
-      'Rechnungen': 'Accounts',
-      'Repertorium': 'Repertory',
-    };
-    const catLabel = (kat) => CATEGORY_EN[kat] || kat;
+    // Doc ids whose TEI the pipeline has produced, from the register projection.
+    // A source without an entry there counts as not yet encoded.
+    let teiDocIds = new Set();
 
     // Pipeline progress per source: filled = reached, outline = pending.
-    // TEI and Edited are pending for the whole corpus until those stages ship.
+    // Edited stays pending for the whole corpus until that stage ships.
     function stageIcons(s) {
+      const docId = s.transkribus?.doc_id;
       const stages = [
         { key: 'F', label: 'Facsimile', done: s.tier === 1 || s.tier === 2 },
         { key: 'H', label: 'HTR text', done: !!(s.transkribus && s.transkribus.has_text) },
-        { key: 'T', label: 'TEI', done: false },
+        { key: 'T', label: 'TEI', done: docId != null && teiDocIds.has(Number(docId)) },
         { key: 'E', label: 'Edited', done: false },
       ];
       return `<span class="stages">` + stages.map(st =>
@@ -118,7 +113,6 @@
     let sortKey = 'signatur';
     let katFilter = '';
 
-    const num = (n) => n.toLocaleString('en-GB');
     const hasText = (s) => !!(s.transkribus && s.transkribus.has_text);
 
     // Availability groups the list before any user-chosen sort: full text, then
@@ -146,7 +140,7 @@
         pages ? `<span class="tnum">${pages}</span>` : '',
       ].filter(Boolean).join('<span class="src-meta__sep" aria-hidden="true">·</span>');
       const title = hasText(s)
-        ? `<a class="src-title" href="viewer.html?doc=${s.transkribus.doc_id}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
+        ? `<a class="src-title" href="viewer.html?doc=${encodeURIComponent(s.transkribus.doc_id)}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
         : `<span class="src-title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`;
       return `<li class="src-row">
         ${thumbMarkup(s)}
@@ -294,6 +288,9 @@
           thumbByDocId = new Map(register.documents
             .filter(d => d.thumb)
             .map(d => [d.docId, { thumb: d.thumb, thumb_page: d.thumb_page }]));
+          teiDocIds = new Set(register.documents
+            .filter(d => d.has_tei)
+            .map(d => Number(d.docId)));
         }
 
         renderProgress(allSources, register);
