@@ -244,6 +244,7 @@
         metaItem('title', 'Archival title', s.titel, 'doc-meta__title', `: ${s.titel}`),
         `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,
         provenanceChip(docId),
+        entityIndex ? entityLegend() : '',
       ].filter(Boolean);
       el.innerHTML = parts.join('');
       el.hidden = false;
@@ -814,19 +815,38 @@
       });
     }
 
-    // Legend above the transcription: colour to type, and the provenance of the
-    // marks with the model named. Rendered only while marks are on screen.
+    // Inline SVG icons for the provenance of the marks: a sparkle for the model
+    // product, a dashed circle for the missing verification. Stroke style and
+    // size follow the other meta icons.
+    const ICON_AI =
+      '<svg class="meta-ico" viewBox="0 0 16 16" fill="currentColor"' +
+      ' aria-hidden="true"><path d="M8 1.8 9.3 5.2 12.7 6.5 9.3 7.8 8 11.2' +
+      ' 6.7 7.8 3.3 6.5 6.7 5.2z"/><path d="m12.9 10.2.7 1.9 1.9.7-1.9.7' +
+      '-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg>';
+    const ICON_UNVERIFIED =
+      '<svg class="meta-ico" viewBox="0 0 16 16" fill="none"' +
+      ' stroke="currentColor" stroke-width="1.5" aria-hidden="true">' +
+      '<circle cx="8" cy="8" r="6.2" stroke-dasharray="2.6 2.1"/></svg>';
+
+    // Entity key for the doc-meta strip: one colour dot per type present, then
+    // the provenance with the model named. Sits beside the category and
+    // provenance chips, apart from the running text it explains.
     function entityLegend() {
       const present = new Set(
         [...entityIndex.byText.values()].map(e => e.type));
       const chips = Object.keys(ENTITY_TYPE_LABELS)
         .filter(t => present.has(t))
-        .map(t => `<span class="entity entity--${escapeAttr(t)}">` +
+        .map(t => `<span class="ent-key">` +
+                  `<span class="ent-key__dot ent-key__dot--${escapeAttr(t)}"></span>` +
                   `${escapeHTML(ENTITY_TYPE_LABELS[t])}</span>`)
         .join('');
-      return `<div class="ent-legend">${chips}<span class="ent-legend__prov">` +
-             `\u{1F916} ${escapeHTML(entityModel())} extraction &middot;` +
-             ` ⚠ not verified by a scholar</span></div>`;
+      return `<span class="ent-key-group" title="Entity marks:` +
+             ` ${escapeAttr(entityModel())} extraction, not verified by a` +
+             ` scholar">${chips}` +
+             `<span class="ent-key ent-key--prov">${ICON_AI}` +
+             `${escapeHTML(entityModel())}</span>` +
+             `<span class="ent-key ent-key--prov">${ICON_UNVERIFIED}` +
+             `not verified</span></span>`;
     }
 
     // One shared tooltip element; screen readers use the span's aria-label
@@ -844,8 +864,8 @@
       entTip.innerHTML =
         `<span class="ent-tip__head">${escapeHTML(ent.normalized || ent.text)}` +
         `${date}</span> &middot; ${escapeHTML(type)}` +
-        `<span class="ent-tip__prov">\u{1F916} ${escapeHTML(entityModel())}` +
-        ' &middot; ⚠ not verified by a scholar</span>';
+        `<span class="ent-tip__prov">${ICON_AI} ${escapeHTML(entityModel())}` +
+        ` &middot; ${ICON_UNVERIFIED} not verified by a scholar</span>`;
       entTip.hidden = false;
       const rect = target.getBoundingClientRect();
       entTip.style.left = `${Math.max(8, Math.min(rect.left,
@@ -882,8 +902,7 @@
       // original it was made against, so a changed export drops it silently
       const corrections = reviewCorrections(pageNr);
 
-      let html = entityIndex ? entityLegend() : '';
-      html += '<div class="transcription">';
+      let html = '<div class="transcription">';
       for (const region of page.regions) {
         for (const line of region.lines) {
           lineNr++;

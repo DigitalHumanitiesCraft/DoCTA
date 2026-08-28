@@ -131,20 +131,36 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .entity--institution { background: var(--ent-institution-bg); color: var(--ent-institution); border-bottom: 2px solid var(--ent-institution); }
 .entity--function { background: var(--ent-function-bg); color: var(--ent-function); border-bottom: 2px solid var(--ent-function); }
 
-/* Legend above the transcription: which colour is which type, and that the
-   marks are an unverified model product, with the model named */
-.ent-legend {
-  display: flex;
-  flex-wrap: wrap;
+/* Entity key in the doc-meta strip: a colour dot per type, then the
+   provenance of the marks with the model named, icons in meta style */
+.ent-key-group {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-xs) var(--space-md);
-  padding: var(--space-sm) var(--space-lg) 0;
-  background: var(--surface);
+  gap: var(--space-sm);
+  flex: 0 0 auto;
+  margin-left: var(--space-xs);
+}
+.ent-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
   font-size: var(--text-2xs);
   color: var(--text-secondary);
+  white-space: nowrap;
 }
-.ent-legend .entity { font-size: var(--text-2xs); padding: 0.05rem 0.35em; }
-.ent-legend__prov { color: var(--text-muted-custom); }
+.ent-key__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  flex: none;
+}
+.ent-key__dot--person { background: var(--ent-person); }
+.ent-key__dot--place { background: var(--ent-place); }
+.ent-key__dot--object { background: var(--ent-object); }
+.ent-key__dot--time { background: var(--ent-time); }
+.ent-key--prov { color: var(--text-muted-custom); }
+.meta-ico { width: 0.8rem; height: 0.8rem; flex: none; }
+.ent-tip .meta-ico { vertical-align: -0.1em; }
 
 /* One shared tooltip for entity marks; a plain title cannot carry structure */
 .ent-tip {
