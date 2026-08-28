@@ -1276,6 +1276,12 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 
 .src-cat { font-size: var(--text-xs); color: var(--text-muted-custom); }
 
+/* Display segmentation: layout regions read as paragraphs, "Item" lines as
+   entries in the reading text. Presentation only, the data holds lines. */
+.transcription__line--region-start { margin-top: 0.9em; }
+.reading-line--region-start { margin-top: 1.1em; }
+.reading-line--entry { margin-top: 0.55em; }
+
 /* Provenance line above the entity table: extraction layer and text basis */
 .exp-basis {
   margin: var(--space-sm) var(--space-md) 0;

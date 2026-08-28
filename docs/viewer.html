@@ -931,13 +931,19 @@
       const corrections = reviewCorrections(pageNr);
 
       let html = '<div class="transcription">';
-      for (const region of page.regions) {
+      // A layout region boundary becomes a paragraph gap: heading, preamble
+      // and list blocks of the source read as blocks, straight from the
+      // Transkribus segmentation, with no interpretation added here.
+      for (const [ri, region] of page.regions.entries()) {
+        let firstInRegion = true;
         for (const line of region.lines) {
           lineNr++;
+          const regionStart = ri > 0 && firstInRegion ? ' transcription__line--region-start' : '';
+          firstInRegion = false;
           const lineAttr = line.id ? ` data-line-id="${escapeAttr(line.id)}" tabindex="-1"` : '';
           const fol = folioLabel(line.text);
           if (fol) {
-            html += `<div class="transcription__line transcription__line--folio"${lineAttr}>` +
+            html += `<div class="transcription__line transcription__line--folio${regionStart}"${lineAttr}>` +
                     `<span class="transcription__line-nr">${lineNr}</span>` +
                     `<span class="transcription__line-text">${escapeHTML(line.text)}</span></div>`;
             continue;
@@ -948,7 +954,7 @@
           if (entityIndex && !corr) text = markEntities(text);
           const mark = corr ? ' transcription__line--corrected' : '';
           const title = corr ? ` title="${escapeAttr(`Original: ${line.text}`)}"` : '';
-          html += `<div class="transcription__line${mark}"${lineAttr}${title}` +
+          html += `<div class="transcription__line${mark}${regionStart}"${lineAttr}${title}` +
                   ` data-original="${escapeAttr(line.text)}">` +
                   `<span class="transcription__line-nr">${lineNr}</span>` +
                   `<span class="transcription__line-text">${text}</span></div>`;
@@ -967,17 +973,27 @@
       const container = document.getElementById('transcription-container');
       const out = [];
       doc.pages.forEach((page, idx) => {
-        const lines = page.regions.flatMap(r => r.lines.map(l => l.text));
-        if (!lines.length) return;
+        const regions = page.regions.filter(r => r.lines.length);
+        if (!regions.length) return;
         out.push('<section class="reading-page">');
         out.push(`<button type="button" class="reading-page__mark" data-index="${idx}"` +
                  ` title="Open page ${page.pageNr} beside the facsimile">p. ${page.pageNr}</button>`);
-        for (const text of lines) {
-          const fol = folioLabel(text);
-          out.push(fol
-            ? `<div class="folio-mark">${escapeHTML(fol)}</div>`
-            : `<div class="reading-line">${escapeHTML(text)}</div>`);
-        }
+        // Region boundaries from the layout give the paragraph gaps; a line
+        // opening with "Item" additionally starts a small entry gap. Both are
+        // display segmentation only and never enter the data.
+        regions.forEach((region, ri) => {
+          region.lines.forEach((l, li) => {
+            const fol = folioLabel(l.text);
+            if (fol) {
+              out.push(`<div class="folio-mark">${escapeHTML(fol)}</div>`);
+              return;
+            }
+            const cls = ['reading-line'];
+            if (ri > 0 && li === 0) cls.push('reading-line--region-start');
+            else if (/^item\b/i.test(l.text)) cls.push('reading-line--entry');
+            out.push(`<div class="${cls.join(' ')}">${escapeHTML(l.text)}</div>`);
+          });
+        });
         out.push('</section>');
       });
       container.innerHTML = out.length
