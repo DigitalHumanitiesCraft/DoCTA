@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Same synthetic spread as page.xml with the two regions' geometry swapped:
+     identical ids, identical text, every derived side flipped. -->
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15">
+  <Page imageFilename="synthetic-spread.jpg" imageWidth="2000" imageHeight="1200">
+    <ReadingOrder>
+      <OrderedGroup id="reading-order">
+        <RegionRefIndexed index="0" regionRef="r-left"/>
+        <RegionRefIndexed index="1" regionRef="r-right"/>
+      </OrderedGroup>
+    </ReadingOrder>
+    <TextRegion id="r-right">
+      <Coords points="100,100 900,100 900,1000 100,1000"/>
+      <TextLine id="l-right-1">
+        <Coords points="150,200 800,200 800,250 150,250"/>
+        <Baseline points="150,240 800,240"/>
+        <TextEquiv><Unicode>Item sechs Pfund</Unicode></TextEquiv>
+      </TextLine>
+    </TextRegion>
+    <TextRegion id="r-left">
+      <Coords points="1100,100 1900,100 1900,1000 1100,1000"/>
+      <TextLine id="l-left-1">
+        <Coords points="1150,200 1800,200 1800,250 1150,250"/>
+        <Baseline points="1150,240 1800,240"/>
+        <TextEquiv><Unicode>Hanns</Unicode></TextEquiv>
+      </TextLine>
+      <TextLine id="l-left-2">
+        <Coords points="1150,300 1800,300 1800,350 1150,350"/>
+        <Baseline points="1150,340 1800,340"/>
+      </TextLine>
+    </TextRegion>
+  </Page>
+</PcGts>

@@ -2,13 +2,19 @@
 
 Unlike the inventory transcription fetcher, the importer keeps every PAGE
 ``TextLine`` even when it has no ``TextEquiv``. Region and line polygons,
-baselines and explicit region reading order are retained. Qualified line ids
-are stable for a fixed document, scan and PAGE layout.
+baselines and explicit region reading order are retained.
 
 The returned transcription revision is self-contained and requires no network
 access. Hash verification deliberately covers textual identity and line order;
 layout coordinates may be corrected without pretending that the reading itself
 changed.
+
+Identity therefore rests on document, scan, PAGE region id and PAGE line id,
+which the importer validates as unique per page. ``Side`` is derived from
+polygon geometry and stays out of the qualified line id, out of the text hash
+and out of anchor resolution. A corrected polygon that moves a line across the
+middle of the image changes the recorded side and leaves every existing anchor
+valid. Anchors carry the side as descriptive layout data.
 """
 
 from __future__ import annotations
@@ -91,15 +97,17 @@ def _safe_id_part(value: str) -> str:
 def qualified_line_id(
     document_id: int,
     scan_number: int,
-    side: Side,
     region_id: str,
     line_id: str,
 ) -> str:
-    """Stable XML-compatible identifier for one native PAGE line."""
+    """Stable XML-compatible identifier for one native PAGE line.
 
-    side_value = side.value if isinstance(side, Side) else str(side)
+    Deliberately free of derived layout information so that a coordinate
+    correction cannot change the id, the text hash or anchor validity.
+    """
+
     return (
-        f"line-{document_id}-{scan_number}-{side_value}-"
+        f"line-{document_id}-{scan_number}-"
         f"{_safe_id_part(region_id)}-{_safe_id_part(line_id)}"
     )
 
@@ -229,7 +237,6 @@ def import_page_xml(
                     "id": qualified_line_id(
                         document_id,
                         scan_number,
-                        side,
                         region_id,
                         native_line_id,
                     ),
@@ -313,7 +320,6 @@ def validate_anchor(anchor: SourceAnchor, revision: TranscriptionRevision) -> No
             item
             for item in revision.lines
             if item.anchor.scan_number == anchor.scan_number
-            and item.anchor.side == anchor.side
             and item.anchor.region_id == anchor.region_id
             and item.anchor.line_id == anchor.line_id
         ),

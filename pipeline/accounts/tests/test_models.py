@@ -12,6 +12,7 @@ from pydantic import ValidationError
 from pipeline.accounts.models import (
     AnnotationProposal,
     EditorialDecision,
+    Side,
     SourceAnchor,
     load_model,
     model_payload,
@@ -27,6 +28,9 @@ def test_source_anchor_uses_camel_case_json() -> None:
     assert payload["documentId"] == 12514730
     assert payload["transcriptionRevisionId"] == "tr-rb2-001"
     assert "document_id" not in payload
+    assert anchor.side is Side.LEFT
+    assert payload["side"] == "left"
+    assert type(payload["side"]) is str
 
 
 def test_invalid_anchor_span_is_rejected() -> None:

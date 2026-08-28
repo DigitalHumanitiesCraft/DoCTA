@@ -1,4 +1,4 @@
-"""Editorial decision, stale detection and accepted-set tests."""
+"""Editorial decision and stale-proposal tests."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
+from pydantic import ValidationError
 
 from pipeline.accounts.anchors import import_page_xml
 from pipeline.accounts.models import (
@@ -14,11 +15,9 @@ from pipeline.accounts.models import (
     TranscriptionRevision,
 )
 from pipeline.accounts.review import (
-    build_accepted_annotation_set,
     make_review_decision,
     proposal_is_stale,
     stale_proposal_ids,
-    validate_annotation_set,
 )
 
 FIXTURES = Path(__file__).parent / "fixtures" / "core"
@@ -59,30 +58,7 @@ def test_proposal_becomes_stale_on_another_revision() -> None:
     assert stale_proposal_ids([proposal], later) == (proposal.id,)
 
 
-def test_accepted_set_requires_matching_human_decision() -> None:
-    revision = _revision()
-    proposal = _proposal(revision)
-    decision = make_review_decision(
-        proposal,
-        decision_id="decision-person-1",
-        outcome=EditorialDecision.ACCEPTED,
-        reviewer="CE",
-        decided_at=NOW,
-    )
-    annotation_set = build_accepted_annotation_set(
-        set_id="annotations-rb2-001",
-        revision=revision,
-        proposals=[proposal],
-        decisions=[decision],
-        created_at=NOW,
-    )
-    assert annotation_set.proposal_ids == (proposal.id,)
-    assert annotation_set.decision_ids == (decision.id,)
-    assert annotation_set.editorial_status == "accepted"
-    validate_annotation_set(annotation_set)
-
-
-def test_rejected_proposal_cannot_enter_accepted_set() -> None:
+def test_decision_records_the_proposal_basis_without_mutating_it() -> None:
     revision = _revision()
     proposal = _proposal(revision)
     decision = make_review_decision(
@@ -91,12 +67,22 @@ def test_rejected_proposal_cannot_enter_accepted_set() -> None:
         outcome=EditorialDecision.REJECTED,
         reviewer="CE",
         decided_at=NOW,
+        note="hand differs",
     )
-    with pytest.raises(ValueError, match="not accepted"):
-        build_accepted_annotation_set(
-            set_id="annotations-rb2-001",
-            revision=revision,
-            proposals=[proposal],
-            decisions=[decision],
-            created_at=NOW,
+    assert decision.proposal_id == proposal.id
+    assert decision.outcome is EditorialDecision.REJECTED
+    assert decision.transcription_revision_id == revision.id
+    assert decision.transcription_sha256 == revision.sha256
+    assert proposal.editorial_status is EditorialDecision.PROPOSED
+
+
+def test_a_decision_needs_an_outcome() -> None:
+    proposal = _proposal(_revision())
+    with pytest.raises(ValidationError, match="other than proposed"):
+        make_review_decision(
+            proposal,
+            decision_id="decision-person-1",
+            outcome=EditorialDecision.PROPOSED,
+            reviewer="CE",
+            decided_at=NOW,
         )

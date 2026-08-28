@@ -1,11 +1,21 @@
 """Versioned data contracts for the DoCTA account-book pipeline.
 
-The models form the JSON trust boundary shared by transcription, annotation,
-review, TEI generation and RDF generation. Python uses snake_case while JSON
-uses the camelCase convention of the existing repository. Models are frozen so
-that a proposal or decision is replaced by a new artifact rather than edited in
-memory. Domain operations live in ``anchors.py``, ``review.py`` and
-``build_manifest.py``.
+This module is the executable part of the specification in
+``docs/knowledge/ACCOUNTING-ENCODING.md``. It covers exactly the objects the
+pipeline already produces and consumes: source anchors, transcription lines and
+revisions, annotation proposals and review decisions. The models form the JSON
+trust boundary shared by transcription, annotation, review, TEI generation and
+RDF generation. Python uses snake_case while JSON uses the camelCase convention
+of the existing repository. Models are frozen so that a proposal or decision is
+replaced by a new artifact rather than edited in memory. Domain operations live
+in ``anchors.py`` and ``review.py``.
+
+Deliberate omission: the annotation package as a locked accepted selection and
+the Edition Build Manifest stay prose specifications in
+``ACCOUNTING-ENCODING.md``. Both were implemented ahead of any consumer and
+drifted from the specification they claimed to encode, so they were removed.
+Upgrade path: when the publication build exists, implement them against the
+knowledge documents rather than against the removed code.
 
 The module makes no network calls. JSON writes are atomic and refuse to replace
 an existing artifact unless the caller explicitly requests it.
@@ -20,7 +30,7 @@ from datetime import datetime
 from enum import StrEnum
 from hashlib import sha256
 from pathlib import Path
-from typing import Annotated, Any, ClassVar, TypeVar
+from typing import Annotated, Any, TypeVar
 
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
 
@@ -43,7 +53,6 @@ class ContractModel(BaseModel):
         extra="forbid",
         frozen=True,
         populate_by_name=True,
-        use_enum_values=True,
     )
 
 
@@ -76,7 +85,11 @@ class PublicationStatus(StrEnum):
 
 
 class Side(StrEnum):
-    """Physical side represented by a line on a scan."""
+    """Physical side represented by a line on a scan.
+
+    Derived from layout geometry, so it describes a line without identifying
+    it. See ``anchors.py`` for the consequences.
+    """
 
     LEFT = "left"
     RIGHT = "right"
@@ -84,7 +97,11 @@ class Side(StrEnum):
 
 
 class SourceAnchor(ContractModel):
-    """Character-exact source reference tied to one transcription revision."""
+    """Character-exact source reference tied to one transcription revision.
+
+    Scan, region and line identify the anchored line; ``side`` is derived
+    layout information carried along and never used to resolve the anchor.
+    """
 
     document_id: int = Field(gt=0)
     scan_number: int = Field(gt=0)
@@ -175,7 +192,7 @@ class AnnotationProposal(ContractModel):
 
     @model_validator(mode="after")
     def _proposal_contract(self) -> AnnotationProposal:
-        if self.editorial_status != EditorialDecision.PROPOSED.value:
+        if self.editorial_status != EditorialDecision.PROPOSED:
             raise ValueError("an AnnotationProposal must remain proposed")
         if self.anchor.transcription_revision_id != self.transcription_revision_id:
             raise ValueError("proposal and anchor use different revisions")
@@ -198,63 +215,8 @@ class ReviewDecision(ContractModel):
 
     @model_validator(mode="after")
     def _is_decision(self) -> ReviewDecision:
-        if self.outcome == EditorialDecision.PROPOSED.value:
+        if self.outcome == EditorialDecision.PROPOSED:
             raise ValueError("a ReviewDecision needs an outcome other than proposed")
-        return self
-
-
-class AnnotationSet(ContractModel):
-    """Accepted annotation selection locked to one transcription revision."""
-
-    id: XML_ID
-    transcription_revision_id: XML_ID
-    transcription_sha256: SHA256
-    proposal_ids: tuple[XML_ID, ...]
-    decision_ids: tuple[XML_ID, ...]
-    editorial_status: EditorialDecision = EditorialDecision.ACCEPTED
-    publication: PublicationStatus = PublicationStatus.UNPUBLISHED
-    created_at: datetime
-    sha256: SHA256
-
-    @model_validator(mode="after")
-    def _accepted_set(self) -> AnnotationSet:
-        if self.editorial_status != EditorialDecision.ACCEPTED.value:
-            raise ValueError("an AnnotationSet contains accepted proposals only")
-        if len(self.proposal_ids) != len(set(self.proposal_ids)):
-            raise ValueError("proposal ids must be unique")
-        if len(self.decision_ids) != len(set(self.decision_ids)):
-            raise ValueError("decision ids must be unique")
-        if len(self.proposal_ids) != len(self.decision_ids):
-            raise ValueError("each accepted proposal needs one review decision")
-        return self
-
-
-class EditionBuildManifest(ContractModel):
-    """Deterministic lock of accepted inputs for one edition build."""
-
-    id: XML_ID
-    profile: NON_EMPTY
-    transcription_revision_ids: tuple[XML_ID, ...]
-    annotation_set_ids: tuple[XML_ID, ...]
-    artifact_hashes: dict[str, SHA256]
-    specification_versions: dict[str, NON_EMPTY]
-    publication: PublicationStatus = PublicationStatus.UNPUBLISHED
-    created_at: datetime
-    sha256: SHA256
-
-    @model_validator(mode="after")
-    def _unique_references(self) -> EditionBuildManifest:
-        for name, values in (
-            ("transcription revision", self.transcription_revision_ids),
-            ("annotation set", self.annotation_set_ids),
-        ):
-            if len(values) != len(set(values)):
-                raise ValueError(f"{name} ids must be unique")
-        referenced = set(self.transcription_revision_ids) | set(self.annotation_set_ids)
-        if referenced != set(self.artifact_hashes):
-            raise ValueError(
-                "artifactHashes must cover exactly the referenced artifacts"
-            )
         return self
 
 
@@ -265,11 +227,9 @@ CORE_MODELS: tuple[type[ContractModel], ...] = (
     TranscriptionRevision,
     AnnotationProposal,
     ReviewDecision,
-    AnnotationSet,
-    EditionBuildManifest,
 )
-CORE_SPECIFICATION_ID: ClassVar[str] = "docta-accounts-core"
-CORE_SPECIFICATION_VERSION: ClassVar[str] = "1.0.0"
+CORE_SPECIFICATION_ID: str = "docta-accounts-core"
+CORE_SPECIFICATION_VERSION: str = "1.0.0"
 
 
 def model_payload(

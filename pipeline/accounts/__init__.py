@@ -2,8 +2,6 @@
 
 from .models import (
     AnnotationProposal,
-    AnnotationSet,
-    EditionBuildManifest,
     EditorialDecision,
     PublicationStatus,
     ReviewDecision,
@@ -16,8 +14,6 @@ from .models import (
 
 __all__ = [
     "AnnotationProposal",
-    "AnnotationSet",
-    "EditionBuildManifest",
     "EditorialDecision",
     "PublicationStatus",
     "ReviewDecision",
