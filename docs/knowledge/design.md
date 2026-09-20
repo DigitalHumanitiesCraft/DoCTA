@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-05
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -71,9 +71,11 @@ The dedicated network page and the faceted search over SiCProD were removed when
 
 ## 4. Rule-bound review status
 
-Extracted entities and relations carry the values secure, worth checking and problematic. The current implementation still takes that grading from the model output and therefore holds no epistemic validity of its own.
+The demo extraction of the prototype phase graded entities and relations as secure, worth checking and problematic. That grading came from the model output and held no epistemic validity, and the display no longer uses it. The pipeline extraction under `data/entities/` carries no such field, because the entity prompt `pipeline/prompts/entities_it01.md` forbids one, and `js/data-loader.js` drops the grading of the demo file on reading. An entity is shown with its machine provenance, the extracting model and the label "not verified".
 
-The next iteration binds the display to documented workflow states. Secure presupposes a deterministic check or a scholarly verification. Worth checking marks an open comparison against image or source. Problematic marks a recognised contradiction, a strong divergence between models or a violated rule. Percentage self-assessments produced by a language model are never displayed. See domain-knowledge.md on epistemic asymmetry and htr-evaluation.md on the review contract.
+The `--conf-*` tokens of section 6 therefore grade no entity. They colour documented states of the text layer, namely the provenance chips, the machine-output badge, the segments of the progress bar and the review bar.
+
+A graded status for entities returns only bound to documented workflow states. Secure presupposes a deterministic check or a scholarly verification. Worth checking marks an open comparison against image or source. Problematic marks a recognised contradiction, a strong divergence between models or a violated rule. Percentage self-assessments produced by a language model are never displayed. See domain-knowledge.md on epistemic asymmetry and htr-evaluation.md on the review contract.
 
 ## 5. Rejected and open
 
@@ -82,7 +84,7 @@ The next iteration binds the display to documented workflow states. Secure presu
 | A map view of the places | Rejected for the prototype | A substantial share of the SiCProD places carry no coordinates. A map with systematic gaps suggests a completeness that is not there |
 | A period filter as a slider | Not built | The datings in SiCProD are too heterogeneous for a continuous axis |
 | A German and English bilingual site | Resolved by the August 2026 refactor | The site and the knowledge base are English throughout; German remains for shelfmarks, source titles and quoted source text |
-| A line overlay in the viewer, coupling image and transcription | Open | The coordinates are ready in `data/transcriptions/*.json` under `regions[].lines[].coords` |
+| A line overlay in the viewer, coupling image and transcription | Built | Drawn from `regions[].lines[].coords` in `data/transcriptions/*.json`, see architecture.md. Documents the pipeline transcribed itself carry no coordinates and get no overlay |
 | A separate edition page | Folded into the viewer, 2026-08-27 | The page duplicated the viewer while no accepted edition text exists. The viewer now carries a reading mode over the whole document text; a dedicated edition page returns once editorially accepted TEI text is available |
 
 ## 6. Colour system

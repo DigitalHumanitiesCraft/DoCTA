@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -341,7 +341,7 @@ The APIs were designed for a desktop client. A `fetch()` on PAGE XML is blocked 
 
 ### Pre-fetch strategy
 
-`scripts/fetch_transcriptions.py` authenticates via OAuth2, requests `fulldoc` per document, parses the PAGE XML and writes JSON with lines, coordinates and text. Output: `data/transcriptions/{doc_id}.json` and `data/raitbuch2_pages.json`. The page list is an exploration artifact that no page loads; the viewer takes its IIIF URLs from the transcription files themselves.
+`scripts/fetch_transcriptions.py` authenticates via OAuth2, requests `fulldoc` per document, parses the PAGE XML and writes JSON with lines, coordinates and text. Output: `data/transcriptions/{doc_id}.json` and `data/raitbuch2_pages.json`. No page loads the page list, since the viewer takes its IIIF URLs from the transcription files themselves. The register build and the benchmark and pilot runners read it as the image table of account book 2.
 
 ### Exploration checklist (closed)
 
@@ -352,7 +352,7 @@ The APIs were designed for a desktop client. A `fetch()` on PAGE XML is blocked 
 - [x] PAGE XML export of the transcribed inventories converted to JSON, in `data/transcriptions/`
 - [x] Mapping from Transkribus titles to catalogue shelfmarks established, all matched, in `data/source_mapping.json`
 
-The collection metadata `data/transkribus_collection.json` and `data/transkribus_status.json` are results of this exploration and are loaded by no page.
+The collection metadata `data/transkribus_collection.json` and `data/transkribus_status.json` are results of this exploration and remain inputs. Their consumers are named in INDEX.md under the pipeline inputs.
 
 ## 4. Account book 2, the working volume
 

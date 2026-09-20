@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -60,7 +60,7 @@ Two departures from the SiCPAS model need to be named, because they read easily 
 1. **`object` instead of `thing`.** The demo uses the coarser label that SiCPAS deliberately leaves behind (see the category discrepancy below). This is a legacy of the first annotation round rather than a modelling decision. In the full project `thing` holds, with the attributes size, number, material, category, quality, colour and function.
 2. **`practice` is not a separate entity type in the prototype.** Practices appear instead as predicates of the extracted relations (`data/demo/thaur_relations.json`, with a `predicateType` drawn from eight classes such as inventorying, possession, handover, object transfer, habitation and testimony). The reference to action is present, modelled at the edge rather than at the node. Whether practices have to become nodes of their own is decided by the mapping between practice and BeNASch.
 
-The finer distinctions place versus space and group versus court are not implemented in the prototype and are presented in the proposal as a planned extension.
+The finer distinctions place versus space and group versus court are not implemented in the prototype and are presented in the proposal as a planned extension. Which granularity the annotation adopts is a decision of the project lead, listed with the other annotation decisions in specification.md.
 
 **Category discrepancy.** The proposal for the first submission defined six categories in its Table 2, among them "object" and "organization". SiCPAS differentiates more finely, with "thing" in place of "object" and "group" and "court" in place of "organization". The prototype set is a pragmatic compromise and still sits terminologically at the level of the proposal.
 
@@ -130,7 +130,7 @@ It models events formally as trigger verb, then agent, then patient. The annotat
 | Event | event | Major events only, no everyday practices |
 | Relation | relations | Relation types have to be mapped onto SiCPAS |
 
-Current counts for the exported entities are in `data/stats.json`; see data.md for the quality of each entity type.
+The exported records are in `data/persons.json`, `data/places.json`, `data/institutions.json`, `data/functions.json` and `data/relations.json`, and data.md describes the quality of each entity type. `data/stats.json` is an aggregate of the prototype phase that no page loads, so it is no source for current figures.
 
 ## Cooperation partners
 

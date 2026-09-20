@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -34,9 +34,8 @@ The site is static and served by GitHub Pages from `docs/` on `main`. It uses va
 | Bootstrap | 5.3.3 | `lib/bootstrap.min.css`, `lib/bootstrap.bundle.min.js` |
 | D3 | 7.9.0 | `lib/d3.v7.min.js` |
 | OpenSeadragon | 4.1.1 | `lib/openseadragon.min.js` |
-| marked | 15.0.12 | `lib/marked.min.js` |
 
-D3 comes from `https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js`, the single-file UMD dist build of the release, vendored on 2026-08-28 and licensed ISC. Cytoscape.js 3.30.4 was vendored until the same day, when the network view moved to D3 and `lib/cytoscape.esm.min.mjs` was deleted; no page loads it any more.
+D3 comes from `https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js`, the single-file UMD dist build of the release, vendored on 2026-08-28 and licensed ISC. Cytoscape.js 3.30.4 was vendored until the same day, when the network view moved to D3 and `lib/cytoscape.esm.min.mjs` was deleted. `lib/marked.min.js` (marked 15.0.12) is still in the folder as a remnant of the knowledge page removed on 28.08.2026, and no page loads it.
 
 The pins lag behind upstream. That is deliberate. The versions are frozen since they worked, and without a package manager an upgrade means editing files by hand and retesting every page.
 
@@ -45,7 +44,7 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 | Page | Purpose |
 |------|---------|
 | `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
-| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with the extracted entities of the demo source, plus a reading mode over the whole document text |
+| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, the entity layer of the document from `data/entities/`, a curation view for page decisions and line corrections, plus a reading mode over the whole document text |
 | `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `about.html` | About the project, data sources, imprint |
@@ -81,7 +80,7 @@ Object entities outnumber persons and places by an order of magnitude, so they s
 
 ### Scale and the two graph problems
 
-The current graph is small, a few hundred nodes at most with objects switched on, so a live force layout over the whole set is fast enough and needs no progressive disclosure. The cost that is already noticeable is the filter change: every toggle rebuilds the node and edge DOM, runs a fresh simulation and finishes with the label-separation pass, which is why switching the 212 objects on takes a moment (operator observation, 2026-08-28). The head-room in this architecture, in the order to use it: seed the simulation with the previous positions instead of starting cold, cache settled positions per filter state, cap the label pass by iteration budget, and only then a Canvas renderer when node counts grow past what SVG carries.
+The current graph is small, a few hundred nodes at most with objects switched on, so a live force layout over the whole set is fast enough and needs no progressive disclosure. The cost that is already noticeable is the filter change: every toggle rebuilds the node and edge DOM, runs a fresh simulation and finishes with the label-separation pass, which is why switching the objects on takes a moment (operator observation, 2026-08-28). The head-room in this architecture, in the order to use it: seed the simulation with the previous positions instead of starting cold, cache settled positions per filter state, cap the label pass by iteration budget, and only then a Canvas renderer when node counts grow past what SVG carries.
 
 The SiCProD court network is a different problem, with several thousand persons and tens of thousands of relations. The prototype-era network page solved it by progressive disclosure, an ego network around Sigmund as the entry point with a bounded full view behind a toggle. That page was removed in the August 2026 consolidation; the design reasoning is preserved in design.md and applies again when the court network returns as a view over edited text. At that size SVG marks become the bottleneck and a Canvas renderer is the upgrade path.
 
@@ -97,7 +96,7 @@ Zero dependencies, IIIF support, deep zoom.
 
 Images come from Transkribus IIIF URLs, loaded as a plain image source (`viewer.open({ type: 'image', url })`) rather than as a tiled IIIF service. That is enough for single pages and saves a request round trip per tile.
 
-The transcription panel is separate HTML beside the viewer. A synchronisation over viewport events, so that a line in the text highlights its line box in the image, was planned and is not implemented; image and text sit side by side without pointing at each other. The line coordinates from the PAGE XML are ready in `data/transcriptions/`, the overlay is missing.
+The transcription panel is separate HTML beside the viewer. `buildLineOverlay` in `viewer.html` draws the line polygons of the PAGE XML, held in `data/transcriptions/` under `regions[].lines[].coords`, as an SVG overlay on the image. Hovering or focusing a line in the text marks its polygon, hovering a polygon marks its line, and a click on a polygon scrolls to the line. A document the pipeline transcribed itself has no layout analysis and therefore no overlay.
 
 ## Search: custom vanilla JavaScript
 
@@ -128,7 +127,7 @@ IndexedDB is optional. If the database does not open within one and a half secon
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, exploration, benchmark, knowledge, about
+│   ├── *.html              index, viewer, exploration, benchmark, about
 │   ├── css/styles.css      Design tokens as CSS custom properties
 │   ├── js/                 ES6 modules shared by several pages
 │   │   ├── app.js          Navigation, banner, footer
@@ -146,7 +145,8 @@ DoCTA/
 │   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
 │   │   ├── entities/       Line-anchored entities per document, input to the TEI build
 │   │   ├── graph.jsonld    Aggregated entity graph over all extracted documents
-│   │   ├── pipeline/       register_summary.json, the site projection of the register
+│   │   ├── pipeline/       register_summary.json, the site projection of the register,
+│   │   │                   and transcriptions/ for the documents DoCTA transcribed itself
 │   │   ├── tei/            Generated TEI P5, one file per document
 │   │   └── transcriptions/ Inventory transcriptions from Transkribus PAGE XML
 │   ├── lib/                Vendored dependencies
@@ -155,8 +155,9 @@ DoCTA/
 │   ├── benchmark/          Versioned prompt benchmark: pages, prompts, runs, metrics
 │   ├── pilot/              The benchmark prompts on continuous, uncurated material
 │   ├── pilot2/             The same configuration on a wider slice of unseen material
-│   └── checks/             Reference-free checks over the runs, currently the
-│                           arithmetic probe of the account-book amounts
+│   ├── checks/             Reference-free checks over the runs, currently the
+│   │                       arithmetic probe of the account-book amounts
+│   └── edition/            The pipeline's own per-page transcriptions for edition use
 ├── experiments/
 │   └── transcription-test/ The frozen first VLM transcription test of 26.08.2026
 ├── pipeline/               Page register (per-page content class, empty evidence,
@@ -195,6 +196,7 @@ Consistent with coOCR/HTR, an external reference project developed by DHCraft.
 | `transform_sources.py` | Source catalogue CSV plus `data/source_mapping.json` | `data/sources.json` |
 | `fetch_transcriptions.py` | Transkribus API over OAuth2 | `data/transcriptions/{id}.json` |
 | `map_sources.py` | Transkribus titles plus catalogue shelfmarks | `data/source_mapping.json` |
+| `harvest_inventaria_mapping.py` | Public Transkribus Sites API of the Inventaria edition plus the IIIF keys of the page register | `data/inventaria_mapping.json` |
 | `build_stats.py` | The exported JSON files | `data/stats.json`, currently read by no page |
 
 The site computes the figures it shows in the browser, from the source catalogue in `data/sources.json` and the register projection in `data/pipeline/register_summary.json`, both of which it loads anyway. `build_stats.py` and its `data/stats.json` are left over from the prototype phase and have no consumer; the file stays as an exploration artifact. The pipeline scripts that write `data/pipeline/`, `data/tei/` and `data/entities/` live in `pipeline/` and are documented in `pipeline/README.md`.
@@ -205,7 +207,7 @@ One exploration script has no consumer for its output: `explore_transkribus_deep
 
 ## Tests
 
-`tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. Both derive their page list from the `*.html` files in `docs/`, so a new page is covered without an edit to the tests, and both exit nonzero on the first finding, which makes them usable as a gate rather than as a report to read. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.
+`tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. Both derive their page list from the `*.html` files in `docs/`, so a new page is covered without an edit to the tests, and both exit nonzero when they report any finding, which makes them usable as a gate rather than as a report to read. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.
 
 ## coOCR/HTR as a reference
 

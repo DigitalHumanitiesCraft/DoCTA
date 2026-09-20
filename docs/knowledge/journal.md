@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -24,6 +24,16 @@ related: [INDEX, project, handoff]
 # Journal
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
+
+## Three owner decisions, and the knowledge base checked against the repository (20.09.2026)
+
+Three decisions of the project owner. First, DoCTA becomes a locally run editing tool. The editor clones the repository, edits the research data in an edit mode of the locally running application and commits her changes herself with GitHub Desktop. The present path, corrections held in the browser's localStorage until an exported review file is ingested by the operator with `apply_review.py`, is the state to be replaced. The decision answers the requirement that the project lead must be able to operate the pipeline herself, and which interfaces and functions she needs is worked out together with her. Home of the decision is `specification.md`. Second, a TEI ODD is not needed. RELAX NG and, in the accounts pilot, Schematron and SHACL carry validation, and an ODD stays a possible later step only if DoCTA publishes a reusable TEI customisation. This replaces the wording "deferred" in `accounting-encoding.md` and `pipeline/schema/SOURCES.md`. Third, the working edition proposed on 28.08.2026 is still unconfirmed, and an introduction meeting with the project lead is set for 21.09.2026. The transcription convention with its permitted normalisations, the annotation vocabulary (priority object categories, order of the reconciliation sources, the free-text `role` field of entity iteration 01, place versus space) and the confirmation of the working edition lie with the project lead, recorded as responsibility in `specification.md`.
+
+A read of every knowledge document against code, data and generated artefacts corrected statements the repository contradicts. The viewer has a line overlay (`buildLineOverlay`), which `architecture.md` called missing and `design.md` listed as open. The viewer reads its entity layer from `data/entities/`, with the demo file as a fallback that no longer triggers for the one document it covers. No page loads `lib/marked.min.js`. The display takes no grading from model output, since the entity prompt forbids a confidence field and the loader drops the one of the demo file, and the `--conf-*` tokens colour states of the text layer. `data/transkribus_collection.json`, `data/transkribus_status.json` and `data/raitbuch2_pages.json` have consumers and moved from the exploration artefacts to the pipeline inputs in `INDEX.md`. `data/stats.json` is no source of current figures. The benchmark computes metrics per page, and zone stratification and line loss are specified only, which `INDEX.md`, `specification.md` and the benchmark README now say. The README no longer lists the removed knowledge page, names `project.md` and `handoff.md`, and states that no page has passed review. `pipeline/README.md` says that the `provenance` field of `documents.json` is a constant, the docstring of `apply_review.py` names the edition run as a base, and the edition README names the blocked benchmark page that `errors.json` records.
+
+`handoff.md` gained the current result and the open work. The inventory path runs from the pipeline's own transcription through entity extraction to TEI valid in both stages for the documents where it was run, the review step is implemented and has never been run with a real export, and no edition path exists for the account books. The process lessons of the pilot 2 review are named there once as open work after the reviewed sample exists, none of them being implemented. No document was removed or renamed.
+
+Four points stay open. How the edit mode writes into the repository, since the technical constraints of `specification.md` were written for the published static site. The constant `provenance` field in `documents.json` misstates the origin of the two documents DoCTA transcribed itself and is a code matter. `docs/lib/marked.min.js` is an unused file of the published site. The token names `--conf-*` still carry the confidence wording they no longer mean.
 
 ## Methods review of the HTR evaluation, and its two correction phases (28.08.2026)
 

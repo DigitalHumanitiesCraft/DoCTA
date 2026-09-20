@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [INDEX, editorial-model, architecture]
@@ -24,7 +24,7 @@ This document specifies how the DoCTA account-book pilot represents the objects 
 
 The document defines an intended pilot specification. No current DoCTA account-book transcription, accounting annotation, TEI file or RDF graph has been facsimile-verified and editorially accepted under this specification. Existing model runs remain unrevised machine output.
 
-The pilot uses a hand-written project RELAX NG schema and a separate Schematron schema. A TEI ODD is deferred beyond the pilot. The schema sources, generated artefacts and validator versions must remain pinned and reproducible.
+The pilot uses a hand-written project RELAX NG schema and a separate Schematron schema. A TEI ODD is not needed, as decided on 2026-09-20, because RELAX NG, Schematron and SHACL carry the validation. An ODD stays a possible later step only if DoCTA publishes a reusable TEI customisation. The schema sources, generated artefacts and validator versions must remain pinned and reproducible.
 
 Part of this specification has an executable counterpart in `pipeline/accounts/`, the module that turns those rules into code a test can hold to. Implemented there are the PAGE-derived anchoring and its identity and digest rules, the JSON records for Transcription Revision, annotation proposal and review decision with the status axes of `editorial-model.md` kept separate, the staleness rule that invalidates an anchor when its text digest changes, and the validation of TEI and RDF against the project RELAX NG, the Schematron rules and the SHACL shapes.
 

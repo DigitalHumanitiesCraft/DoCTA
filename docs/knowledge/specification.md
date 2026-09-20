@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -75,6 +75,14 @@ Recorded in her own words and rendered here in English.
 
 The training request is a design constraint rather than a courtesy. A pipeline the project lead cannot operate or inspect herself fails the requirement even if its output is correct.
 
+## Locally run editing tool, decided 2026-09-20
+
+DoCTA becomes a locally run editing tool, which is the answer to the constraint above. The editor clones the repository, edits the research data in an edit mode of the locally running application, and commits her changes herself with GitHub Desktop.
+
+This replaces the present review path. Today the viewer keeps page decisions and line corrections in the browser's localStorage until the editor exports a review file, and the operator ingests that file with `pipeline/apply_review.py` (contract in `pipeline/README.md`). That path stays in the repository as the implemented state until the edit mode exists.
+
+Which interfaces and functions the editor needs is worked out together with her.
+
 ## Technical constraints
 
 | Constraint | Reason |
@@ -98,7 +106,7 @@ The first submission was rejected in its then form, and the review addressed pri
 | 6 | Sources not sufficiently characterised | The source catalogue is categorised, filterable and sortable, with an availability tier per source. | Code |
 | 7 | No exemplary source excerpts | Real inventory pages with working transcription, entities and a source link. Reference status is now stated explicitly. | Code |
 | 8 | Project plan too generic | A working pipeline is the specific plan. Each stage is shown on concrete material. | Code |
-| 9 | Evaluation of technical procedures missing | The versioned prompt benchmark measures each prompt iteration with repetitions, stratified metrics and full provenance. `htr-evaluation.md` defines reference classes, task-specific metrics and the release rule. | Code and method |
+| 9 | Evaluation of technical procedures missing | The versioned prompt benchmark measures each prompt iteration with repetitions, metrics reported per page and full provenance. `htr-evaluation.md` defines reference classes, task-specific metrics and the release rule. | Code and method |
 | 10 | No fulfilment criteria for the hypotheses | Raw counts on the home page evidence data availability. Fulfilment criteria for historical hypotheses must be formulated per research question in the proposal, as observable evidence together with a refutation criterion. | Text and method |
 
 Seven points are addressed directly in code. Point 9 has moved from a first test to a running measuring instrument. Points 2, 5 and 10 need explicit work in the proposal text and cannot be answered by building anything.
@@ -123,9 +131,19 @@ The full review specification is in `htr-evaluation.md`.
 
 ## Planned: annotation curation in the viewer
 
-Announced in the feedback response of 28.08.2026 and next in line after the transcription review: the editor-in-the-loop of the review mode extends to the entity annotations. Machine entity proposals are already anchored to the source line; the viewer gains their direct correction and confirmation, with source line, model provenance, review status and the reasoned correction preserved for every assignment. Reconciliation targets are SiCProD for persons and functions, Wikidata and the GND additionally for persons and for places, and the Inventaria terminology together with the Getty Art & Architecture Thesaurus for object names and controlled object categories. Confirmed corrections may feed later extraction runs. Two decisions are open and belong to the project lead: the priority object categories, and the order in which the reconciliation sources are consulted.
+Announced in the feedback response of 28.08.2026 and next in line after the transcription review: the editor-in-the-loop of the review mode extends to the entity annotations. Machine entity proposals are already anchored to the source line; the viewer gains their direct correction and confirmation, with source line, model provenance, review status and the reasoned correction preserved for every assignment. Reconciliation targets are SiCProD for persons and functions, Wikidata and the GND additionally for persons and for places, and the Inventaria terminology together with the Getty Art & Architecture Thesaurus for object names and controlled object categories. Confirmed corrections may feed later extraction runs. The vocabulary decisions this needs are listed in the next section.
+
+## Decisions that lie with the project lead
+
+Recorded on 2026-09-20 as responsibility. None of them is taken yet.
+
+- The transcription convention with the permitted normalisations. `htr-evaluation.md` names it under the scholarly review points.
+- The annotation vocabulary, which comprises the priority object categories, the order in which the reconciliation sources are consulted, the treatment of the free-text `role` field that entity iteration 01 (`pipeline/prompts/entities_it01.md`) fills with an attested function for persons and an object group for objects, and the granularity of place versus space (`domain-knowledge.md`).
+- The confirmation of the working edition proposed on 2026-08-28 (`project.md`).
 
 ## Open questions
+
+- How the edit mode of the locally run editing tool writes into the repository is open. The technical constraints above were written for the published static site.
 
 - Whether bilingual presentation in German and English is needed is unresolved. The site is currently English; the source material and the working documents are German.
 - Which case study the resubmission builds on is not decided (see domain-knowledge.md).

@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.1"
 created: 2026-08-27
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [INDEX, data, specification, editorial-model]
@@ -169,6 +169,8 @@ The measurement rests on an approximation that has to be stated. An error is def
 
 ## Limitations
 
+The figures in this section describe the summaries and reports as they stood on 28.08.2026.
+
 - **Reference class.** No editorially accepted ground truth exists in the project. Every CER reported here compares a machine transcription against a Transkribus transcript of provisional status, so it measures the distance between two texts and ranks configurations against one another. A statement about quality would need a reference of the first class.
 - **What the fair profile forgives.** The fair normalisation removes diacritics, collapses `u/v` and `i/j`, drops bracket markup and punctuation, and lowercases. Editorial expansions in the reference, written in round brackets, are unwrapped and then scored as though they stood on the page. Loss markers are dropped rather than counted as content the run failed to deliver. A model that never writes a diacritic is not penalised under this profile.
 - **What temperature zero measures.** Repeated identical requests differ, so the agreement between repetitions measures the nondeterminism of the serving stack together with the ambiguity of the page. It is a lower bound on stability, and any statement about correctness needs the reference.
@@ -222,7 +224,7 @@ A configuration is released for exactly the research purpose for which it passes
 
 ## Scholarly review points
 
-- The project lead sets the diplomatic target convention and the permissible normalisations.
+- The project lead sets the diplomatic target convention and the permissible normalisations. The decision is not taken yet, and specification.md lists it with the other decisions that lie with her.
 - A representative account-book sample receives line-by-line reference transcriptions.
 - Amounts are adjudicated together with unit, line and any relation to a total.
 - SiCProD name variants are used only in post-processing. Every fuzzy match is preserved as a proposal alongside the original reading.

@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -40,7 +40,7 @@ Two commitments hold everywhere. All model output remains unrevised machine tran
 
 ## Proposed next form: a working edition
 
-Proposed to the project lead on 28.08.2026 and not yet confirmed: DoCTA develops into a working edition, a shared working environment tailored to the project lead's research and material, in which account books, inventories, court ordinances, copybooks and further court sources are brought together for indexing and comparative analysis. In a resubmission this takes the form of a service arrangement, Digital Humanities Craft supporting the work with the already developed environment, while the centre of gravity stays with the historical research. The transcription review in the viewer is the model for the next step, an editor-in-the-loop for the annotations, specified in `specification.md`.
+The working edition was proposed to the project lead on 28.08.2026 and is still unconfirmed on 20.09.2026. An introduction meeting with the project lead is set for 21.09.2026, and the confirmation lies with her. Under the proposal DoCTA develops into a working edition, a shared working environment tailored to the project lead's research and material, in which account books, inventories, court ordinances, copybooks and further court sources are brought together for indexing and comparative analysis. In a resubmission this takes the form of a service arrangement, Digital Humanities Craft supporting the work with the already developed environment, while the centre of gravity stays with the historical research. The transcription review in the viewer is the model for the next step, an editor-in-the-loop for the annotations, specified in `specification.md`. Decided on 20.09.2026, DoCTA becomes a locally run editing tool in which the editor changes the research data herself and commits them. `specification.md` holds the decision.
 
 ## Who it is for
 
@@ -52,7 +52,7 @@ Transkribus collection 2197991 holds the facsimiles, account books (Raitbücher)
 
 ## State
 
-The reviewer-facing prototype went public in February 2026 and answered the review critique of the first submission. Since August 2026 the site is organised around the pipeline stages, and the edition pipeline runs end to end, from the pipeline's own transcription of a source through entity extraction to validated TEI. The qualitative gaps that remain, an editorially accepted account-book reference and the comparison with specialised HTR, are named in `htr-evaluation.md`; decisions and their reasons are in `journal.md`.
+The reviewer-facing prototype went public in February 2026 and answered the review critique of the first submission. Since August 2026 the site is organised around the pipeline stages. What the pipeline has produced so far and what it has not is stated in `handoff.md` under the current result. The qualitative gaps of the evaluation, an editorially accepted account-book reference and the comparison with specialised HTR, are named in `htr-evaluation.md`; decisions and their reasons are in `journal.md`.
 
 ## Method
 
