@@ -21,7 +21,7 @@ Runs live in `runs/`, one file per page, named `edition_inv_<docId>_p<n>__it02__
 
 There is no summary file. Without a reference transcription and without repeats there is no metric to compute, and the run records are the source of truth for everything else.
 
-Failures are collected in `errors.json`, empty when every page went through. The API refused nothing in this run set; the benchmark saw one blocked page on a dense Raitbuch spread, which is the kind of failure this file is for.
+Failures are collected in `errors.json`, empty when every page went through. The API refused nothing in this run set; the benchmark saw blocked calls on the dense inventory page `inv_11348659_p1` (see `../benchmark/errors.json`), which is the kind of failure this file is for.
 
 ## Where the runs go from here
 

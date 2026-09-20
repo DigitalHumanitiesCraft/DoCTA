@@ -27,8 +27,9 @@ to what `build_tei.py` emits is a change to this schema, and the two-stage run o
 `validate_tei.py` is what keeps them in step. Being narrower than TEI, it never replaces
 `tei_all.rng`; TEI conformance stays the first stage.
 
-An ODD remains an optional later consolidation path. It becomes useful if DoCTA publishes a
-reusable TEI customisation and adopts a pinned ODD generation toolchain. The accounting pilot
-uses a human-readable encoding specification together with hand-written Relax NG and
+A TEI ODD is not needed, as decided on 2026-09-20. RELAX NG carries the validation, joined in
+the accounting pilot by Schematron and SHACL. An ODD stays a possible later step only if DoCTA
+publishes a reusable TEI customisation, and it would then need a pinned ODD generation
+toolchain. The accounting pilot uses a human-readable encoding specification together with hand-written Relax NG and
 Schematron schemas. Generated and hand-written schemas must never be maintained as competing
 normative sources.

@@ -6,13 +6,13 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 ## What this is
 
-DoCTA turns facsimiles of fifteenth-century Tyrolean court records into research data and a digital edition. Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances are treated as one connected corpus. The pipeline runs in five stages:
+DoCTA turns facsimiles of fifteenth-century Tyrolean court records into research data and a digital edition. Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances are treated as one connected corpus. The pipeline has five stages. Sources, VLM transcription, the benchmark and TEI generation have run on real material. No page has passed scholarly review yet, so approved text and an edition over it do not exist. The current result is stated in `docs/knowledge/handoff.md`.
 
 1. **Sources.** Facsimiles and metadata from a Transkribus collection, mapped against an archival source catalogue.
 2. **VLM transcription.** Vision-language models produce candidate text from the page image. All such output is unrevised machine transcription and is marked as such wherever it is displayed.
-3. **Validation and ground truth.** A versioned prompt benchmark measures each prompt iteration on a fixed page set. Scholarly review at the facsimile produces approved reference text, which serves at once as the evaluation base and as edition progress.
-4. **TEI and research data.** Approved text is encoded and published as reusable research data.
-5. **Edition.** The edition view over the sources that have passed validation.
+3. **Validation and ground truth.** A versioned prompt benchmark measures each prompt iteration on a fixed page set. Scholarly review at the facsimile is to produce approved reference text, which serves at once as the evaluation base and as edition progress.
+4. **TEI and research data.** Text is encoded as TEI that declares its provenance and revision state in the header, and is published as reusable research data. Until a review has run, every file carries text DoCTA has not verified against the facsimile.
+5. **Edition.** The edition view over the sources that have passed review. None has, and the reading mode of the viewer stands in for it.
 
 The digital instruments are heuristic tools in service of historical research questions about court practice. The knowledge base in `docs/knowledge/` is the source of truth for how the project understands its sources, its methods and its own decisions; the code is the disposable artifact.
 
@@ -21,7 +21,7 @@ The digital instruments are heuristic tools in service of historical research qu
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, exploration, benchmark, knowledge, about
+│   ├── *.html              index, viewer, exploration, benchmark, about
 │   ├── css/, js/, lib/     Design tokens, shared ES6 modules, vendored dependencies
 │   ├── data/               Pre-processed JSON read by the site
 │   └── knowledge/          The Promptotyping knowledge base, Markdown read in the repository
@@ -55,6 +55,8 @@ The figures the site shows are computed in the browser from the source catalogue
 | Document | Content |
 |----------|---------|
 | `INDEX.md` | Map of content and reading order |
+| `handoff.md` | Current result, open work and open handoff points |
+| `project.md` | Charter, what the project is, for whom and on what material basis |
 | `data.md` | Data sources, structure and quality |
 | `htr-evaluation.md` | Reference classes, benchmark protocol, metrics, release rule |
 | `specification.md` | Goals, constraints, review criticism and how it was answered |

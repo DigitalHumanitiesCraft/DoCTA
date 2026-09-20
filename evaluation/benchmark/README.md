@@ -4,15 +4,15 @@ Kleines, versioniertes Benchmark für die VLM-Transkription des DoCTA-Bestands (
 
 ## Protokoll
 
-1. **Seiten** stehen fest in `pages.json` (12 Seiten aus der visuellen Bestandssichtung aller 123 Raitbuch-Doppelseiten plus Inventar-Stichprobe; jede Seite vertritt ein Phänomen). Drei Inventarseiten tragen formalen Transkribus-DONE-Status und dienen als CER-Anker. Änderungen am Set nur dokumentiert und nur additiv.
+1. **Seiten** stehen fest in `pages.json` (Seiten aus der visuellen Bestandssichtung aller 123 Raitbuch-Doppelseiten plus Inventar-Stichprobe; jede Seite vertritt ein Phänomen). Die Inventarseiten mit `gt: true` stammen aus den drei Dokumenten mit formalem Transkribus-DONE-Status und dienen als CER-Anker. Die aktuelle Zusammensetzung steht unter Stand. Änderungen am Set nur dokumentiert und nur additiv.
 2. **Prompts** liegen versioniert unter `prompts/` (`it01_*`, `it02_*`, ...). Eine Iteration ist nach ihrem ersten Lauf eingefroren; jede Änderung ist eine neue Iteration mit Änderungsbegründung im Prompt-Dokument. Iteration 02 trennt einen gemeinsamen Kern von Textsorten-Bausteinen (Raitbuch, Inventar).
 3. **Läufe** landen unter `runs/` als je eine Datei pro (Seite × Bedingung × Wiederholung), mit vollständiger Provenienz: Prompt-Version und -Hash, Modell, Temperatur, Bildparameter, Zeitstempel. Es wird nie überschrieben oder gelöscht.
 4. **Wiederholungen**: k >= 3 pro Bedingung, auf GT-Seiten k = 5. Befund aus Iteration 01: identische Requests streuen bei Temperatur 0 um bis zu 5,5 CER-Punkte; eine Rangfolge aus Einzelläufen ist Rauschen.
-5. **Messgrößen**, stratifiziert nach Seite und Zone (Rubrik, Fließtext, Beträge), nie nur als Aggregat:
+5. **Messgrößen**, je Seite berichtet und nie nur als Aggregat. Die Stratifizierung nach Zone (Rubrik, Fließtext, Beträge) ist spezifiziert und nicht implementiert, siehe `docs/knowledge/htr-evaluation.md`:
    - CER fair/strict gegen die DONE-GT-Seiten, mit Editierdistanz und Referenzlänge je Lauf, damit eine Rate ohne Nachrechnen lesbar bleibt (Normalisierungsprofil samt Versions-id im Runner und in `summary.json`)
    - positionsweise Token-Übereinstimmung zwischen Wiederholungen, getrennt für Worttokens und Zahl-/Währungstokens (Selbstkonsistenz; Jaccard-Overlap hat sich als irreführend erwiesen). Der Wert ist symmetrisch gerechnet, `2 × Treffer / (|a| + |b|)` je Tokenklasse, damit die Übereinstimmung zweier Wiederholungen nicht davon abhängt, welche von beiden zuerst steht. Ob ein Token eine Zahl ist, entscheidet seine Form vor der v/u- und j/i-Angleichung des fair-Profils, sonst fällt jedes Zahlzeichen mit `v` oder `j` aus der Zahlmetrik; ein Treffer zählt für eine Klasse nur, wenn beide Seiten sie tragen. Eine Klasse ohne Tokens auf beiden Seiten meldet keinen Wert statt einer Null, zwei leere Wiederholungen gelten als übereinstimmend
    - Ausbeute und Präzision der uncertain-Marker
-   - Zeilenausfall gegen GT bzw. zwischen Wiederholungen
+   - Zeilenzahl je Lauf als Segmentierungssignal. Der Zeilenausfall gegen GT bzw. zwischen Wiederholungen ist spezifiziert und nicht implementiert
    - arithmetische Konsistenz der Beträge als Ausschlussfilter (nicht als Korrektheitsnachweis; das Modell glättet Bilanzen)
 6. **Herkunft der Iterationen**: it01 ist der Testlauf vom 2026-08-26 (`../../experiments/transcription-test/`, Ergebnisse bleiben dort erhalten); it02 synthetisiert die drei Analyseberichte desselben Tages (GT-Fehleranalyse, Raitbuch-Divergenz-Adjudikation, Bestandssichtung); it03 ist nach der Mini-GT-Adjudikation mit der Projektleitung geplant (echtes Raitbuch-Few-Shot, Pro-Modell-Vergleich).
 

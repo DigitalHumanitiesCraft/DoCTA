@@ -25,8 +25,9 @@ Design decisions:
   that run in place instead of appending a second one, which makes the ingest
   idempotent.
   A review is written against the base text it was made on. The base is the run
-  the review builds upon, meaning the newest earlier review run of the page or,
-  where none exists, the Transkribus run. Every corrected line must still carry
+  the review builds upon, meaning the newest earlier review run of the page,
+  where none exists the Transkribus run, and for a document DoCTA transcribed
+  itself the newest edition run. Every corrected line must still carry
   its reported original in that base; where it does not, the export was taken
   before another change and the ingest refuses the whole file rather than
   silently overwriting work with a stale reading.
