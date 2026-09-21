@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Editorial collaboration on main (21.09.2026)
+
+The operator selected main for all editorial collaboration. The README and architecture now remove branch selection and separate-branch integration from the workflow. Local saving, commits and public uploads remain distinct, with publication scope agreed before transferring research data.
+
 ## Compact guide with installed Python (21.09.2026)
 
 Reduced the working guide to setup, launch, editing and saving after the operator found the combined onboarding and reference text too long. Git operations and recovery now remain in the README. Editorial setup follows the supplied teaching route with installed Python and the VS Code terminal. A runtime-only requirements export from the existing lock supports pip without installing uv on the editor's machine. Python 3.14 venv creation and package installation were exercised on Windows, followed by the real-backend browser walkthrough in that environment. Store installation, native macOS setup and recipient-side GitHub Desktop operation remain unobserved. The prior pip-install-project suggestion is replaced by the explicit requirements command.
