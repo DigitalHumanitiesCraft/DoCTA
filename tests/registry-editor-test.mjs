@@ -83,7 +83,7 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 const errors = [];
 page.on('pageerror', error => errors.push(String(error)));
 const checks = [];
-const output = path.join(REPO, 'output', 'inline-acceptance');
+const output = path.join(REPO, 'output', 'unified-annotation');
 fs.mkdirSync(output, { recursive: true });
 function check(condition, label) {
   assert.ok(condition, label);
@@ -105,6 +105,19 @@ async function save(form) {
 async function openRegistry() {
   await page.locator('#btn-registry').click();
   await page.locator('#registry-dialog').waitFor();
+}
+async function workspaceScreenshot(name, entity) {
+  const clip = await page.evaluate(lineId => {
+    const popup = document.getElementById('annotation-workspace').getBoundingClientRect();
+    const source = [...document.querySelectorAll('.transcription__line[data-line-id]')]
+      .find(line => line.dataset.lineId === lineId).getBoundingClientRect();
+    const left = Math.max(0, Math.min(popup.left, source.left) - 12);
+    const top = Math.max(0, Math.min(popup.top, source.top) - 12);
+    const right = Math.min(innerWidth, Math.max(popup.right, source.right) + 12);
+    const bottom = Math.min(innerHeight, Math.max(popup.bottom, source.bottom) + 12);
+    return { x: left + scrollX, y: top + scrollY, width: right - left, height: bottom - top };
+  }, entity.lineId);
+  await page.screenshot({ path: path.join(output, name), clip });
 }
 async function selectText(entity, kind = 'person', route = 'toolbar') {
   await page.locator(`.transcription__line[data-line-id="${entity.lineId}"]`).scrollIntoViewIfNeeded();
@@ -142,16 +155,21 @@ async function selectText(entity, kind = 'person', route = 'toolbar') {
   }
   check(await page.locator('#annotation-selection-toolbar [data-kind]').count() === 4,
     'selection toolbar exposes the four manual annotation categories');
+  await page.locator('#annotation-workspace').waitFor();
+  await page.locator('#annotation-workspace').evaluate(element => { window.__selectionWorkspace = element; });
   if (kind === 'person') {
     await page.screenshot({ path: path.join(output, 'selection-toolbar.png'), fullPage: true });
-    await page.screenshot({ path: path.join(output, 'selection-detail.png'), clip: { x: 640, y: 0, width: 640, height: 760 } });
+    await workspaceScreenshot('selection.png', entity);
   }
   await page.locator(`#annotation-selection-toolbar [data-kind="${kind}"]`).click();
   await page.locator('#mention-dialog').waitFor();
-  check(await page.locator('#mention-quote').textContent() === entity.text,
+  check(await page.locator('#annotation-workspace').evaluate(element => element === window.__selectionWorkspace) &&
+    await page.locator('[popover]:popover-open').count() === 1,
+  'category selection reuses the single physical annotation workspace');
+  check(await page.locator('#annotation-workspace-title').textContent() === entity.text,
     `${route} category selection preserves the exact ${kind} source span`);
-  check(await page.locator('#mention-dialog').evaluate(element => element.tagName !== 'DIALOG' && element.getAttribute('aria-modal') !== 'true'),
-    `${kind} editor is an inline surface without a modal backdrop`);
+  check(await page.locator('#mention-dialog').evaluate(element => !element.hasAttribute('popover') && !!element.closest('#annotation-workspace')),
+    `${kind} editor is a child of the shared workspace without its own popover`);
 }
 
 try {
@@ -171,11 +189,27 @@ try {
     await machineMark.focus();
     await page.keyboard.press('Enter');
     await page.locator('#entities-dialog').waitFor();
+    if (!await page.locator('#entities-dialog').evaluate(element => element.open)) await page.locator('#annotation-proposal-summary').click();
     check(await page.locator('#annotation-editor [name="entity"]').inputValue() === entity.id,
       `same-name machine mark opens its own occurrence ${entity.id} on page ${entity.pageNr}`);
+    check(await page.locator('[popover]:popover-open').count() === 1 &&
+      (await page.locator('#annotation-workspace-title').textContent()).includes(entity.text) &&
+      await page.locator('#annotation-workspace #annotation-selection-toolbar [data-kind]').count() === 4,
+    'machine click combines source context, category actions and proposal in one workspace');
+    check((await page.locator('#annotation-workspace').textContent()).includes(fixture.provenance.model),
+      'the model details name the recorded extraction producer');
+    await page.locator('#annotation-editor [name="normalized"]').scrollIntoViewIfNeeded();
+    await workspaceScreenshot('modeldetails.png', entity);
     await page.keyboard.press('Escape');
     check(await machineMark.evaluate(element => document.activeElement === element),
       `machine inline editor restores focus to occurrence ${entity.id}`);
+    if (entity.id === repeated[0].id) {
+      const sourcePage = await page.locator('#page-input').inputValue();
+      await page.locator('#btn-next-page').click();
+      check(await page.locator('#page-input').inputValue() !== sourcePage &&
+        !(await page.locator('#btn-annotate-selection').textContent()).includes('fortsetzen'),
+      'inspecting a machine occurrence alone creates no editorial draft and permits navigation');
+    }
   }
   await page.goto(`${BASE}/viewer.html?doc=${DOC_ID}&page=${person.pageNr}`, { waitUntil: 'networkidle' });
 
@@ -228,6 +262,49 @@ try {
   check(identicalLabels.length === 2 && new Set(identicalLabels).size === 2,
     'identical person labels without aliases remain visibly distinguishable by identity');
 
+  // Hold a real pre-save GET response so its stale revision reaches the browser last.
+  const raceEntryId = (await state()).entries.at(-1).id;
+  await page.locator('#registry-dialog [data-close-surface]').click();
+  let releaseRegistryRead;
+  let registryReadCaptured;
+  const readGate = new Promise(resolve => { releaseRegistryRead = resolve; });
+  const readCaptured = new Promise(resolve => { registryReadCaptured = resolve; });
+  let holdNextRegistryRead = true;
+  const delayRegistryRead = async route => {
+    if (route.request().method() !== 'GET' || !holdNextRegistryRead) { await route.continue(); return; }
+    holdNextRegistryRead = false;
+    const response = await route.fetch();
+    registryReadCaptured();
+    await readGate;
+    await route.fulfill({ response });
+  };
+  await page.route(`${BASE}/api/registry`, delayRegistryRead);
+  await openRegistry();
+  await readCaptured;
+  await entryForm.locator('[name="note"]').fill(term.text);
+  await entryForm.locator('[name="reviewer"]').fill('QA');
+  await save(entryForm);
+  const latestRegistry = await state();
+  const delayedReadResponse = page.waitForResponse(response => response.url() === `${BASE}/api/registry` && response.request().method() === 'GET');
+  releaseRegistryRead();
+  await delayedReadResponse;
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  check((await page.locator(`[data-entry-id="${raceEntryId}"]`).textContent()).includes(term.text),
+    'late registry GET cannot overwrite the result of a newer entry save');
+  const [registryDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.locator('#registry-export').click(),
+  ]);
+  const exportedRegistry = JSON.parse(fs.readFileSync(await registryDownload.path(), 'utf8'));
+  check(exportedRegistry.revision === latestRegistry.revision && exportedRegistry.entries.find(entry => entry.id === raceEntryId).note === term.text,
+    'registry export retains the current revision and saved entry after a delayed older GET');
+  await page.unroute(`${BASE}/api/registry`, delayRegistryRead);
+  await entryForm.locator('[name="note"]').fill('');
+  await entryForm.locator('[name="reviewer"]').fill('QA');
+  await save(entryForm);
+  check((await state()).entries.find(entry => entry.id === raceEntryId).note === '',
+    'the next entry save uses the current revision after the delayed read');
+
   await entryForm.locator('[name="note"]').fill(term.text);
   const draftPage = await page.locator('#page-input').inputValue();
   await page.locator('#btn-next-page').click();
@@ -249,14 +326,20 @@ try {
   const mentionForm = page.locator('#mention-form');
   const placement = await page.evaluate(lineId => {
     const anchor = [...document.querySelectorAll('.transcription__line[data-line-id]')].find(line => line.dataset.lineId === lineId).getBoundingClientRect();
-    const surface = document.getElementById('mention-dialog').getBoundingClientRect();
+    const surface = document.getElementById('annotation-workspace').getBoundingClientRect();
     return { inside: surface.left >= 0 && surface.right <= innerWidth + 1 && surface.top >= 0 && surface.bottom <= innerHeight + 1,
       gap: Math.max(0, surface.top - anchor.bottom, anchor.top - surface.bottom) };
   }, person.lineId);
   check(placement.inside && placement.gap <= 32,
     'inline editor is clamped inside the viewport beside its source line');
   await page.screenshot({ path: path.join(output, 'person-inline.png'), fullPage: true });
-  await page.screenshot({ path: path.join(output, 'person-detail.png'), clip: { x: 640, y: 0, width: 640, height: 760 } });
+  await workspaceScreenshot('person-detail.png', person);
+  if (!await page.locator('#mention-note').evaluate(element => element.open)) await page.locator('#mention-note > summary').click();
+  await mentionForm.locator('[name="note"]').fill(term.text);
+  await mentionForm.locator('[name="kind"]').selectOption('term');
+  check(await mentionForm.locator('[name="note"]').inputValue() === term.text &&
+    await page.locator('#annotation-workspace-title').textContent() === person.text,
+  'changing category cannot silently replace a manual draft or its source quote');
   await mentionForm.locator('[name="kind"]').selectOption('person');
   await mentionForm.locator('[name="search"]').fill(person.text);
   // Alias lookup must expose the stable identity, even when labels coincide.
@@ -264,6 +347,8 @@ try {
     'the attested alias finds its existing register entry');
   await mentionForm.locator('[name="entryId"]').selectOption(personEntry.id);
   await mentionForm.locator('[name="reviewer"]').fill('QA');
+  if (await page.locator('#mention-note').evaluate(element => element.open)) await page.locator('#mention-note > summary').click();
+  await workspaceScreenshot('personexisting.png', person);
   await save(mentionForm);
   registry = await state();
   const mention = registry.mentions[0];
@@ -277,9 +362,30 @@ try {
   await mark.focus();
   await page.keyboard.press('Enter');
   await page.locator('#mention-dialog').waitFor();
-  check(await page.locator('#entities-dialog').isHidden(),
-    'manual mark over a machine mark opens only its manual inline editor');
-  await page.locator('#mention-note > summary').click();
+  check(await page.locator('[popover]:popover-open').count() === 1 &&
+    await page.locator('#mention-dialog').isVisible(),
+  'manual mark over a machine mark opens the one shared workspace');
+  check((await page.locator('#annotation-workspace').textContent()).includes(fixture.provenance.model),
+    'overlapping manual mention retains access to its machine producer provenance');
+  if (await page.locator('#entities-dialog').evaluate(element => element.open)) await page.locator('#annotation-proposal-summary').click();
+  if (await page.locator('#mention-note').evaluate(element => element.open)) await page.locator('#mention-note > summary').click();
+  const lateralActions = await mark.evaluate(anchor => {
+    const surface = document.getElementById('annotation-workspace');
+    const box = surface.getBoundingClientRect();
+    const source = anchor.getBoundingClientRect();
+    const save = document.querySelector('#mention-form [type="submit"]').getBoundingClientRect();
+    return { lateralRoom: Math.max(source.left, innerWidth - source.right) - 16 >= box.width,
+      saveVisible: save.top >= box.top && save.bottom <= box.bottom && save.left >= box.left && save.right <= box.right && save.bottom <= innerHeight,
+      scrollTop: surface.scrollTop };
+  });
+  check(lateralActions.lateralRoom && lateralActions.saveVisible && lateralActions.scrollTop === 0,
+    `collapsed source workspace shows Save without scrolling when lateral room exists ${JSON.stringify(lateralActions)}`);
+  await workspaceScreenshot('person-clicked.png', person);
+  await page.locator('#annotation-proposal-summary').click();
+  await page.locator('#entity-legend').scrollIntoViewIfNeeded();
+  await workspaceScreenshot('person-provenance.png', person);
+  await page.locator('#annotation-proposal-summary').click();
+  if (!await page.locator('#mention-note').evaluate(element => element.open)) await page.locator('#mention-note > summary').click();
   await mentionForm.locator('[name="note"]').fill(person.text);
   await page.keyboard.press('Escape');
   if (!await page.locator('#mention-dialog').isVisible()) await page.locator('#btn-annotate-selection').click();
@@ -303,17 +409,35 @@ try {
 
   await page.goto(target.href, { waitUntil: 'networkidle' });
   await page.locator('#mention-dialog').waitFor();
-  check(await page.locator('#mention-quote').textContent() === person.text &&
+  check(await page.locator('#annotation-workspace-title').textContent() === person.text &&
     await mentionForm.locator('[name="entryId"]').inputValue() === personEntry.id,
   'following a fundstelle opens the persisted source span and correct identity');
   await page.keyboard.press('Escape');
 
   await selectText(place, 'place', 'contextmenu');
-  await mentionForm.locator('[name="search"]').fill(place.text);
-  await mentionForm.locator('[name="entryId"]').selectOption(placeEntry.id);
+  await page.locator('#mention-new-entry').click();
+  const inlineEntryForm = page.locator('#mention-entry-form');
+  await inlineEntryForm.locator('[name="label"]').fill(place.normalized);
+  await inlineEntryForm.locator('[name="aliases"]').fill(place.text);
+  await inlineEntryForm.locator('[name="reviewer"]').fill('QA');
+  check(await page.locator('#registry-dialog').isHidden() &&
+    await inlineEntryForm.evaluate(element => !!element.closest('#annotation-workspace')) &&
+    await page.locator('[popover]:popover-open').count() === 1,
+  'new register entry is edited inside the same source workspace without opening the sidebar');
+  await workspaceScreenshot('inline-new-entry.png', place);
+  await save(inlineEntryForm);
+  const inlinePlaceId = await mentionForm.locator('[name="entryId"]').inputValue();
+  check(inlinePlaceId !== placeEntry.id && (await state()).entries.some(entry => entry.id === inlinePlaceId && entry.label === place.normalized),
+    'inline creation saves a separate stable identity and selects it for the current source span');
+  await page.locator('#mention-edit-entry').click();
+  await inlineEntryForm.locator('[name="note"]').fill(place.text);
+  await save(inlineEntryForm);
+  check((await state()).entries.find(entry => entry.id === inlinePlaceId).note === place.text &&
+    await mentionForm.locator('[name="entryId"]').inputValue() === inlinePlaceId && await page.locator('#registry-dialog').isHidden(),
+  'editing the selected register entry retains the same identity and source workspace');
   await mentionForm.locator('[name="reviewer"]').fill('QA');
   await save(mentionForm);
-  check((await state()).mentions.some(item => item.kind === 'place' && item.entryId === placeEntry.id && item.quote === place.text),
+  check((await state()).mentions.some(item => item.kind === 'place' && item.entryId === inlinePlaceId && item.quote === place.text),
     'right-click selection assigns a saved exact span to a place');
 
   await selectText(date, 'date', 'keyboard');
@@ -333,7 +457,7 @@ try {
   await mentionForm.locator('[type="submit"]').click();
   await page.waitForFunction(() => {
     const form = document.getElementById('mention-form');
-    return !form.checkValidity() || document.querySelector('#mention-dialog [role=status]')?.textContent.trim();
+    return !form.checkValidity() || document.querySelector('#mention-dialog > .registry-content > [role=status]')?.textContent.trim();
   });
   check((await state()).mentions.find(item => item.id === dateMention.id).when === date.normalized,
     'inverted date bounds cannot replace the saved exact date');
@@ -365,7 +489,7 @@ try {
   check(await mentionForm.locator('[name="entryId"]').inputValue() === personEntry.id,
     'inline person editor remains operable at narrow 200 percent zoom');
   await mentionForm.locator('[name="reviewer"]').fill('QA');
-  const narrowPlacement = await page.locator('#mention-dialog').evaluate(element => {
+  const narrowPlacement = await page.locator('#annotation-workspace').evaluate(element => {
     const rect = element.getBoundingClientRect();
     return { scrollWidth: element.scrollWidth, clientWidth: element.clientWidth, left: rect.left, right: rect.right, viewport: innerWidth };
   });
@@ -428,12 +552,13 @@ try {
   await page.locator(`[data-edit-mention="${termMention.id}"]`).click();
   check(await mentionForm.locator('[type="submit"]').isHidden(),
     'stale mention cannot be silently resaved against the changed source');
-  check((await page.locator('#mention-dialog [role="status"]').textContent()).includes('geändert'),
+  check((await page.locator('#mention-dialog > .registry-content > [role="status"]').textContent()).includes('geändert'),
     'stale-source inline editor explains why a new selection is required');
   await page.keyboard.press('Escape');
   await page.keyboard.press('Escape');
 
   const staticPage = await browser.newPage();
+  staticPage.on('pageerror', error => errors.push(String(error)));
   await staticPage.route('**/viewer.html*', async route => {
     const response = await route.fetch();
     const headers = response.headers();
@@ -445,6 +570,13 @@ try {
   check(await staticPage.locator('#btn-registry').isHidden() &&
     await staticPage.locator('#btn-annotate-selection').isHidden(),
   'static viewer hides unavailable registry and manual annotation actions');
+  await staticPage.locator(`.transcription__line[data-line-id="${person.lineId}"] [data-ent-key="${person.id}"]`).click();
+  await staticPage.locator('#annotation-workspace').waitFor();
+  check((await staticPage.locator('#annotation-workspace').textContent()).includes(fixture.provenance.model) &&
+    (await staticPage.locator('#annotation-workspace').textContent()).includes(person.normalized),
+  'public machine click exposes the recorded producer and original proposal in the shared workspace');
+  check(await staticPage.locator('#annotation-selection-toolbar [data-kind]:visible, #mention-form:visible, #annotation-editor form:visible').count() === 0,
+    'public read-only machine details expose no category actions or editing forms');
   await staticPage.close();
 
   check((await state()).history.length > initial.history.length,

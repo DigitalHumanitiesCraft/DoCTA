@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Shared annotation field (21.09.2026)
+
+The operator's walkthrough at Hannsen Ramung exposed the fragmented interaction between selection, assignment and machine-proposal information. Consolidated these into one source-bound popover. Register entries can be created and edited within it, while the sidebar remains available for browsing. Machine evidence and human assignment retain their separate histories and explicit save actions. Shared navigation guards preserve drafts across dismissal and prevent changing the source while inputs remain unsaved. Independent review also identified an older registry response replacing a more recent saved state, which is now guarded by request and mutation generations. Browser regression checks cover the unified field, inline entry editing, persistence and the delayed-response case. The operator's acceptance remains the next step.
+
 ## Source-bound annotation interaction (21.09.2026)
 
 The operator rejected modal annotation forms after inspecting the screenshots and commissioned an interaction integrated into the reading workspace. Added a selection toolbar, anchored nonmodal editing and a collapsible register sidebar for working version 0.2.0. Persons, terms and places use independent register identities. Date mentions retain their source quotation and optional exact or bounded normalization, with uncertainty separate from precision. Right-click supplements the visible toolbar and keyboard entry point. The initial tall form obscured its source, so the compact layout collapses optional notes and fits the available space beside the passage.

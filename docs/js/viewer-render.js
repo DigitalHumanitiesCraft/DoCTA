@@ -50,7 +50,7 @@ function entityTipText(ent, model) {
 }
 
 // Anchors belong to a document's current page and line, never to a spelling globally.
-export function markEntities(escapedText, index, model, context, editable = false) {
+export function markEntities(escapedText, index, model, context) {
   if (!context) return escapedText;
   const { pageNr, lineId, text } = context;
   const spans = [];
@@ -67,7 +67,7 @@ export function markEntities(escapedText, index, model, context, editable = fals
   for (const { start, end, ent } of spans) {
     if (start < cursor) continue;
     html += escapeHTML(text.slice(cursor, start));
-    html += `<span class="entity entity--${escapeAttr(ent.type)}" role="${editable ? 'button' : 'mark'}" tabindex="0" data-ent-key="${escapeAttr(ent.id)}" aria-label="${escapeAttr(entityTipText(ent, model))}">${escapeHTML(text.slice(start, end))}</span>`;
+    html += `<span class="entity entity--${escapeAttr(ent.type)}" role="button" tabindex="0" data-ent-key="${escapeAttr(ent.id)}" aria-label="${escapeAttr(entityTipText(ent, model))}">${escapeHTML(text.slice(start, end))}</span>`;
     cursor = end;
   }
   return html + escapeHTML(text.slice(cursor));
@@ -95,16 +95,6 @@ function entityLegend(index, model) {
          `<span class="ent-prov">${ICON_UNVERIFIED} Fachlich ungeprüft</span></span>`;
 }
 
-/** Inner markup of the floating tooltip of one entity mark. */
-function entityTipHTML(ent, model) {
-  const date = ent.date ? `, ${escapeHTML(ent.date)}` : '';
-  const type = ENTITY_TYPE_LABELS[ent.type] || ent.type;
-  return `<span class="ent-tip__head">${escapeHTML(ent.normalized || ent.text)}` +
-    `${date}</span> <span>${escapeHTML(type)}</span>` +
-    `<span class="ent-tip__prov">${ICON_AI} ${escapeHTML(model)}` +
-    ` ${ICON_UNVERIFIED} Fachlich ungeprüfter Vorschlag</span>`;
-}
-
 /**
  * The entity layer of the loaded document: the index the line text is matched
  * against, the model that produced it, and the markup that states both. A
@@ -114,22 +104,16 @@ function entityTipHTML(ent, model) {
 export function createEntityLayer() {
   let index = null;
   let model = 'LLM';
-  let editable = false;
   return {
     /** @param {any} data - the loaded extraction, or null */
-    set(data, canEdit = false) {
-      index = buildEntityIndex(data); editable = canEdit;
+    set(data) {
+      index = buildEntityIndex(data);
       model = (data && data.model) || 'LLM';
     },
     get active() { return index !== null; },
     /** Marks entities in already escaped line text. */
-    markText: (escapedText, context) => (index ? markEntities(escapedText, index, model, context, editable) : escapedText),
+    markText: (escapedText, context) => (index ? markEntities(escapedText, index, model, context) : escapedText),
     legendHTML: () => (index ? entityLegend(index, model) : ''),
-    /** Tooltip markup for one entity key, or null where the key is unknown. */
-    tipHTML(key) {
-      const ent = index && index.byId.get(key);
-      return ent ? entityTipHTML(ent, model) : null;
-    },
   };
 }
 

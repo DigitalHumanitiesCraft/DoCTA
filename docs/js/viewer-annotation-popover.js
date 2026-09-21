@@ -20,8 +20,21 @@ export function createAnchoredPopover(element, { onHide = () => {}, beforeHide =
     const measured = element.getBoundingClientRect();
     const scale = element.offsetWidth ? measured.width / element.offsetWidth : 1;
     element.style.maxInlineSize = `${(width - gap * 2) / scale}px`;
+    element.style.maxBlockSize = `${(height - gap * 2) / scale}px`;
+    const natural = element.getBoundingClientRect();
     const belowRoom = top + height - (rect?.bottom ?? top) - gap * 2;
     const aboveRoom = (rect?.top ?? top) - top - gap * 2;
+    // A lateral placement keeps the source visible without needlessly clipping actions.
+    const leftRoom = (rect?.left ?? left) - left - gap * 2;
+    const rightRoom = left + width - (rect?.right ?? left + width) - gap * 2;
+    if (rect && natural.height > Math.max(belowRoom, aboveRoom)
+        && Math.max(leftRoom, rightRoom) >= natural.width) {
+      const x = rightRoom >= natural.width ? rect.right + gap : rect.left - natural.width - gap;
+      const y = Math.max(top + gap, Math.min(rect.top, top + height - natural.height - gap));
+      element.style.insetInlineStart = `${x / scale}px`;
+      element.style.insetBlockStart = `${y / scale}px`;
+      return;
+    }
     // Keep the cited passage visible when the form needs its own scroll area.
     element.style.maxBlockSize = `${Math.max(120, Math.min(height - gap * 2, Math.max(belowRoom, aboveRoom))) / scale}px`;
     const box = element.getBoundingClientRect();

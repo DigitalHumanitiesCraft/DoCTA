@@ -9,11 +9,16 @@ import { createLocalEditor } from './viewer-local.js';
 import { createAnnotationEditor } from './viewer-annotations.js?v=20260921-ui';
 import { createTagEditor } from './viewer-tags.js?v=20260921-ui';
 import { createRegistryEditor } from './viewer-registry.js';
+import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
 
 initNav('viewer');
 initBanner();
 const local = createLocalEditor();
-const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local, { hasDraft: () => review.hasDraft });
+const annotationWorkspace = createAnnotationWorkspace();
+const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local, {
+  hasDraft: () => review.hasDraft,
+  workspace: annotationWorkspace,
+});
 
 let viewer = null;
 let imageKey = null;
@@ -448,14 +453,14 @@ const tags = createTagEditor(document.getElementById('tag-editor'), local, {
 const registry = createRegistryEditor(local, {
   context: () => ({ doc: currentDoc, pageNr: currentPageNr(), hasDraft: review.hasDraft, viewMode }),
   rerender: () => { if (currentDoc) renderCurrentView(); },
-  beforeOpen: () => {
-    entTip.hidden = true;
-    return annotations.beforeNavigate();
-  },
+  workspace: annotationWorkspace,
 });
 
 document.getElementById('btn-entities').addEventListener('click', event => {
-  if (registry.beforeNavigate()) annotations.open(null, event.currentTarget);
+  const source = annotations.source();
+  if (!source) return;
+  if (local.enabled) registry.openSource(source, event.currentTarget);
+  else annotations.open(null, event.currentTarget);
 });
 document.getElementById('btn-review').addEventListener('click', event => {
   if (!canNavigate()) { event.preventDefault(); event.stopImmediatePropagation(); }
@@ -489,63 +494,22 @@ function renderPage(pageNr) {
     provenance.humanCorrections.map(run => `<dt>Textkorrektur ${escapeHTML(run.reviewer || '')}</dt><dd><time datetime="${escapeAttr(run.timestamp || '')}">${escapeHTML(run.timestamp || 'Zeitpunkt nicht dokumentiert')}</time></dd>`).join('') + '</dl></details>' : '';
 }
 
-// === Entity marks in the transcription ===
-// One shared tooltip element; screen readers use the span's aria-label
-const entTip = document.createElement('div');
-entTip.className = 'ent-tip';
-entTip.hidden = true;
-entTip.setAttribute('aria-hidden', 'true');
-document.body.appendChild(entTip);
-
-function showEntityTip(target) {
-  if (target.closest('[data-mention-id]') || document.querySelector('.annotation-popover:not([hidden])')) {
-    entTip.hidden = true;
-    return;
-  }
-  const html = entities.tipHTML(target.dataset.entKey);
-  if (html === null) return;
-  entTip.innerHTML = html;
-  entTip.hidden = false;
-  const rect = target.getBoundingClientRect();
-  entTip.style.left = `${Math.max(8, Math.min(rect.left,
-    window.innerWidth - entTip.offsetWidth - 8))}px`;
-  entTip.style.top = `${rect.bottom + 6}px`;
-}
-
 const entityAt = (node) =>
   (node && node.closest) ? node.closest('.entity[data-ent-key]') : null;
 
 function editEntity(target) {
-  if (!local.enabled || target.closest('[data-mention-id]')) return;
-  if (window.getSelection()?.toString().trim() || !registry.beforeNavigate()) return;
-  entTip.hidden = true;
-  annotations.open(target.dataset.entKey, target);
+  if (target.closest('[data-mention-id]')) return;
+  if (window.getSelection()?.toString().trim()) return;
+  const source = annotations.source(target.dataset.entKey);
+  if (!source) return;
+  if (local.enabled) registry.openSource(source, target);
+  else annotations.open(target.dataset.entKey, target);
 }
 document.addEventListener('click', event => { const target = entityAt(event.target); if (target && !event.target.closest('[data-mention-id]')) editEntity(target); });
 document.addEventListener('keydown', event => {
   const target = entityAt(event.target);
   if (target && !event.target.closest('[data-mention-id]') && ['Enter', ' '].includes(event.key)) { event.preventDefault(); editEntity(target); }
 });
-
-// Pointer and keyboard reach the tip alike: the marks are focusable, so
-// focus opens it and Escape closes it without leaving the line.
-document.addEventListener('mouseover', (e) => {
-  const target = entityAt(e.target);
-  if (target) showEntityTip(target);
-  else if (!entTip.hidden) entTip.hidden = true;
-});
-document.addEventListener('focusin', (e) => {
-  const target = entityAt(e.target);
-  if (target) showEntityTip(target);
-  else if (!entTip.hidden) entTip.hidden = true;
-});
-document.addEventListener('focusout', (e) => {
-  if (entityAt(e.target)) entTip.hidden = true;
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !entTip.hidden) entTip.hidden = true;
-});
-document.addEventListener('scroll', () => { entTip.hidden = true; }, true);
 
 const tei = createTeiView(transcriptionContainer, {
   getViewMode: () => viewMode,
@@ -692,7 +656,7 @@ async function loadDocument(docId, pageNr) {
       throw new Error('the transcription holds no page');
     }
     currentDoc = doc;
-    entities.set(extraction, local.enabled);
+    entities.set(extraction);
     annotations.load(doc, extraction);
     registry.load();
     tags.load(doc);

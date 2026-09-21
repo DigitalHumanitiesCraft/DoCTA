@@ -1,5 +1,4 @@
 import { escapeHTML, escapeAttr, lsGet, lsSet } from './utils.js';
-import { createAnchoredPopover } from './viewer-annotation-popover.js';
 
 async function digest(text) {
   const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
@@ -7,7 +6,7 @@ async function digest(text) {
 }
 
 // Decisions keep their own revision and the exact text on which they were made.
-export function createAnnotationEditor(container, local, { hasDraft = () => false } = {}) {
+export function createAnnotationEditor(container, local, { hasDraft = () => false, workspace }) {
   let request = 0;
   let document = null;
   let extraction = null;
@@ -17,8 +16,7 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
   let dirty = false;
   let selectedId = null;
   let populateRequest = 0;
-  const shell = container.closest('[role="dialog"]');
-  const popover = createAnchoredPopover(shell, { beforeHide: canLeave });
+  const section = container.closest('#entities-dialog');
   const drafts = new Map();
   const key = (entity) => `docta-annotation-${document.docId}-${entity.id}`;
   const typeLabels = { person: 'Person', place: 'Ort', object: 'Begriff', time: 'Datumsangabe' };
@@ -37,13 +35,55 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
     return true;
   }
 
-  window.document.getElementById('btn-close-entities').addEventListener('click', () => popover.hide());
+  workspace.addBeforeChange(canLeave);
+  workspace.addBeforeHide(() => !busy);
+  workspace.onContext(showContext);
   window.addEventListener('beforeunload', event => {
     if (dirty || busy) { event.preventDefault(); event.returnValue = ''; }
   });
 
   function entities() {
     return (extraction?.entities || []).filter(entity => entity.pageNr === pageNr);
+  }
+
+  function source(id = selectedId) {
+    const entity = id ? entities().find(item => item.id === id) : entities()[0];
+    const line = entity && lineFor(entity);
+    if (!line) return null;
+    const start = line.text.indexOf(entity.text);
+    if (start < 0 || line.text.indexOf(entity.text, start + 1) >= 0) return null;
+    return {
+      docId: Number(document.docId), pageNr: entity.pageNr, lineId: entity.lineId,
+      start, end: start + entity.text.length, quote: entity.text, lineText: line.text,
+      kind: ({ object: 'term', time: 'date' })[entity.type] || entity.type,
+    };
+  }
+
+  function showContext(context, refreshForm = true) {
+    const entity = Number(context?.docId) === Number(document?.docId) &&
+      entities().find(item => {
+        const line = lineFor(item);
+        if (!line) return false;
+        const start = line?.text.indexOf(item.text);
+        return item.lineId === context.lineId && item.pageNr === context.pageNr &&
+          item.text === context.quote && start === context.start &&
+          line.text.indexOf(item.text, start + 1) < 0;
+      });
+    section.hidden = !entity;
+    const tools = section.querySelector('#entity-tools');
+    if (tools) tools.hidden = !entity;
+    if (!entity) return;
+    selectedId = entity.id;
+    const decision = state?.decisions.find(item => item.id === entity.id);
+    window.document.getElementById('annotation-proposal-summary').textContent =
+      `Modellvorschlag ${typeLabels[entity.type] || entity.type}, ${decision?.normalized || entity.normalized || entity.text}, ${statusLabels[decision?.status || 'pending']}`;
+    const evidence = section.querySelector('#entity-legend');
+    if (evidence) evidence.innerHTML = '<dl class="annotation-evidence">' + [
+      ['Erzeugt mit', extraction.model || 'LLM nicht dokumentiert'],
+      ['Ursprünglicher Vorschlag', entity.normalized || entity.text],
+      ...(entity.date ? [['Datierung im Vorschlag', entity.date]] : []),
+    ].map(([label, value]) => `<dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd>`).join('') + '</dl>';
+    if (refreshForm && !dirty) render();
   }
 
   function render() {
@@ -54,7 +94,7 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
       return;
     }
     container.innerHTML = '<form class="annotation-editor">' +
-      '<label>Fundstelle<select name="entity">' + entities().map(entity =>
+      '<label hidden>Fundstelle<select name="entity">' + entities().map(entity =>
         `<option value="${escapeAttr(entity.id)}">${escapeHTML(typeLabels[entity.type] || entity.type)} ${escapeHTML(entity.text)}</option>`).join('') +
       '</select></label><label>Normalisierte Form<input name="normalized" required></label>' +
       '<label>Entscheidung<select name="status"><option value="pending">Offen</option>' +
@@ -121,7 +161,7 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
       try { window.localStorage.removeItem(key(entity)); } catch { /* Memory still retains the saved state. */ }
       dirty = false;
       populate();
-      popover.hide();
+      section.open = false;
     });
     form.addEventListener('submit', async event => {
       event.preventDefault();
@@ -159,6 +199,7 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
         if (Number(document.docId) === docId) state = result.annotations;
         message.textContent = 'Annotation lokal gespeichert.';
         renderHistory();
+        showContext(workspace.context, false);
       } catch (error) {
         message.textContent = `Nicht gespeichert: ${error.message}. Formular geöffnet lassen oder die Entscheidung vor dem Neuladen kopieren.`;
       } finally {
@@ -201,14 +242,14 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
       state = null;
       selectedId = null;
       dirty = false;
-      popover.hide({ restoreFocus: false });
+      section.hidden = true;
       container.hidden = true;
       if (!local.enabled || !extraction?.entities?.length) return;
       try {
         const result = await local.annotations(doc.docId);
         if (token !== request) return;
         state = result;
-        render();
+        showContext(workspace.context);
       } catch (error) {
         if (token !== request) return;
         container.hidden = false;
@@ -223,25 +264,25 @@ export function createAnnotationEditor(container, local, { hasDraft = () => fals
     },
     open(id, anchor) {
       if (!canLeave()) return false;
-      if (id && entities().some(entity => entity.id === id)) {
-        selectedId = id;
-        render();
-      }
-      popover.open(anchor, anchor);
+      const context = source(id);
+      if (!context || !workspace.open({ context, anchor, origin: anchor })) return false;
+      showContext(context);
+      section.open = true;
       container.querySelector('[name="normalized"]')?.focus({ preventScroll: true });
       return true;
     },
     beforeNavigate() {
       if (!canLeave()) return false;
-      popover.hide({ restoreFocus: false });
+      workspace.hide({ restoreFocus: false });
       return true;
     },
     get hasDraft() { return dirty || busy; },
+    source,
     page(nr) {
       if (pageNr === nr) return;
       pageNr = nr;
       selectedId = null;
-      if (state) render();
+      if (state) showContext(workspace.context);
     },
     update(doc) { document = doc; if (state && !dirty) render(); },
   };

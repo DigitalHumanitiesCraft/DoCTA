@@ -75,7 +75,7 @@ Data flows in one direction. Transkribus exports and evaluation runs are inputs 
 ## Constraints worth knowing
 
 - Editorial registry writes require optimistic revision checks, the shared review lock and atomic state with before/after history. Anchors address saved line text through UTF-16 offsets and a SHA-256 digest. Equal names never imply equal persons. The contract lives in `docs/knowledge/architecture.md#editorial-register-persistence`.
-- Annotation editing belongs beside the selected source passage, with a nonmodal popover and a separate registry sidebar. The initial categories are person, term, place and date. Preserve pending input across surface dismissal and require save or discard before source navigation. A draft decision must never acquire a changed source digest silently.
+- Annotation editing belongs in one shared nonmodal popover beside the selected source passage. Category selection, register-entry editing and machine-proposal evidence use that same surface. The sidebar supports browsing the whole register. The initial categories are person, term, place and date. Preserve pending input across surface dismissal and require save or discard before source navigation. A draft decision must never acquire a changed source digest silently.
 
 - Everything committed under `docs/` is published immediately on push to `main`.
 - All VLM output is unrevised machine transcription until a scholar approves it, and is marked as such wherever displayed. Keep that framing in any UI or data change.

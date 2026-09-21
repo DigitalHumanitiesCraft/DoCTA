@@ -24,18 +24,20 @@ const checks = [];
 async function setup({ delayed = false, decision = false, legacyDraft = false } = {}) {
   const page = await browser.newPage();
   page.on('pageerror', error => failures.push(String(error)));
-  const modules = new Set(['viewer-annotations.js', 'viewer-annotation-popover.js', 'utils.js']);
+  const modules = new Set(['viewer-annotations.js', 'viewer-annotation-popover.js', 'viewer-annotation-workspace.js', 'utils.js']);
   await page.route('http://localhost:49871/**', async route => {
     const name = new URL(route.request().url()).pathname.slice(1);
     if (modules.has(name)) {
       await route.fulfill({ contentType: 'text/javascript', body: fs.readFileSync(path.join(REPO, 'docs/js', name), 'utf8') });
     } else if (!name) {
-      await route.fulfill({ contentType: 'text/html', body: '<!doctype html><html lang="de"><title>Annotation regression</title><input id="review-initials" value="XY"><button id="btn-close-entities">Schließen</button><div role="dialog"><div id="annotation-editor"></div></div><button id="anchor">Fundstelle</button></html>' });
+      await route.fulfill({ contentType: 'text/html', body: '<!doctype html><html lang="de"><title>Annotation regression</title><input id="review-initials" value="XY"><details id="entities-dialog" hidden><summary id="annotation-proposal-summary">Modellvorschlag</summary><div id="entity-tools"><div id="entity-legend"></div><div id="annotation-editor"></div></div></details><button id="anchor">Fundstelle</button></html>' });
     } else await route.abort();
   });
   await page.goto('http://localhost:49871/');
   await page.evaluate(async ({ doc, extraction, entity, revision, delayed, decision, legacyDraft, sourceText }) => {
     const { createAnnotationEditor } = await import('/viewer-annotations.js');
+    const { createAnnotationWorkspace } = await import('/viewer-annotation-workspace.js');
+    const workspace = createAnnotationWorkspace();
     const state = { revision, decisions: [], history: [] };
     if (decision) {
       const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(sourceText));
@@ -51,7 +53,7 @@ async function setup({ delayed = false, decision = false, legacyDraft = false } 
     };
     const key = `docta-annotation-${doc.docId}-${entity.id}`;
     if (legacyDraft) localStorage.setItem(key, JSON.stringify({ normalized: entity.normalized, status: 'accepted', reviewer: 'XY' }));
-    const editor = createAnnotationEditor(document.querySelector('#annotation-editor'), local);
+    const editor = createAnnotationEditor(document.querySelector('#annotation-editor'), local, { workspace });
     editor.page(entity.pageNr);
     const loading = editor.load(doc, extraction);
     window.test = { editor, pending, saves, state, loading, doc, extraction, entity, key };

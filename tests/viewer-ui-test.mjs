@@ -177,9 +177,11 @@ try {
     check(await visible(page, dialog), `${label} surface opens from the keyboard`);
     if (label === 'tags') check(await visible(page, '#tag-editor form'), 'tag form is accessible inside its dialog');
     if (label === 'entities') {
+      if (!await page.locator(dialog).evaluate(element => element.open)) await page.locator('#annotation-proposal-summary').click();
       check(await visible(page, '#annotation-editor form'), 'annotation form is accessible in its inline editor');
-      check(await page.locator(dialog).evaluate(element => element.tagName !== 'DIALOG' && element.getAttribute('aria-modal') !== 'true'),
-        'machine proposal editing is inline without a modal backdrop');
+      check(await page.locator(dialog).evaluate(element => !element.hasAttribute('popover') && !!element.closest('#annotation-workspace')) &&
+        await page.locator('[popover]:popover-open').count() === 1,
+      'machine proposal editing uses the shared source workspace');
     }
     await page.keyboard.press('Escape');
     await page.locator(dialog).waitFor({ state: 'hidden' });

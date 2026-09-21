@@ -1,5 +1,4 @@
 import { escapeHTML as esc, escapeAttr as attr } from './utils.js';
-import { createAnchoredPopover } from './viewer-annotation-popover.js';
 import { searchKeys, describeEntry, mentionLink, historyMarkup } from './viewer-registry-display.js';
 import { renderRegistryMarks } from './viewer-registry-anchors.js';
 import { KIND_LABELS, registryMarkup, mentionMarkup } from './viewer-registry-markup.js';
@@ -9,13 +8,15 @@ async function digest(text) {
 }
 
 /** Editor-owned identities and exact mentions, separate from machine extraction. */
-export function createRegistryEditor(local, { context, rerender, beforeOpen = () => true }) {
+export function createRegistryEditor(local, { context, rerender, workspace, beforeOpen = () => true }) {
   let state = null;
   let selectedEntry = null;
   let mention = null;
   let busy = false;
   let indexed = [];
-  let pendingEntryForMention = false;
+  let inlineEntry = null;
+  let sourceRequest = 0;
+  let registryGeneration = 0;
   const toolbar = document.querySelector('.transcription-tools');
   const button = document.createElement('button');
   button.id = 'btn-registry';
@@ -30,31 +31,32 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   annotate.title = 'Ausgewählten Text annotieren (Alt+A)';
   toolbar.append(button, annotate);
   const dialog = makeSurface('registry-dialog', 'Register', 'aside');
-  const mentionDialog = makeSurface('mention-dialog', 'Fundstelle annotieren', 'section');
+  const mentionDialog = workspace.manual;
   dialog.classList.add('registry-sidebar');
-  mentionDialog.setAttribute('role', 'dialog');
   document.querySelector('.viewer-layout').append(dialog);
   dialog.querySelector('.registry-content').innerHTML = registryMarkup;
   mentionDialog.querySelector('.registry-content').innerHTML = mentionMarkup;
-  const mentionPopover = createAnchoredPopover(mentionDialog, {
-    beforeHide: () => !busy,
-    onHide: updateDraftButton,
-  });
-  const selectionToolbar = document.createElement('div');
-  selectionToolbar.id = 'annotation-selection-toolbar';
-  selectionToolbar.setAttribute('role', 'group');
-  selectionToolbar.setAttribute('aria-label', 'Auswahl annotieren');
+  const selectionToolbar = workspace.selection;
   selectionToolbar.innerHTML = Object.entries(KIND_LABELS).map(([kind, label]) =>
     `<button type="button" class="review-btn" data-kind="${kind}">${label}</button>`).join('');
-  document.body.append(selectionToolbar);
-  const selectionPopover = createAnchoredPopover(selectionToolbar);
   let selectionSnapshot = null;
   let mentionAnchor = null;
   button.setAttribute('aria-controls', dialog.id);
   button.setAttribute('aria-expanded', 'false');
   const form = dialog.querySelector('form');
   const mentionForm = mentionDialog.querySelector('form');
+  const inlinePanel = document.getElementById('mention-inline-entry');
+  const inlineForm = document.getElementById('mention-entry-form');
   const dirty = new Set();
+  workspace.addBeforeHide(() => !busy);
+  workspace.onHide(updateDraftButton);
+  workspace.addBeforeChange(() => {
+    if (!dirty.size && !busy) return true;
+    const target = dirty.has(dialog) ? dialog : mentionDialog;
+    if (target === dialog) open(dialog, button);
+    message(target, 'Bitte die Eingaben zuerst speichern oder verwerfen.');
+    return false;
+  });
   for (const element of [dialog, mentionDialog]) {
     element.querySelector('form').addEventListener('input', event => {
       if (event.target.name !== 'search') dirty.add(element);
@@ -66,8 +68,11 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     discard.textContent = 'Eingaben verwerfen';
     discard.addEventListener('click', () => {
       if (busy) return;
+      if (element === mentionDialog && dirty.has(inlinePanel)) {
+        showInlineEntry(inlineEntry);
+        return;
+      }
       dirty.delete(element);
-      pendingEntryForMention = false;
       if (element === dialog && state) showEntry(selectedEntry);
       if (element === mentionDialog && mention) showMention(mention, mentionAnchor);
       message(element, 'Eingaben verworfen.');
@@ -75,10 +80,10 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
       updateDraftButton();
     });
     const actions = element === mentionDialog
-      ? element.querySelector('.annotation-actions')
+      ? mentionForm.querySelector(':scope > .annotation-actions')
       : element.querySelector('.registry-content');
     actions.append(discard);
-    element.querySelector('[data-close-surface]').addEventListener('click', () => closeSurface(element));
+    element.querySelector('[data-close-surface]')?.addEventListener('click', () => closeSurface(element));
   }
   window.addEventListener('beforeunload', event => {
     if (!dirty.size) return;
@@ -95,7 +100,14 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   const reviewer = () => document.getElementById('review-initials').value.trim();
 
   function message(target, value) {
-    target.querySelector('[role="status"]').textContent = value;
+    target.querySelector(':scope > [role="status"], :scope > .registry-content > [role="status"]').textContent = value;
+  }
+  function sourceContext(item) {
+    if (!item) return null;
+    const { doc } = context();
+    const page = doc?.pages.find(value => value.pageNr === item.pageNr);
+    const line = page?.regions.flatMap(region => region.lines || []).find(value => value.id === item.lineId);
+    return { ...item, lineText: line?.text || item.lineText || '' };
   }
   function makeSurface(id, title, tag) {
     const element = document.createElement(tag);
@@ -107,11 +119,11 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     return element;
   }
   function updateDraftButton() {
-    annotate.textContent = dirty.has(mentionDialog) ? 'Annotation fortsetzen' : 'Auswahl annotieren';
+    annotate.textContent = dirty.has(mentionDialog) || dirty.has(inlinePanel) ? 'Annotation fortsetzen' : 'Auswahl annotieren';
   }
   function closeSurface(element) {
     if (busy) return;
-    if (element === mentionDialog) mentionPopover.hide();
+    if (element === mentionDialog) workspace.hide();
     else {
       dialog.hidden = true;
       document.querySelector('.viewer-layout').classList.remove('viewer-layout--registry');
@@ -121,7 +133,9 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   }
   function open(element, origin = document.activeElement) {
     if (element === mentionDialog) {
-      mentionPopover.open(mentionAnchor || origin, origin instanceof Element ? origin : annotate);
+      workspace.open({ anchor: mentionAnchor || origin, origin: origin instanceof Element ? origin : annotate, context: sourceContext(mention) });
+      mentionDialog.hidden = false;
+      selectionToolbar.hidden = true;
       return;
     }
     dialog.hidden = false;
@@ -134,6 +148,20 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     results();
     history();
     unresolved();
+  }
+  async function fetchRegistry() {
+    const generation = ++registryGeneration;
+    const current = () => generation === registryGeneration && !busy && !dirty.size;
+    try {
+      const registry = await local.registry();
+      if (!current()) return false;
+      state = registry;
+      refreshRegistry();
+      return true;
+    } catch (error) {
+      if (!current()) return false;
+      throw error;
+    }
   }
   function indexState() {
     indexed = state.entries.map(entry => ({ entry, keys: searchKeys([entry.label, ...entry.aliases].join(' ')) }));
@@ -192,6 +220,8 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   }
   async function save(action, fields, target) {
     if (busy) return false;
+    // Reads begun before a write must never replace its resulting revision.
+    registryGeneration += 1;
     busy = true;
     const targetForm = target.querySelector('form');
     const actor = targetForm.elements.reviewer.value.trim();
@@ -212,7 +242,7 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     finally {
       busy = false;
       for (const control of targetForm.elements) control.disabled = false;
-      targetForm.elements.kind.disabled = target === dialog ? !!selectedEntry : !!mention?.id;
+      targetForm.elements.kind.disabled = target === dialog ? !!selectedEntry : target === inlinePanel ? false : !!mention?.id;
     }
   }
   function entryOptions() {
@@ -225,15 +255,101 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     if (selected && !entries.includes(selected)) entries.unshift(selected);
     mentionForm.elements.entryId.innerHTML = '<option value="">Noch nicht zugeordnet</option>' + entries.map(entry => `<option value="${attr(entry.id)}">${esc(entryDescription(entry))}</option>`).join('');
     if (entries.some(entry => entry.id === chosen)) mentionForm.elements.entryId.value = chosen;
+    entrySummary();
+  }
+  function entrySummary() {
+    const entry = state.entries.find(item => item.id === mentionForm.elements.entryId.value);
+    document.getElementById('mention-edit-entry').hidden = !entry;
+    document.getElementById('mention-entry-summary').textContent = entry
+      ? [entry.aliases.length ? entry.aliases.join(', ') : '', entry.note].filter(Boolean).join(', ')
+      : '';
+    const ids = [mention?.id, entry?.id].filter(Boolean);
+    const events = state.history.filter(event => ids.some(id => JSON.stringify(event).includes(id)));
+    document.querySelector('#mention-history > div').innerHTML = historyMarkup(events);
+    document.getElementById('mention-history').hidden = !events.length;
+    workspace.reposition();
+  }
+  function showInlineEntry(entry) {
+    if (busy) return;
+    if (dirty.has(inlinePanel)) {
+      inlinePanel.hidden = false;
+      mentionForm.hidden = true;
+      message(inlinePanel, 'Bitte die Eingaben zuerst speichern oder verwerfen.');
+      return;
+    }
+    inlineEntry = entry;
+    inlineForm.reset();
+    inlineForm.elements.kind.value = entry?.kind || mentionForm.elements.kind.value;
+    inlineForm.elements.label.value = entry?.label || mention.quote;
+    inlineForm.elements.aliases.value = (entry?.aliases || []).join('\n');
+    inlineForm.elements.note.value = entry?.note || '';
+    inlineForm.elements.reviewer.value = mentionForm.elements.reviewer.value || reviewer();
+    inlineForm.elements.broaderId.innerHTML = '<option value="">Kein Oberbegriff</option>'
+      + state.entries.filter(item => item.kind === 'term' && item.id !== entry?.id)
+        .map(item => `<option value="${attr(item.id)}">${esc(entryDescription(item))}</option>`).join('');
+    inlineForm.elements.broaderId.value = entry?.broaderId || '';
+    document.getElementById('mention-entry-parent').hidden = inlineForm.elements.kind.value !== 'term';
+    inlinePanel.hidden = false;
+    mentionForm.hidden = true;
+    message(inlinePanel, '');
+    if (!entry) dirty.add(inlinePanel);
+    updateDraftButton();
+    workspace.reposition();
+    inlineForm.elements.label.focus();
+  }
+  function returnToMention() {
+    inlinePanel.hidden = true;
+    mentionForm.hidden = false;
+    workspace.reposition();
+    mentionForm.elements.entryId.focus();
+  }
+  inlineForm.addEventListener('input', () => {
+    dirty.add(inlinePanel);
+    updateDraftButton();
+  });
+  document.getElementById('mention-entry-back').addEventListener('click', returnToMention);
+  document.getElementById('mention-entry-discard').addEventListener('click', () => {
+    if (busy) return;
+    dirty.delete(inlinePanel);
+    returnToMention();
+    updateDraftButton();
+  });
+  inlineForm.addEventListener('submit', saveInlineEntry);
+  async function saveInlineEntry(event) {
+    event.preventDefault();
+    const entry = {
+      ...(inlineEntry ? { id: inlineEntry.id } : {}),
+      kind: inlineForm.elements.kind.value,
+      label: inlineForm.elements.label.value.trim(),
+      aliases: inlineForm.elements.aliases.value.split(/\n/).map(value => value.trim()).filter(Boolean),
+      note: inlineForm.elements.note.value.trim(),
+      broaderId: inlineForm.elements.kind.value === 'term' ? inlineForm.elements.broaderId.value || null : null,
+    };
+    if (!await save('save-entry', { entry }, inlinePanel)) return;
+    const saved = state.entries.find(item => entry.id ? item.id === entry.id : item.id === state.entries.at(-1).id);
+    mentionForm.elements.search.value = '';
+    entryOptions();
+    mentionForm.elements.entryId.value = saved.id;
+    mentionForm.elements.reviewer.value = inlineForm.elements.reviewer.value;
+    dirty.add(mentionDialog);
+    entrySummary();
+    returnToMention();
+    updateDraftButton();
+    message(mentionDialog, 'Registereintrag gespeichert. Die Fundstelle ist noch nicht gespeichert.');
   }
   function showMention(item, origin) {
+    sourceRequest += 1;
     if (!beforeOpen() || busy) return;
-    if (dirty.has(mentionDialog)) {
+    if (dirty.has(mentionDialog) || dirty.has(inlinePanel)) {
       open(mentionDialog, origin);
       message(mentionDialog, 'Bitte die geöffnete Fundstelle zuerst speichern oder Eingaben verwerfen.');
       return;
     }
     if (!item) return;
+    if (!workspace.open({ anchor: origin || mentionAnchor, origin: origin instanceof Element ? origin : annotate, context: sourceContext(item) })) return;
+    mentionDialog.hidden = false;
+    selectionToolbar.hidden = true;
+    inlinePanel.hidden = true;
     mentionAnchor = origin || mentionAnchor || annotate;
     mentionForm.hidden = false;
     mention = { ...item };
@@ -249,7 +365,6 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     mentionForm.elements.dateMode.value = item.notBefore || item.notAfter ? 'range' : 'exact';
     dateFields();
     entryOptions();
-    document.getElementById('mention-quote').textContent = item.quote;
     document.getElementById('mention-remove').hidden = !item.id;
     mentionForm.querySelector('[type="submit"]').hidden = !!item.stale;
     message(mentionDialog, item.stale ? 'Der Quellentext wurde geändert. Diese Fundstelle bleibt an ihrem alten Wortlaut verankert. Für eine neue Zuordnung Text erneut auswählen.' : '');
@@ -259,7 +374,7 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     const range = mentionForm.elements.dateMode.value === 'range';
     document.getElementById('mention-when').hidden = range;
     document.getElementById('mention-date-range').hidden = !range;
-    mentionPopover.reposition();
+    workspace.reposition();
   }
   function readSelection() {
     const { doc, pageNr, viewMode } = context();
@@ -282,21 +397,29 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   }
   function captureSelection({ focus = true } = {}) {
     if (!local.enabled || !state || !beforeOpen() || busy) return;
-    if (dirty.has(mentionDialog)) {
+    if (dirty.has(mentionDialog) || dirty.has(inlinePanel)) {
       open(mentionDialog, annotate);
-      if (focus) mentionForm.elements.reviewer.focus();
+      if (dirty.has(inlinePanel)) {
+        inlinePanel.hidden = false;
+        mentionForm.hidden = true;
+      }
+      if (focus) (dirty.has(inlinePanel) ? inlineForm.elements.label : mentionForm.elements.reviewer).focus();
       return;
     }
     const snapshot = readSelection();
     if (!snapshot) return;
     selectionSnapshot = snapshot;
-    selectionPopover.open(snapshot.range, annotate);
+    sourceRequest += 1;
+    if (!workspace.open({ anchor: snapshot.range, origin: annotate, context: snapshot })) return;
+    selectionToolbar.hidden = false;
+    mentionDialog.hidden = true;
     if (focus) selectionToolbar.querySelector('button').focus();
   }
   async function annotateSelection(kind) {
     if (!selectionSnapshot || !beforeOpen() || busy) return;
+    const request = ++sourceRequest;
     const { range, lineText, ...snapshot } = selectionSnapshot;
-    selectionPopover.hide({ restoreFocus: false });
+    selectionToolbar.hidden = true;
     if (context().hasDraft) {
       mentionAnchor = range;
       open(mentionDialog, annotate);
@@ -305,6 +428,7 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
       return;
     }
     const textDigest = await digest(lineText);
+    if (request !== sourceRequest) return;
     if (Number(context().doc?.docId) !== snapshot.docId || context().pageNr !== snapshot.pageNr) return;
     showMention({ ...snapshot, textDigest, entryId: null, kind, note: '' }, range);
     dirty.add(mentionDialog);
@@ -319,8 +443,7 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     open(dialog, button);
     if (dirty.size || busy) return;
     try {
-      state = await local.registry();
-      refreshRegistry();
+      await fetchRegistry();
     } catch (error) {
       message(dialog, error.message);
     }
@@ -337,7 +460,6 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   document.getElementById('registry-search').addEventListener('input', results);
   document.getElementById('registry-kind').addEventListener('change', results);
   document.getElementById('registry-new').addEventListener('click', () => {
-    if (!dirty.has(dialog)) pendingEntryForMention = false;
     showEntry(null);
     form.elements.label.focus();
   });
@@ -362,15 +484,7 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     if (await save('save-entry', { entry }, dialog)) {
       const saved = state.entries.find(item => entry.id ? item.id === entry.id : item.id === state.entries.at(-1).id);
       showEntry(saved);
-      if (pendingEntryForMention && saved.kind === mentionForm.elements.kind.value) {
-        mentionForm.elements.search.value = '';
-        entryOptions();
-        mentionForm.elements.entryId.value = saved.id;
-        dirty.add(mentionDialog);
-        pendingEntryForMention = false;
-        open(mentionDialog, annotate);
-        updateDraftButton();
-      }
+
     }
   }
   annotate.addEventListener('mousedown', event => event.preventDefault());
@@ -396,19 +510,12 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     }
   });
   mentionForm.elements.dateMode.addEventListener('change', dateFields);
-  document.getElementById('mention-new-entry').addEventListener('click', () => {
-    mentionPopover.hide({ restoreFocus: false });
-    open(dialog, annotate);
-    showEntry(null);
-    if (!dirty.has(dialog)) {
-      form.elements.kind.value = mentionForm.elements.kind.value;
-      form.elements.label.value = mention.quote;
-      parentOptions();
-      dirty.add(dialog);
-      pendingEntryForMention = true;
-    }
-    form.elements.label.focus();
+  document.getElementById('mention-new-entry').addEventListener('click', () => showInlineEntry(null));
+  document.getElementById('mention-edit-entry').addEventListener('click', () => {
+    const entry = state.entries.find(item => item.id === mentionForm.elements.entryId.value);
+    if (entry) showInlineEntry(entry);
   });
+  mentionForm.elements.entryId.addEventListener('change', entrySummary);
   document.addEventListener('keydown', event => {
     if (!event.altKey || event.key.toLowerCase() !== 'a') return;
     event.preventDefault();
@@ -416,6 +523,11 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   });
   mentionForm.elements.search.addEventListener('input', entryOptions);
   mentionForm.elements.kind.addEventListener('change', () => {
+    if (dirty.has(inlinePanel)) {
+      mentionForm.elements.kind.value = inlineForm.elements.kind.value;
+      showInlineEntry(inlineEntry);
+      return;
+    }
     mention.entryId = null;
     mentionForm.elements.entryId.value = '';
     entryOptions();
@@ -423,6 +535,13 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
   mentionForm.addEventListener('submit', saveMention);
   async function saveMention(event) {
     event.preventDefault();
+    if (dirty.has(inlinePanel)) {
+      inlinePanel.hidden = false;
+      mentionForm.hidden = true;
+      message(inlinePanel, 'Bitte den Registereintrag zuerst speichern oder verwerfen.');
+      workspace.reposition();
+      return;
+    }
     if (context().hasDraft) {
       message(mentionDialog, 'Bitte zuerst die Textänderungen speichern.');
       return;
@@ -445,11 +564,15 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     if (await save('save-mention', { mention: payload }, mentionDialog)) finishMentionSave();
   }
   function finishMentionSave() {
-    mentionPopover.hide();
+    workspace.hide();
     if (selectedEntry) showEntry(state.entries.find(entry => entry.id === selectedEntry.id));
   }
   document.getElementById('mention-remove').addEventListener('click', removeMention);
   async function removeMention() {
+    if (dirty.has(inlinePanel)) {
+      showInlineEntry(inlineEntry);
+      return;
+    }
     if (!mentionForm.elements.reviewer.reportValidity()) return;
     if (await save('remove-mention', { id: mention.id }, mentionDialog)) finishMentionSave();
   }
@@ -470,25 +593,46 @@ export function createRegistryEditor(local, { context, rerender, beforeOpen = ()
     get hasDraft() { return dirty.size > 0; },
     beforeNavigate() {
       if (dirty.size || busy) {
-        const target = dirty.has(mentionDialog) ? mentionDialog : dialog;
+        const target = dirty.has(mentionDialog) || dirty.has(inlinePanel) ? mentionDialog : dialog;
         open(target, annotate);
         message(target, 'Bitte die Eingaben zuerst speichern oder verwerfen.');
         return false;
       }
-      mentionPopover.hide({ restoreFocus: false });
-      selectionPopover.hide({ restoreFocus: false });
+      workspace.hide({ restoreFocus: false });
+      sourceRequest += 1;
+      selectionToolbar.hidden = true;
       return true;
     },
     openSelection: captureSelection,
+    async openSource(snapshot, anchor) {
+      if (!snapshot || !state || !local.enabled || busy) return false;
+      const request = ++sourceRequest;
+      const existing = state.mentions.find(item => Number(item.docId) === Number(snapshot.docId)
+        && item.pageNr === snapshot.pageNr && item.lineId === snapshot.lineId
+        && item.start === snapshot.start && item.end === snapshot.end && !item.stale);
+      if (existing) {
+        showMention(existing, anchor);
+        return true;
+      }
+      const source = sourceContext(snapshot);
+      if (source.lineText.slice(snapshot.start, snapshot.end) !== snapshot.quote) return false;
+      const textDigest = await digest(source.lineText);
+      if (request !== sourceRequest) return false;
+      if (Number(context().doc?.docId) !== Number(snapshot.docId) || context().pageNr !== snapshot.pageNr) return false;
+      showMention({
+        docId: Number(snapshot.docId), pageNr: snapshot.pageNr, lineId: snapshot.lineId,
+        start: snapshot.start, end: snapshot.end, quote: snapshot.quote,
+        textDigest, kind: snapshot.kind || 'person', entryId: null, note: '',
+      }, anchor);
+      return true;
+    },
     async load() {
       button.hidden = annotate.hidden = !local.enabled;
       if (!local.enabled || dirty.size || busy) return;
       try {
-        state = await local.registry();
-        refreshRegistry();
-        rerender();
+        if (await fetchRegistry()) rerender();
       } catch (error) {
-        button.hidden = annotate.hidden = true;
+        if (!state) button.hidden = annotate.hidden = true;
         console.error(error);
       }
     },
