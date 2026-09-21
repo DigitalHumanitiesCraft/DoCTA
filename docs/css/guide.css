@@ -1,7 +1,9 @@
 .guide-content { max-inline-size: 52rem; margin-inline: auto; padding: calc(2 * var(--space-lg)) var(--space-lg); }
 .guide-content h2 { font-size: 1.3rem; margin-block: calc(2 * var(--space-lg)) var(--space-md); scroll-margin-block-start: calc(var(--nav-height) + var(--space-md)); }
+.guide-content h3 { font-size: 1.1rem; margin-block: var(--space-lg) var(--space-sm); }
 .guide-content p, .guide-content li { line-height: 1.65; }
 .guide-content li { margin-block: var(--space-sm); }
 .guide-content code { overflow-wrap: anywhere; }
+.guide-content pre { white-space: pre-wrap; padding-block: var(--space-sm); }
 .guide-sections { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-lg); margin-block: var(--space-lg); }
 .guide-content a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

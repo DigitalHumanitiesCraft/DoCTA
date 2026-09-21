@@ -52,6 +52,7 @@ node tests/interaction-test.mjs
 node tests/sources-ui-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
+node tests/guide-walkthrough-test.mjs
 ```
 
 For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.

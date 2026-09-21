@@ -42,6 +42,8 @@ The public viewer supports a browser draft and JSON export. Repository write-bac
 
 Continue the local walkthrough with Thaur A 049.1, document 11328300. Earlier interface inspection established source orientation and page navigation and led to a complete initial image, a shared metadata header and fewer simultaneous editing controls. These decisions are recorded in the [working editor hierarchy](design.md#working-editor-hierarchy). The revised interaction still requires assessment on a real research passage.
 
+For independent onboarding, the [working guide](../guide.html#exercise) starts with the attested person wording on page 1 and separates entry creation from occurrence saving. This exercise needs no invented text correction. The correction steps below apply when the source image supports an actual change.
+
 1. Identify title, shelfmark and historical date. Open Quellenangaben only for the additional source context.
 2. Inspect the complete image, zoom to a passage, restore it with Ganze Seite and navigate to the next image.
 3. Open Bearbeiten, enter initials and select an existing text line. Enter confirms a browser draft, Escape cancels the open line edit. Change only a reading justified by the image.

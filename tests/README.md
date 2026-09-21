@@ -37,6 +37,7 @@ node tests/interaction-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
 node tests/sources-ui-test.mjs
+node tests/guide-walkthrough-test.mjs
 ```
 
 ## Was sie prüfen
@@ -87,6 +88,8 @@ Zwei benannte Abläufe kommen hinzu, die der allgemeine Durchlauf nicht prüfen 
   die Trefferzahl muss das melden, ein Begriff ohne Treffer muss den leeren Zustand zeigen, und das
   Leeren des Feldes muss die vollständige Liste wiederherstellen.
 - Der Korrekturdurchgang öffnet Bearbeiten, setzt Initialen und korrigiert eine Zeile. Der Klick auf die nächste Zeile muss die Änderung übernehmen und deren Eingabefeld öffnen. Der Test prüft den sichtbaren Entwurfszustand, das Fehlen von Freigabe- und Zeitmessungsfunktionen sowie den JSON-Export mit der korrigierten Zeile, einer leeren Seitenentscheidung und ohne Aufwandserfassung. Der Export wird im Arbeitsspeicher gelesen und schreibt keine Forschungsdatei.
+
+`guide-walkthrough-test.mjs` folgt dem Personenbeispiel der Anleitung im echten Python-Editor mit isolierten Datenkopien. Er prüft Speichern, Index und Rücksprung, Änderung und Entfernung der Fundstelle sowie Textkorrektur und Wiederherstellung. Die Textauswahl wird im Browser per DOM gesetzt. Die Prüfung ersetzt keinen manuellen Nutzertest oder eine Betriebssysteminstallation. Screenshots liegen unter `output/guide-check/`.
 
 ## Grenzen
 

@@ -23,6 +23,12 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Guided first use and preservation of local work (21.09.2026)
+
+Reworked the German guide around ZIP setup, separate operating-system steps and one source-bound person exercise. The local example link now requires the existing editor capability, so a public reader is directed to reopen the guide in the local application. Entry creation and occurrence saving are explained separately. Text correction is optional where the image supports it, with a further saved correction as the remedy for a mistaken reading. Backup instructions distinguish saved files from browser drafts. A compatible update retains the canonical text and editorial folders while keeping the old project intact. Isolated Windows launcher checks covered a fresh locked environment, its subsequent environment fallback and transfer of saved corrections and registry identities. A reviews-only control confirmed that startup does not reconstruct effective readings from events alone. Native macOS startup and first-time installation of uv on an unprepared machine remain unobserved.
+
+The executable guide walkthrough exercised the actual local backend with isolated corpus copies. It verified entry creation, occurrence saving and reload, Index lookup and return, annotation editing and removal, and correction followed by restoration. Static and local guide routing, keyboard navigation and narrow reflow at increased scale were checked. Source selection was scripted through the browser DOM. Research-file hashes and file inventories remained unchanged. This supplies technical evidence and does not establish first-time-user acceptance.
+
 ## Public working guide and documentation boundary (21.09.2026)
 
 Added the German installation and working guide as a maintained site entry point and linked it from the repository documentation and architecture. Current knowledge documents now describe durable implementation decisions without correspondence summaries. The handoff distinguishes working version 0.2.0, saved human corrections, retained machine output and the scholarly decisions that remain open. Review selection now orders schema version 2 runs by their timezone-aware save timestamp and reads the time suffix of older local run IDs, independently of reviewer initials. Shift with the horizontal arrow keys preserves native text selection instead of changing the page. Targeted backend and browser tests cover both corrections. No publication of research data or scholarly acceptance follows from this documentation state.

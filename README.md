@@ -4,6 +4,8 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 [Public site](https://dhcraft.org/DoCTA/), [German working guide](https://dhcraft.org/DoCTA/guide.html) and [project knowledge](docs/knowledge/INDEX.md).
 
+For a first local trial, follow the German guide's ZIP setup and person-annotation exercise. Open Anleitung again from the locally started application before following its working example. The guide also explains how to back up and transfer saved work into a separate updated project copy.
+
 ## What this is
 
 DoCTA supports source-based research into court practices, possession and object movement, and the use of space. The research conversation starts with the historical question, then the material, the information to annotate and its intended analysis. The [project plan](docs/knowledge/plan.md#joint-walkthrough) connects those decisions to a bounded editorial pilot.
