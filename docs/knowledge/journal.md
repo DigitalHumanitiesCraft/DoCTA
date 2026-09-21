@@ -25,6 +25,10 @@ related: [INDEX, project, handoff]
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
+## Meeting guide and evidence boundaries (21.09.2026)
+
+Prepared the German conversation guide at the operator's request before completion of the joint walkthrough. The [meeting answers](plan.md#meeting-answers-and-scope) distinguish the usable local pilot from funded research scope, explain source access and import, and separate transcription accuracy, correction evidence and historical quantification. Corrected the handoff's obsolete effort-measurement wording and its omission of the operator's saved test correction. Browser-draft reconciliation, removal of the test addition and scholarly acceptance remain open. The guide is preparation for the conversation and does not record an acceptance that has not occurred.
+
 ## Correction provenance and compact tools (21.09.2026)
 
 Corrected the interaction model following the operator's continuing walkthrough. Metadata and annotation entry points share a wrapping row, and the source attribution directly opens the original edition. The operator explicitly rejected time tracking and separate page review stages. These controls and active measurement were removed from the working editor. Correction provenance remains in the saved event and effective page register, with legacy records preserved. The accepted design decision is recorded in [design.md](design.md#working-editor-hierarchy), the persistence model in [architecture.md](architecture.md), and the revised exercise in [plan.md](plan.md).

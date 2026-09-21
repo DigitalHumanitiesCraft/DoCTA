@@ -64,7 +64,7 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 | Page | Purpose |
 |------|---------|
 | `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
-| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, the entity layer of the document from `data/entities/`, a curation view for page decisions and line corrections, plus a reading mode over the whole document text |
+| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, line corrections, working tags and curation of existing machine entity proposals, plus a reading mode over the whole document text |
 | `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `about.html` | About the project, data sources, imprint |
