@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Source overview and consolidated vocabulary (21.09.2026)
+
+The operator requested implementation of the remaining interface review. Retired the separate research-tag surface while preserving its data and compatible API. Reworked source selection around German search, availability and provenance, removed aggregate progress and pipeline-stage initials, and replaced BETA with Research preview. Sources with only a recorded first image can open that image without constructing missing pages or masking transcription errors. The shared annotation field and Index remain the entry points for controlled vocabulary. Browser verification covers source filtering, image-only navigation, the absent tag interface and responsive access. Scholarly workflow acceptance remains with the editor.
+
 ## Editor-owned annotation and Index view (21.09.2026)
 
 The operator simplified the working workflow after inspecting the combined annotation field. Removed machine proposals, their marks and editing controls from the viewer. The source-bound form now serves the editor's own assignments and vocabulary alone. Preserved earlier extraction files and curation decisions for pipeline compatibility. Added Index beside Viewer to browse saved persons, places and controlled terms through search, category filters and source links. The index resolves identities by entry ID and performs no writes or automatic reconciliation. Removed decorative horizontal separators and documented the revised interaction. The earlier shared-field implementation remains part of the development history, while its machine-proposal surface is superseded by this decision.

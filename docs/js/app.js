@@ -4,13 +4,13 @@
  */
 
 const NAV_ITEMS = [
-  { href: 'index.html', label: 'Home', id: 'dashboard' },
+  { href: 'index.html', label: 'Quellen', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
   { href: 'register.html', label: 'Index', id: 'register' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
   // About sits flush right and carries the link into the knowledge base.
-  { href: 'about.html', label: 'About', id: 'about', end: true },
+  { href: 'about.html', label: 'Über das Projekt', id: 'about', end: true },
 ];
 
 /**
@@ -41,24 +41,21 @@ export function initNav(activeId) {
 }
 
 /**
- * Compact BETA badge in the navbar.
+ * The research-preview state remains beside the brand in the navigation flow.
  */
 export function initBanner() {
   const brand = document.querySelector('.navbar-brand');
-  if (!brand || document.getElementById('beta-badge')) return;
-  const badge = document.createElement('span');
-  badge.id = 'beta-badge';
-  badge.className = 'beta-badge';
-  badge.textContent = 'BETA';
-  // The badge carries the site-wide disclaimer, so every page explains its
-  // experimental status without repeating a banner.
-  badge.title = 'Experimental agentic edition pipeline. This Promptotyping environment tests ' +
-    'model-assisted transcription and annotation of fifteenth-century court records. ' +
-    'Machine-generated content remains provisional until scholarly review and acceptance.';
-  // The sticky navbar is already a containing block for the absolutely
-  // positioned badge; the position-relative utility would kill the stickiness.
-  const navbar = document.querySelector('.navbar');
-  (navbar || brand.parentElement).appendChild(badge);
+  if (!brand || document.getElementById('research-preview')) return;
+  const identity = document.createElement('div');
+  identity.className = 'navbar-identity';
+  brand.before(identity);
+  identity.append(brand);
+  const badge = document.createElement('a');
+  badge.id = 'research-preview';
+  badge.className = 'research-preview';
+  badge.textContent = 'Research preview';
+  badge.href = 'about.html#current-scope';
+  identity.append(badge);
 }
 
 /* Official GitHub mark (octicon mark-github, MIT-licensed path data). */
@@ -78,7 +75,7 @@ function initFooter(activeId) {
   const footer = document.querySelector('footer');
   if (!footer) return;
   const about = activeId === 'about' ? '' :
-    ` <a href="about.html">About &amp; Imprint</a>`;
+    ` <a href="about.html">Über das Projekt und Impressum</a>`;
   footer.innerHTML = `<p class="mb-0 footer-line">
     <span>DoCTA</span>
     <a href="https://dhcraft.org" target="_blank" rel="noopener" class="footer-brand">

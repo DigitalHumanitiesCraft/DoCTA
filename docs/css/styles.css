@@ -577,41 +577,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 .review-notes { flex: 1 1 10rem; }
 
-#annotation-editor, #tag-editor {
-  padding: var(--space-xs) var(--space-md);
-  border-bottom: 1px solid var(--border-custom);
-  max-height: 40vh;
-  overflow: auto;
-  font-size: var(--text-xs);
-}
-
-.annotation-editor { display: flex; flex-wrap: wrap; gap: var(--space-sm); padding-block: var(--space-sm); }
-.annotation-editor label { display: grid; gap: var(--space-2xs); flex: 1 1 10rem; }
-.annotation-editor input, .annotation-editor select { min-width: 0; width: 100%; }
-
 .review-bar:has(#local-edition-status) { flex-wrap: wrap; }
-
-.tag-editor, .tag-editor__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); padding-block: var(--space-sm); }
-.tag-editor label, .tag-editor__actions label { display: grid; gap: var(--space-2xs); flex: 1 1 12rem; min-inline-size: 0; }
-.tag-editor label:has(textarea), .tag-editor__warning, .tag-editor__message { flex-basis: 100%; }
-.tag-editor input, .tag-editor select, .tag-editor textarea, .tag-editor__actions input {
-  min-inline-size: 0;
-  inline-size: 100%;
-  padding: var(--space-xs);
-  border: 1px solid var(--border-custom);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text-primary);
-  font: inherit;
-  font-size: 1rem;
-}
-.tag-editor button, .tag-editor__actions button, .tag-editor__list button { min-block-size: 2rem; height: auto; white-space: normal; }
-.tag-editor__list { margin-block: var(--space-sm); padding-inline-start: var(--space-md); }
-.tag-editor__list li { margin-block-end: var(--space-md); overflow-wrap: anywhere; }
-.tag-editor__list blockquote { max-block-size: 6rem; overflow: auto; margin-block: var(--space-xs); white-space: pre-wrap; }
-.tag-editor__list p { margin-block: var(--space-xs); white-space: pre-wrap; }
-.tag-editor__warning:empty, .tag-editor__message:empty { display: none; }
-body:not([data-view="synopsis"]) #tag-editor { display: none; }
 
 /* === Loading Spinner === */
 .loading {
@@ -1272,24 +1238,9 @@ body:not([data-view="synopsis"]) #tag-editor { display: none; }
   .exp-bar { position: relative; z-index: 6; }
 }
 
-/* === Beta badge ===
-   Compact BETA mark in the navbar, inserted by js/app.js. */
-.beta-badge {
-  font-size: var(--text-2xs);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: var(--radius-sm);
-  padding: 1px 5px;
-}
-@media (min-width: 992px) {
-  /* Centered in the navbar on wide screens, out of the flow */
-  .beta-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-}
-@media (max-width: 991.98px) {
-  .beta-badge { position: absolute; right: 5rem; top: 1rem; }
-}
+.navbar-identity { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-sm); margin-inline-end: var(--space-lg); min-inline-size: 0; }
+.navbar-identity .navbar-brand { margin-inline-end: 0; }
+.research-preview { font-size: var(--text-sm); color: var(--text-secondary); white-space: nowrap; }
 
 /* === Shared footer === */
 .footer-line { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; }
@@ -1298,142 +1249,37 @@ body:not([data-view="synopsis"]) #tag-editor { display: none; }
 .footer-brand img { border-radius: 3px; }
 .footer-icon { vertical-align: text-bottom; }
 
-/* === Source list (index) === */
-/* Corpus-wide editorial progress over pages, segments sized from the data */
-.progress-stack {
-  display: flex;
-  height: 12px;
-  border: 1px solid var(--border-custom);
-  border-radius: var(--radius-pill);
-  background: var(--bg-secondary);
-  overflow: hidden;
-}
-
-.progress-seg { min-width: 2px; }
-
-.progress-seg--approved { background: var(--conf-high); }
-.progress-seg--reviewed { background: var(--ent-person); }
-.progress-seg--machine { background: var(--conf-medium); }
-.progress-seg--text { background: var(--accent); }
-.progress-seg--none { background: var(--bg-secondary); }
-
-.progress-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs) var(--space-lg);
-  margin: var(--space-sm) 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: var(--text-xs);
-  color: var(--text-muted-custom);
-}
-
-.progress-legend__item { display: inline-flex; align-items: center; gap: 0.35em; }
-
-.progress-swatch {
-  width: 0.7em;
-  height: 0.7em;
-  border-radius: 2px;
-  border: 1px solid var(--border-custom);
-}
-
-/* Category filter chips, toggle buttons sharing the state of the source list */
+/* Source selection keeps catalogue extent and digital images in separate units. */
+.sources-page h1 { margin-block-end: var(--space-lg); }
+.sources-filters { display: grid; grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)); gap: var(--space-md); margin-block-end: var(--space-md); }
+.sources-filters label { display: grid; gap: var(--space-xs); min-inline-size: 0; font-size: var(--text-sm); }
+.sources-filters :is(input, select) { min-block-size: 2.75rem; font-size: 1rem; border-color: var(--text-muted-custom); }
 .chip-row { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
-
-.chip {
-  border: 1px solid var(--border-custom);
-  border-radius: var(--radius-pill);
-  background: var(--surface);
-  color: var(--text-secondary);
-  font-size: var(--text-xs);
-  padding: 0.15rem 0.65rem;
-  white-space: nowrap;
-}
-
+.chip { min-block-size: 2.25rem; border: 1px solid var(--text-muted-custom); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-secondary); font-size: var(--text-sm); padding: var(--space-xs) var(--space-sm); }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
-
-.chip[aria-pressed="true"] {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
-}
-
-.chip__count { margin-left: 0.4em; opacity: 0.75; }
-
-/* One row per source: facsimile, title with quiet metadata, category, stages */
-.src-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid var(--border-custom);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  overflow: hidden;
-}
-
-.src-row {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr) minmax(6rem, 10rem) auto;
-  align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
-  border-top: 1px solid var(--border-light);
-}
-
-.src-row:first-child { border-top: none; }
-.src-row:hover { background: var(--accent-light); }
-
-.src-empty { padding: 2rem; text-align: center; }
-
-/* Fixed crop keeps the rows even whatever the facsimile aspect ratio */
-.src-thumb {
-  width: 46px;
-  height: 60px;
-  object-fit: cover;
-  object-position: top;
-  border: 1px solid var(--border-custom);
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-}
-
-.src-thumb--empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted-custom);
-  font-size: var(--text-sm);
-  font-weight: 600;
-}
-
-.src-main { min-width: 0; }
-
-.src-title {
-  display: block;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-primary);
-  text-decoration: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.src-list { list-style: none; margin: 0; padding: 0; }
+.src-row { display: grid; grid-template-columns: 3rem minmax(0, 1fr) minmax(7rem, 11rem); align-items: start; gap: var(--space-md); padding-block: var(--space-lg); }
+.src-empty { padding-block: var(--space-lg); }
+.src-thumb { inline-size: 3rem; block-size: 4rem; object-fit: cover; object-position: top; border-radius: var(--radius-sm); background: var(--bg-secondary); }
+.src-thumb--empty { display: block; }
+.src-main { min-inline-size: 0; }
+.src-title { display: block; font-size: 1rem; font-weight: 600; color: var(--text-primary); text-decoration: none; overflow-wrap: anywhere; }
 a.src-title { color: var(--accent); }
 a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-decoration: underline; }
-
-.src-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem var(--space-sm);
-  font-size: var(--text-xs);
-  color: var(--text-muted-custom);
+.src-meta, .src-provenance { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); margin-block-start: var(--space-xs); font-size: var(--text-sm); color: var(--text-secondary); }
+.src-sig { font-family: var(--font-source); overflow-wrap: anywhere; }
+.src-date { font-variant-numeric: tabular-nums; }
+.src-cat { font-size: var(--text-sm); color: var(--text-secondary); overflow-wrap: anywhere; }
+.src-provenance a { color: var(--accent); }
+#result-count { margin-block: var(--space-sm); font-size: var(--text-sm); }
+#result-count:empty { display: none; }
+.list-controls { background: var(--bg-primary); padding-block: var(--space-sm); }
+@media (max-width: 767.98px) {
+  .sources-filters { grid-template-columns: minmax(0, 1fr); }
+  .src-row { grid-template-columns: 3rem minmax(0, 1fr); }
+  .src-cat { grid-column: 2; }
 }
-
-.src-meta__sep { color: var(--border-custom); }
-
-.src-sig { font-family: var(--font-source); }
-
-.src-cat { font-size: var(--text-xs); color: var(--text-muted-custom); }
 
 /* === Display segmentation in the viewer ===
    Layout regions read as paragraphs, "Item" lines as entries in the reading
@@ -1452,45 +1298,6 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .exp-basis a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
 .exp-basis a:hover { color: var(--accent); }
 
-/* === Home page note ===
-   Disclaimer line under the home title: calm prose, no warning banner */
-.hero-note {
-  margin: var(--space-2xs) 0 0;
-  max-width: 62rem;
-  font-size: var(--text-xs);
-  color: var(--text-muted-custom);
-}
-.hero-note a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
-.hero-note a:hover { color: var(--accent); }
-.hero-note__more { white-space: nowrap; }
-
-/* === Source list controls (index) ===
-   Slim line above the source list: live result count on the left, the F/H/T/E
-   key letters on the right, sitting exactly over the stage column of the rows.
-   The 1px compensates the list border so the letters align with the row chips. */
-.src-list-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-xs) calc(var(--space-md) + 1px);
-  margin-bottom: var(--space-xs);
-  font-size: var(--text-xs);
-  color: var(--text-muted-custom);
-}
-
-/* Search, sort, category chips and the stage key travel as one block: they
-   stick under the navbar while the list scrolls, on a solid ground so no row
-   shows through. The 1px overlap closes rounding gaps against the navbar. */
-.list-controls {
-  position: sticky;
-  top: calc(var(--nav-height) - 1px);
-  z-index: 100;
-  background: var(--bg-primary);
-  padding-top: var(--space-sm);
-  border-bottom: 1px solid var(--border-light);
-}
-.src-list-head .stage { cursor: help; }
-
 /* === Edition attribution chip (viewer meta strip) ===
    Accent-tinted so the origin of the text layer catches the eye among the
    neutral category and status chips */
@@ -1508,47 +1315,6 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
   white-space: nowrap;
 }
 .doc-meta__edition:hover { text-decoration: underline; }
-
-/* === Source row details (index) ===
-   Dating in the source row: tabular figures, a shade stronger than the rest
-   of the meta line, so the eye can scan the list chronologically */
-.src-date {
-  font-variant-numeric: tabular-nums;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-
-/* Attribution of the transcription's origin, right under the category */
-.src-credit {
-  display: block;
-  font-size: var(--text-2xs);
-  color: var(--text-muted-custom);
-  text-decoration: underline dotted;
-  text-underline-offset: 2px;
-}
-.src-credit:hover { color: var(--accent); }
-
-.src-stages { justify-self: end; }
-
-@media (max-width: 767.98px) {
-  .src-row {
-    grid-template-columns: 46px minmax(0, 1fr);
-    row-gap: var(--space-xs);
-  }
-  .src-cat, .src-stages { grid-column: 2; justify-self: start; }
-}
-
-/* Pipeline stage marks on a source row */
-.stages { display: inline-flex; gap: 3px; }
-.stage {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 1.35rem; height: 1.35rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.68rem; font-weight: 700;
-  border: 1px solid var(--border-custom);
-}
-.stage--done { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
-.stage--todo { color: var(--text-muted-custom); background: transparent; }
 
 /* === Reading and TEI mode in the viewer === */
 /* Both fold the facsimile pane away and give the text the full panel width. */

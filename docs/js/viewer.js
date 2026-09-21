@@ -6,9 +6,9 @@ import { createTeiView, renderReading,
          renderTranscription } from './viewer-render.js?v=20260921-ui';
 import { createReviewView } from './viewer-review.js?v=20260921-corrections';
 import { createLocalEditor } from './viewer-local.js';
-import { createTagEditor } from './viewer-tags.js?v=20260921-ui';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
+import { imageDocument } from './source-images.js';
 
 initNav('viewer');
 initBanner();
@@ -23,6 +23,7 @@ let viewMode = 'synopsis';
 let rotation = 0;
 let sourceByDocId = new Map();
 let registerByDocId = new Map();
+let imageDocuments = new Map();
 
 const transcriptionContainer = document.getElementById('transcription-container');
 
@@ -31,6 +32,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 // Which text layer the reader is looking at: human-corrected pages are the
 // ones marked DONE in Transkribus, everything else is the unrevised HTR layer.
 function provenanceState(docId) {
+  if (currentDoc?.imageOnly) return null;
   const reg = registerByDocId.get(Number(docId));
   if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
   const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
@@ -133,7 +135,6 @@ function renderDocMeta(docId) {
   const meta = document.getElementById('doc-meta');
   meta.innerHTML = provenanceChip(docId) + coverage;
   meta.hidden = false;
-  document.getElementById('btn-tags').hidden = !local.enabled;
 }
 
 function initOSD() {
@@ -407,31 +408,17 @@ const review = createReviewView({
   getContext: () => ({
     docId: currentDoc ? Number(currentDoc.docId) : null,
     pageNr: currentPageNr(),
-    viewMode,
+    viewMode: currentDoc?.imageOnly ? 'image' : viewMode,
     revision: currentDoc?.revision,
     reviewState: currentDoc?.reviewState,
   }),
   markText: text => text,
   rerenderPage: renderPage,
   local,
-  onDraftChange: () => { updateDraftBadge(); tags.sync(); },
+  onDraftChange: updateDraftBadge,
   onSaved: (doc) => {
     currentDoc = doc;
     registry.load();
-    tags.load(doc);
-    renderDocMeta(doc.docId);
-    renderCurrentView();
-  },
-});
-
-const tags = createTagEditor(document.getElementById('tag-editor'), local, {
-  hasReviewDraft: () => review.hasDraft,
-  refreshSource: async () => {
-    const docId = currentDoc.docId;
-    const doc = await local.load(docId);
-    if (currentDoc.docId !== docId) return;
-    currentDoc = doc;
-    await tags.load(doc);
     renderDocMeta(doc.docId);
     renderCurrentView();
   },
@@ -458,6 +445,9 @@ function renderPage(pageNr) {
   });
   review.applyMode();
   registry.render();
+  if (currentDoc.imageOnly) {
+    transcriptionContainer.textContent = 'Für dieses Digitalisat liegt keine Transkription vor.';
+  }
   const provenance = currentDoc.pages.find(page => page.pageNr === pageNr)?.provenance;
   const provenanceElement = document.getElementById('page-provenance');
   const displayDate = value => {
@@ -486,9 +476,12 @@ function updateTeiDownload() {
   const dl = document.getElementById('tei-download');
   const xml = currentDoc ? tei.cached(currentDoc.docId) : undefined;
   dl.hidden = viewMode !== 'tei' || xml == null;
-  if (currentDoc) {
+  if (currentDoc && (xml != null || registerByDocId.get(Number(currentDoc.docId))?.has_tei)) {
     dl.href = `data/tei/${currentDoc.docId}.xml`;
     dl.setAttribute('download', `${currentDoc.docId}.xml`);
+  } else {
+    dl.removeAttribute('href');
+    dl.removeAttribute('download');
   }
 }
 
@@ -514,7 +507,7 @@ function updatePager() {
                          currentDoc.pages.length);
   const total = currentDoc.provenance?.pagesInDocument || currentDoc.pages.length;
   document.getElementById('page-total').textContent = total === currentDoc.pages.length
-    ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} available)`;
+    ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} verfügbar)`;
   document.getElementById('btn-prev-page').disabled = currentPage === 0;
   document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
 }
@@ -537,11 +530,18 @@ function setPage(idx) {
   if (viewMode !== 'synopsis') { review.sync(); return; }
 
   const page = currentDoc.pages[currentPage];
-  tags.page(page.pageNr);
   loadImage(page.iiif);
   renderPage(page.pageNr);
   document.querySelector('.transcription-workspace').scrollTop = 0;
   review.sync();
+  syncImageOnly();
+}
+
+function syncImageOnly() {
+  const imageOnly = Boolean(currentDoc?.imageOnly);
+  document.getElementById('btn-review').hidden = imageOnly || viewMode !== 'synopsis';
+  if (imageOnly) document.getElementById('review-bar').hidden = true;
+  document.getElementById('btn-more').hidden = imageOnly;
 }
 
 // Renders whatever the current mode shows, from the page the mode still holds
@@ -607,15 +607,16 @@ async function loadDocument(docId, pageNr) {
     const path = source === 'vlm' || registerByDocId.get(Number(docId))?.effective_transcription
       ? `data/pipeline/transcriptions/${docId}.json`
       : `data/transcriptions/${docId}.json`;
-    const doc = await (local.enabled ? local.load(docId) : loadJSON(path));
+    const doc = imageDocuments.get(Number(docId)) ||
+      await (local.enabled ? local.load(docId) : loadJSON(path));
     // A later document switch wins over a slow response
     if (token !== docRequest) return;
     if (!Array.isArray(doc.pages) || !doc.pages.length) {
       throw new Error('the transcription holds no page');
     }
     currentDoc = doc;
+    if (doc.imageOnly) viewMode = 'synopsis';
     registry.load();
-    tags.load(doc);
     const wanted = pageNr !== undefined
       ? Number(pageNr)
       : parseInt(getParams().page || '', 10);
@@ -623,7 +624,7 @@ async function loadDocument(docId, pageNr) {
     renderDocMeta(docId);
     // A document switch keeps the current view
     currentPage = clampPage(idx >= 0 ? idx : 0);
-    renderCurrentView();
+    setView(viewMode);
   } catch (err) {
     if (token !== docRequest) return;
     const errEl = document.createElement('div');
@@ -762,10 +763,11 @@ async function init() {
     }
     document.getElementById('local-edition-bar').hidden = !local.enabled;
     document.getElementById('edition-date').value = new Date().toISOString().slice(0, 10);
-    const [mapping, sources, register] = await Promise.all([
+    const [mapping, sources, register, collection] = await Promise.all([
       loadJSON('data/source_mapping.json'),
       loadJSON('data/sources.json').catch(() => []),
       loadJSON('data/pipeline/register_summary.json').catch(() => ({ documents: [] })),
+      loadJSON('data/transkribus_collection.json').catch(() => []),
     ]);
     // A shelfmark can pair two Transkribus documents, so every one of them
     // resolves to its source row rather than only the first.
@@ -773,16 +775,25 @@ async function init() {
       .flatMap(s => (s.transkribus_docs || []).map(d => [Number(d.doc_id), s])));
     registerByDocId = new Map((register.documents || [])
       .map(d => [Number(d.docId), d]));
+    const mappedText = new Set(mapping.matched.filter(m => m.has_text).map(m => Number(m.transkribus_id)));
+    imageDocuments = new Map(collection.flatMap(entry => {
+      const reg = registerByDocId.get(entry.docId);
+      if (mappedText.has(entry.docId) || reg?.pages_with_text > 0 ||
+          reg?.transcription_source === 'vlm' || reg?.effective_transcription) return [];
+      const doc = imageDocument(entry);
+      return doc ? [[entry.docId, doc]] : [];
+    }));
     const selector = document.getElementById('doc-selector');
 
-    // Every document that carries a text, whether Transkribus exported it
-    // or DoCTA transcribed it itself; the register says which.
-    const docsWithText = mapping.matched
+    // Text-bearing documents lead the selector; image-only sources remain accessible.
+    const accessibleDocs = mapping.matched
       .filter(m => m.has_text ||
+        imageDocuments.has(Number(m.transkribus_id)) ||
         registerByDocId.get(Number(m.transkribus_id))?.transcription_source === 'vlm')
-      .sort((a, b) => a.csv_signatur.localeCompare(b.csv_signatur));
+      .sort((a, b) => Number(imageDocuments.has(Number(a.transkribus_id))) -
+        Number(imageDocuments.has(Number(b.transkribus_id))) || a.csv_signatur.localeCompare(b.csv_signatur));
 
-    for (const doc of docsWithText) {
+    for (const doc of accessibleDocs) {
       const opt = document.createElement('option');
       opt.value = doc.transkribus_id;
       opt.textContent = `${doc.csv_signatur} - ${doc.csv_titel}`;
@@ -794,9 +805,9 @@ async function init() {
     if (params.doc) {
       selector.value = params.doc;
       loadDocument(params.doc);
-    } else if (docsWithText.length) {
+    } else if (accessibleDocs.length) {
       // No deep link: open the first document right away instead of an empty pane
-      const first = String(docsWithText[0].transkribus_id);
+      const first = String(accessibleDocs[0].transkribus_id);
       selector.value = first;
       loadDocument(first, 1);
     }
@@ -815,13 +826,10 @@ init();
 
 for (const [buttonId, dialogId] of [
   ['btn-source-details', 'source-dialog'], ['btn-more', 'viewer-more'],
-  ['btn-tags', 'tags-dialog'],
 ]) {
   const button = document.getElementById(buttonId);
   const dialog = document.getElementById(dialogId);
   button.addEventListener('click', () => {
-    const details = dialog.querySelector('#tag-editor > details');
-    if (details) details.open = true;
     dialog.showModal();
   });
   dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());

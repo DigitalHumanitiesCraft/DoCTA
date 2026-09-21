@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoCTA | Agentic Edition Pipeline</title>
-  <meta name="description" content="DoCTA: agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496). From Transkribus facsimiles to research data and a digital edition.">
+  <title>Quellen | DoCTA</title>
+  <meta name="description" content="Quellen zur Tiroler Hofverwaltung mit Digitalisaten und Transkriptionen in der Arbeitsedition DoCTA.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+<body class="sources-page">
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <nav class="navbar navbar-expand-lg bg-white sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation öffnen">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,359 +22,39 @@
       </div>
     </div>
   </nav>
-
   <main id="main" class="container py-4">
-    <header class="mb-4">
-      <h1>Doing Court in the Tyrolean Alps</h1>
-      <p class="hero-note"><strong>Experimental agentic edition pipeline.</strong>
-        This <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>
-        environment tests model-assisted transcription and annotation of fifteenth-century court
-        records. Machine-generated content remains provisional until scholarly review and acceptance.
-        <a class="hero-note__more" href="about.html#questions">Questions, scope and workflow &rarr;</a></p>
-    </header>
-
-    <!-- Sources with integrated search -->
-    <section class="mb-4" id="sources">
-      <h2 class="visually-hidden">Sources</h2>
-
-      <div class="progress-block mb-4">
-        <div class="progress-stack" id="progress-bar" role="img" aria-label="Editorial progress"></div>
-        <ul class="progress-legend" id="progress-legend"></ul>
-      </div>
-
+    <h1>Quellen</h1>
+    <section id="sources" aria-label="Quellenverzeichnis">
       <div class="list-controls">
-      <div class="row g-2 mb-2 align-items-center">
-        <div class="col-md-5">
-          <input type="search" class="form-control" id="search-input" placeholder="Search shelfmark, title or date..." aria-label="Source search">
-        </div>
-        <div class="col-md-3">
-          <select class="form-select" id="sort-select" aria-label="Sort sources">
-            <option value="signatur">Sort by shelfmark</option>
-            <option value="titel">Sort by title</option>
-            <option value="datierung">Sort by date</option>
-            <option value="extent">Sort by extent</option>
-            <option value="tier">Sort by progress</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <select class="form-select" id="filter-tier" aria-label="Filter by availability">
-            <option value="">Any progress</option>
-            <option value="1">Has HTR text</option>
-            <option value="2">Digitized</option>
-            <option value="3">Archive only</option>
-          </select>
-        </div>
+        <form class="sources-filters" role="search">
+          <label for="search-input">Quellen suchen
+            <input type="search" class="form-control" id="search-input" placeholder="Signatur, Titel oder Datierung" autocomplete="off">
+          </label>
+          <label for="sort-select">Sortierung
+            <select class="form-select" id="sort-select">
+              <option value="signatur">Signatur</option>
+              <option value="titel">Titel</option>
+              <option value="datierung">Datierung</option>
+              <option value="images">Anzahl der Digitalisate</option>
+            </select>
+          </label>
+          <label for="filter-availability">Verfügbarkeit
+            <select class="form-select" id="filter-availability">
+              <option value="">Alle Quellen</option>
+              <option value="text">Mit Transkription</option>
+              <option value="images">Nur Digitalisat</option>
+              <option value="catalogue">Nur Katalognachweis</option>
+            </select>
+          </label>
+        </form>
+        <div class="chip-row" id="category-chips" role="group" aria-label="Quellenart"></div>
+        <p id="result-count" role="status" aria-live="polite"></p>
       </div>
-
-      <div class="chip-row mb-3" id="category-chips" role="group" aria-label="Filter by category"></div>
-
-      <div class="src-list-head">
-        <span id="result-count" role="status" aria-live="polite"></span>
-        <span class="stages" title="Pipeline stage of each source, filled when reached">
-          <span class="stage" title="facsimile">F<span class="visually-hidden"> facsimile</span></span>
-          <span class="stage" title="HTR text">H<span class="visually-hidden"> HTR text</span></span>
-          <span class="stage" title="TEI">T<span class="visually-hidden"> TEI</span></span>
-          <span class="stage" title="edited">E<span class="visually-hidden"> edited</span></span>
-        </span>
-      </div>
-      </div>
-      <ul class="src-list" id="sources-list"></ul>
+      <ul class="src-list" id="sources-list" role="list"><li class="src-empty">Quellen werden geladen.</li></ul>
     </section>
-
   </main>
-
-  <!-- Filled by initFooter() in js/app.js, one definition for every page -->
-  <footer class="text-center py-4 border-top small text-body-secondary"></footer>
-
+  <footer class="text-center py-4 small text-body-secondary"></footer>
   <script src="lib/bootstrap.bundle.min.js"></script>
-  <script type="module">
-    import { initNav, initBanner } from './js/app.js';
-    import { loadJSON } from './js/data-loader.js';
-    import { escapeHTML, escapeAttr, formatDate, debounce, catLabel, formatCount as num } from './js/utils.js';
-
-    initNav('dashboard');
-    initBanner();
-
-    // Doc ids whose TEI the pipeline has produced, from the register projection.
-    // A source without an entry there counts as not yet encoded.
-    let teiDocIds = new Set();
-
-    // A shelfmark can pair two Transkribus documents (A 125.3-4, A 142.1-2), so
-    // every document of a row is inspected wherever one document would decide.
-    const docsOf = (s) => s.transkribus_docs || [];
-
-    // Pipeline progress per source: filled = reached, outline = pending.
-    // Edited stays pending for the whole corpus until that stage ships.
-    function stageIcons(s) {
-      const stages = [
-        { key: 'F', label: 'Facsimile', done: s.tier === 1 || s.tier === 2 },
-        { key: 'H', label: 'HTR text', done: docsOf(s).some(d => d.has_text) },
-        { key: 'T', label: 'TEI', done: docsOf(s).some(d => teiDocIds.has(Number(d.doc_id))) },
-        { key: 'E', label: 'Edited', done: false },
-      ];
-      return `<span class="stages">` + stages.map(st =>
-        `<span class="stage ${st.done ? 'stage--done' : 'stage--todo'}" title="${st.label}${st.done ? '' : ': pending'}">${st.key}<span class="visually-hidden"> ${st.label}${st.done ? ' done' : ' pending'}</span></span>`
-      ).join('') + `</span>`;
-    }
-
-    let allSources = [];
-    let thumbByDocId = new Map();
-    // Attribution per document: who made the transcription and, where
-    // published, the deep link to that edition on Transkribus Sites.
-    let editionByDocId = new Map();
-    let sortKey = 'signatur';
-    let katFilter = '';
-
-    // Documents DoCTA transcribed itself carry no Transkribus text export;
-    // the register projection names them and the viewer can open them.
-    let vlmDocIds = new Set();
-
-    const docHasText = (d) => d.has_text || vlmDocIds.has(Number(d.doc_id));
-    const hasText = (s) => docsOf(s).some(docHasText);
-
-    // Availability groups the list before any user-chosen sort: full text, then
-    // digitized facsimile, then sources known only from the finding aid.
-    const availRank = (s) => (hasText(s) ? 0 : s.tier === 2 ? 1 : 2);
-
-    // Scaled IIIF variant of the first written page; the image stays external.
-    // The thumbnail is presentational, the title link carries the row target.
-    function thumbMarkup(s) {
-      const t = docsOf(s).map(d => thumbByDocId.get(Number(d.doc_id))).find(Boolean);
-      if (t) {
-        // The stored URL is a IIIF image request in the /full/max/ form; a URL of
-        // another shape passes through unchanged and loads at its own size.
-        const src = t.thumb.replace('/full/max/', '/full/,120/');
-        return `<img class="src-thumb" src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async">`;
-      }
-      const initial = (catLabel(s.kategorie) || '?').trim().charAt(0).toUpperCase();
-      return `<span class="src-thumb src-thumb--empty" aria-hidden="true">${escapeHTML(initial)}</span>`;
-    }
-
-    // What the row states about size, in two units kept apart. The scan count is
-    // what the project holds; the catalogue extent is the archival statement of
-    // the finding aid and appears only where it says something different.
-    const UNIT_WORD = { seiten: 'sides', bilder: 'images' };
-
-    function extentMarkup(s) {
-      const n = s.digital_images || 0;
-      const cat = s.catalogue_extent;
-      const out = [];
-      if (n > 0) {
-        out.push(`<span class="tnum" title="Digital images in Transkribus">${num(n)} scan${n === 1 ? '' : 's'}</span>`);
-      }
-      if (cat && cat.value != null && cat.value !== n) {
-        const unit = UNIT_WORD[cat.unit];
-        const hint = unit ? '' : ', unit not stated';
-        out.push(`<span class="tnum" title="${escapeAttr('Extent recorded in the archival finding aid' + hint)}">` +
-          `catalogue ${num(cat.value)}${unit ? ' ' + unit : ''}</span>`);
-      }
-      return out;
-    }
-
-    function rowMarkup(s) {
-      const meta = [
-        `<span class="src-sig">${escapeHTML(s.signatur)}</span>`,
-        `<span class="src-date" title="${escapeAttr('Dating: ' + (s.datierung?.raw || 'unknown'))}">${escapeHTML(formatDate(s.datierung))}</span>`,
-        ...extentMarkup(s),
-      ].filter(Boolean).join('<span class="src-meta__sep" aria-hidden="true">·</span>');
-      const target = docsOf(s).find(docHasText);
-      const title = target
-        ? `<a class="src-title" href="viewer.html?doc=${encodeURIComponent(target.doc_id)}" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</a>`
-        : `<span class="src-title" title="${escapeAttr(s.titel)}">${escapeHTML(s.titel)}</span>`;
-      const edition = docsOf(s).map(d => editionByDocId.get(Number(d.doc_id))).find(Boolean);
-      const credit = edition
-        ? `<a class="src-credit" href="${escapeAttr(edition.url || 'https://www.inventaria.at/')}"` +
-          ` target="_blank" rel="noopener" title="Transcription by the Inventaria project` +
-          `${edition.url ? '; the link opens the published edition on Transkribus Sites' : ' (inventaria.at)'}">Inventaria</a>`
-        : '';
-      return `<li class="src-row">
-        ${thumbMarkup(s)}
-        <div class="src-main">${title}<div class="src-meta">${meta}</div></div>
-        <div class="src-cat">${escapeHTML(catLabel(s.kategorie))}${credit}</div>
-        <div class="src-stages">${stageIcons(s)}</div>
-      </li>`;
-    }
-
-    function renderList(sources) {
-      const list = document.getElementById('sources-list');
-      // Unfiltered, the All chip already carries the total; the counter only
-      // speaks when a search or filter narrows the list.
-      document.getElementById('result-count').textContent =
-        sources.length === allSources.length ? '' : `${num(sources.length)} of ${num(allSources.length)} sources`;
-
-      if (sources.length === 0) {
-        list.innerHTML = '<li class="src-empty text-body-secondary">No sources found</li>';
-        return;
-      }
-      list.innerHTML = sources.map(rowMarkup).join('');
-    }
-
-    function sortValue(s, key) {
-      // A source the finding aid leaves undated sorts to the end instead of
-      // ahead of every dated one; the shelfmark then decides the order.
-      if (key === 'datierung') return s.datierung?.start || Number.MAX_SAFE_INTEGER;
-      // Scans first, because that is the figure the row shows; a source without
-      // them sorts by the catalogue extent, which is all the finding aid gives.
-      if (key === 'extent') return s.digital_images || s.catalogue_extent?.value || 0;
-      if (key === 'tier') return s.tier;
-      return s[key];
-    }
-
-    function getFilteredSources() {
-      const query = document.getElementById('search-input').value.toLowerCase().trim();
-      const tierFilter = document.getElementById('filter-tier').value;
-
-      let filtered = allSources;
-
-      if (query) {
-        filtered = filtered.filter(s =>
-          s.signatur.toLowerCase().includes(query) ||
-          s.titel.toLowerCase().includes(query) ||
-          (s.datierung?.raw || '').toLowerCase().includes(query)
-        );
-      }
-
-      if (katFilter) {
-        filtered = filtered.filter(s => s.kategorie === katFilter);
-      }
-
-      if (tierFilter) {
-        filtered = filtered.filter(s => s.tier === parseInt(tierFilter));
-      }
-
-      return [...filtered].sort((a, b) => {
-        const rank = availRank(a) - availRank(b);
-        if (rank !== 0) return rank;
-        const va = sortValue(a, sortKey);
-        const vb = sortValue(b, sortKey);
-        const cmp = typeof va === 'string'
-          ? va.localeCompare(vb, 'de', { numeric: true })
-          : (va || 0) - (vb || 0);
-        if (cmp !== 0) return cmp;
-        return a.signatur.localeCompare(b.signatur, 'de', { numeric: true });
-      });
-    }
-
-    function update() {
-      renderList(getFilteredSources());
-    }
-
-    // Corpus-wide editorial progress in one unit end to end: digital images.
-    // Numerator and denominator both come from the register, which tracks every
-    // digitized document and counts scans. The catalogue extent stays out of it;
-    // it is an archival statement in another unit, and dividing sides by
-    // openings is what this bar used to do. Without the register the sources
-    // still know their scan count, which keeps the bar meaningful but empty.
-    function renderProgress(sources, register) {
-      const docs = (register && register.documents) || [];
-      const totalImages = docs.length
-        ? docs.reduce((acc, d) => acc + (d.pages_total || 0), 0)
-        : sources.reduce((acc, s) => acc + (s.digital_images || 0), 0);
-      const v = { abgenommen: 0, gesichtet: 0, maschinell: 0 };
-      let pagesWithText = 0;
-      docs.forEach(d => {
-        pagesWithText += d.pages_with_text || 0;
-        Object.keys(v).forEach(k => { v[k] += (d.verification && d.verification[k]) || 0; });
-      });
-      const verified = v.abgenommen + v.gesichtet + v.maschinell;
-      const segments = [
-        { cls: 'approved', label: 'approved', n: v.abgenommen },
-        { cls: 'reviewed', label: 'reviewed', n: v.gesichtet },
-        { cls: 'machine', label: 'machine-checked', n: v.maschinell },
-        { cls: 'text', label: 'images with machine text', n: Math.max(0, pagesWithText - verified) },
-        { cls: 'none', label: 'scanned, not yet transcribed', n: Math.max(0, totalImages - pagesWithText) },
-      ].filter(seg => seg.n > 0);
-
-      const bar = document.getElementById('progress-bar');
-      const pct = (n) => totalImages > 0 ? (n / totalImages) * 100 : 0;
-      bar.innerHTML = segments.map(seg =>
-        `<span class="progress-seg progress-seg--${seg.cls}" style="width:${pct(seg.n).toFixed(3)}%"></span>`
-      ).join('');
-      const summary = segments.map(seg => `${num(seg.n)} ${seg.label}`).join(', ');
-      bar.setAttribute('aria-label', `Editorial progress over ${num(totalImages)} digital images: ${summary}`);
-
-      document.getElementById('progress-legend').innerHTML = segments.map(seg =>
-        `<li class="progress-legend__item"><span class="progress-swatch progress-seg--${seg.cls}" aria-hidden="true"></span><span class="tnum">${num(seg.n)}</span> ${escapeHTML(seg.label)}</li>`
-      ).join('');
-    }
-
-    function renderChips(sources) {
-      const counts = new Map();
-      sources.forEach(s => counts.set(s.kategorie, (counts.get(s.kategorie) || 0) + 1));
-      const chips = [{ value: '', label: 'All', n: sources.length }].concat(
-        [...counts.keys()].sort((a, b) => catLabel(a).localeCompare(catLabel(b), 'en'))
-          .map(k => ({ value: k, label: catLabel(k), n: counts.get(k) }))
-      );
-      const row = document.getElementById('category-chips');
-      row.innerHTML = chips.map(c =>
-        `<button type="button" class="chip" data-kat="${escapeAttr(c.value)}" aria-pressed="${c.value === katFilter}">${escapeHTML(c.label)}${c.n != null ? `<span class="chip__count tnum">${num(c.n)}</span>` : ''}</button>`
-      ).join('');
-    }
-
-    function setCategory(value) {
-      katFilter = value;
-      document.querySelectorAll('#category-chips .chip').forEach(btn => {
-        btn.setAttribute('aria-pressed', String(btn.dataset.kat === katFilter));
-      });
-      update();
-    }
-
-    document.getElementById('search-input').addEventListener('input', debounce(update, 200));
-    document.getElementById('filter-tier').addEventListener('change', update);
-    document.getElementById('sort-select').addEventListener('change', (e) => {
-      sortKey = e.target.value;
-      update();
-    });
-    document.getElementById('category-chips').addEventListener('click', (e) => {
-      const btn = e.target.closest('.chip');
-      if (btn) setCategory(btn.dataset.kat);
-    });
-
-    async function initSources() {
-      try {
-        const [sources, register, collection] = await Promise.all([
-          loadJSON('data/sources.json'),
-          loadJSON('data/pipeline/register_summary.json').catch(() => null),
-          loadJSON('data/transkribus_collection.json').catch(() => null),
-        ]);
-        allSources = sources;
-        if (register) {
-          thumbByDocId = new Map(register.documents
-            .filter(d => d.thumb)
-            .map(d => [d.docId, { thumb: d.thumb, thumb_page: d.thumb_page }]));
-          teiDocIds = new Set(register.documents
-            .filter(d => d.has_tei)
-            .map(d => Number(d.docId)));
-          editionByDocId = new Map(register.documents
-            .filter(d => d.transcription_by === 'Inventaria')
-            .map(d => [Number(d.docId), { url: d.edition_url || null }]));
-          vlmDocIds = new Set(register.documents
-            .filter(d => d.transcription_source === 'vlm')
-            .map(d => Number(d.docId)));
-        }
-        // The register knows only documents with a text layer. Every document
-        // of the collection has a first-page image, so the collection metadata
-        // fills the thumbnails the register cannot provide.
-        if (Array.isArray(collection)) {
-          for (const c of collection) {
-            if (c.docId && c.thumbUrl && !thumbByDocId.has(Number(c.docId))) {
-              thumbByDocId.set(Number(c.docId), { thumb: c.thumbUrl });
-            }
-          }
-        }
-
-        renderProgress(allSources, register);
-        renderChips(allSources);
-        update();
-      } catch (err) {
-        const li = document.createElement('li');
-        li.className = 'src-empty text-body-secondary';
-        li.textContent = `Loading failed: ${err.message}`;
-        document.getElementById('sources-list').replaceChildren(li);
-      }
-    }
-
-    initSources();
-  </script>
+  <script type="module" src="js/sources.js"></script>
 </body>
 </html>

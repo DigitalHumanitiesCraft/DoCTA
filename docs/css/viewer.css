@@ -48,10 +48,6 @@
   background: var(--surface);
 }
 .transcription-tools .doc-meta { flex: 0 1 auto; min-inline-size: 0; padding: 0; border: 0; gap: var(--space-sm); }
-.viewer-page #tags-dialog #tag-editor { padding: 0; border: 0; }
-#tags-dialog #tag-editor > details > summary { display: none; }
-.viewer-page[data-view="tei"] #btn-tags,
-.viewer-page[data-view="reading"] #btn-tags { display: none; }
 .viewer-page .doc-meta__edition { font-size: inherit; border: 0; padding: 0; border-radius: 0; }
 .viewer-page .prov-chip { font-size: var(--text-xs); white-space: normal; }
 .transcription-workspace { flex: 1 1 auto; min-block-size: 0; overflow: auto; overscroll-behavior: contain; }
@@ -60,18 +56,10 @@
 .viewer-page .review-bar__hint { flex-basis: 100%; margin-inline-start: 0; }
 .viewer-page .review-bar__hint:empty { display: none; }
 .viewer-page .review-bar__initials { font-size: 1rem; block-size: 2rem; }
-.viewer-page #tag-editor {
-  max-block-size: none;
-  overflow: visible;
-  padding: var(--space-sm) var(--space-md);
-  font-size: var(--text-sm);
-}
 .viewer-page summary { min-block-size: 2rem; padding-block: var(--space-xs); cursor: pointer; }
 .viewer-page :is(input, select, textarea) { font-size: 1rem; }
 .viewer-page :is(input, select, textarea, .review-btn, .review-toggle, .view-toggle__btn) { border-color: var(--text-muted-custom); }
 .viewer-page :is(button, summary, input, select, textarea, a):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.viewer-page[data-view="tei"] #tag-editor,
-.viewer-page[data-view="reading"] #tag-editor { display: none; }
 .viewer-dialog {
   inline-size: min(38rem, calc(100% - 2rem));
   max-block-size: calc(100% - 2rem);

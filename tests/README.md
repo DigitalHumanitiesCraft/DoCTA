@@ -34,9 +34,9 @@ ausgelieferte Artefakt bleibt davon frei.
 ```
 node tests/smoketest.mjs
 node tests/interaction-test.mjs
-node tests/tag-editor-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
+node tests/sources-ui-test.mjs
 ```
 
 ## Was sie prüfen
@@ -44,13 +44,15 @@ node tests/registry-editor-test.mjs
 
 Die Registerprüfung umfasst die Kategorien Person, Begriff, Ort und Datumsangabe, Rechtsklick und Tastaturzugang sowie die Register-Seitenleiste. Auswahl, Fundstellenbearbeitung und neue Registereinträge müssen in demselben geöffneten Feld bleiben. KI-Vorschläge werden weder geladen noch angezeigt. Die Indexansicht zeigt ausschließlich gespeicherte editorische Einträge mit ihren Fundstellen. Eine reine Einsicht erzeugt keinen Entwurf. Datumsprüfungen unterscheiden exakte Angaben und unsichere Zeiträume. Die schmale Ansicht bei vergrößerter Darstellung muss tatsächliche Eingaben und Speichern ermöglichen.
 
-`registry-editor-test.mjs` startet den echten Python-Speicherdienst über einer isolierten Kopie vorhandener Quelldaten. Geprüft werden Personen und Begriffe, Namensvarianten, gleichnamige getrennte Identitäten, Auswahl und Änderung von Fundstellen, Änderungshistorie, veraltete Textanker, direkte Bearbeitung von Modellvorschlägen sowie Tastaturbedienung und schmale Ansichten. Die Forschungsdaten im Repository werden nicht bearbeitet. Benötigt wird die mit `uv sync --locked` eingerichtete Projektumgebung.
+`registry-editor-test.mjs` startet den echten Python-Speicherdienst über einer isolierten Kopie vorhandener Quelldaten. Geprüft werden Personen und Begriffe, Namensvarianten, gleichnamige getrennte Identitäten, Auswahl und Änderung von Fundstellen, Änderungshistorie, veraltete Textanker sowie Tastaturbedienung und schmale Ansichten. Die Forschungsdaten im Repository werden nicht bearbeitet. Benötigt wird die mit `uv sync --locked` eingerichtete Projektumgebung.
+
+`sources-ui-test.mjs` prüft die Quellenübersicht mit den vorhandenen Katalogdaten, Verfügbarkeit und Herkunft der Transkriptionen sowie den Einstieg in bekannte erste Bilder ohne Transkription. Responsive Darstellung und Navigation gehören zum selben Test.
 
 Die Python-Prüfungen zur TEI-Baseline erzeugen ihren Ausgangsstand aus den vorhandenen Quellen in einem temporären Verzeichnis. Persönliche Korrekturen im Arbeitsverzeichnis dürfen die erwartete ursprüngliche Provenienz nicht verändern.
 
 `viewer-ui-test.mjs` prüft Quellenkopf, Dialogbedienung, Bildpassung und den vereinfachten Bearbeitungsablauf mit einer vorhandenen Transkription. Sein Speicherdienst läuft ausschließlich im Arbeitsspeicher. Die Prüfung verändert keine Forschungsdaten.
 
-`tag-editor-test.mjs` prüft die lokale Schlagwortoberfläche mit einer vorhandenen Transkription und einem simulierten Speicherdienst. Er sichert die Sperre bei ungespeicherten Textkorrekturen, das Wiederladen und Filtern gespeicherter Tags sowie sichtbare Speicherfehler nach einem Seitenwechsel. Die Python-Tests prüfen dazu den tatsächlichen Dateispeicher und die HTTP-Endpunkte. Der Oberflächentest verändert keine Forschungsdaten.
+Die frühere Schlagwortoberfläche ist entfernt. Die Viewer-Prüfung sichert ihre Abwesenheit. Die Python-Tests decken weiterhin den kompatiblen Speicher und die HTTP-Endpunkte für erhaltene Altdaten ab.
 
 **smoketest.mjs** lädt jede Seite der Site und meldet pro Seite Konsolenfehler, nicht abgefangene
 Ausnahmen, fehlgeschlagene Netzwerk-Requests, HTTP-Status ab 400, interne Links, die auf keine Datei

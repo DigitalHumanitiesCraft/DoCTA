@@ -8,7 +8,7 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 DoCTA supports source-based research into court practices, possession and object movement, and the use of space. The research conversation starts with the historical question, then the material, the information to annotate and its intended analysis. The [project plan](docs/knowledge/plan.md#joint-walkthrough) connects those decisions to a bounded editorial pilot.
 
-The local working edition displays facsimile and transcription together. It saves line corrections with their previous reading, reviewer and timestamp, supports page or line tags, and lets the editor build a person index and controlled vocabulary through source-bound assignments. It has no time tracking or page approval controls. Saved corrections are distinct from scholarly acceptance of a complete source. [Current results and remaining work](docs/knowledge/handoff.md) identify the evidence for each implemented part.
+The local working edition displays facsimile and transcription together. It saves line corrections with their previous reading, reviewer and timestamp, and lets the editor build a person index and controlled vocabulary through source-bound assignments. It has no time tracking or page approval controls. Saved corrections are distinct from scholarly acceptance of a complete source. [Current results and remaining work](docs/knowledge/handoff.md) identify the evidence for each implemented part.
 
 Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances form the source programme. Account books are the leading research source. Inventories currently supply the working-editor demonstration. The account-book edition still requires accepted reference text and research annotations.
 
@@ -37,11 +37,11 @@ If the port is occupied, the starter leaves the running service intact. Stop you
 
 1. Open Bearbeiten, enter initials and correct a line against the image.
 2. Select Änderungen speichern and wait for confirmation. Reload to inspect the saved reading. Enter alone retains a browser draft.
-3. Open Schlagwörter to attach a working term and note to a page or line. Changed source text requires a recheck. Tags support page-local filtering and document JSON export.
-4. Open Automatische Annotationen to curate existing proposals. The source text, a machine proposal and a human annotation decision have separate provenance.
-5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps.
+3. Select a passage in a saved line and choose Begriff to assign a controlled term, or Person, Ort or Datumsangabe for the corresponding annotation. The annotation field holds the optional note and register assignment.
+4. Open Index to find saved entries and return to their source occurrences.
+5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
 
-For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note through Schlagwörter. Source spelling stays in the transcription even when a register entry uses a normalized name.
+For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
 Before finishing, save text changes and any tag or annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections reside in the project folder. Clearing browser storage can remove unsaved drafts.
 
@@ -64,6 +64,12 @@ Feedback should include the document and page, the action attempted, the expecte
 If source text changes, affected occurrences require checking. Their retained quotations remain inspectable. Select the new wording to create a replacement occurrence, and remove the superseded occurrence when appropriate. The first version anchors selections within a single existing line. It does not split or merge transcription lines.
 
 The editorial register identifies persons and classifies source occurrences. Assigning the term Polster does not establish that two sources describe the same physical cushion. These explicit assignments remain independent of the automatically generated extraction index. They are saved with their history in `pipeline/registry/index.json` and exported as JSON. The existing TEI and graph build continues to use machine-proposal curation and does not yet incorporate the new editorial register.
+
+### Select sources
+
+Quellen opens the searchable source overview. Availability filters distinguish sources with transcription, sources with a stored image address and archival records. Image-only sources open the first image whose address is recorded. The viewer names the documented total separately and does not invent missing pages. Transcription attribution is shown on the source row and in the viewer. Research preview links to the project explanation.
+
+The separate Schlagwörter dialog is retired. Earlier tag files and browser drafts remain preserved; new controlled terms are assigned through the common annotation field. Historical tags are not automatically converted into register entries.
 
 ### Browse the index and check text provenance
 

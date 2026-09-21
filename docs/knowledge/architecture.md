@@ -41,11 +41,9 @@ Hersch's direct file writing provided a comparison for canonical data and their 
 
 DoCTA retains immutable recognition runs and explicit review records. It checks the loaded revision and original readings, serializes writes, replaces files atomically and reopens review after a correction. The validated edition build keeps the connected projections consistent. These checks address the observed failure cases without claiming a crash-safe transaction across every output file.
 
-### Manual research tags
+### Retained research-tag data
 
-`viewer-tags.js` exposes the local page or line tagging form independently of the extraction layer. `local_tags.py` stores working annotations under `pipeline/tags/<docId>.json`. The API checks both sidecar and source revisions under the shared review lock, creates identifiers and timestamps on the server and replaces the sidecar atomically. Each annotation retains its source text and digest. A recheck explicitly replaces the snapshot and records its reviewer and update time. This sidecar is current working state, with Git providing version history after commits.
-
-The browser preserves form drafts across page changes and reloads. Unsaved transcription corrections block new tags and rechecks. A draft attached to an older source revision requires explicit reassociation after the current source is loaded. The API independently rejects stale writes. Saved tags are searchable on the current page and exportable as document JSON. They are not part of the TEI or graph build, so working terms cannot silently become formal entity or event assertions.
+The separate tagging interface has been retired. Existing sidecars under `pipeline/tags/<docId>.json` and browser drafts remain untouched. `local_tags.py` and its API retain source revision checks, atomic writes and historical compatibility. No automatic conversion into editorial terms occurs because whole-page tags and exact source occurrences have different meanings. New vocabulary assignments use the source-bound annotation field and editorial register.
 
 ### Vendored versions (from the file headers in `docs/lib/`)
 
@@ -63,14 +61,16 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 
 | Page | Purpose |
 |------|---------|
-| `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
-| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, line corrections, working tags and editor-owned source annotations, plus a reading mode over the whole document text |
+| `index.html` | German source catalogue with search, category and availability filters, source attribution and links to accessible text or first images |
+| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, line corrections and editor-owned source annotations, plus a reading mode over the whole document text |
 | `register.html` | Editor-owned Index with persons, places, controlled terms and links to source occurrences |
 | `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `about.html` | About the project, data sources, imprint |
 
 Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. The knowledge base itself has no page on the site since 28.08.2026; it lives as Markdown under `docs/knowledge/` and addresses agents and repository readers, while the About page links to it on GitHub.
+
+`js/sources.js` controls source selection. The shared `js/source-images.js` validates the recorded collection URL and constructs only its known first-page image. The viewer chooses this read-only path for explicitly image-only documents before contacting the local document API. Errors for documents known to carry transcription remain errors. A collection page total never generates fictitious image pages, and text editing controls stay unavailable for image-only documents.
 
 ## Network visualisation: D3
 
@@ -164,7 +164,8 @@ DoCTA/
 │   │   ├── viewer-review.js  Correction drafts, explicit save/discard and export
 │   │   ├── viewer-local.js   Local editor capability and API requests
 │   │   ├── register.js       Editor-owned Index view and source links
-│   │   └── viewer-tags.js    Page and line working annotations
+│   │   ├── sources.js        Searchable source overview
+│   │   └── source-images.js  Validated first-image metadata
 │   ├── data/               Pre-processed JSON, git-tracked
 │   │   ├── benchmark/      Published export of the prompt benchmark, the summary
 │   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
@@ -191,7 +192,7 @@ DoCTA/
 │   ├── accounts/           Executable part of the account-book encoding specification
 │   ├── reviews/            Saved correction events
 │   ├── annotations/        Human decisions on machine proposals
-│   ├── tags/               Current page and line working annotations
+│   ├── tags/               Retained legacy page and line annotations
 │   ├── prompts/            Prompts of the pipeline's extraction scripts
 │   └── schema/             Vendored tei_all.rng and the project schema docta.rng
 ├── scripts/                Python build-time scripts

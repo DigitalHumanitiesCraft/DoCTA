@@ -32,11 +32,7 @@ export function createLocalEditor() {
     load: (id) => request(`/api/documents/${id}`),
     save: (review) => request('/api/review', review),
     build: (date, docIds) => request('/api/build', { date, docIds }),
-    annotations: (id) => request(`/api/annotations/${id}`),
-    saveAnnotations: (payload) => request('/api/annotations', payload),
     registry: () => request('/api/registry'),
     saveRegistry: (payload) => request('/api/registry', payload),
-    tags: (id) => request(`/api/tags/${id}`),
-    saveTags: (payload) => request('/api/tags', payload),
   };
 }

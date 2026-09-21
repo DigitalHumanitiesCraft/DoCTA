@@ -8,7 +8,7 @@ DoCTA develops a local working edition and a public static site for fifteenth-ce
 
 Built with Promptotyping. Before conceptual or design work, consult the knowledge documents; after decisions with reasons, record them in `docs/knowledge/journal.md`.
 
-Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. Only editor-owned annotations appear in the viewer. Index opens the saved person/place registers and controlled vocabulary. The separate editor-owned register preserves independent identities and does not yet feed TEI or graph output.
+Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. Only editor-owned annotations appear in the viewer. The separate research-tag interface is retired; its stored sidecars and backend compatibility remain intact. Index opens the saved person/place registers and controlled vocabulary. The separate editor-owned register preserves independent identities and does not yet feed TEI or graph output.
 
 ## Commands
 
@@ -49,7 +49,7 @@ Site tests are Playwright scripts, installed separately (`npm install playwright
 ```
 node tests/smoketest.mjs
 node tests/interaction-test.mjs
-node tests/tag-editor-test.mjs
+node tests/sources-ui-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
 ```

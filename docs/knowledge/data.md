@@ -158,7 +158,7 @@ One entry per catalogue row. Shelfmark, category, title, normalised dating, form
 
 The unit of `catalogue_extent` is derived rather than recorded, because the CSV never states it. Account-book volumes get `bilder`, the A 006 and A 024 personal inventories get `seiten` where the figure is even and near twice the image count, and everything else stays `unbekannt`. A parse artifact stays visible instead of being smoothed over. A 194.1 carries `value` 1 against 40 scans, because the first integer of its Digitalisiert cell means something other than an extent.
 
-The site shows the scan count as the primary figure per source and the catalogue extent beside it where the two diverge. The editorial progress bar counts digital images end to end and leaves the catalogue extent out of its denominator; an earlier version summed catalogue figures into the denominator while the numerator came from the register, which divided written sides by openings wherever the units differed.
+The site distinguishes stored digital images from the archival catalogue extent. Collection metadata records a first-page image address and a document page total. That total does not establish availability of the remaining image addresses. The source overview makes this distinction visible and carries no corpus-wide progress indicator.
 
 ### Availability pyramid
 

@@ -511,10 +511,10 @@ try {
   check(await indexPage.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1),
     'index remains readable without horizontal overflow at narrow 200 percent zoom');
   check(await indexPage.locator('.navbar-toggler').isVisible() && await indexPage.evaluate(() => {
-    const badge = document.getElementById('beta-badge').getBoundingClientRect();
+    const badge = document.getElementById('research-preview').getBoundingClientRect();
     const toggle = document.querySelector('.navbar-toggler').getBoundingClientRect();
     return badge.right <= toggle.left || badge.left >= toggle.right || badge.bottom <= toggle.top || badge.top >= toggle.bottom;
-  }), 'mobile beta badge does not overlap the visible navigation toggle at 200 percent');
+  }), 'mobile Research preview label does not overlap the visible navigation toggle at 200 percent');
   await indexPage.locator('.navbar-toggler').click();
   const indexNavLink = indexPage.locator('#main-nav').getByRole('link', { name: 'Index', exact: true });
   await indexNavLink.waitFor({ state: 'visible' });

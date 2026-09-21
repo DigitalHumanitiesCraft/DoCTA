@@ -65,12 +65,6 @@ const server = http.createServer((req, res) => {
   if (url.pathname === `/api/documents/${DOC_ID}`) {
     return json(res, 200, documentPayload());
   }
-  if (url.pathname === `/api/annotations/${DOC_ID}`) {
-    return json(res, 200, { revision, decisions: [] });
-  }
-  if (url.pathname === `/api/tags/${DOC_ID}`) {
-    return json(res, 200, { revision, tags: [] });
-  }
   if (url.pathname === '/api/registry' && req.method === 'GET') {
     return json(res, 200, { schemaVersion: 1, revision, entries: [], mentions: [], history: [] });
   }
@@ -157,6 +151,8 @@ try {
   check(posts === 0, 'opening a local document performs no review write');
   check(await page.locator('.entity, [data-ent-key], #btn-entities, #entities-dialog').count() === 0,
     'viewer contains no machine annotation marks or controls');
+  check(await page.locator('#btn-tags, #tags-dialog, #tag-editor').count() === 0,
+    'viewer contains no obsolete tag editing controls');
 
   const expectedSource = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'sources.json'), 'utf8'))
     .find(source => source.transkribus_docs?.some(doc => doc.doc_id === DOC_ID));
@@ -170,13 +166,11 @@ try {
   for (const [button, dialog, label] of [
     ['#btn-source-details', '#source-dialog', 'source'],
     ['#btn-more', '#viewer-more', 'more'],
-    ['#btn-tags', '#tags-dialog', 'tags'],
   ]) {
     await page.locator(button).focus();
     await page.keyboard.press('Enter');
     await page.locator(dialog).waitFor({ state: 'visible' });
     check(await visible(page, dialog), `${label} surface opens from the keyboard`);
-    if (label === 'tags') check(await visible(page, '#tag-editor form'), 'tag form is accessible inside its dialog');
     await page.keyboard.press('Escape');
     await page.locator(dialog).waitFor({ state: 'hidden' });
     await page.waitForFunction(selector => document.querySelector(selector) === document.activeElement, button);
