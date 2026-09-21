@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Compact guide with installed Python (21.09.2026)
+
+Reduced the working guide to setup, launch, editing and saving after the operator found the combined onboarding and reference text too long. Git operations and recovery now remain in the README. Editorial setup follows the supplied teaching route with installed Python and the VS Code terminal. A runtime-only requirements export from the existing lock supports pip without installing uv on the editor's machine. Python 3.14 venv creation and package installation were exercised on Windows, followed by the real-backend browser walkthrough in that environment. Store installation, native macOS setup and recipient-side GitHub Desktop operation remain unobserved. The prior pip-install-project suggestion is replaced by the explicit requirements command.
+
 ## Clarified installation and repository exchange (21.09.2026)
 
 Corrected the setup explanation after the operator identified confusion between Python, VS Code and Live Server. The supplied technical-preparation slides describe a development environment, while the working edition starts its own write-capable server through the existing launchers. The operator selected GitHub Desktop cloning as the sole installation route, replacing the earlier ZIP instructions. The guide and README now explain account creation, uv as the Python installation helper and optional VS Code use. Added a documented path for commits and synchronization, with explicit public-data visibility and preservation of earlier local work. The example remains optional and the invitation supports independent source work and feedback. GitHub Desktop instructions follow provider documentation rather than an observed recipient-side installation.

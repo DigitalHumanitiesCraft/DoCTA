@@ -20,130 +20,62 @@
     </div>
   </nav>
   <main id="main" class="guide-content">
-    <h1>Mit der Arbeitsedition arbeiten</h1>
-    <p>Mit DoCTA vergleichst du Quellenbilder und Transkriptionen, korrigierst Lesungen und baust deinen eigenen Personenindex sowie ein kontrolliertes Vokabular auf. Jede Zuordnung entscheidest du selbst. Arbeite mit den Quellen, die du untersuchen möchtest. Das Personenbeispiel unten hilft dir bei Bedarf beim Einstieg.</p>
-    <p id="guide-online">Diese Website kannst du direkt ansehen. Zum Bearbeiten lädst du DoCTA auf deinen Rechner und öffnest dort die Startdatei. Sie startet das Programm und öffnet DoCTA im Browser. Deine Änderungen werden dann im heruntergeladenen Projektordner gespeichert. Richte es unten ein und öffne danach im gestarteten DoCTA oben <q>Anleitung</q>.</p>
-    <p id="guide-local" hidden>Du liest die Anleitung in der lokalen Arbeitsedition. <a href="viewer.html?doc=11328300&amp;page=1">Thaur, Seite 1, in dieser Arbeitsedition öffnen</a>. Über <q>Anleitung</q> kommst du wieder hierher.</p>
+    <h1>Mit DoCTA arbeiten</h1>
+    <p id="guide-online">Zum Bearbeiten startest du DoCTA auf deinem Rechner. Du arbeitest im Browser und speicherst deine Änderungen im geklonten Projektordner.</p>
+    <p id="guide-local" hidden>Die lokale Arbeitsedition läuft. <a href="viewer.html?doc=11328300&amp;page=1">Inventar von Thaur öffnen</a> oder über <q>Quellen</q> ein anderes Dokument wählen.</p>
     <nav aria-label="Abschnitte der Anleitung" class="guide-sections">
-      <a href="#start">Einrichten</a><a href="#exercise">Person annotieren</a><a href="#corrections">Text korrigieren</a><a href="#annotations">Weitere Annotationen</a><a href="#save">Sichern und beenden</a><a href="#update">Aktualisieren</a><a href="#github">GitHub nutzen</a><a href="#help">Hilfe</a>
+      <a href="#start">Einrichten</a><a href="#launch">Starten</a><a href="#exercise">Arbeiten</a><a href="#save">Sichern</a>
     </nav>
     <section aria-labelledby="start">
       <h2 id="start">Einmalig einrichten</h2>
-      <p>Du legst eine Kopie des Projekts mit GitHub Desktop auf deinem Rechner an. Dieser Vorgang heißt Klonen. Danach installierst du einmalig uv und öffnest die DoCTA-Startdatei. uv ist ein Installationsprogramm, das sich um die passende Python-Version und die benötigten Zusatzpakete kümmert. Später genügt die Startdatei. Visual Studio Code ist zum Arbeiten mit DoCTA nicht erforderlich.</p>
-      <h3>GitHub-Konto und Projektordner</h3>
       <ol>
-        <li>Falls du noch kein GitHub-Konto hast, <a href="https://github.com/signup" target="_blank" rel="noopener">lege eines bei GitHub an</a>. Teile der Projektbetreuung deinen Benutzernamen mit und nimm die Einladung zur Mitarbeit an. Das öffentliche Repository kannst du bereits vor der Einladung klonen. Zum direkten Hochladen brauchst du Schreibzugriff.</li>
-        <li>Installiere <a href="https://desktop.github.com/" target="_blank" rel="noopener">GitHub Desktop</a> und melde dich mit deinem GitHub-Konto an. Richte im Einrichtungsdialog deinen Namen und die gewünschte E-Mail-Adresse für die Versionsgeschichte ein.</li>
-        <li>Wähle in GitHub Desktop <q>File</q> → <q>Clone Repository</q> → <q>URL</q>. Trage <code>https://github.com/DigitalHumanitiesCraft/DoCTA.git</code> ein. Wähle unter <q>Local Path</q> einen neuen Ordner und klicke <q>Clone</q>. Damit erhältst du die Projektdateien einschließlich ihrer Versionsgeschichte.</li>
-        <li>Öffne den geklonten Ordner über <q>Repository</q> → <q>Show in Explorer</q> unter Windows oder <q>Show in Finder</q> auf macOS. Arbeite später immer in diesem Ordner.</li>
-      </ol>
-      <p>Die Installationsbefehle stammen aus der <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noopener">offiziellen uv-Anleitung</a>. <a href="https://docs.astral.sh/uv/guides/install-python/" target="_blank" rel="noopener">uv erklärt auch die automatische Python-Einrichtung</a>.</p>
-      <h3>DoCTA unter Windows starten</h3>
-      <ol>
-        <li>Öffne über das Startmenü <q>PowerShell</q>. Füge den folgenden offiziellen Installationsbefehl ein und drücke Enter. Er lädt uv herunter und installiert es für dein Benutzerkonto.
-          <pre><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
+        <li><a href="https://github.com/signup">GitHub-Konto anlegen</a>, falls du noch keines hast, und der Projektbetreuung deinen Benutzernamen schicken.</li>
+        <li><a href="https://desktop.github.com/">GitHub Desktop installieren</a> und anmelden. Unter <q>File</q> → <q>Clone Repository</q> → <q>URL</q> diese Adresse eingeben und <q>Clone</q> wählen:
+          <pre><code>https://github.com/DigitalHumanitiesCraft/DoCTA.git</code></pre>
+          Klonen legt den Projektordner samt Versionsgeschichte auf deinem Rechner an.
         </li>
-        <li>Öffne im geklonten Projektordner <code>start-editor.cmd</code> mit einem Doppelklick. Beim ersten Start richtet uv Python und die Zusatzpakete ein, soweit sie noch fehlen.</li>
+        <li><a href="https://code.visualstudio.com/">Visual Studio Code installieren</a>. Dort über <q>File</q> → <q>Open Folder</q> den geklonten DoCTA-Ordner öffnen. Über <q>Terminal</q> → <q>New Terminal</q> öffnest du das Eingabefenster für die folgenden Befehle. Gib sie einzeln ein und warte jeweils auf den Abschluss.</li>
       </ol>
-      <h3>DoCTA auf macOS starten</h3>
-      <ol>
-        <li>Öffne mit Spotlight die Anwendung <q>Terminal</q>. Füge den folgenden offiziellen Installationsbefehl ein und drücke Enter. Er lädt uv herunter und installiert es für dein Benutzerkonto.
-          <pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
-        </li>
-        <li>Öffne im geklonten Projektordner <code>start-editor.command</code> mit einem Doppelklick. Beim ersten Start richtet uv Python und die Zusatzpakete ein, soweit sie noch fehlen. Falls die Datei nicht startet, tippe im Terminal <code>bash </code> mit einem Leerzeichen, ziehe die Startdatei aus dem Finder in das Terminal und drücke Enter.</li>
-      </ol>
-      <p>Beim ersten Start werden die Programmpakete geladen. Danach öffnet sich DoCTA im Browser mit einer Adresse, die mit <code>http://127.0.0.1:</code> beginnt. Diese Adresse führt zu deinem eigenen Rechner. Lass das zusätzlich geöffnete Terminalfenster während der Arbeit offen. Wähle eine Quelle und beginne mit der Bearbeitung. Über <q>Anleitung</q> kannst du jederzeit nachschlagen. Quellenbilder können weiterhin Internetzugriff benötigen.</p>
-      <h3>Wenn du bereits Visual Studio Code verwendest</h3>
-      <p>Öffne den DoCTA-Ordner in VS Code und wähle <q>Terminal</q> → <q>New Terminal</q>. Nach der uv-Installation startet dieser Befehl dieselbe Arbeitsedition wie die Startdatei:</p>
-      <pre><code>uv run --locked python pipeline/local_editor.py --open-browser</code></pre>
-      <p>Die Erweiterung Live Server und der Befehl <code>python -m http.server</code> zeigen statische Webseiten an. Die DoCTA-Funktionen zum Speichern von Korrekturen und Annotationen benötigen den eigenen Python-Server, den die Startdatei oder der Befehl oben startet. Ein zusätzlicher Live Server ist dafür nicht nötig.</p>
-      <p>Der Start per Doppelklick und Finder auf macOS ist noch nicht praktisch auf einem Mac geprüft.</p>
+      <h3>Windows</h3>
+      <p>Installiere im Microsoft Store den <q>Python Install Manager</q> der Python Software Foundation. Öffne danach ein neues Terminal und installiere Python:</p>
+      <pre><code>py install 3.14</code></pre>
+      <p>Im VS-Code-Terminal des DoCTA-Ordners richtest du einmalig die Programmumgebung ein:</p>
+      <pre><code>py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r editor-requirements.txt</code></pre>
+      <h3>macOS</h3>
+      <p>Installiere Python 3.14 von <a href="https://www.python.org/downloads/">python.org</a>. Öffne anschließend ein neues VS-Code-Terminal im DoCTA-Ordner und führe aus:</p>
+      <pre><code>python3.14 -m venv .venv
+./.venv/bin/python -m pip install -r editor-requirements.txt</code></pre>
+      <p>Die Einrichtung benötigt Internetzugriff. Die Pakete werden in der eigenen Programmumgebung <code>.venv</code> gespeichert.</p>
+    </section>
+    <section aria-labelledby="launch">
+      <h2 id="launch">Bei jeder Arbeitssitzung starten</h2>
+      <p>Öffne den DoCTA-Ordner in VS Code und starte im Terminal unter Windows:</p>
+      <pre><code>.\.venv\Scripts\python.exe pipeline/local_editor.py --open-browser</code></pre>
+      <p>Auf macOS:</p>
+      <pre><code>./.venv/bin/python pipeline/local_editor.py --open-browser</code></pre>
+      <p>DoCTA öffnet sich im Browser. Lass das Terminal offen. Dieser Python-Server ermöglicht das Speichern. Die VS-Code-Erweiterung Live Server ist dafür nicht erforderlich. Quellenbilder können Internetzugriff benötigen.</p>
     </section>
     <section aria-labelledby="exercise">
-      <h2 id="exercise">Eine Person anlegen und wiederfinden</h2>
-      <p>Ein Registereintrag beschreibt eine Person in deinem Index. Eine Fundstelle hält fest, wo diese Person im Quellentext erwähnt wird. Ein Eintrag kann mehrere Fundstellen haben. Deshalb speicherst du beim erstmaligen Anlegen zuerst den Eintrag und anschließend seine Fundstelle.</p>
+      <h2 id="exercise">Mit deinen Quellen arbeiten</h2>
+      <p>Öffne unter <q>Quellen</q> ein Dokument. Bild und Transkription stehen nebeneinander. Über <q>Ganze Seite</q> setzt du den Bildausschnitt zurück.</p>
+      <h3 id="corrections">Text korrigieren</h3>
+      <p><q>Bearbeiten</q> wählen, Kürzel eintragen und eine Zeile anklicken. Korrigiere anhand des Bildes. Enter übernimmt den Entwurf, erst <q>Änderungen speichern</q> speichert ihn dauerhaft. Lade zur Kontrolle neu. Eine falsche gespeicherte Lesung korrigierst du durch eine weitere gespeicherte Änderung. Schalte <q>Bearbeiten</q> anschließend wieder aus.</p>
+      <h3 id="annotations">Personen und Begriffe annotieren</h3>
       <ol>
-        <li>Öffne in der lokalen Anwendung <q>Quellen</q>, suche nach <q>A 049.1</q> und öffne das Inventar des Schlosses Thaur. Wähle Seite 1. Du siehst das Quellenbild neben der Transkription. Die Textquelle ist Inventaria.</li>
-        <li>Suche in der Transkription <q>durch Hannsen Ramung,</q>. Vergleiche die Stelle mit dem Bild. Über <q>Ganze Seite</q> kehrst du nach dem Zoomen zur vollständigen Bildansicht zurück.</li>
-        <li>Markiere nur <q>Hannsen Ramung</q>, ohne das Komma. Wähle im eingeblendeten Feld <q>Person</q>. Falls das Feld nicht erscheint, nutze nach dem Markieren <q>Auswahl annotieren</q>.</li>
-        <li>Trage unter <q>Dein Kürzel</q> deine Initialen ein. Wähle <q>Neuer Registereintrag</q>. Als <q>Bezeichnung</q> kannst du zunächst den Quellenwortlaut <q>Hannsen Ramung</q> verwenden. Weitere Schreibweisen und eine Notiz sind optional. Damit ist noch keine Gleichsetzung mit einer Person aus anderen Quellen getroffen.</li>
-        <li>Wähle <q>Eintrag speichern</q>. Der neue Eintrag erscheint als Zuordnung der ausgewählten Textstelle. Wähle anschließend <q>Fundstelle speichern</q> und warte auf die Bestätigung.</li>
-        <li>Lade die Seite neu. Der Name ist weiterhin als eigene Annotation markiert. Öffne oben <q>Index</q> und suche nach deiner Bezeichnung. Wähle den Eintrag und klicke unter <q>Fundstellen</q> auf die Erwähnung. Du gelangst zur annotierten Quellenstelle zurück.</li>
+        <li>Markiere eine Stelle innerhalb einer Textzeile. Wähle <q>Person</q>, <q>Begriff</q>, <q>Ort</q> oder <q>Datumsangabe</q>. Falls das Auswahlfeld fehlt, nutze <q>Auswahl annotieren</q>.</li>
+        <li>Trage dein Kürzel ein. Suche bei Personen, Begriffen oder Orten einen passenden Eintrag oder wähle <q>Neuer Registereintrag</q> und speichere ihn mit <q>Eintrag speichern</q>. Jede Zuordnung entscheidest du selbst.</li>
+        <li>Wähle anschließend <q>Fundstelle speichern</q>. Der Registereintrag beschreibt die Person oder den Begriff, die Fundstelle verknüpft ihn mit dieser Textstelle. Deshalb sind beide Speicherschritte nötig.</li>
+        <li>Unter <q>Index</q> findest du deine Personen, Orte und Begriffe wieder. Die Fundstellen führen zurück zum Text. Datumsangaben bearbeitest du direkt an ihrer Stelle.</li>
       </ol>
-      <p>Falls der Eintrag bereits existiert, suche ihn im Feld <q>Eintrag suchen</q> und wähle ihn unter <q>Zuordnung</q>. Verwende ihn nur, wenn du dieselbe Person meinst. Eine offene Identifizierung kannst du mit <q>Noch nicht zugeordnet</q> und einer Notiz speichern.</p>
-    </section>
-    <section aria-labelledby="corrections">
-      <h2 id="corrections">Eine Lesung korrigieren</h2>
-      <p>Korrigiere nur, wenn du die neue Lesung am Bild begründen kannst. Für das Personenbeispiel oben ist keine Textänderung erforderlich.</p>
-      <ol>
-        <li>Wähle <q>Bearbeiten</q> und trage dein Kürzel ein. Klicke auf die betreffende Textzeile.</li>
-        <li>Bearbeite die Lesung. Enter übernimmt sie zunächst als ungespeicherten Entwurf. Escape bricht die offene Zeileneingabe ab.</li>
-        <li>Wähle <q>Änderungen speichern</q> und warte auf die Bestätigung. Lade die Seite neu und prüfe die gespeicherte Lesung.</li>
-        <li>Klicke erneut auf <q>Bearbeiten</q>, um die Textbearbeitung auszuschalten, bevor du weitere Stellen annotierst.</li>
-      </ol>
-      <p>Ist eine gespeicherte Korrektur falsch, bearbeite dieselbe Zeile erneut und speichere die berichtigte Lesung. Die vorherige Bearbeitung bleibt im Verlauf erhalten. <q>Änderungen verwerfen</q> entfernt nur ungespeicherte Änderungen der aktuellen Seite. Es setzt keine gespeicherte Korrektur zurück.</p>
-    </section>
-    <section aria-labelledby="annotations">
-      <h2 id="annotations">Begriffe, Orte und Datumsangaben</h2>
-      <p>Begriffe und Orte legst du wie Personen an. Wähle beim Markieren die passende Art. Für dein kontrolliertes Vokabular bestimmst du die Bezeichnung und verwendest denselben Eintrag an weiteren passenden Stellen. Eine Begriffszuordnung besagt noch nicht, dass zwei Erwähnungen denselben historischen Gegenstand meinen. Handlungen kannst du bei Bedarf ebenfalls als eigene Begriffe erfassen.</p>
-      <p>Bei <q>Datumsangabe</q> kannst du ein Datum oder einen Zeitraum ergänzen und Unsicherheit festhalten. Die Quellenform bleibt erhalten. Kalenderangaben werden nicht automatisch umgerechnet. Personen, Orte und Begriffe erscheinen im Index. Datumsangaben bearbeitest du an ihrer Textstelle.</p>
-      <p>Klicke auf eine bestehende Markierung, um ihre Zuordnung oder Notiz zu ändern. <q>Fundstelle entfernen</q> entfernt diese Annotation, der Quellentext und der Registereintrag bleiben erhalten. Unter <q>Änderungsverlauf</q> bleibt die Bearbeitung nachvollziehbar.</p>
-      <p>Speichere Textkorrekturen vor dem Annotieren. Eine Auswahl bleibt innerhalb einer Textzeile. Ändert sich der Wortlaut einer bereits annotierten Stelle, muss ihre Zuordnung erneut geprüft werden. Ein geschlossenes Feld mit offenen Eingaben erreichst du über <q>Annotation fortsetzen</q>.</p>
+      <p>Eine vorhandene Markierung anklicken, um sie zu ändern oder mit <q>Fundstelle entfernen</q> zu löschen. Der Quellentext bleibt erhalten. Nach einer Textkorrektur prüfe die betroffenen Annotationen erneut.</p>
     </section>
     <section aria-labelledby="save">
-      <h2 id="save">Arbeit sichern und später fortsetzen</h2>
-      <ol>
-        <li>Speichere offene Textkorrekturen mit <q>Änderungen speichern</q>. Speichere bearbeitete Registereinträge und Fundstellen jeweils mit ihrer eigenen Schaltfläche. Warte auf die Bestätigungen.</li>
-        <li>Wechsle in das Terminalfenster und drücke Ctrl+C, unter Windows Strg+C. Damit beendest du das lokale Programm.</li>
-        <li>Kopiere den gesamten Arbeitsordner auf ein separates Sicherungslaufwerk. Benenne die Kopie mit dem Sicherungsdatum und bewahre die vorherige Sicherung auf. Eine Kopie auf derselben Festplatte schützt nicht vor deren Ausfall.</li>
-        <li>Beim nächsten Mal öffnest du die Startdatei in deinem bisherigen Arbeitsordner. Deine gespeicherten Lesungen und Annotationen sind wieder verfügbar.</li>
-      </ol>
-      <p>Zum Wiederherstellen auf demselben Betriebssystem kopierst du den gesicherten Ordner an einen neuen Ort, lässt den bisherigen Ordner bestehen und startest aus der Kopie. Prüfe dort eine bekannte Korrektur und eine Fundstelle im Index. Vor einem Wechsel auf einen anderen Rechner stimme die Übernahme deiner lokalen Bearbeitungen mit der Projektbetreuung ab. Ein neuer Klon enthält nur die bereits auf GitHub gespeicherten Stände.</p>
-      <p>Die Speicherung dokumentiert Kürzel, Zeitpunkt und Änderungen. Deine Arbeit wird dadurch nicht an andere Rechner übertragen oder veröffentlicht. Ungespeicherte Browserentwürfe und offene Formulare sind in der Ordnersicherung nicht enthalten.</p>
-    </section>
-    <section aria-labelledby="update">
-      <h2 id="update">Eine neue Programmversion übernehmen</h2>
-      <p>Du übernimmst Updates mit GitHub Desktop in deinen bestehenden Projektordner. Bei Änderungen am Datenformat folge zusätzlich der jeweiligen Umstellungsanleitung.</p>
-      <ol>
-        <li>Speichere deine Arbeit in DoCTA, beende das Programm und sichere den Ordner. Halte die lokalen Änderungen mit einem <a href="#github">Commit</a> fest.</li>
-        <li>Öffne in GitHub Desktop das DoCTA-Repository. Prüfe unter <q>Current Branch</q>, dass du auf dem vereinbarten Branch arbeitest. Ein Branch ist ein benannter Entwicklungsstand.</li>
-        <li><q>Fetch origin</q> prüft, ob auf GitHub neue Änderungen vorliegen. Falls angeboten, übernimmt <q>Pull origin</q> diese in deinen aktuellen Branch. Änderungen aus anderen Branches werden dadurch nicht übernommen. Wenn du auf einem eigenen Branch arbeitest, stimmt ihr die Übernahme von Programmupdates aus <code>main</code> gesondert ab.</li>
-        <li>Meldet GitHub Desktop einen Konflikt oder sind noch unklare lokale Änderungen vorhanden, unterbrich die Übernahme und melde dich mit der Fehlermeldung. Verwirf keine Forschungsdaten, um ein Update zu erzwingen.</li>
-        <li>Starte DoCTA nach einem erfolgreichen Update über die Startdatei. Prüfe eine bekannte Korrektur und eine Fundstelle samt Änderungsverlauf, bevor du weiterarbeitest.</li>
-      </ol>
-    </section>
-    <section aria-labelledby="export">
-      <h2 id="export">Export und technische Vertiefung</h2>
-      <p>Im Index lädt <q>Register als JSON exportieren</q> die Einträge, Fundstellen und ihren Verlauf als Datendatei herunter. Diese Datei ersetzt keine vollständige Sicherung der Textkorrekturen. Der eigene Index ist bisher nicht in die automatisch erzeugten TEI- und Graph-Ausgaben eingebunden.</p>
-      <p>Die <a href="https://github.com/DigitalHumanitiesCraft/DoCTA#keep-a-local-version-and-report-feedback" target="_blank" rel="noopener">README erklärt die Speicherorte und Versionierung</a>.</p>
-    </section>
-    <section aria-labelledby="github">
-      <h2 id="github">Mit GitHub Desktop zusammenarbeiten</h2>
-      <p>Git hält Versionen deiner Dateien fest. GitHub stellt ein Repository, also den gemeinsamen Projektordner samt Versionsgeschichte, im Internet bereit. GitHub Desktop bedient Git über ein Programmfenster. DoCTA speichert deine Bearbeitungen zunächst nur im lokalen Projektordner. Das Hochladen ist ein eigener Schritt.</p>
-      <h3>Speichern und einen Versionsstand festhalten</h3>
-      <ol>
-        <li>Speichere in DoCTA alle offenen Bearbeitungen und beende das Programm. Öffne danach in GitHub Desktop das passende Repository.</li>
-        <li>Unter <q>Changes</q> siehst du die geänderten Dateien. Wähle die Dateien deiner Bearbeitung aus. Zu Textkorrekturen gehören die geänderten Dateien unter <code>pipeline/pages</code> und die zugehörigen Ereignisse unter <code>pipeline/reviews</code>. Der eigene Index liegt unter <code>pipeline/registry</code>. Bei unklaren weiteren Dateien frage nach, bevor du sie übernimmst oder verwirfst.</li>
-        <li>Trage in <q>Summary</q> eine kurze Beschreibung deiner Arbeit ein. Klicke <q>Commit to …</q>, wobei der Button den aktuellen Branch nennt. Der Commit hält diesen Stand auf deinem Rechner fest. Die Ordnersicherung bleibt zusätzlich sinnvoll.</li>
-      </ol>
-      <h3>Änderungen austauschen</h3>
-      <p>Das DoCTA-Repository ist öffentlich. Ein Push macht die hochgeladenen Dateien samt Verlauf für andere sichtbar, auch auf einem zusätzlichen Branch. Stimme deshalb vor dem ersten Hochladen ab, welche Forschungsdaten veröffentlicht werden dürfen und auf welchem Branch ihr arbeitet. Ein Branch ist ein benannter Entwicklungsstand. Änderungen unter <code>docs/</code> auf <code>main</code> werden außerdem auf GitHub Pages veröffentlicht.</p>
-      <ol>
-        <li>Wenn der Austausch vereinbart ist, lädt <q>Push origin</q> die lokalen Commits auf GitHub. Ein neuer, vereinbarter Branch kann zunächst <q>Publish branch</q> anzeigen. Ohne diesen Schritt bleiben die Commits auf deinem Rechner. Eine Schreibberechtigung allein löst keine Übertragung aus.</li>
-        <li>Zum Übernehmen neuer Änderungen folge dem Abschnitt <a href="#update">Eine neue Programmversion übernehmen</a>.</li>
-      </ol>
-      <p>Die Menüschritte folgen der GitHub-Dokumentation zum <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop" target="_blank" rel="noopener">Klonen</a>, zu <a href="https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop" target="_blank" rel="noopener">Commits</a> und zum <a href="https://docs.github.com/en/desktop/working-with-your-remote-repository-on-github-or-github-enterprise/syncing-your-branch-in-github-desktop" target="_blank" rel="noopener">Synchronisieren</a>. Dieser Ablauf wurde anhand der Dokumentation geprüft. Die Bedienung von GitHub Desktop auf dem Rechner der Editorin steht noch aus.</p>
-    </section>
-    <section aria-labelledby="help">
-      <h2 id="help">Wenn etwas nicht klappt</h2>
-      <ul>
-        <li>Fehlt <q>Änderungen speichern</q>, öffne <q>Bearbeiten</q> und prüfe, ob du im lokal gestarteten DoCTA-Fenster arbeitest. Die öffentliche Website kann deine Projektdateien nicht speichern.</li>
-        <li>Meldet die Startdatei, dass uv fehlt, wiederhole dessen Installation und starte die Datei danach erneut. Bleibt der Fehler bestehen, halte die Meldung für eine Rückfrage fest.</li>
-        <li>Öffnet sich die Seite nicht, prüfe das Terminalfenster. Bei einem bereits belegten Anschluss beende deinen vorherigen DoCTA-Start mit Ctrl+C und starte aus dem gewünschten Arbeitsordner erneut.</li>
-        <li>Bei einem Speicherkonflikt kopiere deine ungespeicherte Lesung zunächst in eine separate Textdatei. Lade dann den gespeicherten Stand neu und gleiche die Lesungen ab. Verwirf einen Entwurf erst, wenn du die Eingabe gesichert hast.</li>
-        <li>Bei fehlenden Bildern prüfe die Internetverbindung. Manche Quellen haben noch nicht alle benötigten Bildadressen. Eine dokumentierte Seitenzahl bedeutet deshalb nicht, dass alle Bilder verfügbar sind.</li>
-      </ul>
-      <p>Für eine Rückmeldung genügen Quelle und Seite, die ausgeführte Handlung sowie das erwartete und das beobachtete Ergebnis. Ein Screenshot kann die betreffende Stelle zeigen.</p>
+      <h2 id="save">Sichern und beenden</h2>
+      <p>Speichere offene Textkorrekturen und Fundstellen jeweils ausdrücklich. Beende DoCTA im Terminal mit Strg+C beziehungsweise Ctrl+C. Sichere den gesamten Projektordner auf einem separaten Laufwerk. Ungespeicherte Browserentwürfe gehören nicht zur Sicherung.</p>
+      <p id="github">Deine Bearbeitungen bleiben zunächst auf deinem Rechner. Ein Git-Commit hält einen lokalen Versionsstand fest. Erst <q>Push origin</q> lädt ihn in das öffentliche Repository. Stimme vorher ab, welche Daten veröffentlicht werden dürfen.</p>
+      <p id="update">Die <a href="https://github.com/DigitalHumanitiesCraft/DoCTA#keep-a-local-version-and-report-feedback">README erklärt GitHub-Austausch, Updates und Wiederherstellung</a>.</p>
+      <p id="help">Bei Fragen oder Fehlermeldungen melde dich mit Quelle, Seite und der ausgeführten Handlung, gerne mit Screenshot. Bewahre ungespeicherte Eingaben vor einem Neuladen separat auf.</p>
     </section>
   </main>
   <footer class="text-center py-4 small text-body-secondary"></footer>

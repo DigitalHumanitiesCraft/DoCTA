@@ -60,7 +60,7 @@ print(server.server_port, flush=True)
 server.serve_forever()
 `;
 const venv = path.join(REPO, '.venv', process.platform === 'win32' ? 'Scripts/python.exe' : 'bin/python');
-const processHandle = spawn(fs.existsSync(venv) ? venv : 'python',
+const processHandle = spawn(process.env.DOCTA_TEST_PYTHON || (fs.existsSync(venv) ? venv : 'python'),
   ['-u', '-c', bootstrap, path.join(REPO, 'pipeline'), ROOT], { cwd: ROOT, windowsHide: true });
 let serverLog = '';
 processHandle.stderr.on('data', chunk => { serverLog += chunk; });

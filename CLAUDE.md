@@ -57,6 +57,8 @@ node tests/guide-walkthrough-test.mjs
 
 For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
 
+The editorial onboarding guide uses installed Python, `venv` and pip in the VS Code terminal. Keep `editor-requirements.txt` aligned with `uv.lock` through `uv export --locked --no-dev --no-emit-project --no-hashes --format requirements-txt --output-file editor-requirements.txt`. uv remains the maintainer tool and is not required on the editor's machine. Set `DOCTA_TEST_PYTHON` to an installed environment's Python executable to run the guide walkthrough against that environment.
+
 ## Architecture
 
 Data flows in one direction. Transkribus exports and evaluation runs are inputs already in the repository; `pipeline/build_register.py` derives the page register from them; `pipeline/build_tei.py` derives TEI from register plus exports; the site under `docs/` reads pre-processed JSON from `docs/data/`. Generated outputs (`pipeline/documents.json`, `pipeline/pages/`, `docs/data/tei/`, `docs/data/pipeline/register_summary.json`) are never edited by hand.

@@ -1,5 +1,7 @@
 # Tests
 
+Der Anleitungsdurchlauf `guide-walkthrough-test.mjs` kann über die Umgebungsvariable `DOCTA_TEST_PYTHON` den absoluten Pfad einer gesondert eingerichteten Python-Umgebung verwenden. Damit lässt sich der dokumentierte Installationsweg mit `venv` und `pip install -r editor-requirements.txt` gegen dieselben isolierten Bearbeitungsprüfungen testen. Ohne diese Variable nutzt er wie bisher die Projektumgebung.
+
 Die allgemeinen Playwright-Prüfungen `smoketest.mjs` und `interaction-test.mjs` starten einen lokalen Server,
 der das Repo bewusst unter dem Unterpfad `/DoCTA/` ausliefert, so wie GitHub Pages es tut. Pfadfehler,
 die auf einer Domain-Wurzel unsichtbar blieben, fallen dadurch auf.

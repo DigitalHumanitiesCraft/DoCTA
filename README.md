@@ -4,7 +4,7 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 [Public site](https://dhcraft.org/DoCTA/), [German working guide](https://dhcraft.org/DoCTA/guide.html) and [project knowledge](docs/knowledge/INDEX.md).
 
-For a first local start, follow the [German setup guide](https://dhcraft.org/DoCTA/guide.html#start). Create a GitHub account if needed, clone with GitHub Desktop, install uv once and open the platform launcher. uv prepares Python and the required packages. Visual Studio Code is optional. The guide includes an optional person-annotation example, backups and a [GitHub Desktop workflow](https://dhcraft.org/DoCTA/guide.html#github) for exchanging agreed changes.
+For a first local start, follow the [compact German guide](https://dhcraft.org/DoCTA/guide.html#start). Create a GitHub account if needed, clone with GitHub Desktop and use Python in the VS Code terminal. The guide covers setup, starting, editing and saving. Detailed Git and recovery instructions remain below.
 
 ## What this is
 
@@ -22,16 +22,25 @@ The working edition is version 0.2.0. It is an internal research version. Public
 
 Clone the repository with GitHub Desktop, following the guide. The project copy contains `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py` together with Git history. Use this same working folder for subsequent sessions and receive updates through Fetch and Pull after saving, committing and backing up local work. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It obtains a compatible Python version if needed and prepares the project environment and locked dependencies on the first launch. That first setup requires network access. Then open the project folder and start the matching launcher:
+Install Python 3.14. On Windows, install the Python Install Manager from the Microsoft Store, published by the Python Software Foundation, and run `py install 3.14`. On macOS, use the installer from [python.org](https://www.python.org/downloads/). Open the cloned folder in VS Code and choose Terminal, New Terminal. Create a project environment and install the runtime packages once:
 
-| System | Start |
-|---|---|
-| Windows | Double-click `start-editor.cmd` |
-| macOS | Open `start-editor.command` |
+Windows:
 
-The starter opens the local viewer in the browser. Keep its terminal window open while working. If a downloaded macOS copy has lost executable permissions, open a terminal in the project folder and run `bash start-editor.command`. The equivalent command on both systems is `uv run --locked python pipeline/local_editor.py --open-browser`. Windows also retains `start-editor.ps1` for PowerShell use. Existing prepared environments can run without uv through the launchers.
+```powershell
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r editor-requirements.txt
+```
 
-VS Code can run that same command from the project terminal. Live Server and `python -m http.server` only serve the static site and do not provide the correction or annotation write API. The DoCTA launcher starts the required Python service itself.
+macOS:
+
+```sh
+python3.14 -m venv .venv
+./.venv/bin/python -m pip install -r editor-requirements.txt
+```
+
+Start each session with `.\.venv\Scripts\python.exe pipeline/local_editor.py --open-browser` on Windows or `./.venv/bin/python pipeline/local_editor.py --open-browser` on macOS. Keep the terminal open while editing. No environment activation or PowerShell execution-policy change is needed. Live Server and `python -m http.server` only serve the static site and do not provide the correction or annotation write API.
+
+For maintainers already using uv, `uv run --locked python pipeline/local_editor.py --open-browser` remains supported. The existing launchers also retain their uv and prepared-environment paths. `editor-requirements.txt` is the runtime-only export of `uv.lock`; regenerate it when dependencies change with `uv export --locked --no-dev --no-emit-project --no-hashes --format requirements-txt --output-file editor-requirements.txt`. The editor installation uses pip and does not require uv. Do not use `pip install .` for this flat script repository.
 
 Open [the silver inventory used in the joint reading](http://127.0.0.1:8742/viewer.html?doc=12647153&page=1) or [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1). The local URL addresses your own computer. Source images may require network access. Reading, correcting and annotating existing material requires no LLM API key.
 
@@ -45,13 +54,18 @@ If the port is occupied, the starter leaves the running service intact. Stop you
 4. Open Index to find saved entries and return to their source occurrences.
 5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
 
-Work on the sources relevant to your research. The guide's optional person example requires no text correction. Correct a reading only where the image supports it. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
+Work on the sources relevant to your research. Annotation requires no artificial text correction. Correct a reading only where the image supports it. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
 Before finishing, save text changes and every open annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections and annotations reside in the project folder. Clearing browser storage can remove unsaved drafts.
 
 ### Keep a local version and report feedback
 
-After saving and stopping the editor, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version. A separate folder backup protects against loss of that local copy. Push origin uploads commits and makes their contents and history visible in this public repository, including on additional branches. Agree which research data may be published and which branch receives them before pushing. Changes under `docs/` on `main` also update GitHub Pages. Text events live under `pipeline/reviews/`, effective readings under `pipeline/pages/`, and the editorial register under `pipeline/registry/`. Retained legacy tags and machine-proposal decisions remain in their existing sidecars. The service saves these files without committing them. The [German GitHub Desktop instructions](https://dhcraft.org/DoCTA/guide.html#github) explain cloning, commits, Fetch, Pull and conflict handling.
+After saving and stopping the editor, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version. A separate folder backup protects against loss of that local copy. Push origin uploads commits and makes their contents and history visible in this public repository, including on additional branches. Agree which research data may be published and which branch receives them before pushing. Changes under `docs/` on `main` also update GitHub Pages. Text events live under `pipeline/reviews/`, effective readings under `pipeline/pages/`, and the editorial register under `pipeline/registry/`. Retained legacy tags and machine-proposal decisions remain in their existing sidecars. The service saves these files without committing them.
+In GitHub Desktop, select the intended files under Changes, write a Summary and choose Commit to the current branch. Keep effective readings and their review events together. Push origin sends agreed commits to GitHub; a new branch may first show Publish branch. An invitation alone does not transfer data.
+
+For updates, save and stop the editor, commit local changes and back up the folder. Check Current Branch, then use Fetch origin and Pull origin if available. Pull only updates that branch. Coordinate integration of main when working on a separate branch. If Git reports conflicts, preserve the current work and seek help rather than discarding data. After updating, rerun the environment's `python -m pip install -r editor-requirements.txt`, start the editor and check a known correction and occurrence. Follow version-specific migration instructions if the data contract changes.
+
+For a full backup, copy the stopped project folder to a separate drive and retain the previous dated backup. Unsaved browser drafts are not included. To restore on the same operating system, keep the old folder, restore the backup separately and verify a known correction and index occurrence. For a new machine or operating system, clone again and arrange transfer of unpushed work. A fresh clone only contains data already uploaded. The [recovery contract](docs/knowledge/architecture.md#local-editing-service) names the canonical folders and compatibility requirements.
 
 If a save reports a conflict, retain the unsaved wording, reload the current saved state and reconcile the readings before saving again. If the browser cannot connect, inspect the terminal for a startup error and confirm that the editor is still running. Do not discard a draft to resolve an unexplained error.
 
