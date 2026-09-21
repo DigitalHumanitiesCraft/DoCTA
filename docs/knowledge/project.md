@@ -58,4 +58,4 @@ The reviewer-facing prototype went public in February 2026 and answered the revi
 
 ## Method
 
-The project is built with Promptotyping. The knowledge base in this folder is the source of truth for how the project understands its sources, methods and decisions, and the code is the disposable artifact. [coOCR/HTR](https://dhcraft.org/co-ocr-htr) is the sister project on transcription quality assessment and serves as design and method reference.
+The project is built with Promptotyping. Maintained project knowledge guides a versioned implementation whose behavior is checked against source evidence and the editor's requirements. Research goals, material selection and the intended use of annotations determine the working edition's scope. [coOCR/HTR](https://dhcraft.org/co-ocr-htr) is the sister project on transcription quality assessment and serves as design and method reference.

@@ -25,6 +25,10 @@ related: [INDEX, project, handoff]
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
+## Research-first documentation alignment (21.09.2026)
+
+Aligned the entry points, correction contract and knowledge documents with the operator's conversation order, research goals, material, annotation needs, intended analysis and then demonstration. The README now introduces the local working edition, the action layer routes to maintained contracts, and the pipeline and test documentation distinguish legacy status fields from the correction-only interface. Recorded the independent provenance of Inventaria transcription and DoCTA model annotations. Direct editing at highlighted mentions remains proposed. The Vault project overview retains stable research context and links to the repository for implementation detail. Historical prompts, runs and research corrections were preserved. Replaced the conflicting disposable-code wording with maintained, tested implementation. No software behavior changed.
+
 ## Meeting guide and evidence boundaries (21.09.2026)
 
 Prepared the German conversation guide at the operator's request before completion of the joint walkthrough. The [meeting answers](plan.md#meeting-answers-and-scope) distinguish the usable local pilot from funded research scope, explain source access and import, and separate transcription accuracy, correction evidence and historical quantification. Corrected the handoff's obsolete effort-measurement wording and its omission of the operator's saved test correction. Browser-draft reconciliation, removal of the test addition and scholarly acceptance remain open. The guide is preparation for the conversation and does not record an acceptance that has not occurred.

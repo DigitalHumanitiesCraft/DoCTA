@@ -23,7 +23,7 @@ related: [INDEX, architecture, specification]
 
 # Design
 
-This document records which design options were considered and which were rejected, each with its reason. Under the Promptotyping principle the decision logic is the reproducible part; the code is disposable.
+The working interface supports source inspection, correction and research annotation. Maintained design decisions guide the versioned implementation and its regression checks.
 
 **Reference implementation:** [coOCR/HTR](https://github.com/DigitalHumanitiesCraft/co-ocr-htr). The opening question was which patterns of the sister project to adopt and which to leave.
 
@@ -36,7 +36,7 @@ This document records which design options were considered and which were reject
 | A service and component hierarchy | No, a flat `app.js`, `data-loader.js`, `utils.js` | Sufficient for a handful of static pages |
 | A progressive web app with a service worker | No | The site has no offline use case |
 
-These four refusals are the reason the project works without a build process. Reversing any one of them undoes the consequence for the others.
+The static interface needs no build process. A change to one of these choices is evaluated against its concrete requirement and does not require adopting the other patterns.
 
 ## 2. Architecture: what was adopted
 
@@ -79,7 +79,7 @@ The demo extraction of the prototype phase graded entities and relations as secu
 
 The `--conf-*` tokens of section 6 therefore grade no entity. They colour documented states of the text layer, namely the provenance chips, the machine-output badge, the segments of the progress bar and the review bar.
 
-A graded status for entities returns only bound to documented workflow states. Secure presupposes a deterministic check or a scholarly verification. Worth checking marks an open comparison against image or source. Problematic marks a recognised contradiction, a strong divergence between models or a violated rule. Percentage self-assessments produced by a language model are never displayed. See domain-knowledge.md on epistemic asymmetry and htr-evaluation.md on the review contract.
+An entity's presentation names its producer and any recorded editorial decision. A deterministic match confirms that a quoted string occurs at its line anchor. It does not validate the historical identification or normalization. Percentage self-assessments produced by a language model are never displayed. See [domain-knowledge.md](domain-knowledge.md#epistemic-foundations) and [htr-evaluation.md](htr-evaluation.md).
 
 ## 5. Rejected and open
 
@@ -120,3 +120,5 @@ The default workspace is the facsimile beside the transcription. Each newly open
 The German control Bearbeiten exposes reviewer initials, save and discard. The operator rejected page approval stages and all time tracking during the walkthrough. Corrections record the before and after reading, actor and save time. Text provenance and annotation controls share one row. The provenance label links directly to the original edition. Free research tags and automatic entity proposals open in separate dialogs, leaving the transcription unobstructed when closed. Narrow windows wrap the row without clipping controls. Reading text, TEI, draft export and the dated edition build are accessed through Weitere Funktionen. Native dialogs support Escape and restore focus. Save persists corrections; updating the edition derives and validates the output from saved text. The build refuses to proceed while transcription drafts remain unsaved.
 
 The interface retains the existing palette and no-build modules. The page controller lives in `js/viewer.js`, with the workspace layout in `css/viewer.css`. Acceptance of the revised workflow belongs to the continuing [joint walkthrough](plan.md#joint-walkthrough).
+
+The operator requested access to annotation correction from the highlighted source mention. That interaction remains a proposal, with implementation deferred during meeting preparation. Existing annotation decisions are edited through the separate dialog. The research question, source passage and intended use of annotations govern the next interface changes.

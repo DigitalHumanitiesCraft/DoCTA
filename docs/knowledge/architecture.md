@@ -160,8 +160,10 @@ DoCTA/
 │   │   ├── utils.js        Formatting, sorting, escaping, localStorage
 │   │   ├── viewer-render.js  Transcription, reading text, TEI, entity marks
 │   │   ├── viewer.js       Viewer page controller and image navigation
-│   │   └── viewer-review.js  Curation view: stored decisions, line editor,
-│   │                       the JSON export apply_review.py ingests
+│   │   ├── viewer-review.js  Correction drafts, explicit save/discard and export
+│   │   ├── viewer-local.js   Local editor capability and API requests
+│   │   ├── viewer-annotations.js  Decisions on machine proposals
+│   │   └── viewer-tags.js    Page and line working annotations
 │   ├── data/               Pre-processed JSON, git-tracked
 │   │   ├── benchmark/      Published export of the prompt benchmark, the summary
 │   │   ├── demo/           Entity and relation extraction on Thaur A 49.1
@@ -186,6 +188,9 @@ DoCTA/
 │   │                       verification status, provenance-tagged transcription runs),
 │   │                       TEI generation, validation, healthcheck
 │   ├── accounts/           Executable part of the account-book encoding specification
+│   ├── reviews/            Saved correction events
+│   ├── annotations/        Human decisions on machine proposals
+│   ├── tags/               Current page and line working annotations
 │   ├── prompts/            Prompts of the pipeline's extraction scripts
 │   └── schema/             Vendored tei_all.rng and the project schema docta.rng
 ├── scripts/                Python build-time scripts

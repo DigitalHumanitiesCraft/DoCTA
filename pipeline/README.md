@@ -34,7 +34,7 @@ A page only reaches a class other than `unknown` on evidence. The Transkribus ex
 
 - `unbearbeitet`: no transcription has been reviewed
 - `maschinell`: a machine transcription exists and has passed automatic checks
-- `gesichtet`: a person has read the transcription against the scan
+- `gesichtet`: legacy verification value, also assigned by ingest to saved text corrections; inspect `reason` and the correction event before inferring review scope
 - `abgenommen`: the transcription is accepted as the edition text
 
 ## Runs
@@ -57,11 +57,11 @@ A page carrying an edition run keeps `content_class` `unknown` like every page w
 
 The loopback editor (`python pipeline/local_editor.py`, or `start-editor.ps1` on Windows) adds direct repository persistence to this contract. A save carries the loaded document revision and is rejected if another edit has changed it. Successful saves preserve an immutable review record under `reviews/` and an effective reading in `pages/`. Empty corrected text is a deliberate empty reading. The public viewer still exports JSON for the ingest below.
 
-Optional `effort` records active seconds, the number of recorded interactions and a decision note. These are observations of the correction session. They establish no corpus-wide effort estimate. Annotation decisions live separately in `annotations/` and carry the source-line digest. See [the local architecture](../docs/knowledge/architecture.md) and [the pilot plan](../docs/knowledge/plan.md).
+Historical exports may contain `effort` with active seconds, interaction counts and a note. The current interface has no timing, interaction counters or page approval controls. New correction drafts carry a null page decision and generate no effort measurements. The serializer and ingest retain compatibility fields, including null effort values and historical records. Annotation decisions live separately in `annotations/` and carry the source-line digest. See [the local architecture](../docs/knowledge/architecture.md) and [the pilot plan](../docs/knowledge/plan.md).
 
 The local build accepts an explicit date and document IDs to check. It rebuilds the connected TEI set with its shared register, applies current annotation decisions to TEI and graph and updates effective static transcription projections. Both TEI schema stages must pass, and stale annotation decisions stop the build. The output set is restored if file replacement fails. The service does not commit or publish. Start it with `--root PATH --port PORT` to run a copied test corpus, whose `docs/` and `pipeline/pages/` directories must exist.
 
-The browser viewer lets a reviewer read a page against its scan, mark it `gesichtet` or `abgenommen` and correct single lines. It exports that as one file per document, and `apply_review.py` writes the export into the register, which stays the only place where the state of a page is held.
+The browser viewer lets an editor correct existing lines against the scan and save locally or export a document draft. `apply_review.py` accepts the correction contract and historical exports with page decisions. The following historical shape remains readable, but its page-status controls are no longer exposed by the viewer.
 
 ```json
 {"docId": 11327963, "reviewer": "XY",
@@ -70,13 +70,13 @@ The browser viewer lets a reviewer read a page against its scan, mark it `gesich
  "exported": "2026-09-03T10:15:00Z", "source": "docta-viewer"}
 ```
 
-The status of a page becomes its `verification` together with the initials and the date. The corrections of a page become a new run `review:<docId>-<pageNr>-<date>-<reviewer>` with `source` `human`. That run carries the full line list of the page with the corrections applied, so it is readable on its own and the transcription it produced can be reconstructed without replaying a diff. Re-applying the newest export of a page replaces its run in place, which makes the ingest idempotent for that export. An older export of the same page is a different matter, because the corrections it reports were written against a base text that the newer export has since replaced; it fails the check on the reported original and is refused.
+The supplied legacy decision or the ingest's correction mapping becomes page `verification` with initials and date. A null decision with changed text maps to `gesichtet` and a correction reason. It does not establish a review of every line. Corrections become a human run whose ID includes document, page, date and reviewer, with the event ID appended for local saves. The run carries the complete effective line list and retains earlier runs. Re-applying an identical event is idempotent. Older conflicting exports fail the check against the effective source reading.
 
 A review is written against the base text it was made on, meaning the newest earlier review run of the page, where none exists the Transkribus run, and for a document DoCTA transcribed itself the newest edition run, whose synthetic line ids are what the viewer addresses there. Every corrected line must still carry its reported `original` in that base. Where it does not, the export was taken before another change, and the ingest refuses instead of overwriting work with a stale reading. The same refusal covers a line or a page the register does not know and every violation of the review specification above.
 
 Validation and writing are separate phases over the whole invocation. Every file passed to a run is validated first, and the register is written only when all of them pass. A single bad file therefore leaves the register untouched and the run exits nonzero, so a batch never lands half applied and a rerun after the fix has nothing to unpick. `--dry-run` stops after the validation phase and reports what would be written.
 
-A page marked reviewed without a single correction records the verification and no run, because there is no new transcription to record.
+A historical status-only export records verification without a new text run. The current editor offers no status-only action.
 
 ```
 python apply_review.py                       # ingest pipeline/reviews/

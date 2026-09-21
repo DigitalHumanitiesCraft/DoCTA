@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -25,7 +25,7 @@ related: [INDEX, project, data, editorial-model]
 
 ## Hypothesis
 
-Semantic annotation and event modelling make it possible to reconstruct patterns of action that stay invisible under conventional source analysis.
+The working hypothesis is that semantic annotation and event modelling help reconstruct patterns of action across dispersed source passages. The [research conversation](plan.md#joint-walkthrough) must establish which historical question, material and comparison would test that hypothesis. The analytical dimensions below are candidate directions for that conversation.
 
 ## Three analytical dimensions
 
@@ -101,11 +101,11 @@ The verbs are given in the source language, because the classification operates 
 
 ## The BeNASch annotation scheme
 
-**BeNASch** stands for Bernese Early New High German Annotation Scheme. It is ACE-based and compatible with CIDOC-CRM.
+BeNASch adapts ACE 2005 for text-near entity, relation and event annotation in premodern German. Its [official introduction](https://dhbern.github.io/BeNASch/1_introduction.html) distinguishes textual evidence from inferred relationships and describes annotation in INCEpTION.
 
-It models events formally as trigger verb, then agent, then patient. The annotation platform is INCEpTION; the named-entity models used are FLAIR, BERT and SpaCy.
+Event types carry their own participant roles. A generic trigger, agent and patient representation therefore needs to be checked against the selected event types. A connection to CIDOC-CRM requires a documented project-specific mapping.
 
-**The link between practice and BeNASch is not yet operational.** The two systematics are differently motivated, and the concrete mapping is outstanding.
+The link between practice and BeNASch is not yet operational. The two systematics are differently motivated, and the concrete mapping is outstanding.
 
 ## Case studies
 

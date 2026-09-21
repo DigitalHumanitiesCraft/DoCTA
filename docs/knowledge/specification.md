@@ -73,7 +73,7 @@ Recorded in her own words and rendered here in English.
 - Data integration with SiCProD, Inventaria, Wikidata and the Getty AAT
 - A glossary that could be built and integrated to improve recognition accuracy
 
-The training request is a design constraint rather than a courtesy. A pipeline the project lead cannot operate or inspect herself fails the requirement even if its output is correct.
+The project lead must be able to operate and inspect the working edition herself. Requirements elicitation starts with her research question, then the source material, the information to annotate and the intended analysis. The interface demonstration follows that sequence, as specified in [plan.md](plan.md#joint-walkthrough). Recorded feature wishes guide discussion but do not establish an accepted scope.
 
 ## Locally run editing tool, decided 2026-09-20
 
@@ -139,7 +139,11 @@ The full review specification is in `htr-evaluation.md`.
 
 ## Annotation curation in the viewer
 
-The local viewer records decisions on existing line-anchored entity proposals in versioned annotation sidecars. The editor can change the normalized form, assign an authority URI and record acceptance, rejection or a pending decision with a reason. Each decision carries the digest of the text it was reviewed against. Source text changes require another review. Model extraction files remain unchanged. Direct creation of new entity spans and changes to the entity type require an extended anchoring contract.
+The local viewer records decisions on existing line-anchored entity proposals in annotation sidecars. These are DoCTA model outputs derived from a transcription. Attribution of an underlying text to Inventaria does not attribute these proposals to Inventaria. Their saved provenance names the producer, prompt and extraction date. Opening the viewer reads existing files and performs no model API call.
+
+Through Automatische Annotationen, the editor can change the normalized form, assign an authority URI and record acceptance, rejection or a pending decision with a reason. Each decision carries the digest of the text it was reviewed against. Source text changes require another review. Model extraction files remain unchanged. A rejected occurrence is excluded from the generated edition output, while the original proposal remains available for inspection. This is distinct from deleting transcription text.
+
+Opening the corresponding form by clicking a highlighted mention is a requested improvement, not implemented behavior. Direct creation of new entity spans and changes to the entity type require an extended anchoring contract. The persistence and publication boundaries are defined in [architecture.md](architecture.md#local-editing-service).
 
 The build applies accepted normalizations and rejected occurrences to the generated TEI and graph. Stale decisions stop the build until rechecked. Authority URIs are represented in the graph, while the inventory TEI retains references to its curated local register under the existing closed schema. Pending and absent decisions remain machine proposals. A curation decision on one occurrence does not confer scholarly acceptance on a whole document or register.
 

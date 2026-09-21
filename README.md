@@ -2,23 +2,29 @@
 
 An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496), held by the Tyrolean State Archives.
 
-**Live site:** https://dhcraft.org/DoCTA/
+[Public site](https://dhcraft.org/DoCTA/) and [project knowledge](docs/knowledge/INDEX.md).
 
 ## What this is
 
-For local editing on Windows, run `./start-editor.ps1` in a prepared repository clone and open `http://127.0.0.1:8742/viewer.html?doc=12647153&page=1`. The script uses `uv` or the existing `.venv`. On a fresh clone, install uv and run `uv sync --locked` first. Review drafts are explicitly saved to the local page register, and a separate validated build updates edition output. The public site keeps JSON export. [The project plan](docs/knowledge/plan.md) names the scholarly inputs and the boundaries of this pilot.
+DoCTA supports source-based research into court practices, possession and object movement, and the use of space. The research conversation starts with the historical question, then the material, the information to annotate and its intended analysis. The [project plan](docs/knowledge/plan.md#joint-walkthrough) connects those decisions to a bounded editorial pilot.
 
-The local viewer's Schlagwörter form saves free research tags on a page or line, with a note and reviewer. Source changes flag saved tags for recheck. These working annotations can be filtered on the page and exported as document JSON, and remain separate from formal entity decisions and edition output.
+The local working edition displays facsimile and transcription together. It saves line corrections with their previous reading, reviewer and timestamp, supports page or line tags, and lets the editor curate existing machine annotation proposals. It has no time tracking or page approval controls. Saved corrections are distinct from scholarly acceptance of a complete source. [Current results and remaining work](docs/knowledge/handoff.md) identify the evidence for each implemented part.
 
-DoCTA turns facsimiles of fifteenth-century Tyrolean court records into research data and a digital edition. Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances are treated as one connected corpus. The pipeline has five stages. Sources, VLM transcription, the benchmark and TEI generation have run on real material. No page has passed scholarly review yet, so approved text and an edition over it do not exist. The current result is stated in `docs/knowledge/handoff.md`.
+Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances form the source programme. Account books are the leading research source. Inventories currently supply the working-editor demonstration. The account-book edition still requires accepted reference text and research annotations.
 
-1. **Sources.** Facsimiles and metadata from a Transkribus collection, mapped against an archival source catalogue.
-2. **VLM transcription.** Vision-language models produce candidate text from the page image. All such output is unrevised machine transcription and is marked as such wherever it is displayed.
-3. **Validation and ground truth.** A versioned prompt benchmark measures each prompt iteration on a fixed page set. Scholarly review at the facsimile is to produce approved reference text, which serves at once as the evaluation base and as edition progress.
-4. **TEI and research data.** Text is encoded as TEI that declares its provenance and revision state in the header, and is published as reusable research data. Until a review has run, every file carries text DoCTA has not verified against the facsimile.
-5. **Edition.** The edition view over the sources that have passed review. None has, and the reading mode of the viewer stands in for it.
+## Local editing
 
-The digital instruments are heuristic tools in service of historical research questions about court practice. The knowledge base in `docs/knowledge/` is the source of truth for how the project understands its sources, its methods and its own decisions; the code is the disposable artifact.
+On Windows, prepare the repository clone with `uv sync --locked`, then run `./start-editor.ps1`. The launcher uses uv or the existing `.venv`. Open [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1). The local URL works only on the computer running the editor, and externally hosted images may require network access.
+
+1. Open Bearbeiten, enter initials and correct a line against the image.
+2. Select Änderungen speichern and wait for confirmation. Reload to inspect the saved reading. Enter alone retains a browser draft.
+3. Open Schlagwörter to attach a working term and note to a page or line. Changed source text requires a recheck. Tags support page-local filtering and document JSON export.
+4. Open Automatische Annotationen to curate existing proposals. The source text, a machine proposal and a human annotation decision have separate provenance.
+5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps.
+
+Inventaria attribution identifies the transcription source. The colored annotation proposals are a separate DoCTA extraction layer whose stored metadata names the model and prompt. Opening the viewer performs no model API call. Direct editing from a highlighted mention remains a proposed improvement. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
+
+The public GitHub Pages viewer supports browser drafts and JSON export. Writing corrections into repository files requires the local editor. Source exports and prior transcription runs remain available. [The persistence model](docs/knowledge/architecture.md#local-editing-service) describes revision checks and output generation.
 
 ## Repository layout
 
@@ -42,6 +48,9 @@ DoCTA/
 │   │                       evidence, verification status and provenance-tagged runs),
 │   │                       TEI generation, validation and the cross-artifact healthcheck
 │   ├── accounts/           Executable part of the account-book encoding specification
+│   ├── reviews/            Saved correction events
+│   ├── annotations/        Decisions on machine entity proposals
+│   ├── tags/               Page and line research tags
 │   ├── prompts/            Prompts used by the pipeline's extraction scripts
 │   └── schema/             Vendored TEI P5 grammar and the project schema docta.rng
 ├── scripts/                Python build-time scripts for data fetching and transformation
@@ -54,22 +63,9 @@ The figures the site shows are computed in the browser from the source catalogue
 
 ## Knowledge base
 
-`docs/knowledge/` holds the distilled project context, readable by people and by agents.
+The [document register](docs/knowledge/INDEX.md) lists the knowledge documents and their maintenance roles. Start with [the project charter](docs/knowledge/project.md) for research scope, [the joint walkthrough](docs/knowledge/plan.md#joint-walkthrough) for the meeting, or [the handoff](docs/knowledge/handoff.md) for current evidence and open work.
 
-| Document | Content |
-|----------|---------|
-| `INDEX.md` | Map of content and reading order |
-| `handoff.md` | Current result, open work and open handoff points |
-| `project.md` | Charter, what the project is, for whom and on what material basis |
-| `data.md` | Data sources, structure and quality |
-| `htr-evaluation.md` | Reference classes, benchmark protocol, metrics, release rule |
-| `specification.md` | Goals, constraints, review criticism and how it was answered |
-| `domain-knowledge.md` | Domain knowledge, the SiCPAS model, methods, epistemology |
-| `editorial-model.md` | Editorial objects, evidence relations and responsible decisions of the account-book pilot |
-| `accounting-encoding.md` | How those objects are represented as JSON, TEI and RDF, and which rule is checked by which validator |
-| `architecture.md` | Architecture and implementation |
-| `design.md` | Design and interaction decisions, including what was rejected |
-| `journal.md` | Dated log of decisions, exploration results and open questions |
+[Pipeline documentation](pipeline/README.md) defines stored data and processing commands. [Test instructions](tests/README.md) describe the executable checks. Agents enter through [CLAUDE.md](CLAUDE.md).
 
 ## Data sources
 
@@ -79,7 +75,7 @@ The figures the site shows are computed in the browser from the source catalogue
 
 ## Method
 
-The project is built with [Promptotyping](https://dhcraft.org/Promptotyping/), a context-engineering method for LLM-assisted development of research artifacts. It runs in four phases, preparation, exploration, distillation and implementation, and keeps maintained knowledge documents as the durable layer that guides each implementation round. Its core principle is that documents are the source of truth and code is a disposable artifact.
+The project is built with [Promptotyping](https://dhcraft.org/Promptotyping/). Maintained knowledge guides the versioned implementation through preparation, exploration, distillation and implementation. Formal validation checks the data structures. Scholarly acceptance requires source-based judgement under an agreed convention.
 
 ## Project
 

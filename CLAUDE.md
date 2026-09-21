@@ -1,12 +1,14 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Repository instructions for agents working on DoCTA. Read this file explicitly when the active environment does not load it automatically.
 
 ## What this repository is
 
-DoCTA turns facsimiles of fifteenth-century Tyrolean court records (Transkribus collection 2197991, Tyrolean State Archives) into research data and a digital edition. VLM transcription, a versioned prompt benchmark, scholarly review, TEI encoding and a static site form one pipeline. The knowledge base in `docs/knowledge/` is the source of truth for how the project understands its sources, methods and decisions; the code is the disposable artifact. Read `docs/knowledge/INDEX.md` first, it names the reading order for the other knowledge documents.
+DoCTA develops a local working edition and a public static site for fifteenth-century Tyrolean court records. Maintained knowledge guides the durable, tested implementation. Read `docs/knowledge/INDEX.md`, then `handoff.md` and the document responsible for the current question. The index defines the reading order and ownership of project knowledge.
 
 Built with Promptotyping. Before conceptual or design work, consult the knowledge documents; after decisions with reasons, record them in `docs/knowledge/journal.md`.
+
+Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. A request for inline annotation editing is recorded as a proposal, not as implemented behavior.
 
 ## Commands
 
@@ -48,16 +50,17 @@ Site tests are Playwright scripts, installed separately (`npm install playwright
 node tests/smoketest.mjs
 node tests/interaction-test.mjs
 node tests/tag-editor-test.mjs
+node tests/viewer-ui-test.mjs
 ```
 
-Local preview of site and viewers: `python -m http.server 8742` from the repo root, then e.g. `http://127.0.0.1:8742/evaluation/benchmark/viewer.html`.
+For the working editor, run `./start-editor.ps1` on Windows or `uv run python pipeline/local_editor.py`, then open `http://127.0.0.1:8742/viewer.html?doc=11328300&page=1`. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
 
 ## Architecture
 
 Data flows in one direction. Transkribus exports and evaluation runs are inputs already in the repository; `pipeline/build_register.py` derives the page register from them; `pipeline/build_tei.py` derives TEI from register plus exports; the site under `docs/` reads pre-processed JSON from `docs/data/`. Generated outputs (`pipeline/documents.json`, `pipeline/pages/`, `docs/data/tei/`, `docs/data/pipeline/register_summary.json`) are never edited by hand.
 
 - **Page register** (`pipeline/`, see `pipeline/README.md`): one entry per document and per page, holding `content_class`, `empty_evidence`, `verification` status and transcription `runs`. Runs are immutable; a better transcription is a new run, never an edit. Run ids encode origin (`transkribus`, `benchmark:<stem>`, `pilot:<stem>`, `pilot2:<stem>`, `edition:<stem>`, `review:<...>`). German vocabulary values (`leer`, `kassiert`, `gesichtet`, `abgenommen`, ...) are part of the data specification, defined in the README. A rebuild carries the ingested review state over from the existing register, so it destroys no review.
-- **Review loop**: GitHub Pages exports browser drafts as review JSON. The local editor saves them through a loopback API with revision checks and serialized writes. Review records are preserved under `pipeline/reviews/`, effective text lives in the register, and source exports remain unchanged. New text corrections reopen an existing approval unless the reviewer explicitly approves the new reading. The separate build validates the connected TEI set and updates the static projections. See `docs/knowledge/architecture.md` and `specification.md`.
+- **Correction loop**: GitHub Pages exports browser drafts as review JSON. The local editor saves corrections through a loopback API with revision checks and serialized writes. Events remain under `pipeline/reviews/`, effective text lives in the register, and source exports remain unchanged. New corrections carry no page decision. Legacy status and effort fields remain readable, and ingest retains compatibility mappings. The separate build validates the connected TEI set and updates static projections. The authoritative contract is in `pipeline/README.md` and `docs/knowledge/architecture.md`.
 - **TEI generation** (`build_tei.py`): diplomatic encoding, one file per document, page/region/line structure only, `<ab>` not `<p>` because no source has been read for more. Work-step provenance as `respStmt`/`revisionDesc`; the generator pins its own source with a sha256 digest in every file. A document the Inventaria project transcribed declares `resp-inventaria-transcription` beside the Transkribus layer and links its published edition as a `<bibl>` in `sourceDesc`; the wording follows the DONE page count and keeps the Transkribus workflow status apart from DoCTA's own facsimile review. Entities are encoded only where their position is deterministic in a named line; no certainty attributes anywhere, a model's confidence self-assessment never enters edition data.
 - **Entity register** (`docs/data/tei/register.xml`, also from `build_tei.py`): the corpus-wide entity index as a `<standOff>` TEI file, `<listPerson>`, `<listPlace>` and a `<list type="objects">`, each entry holding the normalised form and the spellings attested for it. A marked entity in a document TEI carries no normalised form of its own and points at its entry with `ref="register.xml#<id>"`; objects are `<term>` because they are common nouns. The ids come from `pipeline/entity_index.py` and are shared with `docs/data/graph.jsonld`, so TEI and graph address the same entities.
 - **Two-stage validation** (`validate_tei.py`): stage one TEI conformance against vendored `pipeline/schema/tei_all.rng`, stage two the project's own encoding specification `pipeline/schema/docta.rng`, a closed grammar over both file shapes of the directory in which `@cert`/`<certainty>` and `@key` on an entity are impossible by construction. Provenance of both in `pipeline/schema/SOURCES.md`.

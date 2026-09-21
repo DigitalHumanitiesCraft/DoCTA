@@ -1,6 +1,6 @@
 # Tests
 
-Zwei Playwright-Skripte, die die Site vor einem Push prüfen. Beide starten einen lokalen Server,
+Die allgemeinen Playwright-Prüfungen `smoketest.mjs` und `interaction-test.mjs` starten einen lokalen Server,
 der das Repo bewusst unter dem Unterpfad `/DoCTA/` ausliefert, so wie GitHub Pages es tut. Pfadfehler,
 die auf einer Domain-Wurzel unsichtbar blieben, fallen dadurch auf.
 
@@ -76,13 +76,7 @@ Zwei benannte Abläufe kommen hinzu, die der allgemeine Durchlauf nicht prüfen 
 - **Quellensuche der Startseite.** Ein echtes Signaturfragment des Korpus muss die Liste verengen,
   die Trefferzahl muss das melden, ein Begriff ohne Treffer muss den leeren Zustand zeigen, und das
   Leeren des Feldes muss die vollständige Liste wiederherstellen.
-- **Review-Schleife des Viewers.** Review-Modus einschalten, Initialen setzen, eine Zeile zur
-  Korrektur öffnen, durch den Klick auf die nächste Zeile committen, wobei derselbe Klick deren
-  Editor öffnen muss (die Regressionssicherung gegen den nötigen Doppelklick), die beiden
-  Entscheidungsschalter gegen den `aria-pressed`-Vertrag prüfen, insbesondere dass ein Klick auf
-  Reviewed eine abgenommene Seite nicht zurückstuft, und den Export lesen. Der Export wird aus dem
-  Blob gelesen, den die Seite ihrem Anker übergibt; es wird keine Datei geschrieben. Geprüft wird,
-  dass das JSON parst und Version, Seiten, Status und die korrigierte Zeile trägt.
+- Der Korrekturdurchgang öffnet Bearbeiten, setzt Initialen und korrigiert eine Zeile. Der Klick auf die nächste Zeile muss die Änderung übernehmen und deren Eingabefeld öffnen. Der Test prüft den sichtbaren Entwurfszustand, das Fehlen von Freigabe- und Zeitmessungsfunktionen sowie den JSON-Export mit der korrigierten Zeile, einer leeren Seitenentscheidung und ohne Aufwandserfassung. Der Export wird im Arbeitsspeicher gelesen und schreibt keine Forschungsdatei.
 
 ## Grenzen
 

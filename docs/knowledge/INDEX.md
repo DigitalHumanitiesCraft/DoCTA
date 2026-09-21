@@ -23,7 +23,7 @@ related: [project, specification, plan, data, htr-evaluation, domain-knowledge, 
 
 # INDEX
 
-Navigation and glossary of the DoCTA knowledge base. These documents hold the distilled project context, written to be read both by people and by agents, and they are the source of truth for how the project understands its sources, its methods and its own decisions; the code is the disposable artifact. What the project is and where it stands is `project.md`.
+The knowledge base connects DoCTA's research purpose, source evidence and requirements to its maintained implementation. [project.md](project.md) defines the project, [handoff.md](handoff.md) records current results and unresolved work, and [plan.md](plan.md#joint-walkthrough) begins the research conversation with goals, material, annotation needs and intended analysis.
 
 ## Document register
 
@@ -44,6 +44,17 @@ File names follow the Promptotyping naming contract, lowercase canonical functio
 | [design.md](design.md) | Design | How does it look and behave, and what was rejected, with reasons? | design-system or interaction changes |
 | [journal.md](journal.md) | Provenance | How did we get here? | a substantive decision or finding closes |
 | [handoff.md](handoff.md) | Handoff | What is the current result, which work is open, and which received deltas still require integration or rejection? | the result changes, or a handoff point arrives or is resolved |
+
+## Entry points outside the knowledge folder
+
+| Document | Responsibility |
+|---|---|
+| [README.md](../../README.md) | Public introduction and local editing entry point |
+| [CLAUDE.md](../../CLAUDE.md) | Agent instructions, commands and implementation constraints |
+| [pipeline/README.md](../../pipeline/README.md) | Register, correction provenance and processing contract |
+| [tests/README.md](../../tests/README.md) | Executable checks and their observed scope |
+
+The Obsidian document `Project Overview DoCTA` connects this repository to the wider research context. Its repository mapping is maintained in the vault's `Repo-Verzeichnis`. Detailed implementation knowledge remains here.
 
 ## Reading order for agent context
 

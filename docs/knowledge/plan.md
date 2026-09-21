@@ -24,9 +24,17 @@ The working edition supplies the environment for a bounded historical pilot. Gen
 
 ## Joint walkthrough
 
-Start with [the silver inventory A 006.8 and .9](https://dhcraft.org/DoCTA/viewer.html?doc=12647153&page=1). Its first page demonstrates the distinction between a source image, a machine reading and an editorial decision. The available transcription covers only part of the document. Use the right-page image focus, inspect a real discrepancy together, enter a correction and explain the saved state. A technical demonstration correction must stay in an isolated test copy until a scholar confirms the reading.
+Begin with the project lead's research purpose. The operator set the conversation order on 2026-09-21. Tool demonstration follows the answers and does not determine the research scope.
 
-Open [the Thaur inventory A 049.1](https://dhcraft.org/DoCTA/viewer.html?doc=11328300&page=1) to discuss attribution, existing external transcription and anchored entity proposals. A Transkribus workflow status does not establish a reference transcription under the project's own convention. Follow the Inventaria edition link to compare the published source context.
+1. Establish the historical question and what the editor wants to examine or change herself. The documented general wish is to study who does what with which objects and where. A specific first question remains to be chosen.
+2. Select the material capable of answering that question, including a bounded passage. Account books are the leading research source. An inventory demonstration does not decide the pilot corpus.
+3. Identify what must be annotated in that passage. Discuss source wording, interpretation, uncertainty and the needed unit of annotation before choosing categories.
+4. Establish the intended use of the annotations, such as finding passages, comparing evidence, counting defined observations or reconstructing relations. This determines whether working tags suffice or a structured model is required.
+5. Demonstrate the relevant functions and collect the editor's experience against this concrete task.
+
+Use [the Thaur inventory A 049.1](https://dhcraft.org/DoCTA/viewer.html?doc=11328300&page=1) for the initial interface demonstration when it fits the conversation. The [local editor](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1) carries the revised working interface. Follow the Inventaria edition link to distinguish the imported transcription from DoCTA's machine annotation proposals. A Transkribus workflow status does not establish a reference transcription under the project's own convention.
+
+Use [the silver inventory A 006.8 and .9](https://dhcraft.org/DoCTA/viewer.html?doc=12647153&page=1) to explain machine transcription and incomplete image references when that question arises. Its available transcription covers only part of the document. Technical demonstration corrections belong in an isolated test copy until a scholar confirms the reading.
 
 The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.ps1`. Demonstrate save and reload before opening the optional reading text or validated TEI build under Weitere Funktionen. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
 
@@ -54,7 +62,7 @@ Automated Inventaria import is technically implemented for an explicitly selecte
 
 Quantification distinguishes transcription error against an accepted reference, documented correction kinds, and historical counts derived from interpreted entries. It records no working duration. A changed line is neither one error nor one scholarly decision. Historical quantities require a defined unit and denominator, with Roman numerals, monetary units, omissions, source coverage and duplicate mentions checked separately. The comparison of recognition methods requires a common reference and a specialized HTR comparator.
 
-The editor-in-the-loop interaction is the scholar's correction of a source-bound reading and decision on an existing machine proposal. It does not retrain a recognition model or automatically write back to Transkribus. Text corrections, free research tags and decisions on machine proposals remain distinct records. Tags support page-local filtering and document export. A corpus-wide search of working tags and their formal mapping to practices or events remain extensions.
+The editor-in-the-loop interaction is the scholar's correction of a source-bound reading and decision on an existing machine proposal. It does not retrain a recognition model or automatically write back to Transkribus. The [annotation contract](specification.md#annotation-curation-in-the-viewer) distinguishes text corrections, free research tags and decisions on machine proposals. Direct editing through a highlighted mention is a requested interaction improvement, deferred while the operator focuses on the conversation.
 
 The meeting should establish the first historical question, a bounded source passage, transcription rules, useful working tags, the reference sample and the intended edition output. Inventory passages demonstrate the interface. Account books remain the project's leading research source and require their own accepted pilot. Repeated entity mentions and graph co-occurrence do not establish ownership, exchange or a historical event.
 
