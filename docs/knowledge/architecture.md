@@ -41,6 +41,12 @@ Hersch's direct file writing provided a comparison for canonical data and their 
 
 DoCTA retains immutable recognition runs and explicit review records. It checks the loaded revision and original readings, serializes writes, replaces files atomically and reopens review after a correction. The validated edition build keeps the connected projections consistent. These checks address the observed failure cases without claiming a crash-safe transaction across every output file.
 
+### Manual research tags
+
+`viewer-tags.js` exposes the local page or line tagging form independently of the extraction layer. `local_tags.py` stores working annotations under `pipeline/tags/<docId>.json`. The API checks both sidecar and source revisions under the shared review lock, creates identifiers and timestamps on the server and replaces the sidecar atomically. Each annotation retains its source text and digest. A recheck explicitly replaces the snapshot and records its reviewer and update time. This sidecar is current working state, with Git providing version history after commits.
+
+The browser preserves form drafts across page changes and reloads. Unsaved transcription corrections block new tags and rechecks. A draft attached to an older source revision requires explicit reassociation after the current source is loaded. The API independently rejects stale writes. Saved tags are searchable on the current page and exportable as document JSON. They are not part of the TEI or graph build, so working terms cannot silently become formal entity or event assertions.
+
 ### Vendored versions (from the file headers in `docs/lib/`)
 
 | Library | Vendored | File |

@@ -61,6 +61,18 @@ Each step may expose a change needed in an earlier one. Bulk recognition remains
 
 ## Historical pilot proposal for discussion
 
+### First research-tagging exercise
+
+The recorded core wish is to inspect who does what with which objects and where ([specification.md](specification.md#requirements-of-the-project-lead)). The research dimensions concern court practices, possession and object movement, and spatial hierarchies ([domain-knowledge.md](domain-knowledge.md#three-analytical-dimensions)). Manual working tags let the editor collect passages for these questions while correcting the transcription.
+
+Start with the silver inventory, page 1, where the existing lines `v12` through `v15` describe plates. Attach a tag to the page or an existing line and use the note to identify the surrounding passage and the question it raises. `Inventarisierung` is a provisional search term for this passage. The list of plates alone does not establish an object transfer. A second passage is the Thaur inventory, page 2, line `r5l3`, whose current reading is `gnedigen herrn zekawffen gegeben.` A provisional `Kauf / Beschaffung` tag locates the action wording, while the note records that agent and object must be read from the surrounding lines. Both readings still require checking against their images.
+
+The form suggests `Inventarisierung`, `Übergabe`, `Kauf / Beschaffung`, `Zahlung`, `Besitz / Verwahrung`, `Raumnutzung` and `Zeugenschaft`. These are editable working terms proposed for the exercise. They do not constitute an accepted vocabulary. Record what the passage says, what remains uncertain and which neighbouring lines matter. A practice tag does not establish an event, person identity, ownership direction or a complete accounting transaction. Event aggregation and the final verb-centred annotation guidelines remain scholarly decisions.
+
+The editor can filter saved tags on the current page and export all tags of the loaded document as JSON. Cross-document faceted search and formal conversion to SiCPAS, TEI or RDF require a later explicit mapping. Review the terms used in the first passages together before introducing those functions.
+
+### Historical claim
+
 A source-bound question is how a documented transfer or payment places a person in relation to court material and an institution. An inventory may attest a holding or transfer, an account may attest a dated payment with a stated unit, and a court ordinance may prescribe a task. These are different evidential roles. Their combination requires explicit temporal and identity checks.
 
 Use the selected passage to decide whether the research needs a material inventory, an accounting event, or a comparison of prescribed and recorded practice. Raitbuch 2 remains the working account book. Court kitchen and provision or pay outside the territory remain candidate cases until the project lead selects one.

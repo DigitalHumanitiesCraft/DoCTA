@@ -1,9 +1,13 @@
 """Integration checks for the loopback editor persistence boundary."""
 
 import copy
+import json
 import shutil
 import tempfile
+import threading
 from concurrent.futures import ThreadPoolExecutor
+from http.client import HTTPConnection
+from http.server import ThreadingHTTPServer
 from pathlib import Path
 
 import build_register as br
@@ -20,6 +24,72 @@ def test_api_host_allowlist_rejects_dns_rebinding_names() -> None:
     assert le.allowed_host("localhost:8743", 8743)
     assert not le.allowed_host("attacker.example:8743", 8743)
     assert not le.allowed_host("127.0.0.1:9999", 8743)
+
+
+def test_tag_http_route_requires_same_origin_token() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        br.build(root / "pipeline")
+        docs = root / "docs"
+        docs.mkdir()
+        handler = type("TestEditorHandler", (le.EditorHandler,), {})
+        handler.token = "test-token"
+        handler.docs_dir = docs
+        handler.register_dir = root / "pipeline" / "pages"
+        handler.tag_dir = root / "pipeline" / "tags"
+        server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            port = server.server_port
+            connection = HTTPConnection("127.0.0.1", port)
+            connection.request("GET", f"/api/tags/{DOC}")
+            current = json.loads(connection.getresponse().read())
+            line = _request(handler.register_dir)["pages"][str(PAGE)]["lines"][0]
+            body = json.dumps(
+                {
+                    "docId": DOC,
+                    "baseRevision": current["revision"],
+                    "sourceRevision": current["sourceRevision"],
+                    "action": "add",
+                    "tag": {
+                        "pageNr": PAGE,
+                        "lineId": line["id"],
+                        "tag": "Test",
+                        "note": "",
+                        "reviewer": "XY",
+                    },
+                }
+            )
+            connection.request(
+                "POST",
+                "/api/tags",
+                body,
+                {
+                    "Content-Type": "application/json",
+                    "Origin": f"http://127.0.0.1:{port}",
+                },
+            )
+            denied = connection.getresponse()
+            assert denied.status == 403
+            denied.read()
+            connection.request(
+                "POST",
+                "/api/tags",
+                body,
+                {
+                    "Content-Type": "application/json",
+                    "Origin": f"http://127.0.0.1:{port}",
+                    "X-DoCTA-Token": "test-token",
+                },
+            )
+            response = connection.getresponse()
+            assert response.status == 200
+            assert json.loads(response.read())["saved"] is True
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join()
 
 
 def _fixture(tmp: Path) -> tuple[Path, Path]:

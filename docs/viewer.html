@@ -143,6 +143,7 @@
           <button type="button" class="review-btn" id="btn-edition-build">Rebuild edition</button>
         </div>
         <div id="annotation-editor" hidden></div>
+        <div id="tag-editor" lang="de" hidden></div>
         <div id="transcription-container" tabindex="0" role="region"
              aria-label="Transcription, scrollable">
           <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
@@ -166,6 +167,7 @@
     import { createReviewView } from './js/viewer-review.js';
     import { createLocalEditor } from './js/viewer-local.js';
     import { createAnnotationEditor } from './js/viewer-annotations.js';
+    import { createTagEditor } from './js/viewer-tags.js';
 
     initNav('viewer');
     initBanner();
@@ -627,10 +629,25 @@
       markText: entities.markText,
       rerenderPage: renderPage,
       local,
-      onDraftChange: updateDraftBadge,
+      onDraftChange: () => { updateDraftBadge(); tags.sync(); },
       onSaved: (doc) => {
         currentDoc = doc;
         annotations.update(doc);
+        tags.load(doc);
+        renderDocMeta(doc.docId);
+        renderCurrentView();
+      },
+    });
+
+    const tags = createTagEditor(document.getElementById('tag-editor'), local, {
+      hasReviewDraft: () => review.hasDraft,
+      refreshSource: async () => {
+        const docId = currentDoc.docId;
+        const doc = await local.load(docId);
+        if (currentDoc.docId !== docId) return;
+        currentDoc = doc;
+        annotations.update(doc);
+        await tags.load(doc);
         renderDocMeta(doc.docId);
         renderCurrentView();
       },
@@ -752,6 +769,7 @@
 
       const page = currentDoc.pages[currentPage];
       annotations.page(page.pageNr);
+      tags.page(page.pageNr);
       loadImage(page.iiif);
       renderPage(page.pageNr);
       review.sync();
@@ -826,6 +844,7 @@
         currentDoc = doc;
         entities.set(extraction);
         annotations.load(doc, extraction);
+        tags.load(doc);
         const wanted = pageNr !== undefined
           ? Number(pageNr)
           : parseInt(getParams().page || '', 10);

@@ -34,9 +34,12 @@ ausgelieferte Artefakt bleibt davon frei.
 ```
 node tests/smoketest.mjs
 node tests/interaction-test.mjs
+node tests/tag-editor-test.mjs
 ```
 
 ## Was sie prüfen
+
+`tag-editor-test.mjs` prüft die lokale Schlagwortoberfläche mit einer vorhandenen Transkription und einem simulierten Speicherdienst. Er sichert die Sperre bei ungespeicherten Textkorrekturen, das Wiederladen und Filtern gespeicherter Tags sowie sichtbare Speicherfehler nach einem Seitenwechsel. Die Python-Tests prüfen dazu den tatsächlichen Dateispeicher und die HTTP-Endpunkte. Der Oberflächentest verändert keine Forschungsdaten.
 
 **smoketest.mjs** lädt jede Seite der Site und meldet pro Seite Konsolenfehler, nicht abgefangene
 Ausnahmen, fehlgeschlagene Netzwerk-Requests, HTTP-Status ab 400, interne Links, die auf keine Datei

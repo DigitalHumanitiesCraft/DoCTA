@@ -31,5 +31,7 @@ export function createLocalEditor() {
     build: (date, docIds) => request('/api/build', { date, docIds }),
     annotations: (id) => request(`/api/annotations/${id}`),
     saveAnnotations: (payload) => request('/api/annotations', payload),
+    tags: (id) => request(`/api/tags/${id}`),
+    saveTags: (payload) => request('/api/tags', payload),
   };
 }

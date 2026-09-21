@@ -8,6 +8,8 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 For local editing on Windows, run `./start-editor.ps1` in a prepared repository clone and open `http://127.0.0.1:8742/viewer.html?doc=12647153&page=1`. The script uses `uv` or the existing `.venv`. On a fresh clone, install uv and run `uv sync --locked` first. Review drafts are explicitly saved to the local page register, and a separate validated build updates edition output. The public site keeps JSON export. [The project plan](docs/knowledge/plan.md) names the scholarly inputs and the boundaries of this pilot.
 
+The local viewer's Schlagwörter form saves free research tags on a page or line, with a note and reviewer. Source changes flag saved tags for recheck. These working annotations can be filtered on the page and exported as document JSON, and remain separate from formal entity decisions and edition output.
+
 DoCTA turns facsimiles of fifteenth-century Tyrolean court records into research data and a digital edition. Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances are treated as one connected corpus. The pipeline has five stages. Sources, VLM transcription, the benchmark and TEI generation have run on real material. No page has passed scholarly review yet, so approved text and an edition over it do not exist. The current result is stated in `docs/knowledge/handoff.md`.
 
 1. **Sources.** Facsimiles and metadata from a Transkribus collection, mapped against an archival source catalogue.

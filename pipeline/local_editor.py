@@ -29,6 +29,7 @@ import build_graph as bg
 import build_register as br
 import build_tei as bt
 import local_annotations as annotations
+import local_tags as tags
 import validate_tei as vt
 from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, write_json, write_text
 
@@ -239,6 +240,7 @@ class EditorHandler(SimpleHTTPRequestHandler):
     register_dir = REGISTER
     review_dir = PIPELINE_DIR / "reviews"
     annotation_dir = PIPELINE_DIR / "annotations"
+    tag_dir = PIPELINE_DIR / "tags"
     data_dir = DATA
     docs_dir = DOCS
 
@@ -295,6 +297,17 @@ class EditorHandler(SimpleHTTPRequestHandler):
                 annotations.read_decisions(int(raw), self.annotation_dir),
             )
             return
+        tag_prefix = "/api/tags/"
+        if path.startswith(tag_prefix):
+            raw = unquote(path[len(tag_prefix) :])
+            if not raw.isdigit():
+                self._json(HTTPStatus.BAD_REQUEST, {"error": "invalid document id"})
+                return
+            self._json(
+                HTTPStatus.OK,
+                tags.read_tags(int(raw), self.register_dir, self.tag_dir),
+            )
+            return
         super().do_GET()
 
     def do_POST(self) -> None:
@@ -302,7 +315,12 @@ class EditorHandler(SimpleHTTPRequestHandler):
             self._json(HTTPStatus.FORBIDDEN, {"error": "untrusted host"})
             return
         endpoint = urlsplit(self.path).path
-        if endpoint not in ("/api/review", "/api/annotations", "/api/build"):
+        if endpoint not in (
+            "/api/review",
+            "/api/annotations",
+            "/api/tags",
+            "/api/build",
+        ):
             self._json(HTTPStatus.NOT_FOUND, {"error": "not found"})
             return
         if not self._same_origin() or not secrets.compare_digest(
@@ -333,6 +351,9 @@ class EditorHandler(SimpleHTTPRequestHandler):
                     payload, self.register_dir, self.annotation_dir
                 )
                 result = {"saved": True, "annotations": decisions}
+            elif endpoint == "/api/tags":
+                saved_tags = tags.save_tags(payload, self.register_dir, self.tag_dir)
+                result = {"saved": True, "tags": saved_tags}
             else:
                 result = build_tei_documents(
                     payload,
@@ -375,6 +396,7 @@ def main() -> int:
     EditorHandler.register_dir = register
     EditorHandler.review_dir = root / "pipeline" / "reviews"
     EditorHandler.annotation_dir = root / "pipeline" / "annotations"
+    EditorHandler.tag_dir = root / "pipeline" / "tags"
     EditorHandler.data_dir = docs / "data"
     EditorHandler.token = secrets.token_urlsafe(32)
     server = ThreadingHTTPServer(("127.0.0.1", args.port), EditorHandler)

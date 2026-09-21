@@ -85,6 +85,12 @@ GitHub Pages keeps the browser draft and review JSON export. It has no repositor
 
 Which interfaces and functions the editor needs is worked out together with her.
 
+### Manual research tags
+
+The local viewer supports free working tags on a whole page or one existing transcription line, with a note and reviewer. The user saves the transcription before tagging its effective reading. A tag retains the source text and its digest, and a later text correction visibly requires renewed examination of the tag. Saving survives reload and rejects conflicting source or tag revisions. Tags can be removed, rechecked, filtered within the current page and exported for the loaded document.
+
+These working annotations are independent of machine entity proposals. They do not approve the transcription, assign formal SiCPAS relations or enter TEI and graph automatically. The starter terms and the first source exercise are in [plan.md](plan.md#first-research-tagging-exercise). Multiple-line spans and cross-document tag search remain outside this first interaction.
+
 ## Technical constraints
 
 | Constraint | Reason |

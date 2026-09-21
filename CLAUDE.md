@@ -47,6 +47,7 @@ Site tests are Playwright scripts, installed separately (`npm install playwright
 ```
 node tests/smoketest.mjs
 node tests/interaction-test.mjs
+node tests/tag-editor-test.mjs
 ```
 
 Local preview of site and viewers: `python -m http.server 8742` from the repo root, then e.g. `http://127.0.0.1:8742/evaluation/benchmark/viewer.html`.
