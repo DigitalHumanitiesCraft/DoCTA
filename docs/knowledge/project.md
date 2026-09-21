@@ -40,7 +40,7 @@ Two commitments hold everywhere. All model output remains unrevised machine tran
 
 ## Working edition
 
-The project lead's reply supplied on 2026-09-21 expresses willingness to use the working edition proposed on 2026-08-28 and requests a walkthrough. It asks which parts are already usable and which belong to a funded project. This establishes general interest. The commissioned scope and scholarly acceptance remain to be agreed.
+The working edition is available as an internal research version for a bounded editorial pilot. Its technical availability establishes no commissioned scope or scholarly acceptance. Those decisions remain with the responsible project roles.
 
 DoCTA brings account books, inventories, court ordinances and copybooks into a working environment for indexing and comparative analysis. The local editing decision of 2026-09-20 gives the editor direct control over versioned research data. A future service arrangement with Digital Humanities Craft remains a proposal whose scope must follow the historical pilot. [plan.md](plan.md) specifies the walkthrough, contributions and evidence needed to make that scope concrete. [specification.md](specification.md) separates the local editing functions from the public static site.
 

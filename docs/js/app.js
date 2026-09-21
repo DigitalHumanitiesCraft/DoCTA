@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { href: 'register.html', label: 'Index', id: 'register' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
+  { href: 'guide.html', label: 'Anleitung', id: 'guide' },
   // About sits flush right and carries the link into the knowledge base.
   { href: 'about.html', label: 'Über das Projekt', id: 'about', end: true },
 ];

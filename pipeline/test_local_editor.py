@@ -141,6 +141,35 @@ def test_saved_empty_reading_survives_a_fresh_load() -> None:
         assert load_json(canonical[0])["effort"]["activeSeconds"] == 12.5
 
 
+def test_same_day_later_reviewer_wins_after_reload_and_rebuild() -> None:
+    """Restore a real source reading after an empty-reading boundary correction."""
+    with tempfile.TemporaryDirectory() as td:
+        pages, reviews = _fixture(Path(td))
+        first = _request(pages)
+        original = first["pages"][str(PAGE)]["lines"][0]["original"]
+        first["reviewer"] = "ZZ"
+        le.save_review(first, pages, reviews)
+        second = _request(pages, original)
+        second["reviewer"] = "AA"
+        saved = le.save_review(second, pages, reviews)
+        line_id = second["pages"][str(PAGE)]["lines"][0]["id"]
+        for document in (saved, le.document_payload(DOC, pages)):
+            page = next(item for item in document["pages"] if item["pageNr"] == PAGE)
+            line = next(item for item in br.iter_lines(page) if item["id"] == line_id)
+            assert line["text"] == original
+        br.build(pages.parent)
+        rebuilt = le.document_payload(DOC, pages)
+        page = next(item for item in rebuilt["pages"] if item["pageNr"] == PAGE)
+        assert (
+            next(item for item in br.iter_lines(page) if item["id"] == line_id)["text"]
+            == original
+        )
+        stored = load_json(pages / f"{DOC}.json")
+        page = next(item for item in stored["pages"] if item["pageNr"] == PAGE)
+        assert br.newest_review_run(page)["reviewer"] == "AA"
+        assert br.newest_review_run(page)["timestamp"].endswith("Z")
+
+
 def test_stale_revision_writes_neither_register_nor_review() -> None:
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)

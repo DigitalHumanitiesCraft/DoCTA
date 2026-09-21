@@ -20,7 +20,7 @@ related: [INDEX, project, specification, data, htr-evaluation, editorial-model, 
 
 # Plan
 
-The working edition supplies the environment for a bounded historical pilot. General willingness to use it is documented in the project lead's reply supplied on 2026-09-21. The reply does not establish an accepted feature set, funding commitment, transcription convention or publication permission.
+The working edition supplies the environment for a bounded historical pilot. Technical availability does not establish an accepted feature set, funding commitment, transcription convention or publication permission.
 
 ## Joint walkthrough
 
@@ -29,28 +29,28 @@ Begin with the project lead's research purpose. The operator set the conversatio
 1. Establish the historical question and what the editor wants to examine or change herself. The documented general wish is to study who does what with which objects and where. A specific first question remains to be chosen.
 2. Select the material capable of answering that question, including a bounded passage. Account books are the leading research source. An inventory demonstration does not decide the pilot corpus.
 3. Identify what must be annotated in that passage. Discuss source wording, interpretation, uncertainty and the needed unit of annotation before choosing categories.
-4. Establish the intended use of the annotations, such as finding passages, comparing evidence, counting defined observations or reconstructing relations. This determines whether working tags suffice or a structured model is required.
+4. Establish the intended use of the annotations, such as finding passages, comparing evidence, counting defined observations or reconstructing relations. This determines which editor-controlled terms and identities the register needs and whether a later structured model is required.
 5. Demonstrate the relevant functions and collect the editor's experience against this concrete task.
 
 Use [the Thaur inventory A 049.1](https://dhcraft.org/DoCTA/viewer.html?doc=11328300&page=1) for the initial interface demonstration when it fits the conversation. The [local editor](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1) carries the revised working interface. Follow the Inventaria edition link to identify the imported transcription. Annotation in the working viewer builds the editor's own index and vocabulary. A Transkribus workflow status does not establish a reference transcription under the project's own convention.
 
 Use [the silver inventory A 006.8 and .9](https://dhcraft.org/DoCTA/viewer.html?doc=12647153&page=1) to explain machine transcription and incomplete image references when that question arises. Its available transcription covers only part of the document. Technical demonstration corrections belong in an isolated test copy until a scholar confirms the reading.
 
-The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.ps1`. Demonstrate save and reload before opening the optional reading text or validated TEI build under Weitere Funktionen. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
+The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.cmd` on Windows or `start-editor.command` on macOS. Demonstrate save and reload before opening the optional reading text or validated TEI build under Weitere Funktionen. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
 
 ### Guided editor exercise
 
-Continue the local walkthrough with Thaur A 049.1, document 11328300. The operator reported on 2026-09-21 that source orientation and page navigation worked. He requested a complete initial image, a shared metadata header and fewer simultaneous editing controls. Those observations motivated the [working editor hierarchy](design.md#working-editor-hierarchy). The revised interface still needs his hands-on acceptance.
+Continue the local walkthrough with Thaur A 049.1, document 11328300. Earlier interface inspection established source orientation and page navigation and led to a complete initial image, a shared metadata header and fewer simultaneous editing controls. These decisions are recorded in the [working editor hierarchy](design.md#working-editor-hierarchy). The revised interaction still requires assessment on a real research passage.
 
 1. Identify title, shelfmark and historical date. Open Quellenangaben only for the additional source context.
 2. Inspect the complete image, zoom to a passage, restore it with Ganze Seite and navigate to the next image.
 3. Open Bearbeiten, enter initials and select an existing text line. Enter confirms a browser draft, Escape cancels the open line edit. Change only a reading justified by the image.
 4. Use Änderungen speichern, wait for the local-save confirmation and reload. The saved reading must remain. Änderungen verwerfen discards the current page draft and preserves saved text.
-5. Add a page or line tag with a note after saving the text. Reload and inspect its source attachment. Distinguish a research observation from an accepted interpretation.
-6. Inspect an automatic annotation separately. Keep an uncertain proposal open, and record a reason for acceptance or rejection when justified. Annotation decisions concern the selected proposal. Correcting the text requires no separate page approval step.
-7. Under Weitere Funktionen, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them.
+5. Select wording in a saved line and create an editor-owned assignment as a person, place, date or controlled term. Reuse an existing register entry only when the source evidence supports the identity. Otherwise create an independent entry or retain an unresolved occurrence with a note.
+6. Open Index, find the saved entry and return to its source occurrence. Discuss how its preferred label, variants, note and source history support the intended analysis. Record verbs as ordinary controlled terms only when they help the research question. The editor provides the vocabulary, and the interface has no dedicated verb category.
+7. Under Weitere Funktionen, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them. The editorial register remains a separate JSON output in the current version.
 
-After each step, collect the operator's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. The operator requested the German meeting guide before completion of the walkthrough. Its factual basis is the verified implementation and the recorded questions, while hands-on acceptance remains pending. Revise the guide after the walkthrough with confirmed observations. It explains purpose, source provenance, the worked example, correction and annotation, saved versus published state, and the remaining scholarly decisions.
+After each step, collect the editor's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. The [German working guide](../guide.html) explains purpose, source provenance, correction and annotation, saved versus published state, and the remaining scholarly decisions. Revise it only from observed use and verified implementation.
 
 ### Meeting answers and scope
 
@@ -66,7 +66,7 @@ The editor-in-the-loop interaction is the scholar's correction of a source-bound
 
 The meeting should establish the first historical question, a bounded source passage, transcription rules, useful controlled terms, the reference sample and the intended edition output. Inventory passages demonstrate the interface. Account books remain the project's leading research source and require their own accepted pilot. Repeated entity mentions and graph co-occurrence do not establish ownership, exchange or a historical event.
 
-Before a clean demonstration, inspect the remaining browser draft and remove any operator test addition through a further documented correction. Do not present a test edit as a scholarly reading. The local interface changes and saved research data are distinct from the published website. The public links identify the examples, while the local editor is the demonstration target for the revised workflow.
+Demonstration changes belong in an isolated copy and carry no scholarly status. The local interface, saved research data and published website remain distinct states. The public links identify the examples, while the local editor is the demonstration target for the revised workflow.
 
 ## Work sequence and acceptance
 
@@ -78,7 +78,7 @@ Before a clean demonstration, inspect the remaining browser draft and remove any
 | Transcription convention | Decisions on original spelling, abbreviation expansion, illegibility, deletion, foliation and line structure | One convention and a versioned, accepted reference sample | Every sample page reviewed against its image and tied to the convention | Historical editor |
 | Recognition evaluation | Accepted sample and a specialized HTR baseline | Comparisons by page and source stratum, with numeral errors inspected separately | Held-out evaluation, line omissions, normalization profile and failed cases reported | Project lead approves fitness for the research task |
 | Correction documentation | Source-bound corrections under the convention | Original and corrected readings with actor and save time | Saved events resolve to their source document, page and line | Historical editor supplies the reading |
-| Inventory annotations | Controlled vocabulary and verified transcription anchors | Accepted or rejected entity decisions with normalized form and authority URI | Decisions survive reload and become stale when their source text changes | Historical editor resolves ambiguous identity and category |
+| Inventory annotations | Editor-defined vocabulary and saved transcription anchors | Source-bound assignments to independent person, place and term entries, with unresolved occurrences retained | Entries and assignments survive reload, preserve history and become stale when their source text changes | Historical editor decides every identity and vocabulary assignment |
 | Account-book edition | Real PAGE anchors, accepted text and an accepted Annotation Set | TEI and RDF for a selected accounting passage | JSON contracts, RELAX NG, Schematron and SHACL all pass | Historical editor confirms accounting interpretation |
 | Historical pilot | Source passage, research question and an observable contrary finding | Traceable claims connecting source passages across genres | Each claim resolves to evidence and distinguishes interpretation from transcription | Project lead chooses the case and interprets it |
 | Proposal revision | Pilot evidence and revised proposal text | Methods, responsibilities and scope matched to demonstrated work | Every promised output has an input, acceptance criterion and owner | Project lead agrees scope, resources and submission text |
@@ -99,13 +99,13 @@ Each step may expose a change needed in an earlier one. Bulk recognition remains
 
 ## Historical pilot proposal for discussion
 
-### First research-tagging exercise
+### First source-bound annotation exercise
 
 The recorded core wish is to inspect who does what with which objects and where ([specification.md](specification.md#requirements-of-the-project-lead)). The research dimensions concern court practices, possession and object movement, and spatial hierarchies ([domain-knowledge.md](domain-knowledge.md#three-analytical-dimensions)). Source-bound term assignments let the editor collect passages for these questions after saving the transcription.
 
 Start with the silver inventory, page 1, where the existing lines `v12` through `v15` describe plates. Select the relevant wording in a saved line, assign a term and use the note to identify the surrounding passage and the question it raises. `Inventarisierung` is a provisional search term for this passage. The list of plates alone does not establish an object transfer. A second passage is the Thaur inventory, page 2, line `r5l3`, whose current reading is `gnedigen herrn zekawffen gegeben.` A provisional `Kauf / Beschaffung` term assignment locates the action wording, while the note records that agent and object must be read from the surrounding lines. Both readings still require checking against their images.
 
-Possible terms for discussion are `Inventarisierung`, `Übergabe`, `Kauf / Beschaffung`, `Zahlung`, `Besitz / Verwahrung`, `Raumnutzung` and `Zeugenschaft`. These are editable working terms proposed for the exercise. They do not constitute an accepted vocabulary. Record what the passage says, what remains uncertain and which neighbouring lines matter. A practice tag does not establish an event, person identity, ownership direction or a complete accounting transaction. Event aggregation and the final verb-centred annotation guidelines remain scholarly decisions.
+Possible terms for discussion are `Inventarisierung`, `Übergabe`, `Kauf / Beschaffung`, `Zahlung`, `Besitz / Verwahrung`, `Raumnutzung` and `Zeugenschaft`. They are examples for the conversation and are created only when the editor chooses them. The editor controls the vocabulary. Verbs may be ordinary terms, while the interface provides no dedicated verb category. Record what the passage says, what remains uncertain and which neighbouring lines matter. A term assignment does not establish an event, person identity, ownership direction or a complete accounting transaction. Event aggregation and the final verb-centred annotation guidelines remain scholarly decisions.
 
 The editor can search saved terms in Index and follow their source occurrences across documents. Register export includes entries and assignments as JSON. Formal conversion to SiCPAS, TEI or RDF requires a later explicit mapping. Review the terms used in the first passages together before introducing those functions.
 

@@ -729,6 +729,7 @@ pageInput.addEventListener('keydown', (e) => {
 // Shortcuts are documented on the buttons via title/aria-label
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.shiftKey && ['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
   const t = e.target;
   if (t instanceof HTMLElement &&
       (t.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName))) return;

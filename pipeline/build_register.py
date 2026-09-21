@@ -56,6 +56,7 @@ import re
 import sys
 from collections import Counter
 from collections.abc import Iterator
+from datetime import UTC, datetime
 from pathlib import Path
 
 from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, write_json
@@ -166,11 +167,30 @@ def review_runs(page: dict) -> list[dict]:
 
 
 def newest_review_run(page: dict, exclude_id: str | None = None) -> dict | None:
-    """The newest review run of a page by date then id, optionally excluding one."""
+    """Select by save time, retaining dated legacy imports without a timestamp."""
     runs = [r for r in review_runs(page) if r["id"] != exclude_id]
     if not runs:
         return None
-    return max(runs, key=lambda r: (r.get("date") or "", r["id"]))
+    return max(runs, key=_review_order)
+
+
+def _review_order(run: dict) -> tuple[str, str]:
+    timestamp = run.get("timestamp")
+    if timestamp:
+        instant = datetime.fromisoformat(timestamp)
+        if instant.tzinfo is None:
+            raise ValueError("review timestamp must include a timezone")
+        return instant.astimezone(UTC).isoformat(timespec="microseconds"), run["id"]
+    date = run.get("date") or ""
+    suffix = run["id"].rsplit("-", 1)[-1]
+    # Existing local saves encode HHMMSSffffff after the reviewer. Reading that
+    # suffix fixes their ordering without rewriting immutable historical runs.
+    if date and re.fullmatch(r"[0-9]{12}", suffix):
+        return (
+            f"{date}T{suffix[:2]}:{suffix[2:4]}:{suffix[4:6]}.{suffix[6:]}+00:00",
+            run["id"],
+        )
+    return (f"{date}T00:00:00.000000+00:00" if date else "", run["id"])
 
 
 def edition_runs(page: dict) -> list[dict]:

@@ -2,7 +2,7 @@
 
 An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496), held by the Tyrolean State Archives.
 
-[Public site](https://dhcraft.org/DoCTA/) and [project knowledge](docs/knowledge/INDEX.md).
+[Public site](https://dhcraft.org/DoCTA/), [German working guide](https://dhcraft.org/DoCTA/guide.html) and [project knowledge](docs/knowledge/INDEX.md).
 
 ## What this is
 
@@ -18,7 +18,7 @@ Account books (Raitbücher), castle and personal inventories, copybooks and cour
 
 The working edition is version 0.2.0. It is an internal research version. Public availability and scholarly acceptance are separate from this software version.
 
-Use a project copy containing `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py`. GitHub Desktop can clone a supplied repository URL into a local folder. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
+Use a project copy containing `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py`. Install Git or GitHub Desktop when the project copy will be updated and versioned with Git. Clone the supplied repository URL with either tool. A ZIP archive also starts the editor after extraction, but it provides no Git history or update path. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It prepares the project Python environment and locked dependencies on the first launch. That first setup requires network access. Then open the project folder and start the matching launcher:
 
@@ -43,11 +43,11 @@ If the port is occupied, the starter leaves the running service intact. Stop you
 
 For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
-Before finishing, save text changes and any tag or annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections reside in the project folder. Clearing browser storage can remove unsaved drafts.
+Before finishing, save text changes and every open annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections and annotations reside in the project folder. Clearing browser storage can remove unsaved drafts.
 
 ### Keep a local version and report feedback
 
-After saving, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version and does not send it elsewhere. Push origin uploads commits. Publication and sharing of the internal working material require a separate decision. Text events live under `pipeline/reviews/` and effective readings under `pipeline/pages/`. Tags and annotation decisions have their own files. The service saves these files without committing them.
+After saving, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version and supplies the routine backup history for the working data. It does not send the commit elsewhere. Push origin uploads commits. Publication and sharing of the internal working material require a separate decision. Text events live under `pipeline/reviews/`, effective readings under `pipeline/pages/`, and the editorial register under `pipeline/registry/`. Retained legacy tags and machine-proposal decisions remain in their existing sidecars. The service saves these files without committing them.
 
 If a save reports a conflict, retain the unsaved wording, reload the current saved state and reconcile the readings before saving again. If the browser cannot connect, inspect the terminal for a startup error and confirm that the editor is still running. Do not discard a draft to resolve an unexplained error.
 
@@ -63,11 +63,11 @@ Feedback should include the document and page, the action attempted, the expecte
 
 If source text changes, affected occurrences require checking. Their retained quotations remain inspectable. Select the new wording to create a replacement occurrence, and remove the superseded occurrence when appropriate. The first version anchors selections within a single existing line. It does not split or merge transcription lines.
 
-The editorial register identifies persons and classifies source occurrences. Assigning the term Polster does not establish that two sources describe the same physical cushion. These explicit assignments remain independent of the automatically generated extraction index. They are saved with their history in `pipeline/registry/index.json` and exported as JSON. The existing TEI and graph build continues to use machine-proposal curation and does not yet incorporate the new editorial register.
+The editorial register identifies persons and classifies source occurrences. Every identity and vocabulary decision in this register comes from the editor. A person entry contains a preferred label, spelling variants, a note and the history of its source-bound assignments. Assigning the term Polster does not establish that two sources describe the same physical cushion. Verbs can be recorded as editor-controlled terms when the research question requires them. The interface has no dedicated verb category. These explicit assignments remain independent of the automatically generated extraction index. They are saved with their history in `pipeline/registry/index.json` and exported as JSON. The existing TEI and graph build continues to use machine-proposal curation and does not yet incorporate the new editorial register.
 
 ### Select sources
 
-Quellen opens the searchable source overview. Availability filters distinguish sources with transcription, sources with a stored image address and archival records. Image-only sources open the first image whose address is recorded. The viewer names the documented total separately and does not invent missing pages. Transcription attribution is shown on the source row and in the viewer. Research preview links to the project explanation.
+Quellen opens the searchable source overview with all source types and availability states visible by default. Availability filters distinguish sources with transcription, sources with a stored image address and archival records. Image-only sources open the first image whose address is recorded. The viewer names the documented total separately and does not invent missing pages. Transcription attribution is shown on the source row and in the viewer. Research preview links to the project explanation.
 
 The separate Schlagwörter dialog is retired. Earlier tag files and browser drafts remain preserved; new controlled terms are assigned through the common annotation field. Historical tags are not automatically converted into register entries.
 
@@ -104,8 +104,9 @@ DoCTA/
 │   │                       TEI generation, validation and the cross-artifact healthcheck
 │   ├── accounts/           Executable part of the account-book encoding specification
 │   ├── reviews/            Saved correction events
-│   ├── annotations/        Decisions on machine entity proposals
-│   ├── tags/               Page and line research tags
+│   ├── annotations/        Retained decisions on machine entity proposals
+│   ├── tags/               Retained legacy page and line tags
+│   ├── registry/           Editor-owned entries, source assignments and history
 │   ├── prompts/            Prompts used by the pipeline's extraction scripts
 │   └── schema/             Vendored TEI P5 grammar and the project schema docta.rng
 ├── scripts/                Python build-time scripts for data fetching and transformation

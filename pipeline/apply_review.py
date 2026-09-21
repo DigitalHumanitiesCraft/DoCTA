@@ -50,6 +50,7 @@ import re
 import sys
 import threading
 from contextlib import contextmanager
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -135,6 +136,13 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
         raise ReviewError(f"{origin}: docId fehlt oder ist keine ganze Zahl")
     _str(data.get("reviewer"), f"{origin}: reviewer")
     _str(data.get("exported"), f"{origin}: exported")
+    if data.get("schemaVersion") == 2:
+        try:
+            exported = datetime.fromisoformat(data["exported"])
+        except ValueError as exc:
+            raise ReviewError(f"{origin}: exported ist kein ISO-Zeitstempel") from exc
+        if exported.tzinfo is None:
+            raise ReviewError(f"{origin}: exported braucht eine Zeitzone")
     if "reviewId" in data and (
         not isinstance(data["reviewId"], str)
         or not REVIEW_ID.fullmatch(data["reviewId"])
@@ -274,6 +282,8 @@ def apply_document(
                 "date": date,
                 "lines": _corrected_lines(base, entry["lines"], where),
             }
+            if review.get("schemaVersion") == 2:
+                run["timestamp"] = review["exported"]
             if review.get("effort") is not None:
                 run["effort"] = review["effort"]
             existing = next(

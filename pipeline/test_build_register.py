@@ -151,6 +151,29 @@ def test_the_newest_review_run_is_decided_by_date_then_id() -> None:
         )
 
 
+def test_legacy_local_review_suffix_orders_before_reviewer() -> None:
+    """Saved local review identifiers retain their recorded time without migration."""
+    earlier = {
+        **RUN_AB,
+        "id": "review:11328300-2-2026-09-21-ch-082649885795",
+        "date": "2026-09-21",
+    }
+    later = {
+        **RUN_AB,
+        "id": "review:11328300-2-2026-09-21-TEST-115842948140",
+        "date": "2026-09-21",
+    }
+    assert br.newest_review_run({"runs": [later, earlier]}) is later
+    assert br.newest_review_run({"runs": [earlier, later]}, later["id"]) is earlier
+
+
+def test_explicit_review_timestamp_orders_in_utc() -> None:
+    """Timezone and stale client dates are synthetic ordering boundary cases."""
+    earlier = {**RUN_XY, "timestamp": "2026-09-21T12:00:00+02:00"}
+    later = {**RUN_AB, "timestamp": "2026-09-21T11:00:00Z"}
+    assert br.newest_review_run({"runs": [later, earlier]}) is later
+
+
 def test_only_an_edition_run_gets_synthetic_line_ids() -> None:
     """The cohort that produces edition text names its lines; measuring runs do not.
 

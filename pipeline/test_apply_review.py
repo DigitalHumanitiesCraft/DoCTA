@@ -310,6 +310,8 @@ def test_contract_violations_are_refused() -> None:
         broken(source="elsewhere"),
         broken(docId="11327963"),
         broken(reviewer=""),
+        broken(schemaVersion=2, exported="not-a-timestamp"),
+        broken(schemaVersion=2, exported=f"{DATE}T10:15:00"),
         broken(pages=[]),
         broken(pages={"one": page}),
         broken(pages={str(PAGE): {**page, "status": "maschinell"}}),

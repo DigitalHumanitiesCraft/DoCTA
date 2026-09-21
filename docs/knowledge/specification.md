@@ -81,7 +81,7 @@ DoCTA becomes a locally run editing tool, which is the answer to the constraint 
 
 The local editor serves the same viewer through `pipeline/local_editor.py` on loopback. Browser drafts are explicitly saved to the page register with an append-only review record. The server rejects a draft whose base revision no longer matches the stored document. The source transcription remains unchanged. Empty corrected text removes a reading while retaining its line anchor. The working interface has one editor and documents saved corrections with actor, timestamp and before/after text. It provides no elapsed-time tracking, interaction counters or page approval workflow. A separate build produces validated TEI and the static text projection from saved corrections.
 
-GitHub Pages keeps the browser draft and review JSON export. It has no repository write service. The editor starts the local service with `start-editor.ps1`, reviews saved changes in GitHub Desktop and commits them. Publication remains a separate push. The concrete pilot and acceptance sequence are in [plan.md](plan.md).
+GitHub Pages keeps the browser draft and review JSON export. It has no repository write service. The editor starts the local service with `start-editor.cmd` on Windows or `start-editor.command` on macOS, reviews saved changes in GitHub Desktop and commits them. Publication remains a separate push. Native macOS execution still requires observation on the recipient system. The concrete pilot and acceptance sequence are in [plan.md](plan.md).
 
 Which interfaces and functions the editor needs is worked out together with her.
 
@@ -149,11 +149,11 @@ SiCProD, Wikidata, GND and the Getty Art & Architecture Thesaurus remain possibl
 
 ### Editor-owned registers and source-bound annotation
 
-The meeting transcript and the operator's clarification on 2026-09-21 establish the need for an editor-owned person index and controlled object vocabulary. Identity decisions always belong to the historical editor. The exact source selection will follow from the project partner. Access and reuse terms remain unresolved, and current work continues internally on the available material.
+The working edition requires an editor-owned person index and controlled vocabulary. Identity and vocabulary decisions always belong to the historical editor. Exact source selection, access and reuse terms remain scholarly and institutional decisions. Current implementation work uses the available internal material.
 
 The local editor uses new, name-independent person IDs, preferred names, spelling variants, optional notes and explicit links to source occurrences. Local name search suggests existing entries without merging identities. Equal names remain separate entries, distinguished in the interface by variants, notes or an ID fragment. External authority enrichment remains future work. The existing generated entity index groups by type and normalized label and must not be treated as evidence of historical identity.
 
-Vocabulary entries carry preferred terms, variants, notes and an optional broader term. Source occurrences link to these entries. Classifying an occurrence as a cushion does not identify it with a particular physical object mentioned elsewhere. Individual-object identity and historical relations require a separate evidence contract.
+Vocabulary entries carry preferred terms, variants, notes and an optional broader term. Source occurrences link to these entries. The editor supplies this vocabulary. Verbs may be recorded as terms, and no dedicated verb category exists in the initial interface. Classifying an occurrence as a cushion does not identify it with a particular physical object mentioned elsewhere. Individual-object identity and historical relations require a separate evidence contract.
 
 Selection-based annotations retain quotation, line identity, UTF-16 positions and a saved-line digest. Changed text requires rechecking the anchor. Registry and assignment changes retain actor, timestamp and before/after values in the atomic registry file. Machine-proposal decisions retain an event history as well. Older sidecars remain readable without inventing past events. Editorial assignments are available in the viewer and JSON export, but do not yet enter generated TEI or the graph. Multi-line spans remain unsupported. Category labels describe the initial working vocabulary and do not resolve the wider research distinction between place, space, object identity and events.
 
@@ -164,8 +164,8 @@ Windows and macOS launchers use the same Python service and locked dependencies,
 These decisions remain with the historical project lead.
 
 - The transcription convention with the permitted normalisations. `htr-evaluation.md` names it under the scholarly review points.
-- The annotation vocabulary, which comprises the priority object categories, the order in which the reconciliation sources are consulted, the treatment of the free-text `role` field that entity iteration 01 (`pipeline/prompts/entities_it01.md`) fills with an attested function for persons and an object group for objects, and the granularity of place versus space (`domain-knowledge.md`).
-- The concrete scope and acceptance of the working edition. General willingness is documented in the reply supplied on 2026-09-21 (`project.md`).
+- The editor-owned vocabulary, including its preferred terms, variants, broader-term relations and any verbs useful to the research question. The wider distinctions between place and space, object identity, practice and event remain scholarly modelling decisions (`domain-knowledge.md`).
+- The concrete scope and scholarly acceptance of the working edition (`project.md`).
 
 ## Open questions
 

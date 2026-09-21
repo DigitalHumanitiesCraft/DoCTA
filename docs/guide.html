@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anleitung | DoCTA</title>
+  <meta name="description" content="DoCTA lokal starten, Transkriptionen korrigieren und eigene Register und Begriffe aufbauen.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation öffnen"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav" id="main-nav"></ul></div>
+    </div>
+  </nav>
+  <main id="main" class="guide-content">
+    <h1>Mit der Arbeitsedition arbeiten</h1>
+    <p>DoCTA zeigt Quellenbilder neben ihren Transkriptionen. Du kannst Lesungen korrigieren, Textstellen annotieren und dabei dein eigenes Personenregister und kontrolliertes Vokabular aufbauen. Welche Stellen zusammengehören und welche Begriffe passen, entscheidest du selbst.</p>
+    <nav aria-label="Abschnitte der Anleitung" class="guide-sections">
+      <a href="#start">Lokal starten</a><a href="#exercise">Erster Durchgang</a><a href="#annotations">Annotieren</a><a href="#save">Speichern und sichern</a><a href="#help">Wenn etwas nicht klappt</a>
+    </nav>
+    <section aria-labelledby="online">
+      <h2 id="online">Website und lokale Arbeitsedition</h2>
+      <p>Die öffentliche Website auf GitHub Pages dient zum Lesen und Vergleichen. Textkorrekturen lassen sich dort als Browserentwurf bearbeiten und als JSON-Datei exportieren. Sie werden dadurch noch nicht in die Projektdateien übernommen.</p>
+      <p>Für dauerhaft gespeicherte Korrekturen, eigene Annotationen und den Index startest du die Arbeitsedition auf deinem Rechner. Die Adresse beginnt dann mit <code>http://127.0.0.1</code>. Deine Änderungen bleiben in deinem Projektordner. Quellbilder können auch bei lokaler Nutzung eine Internetverbindung benötigen. Für Lesen, Korrigieren und Annotieren brauchst du keinen LLM-API-Key.</p>
+      <p><a href="index.html">Quellenübersicht öffnen</a></p>
+    </section>
+    <section aria-labelledby="start">
+      <h2 id="start">Lokal starten</h2>
+      <ol>
+        <li>Installiere einmalig <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noopener">uv nach der Anleitung für dein Betriebssystem</a>. Es richtet die benötigte Python-Umgebung ein.</li>
+        <li>Hole das <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener">DoCTA-Repository</a> mit GitHub Desktop auf deinen Rechner. Alternativ kannst du auf GitHub unter <q>Code</q> das ZIP herunterladen und vollständig entpacken. Arbeite danach in diesem Projektordner.</li>
+        <li>Öffne unter Windows <code>start-editor.cmd</code>, unter macOS <code>start-editor.command</code>. Beim ersten Start werden die benötigten Pakete geladen. Dafür ist eine Internetverbindung erforderlich.</li>
+        <li>Der Browser öffnet die lokale Arbeitsedition. Lass das zugehörige Terminalfenster während der Arbeit geöffnet.</li>
+      </ol>
+      <p>Falls macOS die Startdatei nicht ausführt, öffne ein Terminal im Projektordner und führe <code>bash start-editor.command</code> aus. Die technische Einrichtung ist in der <a href="https://github.com/DigitalHumanitiesCraft/DoCTA#local-editing" target="_blank" rel="noopener">README</a> beschrieben. Der Start auf macOS muss noch auf einem Mac praktisch geprüft werden.</p>
+    </section>
+    <section aria-labelledby="exercise">
+      <h2 id="exercise">Erster Durchgang</h2>
+      <ol>
+        <li>Öffne in deiner lokalen Arbeitsedition das <a href="viewer.html?doc=11328300&amp;page=1">Inventar des Schlosses Thaur</a>. Titel, Signatur und Datum stehen über dem Arbeitsbereich. Die Transkriptionsherkunft ist beim Text angegeben.</li>
+        <li>Vergleiche eine kurze Passage mit dem Bild. Die Ansicht beginnt mit dem ganzen Bild. Vergrößere eine Stelle und kehre mit <q>Ganze Seite</q> zur Übersicht zurück.</li>
+        <li>Wähle <q>Bearbeiten</q>, trage dein Kürzel ein und klicke eine Textzeile an. Ändere nur eine Lesung, die du am Bild begründen kannst. Enter übernimmt die Eingabe zunächst in den Browserentwurf.</li>
+        <li>Wähle <q>Änderungen speichern</q> und warte auf die Bestätigung. Lade die Seite neu. Die gespeicherte Korrektur muss wieder erscheinen.</li>
+        <li>Markiere eine Stelle, ordne sie einem eigenen Registereintrag zu und speichere die Fundstelle. Öffne danach den <a href="register.html">Index</a> und folge der Fundstelle zurück zum Text.</li>
+      </ol>
+      <p>Das <a href="viewer.html?doc=12647153&amp;page=1">Silberinventar</a> zeigt zusätzlich eine maschinelle Ausgangstranskription. Fehlende Bildreferenzen begrenzen dort den zugänglichen Umfang. Ein Katalogeintrag oder eine dokumentierte Seitenzahl bedeutet noch nicht, dass sämtliche Bilder im Viewer vorliegen.</p>
+    </section>
+    <section aria-labelledby="annotations">
+      <h2 id="annotations">Eigene Annotationen und Register</h2>
+      <p>Speichere zuerst deine Textkorrekturen. Markiere dann den Wortlaut innerhalb einer Zeile. Wähle <q>Person</q>, <q>Begriff</q>, <q>Ort</q> oder <q>Datumsangabe</q>. Du erreichst die Auswahl auch mit Rechtsklick, über <q>Auswahl annotieren</q> oder mit Alt+A.</p>
+      <p>Bei Personen, Orten und Begriffen kannst du einen vorhandenen Eintrag suchen oder einen neuen anlegen. Eine bevorzugte Bezeichnung genügt zum Beginn. Weitere Schreibweisen und eine Notiz helfen später beim Wiederfinden und Unterscheiden. Gleiche Namen werden nicht automatisch zusammengeführt. <q>Noch nicht zugeordnet</q> lässt eine Fundstelle mit offener Identifizierung bestehen.</p>
+      <p>Speichere einen neuen Registereintrag und anschließend die Fundstelle. Erst die gespeicherte Fundstelle verbindet den Eintrag mit dem ausgewählten Quellenwortlaut. Ein Klick auf eine bestehende Markierung öffnet ihre Bearbeitung. Du kannst die Zuordnung ändern oder die Annotation entfernen. Der Quellentext bleibt dabei erhalten, und die Änderung wird dokumentiert.</p>
+      <p>Deine selbst angelegten Begriffe bilden das kontrollierte Vokabular. Du bestimmst ihre Bedeutung und Anwendung. Handlungen kannst du bei Bedarf ebenfalls als eigene Begriffe erfassen. Dafür gibt es keine gesonderte Ereignisannotation und kein vorgegebenes Vokabular.</p>
+      <p>Datumsangaben behalten den Quellenwortlaut. Eine normalisierte Datierung, ein Zeitraum und eine Unsicherheit sind optionale Ergänzungen. Historische Kalenderangaben werden nicht automatisch umgerechnet.</p>
+      <p>Der Index zeigt deine gespeicherten Personen, Orte und Begriffe mit ihren Fundstellen. Die Suche berücksichtigt Bezeichnungen, Schreibweisen und Notizen. Über <q>Register als JSON exportieren</q> erhältst du Einträge, Zuordnungen und deren Verlauf als Datei.</p>
+    </section>
+    <section aria-labelledby="save">
+      <h2 id="save">Speichern, wiederaufnehmen und sichern</h2>
+      <p>Gespeicherte Textkorrekturen halten die vorherige und die neue Lesung mit Kürzel und Zeitpunkt fest. Die ursprüngliche Transkription bleibt erhalten. Eigene Annotationen haben ebenfalls einen Änderungsverlauf. Wenn sich ihr Quellentext ändert, muss die Fundstelle erneut geprüft werden.</p>
+      <p>Textkorrekturen und Annotationen haben eigene Speicheraktionen. Ein geschlossenes Annotationsfeld kann noch einen Entwurf enthalten, den du über <q>Annotation fortsetzen</q> wieder öffnest. <q>Änderungen verwerfen</q> entfernt ungespeicherte Textänderungen der aktuellen Seite. Bereits gespeicherte Änderungen bleiben bestehen.</p>
+      <p>Speichere vor dem Beenden alle bearbeiteten Felder. Danach kannst du den Server mit Ctrl+C im Terminal stoppen. Beim nächsten Start öffnest du dieselbe Startdatei und arbeitest im selben Projektordner weiter.</p>
+      <p>Eine gespeicherte Änderung ist noch kein Git-Commit und keine Veröffentlichung. Mit GitHub Desktop kannst du die vorgesehenen geänderten Dateien prüfen und lokal committen. So bleibt ein versionierter Stand erhalten. Eine separate Sicherung des Projektordners schützt vor dem Verlust des Rechners. Bewahre bei einem ZIP-Download insbesondere deinen bisherigen Arbeitsordner auf und überschreibe ihn nicht mit einer neuen Kopie.</p>
+      <p>Die eigenen Register werden derzeit separat als JSON exportiert. Sie sind noch nicht in die automatisch erzeugten TEI- und Graph-Ausgaben eingebunden. Frühere Schlagwortdateien bleiben erhalten, werden aber nicht automatisch in das eigene Vokabular umgewandelt.</p>
+      <p><a href="https://github.com/DigitalHumanitiesCraft/DoCTA#keep-a-local-version-and-report-feedback" target="_blank" rel="noopener">Speicherorte und Versionierung in der README</a></p>
+    </section>
+    <section aria-labelledby="help">
+      <h2 id="help">Wenn etwas nicht klappt</h2>
+      <ul>
+        <li>Fehlen lokale Speicherfunktionen, prüfe die Browseradresse. Die öffentliche Website schreibt nicht in deinen Projektordner.</li>
+        <li>Öffnet sich die lokale Seite nicht, prüfe das Terminalfenster auf eine Fehlermeldung. Ein bereits laufender Editor wird vom Starter nicht beendet.</li>
+        <li>Bei einem Speicherkonflikt halte deine Eingabe fest, lade den gespeicherten Stand neu und gleiche die Lesungen ab. Verwirf einen Entwurf nicht allein, um die Meldung loszuwerden.</li>
+        <li>Bei fehlenden Bildern prüfe die Internetverbindung. Manche Quellen haben noch nicht alle benötigten Bildadressen.</li>
+      </ul>
+      <p>Für eine Rückmeldung genügen Quelle und Seite, die ausgeführte Handlung sowie das erwartete und das beobachtete Ergebnis. Ein Screenshot kann die betreffende Stelle zeigen.</p>
+    </section>
+  </main>
+  <footer class="text-center py-4 small text-body-secondary"></footer>
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/guide.js"></script>
+</body>
+</html>

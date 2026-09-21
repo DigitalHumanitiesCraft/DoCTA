@@ -73,9 +73,9 @@ The dedicated network page and the faceted search over SiCProD were removed when
 
 The viewer displays the archival title in full and distinguishes the document's extent from the available transcription pages in its pager. Image focus offers the full image or either half of an opening. These controls address the silver-inventory example where a blank facing page occupied much of the panel.
 
-The local review interface distinguishes a browser draft from a saved edition correction. Saving and rebuilding are separate buttons, errors retain the draft, and a changed base revision requires reconciliation. Annotation curation appears only where anchored extraction proposals exist. Neither a stored correction nor a successful build automatically approves a page.
+The local review interface distinguishes a browser draft from a saved edition correction. Saving and rebuilding are separate buttons, errors retain the draft, and a changed base revision requires reconciliation. Source-bound annotation starts from text selected by the editor and contains no automatic proposal. Neither a stored correction nor a successful build automatically approves a page.
 
-The demo extraction of the prototype phase graded entities and relations as secure, worth checking and problematic. That grading came from the model output and held no epistemic validity, and the display no longer uses it. The pipeline extraction under `data/entities/` carries no such field, because the entity prompt `pipeline/prompts/entities_it01.md` forbids one, and `js/data-loader.js` drops the grading of the demo file on reading. An entity is shown with its machine provenance, the extracting model and the label "not verified".
+The demo extraction of the prototype phase graded entities and relations as secure, worth checking and problematic. That grading came from the model output and held no epistemic validity. The working viewer no longer displays the extracted entities. The retained exploration view names their machine provenance and keeps them separate from the editor-owned register.
 
 The `--conf-*` tokens of section 6 therefore grade no entity. They colour documented states of the text layer, namely the provenance chips, the machine-output badge, the review bar.
 

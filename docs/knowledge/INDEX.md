@@ -23,7 +23,7 @@ related: [project, specification, plan, data, htr-evaluation, domain-knowledge, 
 
 # INDEX
 
-The knowledge base connects DoCTA's research purpose, source evidence and requirements to its maintained implementation. [project.md](project.md) defines the project, [handoff.md](handoff.md) records current results and unresolved work, and [plan.md](plan.md#joint-walkthrough) begins the research conversation with goals, material, annotation needs and intended analysis.
+The knowledge base connects DoCTA's research purpose, source evidence and requirements to its maintained implementation. [project.md](project.md) defines the project, [handoff.md](handoff.md) records current results and unresolved work, and [plan.md](plan.md#joint-walkthrough) begins the research conversation with goals, material, annotation needs and intended analysis. The published [German working guide](../guide.html) explains installation and the editorial workflow.
 
 ## Document register
 
@@ -50,6 +50,7 @@ File names follow the Promptotyping naming contract, lowercase canonical functio
 | Document | Responsibility |
 |---|---|
 | [README.md](../../README.md) | Public introduction and local editing entry point |
+| [docs/guide.html](../guide.html) | German installation and working guide for the historical editor |
 | [CLAUDE.md](../../CLAUDE.md) | Agent instructions, commands and implementation constraints |
 | [pipeline/README.md](../../pipeline/README.md) | Register, correction provenance and processing contract |
 | [tests/README.md](../../tests/README.md) | Executable checks and their observed scope |

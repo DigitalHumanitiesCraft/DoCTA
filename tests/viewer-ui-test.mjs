@@ -153,6 +153,11 @@ try {
     'viewer contains no machine annotation marks or controls');
   check(await page.locator('#btn-tags, #tags-dialog, #tag-editor').count() === 0,
     'viewer contains no obsolete tag editing controls');
+  await page.locator('#transcription-container').focus();
+  await page.keyboard.press('Shift+ArrowRight');
+  const selectionPage = await page.locator('#page-input').inputValue();
+  check(selectionPage === '1', 'Shift+ArrowRight preserves the source page for native text selection');
+  if (selectionPage !== '1') await page.locator('#btn-prev-page').click();
 
   const expectedSource = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'sources.json'), 'utf8'))
     .find(source => source.transkribus_docs?.some(doc => doc.doc_id === DOC_ID));
