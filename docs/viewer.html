@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Source Explorer | DoCTA</title>
+  <title>Arbeitsedition | DoCTA</title>
   <meta name="description" content="Source explorer: facsimile next to transcription for the inventories of the Tyrolean State Archives.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/viewer.css">
 </head>
 <body class="viewer-page">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
@@ -24,60 +25,76 @@
   </nav>
 
   <main id="main">
-    <h1 class="visually-hidden">Source explorer: facsimile and transcription</h1>
+    <header class="source-header">
+      <div class="source-heading">
+        <h1 id="source-title">Quelle auswählen</h1>
+        <dl class="source-identity">
+          <div><dt>Signatur</dt><dd id="source-shelfmark"></dd></div>
+          <div><dt>Datierung</dt><dd id="source-date"></dd></div>
+        </dl>
+      </div>
+      <div class="source-actions">
+        <label class="visually-hidden" for="doc-selector">Dokument wechseln</label>
+        <select class="form-select doc-selector" id="doc-selector">
+          <option value="">Dokument auswählen</option>
+        </select>
+        <button type="button" class="review-btn" id="btn-source-details">Quellenangaben</button>
+      </div>
+    </header>
     <div class="viewer-layout">
       <!-- Image Panel -->
       <div class="viewer-panel" id="facsimile-panel">
         <div class="viewer-panel__header">
-          <span class="viewer-panel__title" id="facs-title">Facsimile</span>
+          <span class="viewer-panel__title" id="facs-title">Faksimile</span>
 
-          <div class="viewer-tools" role="group" aria-label="Facsimile controls">
-            <button type="button" class="vt-btn" id="btn-zoom-out" aria-label="Zoom out" title="Zoom out (-)">
+          <div class="viewer-tools" role="group" aria-label="Bildwerkzeuge">
+            <button type="button" class="vt-btn" id="btn-zoom-out" aria-label="Verkleinern" title="Verkleinern (-)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="6.75" cy="6.75" r="4.75"/><path d="M10.4 10.4 14 14M4.5 6.75h4.5"/></svg>
             </button>
-            <button type="button" class="vt-btn" id="btn-zoom-in" aria-label="Zoom in" title="Zoom in (+)">
+            <button type="button" class="vt-btn" id="btn-zoom-in" aria-label="Vergrößern" title="Vergrößern (+)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="6.75" cy="6.75" r="4.75"/><path d="M10.4 10.4 14 14M4.5 6.75h4.5M6.75 4.5v4.5"/></svg>
             </button>
-            <button type="button" class="vt-btn" id="btn-zoom-fit" aria-label="Fit image to panel" title="Fit to panel (0)">
+            <button type="button" class="vt-btn vt-btn--label" id="btn-zoom-fit" title="Ganze Seite (0)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.75V2h3.75M10.25 2H14v3.75M14 10.25V14h-3.75M5.75 14H2v-3.75"/></svg>
+              <span>Ganze Seite</span>
             </button>
             <span class="viewer-bar-sep" aria-hidden="true"></span>
-            <select id="image-focus" class="image-focus" aria-label="Image area">
-              <option value="spread">Full image</option>
-              <option value="left">Left page</option>
-              <option value="right">Right page</option>
+            <select id="image-focus" class="image-focus" aria-label="Bildausschnitt">
+              <option value="spread">Gesamtbild</option>
+              <option value="left">Linke Hälfte</option>
+              <option value="right">Rechte Hälfte</option>
             </select>
-            <button type="button" class="vt-btn" id="btn-line-regions" aria-label="Show line regions" aria-pressed="false" title="Show line regions (l)">
+            <button type="button" class="vt-btn" id="btn-line-regions" aria-label="Zeilenbereiche zeigen" aria-pressed="false" title="Zeilenbereiche zeigen (l)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2.5" width="12" height="11" rx="1.25"/><path d="M4.5 5.75h7M4.5 8h7M4.5 10.25h4"/></svg>
             </button>
             <span class="viewer-bar-sep" aria-hidden="true"></span>
-            <button type="button" class="vt-btn" id="btn-rotate-left" aria-label="Rotate 90 degrees counter-clockwise" title="Rotate left">
+            <button type="button" class="vt-btn" id="btn-rotate-left" aria-label="Nach links drehen" title="Nach links drehen">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5h5.25A4.75 4.75 0 1 1 3 10.25"/><path d="M5 2.75 2.5 5.5 5 8.25"/></svg>
             </button>
-            <button type="button" class="vt-btn" id="btn-rotate-right" aria-label="Rotate 90 degrees clockwise" title="Rotate right (r)">
+            <button type="button" class="vt-btn" id="btn-rotate-right" aria-label="Nach rechts drehen" title="Nach rechts drehen (r)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 5.5H8.25A4.75 4.75 0 1 0 13 10.25"/><path d="M11 2.75 13.5 5.5 11 8.25"/></svg>
             </button>
-            <button type="button" class="vt-btn" id="btn-fullscreen" aria-label="Toggle fullscreen facsimile" aria-pressed="false" title="Fullscreen facsimile">
+            <button type="button" class="vt-btn" id="btn-fullscreen" aria-label="Vollbild umschalten" aria-pressed="false" title="Faksimile im Vollbild">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5H13.5V6.5M13.5 2.5 9 7M6.5 13.5H2.5V9.5M2.5 13.5 7 9"/></svg>
             </button>
           </div>
 
           <span class="viewer-bar-sep" aria-hidden="true"></span>
           <div class="viewer-pager">
-            <button type="button" class="vt-btn" id="btn-prev-page" disabled aria-label="Previous page" title="Previous page (Arrow left)">
+            <button type="button" class="vt-btn" id="btn-prev-page" disabled aria-label="Vorherige Seite" title="Vorherige Seite (Pfeil links)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.75 3.5 5.25 8l4.5 4.5"/></svg>
             </button>
             <input type="number" class="viewer-pager__input" id="page-input" min="1" value="1" step="1"
-                   aria-label="Page number, enter to jump" title="Jump to page">
+                   aria-label="Seitenzahl, mit Eingabe öffnen" title="Seite öffnen">
             <span class="viewer-pager__total" id="page-total">/ 1</span>
-            <button type="button" class="vt-btn" id="btn-next-page" disabled aria-label="Next page" title="Next page (Arrow right)">
+            <button type="button" class="vt-btn" id="btn-next-page" disabled aria-label="Nächste Seite" title="Nächste Seite (Pfeil rechts)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.25 3.5 10.75 8l-4.5 4.5"/></svg>
             </button>
           </div>
         </div>
         <div class="osd-container" id="osd-viewer">
           <div id="osd-placeholder" class="osd-placeholder">
-            Please choose a document from the list on the right.
+            Bitte ein Dokument auswählen.
           </div>
         </div>
       </div>
@@ -85,940 +102,93 @@
       <!-- Transcription Panel -->
       <div class="viewer-panel">
         <div class="viewer-panel__header">
-          <span class="viewer-panel__title">Transcription</span>
-          <div class="view-toggle" role="group" aria-label="Transcription view">
-            <button type="button" class="view-toggle__btn" id="btn-view-synopsis" aria-pressed="true"
-                    title="Facsimile beside the transcription, page by page">Synopsis</button>
-            <button type="button" class="view-toggle__btn" id="btn-view-reading" aria-pressed="false"
-                    title="Continuous text of the whole document">Reading</button>
-            <button type="button" class="view-toggle__btn" id="btn-view-tei" aria-pressed="false"
-                    title="TEI P5 encoding of the whole document">TEI</button>
-          </div>
+          <span class="viewer-panel__title" id="text-view-title">Transkription</span>
+          <button type="button" class="review-btn" id="btn-view-synopsis" aria-pressed="true" hidden>Zurück zu Bild und Text</button>
           <button type="button" class="review-toggle" id="btn-review" aria-pressed="false"
-                  title="Review mode: correct lines and record a decision for this page">Review</button>
-          <div class="view-toggle" role="group" aria-label="Transcription text size">
+                  title="Text zeilenweise korrigieren">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m10 2 4 4-8 8H2v-4zM8 4l4 4"/></svg>
+            <span>Bearbeiten</span>
+          </button>
+          <div class="view-toggle" role="group" aria-label="Schriftgröße der Transkription">
             <button type="button" class="view-toggle__btn" id="btn-font-dec"
-                    title="Smaller text" aria-label="Smaller text">A&minus;</button>
+                    title="Kleinere Schrift" aria-label="Kleinere Schrift">A&minus;</button>
             <button type="button" class="view-toggle__btn" id="btn-font-inc"
-                    title="Larger text" aria-label="Larger text">A+</button>
+                    title="Größere Schrift" aria-label="Größere Schrift">A+</button>
           </div>
           <span class="badge badge-draft" id="draft-badge" hidden>Unrevised draft</span>
-          <a class="tei-download" id="tei-download" href="data/tei/" download hidden>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.75 7.25 8 10.5l3.25-3.25M2.5 13h11"/></svg>
-            Download XML</a>
-          <select class="form-select form-select-sm doc-selector" id="doc-selector" aria-label="Select document">
-            <option value="">Choose a document...</option>
-          </select>
+          <button type="button" class="review-btn" id="btn-more">Weitere Funktionen</button>
         </div>
         <div id="doc-meta" class="doc-meta" hidden></div>
+        <div class="transcription-workspace">
         <div id="review-bar" class="review-bar" hidden>
-          <label class="review-bar__label" for="review-initials">Reviewer</label>
+          <label class="review-bar__label" for="review-initials">Dein Kürzel</label>
           <input type="text" class="review-bar__initials" id="review-initials" maxlength="4"
                  size="4" autocomplete="off" spellcheck="false"
-                 aria-label="Reviewer initials, two to four characters"
-                 title="Two to four characters. Required before a decision is stored.">
-          <span class="viewer-bar-sep" aria-hidden="true"></span>
-          <div class="view-toggle" role="group" aria-label="Decision for this page">
-            <button type="button" class="view-toggle__btn" id="btn-status-reviewed" aria-pressed="false"
-                    title="Page reviewed (gesichtet)">Reviewed</button>
-            <button type="button" class="view-toggle__btn" id="btn-status-approved" aria-pressed="false"
-                    title="Page approved (abgenommen). Approved implies reviewed.">Approved</button>
-            <button type="button" class="view-toggle__btn" id="btn-status-reopen" hidden
-                    title="Record a new review decision that withdraws a saved approval">Reopen review</button>
-          </div>
-          <span class="review-bar__hint" id="review-hint" role="status"></span>
-          <button type="button" class="review-btn" id="btn-review-save" hidden>Save to local edition</button>
-          <button type="button" class="review-btn" id="btn-review-timer" aria-pressed="false">Start timing</button>
-          <label for="review-notes">Decision note</label>
-          <input id="review-notes" class="review-notes" type="text" maxlength="2000">
-          <button type="button" class="review-btn" id="btn-review-export"
-                  title="Download the stored decisions of this document as JSON for the pipeline">Export decisions</button>
+                 aria-label="Dein Kürzel, zwei bis vier Zeichen"
+                 title="Zwei bis vier Zeichen, für die Zuordnung deiner Bearbeitung.">
+          <button type="button" class="review-btn review-btn--primary" id="btn-review-save" hidden>Änderungen speichern</button>
           <button type="button" class="review-btn" id="btn-review-clear"
-                  title="Discard this browser draft for the page. Saved edition text is preserved.">Discard page draft</button>
+                  title="Ungespeicherte Änderungen dieser Seite verwerfen">Änderungen verwerfen</button>
+          <span class="review-bar__hint" id="review-hint" role="status"></span>
+          <details id="review-options" class="review-options">
+          <summary>Prüfstand und Zusatzfunktionen</summary>
+          <div class="review-options__body">
+          <div class="view-toggle" role="group" aria-label="Prüfstand dieser Seite">
+            <button type="button" class="view-toggle__btn" id="btn-status-reviewed" aria-pressed="false"
+                    title="Seite gesichtet">Gesichtet</button>
+            <button type="button" class="view-toggle__btn" id="btn-status-approved" aria-pressed="false"
+                    title="Seite fachlich freigegeben">Freigegeben</button>
+            <button type="button" class="view-toggle__btn" id="btn-status-reopen" hidden
+                    title="Gespeicherte Freigabe zurücknehmen und Prüfung erneut öffnen">Prüfung wieder öffnen</button>
+          </div>
+          <button type="button" class="review-btn" id="btn-review-timer" aria-pressed="false">Zeitmessung starten</button>
+          <label for="review-notes">Entscheidungsnotiz</label>
+          <input id="review-notes" class="review-notes" type="text" maxlength="2000">
+          </div>
+          </details>
         </div>
-        <div id="local-edition-bar" class="review-bar" hidden>
-          <span id="local-edition-status" role="status">Local edition</span>
-          <label for="edition-date">Edition date</label>
-          <input id="edition-date" type="date" required>
-          <button type="button" class="review-btn" id="btn-edition-build">Rebuild edition</button>
-        </div>
-        <div id="annotation-editor" hidden></div>
         <div id="tag-editor" lang="de" hidden></div>
+        <details id="entity-tools" class="entity-tools" hidden>
+          <summary>Automatische Annotationen (Vorschläge)</summary>
+          <div id="entity-legend"></div>
+          <div id="annotation-editor" hidden></div>
+        </details>
         <div id="transcription-container" tabindex="0" role="region"
-             aria-label="Transcription, scrollable">
-          <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
+             aria-label="Transkription">
+          <div class="loading">Bitte ein Dokument auswählen.</div>
+        </div>
         </div>
       </div>
     </div>
   </main>
+
+  <dialog id="source-dialog" class="viewer-dialog" aria-labelledby="source-dialog-title">
+    <div class="viewer-dialog__header"><h2 id="source-dialog-title">Quellenangaben</h2><button type="button" class="review-btn" data-close-dialog>Schließen</button></div>
+    <dl id="source-details" class="source-details"></dl>
+  </dialog>
+  <dialog id="viewer-more" class="viewer-dialog" aria-labelledby="viewer-more-title">
+    <div class="viewer-dialog__header"><h2 id="viewer-more-title">Weitere Funktionen</h2><button type="button" class="review-btn" data-close-dialog>Schließen</button></div>
+    <div class="viewer-dialog__section">
+      <h3>Ansichten und Export</h3>
+      <button type="button" class="review-btn" id="btn-view-reading" aria-pressed="false">Lesetext öffnen</button>
+      <button type="button" class="review-btn" id="btn-view-tei" aria-pressed="false">TEI ansehen</button>
+      <a class="tei-download" id="tei-download" href="data/tei/" download hidden>TEI herunterladen</a>
+      <button type="button" class="review-btn" id="btn-review-export">Bearbeitungsentwurf exportieren</button>
+    </div>
+    <div id="local-edition-bar" class="viewer-dialog__section" hidden>
+      <h3>Lokale Editionsausgabe</h3>
+      <label for="edition-date">Datum der Ausgabe</label>
+      <input id="edition-date" type="date" required>
+      <button type="button" class="review-btn" id="btn-edition-build">Editionsausgabe aktualisieren</button>
+      <span id="local-edition-status" role="status"></span>
+    </div>
+  </dialog>
 
   <!-- Filled by initFooter() in js/app.js, one definition for every page -->
   <footer class="text-center py-4 border-top small text-body-secondary"></footer>
 
   <script src="lib/openseadragon.min.js"></script>
   <script src="lib/bootstrap.bundle.min.js"></script>
-  <script type="module">
-    import { initNav, initBanner } from './js/app.js';
-    import { loadJSON, loadEntities } from './js/data-loader.js';
-    import { getParams, setParams, escapeHTML, escapeAttr, catLabel,
-             lsGet, lsSet } from './js/utils.js';
-    import { createEntityLayer, createTeiView, renderReading,
-             renderTranscription } from './js/viewer-render.js';
-    import { createReviewView } from './js/viewer-review.js';
-    import { createLocalEditor } from './js/viewer-local.js';
-    import { createAnnotationEditor } from './js/viewer-annotations.js';
-    import { createTagEditor } from './js/viewer-tags.js';
-
-    initNav('viewer');
-    initBanner();
-    const local = createLocalEditor();
-    const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local);
-
-    let viewer = null;
-    let currentDoc = null;
-    let currentPage = 0;
-    let viewMode = 'synopsis';
-    let rotation = 0;
-    let sourceByDocId = new Map();
-    let registerByDocId = new Map();
-
-    // Entities of the loaded document: the index the marks are matched against
-    // and the markup that states which model produced them.
-    const entities = createEntityLayer();
-    const transcriptionContainer = document.getElementById('transcription-container');
-
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // The archival title of the document, with a document icon. The strip
-    // truncates the value, so the tooltip repeats it in full; the visible text
-    // is the accessible name, no aria-label competes with it.
-    function titleItem(value) {
-      return `<span class="doc-meta__item" title="${escapeAttr(`Archival title: ${value}`)}">` +
-             '<svg class="doc-meta__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"' +
-             ' stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-             '<path d="M4 2h5l3 3v9H4z"/><path d="M9 2v3h3"/></svg>' +
-             `<span class="doc-meta__title">${escapeHTML(value)}</span></span>`;
-    }
-
-    // Which text layer the reader is looking at: human-corrected pages are the
-    // ones marked DONE in Transkribus, everything else is the unrevised HTR layer.
-    function provenanceState(docId) {
-      const reg = registerByDocId.get(Number(docId));
-      if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
-      const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
-      const total = reg.pages_total;
-      // Name who corrected: for the attributed documents that work is the
-      // Inventaria project's, and "human-corrected" must not leave it open.
-      const by = reg.transcription_by === 'Inventaria' ? ' by the Inventaria project' : '';
-      // A document Transkribus holds no text for was transcribed by DoCTA
-      // itself; naming the Transkribus HTR layer here would be wrong.
-      if (reg.transcription_source === 'vlm') {
-        return {
-          state: 'machine',
-          label: 'Text: Machine transcription · DoCTA',
-          title: 'Unrevised transcription produced by the DoCTA pipeline with a ' +
-                 'vision-language model. Transkribus holds no transcription of this ' +
-                 'source, and no page has been read against the scan by a scholar',
-        };
-      }
-      if (done >= total) {
-        return {
-          state: 'human',
-          label: `Text: Human-corrected${by ? ' (Inventaria)' : ''}`,
-          title: `All ${total} pages corrected${by} and marked done in Transkribus`,
-        };
-      }
-      if (done > 0) {
-        return {
-          state: 'partial',
-          label: `Text: Partly corrected · ${done}/${total} pages`,
-          title: `${done} of ${total} pages corrected${by} and marked done in Transkribus, ` +
-                 'the remaining pages are the unrevised Transkribus HTR layer',
-        };
-      }
-      // Absence of the done status documents nothing about actual correction
-      // work; the chip states the origin and what the status does not record.
-      return {
-        state: 'machine',
-        label: 'Text: Transkribus HTR · no correction recorded',
-        title: 'Text layer exported from Transkribus. No page of this document ' +
-               'is marked done there, so no human correction is documented; the ' +
-               'text may have been worked on without the status being set',
-      };
-    }
-
-    function provenanceChip(docId) {
-      const prov = provenanceState(docId);
-      if (!prov) return '';
-      return `<span class="prov-chip prov-chip--${prov.state}" id="doc-provenance"` +
-             ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
-    }
-
-    // The badge carries the machine-output marking in every view, including the
-    // synopsis: the provenance chip beside it can be absent (no source row, no
-    // register entry), and losing the chip must never mean losing the marking.
-    // A document the register does not know counts as unrevised machine text.
-    function updateDraftBadge() {
-      const badge = document.getElementById('draft-badge');
-      const corrected = currentDoc && provenanceState(currentDoc.docId)?.state === 'human';
-      const states = Object.values(currentDoc?.reviewState || {});
-      const approved = states.length && states.every(page => page.status === 'abgenommen');
-      const reviewed = states.some(page => ['gesichtet', 'abgenommen'].includes(page.status));
-      const pending = currentDoc && review.hasDraft;
-      badge.hidden = !currentDoc || (!pending && (corrected || approved));
-      badge.textContent = pending ? 'Browser draft' : reviewed ? 'Partly reviewed' : 'Unrevised draft';
-      // Reading mode shows the exported text only; local review corrections live
-      // in the synopsis, and the badge says so instead of implying they are here.
-      badge.title = local.enabled
-        ? 'Saved corrections appear in Synopsis and Reading. Page approval is recorded separately. Unsaved drafts appear in Synopsis only.'
-        : 'Machine source text. Browser drafts appear in Synopsis until saved through the local editor or ingested from an export.';
-    }
-
-    function renderDocMeta(docId) {
-      const el = document.getElementById('doc-meta');
-      const s = sourceByDocId.get(Number(docId));
-      const facsTitle = document.getElementById('facs-title');
-      if (!s) {
-        el.hidden = true;
-        facsTitle.textContent = 'Facsimile';
-        facsTitle.removeAttribute('title');
-        return;
-      }
-      // Archival identity lives in the facsimile bar: shelfmark, date, holding.
-      const identity = [s.signatur, s.datierung?.raw, 'Tyrolean State Archives']
-        .filter(Boolean).join(' · ');
-      facsTitle.textContent = identity;
-      facsTitle.title = identity;
-      // The strip stays one line: archival title plus the category as quiet chip.
-      // Page count is omitted, the pager already shows it.
-      // Attribution: the text layer of these documents was made by the
-      // Inventaria project and is used with citation, so the origin is named
-      // right where the transcription is shown.
-      const reg = registerByDocId.get(Number(docId));
-      // The wording states outright what Inventaria did; with a harvested
-      // deep link the chip opens the published edition itself, without one
-      // it falls back to the project site.
-      let attribution = '';
-      if (reg?.transcription_by === 'Inventaria') {
-        const url = reg.edition_url || 'https://www.inventaria.at/';
-        // The claim must match the layer on screen: "edited" only where every
-        // page is corrected; an unrevised working layer names Inventaria as
-        // its origin and points to their published edition without borrowing
-        // its editorial status.
-        const edited = reg.pages_total > 0 && (reg.done_pages || 0) >= reg.pages_total;
-        const label = edited && reg.edition_url
-          ? 'Edited and published by the Inventaria project &middot; open the edition'
-          : `Transcription: Inventaria project${reg.edition_url ? ' &middot; published edition' : ' &middot; inventaria.at'}`;
-        const title = edited
-          ? 'This document was transcribed, edited and published by the Inventaria project' +
-            ' (University of Salzburg / University of Innsbruck); the link opens the published' +
-            ' edition on Transkribus Sites. DoCTA uses it with attribution.'
-          : 'The working transcription of this document comes from the Inventaria project' +
-            ' (University of Salzburg / University of Innsbruck); the text shown here is the' +
-            ' unrevised layer. The link opens their published edition on Transkribus Sites.';
-        const bookIcon =
-          '<svg class="meta-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor"' +
-          ' stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-          '<path d="M8 3.5C6.9 2.6 5.3 2.2 2.5 2.2v10.6c2.8 0 4.4.4 5.5 1.3 1.1-.9 2.7-1.3 5.5-1.3V2.2c-2.8 0-4.4.4-5.5 1.3z"/>' +
-          '<path d="M8 3.5v10.6"/></svg>';
-        attribution =
-          `<a class="doc-meta__edition" href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
-          ` title="${escapeAttr(title)}">${bookIcon}${label}</a>`;
-      }
-      // A DoCTA transcription can cover part of its document, because a source
-      // without a Transkribus export has no page list and the pipeline may hold
-      // an image reference for some of its pages only. The pager would show the
-      // transcribed pages as if they were the whole document, so the strip says
-      // how much of the source is here.
-      const prov = currentDoc?.provenance;
-      const coverage = (prov && prov.pagesTranscribed < prov.pagesInDocument)
-        ? `<span class="doc-meta__cat" title="The remaining pages have no page image` +
-          ` reference in the pipeline and are untranscribed.">` +
-          `${escapeHTML(String(prov.pagesTranscribed))} of ` +
-          `${escapeHTML(String(prov.pagesInDocument))} pages transcribed</span>`
-        : '';
-      const parts = [
-        titleItem(s.titel),
-        `<span class="doc-meta__cat" title="Source category">${escapeHTML(catLabel(s.kategorie))}</span>`,
-        provenanceChip(docId),
-        coverage,
-        attribution,
-      ].filter(Boolean);
-      // The entity key sits in this strip beside the Text chip, so the two
-      // provenance layers read side by side.
-      const legend = entities.active
-        ? `<span class="doc-meta__entities">${entities.legendHTML()}</span>`
-        : '';
-      el.innerHTML = parts.join('') + legend;
-      el.hidden = false;
-    }
-
-    function initOSD() {
-      const placeholder = document.getElementById('osd-placeholder');
-      if (placeholder) placeholder.remove();
-      viewer = OpenSeadragon({
-        id: 'osd-viewer',
-        showNavigator: false,
-        showNavigationControl: false,
-        minZoomLevel: 0.5,
-        maxZoomLevel: 5,
-        defaultZoomLevel: 0.9,
-        animationTime: reduceMotion ? 0 : 1.2,
-        gestureSettingsMouse: { clickToZoom: false, dblClickToZoom: true },
-      });
-      viewer.addHandler('open', buildLineOverlay);
-      viewer.addHandler('close', clearLineOverlay);
-    }
-
-    // === Line regions ===
-    // Each page of the export carries polygon coords per line in full-image pixel
-    // space. They become one SVG overlay: a type:image world item is 1 unit wide,
-    // so the overlay rect is 1 x aspect and the SVG viewBox does the scaling.
-    const SVG_NS = 'http://www.w3.org/2000/svg';
-    let lineOverlayEl = null;
-    let showLineRegions = false;
-    let activeLineId = null;   // line hovered in the transcription, zone highlighted
-    let linkedLineId = null;   // zone hovered in the image, line highlighted
-
-    function clearLineOverlay() {
-      if (!lineOverlayEl) return;
-      if (viewer) {
-        try { viewer.removeOverlay(lineOverlayEl); } catch { /* overlay already dropped */ }
-      }
-      lineOverlayEl.remove();
-      lineOverlayEl = null;
-      activeLineId = null;
-    }
-
-    function zoneFor(lineId) {
-      return lineOverlayEl
-        ? lineOverlayEl.querySelector(`[data-line-id="${CSS.escape(lineId)}"]`)
-        : null;
-    }
-
-    function lineElFor(lineId) {
-      return document.querySelector(
-        `.transcription__line[data-line-id="${CSS.escape(lineId)}"]`);
-    }
-
-    // "x,y x,y ..." to an SVG points string, dropping malformed pairs
-    function parseCoords(coords) {
-      if (typeof coords !== 'string') return null;
-      const pts = coords.trim().split(/\s+/)
-        .map(p => p.split(','))
-        .filter(p => p.length === 2 && p.every(v => v !== '' && Number.isFinite(Number(v))));
-      return pts.length >= 3 ? pts.map(p => p.join(',')).join(' ') : null;
-    }
-
-    function highlightZone(lineId) {
-      if (activeLineId === lineId) return;
-      if (activeLineId) zoneFor(activeLineId)?.classList.remove('line-zone--active');
-      activeLineId = lineId;
-      if (lineId) zoneFor(lineId)?.classList.add('line-zone--active');
-    }
-
-    function highlightLine(lineId) {
-      if (linkedLineId === lineId) return;
-      if (linkedLineId) lineElFor(linkedLineId)?.classList.remove('transcription__line--linked');
-      linkedLineId = lineId;
-      if (lineId) lineElFor(lineId)?.classList.add('transcription__line--linked');
-    }
-
-    function revealLine(lineId) {
-      const el = lineElFor(lineId);
-      if (!el) return;
-      el.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
-      el.focus({ preventScroll: true });
-    }
-
-    function onZoneOver(e) {
-      const id = e.target instanceof Element ? e.target.getAttribute('data-line-id') : null;
-      if (id) highlightLine(id);
-    }
-
-    function onZoneOut(e) {
-      const id = e.target instanceof Element ? e.target.getAttribute('data-line-id') : null;
-      if (id && id === linkedLineId) highlightLine(null);
-    }
-
-    // OpenSeadragon captures the pointer on the canvas, so a click event never
-    // reaches the polygon. The zone press is completed on the document instead,
-    // and a drag of more than a few pixels stays a pan.
-    let pendingZone = null;
-
-    function onZonePointerDown(e) {
-      const id = e.target instanceof Element ? e.target.getAttribute('data-line-id') : null;
-      pendingZone = id ? { id, x: e.clientX, y: e.clientY } : null;
-    }
-
-    document.addEventListener('pointerup', (e) => {
-      const pending = pendingZone;
-      pendingZone = null;
-      if (!pending) return;
-      if (Math.abs(e.clientX - pending.x) > 4 || Math.abs(e.clientY - pending.y) > 4) return;
-      revealLine(pending.id);
-    });
-    document.addEventListener('pointercancel', () => { pendingZone = null; });
-
-    function buildLineOverlay() {
-      clearLineOverlay();
-      if (!viewer || viewMode !== 'synopsis' || !currentDoc) return;
-      const item = viewer.world.getItemAt(0);
-      const page = currentDoc.pages[currentPage];
-      if (!item || !page) return;
-      const size = item.getContentSize();
-      if (!size.x || !size.y) return;
-      // A page of the export can arrive without layout analysis; there is then
-      // no polygon to draw and the overlay stays away.
-      if (!Array.isArray(page.regions)) return;
-
-      const svg = document.createElementNS(SVG_NS, 'svg');
-      svg.setAttribute('class', 'line-overlay');
-      svg.setAttribute('viewBox', `0 0 ${size.x} ${size.y}`);
-      svg.setAttribute('preserveAspectRatio', 'none');
-      svg.setAttribute('aria-hidden', 'true');
-      let count = 0;
-      for (const region of page.regions) {
-        for (const line of region.lines || []) {
-          const points = parseCoords(line.coords);
-          if (!points) continue;
-          const poly = document.createElementNS(SVG_NS, 'polygon');
-          poly.setAttribute('points', points);
-          poly.setAttribute('class', 'line-zone');
-          poly.setAttribute('data-line-id', line.id);
-          svg.appendChild(poly);
-          count++;
-        }
-      }
-      if (!count) return;
-      svg.classList.toggle('line-overlay--visible', showLineRegions);
-      // Handlers live on the overlay element and go with it when it is removed
-      svg.addEventListener('mouseover', onZoneOver);
-      svg.addEventListener('mouseout', onZoneOut);
-      svg.addEventListener('pointerdown', onZonePointerDown);
-      viewer.addOverlay({
-        element: svg,
-        location: new OpenSeadragon.Rect(0, 0, 1, size.y / size.x),
-      });
-      lineOverlayEl = svg;
-    }
-
-    function setLineRegions(on) {
-      showLineRegions = on;
-      document.getElementById('btn-line-regions').setAttribute('aria-pressed', String(on));
-      lineOverlayEl?.classList.toggle('line-overlay--visible', on);
-    }
-
-    function loadImage(iiifUrl) {
-      if (!viewer) initOSD();
-      clearLineOverlay();
-      viewer.addOnceHandler('open', fitView);
-      viewer.open({ type: 'image', url: iiifUrl });
-      document.getElementById('osd-viewer').classList.add('osd-active');
-      // A new page starts upright; rotation is a per-page inspection aid
-      rotation = 0;
-      viewer.viewport.setRotation(0, true);
-    }
-
-    function zoomBy(factor) {
-      if (!viewer) return;
-      viewer.viewport.zoomBy(factor);
-      viewer.viewport.applyConstraints();
-    }
-
-    function rotateBy(delta) {
-      if (!viewer) return;
-      rotation = (rotation + delta + 360) % 360;
-      viewer.viewport.setRotation(rotation, reduceMotion);
-    }
-
-    function fitView() {
-      if (!viewer) return;
-      const side = document.getElementById('image-focus').value;
-      const item = viewer.world.getItemAt(0);
-      if (!item || side === 'spread') { viewer.viewport.goHome(reduceMotion); return; }
-      const size = item.getContentSize();
-      const area = document.getElementById('osd-viewer').getBoundingClientRect();
-      const height = Math.min(size.y, size.x / 2 * area.height / area.width);
-      const rect = item.imageToViewportRectangle(
-        side === 'right' ? size.x / 2 : 0, (size.y - height) / 2, size.x / 2, height);
-      viewer.viewport.fitBounds(rect, reduceMotion);
-    }
-
-    document.getElementById('image-focus').addEventListener('change', fitView);
-
-    const panel = document.getElementById('facsimile-panel');
-    const btnFullscreen = document.getElementById('btn-fullscreen');
-
-    function toggleFullscreen() {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else if (panel.requestFullscreen) {
-        panel.requestFullscreen().catch(() => { if (viewer) viewer.setFullScreen(true); });
-      } else if (viewer) {
-        viewer.setFullScreen(true);
-      }
-    }
-
-    document.addEventListener('fullscreenchange', () => {
-      btnFullscreen.setAttribute('aria-pressed', String(document.fullscreenElement === panel));
-    });
-
-    // === Transcription text size ===
-    // Steps around the 1rem default; the choice is a per-browser convenience
-    // and survives via localStorage where that is available.
-    const FONT_KEY = 'docta-viewer-textsize';
-    const FONT_STEPS = ['0.8125rem', '0.875rem', '0.9375rem', '1rem',
-                        '1.0625rem', '1.125rem', '1.25rem', '1.375rem'];
-    const FONT_DEFAULT = 3;
-    let fontIdx = (() => {
-      const stored = Number.parseInt(lsGet(FONT_KEY) ?? '', 10);
-      return Number.isInteger(stored) && stored >= 0 && stored < FONT_STEPS.length
-        ? stored : FONT_DEFAULT;
-    })();
-
-    const btnFontDec = document.getElementById('btn-font-dec');
-    const btnFontInc = document.getElementById('btn-font-inc');
-
-    function applyFontSize() {
-      document.documentElement.style.setProperty(
-        '--transcription-size', FONT_STEPS[fontIdx]);
-      btnFontDec.disabled = fontIdx === 0;
-      btnFontInc.disabled = fontIdx === FONT_STEPS.length - 1;
-      lsSet(FONT_KEY, String(fontIdx));
-    }
-
-    btnFontDec.addEventListener('click', () => {
-      if (fontIdx > 0) { fontIdx--; applyFontSize(); }
-    });
-    btnFontInc.addEventListener('click', () => {
-      if (fontIdx < FONT_STEPS.length - 1) { fontIdx++; applyFontSize(); }
-    });
-    applyFontSize();
-
-    function currentPageNr() {
-      return currentDoc ? currentDoc.pages[currentPage]?.pageNr : null;
-    }
-
-    // === Curation view ===
-    // The review module owns the stored decisions and the line editor; the page
-    // hands it the review bar, where the reader currently stands, and the way
-    // back to a freshly rendered page.
-    const review = createReviewView({
-      bar: document.getElementById('review-bar'),
-      toggle: document.getElementById('btn-review'),
-      initials: document.getElementById('review-initials'),
-      hint: document.getElementById('review-hint'),
-      statusReviewed: document.getElementById('btn-status-reviewed'),
-      statusApproved: document.getElementById('btn-status-approved'),
-      reopenBtn: document.getElementById('btn-status-reopen'),
-      exportBtn: document.getElementById('btn-review-export'),
-      clearBtn: document.getElementById('btn-review-clear'),
-      saveBtn: document.getElementById('btn-review-save'),
-      timerBtn: document.getElementById('btn-review-timer'),
-      notes: document.getElementById('review-notes'),
-      meta: document.getElementById('doc-meta'),
-    }, {
-      getContext: () => ({
-        docId: currentDoc ? Number(currentDoc.docId) : null,
-        pageNr: currentPageNr(),
-        viewMode,
-        revision: currentDoc?.revision,
-        reviewState: currentDoc?.reviewState,
-      }),
-      markText: entities.markText,
-      rerenderPage: renderPage,
-      local,
-      onDraftChange: () => { updateDraftBadge(); tags.sync(); },
-      onSaved: (doc) => {
-        currentDoc = doc;
-        annotations.update(doc);
-        tags.load(doc);
-        renderDocMeta(doc.docId);
-        renderCurrentView();
-      },
-    });
-
-    const tags = createTagEditor(document.getElementById('tag-editor'), local, {
-      hasReviewDraft: () => review.hasDraft,
-      refreshSource: async () => {
-        const docId = currentDoc.docId;
-        const doc = await local.load(docId);
-        if (currentDoc.docId !== docId) return;
-        currentDoc = doc;
-        annotations.update(doc);
-        await tags.load(doc);
-        renderDocMeta(doc.docId);
-        renderCurrentView();
-      },
-    });
-
-    // One page of the synopsis. The coupling with the image overlay is keyed on
-    // the rendered lines, so a fresh page starts with no line held on either side.
-    function renderPage(pageNr) {
-      activeLineId = null;
-      linkedLineId = null;
-      renderTranscription(transcriptionContainer, currentDoc, pageNr, {
-        corrections: review.corrections(pageNr),
-        markText: entities.markText,
-      });
-      review.applyMode();
-    }
-
-    // === Entity marks in the transcription ===
-    // One shared tooltip element; screen readers use the span's aria-label
-    const entTip = document.createElement('div');
-    entTip.className = 'ent-tip';
-    entTip.hidden = true;
-    entTip.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(entTip);
-
-    function showEntityTip(target) {
-      const html = entities.tipHTML(target.dataset.entKey);
-      if (html === null) return;
-      entTip.innerHTML = html;
-      entTip.hidden = false;
-      const rect = target.getBoundingClientRect();
-      entTip.style.left = `${Math.max(8, Math.min(rect.left,
-        window.innerWidth - entTip.offsetWidth - 8))}px`;
-      entTip.style.top = `${rect.bottom + 6}px`;
-    }
-
-    const entityAt = (node) =>
-      (node && node.closest) ? node.closest('.entity[data-ent-key]') : null;
-
-    // Pointer and keyboard reach the tip alike: the marks are focusable, so
-    // focus opens it and Escape closes it without leaving the line.
-    document.addEventListener('mouseover', (e) => {
-      const target = entityAt(e.target);
-      if (target) showEntityTip(target);
-      else if (!entTip.hidden) entTip.hidden = true;
-    });
-    document.addEventListener('focusin', (e) => {
-      const target = entityAt(e.target);
-      if (target) showEntityTip(target);
-      else if (!entTip.hidden) entTip.hidden = true;
-    });
-    document.addEventListener('focusout', (e) => {
-      if (entityAt(e.target)) entTip.hidden = true;
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !entTip.hidden) entTip.hidden = true;
-    });
-    document.addEventListener('scroll', () => { entTip.hidden = true; }, true);
-
-    const tei = createTeiView(transcriptionContainer, {
-      getViewMode: () => viewMode,
-      onRendered: updateTeiDownload,
-    });
-
-    // The link offers what the TEI view has actually shown; before the fetch and
-    // for a document without TEI the cache holds no text and the link stays away.
-    function updateTeiDownload() {
-      const dl = document.getElementById('tei-download');
-      const xml = currentDoc ? tei.cached(currentDoc.docId) : undefined;
-      dl.hidden = viewMode !== 'tei' || xml == null;
-      if (currentDoc) {
-        dl.href = `data/tei/${currentDoc.docId}.xml`;
-        dl.setAttribute('download', `${currentDoc.docId}.xml`);
-      }
-    }
-
-    function clampPage(n) {
-      return Math.max(0, Math.min(currentDoc.pages.length - 1, n));
-    }
-
-    // The page unit of the interface and of the URL is the page number of the
-    // document, which a document with a gap in its numbering does not share with
-    // the index in pages[]. Everything the reader sees or links is a pageNr, and
-    // this is the one place where it becomes an index.
-    function pageIndexOf(nr) {
-      return currentDoc ? currentDoc.pages.findIndex(p => p.pageNr === nr) : -1;
-    }
-
-    const currentPageNrOr = (fallback) =>
-      currentDoc?.pages[currentPage]?.pageNr ?? fallback;
-
-    function updatePager() {
-      const pageInput = document.getElementById('page-input');
-      pageInput.value = String(currentPageNrOr(currentPage + 1));
-      pageInput.max = String(currentDoc.pages[currentDoc.pages.length - 1]?.pageNr ??
-                             currentDoc.pages.length);
-      const total = currentDoc.provenance?.pagesInDocument || currentDoc.pages.length;
-      document.getElementById('page-total').textContent = total === currentDoc.pages.length
-        ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} available)`;
-      document.getElementById('btn-prev-page').disabled = currentPage === 0;
-      document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
-    }
-
-    function syncParams() {
-      setParams({
-        doc: String(currentDoc.docId),
-        page: String(currentPageNrOr(currentPage + 1)),
-        view: viewMode === 'synopsis' ? '' : viewMode,
-      });
-    }
-
-    // idx: index in pages[], not a page number
-    function setPage(idx) {
-      if (!currentDoc) return;
-      currentPage = clampPage(idx);
-      updatePager();
-      syncParams();
-      if (viewMode !== 'synopsis') { review.sync(); return; }
-
-      const page = currentDoc.pages[currentPage];
-      annotations.page(page.pageNr);
-      tags.page(page.pageNr);
-      loadImage(page.iiif);
-      renderPage(page.pageNr);
-      review.sync();
-    }
-
-    // Renders whatever the current mode shows, from the page the mode still holds
-    function renderCurrentView() {
-      if (!currentDoc) return;
-      updateDraftBadge();
-      updateTeiDownload();
-      if (viewMode === 'synopsis') { setPage(currentPage); return; }
-      updatePager();
-      syncParams();
-      if (viewMode === 'reading') renderReading(transcriptionContainer, currentDoc);
-      else tei.render(currentDoc.docId);
-      review.sync();
-    }
-
-    const VIEWS = ['synopsis', 'reading', 'tei'];
-
-    // pageIdx: optional index in pages[] to land on when returning to the synopsis
-    function setView(mode, pageIdx) {
-      viewMode = VIEWS.includes(mode) ? mode : 'synopsis';
-      const isSynopsis = viewMode === 'synopsis';
-      document.body.dataset.view = viewMode;
-      document.getElementById('facsimile-panel').setAttribute('aria-hidden', String(!isSynopsis));
-      for (const v of VIEWS) {
-        document.getElementById(`btn-view-${v}`).setAttribute('aria-pressed', String(v === viewMode));
-      }
-      // Reading and TEI have no facsimile; the overlay is rebuilt on the way back
-      if (!isSynopsis) clearLineOverlay();
-      updateDraftBadge();
-      updateTeiDownload();
-
-      if (!currentDoc) {
-        setParams({ view: isSynopsis ? '' : viewMode });
-        review.sync();
-        return;
-      }
-      if (pageIdx !== undefined) currentPage = clampPage(pageIdx);
-      renderCurrentView();
-    }
-
-    let docRequest = 0;
-
-    // pageNr: page number of the document to start on. Omit to take it from the
-    // URL (deep link into a page); an unknown number falls back to the first page.
-    async function loadDocument(docId, pageNr) {
-      review.pause();
-      const token = ++docRequest;
-      try {
-        // Deep links arrive copy-pasted; a stray trailing dot or space in the
-        // doc parameter must not turn into a nonexistent file path.
-        docId = String(parseInt(docId, 10));
-        // Where the text of this document lives: the Transkribus export, or the
-        // projection of DoCTA's own transcription for a source without one.
-        const source = registerByDocId.get(Number(docId))?.transcription_source;
-        const path = source === 'vlm' || registerByDocId.get(Number(docId))?.effective_transcription
-          ? `data/pipeline/transcriptions/${docId}.json`
-          : `data/transcriptions/${docId}.json`;
-        // Entities are optional per document and are awaited with the text, so
-        // the first render already carries the marks instead of racing them in.
-        const [doc, extraction] = await Promise.all([
-          local.enabled ? local.load(docId) : loadJSON(path),
-          loadEntities(docId),
-        ]);
-        // A later document switch wins over a slow response
-        if (token !== docRequest) return;
-        if (!Array.isArray(doc.pages) || !doc.pages.length) {
-          throw new Error('the transcription holds no page');
-        }
-        currentDoc = doc;
-        entities.set(extraction);
-        annotations.load(doc, extraction);
-        tags.load(doc);
-        const wanted = pageNr !== undefined
-          ? Number(pageNr)
-          : parseInt(getParams().page || '', 10);
-        const idx = Number.isFinite(wanted) ? pageIndexOf(wanted) : -1;
-        renderDocMeta(docId);
-        // A document switch keeps the current view
-        currentPage = clampPage(idx >= 0 ? idx : 0);
-        renderCurrentView();
-      } catch (err) {
-        if (token !== docRequest) return;
-        const errEl = document.createElement('div');
-        errEl.className = 'loading text-body-secondary';
-        errEl.textContent = `Document ${docId} could not be loaded: ${err.message}`;
-        transcriptionContainer.replaceChildren(errEl);
-      }
-    }
-
-    document.getElementById('btn-prev-page').addEventListener('click', () => setPage(currentPage - 1));
-    document.getElementById('btn-edition-build').addEventListener('click', async (event) => {
-      if (!currentDoc) return;
-      const button = event.currentTarget;
-      const status = document.getElementById('local-edition-status');
-      const date = document.getElementById('edition-date');
-      if (!date.reportValidity()) return;
-      button.disabled = true;
-      try {
-        await local.build(date.value, [Number(currentDoc.docId)]);
-        tei.invalidate();
-        status.textContent = 'Edition rebuilt and validated from saved text.';
-        if (viewMode === 'tei') renderCurrentView();
-      } catch (error) {
-        status.textContent = `Build failed: ${error.message}`;
-      } finally { button.disabled = false; }
-    });
-    document.getElementById('btn-next-page').addEventListener('click', () => setPage(currentPage + 1));
-    document.getElementById('btn-zoom-in').addEventListener('click', () => zoomBy(1.4));
-    document.getElementById('btn-zoom-out').addEventListener('click', () => zoomBy(1 / 1.4));
-    document.getElementById('btn-zoom-fit').addEventListener('click', fitView);
-    document.getElementById('btn-rotate-left').addEventListener('click', () => rotateBy(-90));
-    document.getElementById('btn-rotate-right').addEventListener('click', () => rotateBy(90));
-    btnFullscreen.addEventListener('click', toggleFullscreen);
-    document.getElementById('btn-view-synopsis').addEventListener('click', () => setView('synopsis'));
-    document.getElementById('btn-view-reading').addEventListener('click', () => setView('reading'));
-    document.getElementById('btn-view-tei').addEventListener('click', () => setView('tei'));
-
-    // The page mark in the reading text is the way back to the facsimile
-    transcriptionContainer.addEventListener('click', (e) => {
-      const mark = e.target.closest('.reading-page__mark');
-      if (mark) { setView('synopsis', Number(mark.dataset.index)); return; }
-      if (!review.on || e.target.closest('.transcription__line-edit')) return;
-      review.beginEdit(e.target.closest('.transcription__line[data-line-id]'));
-    });
-
-    // Enter opens the line under the caret for correction; the input handles the rest
-    transcriptionContainer.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' || !review.on) return;
-      if (e.target.closest('.transcription__line-edit')) return;
-      const line = e.target.closest('.transcription__line[data-line-id]');
-      if (!line) return;
-      e.preventDefault();
-      review.beginEdit(line);
-    });
-
-    // Transcription to image: hover or focus on a line lights up its zone
-    const lineIdOf = (target) => {
-      const el = target instanceof Element
-        ? target.closest('.transcription__line[data-line-id]') : null;
-      return el ? el.getAttribute('data-line-id') : null;
-    };
-    transcriptionContainer.addEventListener('mouseover', (e) => highlightZone(lineIdOf(e.target)));
-    transcriptionContainer.addEventListener('mouseleave', () => highlightZone(null));
-    transcriptionContainer.addEventListener('focusin', (e) => highlightZone(lineIdOf(e.target)));
-    transcriptionContainer.addEventListener('focusout', () => highlightZone(null));
-
-    document.getElementById('btn-line-regions')
-      .addEventListener('click', () => setLineRegions(!showLineRegions));
-
-    const pageInput = document.getElementById('page-input');
-    // The field takes a page number of the document; a number the document does
-    // not carry leaves the current page in place.
-    function commitPageInput() {
-      if (!currentDoc) return;
-      const n = parseInt(pageInput.value, 10);
-      const idx = Number.isFinite(n) ? pageIndexOf(n) : -1;
-      if (idx >= 0) setPage(idx);
-      else updatePager();
-    }
-    pageInput.addEventListener('change', commitPageInput);
-    pageInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') { e.preventDefault(); commitPageInput(); }
-    });
-
-    // Shortcuts are documented on the buttons via title/aria-label
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey || e.metaKey || e.altKey) return;
-      const t = e.target;
-      if (t instanceof HTMLElement &&
-          (t.isContentEditable || ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName))) return;
-      // Reading and TEI have no facsimile and no page unit, so the arrow keys are
-      // left to the focused transcription container, which scrolls with them
-      if (viewMode !== 'synopsis') return;
-      switch (e.key) {
-        case 'ArrowLeft': setPage(currentPage - 1); break;
-        case 'ArrowRight': setPage(currentPage + 1); break;
-        case '+': case '=': zoomBy(1.4); break;
-        case '-': zoomBy(1 / 1.4); break;
-        case '0': fitView(); break;
-        case 'r': case 'R': rotateBy(90); break;
-        case 'l': case 'L': setLineRegions(!showLineRegions); break;
-        default: return;
-      }
-      e.preventDefault();
-    });
-
-    document.getElementById('doc-selector').addEventListener('change', (e) => {
-      // Switching documents always starts at page 1, never at the previous document's page
-      if (e.target.value) loadDocument(e.target.value, 1);
-    });
-
-    async function init() {
-      try {
-        await local.init();
-        document.getElementById('local-edition-bar').hidden = !local.enabled;
-        document.getElementById('edition-date').value = new Date().toISOString().slice(0, 10);
-        const [mapping, sources, register] = await Promise.all([
-          loadJSON('data/source_mapping.json'),
-          loadJSON('data/sources.json').catch(() => []),
-          loadJSON('data/pipeline/register_summary.json').catch(() => ({ documents: [] })),
-        ]);
-        // A shelfmark can pair two Transkribus documents, so every one of them
-        // resolves to its source row rather than only the first.
-        sourceByDocId = new Map(sources
-          .flatMap(s => (s.transkribus_docs || []).map(d => [Number(d.doc_id), s])));
-        registerByDocId = new Map((register.documents || [])
-          .map(d => [Number(d.docId), d]));
-        const selector = document.getElementById('doc-selector');
-
-        // Every document that carries a text, whether Transkribus exported it
-        // or DoCTA transcribed it itself; the register says which.
-        const docsWithText = mapping.matched
-          .filter(m => m.has_text ||
-            registerByDocId.get(Number(m.transkribus_id))?.transcription_source === 'vlm')
-          .sort((a, b) => a.csv_signatur.localeCompare(b.csv_signatur));
-
-        for (const doc of docsWithText) {
-          const opt = document.createElement('option');
-          opt.value = doc.transkribus_id;
-          opt.textContent = `${doc.csv_signatur} - ${doc.csv_titel}`;
-          selector.appendChild(opt);
-        }
-
-        const params = getParams();
-        setView(params.view);
-        if (params.doc) {
-          selector.value = params.doc;
-          loadDocument(params.doc);
-        } else if (docsWithText.length) {
-          // No deep link: open the first document right away instead of an empty pane
-          const first = String(docsWithText[0].transkribus_id);
-          selector.value = first;
-          loadDocument(first, 1);
-        }
-      } catch (err) {
-        console.error('Failed to load source mapping:', err);
-        const selector = document.getElementById('doc-selector');
-        const opt = document.createElement('option');
-        opt.value = '';
-        opt.textContent = `Document list could not be loaded: ${err.message}`;
-        selector.replaceChildren(opt);
-        selector.disabled = true;
-      }
-    }
-
-    init();
-  </script>
+  <script type="module" src="js/viewer.js?v=20260921-ui"></script>
 </body>
 </html>

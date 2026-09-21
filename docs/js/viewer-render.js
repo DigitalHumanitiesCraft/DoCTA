@@ -28,8 +28,8 @@ export function folioLabel(text) {
 
 // === Entity marks in the transcription ===
 
-const ENTITY_TYPE_LABELS = { person: 'Person', place: 'Place',
-                             object: 'Object', time: 'Date' };
+const ENTITY_TYPE_LABELS = { person: 'Person', place: 'Ort',
+                             object: 'Gegenstand', time: 'Zeitangabe' };
 
 /**
  * Objects are left unmarked, they are the bulk of an inventory and marking them
@@ -58,8 +58,7 @@ function entityTipText(ent, model) {
   const head = ent.normalized || ent.text;
   const date = ent.date ? ` (${ent.date})` : '';
   const type = ENTITY_TYPE_LABELS[ent.type] || ent.type;
-  return `${head}${date}, ${type}. Extracted by ${model},` +
-         ' not verified by a scholar.';
+  return `${head}${date}, ${type}. Automatischer Vorschlag von ${model}, fachlich ungeprüft.`;
 }
 
 /**
@@ -107,18 +106,18 @@ function entityLegend(index, model) {
   // own provenance chip sits in the doc-meta strip below.
   return `<span class="ent-key-group" title="Entity marks:` +
          ` ${escapeAttr(model)} extraction, not verified by a` +
-         ` scholar"><span class="ent-key">Entities</span>${chips}` +
+         ` scholar"><span class="ent-key">Automatische Vorschläge</span>${chips}` +
          `${provenanceBadges(model)}</span>`;
 }
 
 /** Inner markup of the floating tooltip of one entity mark. */
 function entityTipHTML(ent, model) {
-  const date = ent.date ? ` &middot; ${escapeHTML(ent.date)}` : '';
+  const date = ent.date ? `, ${escapeHTML(ent.date)}` : '';
   const type = ENTITY_TYPE_LABELS[ent.type] || ent.type;
   return `<span class="ent-tip__head">${escapeHTML(ent.normalized || ent.text)}` +
-    `${date}</span> &middot; ${escapeHTML(type)}` +
+    `${date}</span> <span>${escapeHTML(type)}</span>` +
     `<span class="ent-tip__prov">${ICON_AI} ${escapeHTML(model)}` +
-    ` &middot; ${ICON_UNVERIFIED} not verified by a scholar</span>`;
+    ` ${ICON_UNVERIFIED} Fachlich ungeprüfter Vorschlag</span>`;
 }
 
 /**

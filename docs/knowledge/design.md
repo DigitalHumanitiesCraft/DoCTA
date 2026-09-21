@@ -31,7 +31,7 @@ This document records which design options were considered and which were reject
 
 | Pattern in coOCR/HTR | Decision | Reason |
 |---|---|---|
-| Ten modular CSS files | No, a single `styles.css` | At this size modularisation is effort without return |
+| A stylesheet hierarchy | Shared tokens in `styles.css`, scoped viewer layout in `viewer.css` | The working editor changes independently of the public overview pages |
 | Central state management (`AppState extends EventTarget`) | No | The pages are independent and there is no live interaction across pages |
 | A service and component hierarchy | No, a flat `app.js`, `data-loader.js`, `utils.js` | Sufficient for a handful of static pages |
 | A progressive web app with a service worker | No | The site has no offline use case |
@@ -87,7 +87,7 @@ A graded status for entities returns only bound to documented workflow states. S
 |---|---|---|
 | A map view of the places | Rejected for the prototype | A substantial share of the SiCProD places carry no coordinates. A map with systematic gaps suggests a completeness that is not there |
 | A period filter as a slider | Not built | The datings in SiCProD are too heterogeneous for a continuous axis |
-| A German and English bilingual site | Resolved by the August 2026 refactor | The site and the knowledge base are English throughout; German remains for shelfmarks, source titles and quoted source text |
+| Interface language | German working editor, English surrounding site | The editorial walkthrough uses German task labels; repository knowledge remains English |
 | A line overlay in the viewer, coupling image and transcription | Built | Drawn from `regions[].lines[].coords` in `data/transcriptions/*.json`, see architecture.md. Documents the pipeline transcribed itself carry no coordinates and get no overlay |
 | A separate edition page | Folded into the viewer, 2026-08-27 | The page duplicated the viewer while no accepted edition text exists. The viewer now carries a reading mode over the whole document text; a dedicated edition page returns once editorially accepted TEI text is available |
 
@@ -110,3 +110,13 @@ The entity hues are muted against the warm ground `#faf8f5`, and each foreground
 The palette replaced a set of saturated Material hues. Three of those values survive as the XML syntax colours of the TEI display, `--tei-tag` `#6a1b9a`, `--tei-attr` `#1565c0` and `--tei-val` `#2e7d32`, where they carry no entity meaning at all.
 
 The entity colours have to agree in three places, the badge classes in `css/styles.css`, the D3 node fills (read from the same CSS tokens at runtime) and the legend controls on the page carrying the graph. Since 28.08.2026 shape is a fourth axis of the same rule: object nodes are triangles rather than circles in another hue, and the D3 marks, the filter chips and the legend carry the same shape, because meaning must not rest on colour alone.
+
+## Working editor hierarchy
+
+The joint walkthrough on 2026-09-21 established that the operator could identify the source and navigate its pages. The requested revision addresses the crowded metadata and editing controls. A shared source header presents the full archival title, shelfmark and historical date. A source-details dialog holds archive, category, archival unit and original-edition reference. Text attribution stays visible beside the transcription, independently of the current page's local review state. Separator dots are omitted.
+
+The default workspace is the facsimile beside the transcription. Each newly opened image fits fully into the panel, including a photographed opening. Zoom and page-half focus remain deliberate inspection actions. The whole-page action restores the full image. The former fixed initial zoom could crop the top and bottom of a tall image.
+
+The German control Bearbeiten exposes reviewer initials, save and discard. Page decisions, timing and a decision note share a collapsed disclosure. Free research tags and automatic entity proposals have separate disclosures in a scrollable work area. The editor cannot shrink those disclosures into clipped strips. Reading text, TEI, draft export and the dated edition build are accessed through Weitere Funktionen. Native dialogs support Escape and restore focus. Save persists corrections; updating the edition derives and validates the output from saved text. The build refuses to proceed while transcription drafts remain unsaved.
+
+The interface retains the existing palette and no-build modules. The page controller lives in `js/viewer.js`, with the workspace layout in `css/viewer.css`. Acceptance of the revised workflow belongs to the continuing [joint walkthrough](plan.md#joint-walkthrough).

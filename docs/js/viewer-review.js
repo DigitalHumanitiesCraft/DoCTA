@@ -17,7 +17,8 @@ const REVIEWER_KEY = 'docta-review-reviewer';
 // exactly these two values plus null (REVIEW_STATUS there); the machine
 // states of the register are not reachable from the viewer. Any change here
 // is a change of the export contract and belongs in both places.
-const STATUS_LABEL = { gesichtet: 'Reviewed', abgenommen: 'Approved' };
+const STATUS_LABEL = { gesichtet: 'Gesichtet', abgenommen: 'Freigegeben' };
+const MACHINE_STATUS = new Set(['unbearbeitet', 'maschinell']);
 // Shape version of the stored draft. Raise it when the store no longer
 // satisfies what loadReview() keeps, so a stale draft is dropped instead of
 // being exported against the contract.
@@ -109,9 +110,9 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
   function saveReview(store) {
     drafts.set(store.docId, store);
     if (!lsSet(reviewKey(store.docId), JSON.stringify(store))) {
-      els.hint.textContent = 'Browser storage failed. Keep this tab open and save locally or export now.';
+      els.hint.textContent = 'Der Browserentwurf konnte nicht gespeichert werden. Diesen Tab offen lassen und die Änderungen lokal speichern oder jetzt exportieren.';
     } else {
-      els.hint.textContent = 'Draft in this browser. Not yet saved to the edition.';
+      els.hint.textContent = 'Änderungen als Browserentwurf gesichert. Noch nicht lokal gespeichert.';
     }
     onDraftChange();
   }
@@ -128,7 +129,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
       saveReview(store);
     }
     timerStarted = pause ? null : performance.now();
-    els.timerBtn.textContent = pause ? 'Start timing' : 'Pause timing';
+    els.timerBtn.textContent = pause ? 'Zeiterfassung starten' : 'Zeiterfassung pausieren';
     els.timerBtn.setAttribute('aria-pressed', String(!pause));
   }
 
@@ -138,7 +139,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     if (initialsValue().length >= 2) return true;
     els.initials.classList.add('is-missing');
     els.initials.focus();
-    els.hint.textContent = 'Enter two to four initials before recording a decision.';
+    els.hint.textContent = 'Vor einer Entscheidung zwei bis vier Initialen eingeben.';
     return false;
   }
 
@@ -184,7 +185,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     const page = ensurePage(store, pageNr);
     const next = reopen ? 'gesichtet' : nextStatus(page.status, pressed);
     if (!reopen && next === page.status && pressed === 'gesichtet') {
-      els.hint.textContent = 'Approved already implies reviewed. Clear the approval to change it.';
+      els.hint.textContent = 'Eine Freigabe schließt die Sichtung ein. Die Freigabe zuerst aufheben.';
       return;
     }
     page.status = next;
@@ -229,27 +230,35 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
-    els.hint.textContent = 'Exported. Hand the file to the pipeline to ingest it.';
+    els.hint.textContent = 'Review exportiert. Die Datei kann nun in die Pipeline übernommen werden.';
   }
 
-  /** The chip states a local decision, so it names its own reach in the tooltip */
+  /** The chip states the page decision independently of text corrections. */
   function updateReviewChip() {
     const { docId, pageNr, viewMode } = getContext();
     els.meta.querySelector('#review-chip')?.remove();
-    const draftPage = viewMode === 'synopsis' ? reviewPage(pageNr) : null;
+    if (viewMode !== 'synopsis' || pageNr == null) return;
+    const draftPage = reviewPage(pageNr);
     const savedPage = getContext().reviewState?.[String(pageNr)];
-    const page = draftPage || savedPage;
-    if (!page || !page.status) return;
-    if (!(page.status in STATUS_LABEL)) return;
+    const storedStatus = draftPage ? draftPage.status : savedPage?.status;
+    const status = MACHINE_STATUS.has(storedStatus) ? null : storedStatus;
+    if (status != null && !(status in STATUS_LABEL)) return;
     const store = draft(docId);
-    const who = (draftPage ? store?.reviewer : page.reviewer) || '??';
+    const who = (draftPage ? store?.reviewer : savedPage?.reviewer) || '';
     const chip = document.createElement('span');
     chip.id = 'review-chip';
     chip.className = 'prov-chip prov-chip--review';
-    chip.textContent = `${STATUS_LABEL[page.status] || 'Reviewed'} · ${who}`;
-    chip.title = draftPage
-      ? `Decision by ${who} on ${page.date}, browser draft awaiting save or export.`
-      : `Decision by ${who} on ${page.date}, saved in the local edition.`;
+    chip.textContent = status ? `${STATUS_LABEL[status]}${who ? `, ${who}` : ''}` : 'Noch nicht geprüft';
+    if (status) {
+      const date = draftPage?.date || savedPage?.date;
+      chip.title = draftPage
+        ? `Entscheidung${who ? ` von ${who}` : ''}${date ? ` vom ${date}` : ''}. Als Browserentwurf noch nicht lokal gespeichert.`
+        : `Entscheidung${who ? ` von ${who}` : ''}${date ? ` vom ${date}` : ''}. Lokal gespeichert.`;
+    } else if (draftPage?.lines?.length) {
+      chip.title = 'Textkorrekturen liegen als Browserentwurf vor. Für die Seite wurde noch keine Entscheidung erfasst.';
+    } else {
+      chip.title = 'Für diese Seite wurde noch keine Entscheidung erfasst.';
+    }
     els.meta.appendChild(chip);
     els.meta.hidden = false;
   }
@@ -269,9 +278,9 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     if (visibleDocId !== docId) {
       visibleDocId = docId;
       els.notes.value = draft(docId)?.effort?.notes || '';
-      els.hint.textContent = draft(docId) ? 'Browser draft restored. Not yet saved to the edition.' : '';
+      els.hint.textContent = draft(docId) ? 'Browserentwurf wiederhergestellt. Noch nicht lokal gespeichert.' : '';
       if (local.enabled && draft(docId) && draft(docId).baseRevision !== getContext().revision) {
-        els.hint.textContent = 'Restored draft has an older base. Export it before discarding and rechecking the current text.';
+        els.hint.textContent = 'Der wiederhergestellte Entwurf beruht auf einer älteren Fassung. Vor dem Verwerfen exportieren und den aktuellen Text erneut prüfen.';
       }
     }
     const isSynopsis = viewMode === 'synopsis';
@@ -279,7 +288,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     els.toggle.disabled = !isSynopsis;
     els.saveBtn.hidden = !local.enabled;
     els.reopenBtn.hidden = !local.enabled;
-    els.saveBtn.disabled = saving;
+    els.saveBtn.disabled = saving || !Object.keys(draft(docId)?.pages || {}).length;
     for (const control of [els.initials, els.notes, els.timerBtn, els.clearBtn,
       els.statusReviewed, els.statusApproved, els.reopenBtn]) control.disabled = saving;
     els.bar.hidden = !(reviewMode && isSynopsis);
@@ -289,7 +298,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
       String(status === 'gesichtet' || status === 'abgenommen'));
     els.statusApproved.setAttribute('aria-pressed', String(status === 'abgenommen'));
     if (!els.bar.hidden && !els.hint.textContent) {
-      els.hint.textContent = 'Click a line to correct it.';
+      els.hint.textContent = 'Eine Zeile anklicken, um ihre Transkription zu korrigieren.';
     }
     applyReviewMode();
     updateReviewChip();
@@ -316,7 +325,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     span.innerHTML = text;
     lineEl.classList.toggle('transcription__line--corrected', corrected != null);
     if (corrected == null) lineEl.removeAttribute('title');
-    else lineEl.title = `Original: ${original}`;
+    else lineEl.title = `Ursprüngliche Lesung: ${original}`;
   }
 
   function commitCorrection(lineEl, rawValue) {
@@ -360,7 +369,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     input.type = 'text';
     input.className = 'transcription__line-edit';
     input.value = span.textContent;
-    input.setAttribute('aria-label', 'Correct this transcription line');
+    input.setAttribute('aria-label', 'Transkriptionszeile korrigieren');
     let settled = false;
     const finish = (commit) => {
       if (settled) return;
@@ -389,12 +398,14 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
   els.exportBtn.addEventListener('click', exportReview);
   els.clearBtn.addEventListener('click', clearReviewPage);
   els.saveBtn.addEventListener('click', async () => {
-    if (saving || !requireInitials()) return;
-    recordTime(true);
+    if (saving) return;
     const { docId, revision } = getContext();
+    if (!Object.keys(draft(docId)?.pages || {}).length) return;
+    if (!requireInitials()) return;
+    recordTime(true);
     const store = reviewStore();
     if (store.baseRevision !== revision) {
-      els.hint.textContent = 'This draft belongs to an older edition. Export it before clearing and rechecking the current text.';
+      els.hint.textContent = 'Dieser Entwurf gehört zu einer älteren Fassung. Vor dem Verwerfen exportieren und den aktuellen Text erneut prüfen.';
       return;
     }
     store.reviewer = initialsValue();
@@ -411,10 +422,10 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
       if (getContext().docId === docId) {
         onSaved(result.document);
         els.notes.value = '';
-        els.hint.textContent = 'Saved to the local edition. TEI and register require Rebuild edition.';
+        els.hint.textContent = 'Änderungen lokal gespeichert.';
       }
     } catch (error) {
-      els.hint.textContent = `Not saved: ${error.message}. Your draft is retained.`;
+      els.hint.textContent = `Nicht gespeichert: ${error.message}. Der Browserentwurf bleibt erhalten.`;
     } finally {
       saving = false;
       syncReviewUI();

@@ -157,6 +157,9 @@ for (const page of PAGES) {
         const len = await settle(p);
         actions.push(`click "${label}" -> ${len}`);
         clicked++;
+        // Native dialogs deliberately make the rest of the page inert. Close
+        // one after recording its trigger so the sweep can reach later controls.
+        if (await p.locator('dialog[open]').count()) await p.keyboard.press('Escape');
         // A control that puts the page into fullscreen would hide every control
         // outside its element from the rest of the sweep.
         await p.evaluate(() => { if (document.fullscreenElement) document.exitFullscreen(); })
@@ -318,11 +321,14 @@ async function reviewFlow(target) {
     failures.push('the committed line is not marked as corrected');
   }
   actions.push(`corrected line -> "${corrected.slice(0, 40)}"`);
-  if (await p.locator('#draft-badge').textContent() !== 'Browser draft' ||
+  if (await p.locator('#draft-badge').textContent() !== 'Ungespeicherte Änderungen' ||
       !await p.locator('#draft-badge').isVisible()) {
     failures.push('an unsaved correction is not visibly marked as a browser draft');
   }
 
+  // Status is deliberately secondary to saving and clearing. Open its native
+  // details disclosure before exercising the two decisions.
+  await p.locator('#review-options > summary').click();
   const pressed = sel => p.locator(sel).getAttribute('aria-pressed');
   await p.click('#btn-status-reviewed');
   if (await pressed('#btn-status-reviewed') !== 'true') {
@@ -344,6 +350,9 @@ async function reviewFlow(target) {
   }
   actions.push('status reviewed -> approved -> reviewed, approval held');
 
+  // Export belongs to the viewer-wide More dialog, outside the primary review
+  // actions. Opening it here guards that the static fallback remains reachable.
+  await p.click('#btn-more');
   await p.click('#btn-review-export');
   const raw = await p.evaluate(() => {
     const blob = window.__exported[window.__exported.length - 1];

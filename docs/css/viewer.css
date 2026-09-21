@@ -1,0 +1,99 @@
+/* The reading surface and its optional tools share one scroll area, so an
+   expanded editor cannot compress the next disclosure into a clipped strip. */
+.viewer-page > main { display: flex; flex-direction: column; }
+.viewer-page .viewer-layout { flex: 1 1 auto; min-block-size: 0; block-size: auto; }
+.source-header {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--surface);
+}
+.source-heading { flex: 1 1 32rem; min-inline-size: 0; }
+.source-heading h1 { margin: 0 0 var(--space-xs); font-size: 1.125rem; overflow-wrap: anywhere; }
+.source-identity { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); margin: 0; font-size: var(--text-sm); }
+.source-identity > div { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.source-identity dt { font-weight: 400; color: var(--text-muted-custom); }
+.source-identity dd { margin: 0; overflow-wrap: anywhere; }
+.source-actions { display: flex; flex: 0 1 26rem; flex-wrap: wrap; gap: var(--space-sm); min-inline-size: 0; }
+.source-actions .doc-selector { flex: 1 1 15rem; min-inline-size: 0; max-inline-size: 100%; font-size: var(--text-sm); }
+.viewer-page #facs-title { flex: 0 0 auto; font-family: inherit; font-weight: 600; }
+.viewer-page .viewer-tools { flex-wrap: wrap; margin-inline-start: 0; }
+.viewer-page .viewer-pager { margin-inline-start: auto; }
+.viewer-page .viewer-panel__header { gap: var(--space-sm); padding-block: var(--space-sm); }
+.viewer-page #btn-more { margin-inline-start: auto; }
+.viewer-page .review-toggle { display: inline-flex; align-items: center; gap: var(--space-xs); }
+.viewer-page .review-toggle svg { inline-size: 1rem; block-size: 1rem; }
+.viewer-page .review-toggle[hidden] { display: none; }
+.viewer-page .vt-btn--label { inline-size: auto; gap: var(--space-xs); padding-inline: var(--space-sm); font-size: var(--text-sm); }
+.viewer-page .vt-btn, .viewer-page .view-toggle__btn, .viewer-page .review-toggle,
+.viewer-page .review-btn, .viewer-page .image-focus, .viewer-page .viewer-pager__input {
+  min-block-size: 2rem;
+  block-size: auto;
+}
+.viewer-page .review-btn, .viewer-page .review-toggle, .viewer-page .view-toggle__btn { white-space: normal; font-size: var(--text-sm); padding-block: var(--space-xs); }
+.viewer-page .review-btn--primary { color: var(--on-accent); background: var(--accent); border-color: var(--accent); }
+.viewer-page .review-btn--primary:hover { background: var(--accent-hover); }
+.viewer-page .review-btn:disabled { opacity: 0.6; cursor: default; }
+.viewer-page .doc-meta { font-size: var(--text-sm); }
+.viewer-page .doc-meta__edition { font-size: inherit; border: 0; padding: 0; border-radius: 0; }
+.viewer-page .prov-chip { font-size: var(--text-xs); white-space: normal; }
+.transcription-workspace { flex: 1 1 auto; min-block-size: 0; overflow: auto; overscroll-behavior: contain; }
+.viewer-page #transcription-container { overflow: visible; }
+.viewer-page .review-bar { font-size: var(--text-sm); padding-block: var(--space-sm); }
+.viewer-page .review-bar__hint { flex-basis: 100%; margin-inline-start: 0; }
+.viewer-page .review-bar__hint:empty { display: none; }
+.viewer-page .review-bar__initials { font-size: 1rem; block-size: 2rem; }
+.review-options { flex-basis: 100%; }
+.review-options__body { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); padding-block: var(--space-sm); }
+.review-options__body .view-toggle { flex-wrap: wrap; }
+.viewer-page #annotation-editor, .viewer-page #tag-editor, .entity-tools {
+  max-block-size: none;
+  overflow: visible;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+}
+.viewer-page #annotation-editor { padding-inline: 0; border: 0; }
+.viewer-page summary { min-block-size: 2rem; padding-block: var(--space-xs); cursor: pointer; }
+.viewer-page #entity-legend { padding-block: var(--space-sm); }
+.viewer-page .ent-key-group { flex-wrap: wrap; }
+.viewer-page :is(input, select, textarea) { font-size: 1rem; }
+.viewer-page :is(input, select, textarea, .review-btn, .review-toggle, .view-toggle__btn) { border-color: var(--text-muted-custom); }
+.viewer-page :is(button, summary, input, select, textarea, a):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.viewer-page[data-view="tei"] :is(#tag-editor, #entity-tools),
+.viewer-page[data-view="reading"] :is(#tag-editor, #entity-tools) { display: none; }
+.viewer-dialog {
+  inline-size: min(38rem, calc(100% - 2rem));
+  max-block-size: calc(100% - 2rem);
+  overflow: auto;
+  padding: var(--space-lg);
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-md);
+}
+.viewer-dialog::backdrop { background: var(--osd-backdrop); opacity: 0.6; }
+.viewer-dialog__header { display: flex; align-items: start; justify-content: space-between; gap: var(--space-lg); }
+.viewer-dialog h2 { font-size: 1.25rem; }
+.viewer-dialog h3 { inline-size: 100%; font-size: 1rem; margin: 0; }
+.viewer-dialog__section { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-md); padding-block: var(--space-lg); }
+.viewer-dialog__section[hidden] { display: none; }
+.viewer-dialog [role="status"] { flex-basis: 100%; }
+.source-details > div { margin-block: var(--space-md); }
+.source-details dt { color: var(--text-muted-custom); font-size: var(--text-sm); font-weight: 400; }
+.source-details dd { margin: 0; overflow-wrap: anywhere; }
+.viewer-page > footer { padding-block: var(--space-sm) !important; }
+
+@media (max-width: 991.98px) {
+  .viewer-page .viewer-layout { flex: none; }
+  .source-actions { flex-grow: 1; }
+  .viewer-page .transcription-workspace { overflow: visible; }
+  .viewer-page .viewer-panel { overflow: visible; }
+}
+@media (max-height: 600px) and (min-width: 992px) {
+  .viewer-page { block-size: auto; min-block-size: 100vh; overflow: auto; }
+  .viewer-page .viewer-layout { min-block-size: 30rem; }
+  .viewer-page .transcription-workspace { max-block-size: 30rem; }
+}

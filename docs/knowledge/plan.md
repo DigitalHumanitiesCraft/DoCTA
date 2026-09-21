@@ -28,7 +28,21 @@ Start with [the silver inventory A 006.8 and .9](https://dhcraft.org/DoCTA/viewe
 
 Open [the Thaur inventory A 049.1](https://dhcraft.org/DoCTA/viewer.html?doc=11328300&page=1) to discuss attribution, existing external transcription and anchored entity proposals. A Transkribus workflow status does not establish a reference transcription under the project's own convention. Follow the Inventaria edition link to compare the published source context.
 
-The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.ps1`. Demonstrate save, reload, Reading and the validated TEI rebuild separately. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
+The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.ps1`. Demonstrate save and reload before opening the optional reading text or validated TEI build under Weitere Funktionen. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
+
+### Guided editor exercise
+
+Continue the local walkthrough with Thaur A 049.1, document 11328300. The operator reported on 2026-09-21 that source orientation and page navigation worked. He requested a complete initial image, a shared metadata header and fewer simultaneous editing controls. Those observations motivated the [working editor hierarchy](design.md#working-editor-hierarchy). The revised interface still needs his hands-on acceptance.
+
+1. Identify title, shelfmark and historical date. Open Quellenangaben only for the additional source context.
+2. Inspect the complete image, zoom to a passage, restore it with Ganze Seite and navigate to the next image.
+3. Open Bearbeiten, enter initials and select an existing text line. Enter confirms a browser draft, Escape cancels the open line edit. Change only a reading justified by the image.
+4. Use Änderungen speichern, wait for the local-save confirmation and reload. The saved reading must remain. Änderungen verwerfen discards the current page draft and preserves saved text.
+5. Add a page or line tag with a note after saving the text. Reload and inspect its source attachment. Distinguish a research observation from an accepted interpretation.
+6. Inspect an automatic annotation separately. Keep an uncertain proposal open, and record a reason for acceptance or rejection when justified. Page review and scholarly release remain explicit decisions.
+7. Under Weitere Funktionen, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them.
+
+After each step, collect the operator's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. After the walkthrough, prepare the colleague-facing German guide from these observations, the verified persistence behavior and the project lead's open conceptual questions. The guide should explain purpose, source provenance, the worked example, correction and annotation, saved versus published state, and the remaining scholarly decisions.
 
 ## Work sequence and acceptance
 

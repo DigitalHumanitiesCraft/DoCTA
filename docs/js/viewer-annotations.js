@@ -23,17 +23,16 @@ export function createAnnotationEditor(container, local) {
   function render() {
     container.hidden = !local.enabled || !entities().length;
     if (container.hidden) return;
-    container.innerHTML = '<details><summary>Review annotations</summary>' +
-      '<form class="annotation-editor">' +
-      '<label>Source annotation<select name="entity">' + entities().map(entity =>
-        `<option value="${escapeAttr(entity.id)}">${escapeHTML(entity.type)} · ${escapeHTML(entity.text)}</option>`).join('') +
-      '</select></label><label>Normalized form<input name="normalized" required></label>' +
-      '<label>Authority URI<input name="authority" type="url"></label>' +
-      '<label>Decision<select name="status"><option value="pending">Pending</option>' +
-      '<option value="accepted">Accepted</option><option value="rejected">Rejected</option></select></label>' +
-      '<label>Reason<input name="reason" maxlength="2000"></label>' +
-      '<button class="review-btn" type="submit">Save annotation locally</button>' +
-      '<span role="status"></span></form></details>';
+    container.innerHTML = '<form class="annotation-editor">' +
+      '<label>Fundstelle<select name="entity">' + entities().map(entity =>
+        `<option value="${escapeAttr(entity.id)}">${escapeHTML(entity.type)} ${escapeHTML(entity.text)}</option>`).join('') +
+      '</select></label><label>Normalisierte Form<input name="normalized" required></label>' +
+      '<label>Normdaten-URI<input name="authority" type="url"></label>' +
+      '<label>Entscheidung<select name="status"><option value="pending">Offen</option>' +
+      '<option value="accepted">Angenommen</option><option value="rejected">Verworfen</option></select></label>' +
+      '<label>Begründung<input name="reason" maxlength="2000"></label>' +
+      '<button class="review-btn" type="submit">Annotation lokal speichern</button>' +
+      '<span role="status"></span></form>';
     const form = container.querySelector('form');
     const message = form.querySelector('[role="status"]');
     const populate = async () => {
@@ -53,8 +52,8 @@ export function createAnnotationEditor(container, local) {
         }
       }
       const line = lineFor(entity);
-      message.textContent = !line ? 'Source line unavailable.' : decision && decision.textDigest !== await digest(line.text)
-        ? 'Text changed. Recheck this annotation before saving.' : 'Saved decisions remain separate from model proposals and published exports.';
+      message.textContent = !line ? 'Quellenzeile nicht verfügbar.' : decision && decision.textDigest !== await digest(line.text)
+        ? 'Der Quellentext hat sich geändert. Zuordnung vor dem Speichern erneut prüfen.' : '';
     };
     form.elements.entity.addEventListener('change', populate);
     form.addEventListener('input', () => {
@@ -63,8 +62,8 @@ export function createAnnotationEditor(container, local) {
         .map(name => [name, form.elements[name].value]));
       drafts.set(key(entity), values);
       message.textContent = lsSet(key(entity), JSON.stringify(values))
-        ? 'Annotation draft in this browser. Save to record the decision.'
-        : 'Browser storage failed. Save now and keep this tab open.';
+        ? 'Ungespeicherter Annotationsentwurf.'
+        : 'Browserentwurf konnte nicht gesichert werden. Bitte lokal speichern und den Tab geöffnet lassen.';
     });
     form.addEventListener('submit', async event => {
       event.preventDefault();
@@ -72,7 +71,7 @@ export function createAnnotationEditor(container, local) {
       const docId = Number(document.docId);
       const entity = entities().find(item => item.id === form.elements.entity.value);
       const line = lineFor(entity);
-      if (!line) { message.textContent = 'Source line unavailable.'; return; }
+      if (!line) { message.textContent = 'Quellenzeile nicht verfügbar.'; return; }
       const baseRevision = state.revision;
       const previous = state.decisions;
       const values = {
@@ -94,9 +93,9 @@ export function createAnnotationEditor(container, local) {
         drafts.delete(`docta-annotation-${docId}-${entity.id}`);
         try { window.localStorage.removeItem(`docta-annotation-${docId}-${entity.id}`); } catch { /* Saved sidecar is authoritative. */ }
         if (Number(document.docId) === docId) state = result.annotations;
-        message.textContent = 'Annotation saved locally. Published exports are unchanged.';
+        message.textContent = 'Annotation lokal gespeichert.';
       } catch (error) {
-        message.textContent = `Not saved: ${error.message}. Keep the form open or copy your decision before reloading.`;
+        message.textContent = `Nicht gespeichert: ${error.message}. Formular geöffnet lassen oder die Entscheidung vor dem Neuladen kopieren.`;
       } finally {
         busy = false;
         for (const control of form.elements) control.disabled = false;

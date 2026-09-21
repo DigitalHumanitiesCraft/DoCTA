@@ -56,7 +56,7 @@ export function createTagEditor(container, local, { hasReviewDraft, refreshSourc
     container.innerHTML = `<details${expanded ? ' open' : ''}><summary>Schlagwörter</summary>
       <form class="tag-editor">
         <label>Bezugsstelle<select name="lineId"><option value="">Ganze Seite ${pageNr}</option>${sourceLines.map((line, index) =>
-          `<option value="${escapeAttr(line.id)}">Zeile ${index + 1} · ${escapeHTML(line.text.slice(0, 100))}</option>`).join('')}</select></label>
+          `<option value="${escapeAttr(line.id)}">Zeile ${index + 1} ${escapeHTML(line.text.slice(0, 100))}</option>`).join('')}</select></label>
         <label>Schlagwort<input name="tag" list="research-tag-suggestions" maxlength="100" required></label>
         <datalist id="research-tag-suggestions">${['Inventarisierung', 'Übergabe', 'Kauf / Beschaffung', 'Zahlung', 'Besitz / Verwahrung', 'Raumnutzung', 'Zeugenschaft'].map(tag =>
           `<option value="${tag}"></option>`).join('')}</datalist>
@@ -126,7 +126,7 @@ export function createTagEditor(container, local, { hasReviewDraft, refreshSourc
     list.innerHTML = items.map(item => {
       const index = lines().findIndex(line => line.id === item.lineId);
       const anchor = item.lineId === null ? `Seite ${item.pageNr}` : index < 0 ? 'Bezugszeile fehlt' : `Zeile ${index + 1}`;
-      return `<li><div>${escapeHTML(item.tag)} · ${anchor} · ${escapeHTML(item.reviewer)}</div>
+      return `<li><div>${escapeHTML(item.tag)} <span>${anchor}</span> <span>${escapeHTML(item.reviewer)}</span></div>
         <blockquote>${escapeHTML(item.text)}</blockquote>${item.note ? `<p>${escapeHTML(item.note)}</p>` : ''}
         ${item.stale ? `<p>Lesung geändert. Aktuelle Lesung</p><blockquote>${escapeHTML(item.lineId === null
           ? lines().map(line => line.text).join('\n') : lines().find(line => line.id === item.lineId)?.text ?? 'Bezugszeile fehlt.')}</blockquote>` : ''}

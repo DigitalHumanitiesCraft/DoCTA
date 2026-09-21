@@ -77,14 +77,12 @@ function initFooter(activeId) {
   const footer = document.querySelector('footer');
   if (!footer) return;
   const about = activeId === 'about' ? '' :
-    ` <span class="footer-sep">·</span> <a href="about.html">About &amp; Imprint</a>`;
+    ` <a href="about.html">About &amp; Imprint</a>`;
   footer.innerHTML = `<p class="mb-0 footer-line">
-    <span>DoCTA</span> <span class="footer-sep">·</span>
+    <span>DoCTA</span>
     <a href="https://dhcraft.org" target="_blank" rel="noopener" class="footer-brand">
       <img src="img/dhcraft-logo-48.png" alt="" width="18" height="18"> Digital Humanities Craft</a>
-    <span class="footer-sep">·</span>
     <a href="https://github.com/DigitalHumanitiesCraft/DoCTA" target="_blank" rel="noopener" class="footer-brand">${GITHUB_ICON} GitHub</a>
-    <span class="footer-sep">·</span>
     <a href="https://dhcraft.org/Promptotyping/" target="_blank" rel="noopener">Promptotyping</a>${about}
   </p>`;
 }

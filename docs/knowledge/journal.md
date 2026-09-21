@@ -25,6 +25,10 @@ related: [INDEX, project, handoff]
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
+## Working editor navigation and controls (21.09.2026)
+
+Integrated the operator's live walkthrough feedback into the viewer and [design.md](design.md#working-editor-hierarchy). Source identity moved above image and text, image opening now fits the whole image, and corrections have a German editing entry point. Supplemental review actions, annotations and edition output are disclosed at their point of use. The existing save contract remains explicit and the build rejects unsaved transcription drafts. [plan.md](plan.md#guided-editor-exercise) carries the revised exercise and the distinction between confirmed orientation and navigation, automated checks and the operator's pending assessment of the new interface. The colleague-facing report follows the completed walkthrough. Browser regression checks cover image bounds, page changes, dialog keyboard focus, responsive reflow with CSS zoom, and save/reload against an isolated in-memory service. The running local viewer was inspected for full-image presentation, metadata access and the simplified editing controls. These checks do not establish scholarly acceptance or a screen-reader audit.
+
 ## Local working edition and a source-bound pilot plan (21.09.2026)
 
 The owner requested a first correction and annotation exercise following the project lead's recorded question of who does what with which objects and where. The local editor now offers manual page and line tags with notes, reviewers and retained source readings. Working terms remain provisional, separate from entity decisions and TEI/RDF claims. `plan.md` ties the exercise to the silver inventory and a purchase wording in the Thaur inventory. Source changes mark tags for recheck, and conflicting revisions are rejected. Automated persistence checks and an isolated browser exercise cover save, reload, filtering and the changed-source warning.
