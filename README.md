@@ -4,7 +4,7 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 [Public site](https://dhcraft.org/DoCTA/), [German working guide](https://dhcraft.org/DoCTA/guide.html) and [project knowledge](docs/knowledge/INDEX.md).
 
-For a first local trial, follow the German guide's ZIP setup and person-annotation exercise. Open Anleitung again from the locally started application before following its working example. The guide also explains how to back up and transfer saved work into a separate updated project copy.
+For a first local start, follow the [German setup guide](https://dhcraft.org/DoCTA/guide.html#start). Create a GitHub account if needed, clone with GitHub Desktop, install uv once and open the platform launcher. uv prepares Python and the required packages. Visual Studio Code is optional. The guide includes an optional person-annotation example, backups and a [GitHub Desktop workflow](https://dhcraft.org/DoCTA/guide.html#github) for exchanging agreed changes.
 
 ## What this is
 
@@ -20,9 +20,9 @@ Account books (Raitbücher), castle and personal inventories, copybooks and cour
 
 The working edition is version 0.2.0. It is an internal research version. Public availability and scholarly acceptance are separate from this software version.
 
-Use a project copy containing `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py`. Install Git or GitHub Desktop when the project copy will be updated and versioned with Git. Clone the supplied repository URL with either tool. A ZIP archive also starts the editor after extraction, but it provides no Git history or update path. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
+Clone the repository with GitHub Desktop, following the guide. The project copy contains `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py` together with Git history. Use this same working folder for subsequent sessions and receive updates through Fetch and Pull after saving, committing and backing up local work. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It prepares the project Python environment and locked dependencies on the first launch. That first setup requires network access. Then open the project folder and start the matching launcher:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It obtains a compatible Python version if needed and prepares the project environment and locked dependencies on the first launch. That first setup requires network access. Then open the project folder and start the matching launcher:
 
 | System | Start |
 |---|---|
@@ -30,6 +30,8 @@ Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It p
 | macOS | Open `start-editor.command` |
 
 The starter opens the local viewer in the browser. Keep its terminal window open while working. If a downloaded macOS copy has lost executable permissions, open a terminal in the project folder and run `bash start-editor.command`. The equivalent command on both systems is `uv run --locked python pipeline/local_editor.py --open-browser`. Windows also retains `start-editor.ps1` for PowerShell use. Existing prepared environments can run without uv through the launchers.
+
+VS Code can run that same command from the project terminal. Live Server and `python -m http.server` only serve the static site and do not provide the correction or annotation write API. The DoCTA launcher starts the required Python service itself.
 
 Open [the silver inventory used in the joint reading](http://127.0.0.1:8742/viewer.html?doc=12647153&page=1) or [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1). The local URL addresses your own computer. Source images may require network access. Reading, correcting and annotating existing material requires no LLM API key.
 
@@ -43,13 +45,13 @@ If the port is occupied, the starter leaves the running service intact. Stop you
 4. Open Index to find saved entries and return to their source occurrences.
 5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
 
-For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
+Work on the sources relevant to your research. The guide's optional person example requires no text correction. Correct a reading only where the image supports it. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
 Before finishing, save text changes and every open annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections and annotations reside in the project folder. Clearing browser storage can remove unsaved drafts.
 
 ### Keep a local version and report feedback
 
-After saving, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version and supplies the routine backup history for the working data. It does not send the commit elsewhere. Push origin uploads commits. Publication and sharing of the internal working material require a separate decision. Text events live under `pipeline/reviews/`, effective readings under `pipeline/pages/`, and the editorial register under `pipeline/registry/`. Retained legacy tags and machine-proposal decisions remain in their existing sidecars. The service saves these files without committing them.
+After saving and stopping the editor, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version. A separate folder backup protects against loss of that local copy. Push origin uploads commits and makes their contents and history visible in this public repository, including on additional branches. Agree which research data may be published and which branch receives them before pushing. Changes under `docs/` on `main` also update GitHub Pages. Text events live under `pipeline/reviews/`, effective readings under `pipeline/pages/`, and the editorial register under `pipeline/registry/`. Retained legacy tags and machine-proposal decisions remain in their existing sidecars. The service saves these files without committing them. The [German GitHub Desktop instructions](https://dhcraft.org/DoCTA/guide.html#github) explain cloning, commits, Fetch, Pull and conflict handling.
 
 If a save reports a conflict, retain the unsaved wording, reload the current saved state and reconcile the readings before saving again. If the browser cannot connect, inspect the terminal for a startup error and confirm that the editor is still running. Do not discard a draft to resolve an unexplained error.
 

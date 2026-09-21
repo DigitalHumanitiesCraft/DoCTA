@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Clarified installation and repository exchange (21.09.2026)
+
+Corrected the setup explanation after the operator identified confusion between Python, VS Code and Live Server. The supplied technical-preparation slides describe a development environment, while the working edition starts its own write-capable server through the existing launchers. The operator selected GitHub Desktop cloning as the sole installation route, replacing the earlier ZIP instructions. The guide and README now explain account creation, uv as the Python installation helper and optional VS Code use. Added a documented path for commits and synchronization, with explicit public-data visibility and preservation of earlier local work. The example remains optional and the invitation supports independent source work and feedback. GitHub Desktop instructions follow provider documentation rather than an observed recipient-side installation.
+
 ## Guided first use and preservation of local work (21.09.2026)
 
 Reworked the German guide around ZIP setup, separate operating-system steps and one source-bound person exercise. The local example link now requires the existing editor capability, so a public reader is directed to reopen the guide in the local application. Entry creation and occurrence saving are explained separately. Text correction is optional where the image supports it, with a further saved correction as the remedy for a mistaken reading. Backup instructions distinguish saved files from browser drafts. A compatible update retains the canonical text and editorial folders while keeping the old project intact. Isolated Windows launcher checks covered a fresh locked environment, its subsequent environment fallback and transfer of saved corrections and registry identities. A reviews-only control confirmed that startup does not reconstruct effective readings from events alone. Native macOS startup and first-time installation of uv on an unprepared machine remain unobserved.
