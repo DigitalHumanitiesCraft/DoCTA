@@ -92,24 +92,13 @@ function provenanceChip(docId) {
          ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
 }
 
-// The badge carries the machine-output marking in every view, including the
-// synopsis: the provenance chip beside it can be absent (no source row, no
-// register entry), and losing the chip must never mean losing the marking.
-// A document the register does not know counts as unrevised machine text.
+// Source provenance is shown separately; a correction draft is no review verdict.
 function updateDraftBadge() {
   const badge = document.getElementById('draft-badge');
-  const corrected = currentDoc && provenanceState(currentDoc.docId)?.state === 'human';
-  const states = Object.values(currentDoc?.reviewState || {});
-  const approved = states.length && states.every(page => page.status === 'abgenommen');
-  const reviewed = states.some(page => ['gesichtet', 'abgenommen'].includes(page.status));
   const pending = currentDoc && review.hasDraft;
-  badge.hidden = !currentDoc || (!pending && (corrected || approved));
-  badge.textContent = pending ? 'Ungespeicherte Änderungen' : reviewed ? 'Teilweise geprüft' : 'Ungeprüfter Text';
-  // Reading mode shows the exported text only; local review corrections live
-  // in the synopsis, and the badge says so instead of implying they are here.
-  badge.title = local.enabled
-    ? 'Saved corrections appear in Synopsis and Reading. Page approval is recorded separately. Unsaved drafts appear in Synopsis only.'
-    : 'Machine source text. Browser drafts appear in Synopsis until saved through the local editor or ingested from an export.';
+  badge.hidden = !pending;
+  badge.textContent = 'Ungespeicherte Änderungen';
+  badge.title = 'Die aktuelle Textkorrektur ist noch nicht gespeichert.';
 }
 
 function renderDocMeta(docId) {
@@ -459,7 +448,18 @@ const tags = createTagEditor(document.getElementById('tag-editor'), local, {
 const registry = createRegistryEditor(local, {
   context: () => ({ doc: currentDoc, pageNr: currentPageNr(), hasDraft: review.hasDraft, viewMode }),
   rerender: () => { if (currentDoc) renderCurrentView(); },
+  beforeOpen: () => {
+    entTip.hidden = true;
+    return annotations.beforeNavigate();
+  },
 });
+
+document.getElementById('btn-entities').addEventListener('click', event => {
+  if (registry.beforeNavigate()) annotations.open(null, event.currentTarget);
+});
+document.getElementById('btn-review').addEventListener('click', event => {
+  if (!canNavigate()) { event.preventDefault(); event.stopImmediatePropagation(); }
+}, { capture: true });
 
 // One page of the synopsis. The coupling with the image overlay is keyed on
 // the rendered lines, so a fresh page starts with no line held on either side.
@@ -498,6 +498,10 @@ entTip.setAttribute('aria-hidden', 'true');
 document.body.appendChild(entTip);
 
 function showEntityTip(target) {
+  if (target.closest('[data-mention-id]') || document.querySelector('.annotation-popover:not([hidden])')) {
+    entTip.hidden = true;
+    return;
+  }
   const html = entities.tipHTML(target.dataset.entKey);
   if (html === null) return;
   entTip.innerHTML = html;
@@ -513,10 +517,9 @@ const entityAt = (node) =>
 
 function editEntity(target) {
   if (!local.enabled || target.closest('[data-mention-id]')) return;
-  const dialog = document.getElementById('entities-dialog');
-  annotations.select(target.dataset.entKey);
-  if (!dialog.open) dialog.showModal();
-  dialog.addEventListener('close', () => target.focus(), { once: true });
+  if (window.getSelection()?.toString().trim() || !registry.beforeNavigate()) return;
+  entTip.hidden = true;
+  annotations.open(target.dataset.entKey, target);
 }
 document.addEventListener('click', event => { const target = entityAt(event.target); if (target && !event.target.closest('[data-mention-id]')) editEntity(target); });
 document.addEventListener('keydown', event => {
@@ -599,6 +602,7 @@ function syncParams() {
 // idx: index in pages[], not a page number
 function setPage(idx) {
   if (!currentDoc) return;
+  if (clampPage(idx) !== currentPage && !canNavigate()) { updatePager(); return; }
   currentPage = clampPage(idx);
   updatePager();
   syncParams();
@@ -631,6 +635,7 @@ const VIEWS = ['synopsis', 'reading', 'tei'];
 
 // pageIdx: optional index in pages[] to land on when returning to the synopsis
 function setView(mode, pageIdx) {
+  if (mode !== viewMode && !canNavigate()) return;
   viewMode = VIEWS.includes(mode) ? mode : 'synopsis';
   const isSynopsis = viewMode === 'synopsis';
   document.getElementById('btn-view-synopsis').hidden = isSynopsis;
@@ -660,6 +665,10 @@ let docRequest = 0;
 // pageNr: page number of the document to start on. Omit to take it from the
 // URL (deep link into a page); an unknown number falls back to the first page.
 async function loadDocument(docId, pageNr) {
+  if (currentDoc && Number(docId) !== Number(currentDoc.docId) && !canNavigate()) {
+    document.getElementById('doc-selector').value = String(currentDoc.docId);
+    return;
+  }
   const token = ++docRequest;
   try {
     // Deep links arrive copy-pasted; a stray trailing dot or space in the
@@ -779,6 +788,9 @@ document.getElementById('btn-line-regions')
   .addEventListener('click', () => setLineRegions(!showLineRegions));
 
 const pageInput = document.getElementById('page-input');
+function canNavigate() {
+  return annotations.beforeNavigate() && registry.beforeNavigate();
+}
 // The field takes a page number of the document; a number the document does
 // not carry leaves the current page in place.
 function commitPageInput() {
@@ -883,7 +895,7 @@ init();
 
 for (const [buttonId, dialogId] of [
   ['btn-source-details', 'source-dialog'], ['btn-more', 'viewer-more'],
-  ['btn-tags', 'tags-dialog'], ['btn-entities', 'entities-dialog'],
+  ['btn-tags', 'tags-dialog'],
 ]) {
   const button = document.getElementById(buttonId);
   const dialog = document.getElementById(dialogId);

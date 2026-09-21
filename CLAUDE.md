@@ -52,6 +52,7 @@ node tests/interaction-test.mjs
 node tests/tag-editor-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
+node tests/annotation-editor-test.mjs
 ```
 
 For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
@@ -74,6 +75,7 @@ Data flows in one direction. Transkribus exports and evaluation runs are inputs 
 ## Constraints worth knowing
 
 - Editorial registry writes require optimistic revision checks, the shared review lock and atomic state with before/after history. Anchors address saved line text through UTF-16 offsets and a SHA-256 digest. Equal names never imply equal persons. The contract lives in `docs/knowledge/architecture.md#editorial-register-persistence`.
+- Annotation editing belongs beside the selected source passage, with a nonmodal popover and a separate registry sidebar. The initial categories are person, term, place and date. Preserve pending input across surface dismissal and require save or discard before source navigation. A draft decision must never acquire a changed source digest silently.
 
 - Everything committed under `docs/` is published immediately on push to `main`.
 - All VLM output is unrevised machine transcription until a scholar approves it, and is marked as such wherever displayed. Keep that framing in any UI or data change.

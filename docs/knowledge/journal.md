@@ -23,6 +23,12 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Source-bound annotation interaction (21.09.2026)
+
+The operator rejected modal annotation forms after inspecting the screenshots and commissioned an interaction integrated into the reading workspace. Added a selection toolbar, anchored nonmodal editing and a collapsible register sidebar for working version 0.2.0. Persons, terms and places use independent register identities. Date mentions retain their source quotation and optional exact or bounded normalization, with uncertainty separate from precision. Right-click supplements the visible toolbar and keyboard entry point. The initial tall form obscured its source, so the compact layout collapses optional notes and fits the available space beside the passage.
+
+Refactored the registry interaction into controller, form markup, display, source-anchor and shared popover modules. Preserved the existing persistence and history contract. Independent review identified and fixed delayed-load and outdated-response failures in the machine-proposal editor and prevented an in-progress decision from silently acquiring the digest of a corrected source. Regression checks exercise these cases. The working interaction still requires the historical editor's assessment on actual research passages. Updated the README and canonical knowledge contracts, while the Vault overview records the stable editorial responsibilities and distinguishes human assignments from machine proposals.
+
 ## Internal working version 0.1.0 (21.09.2026)
 
 Implemented the editor-owned person register and controlled vocabulary with name-independent identities, variants, optional broader terms and source-bound single-line assignments. The viewer supports local search, manual annotation editing, direct decisions on highlighted machine proposals and separate transcription provenance. Registry and annotation changes retain actor, timestamp and before/after values. Changed source text requires anchor rechecking. Editorial assignments remain separate from generated TEI and graph identities and export as JSON. No external reconciliation or model calls were added.

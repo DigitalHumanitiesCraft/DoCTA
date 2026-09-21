@@ -173,13 +173,20 @@ try {
   ]) {
     await page.locator(button).focus();
     await page.keyboard.press('Enter');
-    check(await visible(page, `${dialog}[open]`), `${label} dialog opens from the keyboard`);
+    await page.locator(dialog).waitFor({ state: 'visible' });
+    check(await visible(page, dialog), `${label} surface opens from the keyboard`);
     if (label === 'tags') check(await visible(page, '#tag-editor form'), 'tag form is accessible inside its dialog');
-    if (label === 'entities') check(await visible(page, '#annotation-editor form'), 'annotation form is accessible inside its dialog');
+    if (label === 'entities') {
+      check(await visible(page, '#annotation-editor form'), 'annotation form is accessible in its inline editor');
+      check(await page.locator(dialog).evaluate(element => element.tagName !== 'DIALOG' && element.getAttribute('aria-modal') !== 'true'),
+        'machine proposal editing is inline without a modal backdrop');
+    }
     await page.keyboard.press('Escape');
-    check(!await visible(page, `${dialog}[open]`), `${label} dialog closes with Escape`);
+    await page.locator(dialog).waitFor({ state: 'hidden' });
+    await page.waitForFunction(selector => document.querySelector(selector) === document.activeElement, button);
+    check(!await visible(page, dialog), `${label} surface closes with Escape`);
     check(await page.locator(button).evaluate(el => el === document.activeElement),
-      `${label} dialog returns focus to its trigger`);
+      `${label} surface returns focus to its trigger`);
   }
 
   check(!await visible(page, '#btn-view-synopsis'),

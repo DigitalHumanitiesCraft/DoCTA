@@ -143,7 +143,7 @@ The local viewer records decisions on existing line-anchored entity proposals in
 
 Through Automatische Annotationen, the editor can change the normalized form, assign an authority URI and record acceptance, rejection or a pending decision with a reason. Each decision carries the digest of the text it was reviewed against. Source text changes require another review. Model extraction files remain unchanged. A rejected occurrence is excluded from the generated edition output, while the original proposal remains available for inspection. This is distinct from deleting transcription text.
 
-Clicking a highlighted machine mention opens its corresponding decision form. The editor can also select text within one saved line and assign a person or term from the separate editorial register. Changing the type or span of a machine proposal remains outside its decision form. The persistence and publication boundaries are defined in [architecture.md](architecture.md#editorial-register-persistence).
+Clicking a highlighted machine mention opens its corresponding decision form beside the source. Selecting text within one saved line opens the categories Person, Begriff, Ort and Datumsangabe. Right-click is an additional entry point, while a toolbar button and Alt+A keep the action accessible without it. Persons, places and terms link to the separate editorial register. Dates preserve their quotation with optional exact or bounded normalization and uncertainty. Changing the type or span of a machine proposal remains outside its decision form. The persistence and publication boundaries are defined in [architecture.md](architecture.md#editorial-register-persistence).
 
 The build applies accepted normalizations and rejected occurrences to the generated TEI and graph. Stale decisions stop the build until rechecked. Authority URIs are represented in the graph, while the inventory TEI retains references to its curated local register under the existing closed schema. Pending and absent decisions remain machine proposals. A curation decision on one occurrence does not confer scholarly acceptance on a whole document or register.
 
@@ -151,7 +151,7 @@ Reconciliation targets are SiCProD for persons and functions, Wikidata and the G
 
 ## Decisions that lie with the project lead
 
-### Editor-owned registers in working version 0.1.0
+### Editor-owned registers and source-bound annotation
 
 The meeting transcript and the operator's clarification on 2026-09-21 establish the need for an editor-owned person index and controlled object vocabulary. Identity decisions always belong to the historical editor. The exact source selection will follow from the project partner. Access and reuse terms remain unresolved, and current work continues internally on the available material.
 
@@ -159,7 +159,7 @@ The local editor uses new, name-independent person IDs, preferred names, spellin
 
 Vocabulary entries carry preferred terms, variants, notes and an optional broader term. Source occurrences link to these entries. Classifying an occurrence as a cushion does not identify it with a particular physical object mentioned elsewhere. Individual-object identity and historical relations require a separate evidence contract.
 
-Selection-based annotations retain quotation, line identity, UTF-16 positions and a saved-line digest. Changed text requires rechecking the anchor. Registry and assignment changes retain actor, timestamp and before/after values in the atomic registry file. Machine-proposal decisions now retain an event history as well. Older sidecars remain readable without inventing past events. Editorial assignments are available in the viewer and JSON export, but do not yet enter generated TEI or the graph. Multi-line spans remain unsupported.
+Selection-based annotations retain quotation, line identity, UTF-16 positions and a saved-line digest. Changed text requires rechecking the anchor. Registry and assignment changes retain actor, timestamp and before/after values in the atomic registry file. Machine-proposal decisions retain an event history as well. Older sidecars remain readable without inventing past events. Editorial assignments are available in the viewer and JSON export, but do not yet enter generated TEI or the graph. Multi-line spans remain unsupported. Category labels describe the initial working vocabulary and do not resolve the wider research distinction between place, space, object identity and events.
 
 The transcription source is displayed independently of annotation provenance. The current page names its recorded transcription model and human correction information, retaining the original producer after corrections. Missing imported model metadata is explicit. Provenance details expose the recorded prompt, hash and run date. Human corrections do not imply a complete scholarly review.
 

@@ -67,6 +67,8 @@
   font-size: var(--text-sm);
 }
 .viewer-page #annotation-editor { padding-inline: 0; border: 0; }
+.annotation-extra { flex: 1 1 100%; min-inline-size: 0; }
+.annotation-editor [role="status"] { flex-basis: 100%; overflow-wrap: anywhere; }
 .viewer-page summary { min-block-size: 2rem; padding-block: var(--space-xs); cursor: pointer; }
 .viewer-page #entity-legend { padding-block: var(--space-sm); }
 .viewer-page .ent-key-group { flex-wrap: wrap; }

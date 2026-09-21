@@ -8,7 +8,6 @@
  */
 
 import { escapeHTML, escapeAttr, ICON_AI, ICON_UNVERIFIED } from './utils.js';
-import { provenanceBadges } from './entity-view.js';
 
 // Lines like "[fol.2r]", "[fol. 12v]" or bare "[1r]" are structure; the
 // endpaper marks "[us_vorne_r]" etc. count as structure as well.
@@ -92,7 +91,8 @@ function entityLegend(index, model) {
   return `<span class="ent-key-group" title="Entity marks:` +
          ` ${escapeAttr(model)} extraction, not verified by a` +
          ` scholar"><span class="ent-key">Automatische Vorschläge</span>${chips}` +
-         `${provenanceBadges(model)}</span>`;
+         `<span class="ent-prov">${ICON_AI} ${escapeHTML(model)}</span>` +
+         `<span class="ent-prov">${ICON_UNVERIFIED} Fachlich ungeprüft</span></span>`;
 }
 
 /** Inner markup of the floating tooltip of one entity mark. */

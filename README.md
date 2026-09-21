@@ -16,7 +16,7 @@ Account books (Raitbücher), castle and personal inventories, copybooks and cour
 
 ### First start
 
-The working edition is version 0.1.0. It is an internal research version. Public availability and scholarly acceptance are separate from this software version.
+The working edition is version 0.2.0. It is an internal research version. Public availability and scholarly acceptance are separate from this software version.
 
 Use a project copy containing `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py`. GitHub Desktop can clone a supplied repository URL into a local folder. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
 
@@ -55,11 +55,11 @@ Feedback should include the document and page, the action attempted, the expecte
 
 ### Build a person index and vocabulary
 
-1. Open Personen und Begriffe and choose Neuer Eintrag. Select Person or Begriff, enter a preferred name or term, and add alternative spellings on separate lines. Terms can have an optional broader term. Save with your initials.
-2. In the saved transcription, select text within one line and choose Auswahl annotieren, or press Alt+A. Choose Person or Begriff, search the register and explicitly select the intended entry. Save the occurrence with your initials. Noch nicht zugeordnet retains an unresolved occurrence with a note.
-3. Click an editorial mark to change its assignment or note, or remove the occurrence. The history preserves the previous value. Removing an annotation leaves the source text intact.
-4. Open a register entry to inspect its Fundstellen and follow a link back to the source. Search includes alternative spellings. Identical names can belong to separate entries, and search never merges them.
-5. Use Register als JSON exportieren to download entries, occurrences and their history for internal reuse.
+1. Select text within one saved transcription line. A small toolbar offers Person, Begriff, Ort and Datumsangabe. Right-clicking the selection also opens the toolbar. Auswahl annotieren and Alt+A provide an explicit alternative.
+2. Choose a category. The editing field opens beside the passage, keeping the source visible. For persons, places and terms, search for an existing register entry or choose Neuer Registereintrag to create one in the sidebar. Noch nicht zugeordnet retains an unresolved occurrence with a note.
+3. For a date, retain the source wording and optionally enter a normalized year, month or day using `YYYY`, `YYYY-MM` or `YYYY-MM-DD`. A Zeitraum can have an earliest and/or latest bound. Unsichere Datierung records uncertainty. The editor decides the historical interpretation and any calendar conversion. Validation uses the proleptic Gregorian calendar, without automatic conversion.
+4. Save the occurrence with your initials. Click its editorial mark to edit or remove it later. Removing an annotation preserves the source text and retains the previous value in history. Closing the inline field retains unsaved input, available through Annotation fortsetzen. Explicit discard removes that draft.
+5. Open Register to search persons, places and terms in a collapsible sidebar. Entries hold a preferred label, spelling variants and notes. Terms may have a broader term. Fundstellen link back to source passages, and equal names remain independent identities. Register als JSON exportieren downloads the saved entries, occurrences and history.
 
 If source text changes, affected occurrences require checking. Their retained quotations remain inspectable. Select the new wording to create a replacement occurrence, and remove the superseded occurrence when appropriate. The first version anchors selections within a single existing line. It does not split or merge transcription lines.
 
@@ -67,7 +67,7 @@ The editorial register identifies persons and classifies source occurrences. Ass
 
 ### Check automatic proposals and text provenance
 
-Inventaria attribution identifies the transcription source. The colored automatic proposals are a separate DoCTA extraction layer. Click a proposal, or use the keyboard, to open its exact occurrence in Automatische Annotationen. Review the normalized form and decision, enter your initials and save. Later decisions preserve the earlier value, actor and timestamp. Earlier sidecars have no retroactively invented history.
+Inventaria attribution identifies the transcription source. The colored automatic proposals are a separate DoCTA extraction layer. Click a proposal, or use the keyboard, to open its exact occurrence beside the text. Review the normalized form and decision, enter your initials and save. Normdaten verknüpfen exposes an optional authority URI. Unsaved decisions block switching to another source until saved or discarded. Later decisions preserve the earlier value, actor and timestamp. Earlier sidecars have no retroactively invented history.
 
 The text provenance identifies the recorded transcription LLM independently of annotation production and keeps saved human corrections visible. Details provide the recorded source run and prompt metadata. Missing model information in imported text remains explicitly unknown. Opening the viewer performs no model API call. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
 

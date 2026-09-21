@@ -12,7 +12,8 @@ from __future__ import annotations
 import copy
 import hashlib
 import re
-from datetime import UTC, datetime
+from calendar import monthrange
+from datetime import UTC, date, datetime
 from pathlib import Path
 from uuid import UUID, uuid4
 
@@ -20,7 +21,8 @@ import apply_review as ar
 from io_paths import load_json, write_json
 from local_annotations import _lines, line_digest
 
-KINDS = frozenset(("person", "term"))
+KINDS = frozenset(("person", "place", "term"))
+MENTION_KINDS = KINDS | {"date"}
 
 
 def _text(value: object, field: str, maximum: int, empty: bool = False) -> str:
@@ -65,7 +67,7 @@ def _entry(data: object) -> dict:
         raise ValueError("entry must be an object")
     kind = data.get("kind")
     if not isinstance(kind, str) or kind not in KINDS:
-        raise ValueError("entry kind must be person or term")
+        raise ValueError("entry kind must be person, place or term")
     aliases = data.get("aliases", [])
     if not isinstance(aliases, list) or len(aliases) > 100:
         raise ValueError("aliases must be a list of at most 100 labels")
@@ -82,6 +84,48 @@ def _entry(data: object) -> dict:
         "note": _text(data.get("note", ""), "note", 10000, empty=True),
         "broaderId": broader,
     }
+
+
+def _date_interval(value: object, field: str) -> tuple[date, date] | None:
+    """Treat reduced ISO precision as a closed proleptic Gregorian interval."""
+    if value is None:
+        return None
+    if not isinstance(value, str) or not re.fullmatch(
+        r"[0-9]{4}(?:-[0-9]{2}(?:-[0-9]{2})?)?", value
+    ):
+        raise ValueError(f"{field} must be an ISO year, month or date")
+    parts = [int(part) for part in value.split("-")]
+    year = parts[0]
+    month = parts[1] if len(parts) > 1 else 1
+    day = parts[2] if len(parts) > 2 else 1
+    try:
+        first = date(year, month, day)
+        last = (
+            first
+            if len(parts) == 3
+            else date(year, month, monthrange(year, month)[1])
+            if len(parts) == 2
+            else date(year, 12, 31)
+        )
+    except ValueError as exc:
+        raise ValueError(f"{field} must be a valid Gregorian date") from exc
+    return first, last
+
+
+def _date_fields(data: dict) -> dict:
+    result = {key: data.get(key) for key in ("when", "notBefore", "notAfter")}
+    intervals = {key: _date_interval(value, key) for key, value in result.items()}
+    if result["when"] is not None and (
+        result["notBefore"] is not None or result["notAfter"] is not None
+    ):
+        raise ValueError("date when cannot be combined with bounds")
+    lower, upper = intervals["notBefore"], intervals["notAfter"]
+    if lower is not None and upper is not None and lower[0] > upper[1]:
+        raise ValueError("date notBefore must not follow notAfter")
+    result["uncertain"] = data.get("uncertain", False)
+    if type(result["uncertain"]) is not bool:
+        raise ValueError("date uncertain must be a boolean")
+    return result
 
 
 def _mention(data: object) -> dict:
@@ -103,8 +147,8 @@ def _mention(data: object) -> dict:
         )
     }
     _uuid(result["id"])
-    if not isinstance(result["kind"], str) or result["kind"] not in KINDS:
-        raise ValueError("mention kind must be person or term")
+    if not isinstance(result["kind"], str) or result["kind"] not in MENTION_KINDS:
+        raise ValueError("mention kind must be person, place, term or date")
     for field in ("docId", "pageNr"):
         if type(result[field]) is not int or result[field] < 1:
             raise ValueError(f"{field} must be a positive integer")
@@ -121,6 +165,12 @@ def _mention(data: object) -> dict:
         raise ValueError("textDigest must be a SHA-256 digest")
     if result["entryId"] is not None:
         _uuid(result["entryId"])
+    if result["kind"] == "date":
+        if result["entryId"] is not None:
+            raise ValueError("date mentions cannot reference a register entry")
+        result.update(_date_fields(data))
+    elif any(key in data for key in ("when", "notBefore", "notAfter", "uncertain")):
+        raise ValueError("only date mentions can have date fields")
     result["note"] = _text(data.get("note", ""), "note", 10000, empty=True)
     return result
 

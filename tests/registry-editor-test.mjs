@@ -15,6 +15,9 @@ const DOCS = path.join(REPO, 'docs');
 const fixture = JSON.parse(fs.readFileSync(path.join(DOCS, 'data/entities', `${DOC_ID}.json`), 'utf8'));
 const person = fixture.entities.find(entity => entity.type === 'person');
 const term = fixture.entities.find(entity => entity.type === 'object');
+const place = fixture.entities.find(entity => entity.type === 'place');
+const date = fixture.entities.find(entity => entity.type === 'time' && /^\d{4}$/.test(entity.normalized));
+const laterDate = fixture.entities.find(entity => entity.type === 'time' && /^\d{4}$/.test(entity.normalized) && entity.normalized > date.normalized);
 const protectedPaths = [
   path.join(REPO, 'pipeline/pages', `${DOC_ID}.json`),
   path.join(DOCS, 'data/transcriptions', `${DOC_ID}.json`),
@@ -80,6 +83,8 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 const errors = [];
 page.on('pageerror', error => errors.push(String(error)));
 const checks = [];
+const output = path.join(REPO, 'output', 'inline-acceptance');
+fs.mkdirSync(output, { recursive: true });
 function check(condition, label) {
   assert.ok(condition, label);
   checks.push(label);
@@ -99,9 +104,10 @@ async function save(form) {
 }
 async function openRegistry() {
   await page.locator('#btn-registry').click();
-  await page.locator('#registry-dialog[open]').waitFor();
+  await page.locator('#registry-dialog').waitFor();
 }
-async function selectText(entity) {
+async function selectText(entity, kind = 'person', route = 'toolbar') {
+  await page.locator(`.transcription__line[data-line-id="${entity.lineId}"]`).scrollIntoViewIfNeeded();
   await page.locator(`.transcription__line[data-line-id="${entity.lineId}"]`).evaluate((line, text) => {
     const root = line.querySelector('.transcription__line-text');
     const full = root.textContent;
@@ -124,9 +130,28 @@ async function selectText(entity) {
     selection.removeAllRanges();
     selection.addRange(range);
     document.dispatchEvent(new Event('selectionchange'));
+    line.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
   }, entity.text);
-  await page.locator('#btn-annotate-selection').click();
-  await page.locator('#mention-dialog[open]').waitFor();
+  if (route === 'keyboard') await page.keyboard.press('Alt+a');
+  if (route === 'contextmenu') {
+    const box = await page.evaluate(() => {
+      const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+      return { x: rect.x + Math.min(rect.width / 2, 8), y: rect.y + rect.height / 2 };
+    });
+    await page.mouse.click(box.x, box.y, { button: 'right' });
+  }
+  check(await page.locator('#annotation-selection-toolbar [data-kind]').count() === 4,
+    'selection toolbar exposes the four manual annotation categories');
+  if (kind === 'person') {
+    await page.screenshot({ path: path.join(output, 'selection-toolbar.png'), fullPage: true });
+    await page.screenshot({ path: path.join(output, 'selection-detail.png'), clip: { x: 640, y: 0, width: 640, height: 760 } });
+  }
+  await page.locator(`#annotation-selection-toolbar [data-kind="${kind}"]`).click();
+  await page.locator('#mention-dialog').waitFor();
+  check(await page.locator('#mention-quote').textContent() === entity.text,
+    `${route} category selection preserves the exact ${kind} source span`);
+  check(await page.locator('#mention-dialog').evaluate(element => element.tagName !== 'DIALOG' && element.getAttribute('aria-modal') !== 'true'),
+    `${kind} editor is an inline surface without a modal backdrop`);
 }
 
 try {
@@ -145,25 +170,27 @@ try {
     await machineMark.waitFor();
     await machineMark.focus();
     await page.keyboard.press('Enter');
-    await page.locator('#entities-dialog[open]').waitFor();
+    await page.locator('#entities-dialog').waitFor();
     check(await page.locator('#annotation-editor [name="entity"]').inputValue() === entity.id,
       `same-name machine mark opens its own occurrence ${entity.id} on page ${entity.pageNr}`);
     await page.keyboard.press('Escape');
     check(await machineMark.evaluate(element => document.activeElement === element),
-      `machine dialog restores focus to occurrence ${entity.id}`);
+      `machine inline editor restores focus to occurrence ${entity.id}`);
   }
   await page.goto(`${BASE}/viewer.html?doc=${DOC_ID}&page=${person.pageNr}`, { waitUntil: 'networkidle' });
 
   await page.locator('#btn-registry').focus();
   await page.keyboard.press('Enter');
-  await page.locator('#registry-dialog[open]').waitFor();
+  await page.locator('#registry-dialog').waitFor();
   await page.keyboard.press('Escape');
+  check(await page.locator('#registry-dialog').isHidden(),
+    'Escape closes the clean register sidebar');
   check(await page.locator('#btn-registry').evaluate(element => document.activeElement === element),
-    'registry dialog opens by keyboard and Escape restores trigger focus');
+    'registry sidebar opens by keyboard and Escape restores trigger focus');
 
   await openRegistry();
   const entryForm = page.locator('#registry-entry-form');
-  for (const [kind, entity] of [['person', person], ['term', term]]) {
+  for (const [kind, entity] of [['person', person], ['term', term], ['place', place]]) {
     await page.locator('#registry-new').click();
     await entryForm.locator('[name="kind"]').selectOption(kind);
     await entryForm.locator('[name="label"]').fill(entity.normalized);
@@ -174,8 +201,9 @@ try {
   let registry = await state();
   const personEntry = registry.entries.find(entry => entry.kind === 'person');
   const termEntry = registry.entries.find(entry => entry.kind === 'term');
-  check(personEntry.label === person.normalized && termEntry.label === term.normalized,
-    'person and controlled term are persisted by the real backend');
+  const placeEntry = registry.entries.find(entry => entry.kind === 'place');
+  check(personEntry.label === person.normalized && termEntry.label === term.normalized && placeEntry.label === place.normalized,
+    'person, controlled term and place are persisted by the real backend');
 
   await page.locator('#registry-new').click();
   await entryForm.locator('[name="kind"]').selectOption('person');
@@ -201,12 +229,17 @@ try {
     'identical person labels without aliases remain visibly distinguishable by identity');
 
   await entryForm.locator('[name="note"]').fill(term.text);
-  await page.keyboard.press('Escape');
-  check(await page.locator('#registry-dialog').isVisible() &&
+  const draftPage = await page.locator('#page-input').inputValue();
+  await page.locator('#btn-next-page').click();
+  check(await page.locator('#page-input').inputValue() === draftPage &&
     await entryForm.locator('[name="note"]').inputValue() === term.text,
-  'Escape retains an unsaved entry draft inside its open dialog');
+  'page navigation retains the unsaved sidebar entry and its source page');
+  await page.keyboard.press('Escape');
+  if (!await page.locator('#registry-dialog').isVisible()) await openRegistry();
+  check(await entryForm.locator('[name="note"]').inputValue() === term.text,
+    'Escape and reopening retain an unsaved sidebar entry');
   await page.locator('#registry-dialog').getByRole('button', { name: 'Eingaben verwerfen', exact: true }).click();
-  check(!await page.locator('#registry-dialog').isVisible(), 'explicit discard closes the dirty dialog');
+  check(!await page.locator('#registry-dialog').isVisible(), 'explicit discard closes the dirty sidebar');
   await openRegistry();
   check(await entryForm.locator('[name="note"]').inputValue() === '',
     'discard restores the persisted entry rather than retaining its unsaved note');
@@ -214,6 +247,16 @@ try {
 
   await selectText(person);
   const mentionForm = page.locator('#mention-form');
+  const placement = await page.evaluate(lineId => {
+    const anchor = [...document.querySelectorAll('.transcription__line[data-line-id]')].find(line => line.dataset.lineId === lineId).getBoundingClientRect();
+    const surface = document.getElementById('mention-dialog').getBoundingClientRect();
+    return { inside: surface.left >= 0 && surface.right <= innerWidth + 1 && surface.top >= 0 && surface.bottom <= innerHeight + 1,
+      gap: Math.max(0, surface.top - anchor.bottom, anchor.top - surface.bottom) };
+  }, person.lineId);
+  check(placement.inside && placement.gap <= 32,
+    'inline editor is clamped inside the viewport beside its source line');
+  await page.screenshot({ path: path.join(output, 'person-inline.png'), fullPage: true });
+  await page.screenshot({ path: path.join(output, 'person-detail.png'), clip: { x: 640, y: 0, width: 640, height: 760 } });
   await mentionForm.locator('[name="kind"]').selectOption('person');
   await mentionForm.locator('[name="search"]').fill(person.text);
   // Alias lookup must expose the stable identity, even when labels coincide.
@@ -233,8 +276,15 @@ try {
   await mark.waitFor();
   await mark.focus();
   await page.keyboard.press('Enter');
-  await page.locator('#mention-dialog[open]').waitFor();
+  await page.locator('#mention-dialog').waitFor();
+  check(await page.locator('#entities-dialog').isHidden(),
+    'manual mark over a machine mark opens only its manual inline editor');
+  await page.locator('#mention-note > summary').click();
   await mentionForm.locator('[name="note"]').fill(person.text);
+  await page.keyboard.press('Escape');
+  if (!await page.locator('#mention-dialog').isVisible()) await page.locator('#btn-annotate-selection').click();
+  check(await mentionForm.locator('[name="note"]').inputValue() === person.text,
+    'Escape and resume retain an unsaved inline mention');
   await mentionForm.locator('[name="reviewer"]').fill('QA');
   await save(mentionForm);
   check((await state()).mentions.find(item => item.id === mention.id).note === person.text,
@@ -252,11 +302,48 @@ try {
   await page.keyboard.press('Escape');
 
   await page.goto(target.href, { waitUntil: 'networkidle' });
-  await page.locator('#mention-dialog[open]').waitFor();
+  await page.locator('#mention-dialog').waitFor();
   check(await page.locator('#mention-quote').textContent() === person.text &&
     await mentionForm.locator('[name="entryId"]').inputValue() === personEntry.id,
   'following a fundstelle opens the persisted source span and correct identity');
   await page.keyboard.press('Escape');
+
+  await selectText(place, 'place', 'contextmenu');
+  await mentionForm.locator('[name="search"]').fill(place.text);
+  await mentionForm.locator('[name="entryId"]').selectOption(placeEntry.id);
+  await mentionForm.locator('[name="reviewer"]').fill('QA');
+  await save(mentionForm);
+  check((await state()).mentions.some(item => item.kind === 'place' && item.entryId === placeEntry.id && item.quote === place.text),
+    'right-click selection assigns a saved exact span to a place');
+
+  await selectText(date, 'date', 'keyboard');
+  await mentionForm.locator('[name="dateMode"]').selectOption('exact');
+  await mentionForm.locator('[name="when"]').fill(date.normalized);
+  await mentionForm.locator('[name="reviewer"]').fill('QA');
+  await page.screenshot({ path: path.join(output, 'date-inline.png'), fullPage: true });
+  await save(mentionForm);
+  let dateMention = (await state()).mentions.find(item => item.kind === 'date');
+  check(dateMention?.when === date.normalized && dateMention.entryId === null,
+    'date annotation persists a source-attested year without an invented register identity');
+  await page.locator(`[data-mention-id="${dateMention.id}"]`).click();
+  await mentionForm.locator('[name="dateMode"]').selectOption('range');
+  await mentionForm.locator('[name="notBefore"]').fill(laterDate.normalized);
+  await mentionForm.locator('[name="notAfter"]').fill(date.normalized);
+  await mentionForm.locator('[name="reviewer"]').fill('QA');
+  await mentionForm.locator('[type="submit"]').click();
+  await page.waitForFunction(() => {
+    const form = document.getElementById('mention-form');
+    return !form.checkValidity() || document.querySelector('#mention-dialog [role=status]')?.textContent.trim();
+  });
+  check((await state()).mentions.find(item => item.id === dateMention.id).when === date.normalized,
+    'inverted date bounds cannot replace the saved exact date');
+  await mentionForm.locator('[name="notBefore"]').fill(date.normalized);
+  await mentionForm.locator('[name="notAfter"]').fill(laterDate.normalized);
+  await mentionForm.locator('[name="uncertain"]').check();
+  await save(mentionForm);
+  dateMention = (await state()).mentions.find(item => item.id === dateMention.id);
+  check(dateMention.notBefore === date.normalized && dateMention.notAfter === laterDate.normalized && dateMention.uncertain && dateMention.when === null,
+    'explicit uncertain date range replaces the exact value with valid saved bounds');
 
   await page.setViewportSize({ width: 640, height: 500 });
   await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
@@ -270,11 +357,33 @@ try {
   check(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1),
     'narrow 200 percent viewport has no horizontal document overflow');
   check(await page.locator('#registry-dialog').evaluate(element => element.scrollWidth <= element.clientWidth + 1),
-    'registry dialog has no horizontal overflow at 200 percent');
+    'registry sidebar has no horizontal overflow at 200 percent');
   // Escape in a populated native search field first clears the query.
-  await page.locator('#registry-dialog .viewer-dialog__header button').click();
+  await page.locator('#registry-dialog [data-close-surface]').click();
+  await mark.scrollIntoViewIfNeeded();
+  await mark.click();
+  check(await mentionForm.locator('[name="entryId"]').inputValue() === personEntry.id,
+    'inline person editor remains operable at narrow 200 percent zoom');
+  await mentionForm.locator('[name="reviewer"]').fill('QA');
+  const narrowPlacement = await page.locator('#mention-dialog').evaluate(element => {
+    const rect = element.getBoundingClientRect();
+    return { scrollWidth: element.scrollWidth, clientWidth: element.clientWidth, left: rect.left, right: rect.right, viewport: innerWidth };
+  });
+  await page.screenshot({ path: path.join(output, 'inline-narrow.png'), fullPage: false });
+  check(narrowPlacement.scrollWidth <= narrowPlacement.clientWidth + 1 && narrowPlacement.left >= 0 && narrowPlacement.right <= narrowPlacement.viewport + 1,
+    `inline editor has no horizontal overflow at narrow 200 percent zoom ${JSON.stringify(narrowPlacement)}`);
+  await save(mentionForm);
+  check((await state()).mentions.some(item => item.id === mention.id && item.entryId === personEntry.id),
+    'inline controls remain fillable and saveable at narrow 200 percent zoom');
   await page.evaluate(() => { document.documentElement.style.zoom = ''; });
   await page.setViewportSize({ width: 1280, height: 800 });
+
+  // Acceptance images precede the deliberate source mutation below.
+  await page.screenshot({ path: path.join(output, 'viewer.png'), fullPage: true });
+  await openRegistry();
+  await page.locator(`[data-entry-id="${personEntry.id}"]`).click();
+  await page.screenshot({ path: path.join(output, 'registry.png'), fullPage: true });
+  await page.keyboard.press('Escape');
 
   await mark.click();
   await mentionForm.locator('[name="reviewer"]').fill('QA');
@@ -286,7 +395,7 @@ try {
   check(!(await state()).mentions.some(item => item.id === mention.id),
     'manual mention deletion persists across reload');
 
-  await selectText(term);
+  await selectText(term, 'term');
   await mentionForm.locator('[name="kind"]').selectOption('term');
   await mentionForm.locator('[name="search"]').fill(term.text);
   await mentionForm.locator('[name="entryId"]').selectOption(termEntry.id);
@@ -320,7 +429,7 @@ try {
   check(await mentionForm.locator('[type="submit"]').isHidden(),
     'stale mention cannot be silently resaved against the changed source');
   check((await page.locator('#mention-dialog [role="status"]').textContent()).includes('geändert'),
-    'stale-source dialog explains why a new selection is required');
+    'stale-source inline editor explains why a new selection is required');
   await page.keyboard.press('Escape');
   await page.keyboard.press('Escape');
 
@@ -341,15 +450,9 @@ try {
   check((await state()).history.length > initial.history.length,
     'registry history survives mutation and reload');
   check(errors.length === 0, `no browser JavaScript errors: ${errors.join(' | ')}`);
-  const output = path.join(REPO, 'output', 'registry-browser');
-  fs.mkdirSync(output, { recursive: true });
-  await page.screenshot({ path: path.join(output, 'viewer.png'), fullPage: true });
-  await openRegistry();
-  await page.locator(`[data-entry-id="${termEntry.id}"]`).click();
-  await page.screenshot({ path: path.join(output, 'registry.png'), fullPage: true });
   console.log(JSON.stringify({ checks: checks.length, results: checks }, null, 2));
 } catch (error) {
-  console.error(JSON.stringify({ completed: checks, errors, dialogs: await page.locator('dialog[open]').evaluateAll(
+  console.error(JSON.stringify({ completed: checks, errors, dialogs: await page.locator('dialog[open], [role=dialog]:visible, #registry-dialog:visible').evaluateAll(
     elements => elements.map(element => ({ id: element.id, text: element.textContent, invalid: [...element.querySelectorAll(':invalid')].map(input => input.name) }))) }, null, 2));
   throw error;
 } finally {

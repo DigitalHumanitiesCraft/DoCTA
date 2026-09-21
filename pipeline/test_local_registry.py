@@ -73,6 +73,130 @@ def test_same_labels_stay_distinct_and_history_survives(pages: Path) -> None:
     assert not (pages.parent / "entity_index.json").exists()
 
 
+def test_place_identity_and_assignment_round_trip(pages: Path) -> None:
+    place = save(pages, "save-entry", entry=entry("place"))["entries"][0]
+    saved = save(
+        pages, "save-mention", mention=mention(pages, kind="place", entryId=place["id"])
+    )
+    assert registry.read_registry(pages) == saved
+    assert saved["mentions"][0]["entryId"] == place["id"]
+    with pytest.raises(ValueError, match="only a term"):
+        save(pages, "save-entry", entry={**place, "broaderId": place["id"]})
+    with pytest.raises(ValueError, match="same kind"):
+        save(pages, "save-mention", mention=mention(pages, entryId=place["id"]))
+
+
+@pytest.mark.parametrize("value", ["0001", "9999", "2000-02", "2000-02-29"])
+def test_date_precision_accepts_calendar_boundaries(value: str) -> None:
+    """Calendar edge cases are contract fixtures, not historical assertions."""
+    result = registry._date_fields({"when": value})
+    assert result == {
+        "when": value,
+        "notBefore": None,
+        "notAfter": None,
+        "uncertain": False,
+    }
+
+
+@pytest.mark.parametrize(
+    "fields",
+    [
+        {"when": "0000"},
+        {"when": "1900-02-29"},
+        {"when": "2000-04-31"},
+        {"when": "2000-13"},
+        {"when": "2000-00"},
+        {"when": "2000-01-00"},
+        {"when": "2000-1-1"},
+        {"when": "2000-01-01T00:00:00"},
+        {"when": " 2000"},
+        {"when": ""},
+        {"when": 2000},
+        {"when": "2000", "notBefore": "2000"},
+        {"when": "2000", "notAfter": "2000"},
+        {"notBefore": "2001", "notAfter": "2000"},
+        {"notBefore": "2000-03", "notAfter": "2000-02"},
+        {"notBefore": "2000-02-02", "notAfter": "2000-02-01"},
+        {"notAfter": "2000-02-30"},
+        {"uncertain": "false"},
+        {"uncertain": 1},
+    ],
+)
+def test_date_fields_reject_invalid_calendar_or_ambiguous_contract(
+    fields: dict,
+) -> None:
+    """Synthetic values isolate calendar validation from the source material."""
+    with pytest.raises(ValueError):
+        registry._date_fields(fields)
+
+
+@pytest.mark.parametrize(
+    "fields",
+    [
+        {},
+        {"uncertain": True},
+        {"notBefore": "2000-02-29"},
+        {"notAfter": "2000"},
+        {"notBefore": "2000-02-29", "notAfter": "2000-02"},
+        {"notBefore": "2000", "notAfter": "2000-01-01"},
+        {"notBefore": "2000-02-29", "notAfter": "2000-02-29"},
+    ],
+)
+def test_date_bounds_expand_partial_precision(fields: dict) -> None:
+    """Bound ordering includes the days allowed by reduced calendar precision."""
+    result = registry._date_fields(fields)
+    assert all(result[key] == value for key, value in fields.items())
+
+
+def test_date_quote_history_and_legacy_records_survive(pages: Path) -> None:
+    """Exercise persistence on real lines without asserting their historical date."""
+    person = save(pages, "save-mention", mention=mention(pages))
+    legacy_mention = person["mentions"][0]
+    legacy_event = copy.deepcopy(person["history"][0])
+    saved = save(pages, "save-mention", mention=mention(pages, kind="date"))
+    record = saved["mentions"][-1]
+    assert record["entryId"] is None
+    assert record["when"] is None
+    assert record["notBefore"] is None
+    assert record["notAfter"] is None
+    assert record["uncertain"] is False
+    changed = save(
+        pages,
+        "save-mention",
+        mention={**record, "when": "2000-02", "uncertain": True, "note": "unresolved"},
+    )
+    assert changed["mentions"][0] == legacy_mention
+    assert changed["history"][0] == legacy_event
+    assert changed["mentions"][-1]["quote"] == record["quote"]
+    assert changed["history"][-1]["before"]["uncertain"] is False
+    assert changed["history"][-1]["after"]["uncertain"] is True
+    assert changed["history"][-1]["after"]["when"] == "2000-02"
+    assert registry.read_registry(pages) == changed
+    assert save(pages, "save-mention", mention=changed["mentions"][-1]) == changed
+    removed = save(pages, "remove-mention", id=record["id"])
+    assert removed["history"][-1]["before"]["uncertain"] is True
+    assert removed["history"][-1]["after"] is None
+
+
+def test_invalid_date_write_preserves_state(pages: Path) -> None:
+    person = save(pages, "save-entry", entry=entry())["entries"][0]
+    path = pages.parent / "registry" / "index.json"
+    original = path.read_bytes()
+    for fields in (
+        {"entryId": person["id"]},
+        {"notBefore": "2001", "notAfter": "2000"},
+        {"when": "2000-02-30"},
+    ):
+        with pytest.raises(ValueError):
+            save(pages, "save-mention", mention=mention(pages, kind="date", **fields))
+        assert path.read_bytes() == original
+    with pytest.raises(ValueError, match="only date"):
+        save(pages, "save-mention", mention=mention(pages, uncertain=False))
+    with pytest.raises(ValueError, match="entry kind"):
+        save(pages, "save-entry", entry=entry("date"))
+    assert path.read_bytes() == original
+
+
 def test_term_hierarchy_rejects_cycles_and_wrong_kind(pages: Path) -> None:
     first = save(pages, "save-entry", entry=entry("term"))["entries"][0]
     second = save(pages, "save-entry", entry=entry("term", broaderId=first["id"]))[
@@ -104,8 +228,11 @@ def test_mentions_link_explicitly_and_preserve_deleted_history(pages: Path) -> N
     assert result["history"][-1]["before"]["entryId"] == person["id"]
 
 
-def test_source_change_marks_stale_without_moving_and_rejects_save(pages: Path) -> None:
-    saved = save(pages, "save-mention", mention=mention(pages))
+@pytest.mark.parametrize("kind", ["person", "place", "term", "date"])
+def test_source_change_marks_stale_without_moving_and_rejects_save(
+    pages: Path, kind: str
+) -> None:
+    saved = save(pages, "save-mention", mention=mention(pages, kind=kind))
     record = saved["mentions"][0]
     document = editor.document_payload(DOC, pages)
     editor.save_review(
