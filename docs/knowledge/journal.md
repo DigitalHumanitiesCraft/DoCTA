@@ -33,6 +33,8 @@ The loopback editor now saves review records and effective readings, detects con
 
 Independent review found and corrected write races, inconsistent partial builds and a frontend draft-status omission. A real-source scratch copy passed save, reload, Reading, TEI rebuild and annotation read-back in the browser. The complete Python suite, lint and formatting passed, and the pipeline healthcheck confirmed schema validity and byte-identical rebuild. Derived site files were regenerated under the existing edition date to preserve their generator provenance. No research correction, reference approval, paid recognition run or publication was performed.
 
+The Hersch and remote SZD implementations were inspected as write-back references. SZD preserves machine text and correction history, but its unchecked asynchronous save, direct file replacement and implicit approval do not meet the local editor's persistence contract. The comparison and pinned source links are recorded in `architecture.md`.
+
 The Inventaria test import stays private and ignored by Git. Missing image keys still require authorized Transkribus metadata. Structural line edits, new annotation spans, the accepted account-book reference, specialized HTR comparison and released accounting TEI/RDF remain open. The browser adapter did not apply the requested narrow viewport, so responsive and zoom accessibility acceptance remains incomplete. The scientific decisions and proposal text remain assigned to the project lead.
 
 ## Three owner decisions, and the knowledge base checked against the repository (20.09.2026)
