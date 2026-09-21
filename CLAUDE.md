@@ -8,7 +8,7 @@ DoCTA develops a local working edition and a public static site for fifteenth-ce
 
 Built with Promptotyping. Before conceptual or design work, consult the knowledge documents; after decisions with reasons, record them in `docs/knowledge/journal.md`.
 
-Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. Highlighted annotations open their editing form. The separate editor-owned register preserves independent identities and does not yet feed TEI or graph output.
+Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. Only editor-owned annotations appear in the viewer. Index opens the saved person/place registers and controlled vocabulary. The separate editor-owned register preserves independent identities and does not yet feed TEI or graph output.
 
 ## Commands
 
@@ -52,7 +52,6 @@ node tests/interaction-test.mjs
 node tests/tag-editor-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
-node tests/annotation-editor-test.mjs
 ```
 
 For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
@@ -75,7 +74,7 @@ Data flows in one direction. Transkribus exports and evaluation runs are inputs 
 ## Constraints worth knowing
 
 - Editorial registry writes require optimistic revision checks, the shared review lock and atomic state with before/after history. Anchors address saved line text through UTF-16 offsets and a SHA-256 digest. Equal names never imply equal persons. The contract lives in `docs/knowledge/architecture.md#editorial-register-persistence`.
-- Annotation editing belongs in one shared nonmodal popover beside the selected source passage. Category selection, register-entry editing and machine-proposal evidence use that same surface. The sidebar supports browsing the whole register. The initial categories are person, term, place and date. Preserve pending input across surface dismissal and require save or discard before source navigation. A draft decision must never acquire a changed source digest silently.
+- Annotation editing belongs in one shared nonmodal popover beside the selected source passage. Category selection and register-entry editing use that same surface. Do not reintroduce AI annotation proposals into this working interface. Decorative horizontal separators are excluded. The sidebar supports browsing the whole register. The initial categories are person, term, place and date. Preserve pending input across surface dismissal and require save or discard before source navigation. A draft decision must never acquire a changed source digest silently.
 
 - Everything committed under `docs/` is published immediately on push to `main`.
 - All VLM output is unrevised machine transcription until a scholar approves it, and is marked as such wherever displayed. Keep that framing in any UI or data change.

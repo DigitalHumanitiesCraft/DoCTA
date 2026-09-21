@@ -155,6 +155,8 @@ try {
   check(await page.locator('#btn-review-save').isDisabled(),
     'local save is disabled before a draft exists');
   check(posts === 0, 'opening a local document performs no review write');
+  check(await page.locator('.entity, [data-ent-key], #btn-entities, #entities-dialog').count() === 0,
+    'viewer contains no machine annotation marks or controls');
 
   const expectedSource = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'sources.json'), 'utf8'))
     .find(source => source.transkribus_docs?.some(doc => doc.doc_id === DOC_ID));
@@ -169,20 +171,12 @@ try {
     ['#btn-source-details', '#source-dialog', 'source'],
     ['#btn-more', '#viewer-more', 'more'],
     ['#btn-tags', '#tags-dialog', 'tags'],
-    ['#btn-entities', '#entities-dialog', 'entities'],
   ]) {
     await page.locator(button).focus();
     await page.keyboard.press('Enter');
     await page.locator(dialog).waitFor({ state: 'visible' });
     check(await visible(page, dialog), `${label} surface opens from the keyboard`);
     if (label === 'tags') check(await visible(page, '#tag-editor form'), 'tag form is accessible inside its dialog');
-    if (label === 'entities') {
-      if (!await page.locator(dialog).evaluate(element => element.open)) await page.locator('#annotation-proposal-summary').click();
-      check(await visible(page, '#annotation-editor form'), 'annotation form is accessible in its inline editor');
-      check(await page.locator(dialog).evaluate(element => !element.hasAttribute('popover') && !!element.closest('#annotation-workspace')) &&
-        await page.locator('[popover]:popover-open').count() === 1,
-      'machine proposal editing uses the shared source workspace');
-    }
     await page.keyboard.press('Escape');
     await page.locator(dialog).waitFor({ state: 'hidden' });
     await page.waitForFunction(selector => document.querySelector(selector) === document.activeElement, button);

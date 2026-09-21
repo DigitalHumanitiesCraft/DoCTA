@@ -1,0 +1,34 @@
+.register-main { max-inline-size: 78rem; margin-inline: auto; padding: var(--space-lg); }
+.register-header, .register-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); }
+.register-header { justify-content: space-between; margin-block-end: var(--space-lg); }
+.register-header h1 { margin: 0; }
+.register-page [hidden] { display: none; }
+.register-button { background: var(--surface); color: var(--text-primary); border: 1px solid var(--text-muted-custom); border-radius: var(--radius-sm); padding: var(--space-sm) var(--space-md); font: inherit; }
+.register-filters { display: grid; grid-template-columns: minmax(0, 3fr) minmax(9rem, 1fr); gap: var(--space-lg); margin-block-end: var(--space-lg); }
+.register-filters label { display: grid; gap: var(--space-xs); min-inline-size: 0; }
+.register-filters :is(input, select) { inline-size: 100%; min-inline-size: 0; min-block-size: 2.75rem; font: inherit; padding: var(--space-sm); color: var(--text-primary); background: var(--surface); border: 1px solid var(--text-muted-custom); border-radius: var(--radius-sm); }
+.register-layout { display: grid; grid-template-columns: minmax(14rem, 1fr) minmax(0, 2fr); gap: clamp(1rem, 4vw, 3rem); align-items: start; }
+.register-list { min-inline-size: 0; max-block-size: calc(100vh - 15rem); overflow: auto; }
+#register-results, #register-unassigned ul, .register-attestations { list-style: none; padding: 0; margin: 0; }
+#register-results li { margin-block-end: var(--space-sm); }
+#register-results a { display: block; padding: var(--space-sm); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-sm); overflow-wrap: anywhere; }
+#register-results a:hover { background: var(--bg-secondary); }
+#register-results a[aria-current="true"] { background: var(--accent-light); outline: 1px solid var(--accent); outline-offset: -1px; }
+.register-kind { display: block; color: var(--text-secondary); font-size: var(--text-sm); }
+#register-detail { min-inline-size: 0; overflow-wrap: anywhere; }
+#register-detail h2 { font-size: 1.4rem; margin-block: 0 var(--space-sm); }
+#register-detail h3 { font-size: 1.1rem; margin-block: var(--space-lg) var(--space-sm); }
+#register-detail dl { display: grid; gap: var(--space-sm); margin-block: var(--space-lg); }
+#register-detail dt { color: var(--text-secondary); font-weight: 400; }
+#register-detail dd { margin: 0; white-space: pre-wrap; }
+.register-attestations li, #register-unassigned li { margin-block: var(--space-md); }
+.register-attestations a, #register-unassigned a { display: block; padding-block: var(--space-xs); }
+.register-stale { display: block; color: var(--text-secondary); }
+.register-page summary { padding-block: var(--space-sm); min-block-size: 2.75rem; cursor: pointer; }
+.register-page :is(a, button, input, select, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#register-status:empty { display: none; }
+#register-unassigned { margin-block-start: var(--space-lg); }
+@media (max-width: 700px) {
+  .register-layout, .register-filters { grid-template-columns: minmax(0, 1fr); }
+  .register-list { max-block-size: 16rem; }
+}

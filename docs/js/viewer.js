@@ -1,12 +1,11 @@
 import { initNav, initBanner } from './app.js?v=20260921-ui';
-import { loadJSON, loadEntities } from './data-loader.js';
+import { loadJSON } from './data-loader.js';
 import { getParams, setParams, escapeHTML, escapeAttr,
          lsGet, lsSet } from './utils.js';
-import { createEntityLayer, createTeiView, renderReading,
+import { createTeiView, renderReading,
          renderTranscription } from './viewer-render.js?v=20260921-ui';
 import { createReviewView } from './viewer-review.js?v=20260921-corrections';
 import { createLocalEditor } from './viewer-local.js';
-import { createAnnotationEditor } from './viewer-annotations.js?v=20260921-ui';
 import { createTagEditor } from './viewer-tags.js?v=20260921-ui';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
@@ -15,10 +14,6 @@ initNav('viewer');
 initBanner();
 const local = createLocalEditor();
 const annotationWorkspace = createAnnotationWorkspace();
-const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local, {
-  hasDraft: () => review.hasDraft,
-  workspace: annotationWorkspace,
-});
 
 let viewer = null;
 let imageKey = null;
@@ -29,9 +24,6 @@ let rotation = 0;
 let sourceByDocId = new Map();
 let registerByDocId = new Map();
 
-// Entities of the loaded document: the index the marks are matched against
-// and the markup that states which model produced them.
-const entities = createEntityLayer();
 const transcriptionContainer = document.getElementById('transcription-container');
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -141,10 +133,7 @@ function renderDocMeta(docId) {
   const meta = document.getElementById('doc-meta');
   meta.innerHTML = provenanceChip(docId) + coverage;
   meta.hidden = false;
-  document.getElementById('entity-tools').hidden = !entities.active;
   document.getElementById('btn-tags').hidden = !local.enabled;
-  document.getElementById('btn-entities').hidden = !entities.active;
-  document.getElementById('entity-legend').innerHTML = entities.legendHTML();
 }
 
 function initOSD() {
@@ -422,13 +411,12 @@ const review = createReviewView({
     revision: currentDoc?.revision,
     reviewState: currentDoc?.reviewState,
   }),
-  markText: entities.markText,
+  markText: text => text,
   rerenderPage: renderPage,
   local,
   onDraftChange: () => { updateDraftBadge(); tags.sync(); },
   onSaved: (doc) => {
     currentDoc = doc;
-    annotations.update(doc);
     registry.load();
     tags.load(doc);
     renderDocMeta(doc.docId);
@@ -443,7 +431,6 @@ const tags = createTagEditor(document.getElementById('tag-editor'), local, {
     const doc = await local.load(docId);
     if (currentDoc.docId !== docId) return;
     currentDoc = doc;
-    annotations.update(doc);
     await tags.load(doc);
     renderDocMeta(doc.docId);
     renderCurrentView();
@@ -456,12 +443,6 @@ const registry = createRegistryEditor(local, {
   workspace: annotationWorkspace,
 });
 
-document.getElementById('btn-entities').addEventListener('click', event => {
-  const source = annotations.source();
-  if (!source) return;
-  if (local.enabled) registry.openSource(source, event.currentTarget);
-  else annotations.open(null, event.currentTarget);
-});
 document.getElementById('btn-review').addEventListener('click', event => {
   if (!canNavigate()) { event.preventDefault(); event.stopImmediatePropagation(); }
 }, { capture: true });
@@ -473,7 +454,7 @@ function renderPage(pageNr) {
   linkedLineId = null;
   renderTranscription(transcriptionContainer, currentDoc, pageNr, {
     corrections: review.corrections(pageNr),
-    markText: entities.markText,
+    markText: text => text,
   });
   review.applyMode();
   registry.render();
@@ -493,23 +474,6 @@ function renderPage(pageNr) {
     origins.map(run => `<dt>Transkriptionslauf</dt><dd>${escapeHTML([run.id, run.date, run.prompt, run.prompt_hash].filter(Boolean).join(', '))}</dd>`).join('') +
     provenance.humanCorrections.map(run => `<dt>Textkorrektur ${escapeHTML(run.reviewer || '')}</dt><dd><time datetime="${escapeAttr(run.timestamp || '')}">${escapeHTML(run.timestamp || 'Zeitpunkt nicht dokumentiert')}</time></dd>`).join('') + '</dl></details>' : '';
 }
-
-const entityAt = (node) =>
-  (node && node.closest) ? node.closest('.entity[data-ent-key]') : null;
-
-function editEntity(target) {
-  if (target.closest('[data-mention-id]')) return;
-  if (window.getSelection()?.toString().trim()) return;
-  const source = annotations.source(target.dataset.entKey);
-  if (!source) return;
-  if (local.enabled) registry.openSource(source, target);
-  else annotations.open(target.dataset.entKey, target);
-}
-document.addEventListener('click', event => { const target = entityAt(event.target); if (target && !event.target.closest('[data-mention-id]')) editEntity(target); });
-document.addEventListener('keydown', event => {
-  const target = entityAt(event.target);
-  if (target && !event.target.closest('[data-mention-id]') && ['Enter', ' '].includes(event.key)) { event.preventDefault(); editEntity(target); }
-});
 
 const tei = createTeiView(transcriptionContainer, {
   getViewMode: () => viewMode,
@@ -573,7 +537,6 @@ function setPage(idx) {
   if (viewMode !== 'synopsis') { review.sync(); return; }
 
   const page = currentDoc.pages[currentPage];
-  annotations.page(page.pageNr);
   tags.page(page.pageNr);
   loadImage(page.iiif);
   renderPage(page.pageNr);
@@ -644,20 +607,13 @@ async function loadDocument(docId, pageNr) {
     const path = source === 'vlm' || registerByDocId.get(Number(docId))?.effective_transcription
       ? `data/pipeline/transcriptions/${docId}.json`
       : `data/transcriptions/${docId}.json`;
-    // Entities are optional per document and are awaited with the text, so
-    // the first render already carries the marks instead of racing them in.
-    const [doc, extraction] = await Promise.all([
-      local.enabled ? local.load(docId) : loadJSON(path),
-      loadEntities(docId),
-    ]);
+    const doc = await (local.enabled ? local.load(docId) : loadJSON(path));
     // A later document switch wins over a slow response
     if (token !== docRequest) return;
     if (!Array.isArray(doc.pages) || !doc.pages.length) {
       throw new Error('the transcription holds no page');
     }
     currentDoc = doc;
-    entities.set(extraction);
-    annotations.load(doc, extraction);
     registry.load();
     tags.load(doc);
     const wanted = pageNr !== undefined
@@ -753,7 +709,7 @@ document.getElementById('btn-line-regions')
 
 const pageInput = document.getElementById('page-input');
 function canNavigate() {
-  return annotations.beforeNavigate() && registry.beforeNavigate();
+  return registry.beforeNavigate();
 }
 // The field takes a page number of the document; a number the document does
 // not carry leaves the current page in place.

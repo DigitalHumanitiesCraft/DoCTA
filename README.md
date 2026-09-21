@@ -8,7 +8,7 @@ An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–
 
 DoCTA supports source-based research into court practices, possession and object movement, and the use of space. The research conversation starts with the historical question, then the material, the information to annotate and its intended analysis. The [project plan](docs/knowledge/plan.md#joint-walkthrough) connects those decisions to a bounded editorial pilot.
 
-The local working edition displays facsimile and transcription together. It saves line corrections with their previous reading, reviewer and timestamp, supports page or line tags, and lets the editor curate existing machine annotation proposals. It has no time tracking or page approval controls. Saved corrections are distinct from scholarly acceptance of a complete source. [Current results and remaining work](docs/knowledge/handoff.md) identify the evidence for each implemented part.
+The local working edition displays facsimile and transcription together. It saves line corrections with their previous reading, reviewer and timestamp, supports page or line tags, and lets the editor build a person index and controlled vocabulary through source-bound assignments. It has no time tracking or page approval controls. Saved corrections are distinct from scholarly acceptance of a complete source. [Current results and remaining work](docs/knowledge/handoff.md) identify the evidence for each implemented part.
 
 Account books (Raitbücher), castle and personal inventories, copybooks and court ordinances form the source programme. Account books are the leading research source. Inventories currently supply the working-editor demonstration. The account-book edition still requires accepted reference text and research annotations.
 
@@ -65,13 +65,15 @@ If source text changes, affected occurrences require checking. Their retained qu
 
 The editorial register identifies persons and classifies source occurrences. Assigning the term Polster does not establish that two sources describe the same physical cushion. These explicit assignments remain independent of the automatically generated extraction index. They are saved with their history in `pipeline/registry/index.json` and exported as JSON. The existing TEI and graph build continues to use machine-proposal curation and does not yet incorporate the new editorial register.
 
-### Check automatic proposals and text provenance
+### Browse the index and check text provenance
 
-Inventaria attribution identifies the transcription source. The colored automatic proposals are a separate DoCTA extraction layer. Clicking a proposal opens the same annotation field as a manual assignment. Expand Modellvorschlag to inspect its recorded LLM and original reading, review the normalized form and decision, enter your initials and save. Normdaten verknüpfen exposes an optional authority URI. The editor-owned register assignment and the decision about the machine proposal retain separate save actions and histories within this field. Inspecting a proposal alone creates no unsaved assignment. Unsaved decisions block switching to another source until saved or discarded. Later decisions preserve the earlier value, actor and timestamp. Earlier sidecars have no retroactively invented history.
+Index beside Viewer opens the editor-owned person and place index and controlled vocabulary. Search preferred names, spelling variants and notes, or filter by category. A selected entry shows its description, broader term where recorded, and source occurrences. Follow a Fundstelle to reopen that exact assignment in the viewer. Equal names remain independent entries. The page reads saved entries and does not merge or import the generated machine index.
 
-The text provenance identifies the recorded transcription LLM independently of annotation production and keeps saved human corrections visible. Details provide the recorded source run and prompt metadata. Missing model information in imported text remains explicitly unknown. Opening the viewer performs no model API call. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
+The annotation field in the viewer contains only editorial assignments. Selecting source text performs no LLM call and displays no automatic proposal. The historical editor builds the index and vocabulary through explicit assignments. Earlier extraction files and annotation decisions remain in the project data, available to their existing processing workflows.
 
-The public GitHub Pages viewer supports browser drafts and JSON export. Writing corrections into repository files requires the local editor. Source exports and prior transcription runs remain available. [The persistence model](docs/knowledge/architecture.md#local-editing-service) describes revision checks and output generation.
+Transcription provenance remains visible independently of editorial annotation. It identifies the recorded transcription LLM and saved human corrections. Details provide the recorded source run and prompt metadata. Missing model information in imported text remains explicitly unknown. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
+
+The public GitHub Pages viewer supports browser transcription drafts and JSON export. Writing corrections and register assignments into project files requires the local editor. Source exports and prior transcription runs remain available. [The persistence model](docs/knowledge/architecture.md#local-editing-service) describes revision checks and output generation.
 
 ## Repository layout
 

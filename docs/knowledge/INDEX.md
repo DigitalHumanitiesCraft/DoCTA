@@ -99,10 +99,10 @@ Unlike `sources/`, this folder is fully contained in the public repository. The 
 | `data/pipeline/transcriptions/*.json` | Text of the documents the pipeline transcribed itself, read by the viewer for documents without a Transkribus transcription |
 | `data/tei/*.xml` | Generated TEI P5, one file per document that carries text, plus `register.xml`, the corpus-wide entity register |
 | `data/transcriptions/*.json` | Inventory transcriptions exported from Transkribus PAGE XML |
-| `data/entities/*.json` | Line-anchored entity extraction per document, read by the viewer's entity layer and encoded into the TEI |
+| `data/entities/*.json` | Line-anchored entity extraction per document, retained for the extraction workflow and encoded into the TEI |
 | `data/graph.jsonld` | Aggregated entity graph (JSON-LD) over every document with an extraction, read by the network view on `exploration.html` |
 | `data/benchmark/summary.json` | Published export of the prompt benchmark, read by `benchmark.html`. The runs themselves stay in `evaluation/benchmark/runs/`, which remains their source of truth |
-| `data/demo/*.json` | Entity and relation extraction demo on the inventory Thaur A 49.1. The viewer falls back to the entity file only when `data/entities/` holds no extraction for that document, and no page loads the relation file |
+| `data/demo/*.json` | Entity and relation extraction demo on the inventory Thaur A 49.1. Retained as prototype research data. The working viewer loads neither file |
 
 ### Pipeline inputs kept under `data/`
 

@@ -28,9 +28,6 @@
 #annotation-selection-toolbar button { min-block-size: 2.75rem; }
 #annotation-workspace-title { overflow-wrap: anywhere; font-family: var(--font-source); }
 #annotation-source-location { color: var(--text-secondary); font-size: var(--text-sm); margin-block-end: var(--space-sm); }
-#annotation-workspace > #entities-dialog { border-block-end: 1px solid var(--border-custom); margin-block-end: var(--space-sm); }
-.annotation-evidence { margin: 0; }
-.annotation-evidence dd { overflow-wrap: anywhere; }
 #mention-inline-entry h3 { margin-block: var(--space-sm); }
 #mention-entry-summary:empty { display: none; }
 .registry-sidebar { min-inline-size: 0; padding: var(--space-lg); background: var(--surface); overflow: auto; border-inline-start: 1px solid var(--border-custom); }

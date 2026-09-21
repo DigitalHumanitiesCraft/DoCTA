@@ -37,14 +37,12 @@ node tests/interaction-test.mjs
 node tests/tag-editor-test.mjs
 node tests/viewer-ui-test.mjs
 node tests/registry-editor-test.mjs
-node tests/annotation-editor-test.mjs
 ```
 
 ## Was sie prüfen
 
-`annotation-editor-test.mjs` prüft die produktiven Annotationsmodule mit echten Quellenwerten und Antworten im Arbeitsspeicher. Verzögertes Laden, überholte Fehlerantworten, zwischenzeitliche Textkorrekturen und konkurrierende Digest-Berechnungen dürfen weder Eingaben verlieren noch eine alte Entscheidung an eine neue Lesung binden.
 
-Die Registerprüfung umfasst die Kategorien Person, Begriff, Ort und Datumsangabe, Rechtsklick und Tastaturzugang sowie die Register-Seitenleiste. Auswahl, Fundstellenbearbeitung, neue Registereinträge und vorhandene Modellvorschläge müssen in demselben geöffneten Feld bleiben. Eine reine Einsicht erzeugt keinen Entwurf. Datumsprüfungen unterscheiden exakte Angaben und unsichere Zeiträume. Die schmale Ansicht bei vergrößerter Darstellung muss tatsächliche Eingaben und Speichern ermöglichen.
+Die Registerprüfung umfasst die Kategorien Person, Begriff, Ort und Datumsangabe, Rechtsklick und Tastaturzugang sowie die Register-Seitenleiste. Auswahl, Fundstellenbearbeitung und neue Registereinträge müssen in demselben geöffneten Feld bleiben. KI-Vorschläge werden weder geladen noch angezeigt. Die Indexansicht zeigt ausschließlich gespeicherte editorische Einträge mit ihren Fundstellen. Eine reine Einsicht erzeugt keinen Entwurf. Datumsprüfungen unterscheiden exakte Angaben und unsichere Zeiträume. Die schmale Ansicht bei vergrößerter Darstellung muss tatsächliche Eingaben und Speichern ermöglichen.
 
 `registry-editor-test.mjs` startet den echten Python-Speicherdienst über einer isolierten Kopie vorhandener Quelldaten. Geprüft werden Personen und Begriffe, Namensvarianten, gleichnamige getrennte Identitäten, Auswahl und Änderung von Fundstellen, Änderungshistorie, veraltete Textanker, direkte Bearbeitung von Modellvorschlägen sowie Tastaturbedienung und schmale Ansichten. Die Forschungsdaten im Repository werden nicht bearbeitet. Benötigt wird die mit `uv sync --locked` eingerichtete Projektumgebung.
 

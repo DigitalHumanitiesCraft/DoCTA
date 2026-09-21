@@ -604,28 +604,6 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       return true;
     },
     openSelection: captureSelection,
-    async openSource(snapshot, anchor) {
-      if (!snapshot || !state || !local.enabled || busy) return false;
-      const request = ++sourceRequest;
-      const existing = state.mentions.find(item => Number(item.docId) === Number(snapshot.docId)
-        && item.pageNr === snapshot.pageNr && item.lineId === snapshot.lineId
-        && item.start === snapshot.start && item.end === snapshot.end && !item.stale);
-      if (existing) {
-        showMention(existing, anchor);
-        return true;
-      }
-      const source = sourceContext(snapshot);
-      if (source.lineText.slice(snapshot.start, snapshot.end) !== snapshot.quote) return false;
-      const textDigest = await digest(source.lineText);
-      if (request !== sourceRequest) return false;
-      if (Number(context().doc?.docId) !== Number(snapshot.docId) || context().pageNr !== snapshot.pageNr) return false;
-      showMention({
-        docId: Number(snapshot.docId), pageNr: snapshot.pageNr, lineId: snapshot.lineId,
-        start: snapshot.start, end: snapshot.end, quote: snapshot.quote,
-        textDigest, kind: snapshot.kind || 'person', entryId: null, note: '',
-      }, anchor);
-      return true;
-    },
     async load() {
       button.hidden = annotate.hidden = !local.enabled;
       if (!local.enabled || dirty.size || busy) return;

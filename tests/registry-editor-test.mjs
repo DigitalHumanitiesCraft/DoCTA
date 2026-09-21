@@ -18,11 +18,13 @@ const term = fixture.entities.find(entity => entity.type === 'object');
 const place = fixture.entities.find(entity => entity.type === 'place');
 const date = fixture.entities.find(entity => entity.type === 'time' && /^\d{4}$/.test(entity.normalized));
 const laterDate = fixture.entities.find(entity => entity.type === 'time' && /^\d{4}$/.test(entity.normalized) && entity.normalized > date.normalized);
-const protectedPaths = [
+const guardedDirectories = ['pipeline/pages', 'pipeline/annotations', 'pipeline/reviews', 'pipeline/registry', 'docs/data/entities', 'docs/data/transcriptions'];
+const storedFiles = directory => fs.existsSync(directory) ? fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? storedFiles(path.join(directory, entry.name)) : [path.join(directory, entry.name)]) : [];
+const protectedPaths = [...new Set([...guardedDirectories.flatMap(relative => storedFiles(path.join(REPO, relative))),
   path.join(REPO, 'pipeline/pages', `${DOC_ID}.json`),
   path.join(DOCS, 'data/transcriptions', `${DOC_ID}.json`),
   path.join(DOCS, 'data/entities', `${DOC_ID}.json`),
-];
+])];
 const digest = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const before = protectedPaths.map(digest);
 function copy(relative) {
@@ -81,9 +83,11 @@ const BASE = `http://127.0.0.1:${port}`;
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 const errors = [];
+const machineRequests = [];
+page.on('request', request => { if (/\/data\/entities\/|\/api\/annotations(?:\/|$)/.test(request.url())) machineRequests.push(request.url()); });
 page.on('pageerror', error => errors.push(String(error)));
 const checks = [];
-const output = path.join(REPO, 'output', 'unified-annotation');
+const output = path.join(REPO, 'output', 'manual-annotation');
 fs.mkdirSync(output, { recursive: true });
 function check(condition, label) {
   assert.ok(condition, label);
@@ -179,40 +183,8 @@ try {
   check(initial.entries.length === 0 && initial.mentions.length === 0,
     'isolated registry starts empty and opening the viewer does not write');
 
-  const repeated = fixture.entities.filter(entity => entity.type === 'person' &&
-    fixture.entities.some(other => other.id !== entity.id && other.text === entity.text));
-  check(repeated.length > 1, 'real fixture contains repeated same-name machine occurrences');
-  for (const entity of repeated) {
-    await page.goto(`${BASE}/viewer.html?doc=${DOC_ID}&page=${entity.pageNr}`, { waitUntil: 'networkidle' });
-    const machineMark = page.locator(`.transcription__line[data-line-id="${entity.lineId}"] [data-ent-key="${entity.id}"]`);
-    await machineMark.waitFor();
-    await machineMark.focus();
-    await page.keyboard.press('Enter');
-    await page.locator('#entities-dialog').waitFor();
-    if (!await page.locator('#entities-dialog').evaluate(element => element.open)) await page.locator('#annotation-proposal-summary').click();
-    check(await page.locator('#annotation-editor [name="entity"]').inputValue() === entity.id,
-      `same-name machine mark opens its own occurrence ${entity.id} on page ${entity.pageNr}`);
-    check(await page.locator('[popover]:popover-open').count() === 1 &&
-      (await page.locator('#annotation-workspace-title').textContent()).includes(entity.text) &&
-      await page.locator('#annotation-workspace #annotation-selection-toolbar [data-kind]').count() === 4,
-    'machine click combines source context, category actions and proposal in one workspace');
-    check((await page.locator('#annotation-workspace').textContent()).includes(fixture.provenance.model),
-      'the model details name the recorded extraction producer');
-    await page.locator('#annotation-editor [name="normalized"]').scrollIntoViewIfNeeded();
-    await workspaceScreenshot('modeldetails.png', entity);
-    await page.keyboard.press('Escape');
-    check(await machineMark.evaluate(element => document.activeElement === element),
-      `machine inline editor restores focus to occurrence ${entity.id}`);
-    if (entity.id === repeated[0].id) {
-      const sourcePage = await page.locator('#page-input').inputValue();
-      await page.locator('#btn-next-page').click();
-      check(await page.locator('#page-input').inputValue() !== sourcePage &&
-        !(await page.locator('#btn-annotate-selection').textContent()).includes('fortsetzen'),
-      'inspecting a machine occurrence alone creates no editorial draft and permits navigation');
-    }
-  }
-  await page.goto(`${BASE}/viewer.html?doc=${DOC_ID}&page=${person.pageNr}`, { waitUntil: 'networkidle' });
-
+  check(await page.locator('.entity, [data-ent-key], #entities-dialog, #btn-entities').count() === 0,
+    'viewer exposes no machine marks, machine annotation panel or machine toolbar action');
   await page.locator('#btn-registry').focus();
   await page.keyboard.press('Enter');
   await page.locator('#registry-dialog').waitFor();
@@ -364,10 +336,7 @@ try {
   await page.locator('#mention-dialog').waitFor();
   check(await page.locator('[popover]:popover-open').count() === 1 &&
     await page.locator('#mention-dialog').isVisible(),
-  'manual mark over a machine mark opens the one shared workspace');
-  check((await page.locator('#annotation-workspace').textContent()).includes(fixture.provenance.model),
-    'overlapping manual mention retains access to its machine producer provenance');
-  if (await page.locator('#entities-dialog').evaluate(element => element.open)) await page.locator('#annotation-proposal-summary').click();
+  'saved manual mark opens the one shared workspace by keyboard');
   if (await page.locator('#mention-note').evaluate(element => element.open)) await page.locator('#mention-note > summary').click();
   const lateralActions = await mark.evaluate(anchor => {
     const surface = document.getElementById('annotation-workspace');
@@ -381,10 +350,6 @@ try {
   check(lateralActions.lateralRoom && lateralActions.saveVisible && lateralActions.scrollTop === 0,
     `collapsed source workspace shows Save without scrolling when lateral room exists ${JSON.stringify(lateralActions)}`);
   await workspaceScreenshot('person-clicked.png', person);
-  await page.locator('#annotation-proposal-summary').click();
-  await page.locator('#entity-legend').scrollIntoViewIfNeeded();
-  await workspaceScreenshot('person-provenance.png', person);
-  await page.locator('#annotation-proposal-summary').click();
   if (!await page.locator('#mention-note').evaluate(element => element.open)) await page.locator('#mention-note > summary').click();
   await mentionForm.locator('[name="note"]').fill(person.text);
   await page.keyboard.press('Escape');
@@ -509,6 +474,62 @@ try {
   await page.screenshot({ path: path.join(output, 'registry.png'), fullPage: true });
   await page.keyboard.press('Escape');
 
+  const indexPage = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+  indexPage.on('pageerror', error => errors.push(String(error)));
+  const beforeIndex = await state();
+  await indexPage.goto(`${BASE}/register.html?entry=${personEntry.id}`, { waitUntil: 'networkidle' });
+  await indexPage.locator('#register-results [data-entry-id]').first().waitFor();
+  check(await indexPage.locator('#register-entry-title').textContent() === personEntry.label,
+    'index direct link selects the persisted editorial identity');
+  const indexDescriptions = await indexPage.locator('#register-results [data-entry-id]').allTextContents();
+  check(new Set(indexDescriptions).size === indexDescriptions.length,
+    'index distinguishes separate same-name identities');
+  const indexAttestation = new URL(await indexPage.locator('.register-attestations a').first().getAttribute('href'), BASE);
+  check(indexAttestation.searchParams.get('mention') === mention.id && indexAttestation.searchParams.get('doc') === String(DOC_ID) &&
+    indexAttestation.searchParams.get('page') === String(person.pageNr), 'index links to the exact saved source mention');
+  check((await indexPage.locator('#register-history').textContent()).includes('QA'),
+    'index exposes persisted editorial change attribution');
+  for (const [kind, entry] of [['person', personEntry], ['place', placeEntry], ['term', termEntry]]) {
+    await indexPage.locator('#register-kind').selectOption(kind);
+    await indexPage.locator('#register-search').fill(entry.aliases[0]);
+    check(await indexPage.locator(`#register-results [data-entry-id="${entry.id}"]`).count() === 1,
+      `index filters ${kind} and finds the persisted source spelling`);
+  }
+  await indexPage.locator('#register-kind').selectOption('');
+  await indexPage.locator('#register-search').fill('');
+  await indexPage.locator(`#register-results [data-entry-id="${personEntry.id}"]`).click();
+  await indexPage.reload({ waitUntil: 'networkidle' });
+  check(new URL(indexPage.url()).searchParams.get('entry') === personEntry.id &&
+    await indexPage.locator('#register-entry-title').textContent() === personEntry.label,
+    'index selected identity survives reload');
+  await indexPage.screenshot({ path: path.join(output, 'index.png'), fullPage: true });
+  const [indexDownload] = await Promise.all([indexPage.waitForEvent('download'), indexPage.locator('#register-export').click()]);
+  assert.deepEqual(JSON.parse(fs.readFileSync(await indexDownload.path(), 'utf8')), beforeIndex);
+  assert.deepEqual(await state(), beforeIndex, 'browsing and exporting the index writes no registry data');
+  await indexPage.setViewportSize({ width: 640, height: 500 });
+  await indexPage.evaluate(() => { document.documentElement.style.zoom = '2'; });
+  check(await indexPage.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1),
+    'index remains readable without horizontal overflow at narrow 200 percent zoom');
+  check(await indexPage.locator('.navbar-toggler').isVisible() && await indexPage.evaluate(() => {
+    const badge = document.getElementById('beta-badge').getBoundingClientRect();
+    const toggle = document.querySelector('.navbar-toggler').getBoundingClientRect();
+    return badge.right <= toggle.left || badge.left >= toggle.right || badge.bottom <= toggle.top || badge.top >= toggle.bottom;
+  }), 'mobile beta badge does not overlap the visible navigation toggle at 200 percent');
+  await indexPage.locator('.navbar-toggler').click();
+  const indexNavLink = indexPage.locator('#main-nav').getByRole('link', { name: 'Index', exact: true });
+  await indexNavLink.waitFor({ state: 'visible' });
+  check(await indexNavLink.getAttribute('aria-current') === 'page',
+    'expanded mobile navigation exposes the accessible current Index link');
+  await indexNavLink.focus();
+  await indexPage.keyboard.press('Enter');
+  await indexPage.waitForURL(`${BASE}/register.html`);
+  await indexPage.locator('#register-results [data-entry-id]').first().waitFor();
+  check(new URL(indexPage.url()).pathname === '/register.html', 'mobile Index link is keyboard operable');
+  await indexPage.locator(`#register-results [data-entry-id="${personEntry.id}"]`).click();
+  await indexPage.evaluate(() => { document.documentElement.style.zoom = '2'; });
+  await indexPage.screenshot({ path: path.join(output, 'index-narrow.png'), fullPage: true });
+  await indexPage.close();
+
   await mark.click();
   await mentionForm.locator('[name="reviewer"]').fill('QA');
   const removeResponse = page.waitForResponse(response => response.url() === `${BASE}/api/registry` &&
@@ -570,17 +591,23 @@ try {
   check(await staticPage.locator('#btn-registry').isHidden() &&
     await staticPage.locator('#btn-annotate-selection').isHidden(),
   'static viewer hides unavailable registry and manual annotation actions');
-  await staticPage.locator(`.transcription__line[data-line-id="${person.lineId}"] [data-ent-key="${person.id}"]`).click();
-  await staticPage.locator('#annotation-workspace').waitFor();
-  check((await staticPage.locator('#annotation-workspace').textContent()).includes(fixture.provenance.model) &&
-    (await staticPage.locator('#annotation-workspace').textContent()).includes(person.normalized),
-  'public machine click exposes the recorded producer and original proposal in the shared workspace');
-  check(await staticPage.locator('#annotation-selection-toolbar [data-kind]:visible, #mention-form:visible, #annotation-editor form:visible').count() === 0,
-    'public read-only machine details expose no category actions or editing forms');
+  check(await staticPage.locator('.entity, [data-ent-key], #entities-dialog, #btn-entities').count() === 0,
+    'public static viewer also exposes no machine annotations');
+  await staticPage.route('**/register.html*', async route => {
+    const response = await route.fetch();
+    const headers = response.headers();
+    delete headers.server;
+    await route.fulfill({ response, headers });
+  });
+  await staticPage.goto(`${BASE}/register.html`, { waitUntil: 'networkidle' });
+  check(await staticPage.locator('#register-export').isHidden() && await staticPage.locator('#register-browser').isHidden() &&
+    (await staticPage.locator('#register-status').textContent()).includes('lokalen Arbeitseditor'),
+    'static index states local availability without dead export or editing controls');
   await staticPage.close();
 
   check((await state()).history.length > initial.history.length,
     'registry history survives mutation and reload');
+  check(machineRequests.length === 0, 'editor does not request machine extractions or annotation decisions');
   check(errors.length === 0, `no browser JavaScript errors: ${errors.join(' | ')}`);
   console.log(JSON.stringify({ checks: checks.length, results: checks }, null, 2));
 } catch (error) {
@@ -589,8 +616,9 @@ try {
   throw error;
 } finally {
   await browser.close();
+  const serverClosed = new Promise(resolve => processHandle.once('close', resolve));
   processHandle.kill();
-  await new Promise(resolve => processHandle.exitCode !== null ? resolve() : processHandle.once('exit', resolve));
+  await serverClosed;
   assert.deepEqual(protectedPaths.map(digest), before, 'live corpus fixtures remain unchanged');
   fs.rmSync(ROOT, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
 }

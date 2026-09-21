@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Editor-owned annotation and Index view (21.09.2026)
+
+The operator simplified the working workflow after inspecting the combined annotation field. Removed machine proposals, their marks and editing controls from the viewer. The source-bound form now serves the editor's own assignments and vocabulary alone. Preserved earlier extraction files and curation decisions for pipeline compatibility. Added Index beside Viewer to browse saved persons, places and controlled terms through search, category filters and source links. The index resolves identities by entry ID and performs no writes or automatic reconciliation. Removed decorative horizontal separators and documented the revised interaction. The earlier shared-field implementation remains part of the development history, while its machine-proposal surface is superseded by this decision.
+
 ## Shared annotation field (21.09.2026)
 
 The operator's walkthrough at Hannsen Ramung exposed the fragmented interaction between selection, assignment and machine-proposal information. Consolidated these into one source-bound popover. Register entries can be created and edited within it, while the sidebar remains available for browsing. Machine evidence and human assignment retain their separate histories and explicit save actions. Shared navigation guards preserve drafts across dismissal and prevent changing the source while inputs remain unsaved. Independent review also identified an older registry response replacing a more recent saved state, which is now guarded by request and mutation generations. Browser regression checks cover the unified field, inline entry editing, persistence and the delayed-response case. The operator's acceptance remains the next step.

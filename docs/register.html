@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index | DoCTA</title>
+  <meta name="description" content="Editorischer Index der Personen, Orte und Begriffe mit ihren Fundstellen in der Arbeitsedition.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body class="register-page">
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="index.html">DoCTA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation öffnen">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="main-nav"></ul>
+      </div>
+    </div>
+  </nav>
+  <main id="main" class="register-main">
+    <header class="register-header">
+      <h1>Index</h1>
+      <div class="register-actions">
+        <a href="viewer.html">Viewer öffnen</a>
+        <button type="button" id="register-export" class="register-button" hidden>Register als JSON exportieren</button>
+      </div>
+    </header>
+    <p id="register-status" role="status">Index wird geladen.</p>
+    <div id="register-browser" hidden>
+      <form id="register-filters" class="register-filters" role="search">
+        <label for="register-search">Namen, Schreibweisen und Notizen suchen
+          <input type="search" id="register-search" autocomplete="off">
+        </label>
+        <label for="register-kind">Art
+          <select id="register-kind">
+            <option value="">Alle</option>
+            <option value="person">Personen</option>
+            <option value="place">Orte</option>
+            <option value="term">Begriffe</option>
+          </select>
+        </label>
+      </form>
+      <div class="register-layout">
+        <section aria-label="Registereinträge" class="register-list">
+          <ul id="register-results" role="list"></ul>
+        </section>
+        <section id="register-detail" aria-labelledby="register-entry-title" hidden></section>
+      </div>
+      <details id="register-unassigned" hidden>
+        <summary>Nicht zugeordnete Fundstellen</summary>
+        <ul role="list"></ul>
+      </details>
+    </div>
+  </main>
+  <footer class="text-center py-4 small text-body-secondary"></footer>
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/register.js"></script>
+</body>
+</html>

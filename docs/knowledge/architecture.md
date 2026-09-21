@@ -31,7 +31,7 @@ The site is static and served by GitHub Pages from `docs/` on `main`. It uses va
 
 `pipeline/local_editor.py` serves the same `docs/` tree on loopback and exposes a same-origin API. `viewer-local.js` discovers this service through its response header and session capability. GitHub Pages and ordinary static preview servers retain the export workflow. Local transcription requests bypass IndexedDB and read the effective register text. Drafts carry the loaded revision, and a save against a changed revision fails visibly.
 
-The browser keeps pending corrections until an explicit save succeeds. The backend records the review under `pipeline/reviews/` and updates `pipeline/pages/`. The event stores the server UTC timestamp in `exported`, its `reviewId`, the document and page identities, the reviewer and each line's `original` and `corrected` text. The page register appends a human run with the complete effective line list and keeps the previous runs. The saved event and register are filesystem state until committed to Git. A later review uses the newest effective text as its base. Original Transkribus files and recognition runs remain unchanged. `viewer-review.js` records text corrections without time tracking or page approval controls. Existing review statuses and historical effort fields remain readable for compatibility. A new correction sends a null decision; the ingest layer retains its legacy `gesichtet` state with reason `text-corrected`, while the interface labels the factual change as `Lokal korrigiert`. `viewer-annotations.js` writes curation sidecars under `pipeline/annotations/`, keyed by extraction identity and a digest of the reviewed source line.
+The browser keeps pending corrections until an explicit save succeeds. The backend records the review under `pipeline/reviews/` and updates `pipeline/pages/`. The event stores the server UTC timestamp in `exported`, its `reviewId`, the document and page identities, the reviewer and each line's `original` and `corrected` text. The page register appends a human run with the complete effective line list and keeps the previous runs. The saved event and register are filesystem state until committed to Git. A later review uses the newest effective text as its base. Original Transkribus files and recognition runs remain unchanged. `viewer-review.js` records text corrections without time tracking or page approval controls. Existing review statuses and historical effort fields remain readable for compatibility. A new correction sends a null decision; the ingest layer retains its legacy `gesichtet` state with reason `text-corrected`, while the interface labels the factual change as `Lokal korrigiert`. Earlier curation sidecars under `pipeline/annotations/` remain keyed by extraction identity and source-line digest. The current viewer does not load their editing interface.
 
 The explicit local build takes an edition date and a document selection to check. It rebuilds the complete connected TEI set, including the shared entity register, because document references and the common date must remain consistent. It applies annotation decisions to TEI and graph, rejects stale source digests, validates generated TEI and updates the static text projections. Failed file replacement restores the preceding output set. Saved work, generated files, a local commit and publication remain separate operations. The loopback server neither commits nor pushes. `--root` selects an isolated repository copy for end-to-end tests.
 
@@ -64,7 +64,8 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 | Page | Purpose |
 |------|---------|
 | `index.html` | Home. The source catalogue with search, filters and a per-source stage indicator for facsimile, HTR text, TEI and edited state |
-| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, line corrections, working tags and curation of existing machine entity proposals, plus a reading mode over the whole document text |
+| `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, line corrections, working tags and editor-owned source annotations, plus a reading mode over the whole document text |
+| `register.html` | Editor-owned Index with persons, places, controlled terms and links to source occurrences |
 | `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `about.html` | About the project, data sources, imprint |
@@ -147,7 +148,7 @@ IndexedDB is optional. If the database does not open within one and a half secon
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, exploration, benchmark, about
+│   ├── *.html              index, viewer, register, exploration, benchmark, about
 │   ├── css/styles.css      Shared design tokens and site styles
 │   ├── css/viewer.css      Working editor layout and disclosures
 │   ├── js/                 ES6 modules shared by several pages
@@ -155,14 +156,14 @@ DoCTA/
 │   │   ├── benchmark.js    Benchmark tables from data/benchmark/summary.json
 │   │   ├── data-loader.js  Fetch JSON, IndexedDB cache
 │   │   ├── entity-view.js  Attestation links and provenance badges, shared by
-│   │   │                   viewer, network and register
+│   │   │                   exploration views
 │   │   ├── network.js      D3 force network over data/graph.jsonld
 │   │   ├── utils.js        Formatting, sorting, escaping, localStorage
-│   │   ├── viewer-render.js  Transcription, reading text, TEI, entity marks
+│   │   ├── viewer-render.js  Transcription, reading text, TEI
 │   │   ├── viewer.js       Viewer page controller and image navigation
 │   │   ├── viewer-review.js  Correction drafts, explicit save/discard and export
 │   │   ├── viewer-local.js   Local editor capability and API requests
-│   │   ├── viewer-annotations.js  Decisions on machine proposals
+│   │   ├── register.js       Editor-owned Index view and source links
 │   │   └── viewer-tags.js    Page and line working annotations
 │   ├── data/               Pre-processed JSON, git-tracked
 │   │   ├── benchmark/      Published export of the prompt benchmark, the summary
@@ -199,7 +200,7 @@ DoCTA/
 
 The module layout departs from the original plan, and it has moved twice. One module per page was planned (`network-view.js`, `search-engine.js`, `source-table.js`, `document-viewer.js`, `pipeline-demo.js`). What was built first was the opposite rule, page-specific JavaScript as `<script type="module">` directly in its HTML file, with `js/` holding only what several pages share. The reason was the missing build step, since each module costs an additional HTTP request while the code of one page is used by no other.
 
-That reason stopped deciding on 28.08.2026. The viewer's inline script had become the largest body of front-end code in the repository, past the point where reading one file explains one page, and inline code is code that no linter reads and no test can import. The rule since then splits by weight. Small page wiring stays inline, meaning the collection of DOM handles, the listeners of a page's own controls, and the orchestration that holds the page state. Substantial view logic lives in a module under `js/`, meaning whatever builds markup from data, carries a contract with the pipeline, or is worth a test of its own. `js/viewer.js` now keeps the OpenSeadragon wiring, the line overlay, the pager and the URL state, while its transcription rendering sits in `js/viewer-render.js` and its curation view in `js/viewer-review.js`; that module takes the DOM handles of the review bar and a context callback from the page and holds no page state itself. `js/entity-view.js` holds what the viewer, the network and the register say alike about an entity record, its attestation links and its machine provenance. The handful of additional requests is accepted for this.
+That reason stopped deciding on 28.08.2026. The viewer's inline script had become the largest body of front-end code in the repository, past the point where reading one file explains one page, and inline code is code that no linter reads and no test can import. The rule since then splits by weight. Small page wiring stays inline, meaning the collection of DOM handles, the listeners of a page's own controls, and the orchestration that holds the page state. Substantial view logic lives in a module under `js/`, meaning whatever builds markup from data, carries a contract with the pipeline, or is worth a test of its own. `js/viewer.js` now keeps the OpenSeadragon wiring, the line overlay, the pager and the URL state, while its transcription rendering sits in `js/viewer-render.js` and its curation view in `js/viewer-review.js`; that module takes the DOM handles of the review bar and a context callback from the page and holds no page state itself. `js/entity-view.js` holds what the exploration views say about an extracted entity record, its attestation links and its machine provenance. The handful of additional requests is accepted for this.
 
 The planned folder `images/` for sample facsimiles does not exist either. Facsimiles load at runtime from the Transkribus IIIF URLs, and no image material lives in the repository.
 
@@ -244,7 +245,9 @@ The frontend searches precomputed name and alias forms locally, including umlaut
 
 Machine-proposal decisions retain their existing sidecar contract and now append actor, timestamp and previous/new decision values in the same atomic write. Historical files load with an empty history until a new decision is saved. Document API responses expose the selected original transcription run separately from human corrections. Source timestamps are read from saved events where available and otherwise remain as recorded in the run.
 
-The frontend separates registry interaction and form markup into `viewer-registry.js` and `viewer-registry-markup.js`. `viewer-annotation-workspace.js` owns the single source context and physical popover shared by category selection, registry assignment, inline register-entry editing and `viewer-annotations.js` machine-proposal decisions. Context changes consult both controllers' draft guards. `viewer-annotation-popover.js` positions the surface and provides a fixed-position fallback for browsers without native popovers. Source-range rendering lives in `viewer-registry-anchors.js`, while search labels, fundstelle links and history presentation live in `viewer-registry-display.js`. The controller keeps the selected quotation and saved-line identity while focus moves into the form. Drafts survive closing the surface, and source navigation requires saving or explicit discard. Machine-proposal drafts additionally retain the reading against which editing started, so a later text correction cannot silently supply a new digest to an old decision. Late responses and failed requests are checked against their active request before changing a form. A registry response started before a subsequent save cannot replace that save's returned state.
+The frontend separates registry interaction and form markup into `viewer-registry.js` and `viewer-registry-markup.js`. `viewer-annotation-workspace.js` owns the single source context and popover for category selection, assignment and inline register-entry editing. `viewer-annotation-popover.js` positions the surface and provides a fixed-position fallback. Source-range rendering lives in `viewer-registry-anchors.js`, while search labels, fundstelle links and history presentation live in `viewer-registry-display.js`. Drafts survive surface dismissal, and source navigation requires saving or explicit discard. A registry response started before a subsequent save cannot replace that save's returned state.
+
+`register.html` and `register.js` read the same local registry API for a dedicated Index view. The page searches and filters saved entries, resolves broader terms by ID and links occurrences to document, page and mention identity. It provides JSON export without write operations. The viewer no longer requests entity extractions or annotation sidecars and has no machine annotation layer. Earlier pipeline decisions and extraction data retain their existing storage and generation contracts.
 
 ## Working-version delivery
 

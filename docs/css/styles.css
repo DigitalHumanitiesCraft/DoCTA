@@ -1288,7 +1288,7 @@ body:not([data-view="synopsis"]) #tag-editor { display: none; }
   .beta-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 }
 @media (max-width: 991.98px) {
-  .beta-badge { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); }
+  .beta-badge { position: absolute; right: 5rem; top: 1rem; }
 }
 
 /* === Shared footer === */

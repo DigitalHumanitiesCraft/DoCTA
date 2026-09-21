@@ -1,6 +1,6 @@
 import { createAnchoredPopover } from './viewer-annotation-popover.js';
 
-/** One source context owns selection, editorial assignment and machine evidence. */
+/** One source context owns selection and editorial assignment. */
 export function createAnnotationWorkspace() {
   const surface = document.createElement('section');
   surface.id = 'annotation-workspace';
@@ -18,8 +18,6 @@ export function createAnnotationWorkspace() {
   document.body.append(surface);
   const manual = surface.querySelector('#mention-dialog');
   const selection = surface.querySelector('#annotation-selection-toolbar');
-  const machine = document.getElementById('entities-dialog');
-  if (machine) surface.insertBefore(machine, manual);
   const beforeChange = [];
   const beforeHide = [];
   const listeners = [];

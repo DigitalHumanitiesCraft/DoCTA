@@ -2,12 +2,12 @@
  * DoCTA viewer - the transcription panel.
  *
  * Everything here builds markup from loaded data into a container element: the
- * page synopsis, the reading text over the whole document, the TEI source and
- * the entity marks laid over the line text. The facsimile, the line overlay,
+ * page synopsis, the reading text over the whole document and the TEI source.
+ * The facsimile, the line overlay,
  * the pager and the URL state stay with the page that owns them.
  */
 
-import { escapeHTML, escapeAttr, ICON_AI, ICON_UNVERIFIED } from './utils.js';
+import { escapeHTML, escapeAttr } from './utils.js';
 
 // Lines like "[fol.2r]", "[fol. 12v]" or bare "[1r]" are structure; the
 // endpaper marks "[us_vorne_r]" etc. count as structure as well.
@@ -23,98 +23,6 @@ export function folioLabel(text) {
   if (!m) return null;
   const n = m[1].trim();
   return n.startsWith('us_') ? n : `fol. ${n}`;
-}
-
-// === Entity marks in the transcription ===
-
-const ENTITY_TYPE_LABELS = { person: 'Person', place: 'Ort',
-                             object: 'Gegenstand', time: 'Zeitangabe' };
-
-/**
- * Objects are left unmarked, they are the bulk of an inventory and marking them
- * would colour whole pages.
-
- * @param {any} data - the loaded extraction, or null
- * @returns {{ byId: Map<string, any> }|null}
- */
-export function buildEntityIndex(data) {
-  if (!data?.entities?.length) return null;
-  const byId = new Map(data.entities.filter(ent => ent.type !== 'object' && ent.text.trim()).map(ent => [ent.id, ent]));
-  return byId.size ? { byId } : null;
-}
-function entityTipText(ent, model) {
-  const head = ent.normalized || ent.text;
-  const date = ent.date ? ` (${ent.date})` : '';
-  const type = ENTITY_TYPE_LABELS[ent.type] || ent.type;
-  return `${head}${date}, ${type}. Automatischer Vorschlag von ${model}, fachlich ungeprüft.`;
-}
-
-// Anchors belong to a document's current page and line, never to a spelling globally.
-export function markEntities(escapedText, index, model, context) {
-  if (!context) return escapedText;
-  const { pageNr, lineId, text } = context;
-  const spans = [];
-  for (const ent of index.byId.values()) {
-    if (ent.pageNr !== pageNr || ent.lineId !== lineId) continue;
-    const start = text.indexOf(ent.text);
-    // Ambiguous repeated readings require an explicit manual span.
-    if (start < 0 || text.indexOf(ent.text, start + 1) !== -1) continue;
-    spans.push({ start, end: start + ent.text.length, ent });
-  }
-  spans.sort((a, b) => a.start - b.start || b.end - a.end);
-  let cursor = 0;
-  let html = '';
-  for (const { start, end, ent } of spans) {
-    if (start < cursor) continue;
-    html += escapeHTML(text.slice(cursor, start));
-    html += `<span class="entity entity--${escapeAttr(ent.type)}" role="button" tabindex="0" data-ent-key="${escapeAttr(ent.id)}" aria-label="${escapeAttr(entityTipText(ent, model))}">${escapeHTML(text.slice(start, end))}</span>`;
-    cursor = end;
-  }
-  return html + escapeHTML(text.slice(cursor));
-}
-/**
- * Entity key for the doc-meta strip: one colour dot per type present, then the
- * provenance with the model named. Sits beside the category and provenance
- * chips, apart from the running text it explains.
- */
-function entityLegend(index, model) {
-  const present = new Set([...index.byId.values()].map(e => e.type));
-  const chips = Object.keys(ENTITY_TYPE_LABELS)
-    .filter(t => present.has(t))
-    .map(t => `<span class="ent-key">` +
-              `<span class="ent-key__dot ent-key__dot--${escapeAttr(t)}"></span>` +
-              `${escapeHTML(ENTITY_TYPE_LABELS[t])}</span>`)
-    .join('');
-  // The leading label binds model and verification state to the entity
-  // layer; without it they read as statements about the text layer, whose
-  // own provenance chip sits in the doc-meta strip below.
-  return `<span class="ent-key-group" title="Entity marks:` +
-         ` ${escapeAttr(model)} extraction, not verified by a` +
-         ` scholar"><span class="ent-key">Automatische Vorschläge</span>${chips}` +
-         `<span class="ent-prov">${ICON_AI} ${escapeHTML(model)}</span>` +
-         `<span class="ent-prov">${ICON_UNVERIFIED} Fachlich ungeprüft</span></span>`;
-}
-
-/**
- * The entity layer of the loaded document: the index the line text is matched
- * against, the model that produced it, and the markup that states both. A
- * document without an extraction leaves the layer inactive, and every method
- * then renders as if no entity were known.
- */
-export function createEntityLayer() {
-  let index = null;
-  let model = 'LLM';
-  return {
-    /** @param {any} data - the loaded extraction, or null */
-    set(data) {
-      index = buildEntityIndex(data);
-      model = (data && data.model) || 'LLM';
-    },
-    get active() { return index !== null; },
-    /** Marks entities in already escaped line text. */
-    markText: (escapedText, context) => (index ? markEntities(escapedText, index, model, context) : escapedText),
-    legendHTML: () => (index ? entityLegend(index, model) : ''),
-  };
 }
 
 /**

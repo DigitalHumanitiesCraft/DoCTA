@@ -6,6 +6,7 @@
 const NAV_ITEMS = [
   { href: 'index.html', label: 'Home', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
+  { href: 'register.html', label: 'Index', id: 'register' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
   // About sits flush right and carries the link into the knowledge base.
