@@ -14,13 +14,45 @@ Account books (Raitbücher), castle and personal inventories, copybooks and cour
 
 ## Local editing
 
-On Windows, prepare the repository clone with `uv sync --locked`, then run `./start-editor.ps1`. The launcher uses uv or the existing `.venv`. Open [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1). The local URL works only on the computer running the editor, and externally hosted images may require network access.
+### First start
+
+Use a project copy containing `start-editor.ps1` and `pipeline/local_editor.py`. Check that both files exist before following these instructions. The editor and the public website can be at different revisions. If either file is missing, obtain the working-editor version from the project maintainer.
+
+GitHub Desktop can clone a supplied repository URL into a local folder. Editing requires Python 3.11 or later and uv, the dependency manager. In a terminal opened in the project folder, prepare the environment once:
+
+```powershell
+uv sync --locked
+```
+
+On Windows and macOS, start the editor from that folder with the same command:
+
+```powershell
+uv run python pipeline/local_editor.py
+```
+
+Windows also provides `.\start-editor.ps1`, which uses uv or an existing project environment. The shared command also applies on Linux. The macOS entry point has been inspected in code but has not been tested on a Mac. Installation on the editor's own computer requires a first save-and-reload check.
+
+Keep the terminal open while working. Open [the silver inventory used in the joint reading](http://127.0.0.1:8742/viewer.html?doc=12647153&page=1) or [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1) in a browser. The local URL works only on the computer running the editor. Source images may require network access. Reading, correcting and tagging existing material requires no model API key.
+
+### Correct, save and resume
 
 1. Open Bearbeiten, enter initials and correct a line against the image.
 2. Select Änderungen speichern and wait for confirmation. Reload to inspect the saved reading. Enter alone retains a browser draft.
 3. Open Schlagwörter to attach a working term and note to a page or line. Changed source text requires a recheck. Tags support page-local filtering and document JSON export.
 4. Open Automatische Annotationen to curate existing proposals. The source text, a machine proposal and a human annotation decision have separate provenance.
 5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps.
+
+For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note through Schlagwörter. Whole-line corrections and page or line tags are supported. Selecting a new word span to create a person annotation is still a planned extension.
+
+Before finishing, save text changes and any tag or annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections reside in the project folder. Clearing browser storage can remove unsaved drafts.
+
+### Keep a local version and report feedback
+
+After saving, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to the local branch. A commit records a local version and does not send it elsewhere. Push origin uploads commits. Publication and sharing of the internal working material require a separate decision. Text events live under `pipeline/reviews/` and effective readings under `pipeline/pages/`. Tags and annotation decisions have their own files. The service saves these files without committing them.
+
+If a save reports a conflict, retain the unsaved wording, reload the current saved state and reconcile the readings before saving again. If the browser cannot connect, inspect the terminal for a startup error and confirm that the editor is still running. Do not discard a draft to resolve an unexplained error.
+
+Feedback should include the document and page, the action attempted, the expected result and the observed result. A screenshot can help identify an interface problem. Use the agreed internal feedback channel while source rights remain unresolved.
 
 Inventaria attribution identifies the transcription source. The colored annotation proposals are a separate DoCTA extraction layer whose stored metadata names the model and prompt. Opening the viewer performs no model API call. Direct editing from a highlighted mention remains a proposed improvement. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
 

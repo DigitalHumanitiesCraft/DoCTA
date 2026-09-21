@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Editorial onboarding and register requirements (21.09.2026)
+
+The supplied meeting transcript establishes cross-source person and object research as the working purpose. The operator clarified that the historical editor decides identities, needs her own person index and vocabulary, and will provide the source selection later. Recorded the requested register and provenance behavior in specification.md, with uncertain links and object classification kept distinct from physical-object identity. Inspection found automatic name-based aggregation in the generated index and no event history in the current annotation sidecars. Expanded the README with startup, separate saves, reload, local versioning and internal feedback instructions. The public remote currently lacks the local editor entry points, so a recipient needs the working-editor version before using the onboarding instructions. No research data or application behavior changed.
+
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
 ## Research-first documentation alignment (21.09.2026)

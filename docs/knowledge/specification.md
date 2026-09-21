@@ -151,6 +151,20 @@ Reconciliation targets are SiCProD for persons and functions, Wikidata and the G
 
 ## Decisions that lie with the project lead
 
+### Editor-owned registers requested after the joint reading
+
+The meeting transcript and the operator's clarification on 2026-09-21 establish the need for an editor-owned person index and controlled object vocabulary. Identity decisions always belong to the historical editor. The exact source selection will follow from the project partner. Access and reuse terms remain unresolved, and current work continues internally on the available material.
+
+The proposed first implementation uses new, name-independent person IDs, preferred names, spelling variants, optional notes and explicit links to source occurrences. Local name search suggests existing entries without merging identities. A fresh register can later carry editor-approved external authority links. The current generated entity index groups by type and normalized label and must not be treated as evidence of historical identity.
+
+The vocabulary needs preferred terms, variants and source occurrences. Whether the first version supports broader categories or alternative classifications should be tested on a real example. Classifying an occurrence as a cushion does not identify it with a particular physical object mentioned elsewhere. Individual-object identity and historical relations require a separate evidence contract.
+
+New selection-based annotations need a retained quotation, line identity, position and source-text digest. Changed text requires rechecking the anchor. Each saved registry or assignment change must retain actor, timestamp and previous value. Current annotation sidecars retain the effective decision and a source digest, but do not yet provide the event history already available for text corrections. These paragraphs define requested behavior, not implemented features.
+
+The transcription source must be visible independently of annotation provenance. Display the recorded transcription LLM and human correction information for the current page, retain the original producer after corrections, and state explicitly when imported model metadata is absent. Prompt version and run date belong in provenance details. A machine-origin label must not erase documented human corrections or imply a complete scholarly review.
+
+The operator requires the local workflow to support both Windows and macOS. The shared Python server entry point is documented in the README. A simple graphical launcher and first-use dependency setup remain packaging work. Platform support must be checked on each platform before promising a tested installation.
+
 These decisions remain with the historical project lead.
 
 - The transcription convention with the permitted normalisations. `htr-evaluation.md` names it under the scholarly review points.
