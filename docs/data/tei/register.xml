@@ -15,7 +15,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-08-28">2026-08-28</date>
+        <date when="2026-09-21">2026-09-21</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded register. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -35,7 +35,7 @@
       </editorialDecl>
     </encodingDesc>
     <revisionDesc>
-      <change when="2026-08-28" who="#resp-tei-generation">Generated from the entity extractions by the DoCTA pipeline.</change>
+      <change when="2026-09-21" who="#resp-tei-generation">Generated from the entity extractions by the DoCTA pipeline.</change>
       <change n="register-summary" status="machine-generated">Entity register stream (state): machine-generated</change>
     </revisionDesc>
   </teiHeader>

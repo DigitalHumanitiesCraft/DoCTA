@@ -225,9 +225,9 @@
    "pages_with_vlm_runs": 4,
    "pages_with_empty_evidence": 0,
    "verification": {
-    "unbearbeitet": 4,
+    "unbearbeitet": 3,
     "maschinell": 0,
-    "gesichtet": 0,
+    "gesichtet": 1,
     "abgenommen": 0
    },
    "thumb": "https://files.transkribus.eu/iiif/2/EUMSRNPRFDGNNBBJVELBDIVJ/full/max/0/default.jpg",
@@ -235,7 +235,7 @@
    "done_pages": 4,
    "has_tei": true,
    "transcription_source": "transkribus",
-   "effective_transcription": false,
+   "effective_transcription": true,
    "has_entities": true,
    "transcription_by": "Inventaria",
    "edition_url": "https://app.transkribus.org/en/sites/inventaria/doc/11721916/detail"
@@ -1521,9 +1521,9 @@
    "pages_with_vlm_runs": 1,
    "pages_with_empty_evidence": 1,
    "verification": {
-    "unbearbeitet": 6,
+    "unbearbeitet": 5,
     "maschinell": 0,
-    "gesichtet": 0,
+    "gesichtet": 1,
     "abgenommen": 0
    },
    "thumb": "https://files.transkribus.eu/iiif/2/YVUFPASEUZXKRSXERYPMTXFT/full/max/0/default.jpg",
@@ -1531,7 +1531,7 @@
    "done_pages": 0,
    "has_tei": true,
    "transcription_source": "vlm",
-   "effective_transcription": false,
+   "effective_transcription": true,
    "has_entities": false,
    "transcription_by": null,
    "edition_url": null

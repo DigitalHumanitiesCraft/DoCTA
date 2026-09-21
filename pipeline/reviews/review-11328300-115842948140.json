@@ -1,0 +1,22 @@
+{
+ "schemaVersion": 2,
+ "source": "docta-viewer",
+ "exported": "2026-09-21T11:58:42.948140Z",
+ "reviewId": "115842948140",
+ "docId": 11328300,
+ "reviewer": "TEST",
+ "pages": {
+  "2": {
+   "date": "2026-09-21",
+   "lines": [
+    {
+     "original": "Item I gestreimbts kũss(test).",
+     "id": "r2l1",
+     "corrected": "Item I gestreimbts kũss."
+    }
+   ],
+   "status": null
+  }
+ },
+ "effort": null
+}

@@ -13,10 +13,14 @@
           <resp>Deterministic TEI generation from the DoCTA edition runs held in the page register, without editorial judgment</resp>
           <name>pipeline/build_tei.py (sha256 337c1fe6ca0c)</name>
         </respStmt>
+        <respStmt xml:id="resp-expert-verification">
+          <resp>Page-level scholarly review and correction in the DoCTA viewer</resp>
+          <name>DoCTA reviewer (initials in the revision log)</name>
+        </respStmt>
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-08-28">2026-08-28</date>
+        <date when="2026-09-21">2026-09-21</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -43,7 +47,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the DoCTA edition runs held in the page register.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The text of this file is unrevised machine transcription. Transkribus holds no transcription of this source, so the DoCTA pipeline transcribed the page images itself with a vision-language model, and every reading is that model's own. Nothing here has been read against the scan by a scholar, so the file is not a citable edition text. It covers 1 of the 6 pages of the source, the pages the pipeline holds an image reference for; the remaining pages are untranscribed. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>Part of the pages of this file has been read against the scan in the DoCTA viewer and marked gesichtet or abgenommen there; the revision log names those pages one by one, and the corrections made there are part of the text of those pages. The pages without a review carry unrevised machine transcription and every reading there is provisional. The file is not yet a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
       </editorialDecl>
       <classDecl>
         <taxonomy xml:id="docta-category">
@@ -62,8 +66,9 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-08-28" who="#resp-tei-generation">Generated from the DoCTA edition runs held in the page register by the DoCTA pipeline.</change>
-      <change n="transcription-summary" status="machine-unrevised">Transcription stream (state): machine-unrevised</change>
+      <change when="2026-09-21" who="#resp-tei-generation">Generated from the DoCTA edition runs held in the page register by the DoCTA pipeline.</change>
+      <change when="2026-09-21" who="#resp-expert-verification" n="review">Page 1 reviewed in the DoCTA viewer by chpo (state): gesichtet</change>
+      <change n="transcription-summary" status="partly-reviewed">Transcription stream (state): partly-reviewed</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>
   </teiHeader>
@@ -79,12 +84,12 @@
         <ab xml:id="ab-12647153-1-vlm">
           <lb/>55.
           <lb/>Vermerckt das Silbergeschirr
-          <lb/>so Martin diethorn durch Hannsen
+          <lb/>so Martin Eichhorn durch Hannsen
           <lb/>Arnolden inngeantwortet ist ingegen-
           <lb/>wurtigkait her Degn fuchs von fuchsperg
           <lb/>Pauls Liechtenstainer Ruprechts
           <lb/>Ruestmauls harstkamers vnd
-          <lb/>Casparn Lathsneider Chamrermen
+          <lb/>Casparn Lachsenfelder Chamrermen
           <lb/>furs Arnn Inßprugg am Sunttag
           <lb/>nach sand Bartholomeestag Anno etc.
           <lb/>Octogesimoseptimo

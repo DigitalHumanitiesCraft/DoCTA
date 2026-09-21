@@ -17,6 +17,10 @@
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
           <name>pipeline/build_tei.py (sha256 337c1fe6ca0c)</name>
         </respStmt>
+        <respStmt xml:id="resp-expert-verification">
+          <resp>Page-level scholarly review and correction in the DoCTA viewer</resp>
+          <name>DoCTA reviewer (initials in the revision log)</name>
+        </respStmt>
         <respStmt xml:id="resp-entity-llm">
           <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar</resp>
           <name>DoCTA prototype extraction</name>
@@ -24,7 +28,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-08-28">2026-08-28</date>
+        <date when="2026-09-21">2026-09-21</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -54,7 +58,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The transcription of this file was produced by the Inventaria project and corrected page by page in Transkribus, where every page of it is marked done. That done status is a workflow status of Transkribus and records a step of the Inventaria project. DoCTA has not independently verified the text against the facsimile, and the DoCTA review status of a page is a separate axis recorded in the page register. The TEI encoding is machine-generated, so the file is not yet a citable DoCTA edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>Part of the pages of this file has been read against the scan in the DoCTA viewer and marked gesichtet or abgenommen there; the revision log names those pages one by one, and the corrections made there are part of the text of those pages. The pages without a review carry the transcription corrected and marked done in Transkribus. The file is not yet a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
         <p>The named entities marked in this file are an unverified extraction by an LLM agent from the prototype phase; they have not been checked against the source by a scholar and carry no claim of correctness.</p>
       </editorialDecl>
       <classDecl>
@@ -74,8 +78,9 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-08-28" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
-      <change n="transcription-summary" status="human-corrected">Transcription stream (state): human-corrected</change>
+      <change when="2026-09-21" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
+      <change when="2026-09-21" who="#resp-expert-verification" n="review">Page 2 reviewed in the DoCTA viewer by TEST (state): gesichtet</change>
+      <change n="transcription-summary" status="partly-reviewed">Transcription stream (state): partly-reviewed</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>
   </teiHeader>

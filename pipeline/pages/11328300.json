@@ -2109,7 +2109,10 @@
    "content_class": "text",
    "empty_evidence": null,
    "verification": {
-    "status": "unbearbeitet"
+    "status": "gesichtet",
+    "reviewer": "TEST",
+    "date": "2026-09-21",
+    "reason": "text-corrected"
    },
    "runs": [
     {
@@ -5986,6 +5989,691 @@
       {
        "id": null,
        "text": "Item lvij ampholtz grabwerchzeukes"
+      }
+     ]
+    },
+    {
+     "id": "review:11328300-2-2026-09-21-ch-082649885795",
+     "source": "human",
+     "reviewer": "ch",
+     "date": "2026-09-21",
+     "lines": [
+      {
+       "id": "r1l1",
+       "text": "[1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item I gestreimbts kũss(test)."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item II dekhen."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item I pott mit weissem uberzogen in"
+      },
+      {
+       "id": "r2l4",
+       "text": "der hern kamer."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item II gestreimbt polster."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item IIII gestreimbt kũss."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item II strosekh."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item I pett mit ainem gestreimbten ziechen."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item I gestreimbt polster."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item II weisse kuss."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item II dekhen."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item I rawhe dekhen."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item I weis pett auf dem erkger ob dem tor."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item I weissen polster."
+      },
+      {
+       "id": "r2l15",
+       "text": "Item II gestreimbte kuss."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item III dekhen."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item I rawhe dekhen ist nichts wert."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item II pratspise in der kuchin."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item I rost."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item I drÿfuss."
+      },
+      {
+       "id": "r2l21",
+       "text": "Ist item XIX hantpuchsen in der harnasch"
+      },
+      {
+       "id": "r2l22",
+       "text": "kamer."
+      },
+      {
+       "id": "r2l23",
+       "text": "Ist item IIII hakgenpuchsen."
+      },
+      {
+       "id": "r2l24",
+       "text": "Ist item I michle, kũphren pũchsen."
+      },
+      {
+       "id": "r2l25",
+       "text": "Ist item VII eÿsnnen und kuphren puchsen."
+      },
+      {
+       "id": "r2l26",
+       "text": "Item etleicher alter harnasch."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item I õllkessel gestet XXVI lb perner"
+      },
+      {
+       "id": "r3l2",
+       "text": "ist gen"
+      },
+      {
+       "id": "r3l3",
+       "text": "hoff komen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item II kussziechen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Den hienachgeschriben hawsrat"
+      },
+      {
+       "id": "r5l2",
+       "text": "hat der burkraff meinem"
+      },
+      {
+       "id": "r5l3",
+       "text": "gnedigen herrn zekawffen gegeben."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item I segens daman das mit mẽt."
+      },
+      {
+       "id": "r6l2",
+       "text": "Item III hakhen."
+      },
+      {
+       "id": "r6l3",
+       "text": "Item I eÿsnen wekg."
+      },
+      {
+       "id": "r6l4",
+       "text": "Item III eÿsnen mistgabelen."
+      },
+      {
+       "id": "r6l5",
+       "text": "Item I temgelgeschier."
+      },
+      {
+       "id": "r6l6",
+       "text": "Item I rakgawn."
+      },
+      {
+       "id": "r6l7",
+       "text": "Item I stromesser."
+      },
+      {
+       "id": "r6l8",
+       "text": "Item I pachtrog."
+      },
+      {
+       "id": "r6l9",
+       "text": "Item I wurchpret."
+      },
+      {
+       "id": "r7l1",
+       "text": "2[r]"
+      },
+      {
+       "id": "r8l1",
+       "text": "Item II spanpett."
+      },
+      {
+       "id": "r8l2",
+       "text": "Item II sÿdeltruhen."
+      },
+      {
+       "id": "r8l3",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r8l4",
+       "text": "Item III stũel."
+      },
+      {
+       "id": "r8l5",
+       "text": "Item I grosser melkasten."
+      },
+      {
+       "id": "r8l6",
+       "text": "Item I futerkasten."
+      },
+      {
+       "id": "r8l7",
+       "text": "Item II padwannen."
+      },
+      {
+       "id": "r8l8",
+       "text": "Item I slittruhen."
+      },
+      {
+       "id": "r8l9",
+       "text": "Item II holzslÿten."
+      },
+      {
+       "id": "r8l10",
+       "text": "Item I alte lagel."
+      },
+      {
+       "id": "r8l11",
+       "text": "Item I fleÿsch peÿl."
+      },
+      {
+       "id": "r8l12",
+       "text": "Item I speÿskasten."
+      },
+      {
+       "id": "r8l13",
+       "text": "Item XIX krawtprenten."
+      },
+      {
+       "id": "r8l14",
+       "text": "Item IIII kessel, klain und gross."
+      },
+      {
+       "id": "r8l15",
+       "text": "Item XI phannen."
+      },
+      {
+       "id": "r8l16",
+       "text": "Item XVII hulzen schusselen."
+      },
+      {
+       "id": "r8l17",
+       "text": "Item I wiltpret vãssel."
+      },
+      {
+       "id": "r8l18",
+       "text": "Item II futer wannen."
+      },
+      {
+       "id": "r8l19",
+       "text": "Item I alten tẽllerkorb."
+      },
+      {
+       "id": "r8l20",
+       "text": "Item X V komat zun rossen hat"
+      },
+      {
+       "id": "r8l21",
+       "text": "der Kneringer hin."
+      },
+      {
+       "id": "r8l22",
+       "text": "Item III zam hat der kneringer hin."
+      },
+      {
+       "id": "r8l23",
+       "text": "Item I ganzen wagen."
+      },
+      {
+       "id": "r8l24",
+       "text": "Item II phlũg."
+      },
+      {
+       "id": "r8l25",
+       "text": "Item II kessel sind in dr albon."
+      },
+      {
+       "id": "r9l1",
+       "text": "Vermerkht der"
+      },
+      {
+       "id": "r9l2",
+       "text": "Beatrix gut."
+      },
+      {
+       "id": "r10l1",
+       "text": "Item III pett."
+      },
+      {
+       "id": "r10l2",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r10l3",
+       "text": "Item aber III pett."
+      },
+      {
+       "id": "r10l4",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r10l5",
+       "text": "Item II pettpõlster."
+      },
+      {
+       "id": "r10l6",
+       "text": "Item II lydren pankhpolster."
+      },
+      {
+       "id": "r10l7",
+       "text": "Item III lydrein pankhkuss."
+      },
+      {
+       "id": "r10l8",
+       "text": "Item VI kuss."
+      },
+      {
+       "id": "r10l9",
+       "text": "Item III dekhen."
+      },
+      {
+       "id": "r10l10",
+       "text": "Item XIIII beslagen loffel in ainem"
+      },
+      {
+       "id": "r10l11",
+       "text": "futral."
+      },
+      {
+       "id": "r10l12",
+       "text": "Item beÿ IIII ellen swãbischer zwilch."
+      }
+     ],
+     "effort": {
+      "activeSeconds": 0,
+      "decisionCount": 1,
+      "notes": ""
+     }
+    },
+    {
+     "id": "review:11328300-2-2026-09-21-TEST-115842948140",
+     "source": "human",
+     "reviewer": "TEST",
+     "date": "2026-09-21",
+     "lines": [
+      {
+       "id": "r1l1",
+       "text": "[1v]"
+      },
+      {
+       "id": "r2l1",
+       "text": "Item I gestreimbts kũss."
+      },
+      {
+       "id": "r2l2",
+       "text": "Item II dekhen."
+      },
+      {
+       "id": "r2l3",
+       "text": "Item I pott mit weissem uberzogen in"
+      },
+      {
+       "id": "r2l4",
+       "text": "der hern kamer."
+      },
+      {
+       "id": "r2l5",
+       "text": "Item II gestreimbt polster."
+      },
+      {
+       "id": "r2l6",
+       "text": "Item IIII gestreimbt kũss."
+      },
+      {
+       "id": "r2l7",
+       "text": "Item II strosekh."
+      },
+      {
+       "id": "r2l8",
+       "text": "Item I pett mit ainem gestreimbten ziechen."
+      },
+      {
+       "id": "r2l9",
+       "text": "Item I gestreimbt polster."
+      },
+      {
+       "id": "r2l10",
+       "text": "Item II weisse kuss."
+      },
+      {
+       "id": "r2l11",
+       "text": "Item II dekhen."
+      },
+      {
+       "id": "r2l12",
+       "text": "Item I rawhe dekhen."
+      },
+      {
+       "id": "r2l13",
+       "text": "Item I weis pett auf dem erkger ob dem tor."
+      },
+      {
+       "id": "r2l14",
+       "text": "Item I weissen polster."
+      },
+      {
+       "id": "r2l15",
+       "text": "Item II gestreimbte kuss."
+      },
+      {
+       "id": "r2l16",
+       "text": "Item III dekhen."
+      },
+      {
+       "id": "r2l17",
+       "text": "Item I rawhe dekhen ist nichts wert."
+      },
+      {
+       "id": "r2l18",
+       "text": "Item II pratspise in der kuchin."
+      },
+      {
+       "id": "r2l19",
+       "text": "Item I rost."
+      },
+      {
+       "id": "r2l20",
+       "text": "Item I drÿfuss."
+      },
+      {
+       "id": "r2l21",
+       "text": "Ist item XIX hantpuchsen in der harnasch"
+      },
+      {
+       "id": "r2l22",
+       "text": "kamer."
+      },
+      {
+       "id": "r2l23",
+       "text": "Ist item IIII hakgenpuchsen."
+      },
+      {
+       "id": "r2l24",
+       "text": "Ist item I michle, kũphren pũchsen."
+      },
+      {
+       "id": "r2l25",
+       "text": "Ist item VII eÿsnnen und kuphren puchsen."
+      },
+      {
+       "id": "r2l26",
+       "text": "Item etleicher alter harnasch."
+      },
+      {
+       "id": "r3l1",
+       "text": "Item I õllkessel gestet XXVI lb perner"
+      },
+      {
+       "id": "r3l2",
+       "text": "ist gen"
+      },
+      {
+       "id": "r3l3",
+       "text": "hoff komen."
+      },
+      {
+       "id": "r4l1",
+       "text": "Item II kussziechen."
+      },
+      {
+       "id": "r5l1",
+       "text": "Den hienachgeschriben hawsrat"
+      },
+      {
+       "id": "r5l2",
+       "text": "hat der burkraff meinem"
+      },
+      {
+       "id": "r5l3",
+       "text": "gnedigen herrn zekawffen gegeben."
+      },
+      {
+       "id": "r6l1",
+       "text": "Item I segens daman das mit mẽt."
+      },
+      {
+       "id": "r6l2",
+       "text": "Item III hakhen."
+      },
+      {
+       "id": "r6l3",
+       "text": "Item I eÿsnen wekg."
+      },
+      {
+       "id": "r6l4",
+       "text": "Item III eÿsnen mistgabelen."
+      },
+      {
+       "id": "r6l5",
+       "text": "Item I temgelgeschier."
+      },
+      {
+       "id": "r6l6",
+       "text": "Item I rakgawn."
+      },
+      {
+       "id": "r6l7",
+       "text": "Item I stromesser."
+      },
+      {
+       "id": "r6l8",
+       "text": "Item I pachtrog."
+      },
+      {
+       "id": "r6l9",
+       "text": "Item I wurchpret."
+      },
+      {
+       "id": "r7l1",
+       "text": "2[r]"
+      },
+      {
+       "id": "r8l1",
+       "text": "Item II spanpett."
+      },
+      {
+       "id": "r8l2",
+       "text": "Item II sÿdeltruhen."
+      },
+      {
+       "id": "r8l3",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r8l4",
+       "text": "Item III stũel."
+      },
+      {
+       "id": "r8l5",
+       "text": "Item I grosser melkasten."
+      },
+      {
+       "id": "r8l6",
+       "text": "Item I futerkasten."
+      },
+      {
+       "id": "r8l7",
+       "text": "Item II padwannen."
+      },
+      {
+       "id": "r8l8",
+       "text": "Item I slittruhen."
+      },
+      {
+       "id": "r8l9",
+       "text": "Item II holzslÿten."
+      },
+      {
+       "id": "r8l10",
+       "text": "Item I alte lagel."
+      },
+      {
+       "id": "r8l11",
+       "text": "Item I fleÿsch peÿl."
+      },
+      {
+       "id": "r8l12",
+       "text": "Item I speÿskasten."
+      },
+      {
+       "id": "r8l13",
+       "text": "Item XIX krawtprenten."
+      },
+      {
+       "id": "r8l14",
+       "text": "Item IIII kessel, klain und gross."
+      },
+      {
+       "id": "r8l15",
+       "text": "Item XI phannen."
+      },
+      {
+       "id": "r8l16",
+       "text": "Item XVII hulzen schusselen."
+      },
+      {
+       "id": "r8l17",
+       "text": "Item I wiltpret vãssel."
+      },
+      {
+       "id": "r8l18",
+       "text": "Item II futer wannen."
+      },
+      {
+       "id": "r8l19",
+       "text": "Item I alten tẽllerkorb."
+      },
+      {
+       "id": "r8l20",
+       "text": "Item X V komat zun rossen hat"
+      },
+      {
+       "id": "r8l21",
+       "text": "der Kneringer hin."
+      },
+      {
+       "id": "r8l22",
+       "text": "Item III zam hat der kneringer hin."
+      },
+      {
+       "id": "r8l23",
+       "text": "Item I ganzen wagen."
+      },
+      {
+       "id": "r8l24",
+       "text": "Item II phlũg."
+      },
+      {
+       "id": "r8l25",
+       "text": "Item II kessel sind in dr albon."
+      },
+      {
+       "id": "r9l1",
+       "text": "Vermerkht der"
+      },
+      {
+       "id": "r9l2",
+       "text": "Beatrix gut."
+      },
+      {
+       "id": "r10l1",
+       "text": "Item III pett."
+      },
+      {
+       "id": "r10l2",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r10l3",
+       "text": "Item aber III pett."
+      },
+      {
+       "id": "r10l4",
+       "text": "Item I strosakh."
+      },
+      {
+       "id": "r10l5",
+       "text": "Item II pettpõlster."
+      },
+      {
+       "id": "r10l6",
+       "text": "Item II lydren pankhpolster."
+      },
+      {
+       "id": "r10l7",
+       "text": "Item III lydrein pankhkuss."
+      },
+      {
+       "id": "r10l8",
+       "text": "Item VI kuss."
+      },
+      {
+       "id": "r10l9",
+       "text": "Item III dekhen."
+      },
+      {
+       "id": "r10l10",
+       "text": "Item XIIII beslagen loffel in ainem"
+      },
+      {
+       "id": "r10l11",
+       "text": "futral."
+      },
+      {
+       "id": "r10l12",
+       "text": "Item beÿ IIII ellen swãbischer zwilch."
       }
      ]
     }

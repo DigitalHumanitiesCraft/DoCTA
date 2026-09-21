@@ -1,0 +1,27 @@
+{
+ "schemaVersion": 2,
+ "source": "docta-viewer",
+ "exported": "2026-09-21T09:37:37.427392Z",
+ "reviewId": "093737427392",
+ "docId": 12647153,
+ "reviewer": "chpo",
+ "pages": {
+  "1": {
+   "status": null,
+   "date": "2026-09-21",
+   "lines": [
+    {
+     "id": "v8",
+     "original": "Casparn Lathsneider Chamrermen",
+     "corrected": "Casparn Lachsenfelder Chamrermen"
+    },
+    {
+     "id": "v3",
+     "original": "so Martin diethorn durch Hannsen",
+     "corrected": "so Martin Eichhorn durch Hannsen"
+    }
+   ]
+  }
+ },
+ "effort": null
+}
