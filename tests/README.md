@@ -36,9 +36,14 @@ node tests/smoketest.mjs
 node tests/interaction-test.mjs
 node tests/tag-editor-test.mjs
 node tests/viewer-ui-test.mjs
+node tests/registry-editor-test.mjs
 ```
 
 ## Was sie prüfen
+
+`registry-editor-test.mjs` startet den echten Python-Speicherdienst über einer isolierten Kopie vorhandener Quelldaten. Geprüft werden Personen und Begriffe, Namensvarianten, gleichnamige getrennte Identitäten, Auswahl und Änderung von Fundstellen, Änderungshistorie, veraltete Textanker, direkte Bearbeitung von Modellvorschlägen sowie Tastaturbedienung und schmale Ansichten. Die Forschungsdaten im Repository werden nicht bearbeitet. Benötigt wird die mit `uv sync --locked` eingerichtete Projektumgebung.
+
+Die Python-Prüfungen zur TEI-Baseline erzeugen ihren Ausgangsstand aus den vorhandenen Quellen in einem temporären Verzeichnis. Persönliche Korrekturen im Arbeitsverzeichnis dürfen die erwartete ursprüngliche Provenienz nicht verändern.
 
 `viewer-ui-test.mjs` prüft Quellenkopf, Dialogbedienung, Bildpassung und den vereinfachten Bearbeitungsablauf mit einer vorhandenen Transkription. Sein Speicherdienst läuft ausschließlich im Arbeitsspeicher. Die Prüfung verändert keine Forschungsdaten.
 

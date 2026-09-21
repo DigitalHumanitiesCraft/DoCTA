@@ -16,23 +16,22 @@ Account books (Raitbücher), castle and personal inventories, copybooks and cour
 
 ### First start
 
-Use a project copy containing `start-editor.ps1` and `pipeline/local_editor.py`. Check that both files exist before following these instructions. The editor and the public website can be at different revisions. If either file is missing, obtain the working-editor version from the project maintainer.
+The working edition is version 0.1.0. It is an internal research version. Public availability and scholarly acceptance are separate from this software version.
 
-GitHub Desktop can clone a supplied repository URL into a local folder. Editing requires Python 3.11 or later and uv, the dependency manager. In a terminal opened in the project folder, prepare the environment once:
+Use a project copy containing `start-editor.cmd`, `start-editor.command` and `pipeline/local_editor.py`. GitHub Desktop can clone a supplied repository URL into a local folder. Obtain the agreed working version before starting, since the public website and the local editor can be at different revisions.
 
-```powershell
-uv sync --locked
-```
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It prepares the project Python environment and locked dependencies on the first launch. That first setup requires network access. Then open the project folder and start the matching launcher:
 
-On Windows and macOS, start the editor from that folder with the same command:
+| System | Start |
+|---|---|
+| Windows | Double-click `start-editor.cmd` |
+| macOS | Open `start-editor.command` |
 
-```powershell
-uv run python pipeline/local_editor.py
-```
+The starter opens the local viewer in the browser. Keep its terminal window open while working. If a downloaded macOS copy has lost executable permissions, open a terminal in the project folder and run `bash start-editor.command`. The equivalent command on both systems is `uv run --locked python pipeline/local_editor.py --open-browser`. Windows also retains `start-editor.ps1` for PowerShell use. Existing prepared environments can run without uv through the launchers.
 
-Windows also provides `.\start-editor.ps1`, which uses uv or an existing project environment. The shared command also applies on Linux. The macOS entry point has been inspected in code but has not been tested on a Mac. Installation on the editor's own computer requires a first save-and-reload check.
+Open [the silver inventory used in the joint reading](http://127.0.0.1:8742/viewer.html?doc=12647153&page=1) or [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1). The local URL addresses your own computer. Source images may require network access. Reading, correcting and annotating existing material requires no LLM API key.
 
-Keep the terminal open while working. Open [the silver inventory used in the joint reading](http://127.0.0.1:8742/viewer.html?doc=12647153&page=1) or [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1) in a browser. The local URL works only on the computer running the editor. Source images may require network access. Reading, correcting and tagging existing material requires no model API key.
+If the port is occupied, the starter leaves the running service intact. Stop your old editor before starting the new version, or use `--port 8744` and open the URL printed by the new server. The macOS launcher requires native verification on the recipient computer. The CI configuration covers Windows, macOS and Linux when it runs on the remote repository.
 
 ### Correct, save and resume
 
@@ -42,7 +41,7 @@ Keep the terminal open while working. Open [the silver inventory used in the joi
 4. Open Automatische Annotationen to curate existing proposals. The source text, a machine proposal and a human annotation decision have separate provenance.
 5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps.
 
-For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note through Schlagwörter. Whole-line corrections and page or line tags are supported. Selecting a new word span to create a person annotation is still a planned extension.
+For the first exercise, correct one existing line, save and reload before continuing. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note through Schlagwörter. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
 Before finishing, save text changes and any tag or annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections reside in the project folder. Clearing browser storage can remove unsaved drafts.
 
@@ -54,7 +53,23 @@ If a save reports a conflict, retain the unsaved wording, reload the current sav
 
 Feedback should include the document and page, the action attempted, the expected result and the observed result. A screenshot can help identify an interface problem. Use the agreed internal feedback channel while source rights remain unresolved.
 
-Inventaria attribution identifies the transcription source. The colored annotation proposals are a separate DoCTA extraction layer whose stored metadata names the model and prompt. Opening the viewer performs no model API call. Direct editing from a highlighted mention remains a proposed improvement. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
+### Build a person index and vocabulary
+
+1. Open Personen und Begriffe and choose Neuer Eintrag. Select Person or Begriff, enter a preferred name or term, and add alternative spellings on separate lines. Terms can have an optional broader term. Save with your initials.
+2. In the saved transcription, select text within one line and choose Auswahl annotieren, or press Alt+A. Choose Person or Begriff, search the register and explicitly select the intended entry. Save the occurrence with your initials. Noch nicht zugeordnet retains an unresolved occurrence with a note.
+3. Click an editorial mark to change its assignment or note, or remove the occurrence. The history preserves the previous value. Removing an annotation leaves the source text intact.
+4. Open a register entry to inspect its Fundstellen and follow a link back to the source. Search includes alternative spellings. Identical names can belong to separate entries, and search never merges them.
+5. Use Register als JSON exportieren to download entries, occurrences and their history for internal reuse.
+
+If source text changes, affected occurrences require checking. Their retained quotations remain inspectable. Select the new wording to create a replacement occurrence, and remove the superseded occurrence when appropriate. The first version anchors selections within a single existing line. It does not split or merge transcription lines.
+
+The editorial register identifies persons and classifies source occurrences. Assigning the term Polster does not establish that two sources describe the same physical cushion. These explicit assignments remain independent of the automatically generated extraction index. They are saved with their history in `pipeline/registry/index.json` and exported as JSON. The existing TEI and graph build continues to use machine-proposal curation and does not yet incorporate the new editorial register.
+
+### Check automatic proposals and text provenance
+
+Inventaria attribution identifies the transcription source. The colored automatic proposals are a separate DoCTA extraction layer. Click a proposal, or use the keyboard, to open its exact occurrence in Automatische Annotationen. Review the normalized form and decision, enter your initials and save. Later decisions preserve the earlier value, actor and timestamp. Earlier sidecars have no retroactively invented history.
+
+The text provenance identifies the recorded transcription LLM independently of annotation production and keeps saved human corrections visible. Details provide the recorded source run and prompt metadata. Missing model information in imported text remains explicitly unknown. Opening the viewer performs no model API call. The [annotation contract](docs/knowledge/specification.md#annotation-curation-in-the-viewer) defines the implemented scope.
 
 The public GitHub Pages viewer supports browser drafts and JSON export. Writing corrections into repository files requires the local editor. Source exports and prior transcription runs remain available. [The persistence model](docs/knowledge/architecture.md#local-editing-service) describes revision checks and output generation.
 

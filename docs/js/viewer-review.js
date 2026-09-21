@@ -238,7 +238,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     const span = lineEl.querySelector('.transcription__line-text');
     if (!span) return;
     let text = escapeHTML(corrected ?? original);
-    if (corrected == null) text = markText(text);
+    if (corrected == null) text = markText(text, { pageNr: getContext().pageNr, lineId: lineEl.dataset.lineId, text: original });
     span.innerHTML = text;
     lineEl.classList.toggle('transcription__line--corrected', corrected != null);
     if (corrected == null) lineEl.removeAttribute('title');

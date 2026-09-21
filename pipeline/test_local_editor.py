@@ -215,6 +215,7 @@ def test_concurrent_annotation_saves_accept_exactly_one() -> None:
         )
         payload = {
             "docId": entity_doc,
+            "reviewer": "XY",
             "baseRevision": current["revision"],
             "decisions": [
                 {
@@ -292,6 +293,7 @@ def test_one_stale_annotation_can_be_rechecked_while_another_is_unchanged() -> N
         )
         saved = la.save_decisions(
             {
+                "reviewer": "XY",
                 "docId": entity_doc,
                 "baseRevision": current["revision"],
                 "decisions": first_checked,
@@ -305,6 +307,7 @@ def test_one_stale_annotation_can_be_rechecked_while_another_is_unchanged() -> N
         )
         final = la.save_decisions(
             {
+                "reviewer": "XY",
                 "docId": entity_doc,
                 "baseRevision": saved["revision"],
                 "decisions": second_checked,

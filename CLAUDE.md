@@ -8,14 +8,14 @@ DoCTA develops a local working edition and a public static site for fifteenth-ce
 
 Built with Promptotyping. Before conceptual or design work, consult the knowledge documents; after decisions with reasons, record them in `docs/knowledge/journal.md`.
 
-Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. A request for inline annotation editing is recorded as a proposal, not as implemented behavior.
+Start research conversations with goals, material, annotation needs and intended analysis before demonstrating tools (`docs/knowledge/plan.md`). Keep source transcription, machine annotation and human correction provenance separate. Opening the viewer never authorizes a new paid model run. The operator excluded time tracking and page approval controls from the working editor. Highlighted annotations open their editing form. The separate editor-owned register preserves independent identities and does not yet feed TEI or graph output.
 
 ## Commands
 
 Python is managed with uv (Python 3.11+, `pyproject.toml`, `uv.lock`). When `uv` is not on PATH, the project venv works directly: `.venv\Scripts\python.exe -m pytest` etc.
 
 ```
-uv sync                                   # install runtime + dev dependencies
+uv sync --locked                          # install runtime + dev dependencies
 uv run pytest                             # all tests (pipeline/, evaluation/checks/)
 uv run pytest -m slow                     # the clean-rebuild healthcheck, also run by the commit hook
 uv run pytest pipeline/test_build_tei.py  # one test file
@@ -51,9 +51,10 @@ node tests/smoketest.mjs
 node tests/interaction-test.mjs
 node tests/tag-editor-test.mjs
 node tests/viewer-ui-test.mjs
+node tests/registry-editor-test.mjs
 ```
 
-For the working editor, run `./start-editor.ps1` on Windows or `uv run python pipeline/local_editor.py`, then open `http://127.0.0.1:8742/viewer.html?doc=11328300&page=1`. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
+For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
 
 ## Architecture
 
@@ -71,6 +72,8 @@ Data flows in one direction. Transkribus exports and evaluation runs are inputs 
 - **Site** (`docs/`, served by GitHub Pages on `main`): static, vanilla JS with ES6 modules, no build step, no runtime package manager; dependencies vendored in `docs/lib/` at deliberately frozen versions. Details in `docs/knowledge/architecture.md`.
 
 ## Constraints worth knowing
+
+- Editorial registry writes require optimistic revision checks, the shared review lock and atomic state with before/after history. Anchors address saved line text through UTF-16 offsets and a SHA-256 digest. Equal names never imply equal persons. The contract lives in `docs/knowledge/architecture.md#editorial-register-persistence`.
 
 - Everything committed under `docs/` is published immediately on push to `main`.
 - All VLM output is unrevised machine transcription until a scholar approves it, and is marked as such wherever displayed. Keep that framing in any UI or data change.

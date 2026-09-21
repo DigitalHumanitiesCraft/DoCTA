@@ -33,27 +33,16 @@ const ENTITY_TYPE_LABELS = { person: 'Person', place: 'Ort',
 
 /**
  * Objects are left unmarked, they are the bulk of an inventory and marking them
- * would colour whole pages. The keys are escaped like the line text, so one
- * alternation matches against the already escaped markup.
+ * would colour whole pages.
+
  * @param {any} data - the loaded extraction, or null
- * @returns {{ byText: Map<string, any>, regex: RegExp }|null}
+ * @returns {{ byId: Map<string, any> }|null}
  */
 export function buildEntityIndex(data) {
-  if (!data || !data.entities.length) return null;
-  const byText = new Map();
-  for (const ent of data.entities) {
-    if (ent.type === 'object' || !ent.text.trim()) continue;
-    byText.set(escapeHTML(ent.text.trim()).toLowerCase(), ent);
-  }
-  if (!byText.size) return null;
-  // Longest first, so a name is not cut short by a shorter alternative
-  const pattern = [...byText.keys()]
-    .sort((a, b) => b.length - a.length)
-    .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-    .join('|');
-  return { byText, regex: new RegExp(pattern, 'gi') };
+  if (!data?.entities?.length) return null;
+  const byId = new Map(data.entities.filter(ent => ent.type !== 'object' && ent.text.trim()).map(ent => [ent.id, ent]));
+  return byId.size ? { byId } : null;
 }
-
 function entityTipText(ent, model) {
   const head = ent.normalized || ent.text;
   const date = ent.date ? ` (${ent.date})` : '';
@@ -61,40 +50,36 @@ function entityTipText(ent, model) {
   return `${head}${date}, ${type}. Automatischer Vorschlag von ${model}, fachlich ungeprüft.`;
 }
 
-/**
- * One pass over the line: inserted markup is never searched again. The
- * structured tooltip replaces the plain title; the aria-label carries the
- * same content for screen readers.
- *
- * Deliberate double escaping: the index is keyed on the escaped and lowercased
- * form (buildEntityIndex), the input here is already escaped line text, and
- * escapeAttr on the key escapes it a second time so it survives as an
- * attribute value. The tooltip reads it back through dataset.entKey and
- * looks it up in the same escaped key space, so both sides must keep this
- * shape; escaping only once on one side breaks the tooltip lookup silently.
- * role="mark" is what carries the aria-label: on a bare span the name maps
- * to a generic role and browsers drop it.
- * @param {string} escapedText
- * @param {{ byText: Map<string, any>, regex: RegExp }} index
- * @param {string} model
- */
-export function markEntities(escapedText, index, model) {
-  return escapedText.replace(index.regex, (match) => {
-    const ent = index.byText.get(match.toLowerCase());
-    if (!ent) return match;
-    return `<span class="entity entity--${escapeAttr(ent.type)}" role="mark" tabindex="0"` +
-           ` data-ent-key="${escapeAttr(match.toLowerCase())}"` +
-           ` aria-label="${escapeAttr(entityTipText(ent, model))}">${match}</span>`;
-  });
+// Anchors belong to a document's current page and line, never to a spelling globally.
+export function markEntities(escapedText, index, model, context, editable = false) {
+  if (!context) return escapedText;
+  const { pageNr, lineId, text } = context;
+  const spans = [];
+  for (const ent of index.byId.values()) {
+    if (ent.pageNr !== pageNr || ent.lineId !== lineId) continue;
+    const start = text.indexOf(ent.text);
+    // Ambiguous repeated readings require an explicit manual span.
+    if (start < 0 || text.indexOf(ent.text, start + 1) !== -1) continue;
+    spans.push({ start, end: start + ent.text.length, ent });
+  }
+  spans.sort((a, b) => a.start - b.start || b.end - a.end);
+  let cursor = 0;
+  let html = '';
+  for (const { start, end, ent } of spans) {
+    if (start < cursor) continue;
+    html += escapeHTML(text.slice(cursor, start));
+    html += `<span class="entity entity--${escapeAttr(ent.type)}" role="${editable ? 'button' : 'mark'}" tabindex="0" data-ent-key="${escapeAttr(ent.id)}" aria-label="${escapeAttr(entityTipText(ent, model))}">${escapeHTML(text.slice(start, end))}</span>`;
+    cursor = end;
+  }
+  return html + escapeHTML(text.slice(cursor));
 }
-
 /**
  * Entity key for the doc-meta strip: one colour dot per type present, then the
  * provenance with the model named. Sits beside the category and provenance
  * chips, apart from the running text it explains.
  */
 function entityLegend(index, model) {
-  const present = new Set([...index.byText.values()].map(e => e.type));
+  const present = new Set([...index.byId.values()].map(e => e.type));
   const chips = Object.keys(ENTITY_TYPE_LABELS)
     .filter(t => present.has(t))
     .map(t => `<span class="ent-key">` +
@@ -129,19 +114,20 @@ function entityTipHTML(ent, model) {
 export function createEntityLayer() {
   let index = null;
   let model = 'LLM';
+  let editable = false;
   return {
     /** @param {any} data - the loaded extraction, or null */
-    set(data) {
-      index = buildEntityIndex(data);
+    set(data, canEdit = false) {
+      index = buildEntityIndex(data); editable = canEdit;
       model = (data && data.model) || 'LLM';
     },
     get active() { return index !== null; },
     /** Marks entities in already escaped line text. */
-    markText: (escapedText) => (index ? markEntities(escapedText, index, model) : escapedText),
+    markText: (escapedText, context) => (index ? markEntities(escapedText, index, model, context, editable) : escapedText),
     legendHTML: () => (index ? entityLegend(index, model) : ''),
     /** Tooltip markup for one entity key, or null where the key is unknown. */
     tipHTML(key) {
-      const ent = index && index.byText.get(key);
+      const ent = index && index.byId.get(key);
       return ent ? entityTipHTML(ent, model) : null;
     },
   };
@@ -195,7 +181,7 @@ export function renderTranscription(container, doc, pageNr, { corrections, markT
       const stored = line.id ? corrections.get(line.id) : null;
       const corr = stored && stored.original === line.text ? stored : null;
       let text = escapeHTML(corr ? corr.corrected : line.text);
-      if (!corr) text = markText(text);
+      if (!corr) text = markText(text, { pageNr, lineId: line.id, text: line.text });
       const mark = corr ? ' transcription__line--corrected' : '';
       const title = corr ? ` title="${escapeAttr(`Original: ${line.text}`)}"` : '';
       html += `<div class="transcription__line${mark}${regionStart}"${lineAttr}${title}` +

@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import json
+from datetime import UTC, datetime
 from pathlib import Path
 
 import apply_review as ar
@@ -38,8 +40,26 @@ def _lines(doc_id: int, register_dir: Path) -> dict[tuple[int, str], str]:
 
 def read_decisions(doc_id: int, sidecar_dir: Path = ANNOTATIONS) -> dict:
     path = sidecar_dir / f"{doc_id}.json"
-    payload = load_json(path) if path.exists() else {"docId": doc_id, "decisions": []}
-    raw = path.read_bytes() if path.exists() else b""
+    exists = path.exists()
+    raw = path.read_bytes() if exists else b""
+    payload = json.loads(raw) if exists else {"docId": doc_id, "decisions": []}
+    if (
+        not isinstance(payload, dict)
+        or payload.get("docId") != doc_id
+        or not isinstance(payload.get("decisions"), list)
+        or not isinstance(payload.get("history", []), list)
+    ):
+        raise ValueError("invalid annotation sidecar")
+    ids = set()
+    for decision in payload["decisions"]:
+        if (
+            not isinstance(decision, dict)
+            or not isinstance(decision.get("id"), str)
+            or decision["id"] in ids
+        ):
+            raise ValueError("invalid or duplicated stored annotation decision")
+        ids.add(decision["id"])
+    payload.setdefault("history", [])
     payload["revision"] = hashlib.sha256(raw).hexdigest()
     return payload
 
@@ -48,12 +68,17 @@ def save_decisions(
     payload: dict,
     register_dir: Path,
     sidecar_dir: Path = ANNOTATIONS,
+    entity_dir: Path | None = None,
 ) -> dict:
     with ar.review_lock(register_dir):
-        return _save_decisions(payload, register_dir, sidecar_dir)
+        return _save_decisions(
+            payload, register_dir, sidecar_dir, entity_dir or DATA / "entities"
+        )
 
 
-def _save_decisions(payload: dict, register_dir: Path, sidecar_dir: Path) -> dict:
+def _save_decisions(
+    payload: dict, register_dir: Path, sidecar_dir: Path, entity_dir: Path
+) -> dict:
     if not isinstance(payload, dict):
         raise ValueError("annotation payload must be an object")
     doc_id = payload.get("docId")
@@ -65,7 +90,7 @@ def _save_decisions(payload: dict, register_dir: Path, sidecar_dir: Path) -> dic
     decisions = payload.get("decisions")
     if not isinstance(decisions, list):
         raise ValueError("decisions must be a list")
-    extraction_path = DATA / "entities" / f"{doc_id}.json"
+    extraction_path = entity_dir / f"{doc_id}.json"
     if not extraction_path.is_file():
         raise FileNotFoundError(f"No entity extraction for document {doc_id}")
     extracted = {
@@ -112,7 +137,29 @@ def _save_decisions(payload: dict, register_dir: Path, sidecar_dir: Path) -> dic
             raise ValueError(f"reason is invalid for {entity_id}")
         checked.append(copy.deepcopy(decision))
     path = sidecar_dir / f"{doc_id}.json"
-    write_json(path, {"docId": doc_id, "decisions": checked})
+    updated = {decision["id"]: decision for decision in checked}
+    changed = [
+        entity_id
+        for entity_id in sorted(existing.keys() | updated.keys())
+        if existing.get(entity_id) != updated.get(entity_id)
+    ]
+    history = copy.deepcopy(current["history"])
+    if changed:
+        reviewer = payload.get("reviewer")
+        if not isinstance(reviewer, str) or not reviewer.strip() or len(reviewer) > 100:
+            raise ValueError("reviewer must be nonempty text of at most 100 characters")
+        timestamp = datetime.now(UTC).isoformat().replace("+00:00", "Z")
+        history.extend(
+            {
+                "id": entity_id,
+                "actor": reviewer,
+                "timestamp": timestamp,
+                "before": existing.get(entity_id),
+                "after": updated.get(entity_id),
+            }
+            for entity_id in changed
+        )
+    write_json(path, {"docId": doc_id, "decisions": checked, "history": history})
     return read_decisions(doc_id, sidecar_dir)
 
 

@@ -143,7 +143,7 @@ The local viewer records decisions on existing line-anchored entity proposals in
 
 Through Automatische Annotationen, the editor can change the normalized form, assign an authority URI and record acceptance, rejection or a pending decision with a reason. Each decision carries the digest of the text it was reviewed against. Source text changes require another review. Model extraction files remain unchanged. A rejected occurrence is excluded from the generated edition output, while the original proposal remains available for inspection. This is distinct from deleting transcription text.
 
-Opening the corresponding form by clicking a highlighted mention is a requested improvement, not implemented behavior. Direct creation of new entity spans and changes to the entity type require an extended anchoring contract. The persistence and publication boundaries are defined in [architecture.md](architecture.md#local-editing-service).
+Clicking a highlighted machine mention opens its corresponding decision form. The editor can also select text within one saved line and assign a person or term from the separate editorial register. Changing the type or span of a machine proposal remains outside its decision form. The persistence and publication boundaries are defined in [architecture.md](architecture.md#editorial-register-persistence).
 
 The build applies accepted normalizations and rejected occurrences to the generated TEI and graph. Stale decisions stop the build until rechecked. Authority URIs are represented in the graph, while the inventory TEI retains references to its curated local register under the existing closed schema. Pending and absent decisions remain machine proposals. A curation decision on one occurrence does not confer scholarly acceptance on a whole document or register.
 
@@ -151,19 +151,19 @@ Reconciliation targets are SiCProD for persons and functions, Wikidata and the G
 
 ## Decisions that lie with the project lead
 
-### Editor-owned registers requested after the joint reading
+### Editor-owned registers in working version 0.1.0
 
 The meeting transcript and the operator's clarification on 2026-09-21 establish the need for an editor-owned person index and controlled object vocabulary. Identity decisions always belong to the historical editor. The exact source selection will follow from the project partner. Access and reuse terms remain unresolved, and current work continues internally on the available material.
 
-The proposed first implementation uses new, name-independent person IDs, preferred names, spelling variants, optional notes and explicit links to source occurrences. Local name search suggests existing entries without merging identities. A fresh register can later carry editor-approved external authority links. The current generated entity index groups by type and normalized label and must not be treated as evidence of historical identity.
+The local editor uses new, name-independent person IDs, preferred names, spelling variants, optional notes and explicit links to source occurrences. Local name search suggests existing entries without merging identities. Equal names remain separate entries, distinguished in the interface by variants, notes or an ID fragment. External authority enrichment remains future work. The existing generated entity index groups by type and normalized label and must not be treated as evidence of historical identity.
 
-The vocabulary needs preferred terms, variants and source occurrences. Whether the first version supports broader categories or alternative classifications should be tested on a real example. Classifying an occurrence as a cushion does not identify it with a particular physical object mentioned elsewhere. Individual-object identity and historical relations require a separate evidence contract.
+Vocabulary entries carry preferred terms, variants, notes and an optional broader term. Source occurrences link to these entries. Classifying an occurrence as a cushion does not identify it with a particular physical object mentioned elsewhere. Individual-object identity and historical relations require a separate evidence contract.
 
-New selection-based annotations need a retained quotation, line identity, position and source-text digest. Changed text requires rechecking the anchor. Each saved registry or assignment change must retain actor, timestamp and previous value. Current annotation sidecars retain the effective decision and a source digest, but do not yet provide the event history already available for text corrections. These paragraphs define requested behavior, not implemented features.
+Selection-based annotations retain quotation, line identity, UTF-16 positions and a saved-line digest. Changed text requires rechecking the anchor. Registry and assignment changes retain actor, timestamp and before/after values in the atomic registry file. Machine-proposal decisions now retain an event history as well. Older sidecars remain readable without inventing past events. Editorial assignments are available in the viewer and JSON export, but do not yet enter generated TEI or the graph. Multi-line spans remain unsupported.
 
-The transcription source must be visible independently of annotation provenance. Display the recorded transcription LLM and human correction information for the current page, retain the original producer after corrections, and state explicitly when imported model metadata is absent. Prompt version and run date belong in provenance details. A machine-origin label must not erase documented human corrections or imply a complete scholarly review.
+The transcription source is displayed independently of annotation provenance. The current page names its recorded transcription model and human correction information, retaining the original producer after corrections. Missing imported model metadata is explicit. Provenance details expose the recorded prompt, hash and run date. Human corrections do not imply a complete scholarly review.
 
-The operator requires the local workflow to support both Windows and macOS. The shared Python server entry point is documented in the README. A simple graphical launcher and first-use dependency setup remain packaging work. Platform support must be checked on each platform before promising a tested installation.
+Windows and macOS launchers use the same Python service and locked dependencies, with first-use setup documented in the README. The server opens the browser after binding successfully. Windows execution and shell syntax are checked locally, while native macOS execution still needs verification on that platform. The CI configuration covers Linux, Windows and macOS without establishing that an unpushed change has run there.
 
 These decisions remain with the historical project lead.
 

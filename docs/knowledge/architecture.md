@@ -232,6 +232,20 @@ Two of the collection scripts write files that are still in use. `explore_transk
 
 One exploration script has no consumer for its output: `explore_transkribus_deep.py`. It documents how the data situation was established and stays in the repository for that reason.
 
+## Editorial register persistence
+
+The local API serves the editor-owned register at `GET /api/registry`. Mutations at `POST /api/registry` require the existing same-origin write token, the loaded registry revision and an editor identifier. `save-entry`, `save-mention` and `remove-mention` replace one validated state atomically under the shared review lock. `pipeline/registry/index.json` stores the current entries and mentions together with append-only before/after events, server timestamps and actors.
+
+Entries use UUIDs independent of their names. Persons and terms have preferred labels, aliases and notes. Terms may have one broader term, with cycles rejected. Mentions carry document, page, line, UTF-16 start/end offsets, an exact quotation, the SHA-256 digest of the full saved line and an optional entry ID. IDs and kinds must agree. Empty assignment is an unresolved occurrence. A changed source digest marks the retained occurrence stale and rejects an attempted save against the obsolete reading. A corrected reading can receive a new explicitly selected occurrence.
+
+The frontend searches precomputed name and alias forms locally, including umlaut variants. It never merges identities. Fundstelle links preserve document, page and mention identity. Manual mentions and exact machine occurrences use different identifiers. The generated extraction index remains a separate name-based aggregation. The TEI/graph build does not consume the editorial register in this version. JSON export preserves the new research data and audit events.
+
+Machine-proposal decisions retain their existing sidecar contract and now append actor, timestamp and previous/new decision values in the same atomic write. Historical files load with an empty history until a new decision is saved. Document API responses expose the selected original transcription run separately from human corrections. Source timestamps are read from saved events where available and otherwise remain as recorded in the run.
+
+## Working-version delivery
+
+The application version comes from `pyproject.toml` and is returned by the local session API. The Windows and macOS launchers invoke the same Python server with automatic browser opening. They use locked uv dependencies or an existing local environment. A used port causes an explicit failure without stopping the service already listening. The CI platform matrix covers Windows, macOS and Linux, while native platform acceptance is only reported after an observed run.
+
 ## Tests
 
 `tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. Both derive their page list from the `*.html` files in `docs/`, so a new page is covered without an edit to the tests, and both exit nonzero when they report any finding, which makes them usable as a gate rather than as a report to read. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.

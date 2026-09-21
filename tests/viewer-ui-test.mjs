@@ -71,6 +71,9 @@ const server = http.createServer((req, res) => {
   if (url.pathname === `/api/tags/${DOC_ID}`) {
     return json(res, 200, { revision, tags: [] });
   }
+  if (url.pathname === '/api/registry' && req.method === 'GET') {
+    return json(res, 200, { schemaVersion: 1, revision, entries: [], mentions: [], history: [] });
+  }
   if (url.pathname === '/api/review' && req.method === 'POST') {
     let raw = '';
     req.on('data', chunk => { raw += chunk; });

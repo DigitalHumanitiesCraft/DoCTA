@@ -1,5 +1,7 @@
 # Page register
 
+The page register described here is distinct from the editor-owned person register and vocabulary in `registry/index.json`. The latter is maintained by `local_registry.py` through the local editor API and retains UUID identities, source occurrences and atomic change history. Its saved-line anchors become stale after text changes. It currently exports as JSON independently of generated TEI and graph output. See the [editorial register contract](../docs/knowledge/architecture.md#editorial-register-persistence).
+
 The register is the data backbone of the agentic edition pipeline. It holds one entry per source document that carries a Transkribus doc_id and one entry per page of that document, and it records for every page what the page contains, how far it has been verified, and which transcription runs exist for it. It is derived data, rebuilt from repo-local files by `build_register.py`, and no step of the pipeline writes into it by hand.
 
 ## Layout

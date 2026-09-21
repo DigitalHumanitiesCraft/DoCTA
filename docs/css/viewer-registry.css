@@ -1,0 +1,15 @@
+.registry-content { display: grid; gap: var(--space-md); }
+.registry-content form { display: grid; gap: var(--space-md); }
+#registry-entry-form { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+#registry-entry-form > button { grid-column: 1 / -1; }
+.registry-content [hidden] { display: none; }
+.registry-content label { display: grid; gap: var(--space-xs); }
+.registry-content :is(input, select, textarea) { inline-size: 100%; min-inline-size: 0; min-block-size: 2.25rem; font: inherit; border: 1px solid var(--text-muted-custom); border-radius: var(--radius-sm); padding: var(--space-xs); color: var(--text-primary); background: var(--surface); }
+#registry-results { display: flex; flex-wrap: wrap; gap: var(--space-sm); max-block-size: 12rem; overflow: auto; }
+#registry-mentions > div { margin-block: var(--space-sm); overflow-wrap: anywhere; }
+.registry-dialog pre, .annotation-history pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--text-sm); }
+.registry-mention { text-decoration: underline; text-decoration-style: double; text-decoration-color: var(--accent); cursor: pointer; }
+.registry-mention:focus-visible, .entity:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.page-provenance { padding-inline: var(--space-md); padding-block: var(--space-xs); font-size: var(--text-xs); color: var(--text-secondary); overflow-wrap: anywhere; }
+.page-provenance:empty { display: none; }
+.viewer-page[data-view="tei"] #page-provenance, .viewer-page[data-view="reading"] #page-provenance { display: none; }

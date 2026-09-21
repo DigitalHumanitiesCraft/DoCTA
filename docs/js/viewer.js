@@ -8,11 +8,12 @@ import { createReviewView } from './viewer-review.js?v=20260921-corrections';
 import { createLocalEditor } from './viewer-local.js';
 import { createAnnotationEditor } from './viewer-annotations.js?v=20260921-ui';
 import { createTagEditor } from './viewer-tags.js?v=20260921-ui';
+import { createRegistryEditor } from './viewer-registry.js';
 
 initNav('viewer');
 initBanner();
 const local = createLocalEditor();
-const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local);
+const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local, { hasDraft: () => review.hasDraft });
 
 let viewer = null;
 let imageKey = null;
@@ -434,6 +435,7 @@ const review = createReviewView({
   onSaved: (doc) => {
     currentDoc = doc;
     annotations.update(doc);
+    registry.load();
     tags.load(doc);
     renderDocMeta(doc.docId);
     renderCurrentView();
@@ -454,6 +456,11 @@ const tags = createTagEditor(document.getElementById('tag-editor'), local, {
   },
 });
 
+const registry = createRegistryEditor(local, {
+  context: () => ({ doc: currentDoc, pageNr: currentPageNr(), hasDraft: review.hasDraft, viewMode }),
+  rerender: () => { if (currentDoc) renderCurrentView(); },
+});
+
 // One page of the synopsis. The coupling with the image overlay is keyed on
 // the rendered lines, so a fresh page starts with no line held on either side.
 function renderPage(pageNr) {
@@ -464,6 +471,22 @@ function renderPage(pageNr) {
     markText: entities.markText,
   });
   review.applyMode();
+  registry.render();
+  const provenance = currentDoc.pages.find(page => page.pageNr === pageNr)?.provenance;
+  const provenanceElement = document.getElementById('page-provenance');
+  const displayDate = value => {
+    const date = new Date(value);
+    if (Number.isNaN(date.valueOf())) return value;
+    return new Intl.DateTimeFormat('de-AT', { dateStyle: 'short', ...(value.includes('T') ? { timeStyle: 'short' } : {}) }).format(date);
+  };
+  const origins = provenance?.originalRuns.filter(run => run.id === provenance.originalRunId) || [];
+  const summary = provenance ? [
+    ...origins.map(run => `Transkription ${run.model || (run.source === 'transkribus' ? 'Transkribus, Modell nicht dokumentiert' : 'Modell nicht dokumentiert')}${run.date ? ' (' + displayDate(run.date) + ')' : ''}`),
+    ...provenance.humanCorrections.map(run => `Textkorrektur ${run.reviewer || 'Kürzel nicht dokumentiert'}${run.timestamp ? ' (' + displayDate(run.timestamp) + ')' : ''}`),
+  ].join('. ') : '';
+  provenanceElement.innerHTML = provenance ? `<details><summary>${escapeHTML(summary)}</summary><dl>` +
+    origins.map(run => `<dt>Transkriptionslauf</dt><dd>${escapeHTML([run.id, run.date, run.prompt, run.prompt_hash].filter(Boolean).join(', '))}</dd>`).join('') +
+    provenance.humanCorrections.map(run => `<dt>Textkorrektur ${escapeHTML(run.reviewer || '')}</dt><dd><time datetime="${escapeAttr(run.timestamp || '')}">${escapeHTML(run.timestamp || 'Zeitpunkt nicht dokumentiert')}</time></dd>`).join('') + '</dl></details>' : '';
 }
 
 // === Entity marks in the transcription ===
@@ -487,6 +510,19 @@ function showEntityTip(target) {
 
 const entityAt = (node) =>
   (node && node.closest) ? node.closest('.entity[data-ent-key]') : null;
+
+function editEntity(target) {
+  if (!local.enabled || target.closest('[data-mention-id]')) return;
+  const dialog = document.getElementById('entities-dialog');
+  annotations.select(target.dataset.entKey);
+  if (!dialog.open) dialog.showModal();
+  dialog.addEventListener('close', () => target.focus(), { once: true });
+}
+document.addEventListener('click', event => { const target = entityAt(event.target); if (target && !event.target.closest('[data-mention-id]')) editEntity(target); });
+document.addEventListener('keydown', event => {
+  const target = entityAt(event.target);
+  if (target && !event.target.closest('[data-mention-id]') && ['Enter', ' '].includes(event.key)) { event.preventDefault(); editEntity(target); }
+});
 
 // Pointer and keyboard reach the tip alike: the marks are focusable, so
 // focus opens it and Escape closes it without leaving the line.
@@ -587,6 +623,7 @@ function renderCurrentView() {
   syncParams();
   if (viewMode === 'reading') renderReading(transcriptionContainer, currentDoc);
   else tei.render(currentDoc.docId);
+  registry.render();
   review.sync();
 }
 
@@ -646,8 +683,9 @@ async function loadDocument(docId, pageNr) {
       throw new Error('the transcription holds no page');
     }
     currentDoc = doc;
-    entities.set(extraction);
+    entities.set(extraction, local.enabled);
     annotations.load(doc, extraction);
+    registry.load();
     tags.load(doc);
     const wanted = pageNr !== undefined
       ? Number(pageNr)
@@ -785,6 +823,11 @@ document.getElementById('doc-selector').addEventListener('change', (e) => {
 async function init() {
   try {
     await local.init();
+    if (local.enabled && local.version) {
+      const version = document.createElement('p');
+      version.textContent = `Arbeitsedition ${local.version}`;
+      document.getElementById('viewer-more').append(version);
+    }
     document.getElementById('local-edition-bar').hidden = !local.enabled;
     document.getElementById('edition-date').value = new Date().toISOString().slice(0, 10);
     const [mapping, sources, register] = await Promise.all([

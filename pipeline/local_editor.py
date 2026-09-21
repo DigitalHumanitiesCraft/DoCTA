@@ -17,6 +17,8 @@ import json
 import secrets
 import sys
 import tempfile
+import tomllib
+import webbrowser
 from collections import Counter
 from datetime import UTC, datetime
 from http import HTTPStatus
@@ -29,6 +31,7 @@ import build_graph as bg
 import build_register as br
 import build_tei as bt
 import local_annotations as annotations
+import local_registry as registry
 import local_tags as tags
 import validate_tei as vt
 from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, write_json, write_text
@@ -46,7 +49,15 @@ def revision(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def document_payload(doc_id: int, register_dir: Path = REGISTER) -> dict:
+def document_payload(
+    doc_id: int,
+    register_dir: Path = REGISTER,
+    review_dir: Path | None = None,
+    locked: bool = False,
+) -> dict:
+    if not locked:
+        with ar.review_lock(register_dir):
+            return document_payload(doc_id, register_dir, review_dir, locked=True)
     path = register_dir / f"{doc_id}.json"
     if not path.is_file():
         raise FileNotFoundError(f"No register for document {doc_id}")
@@ -60,6 +71,50 @@ def document_payload(doc_id: int, register_dir: Path = REGISTER) -> dict:
     }
     transcription["revision"] = revision(path)
     transcription["reviewState"] = states
+    registered_pages = {page["pageNr"]: page for page in register["pages"]}
+    review_times = {}
+    for review_path in (review_dir or register_dir.parent / "reviews").glob(
+        f"review-{doc_id}-*.json"
+    ):
+        review = load_json(review_path)
+        for page_nr, reviewed_page in ar.validate(review, str(review_path)).items():
+            run_id = ar._review_id(
+                review, doc_id, page_nr, reviewed_page["date"], review["reviewer"]
+            )
+            review_times[run_id] = review["exported"]
+    for page in transcription["pages"]:
+        runs = registered_pages[page["pageNr"]].get("runs", [])
+        original_run = next(
+            (run for run in runs if run.get("source") == "transkribus"), None
+        )
+        if original_run is None:
+            original_run = br.newest_edition_run(registered_pages[page["pageNr"]])
+        page["provenance"] = {
+            "originalRunId": original_run["id"] if original_run else None,
+            "originalRuns": [
+                {
+                    key: run.get(key)
+                    for key in (
+                        "id",
+                        "source",
+                        "model",
+                        "date",
+                        "prompt",
+                        "prompt_hash",
+                    )
+                }
+                for run in runs
+                if not str(run.get("id", "")).startswith("review:")
+            ],
+            "humanCorrections": [
+                {
+                    "id": run["id"],
+                    "reviewer": run.get("reviewer"),
+                    "timestamp": review_times.get(run["id"], run.get("date")),
+                }
+                for run in br.review_runs(registered_pages[page["pageNr"]])
+            ],
+        }
     return transcription
 
 
@@ -93,7 +148,7 @@ def save_review(
         pages = ar.validate(review, "request")
         register = copy.deepcopy(load_json(path))
         ar.apply_document(register, review, pages, "request")
-        canonical = (review_dir or PIPELINE_DIR / "reviews") / (
+        canonical = (review_dir or register_dir.parent / "reviews") / (
             f"review-{doc_id}-{review['reviewId']}.json"
         )
         write_json(canonical, review)
@@ -103,7 +158,7 @@ def save_review(
             raise RuntimeError(
                 f"register write failed; recover by replaying {canonical.name}"
             ) from exc
-        return document_payload(doc_id, register_dir)
+        return document_payload(doc_id, register_dir, review_dir, locked=True)
 
 
 def build_tei_documents(
@@ -243,6 +298,7 @@ class EditorHandler(SimpleHTTPRequestHandler):
     tag_dir = PIPELINE_DIR / "tags"
     data_dir = DATA
     docs_dir = DOCS
+    app_version = "development"
 
     def __init__(self, *args: object, **kwargs: object) -> None:
         super().__init__(*args, directory=str(self.docs_dir), **kwargs)
@@ -271,7 +327,22 @@ class EditorHandler(SimpleHTTPRequestHandler):
             return
         path = urlsplit(self.path).path
         if path == "/api/session":
-            self._json(HTTPStatus.OK, {"write_enabled": True, "token": self.token})
+            self._json(
+                HTTPStatus.OK,
+                {
+                    "write_enabled": True,
+                    "token": self.token,
+                    "version": self.app_version,
+                },
+            )
+            return
+        if path == "/api/registry":
+            try:
+                state = registry.read_registry(self.register_dir)
+            except (ValueError, OSError) as exc:
+                self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+            else:
+                self._json(HTTPStatus.OK, state)
             return
         prefix = "/api/documents/"
         if path.startswith(prefix):
@@ -280,9 +351,11 @@ class EditorHandler(SimpleHTTPRequestHandler):
                 self._json(HTTPStatus.BAD_REQUEST, {"error": "invalid document id"})
                 return
             try:
-                payload = document_payload(int(raw), self.register_dir)
+                payload = document_payload(int(raw), self.register_dir, self.review_dir)
             except FileNotFoundError as exc:
                 self._json(HTTPStatus.NOT_FOUND, {"error": str(exc)})
+            except (ValueError, OSError) as exc:
+                self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
             else:
                 self._json(HTTPStatus.OK, payload)
             return
@@ -292,10 +365,12 @@ class EditorHandler(SimpleHTTPRequestHandler):
             if not raw.isdigit():
                 self._json(HTTPStatus.BAD_REQUEST, {"error": "invalid document id"})
                 return
-            self._json(
-                HTTPStatus.OK,
-                annotations.read_decisions(int(raw), self.annotation_dir),
-            )
+            try:
+                decisions = annotations.read_decisions(int(raw), self.annotation_dir)
+            except (ValueError, OSError) as exc:
+                self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+            else:
+                self._json(HTTPStatus.OK, decisions)
             return
         tag_prefix = "/api/tags/"
         if path.startswith(tag_prefix):
@@ -319,6 +394,7 @@ class EditorHandler(SimpleHTTPRequestHandler):
             "/api/review",
             "/api/annotations",
             "/api/tags",
+            "/api/registry",
             "/api/build",
         ):
             self._json(HTTPStatus.NOT_FOUND, {"error": "not found"})
@@ -348,12 +424,20 @@ class EditorHandler(SimpleHTTPRequestHandler):
                 }
             elif endpoint == "/api/annotations":
                 decisions = annotations.save_decisions(
-                    payload, self.register_dir, self.annotation_dir
+                    payload,
+                    self.register_dir,
+                    self.annotation_dir,
+                    self.data_dir / "entities",
                 )
                 result = {"saved": True, "annotations": decisions}
             elif endpoint == "/api/tags":
                 saved_tags = tags.save_tags(payload, self.register_dir, self.tag_dir)
                 result = {"saved": True, "tags": saved_tags}
+            elif endpoint == "/api/registry":
+                result = {
+                    "saved": True,
+                    "registry": registry.save_registry(payload, self.register_dir),
+                }
             else:
                 result = build_tei_documents(
                     payload,
@@ -380,6 +464,7 @@ class EditorHandler(SimpleHTTPRequestHandler):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=8742)
+    parser.add_argument("--open-browser", action="store_true")
     parser.add_argument(
         "--root",
         type=Path,
@@ -399,8 +484,23 @@ def main() -> int:
     EditorHandler.tag_dir = root / "pipeline" / "tags"
     EditorHandler.data_dir = docs / "data"
     EditorHandler.token = secrets.token_urlsafe(32)
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), EditorHandler)
+    manifest = root / "pyproject.toml"
+    if manifest.exists():
+        with manifest.open("rb") as source:
+            EditorHandler.app_version = (
+                tomllib.load(source).get("project", {}).get("version", "development")
+            )
+    try:
+        server = ThreadingHTTPServer(("127.0.0.1", args.port), EditorHandler)
+    except OSError as exc:
+        print(
+            f"FEHLER Lokaler Editor konnte Port {args.port} nicht öffnen. Möglicherweise läuft dort bereits ein Dienst. {exc}",
+            file=sys.stderr,
+        )
+        return 1
     print(f"OK DoCTA editor: http://127.0.0.1:{args.port}/viewer.html")
+    if args.open_browser:
+        webbrowser.open(f"http://127.0.0.1:{server.server_port}/viewer.html")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

@@ -1,6 +1,7 @@
 // A capability issued by the loopback server separates local writes from Pages.
 export function createLocalEditor() {
   let token = null;
+  let version = null;
   async function request(path, body) {
     const response = await fetch(path, {
       cache: 'no-store',
@@ -16,6 +17,7 @@ export function createLocalEditor() {
   }
   return {
     get enabled() { return token !== null; },
+    get version() { return version; },
     async init() {
       if (!['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) return;
       try {
@@ -23,6 +25,7 @@ export function createLocalEditor() {
         await page.text();
         if (!page.headers.get('Server')?.includes('DoCTALocalEditor/')) return;
         const session = await request('/api/session');
+        version = session.version || null;
         if (session.write_enabled && typeof session.token === 'string') token = session.token;
       } catch { /* A plain static preview remains an export-only viewer. */ }
     },
@@ -31,6 +34,8 @@ export function createLocalEditor() {
     build: (date, docIds) => request('/api/build', { date, docIds }),
     annotations: (id) => request(`/api/annotations/${id}`),
     saveAnnotations: (payload) => request('/api/annotations', payload),
+    registry: () => request('/api/registry'),
+    saveRegistry: (payload) => request('/api/registry', payload),
     tags: (id) => request(`/api/tags/${id}`),
     saveTags: (payload) => request('/api/tags', payload),
   };

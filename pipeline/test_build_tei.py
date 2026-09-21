@@ -17,6 +17,7 @@ import apply_review as ar
 import build_register as br
 import build_tei as bt
 import entity_index as ei
+import pytest
 from io_paths import load_json
 
 TEI = "{http://www.tei-c.org/ns/1.0}"
@@ -48,9 +49,24 @@ REVIEW_DATE = "2026-09-03"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 
 
-def _built() -> dict[int, str]:
+@pytest.fixture(scope="module")
+def baseline_register(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    """Derive source-only pages without importing the editor's working state."""
+    root = tmp_path_factory.mktemp("tei-baseline")
+    br.build(root)
+    return root / "pages"
+
+
+def _built(register_dir: Path | None = None) -> dict[int, str]:
+    """Baseline assertions concern source exports, independent of saved reviews."""
     with tempfile.TemporaryDirectory() as td:
-        return bt.build(Path(td))
+        root = Path(td)
+        if register_dir is None:
+            br.build(root / "pipeline")
+            register_dir = root / "pipeline" / "pages"
+        return bt.build(
+            root / "tei", register_dir=register_dir, annotation_dir=root / "annotations"
+        )
 
 
 def _has_entities(doc_id: int) -> bool:
@@ -247,10 +263,10 @@ def test_no_mark_is_left_in_the_body_text() -> None:
     assert milestones, "no milestone in the corpus, the check proves nothing"
 
 
-def test_one_pb_and_one_surface_per_page() -> None:
-    built = _built()
+def test_one_pb_and_one_surface_per_page(baseline_register: Path) -> None:
+    built = _built(baseline_register)
     for doc_id, xml in built.items():
-        source = br.transcription_of(doc_id, bt.REGISTER)
+        source = br.transcription_of(doc_id, baseline_register)
         page_numbers = [str(p["pageNr"]) for p in source["pages"]]
         root = ElementTree.fromstring(xml)
         pbs = [pb.get("n") for pb in root.iter(f"{TEI}pb")]
@@ -1029,15 +1045,19 @@ def test_an_unattributed_document_keeps_its_own_wording() -> None:
         assert "unrevised machine transcription" in _decl(root)
 
 
-def test_a_docta_transcription_declares_its_own_step_and_no_layout() -> None:
+def test_a_docta_transcription_declares_its_own_step_and_no_layout(
+    baseline_register: Path,
+) -> None:
     """A document Transkribus holds no text for carries DoCTA's own layer.
 
     Its responsibility names the model instead of Transkribus, its declaration
     says the reading is the model's own, and it asserts no image region, because
     no layout analysis ran on the page.
     """
-    built = _built()
-    doc = next(d for d in bt._documents() if d["layer"] == bt.VLM_LAYER)
+    built = _built(baseline_register)
+    doc = next(
+        d for d in bt._documents(baseline_register) if d["layer"] == bt.VLM_LAYER
+    )
     doc_id = doc["docId"]
     root = ElementTree.fromstring(built[doc_id])
 
@@ -1058,7 +1078,7 @@ def test_a_docta_transcription_declares_its_own_step_and_no_layout() -> None:
     # The page image is referenced all the same; it is what was transcribed.
     assert [g.get("url") for g in root.iter(f"{TEI}graphic")], "no facsimile"
 
-    register = br.transcription_of(doc_id, bt.REGISTER)
+    register = br.transcription_of(doc_id, baseline_register)
     for page in register["pages"]:
         block = f"ab-{doc_id}-{page['pageNr']}-{br.VLM_REGION}"
         assert root.find(f'.//{TEI}ab[@{XML_ID}="{block}"]') is not None, block
@@ -1066,17 +1086,19 @@ def test_a_docta_transcription_declares_its_own_step_and_no_layout() -> None:
     assert sum(1 for _ in root.iter(f"{TEI}lb")) == expected, "line count differs"
 
 
-def test_a_partly_transcribed_document_says_how_much_it_covers() -> None:
+def test_a_partly_transcribed_document_says_how_much_it_covers(
+    baseline_register: Path,
+) -> None:
     """A file carrying part of its source states the ratio, a complete one does not.
 
     Without the sentence the file reads as the whole document, since a source
     without an export has no page list to compare its page count against.
     """
-    built = _built()
-    for doc in bt._documents():
+    built = _built(baseline_register)
+    for doc in bt._documents(baseline_register):
         if doc["layer"] != bt.VLM_LAYER:
             continue
-        pages = br.transcription_of(doc["docId"], bt.REGISTER)["pages"]
+        pages = br.transcription_of(doc["docId"], baseline_register)["pages"]
         root = ElementTree.fromstring(built[doc["docId"]])
         decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
         covered, total = len(pages), doc["pages"]

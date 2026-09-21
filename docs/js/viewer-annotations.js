@@ -6,7 +6,7 @@ async function digest(text) {
 }
 
 // Decisions keep their own revision and the exact text on which they were made.
-export function createAnnotationEditor(container, local) {
+export function createAnnotationEditor(container, local, { hasDraft = () => false } = {}) {
   let request = 0;
   let document = null;
   let extraction = null;
@@ -31,6 +31,7 @@ export function createAnnotationEditor(container, local) {
       '<label>Entscheidung<select name="status"><option value="pending">Offen</option>' +
       '<option value="accepted">Angenommen</option><option value="rejected">Verworfen</option></select></label>' +
       '<label>Begründung<input name="reason" maxlength="2000"></label>' +
+      '<label>Dein Kürzel<input name="reviewer" required maxlength="40"></label>' +
       '<button class="review-btn" type="submit">Annotation lokal speichern</button>' +
       '<span role="status"></span></form>';
     const form = container.querySelector('form');
@@ -68,6 +69,7 @@ export function createAnnotationEditor(container, local) {
     form.addEventListener('submit', async event => {
       event.preventDefault();
       if (busy) return;
+      if (hasDraft()) { message.textContent = 'Bitte zuerst die Textänderungen speichern.'; return; }
       const docId = Number(document.docId);
       const entity = entities().find(item => item.id === form.elements.entity.value);
       const line = lineFor(entity);
@@ -89,11 +91,12 @@ export function createAnnotationEditor(container, local) {
           textDigest: await digest(line.text),
         };
         const decisions = previous.filter(item => item.id !== entity.id).concat(decision);
-        const result = await local.saveAnnotations({ docId, baseRevision, decisions });
+        const result = await local.saveAnnotations({ docId, baseRevision, decisions, reviewer: form.elements.reviewer.value.trim() });
         drafts.delete(`docta-annotation-${docId}-${entity.id}`);
         try { window.localStorage.removeItem(`docta-annotation-${docId}-${entity.id}`); } catch { /* Saved sidecar is authoritative. */ }
         if (Number(document.docId) === docId) state = result.annotations;
         message.textContent = 'Annotation lokal gespeichert.';
+        renderHistory();
       } catch (error) {
         message.textContent = `Nicht gespeichert: ${error.message}. Formular geöffnet lassen oder die Entscheidung vor dem Neuladen kopieren.`;
       } finally {
@@ -102,6 +105,19 @@ export function createAnnotationEditor(container, local) {
       }
     });
     populate();
+    renderHistory();
+  }
+
+  function renderHistory() {
+    let history = container.querySelector('.annotation-history');
+    if (!history) { history = window.document.createElement('details'); history.className = 'annotation-history'; container.append(history); }
+    history.innerHTML = '<summary>Änderungsverlauf</summary>' + (state?.history || []).map(event => {
+      const describe = value => {
+        const decisions = Array.isArray(value) ? value : value?.decisions || (value ? [value] : []);
+        return decisions.map(item => [item.normalized, item.status, item.reason].filter(Boolean).join(', ')).join('\n');
+      };
+      return `<details><summary>${escapeHTML(event.reviewer || event.actor || '')}, ${escapeHTML(event.timestamp || '')}</summary><dl><dt>Vorher</dt><dd>${escapeHTML(describe(event.before))}</dd><dt>Nachher</dt><dd>${escapeHTML(describe(event.after))}</dd></dl></details>`;
+    }).join('');
   }
 
   function lineFor(entity) {
@@ -126,6 +142,12 @@ export function createAnnotationEditor(container, local) {
         container.hidden = false;
         container.textContent = `Annotations unavailable: ${error.message}`;
       }
+    },
+    select(id) {
+      const select = container.querySelector('[name="entity"]');
+      if (!select || !entities().some(entity => entity.id === id)) return;
+      select.value = id;
+      select.dispatchEvent(new Event('change'));
     },
     page(nr) { pageNr = nr; if (state) render(); },
     update(doc) { document = doc; if (state) render(); },

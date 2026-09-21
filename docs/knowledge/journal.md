@@ -23,6 +23,14 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Internal working version 0.1.0 (21.09.2026)
+
+Implemented the editor-owned person register and controlled vocabulary with name-independent identities, variants, optional broader terms and source-bound single-line assignments. The viewer supports local search, manual annotation editing, direct decisions on highlighted machine proposals and separate transcription provenance. Registry and annotation changes retain actor, timestamp and before/after values. Changed source text requires anchor rechecking. Editorial assignments remain separate from generated TEI and graph identities and export as JSON. No external reconciliation or model calls were added.
+
+Added Windows and macOS launchers using locked dependencies and browser opening after a successful bind. Set the package version to 0.1.0 for the internal working edition. Regenerating the stale lockfile removed unused, undeclared JSON Schema dependencies. CI now declares Linux, Windows and macOS, while native macOS execution remains unobserved locally. Updated the README, implementation contracts and handoff to distinguish implemented behavior from scholarly decisions and later export integration. The source selection and editor acceptance remain open. The requested email is deferred until the implementation is settled.
+
+Verification passed the Python suite, with slow tests reserved for the commit gate, and the browser checks for the register, tags, viewer and public static site. Register browser tests used an isolated real backend and existing corpus data, including save/reload, history, stale anchors, equal names, keyboard interaction and narrow views. TEI baseline tests now derive their fixtures from source exports rather than the operator's corrected working register. Existing research corrections were preserved.
+
 ## Editorial onboarding and register requirements (21.09.2026)
 
 The supplied meeting transcript establishes cross-source person and object research as the working purpose. The operator clarified that the historical editor decides identities, needs her own person index and vocabulary, and will provide the source selection later. Recorded the requested register and provenance behavior in specification.md, with uncertain links and object classification kept distinct from physical-object identity. Inspection found automatic name-based aggregation in the generated index and no event history in the current annotation sidecars. Expanded the README with startup, separate saves, reload, local versioning and internal feedback instructions. The public remote currently lacks the local editor entry points, so a recipient needs the working-editor version before using the onboarding instructions. No research data or application behavior changed.
