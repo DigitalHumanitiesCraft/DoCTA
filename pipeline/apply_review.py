@@ -44,8 +44,12 @@ Usage:
 
 import argparse
 import json
+import math
+import os
 import re
 import sys
+import threading
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -60,14 +64,54 @@ SOURCE = "docta-viewer"
 # the register are not reachable from the viewer.
 REVIEW_STATUS = ("gesichtet", "abgenommen")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+REVIEW_ID = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
+_THREAD_LOCK = threading.RLock()
 
 
 class ReviewError(Exception):
     """An export that violates the contract or no longer fits the register."""
 
 
+@contextmanager
+def review_lock(register_dir: Path):
+    """Serialize review check-and-write across server threads and CLI processes."""
+    lock_path = register_dir.parent / ".review.lock"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with _THREAD_LOCK, lock_path.open("a+b") as stream:
+        stream.seek(0)
+        if stream.read(1) == b"":
+            stream.write(b"0")
+            stream.flush()
+        stream.seek(0)
+        if os.name == "nt":
+            import msvcrt
+
+            msvcrt.locking(stream.fileno(), msvcrt.LK_LOCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            stream.seek(0)
+            if os.name == "nt":
+                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+
+
 def _run_id(doc_id: int, page_nr: int, date: str, reviewer: str) -> str:
     return f"review:{doc_id}-{page_nr}-{date}-{reviewer}"
+
+
+def _review_id(
+    review: dict, doc_id: int, page_nr: int, date: str, reviewer: str
+) -> str:
+    run_id = _run_id(doc_id, page_nr, date, reviewer)
+    if suffix := review.get("reviewId"):
+        run_id += f"-{suffix}"
+    return run_id
 
 
 def _str(value: Any, what: str) -> str:
@@ -91,6 +135,33 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
         raise ReviewError(f"{origin}: docId fehlt oder ist keine ganze Zahl")
     _str(data.get("reviewer"), f"{origin}: reviewer")
     _str(data.get("exported"), f"{origin}: exported")
+    if "reviewId" in data and (
+        not isinstance(data["reviewId"], str)
+        or not REVIEW_ID.fullmatch(data["reviewId"])
+    ):
+        raise ReviewError(f"{origin}: reviewId ist ungueltig")
+    effort = data.get("effort")
+    if effort is not None:
+        if not isinstance(effort, dict):
+            raise ReviewError(f"{origin}: effort ist kein Objekt")
+        active = effort.get("activeSeconds")
+        decisions = effort.get("decisionCount")
+        notes = effort.get("notes")
+        if (
+            not isinstance(active, (int, float))
+            or isinstance(active, bool)
+            or not math.isfinite(active)
+            or active < 0
+        ):
+            raise ReviewError(f"{origin}: effort.activeSeconds ist ungueltig")
+        if (
+            not isinstance(decisions, int)
+            or isinstance(decisions, bool)
+            or decisions < 0
+        ):
+            raise ReviewError(f"{origin}: effort.decisionCount ist ungueltig")
+        if notes is not None and (not isinstance(notes, str) or len(notes) > 2000):
+            raise ReviewError(f"{origin}: effort.notes ist ungueltig")
     pages = data.get("pages")
     if not isinstance(pages, dict):
         raise ReviewError(f"{origin}: pages fehlt oder ist kein Objekt")
@@ -191,7 +262,7 @@ def apply_document(
             raise ReviewError(f"{where}: Seite fehlt im Register von {doc_id}")
         entry = pages[page_nr]
         status, date = entry["status"], entry["date"]
-        run_id = _run_id(doc_id, page_nr, date, reviewer)
+        run_id = _review_id(review, doc_id, page_nr, date, reviewer)
         if entry["lines"]:
             base = base_lines(page, run_id)
             if not base:
@@ -203,6 +274,8 @@ def apply_document(
                 "date": date,
                 "lines": _corrected_lines(base, entry["lines"], where),
             }
+            if review.get("effort") is not None:
+                run["effort"] = review["effort"]
             existing = next(
                 (i for i, r in enumerate(page["runs"]) if r.get("id") == run_id), None
             )
@@ -214,13 +287,26 @@ def apply_document(
                 f"  Seite {page_nr}: {len(entry['lines'])} Zeilen"
                 f" korrigiert -> {run_id}"
             )
-        if status is not None:
+        effective_status = status
+        reason = None
+        if entry["lines"] and status is None:
+            effective_status = "gesichtet"
+            reason = (
+                "review-reopened-after-text-change"
+                if (page.get("verification") or {}).get("status") == "abgenommen"
+                else "text-corrected"
+            )
+        if effective_status is not None:
             page["verification"] = {
-                "status": status,
+                "status": effective_status,
                 "reviewer": reviewer,
                 "date": date,
             }
-            log.append(f"  Seite {page_nr}: {status} ({reviewer}, {date})")
+            if reason:
+                page["verification"]["reason"] = reason
+            if review.get("effort") is not None:
+                page["verification"]["effort"] = review["effort"]
+            log.append(f"  Seite {page_nr}: {effective_status} ({reviewer}, {date})")
     return log
 
 
@@ -244,7 +330,9 @@ def _read(path: Path) -> Any:
         raise ReviewError(f"{path.name}: kein lesbares JSON ({exc})") from exc
 
 
-def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> list[str]:
+def _ingest_unlocked(
+    targets: list[Path], register_dir: Path, dry_run: bool = False
+) -> list[str]:
     """Apply every review file below targets, all or nothing.
 
     Every file of the batch is validated and applied in memory before any
@@ -274,6 +362,12 @@ def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> li
         for register_path, register in registers.items():
             write_json(register_path, register)
     return log
+
+
+def ingest(targets: list[Path], register_dir: Path, dry_run: bool = False) -> list[str]:
+    """Apply a batch while excluding concurrent API or CLI review writes."""
+    with review_lock(register_dir):
+        return _ingest_unlocked(targets, register_dir, dry_run)
 
 
 def main() -> int:

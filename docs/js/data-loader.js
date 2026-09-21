@@ -9,7 +9,7 @@ const STORE_NAME = 'data';
 // Cache key of the shipped data. Raise it whenever the shape of a file under
 // data/ changes, otherwise a returning browser keeps serving the old shape from
 // IndexedDB and the page renders against a contract that no longer holds.
-const DATA_VERSION = '2026-08-28e';
+const DATA_VERSION = '2026-09-21';
 
 let dbPromise = null;
 
@@ -79,6 +79,12 @@ async function putToCache(key, data) {
  * @returns {Promise<any>}
  */
 export async function loadJSON(path) {
+  // Editorial projections change independently of a frontend release.
+  if (path.startsWith('data/pipeline/') || path === 'data/graph.jsonld') {
+    const response = await fetch(path, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Failed to load ${path}: ${response.status}`);
+    return response.json();
+  }
   const cached = await getFromCache(path);
   if (cached) return cached;
 
@@ -123,6 +129,7 @@ function normalizeEntities(raw, docId) {
   // and stays null, which the display renders as a bare LLM label.
   const model = (prov && typeof prov === 'object' && prov.model) || null;
   const entities = (Array.isArray(raw.entities) ? raw.entities : []).map(e => ({
+    id: e.id || null,
     text: e.text || '',
     normalized: e.normalized || '',
     type: e.type || '',

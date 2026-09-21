@@ -6,6 +6,7 @@ __pycache__/
 .env
 .ruff_cache/
 .pytest_cache/
+pipeline/.review.lock
 
 # IDE / AI tools
 .vscode/

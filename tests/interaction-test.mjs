@@ -318,6 +318,10 @@ async function reviewFlow(target) {
     failures.push('the committed line is not marked as corrected');
   }
   actions.push(`corrected line -> "${corrected.slice(0, 40)}"`);
+  if (await p.locator('#draft-badge').textContent() !== 'Browser draft' ||
+      !await p.locator('#draft-badge').isVisible()) {
+    failures.push('an unsaved correction is not visibly marked as a browser draft');
+  }
 
   const pressed = sel => p.locator(sel).getAttribute('aria-pressed');
   await p.click('#btn-status-reviewed');

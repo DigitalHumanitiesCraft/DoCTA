@@ -55,6 +55,12 @@ A page carrying an edition run keeps `content_class` `unknown` like every page w
 
 ## Review ingest
 
+The loopback editor (`python pipeline/local_editor.py`, or `start-editor.ps1` on Windows) adds direct repository persistence to this contract. A save carries the loaded document revision and is rejected if another edit has changed it. Successful saves preserve an immutable review record under `reviews/` and an effective reading in `pages/`. Empty corrected text is a deliberate empty reading. The public viewer still exports JSON for the ingest below.
+
+Optional `effort` records active seconds, the number of recorded interactions and a decision note. These are observations of the correction session. They establish no corpus-wide effort estimate. Annotation decisions live separately in `annotations/` and carry the source-line digest. See [the local architecture](../docs/knowledge/architecture.md) and [the pilot plan](../docs/knowledge/plan.md).
+
+The local build accepts an explicit date and document IDs to check. It rebuilds the connected TEI set with its shared register, applies current annotation decisions to TEI and graph and updates effective static transcription projections. Both TEI schema stages must pass, and stale annotation decisions stop the build. The output set is restored if file replacement fails. The service does not commit or publish. Start it with `--root PATH --port PORT` to run a copied test corpus, whose `docs/` and `pipeline/pages/` directories must exist.
+
 The browser viewer lets a reviewer read a page against its scan, mark it `gesichtet` or `abgenommen` and correct single lines. It exports that as one file per document, and `apply_review.py` writes the export into the register, which stays the only place where the state of a page is held.
 
 ```json

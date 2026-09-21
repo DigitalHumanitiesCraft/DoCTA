@@ -260,6 +260,31 @@ def test_review_without_corrections_records_only_the_verification() -> None:
         assert not [r for r in page["runs"] if r["source"] == "human"]
 
 
+def test_text_change_without_decision_reopens_an_approved_page() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        approved = review_file(tmp, pages_dir, status="abgenommen")
+        ar.ingest([approved], pages_dir)
+        payload = load_json(approved)
+        payload["pages"][str(PAGE)]["date"] = "2026-09-04"
+        payload["pages"][str(PAGE)]["status"] = None
+        payload["pages"][str(PAGE)]["lines"][0] = {
+            "id": "r2l1",
+            "original": "Auf dem klainen estrich",
+            "corrected": "Auf dem klainen Estrich",
+        }
+        changed = tmp / "changed.json"
+        changed.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        ar.ingest([changed], pages_dir)
+        assert _page(pages_dir)["verification"] == {
+            "status": "gesichtet",
+            "reviewer": REVIEWER,
+            "date": "2026-09-04",
+            "reason": "review-reopened-after-text-change",
+        }
+
+
 def test_contract_violations_are_refused() -> None:
     """Every field of the export contract is checked before anything is written."""
     good = {
@@ -293,6 +318,7 @@ def test_contract_violations_are_refused() -> None:
         broken(pages={str(PAGE): {**page, "date": "03.09.2026"}}),
         broken(pages={str(PAGE): {**page, "lines": "none"}}),
         broken(pages={str(PAGE): {**page, "lines": [{"id": "r2l1"}]}}),
+        broken(effort={"activeSeconds": float("nan"), "decisionCount": 1}),
         broken(
             pages={
                 str(PAGE): {

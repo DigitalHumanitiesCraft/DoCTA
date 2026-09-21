@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -26,6 +26,18 @@ related: [INDEX, specification, design, data]
 ## Constraint
 
 The site is static and served by GitHub Pages from `docs/` on `main`. It uses vanilla JavaScript with ES6 modules, no build process and no package manager at runtime. External dependencies are vendored in `docs/lib/`.
+
+### Local editing service
+
+`pipeline/local_editor.py` serves the same `docs/` tree on loopback and exposes a same-origin API. `viewer-local.js` discovers this service through its response header and session capability. GitHub Pages and ordinary static preview servers retain the export workflow. Local transcription requests bypass IndexedDB and read the effective register text. Drafts carry the loaded revision, and a save against a changed revision fails visibly.
+
+The browser keeps pending corrections until an explicit save succeeds. The backend records the review under `pipeline/reviews/` and updates `pipeline/pages/`. A later review uses the newest effective text as its base. Original Transkribus files and recognition runs remain unchanged. `viewer-review.js` records optional active review time and decision notes. `viewer-annotations.js` writes curation sidecars under `pipeline/annotations/`, keyed by extraction identity and a digest of the reviewed source line.
+
+The explicit local build takes an edition date and a document selection to check. It rebuilds the complete connected TEI set, including the shared entity register, because document references and the common date must remain consistent. It applies annotation decisions to TEI and graph, rejects stale source digests, validates generated TEI and updates the static text projections. Failed file replacement restores the preceding output set. Saved work, generated files, a local commit and publication remain separate operations. The loopback server neither commits nor pushes. `--root` selects an isolated repository copy for end-to-end tests.
+
+Accepted annotation normalization enters the local TEI register and graph. Rejected occurrences are excluded, and undecided proposals retain machine provenance. Authority URIs enter the graph. The closed inventory TEI schema does not permit them on register entries, so no external authority pointer is claimed in that TEI representation. Introducing one requires a deliberate encoding change. Source extraction files remain available to the viewer as machine proposals, with saved decisions shown in the curation form.
+
+Hersch's direct file writing provided a comparison for canonical data and their site mirrors. Its sequential writes do not supply the conflict check required here. The SZD HTR pipeline was registered as a remote repository but had no local checkout available during the comparison on 2026-09-21, so no implementation equivalence with that project is claimed.
 
 ### Vendored versions (from the file headers in `docs/lib/`)
 

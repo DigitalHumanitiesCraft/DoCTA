@@ -278,6 +278,7 @@ export function createTeiView(container, { getViewMode, onRendered }) {
   return {
     /** @returns {string|null|undefined} undefined while nothing has been fetched */
     cached: (docId) => cache.get(String(docId)),
+    invalidate: () => { request += 1; cache.clear(); },
 
     async render(docId) {
       const token = ++request;
@@ -288,7 +289,7 @@ export function createTeiView(container, { getViewMode, onRendered }) {
       let xml = cachedXML;
       if (xml === undefined) {
         try {
-          const res = await fetch(`data/tei/${docId}.xml`);
+          const res = await fetch(`data/tei/${docId}.xml`, { cache: 'no-store' });
           if (!res.ok) throw new Error(String(res.status));
           xml = await res.text();
           cache.set(String(docId), xml);

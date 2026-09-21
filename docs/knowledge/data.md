@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -272,6 +272,10 @@ Two transcription conventions are present in the stock. Any comparison across do
 **Account books.** All 26 volumes are digitized. Six volumes (nos. 1 to 6) have a layout analysis with baselines and regions; the remaining twenty carry the status `NEW`. No volume holds transcription text in Transkribus. Machine transcriptions live outside Transkribus under `evaluation/`, and they are unrevised model output.
 
 ### Rights and reuse of third-party material
+
+`scripts/import_inventaria.py` imports one explicitly selected public document through the Transkribus Sites document-pages endpoint. It follows pagination, checks the expected extent and preserves PAGE page, region and line identities, raw custom attributes and textual annotations with their offsets. The importer rejects invalid spans and disables XML entity resolution and network access while parsing. Its output and cache stay under the ignored private `tmp/inventaria/` directory until reuse terms are confirmed. A successful import proves technical availability and does not record permission.
+
+`scripts/fetch_edition_pages.py` accepts authorized document metadata or an exported `fulldoc` JSON and writes a private proposal for missing image references. It does not silently change the canonical page manifest. Collection 2197991 and document 12647153 identify the missing silver-inventory pages discussed in the walkthrough. The request descriptor names the required export without including credentials. Access to document metadata and authorization to republish images are separate inputs.
 
 Publication is not a licence. Material that is freely accessible on the web but carries no open licence is used in three tiers, and the rule is the same for every third-party source.
 

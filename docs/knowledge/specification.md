@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -79,7 +79,9 @@ The training request is a design constraint rather than a courtesy. A pipeline t
 
 DoCTA becomes a locally run editing tool, which is the answer to the constraint above. The editor clones the repository, edits the research data in an edit mode of the locally running application, and commits her changes herself with GitHub Desktop.
 
-This replaces the present review path. Today the viewer keeps page decisions and line corrections in the browser's localStorage until the editor exports a review file, and the operator ingests that file with `pipeline/apply_review.py` (contract in `pipeline/README.md`). That path stays in the repository as the implemented state until the edit mode exists.
+The local editor serves the same viewer through `pipeline/local_editor.py` on loopback. Browser drafts are explicitly saved to the page register with an append-only review record. The server rejects a draft whose base revision no longer matches the stored document. The source transcription remains unchanged. Empty corrected text removes a reading while retaining its line anchor. A separate build produces validated TEI and the static text projection from saved corrections.
+
+GitHub Pages keeps the browser draft and review JSON export. It has no repository write service. The editor starts the local service with `start-editor.ps1`, reviews saved changes in GitHub Desktop and commits them. Publication remains a separate push. The concrete pilot and acceptance sequence are in [plan.md](plan.md).
 
 Which interfaces and functions the editor needs is worked out together with her.
 
@@ -129,21 +131,25 @@ The full review specification is in `htr-evaluation.md`.
 4. Quality statements comprise evidence and decision status per mention and assertion, the availability tiers of the sources, and clearly marked experimental transcription metrics with their reference class.
 5. The seven directly code-addressable points of review criticism are answered.
 
-## Planned: annotation curation in the viewer
+## Annotation curation in the viewer
 
-Announced in the feedback response of 28.08.2026 and next in line after the transcription review: the editor-in-the-loop of the review mode extends to the entity annotations. Machine entity proposals are already anchored to the source line; the viewer gains their direct correction and confirmation, with source line, model provenance, review status and the reasoned correction preserved for every assignment. Reconciliation targets are SiCProD for persons and functions, Wikidata and the GND additionally for persons and for places, and the Inventaria terminology together with the Getty Art & Architecture Thesaurus for object names and controlled object categories. Confirmed corrections may feed later extraction runs. The vocabulary decisions this needs are listed in the next section.
+The local viewer records decisions on existing line-anchored entity proposals in versioned annotation sidecars. The editor can change the normalized form, assign an authority URI and record acceptance, rejection or a pending decision with a reason. Each decision carries the digest of the text it was reviewed against. Source text changes require another review. Model extraction files remain unchanged. Direct creation of new entity spans and changes to the entity type require an extended anchoring contract.
+
+The build applies accepted normalizations and rejected occurrences to the generated TEI and graph. Stale decisions stop the build until rechecked. Authority URIs are represented in the graph, while the inventory TEI retains references to its curated local register under the existing closed schema. Pending and absent decisions remain machine proposals. A curation decision on one occurrence does not confer scholarly acceptance on a whole document or register.
+
+Reconciliation targets are SiCProD for persons and functions, Wikidata and the GND additionally for persons and places, and Inventaria terminology together with the Getty Art & Architecture Thesaurus for object names and categories. These are proposed resources. An authority URI is entered by the editor, and no automatic identity resolution is claimed. The vocabulary decisions are listed below.
 
 ## Decisions that lie with the project lead
 
-Recorded on 2026-09-20 as responsibility. None of them is taken yet.
+These decisions remain with the historical project lead.
 
 - The transcription convention with the permitted normalisations. `htr-evaluation.md` names it under the scholarly review points.
 - The annotation vocabulary, which comprises the priority object categories, the order in which the reconciliation sources are consulted, the treatment of the free-text `role` field that entity iteration 01 (`pipeline/prompts/entities_it01.md`) fills with an attested function for persons and an object group for objects, and the granularity of place versus space (`domain-knowledge.md`).
-- The confirmation of the working edition proposed on 2026-08-28 (`project.md`).
+- The concrete scope and acceptance of the working edition. General willingness is documented in the reply supplied on 2026-09-21 (`project.md`).
 
 ## Open questions
 
-- How the edit mode of the locally run editing tool writes into the repository is open. The technical constraints above were written for the published static site.
+- Structural line insertion, split and merge require an explicit identity, region and annotation-migration contract before they can safely change source anchors.
 
 - Whether bilingual presentation in German and English is needed is unresolved. The site is currently English; the source material and the working documents are German.
 - Which case study the resubmission builds on is not decided (see domain-knowledge.md).

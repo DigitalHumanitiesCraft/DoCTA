@@ -51,6 +51,7 @@ Usage:
 """
 
 import argparse
+import copy
 import re
 import sys
 from collections import Counter
@@ -473,13 +474,47 @@ def transcription_of(
     if export.exists():
         data = load_json(export)
         data["pages"] = sorted(data["pages"], key=lambda p: p["pageNr"])
-        return data
+        return effective_transcription(data, doc_id, register_dir)
     path = (register_dir or PIPELINE_DIR / "pages") / f"{doc_id}.json"
     if not path.exists():
         return None
-    return vlm_transcription(
+    data = vlm_transcription(
         {"docId": doc_id, "title": title}, load_json(path)["pages"]
     )
+    return effective_transcription(data, doc_id, register_dir)
+
+
+def effective_transcription(
+    transcription: dict, doc_id: int, register_dir: Path | None = None
+) -> dict:
+    """Project persisted review readings into an export-shaped transcription.
+
+    Review runs are working edition data even before a page is marked reviewed.
+    The verification state remains a separate scholarly claim. Keeping this
+    projection beside ``transcription_of`` makes the viewer and TEI consume the
+    same reading without modifying immutable source exports.
+    """
+    path = (register_dir or PIPELINE_DIR / "pages") / f"{doc_id}.json"
+    if not path.exists():
+        return transcription
+    return effective_transcription_from_pages(
+        transcription, load_json(path).get("pages", [])
+    )
+
+
+def effective_transcription_from_pages(transcription: dict, pages: list[dict]) -> dict:
+    """Project review runs from already-loaded register pages into text."""
+    reviewed = {page["pageNr"]: newest_review_run(page) for page in pages}
+    out = copy.deepcopy(transcription)
+    for page in out.get("pages", []):
+        run = reviewed.get(page.get("pageNr"))
+        if not run:
+            continue
+        texts = {line["id"]: line["text"] for line in run["lines"]}
+        for line in iter_lines(page):
+            if line.get("id") in texts:
+                line["text"] = texts[line["id"]]
+    return out
 
 
 def _empty_evidence(page_runs: list[dict]) -> dict | None:
@@ -570,6 +605,12 @@ def project(
         # Where the text of this document comes from, which decides both the
         # file the viewer loads and the wording of its provenance chip.
         transcription = vlm_transcription(doc, pages)
+        has_review = any(review_runs(page) for page in pages)
+        if has_review:
+            export = DATA / "transcriptions" / f"{doc['docId']}.json"
+            source = load_json(export) if export.exists() else transcription
+            if source is not None:
+                transcription = effective_transcription_from_pages(source, pages)
         if transcription is not None:
             write_json(
                 out_path.parent / "transcriptions" / f"{doc['docId']}.json",
@@ -617,6 +658,7 @@ def project(
                     if bool(doc["has_text"]) and has_export
                     else ("vlm" if transcription is not None else None)
                 ),
+                "effective_transcription": has_review,
                 # lets the site skip the per-document entity probe; the demo
                 # fallback for the one hand-made extraction stays client-side
                 "has_entities": (DATA / "entities" / f"{doc['docId']}.json").exists(),

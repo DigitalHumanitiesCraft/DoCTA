@@ -79,6 +79,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 import build_register as br
+import curated_entities as ce
 import entity_index as ei
 from io_paths import DATA, PIPELINE_DIR, load_json, write_text
 
@@ -398,7 +399,11 @@ def _inventaria_decl(doc: dict) -> str:
 
 
 def _editorial_decl(
-    doc: dict, indent: str, entities: bool = False, review: dict | None = None
+    doc: dict,
+    indent: str,
+    entities: bool = False,
+    review: dict | None = None,
+    curated: bool = False,
 ) -> list[str]:
     """Stream-dependent editorial declaration; never asserts a step that did
     not run and never contradicts the transcription-summary status."""
@@ -474,12 +479,21 @@ def _editorial_decl(
     )
     out = [f"{indent}<editorialDecl>", f"{indent}  <p>{_esc(first)} {second}</p>"]
     if entities:
-        out.append(
-            f"{indent}  <p>The named entities marked in this file are an"
-            " unverified extraction by an LLM agent from the prototype"
-            " phase; they have not been checked against the source by a"
-            " scholar and carry no claim of correctness.</p>"
-        )
+        if curated:
+            out.append(
+                f"{indent}  <p>The named entities originate in an LLM"
+                " extraction from the prototype phase. Accepted and rejected"
+                " decisions from the local annotation sidecar are applied;"
+                " entities without an accepted decision remain unverified"
+                " machine proposals.</p>"
+            )
+        else:
+            out.append(
+                f"{indent}  <p>The named entities marked in this file are an"
+                " unverified extraction by an LLM agent from the prototype"
+                " phase; they have not been checked against the source by a"
+                " scholar and carry no claim of correctness.</p>"
+            )
     out.append(f"{indent}</editorialDecl>")
     return out
 
@@ -577,7 +591,11 @@ def _ms_identifier(signatur: str, doc_id: int, indent: str) -> list[str]:
 
 
 def _header(
-    doc: dict, date: str, entities: bool = False, review: dict | None = None
+    doc: dict,
+    date: str,
+    entities: bool = False,
+    review: dict | None = None,
+    curated: bool = False,
 ) -> list[str]:
     review = review or {"pages": [], "texts": {}, "complete": False}
     reviewed = bool(review["pages"])
@@ -631,7 +649,7 @@ def _header(
         f" project's agentic edition pipeline from {_generation_source(doc)}.</p>",
         "      </projectDesc>",
     ]
-    out += _editorial_decl(doc, "      ", entities, review)
+    out += _editorial_decl(doc, "      ", entities, review, curated)
     if category:
         out += [
             "      <classDecl>",
@@ -796,7 +814,7 @@ def _line_content(text: str, anchors: list[dict]) -> str:
     return "".join(out)
 
 
-def _entity_data(doc_id: int) -> dict | None:
+def _entity_data(doc_id: int, entity_dir: Path = ENTITY_DIR) -> dict | None:
     """The entity extraction of this document, or None where it has none.
 
     The file names the docId it belongs to, so no document can pick a layer up
@@ -804,14 +822,14 @@ def _entity_data(doc_id: int) -> dict | None:
     the normal case. ENTITY_DIR is also what entity_index.py builds the register
     ids from, so the two sides cannot address different extractions.
     """
-    path = ENTITY_DIR / f"{doc_id}.json"
+    path = entity_dir / f"{doc_id}.json"
     if not path.exists():
         return None
     data = load_json(path)
     return data if data.get("docId") == doc_id else None
 
 
-def entity_slugs() -> dict[tuple[str, str], str]:
+def entity_slugs(entity_dir: Path = ENTITY_DIR) -> dict[tuple[str, str], str]:
     """(type, normalized) of an extracted entity to its register id.
 
     Built from the same extraction files the anchors are cut against, so an
@@ -820,7 +838,7 @@ def entity_slugs() -> dict[tuple[str, str], str]:
     """
     return {
         (entry["type"], entry["normalized"]): entry["id"]
-        for entry in ei.build_index(ei.load_extractions())
+        for entry in ei.build_index(ei.load_extractions(entity_dir))
     }
 
 
@@ -829,6 +847,7 @@ def _entity_anchors(
     pages: list[dict],
     review_texts: dict | None = None,
     slugs: dict[tuple[str, str], str] | None = None,
+    data: dict | None = None,
 ) -> tuple[dict[int, dict[str, list[dict]]], list[tuple[str, str]]]:
     """Deterministic inline anchors for the prototype entity layer.
 
@@ -838,7 +857,7 @@ def _entity_anchors(
     verbatim exactly once; a second occurrence makes the position ambiguous and
     guessing one would assert a reading that was never established.
     """
-    data = _entity_data(doc_id)
+    data = _entity_data(doc_id) if data is None else data
     if data is None:
         return {}, []
     slugs = entity_slugs() if slugs is None else slugs
@@ -912,6 +931,7 @@ def document_xml(
     date: str,
     anchors: dict | None = None,
     review: dict | None = None,
+    curated: bool = False,
 ) -> str:
     doc_id = doc["docId"]
     anchors = anchors or {}
@@ -920,7 +940,7 @@ def document_xml(
         '<?xml version="1.0" encoding="UTF-8"?>',
         f'<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="docta-{doc_id}">',
     ]
-    out += _header(doc, date, bool(anchors), review)
+    out += _header(doc, date, bool(anchors), review, curated)
     out += _facsimile(pages, doc_id, review["texts"])
     out += [
         f'  <text xml:lang="{TEXT_LANG}">',
@@ -1140,7 +1160,11 @@ def _pages_of(doc: dict, register_dir: Path) -> list[dict] | None:
 
 
 def build(
-    out_dir: Path, date: str = GENERATION_DATE, register_dir: Path = REGISTER
+    out_dir: Path,
+    date: str = GENERATION_DATE,
+    register_dir: Path = REGISTER,
+    entity_dir: Path = ENTITY_DIR,
+    annotation_dir: Path = ce.ANNOTATIONS,
 ) -> dict[int, str]:
     """Build one TEI file per transcribed document, plus the entity register.
 
@@ -1149,7 +1173,9 @@ def build(
     whole run rather than leaving a broken file on disk. The returned mapping
     holds the document files; the register is written beside them.
     """
-    entries = ei.build_index(ei.load_extractions())
+    extractions = ce.effective_extractions(entity_dir, annotation_dir, register_dir)
+    by_doc = {extraction["docId"]: extraction for extraction in extractions}
+    entries = ce.decorate_entries(ei.build_index(extractions), extractions)
     slugs = {(e["type"], e["normalized"]): e["id"] for e in entries}
     result: dict[int, str] = {}
     for doc in _documents(register_dir):
@@ -1161,12 +1187,22 @@ def build(
         # says so where a page of the document stayed untranscribed.
         doc["covered"] = len(pages)
         review = _review(doc_id, register_dir)
-        anchors, skipped = _entity_anchors(doc_id, pages, review["texts"], slugs)
+        entity_data = by_doc.get(doc_id, {"docId": doc_id, "entities": []})
+        anchors, skipped = _entity_anchors(
+            doc_id, pages, review["texts"], slugs, entity_data
+        )
         if skipped:
             print(f"ENTITIES {doc_id}: {len(skipped)} nicht kodiert", file=sys.stderr)
             for entity_id, reason in skipped:
                 print(f"  {entity_id}: {reason}", file=sys.stderr)
-        xml = document_xml(doc, pages, date, anchors, review)
+        xml = document_xml(
+            doc,
+            pages,
+            date,
+            anchors,
+            review,
+            bool(entity_data and entity_data.get("curationApplied")),
+        )
         ElementTree.fromstring(xml)  # fail fast on a malformed template result
         result[doc_id] = xml
     for doc_id, xml in result.items():

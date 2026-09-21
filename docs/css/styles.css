@@ -331,7 +331,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 
 .viewer-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0;
   height: 100%;
 }
@@ -340,6 +340,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   display: flex;
   flex-direction: column;
   min-height: 0;
+  min-width: 0;
   overflow: hidden;
   border-right: 1px solid var(--border-custom);
 }
@@ -521,7 +522,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .doc-meta {
   flex: 0 0 auto;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   overflow: hidden;
   gap: var(--space-xs) var(--space-md);
@@ -558,11 +559,37 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 }
 
 .doc-meta__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
   color: var(--text-primary);
 }
+
+.doc-meta__item:has(.doc-meta__title) { flex-basis: 100%; }
+
+.image-focus, .review-notes, #edition-date {
+  max-width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border-custom);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.review-notes { flex: 1 1 10rem; }
+
+#annotation-editor {
+  padding: var(--space-xs) var(--space-md);
+  border-bottom: 1px solid var(--border-custom);
+  max-height: 40vh;
+  overflow: auto;
+  font-size: var(--text-xs);
+}
+
+.annotation-editor { display: flex; flex-wrap: wrap; gap: var(--space-sm); padding-block: var(--space-sm); }
+.annotation-editor label { display: grid; gap: var(--space-2xs); flex: 1 1 10rem; }
+.annotation-editor input, .annotation-editor select { min-width: 0; width: 100%; }
+
+.review-bar:has(#local-edition-status) { flex-wrap: wrap; }
 
 /* === Loading Spinner === */
 .loading {
@@ -608,8 +635,13 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 @media (max-width: 991.98px) {
   .viewer-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: minmax(22rem, 50vh) minmax(32rem, auto);
+    height: auto;
   }
+  .viewer-page { height: auto; min-height: 100vh; overflow: auto; }
+  .viewer-panel:last-child { min-height: 70vh; }
+  .viewer-tools { flex-wrap: wrap; }
+  .viewer-panel__header .doc-selector { max-width: 100%; }
 }
 
 

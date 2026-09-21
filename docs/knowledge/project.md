@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-28
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -38,9 +38,11 @@ The digital component is an agentic edition pipeline. It turns facsimiles of fif
 
 Two commitments hold everywhere. All model output remains unrevised machine transcription until a scholar approves it, and is marked as such wherever it is displayed. Every derived artifact carries its provenance, down to the model, prompt iteration and work step that produced it.
 
-## Proposed next form: a working edition
+## Working edition
 
-The working edition was proposed to the project lead on 28.08.2026 and is still unconfirmed on 20.09.2026. An introduction meeting with the project lead is set for 21.09.2026, and the confirmation lies with her. Under the proposal DoCTA develops into a working edition, a shared working environment tailored to the project lead's research and material, in which account books, inventories, court ordinances, copybooks and further court sources are brought together for indexing and comparative analysis. In a resubmission this takes the form of a service arrangement, Digital Humanities Craft supporting the work with the already developed environment, while the centre of gravity stays with the historical research. The transcription review in the viewer is the model for the next step, an editor-in-the-loop for the annotations, specified in `specification.md`. Decided on 20.09.2026, DoCTA becomes a locally run editing tool in which the editor changes the research data herself and commits them. `specification.md` holds the decision.
+The project lead's reply supplied on 2026-09-21 expresses willingness to use the working edition proposed on 2026-08-28 and requests a walkthrough. It asks which parts are already usable and which belong to a funded project. This establishes general interest. The commissioned scope and scholarly acceptance remain to be agreed.
+
+DoCTA brings account books, inventories, court ordinances and copybooks into a working environment for indexing and comparative analysis. The local editing decision of 2026-09-20 gives the editor direct control over versioned research data. A future service arrangement with Digital Humanities Craft remains a proposal whose scope must follow the historical pilot. [plan.md](plan.md) specifies the walkthrough, contributions and evidence needed to make that scope concrete. [specification.md](specification.md) separates the local editing functions from the public static site.
 
 ## Who it is for
 

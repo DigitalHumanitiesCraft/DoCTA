@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -18,7 +18,7 @@ template:
   version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, data, htr-evaluation, domain-knowledge, editorial-model, accounting-encoding, architecture, design, journal, handoff]
+related: [project, specification, plan, data, htr-evaluation, domain-knowledge, editorial-model, accounting-encoding, architecture, design, journal, handoff]
 ---
 
 # INDEX
@@ -34,6 +34,7 @@ File names follow the Promptotyping naming contract, lowercase canonical functio
 | `INDEX.md` | Navigation | What exists, where does it belong, and how is it read? | path, function, or constitutive term changes |
 | [project.md](project.md) | Charter | What is this project, for whom, and on what material basis? | project identity or scope changes |
 | [specification.md](specification.md) | Specification | What must the pipeline and site deliver, against which criticism and constraints? | requirement or decision changes |
+| [plan.md](plan.md) | Planning | Which source-bound pilot, contributions and acceptance evidence make the working edition and proposal concrete? | pilot scope, dependency or acceptance decision changes |
 | [data.md](data.md) | Material | Which data exist, what can each source carry, where does it break, and which rights rules bind third-party material? | data source, quality finding, or rights rule changes |
 | [htr-evaluation.md](htr-evaluation.md) | Evaluation methodology | How are transcriptions produced, compared, and released for scholarly use? | reference class, protocol, metric, or release rule changes |
 | [domain-knowledge.md](domain-knowledge.md) | Domain Knowledge | Which scholarly framework governs interpretation (SiCPAS, praxeology, BeNASch, epistemology)? | domain model or method changes |

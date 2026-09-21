@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-28
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [INDEX, editorial-model, architecture]
@@ -28,7 +28,9 @@ The pilot uses a hand-written project RELAX NG schema and a separate Schematron 
 
 Part of this specification has an executable counterpart in `pipeline/accounts/`, the module that turns those rules into code a test can hold to. Implemented there are the PAGE-derived anchoring and its identity and digest rules, the JSON records for Transcription Revision, annotation proposal and review decision with the status axes of `editorial-model.md` kept separate, the staleness rule that invalidates an anchor when its text digest changes, and the validation of TEI and RDF against the project RELAX NG, the Schematron rules and the SHACL shapes.
 
-The remainder is prose specification. Annotation Sets and their set hash, the Edition Build Manifest, and the generation and comparison steps of the deterministic build below, from TEI generation through the byte-for-byte clean rebuild, describe an intended build that does not exist yet. A set hash and a manifest are testable only against the build that reads them, so they stay specification until such a consumer is written, and this document remains the authority for their form.
+`pipeline/accounts/build_edition.py` implements preparation of a TranscriptionRevision and an Edition Build Manifest from a pinned existing recognition run, source page manifest and PAGE XML. PAGE text must exactly match the selected run. The output preserves machine-unrevised status and pins its inputs and generated artifact by checksums. Its test uses a real run with a synthetic PAGE carrier, which verifies software behavior and supplies no archival geometry evidence.
+
+Annotation Sets and the released TEI/RDF generation remain specification. The preparation manifest records missing accepted annotations as a release blocker and does not generate substitute assertions. The deterministic publication procedure below becomes executable only when genuine source anchors and editorially accepted accounting annotations are provided.
 
 ## Authoritative layers
 

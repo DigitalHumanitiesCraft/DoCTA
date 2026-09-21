@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -24,6 +24,16 @@ related: [INDEX, project, handoff]
 # Journal
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
+
+## Local working edition and a source-bound pilot plan (21.09.2026)
+
+The supplied reply establishes willingness to work with the edition and asks for a walkthrough. `project.md`, `specification.md` and the new indexed `plan.md` distinguish that willingness from an agreed commission and scientific acceptance. The plan binds the inventory demonstration, reference sample, effort measurement, source permissions and historical case selection to concrete contributions and acceptance evidence.
+
+The loopback editor now saves review records and effective readings, detects concurrent changes and rebuilds the connected TEI set and static projections. Empty readings remain real corrections, and editing an approved text reopens its review. Annotation decisions are stored against source digests and projected into TEI and graph. The graph attributes curation and authority to individual attestations. The original recognition runs and extraction files are preserved. Source import preserves Inventaria PAGE annotations, and the accounts preparation build supplies a checked TranscriptionRevision and manifest without inventing accepted accounting annotations.
+
+Independent review found and corrected write races, inconsistent partial builds and a frontend draft-status omission. A real-source scratch copy passed save, reload, Reading, TEI rebuild and annotation read-back in the browser. The complete Python suite, lint and formatting passed, and the pipeline healthcheck confirmed schema validity and byte-identical rebuild. Derived site files were regenerated under the existing edition date to preserve their generator provenance. No research correction, reference approval, paid recognition run or publication was performed.
+
+The Inventaria test import stays private and ignored by Git. Missing image keys still require authorized Transkribus metadata. Structural line edits, new annotation spans, the accepted account-book reference, specialized HTR comparison and released accounting TEI/RDF remain open. The browser adapter did not apply the requested narrow viewport, so responsive and zoom accessibility acceptance remains incomplete. The scientific decisions and proposal text remain assigned to the project lead.
 
 ## Three owner decisions, and the knowledge base checked against the repository (20.09.2026)
 

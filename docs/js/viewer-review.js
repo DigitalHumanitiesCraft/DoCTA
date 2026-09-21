@@ -1,10 +1,9 @@
 /**
  * DoCTA viewer - the curation view.
  *
- * Decisions are made in the browser and live in localStorage per document.
- * They leave through an explicit JSON export that the pipeline ingests; the
- * site itself is static and writes nothing back. The shape of that export is a
- * contract with pipeline/apply_review.py and is not changed here alone.
+ * Browser drafts can be exported or explicitly saved through the loopback API.
+ * The public site remains export-only. The review shape is a contract with
+ * pipeline/apply_review.py and is not changed here alone.
  *
  * The module holds no page state. Which document, which page and which view the
  * reader is in comes from the getContext callback the page supplies.
@@ -50,10 +49,6 @@ function loadReview(docId) {
     pages[key] = { ...page, status };
   }
   return { ...data, version: REVIEW_VERSION, pages };
-}
-
-function saveReview(store) {
-  lsSet(reviewKey(store.docId), JSON.stringify(store));
 }
 
 function ensurePage(store, pageNr) {
@@ -103,8 +98,39 @@ export function nextStatus(current, pressed) {
  *   rerenderPage: (pageNr: number) => void
  * }} opts
  */
-export function createReviewView(els, { getContext, markText, rerenderPage }) {
+export function createReviewView(els, { getContext, markText, rerenderPage, local, onSaved, onDraftChange }) {
   let reviewMode = false;
+  let saving = false;
+  let timerStarted = null;
+  let timedDocId = null;
+  let visibleDocId = null;
+  const drafts = new Map();
+
+  function saveReview(store) {
+    drafts.set(store.docId, store);
+    if (!lsSet(reviewKey(store.docId), JSON.stringify(store))) {
+      els.hint.textContent = 'Browser storage failed. Keep this tab open and save locally or export now.';
+    } else {
+      els.hint.textContent = 'Draft in this browser. Not yet saved to the edition.';
+    }
+    onDraftChange();
+  }
+
+  function draft(docId) {
+    if (!drafts.has(docId)) drafts.set(docId, loadReview(docId));
+    return drafts.get(docId);
+  }
+
+  function recordTime(pause = false) {
+    if (timerStarted !== null && timedDocId === getContext().docId) {
+      const store = reviewStore();
+      store.effort.activeSeconds += (performance.now() - timerStarted) / 1000;
+      saveReview(store);
+    }
+    timerStarted = pause ? null : performance.now();
+    els.timerBtn.textContent = pause ? 'Start timing' : 'Pause timing';
+    els.timerBtn.setAttribute('aria-pressed', String(!pause));
+  }
 
   const initialsValue = () => els.initials.value.trim();
 
@@ -117,16 +143,20 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   }
 
   function reviewStore() {
-    const { docId } = getContext();
-    const stored = loadReview(docId);
-    if (stored) return stored;
-    return { version: REVIEW_VERSION, docId, reviewer: initialsValue(), pages: {} };
+    const { docId, revision } = getContext();
+    const stored = draft(docId);
+    if (stored) {
+      stored.effort ||= { activeSeconds: 0, decisionCount: 0 };
+      return stored;
+    }
+    return { version: REVIEW_VERSION, docId, baseRevision: revision,
+      reviewer: initialsValue(), pages: {}, effort: { activeSeconds: 0, decisionCount: 0 } };
   }
 
   function reviewPage(pageNr) {
     const { docId } = getContext();
     if (docId == null || pageNr == null) return null;
-    const store = loadReview(docId);
+    const store = draft(docId);
     const page = store?.pages?.[String(pageNr)];
     return page && typeof page === 'object' ? page : null;
   }
@@ -144,19 +174,21 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
     return map;
   }
 
-  function setStatus(pressed) {
+  function setStatus(pressed, reopen = false) {
+    if (saving) return;
     const { docId, pageNr, viewMode } = getContext();
     if (docId == null || viewMode !== 'synopsis') return;
     if (!requireInitials()) return;
     if (pageNr == null) return;
     const store = reviewStore();
     const page = ensurePage(store, pageNr);
-    const next = nextStatus(page.status, pressed);
-    if (next === page.status && pressed === 'gesichtet') {
+    const next = reopen ? 'gesichtet' : nextStatus(page.status, pressed);
+    if (!reopen && next === page.status && pressed === 'gesichtet') {
       els.hint.textContent = 'Approved already implies reviewed. Clear the approval to change it.';
       return;
     }
     page.status = next;
+    store.effort.decisionCount += 1;
     page.date = today();
     store.reviewer = initialsValue();
     prunePage(store, pageNr);
@@ -165,11 +197,17 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   }
 
   function clearReviewPage() {
+    if (saving) return;
     const { docId, pageNr } = getContext();
     if (docId == null || pageNr == null) return;
-    const store = loadReview(docId);
+    const store = draft(docId);
     if (!store) return;
     delete store.pages[String(pageNr)];
+    if (!Object.keys(store.pages).length) {
+      store.baseRevision = getContext().revision;
+      store.effort = { activeSeconds: 0, decisionCount: 0 };
+      els.notes.value = '';
+    }
     saveReview(store);
     rerenderPage(pageNr);
     syncReviewUI();
@@ -178,7 +216,8 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   function exportReview() {
     const { docId } = getContext();
     if (docId == null) return;
-    const store = loadReview(docId) ||
+    recordTime(true);
+    const store = draft(docId) ||
       { version: REVIEW_VERSION, docId, reviewer: initialsValue(), pages: {} };
     const payload = { ...store, exported: new Date().toISOString(), source: 'docta-viewer' };
     const url = URL.createObjectURL(
@@ -197,16 +236,20 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   function updateReviewChip() {
     const { docId, pageNr, viewMode } = getContext();
     els.meta.querySelector('#review-chip')?.remove();
-    const page = viewMode === 'synopsis' ? reviewPage(pageNr) : null;
+    const draftPage = viewMode === 'synopsis' ? reviewPage(pageNr) : null;
+    const savedPage = getContext().reviewState?.[String(pageNr)];
+    const page = draftPage || savedPage;
     if (!page || !page.status) return;
-    const store = loadReview(docId);
-    const who = (store && typeof store.reviewer === 'string' && store.reviewer) || '??';
+    if (!(page.status in STATUS_LABEL)) return;
+    const store = draft(docId);
+    const who = (draftPage ? store?.reviewer : page.reviewer) || '??';
     const chip = document.createElement('span');
     chip.id = 'review-chip';
     chip.className = 'prov-chip prov-chip--review';
     chip.textContent = `${STATUS_LABEL[page.status] || 'Reviewed'} · ${who}`;
-    chip.title = `Decision by ${who} on ${page.date}, held in this browser only. ` +
-                 'It is local until it is exported and ingested by the pipeline.';
+    chip.title = draftPage
+      ? `Decision by ${who} on ${page.date}, browser draft awaiting save or export.`
+      : `Decision by ${who} on ${page.date}, saved in the local edition.`;
     els.meta.appendChild(chip);
     els.meta.hidden = false;
   }
@@ -222,13 +265,26 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   }
 
   function syncReviewUI() {
-    const { pageNr, viewMode } = getContext();
+    const { docId, pageNr, viewMode, reviewState } = getContext();
+    if (visibleDocId !== docId) {
+      visibleDocId = docId;
+      els.notes.value = draft(docId)?.effort?.notes || '';
+      els.hint.textContent = draft(docId) ? 'Browser draft restored. Not yet saved to the edition.' : '';
+      if (local.enabled && draft(docId) && draft(docId).baseRevision !== getContext().revision) {
+        els.hint.textContent = 'Restored draft has an older base. Export it before discarding and rechecking the current text.';
+      }
+    }
     const isSynopsis = viewMode === 'synopsis';
     els.toggle.setAttribute('aria-pressed', String(reviewMode));
     els.toggle.disabled = !isSynopsis;
+    els.saveBtn.hidden = !local.enabled;
+    els.reopenBtn.hidden = !local.enabled;
+    els.saveBtn.disabled = saving;
+    for (const control of [els.initials, els.notes, els.timerBtn, els.clearBtn,
+      els.statusReviewed, els.statusApproved, els.reopenBtn]) control.disabled = saving;
     els.bar.hidden = !(reviewMode && isSynopsis);
     const page = isSynopsis ? reviewPage(pageNr) : null;
-    const status = page?.status || null;
+    const status = page ? page.status : reviewState?.[String(pageNr)]?.status;
     els.statusReviewed.setAttribute('aria-pressed',
       String(status === 'gesichtet' || status === 'abgenommen'));
     els.statusApproved.setAttribute('aria-pressed', String(status === 'abgenommen'));
@@ -272,9 +328,8 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
     const store = reviewStore();
     const page = ensurePage(store, pageNr);
     const idx = page.lines.findIndex(l => l && l.id === id);
-    // An emptied line is treated as a withdrawn correction; a blank reading is
-    // not expressible here and would be indistinguishable from a mis-click
-    const withdrawn = value === original || value === '';
+    // Empty text deliberately removes a hallucinated reading without removing its anchor.
+    const withdrawn = value === original;
     if (withdrawn) {
       if (idx < 0) return;
       page.lines.splice(idx, 1);
@@ -284,6 +339,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
       page.lines.push({ id, original, corrected: value });
     }
     page.date = today();
+    store.effort.decisionCount += 1;
     if (initialsValue().length >= 2) store.reviewer = initialsValue();
     prunePage(store, pageNr);
     saveReview(store);
@@ -293,6 +349,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   }
 
   function beginEdit(lineEl) {
+    if (saving) return;
     if (!reviewMode || getContext().viewMode !== 'synopsis') return;
     if (!lineEl || lineEl.classList.contains('transcription__line--folio')) return;
     if (!requireInitials()) return;
@@ -328,8 +385,60 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   els.toggle.addEventListener('click', () => setReviewMode(!reviewMode));
   els.statusReviewed.addEventListener('click', () => setStatus('gesichtet'));
   els.statusApproved.addEventListener('click', () => setStatus('abgenommen'));
+  els.reopenBtn.addEventListener('click', () => setStatus('gesichtet', true));
   els.exportBtn.addEventListener('click', exportReview);
   els.clearBtn.addEventListener('click', clearReviewPage);
+  els.saveBtn.addEventListener('click', async () => {
+    if (saving || !requireInitials()) return;
+    recordTime(true);
+    const { docId, revision } = getContext();
+    const store = reviewStore();
+    if (store.baseRevision !== revision) {
+      els.hint.textContent = 'This draft belongs to an older edition. Export it before clearing and rechecking the current text.';
+      return;
+    }
+    store.reviewer = initialsValue();
+    store.effort.notes = els.notes.value.trim();
+    saveReview(store);
+    saving = true;
+    syncReviewUI();
+    try {
+      const result = await local.save(store);
+      drafts.set(docId, null);
+      try { window.localStorage.removeItem(reviewKey(docId)); } catch {
+        // A stale stored draft is still rejected by its saved base revision on reload.
+      }
+      if (getContext().docId === docId) {
+        onSaved(result.document);
+        els.notes.value = '';
+        els.hint.textContent = 'Saved to the local edition. TEI and register require Rebuild edition.';
+      }
+    } catch (error) {
+      els.hint.textContent = `Not saved: ${error.message}. Your draft is retained.`;
+    } finally {
+      saving = false;
+      syncReviewUI();
+    }
+  });
+  els.timerBtn.addEventListener('click', () => {
+    if (timerStarted === null) timedDocId = getContext().docId;
+    recordTime(timerStarted !== null);
+  });
+  els.notes.addEventListener('change', () => {
+    const store = reviewStore();
+    store.effort.notes = els.notes.value.trim();
+    saveReview(store);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) recordTime(true);
+  });
+  window.addEventListener('beforeunload', (event) => {
+    recordTime(true);
+    if ([...drafts.values()].some(store => store && Object.keys(store.pages).length)) {
+      event.preventDefault();
+      event.returnValue = '';
+    }
+  });
 
   els.initials.value = lsGet(REVIEWER_KEY) || '';
   els.initials.addEventListener('input', () => {
@@ -340,9 +449,11 @@ export function createReviewView(els, { getContext, markText, rerenderPage }) {
   return {
     /** Whether review mode is on; the page reads it before routing a click. */
     get on() { return reviewMode; },
+    get hasDraft() { return Object.keys(draft(getContext().docId)?.pages || {}).length > 0; },
     corrections: reviewCorrections,
     beginEdit,
     applyMode: applyReviewMode,
     sync: syncReviewUI,
+    pause: () => recordTime(true),
   };
 }

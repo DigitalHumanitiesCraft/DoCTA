@@ -25,8 +25,9 @@ import sys
 from pathlib import Path
 
 import build_register as br
+import curated_entities as ce
 import entity_index as ei
-from io_paths import DATA, write_json
+from io_paths import DATA, PIPELINE_DIR, write_json
 
 GRAPH_FILE = DATA / "graph.jsonld"
 
@@ -134,9 +135,13 @@ def _cooccurrences(entries: list[dict]) -> list[dict]:
     ]
 
 
-def build(entity_dir: Path = ei.ENTITY_DIR) -> dict:
-    extractions = ei.load_extractions(entity_dir)
-    entries = ei.build_index(extractions)
+def build(
+    entity_dir: Path = ei.ENTITY_DIR,
+    annotation_dir: Path = ce.ANNOTATIONS,
+    register_dir: Path = PIPELINE_DIR / "pages",
+) -> dict:
+    extractions = ce.effective_extractions(entity_dir, annotation_dir, register_dir)
+    entries = ce.decorate_entries(ei.build_index(extractions), extractions)
     provenance = {
         # Who identified the entities: the extraction runs, carried verbatim.
         "identification": [
@@ -151,6 +156,11 @@ def build(entity_dir: Path = ei.ENTITY_DIR) -> dict:
             "attestation in a document and co-occurrence in a transcription line",
         },
     }
+    if any("curationApplied" in extraction for extraction in extractions):
+        provenance["curation"] = {
+            "source": "pipeline/annotations sidecars",
+            "method": "accepted decisions replace normalized forms and authorities; rejected proposals are excluded; pending and undecided proposals remain machine output",
+        }
     return {
         "@context": CONTEXT,
         "@id": "docta:graph",

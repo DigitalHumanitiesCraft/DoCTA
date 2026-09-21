@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-05
-updated: 2026-09-20
+updated: 2026-09-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -70,6 +70,10 @@ The dedicated network page and the faceted search over SiCProD were removed when
 `exploration.html` shows the aggregated entity layer of every document with an extraction, drawn with D3 from `data/graph.jsonld`. The single-source Cytoscape demo network over the Thaur inventory, with hand-made typed relations and always-on edge labels, was replaced on 2026-08-28: the displayed relations are now only what the data derivably holds, attestation of an entity in a document and co-occurrence of two entities in one transcription line, and edge labels are gone in favour of tooltips and a detail card. Typed relations return only when a relation extraction with full provenance exists. The graph is small enough for a live force layout over the whole set; node size follows the number of attestations, and every attestation keeps a route back to the facsimile through the viewer.
 
 ## 4. Rule-bound review status
+
+The viewer displays the archival title in full and distinguishes the document's extent from the available transcription pages in its pager. Image focus offers the full image or either half of an opening. These controls address the silver-inventory example where a blank facing page occupied much of the panel.
+
+The local review interface distinguishes a browser draft from a saved edition correction. Saving and rebuilding are separate buttons, errors retain the draft, and a changed base revision requires reconciliation. The timer starts only on an explicit action. Annotation curation appears only where anchored extraction proposals exist. Neither a stored correction nor a successful build automatically approves a page.
 
 The demo extraction of the prototype phase graded entities and relations as secure, worth checking and problematic. That grading came from the model output and held no epistemic validity, and the display no longer uses it. The pipeline extraction under `data/entities/` carries no such field, because the entity prompt `pipeline/prompts/entities_it01.md` forbids one, and `js/data-loader.js` drops the grading of the demo file on reading. An entity is shown with its machine provenance, the extracting model and the label "not verified".
 

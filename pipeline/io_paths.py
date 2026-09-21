@@ -15,6 +15,8 @@ is why they stand in one place instead of at each call site.
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -33,9 +35,18 @@ def load_json(path: Path) -> Any:
 def write_text(path: Path, text: str) -> None:
     """Write text atomically, creating the parent directory where needed."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(".tmp")
-    tmp.write_text(text, encoding="utf-8", newline="\n")
-    tmp.replace(path)
+    handle, name = tempfile.mkstemp(
+        prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
+    )
+    tmp = Path(name)
+    try:
+        with os.fdopen(handle, "w", encoding="utf-8", newline="\n") as stream:
+            stream.write(text)
+            stream.flush()
+            os.fsync(stream.fileno())
+        tmp.replace(path)
+    finally:
+        tmp.unlink(missing_ok=True)
 
 
 def write_json(path: Path, payload: Any) -> None:

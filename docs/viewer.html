@@ -42,6 +42,11 @@
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.75V2h3.75M10.25 2H14v3.75M14 10.25V14h-3.75M5.75 14H2v-3.75"/></svg>
             </button>
             <span class="viewer-bar-sep" aria-hidden="true"></span>
+            <select id="image-focus" class="image-focus" aria-label="Image area">
+              <option value="spread">Full image</option>
+              <option value="left">Left page</option>
+              <option value="right">Right page</option>
+            </select>
             <button type="button" class="vt-btn" id="btn-line-regions" aria-label="Show line regions" aria-pressed="false" title="Show line regions (l)">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2.5" width="12" height="11" rx="1.25"/><path d="M4.5 5.75h7M4.5 8h7M4.5 10.25h4"/></svg>
             </button>
@@ -118,13 +123,26 @@
                     title="Page reviewed (gesichtet)">Reviewed</button>
             <button type="button" class="view-toggle__btn" id="btn-status-approved" aria-pressed="false"
                     title="Page approved (abgenommen). Approved implies reviewed.">Approved</button>
+            <button type="button" class="view-toggle__btn" id="btn-status-reopen" hidden
+                    title="Record a new review decision that withdraws a saved approval">Reopen review</button>
           </div>
-          <span class="review-bar__hint" id="review-hint"></span>
+          <span class="review-bar__hint" id="review-hint" role="status"></span>
+          <button type="button" class="review-btn" id="btn-review-save" hidden>Save to local edition</button>
+          <button type="button" class="review-btn" id="btn-review-timer" aria-pressed="false">Start timing</button>
+          <label for="review-notes">Decision note</label>
+          <input id="review-notes" class="review-notes" type="text" maxlength="2000">
           <button type="button" class="review-btn" id="btn-review-export"
                   title="Download the stored decisions of this document as JSON for the pipeline">Export decisions</button>
           <button type="button" class="review-btn" id="btn-review-clear"
-                  title="Remove the stored decision and all line corrections of this page">Clear page</button>
+                  title="Discard this browser draft for the page. Saved edition text is preserved.">Discard page draft</button>
         </div>
+        <div id="local-edition-bar" class="review-bar" hidden>
+          <span id="local-edition-status" role="status">Local edition</span>
+          <label for="edition-date">Edition date</label>
+          <input id="edition-date" type="date" required>
+          <button type="button" class="review-btn" id="btn-edition-build">Rebuild edition</button>
+        </div>
+        <div id="annotation-editor" hidden></div>
         <div id="transcription-container" tabindex="0" role="region"
              aria-label="Transcription, scrollable">
           <div class="loading">Choose a document, or open a source from the&nbsp;<a href="index.html#sources">home page</a>.</div>
@@ -146,9 +164,13 @@
     import { createEntityLayer, createTeiView, renderReading,
              renderTranscription } from './js/viewer-render.js';
     import { createReviewView } from './js/viewer-review.js';
+    import { createLocalEditor } from './js/viewer-local.js';
+    import { createAnnotationEditor } from './js/viewer-annotations.js';
 
     initNav('viewer');
     initBanner();
+    const local = createLocalEditor();
+    const annotations = createAnnotationEditor(document.getElementById('annotation-editor'), local);
 
     let viewer = null;
     let currentDoc = null;
@@ -237,13 +259,17 @@
     function updateDraftBadge() {
       const badge = document.getElementById('draft-badge');
       const corrected = currentDoc && provenanceState(currentDoc.docId)?.state === 'human';
-      badge.hidden = !currentDoc || corrected;
+      const states = Object.values(currentDoc?.reviewState || {});
+      const approved = states.length && states.every(page => page.status === 'abgenommen');
+      const reviewed = states.some(page => ['gesichtet', 'abgenommen'].includes(page.status));
+      const pending = currentDoc && review.hasDraft;
+      badge.hidden = !currentDoc || (!pending && (corrected || approved));
+      badge.textContent = pending ? 'Browser draft' : reviewed ? 'Partly reviewed' : 'Unrevised draft';
       // Reading mode shows the exported text only; local review corrections live
       // in the synopsis, and the badge says so instead of implying they are here.
-      badge.title = viewMode === 'reading'
-        ? 'Unrevised machine transcription. Local corrections made in review mode are ' +
-          'not shown here; they stay in the synopsis until they are exported.'
-        : 'Unrevised machine transcription, not approved by a scholar.';
+      badge.title = local.enabled
+        ? 'Saved corrections appear in Synopsis and Reading. Page approval is recorded separately. Unsaved drafts appear in Synopsis only.'
+        : 'Machine source text. Browser drafts appear in Synopsis until saved through the local editor or ingested from an export.';
     }
 
     function renderDocMeta(docId) {
@@ -484,6 +510,7 @@
     function loadImage(iiifUrl) {
       if (!viewer) initOSD();
       clearLineOverlay();
+      viewer.addOnceHandler('open', fitView);
       viewer.open({ type: 'image', url: iiifUrl });
       document.getElementById('osd-viewer').classList.add('osd-active');
       // A new page starts upright; rotation is a per-page inspection aid
@@ -505,8 +532,18 @@
 
     function fitView() {
       if (!viewer) return;
-      viewer.viewport.goHome(reduceMotion);
+      const side = document.getElementById('image-focus').value;
+      const item = viewer.world.getItemAt(0);
+      if (!item || side === 'spread') { viewer.viewport.goHome(reduceMotion); return; }
+      const size = item.getContentSize();
+      const area = document.getElementById('osd-viewer').getBoundingClientRect();
+      const height = Math.min(size.y, size.x / 2 * area.height / area.width);
+      const rect = item.imageToViewportRectangle(
+        side === 'right' ? size.x / 2 : 0, (size.y - height) / 2, size.x / 2, height);
+      viewer.viewport.fitBounds(rect, reduceMotion);
     }
+
+    document.getElementById('image-focus').addEventListener('change', fitView);
 
     const panel = document.getElementById('facsimile-panel');
     const btnFullscreen = document.getElementById('btn-fullscreen');
@@ -572,17 +609,31 @@
       hint: document.getElementById('review-hint'),
       statusReviewed: document.getElementById('btn-status-reviewed'),
       statusApproved: document.getElementById('btn-status-approved'),
+      reopenBtn: document.getElementById('btn-status-reopen'),
       exportBtn: document.getElementById('btn-review-export'),
       clearBtn: document.getElementById('btn-review-clear'),
+      saveBtn: document.getElementById('btn-review-save'),
+      timerBtn: document.getElementById('btn-review-timer'),
+      notes: document.getElementById('review-notes'),
       meta: document.getElementById('doc-meta'),
     }, {
       getContext: () => ({
         docId: currentDoc ? Number(currentDoc.docId) : null,
         pageNr: currentPageNr(),
         viewMode,
+        revision: currentDoc?.revision,
+        reviewState: currentDoc?.reviewState,
       }),
       markText: entities.markText,
       rerenderPage: renderPage,
+      local,
+      onDraftChange: updateDraftBadge,
+      onSaved: (doc) => {
+        currentDoc = doc;
+        annotations.update(doc);
+        renderDocMeta(doc.docId);
+        renderCurrentView();
+      },
     });
 
     // One page of the synopsis. The coupling with the image overlay is keyed on
@@ -676,7 +727,9 @@
       pageInput.value = String(currentPageNrOr(currentPage + 1));
       pageInput.max = String(currentDoc.pages[currentDoc.pages.length - 1]?.pageNr ??
                              currentDoc.pages.length);
-      document.getElementById('page-total').textContent = `/ ${currentDoc.pages.length}`;
+      const total = currentDoc.provenance?.pagesInDocument || currentDoc.pages.length;
+      document.getElementById('page-total').textContent = total === currentDoc.pages.length
+        ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} available)`;
       document.getElementById('btn-prev-page').disabled = currentPage === 0;
       document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
     }
@@ -698,6 +751,7 @@
       if (viewMode !== 'synopsis') { review.sync(); return; }
 
       const page = currentDoc.pages[currentPage];
+      annotations.page(page.pageNr);
       loadImage(page.iiif);
       renderPage(page.pageNr);
       review.sync();
@@ -746,6 +800,7 @@
     // pageNr: page number of the document to start on. Omit to take it from the
     // URL (deep link into a page); an unknown number falls back to the first page.
     async function loadDocument(docId, pageNr) {
+      review.pause();
       const token = ++docRequest;
       try {
         // Deep links arrive copy-pasted; a stray trailing dot or space in the
@@ -754,13 +809,13 @@
         // Where the text of this document lives: the Transkribus export, or the
         // projection of DoCTA's own transcription for a source without one.
         const source = registerByDocId.get(Number(docId))?.transcription_source;
-        const path = source === 'vlm'
+        const path = source === 'vlm' || registerByDocId.get(Number(docId))?.effective_transcription
           ? `data/pipeline/transcriptions/${docId}.json`
           : `data/transcriptions/${docId}.json`;
         // Entities are optional per document and are awaited with the text, so
         // the first render already carries the marks instead of racing them in.
         const [doc, extraction] = await Promise.all([
-          loadJSON(path),
+          local.enabled ? local.load(docId) : loadJSON(path),
           loadEntities(docId),
         ]);
         // A later document switch wins over a slow response
@@ -770,6 +825,7 @@
         }
         currentDoc = doc;
         entities.set(extraction);
+        annotations.load(doc, extraction);
         const wanted = pageNr !== undefined
           ? Number(pageNr)
           : parseInt(getParams().page || '', 10);
@@ -788,6 +844,22 @@
     }
 
     document.getElementById('btn-prev-page').addEventListener('click', () => setPage(currentPage - 1));
+    document.getElementById('btn-edition-build').addEventListener('click', async (event) => {
+      if (!currentDoc) return;
+      const button = event.currentTarget;
+      const status = document.getElementById('local-edition-status');
+      const date = document.getElementById('edition-date');
+      if (!date.reportValidity()) return;
+      button.disabled = true;
+      try {
+        await local.build(date.value, [Number(currentDoc.docId)]);
+        tei.invalidate();
+        status.textContent = 'Edition rebuilt and validated from saved text.';
+        if (viewMode === 'tei') renderCurrentView();
+      } catch (error) {
+        status.textContent = `Build failed: ${error.message}`;
+      } finally { button.disabled = false; }
+    });
     document.getElementById('btn-next-page').addEventListener('click', () => setPage(currentPage + 1));
     document.getElementById('btn-zoom-in').addEventListener('click', () => zoomBy(1.4));
     document.getElementById('btn-zoom-out').addEventListener('click', () => zoomBy(1 / 1.4));
@@ -875,6 +947,9 @@
 
     async function init() {
       try {
+        await local.init();
+        document.getElementById('local-edition-bar').hidden = !local.enabled;
+        document.getElementById('edition-date').value = new Date().toISOString().slice(0, 10);
         const [mapping, sources, register] = await Promise.all([
           loadJSON('data/source_mapping.json'),
           loadJSON('data/sources.json').catch(() => []),
