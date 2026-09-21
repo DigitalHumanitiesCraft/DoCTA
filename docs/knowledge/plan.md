@@ -39,7 +39,7 @@ Continue the local walkthrough with Thaur A 049.1, document 11328300. The operat
 3. Open Bearbeiten, enter initials and select an existing text line. Enter confirms a browser draft, Escape cancels the open line edit. Change only a reading justified by the image.
 4. Use Änderungen speichern, wait for the local-save confirmation and reload. The saved reading must remain. Änderungen verwerfen discards the current page draft and preserves saved text.
 5. Add a page or line tag with a note after saving the text. Reload and inspect its source attachment. Distinguish a research observation from an accepted interpretation.
-6. Inspect an automatic annotation separately. Keep an uncertain proposal open, and record a reason for acceptance or rejection when justified. Page review and scholarly release remain explicit decisions.
+6. Inspect an automatic annotation separately. Keep an uncertain proposal open, and record a reason for acceptance or rejection when justified. Annotation decisions concern the selected proposal. Correcting the text requires no separate page approval step.
 7. Under Weitere Funktionen, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them.
 
 After each step, collect the operator's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. After the walkthrough, prepare the colleague-facing German guide from these observations, the verified persistence behavior and the project lead's open conceptual questions. The guide should explain purpose, source provenance, the worked example, correction and annotation, saved versus published state, and the remaining scholarly decisions.
@@ -53,7 +53,7 @@ After each step, collect the operator's observation, the source passage, any une
 | Inventaria reuse | Permission covering the intended texts, annotations and publication | Provenance-preserving import with PAGE annotations | Completeness, line anchoring and annotation offsets checked, attribution and license recorded | Project lead coordinates permission with Inventaria |
 | Transcription convention | Decisions on original spelling, abbreviation expansion, illegibility, deletion, foliation and line structure | One convention and a versioned, accepted reference sample | Every sample page reviewed against its image and tied to the convention | Historical editor |
 | Recognition evaluation | Accepted sample and a specialized HTR baseline | Comparisons by page and source stratum, with numeral errors inspected separately | Held-out evaluation, line omissions, normalization profile and failed cases reported | Project lead approves fitness for the research task |
-| Effort measurement | Representative correction sessions under the convention | Observed active review time and documented editorial decisions | Timing scope, source stratum, interruptions and corrections are inspectable | Historical editor records actual work |
+| Correction documentation | Source-bound corrections under the convention | Original and corrected readings with actor and save time | Saved events resolve to their source document, page and line | Historical editor supplies the reading |
 | Inventory annotations | Controlled vocabulary and verified transcription anchors | Accepted or rejected entity decisions with normalized form and authority URI | Decisions survive reload and become stale when their source text changes | Historical editor resolves ambiguous identity and category |
 | Account-book edition | Real PAGE anchors, accepted text and an accepted Annotation Set | TEI and RDF for a selected accounting passage | JSON contracts, RELAX NG, Schematron and SHACL all pass | Historical editor confirms accounting interpretation |
 | Historical pilot | Source passage, research question and an observable contrary finding | Traceable claims connecting source passages across genres | Each claim resolves to evidence and distinguishes interpretation from transcription | Project lead chooses the case and interprets it |
@@ -93,13 +93,11 @@ Use the selected passage to decide whether the research needs a material invento
 
 A negative finding must remain representable. A payment without a named purpose cannot establish the corresponding practice, and a shared name without corroboration cannot establish identical persons. A proposed cross-source link therefore records its evidence and the reason an alternative reading was rejected or left open.
 
-## Effort protocol
+## Correction provenance
 
-The viewer timer records active seconds between an explicit start and pause and pauses when the browser tab is hidden or the document changes. The review event records this interval, interaction count and a decision note. Interaction count includes changed decisions and is not a count of independently adjudicated scholarly questions.
+The operator excluded time tracking and separate page approval stages on 2026-09-21. The working process records a correction when it is saved. Each event identifies document, page, line, previous reading, corrected reading, actor and server timestamp. The source export remains unchanged. A later correction creates a further event and a new effective page reading. Git records selected file states after an explicit commit.
 
-The historical editor selects a sample covering hands, source genres, layouts and difficult readings. Work on the whole selected passage, including parts that require no change. Record reading and correction together when the timer covers both. Record breaks outside the active interval and use the note for unresolved interpretation. Do not divide one short demonstration by the entire corpus.
-
-Report observed time per reviewed page or opening with its transcription extent, corrected lines and kinds of intervention. Character and word error rates require an accepted reference. Numerals, omissions and monetary units need separate inspection because a small character error can change the historical interpretation. The sample must be large and varied enough for the intended inference before extrapolation is considered.
+The historical editor selects passages across relevant hands, genres, layouts and difficult readings. Quantification can describe the documented changes and their kinds once a comparison convention and sample are agreed. Character and word error rates require an accepted reference. Numerals, omissions and monetary units need separate inspection because a small character error can change historical interpretation.
 
 ## Boundaries still requiring implementation or evidence
 

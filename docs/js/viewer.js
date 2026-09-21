@@ -4,7 +4,7 @@ import { getParams, setParams, escapeHTML, escapeAttr,
          lsGet, lsSet } from './utils.js';
 import { createEntityLayer, createTeiView, renderReading,
          renderTranscription } from './viewer-render.js?v=20260921-ui';
-import { createReviewView } from './viewer-review.js?v=20260921-ui';
+import { createReviewView } from './viewer-review.js?v=20260921-corrections';
 import { createLocalEditor } from './viewer-local.js';
 import { createAnnotationEditor } from './viewer-annotations.js?v=20260921-ui';
 import { createTagEditor } from './viewer-tags.js?v=20260921-ui';
@@ -80,6 +80,13 @@ function provenanceState(docId) {
 function provenanceChip(docId) {
   const prov = provenanceState(docId);
   if (!prov) return '';
+  const reg = registerByDocId.get(Number(docId));
+  const url = reg?.edition_url || 'https://www.inventaria.at/';
+  if (reg?.transcription_by === 'Inventaria' && /^https?:\/\//i.test(url)) {
+    return `<a class="prov-chip prov-chip--${prov.state}" id="doc-provenance"` +
+      ` href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
+      ` title="${escapeAttr(prov.title)}. Originaledition öffnen">${escapeHTML(prov.label)}</a>`;
+  }
   return `<span class="prov-chip prov-chip--${prov.state}" id="doc-provenance"` +
          ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
 }
@@ -137,9 +144,11 @@ function renderDocMeta(docId) {
     ? '<span>' + escapeHTML(String(provenance.pagesTranscribed)) + ' von ' +
       escapeHTML(String(provenance.pagesInDocument)) + ' Seiten transkribiert</span>' : '';
   const meta = document.getElementById('doc-meta');
-  meta.innerHTML = provenanceChip(docId) + attribution + coverage;
+  meta.innerHTML = provenanceChip(docId) + coverage;
   meta.hidden = false;
   document.getElementById('entity-tools').hidden = !entities.active;
+  document.getElementById('btn-tags').hidden = !local.enabled;
+  document.getElementById('btn-entities').hidden = !entities.active;
   document.getElementById('entity-legend').innerHTML = entities.legendHTML();
 }
 
@@ -406,14 +415,9 @@ const review = createReviewView({
   toggle: document.getElementById('btn-review'),
   initials: document.getElementById('review-initials'),
   hint: document.getElementById('review-hint'),
-  statusReviewed: document.getElementById('btn-status-reviewed'),
-  statusApproved: document.getElementById('btn-status-approved'),
-  reopenBtn: document.getElementById('btn-status-reopen'),
   exportBtn: document.getElementById('btn-review-export'),
   clearBtn: document.getElementById('btn-review-clear'),
   saveBtn: document.getElementById('btn-review-save'),
-  timerBtn: document.getElementById('btn-review-timer'),
-  notes: document.getElementById('review-notes'),
   meta: document.getElementById('doc-meta'),
 }, {
   getContext: () => ({
@@ -619,7 +623,6 @@ let docRequest = 0;
 // pageNr: page number of the document to start on. Omit to take it from the
 // URL (deep link into a page); an unknown number falls back to the first page.
 async function loadDocument(docId, pageNr) {
-  review.pause();
   const token = ++docRequest;
   try {
     // Deep links arrive copy-pasted; a stray trailing dot or space in the
@@ -835,10 +838,17 @@ async function init() {
 
 init();
 
-for (const [buttonId, dialogId] of [['btn-source-details', 'source-dialog'], ['btn-more', 'viewer-more']]) {
+for (const [buttonId, dialogId] of [
+  ['btn-source-details', 'source-dialog'], ['btn-more', 'viewer-more'],
+  ['btn-tags', 'tags-dialog'], ['btn-entities', 'entities-dialog'],
+]) {
   const button = document.getElementById(buttonId);
   const dialog = document.getElementById(dialogId);
-  button.addEventListener('click', () => dialog.showModal());
+  button.addEventListener('click', () => {
+    const details = dialog.querySelector('#tag-editor > details');
+    if (details) details.open = true;
+    dialog.showModal();
+  });
   dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => button.focus());
 }

@@ -18,11 +18,11 @@ related: [INDEX, data, specification, editorial-model]
 
 # HTR Evaluation
 
-## Review effort in the working edition
+## Correction evidence in the working edition
 
-The local review interface can record explicitly timed correction sessions with active seconds, interaction count and a decision note. It pauses timing on a hidden browser tab or document switch. An interaction count includes changed decisions and must not be reported as the number of independent scholarly problems. A technical demonstration records no representative correction effort.
+The working editor documents saved text changes with source anchors, previous and corrected readings, actor and timestamp. The operator excluded time tracking on 2026-09-21. Historical effort fields remain part of previously stored records. The editor no longer creates timing measurements or interaction counters.
 
-The sampling and walkthrough protocol is in [plan.md](plan.md). A historical editor must work through complete passages under a fixed transcription convention, including text that needs no change. Stratification follows relevant hands, genres, layouts and reading difficulty. Report the observed page or opening, text extent and intervention types with the timing. Comparison of recognition quality still requires accepted reference text and a specialized HTR baseline. The timer supplies neither of these.
+The sampling and walkthrough protocol is in [plan.md](plan.md). A historical editor works through complete passages under a fixed transcription convention, including text that needs no change. Stratification follows relevant hands, genres, layouts and reading difficulty. Comparison of recognition quality requires accepted reference text and a specialized HTR baseline. A technical demonstration correction supplies no representative accuracy measurement.
 
 ## Scope
 

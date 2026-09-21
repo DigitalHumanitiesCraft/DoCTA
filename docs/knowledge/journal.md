@@ -25,6 +25,10 @@ related: [INDEX, project, handoff]
 
 A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
 
+## Correction provenance and compact tools (21.09.2026)
+
+Corrected the interaction model following the operator's continuing walkthrough. Metadata and annotation entry points share a wrapping row, and the source attribution directly opens the original edition. The operator explicitly rejected time tracking and separate page review stages. These controls and active measurement were removed from the working editor. Correction provenance remains in the saved event and effective page register, with legacy records preserved. The accepted design decision is recorded in [design.md](design.md#working-editor-hierarchy), the persistence model in [architecture.md](architecture.md), and the revised exercise in [plan.md](plan.md).
+
 ## Working editor navigation and controls (21.09.2026)
 
 Integrated the operator's live walkthrough feedback into the viewer and [design.md](design.md#working-editor-hierarchy). Source identity moved above image and text, image opening now fits the whole image, and corrections have a German editing entry point. Supplemental review actions, annotations and edition output are disclosed at their point of use. The existing save contract remains explicit and the build rejects unsaved transcription drafts. [plan.md](plan.md#guided-editor-exercise) carries the revised exercise and the distinction between confirmed orientation and navigation, automated checks and the operator's pending assessment of the new interface. The colleague-facing report follows the completed walkthrough. Browser regression checks cover image bounds, page changes, dialog keyboard focus, responsive reflow with CSS zoom, and save/reload against an isolated in-memory service. The running local viewer was inspected for full-image presentation, metadata access and the simplified editing controls. These checks do not establish scholarly acceptance or a screen-reader audit.

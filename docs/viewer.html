@@ -118,7 +118,11 @@
           <span class="badge badge-draft" id="draft-badge" hidden>Unrevised draft</span>
           <button type="button" class="review-btn" id="btn-more">Weitere Funktionen</button>
         </div>
-        <div id="doc-meta" class="doc-meta" hidden></div>
+        <div class="transcription-tools">
+          <div id="doc-meta" class="doc-meta" hidden></div>
+          <button type="button" class="review-btn" id="btn-tags" aria-haspopup="dialog" hidden>Schlagwörter</button>
+          <button type="button" class="review-btn" id="btn-entities" aria-haspopup="dialog" hidden>Automatische Annotationen</button>
+        </div>
         <div class="transcription-workspace">
         <div id="review-bar" class="review-bar" hidden>
           <label class="review-bar__label" for="review-initials">Dein Kürzel</label>
@@ -130,29 +134,7 @@
           <button type="button" class="review-btn" id="btn-review-clear"
                   title="Ungespeicherte Änderungen dieser Seite verwerfen">Änderungen verwerfen</button>
           <span class="review-bar__hint" id="review-hint" role="status"></span>
-          <details id="review-options" class="review-options">
-          <summary>Prüfstand und Zusatzfunktionen</summary>
-          <div class="review-options__body">
-          <div class="view-toggle" role="group" aria-label="Prüfstand dieser Seite">
-            <button type="button" class="view-toggle__btn" id="btn-status-reviewed" aria-pressed="false"
-                    title="Seite gesichtet">Gesichtet</button>
-            <button type="button" class="view-toggle__btn" id="btn-status-approved" aria-pressed="false"
-                    title="Seite fachlich freigegeben">Freigegeben</button>
-            <button type="button" class="view-toggle__btn" id="btn-status-reopen" hidden
-                    title="Gespeicherte Freigabe zurücknehmen und Prüfung erneut öffnen">Prüfung wieder öffnen</button>
-          </div>
-          <button type="button" class="review-btn" id="btn-review-timer" aria-pressed="false">Zeitmessung starten</button>
-          <label for="review-notes">Entscheidungsnotiz</label>
-          <input id="review-notes" class="review-notes" type="text" maxlength="2000">
-          </div>
-          </details>
         </div>
-        <div id="tag-editor" lang="de" hidden></div>
-        <details id="entity-tools" class="entity-tools" hidden>
-          <summary>Automatische Annotationen (Vorschläge)</summary>
-          <div id="entity-legend"></div>
-          <div id="annotation-editor" hidden></div>
-        </details>
         <div id="transcription-container" tabindex="0" role="region"
              aria-label="Transkription">
           <div class="loading">Bitte ein Dokument auswählen.</div>
@@ -161,6 +143,18 @@
       </div>
     </div>
   </main>
+
+  <dialog id="tags-dialog" class="viewer-dialog" aria-labelledby="tags-dialog-title">
+    <div class="viewer-dialog__header"><h2 id="tags-dialog-title">Schlagwörter</h2><button type="button" class="review-btn" data-close-dialog>Schließen</button></div>
+    <div id="tag-editor" lang="de" hidden></div>
+  </dialog>
+  <dialog id="entities-dialog" class="viewer-dialog" aria-labelledby="entities-dialog-title">
+    <div class="viewer-dialog__header"><h2 id="entities-dialog-title">Automatische Annotationen (Vorschläge)</h2><button type="button" class="review-btn" data-close-dialog>Schließen</button></div>
+    <div id="entity-tools" class="entity-tools" hidden>
+      <div id="entity-legend"></div>
+      <div id="annotation-editor" hidden></div>
+    </div>
+  </dialog>
 
   <dialog id="source-dialog" class="viewer-dialog" aria-labelledby="source-dialog-title">
     <div class="viewer-dialog__header"><h2 id="source-dialog-title">Quellenangaben</h2><button type="button" class="review-btn" data-close-dialog>Schließen</button></div>
@@ -189,6 +183,6 @@
 
   <script src="lib/openseadragon.min.js"></script>
   <script src="lib/bootstrap.bundle.min.js"></script>
-  <script type="module" src="js/viewer.js?v=20260921-ui"></script>
+  <script type="module" src="js/viewer.js?v=20260921-corrections"></script>
 </body>
 </html>

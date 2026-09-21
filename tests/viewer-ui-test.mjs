@@ -25,6 +25,7 @@ const fixture = JSON.parse(fs.readFileSync(
 const revision = 'viewer-ui-fixture-revision';
 let saved = null;
 let posts = 0;
+let lastPayload = null;
 
 function documentPayload() {
   const doc = structuredClone(fixture);
@@ -78,6 +79,7 @@ const server = http.createServer((req, res) => {
         return json(res, 403, { error: 'write authorization failed' });
       }
       const payload = JSON.parse(raw);
+      lastPayload = payload;
       posts += 1;
       const lines = {};
       const reviewState = {};
@@ -85,8 +87,9 @@ const server = http.createServer((req, res) => {
         lines[pageNr] = Object.fromEntries((page.lines || []).map(line =>
           [line.id, line.corrected]));
         reviewState[pageNr] = {
-          status: page.status === 'unbearbeitet' && page.lines?.length
+          status: page.status == null && page.lines?.length
             ? 'gesichtet' : page.status,
+          reason: page.lines?.length ? 'text-corrected' : null,
           reviewer: payload.reviewer, date: page.date,
         };
       }
@@ -162,10 +165,14 @@ try {
   for (const [button, dialog, label] of [
     ['#btn-source-details', '#source-dialog', 'source'],
     ['#btn-more', '#viewer-more', 'more'],
+    ['#btn-tags', '#tags-dialog', 'tags'],
+    ['#btn-entities', '#entities-dialog', 'entities'],
   ]) {
     await page.locator(button).focus();
     await page.keyboard.press('Enter');
     check(await visible(page, `${dialog}[open]`), `${label} dialog opens from the keyboard`);
+    if (label === 'tags') check(await visible(page, '#tag-editor form'), 'tag form is accessible inside its dialog');
+    if (label === 'entities') check(await visible(page, '#annotation-editor form'), 'annotation form is accessible inside its dialog');
     await page.keyboard.press('Escape');
     check(!await visible(page, `${dialog}[open]`), `${label} dialog closes with Escape`);
     check(await page.locator(button).evaluate(el => el === document.activeElement),
@@ -229,6 +236,8 @@ try {
   await page.setViewportSize({ width: 1280, height: 800 });
 
   await page.click('#btn-review');
+  check(await page.locator('#review-options, #btn-review-timer, #btn-status-approved').count() === 0,
+    'the editor contains no approval or timing controls');
   await page.fill('#review-initials', 'QA');
   const first = page.locator('.transcription__line[data-line-id][data-original]').first();
   const original = await first.getAttribute('data-original');
@@ -246,10 +255,14 @@ try {
   await page.click('#btn-review-save');
   check((await saveResponse).ok(), 'in-memory review API accepted the save');
   check(posts === 1, 'review save used the in-memory API exactly once');
+  check(lastPayload.effort == null && Object.values(lastPayload.pages).every(item => item.status === null),
+    'new corrections carry neither effort measurements nor page approval decisions');
   check((await page.locator('#review-hint').textContent()).includes('lokal gespeichert'),
     'successful local save is confirmed in the review bar');
   await page.reload({ waitUntil: 'networkidle' });
   await page.locator('.transcription__line[data-line-id]').first().waitFor();
+  check(await page.locator('#review-chip').textContent() === 'Lokal korrigiert',
+    'the saved correction is described without implying scholarly approval');
   check((await page.locator('.transcription__line[data-line-id][data-original]').first().textContent()).includes(corrected),
     'saved correction survives reload from the in-memory API');
 

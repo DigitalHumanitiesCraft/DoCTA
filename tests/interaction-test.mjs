@@ -270,9 +270,8 @@ async function searchFlow() {
 }
 
 // === Review loop of the viewer ===
-// Review mode, a line correction, the two decision buttons and the export in
-// one pass: everything the review bar promises, from a state the generic sweep
-// never reaches because the bar does not exist before the toggle is pressed.
+// Correction and export need a deliberate sequence that the generic sweep
+// cannot exercise from the initial, non-editing state.
 async function reviewFlow(target) {
   const ctx = await newContext();
   const p = await ctx.newPage();
@@ -326,29 +325,9 @@ async function reviewFlow(target) {
     failures.push('an unsaved correction is not visibly marked as a browser draft');
   }
 
-  // Status is deliberately secondary to saving and clearing. Open its native
-  // details disclosure before exercising the two decisions.
-  await p.locator('#review-options > summary').click();
-  const pressed = sel => p.locator(sel).getAttribute('aria-pressed');
-  await p.click('#btn-status-reviewed');
-  if (await pressed('#btn-status-reviewed') !== 'true') {
-    failures.push('Reviewed did not report itself as pressed');
+  if (await p.locator('#review-options, #btn-review-timer, #btn-status-approved').count()) {
+    failures.push('the correction workflow still exposes approval or timing controls');
   }
-  if (await pressed('#btn-status-approved') !== 'false') {
-    failures.push('Reviewed pressed Approved along with it');
-  }
-  await p.click('#btn-status-approved');
-  if (await pressed('#btn-status-approved') !== 'true' ||
-      await pressed('#btn-status-reviewed') !== 'true') {
-    failures.push('Approved does not report the reviewed state it implies');
-  }
-  // Approved implies reviewed, so a press on Reviewed must leave the approval
-  // standing instead of silently downgrading it into the export.
-  await p.click('#btn-status-reviewed');
-  if (await pressed('#btn-status-approved') !== 'true') {
-    failures.push('a press on Reviewed demoted an approved page');
-  }
-  actions.push('status reviewed -> approved -> reviewed, approval held');
 
   // Export belongs to the viewer-wide More dialog, outside the primary review
   // actions. Opening it here guards that the static fallback remains reachable.
@@ -361,12 +340,13 @@ async function reviewFlow(target) {
   let payload = null;
   try { payload = JSON.parse(raw); } catch { failures.push('the export produced no parsable JSON'); }
   if (payload) {
+    if (payload.effort != null) failures.push('a new correction records effort or timing');
     if (typeof payload.version !== 'number') failures.push('the export carries no version');
     if (String(payload.docId) !== String(docId)) failures.push('the export names another document');
     const exported = payload.pages && payload.pages[String(pageNr)];
     if (!exported) failures.push(`the export carries no page ${pageNr}`);
     else {
-      if (exported.status !== 'abgenommen') {
+      if (exported.status !== null) {
         failures.push(`the exported page carries status ${exported.status}`);
       }
       if (!(exported.lines || []).some(l => l.corrected === corrected)) {
