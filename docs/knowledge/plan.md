@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-10-16
 authors: [Christopher Pollin]
 template:
   name: Vorlage Plan
@@ -20,11 +20,13 @@ related: [INDEX, project, specification, data, htr-evaluation, editorial-model, 
 
 # Plan
 
-The working edition supplies the environment for a bounded historical pilot. Technical availability does not establish an accepted feature set, funding commitment, transcription convention or publication permission.
+The operator confirmed independent use and testing of the working edition on 2026-10-16. The intended processing scope covers all source material already present in the project. Small passages support technical trials and the optional joint historical pilot, without limiting that wider scope. Actual work depends on each source's available images, text and reuse conditions. The source and page registers document actual processing coverage.
+
+Original spelling is retained in the working transcription, including forms such as `hawsrat`. Abbreviation expansion, uncertain readings and an accepted reference sample remain unresolved. Partner collaboration remains non-binding, with no confirmed proposal submission. Scholarly acceptance, publication permission and any commissioned scope require their respective decisions.
 
 ## Joint walkthrough
 
-Begin with the project lead's research purpose. The operator set the conversation order on 2026-09-21. Tool demonstration follows the answers and does not determine the research scope.
+A joint walkthrough with the historical project lead begins with her research purpose. The operator set this conversation order on 2026-09-21. It supports an optional historical pilot and future collaboration. Independent use of the available material can proceed while these conversations remain open. Tool demonstration follows the research questions and does not determine the joint research scope.
 
 1. Establish the historical question and what the editor wants to examine or change herself. The documented general wish is to study who does what with which objects and where. A specific first question remains to be chosen.
 2. Select the material capable of answering that question, including a bounded passage. Account books are the leading research source. An inventory demonstration does not decide the pilot corpus.
@@ -56,7 +58,7 @@ After each step, collect the editor's observation, the source passage, any unexp
 
 ### Meeting answers and scope
 
-The current local edition supports a bounded correction and annotation pilot. A funded project would establish its agreed source coverage, transcription convention, accepted reference sample, research vocabulary, account-book edition and cross-source interpretation. Those are substantive research outputs and cannot be inferred from a working viewer. The installation on the historical editor's computer still needs its own save-and-reload check. Source images can require network access even when editing runs locally.
+The current local edition supports independent correction and annotation work across the existing source material. A bounded joint pilot can establish the editor's needs. A funded project would establish its agreed deliverables, remaining transcription rules, accepted reference sample, research vocabulary, account-book edition and cross-source interpretation. Those are substantive research outputs and cannot be inferred from a working viewer. The installation on the historical editor's computer still needs its own save-and-reload check. Source images can require network access even when editing runs locally.
 
 The question about the five missing silver-inventory pages concerns absent image references. Authorized collection access or a document metadata export can supply them. Receipt of the references enables ingestion and a separate transcription run, and does not mean the pages have already been transcribed. The project lead identifies the intended document and grants access through the service or supplies its metadata, without putting account credentials in project documents.
 
@@ -74,29 +76,30 @@ Demonstration changes belong in an isolated copy and carry no scholarly status. 
 
 | Work | Required input | Concrete result | Acceptance evidence | Responsible decision |
 |---|---|---|---|---|
-| Local editorial pilot | Repository clone and one available source | Saved correction with original text and reviewer provenance | Reload reproduces the reading, a stale concurrent edit is rejected, generated TEI validates | Project lead accepts the working interaction |
+| Independent use | Existing source material and the inputs available for each source | Source-bound correction and annotation work across the existing inventory | Saved changes retain source anchors and provenance, technical trials may use small passages | Operator sets own-use scope, scholarly acceptance remains separate |
+| Joint editorial pilot | Repository clone and a source selected with the historical editor | Saved correction with original text and reviewer provenance | Reload reproduces the reading, a stale concurrent edit is rejected, generated TEI validates | Project lead accepts the working interaction |
 | Source completeness | Authorized Transkribus metadata or exported document metadata | Page manifest with image references and explicit omissions | Expected page numbers match retrieved metadata, each reference resolves | Account holder provides access to the intended collection |
 | Inventaria reuse | Permission covering the intended texts, annotations and publication | Provenance-preserving import with PAGE annotations | Completeness, line anchoring and annotation offsets checked, attribution and license recorded | Project lead coordinates permission with Inventaria |
-| Transcription convention | Decisions on original spelling, abbreviation expansion, illegibility, deletion, foliation and line structure | One convention and a versioned, accepted reference sample | Every sample page reviewed against its image and tied to the convention | Historical editor |
+| Transcription convention | Confirmed retention of original spelling, plus decisions on abbreviation expansion, illegibility, deletion, foliation and line structure | One convention and a versioned, accepted reference sample | Every sample page reviewed against its image and tied to the convention | Operator confirmed the spelling choice, historical editor accepts the full convention and reference |
 | Recognition evaluation | Accepted sample and a specialized HTR baseline | Comparisons by page and source stratum, with numeral errors inspected separately | Held-out evaluation, line omissions, normalization profile and failed cases reported | Project lead approves fitness for the research task |
 | Correction documentation | Source-bound corrections under the convention | Original and corrected readings with actor and save time | Saved events resolve to their source document, page and line | Historical editor supplies the reading |
-| Inventory annotations | Editor-defined vocabulary and saved transcription anchors | Source-bound assignments to independent person, place and term entries, with unresolved occurrences retained | Entries and assignments survive reload, preserve history and become stale when their source text changes | Historical editor decides every identity and vocabulary assignment |
+| Inventory annotations | Editor-defined vocabulary and saved transcription anchors | Source-bound assignments to independent person, place and term entries, with unresolved occurrences retained | Entries and assignments survive reload, preserve history and become stale when their source text changes | Editor of the working layer decides identities and vocabulary; scholarly acceptance remains separate |
 | Account-book edition | Real PAGE anchors, accepted text and an accepted Annotation Set | TEI and RDF for a selected accounting passage | JSON contracts, RELAX NG, Schematron and SHACL all pass | Historical editor confirms accounting interpretation |
 | Historical pilot | Source passage, research question and an observable contrary finding | Traceable claims connecting source passages across genres | Each claim resolves to evidence and distinguishes interpretation from transcription | Project lead chooses the case and interprets it |
 | Proposal revision | Pilot evidence and revised proposal text | Methods, responsibilities and scope matched to demonstrated work | Every promised output has an input, acceptance criterion and owner | Project lead agrees scope, resources and submission text |
 
-Each step may expose a change needed in an earlier one. Bulk recognition remains dependent on the scientific release conditions in [htr-evaluation.md](htr-evaluation.md). No new paid recognition run is required for the local editing demonstration.
+Each step may expose a change needed in an earlier one. Batch recognition remains a separate operational step with source-specific inputs. Scholarly claims and release follow [htr-evaluation.md](htr-evaluation.md). The scope decision above starts no model run. The local editing demonstration needs no new paid recognition run.
 
 ## Decisions to obtain in the conversation
 
 | Decision or input | Why it is needed | Smallest useful answer |
 |---|---|---|
 | First source passage and research question | A source-wide promise cannot be tested by a generic prototype | Select one passage and state the historical observation sought |
-| Edition convention | A correction cannot be evaluated without specifying the target reading | Decide how the selected passage represents spelling, abbreviation and uncertainty |
+| Remaining edition convention | Original spelling is confirmed, while consistent correction and evaluation still need the other rules | Decide abbreviation expansion and uncertain readings, then agree the remaining rules and reference sample |
 | Representative reference | Repeated agreement between machines does not establish accuracy | Name pages spanning the relevant hands and layouts, and who will accept them |
 | Inventaria permission | Public readability does not determine reuse terms | Confirm allowed corpus, annotation reuse, attribution, license and publication |
 | Missing Transkribus pages | The viewer can only open references actually present | Supply collection/document access or a metadata export with page image keys |
-| Working scope | Willingness to use the edition does not define a commissioned deliverable | Distinguish a correction pilot, an accepted pilot edition and a later funded corpus |
+| Joint deliverables | Independent use covers the existing material, while partner collaboration remains non-binding | Agree any joint pilot, scholarly acceptance and later commissioned or funded outputs |
 | SiCPAS interpretation | Entity occurrence alone cannot establish a practice or event | Annotate one real action and explain the evidence needed to aggregate an event |
 
 ## Historical pilot proposal for discussion

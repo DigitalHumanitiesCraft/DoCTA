@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-21
+updated: 2026-10-16
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -22,6 +22,10 @@ related: [INDEX, project, handoff]
 ---
 
 # Journal
+
+## Independent use and original spelling (16.10.2026)
+
+The operator confirmed independent use of the working edition across all source material already present in the project, with original spelling retained. Integrated this scope and spelling decision into project.md, plan.md and specification.md. Small passages remain technical trial cases. No processing was performed during this documentation change. Partner collaboration remains non-binding, and proposal submission is unconfirmed. Abbreviation expansion, uncertain readings, accepted references, source access, reuse rights and scholarly acceptance retain their separate decisions.
 
 ## Editorial collaboration on main (21.09.2026)
 

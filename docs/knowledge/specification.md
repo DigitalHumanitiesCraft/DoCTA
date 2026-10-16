@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-21
+updated: 2026-10-16
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -31,13 +31,15 @@ related: [INDEX, project, data, htr-evaluation]
 | Project lead | The project lead, University of Salzburg |
 | Digital humanities component | Digital Humanities Craft OG |
 | Phases | 1: Promptotyping, 2: workflow, 3: web application, 4: training |
-| Funding context | Planned resubmission of the research proposal |
+| Funding context | Possible resubmission, with no confirmed submission commitment |
 
 ## What the work has to deliver
 
 The present goal is an agentic edition pipeline. The Transkribus facsimiles of the Tyrolean State Archives, covering account books (Raitbücher), inventories, copybooks and court ordinances, are turned into research data and a simple digital edition. Every stage is versioned and verifiable. Machine output remains marked as unrevised until it has been checked against the facsimile and editorially accepted. An accepted page becomes evaluation data only when it is assigned to a named evaluation corpus.
 
-This is a reframing of the earlier goal rather than a replacement of it. The prototype of February 2026 had to convince a reviewer that the methods work; the pipeline has to actually produce the data. The requirements of the project lead below are unchanged by that shift, and the ten points of review criticism remain the checklist the eventual resubmission has to satisfy.
+On 2026-10-16 the operator confirmed independent use of the working edition and an intended processing scope covering all source material already present in the project. Small technical trials may use selected passages. Per-source availability and reuse conditions govern actual processing and publication. The source and page registers document actual processing coverage. Partner collaboration remains non-binding. Original spelling is retained in the working transcription. The remaining transcription rules and an accepted reference sample require further agreement.
+
+This is a reframing of the earlier goal rather than a replacement of it. The prototype of February 2026 had to convince a reviewer that the methods work; the pipeline has to actually produce the data. The requirements of the project lead below are unchanged by that shift, and the ten points of review criticism remain the checklist any future resubmission would need to satisfy.
 
 ## Requirements of the project lead
 
@@ -149,7 +151,7 @@ SiCProD, Wikidata, GND and the Getty Art & Architecture Thesaurus remain possibl
 
 ### Editor-owned registers and source-bound annotation
 
-The working edition requires an editor-owned person index and controlled vocabulary. Identity and vocabulary decisions always belong to the historical editor. Exact source selection, access and reuse terms remain scholarly and institutional decisions. Current implementation work uses the available internal material.
+The working edition requires an editor-owned person index and controlled vocabulary. Identity and vocabulary decisions belong to the person editing the working layer; scholarly acceptance of the shared edition remains with the historical project lead. Source selection for a joint historical pilot, access and reuse terms remain scholarly and institutional decisions. Current implementation work uses the available internal material.
 
 The local editor uses new, name-independent person IDs, preferred names, spelling variants, optional notes and explicit links to source occurrences. Local name search suggests existing entries without merging identities. Equal names remain separate entries, distinguished in the interface by variants, notes or an ID fragment. External authority enrichment remains future work. The existing generated entity index groups by type and normalized label and must not be treated as evidence of historical identity.
 
@@ -163,9 +165,9 @@ Windows and macOS launchers use the same Python service and locked dependencies,
 
 These decisions remain with the historical project lead.
 
-- The transcription convention with the permitted normalisations. `htr-evaluation.md` names it under the scholarly review points.
+- The remaining transcription rules and accepted reference sample. The operator has confirmed retaining original spelling in the working transcription, including `hawsrat`. Abbreviation expansion and uncertain readings remain open. `htr-evaluation.md` names the scholarly review requirements.
 - The editor-owned vocabulary, including its preferred terms, variants, broader-term relations and any verbs useful to the research question. The wider distinctions between place and space, object identity, practice and event remain scholarly modelling decisions (`domain-knowledge.md`).
-- The concrete scope and scholarly acceptance of the working edition (`project.md`).
+- The agreed scope of any joint historical pilot or commissioned output and its scholarly acceptance (`project.md`). Independent use across the existing source material is already within the operator's confirmed scope.
 
 ## Open questions
 

@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-08-28
-updated: 2026-09-21
+updated: 2026-10-16
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -40,13 +40,13 @@ Two commitments hold everywhere. All model output remains unrevised machine tran
 
 ## Working edition
 
-The working edition is available as an internal research version for a bounded editorial pilot. Its technical availability establishes no commissioned scope or scholarly acceptance. Those decisions remain with the responsible project roles.
+Digital Humanities Craft uses and tests the working edition independently of a research proposal. On 2026-10-16 the operator confirmed that the intended processing scope covers all source material already present in the project. Small passages remain useful for technical trials, while the source inventory defines the wider scope. Availability, missing image references and reuse conditions remain source-specific. The source and page registers document actual processing coverage.
 
-DoCTA brings account books, inventories, court ordinances and copybooks into a working environment for indexing and comparative analysis. The local editing decision of 2026-09-20 gives the editor direct control over versioned research data. A future service arrangement with Digital Humanities Craft remains a proposal whose scope must follow the historical pilot. [plan.md](plan.md) specifies the walkthrough, contributions and evidence needed to make that scope concrete. [specification.md](specification.md) separates the local editing functions from the public static site.
+DoCTA brings account books, inventories, court ordinances and copybooks into a working environment for indexing and comparative analysis. The local editing decision of 2026-09-20 gives the editor direct control over versioned research data. Partner collaboration remains non-binding, and submission of another proposal has not been confirmed. A future service arrangement needs its own agreed scope. The optional historical pilot and joint walkthrough in [plan.md](plan.md) support that discussion. Independent use can proceed with the available material, while scholarly acceptance and publication remain separate decisions. [specification.md](specification.md) separates the local editing functions from the public static site.
 
 ## Who it is for
 
-The historical project lead at the University of Salzburg reads, reviews and accepts transcriptions and sets the scholarly requirements. Digital Humanities Craft OG builds and maintains the digital component. Reviewers of a planned FWF resubmission are the third audience; for them the prototype makes the proposed methods checkable on the real material. The public About page carries the reviewer-facing framing, and `specification.md` holds the requirements together with the review criticism of the first submission and how it was answered.
+The historical project lead at the University of Salzburg is responsible for scholarly requirements, interpretation and acceptance of transcriptions. Digital Humanities Craft OG builds and maintains the digital component and uses the working edition for its own exploration. If another proposal is submitted, its reviewers can inspect the proposed methods on real material. The public About page retains the earlier reviewer-facing framing, and `specification.md` holds the requirements together with the review criticism of the first submission and how it was answered.
 
 ## Material basis
 
@@ -58,4 +58,4 @@ The reviewer-facing prototype went public in February 2026 and answered the revi
 
 ## Method
 
-The project is built with Promptotyping. Maintained project knowledge guides a versioned implementation whose behavior is checked against source evidence and the editor's requirements. Research goals, material selection and the intended use of annotations determine the working edition's scope. [coOCR/HTR](https://dhcraft.org/co-ocr-htr) is the sister project on transcription quality assessment and serves as design and method reference.
+The project is built with Promptotyping. Maintained project knowledge guides a versioned implementation whose behavior is checked against source evidence and the editor's requirements. Research goals, available material and the intended use of annotations guide the work. The operator's own-use scope covers all existing source material, while a joint historical pilot and any commissioned deliverables require their own agreement. [coOCR/HTR](https://dhcraft.org/co-ocr-htr) is the sister project on transcription quality assessment and serves as design and method reference.
