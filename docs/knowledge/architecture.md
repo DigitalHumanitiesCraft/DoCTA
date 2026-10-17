@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-21
+updated: 2026-10-17
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -38,6 +38,8 @@ For assisted recovery of unpushed work into a fresh clone with an unchanged data
 The browser keeps pending corrections until an explicit save succeeds. The backend records the review under `pipeline/reviews/` and updates `pipeline/pages/`. The event stores the server UTC timestamp in `exported`, its `reviewId`, the document and page identities, the reviewer and each line's `original` and `corrected` text. Schema version 2 transfers `exported` into the human run as its timezone-aware `timestamp`. The effective reading selects the newest review run by UTC instant. Existing local runs without that field retain their immutable IDs, whose final twelve-digit `HHMMSSffffff` suffix supplies the save time independently of reviewer initials. The page register keeps earlier runs, and a later review uses the newest effective text as its base. Original Transkribus files and recognition runs remain unchanged. `viewer-review.js` records text corrections without time tracking or page approval controls. Existing review statuses and historical effort fields remain readable for compatibility. A new correction sends a null decision; the ingest layer retains its legacy `gesichtet` state with reason `text-corrected`, while the interface labels the factual change as `Lokal korrigiert`. Earlier curation sidecars under `pipeline/annotations/` remain keyed by extraction identity and source-line digest. The current viewer does not load their editing interface.
 
 The explicit local build takes an edition date and a document selection to check. It rebuilds the complete connected TEI set, including the shared entity register, because document references and the common date must remain consistent. It applies annotation decisions to TEI and graph, rejects stale source digests, validates generated TEI and updates the static text projections. Failed file replacement restores the preceding output set. Saved work, generated files, a local commit and publication remain separate operations. The loopback server neither commits nor pushes. `--root` selects an isolated repository copy for end-to-end tests.
+
+The TEI header reports incomplete source coverage independently of correction status. A saved correction cannot remove the notice that pages are absent from the export. Review entries with reason `text-corrected` describe text correction, without asserting that every line on the page was reviewed. The legacy `partly-reviewed` stream value remains compatible with existing consumers and is qualified by the declaration and revision log. The generator preserves the effective register reading; it does not certify diplomatic fidelity or resolve abbreviations. The silver-inventory correction event is replayed in the TEI regression suite to verify these boundaries.
 
 The retained machine-proposal pipeline continues to apply accepted normalizations to the generated TEI register and graph. Rejected occurrences are excluded, and undecided proposals retain machine provenance. Authority URIs enter the graph. The closed inventory TEI schema does not permit them on register entries, so no external authority pointer is claimed in that TEI representation. Introducing one requires a deliberate encoding change. The current working viewer does not display these machine proposals. It exposes only the separate editor-owned register described below.
 

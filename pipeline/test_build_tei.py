@@ -1125,6 +1125,30 @@ def test_revision_desc_carries_both_stream_summaries() -> None:
         assert changes["tei-summary"].get("status") == "machine-generated"
 
 
+def test_silver_inventory_correction_preserves_coverage_and_review_scope(
+    tmp_path: Path,
+) -> None:
+    """Replay the saved real correction without promoting it to page review."""
+    br.build(tmp_path / "pipeline")
+    pages_dir = tmp_path / "pipeline" / "pages"
+    event_path = bt.REGISTER.parent / "reviews" / "review-12647153-093737427392.json"
+    event = load_json(event_path)
+    ar.ingest([event_path], pages_dir)
+    built = bt.build(tmp_path / "tei", register_dir=pages_dir)
+    root = ElementTree.fromstring(built[event["docId"]])
+    decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
+    assert "It covers 1 of the 6 pages of the source" in decl
+    assert "A text correction alone does not establish review of every line" in decl
+    assert "nothing is normalised, expanded or corrected" not in decl
+    change = root.find(f'.//{TEI}change[@n="review"]')
+    assert "Page 1 text corrected" in change.text
+    body = "".join(root.find(f"{TEI}text").itertext())
+    for correction in event["pages"]["1"]["lines"]:
+        assert correction["corrected"] in body
+        assert correction["original"] not in body
+    assert _changes(root)["transcription-summary"].get("status") == bt.REVIEWED
+
+
 def test_rebuild_is_byte_identical() -> None:
     """A rebuild without input changes must leave no diff in the repository.
 
@@ -1209,14 +1233,14 @@ def test_a_reviewed_page_carries_the_reviewed_text() -> None:
     )
     assert (
         resp.find(f"{TEI}resp").text
-        == "Page-level scholarly review and correction in the DoCTA viewer"
+        == "Recorded review and text correction in the DoCTA viewer"
     )
     assert (
         resp.find(f"{TEI}name").text == "DoCTA reviewer (initials in the revision log)"
     )
 
     decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
-    assert "Part of the pages of this file has been read" in decl
+    assert "Recorded reviews or text corrections affect part of this file" in decl
     assert "The text of this file is unrevised machine transcription." not in decl, (
         "editorialDecl contradicts the partly-reviewed stream"
     )
@@ -1289,7 +1313,7 @@ def test_a_document_reviewed_in_mixed_states_stays_partly_reviewed() -> None:
         len([c for c in root.iter(f"{TEI}change") if c.get("n") == "review"]) == count
     )
     decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
-    assert "Part of the pages of this file has been read" in decl
+    assert "Recorded reviews or text corrections affect part of this file" in decl
     assert "Every page of this file has been read against the scan" not in decl
 
 

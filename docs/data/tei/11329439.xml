@@ -15,12 +15,12 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 337c1fe6ca0c)</name>
+          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-09-21">2026-09-21</date>
+        <date when="2026-10-17">2026-10-17</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -47,7 +47,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The text of this file comes from the transcription campaign of the Inventaria project in Transkribus, where no page of it is marked done. It is therefore unrevised machine transcription and every reading is provisional. DoCTA has not read it against the facsimile either, and the DoCTA review status of a page is a separate axis recorded in the page register. The file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>The text of this file comes from the transcription campaign of the Inventaria project in Transkribus, where no page of it is marked done. It is therefore unrevised machine transcription and every reading is provisional. DoCTA has not read it against the facsimile either, and the DoCTA review status of a page is a separate axis recorded in the page register. The file is not a citable edition text. The generator preserves the effective reading and line order from the page register, including saved corrections. It adds no spelling normalization or abbreviation expansion. This does not establish the accuracy or diplomatic fidelity of the input transcription.</p>
       </editorialDecl>
       <classDecl>
         <taxonomy xml:id="docta-category">
@@ -66,7 +66,7 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-09-21" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
+      <change when="2026-10-17" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
       <change n="transcription-summary" status="machine-unrevised">Transcription stream (state): machine-unrevised</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>

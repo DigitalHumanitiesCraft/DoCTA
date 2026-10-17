@@ -10,12 +10,12 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic assembly of the register from the extraction files, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 337c1fe6ca0c)</name>
+          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-09-21">2026-09-21</date>
+        <date when="2026-10-17">2026-10-17</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded register. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -35,7 +35,7 @@
       </editorialDecl>
     </encodingDesc>
     <revisionDesc>
-      <change when="2026-09-21" who="#resp-tei-generation">Generated from the entity extractions by the DoCTA pipeline.</change>
+      <change when="2026-10-17" who="#resp-tei-generation">Generated from the entity extractions by the DoCTA pipeline.</change>
       <change n="register-summary" status="machine-generated">Entity register stream (state): machine-generated</change>
     </revisionDesc>
   </teiHeader>

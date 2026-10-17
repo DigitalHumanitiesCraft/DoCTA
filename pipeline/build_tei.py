@@ -309,7 +309,7 @@ def _resp_stmts(
         steps.append(
             (
                 RESP_VERIFICATION,
-                "Page-level scholarly review and correction in the DoCTA viewer",
+                "Recorded review and text correction in the DoCTA viewer",
                 "DoCTA reviewer (initials in the revision log)",
                 None,
             )
@@ -418,11 +418,11 @@ def _editorial_decl(
         )
     elif reviewed:
         first = (
-            "Part of the pages of this file has been read against the"
-            " scan in the DoCTA viewer and marked gesichtet or abgenommen"
-            " there; the revision log names those pages one by one, and"
-            " the corrections made there are part of the text of those"
-            f" pages. {_REMAINDER[state]} The file is not yet a citable"
+            "Recorded reviews or text corrections affect part of this file;"
+            " the revision log names the affected pages and their state."
+            " A text correction alone does not establish review of every"
+            " line on that page. Saved corrections are part of the text."
+            f" {_REMAINDER[state]} The file is not yet a citable"
             " edition text."
         )
     elif doc.get("layer") == VLM_LAYER:
@@ -434,16 +434,6 @@ def _editorial_decl(
             " own. Nothing here has been read against the scan by a"
             " scholar, so the file is not a citable edition text."
         )
-        # A source without an export carries no page list, so the pipeline may
-        # hold an image reference for part of its pages only. Saying which part
-        # keeps the file from reading as the whole document.
-        covered, total = doc.get("covered"), doc.get("pages")
-        if covered and total and covered < total:
-            first += (
-                f" It covers {covered} of the {total} pages of the source,"
-                " the pages the pipeline holds an image reference for; the"
-                " remaining pages are untranscribed."
-            )
     elif doc.get("inventaria"):
         # Naming the origin is what keeps the declaration true: for a document
         # marked done in Transkribus the generic machine-transcription wording
@@ -472,10 +462,19 @@ def _editorial_decl(
             " machine-generated and scholarly review within DoCTA is still"
             " pending, so the file is not yet a citable edition text."
         )
+    # Coverage is independent of review: correcting one line cannot supply
+    # missing pages or turn a partial export into a complete source.
+    covered, total = doc.get("covered"), doc.get("pages")
+    if covered is not None and total and covered < total:
+        first += (
+            f" It covers {covered} of the {total} pages of the source;"
+            " the remaining pages have no transcription in this export."
+        )
     second = (
-        "Transcription is diplomatic: the wording and spelling of the"
-        " source are kept, nothing is normalised, expanded or corrected,"
-        " and lineation follows the source, one lb per written line."
+        "The generator preserves the effective reading and line order from"
+        " the page register, including saved corrections. It adds no spelling"
+        " normalization or abbreviation expansion. This does not establish"
+        " the accuracy or diplomatic fidelity of the input transcription."
     )
     out = [f"{indent}<editorialDecl>", f"{indent}  <p>{_esc(first)} {second}</p>"]
     if entities:
@@ -521,6 +520,7 @@ def _review(doc_id: int, register_dir: Path) -> dict:
                 "status": verification["status"],
                 "reviewer": verification.get("reviewer"),
                 "date": verification.get("date"),
+                "reason": verification.get("reason"),
             }
         )
         if latest := br.newest_review_run(page):
@@ -687,9 +687,12 @@ def _header(
     for page in review["pages"]:
         when = f' when="{_att(page["date"])}"' if page.get("date") else ""
         initials = page.get("reviewer") or "unnamed"
+        action = (
+            "text corrected" if page.get("reason") == "text-corrected" else "reviewed"
+        )
         out.append(
             f'      <change{when} who="#{RESP_VERIFICATION}" n="review">Page'
-            f" {page['pageNr']} reviewed in the DoCTA viewer by"
+            f" {page['pageNr']} {action} in the DoCTA viewer by"
             f" {_esc(initials)} (state): {page['status']}</change>"
         )
     out += [

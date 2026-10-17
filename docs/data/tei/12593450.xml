@@ -11,7 +11,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the DoCTA edition runs held in the page register, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 337c1fe6ca0c)</name>
+          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
         </respStmt>
         <respStmt xml:id="resp-entity-llm">
           <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar</resp>
@@ -20,7 +20,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>Digital Humanities Craft OG</publisher>
-        <date when="2026-09-21">2026-09-21</date>
+        <date when="2026-10-17">2026-10-17</date>
         <availability status="free">
           <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</licence>
           <p>The licence covers the encoded transcription. The facsimile images are held by the archive and are referenced by IIIF URL, not redistributed here.</p>
@@ -47,7 +47,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the DoCTA edition runs held in the page register.</p>
       </projectDesc>
       <editorialDecl>
-        <p>The text of this file is unrevised machine transcription. Transkribus holds no transcription of this source, so the DoCTA pipeline transcribed the page images itself with a vision-language model, and every reading is that model's own. Nothing here has been read against the scan by a scholar, so the file is not a citable edition text. Transcription is diplomatic: the wording and spelling of the source are kept, nothing is normalised, expanded or corrected, and lineation follows the source, one lb per written line.</p>
+        <p>The text of this file is unrevised machine transcription. Transkribus holds no transcription of this source, so the DoCTA pipeline transcribed the page images itself with a vision-language model, and every reading is that model's own. Nothing here has been read against the scan by a scholar, so the file is not a citable edition text. The generator preserves the effective reading and line order from the page register, including saved corrections. It adds no spelling normalization or abbreviation expansion. This does not establish the accuracy or diplomatic fidelity of the input transcription.</p>
         <p>The named entities marked in this file are an unverified extraction by an LLM agent from the prototype phase; they have not been checked against the source by a scholar and carry no claim of correctness.</p>
       </editorialDecl>
       <classDecl>
@@ -67,7 +67,7 @@
       </textClass>
     </profileDesc>
     <revisionDesc>
-      <change when="2026-09-21" who="#resp-tei-generation">Generated from the DoCTA edition runs held in the page register by the DoCTA pipeline.</change>
+      <change when="2026-10-17" who="#resp-tei-generation">Generated from the DoCTA edition runs held in the page register by the DoCTA pipeline.</change>
       <change n="transcription-summary" status="machine-unrevised">Transcription stream (state): machine-unrevised</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>

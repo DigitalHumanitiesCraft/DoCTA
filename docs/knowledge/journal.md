@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-16
+updated: 2026-10-17
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -22,6 +22,10 @@ related: [INDEX, project, handoff]
 ---
 
 # Journal
+
+## Source coverage after a saved correction (17.10.2026)
+
+Traced the silver inventory A 006.8 (und .9), document 12647153, from its cached facsimile and immutable edition run through the saved correction event to TEI. The existing header lost its incomplete-coverage notice when a correction was present and described correction-only provenance as page review. Moved coverage reporting outside the review branches, retained the correction reason in revision prose and restricted the generator's fidelity claim to preservation of the effective register text. Added a regression that replays the existing correction without modifying source data. Architecture records the resulting contract. Original spelling and saved readings remain unchanged; abbreviation treatment and uncertain readings remain editorial decisions. No recognition run, source download or publication was performed.
 
 ## Independent use and original spelling (16.10.2026)
 
