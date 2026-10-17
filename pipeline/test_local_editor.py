@@ -13,10 +13,85 @@ from pathlib import Path
 import build_register as br
 import local_annotations as la
 import local_editor as le
+import pytest
 from io_paths import DATA, load_json, write_json
 
 DOC = 11327963
 PAGE = 2
+
+
+@pytest.mark.parametrize("with_export", [True, False])
+def test_alternate_root_uses_its_own_sources_for_view_anchors_and_build(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, with_export: bool
+) -> None:
+    """Run startup over a real export copy with a deliberately different reading."""
+    root = tmp_path
+    pages, _ = _fixture(root / "pipeline")
+    data = root / "docs" / "data"
+    (data / "transcriptions").mkdir(parents=True)
+    for name in (
+        "source_mapping.json",
+        "sources.json",
+        "transkribus_status.json",
+        "inventaria_mapping.json",
+    ):
+        shutil.copy2(DATA / name, data / name)
+    mapping = load_json(data / "source_mapping.json")
+    mapping["matched"] = [
+        entry for entry in mapping["matched"] if entry["transkribus_id"] == DOC
+    ]
+    write_json(data / "source_mapping.json", mapping)
+    export = load_json(DATA / "transcriptions" / f"{DOC}.json")
+    source_page = next(page for page in export["pages"] if page["pageNr"] == PAGE)
+    line = source_page["regions"][0]["lines"][0]
+    isolated_reading = line["text"] + " [isolated source fixture]"
+    line["text"] = isolated_reading
+    if with_export:
+        write_json(data / "transcriptions" / f"{DOC}.json", export)
+
+    # Restore startup's process-wide configuration after this isolated server.
+    monkeypatch.setattr(le.br, "DATA", le.br.DATA)
+    monkeypatch.setattr(le.bt, "DATA", le.bt.DATA)
+    for field in (
+        "docs_dir",
+        "register_dir",
+        "review_dir",
+        "annotation_dir",
+        "tag_dir",
+        "data_dir",
+        "token",
+        "app_version",
+    ):
+        monkeypatch.setattr(le.EditorHandler, field, getattr(le.EditorHandler, field))
+
+    class IsolatedServer:
+        server_port = 8742
+
+        def serve_forever(self) -> None:
+            if not with_export:
+                with pytest.raises(FileNotFoundError, match="No transcription"):
+                    le.document_payload(DOC, pages)
+                with pytest.raises(FileNotFoundError, match="No TEI source"):
+                    le.build_tei_documents(
+                        {"date": "2026-10-17", "docIds": [DOC]}, pages, data
+                    )
+                return
+            document = le.document_payload(DOC, pages)
+            current = next(page for page in document["pages"] if page["pageNr"] == PAGE)
+            assert current["regions"][0]["lines"][0]["text"] == isolated_reading
+            assert la._lines(DOC, pages)[(PAGE, line["id"])] == isolated_reading
+            result = le.build_tei_documents(
+                {"date": "2026-10-17", "docIds": [DOC]}, pages, data
+            )
+            assert result["built"]
+            assert isolated_reading in (data / "tei" / f"{DOC}.xml").read_text("utf-8")
+
+        def server_close(self) -> None:
+            pass
+
+    monkeypatch.setattr(le, "ThreadingHTTPServer", lambda *_: IsolatedServer())
+    monkeypatch.setattr(le.sys, "argv", ["local_editor.py", "--root", str(root)])
+    assert le.main() == 0
 
 
 def test_api_host_allowlist_rejects_dns_rebinding_names() -> None:

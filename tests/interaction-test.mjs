@@ -8,6 +8,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 
 // Repo root, independent of the caller's working directory.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
@@ -57,8 +58,12 @@ const report = {};
 
 // No download ever reaches the file system. The review export is read from the
 // Blob the page hands its anchor, and a stray export click is cancelled here.
-const newContext = () => browser.newContext({
-  viewport: { width: 1440, height: 900 }, acceptDownloads: false });
+const newContext = async () => {
+  const context = await browser.newContext({
+    viewport: { width: 1440, height: 900 }, acceptDownloads: false });
+  await useCachedFacsimiles(context);
+  return context;
+};
 
 // null when the element is no longer there. The short timeout carries the
 // weight, because a locator that resolves to nothing waits out the default half

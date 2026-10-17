@@ -17,6 +17,9 @@ from __future__ import annotations
 import json
 import os
 import tempfile
+import threading
+from collections.abc import Iterator
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +29,36 @@ DATA = REPO_ROOT / "docs" / "data"
 
 # Fence line of a Markdown code block, tagged or not.
 FENCE = "```"
+_THREAD_LOCK = threading.RLock()
+
+
+@contextmanager
+def review_lock(register_dir: Path) -> Iterator[None]:
+    """Serialize review check-and-write across server threads and CLI processes."""
+    lock_path = register_dir.parent / ".review.lock"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with _THREAD_LOCK, lock_path.open("a+b") as stream:
+        stream.seek(0)
+        if stream.read(1) == b"":
+            stream.write(b"0")
+            stream.flush()
+        stream.seek(0)
+        if os.name == "nt":
+            import msvcrt
+
+            msvcrt.locking(stream.fileno(), msvcrt.LK_LOCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            stream.seek(0)
+            if os.name == "nt":
+                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
 
 
 def load_json(path: Path) -> Any:

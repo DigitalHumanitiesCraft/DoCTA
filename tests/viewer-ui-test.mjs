@@ -6,6 +6,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ROOT = path.join(REPO, 'docs');
@@ -13,6 +14,8 @@ const DOC_ID = 11328300;
 const PORT = 8736;
 const BASE = `http://127.0.0.1:${PORT}/`;
 const TOKEN = 'viewer-ui-test-token';
+const output = path.join(REPO, 'output', 'readiness-check');
+fs.mkdirSync(output, { recursive: true });
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8',
@@ -122,6 +125,7 @@ const visible = async (page, selector) => page.locator(selector).isVisible().cat
 await new Promise(resolve => server.listen(PORT, '127.0.0.1', resolve));
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: false });
+await useCachedFacsimiles(context);
 await context.addInitScript(() => {
   window.__viewerFitCalls = 0;
   const timer = setInterval(() => {
@@ -145,6 +149,37 @@ page.on('console', message => { if (message.type() === 'error') errors.push(mess
 try {
   await page.goto(`${BASE}viewer.html?doc=${DOC_ID}&page=1`, { waitUntil: 'networkidle' });
   await page.locator('.transcription__line[data-line-id]').first().waitFor();
+
+  const teiRaces = await page.evaluate(async () => {
+    const { createTeiView } = await import('./js/viewer-render.js');
+    const originalFetch = window.fetch;
+    const outcomes = [];
+    try {
+      for (const fails of [false, true]) {
+        let settle;
+        window.fetch = () => new Promise((resolve, reject) => {
+          settle = () => fails ? reject(new Error('old request failed'))
+            : resolve({ ok: true, text: async () => '<TEI>old output</TEI>' });
+        });
+        const container = document.createElement('div');
+        const view = createTeiView(container, { getViewMode: () => 'tei', onRendered() {} });
+        const pending = view.render('test');
+        view.invalidate();
+        settle();
+        await pending;
+        const remainsInvalidated = view.cached('test') === undefined;
+        window.fetch = async () => ({ ok: true, text: async () => '<TEI>rebuilt output</TEI>' });
+        await view.render('test');
+        outcomes.push({ fails, remainsInvalidated,
+          showsRebuilt: container.textContent === '<TEI>rebuilt output</TEI>' });
+      }
+    } finally { window.fetch = originalFetch; }
+    return outcomes;
+  });
+  for (const outcome of teiRaces) {
+    check(outcome.remainsInvalidated && outcome.showsRebuilt,
+      `a delayed TEI ${outcome.fails ? 'failure' : 'success'} cannot repopulate an invalidated edition cache`);
+  }
 
   check(await page.locator('#btn-review-save').isDisabled(),
     'local save is disabled before a draft exists');
@@ -248,8 +283,36 @@ try {
   const original = await first.getAttribute('data-original');
   const corrected = `${original} [QA]`;
   await first.click();
+  await first.locator('.transcription__line-edit').fill(`${original} [cancelled]`);
+  await page.keyboard.press('Escape');
+  check(await first.locator('.transcription__line-text').textContent() === original &&
+    await page.evaluate(id => localStorage.getItem(`docta-review-${id}`) === null, DOC_ID),
+  'Escape cancels a focused correction without creating a browser draft');
+  await first.click();
   await first.locator('.transcription__line-edit').fill(corrected);
-  await page.keyboard.press('Enter');
+  await page.screenshot({ path: path.join(output, 'focused-correction-wide.png'), fullPage: false });
+  await page.setViewportSize({ width: 640, height: 400 });
+  await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
+  await first.locator('.transcription__line-edit').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: path.join(output, 'focused-correction-narrow.png'), fullPage: false });
+  await page.evaluate(() => { document.documentElement.style.zoom = ''; });
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const protectedInput = await page.evaluate((id) => {
+    const event = new Event('beforeunload', { cancelable: true });
+    window.dispatchEvent(event);
+    return { prevented: event.defaultPrevented,
+      draft: JSON.parse(localStorage.getItem(`docta-review-${id}`)) };
+  }, DOC_ID);
+  check(protectedInput.prevented && Object.values(protectedInput.draft?.pages || {})
+    .some(value => value.lines.some(line => line.corrected === corrected)),
+  'unloading with a focused changed correction protects and persists its browser draft without blur or Enter');
+  const persistedDraft = await page.evaluate(id => localStorage.getItem(`docta-review-${id}`), DOC_ID);
+  await first.click();
+  await first.locator('.transcription__line-edit').fill(`${original} [cancelled replacement]`);
+  await page.keyboard.press('Escape');
+  check(await first.locator('.transcription__line-text').textContent() === corrected &&
+    await page.evaluate(id => localStorage.getItem(`docta-review-${id}`), DOC_ID) === persistedDraft,
+  'Escape retains an existing browser correction and its persisted draft');
   check((await page.locator('#draft-badge').textContent()).trim() === 'Ungespeicherte Änderungen' &&
     await page.locator('#draft-badge').isVisible(),
   'a correction has a visible dirty-state indicator');
@@ -272,6 +335,7 @@ try {
     'saved correction survives reload from the in-memory API');
 
   const staticContext = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: true });
+  await useCachedFacsimiles(staticContext);
   const staticPage = await staticContext.newPage();
   await staticPage.goto(`${BASE}viewer.html?static=1&doc=${DOC_ID}&page=1`, { waitUntil: 'networkidle' });
   await staticPage.locator('.transcription__line[data-line-id]').first().waitFor();

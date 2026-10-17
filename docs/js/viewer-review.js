@@ -83,6 +83,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
   let reviewMode = false;
   let saving = false;
   let visibleDocId = null;
+  let activeEdit = null;
   const drafts = new Map();
 
   function saveReview(store) {
@@ -286,11 +287,13 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     input.type = 'text';
     input.className = 'transcription__line-edit';
     input.value = span.textContent;
+    const initialValue = input.value;
     input.setAttribute('aria-label', 'Transkriptionszeile korrigieren');
     let settled = false;
     const finish = (commit) => {
       if (settled) return;
       settled = true;
+      activeEdit = null;
       const value = input.value;
       input.remove();
       span.hidden = false;
@@ -302,6 +305,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
       else if (e.key === 'Escape') { e.preventDefault(); finish(false); }
     });
     input.addEventListener('blur', () => finish(true));
+    activeEdit = { input, initialValue, finish };
     span.hidden = true;
     span.after(input);
     input.focus();
@@ -343,6 +347,8 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     }
   });
   window.addEventListener('beforeunload', (event) => {
+    // Reload and tab close need not blur the focused correction first.
+    if (activeEdit && activeEdit.input.value !== activeEdit.initialValue) activeEdit.finish(true);
     if ([...drafts.values()].some(store => store && Object.keys(store.pages).length)) {
       event.preventDefault();
       event.returnValue = '';

@@ -21,9 +21,9 @@ Design decisions:
   corrections of one page review become a new run "review:<docId>-<pageNr>-<date>
   -<reviewer>" that carries the full line list of the page with the corrections
   applied, so the run is readable on its own and the transcription it produced can
-  be reconstructed without replaying a diff. Re-applying the same export replaces
-  that run in place instead of appending a second one, which makes the ingest
-  idempotent.
+  be reconstructed without replaying a diff. Re-applying an identical export
+  skips its existing run without changing later verification. Changed content
+  under an existing run identity is refused.
   A review is written against the base text it was made on. The base is the run
   the review builds upon, meaning the newest earlier review run of the page,
   where none exists the Transkribus run, and for a document DoCTA transcribed
@@ -43,19 +43,17 @@ Usage:
 """
 
 import argparse
+import hashlib
 import json
 import math
-import os
 import re
 import sys
-import threading
-from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 import build_register as br
-from io_paths import PIPELINE_DIR, load_json, write_json
+from io_paths import PIPELINE_DIR, load_json, review_lock, write_json
 
 REVIEWS = PIPELINE_DIR / "reviews"
 REGISTER = PIPELINE_DIR / "pages"
@@ -66,40 +64,10 @@ SOURCE = "docta-viewer"
 REVIEW_STATUS = ("gesichtet", "abgenommen")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 REVIEW_ID = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
-_THREAD_LOCK = threading.RLock()
 
 
 class ReviewError(Exception):
     """An export that violates the contract or no longer fits the register."""
-
-
-@contextmanager
-def review_lock(register_dir: Path):
-    """Serialize review check-and-write across server threads and CLI processes."""
-    lock_path = register_dir.parent / ".review.lock"
-    lock_path.parent.mkdir(parents=True, exist_ok=True)
-    with _THREAD_LOCK, lock_path.open("a+b") as stream:
-        stream.seek(0)
-        if stream.read(1) == b"":
-            stream.write(b"0")
-            stream.flush()
-        stream.seek(0)
-        if os.name == "nt":
-            import msvcrt
-
-            msvcrt.locking(stream.fileno(), msvcrt.LK_LOCK, 1)
-        else:
-            import fcntl
-
-            fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
-        try:
-            yield
-        finally:
-            stream.seek(0)
-            if os.name == "nt":
-                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
-            else:
-                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
 
 
 def _run_id(doc_id: int, page_nr: int, date: str, reviewer: str) -> str:
@@ -255,6 +223,56 @@ def _corrected_lines(
     ]
 
 
+def _recorded_time(value: object) -> datetime | None:
+    if not isinstance(value, str):
+        return None
+    try:
+        instant = datetime.fromisoformat(value)
+    except ValueError:
+        return None
+    return instant if instant.tzinfo is not None else None
+
+
+def _obsolete_status(page: dict, review: dict, entry: dict, where: str) -> bool:
+    """Keep old decisions from approving a subsequent, changed reading."""
+    instant = _recorded_time(review["exported"])
+    current = page.get("verification") or {}
+    expected = {
+        "status": entry["status"],
+        "reviewer": review["reviewer"],
+        "date": entry["date"],
+    }
+    if review.get("schemaVersion") == 2:
+        expected["timestamp"] = review["exported"]
+    if review.get("effort") is not None:
+        expected["effort"] = review["effort"]
+    ambiguous = False
+    latest = br.newest_review_run(page)
+    for record in [latest, current]:
+        if record is None:
+            continue
+        if record is current and record == expected:
+            continue
+        recorded = _recorded_time(record.get("timestamp"))
+        if recorded is None and re.fullmatch(
+            r"[0-9]{12}", record.get("id", "").rsplit("-", 1)[-1]
+        ):
+            recorded = _recorded_time(br._review_order(record)[0])
+        if instant is not None and recorded is not None:
+            if instant < recorded:
+                return True
+            ambiguous |= instant == recorded
+        elif record.get("date"):
+            if entry["date"] < record["date"]:
+                return True
+            ambiguous |= entry["date"] == record["date"]
+    if ambiguous:
+        raise ReviewError(
+            f"{where}: ambiguous same-day page decision; review the changed text again"
+        )
+    return False
+
+
 def apply_document(
     register: dict, review: dict, pages: dict[int, dict], origin: str
 ) -> list[str]:
@@ -271,8 +289,42 @@ def apply_document(
         entry = pages[page_nr]
         status, date = entry["status"], entry["date"]
         run_id = _review_id(review, doc_id, page_nr, date, reviewer)
+        existing_run = (
+            next((run for run in br.review_runs(page) if run["id"] == run_id), None)
+            if entry["lines"]
+            else None
+        )
+        digest = hashlib.sha256(
+            json.dumps(review, ensure_ascii=False, sort_keys=True).encode("utf-8")
+        ).hexdigest()
+        if existing_run is not None and existing_run.get("reviewDigest") is not None:
+            if existing_run["reviewDigest"] != digest:
+                raise ReviewError(
+                    f"{where}: changed content for existing review {run_id}"
+                )
+            continue
+        if (
+            not entry["lines"]
+            and status is not None
+            and _obsolete_status(page, review, entry, where)
+        ):
+            log.append(f"  Seite {page_nr}: older page decision skipped")
+            continue
         if entry["lines"]:
-            base = base_lines(page, run_id)
+            base_page = page
+            if existing_run is not None:
+                # Historical runs have no event digest. Reconstruct their saved
+                # reading from predecessors, never from subsequent corrections.
+                base_page = {
+                    **page,
+                    "runs": [
+                        run
+                        for run in page["runs"]
+                        if not str(run.get("id", "")).startswith("review:")
+                        or br._review_order(run) < br._review_order(existing_run)
+                    ],
+                }
+            base = base_lines(base_page, run_id)
             if not base:
                 raise ReviewError(f"{where}: keine Basistranskription vorhanden")
             run = {
@@ -286,13 +338,18 @@ def apply_document(
                 run["timestamp"] = review["exported"]
             if review.get("effort") is not None:
                 run["effort"] = review["effort"]
-            existing = next(
-                (i for i, r in enumerate(page["runs"]) if r.get("id") == run_id), None
-            )
-            if existing is None:
-                page["runs"].append(run)
-            else:
-                page["runs"][existing] = run
+            if existing_run is not None:
+                # Earlier local saves predate persisted timestamps; replay
+                # must not rewrite those immutable historical runs.
+                if "timestamp" not in existing_run:
+                    run.pop("timestamp", None)
+                if existing_run != run:
+                    raise ReviewError(
+                        f"{where}: changed content for existing review {run_id}"
+                    )
+                continue
+            run["reviewDigest"] = digest
+            page["runs"].append(run)
             log.append(
                 f"  Seite {page_nr}: {len(entry['lines'])} Zeilen"
                 f" korrigiert -> {run_id}"
@@ -312,6 +369,8 @@ def apply_document(
                 "reviewer": reviewer,
                 "date": date,
             }
+            if review.get("schemaVersion") == 2:
+                page["verification"]["timestamp"] = review["exported"]
             if reason:
                 page["verification"]["reason"] = reason
             if review.get("effort") is not None:

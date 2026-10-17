@@ -151,14 +151,16 @@ export function highlightTEI(xml) {
 export function createTeiView(container, { getViewMode, onRendered }) {
   const cache = new Map();
   let request = 0;
+  let generation = 0;
 
   return {
     /** @returns {string|null|undefined} undefined while nothing has been fetched */
     cached: (docId) => cache.get(String(docId)),
-    invalidate: () => { request += 1; cache.clear(); },
+    invalidate: () => { request += 1; generation += 1; cache.clear(); },
 
     async render(docId) {
       const token = ++request;
+      const startedGeneration = generation;
       const cachedXML = cache.get(String(docId));
       if (cachedXML === undefined) {
         container.innerHTML = '<div class="loading"><div class="loading__spinner"></div>Loading TEI</div>';
@@ -169,11 +171,11 @@ export function createTeiView(container, { getViewMode, onRendered }) {
           const res = await fetch(`data/tei/${docId}.xml`, { cache: 'no-store' });
           if (!res.ok) throw new Error(String(res.status));
           xml = await res.text();
-          cache.set(String(docId), xml);
         } catch {
           xml = null;
-          cache.set(String(docId), null);
         }
+        // A response started before a rebuild cannot refill its cleared cache.
+        if (startedGeneration === generation) cache.set(String(docId), xml);
       }
       // A later document or view switch wins over a slow response
       if (token !== request || getViewMode() !== 'tei') return;

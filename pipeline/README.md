@@ -80,7 +80,9 @@ A review is written against the base text it was made on, meaning the newest ear
 
 Validation and writing are separate phases over the whole invocation. Every file passed to a run is validated first, and the register is written only when all of them pass. A single bad file therefore leaves the register untouched and the run exits nonzero, so a batch never lands half applied and a rerun after the fix has nothing to unpick. `--dry-run` stops after the validation phase and reports what would be written.
 
-A historical status-only export records verification without a new text run. The current editor offers no status-only action.
+A historical status-only export records verification without a new text run. The current editor offers no status-only action. New correction runs retain an event digest; identical reimports skip the existing run and preserve any later verification. Conflicting content under the same identity is refused. Historical correction runs without a digest are reconstructed from their predecessors for the replay check and are not rewritten.
+
+An older status-only decision is skipped when a later correction or verification is recorded. A same-day decision requires comparable timestamps; when their order cannot be established, the import refuses rather than approving a changed reading. Schema version 2 verification retains the event timestamp for that comparison.
 
 ```
 python apply_review.py                       # ingest pipeline/reviews/
@@ -97,7 +99,7 @@ python build_register.py --project   # additionally write the site projection
 pytest pipeline/test_build_register.py
 ```
 
-The builder reads only files already in the repository and makes no network calls; Transkribus exports and evaluation runs are its input. It is deterministic, so a rebuild over an existing register reproduces the same bytes, which the test suite checks.
+The builder reads only files already in the repository and makes no network calls; Transkribus exports and evaluation runs are its input. It is deterministic, so a rebuild over an existing register reproduces the same bytes, which the test suite checks. Register rebuilding and editorial saves hold the same process and file lock during review-state carry and register replacement, so a successful concurrent save cannot be overwritten by a rebuild.
 
 The review state is the one thing the rebuild cannot derive from those inputs, since it was written by `apply_review.py` from a viewer export. The builder therefore reads the existing register before it writes and carries that state over, meaning every page whose `verification` differs from `unbearbeitet` together with the `review:` runs of that page. A rebuild after new Transkribus data leaves the reviewed pages as they stand and destroys no review. Which register the state is carried from is a parameter of `build`, defaulting to the directory it writes into. The healthcheck builds into a temporary directory and points that parameter at `pipeline/`, so its byte comparison runs against the reviewed working tree instead of against a register nobody has reviewed.
 

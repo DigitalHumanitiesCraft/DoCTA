@@ -5,6 +5,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 
 // Repo root, independent of the caller's working directory.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
@@ -78,6 +79,7 @@ const report = {};
 
 for (const { url: page, nonempty = [], check } of TARGETS) {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await useCachedFacsimiles(ctx);
   const p = await ctx.newPage();
   const errors = [], warnings = [], failed = [], slow = [];
 

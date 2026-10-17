@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-16
+updated: 2026-10-17
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -38,6 +38,8 @@ related: [INDEX, project, data, htr-evaluation]
 The present goal is an agentic edition pipeline. The Transkribus facsimiles of the Tyrolean State Archives, covering account books (Raitbücher), inventories, copybooks and court ordinances, are turned into research data and a simple digital edition. Every stage is versioned and verifiable. Machine output remains marked as unrevised until it has been checked against the facsimile and editorially accepted. An accepted page becomes evaluation data only when it is assigned to a named evaluation corpus.
 
 On 2026-10-16 the operator confirmed independent use of the working edition and an intended processing scope covering all source material already present in the project. Small technical trials may use selected passages. Per-source availability and reuse conditions govern actual processing and publication. The source and page registers document actual processing coverage. Partner collaboration remains non-binding. Original spelling is retained in the working transcription. The remaining transcription rules and an accepted reference sample require further agreement.
+
+On 2026-10-17 the operator set technical readiness while awaiting the historical project lead's feedback as the immediate task. The existing specified functions must be reviewed, refactored where necessary and tested so that feedback can be incorporated on a working basis. The [readiness checklist](plan.md#readiness-while-awaiting-feedback) connects these functions to their checks. This does not turn the recorded feature wishes or unresolved scholarly mappings into accepted implementation requirements.
 
 This is a reframing of the earlier goal rather than a replacement of it. The prototype of February 2026 had to convince a reviewer that the methods work; the pipeline has to actually produce the data. The requirements of the project lead below are unchanged by that shift, and the ten points of review criticism remain the checklist any future resubmission would need to satisfy.
 

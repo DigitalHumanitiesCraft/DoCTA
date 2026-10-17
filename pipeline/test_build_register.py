@@ -9,10 +9,14 @@ Usage:
 
 import json
 import tempfile
+import threading
+from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from pathlib import Path
 
 import apply_review as ar
 import build_register as br
+import local_editor as editor
+import pytest
 from io_paths import load_json, write_json
 
 
@@ -446,3 +450,50 @@ def test_projection_matches_register() -> None:
         pages = pages_by_doc[entry["docId"]]
         assert entry["pages_total"] == len(pages)
         assert sum(entry["verification"].values()) == entry["pages_total"]
+
+
+def test_rebuild_serializes_with_editor_save(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """A real-source save waits until rebuild finishes carrying prior reviews."""
+    br.build(tmp_path)
+    pages = tmp_path / "pages"
+    exported = _review_export(pages, tmp_path / "review.json")
+    request = load_json(exported)
+    request["baseRevision"] = editor.revision(pages / f"{request['docId']}.json")
+    carried = threading.Event()
+    release = threading.Event()
+    saving = threading.Event()
+    original = br._carry_review_state
+
+    def pause(source_dir: Path, doc_id: int, source_pages: list[dict]) -> None:
+        original(source_dir, doc_id, source_pages)
+        if doc_id == request["docId"]:
+            carried.set()
+            assert release.wait(10), "test did not release rebuild"
+
+    def save() -> dict:
+        saving.set()
+        return editor.save_review(request, pages, tmp_path / "reviews")
+
+    monkeypatch.setattr(br, "_carry_review_state", pause)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        rebuild = pool.submit(br.build, tmp_path)
+        try:
+            assert carried.wait(10), "rebuild did not reach review carry"
+            saved = pool.submit(save)
+            assert saving.wait(10), "save worker did not start"
+            with pytest.raises(TimeoutError):
+                saved.result(timeout=0.2)
+        finally:
+            release.set()
+        rebuild.result(timeout=10)
+        document = saved.result(timeout=10)
+    line_change = next(iter(request["pages"].values()))["lines"][0]
+    assert any(
+        line["id"] == line_change["id"] and line["text"] == line_change["corrected"]
+        for page in document["pages"]
+        for line in br.iter_lines(page)
+    )
+    stored = load_json(pages / f"{request['docId']}.json")
+    assert any(br.review_runs(page) for page in stored["pages"])

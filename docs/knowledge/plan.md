@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: 2026-09-21
-updated: 2026-10-16
+updated: 2026-10-17
 authors: [Christopher Pollin]
 template:
   name: Vorlage Plan
@@ -19,6 +19,22 @@ related: [INDEX, project, specification, data, htr-evaluation, editorial-model, 
 ---
 
 # Plan
+
+## Readiness while awaiting feedback
+
+On 2026-10-17 the operator set the immediate objective: wait for the historical project lead's feedback while reviewing, cleaning up and completing the existing technical workflows. The repository must remain ready to incorporate that feedback. The current work verifies the specified working edition from source selection through correction, annotation, persistence and export. Scholarly convention and modelling questions stay open for that feedback. Recorded feature wishes remain discussion material under the scope boundary in [specification.md](specification.md#requirements-of-the-project-lead).
+
+| Existing workflow | Readiness evidence | Boundary |
+|---|---|---|
+| Find a source and open its image or text | Source UI, static smoke and interaction checks | Missing images and text remain explicit |
+| Correct text, retain drafts and save locally | Viewer regression, guide walkthrough and local-editor tests | Original exports remain immutable; corrections do not approve pages |
+| Resolve concurrent or repeated writes | Revision, review replay and rebuild/save regressions | Conflicting input is refused |
+| Annotate a saved passage and maintain indexes | Registry browser checks and registry tests | Identities and vocabulary are editorial decisions |
+| Return from an index to its source occurrence | Registry and guide browser checks | Changed source text requires anchor rechecking |
+| Produce validated edition outputs | TEI validation and cross-artifact healthcheck | Editorial register JSON remains separate from TEI and graph pending a mapping decision |
+| Work with an isolated repository copy | Alternate-root source, anchor and build regression | Missing input in the copy does not fall back to the original checkout |
+
+The feedback round supplies observed use and substantive requirements. New model runs, corpus-wide processing and scholarly release retain their existing authorization and evidence requirements. The working guide and [handoff.md](handoff.md) are the entry points when the feedback arrives.
 
 The operator confirmed independent use and testing of the working edition on 2026-10-16. The intended processing scope covers all source material already present in the project. Small passages support technical trials and the optional joint historical pilot, without limiting that wider scope. Actual work depends on each source's available images, text and reuse conditions. The source and page registers document actual processing coverage.
 

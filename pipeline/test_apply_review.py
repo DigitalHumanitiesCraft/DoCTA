@@ -7,13 +7,15 @@ Usage:
   pytest pipeline/test_apply_review.py
 """
 
+import copy
 import json
 import tempfile
 from pathlib import Path
 
 import apply_review as ar
 import build_register as br
-from io_paths import load_json
+import pytest
+from io_paths import load_json, write_json
 
 DOC = 11327963
 PAGE = 2
@@ -453,3 +455,134 @@ def test_an_edition_run_is_the_review_base_of_a_document_docta_transcribed() -> 
         ], "the review run must carry the full page"
         assert review["lines"][0]["text"] == "korrigierte Lesung"
         assert written["verification"]["status"] == "gesichtet"
+
+
+@pytest.mark.parametrize("legacy", [False, True])
+def test_older_event_replay_preserves_later_reading_and_verification(
+    tmp_path: Path, legacy: bool
+) -> None:
+    """Replay real source corrections without undoing later editorial work."""
+    pages = _register(tmp_path)
+    first = review_file(tmp_path, pages)
+    initial = load_json(first)
+    initial["schemaVersion"] = 2
+    write_json(first, initial)
+    ar.ingest([first], pages)
+    later = copy.deepcopy(initial)
+    later["exported"] = "2026-09-04T10:15:00Z"
+    later["pages"][str(PAGE)].update(date="2026-09-04", status="abgenommen")
+    later["pages"][str(PAGE)]["lines"][0].update(
+        original=initial["pages"][str(PAGE)]["lines"][0]["corrected"],
+        corrected="Auf dem klainen Estrich",
+    )
+    second = tmp_path / "second.json"
+    second.write_text(json.dumps(later), encoding="utf-8")
+    ar.ingest([second], pages)
+    path = pages / f"{DOC}.json"
+    if legacy:
+        register = load_json(path)
+        for page in register["pages"]:
+            for run in br.review_runs(page):
+                run.pop("reviewDigest", None)
+                run.pop("timestamp", None)
+        path.write_text(json.dumps(register), encoding="utf-8")
+    # Use canonical serialization so the replay check measures state changes.
+    write_json(path, load_json(path))
+    before = path.read_bytes()
+    ar.ingest([first, second], pages)
+    assert path.read_bytes() == before
+    page = _page(pages)
+    assert page["verification"]["status"] == "abgenommen"
+    assert (
+        next(
+            line["text"]
+            for line in br.newest_review_run(page)["lines"]
+            if line["id"] == initial["pages"][str(PAGE)]["lines"][0]["id"]
+        )
+        == "Auf dem klainen Estrich"
+    )
+
+
+@pytest.mark.parametrize(
+    "field,value", [("corrected", "different reading"), ("original", "different base")]
+)
+def test_existing_review_identity_rejects_changed_correction(
+    tmp_path: Path, field: str, value: str
+) -> None:
+    pages = _register(tmp_path)
+    event = review_file(tmp_path, pages)
+    ar.ingest([event], pages)
+    before = (pages / f"{DOC}.json").read_bytes()
+    changed = load_json(event)
+    changed["pages"][str(PAGE)]["lines"][0][field] = value
+    event.write_text(json.dumps(changed), encoding="utf-8")
+    with pytest.raises(ar.ReviewError, match="changed content"):
+        ar.ingest([event], pages)
+    assert (pages / f"{DOC}.json").read_bytes() == before
+
+
+@pytest.mark.parametrize("same_day", [False, True])
+def test_status_only_replay_cannot_reapprove_a_changed_reading(
+    tmp_path: Path, same_day: bool
+) -> None:
+    """Replay a genuine approval export after a later real-source correction."""
+    pages = _register(tmp_path)
+    correction = review_file(tmp_path, pages, status=None)
+    changed = load_json(correction)
+    approved = copy.deepcopy(changed)
+    approved["pages"][str(PAGE)].update(status="abgenommen", lines=[])
+    if same_day:
+        approved["schemaVersion"] = changed["schemaVersion"] = 2
+    else:
+        changed["pages"][str(PAGE)]["date"] = "2026-09-04"
+    changed["exported"] = "2026-09-03T11:15:00Z" if same_day else "2026-09-04T11:15:00Z"
+    approval = tmp_path / "approval.json"
+    write_json(approval, approved)
+    write_json(correction, changed)
+    ar.ingest([approval], pages)
+    ar.ingest([correction], pages)
+    path = pages / f"{DOC}.json"
+    before = path.read_bytes()
+    log = ar.ingest([approval], pages)
+    assert any("older page decision skipped" in entry for entry in log)
+    assert path.read_bytes() == before
+    assert _page(pages)["verification"]["status"] == "gesichtet"
+
+
+def test_same_day_legacy_approval_after_correction_requires_clear_chronology(
+    tmp_path: Path,
+) -> None:
+    """A date alone cannot establish whether approval covered the saved reading."""
+    pages = _register(tmp_path)
+    correction = review_file(tmp_path, pages, status=None)
+    approved = load_json(correction)
+    approved["pages"][str(PAGE)].update(status="abgenommen", lines=[])
+    approval = tmp_path / "approval.json"
+    write_json(approval, approved)
+    ar.ingest([approval], pages)
+    ar.ingest([correction], pages)
+    path = pages / f"{DOC}.json"
+    before = path.read_bytes()
+    with pytest.raises(ar.ReviewError, match="ambiguous same-day"):
+        ar.ingest([approval], pages)
+    assert path.read_bytes() == before
+
+
+def test_later_same_day_approval_can_accept_saved_correction(tmp_path: Path) -> None:
+    pages = _register(tmp_path)
+    correction = review_file(tmp_path, pages, status=None)
+    changed = load_json(correction)
+    changed["schemaVersion"] = 2
+    write_json(correction, changed)
+    ar.ingest([correction], pages)
+    approved = copy.deepcopy(changed)
+    approved["exported"] = "2026-09-03T11:15:00Z"
+    approved["pages"][str(PAGE)].update(status="abgenommen", lines=[])
+    approval = tmp_path / "approval.json"
+    write_json(approval, approved)
+    ar.ingest([approval], pages)
+    path = pages / f"{DOC}.json"
+    before = path.read_bytes()
+    ar.ingest([approval], pages)
+    assert path.read_bytes() == before
+    assert _page(pages)["verification"]["status"] == "abgenommen"

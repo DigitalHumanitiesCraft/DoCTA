@@ -6,6 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 import { chromium } from 'playwright';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -42,6 +43,8 @@ for (const relative of [
   `docs/data/transcriptions/${DOC_ID}.json`, `docs/data/entities/${DOC_ID}.json`,
   'docs/data/pipeline/register_summary.json', `pipeline/pages/${DOC_ID}.json`,
 ]) copy(relative);
+const effectiveText = `docs/data/pipeline/transcriptions/${DOC_ID}.json`;
+if (fs.existsSync(path.join(REPO, effectiveText))) copy(effectiveText);
 
 // Every writable handler path is rooted in the copy, including paths unused by
 // the current checks. br.DATA also keeps transcription reads inside the copy.
@@ -82,6 +85,7 @@ const port = await new Promise((resolve, reject) => {
 const BASE = `http://127.0.0.1:${port}`;
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+await useCachedFacsimiles(page.context());
 const errors = [];
 const machineRequests = [];
 page.on('request', request => { if (/\/data\/entities\/|\/api\/annotations(?:\/|$)/.test(request.url())) machineRequests.push(request.url()); });
@@ -579,6 +583,7 @@ try {
   await page.keyboard.press('Escape');
 
   const staticPage = await browser.newPage();
+  await useCachedFacsimiles(staticPage.context());
   staticPage.on('pageerror', error => errors.push(String(error)));
   await staticPage.route('**/viewer.html*', async route => {
     const response = await route.fetch();

@@ -59,7 +59,7 @@ from collections.abc import Iterator
 from datetime import UTC, datetime
 from pathlib import Path
 
-from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, write_json
+from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, review_lock, write_json
 
 BENCHMARK_RUNS = REPO_ROOT / "evaluation" / "benchmark" / "runs"
 PILOT_RUNS = REPO_ROOT / "evaluation" / "pilot" / "runs"
@@ -501,6 +501,8 @@ def transcription_of(
     data = vlm_transcription(
         {"docId": doc_id, "title": title}, load_json(path)["pages"]
     )
+    if data is None:
+        return None
     return effective_transcription(data, doc_id, register_dir)
 
 
@@ -589,18 +591,19 @@ def build(
     has to be pointed at the register it is meant to reproduce, otherwise it
     finds no review state and diverges from the tree it is compared against.
     """
-    runs = _vlm_runs()
-    docs = _documents()
-    pages_by_doc = {d["docId"]: _pages(d, runs) for d in docs}
-    for doc_id, pages in pages_by_doc.items():
-        _carry_review_state(carry_from or out_dir, doc_id, pages)
+    with review_lock(out_dir / "pages"):
+        runs = _vlm_runs()
+        docs = _documents()
+        pages_by_doc = {d["docId"]: _pages(d, runs) for d in docs}
+        for doc_id, pages in pages_by_doc.items():
+            _carry_review_state(carry_from or out_dir, doc_id, pages)
 
-    write_json(out_dir / "documents.json", docs)
-    for doc_id, pages in pages_by_doc.items():
-        write_json(
-            out_dir / "pages" / f"{doc_id}.json", {"docId": doc_id, "pages": pages}
-        )
-    return docs, pages_by_doc
+        write_json(out_dir / "documents.json", docs)
+        for doc_id, pages in pages_by_doc.items():
+            write_json(
+                out_dir / "pages" / f"{doc_id}.json", {"docId": doc_id, "pages": pages}
+            )
+        return docs, pages_by_doc
 
 
 def project(

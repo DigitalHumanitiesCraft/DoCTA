@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Technical readiness for the feedback round (17.10.2026)
+
+The operator requested a reviewed and cleaned working codebase while awaiting the historical project lead's feedback. Two separate local code reviews identified gaps in rebuild/save serialization, correction replay, alternate-root source isolation, focused-input protection and TEI cache invalidation. Integrated bounded fixes and regressions into the existing script pipeline and no-build viewer. The shared review lock moved to io_paths without changing its public compatibility import. Browser checks can reuse existing cached facsimiles, and isolated fixtures carry effective static text projections. Specification, plan, architecture and handoff now distinguish readiness of the existing functions from the scholarly decisions and feedback still outstanding. No source processing, new recognition run or publication was performed.
+
 ## Source coverage after a saved correction (17.10.2026)
 
 Traced the silver inventory A 006.8 (und .9), document 12647153, from its cached facsimile and immutable edition run through the saved correction event to TEI. The existing header lost its incomplete-coverage notice when a correction was present and described correction-only provenance as page review. Moved coverage reporting outside the review branches, retained the correction reason in revision prose and restricted the generator's fidelity claim to preservation of the effective register text. Added a regression that replays the existing correction without modifying source data. Architecture records the resulting contract. Original spelling and saved readings remain unchanged; abbreviation treatment and uncertain readings remain editorial decisions. No recognition run, source download or publication was performed.

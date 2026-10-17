@@ -95,6 +95,8 @@ Zwei benannte Abläufe kommen hinzu, die der allgemeine Durchlauf nicht prüfen 
 
 ## Grenzen
 
+Die Browserprüfungen verwenden über `facsimile-fixtures.mjs` vorhandene, gitignorierte Originalbilder aus dem lokalen Erkennungscache, wenn deren Dokument- und Seitenkennung zur IIIF-Referenz im Register passt. Es werden keine Bilder heruntergeladen oder eingecheckt. Ohne passende lokale Kopie bleibt die ursprüngliche Bildadresse aktiv. Die lokalen Bedienprüfungen belegen daher keine Erreichbarkeit des externen Bildservers. Ein isoliertes Prüfkorpus übernimmt auch eine vorhandene effektive Textprojektion, damit sein statischer Leser denselben Datenvertrag wie die Anwendung erhält.
+
 Beide messen sichtbaren Text und Netzwerkverkehr. Was im Canvas gerendert wird, erfassen sie nicht;
 im Viewer zeichnet OpenSeadragon das Faksimile dorthin. Der Netzwerk-Explorer läuft seit dem
 28.08.2026 auf D3 und zeichnet SVG, seine Marken stehen damit im DOM. Im Browser zählt

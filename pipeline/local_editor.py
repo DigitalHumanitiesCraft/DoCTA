@@ -483,6 +483,10 @@ def main() -> int:
     EditorHandler.annotation_dir = root / "pipeline" / "annotations"
     EditorHandler.tag_dir = root / "pipeline" / "tags"
     EditorHandler.data_dir = docs / "data"
+    # One server uses one root. Set source readers before serving so a scratch
+    # copy cannot silently read transcriptions or metadata from this checkout.
+    br.DATA = EditorHandler.data_dir
+    bt.DATA = EditorHandler.data_dir
     EditorHandler.token = secrets.token_urlsafe(32)
     manifest = root / "pyproject.toml"
     if manifest.exists():
