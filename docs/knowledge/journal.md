@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-17
+updated: 2026-10-19
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -22,6 +22,10 @@ related: [INDEX, project, handoff]
 ---
 
 # Journal
+
+## Dependency file for editorial onboarding (19.10.2026)
+
+Renamed the runtime-only lock export to requirements.txt at the operator's request and updated the guide, README, maintainer command and test instructions. The guide now explains that cloning downloads this project file and that the one-time pip step installs its listed packages. Package versions and the installed-Python workflow are unchanged.
 
 ## Technical readiness for the feedback round (17.10.2026)
 

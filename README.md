@@ -28,19 +28,19 @@ Windows:
 
 ```powershell
 py -3.14 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r editor-requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 macOS:
 
 ```sh
 python3.14 -m venv .venv
-./.venv/bin/python -m pip install -r editor-requirements.txt
+./.venv/bin/python -m pip install -r requirements.txt
 ```
 
 Start each session with `.\.venv\Scripts\python.exe pipeline/local_editor.py --open-browser` on Windows or `./.venv/bin/python pipeline/local_editor.py --open-browser` on macOS. Keep the terminal open while editing. No environment activation or PowerShell execution-policy change is needed. Live Server and `python -m http.server` only serve the static site and do not provide the correction or annotation write API.
 
-For maintainers already using uv, `uv run --locked python pipeline/local_editor.py --open-browser` remains supported. The existing launchers also retain their uv and prepared-environment paths. `editor-requirements.txt` is the runtime-only export of `uv.lock`; regenerate it when dependencies change with `uv export --locked --no-dev --no-emit-project --no-hashes --format requirements-txt --output-file editor-requirements.txt`. The editor installation uses pip and does not require uv. Do not use `pip install .` for this flat script repository.
+For maintainers already using uv, `uv run --locked python pipeline/local_editor.py --open-browser` remains supported. The existing launchers also retain their uv and prepared-environment paths. `requirements.txt` is the runtime-only export of `uv.lock`; regenerate it when dependencies change with `uv export --locked --no-dev --no-emit-project --no-hashes --format requirements-txt --output-file requirements.txt`. Cloning includes requirements.txt but does not install its packages. Run the setup commands above once from the cloned DoCTA folder. The editor installation uses pip and does not require uv. Do not use `pip install .` for this flat script repository.
 
 Open [the silver inventory used in the joint reading](http://127.0.0.1:8742/viewer.html?doc=12647153&page=1) or [the Thaur inventory](http://127.0.0.1:8742/viewer.html?doc=11328300&page=1). The local URL addresses your own computer. Source images may require network access. Reading, correcting and annotating existing material requires no LLM API key.
 
@@ -63,7 +63,7 @@ Before finishing, save text changes and every open annotation form separately. S
 After saving and stopping the editor, GitHub Desktop shows the changed project files. Select only the intended research changes, enter a short description and commit them to `main`. Editorial work stays on `main`. A commit records a local version. A separate folder backup protects against loss of that local copy. Push origin uploads commits and makes their contents and history visible in this public repository, so agree which research data may be published before pushing. Changes under `docs/` on `main` also update GitHub Pages. Text events live under `pipeline/reviews/`, effective readings under `pipeline/pages/`, and the editorial register under `pipeline/registry/`. Retained legacy tags and machine-proposal decisions remain in their existing sidecars. The service saves these files without committing them.
 In GitHub Desktop, select the intended files under Changes, write a Summary and choose Commit to main. Keep effective readings and their review events together. Push origin sends agreed commits to GitHub. An invitation alone does not transfer data.
 
-For updates, save and stop the editor, commit local changes and back up the folder. Keep Current Branch set to main, then use Fetch origin and Pull origin if available. If Git reports conflicts, preserve the current work and seek help rather than discarding data. After updating, rerun the environment's `python -m pip install -r editor-requirements.txt`, start the editor and check a known correction and occurrence. Follow version-specific migration instructions if the data contract changes.
+For updates, save and stop the editor, commit local changes and back up the folder. Keep Current Branch set to main, then use Fetch origin and Pull origin if available. If Git reports conflicts, preserve the current work and seek help rather than discarding data. After updating, rerun the environment's `python -m pip install -r requirements.txt`, start the editor and check a known correction and occurrence. Follow version-specific migration instructions if the data contract changes.
 
 For a full backup, copy the stopped project folder to a separate drive and retain the previous dated backup. Unsaved browser drafts are not included. To restore on the same operating system, keep the old folder, restore the backup separately and verify a known correction and index occurrence. For a new machine or operating system, clone again and arrange transfer of unpushed work. A fresh clone only contains data already uploaded. The [recovery contract](docs/knowledge/architecture.md#local-editing-service) names the canonical folders and compatibility requirements.
 
