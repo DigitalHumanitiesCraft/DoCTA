@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Compact installation guide (19.10.2026)
+
+Shortened the setup section at the operator's request. The guide now leads directly from cloning to opening the project terminal, then gives one command block per operating system. The dependency list is explained at the installation step, and a direct link continues to starting the editor. Setup commands, anchors and the separation of one-time installation from later sessions are retained.
+
 ## Dependency file for editorial onboarding (19.10.2026)
 
 Renamed the runtime-only lock export to requirements.txt at the operator's request and updated the guide, README, maintainer command and test instructions. The guide now explains that cloning downloads this project file and that the one-time pip step installs its listed packages. Package versions and the installed-Python workflow are unchanged.

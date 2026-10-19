@@ -29,25 +29,24 @@
     <section aria-labelledby="start">
       <h2 id="start">Einmalig einrichten</h2>
       <ol>
-        <li><a href="https://github.com/signup">GitHub-Konto anlegen</a>, falls du noch keines hast, und der Projektbetreuung deinen Benutzernamen schicken.</li>
-        <li><a href="https://desktop.github.com/">GitHub Desktop installieren</a> und anmelden. Unter <q>File</q> → <q>Clone Repository</q> → <q>URL</q> diese Adresse eingeben und <q>Clone</q> wählen:
+        <li><a href="https://github.com/signup">GitHub-Konto anlegen</a>, falls nötig, und der Projektbetreuung den Benutzernamen schicken.</li>
+        <li><a href="https://desktop.github.com/">GitHub Desktop installieren</a> und anmelden. Über <q>File</q> → <q>Clone Repository</q> → <q>URL</q> das Projekt herunterladen:
           <pre><code>https://github.com/DigitalHumanitiesCraft/DoCTA.git</code></pre>
-          Klonen legt den Projektordner samt Versionsgeschichte auf deinem Rechner an.
+          Wähle einen Speicherort und klicke auf <q>Clone</q>.
         </li>
-        <li><a href="https://code.visualstudio.com/">Visual Studio Code installieren</a>. Dort über <q>File</q> → <q>Open Folder</q> den geklonten DoCTA-Ordner öffnen. Über <q>Terminal</q> → <q>New Terminal</q> öffnest du das Eingabefenster für die folgenden Befehle. Gib sie einzeln ein und warte jeweils auf den Abschluss.</li>
+        <li><a href="https://code.visualstudio.com/">Visual Studio Code installieren</a>. Über <q>File</q> → <q>Open Folder</q> den heruntergeladenen DoCTA-Ordner öffnen, dann <q>Terminal</q> → <q>New Terminal</q> wählen.</li>
       </ol>
-      <p>Die Datei <code>requirements.txt</code> liegt im geklonten DoCTA-Ordner und nennt die benötigten Python-Pakete samt Versionen. Sie wird beim Klonen mit heruntergeladen und gehört zum DoCTA-Projekt. Die folgenden Befehle installieren die darin aufgeführten Pakete einmalig in die eigene Programmumgebung.</p>
+      <p>Die Datei <code>requirements.txt</code> liegt bereits im DoCTA-Ordner. Sie listet die benötigten Python-Pakete samt Versionen auf. Installiere sie mit den folgenden Befehlen für dein Betriebssystem. Gib jede Zeile einzeln ein und warte auf ihren Abschluss. Dafür brauchst du Internet.</p>
       <h3>Windows</h3>
-      <p>Installiere im Microsoft Store den <q>Python Install Manager</q> der Python Software Foundation. Öffne danach ein neues Terminal und installiere Python:</p>
-      <pre><code>py install 3.14</code></pre>
-      <p>Im VS-Code-Terminal des DoCTA-Ordners richtest du einmalig die Programmumgebung ein:</p>
-      <pre><code>py -3.14 -m venv .venv
+      <p>Installiere den <q>Python Install Manager</q> der Python Software Foundation aus dem Microsoft Store. Öffne danach das VS-Code-Terminal neu und führe aus:</p>
+      <pre><code>py install 3.14
+py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt</code></pre>
       <h3>macOS</h3>
-      <p>Installiere Python 3.14 von <a href="https://www.python.org/downloads/">python.org</a>. Öffne anschließend ein neues VS-Code-Terminal im DoCTA-Ordner und führe aus:</p>
+      <p>Installiere Python 3.14 von <a href="https://www.python.org/downloads/">python.org</a>. Öffne danach das VS-Code-Terminal neu und führe aus:</p>
       <pre><code>python3.14 -m venv .venv
 ./.venv/bin/python -m pip install -r requirements.txt</code></pre>
-      <p>Die Einrichtung benötigt Internetzugriff. Die Pakete werden in der eigenen Programmumgebung <code>.venv</code> gespeichert.</p>
+      <p>Die Pakete liegen anschließend in <code>.venv</code> im DoCTA-Ordner. Weiter mit <a href="#launch">Starten</a>.</p>
     </section>
     <section aria-labelledby="launch">
       <h2 id="launch">Bei jeder Arbeitssitzung starten</h2>
