@@ -1,7 +1,7 @@
 import { initNav, initBanner } from './app.js';
 import { createLocalEditor } from './viewer-local.js';
 import { escapeHTML as esc, escapeAttr as attr } from './utils.js';
-import { searchKeys, describeEntry, historyMarkup, mentionQuote } from './viewer-registry-display.js?v=20261020-segments';
+import { searchKeys, describeEntry, historyMarkup, mentionQuote } from './viewer-registry-display.js?v=20261020-accept';
 
 initNav('register');
 initBanner();

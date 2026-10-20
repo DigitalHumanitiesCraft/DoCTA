@@ -1,4 +1,4 @@
-import { mentionSegments, mentionQuote } from './viewer-registry-display.js?v=20261020-segments';
+import { mentionSegments, mentionQuote } from './viewer-registry-display.js?v=20261020-accept';
 
 /** UTF-16 offsets deliberately match both the DOM range and the registry API. */
 export function rangeAtOffsets(text, start, end) {

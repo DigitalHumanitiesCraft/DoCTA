@@ -170,7 +170,12 @@ async function selectText(entity, kind = 'person', route = 'toolbar') {
 }
 async function screenshot(name, narrow = false) {
   await page.setViewportSize(narrow ? { width: 640, height: 800 } : { width: 1280, height: 900 });
-  await page.evaluate(zoom => { document.documentElement.style.zoom = zoom; }, narrow ? '2' : '');
+  // Browser zoom fires resize; the CSS zoom standing in for it here does not,
+  // so the helper fires it, or open surfaces keep their unzoomed geometry.
+  await page.evaluate(zoom => {
+    document.documentElement.style.zoom = zoom;
+    window.dispatchEvent(new Event('resize'));
+  }, narrow ? '2' : '');
   check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${name} has no horizontal overflow`);
   await page.screenshot({ path: path.join(output, name), fullPage: false });
 }
@@ -266,6 +271,13 @@ try {
   await page.locator(`#annotation-workspace`).waitFor();
   check(await mentionForm.locator('[name="entryId"]').inputValue() === entry.id && await page.locator('#annotation-workspace-title').textContent() === person.text,
     'Index backlink opens the saved occurrence editor');
+  check(await page.evaluate(id => {
+    const mark = document.querySelector(`[data-mention-id="${id}"]`).getBoundingClientRect();
+    const pane = document.getElementById('transcription-container').closest('.transcription-workspace')
+      ?.getBoundingClientRect() || { top: 0, bottom: innerHeight };
+    return mark.top >= Math.max(0, pane.top) && mark.bottom <= Math.min(innerHeight, pane.bottom);
+  }, mention.id) && await page.evaluate(() => document.getElementById('mention-form').contains(document.activeElement)),
+  'Index backlink scrolls the passage into view and moves focus into the occurrence');
   await mentionForm.locator('[name="reviewer"]').fill('QA');
   await page.locator('#mention-note summary').click();
   await mentionForm.locator('[name="note"]').fill('QA');

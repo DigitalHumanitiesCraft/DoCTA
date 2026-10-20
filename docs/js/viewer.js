@@ -6,7 +6,7 @@ import { createTeiView, renderReading,
          renderTranscription } from './viewer-render.js?v=20261020-readings';
 import { createReviewView } from './viewer-review.js?v=20261020-readings';
 import { createLocalEditor } from './viewer-local.js';
-import { createRegistryEditor } from './viewer-registry.js?v=20261020-segments';
+import { createRegistryEditor } from './viewer-registry.js?v=20261020-accept';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
 import { createTextStatus, editionUrl, pageProgress } from './viewer-status.js?v=20261020-progress';
 import { STATUS_DETAILS, PROGRESS } from './strings.js';

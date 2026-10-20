@@ -27,7 +27,11 @@ export function mentionLink(item, currentDoc, currentPageNr) {
   const samePage = sameDoc && item.pageNr === currentPageNr;
   const page = sameDoc && currentDoc.pages.find(value => value.pageNr === item.pageNr);
   const lines = page ? page.regions.flatMap(region => region.lines || []) : [];
-  const ordinal = lines.findIndex(line => line.id === item.lineId) + 1;
+  // The synopsis numbers lines through the document, so the link does too.
+  const earlier = sameDoc ? currentDoc.pages.filter(value => value.pageNr < item.pageNr)
+    .reduce((sum, value) => sum + (value.regions || []).reduce((n, region) => n + (region.lines || []).length, 0), 0) : 0;
+  const index = lines.findIndex(line => line.id === item.lineId);
+  const ordinal = index < 0 ? 0 : earlier + index + 1;
   const source = sameDoc ? currentDoc.csvTitel || currentDoc.title : `Document ${item.docId}`;
   const label = [mentionQuote(item), source, `Page ${item.pageNr}`, ordinal ? `Line ${ordinal}` : ''].filter(Boolean).join(', ');
   const edit = samePage ? `<button type="button" class="review-btn" data-edit-mention="${attr(item.id)}">Edit</button>` : '';

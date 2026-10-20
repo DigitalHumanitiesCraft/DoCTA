@@ -1,6 +1,6 @@
 import { escapeHTML as esc, escapeAttr as attr } from './utils.js';
-import { searchKeys, describeEntry, mentionLink, historyMarkup, mentionQuote } from './viewer-registry-display.js?v=20261020-segments';
-import { renderRegistryMarks } from './viewer-registry-anchors.js?v=20261020-segments';
+import { searchKeys, describeEntry, mentionLink, historyMarkup, mentionQuote } from './viewer-registry-display.js?v=20261020-accept';
+import { renderRegistryMarks } from './viewer-registry-anchors.js?v=20261020-accept';
 import { KIND_LABELS, registryMarkup, mentionMarkup } from './viewer-registry-markup.js';
 
 // Further lines a mention may continue into, as pipeline/local_registry.py bounds it.
@@ -372,6 +372,13 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     message(mentionDialog, item.stale ? 'The source text has changed. This occurrence stays anchored to its former wording. Select the text again for a new assignment.' : '');
     mentionDialog.dataset.stale = String(!!item.stale);
     open(mentionDialog, origin);
+    // Opened from a mark, focus moves into the occurrence, so the next Tab
+    // does not walk the remaining marks first; Escape returns to the mark.
+    if (origin instanceof Element && origin.closest('[data-mention-id]')) {
+      Array.from(mentionForm.elements)
+        .find(control => !control.disabled && control.type !== 'hidden' && control.offsetParent !== null)
+        ?.focus({ preventScroll: true });
+    }
   }
   function dateFields() {
     const range = mentionForm.elements.dateMode.value === 'range';
@@ -658,6 +665,8 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       if (item) {
         const anchor = Array.from(document.querySelectorAll('[data-mention-id]'))
           .find(mark => mark.dataset.mentionId === item.id);
+        // A link from the Index lands on the passage, not at the top of the page.
+        anchor?.scrollIntoView({ block: 'center' });
         showMention(item, anchor || button);
         const url = new URL(location);
         url.searchParams.delete('mention');

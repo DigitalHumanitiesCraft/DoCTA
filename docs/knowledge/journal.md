@@ -27,6 +27,12 @@ related: [INDEX, project, specification, handoff]
 
 Newest first. Each entry records one transition with its type (integrated, rejected, corrected, compacted), source, target and result. Figures inside an entry are the measurement of its date, not a current value; a later entry names any decision it supersedes.
 
+### 2026-10-20 corrected: findings of the browser acceptance
+
+- Source: three isolated browser acceptance runs over the correction workflow, the annotation workflow and the static site, each on its own data copy.
+- Target: `docs/css/viewer.css`, `styles.css`, `viewer-registry.js`, `viewer-registry-display.js`, `tests/guide-walkthrough-test.mjs`.
+- Result: the status pill no longer breaks inside a word on a phone; Restore sits beside its line; the TEI download reads as a button; the benchmark tables no longer widen the page, because their scroll container now contains the absolutely positioned cell labels; a link from the Index scrolls to its passage and an occurrence opened from a mark takes the focus; the line number of an occurrence counts through the document as the synopsis does. The walkthrough fired no resize after its CSS zoom, so an open surface sometimes kept its unzoomed width; the helper now fires it. Not reproduced: a document selector left blank after a refused change. Kept as designed: page dots without a tab stop, and the different tooltips of the same bracket in human and machine text. The `revisionDesc` wording "(state)" is unchanged pending a decision.
+
 ### 2026-10-20 rejected: research-tag backend
 
 - Source: operator decision of 2026-10-20.

@@ -268,6 +268,11 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 }
 
 /* === Tables === */
+/* The scroll container is the containing block of the visually hidden cell
+   labels, which are absolutely positioned; otherwise they escape its clipping
+   and widen the whole page on a phone. */
+.table-responsive { position: relative; }
+
 /* Keyboard users can scroll a wide table only if its container is focusable */
 .table-responsive:focus-visible {
   outline: 2px solid var(--accent);
@@ -1304,17 +1309,23 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
   outline-offset: 1px;
 }
 
+/* Drawn like the buttons beside it in the More dialog, since a plain small
+   link there read as a label rather than an action. */
 .tei-download {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  color: var(--text-muted-custom);
-  font-size: var(--text-2xs);
+  min-block-size: 2rem;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--text-muted-custom);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
   text-decoration: none;
   white-space: nowrap;
 }
 
-.tei-download:hover { color: var(--accent); }
+.tei-download:hover { border-color: var(--accent); color: var(--accent); }
 .tei-download svg { width: 13px; height: 13px; }
 
 /* Raw TEI of the whole document, escaped and lightly coloured */
@@ -1506,7 +1517,7 @@ body[data-review="on"] .transcription__line[data-line-id]:not(.transcription__li
   color: var(--text-muted-custom);
   text-decoration: line-through;
 }
-.transcription__line-restore { margin-inline-start: auto; font-size: var(--text-xs); }
+.transcription__line-restore { align-self: center; margin-inline-start: var(--space-sm); font-size: var(--text-xs); }
 body:not([data-review="on"]) .transcription__line-restore { display: none; }
 body[data-review="on"] .transcription__line--excluded { cursor: default; }
 
