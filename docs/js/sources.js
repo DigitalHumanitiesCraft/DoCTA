@@ -3,7 +3,7 @@ import { loadJSON } from './data-loader.js';
 import { escapeHTML as esc, escapeAttr as attr, formatDate, formatCount as number, catLabel, vocabLabel } from './utils.js';
 import { searchKeys } from './viewer-registry-display.js';
 import { imageDocument } from './source-images.js';
-import { PROVENANCE } from './strings.js';
+import { PROVENANCE, PROGRESS } from './strings.js';
 
 initNav('dashboard');
 initBanner();
@@ -49,6 +49,9 @@ function provenanceMarkup(item) {
   } else if (item.hasText && !inventaria) {
     parts.push('<span>Transcription from Transkribus</span>');
   }
+  const corrected = item.documents.reduce((sum, doc) =>
+    sum + (doc.summary?.verification?.gesichtet || 0) + (doc.summary?.verification?.abgenommen || 0), 0);
+  if (corrected) parts.push(`<span data-progress="corrected">${esc(PROGRESS.overview(corrected))}</span>`);
   if (!item.hasText) {
     const firstImage = item.documents.find(doc => doc.image);
     const text = firstImage

@@ -75,3 +75,23 @@ export const READINGS = {
   restoreLineTitle: 'Return this line to the edition text',
   excluded: 'Deleted line, not part of the edition text',
 };
+
+/**
+ * The work progress of a document. Corrected means a saved DoCTA correction
+ * on the page; it is progress of the work and no scholarly approval.
+ */
+const pages = n => (n === 1 ? '1 page' : `${n} pages`);
+export const PROGRESS = {
+  label: 'Corrected in DoCTA',
+  count: (n, m) => `${n} of ${m} transcribed ${m === 1 ? 'page' : 'pages'} corrected in DoCTA`,
+  overview: n => `${pages(n)} corrected in DoCTA`,
+  page: (nr, state) => `Page ${nr}, ${state}`,
+  states: {
+    corrected: 'corrected in DoCTA',
+    machine: 'unrevised machine transcription',
+    unrecorded: 'correction not recorded',
+    human: 'corrected at its source',
+    transcribed: 'transcribed',
+    empty: 'no transcription',
+  },
+};

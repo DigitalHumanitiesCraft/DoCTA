@@ -8,8 +8,8 @@ import { createReviewView } from './viewer-review.js?v=20261020-readings';
 import { createLocalEditor } from './viewer-local.js';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
-import { createTextStatus, editionUrl } from './viewer-status.js?v=20261020-refactor';
-import { STATUS_DETAILS } from './strings.js';
+import { createTextStatus, editionUrl, pageProgress } from './viewer-status.js?v=20261020-progress';
+import { STATUS_DETAILS, PROGRESS } from './strings.js';
 import { imageDocument } from './source-images.js';
 
 initNav('viewer');
@@ -476,7 +476,43 @@ function updatePager() {
     ? `/ ${total}` : `/ ${total}, ${held} ${what}`;
   document.getElementById('btn-prev-page').disabled = currentPage === 0;
   document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
+  renderProgress();
 }
+
+// Above this many pages the dots no longer read as pages; the count stays.
+const PROGRESS_DOTS_MAX = 80;
+
+/** Work progress: the count in the source header and one dot per held page. */
+function renderProgress() {
+  const progress = pageProgress(currentDoc, registerByDocId.get(Number(currentDoc.docId)));
+  const count = document.getElementById('doc-progress');
+  count.hidden = !progress.transcribed;
+  document.getElementById('doc-progress-count').textContent =
+    PROGRESS.count(progress.corrected, progress.transcribed);
+  const strip = document.getElementById('page-progress');
+  strip.hidden = !progress.transcribed || progress.states.length < 2 ||
+    progress.states.length > PROGRESS_DOTS_MAX;
+  if (strip.hidden) { strip.replaceChildren(); return; }
+  // The pager stays the keyboard route; the dots add a pointer shortcut and
+  // a visible overview, so they take no tab stop of their own.
+  strip.replaceChildren(...progress.states.map((page, idx) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.tabIndex = -1;
+    dot.className = 'page-progress__dot';
+    dot.dataset.state = page.state;
+    dot.dataset.index = String(idx);
+    dot.title = page.label;
+    dot.setAttribute('aria-label', page.label);
+    if (idx === currentPage) dot.setAttribute('aria-current', 'page');
+    return dot;
+  }));
+}
+
+document.getElementById('page-progress').addEventListener('click', (e) => {
+  const dot = e.target.closest('.page-progress__dot');
+  if (dot) setPage(Number(dot.dataset.index));
+});
 
 function syncParams() {
   setParams({

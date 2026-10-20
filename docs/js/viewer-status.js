@@ -9,7 +9,7 @@
  */
 
 import { escapeHTML, escapeAttr } from './utils.js';
-import { PROVENANCE, STATUS_DETAILS as D, DRAFT_BADGE } from './strings.js';
+import { PROVENANCE, STATUS_DETAILS as D, DRAFT_BADGE, PROGRESS } from './strings.js';
 import { CORRECTION_REASONS } from './viewer-review.js?v=20261020-en';
 import { createAnchoredPopover } from './viewer-annotation-popover.js';
 
@@ -36,6 +36,30 @@ export function editionUrl(reg) {
   if (reg?.transcription_by !== 'Inventaria') return null;
   const url = reg.edition_url || 'https://www.inventaria.at/';
   return WEB_URL.test(url) ? url : null;
+}
+
+/**
+ * The work state of every held page, in the colours of the status pill. A
+ * saved DoCTA correction is known per page; the state of a page without one
+ * follows the document's attribution only where that holds for every page,
+ * because the served data carries the Transkribus done status per document.
+ * @param {any} doc the loaded transcription
+ * @param {any} reg the register summary of the document
+ */
+export function pageProgress(doc, reg) {
+  const done = reg?.done_pages ?? 0;
+  const total = reg?.pages_total ?? 0;
+  const base = reg?.transcription_source === 'vlm' ? 'machine'
+    : !done ? 'unrecorded' : total && done >= total ? 'human' : 'transcribed';
+  const states = (doc?.pages || []).map(page => {
+    const lines = (page.regions || []).some(region => (region.lines || []).length);
+    const state = Number.isInteger(page.changedLines) && page.changedLines > 0 ? 'corrected'
+      : lines && !doc.imageOnly ? base : 'empty';
+    return { pageNr: page.pageNr, state, label: PROGRESS.page(page.pageNr, PROGRESS.states[state]) };
+  });
+  const transcribed = states.filter(page => page.state !== 'empty').length;
+  const corrected = states.filter(page => page.state === 'corrected').length;
+  return { states, transcribed, corrected };
 }
 
 function attribution(reg) {

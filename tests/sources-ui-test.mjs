@@ -133,6 +133,20 @@ try {
   check(await page.locator('#page-input').getAttribute('max') === '1' && await page.locator('#btn-next-page').isDisabled(), 'image-only viewer offers only the image URL actually recorded, without invented pages');
   check(await page.locator('#btn-tags, #tags-dialog, #btn-entities, #entities-dialog').count() === 0, 'image-only viewer exposes no removed machine or tag controls');
   await page.screenshot({ path: path.join(output, 'image-only-viewer.png'), fullPage: false });
+  // The corpus holds no saved correction, so the overview reads a summary in
+  // which one document has two pages with a saved DoCTA correction.
+  const progressDoc = documents.find(doc => doc.transcription_source === 'vlm');
+  const progressSource = sources.find(s => s.transkribus_docs.some(d => Number(d.doc_id) === progressDoc.docId));
+  const progressSummary = { documents: documents.map(doc => doc.docId === progressDoc.docId
+    ? { ...doc, verification: { ...doc.verification, gesichtet: 2 } } : doc) };
+  await page.route('**/data/pipeline/register_summary.json', route => route.fulfill({ json: progressSummary }));
+  await page.goto(`${base}/index.html`, { waitUntil: 'networkidle' });
+  await page.locator('#sources-list .src-row').first().waitFor();
+  const overview = await page.evaluate(async () => (await import('./js/strings.js')).PROGRESS.overview(2));
+  check(await row(progressSource).locator('[data-progress="corrected"]').textContent() === overview &&
+    await page.locator('[data-progress="corrected"]').count() === 1,
+  'the source overview counts the pages a document has corrected in DoCTA, and only there');
+  await page.unrouteAll();
   check(errors.length === 0, `no browser JavaScript errors: ${errors.join(' | ')}`);
   console.log(JSON.stringify({ checks: checks.length, results: checks }, null, 2));
 } finally {

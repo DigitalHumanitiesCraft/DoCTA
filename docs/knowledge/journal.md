@@ -35,6 +35,12 @@ Newest first. Each entry records one transition with its type (integrated, rejec
 - Result: the tag module, its `/api/tags` routes, sidecar storage and tests are deleted, and `/api/tags` answers 404. An HTTP test against the registry write route keeps the same-origin token check covered. Annotation, editorial register and controlled vocabulary are unchanged.
 
 
+### 2026-10-20 integrated: work progress
+
+- Source: the project lead's request to see the progress of the work; operator decision of 2026-10-20 for dots and a count.
+- Target: design.md, plan.md, `docs/js/viewer-status.js`, `viewer.js`, `sources.js`, `strings.js`.
+- Result: one dot per page in the pill colours and the count of transcribed pages corrected in DoCTA, computed in the browser from `changedLines` and the register summary. The Transkribus done status is served per document, so a page of a partly done document has a neutral dot rather than a claimed state.
+
 ### 2026-10-20 integrated: unclear readings and line deletion
 
 - Source: operator decisions of 2026-10-20 on the feedback round; a survey of every bracket form in the page register.

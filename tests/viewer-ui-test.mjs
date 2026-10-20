@@ -436,6 +436,38 @@ try {
   check((await page.locator('.transcription__line[data-line-id][data-original]').first().textContent()).includes(corrected),
     'saved correction survives reload from the in-memory API');
 
+  // Work progress: the saved page is corrected in its dot and in the count.
+  const progress = await page.evaluate(async () => {
+    const { PROGRESS } = await import('./js/strings.js');
+    const dots = [...document.querySelectorAll('#page-progress .page-progress__dot')];
+    const current = dots.find(dot => dot.getAttribute('aria-current') === 'page');
+    const transcribed = dots.filter(dot => dot.dataset.state !== 'empty').length;
+    return {
+      currentState: current?.dataset.state,
+      corrected: dots.filter(dot => dot.dataset.state === 'corrected').length,
+      tabStops: dots.filter(dot => dot.tabIndex >= 0).length,
+      count: document.getElementById('doc-progress-count').textContent,
+      expected: PROGRESS.count(1, transcribed),
+      label: current?.getAttribute('aria-label'),
+      expectedLabel: PROGRESS.page(Number(new URL(location.href).searchParams.get('page')),
+        PROGRESS.states.corrected),
+    };
+  });
+  check(progress.currentState === 'corrected' && progress.corrected === 1 &&
+    progress.count === progress.expected && progress.label === progress.expectedLabel &&
+    progress.tabStops === 0,
+  'the saved page shows as corrected in its page dot and in the count of corrected pages');
+  const savedPage = new URL(page.url()).searchParams.get('page');
+  const dots = page.locator('#page-progress .page-progress__dot');
+  const otherIndex = (await dots.evaluateAll(items =>
+    items.findIndex(item => item.getAttribute('aria-current') !== 'page')));
+  await dots.nth(otherIndex).click();
+  await page.waitForFunction(previous => new URL(location.href).searchParams.get('page') !== previous, savedPage);
+  check(await dots.nth(otherIndex).getAttribute('aria-current') === 'page',
+    'a page dot opens its page');
+  await page.goto(`${BASE}viewer.html?doc=${DOC_ID}&page=${savedPage}`, { waitUntil: 'networkidle' });
+  await page.locator('.transcription__line[data-line-id]').first().waitFor();
+
   // Unclear readings and deleted lines, decided 2026-10-20.
   const readingStrings = await page.evaluate(async () => (await import('./js/strings.js')).READINGS);
   await page.click('#btn-review');

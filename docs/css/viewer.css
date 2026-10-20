@@ -173,6 +173,24 @@
 .source-details > div { margin-block: var(--space-md); }
 .source-details dt { color: var(--text-muted-custom); font-size: var(--text-sm); font-weight: 400; }
 .source-details dd { margin: 0; overflow-wrap: anywhere; }
+/* One dot per page in the colours of the status pill, filled where the page
+   has text and hollow where it has none; the current page is ringed. */
+.page-progress { display: flex; flex-wrap: wrap; gap: 0.25rem; padding: var(--space-2xs) var(--space-md); background: var(--surface); }
+.page-progress[hidden] { display: none; }
+.page-progress__dot {
+  inline-size: 0.625rem;
+  block-size: 0.625rem;
+  padding: 0;
+  border: 1px solid var(--text-muted-custom);
+  border-radius: 50%;
+  background: var(--text-muted-custom);
+  cursor: pointer;
+}
+.page-progress__dot[data-state="machine"], .page-progress__dot[data-state="unrecorded"] { border-color: var(--conf-medium); background: var(--conf-medium); }
+.page-progress__dot[data-state="corrected"] { border-color: var(--state-corrected); background: var(--state-corrected); }
+.page-progress__dot[data-state="human"] { border-color: var(--conf-high); background: var(--conf-high); }
+.page-progress__dot[data-state="empty"] { background: transparent; }
+.page-progress__dot[aria-current="page"] { outline: 2px solid var(--accent); outline-offset: 1px; }
 .viewer-page > footer { padding-block: var(--space-sm) !important; }
 
 @media (max-width: 991.98px) {
