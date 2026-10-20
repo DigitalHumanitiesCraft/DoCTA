@@ -1,0 +1,227 @@
+/**
+ * DoCTA viewer - the text status pill and its details surface.
+ *
+ * One statement beside the transcription title: the document's text
+ * attribution, qualified by the state of the current page. The details surface
+ * holds what the pill abbreviates. The module derives everything from the
+ * loaded document, the register summary and, where needed, the immutable
+ * Transkribus export; it holds no review state of its own.
+ */
+
+import { escapeHTML, escapeAttr } from './utils.js';
+import { loadJSON } from './data-loader.js';
+import { PROVENANCE, STATUS_DETAILS as D, DRAFT_BADGE } from './strings.js';
+import { CORRECTION_REASONS } from './viewer-review.js?v=20261020-en';
+import { createAnchoredPopover } from './viewer-annotation-popover.js';
+
+const WEB_URL = /^https?:\/\//i;
+
+function displayDate(value) {
+  if (!value) return '';
+  const date = new Date(value);
+  if (Number.isNaN(date.valueOf())) return value;
+  return new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'short', ...(String(value).includes('T') ? { timeStyle: 'short' } : {}),
+  }).format(date);
+}
+
+/**
+ * Who produced the text layer of a document, from the register summary.
+ * Absence of the Transkribus done status documents no correction work, so it
+ * is named as unrecorded rather than as unrevised.
+ */
+function attribution(reg) {
+  if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
+  const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
+  const total = reg.pages_total;
+  const inventaria = reg.transcription_by === 'Inventaria';
+  const url = reg.edition_url || 'https://www.inventaria.at/';
+  const edition = inventaria && WEB_URL.test(url) ? url : null;
+  const by = inventaria ? 'the Inventaria project' : '';
+  if (reg.transcription_source === 'vlm') {
+    return { kind: 'vlm', provenance: 'machine-unrevised', tone: 'machine', edition, description: D.vlm };
+  }
+  if (done >= total) {
+    return { kind: 'corrected', provenance: 'corrected', tone: 'human', edition,
+      base: inventaria ? PROVENANCE.inventariaCorrected : PROVENANCE.transkribusCorrected,
+      description: D.corrected(by, total) };
+  }
+  if (done > 0) {
+    return { kind: 'partial', provenance: 'partly-corrected', tone: 'partial', edition,
+      base: PROVENANCE.partlyCorrected(done, total), description: D.partlyCorrected(by, done, total) };
+  }
+  return { kind: 'unrecorded', provenance: 'correction-unrecorded', tone: 'machine', edition,
+    description: D.transkribusUnrecorded };
+}
+
+function lineTexts(page) {
+  return new Map((page?.regions || []).flatMap(region => region.lines || [])
+    .filter(line => line.id).map(line => [line.id, line.text]));
+}
+
+/** Lines of a page whose effective reading differs from the export reading. */
+function changedLines(doc, base, pageNr) {
+  const before = lineTexts(base.pages?.find(page => page.pageNr === pageNr));
+  let count = 0;
+  for (const [id, text] of lineTexts(doc.pages.find(page => page.pageNr === pageNr))) {
+    if (before.has(id) && before.get(id) !== text) count += 1;
+  }
+  return count;
+}
+
+function newestCorrection(page, saved) {
+  const runs = page?.provenance?.humanCorrections || [];
+  const newest = runs.reduce((best, run) =>
+    (!best || String(run.timestamp || '') > String(best.timestamp || '') ? run : best), null);
+  return {
+    who: newest?.reviewer || saved?.reviewer || '',
+    when: displayDate(newest?.timestamp || saved?.date || ''),
+  };
+}
+
+/**
+ * The correction state of the current page, or of the whole document outside
+ * the synopsis. state: none | counted | uncounted | unlocated.
+ */
+function correctionState({ doc, reg, pageNr, scope }, attr, baseOf) {
+  const local = doc.reviewState && typeof doc.reviewState === 'object';
+  const savedFor = nr => {
+    const saved = doc.reviewState?.[String(nr)];
+    const page = doc.pages.find(item => item.pageNr === nr);
+    return CORRECTION_REASONS.has(saved?.reason) || Boolean(page?.provenance?.humanCorrections?.length);
+  };
+  if (scope === 'document') {
+    const corrected = local ? doc.pages.some(page => savedFor(page.pageNr)) : Boolean(reg?.effective_transcription);
+    return { state: corrected ? 'unlocated' : 'none' };
+  }
+  if (local && !savedFor(pageNr)) return { state: 'none' };
+  if (!local && !reg?.effective_transcription) return { state: 'none' };
+  const page = doc.pages.find(item => item.pageNr === pageNr);
+  const who = local ? newestCorrection(page, doc.reviewState?.[String(pageNr)]) : { who: '', when: '' };
+  // Only the Transkribus export survives beside the corrected reading; a
+  // DoCTA transcription's original lines are not served to the browser.
+  if (attr.kind === 'vlm') return { state: local ? 'uncounted' : 'unlocated', ...who };
+  const base = baseOf();
+  if (base === undefined) return { state: 'pending', ...who };
+  if (base === null) return { state: 'uncounted', ...who };
+  const count = changedLines(doc, base, pageNr);
+  if (!local && !count) return { state: 'none' };
+  return { state: 'counted', count, ...who };
+}
+
+function pillLabel(attr, corr) {
+  const n = corr.count;
+  if (attr.kind === 'vlm') {
+    if (corr.state === 'counted' && n) return PROVENANCE.vlmCorrected(n);
+    if (corr.state === 'uncounted') return PROVENANCE.vlmCorrectedUncounted;
+    if (corr.state === 'unlocated') return PROVENANCE.vlmPartlyCorrected;
+    return PROVENANCE.vlm;
+  }
+  if (attr.kind === 'unrecorded') {
+    if (corr.state === 'counted' && n) return PROVENANCE.transkribusUnrecordedCorrected(n);
+    if (corr.state === 'uncounted' || corr.state === 'unlocated') return PROVENANCE.transkribusUnrecordedCorrectedUncounted;
+    return PROVENANCE.transkribusUnrecorded;
+  }
+  if (corr.state === 'counted' && n) return PROVENANCE.changedInDocta(attr.base, n);
+  return attr.base;
+}
+
+function detailLines(ctx, attr, corr) {
+  const { doc, pageNr, scope, dirty } = ctx;
+  const out = [];
+  if (dirty) out.push(escapeHTML(D.draft));
+  out.push(escapeHTML(attr.description));
+  const page = doc.pages.find(item => item.pageNr === pageNr);
+  const prov = page?.provenance;
+  const runs = (prov?.originalRuns || []).filter(run => run.id === prov.originalRunId);
+  if (scope === 'page' && runs.length) {
+    for (const run of runs) {
+      const what = run.model || (run.source === 'transkribus' ? D.transkribusExport : D.modelUndocumented);
+      out.push(escapeHTML(D.transcription([what, displayDate(run.date)].filter(Boolean).join(', '))));
+    }
+  } else if (attr.kind === 'vlm') {
+    const model = doc.provenance?.model;
+    const prompt = doc.provenance?.prompt ? `prompt ${doc.provenance.prompt}` : '';
+    out.push(escapeHTML(D.transcription([model || D.modelUndocumented, prompt].filter(Boolean).join(', '))));
+  } else {
+    out.push(escapeHTML(D.transcription(D.transkribusExport)));
+  }
+  if (attr.edition) {
+    out.push(escapeHTML(D.edition) + `<a href="${escapeAttr(attr.edition)}" target="_blank" rel="noopener">` +
+      `${escapeHTML(D.editionLink)}</a>`);
+  }
+  if (corr.state === 'none') out.push(escapeHTML(D.noCorrection));
+  else if (corr.state === 'counted') out.push(escapeHTML(D.correctionCount(corr.count)));
+  else if (corr.state === 'uncounted') out.push(escapeHTML(D.correctionUncounted));
+  else if (corr.state === 'unlocated') out.push(escapeHTML(D.correctionUnlocated));
+  if (corr.who || corr.when) out.push(escapeHTML(D.correctionBy(corr.who, corr.when)));
+  if (corr.state !== 'none' && corr.state !== 'pending') out.push(escapeHTML(D.notApproval));
+  const coverage = doc.provenance;
+  if (coverage && coverage.pagesTranscribed < coverage.pagesInDocument) {
+    out.push(escapeHTML(D.coverage(coverage.pagesTranscribed, coverage.pagesInDocument)));
+  }
+  return out;
+}
+
+/**
+ * @param {{ group: HTMLElement, pill: HTMLButtonElement, credit: HTMLAnchorElement,
+ *           details: HTMLElement }} els
+ */
+export function createTextStatus(els) {
+  const label = els.pill.querySelector('.status-pill__label');
+  const creditLabel = els.credit.querySelector('.action-label');
+  const body = els.details.querySelector('.text-status__body');
+  const bases = new Map();
+  let last = null;
+  const popover = createAnchoredPopover(els.details, {
+    onHide: () => els.pill.setAttribute('aria-expanded', 'false'),
+  });
+
+  // The export is fetched once per document, and only when a saved correction
+  // needs a reading to be compared against.
+  function baseFor(docId) {
+    if (!bases.has(docId)) {
+      bases.set(docId, undefined);
+      loadJSON(`data/transcriptions/${docId}.json`)
+        .then(data => data, () => null)
+        .then(data => {
+          bases.set(docId, Array.isArray(data?.pages) ? data : null);
+          if (last && Number(last.doc?.docId) === docId) update(last);
+        });
+    }
+    return bases.get(docId);
+  }
+
+  function update(ctx) {
+    last = ctx;
+    const attr = ctx.doc && !ctx.doc.imageOnly ? attribution(ctx.reg) : null;
+    els.group.hidden = !attr;
+    if (!attr) { popover.hide({ restoreFocus: false }); return; }
+    const docId = Number(ctx.doc.docId);
+    // Until the export arrives the page is described by its attribution alone.
+    const corr = correctionState(ctx, attr, () => baseFor(docId));
+    const text = ctx.dirty ? DRAFT_BADGE : pillLabel(attr, corr);
+    label.textContent = text;
+    els.pill.dataset.provenance = attr.provenance;
+    els.pill.dataset.pageState = corr.state;
+    els.pill.dataset.state = ctx.dirty ? 'dirty'
+      : ['none', 'pending'].includes(corr.state) ? attr.tone : 'corrected';
+    els.pill.title = `${text}. Show the text status details`;
+    els.credit.hidden = !attr.edition;
+    if (attr.edition) {
+      els.credit.href = attr.edition;
+      creditLabel.textContent = D.editionLink;
+      els.credit.title = D.editionLinkName;
+    }
+    body.innerHTML = detailLines(ctx, attr, corr).map(line => `<p>${line}</p>`).join('');
+    popover.reposition();
+  }
+
+  els.pill.addEventListener('click', () => {
+    if (popover.isOpen) { popover.hide(); return; }
+    els.pill.setAttribute('aria-expanded', 'true');
+    popover.open(els.pill, els.pill);
+  });
+
+  return { update, hide: () => popover.hide({ restoreFocus: false }) };
+}

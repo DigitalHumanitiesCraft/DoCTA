@@ -162,6 +162,43 @@ try {
   });
   check(await page.locator('[data-testid="readonly-hint"]').isHidden(),
     'the local working edition shows no read-only hint');
+  // The expected wording is computed from the shipped strings in the page.
+  const label = (key, ...args) => page.evaluate(async ([name, values]) => {
+    const { PROVENANCE } = await import('./js/strings.js');
+    const value = PROVENANCE[name];
+    return typeof value === 'function' ? value(...values) : value;
+  }, [key, args]);
+  const sameRow = target => target.evaluate(() => {
+    const boxes = ['#text-view-title', '#doc-provenance', '#btn-review', '#btn-more']
+      .map(selector => document.querySelector(selector).getBoundingClientRect());
+    return Math.max(...boxes.map(box => box.top)) < Math.min(...boxes.map(box => box.bottom));
+  });
+  const pill = page.locator('#doc-provenance');
+  check(await pill.getAttribute('data-provenance') === 'corrected' &&
+    (await pill.innerText()).trim() === await label('inventariaCorrected') &&
+    await page.locator('#doc-edition-link').isVisible() &&
+    (await page.locator('#doc-edition-link').getAttribute('href')).startsWith('http'),
+  'an Inventaria-corrected page names Inventaria in the status pill and keeps the edition link visible');
+  check(await sameRow(page), 'title, status pill and actions share one header row at 1280 px');
+  check(await page.locator('#page-provenance, #draft-badge, #doc-meta').count() === 0,
+    'the former meta strip, page provenance row and separate draft badge are gone');
+
+  await pill.click();
+  const details = page.locator('#text-status-details');
+  check(await details.isVisible() && await pill.getAttribute('aria-expanded') === 'true',
+    'the status pill opens its details surface by click');
+  check((await details.innerText()).includes('Inventaria'),
+    'the details surface names the text source');
+  await pill.click();
+  check(await details.isHidden() && await pill.getAttribute('aria-expanded') === 'false',
+    'a second click on the pill closes the details surface');
+  await pill.focus();
+  await page.keyboard.press('Enter');
+  check(await details.isVisible(), 'the status pill opens its details surface from the keyboard');
+  await page.keyboard.press('Escape');
+  check(await details.isHidden() && await pill.evaluate(el => el === document.activeElement) &&
+    await pill.getAttribute('aria-expanded') === 'false',
+  'Escape closes the details surface and returns focus to the pill');
 
   const teiRaces = await page.evaluate(async () => {
     const { createTeiView } = await import('./js/viewer-render.js');
@@ -326,10 +363,10 @@ try {
   check(await first.locator('.transcription__line-text').textContent() === corrected &&
     await page.evaluate(id => localStorage.getItem(`docta-review-${id}`), DOC_ID) === persistedDraft,
   'Escape retains an existing browser correction and its persisted draft');
-  check(await page.locator('#draft-badge').getAttribute('data-state') === 'dirty' &&
-    (await page.locator('#draft-badge').textContent()).trim() === strings.DRAFT_BADGE &&
-    await page.locator('#draft-badge').isVisible(),
-  'a correction has a visible dirty-state indicator');
+  check(await pill.getAttribute('data-state') === 'dirty' &&
+    (await pill.innerText()).trim() === strings.DRAFT_BADGE &&
+    await pill.isVisible(),
+  'a correction switches the status pill to the unsaved state');
   check((await page.locator('#btn-review-save').textContent()).trim().length > 0,
     'local save control has an explicit label');
   const saveResponse = page.waitForResponse(response =>
@@ -343,9 +380,15 @@ try {
     'successful local save is confirmed in the review bar');
   await page.reload({ waitUntil: 'networkidle' });
   await page.locator('.transcription__line[data-line-id]').first().waitFor();
-  check(await page.locator('#review-chip').getAttribute('data-provenance') === 'local-correction' &&
-    await page.locator('#review-chip').textContent() === strings.PROVENANCE.localCorrection,
-    'the saved correction is described without implying scholarly approval');
+  await page.waitForFunction(() => document.getElementById('doc-provenance').dataset.pageState === 'counted');
+  check((await pill.innerText()).trim() === await label('changedInDocta', await label('inventariaCorrected'), 1) &&
+    await pill.getAttribute('data-state') === 'corrected',
+  'the saved correction qualifies the page attribution with its counted line');
+  await pill.click();
+  check((await details.innerText()).includes('not a scholarly approval') &&
+    (await details.innerText()).includes('QA'),
+  'the details name the corrector and state that a correction is no scholarly approval');
+  await page.keyboard.press('Escape');
   check((await page.locator('.transcription__line[data-line-id][data-original]').first().textContent()).includes(corrected),
     'saved correction survives reload from the in-memory API');
 
@@ -372,14 +415,56 @@ try {
   const chip = staticPage.locator('#doc-provenance');
   await chip.waitFor();
   check(await chip.getAttribute('data-provenance') === 'machine-unrevised' &&
+    await chip.getAttribute('data-state') === 'machine' &&
     (await chip.innerText()).trim() === strings.PROVENANCE.vlm &&
-    strings.PROVENANCE.vlm.toLowerCase().includes('unrevised machine transcription'),
-  'a DoCTA machine transcription states unrevised machine transcription in visible chip text');
+    strings.PROVENANCE.vlm.toLowerCase().includes('unrevised'),
+  'an uncorrected DoCTA machine transcription states unrevised in the visible pill text');
   await staticPage.click('#btn-more');
   check(await visible(staticPage, '#btn-review-export'),
     'static mode exposes review export in the more dialog');
   check(!await visible(staticPage, '#btn-review-save'),
     'static mode does not expose the local save control');
+  await staticPage.keyboard.press('Escape');
+
+  const summary = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pipeline', 'register_summary.json'), 'utf8')).documents;
+  const staticLabel = key => staticPage.evaluate(async name => (await import('./js/strings.js')).PROVENANCE[name], key);
+  const unrecorded = summary.find(doc => doc.transcription_source === 'transkribus' && !doc.done_pages);
+  await staticPage.goto(`${BASE}viewer.html?doc=${unrecorded.docId}&page=1`, { waitUntil: 'networkidle' });
+  await chip.waitFor();
+  check(await chip.getAttribute('data-provenance') === 'correction-unrecorded' &&
+    (await chip.innerText()).trim() === await staticLabel('transkribusUnrecorded'),
+  'a Transkribus document without done pages states that correction is not recorded');
+
+  // A DoCTA transcription covering part of its source names the coverage only in the details.
+  const partial = summary.filter(doc => doc.transcription_source === 'vlm').find(doc => {
+    const file = path.join(ROOT, 'data', 'pipeline', 'transcriptions', `${doc.docId}.json`);
+    const prov = fs.existsSync(file) && JSON.parse(fs.readFileSync(file, 'utf8')).provenance;
+    return prov && prov.pagesTranscribed < prov.pagesInDocument;
+  });
+  check(Boolean(partial), 'the corpus holds a partly transcribed DoCTA document for the coverage check');
+  if (partial) {
+    await staticPage.goto(`${BASE}viewer.html?doc=${partial.docId}&page=1`, { waitUntil: 'networkidle' });
+    await chip.waitFor();
+    const outside = await staticPage.evaluate(() => {
+      const clone = document.body.cloneNode(true);
+      clone.querySelector('#text-status-details')?.remove();
+      return clone.textContent.includes('pages transcribed');
+    });
+    check(!outside, 'no page coverage text appears outside the status details');
+    await chip.click();
+    check((await staticPage.locator('#text-status-details').innerText()).includes('pages transcribed'),
+      'the status details state the page coverage');
+    check((await chip.innerText()).toLowerCase().includes('unrevised'),
+      'a DoCTA machine transcription keeps the word unrevised in the pill');
+    await staticPage.keyboard.press('Escape');
+    await staticPage.setViewportSize({ width: 640, height: 900 });
+    check(await sameRow(staticPage), 'title, status pill and actions share one header row at 640 px');
+    check(await staticPage.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1),
+      'the narrow header causes no horizontal document overflow');
+    check(await staticPage.locator('#btn-more').evaluate(button =>
+      button.querySelector('.action-label').getBoundingClientRect().width <= 1 && button.title.length > 0),
+    'narrow actions are icon-only and keep a tooltip');
+  }
   await staticContext.close();
 } finally {
   await context.close();

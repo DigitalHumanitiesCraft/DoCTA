@@ -68,7 +68,7 @@ Use [the Thaur inventory A 049.1](https://dhcraft.org/DoCTA/viewer.html?doc=1132
 
 Use [the silver inventory A 006.8 and .9](https://dhcraft.org/DoCTA/viewer.html?doc=12647153&page=1) to explain machine transcription and incomplete image references when that question arises. Its available transcription covers only part of the document. Technical demonstration corrections belong in an isolated test copy until a scholar confirms the reading.
 
-The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.cmd` on Windows or `start-editor.command` on macOS. Demonstrate save and reload before opening the optional reading text or validated TEI build under More functions. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
+The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.cmd` on Windows or `start-editor.command` on macOS. Demonstrate save and reload before opening the optional reading text or validated TEI build under More. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
 
 ### Guided editor exercise
 
@@ -82,7 +82,7 @@ For independent onboarding, the [working guide](../guide.html#exercise) starts w
 4. Use Save changes, wait for the local-save confirmation and reload. The saved reading must remain. Discard changes discards the current page draft and preserves saved text.
 5. Select wording in a saved line and create an editor-owned assignment as a person, place, date or controlled term. Reuse an existing register entry only when the source evidence supports the identity. Otherwise create an independent entry or retain an unresolved occurrence with a note.
 6. Open Index, find the saved entry and return to its source occurrence. Discuss how its preferred label, variants, note and source history support the intended analysis. Record verbs as ordinary controlled terms only when they help the research question. The editor provides the vocabulary, and the interface has no dedicated verb category.
-7. Under More functions, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them. The editorial register remains a separate JSON output in the current version.
+7. Under More, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them. The editorial register remains a separate JSON output in the current version.
 
 After each step, collect the editor's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. The [working guide](../guide.html) explains purpose, source provenance, correction and annotation, saved versus published state, and the remaining scholarly decisions. Revise it only from observed use and verified implementation.
 

@@ -52,7 +52,7 @@ If the port is occupied, the starter leaves the running service intact. Stop you
 2. Select Save changes and wait for confirmation. Reload to inspect the saved reading. Enter alone retains a browser draft.
 3. Select a passage in a saved line and choose Term to assign a controlled term, or Person, Place or Date for the corresponding annotation. The annotation field holds the optional note and register assignment.
 4. Open Index to find saved entries and return to their source occurrences.
-5. Use More functions to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
+5. Use More to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
 
 Work on the sources relevant to your research. Annotation requires no artificial text correction. Correct a reading only where the image supports it. Discard changes discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
@@ -73,7 +73,7 @@ Feedback should include the document and page, the action attempted, the expecte
 
 ### Build a person index and vocabulary
 
-1. Select text within one saved transcription line. A small toolbar offers Person, Term, Place and Date. Right-clicking the selection also opens the toolbar. Annotate selection and Alt+A provide an explicit alternative.
+1. Select text within one saved transcription line. A small toolbar offers Person, Term, Place and Date. Right-clicking the selection also opens the toolbar. The Annotate button and Alt+A provide an explicit alternative.
 2. Choose a category. The same field beside the passage contains the assignment and its history. For persons, places and terms, search for an existing register entry or choose New register entry. Create or edit the entry in that field, save it, then explicitly save the occurrence. Not yet assigned retains an unresolved occurrence with a note.
 3. For a date, retain the source wording and optionally enter a normalized year, month or day using `YYYY`, `YYYY-MM` or `YYYY-MM-DD`. A Period can have an earliest and/or latest bound. Uncertain date records uncertainty. The editor decides the historical interpretation and any calendar conversion. Validation uses the proleptic Gregorian calendar, without automatic conversion.
 4. Save the occurrence with your initials. Click its editorial mark to edit or remove it later. Removing an annotation preserves the source text and retains the previous value in history. Closing the inline field retains unsaved input, available through Continue annotation. Explicit discard removes that draft.

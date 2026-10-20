@@ -326,8 +326,8 @@ async function reviewFlow(target) {
     failures.push('the committed line is not marked as corrected');
   }
   actions.push(`corrected line -> "${corrected.slice(0, 40)}"`);
-  if (await p.locator('#draft-badge').getAttribute('data-state') !== 'dirty' ||
-      !await p.locator('#draft-badge').isVisible()) {
+  if (await p.locator('#doc-provenance').getAttribute('data-state') !== 'dirty' ||
+      !await p.locator('#doc-provenance').isVisible()) {
     failures.push('an unsaved correction is not visibly marked as a browser draft');
   }
 

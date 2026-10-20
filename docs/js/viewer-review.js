@@ -10,11 +10,11 @@
  */
 
 import { escapeHTML, lsGet, lsSet } from './utils.js';
-import { PROVENANCE } from './strings.js';
 
 const REVIEWER_KEY = 'docta-review-reviewer';
 const LEGACY_STATUS = new Set(['gesichtet', 'abgenommen']);
-const CORRECTION_REASONS = new Set(['text-corrected', 'review-reopened-after-text-change']);
+// Persisted reasons that justify a correction claim; the text status reads them too.
+export const CORRECTION_REASONS = new Set(['text-corrected', 'review-reopened-after-text-change']);
 // Shape version of the stored draft. Raise it when the store no longer
 // satisfies what loadReview() keeps, so a stale draft is dropped instead of
 // being exported against the contract.
@@ -72,7 +72,7 @@ function prunePage(store, pageNr) {
  * @param {{
  *   bar: HTMLElement, toggle: HTMLElement, initials: HTMLInputElement,
  *   hint: HTMLElement, exportBtn: HTMLElement, clearBtn: HTMLElement,
- *   saveBtn: HTMLElement, meta: HTMLElement
+ *   saveBtn: HTMLElement
  * }} els
  * @param {{
  *   getContext: () => { docId: number|null, pageNr: number|null, viewMode: string },
@@ -177,25 +177,6 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     setHint('Draft exported. The file can now be taken into the pipeline.');
   }
 
-  /** Only a persisted correction reason justifies a correction claim. */
-  function updateReviewChip() {
-    const { pageNr, viewMode } = getContext();
-    els.meta.querySelector('#review-chip')?.remove();
-    if (viewMode !== 'synopsis' || pageNr == null) return;
-    const savedPage = getContext().reviewState?.[String(pageNr)];
-    if (!CORRECTION_REASONS.has(savedPage?.reason)) return;
-    const who = savedPage.reviewer || '';
-    const date = savedPage.date || '';
-    const chip = document.createElement('span');
-    chip.id = 'review-chip';
-    chip.className = 'prov-chip prov-chip--review';
-    chip.dataset.provenance = 'local-correction';
-    chip.textContent = PROVENANCE.localCorrection;
-    chip.title = `Text correction saved locally${who ? ` by ${who}` : ''}${date ? ` on ${date}` : ''}. This is not a scholarly approval.`;
-    els.meta.appendChild(chip);
-    els.meta.hidden = false;
-  }
-
   /** Editable lines get a tab stop only while review mode is on */
   function applyReviewMode() {
     const editable = reviewMode && getContext().viewMode === 'synopsis';
@@ -226,7 +207,6 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
       setHint('Click a line to correct its transcription.');
     }
     applyReviewMode();
-    updateReviewChip();
   }
 
   function setReviewMode(on) {

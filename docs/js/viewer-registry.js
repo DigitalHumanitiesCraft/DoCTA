@@ -17,19 +17,13 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
   let inlineEntry = null;
   let sourceRequest = 0;
   let registryGeneration = 0;
-  const toolbar = document.querySelector('.transcription-tools');
-  const button = document.createElement('button');
-  button.id = 'btn-registry';
-  button.className = 'review-btn';
-  button.textContent = 'Register';
+  // Both controls live in the transcription header markup of viewer.html and
+  // stay hidden until the local editor confirms write access.
+  const button = document.getElementById('btn-registry');
+  const annotate = document.getElementById('btn-annotate-selection');
+  const annotateLabel = annotate.querySelector('.action-label');
   button.hidden = true;
-  const annotate = document.createElement('button');
-  annotate.id = 'btn-annotate-selection';
-  annotate.className = 'review-btn';
-  annotate.textContent = 'Annotate selection';
   annotate.hidden = true;
-  annotate.title = 'Annotate the selected text (Alt+A)';
-  toolbar.append(button, annotate);
   const dialog = makeSurface('registry-dialog', 'Register', 'aside');
   const mentionDialog = workspace.manual;
   dialog.classList.add('registry-sidebar');
@@ -119,7 +113,9 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     return element;
   }
   function updateDraftButton() {
-    annotate.textContent = dirty.has(mentionDialog) || dirty.has(inlinePanel) ? 'Continue annotation' : 'Annotate selection';
+    const pending = dirty.has(mentionDialog) || dirty.has(inlinePanel);
+    annotateLabel.textContent = pending ? 'Continue annotation' : 'Annotate';
+    annotate.title = pending ? 'Continue the unsaved annotation' : 'Annotate the selected text (Alt+A)';
   }
   function closeSurface(element) {
     if (busy) return;

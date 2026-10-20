@@ -2,13 +2,13 @@ import { initNav, initBanner } from './app.js?v=20261020-en';
 import { loadJSON } from './data-loader.js';
 import { getParams, setParams, escapeHTML, escapeAttr,
          lsGet, lsSet, catLabel, vocabLabel } from './utils.js';
-import { PROVENANCE, DRAFT_BADGE } from './strings.js';
 import { createTeiView, renderReading,
          renderTranscription } from './viewer-render.js?v=20261020-en';
 import { createReviewView } from './viewer-review.js?v=20261020-en';
 import { createLocalEditor } from './viewer-local.js';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
+import { createTextStatus } from './viewer-status.js';
 import { imageDocument } from './source-images.js';
 
 initNav('viewer');
@@ -30,80 +30,23 @@ const transcriptionContainer = document.getElementById('transcription-container'
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Which text layer the reader is looking at: human-corrected pages are the
-// ones marked DONE in Transkribus, everything else is the unrevised HTR layer.
-function provenanceState(docId) {
-  if (currentDoc?.imageOnly) return null;
-  const reg = registerByDocId.get(Number(docId));
-  if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
-  const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
-  const total = reg.pages_total;
-  // Name who corrected: for the attributed documents that work is the
-  // Inventaria project's, and "human-corrected" must not leave it open.
-  const by = reg.transcription_by === 'Inventaria' ? ' by the Inventaria project' : '';
-  // A document Transkribus holds no text for was transcribed by DoCTA
-  // itself; naming the Transkribus HTR layer here would be wrong.
-  if (reg.transcription_source === 'vlm') {
-    return {
-      state: 'machine',
-      provenance: 'machine-unrevised',
-      label: PROVENANCE.vlm,
-      title: 'Unrevised transcription produced by the DoCTA pipeline with a ' +
-             'vision-language model. Transkribus holds no transcription of this ' +
-             'source, and no page has been read against the scan by a scholar',
-    };
-  }
-  if (done >= total) {
-    return {
-      state: 'human',
-      provenance: 'corrected',
-      label: by ? PROVENANCE.inventariaCorrected : PROVENANCE.transkribusCorrected,
-      title: `All ${total} pages corrected${by} and marked done in Transkribus`,
-    };
-  }
-  if (done > 0) {
-    return {
-      state: 'partial',
-      provenance: 'partly-corrected',
-      label: PROVENANCE.partlyCorrected(done, total),
-      title: `${done} of ${total} pages corrected${by} and marked done in Transkribus, ` +
-             'the remaining pages are the unrevised Transkribus HTR layer',
-    };
-  }
-  // Absence of the done status documents nothing about actual correction
-  // work; the chip states the origin and what the status does not record.
-  return {
-    state: 'machine',
-    provenance: 'correction-unrecorded',
-    label: PROVENANCE.transkribusUnrecorded,
-    title: 'Text layer exported from Transkribus. No page of this document ' +
-           'is marked done there, so no human correction is documented; the ' +
-           'text may have been worked on without the status being set',
-  };
-}
+const textStatus = createTextStatus({
+  group: document.getElementById('text-status'),
+  pill: document.getElementById('doc-provenance'),
+  credit: document.getElementById('doc-edition-link'),
+  details: document.getElementById('text-status-details'),
+});
 
-function provenanceChip(docId) {
-  const prov = provenanceState(docId);
-  if (!prov) return '';
-  const reg = registerByDocId.get(Number(docId));
-  const url = reg?.edition_url || 'https://www.inventaria.at/';
-  if (reg?.transcription_by === 'Inventaria' && /^https?:\/\//i.test(url)) {
-    return `<a class="prov-chip prov-chip--${prov.state}" id="doc-provenance" data-provenance="${prov.provenance}"` +
-      ` href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
-      ` title="${escapeAttr(prov.title)}. Open the original edition">${escapeHTML(prov.label)}</a>`;
-  }
-  return `<span class="prov-chip prov-chip--${prov.state}" id="doc-provenance" data-provenance="${prov.provenance}"` +
-         ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
-}
-
-// Source provenance is shown separately; a correction draft is no review verdict.
-function updateDraftBadge() {
-  const badge = document.getElementById('draft-badge');
-  const pending = currentDoc && review.hasDraft;
-  badge.hidden = !pending;
-  badge.dataset.state = pending ? 'dirty' : 'clean';
-  badge.textContent = DRAFT_BADGE;
-  badge.title = 'The current text correction is not saved yet.';
+// The pill states the document's attribution and the current page's state in
+// one place; an unsaved draft takes it over until it is saved or discarded.
+function updateTextStatus() {
+  textStatus.update({
+    doc: currentDoc,
+    reg: currentDoc ? registerByDocId.get(Number(currentDoc.docId)) : null,
+    pageNr: currentPageNr(),
+    scope: viewMode === 'synopsis' ? 'page' : 'document',
+    dirty: Boolean(currentDoc) && review.hasDraft,
+  });
 }
 
 function renderDocMeta(docId) {
@@ -135,13 +78,6 @@ function renderDocMeta(docId) {
     }
   }
   document.getElementById('source-details').innerHTML = details;
-  const provenance = currentDoc?.provenance;
-  const coverage = provenance && provenance.pagesTranscribed < provenance.pagesInDocument
-    ? '<span>' + escapeHTML(String(provenance.pagesTranscribed)) + ' of ' +
-      escapeHTML(String(provenance.pagesInDocument)) + ' pages transcribed</span>' : '';
-  const meta = document.getElementById('doc-meta');
-  meta.innerHTML = provenanceChip(docId) + coverage;
-  meta.hidden = false;
 }
 
 function initOSD() {
@@ -410,7 +346,6 @@ const review = createReviewView({
   exportBtn: document.getElementById('btn-review-export'),
   clearBtn: document.getElementById('btn-review-clear'),
   saveBtn: document.getElementById('btn-review-save'),
-  meta: document.getElementById('doc-meta'),
 }, {
   getContext: () => ({
     docId: currentDoc ? Number(currentDoc.docId) : null,
@@ -422,7 +357,7 @@ const review = createReviewView({
   markText: text => text,
   rerenderPage: renderPage,
   local,
-  onDraftChange: updateDraftBadge,
+  onDraftChange: updateTextStatus,
   onSaved: (doc) => {
     currentDoc = doc;
     registry.load();
@@ -459,21 +394,7 @@ function renderPage(pageNr) {
     note.textContent = 'No transcription is available for this digitised image.';
     transcriptionContainer.replaceChildren(note);
   }
-  const provenance = currentDoc.pages.find(page => page.pageNr === pageNr)?.provenance;
-  const provenanceElement = document.getElementById('page-provenance');
-  const displayDate = value => {
-    const date = new Date(value);
-    if (Number.isNaN(date.valueOf())) return value;
-    return new Intl.DateTimeFormat('en-GB', { dateStyle: 'short', ...(value.includes('T') ? { timeStyle: 'short' } : {}) }).format(date);
-  };
-  const origins = provenance?.originalRuns.filter(run => run.id === provenance.originalRunId) || [];
-  const summary = provenance ? [
-    ...origins.map(run => `Transcription ${run.model || (run.source === 'transkribus' ? 'Transkribus, model not documented' : 'model not documented')}${run.date ? ' (' + displayDate(run.date) + ')' : ''}`),
-    ...provenance.humanCorrections.map(run => `Text correction ${run.reviewer || 'initials not documented'}${run.timestamp ? ' (' + displayDate(run.timestamp) + ')' : ''}`),
-  ].join('. ') : '';
-  provenanceElement.innerHTML = provenance ? `<details><summary>${escapeHTML(summary)}</summary><dl>` +
-    origins.map(run => `<dt>Transcription run</dt><dd>${escapeHTML([run.id, run.date, run.prompt, run.prompt_hash].filter(Boolean).join(', '))}</dd>`).join('') +
-    provenance.humanCorrections.map(run => `<dt>Text correction ${escapeHTML(run.reviewer || '')}</dt><dd><time datetime="${escapeAttr(run.timestamp || '')}">${escapeHTML(run.timestamp || 'time not documented')}</time></dd>`).join('') + '</dl></details>' : '';
+  updateTextStatus();
 }
 
 const tei = createTeiView(transcriptionContainer, {
@@ -565,7 +486,7 @@ function syncReadOnlyHint() {
 // Renders whatever the current mode shows, from the page the mode still holds
 function renderCurrentView() {
   if (!currentDoc) return;
-  updateDraftBadge();
+  updateTextStatus();
   updateTeiDownload();
   if (viewMode === 'synopsis') { setPage(currentPage); return; }
   updatePager();
@@ -593,7 +514,7 @@ function setView(mode, pageIdx) {
   }
   // Reading and TEI have no facsimile; the overlay is rebuilt on the way back
   if (!isSynopsis) clearLineOverlay();
-  updateDraftBadge();
+  updateTextStatus();
   updateTeiDownload();
 
   if (!currentDoc) {
