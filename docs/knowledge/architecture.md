@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-19
+updated: 2026-10-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -31,13 +31,15 @@ The site is static and served by GitHub Pages from `docs/` on `main`. It uses va
 
 `pipeline/local_editor.py` serves the same `docs/` tree on loopback and exposes a same-origin API. `viewer-local.js` discovers this service through its response header and session capability. GitHub Pages and ordinary static preview servers retain the export workflow. Local transcription requests bypass IndexedDB and read the effective register text. Drafts carry the loaded revision, and a save against a changed revision fails visibly.
 
-The working guide uses the same service detection. Its direct local exercise link appears only after the write service is identified, preserving the current origin and port. Static readers are directed to start the application and reopen Anleitung there. The operator selected cloning through GitHub Desktop as the sole onboarding route. The compact guide explains account creation, cloning and an installed-Python workflow in the VS Code terminal. A venv isolates the editor dependencies, installed with pip from requirements.txt, the runtime-only export of uv.lock. Cloning downloads this dependency list; the one-time pip command installs the listed packages. The file belongs to DoCTA rather than the Python installer. Regenerate the export when the lock changes. uv remains available to maintainers and is not part of editorial onboarding. Detailed Git operations and recovery remain in the README. Live Server cannot substitute for the editor's write API. The working steps distinguish register-entry creation from occurrence saving, without requiring a transcription change. The GitHub Desktop instructions distinguish local saves, commits, remote transfer and public visibility. Editorial work stays on `main`, as explicitly selected by the operator. Pushing exposes research data and history in the public repository, while changes under `docs/` also update Pages. Transfer scope requires agreement before uploading. Updates use Fetch and Pull on `main` after saving, committing and backing up local work.
+The working guide uses the same service detection. Its direct local exercise link appears only after the write service is identified, preserving the current origin and port. Static readers are directed to start the application and reopen Guide there. The operator selected cloning through GitHub Desktop as the sole onboarding route. The compact guide explains account creation, cloning and an installed-Python workflow in the VS Code terminal. A venv isolates the editor dependencies, installed with pip from requirements.txt, the runtime-only export of uv.lock. Cloning downloads this dependency list; the one-time pip command installs the listed packages. The file belongs to DoCTA rather than the Python installer. Regenerate the export when the lock changes. uv remains available to maintainers and is not part of editorial onboarding. Detailed Git operations and recovery remain in the README. Live Server cannot substitute for the editor's write API. The working steps distinguish register-entry creation from occurrence saving, without requiring a transcription change. The GitHub Desktop instructions distinguish local saves, commits, remote transfer and public visibility. Editorial work stays on `main`, as explicitly selected by the operator. Pushing exposes research data and history in the public repository, while changes under `docs/` also update Pages. Transfer scope requires agreement before uploading. Updates use Fetch and Pull on `main` after saving, committing and backing up local work.
 
 For assisted recovery of unpushed work into a fresh clone with an unchanged data contract and unchanged source texts, preserve the previous stopped project and copy the contents of `pipeline/pages`, `pipeline/reviews`, `pipeline/registry`, `pipeline/tags` and `pipeline/annotations` into the corresponding folders of the new project, where present. Locally edited files take precedence over same-named distributed files. Keep additional new files. Startup does not replay review events, so `pages` and `reviews` must both travel. Program files and `.venv` come from the new installation. Browser drafts are outside this folder backup and must be saved first. Verify a known correction and register occurrence before continuing in the new copy. Changed source texts or incompatible future data contracts require their own migration instructions.
 
-The browser keeps pending corrections until an explicit save succeeds. The backend records the review under `pipeline/reviews/` and updates `pipeline/pages/`. The event stores the server UTC timestamp in `exported`, its `reviewId`, the document and page identities, the reviewer and each line's `original` and `corrected` text. Schema version 2 transfers `exported` into the human run as its timezone-aware `timestamp`. The effective reading selects the newest review run by UTC instant. Existing local runs without that field retain their immutable IDs, whose final twelve-digit `HHMMSSffffff` suffix supplies the save time independently of reviewer initials. The page register keeps earlier runs, and a later review uses the newest effective text as its base. Original Transkribus files and recognition runs remain unchanged. `viewer-review.js` records text corrections without time tracking or page approval controls. Existing review statuses and historical effort fields remain readable for compatibility. A new correction sends a null decision; the ingest layer retains its legacy `gesichtet` state with reason `text-corrected`, while the interface labels the factual change as `Lokal korrigiert`. Earlier curation sidecars under `pipeline/annotations/` remain keyed by extraction identity and source-line digest. The current viewer does not load their editing interface.
+The browser keeps pending corrections until an explicit save succeeds. The backend records the review under `pipeline/reviews/` and updates `pipeline/pages/`. The event stores the server UTC timestamp in `exported`, its `reviewId`, the document and page identities, the reviewer and each line's `original` and `corrected` text. Schema version 2 transfers `exported` into the human run as its timezone-aware `timestamp`. The effective reading selects the newest review run by UTC instant. Existing local runs without that field retain their immutable IDs, whose final twelve-digit `HHMMSSffffff` suffix supplies the save time independently of reviewer initials. The page register keeps earlier runs, and a later review uses the newest effective text as its base. Original Transkribus files and recognition runs remain unchanged. `viewer-review.js` records text corrections without time tracking or page approval controls. Existing review statuses and historical effort fields remain readable for compatibility. A new correction sends a null decision; the ingest layer retains its legacy `gesichtet` state with reason `text-corrected`, while the interface labels the factual change as `Corrected locally`. Earlier curation sidecars under `pipeline/annotations/` remain keyed by extraction identity and source-line digest. The current viewer does not load their editing interface.
 
-The explicit local build takes an edition date and a document selection to check. It rebuilds the complete connected TEI set, including the shared entity register, because document references and the common date must remain consistent. It applies annotation decisions to TEI and graph, rejects stale source digests, validates generated TEI and updates the static text projections. Failed file replacement restores the preceding output set. Saved work, generated files, a local commit and publication remain separate operations. The loopback server neither commits nor pushes. `--root` selects an isolated repository copy for end-to-end tests. Before the server starts, the source readers are bound to that same root, so viewing, anchor checks and TEI generation cannot silently use the original checkout's text or metadata.
+The explicit local build takes an edition date and a document selection to check. It rebuilds the complete connected TEI set, including the shared entity register, because document references and the common date must remain consistent. It applies annotation decisions to TEI and graph, rejects stale source digests, validates generated TEI and updates the static text projections. It writes `docs/data/pipeline/transcriptions/<docId>.json` through `build_register.site_transcription` with the title from `pipeline/documents.json`, the same path `build_register.py --project` takes, so the two projections cannot drift apart. Failed file replacement restores the preceding output set. Saved work, generated files, a local commit and publication remain separate operations. The loopback server neither commits nor pushes.
+
+Every API failure is answered as JSON with an `error` field. Invalid input gives 400, an untrusted host or a failed write token 403, an unknown path or document 404, a stale revision or conflicting write 409, and a body outside the size limit 413. Stored state the server cannot read gives 500 with a message naming the problem. Any other unexpected failure gives 500 with the generic message `internal error`, while the traceback goes to the server log only. A save writes its review event first and then the register. If the register write fails, the event is removed again, because startup replays no events and an orphaned event would record a save that never took effect. `--root` selects an isolated repository copy for end-to-end tests. Before the server starts, the source readers are bound to that same root, so viewing, anchor checks and TEI generation cannot silently use the original checkout's text or metadata.
 
 Register rebuilding and editorial saves share the process and file lock in `io_paths.py`; `apply_review.review_lock` remains a compatibility import. Rebuilding holds the lock while carrying existing corrections and replacing the register. New correction runs retain a digest of their event, so an identical replay preserves newer verification and changed content under an existing identity is refused. Historical correction runs without a digest are checked against their predecessors and remain unchanged.
 
@@ -73,15 +75,15 @@ The pins lag behind upstream. That is deliberate. The versions are frozen since 
 
 | Page | Purpose |
 |------|---------|
-| `index.html` | German source catalogue with search, category and availability filters, source attribution and links to accessible text or first images |
+| `index.html` | Source catalogue with search, category and availability filters, source attribution and links to accessible text or first images |
 | `viewer.html` | Source explorer. OpenSeadragon facsimile beside the transcription, with a line overlay coupling image and text, line corrections and editor-owned source annotations, plus a reading mode over the whole document text |
 | `register.html` | Editor-owned Index with persons, places, controlled terms and links to source occurrences |
-| `guide.html` | German installation and working guide for correction, source annotation and local versioning |
+| `guide.html` | Installation and working guide for correction, source annotation and local versioning. It includes fetching and pulling the latest version before each session and states that annotation is available only in the local working edition |
 | `exploration.html` | Workbench over the extracted content layer, a D3 network over `data/graph.jsonld` and a sortable entity table per source |
 | `benchmark.html` | Results of the versioned prompt benchmark, read from `data/benchmark/` |
 | `about.html` | About the project, data sources, imprint |
 
-Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. The knowledge base itself has no page on the site since 28.08.2026; it lives as Markdown under `docs/knowledge/` and addresses agents and repository readers, while the About page links to it on GitHub.
+Navigation is generated centrally in `js/app.js`, so a page added to the site is registered in one place. The operator decided on 2026-10-20 that every page, the guide included, is English. Source text and quoted source wording stay as they are. The German data vocabulary stays German in the data, and `vocabLabel` in `js/utils.js` maps it to English labels for display. `js/strings.js` holds the wording that is itself a requirement, the provenance statements and the draft badge, and the browser tests import it so that they assert the shipped wording. On static hosting the viewer shows a persistent read-only hint (`#readonly-hint`) linking to `guide.html#launch`. The knowledge base itself has no page on the site since 28.08.2026; it lives as Markdown under `docs/knowledge/` and addresses agents and repository readers, while the About page links to it on GitHub.
 
 `js/sources.js` controls source selection. The shared `js/source-images.js` validates the recorded collection URL and constructs only its known first-page image. The viewer chooses this read-only path for explicitly image-only documents before contacting the local document API. Errors for documents known to carry transcription remain errors. A collection page total never generates fictitious image pages, and text editing controls stay unavailable for image-only documents.
 
@@ -161,21 +163,32 @@ IndexedDB is optional. If the database does not open within one and a half secon
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, register, exploration, benchmark, about
+│   ├── *.html              index, viewer, register, guide, exploration, benchmark, about
 │   ├── css/styles.css      Shared design tokens and site styles
 │   ├── css/viewer.css      Working editor layout and disclosures
-│   ├── js/                 ES6 modules shared by several pages
+│   ├── css/viewer-registry.css  Annotation field, register sidebar and source marks
+│   ├── css/register.css    Index page
+│   ├── css/guide.css       Working guide
+│   ├── js/                 ES6 modules of the site
 │   │   ├── app.js          Navigation, banner, footer
 │   │   ├── benchmark.js    Benchmark tables from data/benchmark/summary.json
 │   │   ├── data-loader.js  Fetch JSON, IndexedDB cache
 │   │   ├── entity-view.js  Attestation links and provenance badges, shared by
 │   │   │                   exploration views
+│   │   ├── guide.js        Local-service detection and exercise links of the guide
 │   │   ├── network.js      D3 force network over data/graph.jsonld
-│   │   ├── utils.js        Formatting, sorting, escaping, localStorage
+│   │   ├── utils.js        Formatting, sorting, escaping, localStorage, vocabLabel
+│   │   ├── strings.js      Requirement-bearing interface wording (provenance, draft badge)
 │   │   ├── viewer-render.js  Transcription, reading text, TEI
 │   │   ├── viewer.js       Viewer page controller and image navigation
 │   │   ├── viewer-review.js  Correction drafts, explicit save/discard and export
 │   │   ├── viewer-local.js   Local editor capability and API requests
+│   │   ├── viewer-annotation-workspace.js  Shared annotation popover and its source context
+│   │   ├── viewer-annotation-popover.js    Popover positioning and fixed fallback
+│   │   ├── viewer-registry.js          Registry interaction in the viewer
+│   │   ├── viewer-registry-markup.js   Registry form markup
+│   │   ├── viewer-registry-anchors.js  Source-range rendering of saved occurrences
+│   │   ├── viewer-registry-display.js  Search labels, Occurrence links, history
 │   │   ├── register.js       Editor-owned Index view and source links
 │   │   ├── sources.js        Searchable source overview
 │   │   └── source-images.js  Validated first-image metadata
@@ -204,13 +217,16 @@ DoCTA/
 │   │                       TEI generation, validation, healthcheck
 │   ├── accounts/           Executable part of the account-book encoding specification
 │   ├── reviews/            Saved correction events
-│   ├── annotations/        Human decisions on machine proposals
-│   ├── tags/               Retained legacy page and line annotations
+│   ├── annotations/        Human decisions on machine proposals (created on first write)
+│   ├── tags/               Retained legacy page and line annotations (created on first write)
+│   ├── registry/           Editor-owned register index.json (created on first write)
 │   ├── prompts/            Prompts of the pipeline's extraction scripts
 │   └── schema/             Vendored tei_all.rng and the project schema docta.rng
 ├── scripts/                Python build-time scripts
-└── tests/                  Smoke and interaction tests against the published site
+└── tests/                  Playwright checks run locally (see Tests)
 ```
+
+`pipeline/annotations/`, `pipeline/tags/` and `pipeline/registry/` are not part of the repository. The atomic writers in `io_paths.py` create a folder when the local editor first saves into it, so a fresh clone lacks all three until that happens.
 
 The module layout departs from the original plan, and it has moved twice. One module per page was planned (`network-view.js`, `search-engine.js`, `source-table.js`, `document-viewer.js`, `pipeline-demo.js`). What was built first was the opposite rule, page-specific JavaScript as `<script type="module">` directly in its HTML file, with `js/` holding only what several pages share. The reason was the missing build step, since each module costs an additional HTTP request while the code of one page is used by no other.
 
@@ -255,7 +271,7 @@ Entries use UUIDs independent of their names. Persons, places and terms have pre
 
 Date mentions have kind `date` and no entry ID. Optional `when`, `notBefore` and `notAfter` retain ISO strings at year, month or day precision. `when` excludes interval bounds. Validation uses the proleptic Gregorian calendar in years 0001–9999 and compares the first possible lower day with the last possible upper day. `uncertain` records the editor's uncertainty separately from precision. The service never converts a historical calendar or infers a normalized date. Other mention kinds reject these fields. Existing entries and historical events retain their original shapes under schema version 1.
 
-The frontend searches precomputed name and alias forms locally, including umlaut variants. It never merges identities. Fundstelle links preserve document, page and mention identity. Manual mentions and exact machine occurrences use different identifiers. The generated extraction index remains a separate name-based aggregation. The TEI/graph build does not consume the editorial register in this version. JSON export preserves the new research data and audit events.
+The frontend searches precomputed name and alias forms locally, including umlaut variants. It never merges identities. Occurrence links preserve document, page and mention identity. Manual mentions and exact machine occurrences use different identifiers. The generated extraction index remains a separate name-based aggregation. The TEI/graph build does not consume the editorial register in this version. JSON export preserves the new research data and audit events.
 
 Machine-proposal decisions retain their existing sidecar contract and now append actor, timestamp and previous/new decision values in the same atomic write. Historical files load with an empty history until a new decision is saved. Document API responses expose the selected original transcription run separately from human corrections. Source timestamps are read from saved events where available and otherwise remain as recorded in the run.
 
@@ -269,7 +285,13 @@ The application version comes from `pyproject.toml` and is returned by the local
 
 ## Tests
 
-`tests/` holds a smoke test and an interaction test driven by Playwright. Both start a local server that deliberately serves the repository under the subpath `/DoCTA/`, exactly as GitHub Pages does, so that path errors invisible at a domain root become visible. Both derive their page list from the `*.html` files in `docs/`, so a new page is covered without an edit to the tests, and both exit nonzero when they report any finding, which makes them usable as a gate rather than as a report to read. The smoke test loads every page and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. The interaction test exercises the central controls of each page. Playwright is not a project dependency; the site itself has no Node dependencies. Their README states how to install and run them.
+`tests/` holds six Playwright scripts and the shared helper `facsimile-fixtures.mjs`, which answers image requests from already cached facsimiles where the register's IIIF key matches and otherwise lets the original request through. Every script runs on the local machine, binds its server to a free port (port 0), and exits nonzero on any finding, which makes it usable as a gate. None of them loads the published site. The scripts locate states through attributes the pages expose for that purpose, `data-provenance`, `data-state`, `data-stale` and `data-testid`, rather than through visible wording.
+
+- `smoketest.mjs` and `interaction-test.mjs` start a local server that serves the repository under the subpath `/DoCTA/`, as GitHub Pages does, so that path errors invisible at a domain root become visible. Both derive their page list from the `*.html` files in `docs/`, so a new page is covered without an edit to the tests. The smoke test loads every page and its citable deep links and reports console errors, uncaught exceptions, failed network requests, HTTP status codes from 400 upwards and internal links that resolve to no file. It also carries the language guard, which requires `lang="en"` on every page and checks rendered text and the string literals of the site scripts against a denylist of German interface words, excluding source text containers. The interaction test exercises the controls of each page and two named flows, the source search and the correction loop.
+- `sources-ui-test.mjs` and `viewer-ui-test.mjs` serve `docs/` at the root and check named flows, the source overview and the viewer's header, dialogs, image fit and simplified correction flow. The viewer test answers the write API from memory.
+- `registry-editor-test.mjs` and `guide-walkthrough-test.mjs` start the real `local_editor.py` over an isolated copy of the data and check registry editing and the guide's person exercise. `DOCTA_TEST_PYTHON` lets the guide walkthrough run in a separately installed Python environment.
+
+Playwright is not a project dependency; the site itself has no Node dependencies. `tests/README.md` states how to install and run the scripts and what each one covers.
 
 ## coOCR/HTR as a reference
 

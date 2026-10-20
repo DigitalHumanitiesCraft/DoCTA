@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-17
+updated: 2026-10-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -91,15 +91,15 @@ Which interfaces and functions the editor needs is worked out together with her.
 
 ### Controlled terms and retained tags
 
-The editor assigns Begriffe to selected passages through the shared annotation field and builds the controlled vocabulary in the editorial register. Index exposes these terms and their source occurrences. The former separate Schlagwörter dialog is removed. Existing page and line tags remain in their original storage and are not silently promoted into register entries. Their optional migration requires a defined mapping of source scope and vocabulary identity.
+The editor assigns terms to selected passages through the shared annotation field and builds the controlled vocabulary in the editorial register. Index exposes these terms and their source occurrences. The former separate keyword dialog is removed. Existing page and line tags remain in their original storage and are not silently promoted into register entries. Their optional migration requires a defined mapping of source scope and vocabulary identity.
 
 ## Technical constraints
 
 | Constraint | Reason |
 |-----------|--------|
-| GitHub Pages, static | No backend, no server |
+| Public site on GitHub Pages, static | The published site has no backend. Repository write-back runs only through the local loopback editor (`pipeline/local_editor.py`) |
 | Vanilla JavaScript, ES6 modules | No framework, no build process, no npm at runtime |
-| Vendored dependencies | External libraries in `/lib/`, no CDN dependency |
+| Vendored dependencies | External libraries in `docs/lib/`, no CDN dependency |
 | Public, no authentication | The site has to be reachable by reviewers and by the project team alike |
 
 ## Answering the review of the first submission
@@ -141,13 +141,19 @@ The full review specification is in `htr-evaluation.md`.
 
 ## Annotation curation in the viewer
 
-The working viewer shows editor-owned annotations only. Selecting text within one saved line opens Person, Begriff, Ort and Datumsangabe. Right-click is an additional entry point, while a toolbar button and Alt+A keep the action accessible without it. Persons, places and terms link to the editorial register. Dates preserve their quotation with optional exact or bounded normalization and uncertainty. Opening the viewer or selecting text performs no model API call and does not display stored machine proposals.
+The working viewer shows editor-owned annotations only. Selecting text within one saved line opens Person, Term, Place and Date. Right-click is an additional entry point, while a toolbar button and Alt+A keep the action accessible without it. Persons, places and terms link to the editorial register. Dates preserve their quotation with optional exact or bounded normalization and uncertainty. Opening the viewer or selecting text performs no model API call and does not display stored machine proposals.
 
 Index beside Viewer provides a dedicated view of the saved persons, places and controlled vocabulary. Search covers names, spelling variants and notes. Category filters narrow the entries, and source links return to the exact assignment. Names never establish identity on their own. Entry creation and correction remain attached to source passages in the viewer. The persistence and publication boundaries are defined in [architecture.md](architecture.md#editorial-register-persistence).
 
 Earlier machine extractions and curation sidecars remain available to the existing pipeline. Their provenance distinguishes DoCTA extraction from Inventaria transcription. The build still applies recorded accepted normalizations and rejected occurrences to generated TEI and graph and rejects stale decisions. This compatibility does not import those proposals into the working annotation interface. Editorial register assignments do not yet enter that generated output.
 
 SiCProD, Wikidata, GND and the Getty Art & Architecture Thesaurus remain possible future reconciliation resources. External identity enrichment requires a separate editorial decision and is not part of the initial index-building workflow.
+
+## Interface language and unclear readings, decided 2026-10-20
+
+The operator decided that the entire website, including the working guide and the viewer, is English. Historical source text, quoted source wording and the German data vocabulary of the register stay German. The historical project lead asked for a fully English working edition to support a proposal to the Austrian Science Fund (FWF).
+
+The operator also decided that unclear readings receive one uniform notation inside the transcription text. The viewer shows the marked passage with a tooltip, correction mode can set and remove the mark, and the TEI build converts it into an encoding of its own. The notation and its TEI form are specified in a later package. This decision fixes the mechanism and leaves the syntax open.
 
 ## Decisions that lie with the project lead
 
@@ -167,13 +173,12 @@ Windows and macOS launchers use the same Python service and locked dependencies,
 
 These decisions remain with the historical project lead.
 
-- The remaining transcription rules and accepted reference sample. The operator has confirmed retaining original spelling in the working transcription, including `hawsrat`. Abbreviation expansion and uncertain readings remain open. `htr-evaluation.md` names the scholarly review requirements.
+- The remaining transcription rules and accepted reference sample. The operator has confirmed retaining original spelling in the working transcription, including `hawsrat`, and on 2026-10-20 decided a uniform notation for unclear readings (see above). Abbreviation expansion and which readings count as unclear remain open. `htr-evaluation.md` names the scholarly review requirements.
 - The editor-owned vocabulary, including its preferred terms, variants, broader-term relations and any verbs useful to the research question. The wider distinctions between place and space, object identity, practice and event remain scholarly modelling decisions (`domain-knowledge.md`).
 - The agreed scope of any joint historical pilot or commissioned output and its scholarly acceptance (`project.md`). Independent use across the existing source material is already within the operator's confirmed scope.
 
 ## Open questions
 
-- Structural line insertion, split and merge require an explicit identity, region and annotation-migration contract before they can safely change source anchors.
-
-- Whether bilingual presentation in German and English is needed is unresolved. The site is currently English; the source material and the working documents are German.
+- Structural line insertion, split and merge require an explicit identity, region and annotation-migration contract before they can safely change source anchors. Excluding a line from the edition text, marking an unclear reading and a mention made of segments that each sit in one line leave line identities unchanged and need no such contract.
+- How lines that are not source text are excluded, such as modern archival notes, foliation and editorial folio markers. Emptying the line is unsuitable, as recorded in [plan.md](plan.md#boundaries-still-requiring-implementation-or-evidence).
 - Which case study the resubmission builds on is not decided (see domain-knowledge.md).

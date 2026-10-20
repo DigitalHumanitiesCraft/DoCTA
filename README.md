@@ -2,9 +2,9 @@
 
 An agentic edition pipeline for the court records of Sigismund of Tyrol (1427–1496), held by the Tyrolean State Archives.
 
-[Public site](https://dhcraft.org/DoCTA/), [German working guide](https://dhcraft.org/DoCTA/guide.html) and [project knowledge](docs/knowledge/INDEX.md).
+[Public site](https://dhcraft.org/DoCTA/), [working guide](https://dhcraft.org/DoCTA/guide.html) and [project knowledge](docs/knowledge/INDEX.md).
 
-For a first local start, follow the [compact German guide](https://dhcraft.org/DoCTA/guide.html#start). Create a GitHub account if needed, clone with GitHub Desktop and use Python in the VS Code terminal. The guide covers setup, starting, editing and saving. Detailed Git and recovery instructions remain below.
+For a first local start, follow the [compact guide](https://dhcraft.org/DoCTA/guide.html#start). Create a GitHub account if needed, clone with GitHub Desktop and use Python in the VS Code terminal. The guide covers setup, starting, editing and saving. Detailed Git and recovery instructions remain below.
 
 ## What this is
 
@@ -48,13 +48,13 @@ If the port is occupied, the starter leaves the running service intact. Stop you
 
 ### Correct, save and resume
 
-1. Open Bearbeiten, enter initials and correct a line against the image.
-2. Select Änderungen speichern and wait for confirmation. Reload to inspect the saved reading. Enter alone retains a browser draft.
-3. Select a passage in a saved line and choose Begriff to assign a controlled term, or Person, Ort or Datumsangabe for the corresponding annotation. The annotation field holds the optional note and register assignment.
+1. Open Edit, enter initials and correct a line against the image.
+2. Select Save changes and wait for confirmation. Reload to inspect the saved reading. Enter alone retains a browser draft.
+3. Select a passage in a saved line and choose Term to assign a controlled term, or Person, Place or Date for the corresponding annotation. The annotation field holds the optional note and register assignment.
 4. Open Index to find saved entries and return to their source occurrences.
-5. Use Weitere Funktionen to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
+5. Use More functions to derive and validate edition output from saved work when needed. Saved data, generated output, Git commits and publication are separate steps. Editorial register assignments currently export separately as JSON.
 
-Work on the sources relevant to your research. Annotation requires no artificial text correction. Correct a reading only where the image supports it. Änderungen verwerfen discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
+Work on the sources relevant to your research. Annotation requires no artificial text correction. Correct a reading only where the image supports it. Discard changes discards the current page draft and preserves saved text. Leave an uncertain reading unchanged and attach a note to the selected passage. Source spelling stays in the transcription even when a register entry uses a normalized name.
 
 Before finishing, save text changes and every open annotation form separately. Stop the server with Ctrl+C in its terminal after saving. For the next session, run the start command again and reopen the local link. Saved corrections and annotations reside in the project folder. Clearing browser storage can remove unsaved drafts.
 
@@ -73,11 +73,11 @@ Feedback should include the document and page, the action attempted, the expecte
 
 ### Build a person index and vocabulary
 
-1. Select text within one saved transcription line. A small toolbar offers Person, Begriff, Ort and Datumsangabe. Right-clicking the selection also opens the toolbar. Auswahl annotieren and Alt+A provide an explicit alternative.
-2. Choose a category. The same field beside the passage contains the assignment and its history. For persons, places and terms, search for an existing register entry or choose Neuer Registereintrag. Create or edit the entry in that field, save it, then explicitly save the occurrence. Noch nicht zugeordnet retains an unresolved occurrence with a note.
-3. For a date, retain the source wording and optionally enter a normalized year, month or day using `YYYY`, `YYYY-MM` or `YYYY-MM-DD`. A Zeitraum can have an earliest and/or latest bound. Unsichere Datierung records uncertainty. The editor decides the historical interpretation and any calendar conversion. Validation uses the proleptic Gregorian calendar, without automatic conversion.
-4. Save the occurrence with your initials. Click its editorial mark to edit or remove it later. Removing an annotation preserves the source text and retains the previous value in history. Closing the inline field retains unsaved input, available through Annotation fortsetzen. Explicit discard removes that draft.
-5. Open Register to search persons, places and terms in a collapsible sidebar. Entries hold a preferred label, spelling variants and notes. Terms may have a broader term. Fundstellen link back to source passages, and equal names remain independent identities. Register als JSON exportieren downloads the saved entries, occurrences and history.
+1. Select text within one saved transcription line. A small toolbar offers Person, Term, Place and Date. Right-clicking the selection also opens the toolbar. Annotate selection and Alt+A provide an explicit alternative.
+2. Choose a category. The same field beside the passage contains the assignment and its history. For persons, places and terms, search for an existing register entry or choose New register entry. Create or edit the entry in that field, save it, then explicitly save the occurrence. Not yet assigned retains an unresolved occurrence with a note.
+3. For a date, retain the source wording and optionally enter a normalized year, month or day using `YYYY`, `YYYY-MM` or `YYYY-MM-DD`. A Period can have an earliest and/or latest bound. Uncertain date records uncertainty. The editor decides the historical interpretation and any calendar conversion. Validation uses the proleptic Gregorian calendar, without automatic conversion.
+4. Save the occurrence with your initials. Click its editorial mark to edit or remove it later. Removing an annotation preserves the source text and retains the previous value in history. Closing the inline field retains unsaved input, available through Continue annotation. Explicit discard removes that draft.
+5. Open Register to search persons, places and terms in a collapsible sidebar. Entries hold a preferred label, spelling variants and notes. Terms may have a broader term. Occurrences link back to source passages, and equal names remain independent identities. Export register as JSON downloads the saved entries, occurrences and history.
 
 If source text changes, affected occurrences require checking. Their retained quotations remain inspectable. Select the new wording to create a replacement occurrence, and remove the superseded occurrence when appropriate. The first version anchors selections within a single existing line. It does not split or merge transcription lines.
 
@@ -85,13 +85,13 @@ The editorial register identifies persons and classifies source occurrences. Eve
 
 ### Select sources
 
-Quellen opens the searchable source overview with all source types and availability states visible by default. Availability filters distinguish sources with transcription, sources with a stored image address and archival records. Image-only sources open the first image whose address is recorded. The viewer names the documented total separately and does not invent missing pages. Transcription attribution is shown on the source row and in the viewer. Research preview links to the project explanation.
+Sources opens the searchable source overview with all source types and availability states visible by default. Availability filters distinguish sources with transcription, sources with a stored image address and archival records. Image-only sources open the first image whose address is recorded. The viewer names the documented total separately and does not invent missing pages. Transcription attribution is shown on the source row and in the viewer. Research preview links to the project explanation.
 
-The separate Schlagwörter dialog is retired. Earlier tag files and browser drafts remain preserved; new controlled terms are assigned through the common annotation field. Historical tags are not automatically converted into register entries.
+The separate keyword dialog is retired. Earlier tag files and browser drafts remain preserved; new controlled terms are assigned through the common annotation field. Historical tags are not automatically converted into register entries.
 
 ### Browse the index and check text provenance
 
-Index beside Viewer opens the editor-owned person and place index and controlled vocabulary. Search preferred names, spelling variants and notes, or filter by category. A selected entry shows its description, broader term where recorded, and source occurrences. Follow a Fundstelle to reopen that exact assignment in the viewer. Equal names remain independent entries. The page reads saved entries and does not merge or import the generated machine index.
+Index beside Viewer opens the editor-owned person and place index and controlled vocabulary. Search preferred names, spelling variants and notes, or filter by category. A selected entry shows its description, broader term where recorded, and source occurrences. Follow an occurrence to reopen that exact assignment in the viewer. Equal names remain independent entries. The page reads saved entries and does not merge or import the generated machine index.
 
 The annotation field in the viewer contains only editorial assignments. Selecting source text performs no LLM call and displays no automatic proposal. The historical editor builds the index and vocabulary through explicit assignments. Earlier extraction files and annotation decisions remain in the project data, available to their existing processing workflows.
 
@@ -104,7 +104,7 @@ The public GitHub Pages viewer supports browser transcription drafts and JSON ex
 ```
 DoCTA/
 ├── docs/                   Published site, GitHub Pages serves this folder on main
-│   ├── *.html              index, viewer, exploration, benchmark, about
+│   ├── *.html              index, viewer, register, guide, exploration, benchmark, about
 │   ├── css/, js/, lib/     Design tokens, shared ES6 modules, vendored dependencies
 │   ├── data/               Pre-processed JSON read by the site
 │   └── knowledge/          The Promptotyping knowledge base, Markdown read in the repository
@@ -122,16 +122,17 @@ DoCTA/
 │   │                       TEI generation, validation and the cross-artifact healthcheck
 │   ├── accounts/           Executable part of the account-book encoding specification
 │   ├── reviews/            Saved correction events
-│   ├── annotations/        Retained decisions on machine entity proposals
-│   ├── tags/               Retained legacy page and line tags
-│   ├── registry/           Editor-owned entries, source assignments and history
+│   ├── annotations/        Decisions on machine entity proposals (created on first write)
+│   ├── tags/               Legacy page and line tags (created on first write)
+│   ├── registry/           Editor-owned entries, assignments and history (created on first write)
 │   ├── prompts/            Prompts used by the pipeline's extraction scripts
 │   └── schema/             Vendored TEI P5 grammar and the project schema docta.rng
 ├── scripts/                Python build-time scripts for data fetching and transformation
-└── tests/                  Playwright smoke and interaction tests against the published site
+└── tests/                  Playwright checks run locally, over the served docs/ tree or the
+                            real local editor on an isolated data copy
 ```
 
-The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. Details are in `docs/knowledge/architecture.md`.
+The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. `pipeline/annotations/`, `pipeline/tags/` and `pipeline/registry/` are absent from a fresh clone. The local editor creates each folder when it first saves into it, and the recovery instructions apply to them only where present. Details are in `docs/knowledge/architecture.md`.
 
 The figures the site shows are computed in the browser from the source catalogue in `docs/data/sources.json` and the register projection in `docs/data/pipeline/register_summary.json`, so no count is hard-coded in a page. Benchmark results live in `evaluation/benchmark/summary.json`, with the published export under `docs/data/benchmark/`.
 

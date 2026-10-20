@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-21
+updated: 2026-10-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -23,7 +23,7 @@ related: [project, specification, plan, data, htr-evaluation, domain-knowledge, 
 
 # INDEX
 
-The knowledge base connects DoCTA's research purpose, source evidence and requirements to its maintained implementation. [project.md](project.md) defines the project, [handoff.md](handoff.md) records current results and unresolved work, and [plan.md](plan.md#joint-walkthrough) begins the research conversation with goals, material, annotation needs and intended analysis. The published [German working guide](../guide.html) explains installation and the editorial workflow.
+The knowledge base connects DoCTA's research purpose, source evidence and requirements to its maintained implementation. [project.md](project.md) defines the project, [handoff.md](handoff.md) records current results and unresolved work, and [plan.md](plan.md#joint-walkthrough) begins the research conversation with goals, material, annotation needs and intended analysis. The published [working guide](../guide.html) explains installation and the editorial workflow.
 
 ## Document register
 
@@ -50,7 +50,7 @@ File names follow the Promptotyping naming contract, lowercase canonical functio
 | Document | Responsibility |
 |---|---|
 | [README.md](../../README.md) | Public introduction and local editing entry point |
-| [docs/guide.html](../guide.html) | German installation and working guide for the historical editor |
+| [docs/guide.html](../guide.html) | Installation and working guide for the historical editor |
 | [CLAUDE.md](../../CLAUDE.md) | Agent instructions, commands and implementation constraints |
 | [pipeline/README.md](../../pipeline/README.md) | Register, correction provenance and processing contract |
 | [tests/README.md](../../tests/README.md) | Executable checks and their observed scope |
@@ -62,14 +62,15 @@ The Obsidian document `Project Overview DoCTA` connects this repository to the w
 1. **INDEX.md** (this document), orientation
 2. **handoff.md**, current result, open work and open handoff points
 3. **project.md**, what the project is
-4. **data.md**, which data exist and where they break
-5. **htr-evaluation.md**, how transcriptions are produced, compared and approved
-6. **domain-knowledge.md**, the scholarly framework needed for correct interpretation
-7. **specification.md**, what the work has to deliver and against which criticism
-8. **architecture.md**, how site and pipeline are built
-9. **design.md**, why it looks and behaves as it does
-10. **editorial-model.md** and **accounting-encoding.md**, read together before any work on the account-book pilot
-11. **journal.md**, decision history, read on demand
+4. **plan.md**, the source-bound pilot, the feedback round and the acceptance evidence
+5. **data.md**, which data exist and where they break
+6. **htr-evaluation.md**, how transcriptions are produced, compared and approved
+7. **domain-knowledge.md**, the scholarly framework needed for correct interpretation
+8. **specification.md**, what the work has to deliver and against which criticism
+9. **architecture.md**, how site and pipeline are built
+10. **design.md**, why it looks and behaves as it does
+11. **editorial-model.md** and **accounting-encoding.md**, read together before any work on the account-book pilot
+12. **journal.md**, decision history, read on demand
 
 ## Source documents (`sources/`)
 

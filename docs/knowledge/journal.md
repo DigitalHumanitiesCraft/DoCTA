@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-19
+updated: 2026-10-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -22,6 +22,12 @@ related: [INDEX, project, handoff]
 ---
 
 # Journal
+
+## Feedback round, interface language and unclear readings (20.10.2026)
+
+The historical project lead tested the working edition. Corrections worked. Annotation appeared non-functional, most likely because she used the read-only GitHub Pages viewer, which hides the annotate controls without saying why. She asked to remove unneeded lines, mark unclear readings, annotate across line breaks, see work progress, reach more pages of the household chamberlain inventories, link persons to SiCProD, whether the exploration entities were made by an LLM, for a fully English working edition for an FWF proposal, and whether to fork. She was added as collaborator and clones rather than forks. The operator replied that a detailed answer follows, that annotation needs the locally started edition, and asked whether the proposal or the data matters more to her now. Her answer decides the next source selection.
+
+Repository inspection traced the unwanted lines most likely to modern archival notes, foliation and folio markers, as in the last lines of A 024.1. The VLM already labels such lines through `kind`, and Transkribus records region structure types, but the register drops `kind` and `scripts/fetch_transcriptions.py` loses the type. Emptying a line keeps an empty TEI line and stales its anchors. Line-break mentions such as `Jo` / `seph` are split because every entity is bound to one line. Only structural insertion, split and merge need the anchor-migration contract. The exploration entities are `entities_it01` LLM output without human input. The operator decided that the entire website including the guide is English, and that unclear readings get one uniform notation with tooltip, correction-mode editing and TEI conversion, its syntax left to a later package. The same pass corrected stale statements across CLAUDE.md, the READMEs and the knowledge documents (starters, commit hook, tests, accounts build, review overlay, absent sidecar folders, pilot2, reading order). Plan, specification, data, design and handoff carry the result. The documents now also record the English site with its read-only hint, `strings.js` and `vocabLabel`, the stricter review contract, the JSON error answers of the local API with removal of orphaned review events, the shared site-transcription path of the local build and the new `json.entity-corrected` finding. No code, data or published page was changed in this documentation step.
 
 ## Compact installation guide (19.10.2026)
 

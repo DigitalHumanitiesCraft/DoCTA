@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.1"
 created: 2026-08-27
-updated: 2026-09-21
+updated: 2026-10-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [INDEX, data, specification, editorial-model]
@@ -230,7 +230,7 @@ A configuration is released for exactly the research purpose for which it passes
 
 ## Scholarly review points
 
-- The project lead sets the diplomatic target convention and the permissible normalisations. The decision is not taken yet, and specification.md lists it with the other decisions that lie with her.
+- The project lead sets the diplomatic target convention and the permissible normalisations. Two parts are settled. Original spelling is retained in the working transcription (2026-10-16), and unclear readings receive one uniform notation whose syntax is still to be specified (2026-10-20). Abbreviation expansion, the remaining normalisations and the reference sample are open, and [specification.md](specification.md#decisions-that-lie-with-the-project-lead) lists them with the other decisions that lie with her.
 - A representative account-book sample receives line-by-line reference transcriptions.
 - Amounts are adjudicated together with unit, line and any relation to a total.
 - SiCProD name variants are used only in post-processing. Every fuzzy match is preserved as a proposal alongside the original reading.

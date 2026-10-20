@@ -57,7 +57,9 @@ A page carrying an edition run keeps `content_class` `unknown` like every page w
 
 ## Review ingest
 
-The loopback editor (`python pipeline/local_editor.py`, or `start-editor.ps1` on Windows) adds direct repository persistence to this contract. A save carries the loaded document revision and is rejected if another edit has changed it. Successful saves preserve an immutable review record under `reviews/` and an effective reading in `pages/`. Empty corrected text is a deliberate empty reading. The public viewer still exports JSON for the ingest below.
+The loopback editor (`python pipeline/local_editor.py`) adds direct repository persistence to this contract. A save carries the loaded document revision and is rejected if another edit has changed it. Successful saves preserve an immutable review record under `reviews/` and an effective reading in `pages/`. Empty corrected text is a deliberate empty reading. It keeps the line in TEI as an empty `<lb/>`, so it is no way to remove a line that does not belong to the source text. The public viewer still exports JSON for the ingest below.
+
+Three starters in the repository root run the same server with `--open-browser`. `start-editor.cmd` is the Windows double-click starter named in the editorial documentation. It tries `uv` on the PATH, then `uv` under `%USERPROFILE%\.local\bin`, then the project `.venv`. `start-editor.ps1` is an equivalent PowerShell script that tries `uv` and then `.venv`. `start-editor.command` is the macOS starter.
 
 Historical exports may contain `effort` with active seconds, interaction counts and a note. The current interface has no timing, interaction counters or page approval controls. New correction drafts carry a null page decision and generate no effort measurements. The serializer and ingest retain compatibility fields, including null effort values and historical records. Annotation decisions live separately in `annotations/` and carry the source-line digest. See [the local architecture](../docs/knowledge/architecture.md) and [the pilot plan](../docs/knowledge/plan.md).
 
@@ -80,6 +82,8 @@ A review is written against the base text it was made on, meaning the newest ear
 
 Validation and writing are separate phases over the whole invocation. Every file passed to a run is validated first, and the register is written only when all of them pass. A single bad file therefore leaves the register untouched and the run exits nonzero, so a batch never lands half applied and a rerun after the fix has nothing to unpick. `--dry-run` stops after the validation phase and reports what would be written.
 
+The review contract is checked strictly. A page `date` must be a real calendar date in exact `YYYY-MM-DD` form. Page keys consist of ASCII digits only, and two keys naming the same page, such as `2` and `02`, are refused. Text that UTF-8 cannot store, such as a lone surrogate from a JSON escape, is refused before anything is written. A directory argument reads only the `*.json` files directly in that directory, without descending into subdirectories.
+
 A historical status-only export records verification without a new text run. The current editor offers no status-only action. New correction runs retain an event digest; identical reimports skip the existing run and preserve any later verification. Conflicting content under the same identity is refused. Historical correction runs without a digest are reconstructed from their predecessors for the replay check and are not rewritten.
 
 An older status-only decision is skipped when a later correction or verification is recorded. A same-day decision requires comparable timestamps; when their order cannot be established, the import refuses rather than approving a changed reading. Schema version 2 verification retains the event timestamp for that comparison.
@@ -87,7 +91,7 @@ An older status-only decision is skipped when a later correction or verification
 ```
 python apply_review.py                       # ingest pipeline/reviews/
 python apply_review.py review-11327963.json  # one or more files
-python apply_review.py DIR --dry-run         # validate and report only
+python apply_review.py DIR --dry-run         # validate and report only (*.json directly in DIR)
 pytest pipeline/test_apply_review.py
 ```
 
@@ -121,7 +125,7 @@ The two transcription steps are alternatives, and which one a file declares says
 
 Where the text of a document comes from is answered in one place, `build_register.transcription_of`, which returns the Transkribus export where one exists and otherwise the edition runs of the register in the same shape. TEI generation, entity extraction and the healthcheck all ask there, so the three cannot disagree about what a document says.
 
-Within that, the text of a page comes from the review layer of the register where one exists. A page whose register verification is `gesichtet` or `abgenommen` and which carries a review run is written from the lines of its newest review run; every other page is written from the raw Transkribus export. The layout data always comes from the export, so zones and `lb` bindings are unaffected, since a correction changes a reading and leaves the position of the line on the image alone. Entity anchors are cut against the text the file actually carries, so a corrected line is matched on its reviewed reading.
+Within that, the text of a page comes from the review layer of the register where one exists. `transcription_of` passes its result through `effective_transcription_from_pages`, which overlays the lines of the newest review run of every page that carries one, whatever its `verification` status. A page without a review run keeps the text of the export or the edition run. `build_tei.py` reads that effective text and additionally collects the review texts of the pages whose verification is `gesichtet` or `abgenommen`. For those pages it applies the same newest run a second time. Only those pages enter the review declarations, the `revisionDesc` entries and the stream status described below. A review run on a page whose verification is still `unbearbeitet` therefore changes the text of the TEI file without declaring a review. The ingest normally prevents that case, because a saved correction maps to `gesichtet`. The layout data always comes from the export, so zones and `lb` bindings are unaffected, since a correction changes a reading and leaves the position of the line on the image alone. Entity anchors are cut against the text the file actually carries, so a corrected line is matched on its reviewed reading.
 
 The review layer outranks the Transkribus states in `transcription-summary`. A document with some reviewed pages reports `partly-reviewed`, a document whose every page is `abgenommen` reports `approved`, and a document without a review keeps the state derived from the DONE page count. The `editorialDecl` says the same in plain words for a reader of the file.
 
@@ -162,7 +166,7 @@ pytest pipeline/test_build_tei.py
 
 ## Quality gates
 
-Two gates stand between the generators and a commit, the two-stage schema validation and the cross-artifact healthcheck. Both are wired into the pre-commit hook configured in `.pre-commit-config.yaml`, which is what actually runs them; `uv run pre-commit run --all-files` reproduces that run by hand. The healthcheck's clean rebuild is slow, so under pytest it sits behind the `slow` marker and runs with `uv run pytest -m slow` and in the hook, while the ordinary test run stays fast.
+Two gates stand between the generators and a commit, the two-stage schema validation and the cross-artifact healthcheck. The pre-commit hook configured in `.pre-commit-config.yaml` runs ruff, a guard against newly added files over 1 MB, the fast pytest suite and `check_pipeline.py` directly. The healthcheck itself runs both schema stages, so `validate_tei.py` has no hook of its own. `uv run pre-commit run --all-files` reproduces that run by hand. Under pytest the clean-rebuild healthcheck and the slow schema test sit behind the `slow` marker, which `pyproject.toml` excludes by default. `uv run pytest -m slow` runs them explicitly, and the hook does not invoke that marker.
 
 ### The two schemas
 
@@ -185,6 +189,8 @@ The reference check also holds the projection flag `has_tei` against the TEI dir
 
 The reference check runs over the entity layer as well. Every `@ref` of a document has to resolve to an `xml:id` of `register.xml`, and the register and `graph.jsonld` have to name the same entities, since both take their ids from `entity_index.py`. An entry that no document points at is reported as INFO rather than as a defect, because an entity whose anchor was not placeable keeps its register entry on purpose.
 
+The entity files are checked against the text their anchors name. An entity whose surface form is missing only from the human-corrected reading of its line, while the unrevised source line still carries it, is INFO `json.entity-corrected`, consistent with `build_tei.py`, which leaves such an entity unencoded and reports the reason. A correction is editorial work and no defect of the extraction. A surface form missing from the unrevised source line as well remains FAIL `json.entity-verbatim`.
+
 The metrics check covers all three evaluation summaries, the two pilots and the benchmark. For the benchmark it reads the degenerate reference from the `reference_degenerate` flag the summary persists, never from the measured rate, and a page whose rate exceeds one while the flag is absent is a FAIL, because the criterion behind the flag then missed a case a consumer would have to exclude by value again. The same check holds `evaluation/benchmark/summary.json` and its site copy `docs/data/benchmark/summary.json` byte for byte, since that copy is made by hand and nothing else keeps the published figures and the measured ones together.
 
 A finding is FAIL or INFO and carries the id of the check that raised it. INFO is a fact worth seeing that is not a defect, such as a page whose reference transcription is degenerate, a repeat pair whose line counts diverge far enough to want a third run, or a document that sits in one set and not in another for a reason already settled in the data. Only FAIL decides the exit code.
@@ -199,11 +205,11 @@ pytest pipeline/test_check_pipeline.py
 
 `accounts/` is the executable part of the account-book encoding specification. `docs/knowledge/accounting-encoding.md` and `docs/knowledge/editorial-model.md` are the specification; this module implements the part of it that a test can hold to, and it carries its own fixtures, schemas and tests.
 
-Implemented are four things. `anchors.py` reads PAGE XML into source anchors and lines. `models.py` holds the pydantic models `SourceAnchor`, `TranscriptionLine`, `TranscriptionRevision`, `AnnotationProposal` and `ReviewDecision` with the separate status axes of the editorial model, so verification, editorial decision, formal validation and publication stay four independent fields. `review.py` supplies `proposal_is_stale`, `stale_proposal_ids` and `make_review_decision`, which is the machinery that makes a proposal fall out of date when the text it points into changes. `validate_tei.py` and `validate_rdf.py` run the account-book artefacts against the project RELAX NG, the Schematron rules and the SHACL shapes in `accounts/schema/` and `accounts/shapes/`.
+Implemented are five things. `anchors.py` reads PAGE XML into source anchors and lines. `models.py` holds the pydantic models `SourceAnchor`, `TranscriptionLine`, `TranscriptionRevision`, `AnnotationProposal` and `ReviewDecision` with the separate status axes of the editorial model, so verification, editorial decision, formal validation and publication stay four independent fields. `review.py` supplies `proposal_is_stale`, `stale_proposal_ids` and `make_review_decision`, which is the machinery that makes a proposal fall out of date when the text it points into changes. `validate_tei.py` and `validate_rdf.py` run the account-book artefacts against the project RELAX NG, the Schematron rules and the SHACL shapes in `accounts/schema/` and `accounts/shapes/`. `build_edition.py` joins one machine run of account book 2 to a PAGE document whose line text matches it exactly and writes the anchored `TranscriptionRevision` together with an Edition Build Manifest carrying checksums of inputs, outputs and generator. The manifest sets `releaseEligible` to false and names the missing accepted Annotation Set as its release blocker, with `tei` and `rdf` left empty.
 
 The qualified line identity is the source, the document, the page, the region and the line, and the text digest is taken over that identity together with the text. The side of an opening, verso or recto, is derived from the page geometry and stays out of both. A derived value in an identifier would let a change in the geometry heuristic rename a line and invalidate every anchor pointing at it, which is exactly what the identity is supposed to prevent.
 
-Annotation Sets, the Edition Build Manifest and the generation steps of the deterministic build, from TEI generation through the byte-for-byte clean rebuild, remain prose specification in `accounting-encoding.md`. A set hash and a manifest are testable only against the build that reads them, and that build does not exist yet; they enter the module with their first consumer.
+Annotation Sets and the release steps of the deterministic build, from accounting TEI and RDF generation through the byte-for-byte clean rebuild, remain prose specification in `accounting-encoding.md`. A set hash is testable only against the build step that reads it; it enters the module with that consumer.
 
 ## Known gaps in the input data
 

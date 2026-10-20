@@ -16,8 +16,8 @@ Python is managed with uv (Python 3.11+, `pyproject.toml`, `uv.lock`). When `uv`
 
 ```
 uv sync --locked                          # install runtime + dev dependencies
-uv run pytest                             # all tests (pipeline/, evaluation/checks/)
-uv run pytest -m slow                     # the clean-rebuild healthcheck, also run by the commit hook
+uv run pytest                             # fast suite (pipeline/, evaluation/checks/); slow marker excluded by pyproject
+uv run pytest -m slow                     # clean-rebuild healthcheck and slow schema test; the hook runs check_pipeline.py directly instead
 uv run pytest pipeline/test_build_tei.py  # one test file
 uv run pytest pipeline/test_build_tei.py::test_name   # one test
 uv run ruff check --fix . && uv run ruff format .     # lint + format
@@ -44,7 +44,7 @@ python evaluation/benchmark/run_benchmark.py         # fill missing runs (skip-i
 python evaluation/benchmark/run_benchmark.py --eval  # recompute evaluation only
 ```
 
-Site tests are Playwright scripts, installed separately (`npm install playwright && npx playwright install chromium`, deliberately gitignored). They serve the repo under the subpath `/DoCTA/` like GitHub Pages, derive their page list from the `*.html` files in `docs/`, and exit nonzero on any finding, so they work as a gate:
+Site tests are Playwright scripts, installed separately (`npm install playwright && npx playwright install chromium`, deliberately gitignored). They run locally on a free port (port 0), locate states through `data-provenance`, `data-state`, `data-stale` and `data-testid` rather than visible wording, and exit nonzero on any finding, so they work as a gate. `smoketest.mjs` and `interaction-test.mjs` serve the repo under the subpath `/DoCTA/` like GitHub Pages and derive their page list from the `*.html` files in `docs/`. `smoketest.mjs` also carries the language guard, `lang="en"` on every page and a denylist of German interface words over rendered text and script string literals. `sources-ui-test.mjs` and `viewer-ui-test.mjs` serve `docs/` at the root and check named flows, the viewer test against an in-memory write API. `registry-editor-test.mjs` and `guide-walkthrough-test.mjs` start the real Python editor over an isolated copy of the data. `facsimile-fixtures.mjs` is a shared helper that serves already cached facsimiles:
 
 ```
 node tests/smoketest.mjs
@@ -55,7 +55,7 @@ node tests/registry-editor-test.mjs
 node tests/guide-walkthrough-test.mjs
 ```
 
-For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
+For the working editor, use `start-editor.cmd` on Windows or `start-editor.command` on macOS after installing uv. Both open the browser. `start-editor.ps1` is an equivalent PowerShell starter. The shared command is `uv run --locked python pipeline/local_editor.py --open-browser`. The README records platform verification limits. A plain `python -m http.server` is a read-only preview and provides no repository write API. To preview the benchmark alone, serve the repo root on a different free port and open `evaluation/benchmark/viewer.html`.
 
 The editorial onboarding guide uses installed Python, `venv` and pip in the VS Code terminal. Keep `requirements.txt` aligned with `uv.lock` through `uv export --locked --no-dev --no-emit-project --no-hashes --format requirements-txt --output-file requirements.txt`. uv remains the maintainer tool and is not required on the editor's machine. Set `DOCTA_TEST_PYTHON` to an installed environment's Python executable to run the guide walkthrough against that environment.
 
@@ -83,5 +83,6 @@ Data flows in one direction. Transkribus exports and evaluation runs are inputs 
 - All VLM output is unrevised machine transcription until a scholar approves it, and is marked as such wherever displayed. Keep that framing in any UI or data change.
 - `sources/` (project-internal, absent from the public clone) holds unpublished proposal text and correspondence; never recreate or commit it.
 - Figures shown by the site are computed in the browser from `docs/data/sources.json` and `docs/data/pipeline/register_summary.json`; do not hard-code counts. `docs/data/stats.json` is a prototype-era artifact that no page loads.
+- Interface language: the operator decided on 2026-10-20 that the entire website, including the working guide and the viewer, is English. Historical source text and quoted source wording stay German. The German data vocabulary (`leer`, `gesichtet`, ...) stays German in the data and is displayed through English labels by `vocabLabel` in `docs/js/utils.js`. Requirement-bearing wording such as provenance statements lives in `docs/js/strings.js`, which the browser tests import.
 - Language split: code, code comments, this file, the knowledge documents in `docs/knowledge/`, the top-level README and `pipeline/README.md` are English. German prose with English technical terms remains in `tests/README.md` and in the benchmark and pilot READMEs under `evaluation/`, while `evaluation/pilot2/` and `evaluation/checks/` are English. A new README under `evaluation/` is written in English; an existing one keeps its language. Follow the language of the document being edited.
 - License: code MIT, documents and research data CC BY 4.0; published Inventaria transcriptions are cited with attribution wherever displayed or evaluated.

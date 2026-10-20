@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: 2026-09-21
-updated: 2026-10-17
+updated: 2026-10-20
 authors: [Christopher Pollin]
 template:
   name: Vorlage Plan
@@ -34,11 +34,25 @@ On 2026-10-17 the operator set the immediate objective: wait for the historical 
 | Produce validated edition outputs | TEI validation and cross-artifact healthcheck | Editorial register JSON remains separate from TEI and graph pending a mapping decision |
 | Work with an isolated repository copy | Alternate-root source, anchor and build regression | Missing input in the copy does not fall back to the original checkout |
 
-The feedback round supplies observed use and substantive requirements. New model runs, corpus-wide processing and scholarly release retain their existing authorization and evidence requirements. The working guide and [handoff.md](handoff.md) are the entry points when the feedback arrives.
+The feedback round supplies observed use and substantive requirements. New model runs, corpus-wide processing and scholarly release retain their existing authorization and evidence requirements. The working guide and [handoff.md](handoff.md) are the entry points for the feedback, which arrived on 2026-10-20 and is recorded below.
 
 The operator confirmed independent use and testing of the working edition on 2026-10-16. The intended processing scope covers all source material already present in the project. Small passages support technical trials and the optional joint historical pilot, without limiting that wider scope. Actual work depends on each source's available images, text and reuse conditions. The source and page registers document actual processing coverage.
 
-Original spelling is retained in the working transcription, including forms such as `hawsrat`. Abbreviation expansion, uncertain readings and an accepted reference sample remain unresolved. Partner collaboration remains non-binding, with no confirmed proposal submission. Scholarly acceptance, publication permission and any commissioned scope require their respective decisions.
+Original spelling is retained in the working transcription, including forms such as `hawsrat`. Abbreviation expansion and an accepted reference sample remain unresolved. Unclear readings receive one uniform notation, decided on 2026-10-20, whose syntax is still to be specified. Partner collaboration remains non-binding, with no confirmed proposal submission. Scholarly acceptance, publication permission and any commissioned scope require their respective decisions.
+
+### Feedback round of 2026-10-20
+
+The historical project lead tested the working edition. Her requests and the findings on them are input to the next work. Which of them become accepted work, and in which form, remains open, and [handoff.md](handoff.md) carries the points awaiting a decision.
+
+| Request | Finding | Next step |
+|---|---|---|
+| Remove lines that do not belong to the source text | Most likely modern archival notes, foliation and editorial folio markers. The VLM already classifies such lines, and for exported documents the Transkribus region types could probably serve as well, but neither reaches the register ([data.md](data.md#pre-fetch-strategy)) | A line exclusion flag that keeps the line and its identity, open |
+| Mark unclear readings | The operator decided one uniform notation ([specification.md](specification.md#interface-language-and-unclear-readings-decided-2026-10-20)) | Notation, tooltip, correction-mode editing and TEI conversion, specified in a later package |
+| Annotate across line breaks | Every annotation and extracted entity is bound to one line, so a word divided at the line end, such as `Jo` / `seph`, is split or duplicated | Mentions made of several segments, each anchored to its own line, open |
+| See the progress of the work | No overview of corrected and annotated pages exists in the interface | A work-progress display, open |
+| Access more pages of the household chamberlain inventories | A 024.1 is a single sheet and fully transcribed. The register holds no image reference for the pages of A 024.2, so further pages need image keys from authorized Transkribus metadata | Obtain the metadata through the account holder |
+| Link persons to SiCProD | External identity enrichment is future work (specification.md) | SiCProD matching, open |
+| Fully English working edition | Decided by the operator on 2026-10-20 | Site and guide translated, German kept for source text and stored data vocabulary |
 
 ## Joint walkthrough
 
@@ -54,7 +68,7 @@ Use [the Thaur inventory A 049.1](https://dhcraft.org/DoCTA/viewer.html?doc=1132
 
 Use [the silver inventory A 006.8 and .9](https://dhcraft.org/DoCTA/viewer.html?doc=12647153&page=1) to explain machine transcription and incomplete image references when that question arises. Its available transcription covers only part of the document. Technical demonstration corrections belong in an isolated test copy until a scholar confirms the reading.
 
-The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.cmd` on Windows or `start-editor.command` on macOS. Demonstrate save and reload before opening the optional reading text or validated TEI build under Weitere Funktionen. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
+The public viewer supports a browser draft and JSON export. Repository write-back uses the loopback editor started with `start-editor.cmd` on Windows or `start-editor.command` on macOS. Demonstrate save and reload before opening the optional reading text or validated TEI build under More functions. Closing the browser is not publication. A local Git commit records a change, and pushing to the public repository is a separate operator action.
 
 ### Guided editor exercise
 
@@ -62,15 +76,15 @@ Continue the local walkthrough with Thaur A 049.1, document 11328300. Earlier in
 
 For independent onboarding, the [working guide](../guide.html#exercise) starts with the attested person wording on page 1 and separates entry creation from occurrence saving. This exercise needs no invented text correction. The correction steps below apply when the source image supports an actual change.
 
-1. Identify title, shelfmark and historical date. Open Quellenangaben only for the additional source context.
-2. Inspect the complete image, zoom to a passage, restore it with Ganze Seite and navigate to the next image.
-3. Open Bearbeiten, enter initials and select an existing text line. Enter confirms a browser draft, Escape cancels the open line edit. Change only a reading justified by the image.
-4. Use Änderungen speichern, wait for the local-save confirmation and reload. The saved reading must remain. Änderungen verwerfen discards the current page draft and preserves saved text.
+1. Identify title, shelfmark and historical date. Open Source details only for the additional source context.
+2. Inspect the complete image, zoom to a passage, restore it with Whole page and navigate to the next image.
+3. Open Edit, enter initials and select an existing text line. Enter confirms a browser draft, Escape cancels the open line edit. Change only a reading justified by the image.
+4. Use Save changes, wait for the local-save confirmation and reload. The saved reading must remain. Discard changes discards the current page draft and preserves saved text.
 5. Select wording in a saved line and create an editor-owned assignment as a person, place, date or controlled term. Reuse an existing register entry only when the source evidence supports the identity. Otherwise create an independent entry or retain an unresolved occurrence with a note.
 6. Open Index, find the saved entry and return to its source occurrence. Discuss how its preferred label, variants, note and source history support the intended analysis. Record verbs as ordinary controlled terms only when they help the research question. The editor provides the vocabulary, and the interface has no dedicated verb category.
-7. Under Weitere Funktionen, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them. The editorial register remains a separate JSON output in the current version.
+7. Under More functions, update the local edition output with its output date and inspect TEI if needed. This action derives files and does not publish them. The editorial register remains a separate JSON output in the current version.
 
-After each step, collect the editor's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. The [German working guide](../guide.html) explains purpose, source provenance, correction and annotation, saved versus published state, and the remaining scholarly decisions. Revise it only from observed use and verified implementation.
+After each step, collect the editor's observation, the source passage, any unexpected behavior and the effect on the research workflow. Preserve reported experience separately from agent interpretation and automated verification. The [working guide](../guide.html) explains purpose, source provenance, correction and annotation, saved versus published state, and the remaining scholarly decisions. Revise it only from observed use and verified implementation.
 
 ### Meeting answers and scope
 
@@ -84,7 +98,7 @@ Quantification distinguishes transcription error against an accepted reference, 
 
 The editor-in-the-loop interaction is the scholar's correction of a source-bound reading and assignment to her own person register or vocabulary. It does not retrain a recognition model or automatically write back to Transkribus. The [annotation contract](specification.md#annotation-curation-in-the-viewer) distinguishes text corrections, retained legacy data and manual assignments. Highlighted mentions open their corresponding editing form. New assignments cover a selection within one saved line and currently export as JSON separately from TEI and the graph.
 
-The meeting should establish the first historical question, a bounded source passage, transcription rules, useful controlled terms, the reference sample and the intended edition output. Inventory passages demonstrate the interface. Account books remain the project's leading research source and require their own accepted pilot. Repeated entity mentions and graph co-occurrence do not establish ownership, exchange or a historical event.
+The meeting of 2026-09-21 shaped the working editor hierarchy ([design.md](design.md#working-editor-hierarchy)). The first historical question, a bounded source passage, the remaining transcription rules, useful controlled terms, the reference sample and the intended edition output are still to be established with the historical project lead. Inventory passages demonstrate the interface. Account books remain the project's leading research source and require their own accepted pilot. Repeated entity mentions and graph co-occurrence do not establish ownership, exchange or a historical event.
 
 Demonstration changes belong in an isolated copy and carry no scholarly status. The local interface, saved research data and published website remain distinct states. The public links identify the examples, while the local editor is the demonstration target for the revised workflow.
 
@@ -146,8 +160,10 @@ The historical editor selects passages across relevant hands, genres, layouts an
 
 ## Boundaries still requiring implementation or evidence
 
-Structural insertion, split and merge of transcription lines require stable new line identities, explicit region membership, facsimile geometry rules and migration of downstream annotation anchors. Emptying an existing hallucinated reading is supported while preserving its anchor. These are distinct operations.
+Structural insertion, split and merge of transcription lines require stable new line identities, explicit region membership, facsimile geometry rules and migration of downstream annotation anchors. Excluding a line, marking an unclear reading and a mention whose segments are each anchored to their own line keep every line identity and need no anchor migration.
+
+Emptying an existing reading is supported and preserves its line anchor. It is unsuitable for removing a line that is not source text. The TEI then still claims an empty line, editorial anchors on that line become stale, and an extracted entity anchored there drops out of the TEI and is flagged by the healthcheck. A line exclusion flag is the intended alternative.
 
 The account-book preparation build creates a machine-unrevised TranscriptionRevision and checksummed manifest. A generated test PAGE carrier proves software behavior only. A scholarly build requires genuine source anchors and accepted accounting annotations, and may not manufacture either.
 
-Prompt changes identified in [handoff.md](handoff.md) become a new version after the reviewed sample exists. Frozen prompts and measuring runs remain unchanged. The specialized HTR comparator, proposal revision and scholarly approval remain explicit dependencies.
+The next prompt iteration, it03, is planned in `evaluation/benchmark/README.md` for after the reference sample has been adjudicated. Frozen prompts and measuring runs remain unchanged. The specialized HTR comparator, proposal revision and scholarly approval remain explicit dependencies.

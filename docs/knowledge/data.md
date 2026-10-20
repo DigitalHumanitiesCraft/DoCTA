@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-09-21
+updated: 2026-10-20
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -242,7 +242,7 @@ Among them a coherent cluster on Sigismund's wedding of 1484. The page figures a
 
 **Castle inventories with working transcriptions** are immediately available. A subset was edited and published by the Inventaria project on Transkribus Sites (see section 3); only published material is used, and it is used with attribution. The remaining transcriptions in the collection carry no documented formal ground-truth status and follow two different transcription conventions.
 
-**Account book 2** is available as an image and layout source. Transkribus holds no text for it. Machine transcriptions from the benchmark and the pilot exist and are marked as unrevised model output.
+**Account book 2** is available as an image and layout source. Transkribus holds no text for it. Machine transcriptions from the benchmark and the two pilots exist and are marked as unrevised model output.
 
 Script output: `data/sources.json`, the cleaned catalogue as JSON for the source table on the home page, in the schema described above. `scripts/transform_sources.py --migrate` rewrites that file into the current schema without the CSV, which is project-internal and missing from the public clone; a `catalogue_extent.raw` of `null` marks a value that reached the file that way.
 
@@ -349,6 +349,12 @@ The APIs were designed for a desktop client. A `fetch()` on PAGE XML is blocked 
 
 `scripts/fetch_transcriptions.py` authenticates via OAuth2, requests `fulldoc` per document, parses the PAGE XML and writes JSON with lines, coordinates and text. Output: `data/transcriptions/{doc_id}.json` and `data/raitbuch2_pages.json`. No page loads the page list, since the viewer takes its IIIF URLs from the transcription files themselves. The register build and the benchmark and pilot runners read it as the image table of account book 2.
 
+The parser keeps line text, coordinates and region ids and loses the region structure type. Its region pattern looks for a `type` attribute, which Transkribus PAGE XML does not use for this purpose, so every region in `data/transcriptions/` carries an empty `type`. Transkribus records the structure type in the region's `custom` attribute, for example `structure {type:page-number;}`, `heading`, `paragraph` or `other`. The repository keeps only the parsed JSON, so recovering the type requires fetching the PAGE XML again.
+
+### Lines that are not source text
+
+The feedback round of 2026-10-20 showed that edition text contains lines that do not belong to the historical source. They are most likely modern archival notes, foliation and editorial folio markers. The last four lines of A 024.1 (document 12593450) in its edition run are an example. They hold the shelfmark `Inv. A 24/1`, an archivist's attribution to the household chamberlain office, an archivist's date `1489 April 11.` and an old archive reference `Sch. A. I, 7621`. The VLM classifies each line with a `kind` of `entry`, `rubric`, `amount`, `sum`, `marginal` or `foliation`, and the it02 inventory module instructs it to mark modern archival notes as `foliation`, which it did for these four lines. The runs under `evaluation/` keep that field, together with an `uncertain` list of doubtful words per line, while `build_register.py` stores only `id` and `text` per line and discards both. A line exclusion therefore has two existing signals to start from, the VLM `kind` for DoCTA's own transcriptions and the Transkribus structure type for exported documents, and neither is in the register yet.
+
 ### Exploration checklist (closed)
 
 - [x] Collection ID: 2197991
@@ -394,7 +400,7 @@ The collection metadata `data/transkribus_collection.json` and `data/transkribus
 
 ### Machine transcription of the volume
 
-Openings from account book 2 form the core of the versioned prompt benchmark under `evaluation/benchmark/`; the page set was chosen from a visual survey of all 123 openings so that each selected page represents a distinct phenomenon (rule structure, name rubrics, columns of figures, cancellation crosses, faded rubrics, blank and transitional pages). The pilot under `evaluation/pilot/` runs the same prompts over a stretch of consecutive openings from the start of the volume.
+Openings from account book 2 form the core of the versioned prompt benchmark under `evaluation/benchmark/`; the page set was chosen from a visual survey of all 123 openings so that each selected page represents a distinct phenomenon (rule structure, name rubrics, columns of figures, cancellation crosses, faded rubrics, blank and transitional pages). The pilot under `evaluation/pilot/` runs the same prompts over a stretch of consecutive openings from the start of the volume, spreads 2 to 21. The second pilot under `evaluation/pilot2/` keeps the frozen it02 configuration and continues with spreads 22 to 41.
 
 The models reliably recognise blank pages, the division of an opening into its two halves and the coarse entry structure. Personal names, dates and monetary amounts vary between repeated runs of the same prompt, and the amounts are precisely what account-book research depends on. All model output is therefore treated as an unrevised proposal. Edition use requires facsimile verification and an explicit editorial decision. The full argument and the current measurements are in `htr-evaluation.md` and in `data/benchmark/summary.json`.
 
