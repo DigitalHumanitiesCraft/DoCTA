@@ -37,11 +37,9 @@ def review_lock(register_dir: Path) -> Iterator[None]:
     """Serialize review check-and-write across server threads and CLI processes."""
     lock_path = register_dir.parent / ".review.lock"
     lock_path.parent.mkdir(parents=True, exist_ok=True)
+    # No read or write before locking: on Windows another process's lock makes
+    # the byte unreadable. msvcrt locks byte 0 even of an empty file.
     with _THREAD_LOCK, lock_path.open("a+b") as stream:
-        stream.seek(0)
-        if stream.read(1) == b"":
-            stream.write(b"0")
-            stream.flush()
         stream.seek(0)
         if os.name == "nt":
             import msvcrt

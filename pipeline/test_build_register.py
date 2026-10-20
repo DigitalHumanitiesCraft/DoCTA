@@ -7,6 +7,7 @@ Usage:
   pytest pipeline/test_build_register.py
 """
 
+import copy
 import json
 import tempfile
 import threading
@@ -19,9 +20,26 @@ import local_editor as editor
 import pytest
 from io_paths import load_json, write_json
 
+Build = tuple[list[dict], dict[int, list[dict]]]
 
-def _build(tmp: Path) -> tuple[list[dict], dict[int, list[dict]]]:
+
+def _build(tmp: Path) -> Build:
     return br.build(tmp)
+
+
+@pytest.fixture(scope="module")
+def _source_build(tmp_path_factory: pytest.TempPathFactory) -> Build:
+    """One build off the sources into an empty directory, so no saved review."""
+    return _build(tmp_path_factory.mktemp("register-baseline"))
+
+
+@pytest.fixture
+def source_build(_source_build: Build) -> Build:
+    """The shared build, copied per test so no test leaks a change into the next.
+
+    A test that writes into the register directory itself builds its own.
+    """
+    return copy.deepcopy(_source_build)
 
 
 # ------------------------------------------------------------------ unit tests
@@ -201,11 +219,10 @@ def test_only_an_edition_run_gets_synthetic_line_ids() -> None:
 # --------------------------------------------------------- integration tests
 
 
-def test_export_pages_appear_exactly_once() -> None:
+def test_export_pages_appear_exactly_once(source_build: Build) -> None:
     """Every page of every Transkribus export is in its document register, once,
     and a page with exported lines carries that export as its single run."""
-    with tempfile.TemporaryDirectory() as td:
-        _, pages_by_doc = _build(Path(td))
+    _, pages_by_doc = source_build
     for export in sorted((br.DATA / "transcriptions").glob("*.json")):
         doc_id = int(export.stem)
         assert doc_id in pages_by_doc, f"document {doc_id} missing from the register"
@@ -249,10 +266,9 @@ def test_rebuild_is_byte_identical() -> None:
             assert first.read_bytes() == second.read_bytes(), f"drift in {first.name}"
 
 
-def test_pilot_empty_page_carries_vlm_evidence() -> None:
+def test_pilot_empty_page_carries_vlm_evidence(source_build: Build) -> None:
     """Raitbuch spread 7 was reported empty on one side by both pilot runs."""
-    with tempfile.TemporaryDirectory() as td:
-        _, pages_by_doc = _build(Path(td))
+    _, pages_by_doc = source_build
     page = next(p for p in pages_by_doc[br.RAITBUCH2_DOC] if p["pageNr"] == 7)
     assert page["empty_evidence"] == {"method": "vlm", "runs": 2, "scope": "partial"}
     assert page["content_class"] == "unknown", "evidence must not flip the class"
@@ -383,10 +399,11 @@ def test_a_rebuild_elsewhere_reproduces_the_register_it_carries_from() -> None:
 EDITION_DOC = 12593450  # A 024.1, one page, transcribed by DoCTA itself
 
 
-def test_a_document_without_an_export_carries_its_edition_run() -> None:
+def test_a_document_without_an_export_carries_its_edition_run(
+    source_build: Build,
+) -> None:
     """The edition cohort reaches the register, with an image and named lines."""
-    with tempfile.TemporaryDirectory() as td:
-        _, pages_by_doc = _build(Path(td))
+    _, pages_by_doc = source_build
     pages = pages_by_doc[EDITION_DOC]
     page = next(p for p in pages if p["pageNr"] == 1)
     runs = br.edition_runs(page)
@@ -401,23 +418,25 @@ def test_a_document_without_an_export_carries_its_edition_run() -> None:
     assert page["content_class"] == "unknown"
 
 
-def test_the_site_transcription_mirrors_the_edition_run() -> None:
+def test_the_site_transcription_mirrors_the_edition_run(
+    source_build: Build, tmp_path: Path
+) -> None:
     """The projection carries the text of the newest edition run, page by page,
     marked as unrevised machine output and without invented layout data."""
-    with tempfile.TemporaryDirectory() as td:
-        out = Path(td)
-        docs, pages_by_doc = _build(out)
-        br.project(docs, pages_by_doc, out / "register_summary.json")
-        written = json.loads(
-            (out / "transcriptions" / f"{EDITION_DOC}.json").read_text(encoding="utf-8")
+    docs, pages_by_doc = source_build
+    br.project(docs, pages_by_doc, tmp_path / "register_summary.json")
+    written = json.loads(
+        (tmp_path / "transcriptions" / f"{EDITION_DOC}.json").read_text(
+            encoding="utf-8"
         )
-        # Exactly the documents DoCTA transcribed itself get such a file; a
-        # document with a Transkribus export is read from the export.
-        assert {int(p.stem) for p in (out / "transcriptions").glob("*.json")} == {
-            doc_id
-            for doc_id, pages in pages_by_doc.items()
-            if any(br.edition_runs(p) for p in pages)
-        }
+    )
+    # Exactly the documents DoCTA transcribed itself get such a file; a
+    # document with a Transkribus export is read from the export.
+    assert {int(p.stem) for p in (tmp_path / "transcriptions").glob("*.json")} == {
+        doc_id
+        for doc_id, pages in pages_by_doc.items()
+        if any(br.edition_runs(p) for p in pages)
+    }
     doc = next(d for d in docs if d["docId"] == EDITION_DOC)
     assert written == br.vlm_transcription(doc, pages_by_doc[EDITION_DOC])
     assert written["provenance"]["state"] == "machine-unrevised"
@@ -438,14 +457,11 @@ def test_the_site_transcription_mirrors_the_edition_run() -> None:
         )
 
 
-def test_projection_matches_register() -> None:
-    with tempfile.TemporaryDirectory() as td:
-        docs, pages_by_doc = _build(Path(td))
-        payload = br.project(docs, pages_by_doc, Path(td) / "register_summary.json")
-        assert (
-            json.loads((Path(td) / "register_summary.json").read_text(encoding="utf-8"))
-            == payload
-        )
+def test_projection_matches_register(source_build: Build, tmp_path: Path) -> None:
+    docs, pages_by_doc = source_build
+    out = tmp_path / "register_summary.json"
+    payload = br.project(docs, pages_by_doc, out)
+    assert json.loads(out.read_text(encoding="utf-8")) == payload
     for entry in payload["documents"]:
         pages = pages_by_doc[entry["docId"]]
         assert entry["pages_total"] == len(pages)

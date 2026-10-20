@@ -9,6 +9,7 @@ Usage:
 
 import copy
 import json
+import re
 import tempfile
 from pathlib import Path
 
@@ -123,12 +124,13 @@ def test_stale_review_is_refused() -> None:
         pages_dir = _register(tmp)
         path = review_file(tmp, pages_dir, original="something else entirely")
         before = (pages_dir / f"{DOC}.json").read_bytes()
-        try:
+        # The stale refusal is the one that quotes the reading the export
+        # reported; matching that value, not the wording, keeps the check
+        # independent of the message language.
+        with pytest.raises(
+            ar.ReviewError, match=re.escape(repr("something else entirely"))
+        ):
             ar.ingest([path], pages_dir)
-        except ar.ReviewError as exc:
-            assert "veraltet" in str(exc), f"unexpected refusal: {exc}"
-        else:
-            raise AssertionError("stale review was applied")
         assert (pages_dir / f"{DOC}.json").read_bytes() == before, (
             "register was touched by a refused review"
         )
@@ -200,14 +202,11 @@ def test_one_stale_page_refuses_the_whole_file() -> None:
             encoding="utf-8",
         )
         before = (pages_dir / f"{DOC}.json").read_bytes()
-        try:
+        # Only page 3 reports this reading, so the quoted value names the page.
+        with pytest.raises(
+            ar.ReviewError, match=re.escape(repr("eine ueberholte Lesung"))
+        ):
             ar.ingest([path], pages_dir)
-        except ar.ReviewError as exc:
-            assert "Seite 3" in str(exc) and "veraltet" in str(exc), (
-                f"unexpected refusal: {exc}"
-            )
-        else:
-            raise AssertionError("a stale page was applied")
         assert (pages_dir / f"{DOC}.json").read_bytes() == before, (
             "the valid page of a refused file was written"
         )
@@ -348,23 +347,17 @@ def test_unknown_line_and_missing_page_are_refused() -> None:
         tmp = Path(td)
         pages_dir = _register(tmp)
         path = review_file(tmp, pages_dir, line_id="r99l99", original="x")
-        try:
+        with pytest.raises(ar.ReviewError, match=r"\br99l99\b") as refused:
             ar.ingest([path], pages_dir)
-        except ar.ReviewError as exc:
-            assert "steht nicht im Register" in str(exc)
-        else:
-            raise AssertionError("unknown line was accepted")
+        # Refused as unknown, before any comparison with a reported original.
+        assert repr("x") not in str(refused.value)
 
         payload = json.loads(path.read_text("utf-8"))
         payload["pages"] = {"9999": payload["pages"][str(PAGE)]}
         payload["pages"]["9999"]["lines"] = []
         path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-        try:
+        with pytest.raises(ar.ReviewError, match=r"\b9999\b"):
             ar.ingest([path], pages_dir)
-        except ar.ReviewError as exc:
-            assert "fehlt im Register" in str(exc)
-        else:
-            raise AssertionError("unknown page was accepted")
 
 
 def test_a_directory_is_ingested_and_dry_run_writes_nothing() -> None:
@@ -390,12 +383,9 @@ def test_a_malformed_export_is_refused_as_a_review_error() -> None:
         path = tmp / "broken.json"
         path.write_text('{"docId": 11327963, "pages":', encoding="utf-8")
         before = (pages_dir / f"{DOC}.json").read_bytes()
-        try:
+        with pytest.raises(ar.ReviewError, match=re.escape(path.name)) as refused:
             ar.ingest([path], pages_dir)
-        except ar.ReviewError as exc:
-            assert "kein lesbares JSON" in str(exc) and path.name in str(exc)
-        else:
-            raise AssertionError("a malformed export was accepted")
+        assert isinstance(refused.value.__cause__, json.JSONDecodeError)
         assert (pages_dir / f"{DOC}.json").read_bytes() == before
 
 

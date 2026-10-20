@@ -523,6 +523,39 @@ def test_api_build_projection_equals_the_register_projection_for_a_vlm_document(
         )
 
 
+def test_local_payload_and_projection_count_the_same_changed_lines() -> None:
+    """Both routes count lines against the machine run, not the previous save."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages, reviews = _fixture(tmp)
+        request = _vlm_correction(pages)
+        page_nr = next(iter(request["pages"]))
+        first, second = list(
+            br.iter_lines(le.document_payload(VLM_DOC, pages)["pages"][0])
+        )[:2]
+        request["pages"][page_nr]["lines"].append(
+            {"id": second["id"], "original": second["text"], "corrected": "y"}
+        )
+        le.save_review(request, pages, reviews)
+        # Restoring one line to its machine reading leaves one changed line.
+        restore = _vlm_correction(pages)
+        restore["pages"][page_nr]["lines"] = [
+            {"id": first["id"], "original": "x", "corrected": first["text"]}
+        ]
+        le.save_review(restore, pages, reviews)
+
+        local = le.document_payload(VLM_DOC, pages)
+        _project(tmp, tmp / "projection" / "register_summary.json")
+        static = load_json(tmp / "projection" / "transcriptions" / f"{VLM_DOC}.json")
+        for document in (local, static):
+            counts = {
+                page["pageNr"]: page["changedLines"]
+                for page in document["pages"]
+                if "changedLines" in page
+            }
+            assert counts == {int(page_nr): 1}
+
+
 def test_failed_register_write_leaves_no_orphan_review_event(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

@@ -555,7 +555,14 @@ def effective_transcription(
 
 
 def effective_transcription_from_pages(transcription: dict, pages: list[dict]) -> dict:
-    """Project review runs from already-loaded register pages into text."""
+    """Project review runs from already-loaded register pages into text.
+
+    A reviewed page also carries ``changedLines``, the number of its lines whose
+    effective text differs from the transcription it was projected onto. The
+    base lines themselves are not served, so this count is all the viewer gets
+    to qualify a corrected page; the local payload and the static projection
+    both route through here and therefore state the same number.
+    """
     reviewed = {page["pageNr"]: newest_review_run(page) for page in pages}
     out = copy.deepcopy(transcription)
     for page in out.get("pages", []):
@@ -563,9 +570,12 @@ def effective_transcription_from_pages(transcription: dict, pages: list[dict]) -
         if not run:
             continue
         texts = {line["id"]: line["text"] for line in run["lines"]}
+        changed = 0
         for line in iter_lines(page):
             if line.get("id") in texts:
+                changed += texts[line["id"]] != line["text"]
                 line["text"] = texts[line["id"]]
+        page["changedLines"] = changed
     return out
 
 

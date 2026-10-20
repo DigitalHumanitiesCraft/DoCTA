@@ -121,3 +121,19 @@ im Viewer zeichnet OpenSeadragon das Faksimile dorthin. Der Netzwerk-Explorer l�
 `document.querySelectorAll('.net-node')` die gezeichneten Knoten, `.net-node.is-labelled` die
 dauerhaft beschrifteten und `.net-linkg` die Kanten; so f채llt eine Abweichung zwischen angezeigter
 und beschrifteter Knotenzahl auf.
+
+## Alle Gates in einem Lauf
+
+Die Pr체fungen bilden drei Stufen:
+
+- **Schnell:** `pytest` ohne Marker, die Unit- und Integrationstests unter `pipeline/` und
+  `evaluation/checks/`, gedacht f체r jeden Zwischenstand.
+- **Langsam:** `pytest -m slow` mit dem Neuaufbau aus sauberem Stand, dazu
+  `pipeline/check_pipeline.py` als artefakt체bergreifende Pr체fung.
+- **Browser:** die sechs Playwright-Skripte oben, die Playwright voraussetzen.
+
+`scripts/test-all.ps1` (Windows) und `sh scripts/test-all.sh` (macOS, Linux, Git Bash) f체hren
+alle Stufen nacheinander aus: `ruff check`, `ruff format --check`, die schnelle und die langsame
+pytest-Stufe, `check_pipeline.py` und die sechs Browserpr체fungen. Der Lauf bricht beim ersten
+fehlschlagenden Gate ab, nennt es und listet die zuvor bestandenen. Die Skripte verwenden `uv`,
+wenn es im PATH liegt, sonst direkt den Python-Interpreter der Projektumgebung `.venv`.

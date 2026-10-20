@@ -10,7 +10,9 @@ Usage:
 import json
 import re
 import tempfile
+from collections.abc import Mapping
 from pathlib import Path
+from types import MappingProxyType
 from xml.etree import ElementTree
 
 import apply_review as ar
@@ -57,16 +59,22 @@ def baseline_register(tmp_path_factory: pytest.TempPathFactory) -> Path:
     return root / "pages"
 
 
-def _built(register_dir: Path | None = None) -> dict[int, str]:
-    """Baseline assertions concern source exports, independent of saved reviews."""
-    with tempfile.TemporaryDirectory() as td:
-        root = Path(td)
-        if register_dir is None:
-            br.build(root / "pipeline")
-            register_dir = root / "pipeline" / "pages"
-        return bt.build(
-            root / "tei", register_dir=register_dir, annotation_dir=root / "annotations"
-        )
+@pytest.fixture(scope="module")
+def baseline_tei(
+    baseline_register: Path, tmp_path_factory: pytest.TempPathFactory
+) -> Mapping[int, str]:
+    """The corpus built once off the source-only register, without saved reviews.
+
+    Shared by every test that only reads the build; read-only so no test can
+    leak a change into the next. A test that changes an input builds its own.
+    """
+    root = tmp_path_factory.mktemp("tei-baseline-build")
+    built = bt.build(
+        root / "tei",
+        register_dir=baseline_register,
+        annotation_dir=root / "annotations",
+    )
+    return MappingProxyType(built)
 
 
 def _has_entities(doc_id: int) -> bool:
@@ -168,28 +176,26 @@ def test_correction_state_from_the_done_page_count() -> None:
 # ----------------------------------------------------------- integration tests
 
 
-def test_every_document_parses() -> None:
-    built = _built()
-    assert built, "no TEI documents built"
-    for doc_id, xml in built.items():
+def test_every_document_parses(baseline_tei: Mapping[int, str]) -> None:
+    assert baseline_tei, "no TEI documents built"
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         assert root.tag == f"{TEI}TEI", f"unexpected root in {doc_id}"
 
 
-def test_line_counts_match_the_export() -> None:
+def test_line_counts_match_the_export(baseline_tei: Mapping[int, str]) -> None:
     """Every exported line is either an lb or a folio milestone, never dropped.
 
     The expectation is counted off the export JSON, so the check does not go
     through the same line iteration the generator uses.
     """
-    built = _built()
     for doc_id in SAMPLES:
         exported = sum(
             len(region.get("lines") or [])
             for page in _export(doc_id)["pages"]
             for region in page.get("regions") or []
         )
-        root = ElementTree.fromstring(built[doc_id])
+        root = ElementTree.fromstring(baseline_tei[doc_id])
         body = root.find(f"{TEI}text")
         encoded = sum(1 for _ in body.iter(f"{TEI}lb"))
         milestones = sum(1 for _ in body.iter(f"{TEI}milestone"))
@@ -242,11 +248,11 @@ def test_a_mark_is_read_off_a_whole_line_only() -> None:
 MARK_IN_TEXT = re.compile(r"\[(?:fol\.?\s*)?[0-9]+[rv]?\]|\[us_[a-z]+_[rv]\]")
 
 
-def test_no_mark_is_left_in_the_body_text() -> None:
+def test_no_mark_is_left_in_the_body_text(baseline_tei: Mapping[int, str]) -> None:
     """A mark line is a reference point of the transcription and becomes a
     milestone; none of them survives as text of the source."""
     milestones = 0
-    for doc_id, xml in _built().items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         text = "".join(root.find(f"{TEI}text").itertext())
         marks = MARK_IN_TEXT.findall(text)
@@ -263,9 +269,10 @@ def test_no_mark_is_left_in_the_body_text() -> None:
     assert milestones, "no milestone in the corpus, the check proves nothing"
 
 
-def test_one_pb_and_one_surface_per_page(baseline_register: Path) -> None:
-    built = _built(baseline_register)
-    for doc_id, xml in built.items():
+def test_one_pb_and_one_surface_per_page(
+    baseline_register: Path, baseline_tei: Mapping[int, str]
+) -> None:
+    for doc_id, xml in baseline_tei.items():
         source = br.transcription_of(doc_id, baseline_register)
         page_numbers = [str(p["pageNr"]) for p in source["pages"]]
         root = ElementTree.fromstring(xml)
@@ -281,9 +288,8 @@ def test_one_pb_and_one_surface_per_page(baseline_register: Path) -> None:
             assert pb.get("facs") == f"#surface-{doc_id}-{pb.get('n')}"
 
 
-def test_one_ab_per_text_region() -> None:
+def test_one_ab_per_text_region(baseline_tei: Mapping[int, str]) -> None:
     """Regions of the export survive as blocks; nothing is flattened away."""
-    built = _built()
     for doc_id in SAMPLES:
         export = load_json(bt.DATA / "transcriptions" / f"{doc_id}.json")
         expected = [
@@ -291,7 +297,7 @@ def test_one_ab_per_text_region() -> None:
             for page in sorted(export["pages"], key=lambda p: p["pageNr"])
             for region in page.get("regions") or []
         ]
-        root = ElementTree.fromstring(built[doc_id])
+        root = ElementTree.fromstring(baseline_tei[doc_id])
         assert [ab.get(XML_ID) for ab in root.iter(f"{TEI}ab")] == expected, (
             f"ab set differs in {doc_id}"
         )
@@ -302,10 +308,9 @@ def test_one_ab_per_text_region() -> None:
             assert ab.find(f"{TEI}pb") is None, f"pb inside an ab in {doc_id}"
 
 
-def test_header_carries_the_archival_identity() -> None:
-    built = _built()
+def test_header_carries_the_archival_identity(baseline_tei: Mapping[int, str]) -> None:
     docs = {d["docId"]: d for d in bt._documents()}
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         titles = {t.get("type"): t.text for t in root.iter(f"{TEI}title")}
         assert titles.get("shelfmark") == docs[doc_id]["shelfmark"]
@@ -331,10 +336,9 @@ def test_header_carries_the_archival_identity() -> None:
 MARK_LINE = re.compile(r"^\[(?:fol\.\s*)?[0-9]+[rv]?\]$|^\[us_[a-z]+_[rv]\]$")
 
 
-def test_zone_per_line_with_coordinates() -> None:
+def test_zone_per_line_with_coordinates(baseline_tei: Mapping[int, str]) -> None:
     """Every exported line with coordinates gets one zone under its surface;
     folio and cover lines become milestones without facs and get none."""
-    built = _built()
     for doc_id in SAMPLES:
         export = load_json(bt.DATA / "transcriptions" / f"{doc_id}.json")
         expected = [
@@ -346,17 +350,16 @@ def test_zone_per_line_with_coordinates() -> None:
             if (line.get("coords") or "").strip()
             and not MARK_LINE.match((line.get("text") or "").strip())
         ]
-        root = ElementTree.fromstring(built[doc_id])
+        root = ElementTree.fromstring(baseline_tei[doc_id])
         zones = [(z.get(XML_ID), z.get("points")) for z in root.iter(f"{TEI}zone")]
         assert zones == [
             (f"zone-{doc_id}-{nr}-{lid}", coords) for nr, lid, coords in expected
         ], f"zone set differs in {doc_id}"
 
 
-def test_every_zone_is_referenced_by_an_lb() -> None:
+def test_every_zone_is_referenced_by_an_lb(baseline_tei: Mapping[int, str]) -> None:
     """No zone is dead layout data: each one is the target of exactly one lb."""
-    built = _built()
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         zone_ids = {z.get(XML_ID) for z in root.iter(f"{TEI}zone")}
         referenced = {
@@ -365,15 +368,14 @@ def test_every_zone_is_referenced_by_an_lb() -> None:
         assert zone_ids == referenced, f"orphan or dangling zones in {doc_id}"
 
 
-def test_every_lb_facs_resolves_to_a_zone() -> None:
+def test_every_lb_facs_resolves_to_a_zone(baseline_tei: Mapping[int, str]) -> None:
     """An lb points at a zone or at nothing, never at a missing one.
 
     A document whose text DoCTA transcribed itself has no layout analysis and
     therefore no zone at all, so its lines are unbound by construction; every
     document that has zones must bind lines to them.
     """
-    built = _built()
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         ids = {z.get(XML_ID) for z in root.iter(f"{TEI}zone")}
         bound = 0
@@ -397,10 +399,11 @@ def _marked_entities(root: ElementTree.Element) -> list[ElementTree.Element]:
     return [el for el in root.iter() if el.get("resp") == f"#{bt.RESP_ENTITY}"]
 
 
-def test_entity_layer_only_where_an_extraction_exists() -> None:
-    built = _built()
+def test_entity_layer_only_where_an_extraction_exists(
+    baseline_tei: Mapping[int, str],
+) -> None:
     assert _has_entities(DEMO_DOC), "the prototype extraction disappeared"
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         if not _has_entities(doc_id):
             continue
         root = ElementTree.fromstring(xml)
@@ -423,9 +426,9 @@ def test_entity_layer_only_where_an_extraction_exists() -> None:
         assert "unverified extraction by an LLM agent" in decl
 
     assert not _has_entities(NON_DEMO_DOC), "the counter-example acquired entities"
-    other = ElementTree.fromstring(built[NON_DEMO_DOC])
+    other = ElementTree.fromstring(baseline_tei[NON_DEMO_DOC])
     assert bt.RESP_ENTITY not in _resp_ids(other), "entity respStmt leaked"
-    assert bt.RESP_ENTITY not in built[NON_DEMO_DOC]
+    assert bt.RESP_ENTITY not in baseline_tei[NON_DEMO_DOC]
     assert not _marked_entities(other), f"entity leaked into {NON_DEMO_DOC}"
     for tag in ("persName", "placeName", "objectName"):
         assert not list(other.iter(f"{TEI}{tag}")), f"{tag} leaked into {NON_DEMO_DOC}"
@@ -790,14 +793,13 @@ def test_line_content_wraps_the_anchors_and_escapes_everything_else() -> None:
     assert bt._line_content(text, []) == "Hannsen Ramung &amp; Thawr"
 
 
-def test_no_certainty_attribute_anywhere() -> None:
+def test_no_certainty_attribute_anywhere(baseline_tei: Mapping[int, str]) -> None:
     """The extraction reports a confidence; the encoding must not repeat it.
 
     Attribute names are compared with their namespace stripped, because an exact
     key comparison against "cert" sees neither a prefixed form nor @certainty.
     """
-    built = _built()
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         for element in root.iter():
             bare = {name.rsplit("}", 1)[-1] for name in element.attrib}
@@ -815,16 +817,17 @@ def _changes(root: ElementTree.Element) -> dict[str, ElementTree.Element]:
     return {c.get("n"): c for c in root.iter(f"{TEI}change") if c.get("n")}
 
 
-def test_every_document_declares_its_work_steps() -> None:
+def test_every_document_declares_its_work_steps(
+    baseline_tei: Mapping[int, str],
+) -> None:
     """Each file names the two steps that ran, and claims no verification step.
 
     Which transcription step that is depends on the layer: the Transkribus one
     where an export carries the text, DoCTA's own where the pipeline produced it.
     """
-    built = _built()
     layers = {d["docId"]: d["layer"] for d in bt._documents()}
     attributed = {d["docId"]: bool(d["inventaria"]) for d in bt._documents()}
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         transcription = (
             bt.RESP_VLM if layers[doc_id] == bt.VLM_LAYER else bt.RESP_TRANSKRIBUS
@@ -845,10 +848,11 @@ def test_every_document_declares_its_work_steps() -> None:
         )
 
 
-def test_correction_state_decides_wording_and_status() -> None:
-    built = _built()
+def test_correction_state_decides_wording_and_status(
+    baseline_tei: Mapping[int, str],
+) -> None:
     for doc_id in FULLY_CORRECTED:
-        root = ElementTree.fromstring(built[doc_id])
+        root = ElementTree.fromstring(baseline_tei[doc_id])
         resp = root.find(f".//{TEI}respStmt/{TEI}resp").text
         assert "corrected page by page" in resp, f"wrong layer resp in {doc_id}"
         decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
@@ -858,7 +862,7 @@ def test_correction_state_decides_wording_and_status() -> None:
             f"wrong status in {doc_id}"
         )
 
-    root = ElementTree.fromstring(built[MACHINE_SAMPLE])
+    root = ElementTree.fromstring(baseline_tei[MACHINE_SAMPLE])
     resp = root.find(f".//{TEI}respStmt/{TEI}resp").text
     assert resp == "Automated text recognition layer from Transkribus, unrevised"
     decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
@@ -914,13 +918,14 @@ def test_the_attribution_reads_the_source_mapping_and_the_edition_links() -> Non
     assert without["inventaria"] and without["edition_url"] is None
 
 
-def test_an_attributed_document_names_the_inventaria_project() -> None:
+def test_an_attributed_document_names_the_inventaria_project(
+    baseline_tei: Mapping[int, str],
+) -> None:
     """The attribution stands beside the Transkribus layer it qualifies and
     weakens none of the responsibilities already declared."""
-    built = _built()
     docs = {d["docId"]: d for d in bt._documents()}
     seen = 0
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         resp = _resp_of(root, bt.RESP_INVENTARIA)
         if not docs[doc_id]["inventaria"]:
@@ -938,15 +943,16 @@ def test_an_attributed_document_names_the_inventaria_project() -> None:
     assert seen, "no attributed document in the corpus, the check proves nothing"
 
 
-def test_a_fully_done_attributed_document_is_not_called_unrevised() -> None:
+def test_a_fully_done_attributed_document_is_not_called_unrevised(
+    baseline_tei: Mapping[int, str],
+) -> None:
     """A document the Inventaria project corrected page by page must not be
     presented as unrevised machine output, and DoCTA must not claim the
     verification the done status is not."""
-    built = _built()
     docs = {d["docId"]: d for d in bt._documents()}
     for doc_id in FULLY_CORRECTED:
         assert docs[doc_id]["inventaria"], f"{doc_id} lost its attribution"
-        root = ElementTree.fromstring(built[doc_id])
+        root = ElementTree.fromstring(baseline_tei[doc_id])
         resp = _resp_of(root, bt.RESP_INVENTARIA).find(f"{TEI}resp").text
         assert "produced and corrected by the Inventaria project" in resp
         assert "marked done in Transkribus" in resp
@@ -961,11 +967,12 @@ def test_a_fully_done_attributed_document_is_not_called_unrevised() -> None:
         assert "DoCTA has not independently verified" in decl, doc_id
 
 
-def test_an_attributed_document_without_a_done_page_says_so() -> None:
+def test_an_attributed_document_without_a_done_page_says_so(
+    baseline_tei: Mapping[int, str],
+) -> None:
     """No page marked done means the campaign produced the text and no one
     corrected it; the file keeps saying that it is machine transcription."""
-    built = _built()
-    root = ElementTree.fromstring(built[ATTRIBUTED_MACHINE])
+    root = ElementTree.fromstring(baseline_tei[ATTRIBUTED_MACHINE])
     resp = _resp_of(root, bt.RESP_INVENTARIA).find(f"{TEI}resp").text
     assert resp == (
         "Transcription campaign of the Inventaria project in Transkribus,"
@@ -1005,13 +1012,14 @@ def test_a_partly_done_attributed_document_states_the_split() -> None:
     assert "DoCTA has not independently verified" in decl
 
 
-def test_the_published_edition_travels_as_a_bibl() -> None:
+def test_the_published_edition_travels_as_a_bibl(
+    baseline_tei: Mapping[int, str],
+) -> None:
     """Where the harvest found the published edition, the source description
     links it; a document without a link carries no empty bibl."""
-    built = _built()
     docs = {d["docId"]: d for d in bt._documents()}
     linked = 0
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         source = root.find(f".//{TEI}sourceDesc")
         bibl = source.find(f"{TEI}bibl")
@@ -1027,17 +1035,20 @@ def test_the_published_edition_travels_as_a_bibl() -> None:
         assert [el.tag for el in source] == [f"{TEI}msDesc", f"{TEI}bibl"]
     assert linked, "no edition link in the corpus, the check proves nothing"
     assert (
-        ElementTree.fromstring(built[ATTRIBUTED_WITHOUT_LINK]).find(f".//{TEI}bibl")
+        ElementTree.fromstring(baseline_tei[ATTRIBUTED_WITHOUT_LINK]).find(
+            f".//{TEI}bibl"
+        )
         is None
     )
 
 
-def test_an_unattributed_document_keeps_its_own_wording() -> None:
-    built = _built()
+def test_an_unattributed_document_keeps_its_own_wording(
+    baseline_tei: Mapping[int, str],
+) -> None:
     docs = [d for d in bt._documents() if not d["inventaria"]]
     assert docs, "no unattributed document, the check proves nothing"
     for doc in docs:
-        xml = built[doc["docId"]]
+        xml = baseline_tei[doc["docId"]]
         root = ElementTree.fromstring(xml)
         assert bt.RESP_INVENTARIA not in xml, f"attribution leaked into {doc['docId']}"
         assert "Inventaria" not in xml, f"Inventaria named in {doc['docId']}"
@@ -1047,6 +1058,7 @@ def test_an_unattributed_document_keeps_its_own_wording() -> None:
 
 def test_a_docta_transcription_declares_its_own_step_and_no_layout(
     baseline_register: Path,
+    baseline_tei: Mapping[int, str],
 ) -> None:
     """A document Transkribus holds no text for carries DoCTA's own layer.
 
@@ -1054,12 +1066,11 @@ def test_a_docta_transcription_declares_its_own_step_and_no_layout(
     says the reading is the model's own, and it asserts no image region, because
     no layout analysis ran on the page.
     """
-    built = _built(baseline_register)
     doc = next(
         d for d in bt._documents(baseline_register) if d["layer"] == bt.VLM_LAYER
     )
     doc_id = doc["docId"]
-    root = ElementTree.fromstring(built[doc_id])
+    root = ElementTree.fromstring(baseline_tei[doc_id])
 
     ids = _resp_ids(root)
     assert bt.RESP_VLM in ids and bt.RESP_TRANSKRIBUS not in ids
@@ -1088,18 +1099,18 @@ def test_a_docta_transcription_declares_its_own_step_and_no_layout(
 
 def test_a_partly_transcribed_document_says_how_much_it_covers(
     baseline_register: Path,
+    baseline_tei: Mapping[int, str],
 ) -> None:
     """A file carrying part of its source states the ratio, a complete one does not.
 
     Without the sentence the file reads as the whole document, since a source
     without an export has no page list to compare its page count against.
     """
-    built = _built(baseline_register)
     for doc in bt._documents(baseline_register):
         if doc["layer"] != bt.VLM_LAYER:
             continue
         pages = br.transcription_of(doc["docId"], baseline_register)["pages"]
-        root = ElementTree.fromstring(built[doc["docId"]])
+        root = ElementTree.fromstring(baseline_tei[doc["docId"]])
         decl = "".join(root.find(f".//{TEI}editorialDecl").itertext())
         covered, total = len(pages), doc["pages"]
         if covered < total:
@@ -1108,10 +1119,11 @@ def test_a_partly_transcribed_document_says_how_much_it_covers(
             assert "It covers" not in decl, doc["docId"]
 
 
-def test_revision_desc_carries_both_stream_summaries() -> None:
-    built = _built()
+def test_revision_desc_carries_both_stream_summaries(
+    baseline_tei: Mapping[int, str],
+) -> None:
     states = {bt.CORRECTED, bt.PARTLY, bt.MACHINE}
-    for doc_id, xml in built.items():
+    for doc_id, xml in baseline_tei.items():
         root = ElementTree.fromstring(xml)
         generation = root.find(f".//{TEI}change")
         assert generation.get("who") == f"#{bt.RESP_GENERATION}", (
