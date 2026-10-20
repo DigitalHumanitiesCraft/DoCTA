@@ -132,7 +132,7 @@ Zero dependencies, IIIF support, deep zoom.
 
 Images come from Transkribus IIIF URLs, loaded as a plain image source (`viewer.open({ type: 'image', url })`) rather than as a tiled IIIF service. That is enough for single pages and saves a request round trip per tile.
 
-The transcription panel is separate HTML beside the viewer. `buildLineOverlay` in `viewer.html` draws the line polygons of the PAGE XML, held in `data/transcriptions/` under `regions[].lines[].coords`, as an SVG overlay on the image. Hovering or focusing a line in the text marks its polygon, hovering a polygon marks its line, and a click on a polygon scrolls to the line. A document the pipeline transcribed itself has no layout analysis and therefore no overlay.
+The transcription panel is separate HTML beside the viewer. `buildLineOverlay` in `js/viewer.js` draws the line polygons of the PAGE XML, held in `data/transcriptions/` under `regions[].lines[].coords`, as an SVG overlay on the image. The polygons address the original scan, while Transkribus serves `full/max` scaled down to its maximum image area of ten megapixels, so the overlay takes its coordinate space from the IIIF `info.json` of the image and falls back to the loaded size, which is exact below that limit. Hovering or focusing a line in the text marks its polygon, hovering a polygon marks its line, and a click on a polygon scrolls to the line. A document the pipeline transcribed itself has no layout analysis and therefore no overlay.
 
 ## Search: custom vanilla JavaScript
 

@@ -27,6 +27,9 @@
   --conf-medium-bg: #fff8e1;
   --conf-low: #c62828;
   --conf-low-bg: #ffebee;
+  /* Text corrected in DoCTA: a state, so not the accent of the controls and
+     not the person blue of the entity palette. */
+  --state-corrected: #2f6db5;
 
   /* Entity palette: four muted hues on the warm ground, each foreground at least
      4.5:1 on its own -bg pair, on --bg-primary and on --surface. */

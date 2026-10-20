@@ -139,6 +139,11 @@ BASE = `http://127.0.0.1:${server.address().port}/`;
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: false });
 await useCachedFacsimiles(context);
+// The original scan size, larger than any cached image, so the line overlay
+// must take its coordinate space from info.json rather than the loaded image.
+const ORIGINAL = { width: 4321, height: 6789 };
+await context.route('https://files.transkribus.eu/iiif/2/*/info.json',
+  route => route.fulfill({ json: ORIGINAL }));
 await context.addInitScript(() => {
   window.__viewerFitCalls = 0;
   const timer = setInterval(() => {
@@ -321,6 +326,13 @@ try {
   await page.click('#btn-zoom-fit');
   await page.waitForTimeout(1400);
   check(await waitForImageFit(), 'the whole-page control restores the complete image after zooming');
+
+  await page.waitForFunction(size => document.querySelector('#osd-viewer .line-overlay')
+    ?.getAttribute('viewBox') === `0 0 ${size.width} ${size.height}`, ORIGINAL, { timeout: 5000 })
+    .catch(() => {});
+  check(await page.locator('#osd-viewer .line-overlay').getAttribute('viewBox') ===
+    `0 0 ${ORIGINAL.width} ${ORIGINAL.height}`,
+  'line regions use the original scan size from info.json, not the downscaled image');
 
   // Toggle tooltips name the next press, also when the keyboard toggles.
   const regions = page.locator('#btn-line-regions');

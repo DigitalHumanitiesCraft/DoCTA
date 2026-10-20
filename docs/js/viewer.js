@@ -19,6 +19,7 @@ const annotationWorkspace = createAnnotationWorkspace();
 
 let viewer = null;
 let imageKey = null;
+let imageUrl = null;
 let currentDoc = null;
 let currentPage = 0;
 let viewMode = 'synopsis';
@@ -181,6 +182,26 @@ document.addEventListener('pointerup', (e) => {
 });
 document.addEventListener('pointercancel', () => { pendingZone = null; });
 
+// Transkribus scales full/max down to its maximum area, while PAGE coordinates
+// address the original scan; info.json names the original size. Until it
+// arrives, or where it fails, the loaded size stands in, which is exact for
+// every image under that limit.
+const originalSizes = new Map();
+function originalSize(url) {
+  const info = url.replace(/\/full\/[^/]+\/[^/]+\/default\.\w+$/, '/info.json');
+  if (info === url) return null;
+  if (!originalSizes.has(info)) {
+    originalSizes.set(info, null);
+    fetch(info).then(response => (response.ok ? response.json() : null)).then(data => {
+      if (!(Number.isFinite(data?.width) && Number.isFinite(data?.height) &&
+        data.width > 0 && data.height > 0)) return;
+      originalSizes.set(info, { x: data.width, y: data.height });
+      if (imageUrl === url) buildLineOverlay();
+    }).catch(() => {});
+  }
+  return originalSizes.get(info);
+}
+
 function buildLineOverlay() {
   clearLineOverlay();
   if (!viewer || viewMode !== 'synopsis' || !currentDoc) return;
@@ -195,7 +216,8 @@ function buildLineOverlay() {
 
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('class', 'line-overlay');
-  svg.setAttribute('viewBox', `0 0 ${size.x} ${size.y}`);
+  const coords = originalSize(imageUrl) || size;
+  svg.setAttribute('viewBox', `0 0 ${coords.x} ${coords.y}`);
   svg.setAttribute('preserveAspectRatio', 'none');
   svg.setAttribute('aria-hidden', 'true');
   let count = 0;
@@ -243,6 +265,7 @@ function loadImage(iiifUrl) {
     return;
   }
   imageKey = key;
+  imageUrl = iiifUrl;
   clearLineOverlay();
   document.getElementById('image-focus').value = 'spread';
   viewer.addOnceHandler('open', () => fitView(true));

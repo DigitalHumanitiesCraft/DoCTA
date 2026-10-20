@@ -68,7 +68,7 @@
 /* The dot reinforces the wording; it never carries the state alone. */
 .status-pill[data-state="machine"] .status-pill__dot,
 .status-pill[data-state="partial"] .status-pill__dot { background: var(--conf-medium); }
-.status-pill[data-state="corrected"] .status-pill__dot { background: var(--accent); }
+.status-pill[data-state="corrected"] .status-pill__dot { background: var(--state-corrected); }
 .status-pill[data-state="human"] .status-pill__dot { background: var(--conf-high); }
 .status-pill[data-state="dirty"] { border-color: var(--conf-medium); background: var(--conf-medium-bg); color: var(--conf-medium); font-weight: 600; }
 .status-pill[data-state="dirty"] .status-pill__dot { background: var(--conf-low); }

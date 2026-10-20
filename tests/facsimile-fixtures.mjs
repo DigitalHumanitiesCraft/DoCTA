@@ -23,9 +23,12 @@ if (fs.existsSync(directory)) {
 export async function useCachedFacsimiles(surface) {
   if (!images.size) return;
   await surface.route('https://files.transkribus.eu/iiif/2/**', async route => {
-    const key = new URL(route.request().url()).pathname.split('/')[3];
-    const image = images.get(key);
-    if (image) await route.fulfill({ path: image, contentType: 'image/jpeg' });
-    else await route.continue();
+    const { pathname } = new URL(route.request().url());
+    const image = images.get(pathname.split('/')[3]);
+    if (!image) await route.continue();
+    // The cached file is the downscaled image the viewer loads, so an empty
+    // info.json lets the line overlay keep the loaded size, offline.
+    else if (pathname.endsWith('/info.json')) await route.fulfill({ json: {} });
+    else await route.fulfill({ path: image, contentType: 'image/jpeg' });
   });
 }
