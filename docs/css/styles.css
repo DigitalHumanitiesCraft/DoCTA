@@ -200,15 +200,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--conf-high);
 }
 
-/* Partly corrected: part of the pages carry a human hand, the rest do not */
-.prov-chip--partial {
-  border-color: var(--conf-medium);
-  background: var(--conf-medium-bg);
-  color: var(--conf-medium);
-}
-
-/* The machine-output marking, the same semantic as the partial chip and drawn
-   from the same token pair instead of Bootstrap's warning colour, which was the
+/* The machine-output marking, drawn from the medium-confidence token pair instead of Bootstrap's warning colour, which was the
    one marker painted outside the project palette. Foreground on background is
    5.2:1, so the badge text carries the statement on its own. */
 .badge-draft {
@@ -224,8 +216,7 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   color: var(--ent-person);
 }
 
-.prov-chip--llm,
-.prov-chip--machine {
+.prov-chip--llm {
   border-color: var(--border-custom);
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -393,9 +384,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   font-size: var(--text-xs);
 }
 
-/* Entity key at the right end of the meta strip, opposite the text chips */
-.doc-meta__entities { margin-left: auto; flex: 0 0 auto; }
-
 .viewer-tools,
 .viewer-pager {
   display: flex;
@@ -516,54 +504,6 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
   min-height: 0;
   overflow-y: auto;
 }
-
-/* Document metadata strip under the transcription header. The icons group the
-   parts, so no separator characters are set between them. */
-.doc-meta {
-  flex: 0 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  overflow: hidden;
-  gap: var(--space-xs) var(--space-md);
-  padding: var(--space-xs) var(--space-md);
-  border-bottom: 1px solid var(--border-light);
-  background: var(--surface);
-  font-size: var(--text-2xs);
-  color: var(--text-muted-custom);
-  line-height: 1.5;
-}
-
-.doc-meta__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3em;
-  min-width: 0;
-}
-
-.doc-meta__icon {
-  width: 13px;
-  height: 13px;
-  flex: 0 0 auto;
-  color: var(--text-muted-custom);
-}
-
-.doc-meta__cat {
-  flex: 0 0 auto;
-  padding: 0.0625rem var(--space-sm);
-  border: 1px solid var(--border-custom);
-  border-radius: var(--radius-pill);
-  font-size: var(--text-2xs);
-  color: var(--text-muted-custom);
-  white-space: nowrap;
-}
-
-.doc-meta__title {
-  overflow-wrap: anywhere;
-  color: var(--text-primary);
-}
-
-.doc-meta__item:has(.doc-meta__title) { flex-basis: 100%; }
 
 .image-focus, .review-notes, #edition-date {
   max-width: 100%;
@@ -1298,7 +1238,7 @@ a.src-title:hover, a.src-title:focus-visible { color: var(--accent-hover); text-
 .exp-basis a { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
 .exp-basis a:hover { color: var(--accent); }
 
-/* === Edition attribution chip (viewer meta strip) ===
+/* === Edition attribution link (viewer source details) ===
    Accent-tinted so the origin of the text layer catches the eye among the
    neutral category and status chips */
 .doc-meta__edition {

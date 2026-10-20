@@ -93,14 +93,6 @@
 .viewer-page .action-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-inline-size: 2rem; }
 .viewer-page .action-btn[hidden] { display: none; }
 .viewer-page .action-btn[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
-.status-credit .action-label {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
 /* A narrower panel turns the secondary actions into icons first and Edit
    last; the label stays the accessible name and the title repeats it. */
 @container (max-width: 48rem) {

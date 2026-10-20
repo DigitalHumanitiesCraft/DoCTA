@@ -29,7 +29,6 @@ export const PROVENANCE = {
 
 /** Field labels, values and notes of the status details surface. */
 export const STATUS_DETAILS = {
-  title: 'Text status',
   fields: {
     layer: 'Text layer', model: 'Model', transcribed: 'Transcribed', edition: 'Edition',
     page: 'This page', document: 'Document', correctedBy: 'Corrected by', coverage: 'Coverage',

@@ -51,9 +51,6 @@
 .registry-mention[data-kind="place"], #annotation-selection-toolbar [data-kind="place"] { color: var(--ent-place); background: var(--ent-place-bg); }
 .registry-mention[data-kind="date"], #annotation-selection-toolbar [data-kind="date"] { color: var(--ent-time); background: var(--ent-time-bg); }
 .registry-mention:focus-visible, .entity:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.page-provenance { padding-inline: var(--space-md); padding-block: var(--space-xs); font-size: var(--text-xs); color: var(--text-secondary); overflow-wrap: anywhere; }
-.page-provenance:empty { display: none; }
-.viewer-page[data-view="tei"] #page-provenance, .viewer-page[data-view="reading"] #page-provenance { display: none; }
 @media (max-width: 1200px) {
   .viewer-page .viewer-layout--registry { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .registry-sidebar { grid-column: 1 / -1; max-block-size: 50vh; border-inline-start: 0; }

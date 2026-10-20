@@ -30,13 +30,20 @@ function displayDate(value) {
  * Absence of the Transkribus done status documents no correction work, so it
  * is named as unrecorded rather than as unrevised.
  */
+/** Published Inventaria edition of a document, or null; only web links from
+ * the source register may become navigable. */
+export function editionUrl(reg) {
+  if (reg?.transcription_by !== 'Inventaria') return null;
+  const url = reg.edition_url || 'https://www.inventaria.at/';
+  return WEB_URL.test(url) ? url : null;
+}
+
 function attribution(reg) {
   if (!reg || typeof reg.pages_total !== 'number' || !reg.pages_total) return null;
   const done = typeof reg.done_pages === 'number' ? reg.done_pages : 0;
   const total = reg.pages_total;
   const inventaria = reg.transcription_by === 'Inventaria';
-  const url = reg.edition_url || 'https://www.inventaria.at/';
-  const edition = inventaria && WEB_URL.test(url) ? url : null;
+  const edition = editionUrl(reg);
   const by = inventaria ? 'the Inventaria project' : '';
   if (reg.transcription_source === 'vlm') {
     return { kind: 'vlm', provenance: 'machine-unrevised', tone: 'machine', edition, description: D.vlmNote };
@@ -156,7 +163,8 @@ function detailNotes(attr, corr) {
  */
 export function createTextStatus(els) {
   const label = els.pill.querySelector('.status-pill__label');
-  const creditLabel = els.credit.querySelector('.action-label');
+  els.credit.querySelector('.action-label').textContent = D.editionLink;
+  els.credit.title = D.editionLinkName;
   const body = els.details.querySelector('.text-status__body');
   const popover = createAnchoredPopover(els.details, {
     onHide: () => els.pill.setAttribute('aria-expanded', 'false'),
@@ -175,11 +183,7 @@ export function createTextStatus(els) {
       : corr.state === 'none' ? attr.tone : 'corrected';
     els.pill.title = 'Show text status details';
     els.credit.hidden = !attr.edition;
-    if (attr.edition) {
-      els.credit.href = attr.edition;
-      creditLabel.textContent = D.editionLink;
-      els.credit.title = D.editionLinkName;
-    }
+    if (attr.edition) els.credit.href = attr.edition;
     body.innerHTML = (ctx.dirty ? `<p class="text-status__draft">${escapeHTML(D.draft)}</p>` : '') +
       '<dl class="text-status__fields">' +
       detailFields(ctx, attr, corr).map(([key, value]) => `<div><dt>${escapeHTML(key)}</dt><dd>${value}</dd></div>`).join('') +

@@ -8,7 +8,8 @@ import { createReviewView } from './viewer-review.js?v=20261020-en';
 import { createLocalEditor } from './viewer-local.js';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
-import { createTextStatus } from './viewer-status.js?v=20261020-count';
+import { createTextStatus, editionUrl } from './viewer-status.js?v=20261020-refactor';
+import { STATUS_DETAILS } from './strings.js';
 import { imageDocument } from './source-images.js';
 
 initNav('viewer');
@@ -65,15 +66,11 @@ function renderDocMeta(docId) {
     field('Archival unit', source?.art && vocabLabel('archivalUnit', source.art)) +
     field('Transcription project', reg?.transcription_by || source?.transkribiert) +
     field('Transkribus document', docId);
-  let attribution = '';
-  if (reg?.transcription_by === 'Inventaria') {
-    const url = reg.edition_url || 'https://www.inventaria.at/';
-    // Only web links from the source register may become navigable metadata.
-    if (/^https?:\/\//i.test(url)) {
-      attribution = '<a class="doc-meta__edition" href="' + escapeAttr(url) +
-        '" target="_blank" rel="noopener">Edition by Inventaria</a>';
-      details += '<div><dt>Original edition</dt><dd>' + attribution + '</dd></div>';
-    }
+  const url = editionUrl(reg);
+  if (url) {
+    details += '<div><dt>Original edition</dt><dd><a class="doc-meta__edition" href="' +
+      escapeAttr(url) + '" target="_blank" rel="noopener">' +
+      escapeHTML(STATUS_DETAILS.editionLink) + '</a></dd></div>';
   }
   document.getElementById('source-details').innerHTML = details;
 }
