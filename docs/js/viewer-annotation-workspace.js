@@ -9,11 +9,11 @@ export function createAnnotationWorkspace() {
   surface.setAttribute('aria-labelledby', 'annotation-workspace-title');
   surface.innerHTML = `
     <div class="viewer-dialog__header">
-      <h2 id="annotation-workspace-title">Textstelle annotieren</h2>
-      <button type="button" class="review-btn" id="annotation-workspace-close">Schließen</button>
+      <h2 id="annotation-workspace-title">Annotate passage</h2>
+      <button type="button" class="review-btn" id="annotation-workspace-close">Close</button>
     </div>
     <div id="annotation-source-location"></div>
-    <div id="annotation-selection-toolbar" role="group" aria-label="Auswahl annotieren" hidden></div>
+    <div id="annotation-selection-toolbar" role="group" aria-label="Annotate selection" hidden></div>
     <div id="mention-dialog" hidden><div class="registry-content"></div></div>`;
   document.body.append(surface);
   const manual = surface.querySelector('#mention-dialog');
@@ -40,8 +40,8 @@ export function createAnnotationWorkspace() {
     anchor = next.anchor || anchor;
     origin = next.origin instanceof Element ? next.origin : origin || document.activeElement;
     context = next.context || context;
-    surface.querySelector('h2').textContent = context?.quote || 'Textstelle annotieren';
-    surface.querySelector('#annotation-source-location').textContent = context?.pageNr ? `Seite ${context.pageNr}` : '';
+    surface.querySelector('h2').textContent = context?.quote || 'Annotate passage';
+    surface.querySelector('#annotation-source-location').textContent = context?.pageNr ? `Page ${context.pageNr}` : '';
     if (changed) listeners.forEach(notify => notify(context));
     popover.open(anchor, origin);
     return true;

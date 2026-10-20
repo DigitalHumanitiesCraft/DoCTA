@@ -1,81 +1,83 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anleitung | DoCTA</title>
-  <meta name="description" content="DoCTA lokal starten, Transkriptionen korrigieren und eigene Register und Begriffe aufbauen.">
+  <title>Guide | DoCTA</title>
+  <meta name="description" content="Start DoCTA on your own computer, correct transcriptions and build your own registers and controlled terms.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/guide.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation öffnen"><span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav" id="main-nav"></ul></div>
     </div>
   </nav>
   <main id="main" class="guide-content">
-    <h1>Mit DoCTA arbeiten</h1>
-    <p id="guide-online">Zum Bearbeiten startest du DoCTA auf deinem Rechner. Du arbeitest im Browser und speicherst deine Änderungen im geklonten Projektordner.</p>
-    <p id="guide-local" hidden>Die lokale Arbeitsedition läuft. <a href="viewer.html?doc=11328300&amp;page=1">Inventar von Thaur öffnen</a> oder über <q>Quellen</q> ein anderes Dokument wählen.</p>
-    <nav aria-label="Abschnitte der Anleitung" class="guide-sections">
-      <a href="#start">Einrichten</a><a href="#launch">Starten</a><a href="#exercise">Arbeiten</a><a href="#save">Sichern</a>
+    <h1>Working with DoCTA</h1>
+    <p id="guide-online">To edit, you start DoCTA on your own computer. You work in the browser and save your changes in the cloned project folder. Annotating and saving work only in this local working edition. The public website is a read-only view: corrections made there remain a browser draft that can only be exported.</p>
+    <p id="guide-local" hidden>The local working edition is running. <a href="viewer.html?doc=11328300&amp;page=1">Open the Thaur inventory</a> or choose another document under <q>Sources</q>.</p>
+    <nav aria-label="Guide sections" class="guide-sections">
+      <a href="#start">Set up</a><a href="#launch">Start</a><a href="#exercise">Work</a><a href="#save">Back up</a>
     </nav>
     <section aria-labelledby="start">
-      <h2 id="start">Einmalig einrichten</h2>
+      <h2 id="start">One-time setup</h2>
       <ol>
-        <li><a href="https://github.com/signup">GitHub-Konto anlegen</a>, falls nötig, und der Projektbetreuung den Benutzernamen schicken.</li>
-        <li><a href="https://desktop.github.com/">GitHub Desktop installieren</a> und anmelden. Über <q>File</q> → <q>Clone Repository</q> → <q>URL</q> das Projekt herunterladen:
+        <li><a href="https://github.com/signup">Create a GitHub account</a> if you do not have one, and send your user name to the project support.</li>
+        <li><a href="https://desktop.github.com/">Install GitHub Desktop</a> and sign in. Download the project via <q>File</q> → <q>Clone Repository</q> → <q>URL</q>:
           <pre><code>https://github.com/DigitalHumanitiesCraft/DoCTA.git</code></pre>
-          Wähle einen Speicherort und klicke auf <q>Clone</q>.
+          Choose a location and click <q>Clone</q>. Clone the repository; do not create a fork.
         </li>
-        <li><a href="https://code.visualstudio.com/">Visual Studio Code installieren</a>. Über <q>File</q> → <q>Open Folder</q> den heruntergeladenen DoCTA-Ordner öffnen, dann <q>Terminal</q> → <q>New Terminal</q> wählen.</li>
+        <li><a href="https://code.visualstudio.com/">Install Visual Studio Code</a>. Open the downloaded DoCTA folder via <q>File</q> → <q>Open Folder</q>, then choose <q>Terminal</q> → <q>New Terminal</q>.</li>
       </ol>
-      <p>Die Datei <code>requirements.txt</code> liegt bereits im DoCTA-Ordner. Sie listet die benötigten Python-Pakete samt Versionen auf. Installiere sie mit den folgenden Befehlen für dein Betriebssystem. Gib jede Zeile einzeln ein und warte auf ihren Abschluss. Dafür brauchst du Internet.</p>
+      <p>The file <code>requirements.txt</code> is already in the DoCTA folder. It lists the required Python packages with their versions. Install them with the following commands for your operating system. Enter each line separately and wait for it to finish. This requires an internet connection.</p>
       <h3>Windows</h3>
-      <p>Installiere den <q>Python Install Manager</q> der Python Software Foundation aus dem Microsoft Store. Öffne danach das VS-Code-Terminal neu und führe aus:</p>
+      <p>Install the <q>Python Install Manager</q> of the Python Software Foundation from the Microsoft Store. Then reopen the VS Code terminal and run:</p>
       <pre><code>py install 3.14
 py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt</code></pre>
       <h3>macOS</h3>
-      <p>Installiere Python 3.14 von <a href="https://www.python.org/downloads/">python.org</a>. Öffne danach das VS-Code-Terminal neu und führe aus:</p>
+      <p>Install Python 3.14 from <a href="https://www.python.org/downloads/">python.org</a>. Then reopen the VS Code terminal and run:</p>
       <pre><code>python3.14 -m venv .venv
 ./.venv/bin/python -m pip install -r requirements.txt</code></pre>
-      <p>Die Pakete liegen anschließend in <code>.venv</code> im DoCTA-Ordner. Weiter mit <a href="#launch">Starten</a>.</p>
+      <p>The packages are then installed in <code>.venv</code> inside the DoCTA folder. Continue with <a href="#launch">Start</a>.</p>
     </section>
     <section aria-labelledby="launch">
-      <h2 id="launch">Bei jeder Arbeitssitzung starten</h2>
-      <p>Öffne den DoCTA-Ordner in VS Code und starte im Terminal unter Windows:</p>
+      <h2 id="launch">Start at every working session</h2>
+      <p id="pull">First fetch the latest version from GitHub. In GitHub Desktop, select the DoCTA repository, click <q>Fetch origin</q> and then <q>Pull origin</q> if it appears. If GitHub Desktop reports conflicting changes, stop and contact the project support instead of discarding anything. If the update changed <code>requirements.txt</code>, run the <code>pip install</code> line from the setup again.</p>
+      <p>Open the DoCTA folder in VS Code and start DoCTA in the terminal. On Windows:</p>
       <pre><code>.\.venv\Scripts\python.exe pipeline/local_editor.py --open-browser</code></pre>
-      <p>Auf macOS:</p>
+      <p>On macOS:</p>
       <pre><code>./.venv/bin/python pipeline/local_editor.py --open-browser</code></pre>
-      <p>DoCTA öffnet sich im Browser. Lass das Terminal offen. Dieser Python-Server ermöglicht das Speichern. Die VS-Code-Erweiterung Live Server ist dafür nicht erforderlich. Quellenbilder können Internetzugriff benötigen.</p>
+      <p>DoCTA opens in the browser. Keep the terminal open. This Python server is what makes saving possible. The VS Code extension Live Server is not needed for this. Source images may require internet access.</p>
     </section>
     <section aria-labelledby="exercise">
-      <h2 id="exercise">Mit deinen Quellen arbeiten</h2>
-      <p>Öffne unter <q>Quellen</q> ein Dokument. Bild und Transkription stehen nebeneinander. Über <q>Ganze Seite</q> setzt du den Bildausschnitt zurück.</p>
-      <h3 id="corrections">Text korrigieren</h3>
-      <p><q>Bearbeiten</q> wählen, Kürzel eintragen und eine Zeile anklicken. Korrigiere anhand des Bildes. Enter übernimmt den Entwurf, erst <q>Änderungen speichern</q> speichert ihn dauerhaft. Lade zur Kontrolle neu. Eine falsche gespeicherte Lesung korrigierst du durch eine weitere gespeicherte Änderung. Schalte <q>Bearbeiten</q> anschließend wieder aus.</p>
-      <h3 id="annotations">Personen und Begriffe annotieren</h3>
+      <h2 id="exercise">Working with your sources</h2>
+      <p>Open a document under <q>Sources</q>. Image and transcription stand side by side. <q>Whole page</q> resets the image area.</p>
+      <h3 id="corrections">Correcting the text</h3>
+      <p>Choose <q>Edit</q>, enter your initials and click a line. Correct it against the image. Enter accepts the draft; only <q>Save changes</q> stores it permanently. Reload to check. You correct a wrong saved reading with a further saved change. Switch <q>Edit</q> off again afterwards.</p>
+      <h3 id="annotations">Annotating persons and terms</h3>
+      <p>Annotation is available only in the local working edition started above, not on the public website.</p>
       <ol>
-        <li>Markiere eine Stelle innerhalb einer Textzeile. Wähle <q>Person</q>, <q>Begriff</q>, <q>Ort</q> oder <q>Datumsangabe</q>. Falls das Auswahlfeld fehlt, nutze <q>Auswahl annotieren</q>.</li>
-        <li>Trage dein Kürzel ein. Suche bei Personen, Begriffen oder Orten einen passenden Eintrag oder wähle <q>Neuer Registereintrag</q> und speichere ihn mit <q>Eintrag speichern</q>. Jede Zuordnung entscheidest du selbst.</li>
-        <li>Wähle anschließend <q>Fundstelle speichern</q>. Der Registereintrag beschreibt die Person oder den Begriff, die Fundstelle verknüpft ihn mit dieser Textstelle. Deshalb sind beide Speicherschritte nötig.</li>
-        <li>Unter <q>Index</q> findest du deine Personen, Orte und Begriffe wieder. Die Fundstellen führen zurück zum Text. Datumsangaben bearbeitest du direkt an ihrer Stelle.</li>
+        <li>Select a passage within one text line. Choose <q>Person</q>, <q>Term</q>, <q>Place</q> or <q>Date</q>. If the selection field does not appear, use <q>Annotate selection</q>.</li>
+        <li>Enter your initials. For persons, terms or places, search for a matching entry or choose <q>New register entry</q> and save it with <q>Save entry</q>. You decide every assignment yourself.</li>
+        <li>Then choose <q>Save occurrence</q>. The register entry describes the person or the term; the occurrence links it to this passage of the text. That is why both save steps are needed.</li>
+        <li>Under <q>Index</q> you find your persons, places and terms again. The occurrences lead back to the text. Dates are edited directly at their passage.</li>
       </ol>
-      <p>Eine vorhandene Markierung anklicken, um sie zu ändern oder mit <q>Fundstelle entfernen</q> zu löschen. Der Quellentext bleibt erhalten. Nach einer Textkorrektur prüfe die betroffenen Annotationen erneut.</p>
+      <p>Click an existing mark to change it or to delete it with <q>Remove occurrence</q>. The source text remains unchanged. After a text correction, check the affected annotations again.</p>
     </section>
     <section aria-labelledby="save">
-      <h2 id="save">Sichern und beenden</h2>
-      <p>Speichere offene Textkorrekturen und Fundstellen jeweils ausdrücklich. Beende DoCTA im Terminal mit Strg+C beziehungsweise Ctrl+C. Sichere den gesamten Projektordner auf einem separaten Laufwerk. Ungespeicherte Browserentwürfe gehören nicht zur Sicherung.</p>
-      <p id="github">Deine Bearbeitungen bleiben zunächst auf deinem Rechner. Ein Git-Commit hält einen lokalen Versionsstand fest. Erst <q>Push origin</q> lädt ihn in das öffentliche Repository. Stimme vorher ab, welche Daten veröffentlicht werden dürfen.</p>
-      <p id="update">Die <a href="https://github.com/DigitalHumanitiesCraft/DoCTA#keep-a-local-version-and-report-feedback">README erklärt GitHub-Austausch, Updates und Wiederherstellung</a>.</p>
-      <p id="help">Bei Fragen oder Fehlermeldungen melde dich mit Quelle, Seite und der ausgeführten Handlung, gerne mit Screenshot. Bewahre ungespeicherte Eingaben vor einem Neuladen separat auf.</p>
+      <h2 id="save">Backing up and finishing</h2>
+      <p>Save open text corrections and occurrences explicitly each time. Stop DoCTA in the terminal with Ctrl+C. Back up the whole project folder on a separate drive. Unsaved browser drafts are not part of the backup.</p>
+      <p id="github">Your edits initially remain on your computer. A Git commit records a local version. Only <q>Push origin</q> uploads it to the public repository. Agree beforehand which data may be published.</p>
+      <p id="update">The <a href="https://github.com/DigitalHumanitiesCraft/DoCTA#keep-a-local-version-and-report-feedback">README explains exchange through GitHub, updates and recovery</a>.</p>
+      <p id="help">If you have questions or see error messages, get in touch with the source, the page and the action you performed, ideally with a screenshot. Keep unsaved input separately before reloading.</p>
     </section>
   </main>
   <footer class="text-center py-4 small text-body-secondary"></footer>

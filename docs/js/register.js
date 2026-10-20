@@ -7,7 +7,7 @@ initNav('register');
 initBanner();
 
 const local = createLocalEditor();
-const kinds = { person: 'Person', place: 'Ort', term: 'Begriff' };
+const kinds = { person: 'Person', place: 'Place', term: 'Term' };
 const status = document.getElementById('register-status');
 const search = document.getElementById('register-search');
 const kind = document.getElementById('register-kind');
@@ -30,9 +30,9 @@ function entryUrl(id, resetFilters = false) {
 
 function attestationMarkup(mention) {
   const source = documents.get(String(mention.docId));
-  const label = [mention.quote, source?.title || `Dokument ${mention.docId}`, source?.shelfmark, `Seite ${mention.pageNr}`].filter(Boolean).join(', ');
+  const label = [mention.quote, source?.title || `Document ${mention.docId}`, source?.shelfmark, `Page ${mention.pageNr}`].filter(Boolean).join(', ');
   const url = `viewer.html?doc=${encodeURIComponent(mention.docId)}&page=${encodeURIComponent(mention.pageNr)}&mention=${encodeURIComponent(mention.id)}`;
-  return `<li><a href="${attr(url)}">${esc(label)}</a>${mention.stale ? '<span class="register-stale">Quellentext geändert, Fundstelle prüfen.</span>' : ''}</li>`;
+  return `<li><a href="${attr(url)}">${esc(label)}</a>${mention.stale ? '<span class="register-stale" data-stale="true">Source text changed, check this occurrence.</span>' : ''}</li>`;
 }
 
 function renderDetail(entry) {
@@ -47,18 +47,18 @@ function renderDetail(entry) {
   const events = registry.history.filter(event => [event.before, event.after].some(record =>
     record && (record.id === entry.id || record.entryId === entry.id || mentionIds.has(record.id))));
   const fields = [
-    entry.aliases.length ? `<div><dt>Weitere Schreibweisen</dt><dd>${esc(entry.aliases.join(', '))}</dd></div>` : '',
-    entry.note ? `<div><dt>Notiz</dt><dd>${esc(entry.note)}</dd></div>` : '',
-    parent ? `<div><dt>Oberbegriff</dt><dd><a href="${attr(entryUrl(parent.id, true))}" data-entry-id="${attr(parent.id)}">${esc(parent.label)}</a></dd></div>` : '',
+    entry.aliases.length ? `<div><dt>Other spellings</dt><dd>${esc(entry.aliases.join(', '))}</dd></div>` : '',
+    entry.note ? `<div><dt>Note</dt><dd>${esc(entry.note)}</dd></div>` : '',
+    parent ? `<div><dt>Broader term</dt><dd><a href="${attr(entryUrl(parent.id, true))}" data-entry-id="${attr(parent.id)}">${esc(parent.label)}</a></dd></div>` : '',
   ].join('');
   detail.innerHTML = `
     <h2 id="register-entry-title" tabindex="-1">${esc(entry.label)}</h2>
     <p class="register-kind">${kinds[entry.kind]}</p>
     ${fields ? `<dl>${fields}</dl>` : ''}
-    <h3>Fundstellen</h3>
-    ${mentions.length ? `<ul class="register-attestations" role="list">${mentions.map(attestationMarkup).join('')}</ul>` : '<p>Keine Fundstellen zugeordnet.</p>'}
-    <details><summary>Kennung</summary><code>${esc(entry.id)}</code></details>
-    ${events.length ? `<details id="register-history"><summary>Änderungsverlauf</summary>${historyMarkup(events)}</details>` : ''}`;
+    <h3>Occurrences</h3>
+    ${mentions.length ? `<ul class="register-attestations" role="list">${mentions.map(attestationMarkup).join('')}</ul>` : '<p>No occurrences assigned.</p>'}
+    <details><summary>Identifier</summary><code>${esc(entry.id)}</code></details>
+    ${events.length ? `<details id="register-history"><summary>Change history</summary>${historyMarkup(events)}</details>` : ''}`;
 }
 
 function updateUrl({ push = false } = {}) {
@@ -81,7 +81,7 @@ function render({ preferredId = selectedId, writeUrl = true } = {}) {
     <a href="${attr(entryUrl(entry.id))}" data-entry-id="${attr(entry.id)}"${entry.id === selectedId ? ' aria-current="true"' : ''}>
       ${esc(describeEntry(entry, registry.entries))}<span class="register-kind">${kinds[entry.kind]}</span>
     </a></li>`).join('');
-  status.textContent = matches.length ? '' : registry.entries.length ? 'Keine passenden Einträge.' : 'Noch keine Registereinträge angelegt.';
+  status.textContent = matches.length ? '' : registry.entries.length ? 'No matching entries.' : 'No register entries created yet.';
   renderDetail(selected);
 }
 
@@ -126,7 +126,8 @@ document.getElementById('register-export').addEventListener('click', () => {
 async function initialize() {
   await local.init();
   if (!local.enabled) {
-    status.textContent = 'Der editorische Index ist im lokalen Arbeitseditor verfügbar.';
+    status.dataset.state = 'read-only';
+    status.innerHTML = 'The editorial index is available only in the local working edition. <a href="guide.html#launch">How to start the local working edition</a>';
     return;
   }
   try {
@@ -149,7 +150,7 @@ async function initialize() {
     readUrl();
     render();
   } catch (error) {
-    status.textContent = `Index nicht geladen. ${error.message}`;
+    status.textContent = `Index could not be loaded. ${error.message}`;
   }
 }
 

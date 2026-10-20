@@ -204,7 +204,8 @@ try {
   await page.goto(`${BASE}/guide.html`, { waitUntil: 'networkidle' });
   check(await page.locator('#guide-local').isVisible() && await page.locator('#guide-online').isHidden(),
     'real local guide shows the working example instead of online setup guidance');
-  check(await page.locator('[aria-current="page"]').textContent() === 'Anleitung', 'guide navigation identifies current page');
+  check(await page.locator('#main-nav [aria-current="page"]').getAttribute('href') === 'guide.html', 'guide navigation identifies current page');
+  check(await page.locator('section[aria-labelledby="launch"] #pull').count() === 1, 'guide asks to pull the latest version before each session');
   for (const href of await page.locator('.guide-sections a').evaluateAll(links => links.map(link => link.getAttribute('href')))) {
     check(await page.locator(href).count() === 1, `guide section ${href} exists`);
   }
@@ -284,7 +285,7 @@ try {
   await saveCorrection(`${originalText} [QA]`, person.lineId);
   await saveCorrection(originalText, person.lineId);
   if (await page.locator('#btn-review').getAttribute('aria-pressed') === 'true') await page.locator('#btn-review').click();
-  check(await page.locator('#btn-review').getAttribute('aria-pressed') === 'false', 'Bearbeiten switches off before further annotation');
+  check(await page.locator('#btn-review').getAttribute('aria-pressed') === 'false', 'Edit switches off before further annotation');
   await selectText(person);
   check(await mentionForm.isVisible(), 'annotation selection works after correction and restoration');
   check(machineRequests.length === 0, 'walkthrough loads no machine annotation suggestions');

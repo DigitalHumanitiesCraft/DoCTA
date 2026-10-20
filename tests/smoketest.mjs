@@ -9,8 +9,8 @@ import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 
 // Repo root, independent of the caller's working directory.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
-const PORT = 8731;
-const BASE = `http://127.0.0.1:${PORT}/DoCTA/`;
+// Port 0 lets the system choose a free port, so suites can run concurrently.
+let BASE = '';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -73,7 +73,55 @@ const DEEP_LINKS = [
 
 const TARGETS = [...PAGES.map(url => ({ url })), ...DEEP_LINKS];
 
-await new Promise(r => server.listen(PORT, '127.0.0.1', r));
+// Language guard. The interface is English; these German interface words were
+// translated and must not return. Source text, shelfmarks, catalogue titles and
+// extracted entity forms stay German and are excluded by their containers.
+const GERMAN_UI = [
+  'Quelle', 'Quellen', 'Quellenangaben', 'Anleitung', 'Bearbeiten', 'speichern', 'gespeichert',
+  'verwerfen', 'Schließen', 'Seite', 'Seiten', 'Fundstelle', 'Fundstellen', 'Kürzel', 'Eintrag',
+  'Einträge', 'Registereintrag', 'Begriff', 'Begriffe', 'Datumsangabe', 'Datierung', 'Signatur',
+  'Transkription', 'Faksimile', 'Lesetext', 'Digitalisat', 'Digitalisate', 'Weitere Funktionen',
+  'Zum Inhalt', 'Über das Projekt', 'Ganze Seite', 'Bitte', 'nicht', 'Keine', 'Änderungen',
+  'Auswahl', 'annotieren', 'Notiz', 'Oberbegriff', 'Schreibweisen', 'Zeile', 'öffnen',
+  'Vergrößern', 'Verkleinern', 'Vollbild', 'Hälfte', 'Gesamtbild', 'Sortierung', 'Verfügbarkeit',
+];
+const GERMAN_RE = new RegExp(String.raw`(?<!\p{L})(${GERMAN_UI.join('|')})(?!\p{L})`, 'u');
+const SOURCE_TEXT = [
+  'body [lang]:not([lang="en"])', '#transcription-container', '#source-title', '#source-shelfmark',
+  '#source-details', '#doc-selector', '.src-title', '.src-sig', '#annotation-workspace-title',
+  '.exp-table', '.exp-attest', '.net-svg', '.net-card', '.net-list', 'select', 'option',
+].join(',');
+
+async function germanInterfaceText(p) {
+  return p.evaluate(({ pattern, flags, exclude }) => {
+    const re = new RegExp(pattern, flags);
+    const found = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (!parent || parent.closest(exclude) || !parent.checkVisibility()) continue;
+      const match = re.exec(node.textContent);
+      if (match) found.push(`text "${match[1]}" in ${node.textContent.trim().slice(0, 80)}`);
+    }
+    for (const el of document.querySelectorAll('[aria-label], [title], [placeholder], [alt]')) {
+      if (el.closest(exclude)) continue;
+      for (const name of ['aria-label', 'title', 'placeholder', 'alt']) {
+        const match = re.exec(el.getAttribute(name) || '');
+        if (match) found.push(`${name} "${match[1]}" on ${el.tagName.toLowerCase()}#${el.id}`);
+      }
+    }
+    const meta = document.querySelector('meta[name="description"]')?.content || '';
+    for (const [label, value] of [['title', document.title], ['meta description', meta]]) {
+      const match = re.exec(value);
+      if (match) found.push(`${label} "${match[1]}"`);
+    }
+    return found;
+  }, { pattern: GERMAN_RE.source, flags: GERMAN_RE.flags, exclude: SOURCE_TEXT });
+}
+
+await new Promise(r => server.listen(0, '127.0.0.1', r));
+BASE = `http://127.0.0.1:${server.address().port}/DoCTA/`;
 const browser = await chromium.launch();
 const report = {};
 
@@ -124,6 +172,10 @@ for (const { url: page, nonempty = [], check } of TARGETS) {
     else if (!filled) missing.push(`${sel} rendered empty`);
   }
   if (check) missing.push(...await check(p).catch(e => [String(e).slice(0, 120)]));
+  const lang = await p.evaluate(() => document.documentElement.lang).catch(() => '');
+  if (lang !== 'en') missing.push(`html lang is "${lang}", not "en"`);
+  missing.push(...(await germanInterfaceText(p).catch(e => [String(e).slice(0, 120)]))
+    .map(item => `German interface word: ${item}`));
 
   report[page] = { loadMs, title, textLen, errors, warnings: warnings.slice(0, 5),
                    failed: [...new Set(failed)], links: [...new Set(links)], imgNoAlt, imgTotal,
@@ -140,6 +192,21 @@ for (const [, r] of Object.entries(report)) {
     h && !/^(https?:|mailto:|#|javascript:)/.test(h) && !exists(h));
   delete r.links;
 }
+
+// The same denylist over the string literals of the site scripts, so a German
+// message that only appears in a rare state cannot slip past the page loads.
+// Comments are dropped first; the vocabulary mappings name no denylisted word.
+const scriptFindings = [];
+for (const name of fs.readdirSync(path.join(ROOT, 'js')).filter(f => f.endsWith('.js'))) {
+  const code = fs.readFileSync(path.join(ROOT, 'js', name), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|\s)\/\/.*$/gm, '$1');
+  for (const literal of code.match(/'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`/g) || []) {
+    const match = GERMAN_RE.exec(literal);
+    if (match) scriptFindings.push(`js/${name}: "${match[1]}" in ${literal.slice(0, 80)}`);
+  }
+}
+report['docs/js/*.js :: German string literals'] = { errors: [], failed: [], deadLinks: [], textLen: 1,
+  missing: scriptFindings };
 
 console.log(JSON.stringify(report, null, 1));
 

@@ -39,7 +39,7 @@ export function renderRegistryMarks(mentions, entries, labels) {
     mark.dataset.mentionId = mention.id;
     mark.tabIndex = 0;
     mark.setAttribute('role', 'button');
-    mark.setAttribute('aria-label', `${mention.quote}, ${description}, Fundstelle bearbeiten`);
+    mark.setAttribute('aria-label', `${mention.quote}, ${description}, edit occurrence`);
     mark.append(range.extractContents());
     range.insertNode(mark);
   }

@@ -12,8 +12,8 @@ import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 
 // Repo root, independent of the caller's working directory.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs');
-const PORT = 8733;
-const BASE = `http://127.0.0.1:${PORT}/DoCTA/`;
+// Port 0 lets the system choose a free port, so suites can run concurrently.
+let BASE = '';
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml',
@@ -52,7 +52,8 @@ function reviewDoc() {
   return null;
 }
 
-await new Promise(r => server.listen(PORT, '127.0.0.1', r));
+await new Promise(r => server.listen(0, '127.0.0.1', r));
+BASE = `http://127.0.0.1:${server.address().port}/DoCTA/`;
 const browser = await chromium.launch();
 const report = {};
 
@@ -325,7 +326,7 @@ async function reviewFlow(target) {
     failures.push('the committed line is not marked as corrected');
   }
   actions.push(`corrected line -> "${corrected.slice(0, 40)}"`);
-  if (await p.locator('#draft-badge').textContent() !== 'Ungespeicherte Änderungen' ||
+  if (await p.locator('#draft-badge').getAttribute('data-state') !== 'dirty' ||
       !await p.locator('#draft-badge').isVisible()) {
     failures.push('an unsaved correction is not visibly marked as a browser draft');
   }

@@ -1,8 +1,9 @@
 import { initNav, initBanner } from './app.js';
 import { loadJSON } from './data-loader.js';
-import { escapeHTML as esc, escapeAttr as attr, formatDate } from './utils.js';
+import { escapeHTML as esc, escapeAttr as attr, formatDate, formatCount as number, catLabel, vocabLabel } from './utils.js';
 import { searchKeys } from './viewer-registry-display.js';
 import { imageDocument } from './source-images.js';
+import { PROVENANCE } from './strings.js';
 
 initNav('dashboard');
 initBanner();
@@ -14,17 +15,15 @@ const list = document.getElementById('sources-list');
 const count = document.getElementById('result-count');
 let sources = [];
 let category = '';
-const number = value => value.toLocaleString('de-AT');
 
 function extentMarkup(source) {
   const parts = [];
   const images = source.digital_images || 0;
-  if (images) parts.push(`<span>${number(images)} ${images === 1 ? 'Digitalisat' : 'Digitalisate'}</span>`);
+  if (images) parts.push(`<span>${number(images)} ${images === 1 ? 'digitised image' : 'digitised images'}</span>`);
   const extent = source.catalogue_extent;
   if (extent?.value != null) {
-    const units = { seiten: 'Seiten', bilder: 'Bilder' };
-    const unit = units[extent.unit] || 'ohne Einheitenangabe';
-    parts.push(`<span>Katalogumfang ${number(extent.value)} ${esc(unit)}</span>`);
+    const unit = vocabLabel('extentUnit', extent.unit || 'unbekannt');
+    parts.push(`<span>Catalogue extent ${number(extent.value)} ${esc(unit)}</span>`);
   }
   return parts.join('');
 }
@@ -41,19 +40,20 @@ function provenanceMarkup(item) {
     } catch { /* Missing edition links use the project's public homepage. */ }
     const corrected = inventariaDocuments.every(doc => doc.summary.pages_total > 0 && doc.summary.done_pages >= doc.summary.pages_total);
     const partlyCorrected = inventariaDocuments.some(doc => doc.summary.done_pages > 0);
-    const correction = corrected ? ', korrigiert' : partlyCorrected ? ', teilweise korrigiert' : '';
-    parts.push(`<a href="${attr(url)}" target="_blank" rel="noopener">Transkription Inventaria${correction}</a>`);
+    const correction = corrected ? ', corrected' : partlyCorrected ? ', partly corrected' : '';
+    const state = corrected ? 'full' : partlyCorrected ? 'partial' : 'none';
+    parts.push(`<a href="${attr(url)}" target="_blank" rel="noopener" data-correction="${state}">Transcription by Inventaria${correction}</a>`);
   }
   if (item.documents.some(doc => doc.summary?.transcription_source === 'vlm')) {
-    parts.push('<span>Maschinelle Ausgangstranskription</span>');
+    parts.push(`<span data-provenance="machine-unrevised">${esc(PROVENANCE.sourceListVlm)}</span>`);
   } else if (item.hasText && !inventaria) {
-    parts.push('<span>Transkription aus Transkribus</span>');
+    parts.push('<span>Transcription from Transkribus</span>');
   }
   if (!item.hasText) {
     const firstImage = item.documents.find(doc => doc.image);
     const text = firstImage
-      ? firstImage.collection.nrOfPages > 1 ? 'Erstes Bild verfügbar' : 'Digitalisat'
-      : item.hasImages ? 'Digitalisiert' : 'Katalognachweis';
+      ? firstImage.collection.nrOfPages > 1 ? 'First image available' : 'Digitised image'
+      : item.hasImages ? 'Digitised' : 'Catalogue record';
     parts.push(`<span>${text}</span>`);
   }
   return parts.join('');
@@ -73,10 +73,10 @@ function rowMarkup(item) {
     ${image}
     <div class="src-main">
       ${title}
-      <div class="src-meta"><span class="src-sig">${esc(source.signatur)}</span><span class="src-date">${esc(formatDate(source.datierung).replace(/^c\./, 'ca.'))}</span>${extentMarkup(source)}</div>
+      <div class="src-meta"><span class="src-sig">${esc(source.signatur)}</span><span class="src-date">${esc(formatDate(source.datierung))}</span>${extentMarkup(source)}</div>
       <div class="src-provenance">${provenanceMarkup(item)}</div>
     </div>
-    <span class="src-cat">${esc(source.kategorie)}</span>
+    <span class="src-cat">${esc(catLabel(source.kategorie))}</span>
   </li>`;
 }
 
@@ -96,8 +96,8 @@ function update() {
     && (!availability.value || item.availability === availability.value)
     && query.some(key => item.search.some(value => value.includes(key)))).sort(compareSources);
   const active = search.value.trim() || category || availability.value;
-  count.textContent = active ? `${number(filtered.length)} ${filtered.length === 1 ? 'Quelle gefunden' : 'Quellen gefunden'}` : '';
-  list.innerHTML = filtered.map(rowMarkup).join('') || '<li class="src-empty">Keine Quellen gefunden.</li>';
+  count.textContent = active ? `${number(filtered.length)} ${filtered.length === 1 ? 'source found' : 'sources found'}` : '';
+  list.innerHTML = filtered.map(rowMarkup).join('') || '<li class="src-empty">No sources found.</li>';
   const url = new URL(location.href);
   for (const [name, value] of [['q', search.value], ['category', category], ['availability', availability.value], ['sort', sort.value === 'signatur' ? '' : sort.value]]) {
     if (value) url.searchParams.set(name, value);
@@ -107,8 +107,8 @@ function update() {
 }
 
 function renderCategories() {
-  const categories = [...new Set(sources.map(item => item.source.kategorie))].sort((a, b) => a.localeCompare(b, 'de'));
-  const choices = [{ value: '', label: 'Alle Quellenarten' }, ...categories.map(value => ({ value, label: value }))];
+  const categories = [...new Set(sources.map(item => item.source.kategorie))].sort((a, b) => catLabel(a).localeCompare(catLabel(b), 'en'));
+  const choices = [{ value: '', label: 'All source types' }, ...categories.map(value => ({ value, label: catLabel(value) }))];
   document.getElementById('category-chips').innerHTML = choices.map(choice =>
     `<button type="button" class="chip" data-kat="${attr(choice.value)}" aria-pressed="${choice.value === category}">${esc(choice.label)}</button>`).join('');
 }
@@ -167,7 +167,7 @@ async function initialize() {
     list.replaceChildren();
     const message = document.createElement('li');
     message.className = 'src-empty';
-    message.textContent = `Quellen nicht geladen. ${error.message}`;
+    message.textContent = `Sources could not be loaded. ${error.message}`;
     list.append(message);
   }
 }

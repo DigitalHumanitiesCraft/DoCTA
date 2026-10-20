@@ -4,7 +4,15 @@ Der Anleitungsdurchlauf `guide-walkthrough-test.mjs` kann über die Umgebungsvar
 
 Die allgemeinen Playwright-Prüfungen `smoketest.mjs` und `interaction-test.mjs` starten einen lokalen Server,
 der das Repo bewusst unter dem Unterpfad `/DoCTA/` ausliefert, so wie GitHub Pages es tut. Pfadfehler,
-die auf einer Domain-Wurzel unsichtbar blieben, fallen dadurch auf.
+die auf einer Domain-Wurzel unsichtbar blieben, fallen dadurch auf. Alle Browserprüfungen lassen das
+Betriebssystem einen freien Port wählen, sodass mehrere Prüfläufe gleichzeitig laufen können.
+
+Die Oberfläche ist englisch. Die Prüfungen hängen deshalb nicht an Oberflächentexten, sondern an
+Zustandsattributen wie `data-state`, `data-provenance`, `data-stale` und `data-correction`, an
+`data-testid` für strukturelle Haken und an zugänglichen Namen über `getByRole`. Wo der Wortlaut selbst
+die Anforderung ist, etwa die Kennzeichnung als ungeprüfte maschinelle Transkription, lesen die Prüfungen
+den ausgelieferten Text aus `docs/js/strings.js` im Browser und vergleichen ihn mit dem DOM, statt eine
+Kopie des Wortlauts zu führen.
 
 Beide Skripte lesen ihre Seitenliste aus den `*.html`-Dateien in `docs/`. Eine neue Seite ist damit
 ohne Eingriff in die Tests abgedeckt, und eine gelöschte Seite hinterlässt keinen toten Eintrag.
@@ -53,7 +61,7 @@ Die Registerprüfung umfasst die Kategorien Person, Begriff, Ort und Datumsangab
 
 Die Python-Prüfungen zur TEI-Baseline erzeugen ihren Ausgangsstand aus den vorhandenen Quellen in einem temporären Verzeichnis. Persönliche Korrekturen im Arbeitsverzeichnis dürfen die erwartete ursprüngliche Provenienz nicht verändern.
 
-`viewer-ui-test.mjs` prüft Quellenkopf, Dialogbedienung, Bildpassung und den vereinfachten Bearbeitungsablauf mit einer vorhandenen Transkription. Sein Speicherdienst läuft ausschließlich im Arbeitsspeicher. Die Prüfung verändert keine Forschungsdaten.
+`viewer-ui-test.mjs` prüft Quellenkopf, Dialogbedienung, Bildpassung und den vereinfachten Bearbeitungsablauf mit einer vorhandenen Transkription. Sein Speicherdienst läuft ausschließlich im Arbeitsspeicher. Die Prüfung verändert keine Forschungsdaten. Ein zweiter Browserkontext sieht denselben Server als rein statischen Host wie GitHub Pages. Dort muss der dauerhafte Hinweis erscheinen, dass Annotieren und Speichern die lokale Arbeitsedition voraussetzen, mit Verweis auf den Startabschnitt der Anleitung, und der Herkunftschip einer DoCTA-Maschinentranskription muss die ungeprüfte maschinelle Transkription im sichtbaren Text nennen.
 
 Die frühere Schlagwortoberfläche ist entfernt. Die Viewer-Prüfung sichert ihre Abwesenheit. Die Python-Tests decken weiterhin den kompatiblen Speicher und die HTTP-Endpunkte für erhaltene Altdaten ab.
 
@@ -67,6 +75,16 @@ gefülltem Panel; beim Seiten-Deep-Link wird zusätzlich geprüft, dass der Page
 Seite steht. Den Exit-Code kippen Konsolenfehler samt Ausnahmen, tote interne Links, fehlgeschlagene
 Requests außerhalb der erwarteten Sonden, ein nicht eingelöstes Deep-Link-Versprechen und eine Seite
 ohne gerenderten Text. Fehlende `alt`-Attribute und die Ladezeit stehen nur im Report.
+
+Derselbe Lauf ist die Sprachprüfung der Site. Jede Seite und jeder Deep Link muss `lang="en"` tragen.
+Sichtbarer Text, `aria-label`, `title`, `placeholder`, `alt`, Seitentitel und Meta-Beschreibung werden
+gegen eine Sperrliste deutscher Oberflächenwörter geprüft, die aus den übersetzten Bezeichnungen gebildet
+ist. Ausgenommen sind die Behälter für Quellentext, Signaturen, Katalogtitel und extrahierte
+Entitätsformen sowie jedes Element mit einem anderen `lang` als `en`. Dieselbe Sperrliste läuft über die
+Zeichenkettenliterale in `docs/js/*.js`, ohne Kommentare, damit eine Meldung, die nur in einem seltenen
+Zustand erscheint, nicht unbemerkt bleibt. Jeder Treffer kippt den Exit-Code. Die deutschen
+Vokabularwerte der Daten (`leer`, `gesichtet` und andere) bleiben in den Daten unverändert; die
+Oberfläche zeigt sie über die gemeinsame Zuordnung `vocabLabel` in `docs/js/utils.js` englisch an.
 
 **interaction-test.mjs** klickt auf jeder Seite durch Schaltflächen, Auswahlfelder, Suchfelder und
 Kontrollkästchen und sammelt dabei dieselben Fehlerarten. Navigation wird ausgespart oder rückgängig
@@ -91,7 +109,7 @@ Zwei benannte Abläufe kommen hinzu, die der allgemeine Durchlauf nicht prüfen 
   Leeren des Feldes muss die vollständige Liste wiederherstellen.
 - Der Korrekturdurchgang öffnet Bearbeiten, setzt Initialen und korrigiert eine Zeile. Der Klick auf die nächste Zeile muss die Änderung übernehmen und deren Eingabefeld öffnen. Der Test prüft den sichtbaren Entwurfszustand, das Fehlen von Freigabe- und Zeitmessungsfunktionen sowie den JSON-Export mit der korrigierten Zeile, einer leeren Seitenentscheidung und ohne Aufwandserfassung. Der Export wird im Arbeitsspeicher gelesen und schreibt keine Forschungsdatei.
 
-`guide-walkthrough-test.mjs` folgt dem Personenbeispiel der Anleitung im echten Python-Editor mit isolierten Datenkopien. Er prüft Speichern, Index und Rücksprung, Änderung und Entfernung der Fundstelle sowie Textkorrektur und Wiederherstellung. Die Textauswahl wird im Browser per DOM gesetzt. Die Prüfung ersetzt keinen manuellen Nutzertest oder eine Betriebssysteminstallation. Screenshots liegen unter `output/guide-check/`.
+`guide-walkthrough-test.mjs` folgt dem Personenbeispiel der Anleitung im echten Python-Editor mit isolierten Datenkopien. Er prüft außerdem, dass die Anleitung vor jeder Arbeitssitzung das Holen des aktuellen Stands von GitHub verlangt. Er prüft Speichern, Index und Rücksprung, Änderung und Entfernung der Fundstelle sowie Textkorrektur und Wiederherstellung. Die Textauswahl wird im Browser per DOM gesetzt. Die Prüfung ersetzt keinen manuellen Nutzertest oder eine Betriebssysteminstallation. Screenshots liegen unter `output/guide-check/`.
 
 ## Grenzen
 

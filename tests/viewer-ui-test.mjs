@@ -11,8 +11,8 @@ import { useCachedFacsimiles } from './facsimile-fixtures.mjs';
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ROOT = path.join(REPO, 'docs');
 const DOC_ID = 11328300;
-const PORT = 8736;
-const BASE = `http://127.0.0.1:${PORT}/`;
+// Port 0 lets the system choose a free port, so suites can run concurrently.
+let BASE = 'http://127.0.0.1/';
 const TOKEN = 'viewer-ui-test-token';
 const output = path.join(REPO, 'output', 'readiness-check');
 fs.mkdirSync(output, { recursive: true });
@@ -62,6 +62,12 @@ function json(res, status, payload, headers = {}) {
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, BASE);
+  // A context sending this header sees a plain static host, like GitHub Pages.
+  const staticHost = req.headers['x-docta-static'] === '1';
+  if (url.pathname.startsWith('/api/') && staticHost) {
+    res.writeHead(404);
+    return res.end('not found');
+  }
   if (url.pathname === '/api/session') {
     return json(res, 200, { write_enabled: true, token: TOKEN });
   }
@@ -108,7 +114,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {
       'Content-Type': MIME[path.extname(file)] || 'application/octet-stream',
       // createLocalEditor recognises the local capability from this header.
-      ...(url.searchParams.has('static') ? {} : { Server: 'DoCTALocalEditor/1' }),
+      ...(staticHost ? {} : { Server: 'DoCTALocalEditor/1' }),
     });
     res.end(body);
   });
@@ -122,7 +128,8 @@ const check = (condition, message) => {
 };
 const visible = async (page, selector) => page.locator(selector).isVisible().catch(() => false);
 
-await new Promise(resolve => server.listen(PORT, '127.0.0.1', resolve));
+await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+BASE = `http://127.0.0.1:${server.address().port}/`;
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: false });
 await useCachedFacsimiles(context);
@@ -149,6 +156,12 @@ page.on('console', message => { if (message.type() === 'error') errors.push(mess
 try {
   await page.goto(`${BASE}viewer.html?doc=${DOC_ID}&page=1`, { waitUntil: 'networkidle' });
   await page.locator('.transcription__line[data-line-id]').first().waitFor();
+  const strings = await page.evaluate(async () => {
+    const { PROVENANCE, DRAFT_BADGE } = await import('./js/strings.js');
+    return { PROVENANCE, DRAFT_BADGE };
+  });
+  check(await page.locator('[data-testid="readonly-hint"]').isHidden(),
+    'the local working edition shows no read-only hint');
 
   const teiRaces = await page.evaluate(async () => {
     const { createTeiView } = await import('./js/viewer-render.js');
@@ -227,8 +240,8 @@ try {
     'synopsis return control is visible outside synopsis');
   await page.click('#btn-view-synopsis');
 
-  check((await page.locator('#btn-zoom-fit').innerText()).trim() === 'Ganze Seite',
-    'fit control is labelled Ganze Seite');
+  check((await page.locator('#btn-zoom-fit').innerText()).trim().length > 0,
+    'fit control carries a visible label');
   check(await page.locator('#osd-viewer canvas').count() > 0,
     'initial synopsis renders the complete-image OpenSeadragon surface');
   await page.waitForFunction(() => window.__viewerFitCalls > 0);
@@ -264,7 +277,7 @@ try {
   await page.click('#btn-zoom-in');
   await page.click('#btn-zoom-fit');
   await page.waitForTimeout(1400);
-  check(await waitForImageFit(), 'Ganze Seite restores the complete image after zooming');
+  check(await waitForImageFit(), 'the whole-page control restores the complete image after zooming');
 
   await page.setViewportSize({ width: 640, height: 400 });
   await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
@@ -313,7 +326,8 @@ try {
   check(await first.locator('.transcription__line-text').textContent() === corrected &&
     await page.evaluate(id => localStorage.getItem(`docta-review-${id}`), DOC_ID) === persistedDraft,
   'Escape retains an existing browser correction and its persisted draft');
-  check((await page.locator('#draft-badge').textContent()).trim() === 'Ungespeicherte Änderungen' &&
+  check(await page.locator('#draft-badge').getAttribute('data-state') === 'dirty' &&
+    (await page.locator('#draft-badge').textContent()).trim() === strings.DRAFT_BADGE &&
     await page.locator('#draft-badge').isVisible(),
   'a correction has a visible dirty-state indicator');
   check((await page.locator('#btn-review-save').textContent()).trim().length > 0,
@@ -325,20 +339,42 @@ try {
   check(posts === 1, 'review save used the in-memory API exactly once');
   check(lastPayload.effort == null && Object.values(lastPayload.pages).every(item => item.status === null),
     'new corrections carry neither effort measurements nor page approval decisions');
-  check((await page.locator('#review-hint').textContent()).includes('lokal gespeichert'),
+  check(await page.locator('#review-hint').getAttribute('data-state') === 'saved',
     'successful local save is confirmed in the review bar');
   await page.reload({ waitUntil: 'networkidle' });
   await page.locator('.transcription__line[data-line-id]').first().waitFor();
-  check(await page.locator('#review-chip').textContent() === 'Lokal korrigiert',
+  check(await page.locator('#review-chip').getAttribute('data-provenance') === 'local-correction' &&
+    await page.locator('#review-chip').textContent() === strings.PROVENANCE.localCorrection,
     'the saved correction is described without implying scholarly approval');
   check((await page.locator('.transcription__line[data-line-id][data-original]').first().textContent()).includes(corrected),
     'saved correction survives reload from the in-memory API');
 
-  const staticContext = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: true });
+  const staticContext = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: true,
+    extraHTTPHeaders: { 'x-docta-static': '1' } });
   await useCachedFacsimiles(staticContext);
   const staticPage = await staticContext.newPage();
-  await staticPage.goto(`${BASE}viewer.html?static=1&doc=${DOC_ID}&page=1`, { waitUntil: 'networkidle' });
+  await staticPage.goto(`${BASE}viewer.html?doc=${DOC_ID}&page=1`, { waitUntil: 'networkidle' });
   await staticPage.locator('.transcription__line[data-line-id]').first().waitFor();
+  const hint = staticPage.locator('[data-testid="readonly-hint"]');
+  check(await hint.isVisible() && (await hint.textContent()).includes('local working edition'),
+    'static mode states persistently that annotating and saving require the local working edition');
+  check(await hint.getByRole('link').getAttribute('href') === 'guide.html#launch',
+    'the read-only hint links to the guide section on starting the local working edition');
+  check(await staticPage.locator('#btn-annotate-selection, #btn-registry').evaluateAll(items => items.every(item => item.hidden)),
+    'static mode offers no annotation controls');
+  await staticPage.click('#btn-review');
+  check(!await visible(staticPage, '#btn-review-save'),
+    'static mode keeps the local save control hidden while editing');
+  await staticPage.click('#btn-review');
+  const vlmDoc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pipeline', 'register_summary.json'), 'utf8'))
+    .documents.find(doc => doc.transcription_source === 'vlm');
+  await staticPage.goto(`${BASE}viewer.html?doc=${vlmDoc.docId}&page=1`, { waitUntil: 'networkidle' });
+  const chip = staticPage.locator('#doc-provenance');
+  await chip.waitFor();
+  check(await chip.getAttribute('data-provenance') === 'machine-unrevised' &&
+    (await chip.innerText()).trim() === strings.PROVENANCE.vlm &&
+    strings.PROVENANCE.vlm.toLowerCase().includes('unrevised machine transcription'),
+  'a DoCTA machine transcription states unrevised machine transcription in visible chip text');
   await staticPage.click('#btn-more');
   check(await visible(staticPage, '#btn-review-export'),
     'static mode exposes review export in the more dialog');

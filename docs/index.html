@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quellen | DoCTA</title>
-  <meta name="description" content="Quellen zur Tiroler Hofverwaltung mit Digitalisaten und Transkriptionen in der Arbeitsedition DoCTA.">
+  <title>Sources | DoCTA</title>
+  <meta name="description" content="Sources on the Tyrolean court administration with digitised images and transcriptions in the DoCTA working edition.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="lib/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="sources-page">
-  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar navbar-expand-lg bg-white sticky-top">
     <div class="container-fluid px-3">
       <a class="navbar-brand" href="index.html">DoCTA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation öffnen">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -23,34 +23,34 @@
     </div>
   </nav>
   <main id="main" class="container py-4">
-    <h1>Quellen</h1>
-    <section id="sources" aria-label="Quellenverzeichnis">
+    <h1>Sources</h1>
+    <section id="sources" aria-label="Source catalogue">
       <div class="list-controls">
         <form class="sources-filters" role="search">
-          <label for="search-input">Quellen suchen
-            <input type="search" class="form-control" id="search-input" placeholder="Signatur, Titel oder Datierung" autocomplete="off">
+          <label for="search-input">Search sources
+            <input type="search" class="form-control" id="search-input" placeholder="Shelfmark, title or date" autocomplete="off">
           </label>
-          <label for="sort-select">Sortierung
+          <label for="sort-select">Sort by
             <select class="form-select" id="sort-select">
-              <option value="signatur">Signatur</option>
-              <option value="titel">Titel</option>
-              <option value="datierung">Datierung</option>
-              <option value="images">Anzahl der Digitalisate</option>
+              <option value="signatur">Shelfmark</option>
+              <option value="titel">Title</option>
+              <option value="datierung">Date</option>
+              <option value="images">Number of digitised images</option>
             </select>
           </label>
-          <label for="filter-availability">Verfügbarkeit
+          <label for="filter-availability">Availability
             <select class="form-select" id="filter-availability">
-              <option value="">Alle Quellen</option>
-              <option value="text">Mit Transkription</option>
-              <option value="images">Nur Digitalisat</option>
-              <option value="catalogue">Nur Katalognachweis</option>
+              <option value="">All sources</option>
+              <option value="text">With transcription</option>
+              <option value="images">Images only</option>
+              <option value="catalogue">Catalogue record only</option>
             </select>
           </label>
         </form>
-        <div class="chip-row" id="category-chips" role="group" aria-label="Quellenart"></div>
+        <div class="chip-row" id="category-chips" role="group" aria-label="Source type"></div>
         <p id="result-count" role="status" aria-live="polite"></p>
       </div>
-      <ul class="src-list" id="sources-list" role="list"><li class="src-empty">Quellen werden geladen.</li></ul>
+      <ul class="src-list" id="sources-list" role="list"><li class="src-empty">Loading sources.</li></ul>
     </section>
   </main>
   <footer class="text-center py-4 small text-body-secondary"></footer>

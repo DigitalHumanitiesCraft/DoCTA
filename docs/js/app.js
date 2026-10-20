@@ -4,14 +4,14 @@
  */
 
 const NAV_ITEMS = [
-  { href: 'index.html', label: 'Quellen', id: 'dashboard' },
+  { href: 'index.html', label: 'Sources', id: 'dashboard' },
   { href: 'viewer.html', label: 'Viewer', id: 'viewer' },
   { href: 'register.html', label: 'Index', id: 'register' },
   { href: 'exploration.html', label: 'Exploration', id: 'exploration' },
   { href: 'benchmark.html', label: 'Benchmark', id: 'benchmark' },
-  { href: 'guide.html', label: 'Anleitung', id: 'guide' },
+  { href: 'guide.html', label: 'Guide', id: 'guide' },
   // About sits flush right and carries the link into the knowledge base.
-  { href: 'about.html', label: 'Über das Projekt', id: 'about', end: true },
+  { href: 'about.html', label: 'About', id: 'about', end: true },
 ];
 
 /**
@@ -76,7 +76,7 @@ function initFooter(activeId) {
   const footer = document.querySelector('footer');
   if (!footer) return;
   const about = activeId === 'about' ? '' :
-    ` <a href="about.html">Über das Projekt und Impressum</a>`;
+    ` <a href="about.html">About the project and imprint</a>`;
   footer.innerHTML = `<p class="mb-0 footer-line">
     <span>DoCTA</span>
     <a href="https://dhcraft.org" target="_blank" rel="noopener" class="footer-brand">

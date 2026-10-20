@@ -10,6 +10,7 @@
  */
 
 import { escapeHTML, lsGet, lsSet } from './utils.js';
+import { PROVENANCE } from './strings.js';
 
 const REVIEWER_KEY = 'docta-review-reviewer';
 const LEGACY_STATUS = new Set(['gesichtet', 'abgenommen']);
@@ -85,13 +86,18 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
   let visibleDocId = null;
   let activeEdit = null;
   const drafts = new Map();
+  // The state attribute lets tests and styles tell outcomes apart without reading the wording.
+  const setHint = (text, state = '') => {
+    els.hint.textContent = text;
+    els.hint.dataset.state = state;
+  };
 
   function saveReview(store) {
     drafts.set(store.docId, store);
     if (!lsSet(reviewKey(store.docId), JSON.stringify(store))) {
-      els.hint.textContent = 'Der Browserentwurf konnte nicht gespeichert werden. Diesen Tab offen lassen und die Änderungen lokal speichern oder jetzt exportieren.';
+      setHint('The browser draft could not be stored. Keep this tab open and save the changes locally or export them now.');
     } else {
-      els.hint.textContent = 'Änderungen als Browserentwurf gesichert. Noch nicht lokal gespeichert.';
+      setHint('Changes kept as a browser draft. Not yet saved locally.');
     }
     onDraftChange();
   }
@@ -107,7 +113,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     if (initialsValue().length >= 2) return true;
     els.initials.classList.add('is-missing');
     els.initials.focus();
-    els.hint.textContent = 'Vor einer Korrektur zwei bis vier Initialen eingeben.';
+    setHint('Enter two to four initials before correcting.');
     return false;
   }
 
@@ -168,7 +174,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
-    els.hint.textContent = 'Review exportiert. Die Datei kann nun in die Pipeline übernommen werden.';
+    setHint('Draft exported. The file can now be taken into the pipeline.');
   }
 
   /** Only a persisted correction reason justifies a correction claim. */
@@ -183,8 +189,9 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     const chip = document.createElement('span');
     chip.id = 'review-chip';
     chip.className = 'prov-chip prov-chip--review';
-    chip.textContent = 'Lokal korrigiert';
-    chip.title = `Textkorrektur lokal gespeichert${who ? ` von ${who}` : ''}${date ? ` am ${date}` : ''}.`;
+    chip.dataset.provenance = 'local-correction';
+    chip.textContent = PROVENANCE.localCorrection;
+    chip.title = `Text correction saved locally${who ? ` by ${who}` : ''}${date ? ` on ${date}` : ''}. This is not a scholarly approval.`;
     els.meta.appendChild(chip);
     els.meta.hidden = false;
   }
@@ -203,9 +210,9 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     const { docId, viewMode } = getContext();
     if (visibleDocId !== docId) {
       visibleDocId = docId;
-      els.hint.textContent = draft(docId) ? 'Browserentwurf wiederhergestellt. Noch nicht lokal gespeichert.' : '';
+      setHint(draft(docId) ? 'Browser draft restored. Not yet saved locally.' : '');
       if (local.enabled && draft(docId) && draft(docId).baseRevision !== getContext().revision) {
-        els.hint.textContent = 'Der wiederhergestellte Entwurf beruht auf einer älteren Fassung. Vor dem Verwerfen exportieren und den aktuellen Text erneut prüfen.';
+        setHint('The restored draft is based on an older version. Export it before discarding and check the current text again.');
       }
     }
     const isSynopsis = viewMode === 'synopsis';
@@ -216,7 +223,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     for (const control of [els.initials, els.clearBtn]) control.disabled = saving;
     els.bar.hidden = !(reviewMode && isSynopsis);
     if (!els.bar.hidden && !els.hint.textContent) {
-      els.hint.textContent = 'Eine Zeile anklicken, um ihre Transkription zu korrigieren.';
+      setHint('Click a line to correct its transcription.');
     }
     applyReviewMode();
     updateReviewChip();
@@ -224,7 +231,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
 
   function setReviewMode(on) {
     reviewMode = on;
-    els.hint.textContent = '';
+    setHint('');
     syncReviewUI();
     if (on && !els.bar.hidden && initialsValue().length < 2) els.initials.focus();
   }
@@ -243,7 +250,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     span.innerHTML = text;
     lineEl.classList.toggle('transcription__line--corrected', corrected != null);
     if (corrected == null) lineEl.removeAttribute('title');
-    else lineEl.title = `Ursprüngliche Lesung: ${original}`;
+    else lineEl.title = `Original reading: ${original}`;
   }
 
   function commitCorrection(lineEl, rawValue) {
@@ -288,7 +295,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     input.className = 'transcription__line-edit';
     input.value = span.textContent;
     const initialValue = input.value;
-    input.setAttribute('aria-label', 'Transkriptionszeile korrigieren');
+    input.setAttribute('aria-label', 'Correct transcription line');
     let settled = false;
     const finish = (commit) => {
       if (settled) return;
@@ -322,7 +329,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     if (!requireInitials()) return;
     const store = reviewStore();
     if (store.baseRevision !== revision) {
-      els.hint.textContent = 'Dieser Entwurf gehört zu einer älteren Fassung. Vor dem Verwerfen exportieren und den aktuellen Text erneut prüfen.';
+      setHint('This draft belongs to an older version. Export it before discarding and check the current text again.');
       return;
     }
     store.reviewer = initialsValue();
@@ -337,10 +344,10 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
       }
       if (getContext().docId === docId) {
         onSaved(result.document);
-        els.hint.textContent = 'Änderungen lokal gespeichert.';
+        setHint('Changes saved locally.', 'saved');
       }
     } catch (error) {
-      els.hint.textContent = `Nicht gespeichert: ${error.message}. Der Browserentwurf bleibt erhalten.`;
+      setHint(`Not saved: ${error.message}. The browser draft is kept.`);
     } finally {
       saving = false;
       syncReviewUI();

@@ -26,9 +26,9 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
   const annotate = document.createElement('button');
   annotate.id = 'btn-annotate-selection';
   annotate.className = 'review-btn';
-  annotate.textContent = 'Auswahl annotieren';
+  annotate.textContent = 'Annotate selection';
   annotate.hidden = true;
-  annotate.title = 'Ausgewählten Text annotieren (Alt+A)';
+  annotate.title = 'Annotate the selected text (Alt+A)';
   toolbar.append(button, annotate);
   const dialog = makeSurface('registry-dialog', 'Register', 'aside');
   const mentionDialog = workspace.manual;
@@ -54,7 +54,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     if (!dirty.size && !busy) return true;
     const target = dirty.has(dialog) ? dialog : mentionDialog;
     if (target === dialog) open(dialog, button);
-    message(target, 'Bitte die Eingaben zuerst speichern oder verwerfen.');
+    message(target, 'Please save or discard your input first.');
     return false;
   });
   for (const element of [dialog, mentionDialog]) {
@@ -65,7 +65,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     const discard = document.createElement('button');
     discard.type = 'button';
     discard.className = 'review-btn';
-    discard.textContent = 'Eingaben verwerfen';
+    discard.textContent = 'Discard input';
     discard.addEventListener('click', () => {
       if (busy) return;
       if (element === mentionDialog && dirty.has(inlinePanel)) {
@@ -75,7 +75,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       dirty.delete(element);
       if (element === dialog && state) showEntry(selectedEntry);
       if (element === mentionDialog && mention) showMention(mention, mentionAnchor);
-      message(element, 'Eingaben verworfen.');
+      message(element, 'Input discarded.');
       closeSurface(element);
       updateDraftButton();
     });
@@ -114,12 +114,12 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     element.id = id;
     element.hidden = true;
     element.setAttribute('aria-labelledby', `${id}-title`);
-    element.innerHTML = `<div class="viewer-dialog__header"><h2 id="${id}-title">${title}</h2><button type="button" class="review-btn" data-close-surface>Schließen</button></div><div class="registry-content"></div>`;
+    element.innerHTML = `<div class="viewer-dialog__header"><h2 id="${id}-title">${title}</h2><button type="button" class="review-btn" data-close-surface>Close</button></div><div class="registry-content"></div>`;
     document.body.append(element);
     return element;
   }
   function updateDraftButton() {
-    annotate.textContent = dirty.has(mentionDialog) || dirty.has(inlinePanel) ? 'Annotation fortsetzen' : 'Auswahl annotieren';
+    annotate.textContent = dirty.has(mentionDialog) || dirty.has(inlinePanel) ? 'Continue annotation' : 'Annotate selection';
   }
   function closeSurface(element) {
     if (busy) return;
@@ -172,7 +172,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
   }
   function results() {
     const query = document.getElementById('registry-search').value;
-    document.getElementById('registry-results').innerHTML = matches(query, document.getElementById('registry-kind').value || null).map(entry => `<button type="button" class="review-btn" data-entry-id="${attr(entry.id)}">${esc(entryDescription(entry))} (${KIND_LABELS[entry.kind]})</button>`).join('') || '<p>Keine Einträge gefunden.</p>';
+    document.getElementById('registry-results').innerHTML = matches(query, document.getElementById('registry-kind').value || null).map(entry => `<button type="button" class="review-btn" data-entry-id="${attr(entry.id)}">${esc(entryDescription(entry))} (${KIND_LABELS[entry.kind]})</button>`).join('') || '<p>No entries found.</p>';
   }
   function entryDescription(entry) {
     return describeEntry(entry, state.entries);
@@ -184,11 +184,11 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
   function unresolved() {
     const mentions = state.mentions.filter(item => !item.entryId && item.kind !== 'date');
     document.getElementById('registry-unresolved').innerHTML =
-      '<details><summary>Nicht zugeordnete Fundstellen</summary>' + mentionLinks(mentions) + '</details>';
+      '<details><summary>Unassigned occurrences</summary>' + mentionLinks(mentions) + '</details>';
   }
   function parentOptions() {
     const value = form.elements.broaderId.value;
-    form.elements.broaderId.innerHTML = '<option value="">Kein Oberbegriff</option>' + state.entries.filter(entry => entry.kind === 'term' && entry.id !== selectedEntry?.id).map(entry => `<option value="${attr(entry.id)}">${esc(entryDescription(entry))}</option>`).join('');
+    form.elements.broaderId.innerHTML = '<option value="">No broader term</option>' + state.entries.filter(entry => entry.kind === 'term' && entry.id !== selectedEntry?.id).map(entry => `<option value="${attr(entry.id)}">${esc(entryDescription(entry))}</option>`).join('');
     form.elements.broaderId.value = value;
     document.getElementById('registry-parent-label').hidden = form.elements.kind.value !== 'term';
   }
@@ -199,7 +199,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
   function showEntry(entry) {
     if (!beforeOpen()) return;
     if (dirty.has(dialog)) {
-      message(dialog, 'Bitte den geöffneten Eintrag zuerst speichern oder Eingaben verwerfen.');
+      message(dialog, 'Please save the open entry or discard your input first.');
       return;
     }
     selectedEntry = entry;
@@ -214,7 +214,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     form.elements.broaderId.value = entry?.broaderId || '';
     const mentions = state.mentions.filter(item => entry && item.entryId === entry.id);
     document.getElementById('registry-mentions').innerHTML = entry
-      ? '<h3>Fundstellen</h3>' + (mentionLinks(mentions) || '<p>Keine Fundstellen zugeordnet.</p>')
+      ? '<h3>Occurrences</h3>' + (mentionLinks(mentions) || '<p>No occurrences assigned.</p>')
       : '';
     history();
   }
@@ -233,10 +233,10 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       refreshRegistry();
       rerender();
       updateDraftButton();
-      message(target, 'Lokal gespeichert.');
+      message(target, 'Saved locally.');
       return true;
     } catch (error) {
-      message(target, `Nicht gespeichert. ${error.message}`);
+      message(target, `Not saved. ${error.message}`);
       return false;
     }
     finally {
@@ -253,7 +253,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     const entries = matches(mentionForm.elements.search.value, mentionForm.elements.kind.value);
     const selected = state.entries.find(entry => entry.id === chosen && entry.kind === mentionForm.elements.kind.value);
     if (selected && !entries.includes(selected)) entries.unshift(selected);
-    mentionForm.elements.entryId.innerHTML = '<option value="">Noch nicht zugeordnet</option>' + entries.map(entry => `<option value="${attr(entry.id)}">${esc(entryDescription(entry))}</option>`).join('');
+    mentionForm.elements.entryId.innerHTML = '<option value="">Not yet assigned</option>' + entries.map(entry => `<option value="${attr(entry.id)}">${esc(entryDescription(entry))}</option>`).join('');
     if (entries.some(entry => entry.id === chosen)) mentionForm.elements.entryId.value = chosen;
     entrySummary();
   }
@@ -274,7 +274,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     if (dirty.has(inlinePanel)) {
       inlinePanel.hidden = false;
       mentionForm.hidden = true;
-      message(inlinePanel, 'Bitte die Eingaben zuerst speichern oder verwerfen.');
+      message(inlinePanel, 'Please save or discard your input first.');
       return;
     }
     inlineEntry = entry;
@@ -284,7 +284,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     inlineForm.elements.aliases.value = (entry?.aliases || []).join('\n');
     inlineForm.elements.note.value = entry?.note || '';
     inlineForm.elements.reviewer.value = mentionForm.elements.reviewer.value || reviewer();
-    inlineForm.elements.broaderId.innerHTML = '<option value="">Kein Oberbegriff</option>'
+    inlineForm.elements.broaderId.innerHTML = '<option value="">No broader term</option>'
       + state.entries.filter(item => item.kind === 'term' && item.id !== entry?.id)
         .map(item => `<option value="${attr(item.id)}">${esc(entryDescription(item))}</option>`).join('');
     inlineForm.elements.broaderId.value = entry?.broaderId || '';
@@ -335,14 +335,14 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     entrySummary();
     returnToMention();
     updateDraftButton();
-    message(mentionDialog, 'Registereintrag gespeichert. Die Fundstelle ist noch nicht gespeichert.');
+    message(mentionDialog, 'Register entry saved. The occurrence is not saved yet.');
   }
   function showMention(item, origin) {
     sourceRequest += 1;
     if (!beforeOpen() || busy) return;
     if (dirty.has(mentionDialog) || dirty.has(inlinePanel)) {
       open(mentionDialog, origin);
-      message(mentionDialog, 'Bitte die geöffnete Fundstelle zuerst speichern oder Eingaben verwerfen.');
+      message(mentionDialog, 'Please save the open occurrence or discard your input first.');
       return;
     }
     if (!item) return;
@@ -367,7 +367,8 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     entryOptions();
     document.getElementById('mention-remove').hidden = !item.id;
     mentionForm.querySelector('[type="submit"]').hidden = !!item.stale;
-    message(mentionDialog, item.stale ? 'Der Quellentext wurde geändert. Diese Fundstelle bleibt an ihrem alten Wortlaut verankert. Für eine neue Zuordnung Text erneut auswählen.' : '');
+    message(mentionDialog, item.stale ? 'The source text has changed. This occurrence stays anchored to its former wording. Select the text again for a new assignment.' : '');
+    mentionDialog.dataset.stale = String(!!item.stale);
     open(mentionDialog, origin);
   }
   function dateFields() {
@@ -424,7 +425,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       mentionAnchor = range;
       open(mentionDialog, annotate);
       mentionForm.hidden = true;
-      message(mentionDialog, 'Bitte zuerst die Textänderungen speichern.');
+      message(mentionDialog, 'Please save the text changes first.');
       return;
     }
     const textDigest = await digest(lineText);
@@ -538,12 +539,12 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     if (dirty.has(inlinePanel)) {
       inlinePanel.hidden = false;
       mentionForm.hidden = true;
-      message(inlinePanel, 'Bitte den Registereintrag zuerst speichern oder verwerfen.');
+      message(inlinePanel, 'Please save or discard the register entry first.');
       workspace.reposition();
       return;
     }
     if (context().hasDraft) {
-      message(mentionDialog, 'Bitte zuerst die Textänderungen speichern.');
+      message(mentionDialog, 'Please save the text changes first.');
       return;
     }
     const payload = {
@@ -595,7 +596,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       if (dirty.size || busy) {
         const target = dirty.has(mentionDialog) || dirty.has(inlinePanel) ? mentionDialog : dialog;
         open(target, annotate);
-        message(target, 'Bitte die Eingaben zuerst speichern oder verwerfen.');
+        message(target, 'Please save or discard your input first.');
         return false;
       }
       workspace.hide({ restoreFocus: false });

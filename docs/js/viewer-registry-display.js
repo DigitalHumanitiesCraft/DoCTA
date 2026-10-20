@@ -28,39 +28,39 @@ export function mentionLink(item, currentDoc, currentPageNr) {
   const page = sameDoc && currentDoc.pages.find(value => value.pageNr === item.pageNr);
   const lines = page ? page.regions.flatMap(region => region.lines || []) : [];
   const ordinal = lines.findIndex(line => line.id === item.lineId) + 1;
-  const source = sameDoc ? currentDoc.csvTitel || currentDoc.title : `Dokument ${item.docId}`;
-  const label = [item.quote, source, `Seite ${item.pageNr}`, ordinal ? `Zeile ${ordinal}` : ''].filter(Boolean).join(', ');
-  const edit = samePage ? `<button type="button" class="review-btn" data-edit-mention="${attr(item.id)}">Bearbeiten</button>` : '';
-  return `<div><a href="${attr(url)}">${esc(label)}</a>${item.stale ? ', Text geändert, prüfen' : ''} ${edit}</div>`;
+  const source = sameDoc ? currentDoc.csvTitel || currentDoc.title : `Document ${item.docId}`;
+  const label = [item.quote, source, `Page ${item.pageNr}`, ordinal ? `Line ${ordinal}` : ''].filter(Boolean).join(', ');
+  const edit = samePage ? `<button type="button" class="review-btn" data-edit-mention="${attr(item.id)}">Edit</button>` : '';
+  return `<div><a href="${attr(url)}">${esc(label)}</a>${item.stale ? '<span data-stale="true">, text changed, check</span>' : ''} ${edit}</div>`;
 }
 
 function formatTimestamp(value) {
   const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? value : date.toLocaleString('de-AT', { dateStyle: 'short', timeStyle: 'short' });
+  return Number.isNaN(date.getTime()) ? value : date.toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' });
 }
 
 function historyReading(record) {
-  if (!record) return 'Nicht vorhanden';
+  if (!record) return 'None';
   return [
     record.label || record.quote,
     ...(record.aliases || []),
     record.when,
-    record.notBefore ? `frühestens ${record.notBefore}` : '',
-    record.notAfter ? `spätestens ${record.notAfter}` : '',
-    record.uncertain ? 'unsichere Datierung' : '',
+    record.notBefore ? `not before ${record.notBefore}` : '',
+    record.notAfter ? `not after ${record.notAfter}` : '',
+    record.uncertain ? 'uncertain date' : '',
     record.note,
   ].filter(Boolean).join(', ');
 }
 
 export function historyMarkup(events) {
   const actions = {
-    'save-entry': 'Eintrag gespeichert',
-    'save-mention': 'Fundstelle gespeichert',
-    'remove-mention': 'Fundstelle entfernt',
+    'save-entry': 'Entry saved',
+    'save-mention': 'Occurrence saved',
+    'remove-mention': 'Occurrence removed',
   };
   return events.map(event => `<details>
-    <summary>${esc(actions[event.action] || 'Änderung')}, ${esc(event.reviewer || event.actor || '')}, ${esc(formatTimestamp(event.timestamp || event.date || ''))}</summary>
-    <dl><dt>Vorher</dt><dd>${esc(historyReading(event.before))}</dd>
-    <dt>Nachher</dt><dd>${esc(historyReading(event.after))}</dd></dl>
-  </details>`).join('') || '<p>Noch keine Änderungen.</p>';
+    <summary>${esc(actions[event.action] || 'Change')}, ${esc(event.reviewer || event.actor || '')}, ${esc(formatTimestamp(event.timestamp || event.date || ''))}</summary>
+    <dl><dt>Before</dt><dd>${esc(historyReading(event.before))}</dd>
+    <dt>After</dt><dd>${esc(historyReading(event.after))}</dd></dl>
+  </details>`).join('') || '<p>No changes yet.</p>';
 }

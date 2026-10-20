@@ -1,77 +1,77 @@
-export const KIND_LABELS = { person: 'Person', term: 'Begriff', place: 'Ort', date: 'Datumsangabe' };
+export const KIND_LABELS = { person: 'Person', term: 'Term', place: 'Place', date: 'Date' };
 const kinds = Object.entries(KIND_LABELS).map(([kind, label]) => `<option value="${kind}">${label}</option>`);
 
 export const registryMarkup = `
-  <label>Suchen<input id="registry-search" type="search"></label>
-  <label>Art<select id="registry-kind"><option value="">Alle</option>${kinds.slice(0, 3).join('')}</select></label>
+  <label>Search<input id="registry-search" type="search"></label>
+  <label>Type<select id="registry-kind"><option value="">All</option>${kinds.slice(0, 3).join('')}</select></label>
   <div id="registry-results"></div>
-  <button type="button" id="registry-new" class="review-btn">Neuer Eintrag</button>
+  <button type="button" id="registry-new" class="review-btn">New entry</button>
   <form id="registry-entry-form" hidden>
-    <label>Art<select name="kind">${kinds.slice(0, 3).join('')}</select></label>
-    <label>Bezeichnung<input name="label" required maxlength="300"></label>
-    <label>Weitere Schreibweisen<textarea name="aliases" rows="2"></textarea></label>
-    <label>Notiz<textarea name="note" rows="2"></textarea></label>
-    <label id="registry-parent-label">Oberbegriff<select name="broaderId"></select></label>
-    <label>Dein Kürzel<input name="reviewer" required maxlength="40"></label>
-    <button class="review-btn review-btn--primary" type="submit">Eintrag speichern</button>
+    <label>Type<select name="kind">${kinds.slice(0, 3).join('')}</select></label>
+    <label>Name<input name="label" required maxlength="300"></label>
+    <label>Other spellings<textarea name="aliases" rows="2"></textarea></label>
+    <label>Note<textarea name="note" rows="2"></textarea></label>
+    <label id="registry-parent-label">Broader term<select name="broaderId"></select></label>
+    <label>Your initials<input name="reviewer" required maxlength="40"></label>
+    <button class="review-btn review-btn--primary" type="submit">Save entry</button>
   </form>
   <div id="registry-mentions"></div>
   <div id="registry-unresolved"></div>
-  <details id="registry-history"><summary>Änderungsverlauf</summary><div></div></details>
-  <button type="button" id="registry-export" class="review-btn">Register als JSON exportieren</button>
+  <details id="registry-history"><summary>Change history</summary><div></div></details>
+  <button type="button" id="registry-export" class="review-btn">Export register as JSON</button>
   <p role="status"></p>`;
 
 export const mentionMarkup = `
   <form id="mention-form">
     <div class="annotation-field-row">
-      <label>Art<select name="kind">${kinds.join('')}</select></label>
-      <label>Dein Kürzel<input name="reviewer" required maxlength="40"></label>
+      <label>Type<select name="kind">${kinds.join('')}</select></label>
+      <label>Your initials<input name="reviewer" required maxlength="40"></label>
     </div>
     <div id="mention-entry-fields">
       <div class="annotation-field-row">
-        <label>Eintrag suchen<input name="search" type="search"></label>
-        <label>Zuordnung<select name="entryId"></select></label>
+        <label>Search entries<input name="search" type="search"></label>
+        <label>Assignment<select name="entryId"></select></label>
       </div>
       <div class="annotation-actions">
-        <button type="button" id="mention-new-entry" class="review-btn">Neuer Registereintrag</button>
-        <button type="button" id="mention-edit-entry" class="review-btn" hidden>Registereintrag bearbeiten</button>
+        <button type="button" id="mention-new-entry" class="review-btn">New register entry</button>
+        <button type="button" id="mention-edit-entry" class="review-btn" hidden>Edit register entry</button>
       </div>
       <div id="mention-entry-summary"></div>
     </div>
     <fieldset id="mention-date-fields" hidden>
-      <legend>Datierung</legend>
-      <label>Datumsform<select name="dateMode"><option value="exact">Einzelangabe</option><option value="range">Zeitraum</option></select></label>
-      <label id="mention-when">Datum<input name="when" placeholder="JJJJ / JJJJ-MM / JJJJ-MM-TT" autocomplete="off"></label>
+      <legend>Dating</legend>
+      <label>Date form<select name="dateMode"><option value="exact">Single date</option><option value="range">Period</option></select></label>
+      <label id="mention-when">Date<input name="when" placeholder="YYYY / YYYY-MM / YYYY-MM-DD" autocomplete="off"></label>
       <div id="mention-date-range" class="annotation-field-row" hidden>
-        <label>Frühestens<input name="notBefore" placeholder="JJJJ / JJJJ-MM / JJJJ-MM-TT" autocomplete="off"></label>
-        <label>Spätestens<input name="notAfter" placeholder="JJJJ / JJJJ-MM / JJJJ-MM-TT" autocomplete="off"></label>
+        <label>Not before<input name="notBefore" placeholder="YYYY / YYYY-MM / YYYY-MM-DD" autocomplete="off"></label>
+        <label>Not after<input name="notAfter" placeholder="YYYY / YYYY-MM / YYYY-MM-DD" autocomplete="off"></label>
       </div>
-      <label class="registry-checkbox"><input name="uncertain" type="checkbox">Unsichere Datierung</label>
+      <label class="registry-checkbox"><input name="uncertain" type="checkbox">Uncertain date</label>
     </fieldset>
-    <details id="mention-note"><summary>Notiz</summary><label><span class="visually-hidden">Notiz</span><textarea name="note" rows="2"></textarea></label></details>
+    <details id="mention-note"><summary>Note</summary><label><span class="visually-hidden">Note</span><textarea name="note" rows="2"></textarea></label></details>
     <div class="annotation-actions">
-      <button type="submit" class="review-btn review-btn--primary">Fundstelle speichern</button>
-      <button id="mention-remove" type="button" class="review-btn" hidden>Fundstelle entfernen</button>
+      <button type="submit" class="review-btn review-btn--primary">Save occurrence</button>
+      <button id="mention-remove" type="button" class="review-btn" hidden>Remove occurrence</button>
     </div>
   </form>
   <section id="mention-inline-entry" hidden aria-labelledby="mention-inline-entry-title">
-    <h3 id="mention-inline-entry-title">Registereintrag</h3>
+    <h3 id="mention-inline-entry-title">Register entry</h3>
     <form id="mention-entry-form">
       <input type="hidden" name="kind">
       <div class="annotation-field-row">
-        <label>Bezeichnung<input name="label" required maxlength="300"></label>
-        <label>Dein Kürzel<input name="reviewer" required maxlength="40"></label>
+        <label>Name<input name="label" required maxlength="300"></label>
+        <label>Your initials<input name="reviewer" required maxlength="40"></label>
       </div>
-      <label>Weitere Schreibweisen<textarea name="aliases" rows="2"></textarea></label>
-      <label>Notiz<textarea name="note" rows="2"></textarea></label>
-      <label id="mention-entry-parent">Oberbegriff<select name="broaderId"></select></label>
+      <label>Other spellings<textarea name="aliases" rows="2"></textarea></label>
+      <label>Note<textarea name="note" rows="2"></textarea></label>
+      <label id="mention-entry-parent">Broader term<select name="broaderId"></select></label>
       <div class="annotation-actions">
-        <button type="submit" class="review-btn review-btn--primary">Eintrag speichern</button>
-        <button type="button" id="mention-entry-discard" class="review-btn">Eingaben verwerfen</button>
-        <button type="button" id="mention-entry-back" class="review-btn">Zur Fundstelle</button>
+        <button type="submit" class="review-btn review-btn--primary">Save entry</button>
+        <button type="button" id="mention-entry-discard" class="review-btn">Discard input</button>
+        <button type="button" id="mention-entry-back" class="review-btn">Back to occurrence</button>
       </div>
     </form>
     <p role="status"></p>
   </section>
-  <details id="mention-history"><summary>Änderungsverlauf</summary><div></div></details>
+  <details id="mention-history"><summary>Change history</summary><div></div></details>
   <p role="status"></p>`;

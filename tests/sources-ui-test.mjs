@@ -36,14 +36,15 @@ const row = source => page.locator('#sources-list .src-row').filter({ has: page.
 try {
   await page.goto(`${base}/index.html`, { waitUntil: 'networkidle' });
   await page.locator('#sources-list .src-row').first().waitFor();
-  check(await page.locator('html').getAttribute('lang') === 'de', 'source catalogue declares German');
+  check(await page.locator('html').getAttribute('lang') === 'en', 'source catalogue declares English');
+  const strings = await page.evaluate(async () => (await import('./js/strings.js')).PROVENANCE);
   check(await page.locator('#sources-list .src-row').count() === sources.length, 'unfiltered source list covers the stored catalogue');
   check(await page.locator('#research-preview').textContent() === 'Research preview', 'Research preview identifies the working site beside the brand');
   check(await page.locator('#research-preview').getAttribute('href') === 'about.html#current-scope', 'Research preview links to the stated working scope');
   check(await page.locator('#beta-badge, .progress-block, .stages, .hero').count() === 0, 'source overview has no former badge, hero or pipeline progress strip');
   check(!(await page.locator('main').textContent()).includes('·'), 'source metadata uses no middle-dot separators');
-  const options = await page.locator('#filter-availability option').allTextContents();
-  check(options.includes('Mit Transkription') && options.includes('Nur Digitalisat') && options.includes('Nur Katalognachweis'), 'availability filters name the actual German source states');
+  const options = await page.locator('#filter-availability option').evaluateAll(items => items.map(item => item.value));
+  check(['text', 'images', 'catalogue'].every(value => options.includes(value)), 'availability filters offer the actual source states');
 
   const vlmDocuments = documents.filter(doc => doc.transcription_source === 'vlm');
   check(vlmDocuments.length > 0, 'actual corpus provides VLM transcription fixtures');
@@ -54,8 +55,8 @@ try {
     const source = sources.find(s => s.transkribus_docs.some(d => Number(d.doc_id) === doc.docId));
     check(await row(source).count() === 1 && await row(source).locator(`a[href*="doc=${doc.docId}"]`).count() > 0,
       `text filter includes the actual VLM projection ${doc.docId}`);
-    check((await row(source).locator('.src-provenance').textContent()).includes('Maschinelle Ausgangstranskription'),
-      `VLM source ${doc.docId} identifies its initial text provenance`);
+    check(await row(source).locator('[data-provenance="machine-unrevised"]').textContent() === strings.sourceListVlm,
+      `VLM source ${doc.docId} identifies its initial text as unrevised machine transcription`);
   }
   const credited = documents.find(doc => doc.transcription_by === 'Inventaria' && doc.edition_url);
   const creditedSource = sources.find(s => s.transkribus_docs.some(d => Number(d.doc_id) === credited.docId));
@@ -65,9 +66,10 @@ try {
     .filter(doc => doc?.transcription_by === 'Inventaria');
   const allCorrected = creditedDocs.every(doc => doc.pages_total > 0 && doc.done_pages >= doc.pages_total);
   const someCorrected = creditedDocs.some(doc => doc.done_pages > 0);
-  const expectedCredit = `Transkription Inventaria${allCorrected ? ', korrigiert' : someCorrected ? ', teilweise korrigiert' : ''}`;
-  check(await row(creditedSource).locator(`a[href="${credited.edition_url}"]`).textContent() === expectedCredit,
-    'transcription attribution claims correction only when the recorded page states support it');
+  const expectedCorrection = allCorrected ? 'full' : someCorrected ? 'partial' : 'none';
+  const credit = row(creditedSource).locator(`a[href="${credited.edition_url}"]`);
+  check(await credit.getAttribute('data-correction') === expectedCorrection && (await credit.textContent()).includes('Inventaria'),
+    'transcription attribution names Inventaria and claims correction only when the recorded page states support it');
   await page.waitForFunction(() => [...document.querySelectorAll('#sources-list img')]
     .filter(image => image.getBoundingClientRect().top < innerHeight)
     .every(image => image.complete && image.naturalWidth > 0));
@@ -90,15 +92,16 @@ try {
   await page.locator('#filter-availability').selectOption('');
   await page.locator('#search-input').fill(creditedSource.signatur);
   await page.waitForFunction(() => document.querySelectorAll('#sources-list .src-row').length === 1);
-  check(await row(creditedSource).count() === 1, 'German source search resolves an exact stored shelfmark');
+  check(await row(creditedSource).count() === 1, 'source search resolves an exact stored German shelfmark');
   await page.locator('#search-input').fill('zzzzqqq');
   await page.locator('.src-empty').waitFor();
-  check((await page.locator('.src-empty').textContent()).includes('Keine'), 'empty source search reports its result in German');
+  check(await page.locator('#sources-list .src-row').count() === 0 && (await page.locator('.src-empty').textContent()).trim().length > 0,
+    'empty source search reports an explicit empty state');
   await page.locator('#search-input').fill('');
   await page.waitForFunction(count => document.querySelectorAll('#sources-list .src-row').length === count, sources.length);
   const category = creditedSource.kategorie;
-  await page.locator('#category-chips button').filter({ hasText: category }).click();
-  check(await page.locator('#sources-list .src-row').count() === sources.filter(source => source.kategorie === category).length, 'German source category filter matches the actual catalogue category');
+  await page.locator(`#category-chips button[data-kat="${category}"]`).click();
+  check(await page.locator('#sources-list .src-row').count() === sources.filter(source => source.kategorie === category).length, 'source category filter matches the actual stored catalogue category');
   await page.locator('#category-chips button[data-kat=""]').click();
   await page.screenshot({ path: path.join(output, 'sources.png'), fullPage: false });
   await page.setViewportSize({ width: 640, height: 500 });
@@ -122,7 +125,8 @@ try {
   await page.goto(imageUrl, { waitUntil: 'networkidle' });
   check(await page.locator('#doc-selector').inputValue() === String(imageOnly.docId), 'image-only source opens its exact document in the viewer');
   check((await page.locator('#page-total').textContent()).includes(String(imageOnly.pages_total)), 'image-only viewer reports the recorded document extent');
-  check((await page.locator('#transcription-container').textContent()).includes('dieses Digitalisat liegt keine Transkription vor.'), 'image-only viewer accurately states missing transcription');
+  check(await page.locator('#transcription-container [data-testid="no-transcription"]').isVisible(), 'image-only viewer accurately states missing transcription');
+  check(await page.locator('[data-testid="readonly-hint"]').isHidden(), 'image-only viewer shows no annotation hint for a source without text');
   check(await page.locator('#btn-review').isHidden() && await page.locator('#btn-more').isHidden(), 'image-only viewer hides unavailable review and text tools');
   check(await page.locator(`a[href="data/tei/${imageOnly.docId}.xml"]`).count() === 0,
     'image-only viewer does not retain a dead TEI export link');

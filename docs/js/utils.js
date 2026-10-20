@@ -108,6 +108,35 @@ export function catLabel(kategorie) {
 }
 
 /**
+ * English display labels for the German vocabulary values of the data
+ * specification (pipeline/README.md). The stored values never change; only
+ * what the interface shows is translated, and an unknown value shows as stored.
+ */
+const VOCABULARY_EN = {
+  contentClass: {
+    text: 'text', leer: 'blank', kassiert: 'struck through', einlage: 'insert', unknown: 'not determined',
+  },
+  emptyEvidence: { heuristik: 'heuristic', vlm: 'vision model', mensch: 'human' },
+  verification: {
+    unbearbeitet: 'not reviewed',
+    maschinell: 'unrevised machine transcription',
+    gesichtet: 'reviewed',
+    abgenommen: 'accepted',
+  },
+  extentUnit: { seiten: 'pages', bilder: 'images', unbekannt: 'without a stated unit' },
+  archivalUnit: { 'Einzelstück': 'single item' },
+};
+
+/**
+ * @param {keyof typeof VOCABULARY_EN} field
+ * @param {string} value - the stored German value
+ * @returns {string}
+ */
+export function vocabLabel(field, value) {
+  return VOCABULARY_EN[field]?.[value] ?? value;
+}
+
+/**
  * Counts in the interface read in the page language, not the reader's locale.
  * @param {number|null|undefined} n
  * @returns {string}

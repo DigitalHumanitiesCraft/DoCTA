@@ -291,7 +291,7 @@ try {
   if (!await page.locator('#registry-dialog').isVisible()) await openRegistry();
   check(await entryForm.locator('[name="note"]').inputValue() === term.text,
     'Escape and reopening retain an unsaved sidebar entry');
-  await page.locator('#registry-dialog').getByRole('button', { name: 'Eingaben verwerfen', exact: true }).click();
+  await page.locator('#registry-dialog').getByRole('button', { name: 'Discard input', exact: true }).click();
   check(!await page.locator('#registry-dialog').isVisible(), 'explicit discard closes the dirty sidebar');
   await openRegistry();
   check(await entryForm.locator('[name="note"]').inputValue() === '',
@@ -572,12 +572,13 @@ try {
     'stale mention is not silently redrawn on changed text');
   await openRegistry();
   await page.locator(`[data-entry-id="${termEntry.id}"]`).click();
-  check((await page.locator('#registry-mentions').textContent()).includes('Text geändert'),
-    'the term fundstelle visibly identifies its changed source');
+  check(await page.locator('#registry-mentions [data-stale="true"]').isVisible(),
+    'the term occurrence visibly identifies its changed source');
   await page.locator(`[data-edit-mention="${termMention.id}"]`).click();
   check(await mentionForm.locator('[type="submit"]').isHidden(),
     'stale mention cannot be silently resaved against the changed source');
-  check((await page.locator('#mention-dialog > .registry-content > [role="status"]').textContent()).includes('geändert'),
+  check(await page.locator('#mention-dialog').getAttribute('data-stale') === 'true' &&
+    (await page.locator('#mention-dialog > .registry-content > [role="status"]').textContent()).trim().length > 0,
     'stale-source inline editor explains why a new selection is required');
   await page.keyboard.press('Escape');
   await page.keyboard.press('Escape');
@@ -606,7 +607,8 @@ try {
   });
   await staticPage.goto(`${BASE}/register.html`, { waitUntil: 'networkidle' });
   check(await staticPage.locator('#register-export').isHidden() && await staticPage.locator('#register-browser').isHidden() &&
-    (await staticPage.locator('#register-status').textContent()).includes('lokalen Arbeitseditor'),
+    await staticPage.locator('#register-status').getAttribute('data-state') === 'read-only' &&
+    await staticPage.locator('#register-status').getByRole('link').getAttribute('href') === 'guide.html#launch',
     'static index states local availability without dead export or editing controls');
   await staticPage.close();
 

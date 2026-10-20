@@ -1,10 +1,11 @@
-import { initNav, initBanner } from './app.js?v=20260921-ui';
+import { initNav, initBanner } from './app.js?v=20261020-en';
 import { loadJSON } from './data-loader.js';
 import { getParams, setParams, escapeHTML, escapeAttr,
-         lsGet, lsSet } from './utils.js';
+         lsGet, lsSet, catLabel, vocabLabel } from './utils.js';
+import { PROVENANCE, DRAFT_BADGE } from './strings.js';
 import { createTeiView, renderReading,
-         renderTranscription } from './viewer-render.js?v=20260921-ui';
-import { createReviewView } from './viewer-review.js?v=20260921-corrections';
+         renderTranscription } from './viewer-render.js?v=20261020-en';
+import { createReviewView } from './viewer-review.js?v=20261020-en';
 import { createLocalEditor } from './viewer-local.js';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
@@ -45,7 +46,8 @@ function provenanceState(docId) {
   if (reg.transcription_source === 'vlm') {
     return {
       state: 'machine',
-      label: 'Maschinentranskription von DoCTA',
+      provenance: 'machine-unrevised',
+      label: PROVENANCE.vlm,
       title: 'Unrevised transcription produced by the DoCTA pipeline with a ' +
              'vision-language model. Transkribus holds no transcription of this ' +
              'source, and no page has been read against the scan by a scholar',
@@ -54,14 +56,16 @@ function provenanceState(docId) {
   if (done >= total) {
     return {
       state: 'human',
-      label: `Textquelle ${by ? 'Inventaria, korrigiert' : 'Transkribus, korrigiert'}`,
+      provenance: 'corrected',
+      label: by ? PROVENANCE.inventariaCorrected : PROVENANCE.transkribusCorrected,
       title: `All ${total} pages corrected${by} and marked done in Transkribus`,
     };
   }
   if (done > 0) {
     return {
       state: 'partial',
-      label: `Textquelle teilweise korrigiert (${done}/${total} Seiten)`,
+      provenance: 'partly-corrected',
+      label: PROVENANCE.partlyCorrected(done, total),
       title: `${done} of ${total} pages corrected${by} and marked done in Transkribus, ` +
              'the remaining pages are the unrevised Transkribus HTR layer',
     };
@@ -70,7 +74,8 @@ function provenanceState(docId) {
   // work; the chip states the origin and what the status does not record.
   return {
     state: 'machine',
-    label: 'Transkribus HTR, Korrektur nicht verzeichnet',
+    provenance: 'correction-unrecorded',
+    label: PROVENANCE.transkribusUnrecorded,
     title: 'Text layer exported from Transkribus. No page of this document ' +
            'is marked done there, so no human correction is documented; the ' +
            'text may have been worked on without the status being set',
@@ -83,11 +88,11 @@ function provenanceChip(docId) {
   const reg = registerByDocId.get(Number(docId));
   const url = reg?.edition_url || 'https://www.inventaria.at/';
   if (reg?.transcription_by === 'Inventaria' && /^https?:\/\//i.test(url)) {
-    return `<a class="prov-chip prov-chip--${prov.state}" id="doc-provenance"` +
+    return `<a class="prov-chip prov-chip--${prov.state}" id="doc-provenance" data-provenance="${prov.provenance}"` +
       ` href="${escapeAttr(url)}" target="_blank" rel="noopener"` +
-      ` title="${escapeAttr(prov.title)}. Originaledition öffnen">${escapeHTML(prov.label)}</a>`;
+      ` title="${escapeAttr(prov.title)}. Open the original edition">${escapeHTML(prov.label)}</a>`;
   }
-  return `<span class="prov-chip prov-chip--${prov.state}" id="doc-provenance"` +
+  return `<span class="prov-chip prov-chip--${prov.state}" id="doc-provenance" data-provenance="${prov.provenance}"` +
          ` title="${escapeAttr(prov.title)}">${escapeHTML(prov.label)}</span>`;
 }
 
@@ -96,42 +101,44 @@ function updateDraftBadge() {
   const badge = document.getElementById('draft-badge');
   const pending = currentDoc && review.hasDraft;
   badge.hidden = !pending;
-  badge.textContent = 'Ungespeicherte Änderungen';
-  badge.title = 'Die aktuelle Textkorrektur ist noch nicht gespeichert.';
+  badge.dataset.state = pending ? 'dirty' : 'clean';
+  badge.textContent = DRAFT_BADGE;
+  badge.title = 'The current text correction is not saved yet.';
 }
 
 function renderDocMeta(docId) {
   const source = sourceByDocId.get(Number(docId));
   const reg = registerByDocId.get(Number(docId));
-  const title = source?.titel || currentDoc?.title || 'Quelle';
+  const title = source?.titel || currentDoc?.title || 'Source';
   document.getElementById('source-title').textContent = title;
-  document.getElementById('source-shelfmark').textContent = source?.signatur || 'Nicht verzeichnet';
+  document.getElementById('source-shelfmark').textContent = source?.signatur || 'Not recorded';
   const rawDate = source?.datierung?.raw || '';
   const date = /^\d{4}\.\d{2}\.\d{2}$/.test(rawDate)
-    ? rawDate.split('.').reverse().join('.') : rawDate;
-  document.getElementById('source-date').textContent = date || 'Nicht verzeichnet';
+    ? rawDate.replaceAll('.', '-') : rawDate;
+  document.getElementById('source-date').textContent = date || 'Not recorded';
   const field = (label, value) => value
     ? '<div><dt>' + escapeHTML(label) + '</dt><dd>' + escapeHTML(String(value)) + '</dd></div>' : '';
-  let details = field('Titel', title) + field('Signatur', source?.signatur) +
-    field('Datierung', date) + field('Archiv', 'Tiroler Landesarchiv') +
-    field('Quellentyp', source?.kategorie) + field('Archivalische Einheit', source?.art) +
-    field('Transkriptionsprojekt', reg?.transcription_by || source?.transkribiert) +
-    field('Transkribus-Dokument', docId);
+  let details = field('Title', title) + field('Shelfmark', source?.signatur) +
+    field('Date', date) + field('Archive', 'Tyrolean State Archives') +
+    field('Source type', source?.kategorie && catLabel(source.kategorie)) +
+    field('Archival unit', source?.art && vocabLabel('archivalUnit', source.art)) +
+    field('Transcription project', reg?.transcription_by || source?.transkribiert) +
+    field('Transkribus document', docId);
   let attribution = '';
   if (reg?.transcription_by === 'Inventaria') {
     const url = reg.edition_url || 'https://www.inventaria.at/';
     // Only web links from the source register may become navigable metadata.
     if (/^https?:\/\//i.test(url)) {
       attribution = '<a class="doc-meta__edition" href="' + escapeAttr(url) +
-        '" target="_blank" rel="noopener">Edition von Inventaria</a>';
-      details += '<div><dt>Originaledition</dt><dd>' + attribution + '</dd></div>';
+        '" target="_blank" rel="noopener">Edition by Inventaria</a>';
+      details += '<div><dt>Original edition</dt><dd>' + attribution + '</dd></div>';
     }
   }
   document.getElementById('source-details').innerHTML = details;
   const provenance = currentDoc?.provenance;
   const coverage = provenance && provenance.pagesTranscribed < provenance.pagesInDocument
-    ? '<span>' + escapeHTML(String(provenance.pagesTranscribed)) + ' von ' +
-      escapeHTML(String(provenance.pagesInDocument)) + ' Seiten transkribiert</span>' : '';
+    ? '<span>' + escapeHTML(String(provenance.pagesTranscribed)) + ' of ' +
+      escapeHTML(String(provenance.pagesInDocument)) + ' pages transcribed</span>' : '';
   const meta = document.getElementById('doc-meta');
   meta.innerHTML = provenanceChip(docId) + coverage;
   meta.hidden = false;
@@ -446,23 +453,27 @@ function renderPage(pageNr) {
   review.applyMode();
   registry.render();
   if (currentDoc.imageOnly) {
-    transcriptionContainer.textContent = 'Für dieses Digitalisat liegt keine Transkription vor.';
+    const note = document.createElement('p');
+    note.className = 'loading';
+    note.dataset.testid = 'no-transcription';
+    note.textContent = 'No transcription is available for this digitised image.';
+    transcriptionContainer.replaceChildren(note);
   }
   const provenance = currentDoc.pages.find(page => page.pageNr === pageNr)?.provenance;
   const provenanceElement = document.getElementById('page-provenance');
   const displayDate = value => {
     const date = new Date(value);
     if (Number.isNaN(date.valueOf())) return value;
-    return new Intl.DateTimeFormat('de-AT', { dateStyle: 'short', ...(value.includes('T') ? { timeStyle: 'short' } : {}) }).format(date);
+    return new Intl.DateTimeFormat('en-GB', { dateStyle: 'short', ...(value.includes('T') ? { timeStyle: 'short' } : {}) }).format(date);
   };
   const origins = provenance?.originalRuns.filter(run => run.id === provenance.originalRunId) || [];
   const summary = provenance ? [
-    ...origins.map(run => `Transkription ${run.model || (run.source === 'transkribus' ? 'Transkribus, Modell nicht dokumentiert' : 'Modell nicht dokumentiert')}${run.date ? ' (' + displayDate(run.date) + ')' : ''}`),
-    ...provenance.humanCorrections.map(run => `Textkorrektur ${run.reviewer || 'Kürzel nicht dokumentiert'}${run.timestamp ? ' (' + displayDate(run.timestamp) + ')' : ''}`),
+    ...origins.map(run => `Transcription ${run.model || (run.source === 'transkribus' ? 'Transkribus, model not documented' : 'model not documented')}${run.date ? ' (' + displayDate(run.date) + ')' : ''}`),
+    ...provenance.humanCorrections.map(run => `Text correction ${run.reviewer || 'initials not documented'}${run.timestamp ? ' (' + displayDate(run.timestamp) + ')' : ''}`),
   ].join('. ') : '';
   provenanceElement.innerHTML = provenance ? `<details><summary>${escapeHTML(summary)}</summary><dl>` +
-    origins.map(run => `<dt>Transkriptionslauf</dt><dd>${escapeHTML([run.id, run.date, run.prompt, run.prompt_hash].filter(Boolean).join(', '))}</dd>`).join('') +
-    provenance.humanCorrections.map(run => `<dt>Textkorrektur ${escapeHTML(run.reviewer || '')}</dt><dd><time datetime="${escapeAttr(run.timestamp || '')}">${escapeHTML(run.timestamp || 'Zeitpunkt nicht dokumentiert')}</time></dd>`).join('') + '</dl></details>' : '';
+    origins.map(run => `<dt>Transcription run</dt><dd>${escapeHTML([run.id, run.date, run.prompt, run.prompt_hash].filter(Boolean).join(', '))}</dd>`).join('') +
+    provenance.humanCorrections.map(run => `<dt>Text correction ${escapeHTML(run.reviewer || '')}</dt><dd><time datetime="${escapeAttr(run.timestamp || '')}">${escapeHTML(run.timestamp || 'time not documented')}</time></dd>`).join('') + '</dl></details>' : '';
 }
 
 const tei = createTeiView(transcriptionContainer, {
@@ -507,7 +518,7 @@ function updatePager() {
                          currentDoc.pages.length);
   const total = currentDoc.provenance?.pagesInDocument || currentDoc.pages.length;
   document.getElementById('page-total').textContent = total === currentDoc.pages.length
-    ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} verfügbar)`;
+    ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} available)`;
   document.getElementById('btn-prev-page').disabled = currentPage === 0;
   document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
 }
@@ -542,6 +553,13 @@ function syncImageOnly() {
   document.getElementById('btn-review').hidden = imageOnly || viewMode !== 'synopsis';
   if (imageOnly) document.getElementById('review-bar').hidden = true;
   document.getElementById('btn-more').hidden = imageOnly;
+  syncReadOnlyHint();
+}
+
+// Pages and a plain static preview cannot write; the hint names that state
+// instead of leaving the missing annotation controls unexplained.
+function syncReadOnlyHint() {
+  document.getElementById('readonly-hint').hidden = local.enabled || Boolean(currentDoc?.imageOnly);
 }
 
 // Renders whatever the current mode shows, from the page the mode still holds
@@ -567,7 +585,7 @@ function setView(mode, pageIdx) {
   const isSynopsis = viewMode === 'synopsis';
   document.getElementById('btn-view-synopsis').hidden = isSynopsis;
   document.getElementById('btn-review').hidden = !isSynopsis;
-  document.getElementById('text-view-title').textContent = isSynopsis ? 'Transkription' : viewMode === 'tei' ? 'TEI' : 'Lesetext';
+  document.getElementById('text-view-title').textContent = isSynopsis ? 'Transcription' : viewMode === 'tei' ? 'TEI' : 'Reading text';
   document.body.dataset.view = viewMode;
   document.getElementById('facsimile-panel').setAttribute('aria-hidden', String(!isSynopsis));
   for (const v of VIEWS) {
@@ -641,7 +659,7 @@ document.getElementById('btn-edition-build').addEventListener('click', async (ev
   const status = document.getElementById('local-edition-status');
   const date = document.getElementById('edition-date');
   if (review.hasDraft) {
-    status.textContent = 'Bitte die Textänderungen zuerst speichern oder verwerfen.';
+    status.textContent = 'Please save or discard the text changes first.';
     return;
   }
   if (!date.reportValidity()) return;
@@ -649,10 +667,10 @@ document.getElementById('btn-edition-build').addEventListener('click', async (ev
   try {
     await local.build(date.value, [Number(currentDoc.docId)]);
     tei.invalidate();
-    status.textContent = 'Editionsausgabe aus dem gespeicherten Text aktualisiert und geprüft.';
+    status.textContent = 'Edition output updated from the saved text and validated.';
     if (viewMode === 'tei') renderCurrentView();
   } catch (error) {
-    status.textContent = `Ausgabe nicht aktualisiert: ${error.message}`;
+    status.textContent = `Output not updated: ${error.message}`;
   } finally { button.disabled = false; }
 });
 document.getElementById('btn-next-page').addEventListener('click', () => setPage(currentPage + 1));
@@ -759,10 +777,11 @@ async function init() {
     await local.init();
     if (local.enabled && local.version) {
       const version = document.createElement('p');
-      version.textContent = `Arbeitsedition ${local.version}`;
+      version.textContent = `Working edition ${local.version}`;
       document.getElementById('viewer-more').append(version);
     }
     document.getElementById('local-edition-bar').hidden = !local.enabled;
+    syncReadOnlyHint();
     document.getElementById('edition-date').value = new Date().toISOString().slice(0, 10);
     const [mapping, sources, register, collection] = await Promise.all([
       loadJSON('data/source_mapping.json'),

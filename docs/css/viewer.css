@@ -48,6 +48,8 @@
   background: var(--surface);
 }
 .transcription-tools .doc-meta { flex: 0 1 auto; min-inline-size: 0; padding: 0; border: 0; gap: var(--space-sm); }
+.readonly-hint { flex: 1 1 100%; margin: 0; font-size: var(--text-sm); color: var(--text-secondary); }
+.readonly-hint[hidden] { display: none; }
 .viewer-page .doc-meta__edition { font-size: inherit; border: 0; padding: 0; border-radius: 0; }
 .viewer-page .prov-chip { font-size: var(--text-xs); white-space: normal; }
 .transcription-workspace { flex: 1 1 auto; min-block-size: 0; overflow: auto; overscroll-behavior: contain; }
