@@ -13,7 +13,7 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ROOT = fs.mkdtempSync(path.join(os.tmpdir(), 'docta-guide-browser-'));
 const DOC_ID = 11328300;
 const DOCS = path.join(REPO, 'docs');
-const guardedDirectories = ['pipeline/pages', 'pipeline/annotations', 'pipeline/reviews', 'pipeline/registry', 'pipeline/tags', 'docs/data/tei', 'docs/data/entities', 'docs/data/transcriptions'];
+const guardedDirectories = ['pipeline/pages', 'pipeline/annotations', 'pipeline/reviews', 'pipeline/registry', 'docs/data/tei', 'docs/data/entities', 'docs/data/transcriptions'];
 const storedFiles = directory => fs.existsSync(directory) ? fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? storedFiles(path.join(directory, entry.name)) : [path.join(directory, entry.name)]) : [];
 const protectedPaths = [...new Set([...guardedDirectories.flatMap(relative => storedFiles(path.join(REPO, relative))),
   path.join(REPO, 'pipeline/pages', `${DOC_ID}.json`),
@@ -56,7 +56,6 @@ handler.data_dir = root / 'docs' / 'data'
 handler.register_dir = root / 'pipeline' / 'pages'
 handler.review_dir = root / 'pipeline' / 'reviews'
 handler.annotation_dir = root / 'pipeline' / 'annotations'
-handler.tag_dir = root / 'pipeline' / 'tags'
 handler.token = 'isolated-browser-fixture'
 server = ThreadingHTTPServer(('127.0.0.1', 0), handler)
 print(server.server_port, flush=True)

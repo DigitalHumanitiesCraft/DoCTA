@@ -63,7 +63,7 @@ Die Python-Prüfungen zur TEI-Baseline erzeugen ihren Ausgangsstand aus den vorh
 
 `viewer-ui-test.mjs` prüft Quellenkopf, Dialogbedienung, Bildpassung und den vereinfachten Bearbeitungsablauf mit einer vorhandenen Transkription. Sein Speicherdienst läuft ausschließlich im Arbeitsspeicher. Die Prüfung verändert keine Forschungsdaten. Ein zweiter Browserkontext sieht denselben Server als rein statischen Host wie GitHub Pages. Dort muss der dauerhafte Hinweis erscheinen, dass Annotieren und Speichern die lokale Arbeitsedition voraussetzen, mit Verweis auf den Startabschnitt der Anleitung, und der Herkunftschip einer DoCTA-Maschinentranskription muss die ungeprüfte maschinelle Transkription im sichtbaren Text nennen.
 
-Die frühere Schlagwortoberfläche ist entfernt. Die Viewer-Prüfung sichert ihre Abwesenheit. Die Python-Tests decken weiterhin den kompatiblen Speicher und die HTTP-Endpunkte für erhaltene Altdaten ab.
+Die frühere Schlagwortoberfläche ist entfernt. Die Viewer-Prüfung sichert ihre Abwesenheit. Das zugehörige Backend wurde am 2026-10-20 entfernt; die Python-Tests prüfen, dass `/api/tags` mit 404 antwortet.
 
 **smoketest.mjs** lädt jede Seite der Site und meldet pro Seite Konsolenfehler, nicht abgefangene
 Ausnahmen, fehlgeschlagene Netzwerk-Requests, HTTP-Status ab 400, interne Links, die auf keine Datei

@@ -89,9 +89,9 @@ GitHub Pages keeps the browser draft and review JSON export. It has no repositor
 
 Which interfaces and functions the editor needs is worked out together with her.
 
-### Controlled terms and retained tags
+### Controlled terms
 
-The editor assigns terms to selected passages through the shared annotation field and builds the controlled vocabulary in the editorial register. Index exposes these terms and their source occurrences. The former separate keyword dialog is removed. Existing page and line tags remain in their original storage and are not silently promoted into register entries. Their optional migration requires a defined mapping of source scope and vocabulary identity.
+The editor assigns terms to selected passages through the shared annotation field and builds the controlled vocabulary in the editorial register. Index exposes these terms and their source occurrences. The former separate keyword dialog is removed, and its page and line tag storage was removed on 2026-10-20.
 
 ## Technical constraints
 

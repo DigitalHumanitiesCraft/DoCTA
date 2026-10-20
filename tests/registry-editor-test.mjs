@@ -62,7 +62,6 @@ handler.data_dir = root / 'docs' / 'data'
 handler.register_dir = root / 'pipeline' / 'pages'
 handler.review_dir = root / 'pipeline' / 'reviews'
 handler.annotation_dir = root / 'pipeline' / 'annotations'
-handler.tag_dir = root / 'pipeline' / 'tags'
 handler.token = 'isolated-browser-fixture'
 server = ThreadingHTTPServer(('127.0.0.1', 0), handler)
 print(server.server_port, flush=True)

@@ -57,7 +57,6 @@ def test_alternate_root_uses_its_own_sources_for_view_anchors_and_build(
         "register_dir",
         "review_dir",
         "annotation_dir",
-        "tag_dir",
         "data_dir",
         "token",
         "app_version",
@@ -101,7 +100,7 @@ def test_api_host_allowlist_rejects_dns_rebinding_names() -> None:
     assert not le.allowed_host("127.0.0.1:9999", 8743)
 
 
-def test_tag_http_route_requires_same_origin_token() -> None:
+def test_write_route_requires_same_origin_token() -> None:
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
         br.build(root / "pipeline")
@@ -111,56 +110,39 @@ def test_tag_http_route_requires_same_origin_token() -> None:
         handler.token = "test-token"
         handler.docs_dir = docs
         handler.register_dir = root / "pipeline" / "pages"
-        handler.tag_dir = root / "pipeline" / "tags"
         server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
         try:
             port = server.server_port
+            origin = f"http://127.0.0.1:{port}"
             connection = HTTPConnection("127.0.0.1", port)
-            connection.request("GET", f"/api/tags/{DOC}")
-            current = json.loads(connection.getresponse().read())
-            line = _request(handler.register_dir)["pages"][str(PAGE)]["lines"][0]
-            body = json.dumps(
-                {
-                    "docId": DOC,
-                    "baseRevision": current["revision"],
-                    "sourceRevision": current["sourceRevision"],
-                    "action": "add",
-                    "tag": {
-                        "pageNr": PAGE,
-                        "lineId": line["id"],
-                        "tag": "Test",
-                        "note": "",
-                        "reviewer": "XY",
-                    },
-                }
-            )
+            # A body without baseRevision reaches the revision check only after
+            # the token gate, so 409 proves authorization passed.
+            body = json.dumps({})
             connection.request(
                 "POST",
-                "/api/tags",
+                "/api/registry",
                 body,
-                {
-                    "Content-Type": "application/json",
-                    "Origin": f"http://127.0.0.1:{port}",
-                },
+                {"Content-Type": "application/json", "Origin": origin},
             )
             denied = connection.getresponse()
             assert denied.status == 403
             denied.read()
-            connection.request(
-                "POST",
-                "/api/tags",
-                body,
-                {
-                    "Content-Type": "application/json",
-                    "Origin": f"http://127.0.0.1:{port}",
-                    "X-DoCTA-Token": "test-token",
-                },
-            )
-            response = connection.getresponse()
-            assert response.status == 200
-            assert json.loads(response.read())["saved"] is True
+            authorized = {
+                "Content-Type": "application/json",
+                "Origin": origin,
+                "X-DoCTA-Token": "test-token",
+            }
+            connection.request("POST", "/api/registry", body, authorized)
+            rejected = connection.getresponse()
+            assert rejected.status == 409
+            rejected.read()
+            # The research-tag routes were removed on 2026-10-20.
+            connection.request("POST", "/api/tags", body, authorized)
+            removed = connection.getresponse()
+            assert removed.status == 404
+            removed.read()
         finally:
             server.shutdown()
             server.server_close()
@@ -614,7 +596,6 @@ def editor(tmp_path_factory: pytest.TempPathFactory):
     handler.register_dir = root / "pipeline" / "pages"
     handler.review_dir = root / "pipeline" / "reviews"
     handler.annotation_dir = root / "pipeline" / "annotations"
-    handler.tag_dir = root / "pipeline" / "tags"
     handler.data_dir = root / "docs" / "data"
     shutil.copytree(DATA / "entities", handler.data_dir / "entities")
     server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
@@ -680,13 +661,6 @@ def _bad_review_dir(handler: type, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(handler, "review_dir", bad)
 
 
-def _bad_tag_sidecar(handler: type, monkeypatch: pytest.MonkeyPatch) -> None:
-    bad = handler.tag_dir.parent / "bad-tags"
-    bad.mkdir(exist_ok=True)
-    write_json(bad / f"{DOC}.json", [])
-    monkeypatch.setattr(handler, "tag_dir", bad)
-
-
 def _patch(target: object, name: str, exc: BaseException):
     def fail(*_: object, **__: object) -> None:
         raise exc
@@ -730,9 +704,9 @@ CONTRACT = {
         400,
         "invalid document id",
     ),
-    "non-ascii digit tag id": (
+    "non-ascii digit document id": (
         "GET",
-        "/api/tags/%C2%B2",
+        "/api/documents/%C2%B2",
         None,
         None,
         400,
@@ -884,25 +858,7 @@ CONTRACT = {
         400,
         ANY,
     ),
-    "tags read": ("GET", f"/api/tags/{DOC}", None, None, 200, None),
-    "malformed tag sidecar": (
-        "GET",
-        f"/api/tags/{DOC}",
-        None,
-        _bad_tag_sidecar,
-        500,
-        ANY,
-    ),
-    "tags for unknown document": ("GET", "/api/tags/999", None, None, 404, ANY),
-    "tag payload not an object": ("POST", "/api/tags", _body([]), None, 400, ANY),
-    "stale tags": (
-        "POST",
-        "/api/tags",
-        _body({"docId": DOC, "baseRevision": "x"}),
-        None,
-        409,
-        ANY,
-    ),
+    "retired tag route": ("POST", "/api/tags", _body([]), None, 404, ANY),
 }
 
 

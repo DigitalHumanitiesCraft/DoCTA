@@ -34,7 +34,6 @@ import build_register as br
 import build_tei as bt
 import local_annotations as annotations
 import local_registry as registry
-import local_tags as tags
 import validate_tei as vt
 from io_paths import DATA, PIPELINE_DIR, REPO_ROOT, load_json, write_json, write_text
 
@@ -299,7 +298,6 @@ class EditorHandler(SimpleHTTPRequestHandler):
     register_dir = REGISTER
     review_dir = PIPELINE_DIR / "reviews"
     annotation_dir = PIPELINE_DIR / "annotations"
-    tag_dir = PIPELINE_DIR / "tags"
     data_dir = DATA
     docs_dir = DOCS
     app_version = "development"
@@ -370,9 +368,6 @@ class EditorHandler(SimpleHTTPRequestHandler):
             "/api/annotations/": lambda doc_id: annotations.read_decisions(
                 doc_id, self.annotation_dir
             ),
-            "/api/tags/": lambda doc_id: tags.read_tags(
-                doc_id, self.register_dir, self.tag_dir
-            ),
         }
         for prefix, read in readers.items():
             if path.startswith(prefix):
@@ -390,7 +385,6 @@ class EditorHandler(SimpleHTTPRequestHandler):
         if endpoint not in (
             "/api/review",
             "/api/annotations",
-            "/api/tags",
             "/api/registry",
             "/api/build",
         ):
@@ -427,9 +421,6 @@ class EditorHandler(SimpleHTTPRequestHandler):
                     self.data_dir / "entities",
                 )
                 result = {"saved": True, "annotations": decisions}
-            elif endpoint == "/api/tags":
-                saved_tags = tags.save_tags(payload, self.register_dir, self.tag_dir)
-                result = {"saved": True, "tags": saved_tags}
             elif endpoint == "/api/registry":
                 result = {
                     "saved": True,
@@ -482,7 +473,6 @@ def main() -> int:
     EditorHandler.register_dir = register
     EditorHandler.review_dir = root / "pipeline" / "reviews"
     EditorHandler.annotation_dir = root / "pipeline" / "annotations"
-    EditorHandler.tag_dir = root / "pipeline" / "tags"
     EditorHandler.data_dir = docs / "data"
     # One server uses one root. Set source readers before serving so a scratch
     # copy cannot silently read transcriptions or metadata from this checkout.

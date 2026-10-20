@@ -87,7 +87,7 @@ The editorial register identifies persons and classifies source occurrences. Eve
 
 Sources opens the searchable source overview with all source types and availability states visible by default. Availability filters distinguish sources with transcription, sources with a stored image address and archival records. Image-only sources open the first image whose address is recorded. The viewer names the documented total separately and does not invent missing pages. Transcription attribution is shown on the source row and in the viewer. Research preview links to the project explanation.
 
-The separate keyword dialog is retired. Earlier tag files and browser drafts remain preserved; new controlled terms are assigned through the common annotation field. Historical tags are not automatically converted into register entries.
+The separate keyword dialog was retired, and its storage backend was removed on 2026-10-20. Controlled terms are assigned through the common annotation field.
 
 ### Browse the index and check text provenance
 
@@ -123,7 +123,6 @@ DoCTA/
 │   ├── accounts/           Executable part of the account-book encoding specification
 │   ├── reviews/            Saved correction events
 │   ├── annotations/        Decisions on machine entity proposals (created on first write)
-│   ├── tags/               Legacy page and line tags (created on first write)
 │   ├── registry/           Editor-owned entries, assignments and history (created on first write)
 │   ├── prompts/            Prompts used by the pipeline's extraction scripts
 │   └── schema/             Vendored TEI P5 grammar and the project schema docta.rng
@@ -132,7 +131,7 @@ DoCTA/
                             real local editor on an isolated data copy
 ```
 
-The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. `pipeline/annotations/`, `pipeline/tags/` and `pipeline/registry/` are absent from a fresh clone. The local editor creates each folder when it first saves into it, and the recovery instructions apply to them only where present. Details are in `docs/knowledge/architecture.md`.
+The site is static: vanilla JavaScript with ES6 modules, no build process, dependencies vendored in `docs/lib/`. `pipeline/annotations/` and `pipeline/registry/` are absent from a fresh clone. The local editor creates each folder when it first saves into it, and the recovery instructions apply to them only where present. Details are in `docs/knowledge/architecture.md`.
 
 The figures the site shows are computed in the browser from the source catalogue in `docs/data/sources.json` and the register projection in `docs/data/pipeline/register_summary.json`, so no count is hard-coded in a page. Benchmark results live in `evaluation/benchmark/summary.json`, with the published export under `docs/data/benchmark/`.
 

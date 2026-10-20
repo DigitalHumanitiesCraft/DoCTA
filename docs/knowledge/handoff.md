@@ -56,5 +56,5 @@ Internal working version 0.2.0 integrates source annotation into the reading int
 - Received: 2026-10-20
 - Source: feedback-round review of the repository state
 - Target: [architecture.md](architecture.md#retained-research-tag-data)
-- Context: `pipeline/annotations/`, `pipeline/tags/` and `pipeline/registry/` do not exist in this checkout and are created on first write. Whether retained tag, annotation or register files exist in another working copy is unknown.
+- Context: `pipeline/annotations/` and `pipeline/registry/` do not exist in this checkout and are created on first write. Whether annotation or register files exist in another working copy is unknown; the tag backend and its sidecars were removed on 2026-10-20.
 - Next action: Check the other working copies before any migration or recovery step assumes these files.

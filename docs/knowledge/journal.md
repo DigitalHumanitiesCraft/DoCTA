@@ -27,6 +27,14 @@ related: [INDEX, project, specification, handoff]
 
 Newest first. Each entry records one transition with its type (integrated, rejected, corrected, compacted), source, target and result. Figures inside an entry are the measurement of its date, not a current value; a later entry names any decision it supersedes.
 
+### 2026-10-20 rejected: research-tag backend
+
+- Source: operator decision of 2026-10-20.
+- Target: `pipeline/local_tags.py`, `pipeline/test_local_tags.py`, `pipeline/local_editor.py`, `pipeline/test_local_editor.py`, the editor bootstraps in `tests/registry-editor-test.mjs` and `tests/guide-walkthrough-test.mjs`, README.md, tests/README.md, CLAUDE.md, [architecture.md](architecture.md#removed-research-tag-backend), [specification.md](specification.md#controlled-terms).
+- Reason: the research-tag interface was retired on 2026-09-21, the repository holds no tag sidecars, and the only editor began after the retirement, so the retained compatibility served no data.
+- Result: the tag module, its `/api/tags` routes, sidecar storage and tests are deleted, and `/api/tags` answers 404. An HTTP test against the registry write route keeps the same-origin token check covered. Annotation, editorial register and controlled vocabulary are unchanged.
+
+
 ### 2026-10-20 integrated: unclear readings and line deletion
 
 - Source: operator decisions of 2026-10-20 on the feedback round; a survey of every bracket form in the page register.
