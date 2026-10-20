@@ -333,14 +333,14 @@ export function createNetworkView(panel, controls, graph) {
   function nodeTip(d) {
     const typeLabel = TYPES.find(t => t.key === d.type)?.label || d.type;
     if (d.kind === 'document') {
-      return tipRows(d.label, `${typeLabel} · Transkribus ${d.docId}`,
+      return tipRows(d.label, `${typeLabel}, Transkribus ${d.docId}`,
         d.res.transcriptionBy ? `Transcription: ${d.res.transcriptionBy}` : '',
         `${d.count} entity attestation${d.count === 1 ? '' : 's'}`);
     }
     const inDocs = (d.res?.attestedIn || []).length;
     const roles = d.res?.role || [];
     return tipRows(d.label,
-      `${typeLabel} · ${d.count} attestation${d.count === 1 ? '' : 's'}` +
+      `${typeLabel}, ${d.count} attestation${d.count === 1 ? '' : 's'}` +
         (inDocs ? ` in ${inDocs} document${inDocs === 1 ? '' : 's'}` : ''),
       roles.length ? roles.join(', ') : '');
   }
@@ -349,7 +349,7 @@ export function createNetworkView(panel, controls, graph) {
     const kind = l.kind === 'cooc'
       ? 'Co-occurrence in one transcription line'
       : 'Attestation of an entity in a document';
-    return tipRows(`${l.source.label} — ${l.target.label}`, `${kind} · ${l.count}×`);
+    return tipRows(`${l.source.label} — ${l.target.label}`, `${kind}, ${l.count}×`);
   }
 
   // --- neighbourhood isolation ---------------------------------------------

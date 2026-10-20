@@ -137,7 +137,7 @@ function renderAggregate(summary, its, excluded) {
         : "";
       return `<div class="d-flex justify-content-between align-items-baseline gap-3">
         <dt class="fw-normal text-body-secondary">${escapeHTML(m.label)}
-          <span class="text-body-tertiary">· ${escapeHTML(m.scope)}</span></dt>
+          <span class="text-body-tertiary">(${escapeHTML(m.scope)})</span></dt>
         <dd class="mb-0 text-end text-nowrap"><span class="tnum">${m.fmt(s[m.key])}</span>${second}</dd>
       </div>`;
     }).join("");
@@ -265,12 +265,12 @@ function renderRefTable(summary, its) {
   // table, because it says whose transcription the error rate is measured on,
   // and beside it what the DONE status does and does not certify.
   $("#ref-note").innerHTML =
-    `${rows.length} pages · ` +
-    `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration · ` +
+    `${rows.length} pages, ` +
+    `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration, ` +
     `measured against the Transkribus transcript with workflow status DONE in the collection of the ` +
     `Inventaria project (Univ. Salzburg / Innsbruck), <a href="https://www.inventaria.at/" target="_blank" rel="noopener">inventaria.at</a>. ` +
-    `DONE records a completed workflow step; editorial approval is a separate decision, so every rate here is a comparison signal · ` +
-    `spread in the cell tooltip`;
+    `DONE records a completed workflow step; editorial approval is a separate decision, so every rate here is a comparison signal. ` +
+    `The cell tooltip shows the spread.`;
 }
 
 function renderConsTable(summary, its) {
@@ -312,8 +312,8 @@ function renderConsTable(summary, its) {
     `<caption class="visually-hidden">Agreement between the repeated runs per page and prompt iteration</caption>` +
     head + `<tbody>${body}</tbody>`;
   $("#cons-note").textContent =
-    `${rows.length} pages chosen for one phenomenon each, with no reference transcription of any class · ` +
-    `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration · ` +
+    `${rows.length} pages chosen for one phenomenon each, with no reference transcription of any class, ` +
+    `${kRange(rows.flatMap(([, p]) => its.map((it) => p.iterations[it]).filter(Boolean)))} runs per page and iteration, ` +
     `agreement between those runs, higher is more stable.`;
 }
 
@@ -322,9 +322,9 @@ function renderIntro(summary, its) {
   const refs = pages.filter(isReference).length;
   const entries = pages.flatMap((p) => its.map((it) => p.iterations[it]).filter(Boolean));
   $("#intro-facts").textContent =
-    `Model ${summary.model} · ${its.length} prompt iterations (${its.join(", ")}) · ` +
-    `${pages.length} pages, ${refs} of them with a Transkribus DONE reference · ` +
-    `${kRange(entries)} runs per page and iteration · data as of ${summary.generated.slice(0, 10)}.`;
+    `Model ${summary.model}, ${its.length} prompt iterations (${its.join(", ")}), ` +
+    `${pages.length} pages, ${refs} of them with a Transkribus DONE reference, ` +
+    `${kRange(entries)} runs per page and iteration, data as of ${summary.generated.slice(0, 10)}.`;
 }
 
 async function init() {

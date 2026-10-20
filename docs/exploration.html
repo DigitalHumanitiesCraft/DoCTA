@@ -389,7 +389,7 @@
             ` rel="noopener" title="Opens the published edition on Transkribus Sites">` +
             `transcription by the Inventaria project</a>`
           : 'Transkribus transcription layer';
-        basis.innerHTML = `Extraction ${provChip(provenance)}${model} &middot; Text basis: ${textBasis}`;
+        basis.innerHTML = `Extraction ${provChip(provenance)}${model}. Text basis: ${textBasis}`;
 
         const split = splitColumns();
         columns = split.cols;
@@ -499,9 +499,9 @@
       basis.innerHTML = `Extraction ${provChip('llm')}` +
         (models.length ? ' ' : '') + provenanceBadges(models.join(', ')) +
         (prompts.length
-          ? ` &middot; Prompt ${escapeHTML(prompts.join(', '))}${dateSpan ? `, ${escapeHTML(dateSpan)}` : ''}`
+          ? `. Prompt ${escapeHTML(prompts.join(', '))}${dateSpan ? `, ${escapeHTML(dateSpan)}` : ''}`
           : '') +
-        ` &middot; Encoded as <a href="${REGISTER_FILE}">${REGISTER_FILE}</a>`;
+        `. Encoded as <a href="${REGISTER_FILE}">${REGISTER_FILE}</a>`;
       factsItems.innerHTML = '<span class="exp-facts__item">' +
         '<span class="exp-facts__key">Citable address</span>' +
         `<span class="exp-src">${REGISTER_FILE}#&lt;id&gt;</span></span>`;

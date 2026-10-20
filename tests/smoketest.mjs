@@ -120,6 +120,19 @@ async function germanInterfaceText(p) {
   }, { pattern: GERMAN_RE.source, flags: GERMAN_RE.flags, exclude: SOURCE_TEXT });
 }
 
+async function middleDots(p) {
+  return p.evaluate(exclude => {
+    const found = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const parent = walker.currentNode.parentElement;
+      if (!parent || parent.closest(exclude) || !walker.currentNode.textContent.includes('·')) continue;
+      found.push(walker.currentNode.textContent.trim().slice(0, 80));
+    }
+    return found;
+  }, SOURCE_TEXT);
+}
+
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 BASE = `http://127.0.0.1:${server.address().port}/DoCTA/`;
 const browser = await chromium.launch();
@@ -176,6 +189,9 @@ for (const { url: page, nonempty = [], check } of TARGETS) {
   if (lang !== 'en') missing.push(`html lang is "${lang}", not "en"`);
   missing.push(...(await germanInterfaceText(p).catch(e => [String(e).slice(0, 120)]))
     .map(item => `German interface word: ${item}`));
+  // The operator excluded middle-dot separators from the whole interface.
+  missing.push(...(await middleDots(p).catch(e => [String(e).slice(0, 120)]))
+    .map(item => `middle-dot separator: ${item}`));
 
   report[page] = { loadMs, title, textLen, errors, warnings: warnings.slice(0, 5),
                    failed: [...new Set(failed)], links: [...new Set(links)], imgNoAlt, imgTotal,
@@ -203,6 +219,7 @@ for (const name of fs.readdirSync(path.join(ROOT, 'js')).filter(f => f.endsWith(
   for (const literal of code.match(/'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`/g) || []) {
     const match = GERMAN_RE.exec(literal);
     if (match) scriptFindings.push(`js/${name}: "${match[1]}" in ${literal.slice(0, 80)}`);
+    if (literal.includes('·') || literal.includes('·')) scriptFindings.push(`js/${name}: middle dot in ${literal.slice(0, 80)}`);
   }
 }
 report['docs/js/*.js :: German string literals'] = { errors: [], failed: [], deadLinks: [], textLen: 1,

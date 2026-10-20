@@ -61,7 +61,7 @@ export function attestationList(atts, docLabel, { className, detail }) {
       `Open ${docLabel(a.docId)}, page ${a.page} in the viewer${extra}`,
       `${escapeHTML(shortDoc(docLabel(a.docId)))} p.&nbsp;${escapeHTML(String(a.page))}`);
     const meta = detail === 'meta'
-      ? [a.line ? `line ${a.line}` : '', a.form ? `“${a.form}”` : ''].filter(Boolean).join(' · ')
+      ? [a.line ? `line ${a.line}` : '', a.form ? `“${a.form}”` : ''].filter(Boolean).join(', ')
       : '';
     return `<li>${link}` +
       (meta ? ` <span class="net-att__meta">${escapeHTML(meta)}</span>` : '') + '</li>';
