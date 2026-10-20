@@ -1,7 +1,7 @@
 import { initNav, initBanner } from './app.js?v=20261020-en';
 import { loadJSON } from './data-loader.js';
 import { getParams, setParams, escapeHTML, escapeAttr,
-         lsGet, lsSet, catLabel, vocabLabel } from './utils.js';
+         lsGet, lsSet, catLabel, vocabLabel, formatDate } from './utils.js';
 import { createTeiView, renderReading,
          renderTranscription } from './viewer-render.js?v=20261020-en';
 import { createReviewView } from './viewer-review.js?v=20261020-en';
@@ -55,9 +55,7 @@ function renderDocMeta(docId) {
   const title = source?.titel || currentDoc?.title || 'Source';
   document.getElementById('source-title').textContent = title;
   document.getElementById('source-shelfmark').textContent = source?.signatur || 'Not recorded';
-  const rawDate = source?.datierung?.raw || '';
-  const date = /^\d{4}\.\d{2}\.\d{2}$/.test(rawDate)
-    ? rawDate.replaceAll('.', '-') : rawDate;
+  const date = source?.datierung ? formatDate(source.datierung) : '';
   document.getElementById('source-date').textContent = date || 'Not recorded';
   const field = (label, value) => value
     ? '<div><dt>' + escapeHTML(label) + '</dt><dd>' + escapeHTML(String(value)) + '</dd></div>' : '';
@@ -774,5 +772,11 @@ for (const [buttonId, dialogId] of [
     dialog.showModal();
   });
   dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => button.focus());
+  // The browser restores focus on close itself; the close event arrives later,
+  // so refocus only when focus was left nowhere, never pull it back from a
+  // control the user has moved to meanwhile.
+  dialog.addEventListener('close', () => {
+    const active = document.activeElement;
+    if (!active || active === document.body || dialog.contains(active)) button.focus();
+  });
 }

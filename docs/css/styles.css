@@ -1243,8 +1243,8 @@ main h1 { font-size: 1.75rem; font-weight: 600; }
 .research-preview { font-size: var(--text-sm); color: var(--text-secondary); white-space: nowrap; }
 
 /* === Shared footer === */
-.footer-line { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; }
-.footer-sep { color: var(--border-custom); }
+.footer-line { display: flex; flex-wrap: wrap; gap: 6px var(--space-lg); align-items: center; justify-content: space-between; padding-inline: var(--space-lg); text-align: start; }
+.footer-group { display: inline-flex; flex-wrap: wrap; gap: 6px var(--space-md); align-items: center; }
 .footer-brand { display: inline-flex; align-items: center; gap: 4px; }
 .footer-brand img { border-radius: 3px; }
 .footer-icon { vertical-align: text-bottom; }

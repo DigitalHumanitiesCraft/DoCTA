@@ -15,7 +15,9 @@
 .source-heading h1 { margin: 0 0 var(--space-xs); font-size: 1.125rem; overflow-wrap: anywhere; }
 .source-identity { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); margin: 0; font-size: var(--text-sm); }
 .source-identity > div { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
-.source-identity dt { font-weight: 400; color: var(--text-muted-custom); }
+.source-identity > div { align-items: center; }
+.source-identity dt { display: inline-flex; font-weight: 400; color: var(--text-muted-custom); }
+.source-identity dt svg { inline-size: 0.95rem; block-size: 0.95rem; }
 .source-identity dd { margin: 0; overflow-wrap: anywhere; }
 .source-actions { display: flex; flex: 0 1 26rem; flex-wrap: wrap; gap: var(--space-sm); min-inline-size: 0; }
 .source-actions .doc-selector { flex: 1 1 15rem; min-inline-size: 0; max-inline-size: 100%; font-size: var(--text-sm); }

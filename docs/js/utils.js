@@ -72,13 +72,28 @@ export function escapeAttr(str) {
  */
 export function formatDate(date) {
   if (!date || (!date.raw && date.start == null)) return '–';
-  const circa = date.circa ? 'c. ' : '';
-  // A span of years reads as a range with an en dash; a single date keeps the
-  // archival day-level form of the finding aid (e.g. 1471.09.25).
-  if (date.start != null && date.end != null && date.start !== date.end) {
-    return `${circa}${date.start}–${date.end}`;
-  }
-  return circa + (date.raw || String(date.start));
+  const raw = (date.raw || '').trim();
+  // The finding aid's day-level form (1471.09.25) is written out for reading.
+  const day = /^(\d{4})\.(\d{2})\.(\d{2})$/.exec(raw);
+  if (day && MONTHS[Number(day[2]) - 1]) return `${Number(day[3])} ${MONTHS[Number(day[2]) - 1]} ${day[1]}`;
+  // German century notation (15. Jh.) is translated rather than shown as the
+  // year bounds the catalogue derived from it.
+  const centuries = [...raw.matchAll(/(\d{1,2})\. Jh\./g)].map(m => `${ordinal(Number(m[1]))} century`);
+  if (centuries.length) return (raw.startsWith('-') ? 'until ' : '') + centuries.join('–');
+  const circa = date.circa ? 'c. ' : '';
+  if (date.start == null) return `until ${circa}${date.end}`;
+  if (date.end == null) return `from ${circa}${date.start}`;
+  if (date.start !== date.end) return `${circa}${date.start}–${date.end}`;
+  return circa + date.start;
+}
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+  'August', 'September', 'October', 'November', 'December'];
+
+function ordinal(n) {
+  const tens = n % 100;
+  if (tens >= 11 && tens <= 13) return `${n}th`;
+  return n + ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th');
 }
 
 /**
