@@ -1137,14 +1137,45 @@ def test_revision_desc_carries_both_stream_summaries(
         assert changes["tei-summary"].get("status") == "machine-generated"
 
 
+# Two lines of the edition run of 12647153 page 1, the only transcribed page of
+# six; the originals must match the register, the corrections are synthetic.
+SILVER_CORRECTION = {
+    "schemaVersion": 2,
+    "source": "docta-viewer",
+    "exported": "2026-09-21T09:37:37Z",
+    "docId": 12647153,
+    "reviewer": "AB",
+    "pages": {
+        "1": {
+            "status": None,
+            "date": "2026-09-21",
+            "lines": [
+                {
+                    "id": "v8",
+                    "original": "Casparn Lathsneider Chamrermen",
+                    "corrected": "Casparn Lachsenfelder Chamrermen",
+                },
+                {
+                    "id": "v3",
+                    "original": "so Martin diethorn durch Hannsen",
+                    "corrected": "so Martin Eichhorn durch Hannsen",
+                },
+            ],
+        }
+    },
+}
+
+
 def test_silver_inventory_correction_preserves_coverage_and_review_scope(
     tmp_path: Path,
 ) -> None:
-    """Replay the saved real correction without promoting it to page review."""
+    """A line correction on a partly transcribed edition document stays a
+    correction and is not promoted to page review."""
     br.build(tmp_path / "pipeline")
     pages_dir = tmp_path / "pipeline" / "pages"
-    event_path = bt.REGISTER.parent / "reviews" / "review-12647153-093737427392.json"
-    event = load_json(event_path)
+    event = SILVER_CORRECTION
+    event_path = tmp_path / "review-12647153.json"
+    event_path.write_text(json.dumps(event, ensure_ascii=False), encoding="utf-8")
     ar.ingest([event_path], pages_dir)
     built = bt.build(tmp_path / "tei", register_dir=pages_dir)
     root = ElementTree.fromstring(built[event["docId"]])

@@ -23,6 +23,10 @@ related: [INDEX, project, handoff]
 
 # Journal
 
+## Demonstration corrections removed (20.10.2026)
+
+The operator identified the three saved correction events of 2026-09-21 as their own test entries: one on page 2 of 11328300 with its reversal, and two lines on page 1 of 12647153. Removed the events and their review runs, rebuilt the register, projection and TEI, and deleted the static projection of 11328300 that only the review had produced. Both documents are back to their source text without a recorded review. The TEI regression that replayed the 12647153 event now carries the same two line corrections as a synthetic fixture. The corrected readings were never confirmed against the facsimile.
+
 ## Feedback round, interface language and unclear readings (20.10.2026)
 
 The historical project lead tested the working edition. Corrections worked. Annotation appeared non-functional, most likely because she used the read-only GitHub Pages viewer, which hides the annotate controls without saying why. She asked to remove unneeded lines, mark unclear readings, annotate across line breaks, see work progress, reach more pages of the household chamberlain inventories, link persons to SiCProD, whether the exploration entities were made by an LLM, for a fully English working edition for an FWF proposal, and whether to fork. She was added as collaborator and clones rather than forks. The operator replied that a detailed answer follows, that annotation needs the locally started edition, and asked whether the proposal or the data matters more to her now. Her answer decides the next source selection.

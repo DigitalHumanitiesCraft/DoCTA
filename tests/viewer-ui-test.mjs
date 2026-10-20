@@ -451,42 +451,42 @@ try {
     'static mode does not expose the local save control');
   await staticPage.keyboard.press('Escape');
 
-  const summary = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pipeline', 'register_summary.json'), 'utf8')).documents;
+  const summaryFile = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pipeline', 'register_summary.json'), 'utf8'));
+  const summary = summaryFile.documents;
 
   // A corrected page of a DoCTA transcription states its corrected lines. The
-  // expected count compares the published reading with the machine run in the
-  // page register, independently of the count the projection carries.
-  const correctedDoc = summary.find(doc => doc.transcription_source === 'vlm' && doc.effective_transcription);
-  check(Boolean(correctedDoc), 'the corpus holds a corrected DoCTA transcription for the line count check');
+  // corpus holds no saved correction, so the static projection of the first
+  // machine-transcribed document is served with one line changed, as
+  // build_register.py --project writes it after a save.
+  const correctedDoc = summary.find(doc => doc.transcription_source === 'vlm' &&
+    fs.existsSync(path.join(ROOT, 'data', 'pipeline', 'transcriptions', `${doc.docId}.json`)));
+  check(Boolean(correctedDoc), 'the corpus holds a DoCTA machine transcription for the line count check');
   if (correctedDoc) {
-    const projected = JSON.parse(fs.readFileSync(
-      path.join(ROOT, 'data', 'pipeline', 'transcriptions', `${correctedDoc.docId}.json`), 'utf8'));
-    const register = JSON.parse(fs.readFileSync(
-      path.join(REPO, 'pipeline', 'pages', `${correctedDoc.docId}.json`), 'utf8'));
-    const changedOn = projectedPage => {
-      const run = register.pages.find(p => p.pageNr === projectedPage.pageNr).runs
-        .find(r => r.id === projectedPage.run);
-      const machine = new Map(run.lines.map(line => [line.id, line.text]));
-      return projectedPage.regions.flatMap(region => region.lines)
-        .filter(line => machine.get(line.id) !== line.text).length;
-    };
-    const target = projected.pages.find(p => changedOn(p) > 0);
-    check(Boolean(target), 'the corrected DoCTA transcription differs from its machine run on one page');
-    if (target) {
-      const expected = changedOn(target);
-      await staticPage.goto(`${BASE}viewer.html?doc=${correctedDoc.docId}&page=${target.pageNr}`, { waitUntil: 'networkidle' });
-      await chip.waitFor();
-      await staticPage.waitForFunction(() => document.getElementById('doc-provenance').dataset.pageState === 'counted');
-      const details = staticPage.locator('#text-status-details');
-      await chip.click();
-      check((await chip.innerText()).trim() === await staticPage.evaluate(async n =>
-        (await import('./js/strings.js')).PROVENANCE.vlmCorrected(n), expected) &&
-        await chip.getAttribute('data-provenance') === 'machine-unrevised' &&
-        (await details.innerText()).includes(await staticPage.evaluate(async n =>
-          (await import('./js/strings.js')).STATUS_DETAILS.correctionCount(n), expected)),
-      `a corrected page of a DoCTA transcription counts its ${expected} corrected lines in pill and details`);
-      await staticPage.keyboard.press('Escape');
-    }
+    const projectionPath = `data/pipeline/transcriptions/${correctedDoc.docId}.json`;
+    const projected = JSON.parse(fs.readFileSync(path.join(ROOT, projectionPath), 'utf8'));
+    const target = projected.pages.find(p => p.regions.some(region => region.lines.length));
+    const line = target.regions.find(region => region.lines.length).lines[0];
+    line.text = `${line.text} [corrected]`;
+    target.changedLines = 1;
+    const correctedSummary = { ...summaryFile, documents: summary.map(doc =>
+      doc.docId === correctedDoc.docId ? { ...doc, effective_transcription: true } : doc) };
+    await staticPage.route(`**/${projectionPath}`, route => route.fulfill({ json: projected }));
+    await staticPage.route('**/data/pipeline/register_summary.json', route => route.fulfill({ json: correctedSummary }));
+    await staticPage.goto(`${BASE}viewer.html?doc=${correctedDoc.docId}&page=${target.pageNr}`, { waitUntil: 'networkidle' });
+    await chip.waitFor();
+    await staticPage.waitForFunction(() => document.getElementById('doc-provenance').dataset.pageState === 'counted');
+    const details = staticPage.locator('#text-status-details');
+    await chip.click();
+    const expected = await staticPage.evaluate(async () => {
+      const { PROVENANCE, STATUS_DETAILS } = await import('./js/strings.js');
+      return { pill: PROVENANCE.vlmCorrected(1), details: STATUS_DETAILS.correctionCount(1) };
+    });
+    check((await chip.innerText()).trim() === expected.pill &&
+      await chip.getAttribute('data-provenance') === 'machine-unrevised' &&
+      (await details.innerText()).includes(expected.details),
+    'a corrected page of a DoCTA transcription counts its corrected line in pill and details');
+    await staticPage.keyboard.press('Escape');
+    await staticPage.unrouteAll();
   }
   const staticLabel = key => staticPage.evaluate(async name => (await import('./js/strings.js')).PROVENANCE[name], key);
   const unrecorded = summary.find(doc => doc.transcription_source === 'transkribus' && !doc.done_pages);

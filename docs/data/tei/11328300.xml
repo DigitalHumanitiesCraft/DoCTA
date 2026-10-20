@@ -17,10 +17,6 @@
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
           <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
         </respStmt>
-        <respStmt xml:id="resp-expert-verification">
-          <resp>Recorded review and text correction in the DoCTA viewer</resp>
-          <name>DoCTA reviewer (initials in the revision log)</name>
-        </respStmt>
         <respStmt xml:id="resp-entity-llm">
           <resp>Named-entity extraction by an LLM agent in the prototype phase, informally reviewed, not verified by a scholar</resp>
           <name>DoCTA prototype extraction</name>
@@ -58,7 +54,7 @@
         <p>DoCTA edits the inventories and account books of the Tyrolean territorial administration; this file is produced by the project's agentic edition pipeline from the Transkribus export.</p>
       </projectDesc>
       <editorialDecl>
-        <p>Recorded reviews or text corrections affect part of this file; the revision log names the affected pages and their state. A text correction alone does not establish review of every line on that page. Saved corrections are part of the text. The pages without a review carry the transcription corrected and marked done in Transkribus. The file is not yet a citable edition text. The generator preserves the effective reading and line order from the page register, including saved corrections. It adds no spelling normalization or abbreviation expansion. This does not establish the accuracy or diplomatic fidelity of the input transcription.</p>
+        <p>The transcription of this file was produced by the Inventaria project and corrected page by page in Transkribus, where every page of it is marked done. That done status is a workflow status of Transkribus and records a step of the Inventaria project. DoCTA has not independently verified the text against the facsimile, and the DoCTA review status of a page is a separate axis recorded in the page register. The TEI encoding is machine-generated, so the file is not yet a citable DoCTA edition text. The generator preserves the effective reading and line order from the page register, including saved corrections. It adds no spelling normalization or abbreviation expansion. This does not establish the accuracy or diplomatic fidelity of the input transcription.</p>
         <p>The named entities marked in this file are an unverified extraction by an LLM agent from the prototype phase; they have not been checked against the source by a scholar and carry no claim of correctness.</p>
       </editorialDecl>
       <classDecl>
@@ -79,8 +75,7 @@
     </profileDesc>
     <revisionDesc>
       <change when="2026-10-17" who="#resp-tei-generation">Generated from the Transkribus export by the DoCTA pipeline.</change>
-      <change when="2026-09-21" who="#resp-expert-verification" n="review">Page 2 text corrected in the DoCTA viewer by TEST (state): gesichtet</change>
-      <change n="transcription-summary" status="partly-reviewed">Transcription stream (state): partly-reviewed</change>
+      <change n="transcription-summary" status="human-corrected">Transcription stream (state): human-corrected</change>
       <change n="tei-summary" status="machine-generated">TEI stream (state): machine-generated</change>
     </revisionDesc>
   </teiHeader>
