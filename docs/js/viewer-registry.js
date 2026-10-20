@@ -115,7 +115,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
   function updateDraftButton() {
     const pending = dirty.has(mentionDialog) || dirty.has(inlinePanel);
     annotateLabel.textContent = pending ? 'Continue annotation' : 'Annotate';
-    annotate.title = pending ? 'Continue the unsaved annotation' : 'Annotate the selected text (Alt+A)';
+    annotate.title = pending ? 'Continue the unsaved annotation (Alt+A)' : 'Annotate the selected text (Alt+A)';
   }
   function closeSurface(element) {
     if (busy) return;

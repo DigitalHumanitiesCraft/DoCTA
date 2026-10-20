@@ -32,7 +32,7 @@
 
       <section class="exp-main">
         <div class="exp-bar">
-          <button type="button" class="vt-btn exp-sidebar-toggle d-lg-none" id="btn-sidebar" aria-controls="exp-sidebar" aria-expanded="false" aria-label="Toggle the filter sidebar" title="Toggle the filter sidebar">
+          <button type="button" class="vt-btn exp-sidebar-toggle d-lg-none" id="btn-sidebar" aria-controls="exp-sidebar" aria-expanded="false" aria-label="Toggle the filter sidebar" title="Show the filters">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4h11M2.5 8h11M2.5 12h11"/></svg>
           </button>
           <div class="view-toggle exp-views" role="tablist" aria-label="Views" id="exp-views"></div>
@@ -184,6 +184,7 @@
     toggleBtn.addEventListener('click', () => {
       const open = layout.classList.toggle('exp-layout--sidebar-open');
       toggleBtn.setAttribute('aria-expanded', String(open));
+      toggleBtn.title = open ? 'Hide the filters' : 'Show the filters';
     });
 
     /* The network view lives in its own module; it fills the panel and its
@@ -386,7 +387,7 @@
         const model = data?.model ? ` ${provenanceBadges(data.model)}` : '';
         const textBasis = reg?.transcription_by === 'Inventaria'
           ? `<a href="${escapeAttr(reg.edition_url || 'https://www.inventaria.at/')}" target="_blank"` +
-            ` rel="noopener" title="Opens the published edition on Transkribus Sites">` +
+            ` rel="noopener" title="Open the published edition on Transkribus Sites">` +
             `transcription by the Inventaria project</a>`
           : 'Transkribus transcription layer';
         basis.innerHTML = `Extraction ${provChip(provenance)}${model}. Text basis: ${textBasis}`;

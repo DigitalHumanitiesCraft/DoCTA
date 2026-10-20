@@ -148,6 +148,19 @@
 .viewer-page :is(input, select, textarea) { font-size: 1rem; }
 .viewer-page :is(input, select, textarea, .review-btn, .review-toggle, .view-toggle__btn) { border-color: var(--text-muted-custom); }
 .viewer-page :is(button, summary, input, select, textarea, a):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* The image area select reads as one of the toolbar buttons beside it: same
+   text size, border, radius and hover, while staying a native select. It
+   follows the form-control rules above, which would otherwise win. */
+.viewer-page .image-focus {
+  padding: 0 var(--space-xs);
+  border-color: transparent;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.viewer-page .image-focus:hover { border-color: var(--border-custom); background-color: var(--accent-light); color: var(--accent); }
 .viewer-dialog {
   inline-size: min(38rem, calc(100% - 2rem));
   max-block-size: calc(100% - 2rem);

@@ -10,7 +10,7 @@ export const PROVENANCE = {
   // attribution comes first, the current page's state qualifies it, so the
   // two never appear as separate, contradicting statements.
   vlm: 'Machine transcription, unrevised',
-  vlmCorrected: n => `Machine transcription, ${lines(n)} corrected`,
+  vlmCorrected: n => `Machine transcription, ${lines(n)} corrected, otherwise unrevised`,
   // A saved correction whose line count the served data cannot establish.
   vlmCorrectedUncounted: 'Machine transcription, corrections saved',
   // The published projection carries corrected text without naming its page.
@@ -48,7 +48,7 @@ export const STATUS_DETAILS = {
   modelUndocumented: 'not documented',
   transkribusExport: 'Transkribus HTR, model not documented',
   editionLink: 'Edition by Inventaria',
-  editionLinkName: 'Open the Inventaria edition',
+  editionLinkName: 'Published edition by the Inventaria project',
   noCorrection: 'No saved correction',
   correctionCount: n => `${lines(n)} corrected`,
   correctionUncounted: 'Corrections saved',

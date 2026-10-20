@@ -238,7 +238,7 @@ export function createNetworkView(panel, controls, graph) {
     '<div class="net-card" id="net-card" role="dialog" aria-labelledby="net-card-title" tabindex="-1" hidden>' +
     '<div class="net-card__head"><h2 class="net-card__title" id="net-card-title"></h2>' +
     '<button type="button" class="net-card__close" id="net-card-close" ' +
-    'aria-label="Close the detail card" title="Close">' +
+    'aria-label="Close the detail card" title="Close the detail card">' +
     '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" ' +
     'aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>' +
     '<div class="net-card__body" id="net-card-body"></div></div>' +

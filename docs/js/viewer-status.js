@@ -4,12 +4,11 @@
  * One statement beside the transcription title: the document's text
  * attribution, qualified by the state of the current page. The details surface
  * holds what the pill abbreviates. The module derives everything from the
- * loaded document, the register summary and, where needed, the immutable
- * Transkribus export; it holds no review state of its own.
+ * loaded document and the register summary; it holds no review state of its
+ * own.
  */
 
 import { escapeHTML, escapeAttr } from './utils.js';
-import { loadJSON } from './data-loader.js';
 import { PROVENANCE, STATUS_DETAILS as D, DRAFT_BADGE } from './strings.js';
 import { CORRECTION_REASONS } from './viewer-review.js?v=20261020-en';
 import { createAnchoredPopover } from './viewer-annotation-popover.js';
@@ -55,21 +54,6 @@ function attribution(reg) {
     description: D.unrecordedNote };
 }
 
-function lineTexts(page) {
-  return new Map((page?.regions || []).flatMap(region => region.lines || [])
-    .filter(line => line.id).map(line => [line.id, line.text]));
-}
-
-/** Lines of a page whose effective reading differs from the export reading. */
-function changedLines(doc, base, pageNr) {
-  const before = lineTexts(base.pages?.find(page => page.pageNr === pageNr));
-  let count = 0;
-  for (const [id, text] of lineTexts(doc.pages.find(page => page.pageNr === pageNr))) {
-    if (before.has(id) && before.get(id) !== text) count += 1;
-  }
-  return count;
-}
-
 function newestCorrection(page, saved) {
   const runs = page?.provenance?.humanCorrections || [];
   const newest = runs.reduce((best, run) =>
@@ -84,7 +68,7 @@ function newestCorrection(page, saved) {
  * The correction state of the current page, or of the whole document outside
  * the synopsis. state: none | counted | uncounted | unlocated.
  */
-function correctionState({ doc, reg, pageNr, scope }, attr, baseOf) {
+function correctionState({ doc, reg, pageNr, scope }) {
   const local = doc.reviewState && typeof doc.reviewState === 'object';
   const savedFor = nr => {
     const saved = doc.reviewState?.[String(nr)];
@@ -99,13 +83,12 @@ function correctionState({ doc, reg, pageNr, scope }, attr, baseOf) {
   if (!local && !reg?.effective_transcription) return { state: 'none' };
   const page = doc.pages.find(item => item.pageNr === pageNr);
   const who = local ? newestCorrection(page, doc.reviewState?.[String(pageNr)]) : { who: '', when: '' };
-  // Only the Transkribus export survives beside the corrected reading; a
-  // DoCTA transcription's original lines are not served to the browser.
-  if (attr.kind === 'vlm') return { state: local ? 'uncounted' : 'unlocated', ...who };
-  const base = baseOf();
-  if (base === undefined) return { state: 'pending', ...who };
-  if (base === null) return { state: 'uncounted', ...who };
-  const count = changedLines(doc, base, pageNr);
+  // The served page counts its lines that differ from the machine or export
+  // reading (build_register.effective_transcription_from_pages); the base
+  // lines themselves are not served. A page without the count is not
+  // reviewed in the static projection, and of unknown extent locally.
+  const count = page?.changedLines;
+  if (!Number.isInteger(count)) return { state: local ? 'uncounted' : 'none', ...who };
   if (!local && !count) return { state: 'none' };
   return { state: 'counted', count, ...who };
 }
@@ -163,7 +146,7 @@ function detailFields(ctx, attr, corr) {
 /** The notes under the fields: what the layer is, and what a correction is not. */
 function detailNotes(attr, corr) {
   const notes = [attr.description];
-  if (corr.state !== 'none' && corr.state !== 'pending') notes.push(D.notApproval);
+  if (corr.state !== 'none') notes.push(D.notApproval);
   return notes;
 }
 
@@ -175,41 +158,21 @@ export function createTextStatus(els) {
   const label = els.pill.querySelector('.status-pill__label');
   const creditLabel = els.credit.querySelector('.action-label');
   const body = els.details.querySelector('.text-status__body');
-  const bases = new Map();
-  let last = null;
   const popover = createAnchoredPopover(els.details, {
     onHide: () => els.pill.setAttribute('aria-expanded', 'false'),
   });
 
-  // The export is fetched once per document, and only when a saved correction
-  // needs a reading to be compared against.
-  function baseFor(docId) {
-    if (!bases.has(docId)) {
-      bases.set(docId, undefined);
-      loadJSON(`data/transcriptions/${docId}.json`)
-        .then(data => data, () => null)
-        .then(data => {
-          bases.set(docId, Array.isArray(data?.pages) ? data : null);
-          if (last && Number(last.doc?.docId) === docId) update(last);
-        });
-    }
-    return bases.get(docId);
-  }
-
   function update(ctx) {
-    last = ctx;
     const attr = ctx.doc && !ctx.doc.imageOnly ? attribution(ctx.reg) : null;
     els.group.hidden = !attr;
     if (!attr) { popover.hide({ restoreFocus: false }); return; }
-    const docId = Number(ctx.doc.docId);
-    // Until the export arrives the page is described by its attribution alone.
-    const corr = correctionState(ctx, attr, () => baseFor(docId));
+    const corr = correctionState(ctx);
     const text = ctx.dirty ? DRAFT_BADGE : pillLabel(attr, corr);
     label.textContent = text;
     els.pill.dataset.provenance = attr.provenance;
     els.pill.dataset.pageState = corr.state;
     els.pill.dataset.state = ctx.dirty ? 'dirty'
-      : ['none', 'pending'].includes(corr.state) ? attr.tone : 'corrected';
+      : corr.state === 'none' ? attr.tone : 'corrected';
     els.pill.title = 'Show text status details';
     els.credit.hidden = !attr.edition;
     if (attr.edition) {

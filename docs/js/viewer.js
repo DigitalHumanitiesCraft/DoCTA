@@ -3,12 +3,12 @@ import { loadJSON } from './data-loader.js';
 import { getParams, setParams, escapeHTML, escapeAttr,
          lsGet, lsSet, catLabel, vocabLabel, formatDate } from './utils.js';
 import { createTeiView, renderReading,
-         renderTranscription } from './viewer-render.js?v=20261020-en';
+         renderTranscription } from './viewer-render.js?v=20261020-tooltips';
 import { createReviewView } from './viewer-review.js?v=20261020-en';
 import { createLocalEditor } from './viewer-local.js';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
-import { createTextStatus } from './viewer-status.js';
+import { createTextStatus } from './viewer-status.js?v=20261020-count';
 import { imageDocument } from './source-images.js';
 
 initNav('viewer');
@@ -227,9 +227,13 @@ function buildLineOverlay() {
   lineOverlayEl = svg;
 }
 
+// The tooltip names what the next press does; the accessible name stays
+// constant and aria-pressed carries the state.
 function setLineRegions(on) {
   showLineRegions = on;
-  document.getElementById('btn-line-regions').setAttribute('aria-pressed', String(on));
+  const button = document.getElementById('btn-line-regions');
+  button.setAttribute('aria-pressed', String(on));
+  button.title = `${on ? 'Hide' : 'Show'} line regions (L)`;
   lineOverlayEl?.classList.toggle('line-overlay--visible', on);
 }
 
@@ -293,7 +297,9 @@ function toggleFullscreen() {
 }
 
 document.addEventListener('fullscreenchange', () => {
-  btnFullscreen.setAttribute('aria-pressed', String(document.fullscreenElement === panel));
+  const on = document.fullscreenElement === panel;
+  btnFullscreen.setAttribute('aria-pressed', String(on));
+  btnFullscreen.title = on ? 'Leave full screen' : 'Show the facsimile in full screen';
 });
 
 // === Transcription text size ===
@@ -435,9 +441,13 @@ function updatePager() {
   pageInput.value = String(currentPageNrOr(currentPage + 1));
   pageInput.max = String(currentDoc.pages[currentDoc.pages.length - 1]?.pageNr ??
                          currentDoc.pages.length);
+  // pages[] can be shorter than the document: a DoCTA transcription holds the
+  // pages a model run transcribed, an image-only source its first image.
   const total = currentDoc.provenance?.pagesInDocument || currentDoc.pages.length;
-  document.getElementById('page-total').textContent = total === currentDoc.pages.length
-    ? `/ ${total}` : `/ ${total} (${currentDoc.pages.length} available)`;
+  const held = currentDoc.pages.length;
+  const what = currentDoc.imageOnly ? (held === 1 ? 'image available' : 'images available') : 'transcribed';
+  document.getElementById('page-total').textContent = total === held
+    ? `/ ${total}` : `/ ${total}, ${held} ${what}`;
   document.getElementById('btn-prev-page').disabled = currentPage === 0;
   document.getElementById('btn-next-page').disabled = currentPage === currentDoc.pages.length - 1;
 }
@@ -663,7 +673,8 @@ pageInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') { e.preventDefault(); commitPageInput(); }
 });
 
-// Shortcuts are documented on the buttons via title/aria-label
+// Shortcuts are documented in the button tooltips; a change here changes
+// the title attributes in viewer.html and setLineRegions with it.
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
   if (e.shiftKey && ['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
@@ -679,7 +690,9 @@ document.addEventListener('keydown', (e) => {
     case '+': case '=': zoomBy(1.4); break;
     case '-': zoomBy(1 / 1.4); break;
     case '0': showWholePage(); break;
-    case 'r': case 'R': rotateBy(90); break;
+    // Shift selects the direction rather than the letter case, so Caps Lock
+    // does not reverse the rotation.
+    case 'r': case 'R': rotateBy(e.shiftKey ? -90 : 90); break;
     case 'l': case 'L': setLineRegions(!showLineRegions); break;
     default: return;
   }

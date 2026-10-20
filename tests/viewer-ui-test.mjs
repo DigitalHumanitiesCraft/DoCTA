@@ -37,13 +37,19 @@ function documentPayload() {
     doc.pages.map(page => [String(page.pageNr), { status: 'unbearbeitet' }]));
   if (saved?.lines) {
     for (const page of doc.pages) {
-      const changes = saved.lines[String(page.pageNr)] || {};
+      if (!Object.hasOwn(saved.lines, String(page.pageNr))) continue;
+      const changes = saved.lines[String(page.pageNr)];
+      // Like the real payload, a reviewed page counts the lines that differ
+      // from the export reading.
+      page.changedLines = 0;
       for (const region of page.regions || []) {
         for (const line of region.lines || []) {
           const direct = Object.hasOwn(changes, line.id) ? changes[line.id] : undefined;
           const corrected = direct ?? Object.entries(changes)
             .find(([id]) => id.endsWith(`-${line.id}`))?.[1];
-          if (corrected !== undefined) line.text = corrected;
+          if (corrected === undefined) continue;
+          if (corrected !== line.text) page.changedLines += 1;
+          line.text = corrected;
         }
       }
     }
@@ -316,6 +322,25 @@ try {
   await page.waitForTimeout(1400);
   check(await waitForImageFit(), 'the whole-page control restores the complete image after zooming');
 
+  // Toggle tooltips name the next press, also when the keyboard toggles.
+  const regions = page.locator('#btn-line-regions');
+  check(await regions.getAttribute('title') === 'Show line regions (L)', 'line regions tooltip offers to show them while hidden');
+  await page.keyboard.press('l');
+  check(await regions.getAttribute('aria-pressed') === 'true' && await regions.getAttribute('title') === 'Hide line regions (L)',
+    'the L key shows line regions and the tooltip then offers to hide them');
+  await page.keyboard.press('Shift+L');
+  check(await regions.getAttribute('aria-pressed') === 'false' && await regions.getAttribute('title') === 'Show line regions (L)',
+    'a second L press hides line regions and restores the tooltip');
+  // Shift+R turns left and R turns right; Shift+R must not also turn right.
+  const rotation = () => page.evaluate(() => window.__viewerViewport.getRotation());
+  await page.keyboard.press('Shift+R');
+  check(await rotation() === 270, 'Shift+R rotates the facsimile left by a quarter turn');
+  await page.keyboard.press('r');
+  check(await rotation() === 0, 'R rotates the facsimile right by a quarter turn');
+  check(await page.locator('#btn-rotate-left').getAttribute('title') === 'Rotate left (Shift+R)' &&
+    await page.locator('#btn-rotate-right').getAttribute('title') === 'Rotate right (R)',
+  'the rotate tooltips name the working shortcuts');
+
   await page.setViewportSize({ width: 640, height: 400 });
   await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
   check(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1),
@@ -427,6 +452,42 @@ try {
   await staticPage.keyboard.press('Escape');
 
   const summary = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pipeline', 'register_summary.json'), 'utf8')).documents;
+
+  // A corrected page of a DoCTA transcription states its corrected lines. The
+  // expected count compares the published reading with the machine run in the
+  // page register, independently of the count the projection carries.
+  const correctedDoc = summary.find(doc => doc.transcription_source === 'vlm' && doc.effective_transcription);
+  check(Boolean(correctedDoc), 'the corpus holds a corrected DoCTA transcription for the line count check');
+  if (correctedDoc) {
+    const projected = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'data', 'pipeline', 'transcriptions', `${correctedDoc.docId}.json`), 'utf8'));
+    const register = JSON.parse(fs.readFileSync(
+      path.join(REPO, 'pipeline', 'pages', `${correctedDoc.docId}.json`), 'utf8'));
+    const changedOn = projectedPage => {
+      const run = register.pages.find(p => p.pageNr === projectedPage.pageNr).runs
+        .find(r => r.id === projectedPage.run);
+      const machine = new Map(run.lines.map(line => [line.id, line.text]));
+      return projectedPage.regions.flatMap(region => region.lines)
+        .filter(line => machine.get(line.id) !== line.text).length;
+    };
+    const target = projected.pages.find(p => changedOn(p) > 0);
+    check(Boolean(target), 'the corrected DoCTA transcription differs from its machine run on one page');
+    if (target) {
+      const expected = changedOn(target);
+      await staticPage.goto(`${BASE}viewer.html?doc=${correctedDoc.docId}&page=${target.pageNr}`, { waitUntil: 'networkidle' });
+      await chip.waitFor();
+      await staticPage.waitForFunction(() => document.getElementById('doc-provenance').dataset.pageState === 'counted');
+      const details = staticPage.locator('#text-status-details');
+      await chip.click();
+      check((await chip.innerText()).trim() === await staticPage.evaluate(async n =>
+        (await import('./js/strings.js')).PROVENANCE.vlmCorrected(n), expected) &&
+        await chip.getAttribute('data-provenance') === 'machine-unrevised' &&
+        (await details.innerText()).includes(await staticPage.evaluate(async n =>
+          (await import('./js/strings.js')).STATUS_DETAILS.correctionCount(n), expected)),
+      `a corrected page of a DoCTA transcription counts its ${expected} corrected lines in pill and details`);
+      await staticPage.keyboard.press('Escape');
+    }
+  }
   const staticLabel = key => staticPage.evaluate(async name => (await import('./js/strings.js')).PROVENANCE[name], key);
   const unrecorded = summary.find(doc => doc.transcription_source === 'transkribus' && !doc.done_pages);
   await staticPage.goto(`${BASE}viewer.html?doc=${unrecorded.docId}&page=1`, { waitUntil: 'networkidle' });
@@ -451,11 +512,17 @@ try {
       return clone.textContent.includes('pages transcribed');
     });
     check(!outside, 'no page coverage text appears outside the status details');
+    const coverage = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'data', 'pipeline', 'transcriptions', `${partial.docId}.json`), 'utf8')).provenance;
+    check((await staticPage.locator('#page-total').textContent()) ===
+      `/ ${coverage.pagesInDocument}, ${coverage.pagesTranscribed} transcribed`,
+    'the pager names the document extent and the transcribed page count');
     await chip.click();
     check((await staticPage.locator('#text-status-details').innerText()).includes('pages transcribed'),
       'the status details state the page coverage');
-    check((await chip.innerText()).toLowerCase().includes('unrevised'),
-      'a DoCTA machine transcription keeps the word unrevised in the pill');
+    check((await chip.innerText()).startsWith('Machine transcription') &&
+      (await staticPage.locator('#text-status-details').innerText()).includes('unrevised machine transcription'),
+    'a DoCTA machine transcription names its machine origin in the pill and its unrevised lines in the details');
     await staticPage.keyboard.press('Escape');
     await staticPage.setViewportSize({ width: 640, height: 900 });
     check(await sameRow(staticPage), 'title, status pill and actions share one header row at 640 px');

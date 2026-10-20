@@ -75,7 +75,7 @@ export function renderTranscription(container, doc, pageNr, { corrections, markT
       let text = escapeHTML(corr ? corr.corrected : line.text);
       if (!corr) text = markText(text, { pageNr, lineId: line.id, text: line.text });
       const mark = corr ? ' transcription__line--corrected' : '';
-      const title = corr ? ` title="${escapeAttr(`Original: ${line.text}`)}"` : '';
+      const title = corr ? ` title="${escapeAttr(`Original reading: ${line.text}`)}"` : '';
       html += `<div class="transcription__line${mark}${regionStart}"${lineAttr}${title}` +
               ` data-original="${escapeAttr(line.text)}">` +
               `<span class="transcription__line-nr">${lineNr}</span>` +

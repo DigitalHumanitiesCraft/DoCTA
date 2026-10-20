@@ -42,7 +42,7 @@ function folioLink(p) {
   const label = escapeHTML(p.folio);
   if (!p.iiif) return label;
   return `<a href="${escapeAttr(p.iiif)}" target="_blank" rel="noopener"` +
-    ` title="Facsimile image, opens in a new tab">${label}</a>`;
+    ` title="Open the facsimile image in a new tab">${label}</a>`;
 }
 
 /* A page carrying a reference at all, by the class the summary states rather
@@ -229,11 +229,11 @@ function renderRefTable(summary, its) {
   const measures = [
     {
       key: "cer_fair", label: "CER fair",
-      title: "Character error rate against the Transkribus transcript that carries workflow status DONE in the Inventaria project's collection, after the documented normalization profile. Lower is better.",
+      title: "Character error rate against the Transkribus transcript that carries workflow status DONE in the Inventaria project's collection, after the documented normalization profile. Lower is better",
     },
     {
       key: "cer_strict", label: "CER strict",
-      title: "The same comparison against that Transkribus transcript on exact characters, without normalization. Lower is better.",
+      title: "The same comparison against that Transkribus transcript on exact characters, without normalization. Lower is better",
     },
   ];
   const head = metricHead(["Page", "Folio"], its, measures);
@@ -278,15 +278,15 @@ function renderConsTable(summary, its) {
   const measures = [
     {
       key: "consistency_words", label: "words",
-      title: "Position-wise agreement of word tokens between the repeated runs, 0 to 1. Higher is more stable, which is not the same as correct.",
+      title: "Position-wise agreement of word tokens between the repeated runs, 0 to 1. Higher is more stable, which is not the same as correct",
     },
     {
       key: "consistency_numbers", label: "numbers",
-      title: "The same agreement restricted to number and currency tokens, 0 to 1. Higher is more stable.",
+      title: "The same agreement restricted to number and currency tokens, 0 to 1. Higher is more stable",
     },
     {
       key: "lines", label: "lines",
-      title: "Line count of the individual runs. A spread signals unstable segmentation of the page.",
+      title: "Line count of the individual runs. A spread signals unstable segmentation of the page",
     },
   ];
   const head = metricHead(["Page", "Folio", "Phenomena"], its, measures);
