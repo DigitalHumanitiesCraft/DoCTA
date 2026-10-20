@@ -1,7 +1,10 @@
 import { escapeHTML as esc, escapeAttr as attr } from './utils.js';
-import { searchKeys, describeEntry, mentionLink, historyMarkup } from './viewer-registry-display.js';
-import { renderRegistryMarks } from './viewer-registry-anchors.js';
+import { searchKeys, describeEntry, mentionLink, historyMarkup, mentionQuote } from './viewer-registry-display.js?v=20261020-segments';
+import { renderRegistryMarks } from './viewer-registry-anchors.js?v=20261020-segments';
 import { KIND_LABELS, registryMarkup, mentionMarkup } from './viewer-registry-markup.js';
+
+// Further lines a mention may continue into, as pipeline/local_registry.py bounds it.
+const MAX_CONTINUATION = 4;
 
 async function digest(text) {
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))), byte => byte.toString(16).padStart(2, '0')).join('');
@@ -101,7 +104,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     const { doc } = context();
     const page = doc?.pages.find(value => value.pageNr === item.pageNr);
     const line = page?.regions.flatMap(region => region.lines || []).find(value => value.id === item.lineId);
-    return { ...item, lineText: line?.text || item.lineText || '' };
+    return { ...item, quote: mentionQuote(item), lineText: line?.text || item.lineText || '' };
   }
   function makeSurface(id, title, tag) {
     const element = document.createElement(tag);
@@ -276,7 +279,10 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     inlineEntry = entry;
     inlineForm.reset();
     inlineForm.elements.kind.value = entry?.kind || mentionForm.elements.kind.value;
-    inlineForm.elements.label.value = entry?.label || mention.quote;
+    // A word divided at the line end reads as one word; the editor adjusts
+    // the label where the break separates two words.
+    inlineForm.elements.label.value = entry?.label ||
+      [mention.quote, ...(mention.continuation || []).map(segment => segment.quote)].join('');
     inlineForm.elements.aliases.value = (entry?.aliases || []).join('\n');
     inlineForm.elements.note.value = entry?.note || '';
     inlineForm.elements.reviewer.value = mentionForm.elements.reviewer.value || reviewer();
@@ -373,6 +379,11 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     document.getElementById('mention-date-range').hidden = !range;
     workspace.reposition();
   }
+  /**
+   * The selected source passage as line-bound segments. A selection may run
+   * from one line into the following lines of the page, as a word divided at
+   * the line end does; every segment must still read exactly as saved.
+   */
   function readSelection() {
     const { doc, pageNr, viewMode } = context();
     if (!state || !local.enabled || !doc || viewMode !== 'synopsis') return null;
@@ -380,17 +391,40 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     if (!selection?.rangeCount || selection.isCollapsed) return null;
     const range = selection.getRangeAt(0).cloneRange();
     const parent = node => (node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement)?.closest('.transcription__line-text');
-    const lineEl = parent(range.startContainer);
-    if (!lineEl || lineEl !== parent(range.endContainer)) return null;
-    const lineId = lineEl.closest('[data-line-id]').dataset.lineId;
-    const line = doc.pages.find(page => page.pageNr === pageNr)?.regions.flatMap(region => region.lines || []).find(value => value.id === lineId);
-    const before = range.cloneRange();
-    before.selectNodeContents(lineEl);
-    before.setEnd(range.startContainer, range.startOffset);
-    const start = before.toString().length;
-    const end = start + range.toString().length;
-    if (!line || !range.toString().trim() || line.text.slice(start, end) !== range.toString()) return null;
-    return { range, lineText: line.text, docId: Number(doc.docId), pageNr, lineId, start, end, quote: range.toString() };
+    const first = parent(range.startContainer);
+    const last = parent(range.endContainer);
+    if (!first || !last) return null;
+    const texts = Array.from(document.querySelectorAll(
+      '#transcription-container .transcription__line[data-line-id] .transcription__line-text'));
+    const from = texts.indexOf(first);
+    const to = texts.indexOf(last);
+    if (from < 0 || to < from || to - from > MAX_CONTINUATION) return null;
+    const lines = doc.pages.find(page => page.pageNr === pageNr)?.regions.flatMap(region => region.lines || []) || [];
+    const offset = (textEl, container, position) => {
+      const before = document.createRange();
+      before.selectNodeContents(textEl);
+      before.setEnd(container, position);
+      return before.toString().length;
+    };
+    const segments = [];
+    for (let index = from; index <= to; index++) {
+      const textEl = texts[index];
+      const lineEl = textEl.closest('[data-line-id]');
+      const line = lines.find(value => value.id === lineEl.dataset.lineId);
+      if (!line || lineEl.classList.contains('transcription__line--excluded') ||
+        textEl.textContent !== line.text) return null;
+      const start = index === from ? offset(textEl, range.startContainer, range.startOffset) : 0;
+      const end = index === to ? offset(textEl, range.endContainer, range.endOffset) : line.text.length;
+      const quote = line.text.slice(start, end);
+      if (start >= end || !quote.trim()) return null;
+      segments.push({ lineId: line.id, start, end, quote, lineText: line.text });
+    }
+    const [head, ...rest] = segments;
+    return {
+      range, lineText: head.lineText, docId: Number(doc.docId), pageNr,
+      lineId: head.lineId, start: head.start, end: head.end, quote: head.quote,
+      ...(rest.length ? { continuation: rest } : {}),
+    };
   }
   function captureSelection({ focus = true } = {}) {
     if (!local.enabled || !state || !beforeOpen() || busy) return;
@@ -407,7 +441,7 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
     if (!snapshot) return;
     selectionSnapshot = snapshot;
     sourceRequest += 1;
-    if (!workspace.open({ anchor: snapshot.range, origin: annotate, context: snapshot })) return;
+    if (!workspace.open({ anchor: snapshot.range, origin: annotate, context: { ...snapshot, quote: mentionQuote(snapshot) } })) return;
     selectionToolbar.hidden = false;
     mentionDialog.hidden = true;
     if (focus) selectionToolbar.querySelector('button').focus();
@@ -425,9 +459,11 @@ export function createRegistryEditor(local, { context, rerender, workspace, befo
       return;
     }
     const textDigest = await digest(lineText);
+    const continuation = snapshot.continuation && await Promise.all(snapshot.continuation.map(
+      async ({ lineText: text, ...segment }) => ({ ...segment, textDigest: await digest(text) })));
     if (request !== sourceRequest) return;
     if (Number(context().doc?.docId) !== snapshot.docId || context().pageNr !== snapshot.pageNr) return;
-    showMention({ ...snapshot, textDigest, entryId: null, kind, note: '' }, range);
+    showMention({ ...snapshot, ...(continuation ? { continuation } : {}), textDigest, entryId: null, kind, note: '' }, range);
     dirty.add(mentionDialog);
     updateDraftButton();
     mentionForm.elements[kind === 'date' ? 'when' : 'search'].focus();

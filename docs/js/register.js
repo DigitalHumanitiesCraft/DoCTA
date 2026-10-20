@@ -1,7 +1,7 @@
 import { initNav, initBanner } from './app.js';
 import { createLocalEditor } from './viewer-local.js';
 import { escapeHTML as esc, escapeAttr as attr } from './utils.js';
-import { searchKeys, describeEntry, historyMarkup } from './viewer-registry-display.js';
+import { searchKeys, describeEntry, historyMarkup, mentionQuote } from './viewer-registry-display.js?v=20261020-segments';
 
 initNav('register');
 initBanner();
@@ -30,7 +30,7 @@ function entryUrl(id, resetFilters = false) {
 
 function attestationMarkup(mention) {
   const source = documents.get(String(mention.docId));
-  const label = [mention.quote, source?.title || `Document ${mention.docId}`, source?.shelfmark, `Page ${mention.pageNr}`].filter(Boolean).join(', ');
+  const label = [mentionQuote(mention), source?.title || `Document ${mention.docId}`, source?.shelfmark, `Page ${mention.pageNr}`].filter(Boolean).join(', ');
   const url = `viewer.html?doc=${encodeURIComponent(mention.docId)}&page=${encodeURIComponent(mention.pageNr)}&mention=${encodeURIComponent(mention.id)}`;
   return `<li><a href="${attr(url)}">${esc(label)}</a>${mention.stale ? '<span class="register-stale" data-stale="true">Source text changed, check this occurrence.</span>' : ''}</li>`;
 }

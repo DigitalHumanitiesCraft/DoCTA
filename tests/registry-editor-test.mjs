@@ -543,6 +543,58 @@ try {
   check(!(await state()).mentions.some(item => item.id === mention.id),
     'manual mention deletion persists across reload');
 
+  // A mention across a line break: the end of one line and the start of the
+  // next, selected in one drag as a word divided at the line end would be.
+  const pair = await page.evaluate(() => {
+    const lines = [...document.querySelectorAll('.transcription__line[data-line-id][data-original]')]
+      .filter(line => line.dataset.original.length >= 4);
+    const [first, second] = lines;
+    const textNode = (line, last) => {
+      const walker = document.createTreeWalker(line.querySelector('.transcription__line-text'), NodeFilter.SHOW_TEXT);
+      let node = walker.nextNode();
+      if (last) { let next; while ((next = walker.nextNode())) node = next; }
+      return node;
+    };
+    const range = document.createRange();
+    const head = textNode(first, true);
+    range.setStart(head, head.length - 2);
+    range.setEnd(textNode(second, false), 4);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.dispatchEvent(new Event('selectionchange'));
+    second.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
+    return { first: first.dataset.lineId, second: second.dataset.lineId,
+      head: first.dataset.original.slice(-2), tail: second.dataset.original.slice(0, 4) };
+  });
+  await page.locator('#annotation-selection-toolbar [data-kind="person"]').click();
+  await page.locator('#mention-dialog').waitFor();
+  check(await page.locator('#annotation-workspace-title').textContent() === `${pair.head} / ${pair.tail}`,
+    'a selection across a line break names both segments, the break shown as a slash');
+  await mentionForm.locator('[name="reviewer"]').fill('QA');
+  await save(mentionForm);
+  const divided = (await state()).mentions.find(item => item.continuation?.length);
+  check(divided?.lineId === pair.first && divided.quote === pair.head &&
+    divided.continuation.length === 1 && divided.continuation[0].lineId === pair.second &&
+    divided.continuation[0].quote === pair.tail && divided.continuation[0].start === 0 &&
+    /^[0-9a-f]{64}$/.test(divided.continuation[0].textDigest) && !divided.stale,
+  'a mention across a line break persists as two segments, each anchored to its own line');
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.locator('.transcription__line[data-line-id]').first().waitFor();
+  const marks = page.locator(`[data-mention-id="${divided.id}"]`);
+  await marks.first().waitFor();
+  check(await marks.count() === 2 &&
+    await marks.nth(0).getAttribute('tabindex') === '0' &&
+    await marks.nth(1).getAttribute('aria-hidden') === 'true' &&
+    await marks.nth(0).textContent() === pair.head && await marks.nth(1).textContent() === pair.tail,
+  'both segments are marked after reload, with one keyboard stop for the mention');
+  await marks.nth(1).click();
+  await page.locator('#mention-dialog').waitFor();
+  const removeDivided = page.waitForResponse(response => response.url() === `${BASE}/api/registry` && response.request().method() === 'POST');
+  await mentionForm.locator('[name="reviewer"]').fill('QA');
+  await page.locator('#mention-remove').click();
+  assert.equal((await removeDivided).status(), 200);
+
   await selectText(term, 'term');
   await mentionForm.locator('[name="kind"]').selectOption('term');
   await mentionForm.locator('[name="search"]').fill(term.text);

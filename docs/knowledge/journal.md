@@ -35,6 +35,12 @@ Newest first. Each entry records one transition with its type (integrated, rejec
 - Result: the tag module, its `/api/tags` routes, sidecar storage and tests are deleted, and `/api/tags` answers 404. An HTTP test against the registry write route keeps the same-origin token check covered. Annotation, editorial register and controlled vocabulary are unchanged.
 
 
+### 2026-10-20 integrated: mentions across line breaks
+
+- Source: the project lead's request to annotate across line breaks (`Jo` / `seph`); operator decision of 2026-10-20 for segments.
+- Target: `pipeline/local_registry.py`, `docs/js/viewer-registry.js`, `viewer-registry-anchors.js`, `viewer-registry-display.js`, `register.js`, architecture.md, specification.md, design.md.
+- Result: a mention keeps its anchor fields as first segment and may carry `continuation` with up to four further line-bound segments; staleness holds per segment. The gesture is one drag across the line break instead of the Shift selection first proposed, because a divided word is always contiguous. No migration was needed. The extraction entities and the TEI stay line-bound, since the editorial register does not yet feed TEI.
+
 ### 2026-10-20 integrated: work progress
 
 - Source: the project lead's request to see the progress of the work; operator decision of 2026-10-20 for dots and a count.

@@ -29,7 +29,7 @@ export function mentionLink(item, currentDoc, currentPageNr) {
   const lines = page ? page.regions.flatMap(region => region.lines || []) : [];
   const ordinal = lines.findIndex(line => line.id === item.lineId) + 1;
   const source = sameDoc ? currentDoc.csvTitel || currentDoc.title : `Document ${item.docId}`;
-  const label = [item.quote, source, `Page ${item.pageNr}`, ordinal ? `Line ${ordinal}` : ''].filter(Boolean).join(', ');
+  const label = [mentionQuote(item), source, `Page ${item.pageNr}`, ordinal ? `Line ${ordinal}` : ''].filter(Boolean).join(', ');
   const edit = samePage ? `<button type="button" class="review-btn" data-edit-mention="${attr(item.id)}">Edit</button>` : '';
   return `<div><a href="${attr(url)}">${esc(label)}</a>${item.stale ? '<span data-stale="true">, text changed, check</span>' : ''} ${edit}</div>`;
 }
@@ -42,7 +42,7 @@ function formatTimestamp(value) {
 function historyReading(record) {
   if (!record) return 'None';
   return [
-    record.label || record.quote,
+    record.label || (record.quote && mentionQuote(record)),
     ...(record.aliases || []),
     record.when,
     record.notBefore ? `not before ${record.notBefore}` : '',
@@ -63,4 +63,20 @@ export function historyMarkup(events) {
     <dl><dt>Before</dt><dd>${esc(historyReading(event.before))}</dd>
     <dt>After</dt><dd>${esc(historyReading(event.after))}</dd></dl>
   </details>`).join('') || '<p>No changes yet.</p>';
+}
+
+/**
+ * The line-bound spans of a mention in reading order. A mention across a line
+ * break continues in further segments; the anchor fields of the mention are
+ * its first, so an older mention is one segment unchanged.
+ * @param {any} mention
+ */
+export function mentionSegments(mention) {
+  const { lineId, start, end, quote, textDigest } = mention;
+  return [{ lineId, start, end, quote, textDigest }, ...(mention.continuation || [])];
+}
+
+/** The quotation of a mention, its line breaks shown as a slash. */
+export function mentionQuote(mention) {
+  return mentionSegments(mention).map(segment => segment.quote).join(' / ');
 }

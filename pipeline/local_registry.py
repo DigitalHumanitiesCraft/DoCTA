@@ -23,6 +23,11 @@ from local_annotations import _lines, line_digest
 
 KINDS = frozenset(("person", "place", "term"))
 MENTION_KINDS = KINDS | {"date"}
+# A mention across a line break continues in the following lines of its page;
+# a name or word divided at a line end needs one further segment, so a handful
+# bounds a malformed request without limiting the source.
+MAX_CONTINUATION = 4
+SEGMENT_FIELDS = ("lineId", "start", "end", "quote", "textDigest")
 
 
 def _text(value: object, field: str, maximum: int, empty: bool = False) -> str:
@@ -128,6 +133,31 @@ def _date_fields(data: dict) -> dict:
     return result
 
 
+def _segment(data: dict) -> None:
+    """One line-bound span: the anchor fields every segment shares."""
+    _text(data["lineId"], "lineId", 500)
+    _text(data["quote"], "quote", 100000)
+    if (
+        type(data["start"]) is not int
+        or type(data["end"]) is not int
+        or not 0 <= data["start"] < data["end"]
+    ):
+        raise ValueError("invalid mention offsets")
+    digest = data["textDigest"]
+    if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+        raise ValueError("textDigest must be a SHA-256 digest")
+
+
+def segments(mention: dict) -> list[dict]:
+    """The line-bound spans of a mention in reading order.
+
+    The anchor fields of the mention itself are its first segment, so a mention
+    saved before continuation existed is a mention of one segment unchanged.
+    """
+    first = {key: mention[key] for key in SEGMENT_FIELDS}
+    return [first, *mention.get("continuation", [])]
+
+
 def _mention(data: object) -> dict:
     if not isinstance(data, dict):
         raise ValueError("mention must be an object")
@@ -152,17 +182,26 @@ def _mention(data: object) -> dict:
     for field in ("docId", "pageNr"):
         if type(result[field]) is not int or result[field] < 1:
             raise ValueError(f"{field} must be a positive integer")
-    _text(result["lineId"], "lineId", 500)
-    _text(result["quote"], "quote", 100000)
-    if (
-        type(result["start"]) is not int
-        or type(result["end"]) is not int
-        or not 0 <= result["start"] < result["end"]
-    ):
-        raise ValueError("invalid mention offsets")
-    digest = result["textDigest"]
-    if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
-        raise ValueError("textDigest must be a SHA-256 digest")
+    _segment(result)
+    continuation = data.get("continuation")
+    if continuation is not None:
+        if (
+            not isinstance(continuation, list)
+            or not 1 <= len(continuation) <= MAX_CONTINUATION
+        ):
+            raise ValueError(
+                f"continuation must list 1 to {MAX_CONTINUATION} further segments"
+            )
+        result["continuation"] = []
+        for item in continuation:
+            if not isinstance(item, dict):
+                raise ValueError("continuation segment must be an object")
+            segment = {key: item.get(key) for key in SEGMENT_FIELDS}
+            _segment(segment)
+            result["continuation"].append(segment)
+        line_ids = [segment["lineId"] for segment in segments(result)]
+        if len(set(line_ids)) != len(line_ids):
+            raise ValueError("each segment of a mention needs its own line")
     if result["entryId"] is not None:
         _uuid(result["entryId"])
     if result["kind"] == "date":
@@ -249,14 +288,22 @@ def _read(register_dir: Path) -> tuple[dict, str]:
     return state, revision
 
 
-def _stale(mention: dict, lines: dict) -> bool:
-    text = lines.get((mention["pageNr"], mention["lineId"]))
-    if text is None or line_digest(text) != mention["textDigest"]:
+def _segment_stale(page_nr: int, segment: dict, lines: dict) -> bool:
+    text = lines.get((page_nr, segment["lineId"]))
+    if text is None or line_digest(text) != segment["textDigest"]:
         return True
     try:
-        return utf16_slice(text, mention["start"], mention["end"]) != mention["quote"]
+        return utf16_slice(text, segment["start"], segment["end"]) != segment["quote"]
     except ValueError:
         return True
+
+
+def _stale(mention: dict, lines: dict) -> bool:
+    """A mention is stale as soon as one of its segments no longer matches."""
+    return any(
+        _segment_stale(mention["pageNr"], segment, lines)
+        for segment in segments(mention)
+    )
 
 
 def _project(state: dict, revision: str, register_dir: Path) -> dict:

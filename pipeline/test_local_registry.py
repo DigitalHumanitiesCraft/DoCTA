@@ -391,3 +391,109 @@ def test_legacy_annotation_save_adds_audit_only_on_change(
     )
     assert again["history"] == saved["history"]
     assert json.loads(path.read_text(encoding="utf-8"))["history"] == saved["history"]
+
+
+def _line_break_mention(pages: Path) -> dict:
+    """The end of one line and the start of the next, as a word divided at the
+    line end would be selected."""
+    page_lines = [
+        (key, text) for key, text in annotations._lines(DOC, pages).items() if text
+    ]
+    (page_nr, first_id), first = page_lines[0]
+    (_, second_id), second = next(
+        item for item in page_lines[1:] if item[0][0] == page_nr
+    )
+    head, tail = first[-2:], second[:4]
+    width = len(first.encode("utf-16-le")) // 2
+    return mention(
+        pages,
+        pageNr=page_nr,
+        lineId=first_id,
+        start=width - 2,
+        end=width,
+        quote=head,
+        textDigest=annotations.line_digest(first),
+        continuation=[
+            {
+                "lineId": second_id,
+                "start": 0,
+                "end": 4,
+                "quote": tail,
+                "textDigest": annotations.line_digest(second),
+            }
+        ],
+    )
+
+
+def test_a_mention_across_a_line_break_keeps_both_segments(pages: Path) -> None:
+    saved = save(pages, "save-mention", mention=_line_break_mention(pages))
+    record = saved["mentions"][0]
+    assert len(registry.segments(record)) == 2
+    assert record["stale"] is False
+    stored = load_json(pages.parent / "registry" / "index.json")
+    assert stored["mentions"][0]["continuation"] == record["continuation"]
+    assert stored["history"][-1]["after"]["continuation"] == record["continuation"]
+
+
+def test_a_single_line_mention_has_no_continuation(pages: Path) -> None:
+    record = save(pages, "save-mention", mention=mention(pages))["mentions"][0]
+    assert "continuation" not in record
+    assert len(registry.segments(record)) == 1
+
+
+def test_a_changed_continuation_line_makes_the_whole_mention_stale(
+    pages: Path,
+) -> None:
+    record = save(pages, "save-mention", mention=_line_break_mention(pages))[
+        "mentions"
+    ][0]
+    second = record["continuation"][0]
+    lines = annotations._lines(DOC, pages)
+    original = lines[(record["pageNr"], second["lineId"])]
+    document = editor.document_payload(DOC, pages)
+    editor.save_review(
+        {
+            "docId": DOC,
+            "baseRevision": document["revision"],
+            "reviewer": "XY",
+            "pages": {
+                str(record["pageNr"]): {
+                    "date": "2026-09-21",
+                    "status": None,
+                    "lines": [
+                        {
+                            "id": second["lineId"],
+                            "original": original,
+                            "corrected": original + " x",
+                        }
+                    ],
+                }
+            },
+        },
+        pages,
+        pages.parent / "reviews",
+    )
+    assert registry.read_registry(pages)["mentions"][0]["stale"] is True
+
+
+@pytest.mark.parametrize(
+    "continuation",
+    [
+        [],
+        "segment",
+        [{"lineId": "r1l1"}],
+        [{"lineId": "x", "start": 0, "end": 1, "quote": "a", "textDigest": "0" * 64}]
+        * (registry.MAX_CONTINUATION + 1),
+    ],
+)
+def test_a_malformed_continuation_is_refused(pages: Path, continuation: object) -> None:
+    with pytest.raises(ValueError):
+        save(pages, "save-mention", mention=mention(pages, continuation=continuation))
+    assert not (pages.parent / "registry" / "index.json").exists()
+
+
+def test_a_segment_repeating_the_first_line_is_refused(pages: Path) -> None:
+    single = mention(pages)
+    repeat = {key: single[key] for key in registry.SEGMENT_FIELDS}
+    with pytest.raises(ValueError, match="own line"):
+        save(pages, "save-mention", mention={**single, "continuation": [repeat]})
