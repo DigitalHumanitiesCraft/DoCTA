@@ -185,3 +185,73 @@ def test_a_crashing_check_becomes_a_finding_and_the_run_continues() -> None:
     assert code == 1, report
     assert "FAIL boom.crashed: RuntimeError: unreadable input" in report
     assert "OK   coverage" in report, "the checks after the crash did not run"
+
+
+def _entity_findings(surface: str | None, corrected: str) -> list[cp.Finding]:
+    """Entity check of one document whose anchor line a reviewer corrected.
+
+    The first entity of 11328300 keeps its source line; a newest review run gives
+    that line the reading ``corrected``. ``surface`` replaces the extracted
+    surface form where given.
+    """
+    doc_id = 11328300
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        entities = tmp / "entities"
+        entities.mkdir()
+        extraction = json.loads(
+            (cp.ENTITY_DIR / f"{doc_id}.json").read_text(encoding="utf-8")
+        )
+        entity = extraction["entities"][0]
+        if surface is not None:
+            entity["text"] = surface
+        (entities / f"{doc_id}.json").write_text(
+            json.dumps(extraction, ensure_ascii=False), encoding="utf-8"
+        )
+        register = tmp / "pages"
+        shutil.copytree(cp.REGISTER, register)
+        path = register / f"{doc_id}.json"
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        page = next(p for p in payload["pages"] if p["pageNr"] == entity["pageNr"])
+        source = next(r for r in page["runs"] if r["source"] == "transkribus")
+        page["runs"].append(
+            {
+                "id": f"review:{doc_id}-{page['pageNr']}-2099-01-01-XY",
+                "source": "human",
+                "reviewer": "XY",
+                "date": "2099-01-01",
+                "timestamp": "2099-01-01T00:00:00+00:00",
+                "lines": [
+                    {
+                        "id": line["id"],
+                        "text": corrected
+                        if line["id"] == entity["lineId"]
+                        else line["text"],
+                    }
+                    for line in source["lines"]
+                ],
+            }
+        )
+        path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        originals = cp.ENTITY_DIR, cp.REGISTER
+        cp.ENTITY_DIR, cp.REGISTER = entities, register
+        try:
+            return cp._check_entities()
+        finally:
+            cp.ENTITY_DIR, cp.REGISTER = originals
+
+
+def test_a_human_correction_of_an_entity_line_is_reported_not_failed() -> None:
+    """build_tei skips such an entity with a reason, so the healthcheck agrees."""
+    findings = _entity_findings(None, "corrected reading without the form")
+    assert not [f for f in findings if f.severity == cp.FAIL], findings
+    hits = [f for f in findings if f.check == "json.entity-corrected"]
+    assert len(hits) == 1, findings
+    assert hits[0].severity == cp.INFO
+    assert "11328300" in hits[0].message and "p1_r2l1" in hits[0].message
+
+
+def test_a_surface_form_absent_from_the_source_line_still_fails() -> None:
+    findings = _entity_findings("never in this line", "corrected reading")
+    hits = [f for f in findings if f.check == "json.entity-verbatim"]
+    assert hits and all(f.severity == cp.FAIL for f in hits), findings

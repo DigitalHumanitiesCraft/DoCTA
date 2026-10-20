@@ -305,7 +305,20 @@ def _check_entities() -> list[Finding]:
                         " not in the transcription",
                     )
                 )
-            elif entity["text"] not in line:
+            elif entity["text"] in line:
+                continue
+            elif entity["text"] in _source_lines(doc_id).get(key, ""):
+                # build_tei skips this entity with a reason; a reviewer changing
+                # the line is editorial work, not a defect of the extraction.
+                out.append(
+                    _info(
+                        "json.entity-corrected",
+                        f"document {doc_id}, page {entity['pageNr']}, line"
+                        f" {key}: entity {entity['id']} {entity['text']!r} is no"
+                        " longer in the human-corrected reading",
+                    )
+                )
+            else:
                 out.append(
                     _fail(
                         "json.entity-verbatim",
@@ -313,6 +326,24 @@ def _check_entities() -> list[Finding]:
                         f" {entity['text']!r} not verbatim in line {key}",
                     )
                 )
+    return out
+
+
+def _source_lines(doc_id: Any) -> dict[str, str]:
+    """Page-qualified unrevised line index, the base every review is made on."""
+    path = REGISTER / f"{doc_id}.json"
+    if not path.exists():
+        return {}
+    out: dict[str, str] = {}
+    for page in load_json(path)["pages"]:
+        reviewed = {run["id"] for run in br.review_runs(page)}
+        unrevised = {
+            **page,
+            "runs": [r for r in page.get("runs") or [] if r.get("id") not in reviewed],
+        }
+        for line in ar.base_lines(unrevised, ""):
+            if line.get("id"):
+                out[br.line_key(page["pageNr"], line["id"])] = line["text"]
     return out
 
 

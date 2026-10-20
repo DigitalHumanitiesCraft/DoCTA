@@ -448,3 +448,448 @@ def test_selected_tei_build_writes_valid_document_and_static_projection() -> Non
         assert load_json(projection)["docId"] == DOC
         projected = load_json(summary)["documents"][0]
         assert projected["effective_transcription"] is True
+
+
+VLM_DOC = 12647153
+
+
+def _vlm_correction(pages: Path) -> dict:
+    document = le.document_payload(VLM_DOC, pages)
+    page = document["pages"][0]
+    line = next(br.iter_lines(page))
+    return {
+        "docId": VLM_DOC,
+        "baseRevision": document["revision"],
+        "reviewer": "XY",
+        "pages": {
+            str(page["pageNr"]): {
+                "status": None,
+                "date": "2026-09-21",
+                "lines": [
+                    {"id": line["id"], "original": line["text"], "corrected": "x"}
+                ],
+            }
+        },
+    }
+
+
+def test_document_payload_carries_the_title_of_a_vlm_document() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        pages, _ = _fixture(Path(td))
+        title = next(
+            doc["title"]
+            for doc in load_json(pages.parent / "documents.json")
+            if doc["docId"] == VLM_DOC
+        )
+        assert title
+        assert le.document_payload(VLM_DOC, pages)["title"] == title
+
+
+def _project(register_root: Path, summary: Path) -> dict:
+    docs = load_json(register_root / "documents.json")
+    pages_by_doc = {
+        doc["docId"]: load_json(register_root / "pages" / f"{doc['docId']}.json")[
+            "pages"
+        ]
+        for doc in docs
+    }
+    return br.project(docs, pages_by_doc, summary)
+
+
+def test_api_build_projection_equals_the_register_projection_for_a_vlm_document() -> (
+    None
+):
+    """The /api/build projection and build_register.project agree field by field."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages, reviews = _fixture(tmp)
+        data = tmp / "data"
+        (data / "entities").mkdir(parents=True)
+        # The site projection as published before the correction.
+        _project(tmp, data / "pipeline" / "register_summary.json")
+        le.save_review(_vlm_correction(pages), pages, reviews)
+        le.build_tei_documents({"date": "2026-09-21", "docIds": [VLM_DOC]}, pages, data)
+
+        expected = tmp / "projection" / "register_summary.json"
+        projected = _project(tmp, expected)
+        assert load_json(data / "pipeline" / "register_summary.json") == projected
+        entry = next(d for d in projected["documents"] if d["docId"] == VLM_DOC)
+        assert entry["transcription_source"] == "vlm"
+        assert entry["effective_transcription"] is True
+        built = load_json(data / "pipeline" / "transcriptions" / f"{VLM_DOC}.json")
+        assert built["title"] == entry["title"]
+        assert built == load_json(
+            expected.parent / "transcriptions" / f"{VLM_DOC}.json"
+        )
+
+
+def test_failed_register_write_leaves_no_orphan_review_event(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    with tempfile.TemporaryDirectory() as td:
+        pages, reviews = _fixture(Path(td))
+        request = _request(pages, "corrected")
+        register = pages / f"{DOC}.json"
+        before = register.read_bytes()
+        write = le.write_json
+
+        def failing(path: Path, payload: object) -> None:
+            if path == register:
+                raise OSError("disk full")
+            write(path, payload)
+
+        monkeypatch.setattr(le, "write_json", failing)
+        with pytest.raises(OSError):
+            le.save_review(request, pages, reviews)
+        assert register.read_bytes() == before
+        assert not list(reviews.iterdir())
+
+
+def test_publish_rollback_restores_earlier_targets_and_removes_new_ones(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    existing, created, third = (tmp_path / n for n in ("a.xml", "b.json", "c.json"))
+    existing.write_bytes(b"prior\n")
+    write = le.write_text
+
+    def failing(path: Path, text: str) -> None:
+        if path == third:
+            raise OSError("disk full")
+        write(path, text)
+
+    monkeypatch.setattr(le, "write_text", failing)
+    with pytest.raises(OSError):
+        le._publish_artifacts({existing: "new", created: "new", third: "new"})
+    assert existing.read_bytes() == b"prior\n"
+    assert not created.exists() and not third.exists()
+
+
+ENTITY_DOC = 11328300
+TOKEN = "contract-token"
+
+
+@pytest.fixture(scope="module")
+def editor(tmp_path_factory: pytest.TempPathFactory):
+    """One loopback server over a scratch register, shared by the contract cases."""
+    root = tmp_path_factory.mktemp("editor")
+    br.build(root / "pipeline")
+    (root / "docs").mkdir()
+    (root / "pipeline" / "reviews").mkdir()
+    handler = type("ContractHandler", (le.EditorHandler,), {})
+    handler.token = TOKEN
+    handler.docs_dir = root / "docs"
+    handler.register_dir = root / "pipeline" / "pages"
+    handler.review_dir = root / "pipeline" / "reviews"
+    handler.annotation_dir = root / "pipeline" / "annotations"
+    handler.tag_dir = root / "pipeline" / "tags"
+    handler.data_dir = root / "docs" / "data"
+    shutil.copytree(DATA / "entities", handler.data_dir / "entities")
+    server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    yield handler, server.server_port
+    server.shutdown()
+    server.server_close()
+    thread.join()
+
+
+def _call(
+    port: int,
+    method: str,
+    path: str,
+    body: object = None,
+    headers: dict | None = None,
+    raw: bytes | None = None,
+) -> tuple[int, str, dict]:
+    connection = HTTPConnection("127.0.0.1", port, timeout=60)
+    sent = {}
+    if method == "POST":
+        sent = {"Origin": f"http://127.0.0.1:{port}", "X-DoCTA-Token": TOKEN}
+    sent.update(headers or {})
+    data = raw if raw is not None else None if body is None else json.dumps(body)
+    try:
+        connection.request(method, path, data, sent)
+        response = connection.getresponse()
+        return (
+            response.status,
+            response.getheader("Content-Type", ""),
+            json.loads(response.read()),
+        )
+    finally:
+        connection.close()
+
+
+def _annotation_payload(port: int) -> dict:
+    current = _call(port, "GET", f"/api/annotations/{ENTITY_DOC}")[2]
+    entity = load_json(DATA / "entities" / f"{ENTITY_DOC}.json")["entities"][0]
+    return {
+        "docId": ENTITY_DOC,
+        "reviewer": "XY",
+        "baseRevision": current["revision"],
+        "decisions": [
+            {
+                "id": entity["id"],
+                "kind": [entity["type"]],
+                "normalized": entity["normalized"],
+                "authority": None,
+                "status": ["accepted"],
+                "reason": None,
+                "textDigest": "0" * 64,
+            }
+        ],
+    }
+
+
+def _bad_review_dir(handler: type, monkeypatch: pytest.MonkeyPatch) -> None:
+    bad = handler.review_dir.parent / "bad-reviews"
+    bad.mkdir(exist_ok=True)
+    write_json(bad / f"review-{DOC}-broken.json", {"docId": DOC})
+    monkeypatch.setattr(handler, "review_dir", bad)
+
+
+def _bad_tag_sidecar(handler: type, monkeypatch: pytest.MonkeyPatch) -> None:
+    bad = handler.tag_dir.parent / "bad-tags"
+    bad.mkdir(exist_ok=True)
+    write_json(bad / f"{DOC}.json", [])
+    monkeypatch.setattr(handler, "tag_dir", bad)
+
+
+def _patch(target: object, name: str, exc: BaseException):
+    def fail(*_: object, **__: object) -> None:
+        raise exc
+
+    return lambda handler, monkeypatch: monkeypatch.setattr(target, name, fail)
+
+
+def _body(body: object = None, headers: dict | None = None, raw: bytes | None = None):
+    return lambda port: (body, headers, raw)
+
+
+ANY = "<any message>"
+
+# name: (method, path, request, setup, status, error). The request returns
+# (body, headers, raw bytes); an error of None expects a success payload.
+CONTRACT = {
+    "untrusted host": (
+        "GET",
+        f"/api/documents/{DOC}",
+        _body(headers={"Host": "attacker.example"}),
+        None,
+        403,
+        "untrusted host",
+    ),
+    "missing token": (
+        "POST",
+        "/api/review",
+        _body({}, {"X-DoCTA-Token": ""}),
+        None,
+        403,
+        "write authorization failed",
+    ),
+    "unknown get path": ("GET", "/api/nothing", None, None, 404, "not found"),
+    "unknown post path": ("POST", "/api/nothing", None, None, 404, "not found"),
+    "unknown document": ("GET", "/api/documents/999", None, None, 404, ANY),
+    "non-digit document id": (
+        "GET",
+        "/api/documents/12a",
+        None,
+        None,
+        400,
+        "invalid document id",
+    ),
+    "non-ascii digit tag id": (
+        "GET",
+        "/api/tags/%C2%B2",
+        None,
+        None,
+        400,
+        "invalid document id",
+    ),
+    "non-digit annotation id": (
+        "GET",
+        "/api/annotations/x",
+        None,
+        None,
+        400,
+        "invalid document id",
+    ),
+    "invalid content length": (
+        "POST",
+        "/api/review",
+        _body(headers={"Content-Length": "abc"}, raw=b"{}"),
+        None,
+        413,
+        "invalid body size",
+    ),
+    "oversize body": (
+        "POST",
+        "/api/review",
+        _body(headers={"Content-Length": str(le.MAX_BODY + 1)}, raw=b"{}"),
+        None,
+        413,
+        "invalid body size",
+    ),
+    "malformed json": (
+        "POST",
+        "/api/review",
+        _body(raw=b"{"),
+        None,
+        400,
+        "invalid JSON",
+    ),
+    "review contract": ("POST", "/api/review", _body({"docId": "1"}), None, 400, ANY),
+    "stale review": (
+        "POST",
+        "/api/review",
+        _body({"docId": DOC, "baseRevision": "0" * 64}),
+        None,
+        409,
+        "stale revision",
+    ),
+    "review for unknown document": (
+        "POST",
+        "/api/review",
+        _body({"docId": 999, "baseRevision": "0" * 64}),
+        None,
+        404,
+        ANY,
+    ),
+    "malformed stored review": (
+        "GET",
+        f"/api/documents/{DOC}",
+        None,
+        _bad_review_dir,
+        500,
+        ANY,
+    ),
+    "forced document read OSError": (
+        "GET",
+        f"/api/documents/{DOC}",
+        None,
+        _patch(le, "document_payload", OSError("disk")),
+        500,
+        "disk",
+    ),
+    "unexpected document failure": (
+        "GET",
+        f"/api/documents/{DOC}",
+        None,
+        _patch(le, "document_payload", KeyError("x")),
+        500,
+        "internal error",
+    ),
+    "forced review write OSError": (
+        "POST",
+        "/api/review",
+        _body({"docId": DOC}),
+        _patch(le, "save_review", OSError("disk")),
+        500,
+        "disk",
+    ),
+    "unexpected review failure": (
+        "POST",
+        "/api/review",
+        _body({"docId": DOC}),
+        _patch(le, "save_review", KeyError("x")),
+        500,
+        "internal error",
+    ),
+    "annotation kind of the wrong type": (
+        "POST",
+        "/api/annotations",
+        lambda port: (_annotation_payload(port), None, None),
+        None,
+        400,
+        ANY,
+    ),
+    "stale annotation": (
+        "POST",
+        "/api/annotations",
+        _body({"docId": ENTITY_DOC, "baseRevision": "x"}),
+        None,
+        409,
+        ANY,
+    ),
+    "registry read": ("GET", "/api/registry", None, None, 200, None),
+    "registry not an object": (
+        "POST",
+        "/api/registry",
+        _body([]),
+        None,
+        400,
+        ANY,
+    ),
+    "stale registry": (
+        "POST",
+        "/api/registry",
+        _body({"baseRevision": "x"}),
+        None,
+        409,
+        ANY,
+    ),
+    "forced registry read OSError": (
+        "GET",
+        "/api/registry",
+        None,
+        _patch(le.registry, "read_registry", OSError("disk")),
+        500,
+        "disk",
+    ),
+    "build with an impossible date": (
+        "POST",
+        "/api/build",
+        _body({"date": "2026-02-30", "docIds": [DOC]}),
+        None,
+        400,
+        ANY,
+    ),
+    "build without documents": (
+        "POST",
+        "/api/build",
+        _body({"date": "2026-02-03", "docIds": []}),
+        None,
+        400,
+        ANY,
+    ),
+    "tags read": ("GET", f"/api/tags/{DOC}", None, None, 200, None),
+    "malformed tag sidecar": (
+        "GET",
+        f"/api/tags/{DOC}",
+        None,
+        _bad_tag_sidecar,
+        500,
+        ANY,
+    ),
+    "tags for unknown document": ("GET", "/api/tags/999", None, None, 404, ANY),
+    "tag payload not an object": ("POST", "/api/tags", _body([]), None, 400, ANY),
+    "stale tags": (
+        "POST",
+        "/api/tags",
+        _body({"docId": DOC, "baseRevision": "x"}),
+        None,
+        409,
+        ANY,
+    ),
+}
+
+
+@pytest.mark.parametrize("case", CONTRACT)
+def test_every_api_failure_is_a_json_answer_with_its_status(
+    editor: tuple[type, int], monkeypatch: pytest.MonkeyPatch, case: str
+) -> None:
+    handler, port = editor
+    method, path, request, setup, status, error = CONTRACT[case]
+    if setup is not None:
+        setup(handler, monkeypatch)
+    body, headers, raw = request(port) if request else (None, None, None)
+    if method == "POST" and body is None and raw is None:
+        raw = b"{}"
+    got, content_type, payload = _call(port, method, path, body, headers, raw)
+    assert got == status, payload
+    assert content_type.startswith("application/json")
+    if error is None:
+        assert "error" not in payload
+    else:
+        assert isinstance(payload["error"], str) and payload["error"]
+        if error is not ANY:
+            assert payload["error"] == error

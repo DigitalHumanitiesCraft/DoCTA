@@ -14,10 +14,12 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import secrets
 import sys
 import tempfile
 import tomllib
+import traceback
 import webbrowser
 from collections import Counter
 from datetime import UTC, datetime
@@ -62,7 +64,7 @@ def document_payload(
     if not path.is_file():
         raise FileNotFoundError(f"No register for document {doc_id}")
     register = load_json(path)
-    transcription = br.transcription_of(doc_id, register_dir, register.get("title"))
+    transcription = br.transcription_of(doc_id, register_dir)
     if transcription is None:
         raise FileNotFoundError(f"No transcription for document {doc_id}")
     states = {
@@ -154,10 +156,11 @@ def save_review(
         write_json(canonical, review)
         try:
             write_json(path, register)
-        except OSError as exc:
-            raise RuntimeError(
-                f"register write failed; recover by replaying {canonical.name}"
-            ) from exc
+        except BaseException:
+            # The register is the effective state and startup replays nothing,
+            # so an event without its register write would be a phantom save.
+            canonical.unlink(missing_ok=True)
+            raise
         return document_payload(doc_id, register_dir, review_dir, locked=True)
 
 
@@ -242,9 +245,10 @@ def _build_tei_documents(
             target = data_dir / "tei" / f"{doc_id}.xml"
             artifacts[target] = xml
             register = load_json(register_dir / f"{doc_id}.json")
-            has_review = any(br.review_runs(page) for page in register["pages"])
-            transcription = br.transcription_of(doc_id, register_dir)
-            if has_review and transcription is not None:
+            transcription = br.site_transcription(
+                br.document_entry(doc_id, register_dir), register["pages"]
+            )
+            if transcription is not None:
                 projection = data_dir / "pipeline" / "transcriptions" / f"{doc_id}.json"
                 artifacts[projection] = (
                     json.dumps(transcription, ensure_ascii=False, indent=1) + "\n"
@@ -304,7 +308,11 @@ class EditorHandler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=str(self.docs_dir), **kwargs)
 
     def _json(self, status: HTTPStatus, payload: dict) -> None:
-        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        try:
+            body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        except UnicodeEncodeError:
+            # Echoed client text may hold a lone surrogate; escape it.
+            body = json.dumps(payload).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
@@ -321,69 +329,58 @@ class EditorHandler(SimpleHTTPRequestHandler):
     def _trusted_host(self) -> bool:
         return allowed_host(self.headers.get("Host"), self.server.server_port)
 
+    def _internal_error(self) -> None:
+        """Answer an unexpected failure without leaking it; the log keeps it."""
+        self.log_error("%s", traceback.format_exc())
+        self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "internal error"})
+
     def do_GET(self) -> None:
         if not self._trusted_host():
             self._json(HTTPStatus.FORBIDDEN, {"error": "untrusted host"})
             return
         path = urlsplit(self.path).path
+        if not path.startswith("/api/"):
+            super().do_GET()
+            return
+        try:
+            status, payload = self._get_api(path)
+        except FileNotFoundError as exc:
+            self._json(HTTPStatus.NOT_FOUND, {"error": str(exc)})
+        except (ValueError, OSError, ar.ReviewError) as exc:
+            # Stored state the server cannot read; the message names the file.
+            self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+        except Exception:
+            self._internal_error()
+        else:
+            self._json(status, payload)
+
+    def _get_api(self, path: str) -> tuple[HTTPStatus, dict]:
         if path == "/api/session":
-            self._json(
-                HTTPStatus.OK,
-                {
-                    "write_enabled": True,
-                    "token": self.token,
-                    "version": self.app_version,
-                },
-            )
-            return
+            return HTTPStatus.OK, {
+                "write_enabled": True,
+                "token": self.token,
+                "version": self.app_version,
+            }
         if path == "/api/registry":
-            try:
-                state = registry.read_registry(self.register_dir)
-            except (ValueError, OSError) as exc:
-                self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
-            else:
-                self._json(HTTPStatus.OK, state)
-            return
-        prefix = "/api/documents/"
-        if path.startswith(prefix):
-            raw = unquote(path[len(prefix) :])
-            if not raw.isdigit():
-                self._json(HTTPStatus.BAD_REQUEST, {"error": "invalid document id"})
-                return
-            try:
-                payload = document_payload(int(raw), self.register_dir, self.review_dir)
-            except FileNotFoundError as exc:
-                self._json(HTTPStatus.NOT_FOUND, {"error": str(exc)})
-            except (ValueError, OSError) as exc:
-                self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
-            else:
-                self._json(HTTPStatus.OK, payload)
-            return
-        annotation_prefix = "/api/annotations/"
-        if path.startswith(annotation_prefix):
-            raw = unquote(path[len(annotation_prefix) :])
-            if not raw.isdigit():
-                self._json(HTTPStatus.BAD_REQUEST, {"error": "invalid document id"})
-                return
-            try:
-                decisions = annotations.read_decisions(int(raw), self.annotation_dir)
-            except (ValueError, OSError) as exc:
-                self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
-            else:
-                self._json(HTTPStatus.OK, decisions)
-            return
-        tag_prefix = "/api/tags/"
-        if path.startswith(tag_prefix):
-            raw = unquote(path[len(tag_prefix) :])
-            if not raw.isdigit():
-                self._json(HTTPStatus.BAD_REQUEST, {"error": "invalid document id"})
-                return
-            self._json(
-                HTTPStatus.OK,
-                tags.read_tags(int(raw), self.register_dir, self.tag_dir),
-            )
-            return
-        super().do_GET()
+            return HTTPStatus.OK, registry.read_registry(self.register_dir)
+        readers = {
+            "/api/documents/": lambda doc_id: document_payload(
+                doc_id, self.register_dir, self.review_dir
+            ),
+            "/api/annotations/": lambda doc_id: annotations.read_decisions(
+                doc_id, self.annotation_dir
+            ),
+            "/api/tags/": lambda doc_id: tags.read_tags(
+                doc_id, self.register_dir, self.tag_dir
+            ),
+        }
+        for prefix, read in readers.items():
+            if path.startswith(prefix):
+                raw = unquote(path[len(prefix) :])
+                if not re.fullmatch(r"[0-9]+", raw):
+                    return HTTPStatus.BAD_REQUEST, {"error": "invalid document id"}
+                return HTTPStatus.OK, read(int(raw))
+        return HTTPStatus.NOT_FOUND, {"error": "not found"}
 
     def do_POST(self) -> None:
         if not self._trusted_host():
@@ -453,10 +450,14 @@ class EditorHandler(SimpleHTTPRequestHandler):
             self._json(HTTPStatus.NOT_FOUND, {"error": str(exc)})
         except RuntimeError as exc:
             self._json(HTTPStatus.CONFLICT, {"error": str(exc)})
-        except ValueError as exc:
+        except (ValueError, TypeError) as exc:
+            # TypeError comes from payload values of the wrong JSON type, such
+            # as a list where a validator tests membership in a set of names.
             self._json(HTTPStatus.BAD_REQUEST, {"error": str(exc)})
         except OSError as exc:
             self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+        except Exception:
+            self._internal_error()
         else:
             self._json(HTTPStatus.OK, result)
 
@@ -498,7 +499,7 @@ def main() -> int:
         server = ThreadingHTTPServer(("127.0.0.1", args.port), EditorHandler)
     except OSError as exc:
         print(
-            f"FEHLER Lokaler Editor konnte Port {args.port} nicht öffnen. Möglicherweise läuft dort bereits ein Dienst. {exc}",
+            f"ERROR DoCTA editor could not open port {args.port}. Another service may already be using it. {exc}",
             file=sys.stderr,
         )
         return 1

@@ -586,3 +586,69 @@ def test_later_same_day_approval_can_accept_saved_correction(tmp_path: Path) -> 
     ar.ingest([approval], pages)
     assert path.read_bytes() == before
     assert _page(pages)["verification"]["status"] == "abgenommen"
+
+
+def _minimal(pages: dict, **extra: object) -> dict:
+    return {
+        "docId": DOC,
+        "reviewer": REVIEWER,
+        "exported": f"{DATE}T10:15:00Z",
+        "source": "docta-viewer",
+        "pages": pages,
+        **extra,
+    }
+
+
+@pytest.mark.parametrize(
+    "date",
+    [
+        "2026-09-03\n",
+        "2026-13-45",
+        "2026-02-30",
+        "".join(chr(0xFF10 + int(c)) for c in "2026") + "-09-03",
+    ],
+)
+def test_an_impossible_or_padded_date_is_refused(date: str) -> None:
+    with pytest.raises(ar.ReviewError):
+        ar.validate(_minimal({"2": {"status": None, "date": date, "lines": []}}), "x")
+
+
+def test_page_keys_naming_one_page_twice_are_refused() -> None:
+    page = {"status": "gesichtet", "date": DATE, "lines": []}
+    with pytest.raises(ar.ReviewError):
+        ar.validate(_minimal({"2": page, "02": dict(page)}), "x")
+
+
+def test_a_lone_surrogate_in_an_export_is_a_review_error() -> None:
+    page = {
+        "status": None,
+        "date": DATE,
+        "lines": [{"id": "r2l1", "original": "a", "corrected": "\ud800"}],
+    }
+    with pytest.raises(ar.ReviewError):
+        ar.validate(_minimal({"2": page}), "x")
+
+
+def test_an_unencodable_register_refuses_the_batch_before_any_write(
+    tmp_path: Path,
+) -> None:
+    pages_dir = _register(tmp_path)
+    other = 11328300
+    first = review_file(tmp_path, pages_dir)
+    second = tmp_path / f"review-{other}.json"
+    second.write_text(
+        json.dumps(
+            {
+                **_minimal({"1": {"status": "gesichtet", "date": DATE, "lines": []}}),
+                "docId": other,
+            }
+        ),
+        encoding="utf-8",
+    )
+    broken = load_json(pages_dir / f"{other}.json")
+    broken["pages"][0]["runs"][0]["lines"][0]["text"] = "\ud800"
+    (pages_dir / f"{other}.json").write_text(json.dumps(broken), encoding="utf-8")
+    before = (pages_dir / f"{DOC}.json").read_bytes()
+    with pytest.raises(ar.ReviewError):
+        ar.ingest([first, second], pages_dir)
+    assert (pages_dir / f"{DOC}.json").read_bytes() == before

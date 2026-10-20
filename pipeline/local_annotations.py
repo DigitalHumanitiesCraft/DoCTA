@@ -114,7 +114,12 @@ def _save_decisions(
         entity = extracted[entity_id]
         kind = decision.get("kind")
         status = decision.get("status")
-        if kind not in KINDS or status not in STATES:
+        if (
+            not isinstance(kind, str)
+            or not isinstance(status, str)
+            or kind not in KINDS
+            or status not in STATES
+        ):
             raise ValueError(f"invalid annotation decision for {entity_id}")
         if kind != entity["type"]:
             raise ValueError(f"entity kind changed for {entity_id}")

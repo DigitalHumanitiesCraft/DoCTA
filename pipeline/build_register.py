@@ -488,7 +488,8 @@ def transcription_of(
     The Transkribus export where one exists, the DoCTA edition runs of the page
     register otherwise, both in the export shape. This is the single place that
     answers where the text of a document comes from; TEI generation, entity
-    extraction and the healthcheck all ask here.
+    extraction and the healthcheck all ask here. Without a title, the one of
+    the document list beside the register is used, as the site projection does.
     """
     export = DATA / "transcriptions" / f"{doc_id}.json"
     if export.exists():
@@ -498,12 +499,41 @@ def transcription_of(
     path = (register_dir or PIPELINE_DIR / "pages") / f"{doc_id}.json"
     if not path.exists():
         return None
+    if title is None:
+        title = document_entry(doc_id, register_dir)["title"]
     data = vlm_transcription(
         {"docId": doc_id, "title": title}, load_json(path)["pages"]
     )
     if data is None:
         return None
     return effective_transcription(data, doc_id, register_dir)
+
+
+def document_entry(doc_id: int, register_dir: Path | None = None) -> dict:
+    """The documents.json entry beside a register, or a bare one without it."""
+    path = (register_dir or PIPELINE_DIR / "pages").parent / "documents.json"
+    docs = load_json(path) if path.exists() else []
+    return next(
+        (doc for doc in docs if doc["docId"] == doc_id),
+        {"docId": doc_id, "title": None},
+    )
+
+
+def site_transcription(doc: dict, pages: list[dict]) -> dict | None:
+    """The viewer transcription file of one document, or None when none is due.
+
+    A document DoCTA transcribed itself always gets one; an exported document
+    only once a review changed its text, since the viewer otherwise reads the
+    export. project() and the local editor build both write through here, so
+    the two projections cannot drift apart.
+    """
+    transcription = vlm_transcription(doc, pages)
+    if any(review_runs(page) for page in pages):
+        export = DATA / "transcriptions" / f"{doc['docId']}.json"
+        source = load_json(export) if export.exists() else transcription
+        if source is not None:
+            transcription = effective_transcription_from_pages(source, pages)
+    return transcription
 
 
 def effective_transcription(
@@ -627,13 +657,8 @@ def project(
         status = Counter(p["verification"]["status"] for p in pages)
         # Where the text of this document comes from, which decides both the
         # file the viewer loads and the wording of its provenance chip.
-        transcription = vlm_transcription(doc, pages)
+        transcription = site_transcription(doc, pages)
         has_review = any(review_runs(page) for page in pages)
-        if has_review:
-            export = DATA / "transcriptions" / f"{doc['docId']}.json"
-            source = load_json(export) if export.exists() else transcription
-            if source is not None:
-                transcription = effective_transcription_from_pages(source, pages)
         if transcription is not None:
             write_json(
                 out_path.parent / "transcriptions" / f"{doc['docId']}.json",

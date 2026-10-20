@@ -38,7 +38,7 @@ Design decisions:
 Usage:
   python apply_review.py                       # ingest pipeline/reviews/
   python apply_review.py review-11328300.json  # one or more files
-  python apply_review.py DIR                   # every *.json below DIR
+  python apply_review.py DIR                   # every *.json directly in DIR
   python apply_review.py --register DIR --dry-run
 """
 
@@ -48,6 +48,7 @@ import json
 import math
 import re
 import sys
+from datetime import date as calendar_date
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -62,7 +63,7 @@ SOURCE = "docta-viewer"
 # A review may only assert one of the two human states; the machine states of
 # the register are not reachable from the viewer.
 REVIEW_STATUS = ("gesichtet", "abgenommen")
-DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+DATE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 REVIEW_ID = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 
 
@@ -89,6 +90,24 @@ def _str(value: Any, what: str) -> str:
     return value
 
 
+def _encodable(data: Any, what: str) -> None:
+    """Refuse text UTF-8 cannot store, such as a lone surrogate from a JSON escape."""
+    try:
+        json.dumps(data, ensure_ascii=False).encode("utf-8")
+    except UnicodeEncodeError as exc:
+        raise ReviewError(f"{what}: enthaelt nicht speicherbaren Text") from exc
+
+
+def _valid_date(value: Any) -> bool:
+    if not isinstance(value, str) or not DATE.fullmatch(value):
+        return False
+    try:
+        calendar_date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
+
+
 def validate(data: Any, origin: str) -> dict[int, dict]:
     """Check the export against the contract and return its pages by number.
 
@@ -97,6 +116,7 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
     """
     if not isinstance(data, dict):
         raise ReviewError(f"{origin}: kein JSON-Objekt")
+    _encodable(data, origin)
     if data.get("source") != SOURCE:
         raise ReviewError(f"{origin}: source ist nicht {SOURCE!r}")
     doc_id = data.get("docId")
@@ -145,8 +165,10 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
     out: dict[int, dict] = {}
     for key, page in pages.items():
         where = f"{origin}, Seite {key}"
-        if not (isinstance(key, str) and key.isdigit()):
+        if not (isinstance(key, str) and re.fullmatch(r"[0-9]+", key)):
             raise ReviewError(f"{where}: Seitenschluessel ist keine Seitenzahl")
+        if int(key) in out:
+            raise ReviewError(f"{where}: Seite {int(key)} mehrfach angegeben")
         if not isinstance(page, dict):
             raise ReviewError(f"{where}: kein Objekt")
         if "status" not in page:
@@ -154,8 +176,7 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
         status = page["status"]
         if status is not None and status not in REVIEW_STATUS:
             raise ReviewError(f"{where}: status {status!r} ist kein Reviewstatus")
-        date = page.get("date")
-        if not isinstance(date, str) or not DATE.match(date):
+        if not _valid_date(page.get("date")):
             raise ReviewError(f"{where}: date fehlt oder ist nicht YYYY-MM-DD")
         lines = page.get("lines")
         if not isinstance(lines, list):
@@ -427,6 +448,9 @@ def _ingest_unlocked(
             registers[register_path] = _read(register_path)
         log.append(f"{path.name} -> {register_path.name}")
         log += apply_document(registers[register_path], review, pages, path.name)
+    # Refuse before the first write, so a batch is never half written for it.
+    for register_path, register in registers.items():
+        _encodable(register, register_path.name)
     if not dry_run:
         for register_path, register in registers.items():
             write_json(register_path, register)
