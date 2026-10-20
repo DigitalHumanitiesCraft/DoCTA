@@ -27,34 +27,34 @@ export const PROVENANCE = {
   sourceListVlm: 'Initial machine transcription, unrevised',
 };
 
-/** The plain lines of the status details surface. */
+/** Field labels, values and notes of the status details surface. */
 export const STATUS_DETAILS = {
   title: 'Text status',
-  vlm: 'Machine transcription produced by the DoCTA pipeline with a vision-language model. ' +
-    'Transkribus holds no transcription of this source. Lines without a saved correction ' +
-    'are unrevised machine transcription.',
-  transkribusUnrecorded: 'Text layer exported from Transkribus. No page of this document is ' +
-    'marked done there, so no human correction is documented. The text may have been ' +
-    'worked on without the status being set.',
+  fields: {
+    layer: 'Text layer', model: 'Model', transcribed: 'Transcribed', edition: 'Edition',
+    page: 'This page', document: 'Document', correctedBy: 'Corrected by', coverage: 'Coverage',
+  },
+  layer: {
+    vlm: 'Machine transcription, DoCTA pipeline',
+    unrecorded: 'Transkribus HTR, correction not recorded',
+  },
+  vlmNote: 'Transcribed by a vision-language model; Transkribus holds no transcription of this source. ' +
+    'Lines without a saved correction are unrevised machine transcription.',
+  unrecordedNote: 'No page of this document is marked done in Transkribus, so no human correction ' +
+    'is documented. The text may have been worked on without the status being set.',
   corrected: (by, total) => `All ${total} pages corrected${by ? ` by ${by}` : ''} and marked done in Transkribus.`,
   partlyCorrected: (by, done, total) => `${done} of ${total} pages corrected${by ? ` by ${by}` : ''} ` +
-    'and marked done in Transkribus. The remaining pages are the unrevised Transkribus HTR layer. ' +
-    'The served data do not record which pages are done.',
-  transcription: what => `Transcription: ${what}.`,
-  modelUndocumented: 'model not documented',
-  transkribusExport: 'Transkribus HTR export, model not documented',
-  edition: 'Original edition: ',
+    'and marked done in Transkribus; the remaining pages are the unrevised Transkribus HTR layer.',
+  modelUndocumented: 'not documented',
+  transkribusExport: 'Transkribus HTR, model not documented',
   editionLink: 'Edition by Inventaria',
   editionLinkName: 'Open the Inventaria edition',
-  noCorrection: 'No saved correction on this page.',
-  correctionCount: n => `${lines(n)} corrected on this page.`,
-  correctionUncounted: 'Corrections are saved for this page. The served data hold only the ' +
-    'corrected reading, so the number of changed lines is not shown.',
-  correctionUnlocated: 'Corrections are saved for this document. The published text does not ' +
-    'record which pages or lines they concern.',
-  correctionBy: (who, when) => `Saved correction${who ? ` by ${who}` : ''}${when ? `, ${when}` : ''}.`,
+  noCorrection: 'No saved correction',
+  correctionCount: n => `${lines(n)} corrected`,
+  correctionUncounted: 'Corrections saved',
+  correctionUnlocated: 'Corrections saved, pages not recorded',
   notApproval: 'A saved correction records a text change. It is not a scholarly approval.',
-  coverage: (done, total) => `${done} of ${total} pages transcribed.`,
+  coverage: (done, total) => `${done} of ${total} pages transcribed`,
   draft: 'This page has unsaved changes. Save or discard them in the edit bar.',
 };
 

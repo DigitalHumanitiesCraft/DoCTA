@@ -20,9 +20,10 @@ function displayDate(value) {
   if (!value) return '';
   const date = new Date(value);
   if (Number.isNaN(date.valueOf())) return value;
-  return new Intl.DateTimeFormat('en-GB', {
-    dateStyle: 'short', ...(String(value).includes('T') ? { timeStyle: 'short' } : {}),
-  }).format(date);
+  // Written out like the archival dates in the source header.
+  const day = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' }).format(date);
+  if (!String(value).includes('T')) return day;
+  return `${day}, ${new Intl.DateTimeFormat('en-GB', { timeStyle: 'short' }).format(date)}`;
 }
 
 /**
@@ -39,7 +40,7 @@ function attribution(reg) {
   const edition = inventaria && WEB_URL.test(url) ? url : null;
   const by = inventaria ? 'the Inventaria project' : '';
   if (reg.transcription_source === 'vlm') {
-    return { kind: 'vlm', provenance: 'machine-unrevised', tone: 'machine', edition, description: D.vlm };
+    return { kind: 'vlm', provenance: 'machine-unrevised', tone: 'machine', edition, description: D.vlmNote };
   }
   if (done >= total) {
     return { kind: 'corrected', provenance: 'corrected', tone: 'human', edition,
@@ -51,7 +52,7 @@ function attribution(reg) {
       base: PROVENANCE.partlyCorrected(done, total), description: D.partlyCorrected(by, done, total) };
   }
   return { kind: 'unrecorded', provenance: 'correction-unrecorded', tone: 'machine', edition,
-    description: D.transkribusUnrecorded };
+    description: D.unrecordedNote };
 }
 
 function lineTexts(page) {
@@ -126,41 +127,44 @@ function pillLabel(attr, corr) {
   return attr.base;
 }
 
-function detailLines(ctx, attr, corr) {
-  const { doc, pageNr, scope, dirty } = ctx;
-  const out = [];
-  if (dirty) out.push(escapeHTML(D.draft));
-  out.push(escapeHTML(attr.description));
+function detailFields(ctx, attr, corr) {
+  const { doc, pageNr, scope } = ctx;
+  const F = D.fields;
+  const fields = [[F.layer, escapeHTML(D.layer[attr.kind] || attr.base)]];
   const page = doc.pages.find(item => item.pageNr === pageNr);
   const prov = page?.provenance;
   const runs = (prov?.originalRuns || []).filter(run => run.id === prov.originalRunId);
   if (scope === 'page' && runs.length) {
     for (const run of runs) {
-      const what = run.model || (run.source === 'transkribus' ? D.transkribusExport : D.modelUndocumented);
-      out.push(escapeHTML(D.transcription([what, displayDate(run.date)].filter(Boolean).join(', '))));
+      fields.push([F.model, escapeHTML(run.model || (run.source === 'transkribus' ? D.transkribusExport : D.modelUndocumented))]);
+      if (run.date) fields.push([F.transcribed, escapeHTML(displayDate(run.date))]);
     }
   } else if (attr.kind === 'vlm') {
-    const model = doc.provenance?.model;
-    const prompt = doc.provenance?.prompt ? `prompt ${doc.provenance.prompt}` : '';
-    out.push(escapeHTML(D.transcription([model || D.modelUndocumented, prompt].filter(Boolean).join(', '))));
+    const prompt = doc.provenance?.prompt ? `, prompt ${doc.provenance.prompt}` : '';
+    fields.push([F.model, escapeHTML((doc.provenance?.model || D.modelUndocumented) + prompt)]);
   } else {
-    out.push(escapeHTML(D.transcription(D.transkribusExport)));
+    fields.push([F.model, escapeHTML(D.transkribusExport)]);
   }
   if (attr.edition) {
-    out.push(escapeHTML(D.edition) + `<a href="${escapeAttr(attr.edition)}" target="_blank" rel="noopener">` +
-      `${escapeHTML(D.editionLink)}</a>`);
+    fields.push([F.edition, `<a href="${escapeAttr(attr.edition)}" target="_blank" rel="noopener">` +
+      `${escapeHTML(D.editionLink)}</a>`]);
   }
-  if (corr.state === 'none') out.push(escapeHTML(D.noCorrection));
-  else if (corr.state === 'counted') out.push(escapeHTML(D.correctionCount(corr.count)));
-  else if (corr.state === 'uncounted') out.push(escapeHTML(D.correctionUncounted));
-  else if (corr.state === 'unlocated') out.push(escapeHTML(D.correctionUnlocated));
-  if (corr.who || corr.when) out.push(escapeHTML(D.correctionBy(corr.who, corr.when)));
-  if (corr.state !== 'none' && corr.state !== 'pending') out.push(escapeHTML(D.notApproval));
+  const state = { none: D.noCorrection, counted: D.correctionCount(corr.count),
+    uncounted: D.correctionUncounted, unlocated: D.correctionUnlocated }[corr.state];
+  if (state) fields.push([scope === 'page' ? F.page : F.document, escapeHTML(state)]);
+  if (corr.who || corr.when) fields.push([F.correctedBy, escapeHTML([corr.who, corr.when].filter(Boolean).join(', '))]);
   const coverage = doc.provenance;
   if (coverage && coverage.pagesTranscribed < coverage.pagesInDocument) {
-    out.push(escapeHTML(D.coverage(coverage.pagesTranscribed, coverage.pagesInDocument)));
+    fields.push([F.coverage, escapeHTML(D.coverage(coverage.pagesTranscribed, coverage.pagesInDocument))]);
   }
-  return out;
+  return fields;
+}
+
+/** The notes under the fields: what the layer is, and what a correction is not. */
+function detailNotes(attr, corr) {
+  const notes = [attr.description];
+  if (corr.state !== 'none' && corr.state !== 'pending') notes.push(D.notApproval);
+  return notes;
 }
 
 /**
@@ -206,14 +210,17 @@ export function createTextStatus(els) {
     els.pill.dataset.pageState = corr.state;
     els.pill.dataset.state = ctx.dirty ? 'dirty'
       : ['none', 'pending'].includes(corr.state) ? attr.tone : 'corrected';
-    els.pill.title = `${text}. Show the text status details`;
+    els.pill.title = 'Show text status details';
     els.credit.hidden = !attr.edition;
     if (attr.edition) {
       els.credit.href = attr.edition;
       creditLabel.textContent = D.editionLink;
       els.credit.title = D.editionLinkName;
     }
-    body.innerHTML = detailLines(ctx, attr, corr).map(line => `<p>${line}</p>`).join('');
+    body.innerHTML = (ctx.dirty ? `<p class="text-status__draft">${escapeHTML(D.draft)}</p>` : '') +
+      '<dl class="text-status__fields">' +
+      detailFields(ctx, attr, corr).map(([key, value]) => `<div><dt>${escapeHTML(key)}</dt><dd>${value}</dd></div>`).join('') +
+      '</dl>' + detailNotes(attr, corr).map(note => `<p class="text-status__note">${escapeHTML(note)}</p>`).join('');
     popover.reposition();
   }
 

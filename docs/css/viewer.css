@@ -127,8 +127,13 @@
 }
 .text-status__details.annotation-popover { inline-size: min(24rem, calc(100vw - 1rem)); font-size: var(--text-sm); }
 .text-status__details h2 { margin: 0 0 var(--space-sm); font-size: 1rem; }
-.text-status__body p { margin: 0 0 var(--space-sm); }
-.text-status__body p:last-child { margin-block-end: 0; }
+.text-status__fields { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2xs) var(--space-md); margin: 0 0 var(--space-sm); }
+.text-status__fields > div { display: contents; }
+.text-status__fields dt { font-weight: 400; color: var(--text-muted-custom); }
+.text-status__fields dd { margin: 0; overflow-wrap: anywhere; }
+.text-status__draft { margin: 0 0 var(--space-sm); font-weight: 600; color: var(--conf-medium); }
+.text-status__note { margin: 0 0 var(--space-xs); color: var(--text-secondary); }
+.text-status__note:last-child { margin-block-end: 0; }
 .transcription-tools { flex: 0 0 auto; background: var(--surface); }
 .readonly-hint { margin: 0; padding: var(--space-sm) var(--space-md); font-size: var(--text-sm); color: var(--text-secondary); }
 .readonly-hint[hidden] { display: none; }
