@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -572,7 +572,7 @@
           <lb facs="#zone-11329479-3-r3l10"/>It(em) ettlich tach ziegl.
           <lb facs="#zone-11329479-3-r3l11"/>It(em) VIIII lerchy podn lad(e)n.
           <lb facs="#zone-11329479-3-r3l12"/>It(em) V klain ladn.
-          <lb facs="#zone-11329479-3-r3l13"/>It(em) LX st. pĕm gezymert unge[..]lichter.
+          <lb facs="#zone-11329479-3-r3l13"/>It(em) LX st. pĕm gezymert unge<gap reason="illegible"/>lichter.
         </ab>
         <pb n="4" facs="#surface-11329479-4"/>
         <ab xml:id="ab-11329479-4-r1">
@@ -604,7 +604,7 @@
           <lb facs="#zone-11329479-5-r3l15"/>It(em) ein hirschkurner.
         </ab>
         <ab xml:id="ab-11329479-5-r4">
-          <lb facs="#zone-11329479-5-r4l1"/>In stub(e)n p[.]d t(en).
+          <lb facs="#zone-11329479-5-r4l1"/>In stub(e)n p<gap reason="illegible"/>d t(en).
         </ab>
         <ab xml:id="ab-11329479-5-r5">
           <lb facs="#zone-11329479-5-r5l1"/>It(em) II tisch.
@@ -740,7 +740,7 @@
           <lb facs="#zone-11329479-8-r3l17"/>It(em) I messing getzl.
           <lb facs="#zone-11329479-8-r3l18"/>It(em) ein pratspis zu hirschlab(e)rn.
           <lb facs="#zone-11329479-8-r3l19"/>It(em) II gross pratspis.
-          <lb facs="#zone-11329479-8-r3l20"/>It(em) ein eysny gabl da ma(n) fleisch auf[---].
+          <lb facs="#zone-11329479-8-r3l20"/>It(em) ein eysny gabl da ma(n) fleisch auf<gap reason="illegible"/>.
           <lb facs="#zone-11329479-8-r3l21"/>It(em) ein lutscher(e)n.
           <lb facs="#zone-11329479-8-r3l22"/>It(em) ein feŭrkrel.
           <lb facs="#zone-11329479-8-r3l23"/>It(em) IIII alt hafndegkg(e)n.
@@ -753,7 +753,7 @@
           <lb facs="#zone-11329479-8-r3l30"/>It(em) ein reibscherr(e)n.
           <lb facs="#zone-11329479-8-r3l31"/>It(em) XXX hulcy tell(er).
           <lb facs="#zone-11329479-8-r3l32"/>It(em) I pannkhschab.
-          <lb facs="#zone-11329479-8-r3l33"/>It(em) I [..]cz kupfery sy̆b.
+          <lb facs="#zone-11329479-8-r3l33"/>It(em) I <gap reason="illegible"/>cz kupfery sy̆b.
         </ab>
         <pb n="9" facs="#surface-11329479-9"/>
         <ab xml:id="ab-11329479-9-r1">

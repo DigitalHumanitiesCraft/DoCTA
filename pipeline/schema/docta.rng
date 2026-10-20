@@ -363,9 +363,24 @@
             <empty/>
           </element>
           <ref name="entity"/>
+          <ref name="reading"/>
         </choice>
       </zeroOrMore>
     </interleave>
+  </define>
+
+  <!-- The two marks of an unclear reading in a human transcription: an
+       illegible passage, which carries no text, and an uncertain reading,
+       which carries the word as read. Neither has @cert, because the notation
+       states no degree of certainty. -->
+  <define name="reading">
+    <choice>
+      <element name="gap">
+        <attribute name="reason"><value>illegible</value></attribute>
+        <empty/>
+      </element>
+      <element name="unclear"><text/></element>
+    </choice>
   </define>
 
   <!-- A folio mark of the transcription, never a read line; the two units carry
@@ -393,7 +408,7 @@
   <!-- An entity carries its responsibility and a pointer into the register and
        nothing else. An object of these inventories is a common noun, so it is a
        <term> and not a name. No @key, because the normalised form lives in the
-       register entry; no @cert, no @certainty, no @precision, no nesting. -->
+       register entry; no @cert, no @certainty, no @precision, no nesting of entities. -->
   <define name="entity">
     <element>
       <choice>
@@ -403,7 +418,10 @@
       </choice>
       <attribute name="resp"><value>#resp-entity-llm</value></attribute>
       <attribute name="ref"><ref name="entity.ref"/></attribute>
-      <text/>
+      <interleave>
+        <text/>
+        <zeroOrMore><ref name="reading"/></zeroOrMore>
+      </interleave>
     </element>
   </define>
 

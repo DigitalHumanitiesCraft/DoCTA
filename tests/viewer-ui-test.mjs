@@ -45,11 +45,15 @@ function documentPayload() {
       for (const region of page.regions || []) {
         for (const line of region.lines || []) {
           const direct = Object.hasOwn(changes, line.id) ? changes[line.id] : undefined;
-          const corrected = direct ?? Object.entries(changes)
+          const change = direct ?? Object.entries(changes)
             .find(([id]) => id.endsWith(`-${line.id}`))?.[1];
-          if (corrected === undefined) continue;
-          if (corrected !== line.text) page.changedLines += 1;
-          line.text = corrected;
+          if (change === undefined) continue;
+          if (change.text !== line.text || change.excluded) {
+            page.changedLines += 1;
+            line.corrected = true;
+          }
+          if (change.excluded) line.excluded = true;
+          line.text = change.text;
         }
       }
     }
@@ -97,7 +101,7 @@ const server = http.createServer((req, res) => {
       const reviewState = {};
       for (const [pageNr, page] of Object.entries(payload.pages || {})) {
         lines[pageNr] = Object.fromEntries((page.lines || []).map(line =>
-          [line.id, line.corrected]));
+          [line.id, { text: line.corrected, excluded: line.excluded === true }]));
         reviewState[pageNr] = {
           status: page.status == null && page.lines?.length
             ? 'gesichtet' : page.status,
@@ -132,6 +136,9 @@ const check = (condition, message) => {
   checks.push(message);
   if (!condition) failures.push(message);
 };
+const reviewDraft = page => page.evaluate(id =>
+  Object.values(JSON.parse(localStorage.getItem(`docta-review-${id}`) || '{"pages":{}}').pages)
+    .flatMap(item => item.lines), DOC_ID);
 const visible = async (page, selector) => page.locator(selector).isVisible().catch(() => false);
 
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -429,6 +436,64 @@ try {
   check((await page.locator('.transcription__line[data-line-id][data-original]').first().textContent()).includes(corrected),
     'saved correction survives reload from the in-memory API');
 
+  // Unclear readings and deleted lines, decided 2026-10-20.
+  const readingStrings = await page.evaluate(async () => (await import('./js/strings.js')).READINGS);
+  await page.click('#btn-review');
+  const second = page.locator('.transcription__line[data-line-id][data-original]').nth(1);
+  const third = page.locator('.transcription__line[data-line-id][data-original]').nth(2);
+  const thirdId = await third.getAttribute('data-line-id');
+  const thirdText = await third.getAttribute('data-original');
+  await second.click();
+  const editor = second.locator('.transcription__line-edit');
+  await editor.fill('Item [?] Hannsen');
+  // Select "Hannsen" and mark it as an uncertain reading.
+  await editor.evaluate(input => { input.focus(); input.setSelectionRange(9, 16); });
+  await second.getByRole('button', { name: readingStrings.markUnclear }).click();
+  check(await editor.inputValue() === 'Item [?] [Hannsen?]' &&
+    await editor.evaluate(input => document.activeElement === input),
+  'Mark as unclear wraps the selection and keeps the caret in the line');
+  await editor.press('Enter');
+  const marks = second.locator('.reading-mark');
+  check(await marks.count() === 2 &&
+    await marks.nth(0).getAttribute('data-reading') === 'gap' &&
+    await marks.nth(0).getAttribute('title') === readingStrings.gap &&
+    await marks.nth(1).getAttribute('data-reading') === 'unclear' &&
+    await marks.nth(1).getAttribute('title') === readingStrings.unclear &&
+    (await second.locator('.transcription__line-text').textContent()) === 'Item [?] [Hannsen?]',
+  'a human reading shows its illegible and uncertain marks as written, each with its tooltip');
+  await third.click();
+  await third.getByRole('button', { name: readingStrings.deleteLine }).click();
+  check(await third.evaluate(el => el.classList.contains('transcription__line--excluded')) &&
+    await third.getByRole('button', { name: readingStrings.restoreLine }).isVisible(),
+  'Delete line strikes the line through and offers Restore while editing');
+  const saveDeleted = page.waitForResponse(response =>
+    response.url() === `${BASE}api/review` && response.request().method() === 'POST');
+  await page.click('#btn-review-save');
+  check((await saveDeleted).ok() &&
+    Object.values(lastPayload.pages).some(item => item.lines.some(line =>
+      line.id === thirdId && line.excluded === true && line.corrected === thirdText)),
+  'the save sends the deleted line with its unchanged reading and excluded set');
+  await page.reload({ waitUntil: 'networkidle' });
+  const reloaded = page.locator(`.transcription__line[data-line-id="${thirdId}"]`);
+  await reloaded.waitFor();
+  check(await reloaded.getAttribute('data-excluded') === 'true' &&
+    await reloaded.evaluate(el => el.classList.contains('transcription__line--excluded')) &&
+    !await reloaded.locator('.transcription__line-restore').isVisible(),
+  'a saved deletion survives reload, and Restore stays hidden outside the edit mode');
+  await page.click('#btn-more');
+  await page.click('#btn-view-reading');
+  check(!(await page.locator('#transcription-container').innerText()).includes(thirdText),
+    'the reading text leaves a deleted line out');
+  await page.click('#btn-view-synopsis');
+  await page.click('#btn-review');
+  await page.locator(`.transcription__line[data-line-id="${thirdId}"] .transcription__line-restore`).click();
+  check(!await page.locator(`.transcription__line[data-line-id="${thirdId}"]`)
+    .evaluate(el => el.classList.contains('transcription__line--excluded')) &&
+    (await reviewDraft(page)).some(line => line.id === thirdId && line.excluded === false),
+  'Restore returns the line to the text as a draft with excluded unset');
+  await page.click('#btn-review-clear');
+  await page.click('#btn-review');
+
   const staticContext = await browser.newContext({ viewport: { width: 1280, height: 800 }, acceptDownloads: true,
     extraHTTPHeaders: { 'x-docta-static': '1' } });
   await useCachedFacsimiles(staticContext);
@@ -451,6 +516,13 @@ try {
   await staticPage.goto(`${BASE}viewer.html?doc=${vlmDoc.docId}&page=1`, { waitUntil: 'networkidle' });
   const chip = staticPage.locator('#doc-provenance');
   await chip.waitFor();
+  const machineMarks = await staticPage.locator('#transcription-container .reading-mark').evaluateAll(items =>
+    items.map(item => ({ reading: item.dataset.reading, title: item.title, text: item.textContent })));
+  const machineTitle = await staticPage.evaluate(async () => (await import('./js/strings.js')).READINGS.machine);
+  check(machineMarks.length > 0 &&
+    machineMarks.every(mark => mark.reading === 'machine' && mark.title === machineTitle) &&
+    !machineMarks.some(mark => mark.text === '[er]'),
+  'the model brackets of a machine transcription are one neutral category, and a supplied [er] is text');
   check(await chip.getAttribute('data-provenance') === 'machine-unrevised' &&
     await chip.getAttribute('data-state') === 'machine' &&
     (await chip.innerText()).trim() === strings.PROVENANCE.vlm &&

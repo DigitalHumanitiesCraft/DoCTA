@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -263,7 +263,7 @@
           <lb facs="#zone-11329062-3-r2l26"/>ochsn geb(e)n am herbst.
           <lb facs="#zone-11329062-3-r2l27"/>It(em) meins h(er)rn visch(e)r hat man(n) geben
           <lb facs="#zone-11329062-3-r2l28"/>ain(n) seitten schweinen fleisch.
-          <lb facs="#zone-11329062-3-r2l29"/>It(em) dem Frechen I vass weíns von XII [---].
+          <lb facs="#zone-11329062-3-r2l29"/>It(em) dem Frechen I vass weíns von XII <gap reason="illegible"/>.
         </ab>
         <pb n="4" facs="#surface-11329062-4"/>
         <ab xml:id="ab-11329062-4-r1">

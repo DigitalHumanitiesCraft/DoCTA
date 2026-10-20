@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -454,7 +454,7 @@
           <lb facs="#zone-11330760-3-r5l1"/>Item IIII par hentschůch.
           <lb facs="#zone-11330760-3-r5l2"/>Manglt II par
           <lb facs="#zone-11330760-3-r5l3"/>hat der Ubeli
-          <lb facs="#zone-11330760-3-r5l4"/>und [.]fili.
+          <lb facs="#zone-11330760-3-r5l4"/>und <gap reason="illegible"/>fili.
         </ab>
         <ab xml:id="ab-11330760-3-r6">
           <lb facs="#zone-11330760-3-r6l1"/>Item III winden.
@@ -481,7 +481,7 @@
           <lb facs="#zone-11330760-4-r3l11"/>II maß kantten,
           <lb facs="#zone-11330760-4-r3l12"/>I maß trincken kannten ist daz lid
           <lb facs="#zone-11330760-4-r3l13"/>darab prochen.
-          <lb facs="#zone-11330760-4-r3l14"/>Item in der hell ist pei II1/2 z[..]st[...]
+          <lb facs="#zone-11330760-4-r3l14"/>Item in der hell ist pei II1/2 z<gap reason="illegible"/>st<gap reason="illegible"/>
           <lb facs="#zone-11330760-4-r3l15"/>oxen an tigen flaisch,
           <lb facs="#zone-11330760-4-r3l16"/>I zenten ũnslid allez ungefarlich.
           <lb facs="#zone-11330760-4-r3l17"/>Item sweine flaysch von IIII swein

@@ -108,6 +108,14 @@ TEXT_LANG = "gmh"
 # endpaper marks "[us_vorne_r]" etc.; "[- - -]" stays ordinary text.
 FOLIO_LINE = re.compile(r"^\[(?:fol\.\s*)?([0-9]+[rv]?)\]$")
 COVER_LINE = re.compile(r"^\[(us_[a-z]+_[rv])\]$")
+# Unclear readings in a human transcription (specification.md, interface
+# language and unclear readings). [?] marks an illegible passage; the dot and
+# dash forms of the Transkribus layer mean the same and stay as written in the
+# data. [word?] marks an uncertain reading. A bracket without these shapes, a
+# folio mark such as [fol.1r] or a supplied [er], is text. The patterns run on
+# escaped text, which keeps brackets and ? intact.
+GAP_MARK = re.compile(r"\[(?:\?|\.{1,5}|-(?: -)*|-{2,})\]")
+UNCLEAR_MARK = re.compile(r"\[([^\[\]?]*[^\[\]?\s.-][^\[\]?]*)\?\]")
 
 FULL_DATE = re.compile(r"^(\d{4})\.(\d{2})\.(\d{2})$")
 YEAR = re.compile(r"^(\d{4})$")
@@ -187,6 +195,12 @@ def _esc(text: str) -> str:
     """Escape for element content and strip characters XML cannot carry."""
     clean = VALID_XML.sub("", text)
     return clean.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _readings(escaped: str) -> str:
+    """Encode the unclear-reading notation in an already escaped segment."""
+    escaped = GAP_MARK.sub('<gap reason="illegible"/>', escaped)
+    return UNCLEAR_MARK.sub(r"<unclear>\1</unclear>", escaped)
 
 
 def _att(text: str) -> str:
@@ -746,9 +760,19 @@ def _zone_id(doc_id: int, page_nr: int, line_id: str) -> str:
 
 
 def _page_body(
-    page: dict, doc_id: int, anchors: dict, review_texts: dict | None = None
+    page: dict,
+    doc_id: int,
+    anchors: dict,
+    review_texts: dict | None = None,
+    machine: bool = False,
 ) -> list[str]:
-    """One pb per page and one ab per text region of the export."""
+    """One pb per page and one ab per text region of the export.
+
+    A line a reviewer excluded is no text of the edition and is left out. On a
+    machine transcription the brackets are the model's own uncertainty, which
+    is not edited as a finding; they become notation only in a line a
+    reviewer changed, since saving it adopts its marks.
+    """
     page_nr = page["pageNr"]
     pb = f'<pb n="{page_nr}"'
     has_surface = bool(page.get("iiif"))
@@ -758,6 +782,8 @@ def _page_body(
     for region in page.get("regions") or []:
         out.append(f'      <ab xml:id="{_att(_ab_id(doc_id, page_nr, region))}">')
         for line in region.get("lines") or []:
+            if line.get("excluded"):
+                continue
             text = _line_text(line, review_texts)
             if m := FOLIO_LINE.match(text):
                 out.append(f'        <milestone unit="folio" n="{_att(m.group(1))}"/>')
@@ -772,7 +798,11 @@ def _page_body(
                 if has_surface and (line.get("coords") or "").strip():
                     zone = _zone_id(doc_id, page_nr, line["id"])
                     lb = f'<lb facs="#{_att(zone)}"/>'
-                content = _line_content(text, anchors.get(line["id"]) or [])
+                content = _line_content(
+                    text,
+                    anchors.get(line["id"]) or [],
+                    readings=not machine or bool(line.get("corrected")),
+                )
                 out.append(f"        {lb}{content}")
         out.append("      </ab>")
     return out
@@ -789,7 +819,7 @@ def _line_text(line: dict, review_texts: dict | None = None) -> str:
     return (line.get("text") or "").strip()
 
 
-def _line_content(text: str, anchors: list[dict]) -> str:
+def _line_content(text: str, anchors: list[dict], readings: bool = False) -> str:
     """Line text with the entity anchors of that line wrapped inline.
 
     Escaping is safe by construction: every substring of the raw line passes
@@ -797,23 +827,25 @@ def _line_content(text: str, anchors: list[dict]) -> str:
     _att, and the element names come from ENTITY_ELEMENTS, so no raw character
     can escape into markup. Anchors are applied left to right and an anchor
     overlapping an already consumed span is dropped, which keeps the result
-    deterministic.
+    deterministic. With readings, every escaped segment also passes through
+    _readings, so an unclear mark split by an anchor boundary stays text.
     """
+    esc = (lambda part: _readings(_esc(part))) if readings else _esc
     if not anchors:
-        return _esc(text)
+        return esc(text)
     out, pos = [], 0
     for anchor in sorted(anchors, key=lambda a: a["start"]):
         if anchor["start"] < pos:
             continue
         element = anchor["element"]
         out += [
-            _esc(text[pos : anchor["start"]]),
+            esc(text[pos : anchor["start"]]),
             f'<{element} resp="#{RESP_ENTITY}" ref="{_att(anchor["ref"])}">',
-            _esc(text[anchor["start"] : anchor["end"]]),
+            esc(text[anchor["start"] : anchor["end"]]),
             f"</{element}>",
         ]
         pos = anchor["end"]
-    out.append(_esc(text[pos:]))
+    out.append(esc(text[pos:]))
     return "".join(out)
 
 
@@ -953,7 +985,12 @@ def document_xml(
     for page in pages:
         page_anchors = anchors.get(page["pageNr"]) or {}
         texts = review["texts"].get(page["pageNr"])
-        out += ["  " + line for line in _page_body(page, doc_id, page_anchors, texts)]
+        out += [
+            "  " + line
+            for line in _page_body(
+                page, doc_id, page_anchors, texts, doc.get("layer") == VLM_LAYER
+            )
+        ]
     out += ["      </div>", "    </body>", "  </text>", "</TEI>", ""]
     return "\n".join(out)
 

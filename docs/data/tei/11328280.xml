@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -332,9 +332,9 @@
         <ab xml:id="ab-11328280-1-r2">
           <lb facs="#zone-11328280-1-r2l1"/>Am montag nach Valentini anno etc.
           <lb facs="#zone-11328280-1-r2l2"/>LXXXIIIIt en ist Jacoby von Spar
-          <lb facs="#zone-11328280-1-r2l3"/>das Sloß Taŭr yngeãnt[.] und die
+          <lb facs="#zone-11328280-1-r2l3"/>das Sloß Taŭr yngeãnt<gap reason="illegible"/> und die
           <lb facs="#zone-11328280-1-r2l4"/>hienachgeschrieben hab so Melchior von Hey¬
-          <lb facs="#zone-11328280-1-r2l5"/>menhofen dagelassen s h [...] [- - -] ii.
+          <lb facs="#zone-11328280-1-r2l5"/>menhofen dagelassen s h <gap reason="illegible"/> <gap reason="illegible"/> ii.
         </ab>
         <ab xml:id="ab-11328280-1-r3">
           <lb facs="#zone-11328280-1-r3l1"/>In meins gnedigen herren gmachen in
@@ -486,7 +486,7 @@
         </ab>
         <ab xml:id="ab-11328280-6-r5">
           <lb facs="#zone-11328280-6-r5l1"/>Zwen tisch.
-          <lb facs="#zone-11328280-6-r5l2"/>Vier [.]
+          <lb facs="#zone-11328280-6-r5l2"/>Vier <gap reason="illegible"/>
           <lb facs="#zone-11328280-6-r5l3"/>Auf dem estrich davor ain speiskasten.
           <lb facs="#zone-11328280-6-r5l4"/>In d(em) casten darin II spanpet.
         </ab>
@@ -499,7 +499,7 @@
           <lb facs="#zone-11328280-6-r7l3"/>sind gar voll, die andern halb
           <lb facs="#zone-11328280-6-r7l4"/>oder uber das halb teil.
           <lb facs="#zone-11328280-6-r7l5"/>Ain halbs vassel saliter.
-          <lb facs="#zone-11328280-6-r7l6"/>Ain vierteil von a[.]ner lagel swebel.
+          <lb facs="#zone-11328280-6-r7l6"/>Ain vierteil von a<gap reason="illegible"/>ner lagel swebel.
           <lb facs="#zone-11328280-6-r7l7"/>Ain beslagen aimer zu ainem prunen.
         </ab>
         <pb n="7" facs="#surface-11328280-7"/>
@@ -542,7 +542,7 @@
           <lb facs="#zone-11328280-7-r11l1"/>In der kuchl.
         </ab>
         <ab xml:id="ab-11328280-7-r12">
-          <lb facs="#zone-11328280-7-r12l1"/>Ain sp[..]pl[.]s[.].
+          <lb facs="#zone-11328280-7-r12l1"/>Ain sp<gap reason="illegible"/>pl<gap reason="illegible"/>s<gap reason="illegible"/>.
           <lb facs="#zone-11328280-7-r12l2"/>Ain hĕl.
           <lb facs="#zone-11328280-7-r12l3"/>Zwei prantraiten. Ain speiskasten.
         </ab>
@@ -656,7 +656,7 @@
           <lb facs="#zone-11328280-13-r2l24"/>XX kŏtein hăfen klain und groß II lb. VI kr.
           <lb facs="#zone-11328280-13-r2l25"/>Drei kessel klain und groß und I ribeysen
           <lb facs="#zone-11328280-13-r2l26"/>pro VII lb.
-          <lb facs="#zone-11328280-13-r2l27"/>Summa [..] XXI mr̃. IIII lb X kr.
+          <lb facs="#zone-11328280-13-r2l27"/>Summa <gap reason="illegible"/> XXI mr̃. IIII lb X kr.
         </ab>
         <pb n="14" facs="#surface-11328280-14"/>
         <ab xml:id="ab-11328280-14-r1">
@@ -665,7 +665,7 @@
         <ab xml:id="ab-11328280-14-r2">
           <lb facs="#zone-11328280-14-r2l1"/>Ain rost, alte hackmeser, I kuchelspis,
           <lb facs="#zone-11328280-14-r2l2"/>ain kuechlspis, ain pawmschab,
-          <lb facs="#zone-11328280-14-r2l3"/>ist g[.]sch ain hafendeck per
+          <lb facs="#zone-11328280-14-r2l3"/>ist g<gap reason="illegible"/>sch ain hafendeck per
           <lb facs="#zone-11328280-14-r2l4"/>II lb.
           <lb facs="#zone-11328280-14-r2l5"/>Etlich milichnăp, schuslen, taler,
           <lb facs="#zone-11328280-14-r2l6"/>zwai slegkubel, zwen smalzkibel

@@ -38,7 +38,7 @@ The feedback round supplies observed use and substantive requirements. New model
 
 The operator confirmed independent use and testing of the working edition on 2026-10-16. The intended processing scope covers all source material already present in the project. Small passages support technical trials and the optional joint historical pilot, without limiting that wider scope. Actual work depends on each source's available images, text and reuse conditions. The source and page registers document actual processing coverage.
 
-Original spelling is retained in the working transcription, including forms such as `hawsrat`. Abbreviation expansion and an accepted reference sample remain unresolved. Unclear readings receive one uniform notation, decided on 2026-10-20, whose syntax is still to be specified. Partner collaboration remains non-binding, with no confirmed proposal submission. Scholarly acceptance, publication permission and any commissioned scope require their respective decisions.
+Original spelling is retained in the working transcription, including forms such as `hawsrat`. Abbreviation expansion and an accepted reference sample remain unresolved. Unclear readings receive one uniform notation, decided and specified on 2026-10-20. Partner collaboration remains non-binding, with no confirmed proposal submission. Scholarly acceptance, publication permission and any commissioned scope require their respective decisions.
 
 ### Feedback round of 2026-10-20
 
@@ -46,12 +46,12 @@ The historical project lead tested the working edition. Her requests and the fin
 
 | Request | Finding | Next step |
 |---|---|---|
-| Remove lines that do not belong to the source text | Most likely modern archival notes, foliation and editorial folio markers. The VLM already classifies such lines, and for exported documents the Transkribus region types could probably serve as well, but neither reaches the register ([data.md](data.md#pre-fetch-strategy)) | A line exclusion flag that keeps the line and its identity, open |
-| Mark unclear readings | The operator decided one uniform notation ([specification.md](specification.md#interface-language-and-unclear-readings-decided-2026-10-20)) | Notation, tooltip, correction-mode editing and TEI conversion, specified in a later package |
-| Annotate across line breaks | Every annotation and extracted entity is bound to one line, so a word divided at the line end, such as `Jo` / `seph`, is split or duplicated | Mentions made of several segments, each anchored to its own line, open |
-| See the progress of the work | No overview of corrected and annotated pages exists in the interface | A work-progress display, open |
+| Remove lines that do not belong to the source text | Most likely modern archival notes, foliation and editorial folio markers. The VLM already classifies such lines, and for exported documents the Transkribus region types could probably serve as well, but neither reaches the register ([data.md](data.md#pre-fetch-strategy)) | Built on 2026-10-20: Delete line keeps the line, its identity and reading, leaves reading text and TEI, and can be restored |
+| Mark unclear readings | The operator decided one uniform notation ([specification.md](specification.md#interface-language-and-unclear-readings-decided-2026-10-20)) | Built on 2026-10-20: `[?]` and `[word?]` with tooltip, Mark as unclear in correction mode, `gap` and `unclear` in TEI; the model's brackets stay one neutral category |
+| Annotate across line breaks | Every annotation and extracted entity is bound to one line, so a word divided at the line end, such as `Jo` / `seph`, is split or duplicated | Decided on 2026-10-20: mentions made of several segments, each anchored to its own line |
+| See the progress of the work | No overview of corrected and annotated pages exists in the interface | Decided on 2026-10-20: a dot per page in the pager and the count of corrected pages in source header and overview |
 | Access more pages of the household chamberlain inventories | A 024.1 is a single sheet and fully transcribed. The register holds no image reference for the pages of A 024.2, so further pages need image keys from authorized Transkribus metadata | Obtain the metadata through the account holder |
-| Link persons to SiCProD | External identity enrichment is future work (specification.md) | SiCProD matching, open |
+| Link persons to SiCProD | External identity enrichment is future work (specification.md) | To be asked of the project lead before any work |
 | Fully English working edition | Decided by the operator on 2026-10-20 | Site and guide translated, German kept for source text and stored data vocabulary |
 
 ## Joint walkthrough

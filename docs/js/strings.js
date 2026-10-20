@@ -58,3 +58,20 @@ export const STATUS_DETAILS = {
 };
 
 export const DRAFT_BADGE = 'Unsaved changes';
+
+/**
+ * Tooltips of the unclear-reading marks and labels of the line actions. The
+ * model's brackets get one neutral statement and no further characterisation.
+ */
+export const READINGS = {
+  gap: 'Illegible',
+  unclear: 'Uncertain reading',
+  machine: 'Uncertain in the machine transcription',
+  markUnclear: 'Mark as unclear',
+  markUnclearTitle: 'Wrap the selection as an uncertain reading, or insert an illegible mark',
+  deleteLine: 'Delete line',
+  deleteLineTitle: 'Leave this line out of the edition text; it can be restored',
+  restoreLine: 'Restore',
+  restoreLineTitle: 'Return this line to the edition text',
+  excluded: 'Deleted line, not part of the edition text',
+};

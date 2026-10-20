@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -1061,7 +1061,7 @@
           <lb facs="#zone-11328727-11-r3l14"/>I(tem) XXX pes(e)n gemachte.
           <lb facs="#zone-11328727-11-r3l15"/>I(tem) aȋn reibstaȋn und aȋn reibpankh
           <lb facs="#zone-11328727-11-r3l16"/>zu salssen.
-          <lb facs="#zone-11328727-11-r3l17"/>I(tem) IIII par s[.]ẽraiff.
+          <lb facs="#zone-11328727-11-r3l17"/>I(tem) IIII par s<gap reason="illegible"/>ẽraiff.
           <lb facs="#zone-11328727-11-r3l18"/>I(tem I knëttrog und I wũrchpankh
           <lb facs="#zone-11328727-11-r3l19"/>zu brot.
           <lb facs="#zone-11328727-11-r3l20"/>I(tem) II brotschaf.
@@ -1175,7 +1175,7 @@
           <lb facs="#zone-11328727-15-r3l18"/>I(tem) und I fleȋschpeihl.
           <lb facs="#zone-11328727-15-r3l19"/>I(tem) II messer ȋn ain(er) schaid(e)n.
           <lb facs="#zone-11328727-15-r3l20"/>Im eisen käm(er)lin.
-          <lb facs="#zone-11328727-15-r3l21"/>I(tem) II new̆e segpl[....] plett(er)
+          <lb facs="#zone-11328727-15-r3l21"/>I(tem) II new̆e segpl<gap reason="illegible"/> plett(er)
           <lb facs="#zone-11328727-15-r3l22"/>und sagzeŭg darzu.
           <lb facs="#zone-11328727-15-r3l23"/>I(tem) VIII hebeis(e)n.
           <lb facs="#zone-11328727-15-r3l24"/>I(tem) XXVII eisen stang(en).
@@ -1333,7 +1333,7 @@
           <lb facs="#zone-11328727-22-r3l3"/>I(tem) III sȋlzăls(e)n.
           <lb facs="#zone-11328727-22-r3l4"/>I(tem) I new̆s hew̃sail.
           <lb facs="#zone-11328727-22-r3l5"/>I(tem) VII1/2 par silsailer.
-          <lb facs="#zone-11328727-22-r3l6"/>I(tem) I af[..]sil(e)n.
+          <lb facs="#zone-11328727-22-r3l6"/>I(tem) I af<gap reason="illegible"/>sil(e)n.
           <lb facs="#zone-11328727-22-r3l7"/>I(tem) ain zŭg mit II saȋl(e)n
           <lb facs="#zone-11328727-22-r3l8"/>und mit and(er) sein(er) zugehŏrd.
         </ab>
@@ -1530,7 +1530,7 @@
           <lb facs="#zone-11328727-30-r4l12"/>I(tem) I pét.
           <lb facs="#zone-11328727-30-r4l13"/>I(tem) I par leȋlach.
           <lb facs="#zone-11328727-30-r4l14"/>I(tem) I polster.
-          <lb facs="#zone-11328727-30-r4l15"/>Item) [---] k[.]ß.
+          <lb facs="#zone-11328727-30-r4l15"/>Item) <gap reason="illegible"/> k<gap reason="illegible"/>ß.
           <lb facs="#zone-11328727-30-r4l16"/>I(tem) I strosakh.
           <lb facs="#zone-11328727-30-r4l17"/>I(tem) I rauchdek(e)n.
           <lb facs="#zone-11328727-30-r4l18"/>I(tem) und I pẽtstatt.

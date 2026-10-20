@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -267,7 +267,7 @@
         </ab>
         <ab xml:id="ab-11329060-1-r4">
           <lb facs="#zone-11329060-1-r4l1"/>Anderhalb vässel mit pulver.
-          <lb facs="#zone-11329060-1-r4l2"/>F[..]d
+          <lb facs="#zone-11329060-1-r4l2"/>F<gap reason="illegible"/>d
           <lb facs="#zone-11329060-1-r4l3"/>ist darvon
           <lb facs="#zone-11329060-1-r4l4"/>geschosß.
         </ab>

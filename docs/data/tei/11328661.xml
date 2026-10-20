@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -266,7 +266,7 @@
           <lb facs="#zone-11328661-2-r2l18"/>X par leylachen schlecht
           <lb facs="#zone-11328661-2-r2l19"/>herrwein.
           <lb facs="#zone-11328661-2-r2l20"/>XX zynen schusel gross
-          <lb facs="#zone-11328661-2-r2l21"/>und klain [.]III plan.
+          <lb facs="#zone-11328661-2-r2l21"/>und klain <gap reason="illegible"/>III plan.
           <lb facs="#zone-11328661-2-r2l22"/>XVIII zynen täler in
           <lb facs="#zone-11328661-2-r2l23"/>ainer hultzen puchsen.
           <lb facs="#zone-11328661-2-r2l24"/>Zwo zwymãssig kandel.

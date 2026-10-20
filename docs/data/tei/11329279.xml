@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -129,8 +129,8 @@
         <ab xml:id="ab-11329279-2-r2">
           <lb facs="#zone-11329279-2-r2l1"/>It(em) in dem undtern staingaden
           <lb facs="#zone-11329279-2-r2l2"/>1/2 läg(e)l pfeil.
-          <lb facs="#zone-11329279-2-r2l3"/>It(em) ain fueter kăstel im undt(er)n staing[---].
-          <lb facs="#zone-11329279-2-r2l4"/>It(em) in meins h(er)ren stuben vier scht[---]
+          <lb facs="#zone-11329279-2-r2l3"/>It(em) ain fueter kăstel im undt(er)n staing<gap reason="illegible"/>.
+          <lb facs="#zone-11329279-2-r2l4"/>It(em) in meins h(er)ren stuben vier scht<gap reason="illegible"/>
           <lb facs="#zone-11329279-2-r2l5"/>tisch, der viert in d(er) ander(e)n stubn.
           <lb facs="#zone-11329279-2-r2l6"/>It(e)m in dem ergkar gen d(er) Schãrnitz
           <lb facs="#zone-11329279-2-r2l7"/>ain tȃrispũchß(en).

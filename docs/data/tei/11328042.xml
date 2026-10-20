@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -454,7 +454,7 @@
           <lb facs="#zone-11328042-4-r4l1"/>In d(er) chuch(e)n.
         </ab>
         <ab xml:id="ab-11328042-4-r5">
-          <lb facs="#zone-11328042-4-r5l1"/>It(em) VIIII pfann(en) gros und clein  [- - -] gr
+          <lb facs="#zone-11328042-4-r5l1"/>It(em) VIIII pfann(en) gros und clein  <gap reason="illegible"/> gr
           <lb facs="#zone-11328042-4-r5l2"/>pos und gut.
           <lb facs="#zone-11328042-4-r5l3"/>V kes(e)l gros u(nd) cl(ein).
           <lb facs="#zone-11328042-4-r5l4"/>V erin haf(e)n.
@@ -641,12 +641,12 @@
           <lb facs="#zone-11328042-9-r5l4"/>It(em) VIII kăss.
           <lb facs="#zone-11328042-9-r5l5"/>It(em) etlich pitschol(en), arbais und
           <lb facs="#zone-11328042-9-r5l6"/>gemŭess.
-          <lb facs="#zone-11328042-9-r5l7"/>It(em) II [- - -]
+          <lb facs="#zone-11328042-9-r5l7"/>It(em) II <gap reason="illegible"/>
           <lb facs="#zone-11328042-9-r5l8"/>It(em) ain naig wein im kell(er).
           <lb facs="#zone-11328042-9-r5l9"/>It(em) XIX III hen(er).
           <lb facs="#zone-11328042-9-r5l10"/>VIIII cappeun.
           <lb facs="#zone-11328042-9-r5l11"/>IX kuo hut in g(nädigen) h(errn) d(eren) gens(er)
-          <lb facs="#zone-11328042-9-r5l12"/>geschriben was sih h(er) Sig(mund) perschibet [..] [..]
+          <lb facs="#zone-11328042-9-r5l12"/>geschriben was sih h(er) Sig(mund) perschibet <gap reason="illegible"/> <gap reason="illegible"/>
           <lb facs="#zone-11328042-9-r5l13"/>ern datus.
         </ab>
         <ab xml:id="ab-11328042-9-r6">

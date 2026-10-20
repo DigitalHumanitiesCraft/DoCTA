@@ -197,3 +197,38 @@ def test_a_certainty_claim_is_valid_tei_and_still_refused(tmp_path: Path) -> Non
 def test_both_schema_stages_are_present() -> None:
     for _, schema in vt.STAGES:
         assert schema.is_file(), f"schema missing: {schema}"
+
+
+def _readings_in_line_and_entity(document: etree._ElementTree) -> None:
+    """Both marks of an unclear reading, beside and inside an entity."""
+    ab = document.find(".//tei:ab", TEI)
+    unclear = etree.SubElement(ab, f"{NS}unclear")
+    unclear.text = "Hannsen"
+    etree.SubElement(ab, f"{NS}gap").set("reason", "illegible")
+    entity = document.find(".//tei:text//tei:persName", TEI)
+    etree.SubElement(entity, f"{NS}gap").set("reason", "illegible")
+
+
+def _gap_with_another_reason(document: etree._ElementTree) -> None:
+    ab = document.find(".//tei:ab", TEI)
+    etree.SubElement(ab, f"{NS}gap").set("reason", "damage")
+
+
+def _cert_on_an_unclear(document: etree._ElementTree) -> None:
+    ab = document.find(".//tei:ab", TEI)
+    unclear = etree.SubElement(ab, f"{NS}unclear")
+    unclear.set("cert", "low")
+    unclear.text = "Hannsen"
+
+
+def test_the_project_schema_admits_the_unclear_reading_marks(tmp_path: Path) -> None:
+    path = _mutated(tmp_path, _readings_in_line_and_entity)
+    assert _invalid([path], vt.DOCTA_SCHEMA) == []
+
+
+@pytest.mark.parametrize("mutate", [_gap_with_another_reason, _cert_on_an_unclear])
+def test_the_project_schema_bounds_the_unclear_reading_marks(
+    tmp_path: Path, mutate: Mutation
+) -> None:
+    path = _mutated(tmp_path, mutate)
+    assert _invalid([path], vt.DOCTA_SCHEMA) == [path]

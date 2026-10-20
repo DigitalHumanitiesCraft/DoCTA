@@ -27,6 +27,18 @@ related: [INDEX, project, specification, handoff]
 
 Newest first. Each entry records one transition with its type (integrated, rejected, corrected, compacted), source, target and result. Figures inside an entry are the measurement of its date, not a current value; a later entry names any decision it supersedes.
 
+### 2026-10-20 integrated: unclear readings and line deletion
+
+- Source: operator decisions of 2026-10-20 on the feedback round; a survey of every bracket form in the page register.
+- Target: [specification.md](specification.md#interface-language-and-unclear-readings-decided-2026-10-20), `pipeline/README.md`, design.md, plan.md, `apply_review.py`, `build_register.py`, `build_tei.py`, `docta.rng`, `docs/js/readings.js`, `viewer-render.js`, `viewer-review.js`.
+- Result: `[?]` and `[word?]` are the notation, encoded as `gap` and `unclear`; the Transkribus dot and dash forms count as `[?]` and stay as written. The survey found these forms only in the Transkribus layer, `[...]` and one `[sberg?]` in model output, and folio marks and supplied letters such as `[er]` as text. The model's brackets stay text in TEI until a reviewer changes the line. Review lines may carry `excluded`, which keeps line identity and reading and leaves reading text and TEI; Restore unsets it. The viewer marks exactly what the TEI encodes, which a parity test holds, and the corpus test reads every transcribed line back without loss.
+
+### 2026-10-20 corrected: line overlay on large scans
+
+- Source: misplaced line regions on 11327964 page 1, whose original is 2448 by 6912 pixels.
+- Target: `docs/js/viewer.js`, architecture.md.
+- Result: Transkribus serves `full/max` scaled down above ten megapixels while PAGE coordinates address the original; the overlay takes its coordinate space from the IIIF `info.json` and falls back to the loaded size. The corrected-state dot of the status pill became its own blue token.
+
 ### 2026-10-20 compacted: whole journal
 
 - Predecessor: commit `a2a960e`.

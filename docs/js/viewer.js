@@ -3,8 +3,8 @@ import { loadJSON } from './data-loader.js';
 import { getParams, setParams, escapeHTML, escapeAttr,
          lsGet, lsSet, catLabel, vocabLabel, formatDate } from './utils.js';
 import { createTeiView, renderReading,
-         renderTranscription } from './viewer-render.js?v=20261020-tooltips';
-import { createReviewView } from './viewer-review.js?v=20261020-en';
+         renderTranscription } from './viewer-render.js?v=20261020-readings';
+import { createReviewView } from './viewer-review.js?v=20261020-readings';
 import { createLocalEditor } from './viewer-local.js';
 import { createRegistryEditor } from './viewer-registry.js';
 import { createAnnotationWorkspace } from './viewer-annotation-workspace.js';
@@ -378,7 +378,6 @@ const review = createReviewView({
     revision: currentDoc?.revision,
     reviewState: currentDoc?.reviewState,
   }),
-  markText: text => text,
   rerenderPage: renderPage,
   local,
   onDraftChange: updateTextStatus,
@@ -400,6 +399,13 @@ document.getElementById('btn-review').addEventListener('click', event => {
   if (!canNavigate()) { event.preventDefault(); event.stopImmediatePropagation(); }
 }, { capture: true });
 
+// A document DoCTA transcribed itself carries the model's brackets, which are
+// not editorial notation until a reviewer saves the line.
+function isMachineText() {
+  return currentDoc != null &&
+    registerByDocId.get(Number(currentDoc.docId))?.transcription_source === 'vlm';
+}
+
 // One page of the synopsis. The coupling with the image overlay is keyed on
 // the rendered lines, so a fresh page starts with no line held on either side.
 function renderPage(pageNr) {
@@ -407,7 +413,7 @@ function renderPage(pageNr) {
   linkedLineId = null;
   renderTranscription(transcriptionContainer, currentDoc, pageNr, {
     corrections: review.corrections(pageNr),
-    markText: text => text,
+    machine: isMachineText(),
   });
   review.applyMode();
   registry.render();
@@ -519,7 +525,7 @@ function renderCurrentView() {
   if (viewMode === 'synopsis') { setPage(currentPage); return; }
   updatePager();
   syncParams();
-  if (viewMode === 'reading') renderReading(transcriptionContainer, currentDoc);
+  if (viewMode === 'reading') renderReading(transcriptionContainer, currentDoc, isMachineText());
   else tei.render(currentDoc.docId);
   registry.render();
   review.sync();
@@ -647,14 +653,16 @@ document.getElementById('btn-view-tei').addEventListener('click', () => {
 transcriptionContainer.addEventListener('click', (e) => {
   const mark = e.target.closest('.reading-page__mark');
   if (mark) { setView('synopsis', Number(mark.dataset.index)); return; }
-  if (!review.on || e.target.closest('.transcription__line-edit')) return;
-  review.beginEdit(e.target.closest('.transcription__line[data-line-id]'));
+  if (!review.on || e.target.closest('.transcription__line-editor')) return;
+  const line = e.target.closest('.transcription__line[data-line-id]');
+  if (e.target.closest('.transcription__line-restore')) { review.restoreLine(line); return; }
+  review.beginEdit(line);
 });
 
 // Enter opens the line under the caret for correction; the input handles the rest
 transcriptionContainer.addEventListener('keydown', (e) => {
   if (e.key !== 'Enter' || !review.on) return;
-  if (e.target.closest('.transcription__line-edit')) return;
+  if (e.target.closest('.transcription__line-editor, .transcription__line-restore')) return;
   const line = e.target.closest('.transcription__line[data-line-id]');
   if (!line) return;
   e.preventDefault();

@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -205,8 +205,8 @@
           <lb facs="#zone-11329419-1-r3l16"/>I(tem) zinskeß L.
           <lb facs="#zone-11329419-1-r3l17"/>I(tem) arbais und ponen VI stẽr.
           <lb facs="#zone-11329419-1-r3l18"/>I(tem) I vaß vol mit rogkein mel.
-          <lb facs="#zone-11329419-1-r3l19"/>I(tem) I vaß mit [....]
-          <lb facs="#zone-11329419-1-r3l20"/>ro[..]ter gerst XXVII.
+          <lb facs="#zone-11329419-1-r3l19"/>I(tem) I vaß mit <gap reason="illegible"/>
+          <lb facs="#zone-11329419-1-r3l20"/>ro<gap reason="illegible"/>ter gerst XXVII.
           <lb facs="#zone-11329419-1-r3l21"/>I(tem) XII ster rogk(e)n.
           <lb facs="#zone-11329419-1-r3l22"/>I(tem) II zȋneȋn leŭchter.
           <lb facs="#zone-11329419-1-r3l23"/>I(tem) I eisneȋn lutschẽrn.

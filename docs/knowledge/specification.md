@@ -153,7 +153,18 @@ SiCProD, Wikidata, GND and the Getty Art & Architecture Thesaurus remain possibl
 
 The operator decided that the entire website, including the working guide and the viewer, is English. Historical source text, quoted source wording and the German data vocabulary of the register stay German. The historical project lead asked for a fully English working edition to support a proposal to the Austrian Science Fund (FWF).
 
-The operator also decided that unclear readings receive one uniform notation inside the transcription text. The viewer shows the marked passage with a tooltip, correction mode can set and remove the mark, and the TEI build converts it into an encoding of its own. The notation and its TEI form are specified in a later package. This decision fixes the mechanism and leaves the syntax open.
+The operator also decided that unclear readings receive one uniform notation inside the transcription text. The viewer shows the marked passage with a tooltip, correction mode can set and remove the mark, and the TEI build converts it into an encoding of its own.
+
+| Notation | Meaning | TEI | Tooltip |
+|---|---|---|---|
+| `[?]` | Illegible passage | `<gap reason="illegible"/>` | Illegible |
+| `[word?]` | Uncertain reading of the enclosed word or words | `<unclear>word</unclear>` | Uncertain reading |
+
+The dot and dash forms of the Transkribus layer (`[.]` to `[.....]`, `[- - -]`, `[---]`) mean an illegible passage and are read as `[?]`. They stay as written in the data and in the display; the TEI encodes them as the same `gap`, without a count of characters, because the convention behind the number of dots is not documented. Any other bracket is text, such as a folio mark (`[fol.1r]`, handled as a milestone where it fills a line) or supplied letters (`[er]`). The marks enter neither `@cert` nor any degree of certainty.
+
+The brackets of a machine transcription are the model's own uncertainty. The viewer shows them as one category with the tooltip Uncertain in the machine transcription, and the TEI keeps them as text, because a model's self-assessment is not edited as a finding. A line becomes human notation once a reviewer changes it, since saving the line adopts its marks. The model's separate `uncertain` word list is never shown. In correction mode, Mark as unclear wraps the selection as `[selection?]` or inserts `[?]` at the caret.
+
+A reviewer can also delete a line that does not belong to the source text, such as a modern archival note. The line keeps its identity, reading and position in the register, carries `excluded`, and leaves the reading text and the TEI. Correction mode shows it struck through with Restore, which is a further correction with `excluded` unset. No reason is recorded beyond the actor and time every correction carries.
 
 ## Decisions that lie with the project lead
 
@@ -173,7 +184,7 @@ Windows and macOS launchers use the same Python service and locked dependencies,
 
 These decisions remain with the historical project lead.
 
-- The remaining transcription rules and accepted reference sample. The operator has confirmed retaining original spelling in the working transcription, including `hawsrat`, and on 2026-10-20 decided a uniform notation for unclear readings (see above). Abbreviation expansion and which readings count as unclear remain open. `htr-evaluation.md` names the scholarly review requirements.
+- The remaining transcription rules and accepted reference sample. The operator has confirmed retaining original spelling in the working transcription, including `hawsrat`, and on 2026-10-20 decided a uniform notation for unclear readings (see above). Abbreviation expansion and which readings count as unclear remain open, as does whether the number of dots in the Transkribus layer counts illegible characters. `htr-evaluation.md` names the scholarly review requirements.
 - The editor-owned vocabulary, including its preferred terms, variants, broader-term relations and any verbs useful to the research question. The wider distinctions between place and space, object identity, practice and event remain scholarly modelling decisions (`domain-knowledge.md`).
 - The agreed scope of any joint historical pilot or commissioned output and its scholarly acceptance (`project.md`). Independent use across the existing source material is already within the operator's confirmed scope.
 

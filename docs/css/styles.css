@@ -1480,6 +1480,36 @@ body[data-review="on"] .transcription__line[data-line-id]:not(.transcription__li
   line-height: 1.6;
 }
 
+/* The line editor wraps the input and its two actions, so a narrow panel
+   moves the actions below the input instead of clipping them. */
+.transcription__line-editor {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+.transcription__line-editor .review-btn { font-size: var(--text-xs); }
+
+/* An unclear mark stays as written; a dotted underline and its tooltip name
+   it, so the reading text keeps every character and offset. */
+.reading-mark {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+}
+.reading-mark[data-reading="machine"] { text-decoration-color: var(--conf-medium); }
+
+/* A deleted line keeps its place and reading for the record; it is struck
+   through and muted, and only the edit mode offers to restore it. */
+.transcription__line--excluded .transcription__line-text {
+  color: var(--text-muted-custom);
+  text-decoration: line-through;
+}
+.transcription__line-restore { margin-inline-start: auto; font-size: var(--text-xs); }
+body:not([data-review="on"]) .transcription__line-restore { display: none; }
+body[data-review="on"] .transcription__line--excluded { cursor: default; }
+
 /* === Entity register view (exploration.html, ?view=register) ===
    The corpus-wide register of the extraction layer, one tab per entity type.
    The tabs reuse the dot of the network filter chips, so a type carries the

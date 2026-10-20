@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -585,18 +585,18 @@
           <lb facs="#zone-11330060-6-r3l1"/>Zwen wagen, I wang mit II
           <lb facs="#zone-11330060-6-r3l2"/>silschitter, ain kar(en) mit ain(em)
           <lb facs="#zone-11330060-6-r3l3"/>bösen gestu̇edl, III reder, ains
-          <lb facs="#zone-11330060-6-r3l4"/>on ain bit[..]en, ain wages
+          <lb facs="#zone-11330060-6-r3l4"/>on ain bit<gap reason="illegible"/>en, ain wages
           <lb facs="#zone-11330060-6-r3l5"/>on ain pflůg.
           <lb facs="#zone-11330060-6-r3l6"/>Item czwefl
           <lb facs="#zone-11330060-6-r3l7"/>Item czwelff rinder, ochs(en) und
           <lb facs="#zone-11330060-6-r3l8"/>stier, sind Hanns Klamers
           <lb facs="#zone-11330060-6-r3l9"/>gewesen.
           <lb facs="#zone-11330060-6-r3l10"/>Item barschafft in krewcern
-          <lb facs="#zone-11330060-6-r3l11"/>czwainzig [..]rk[.].
+          <lb facs="#zone-11330060-6-r3l11"/>czwainzig <gap reason="illegible"/>rk<gap reason="illegible"/>.
         </ab>
         <ab xml:id="ab-11330060-6-r4">
           <lb facs="#zone-11330060-6-r4l1"/>Meines gnädigen herren czewg
-          <lb facs="#zone-11330060-6-r4l2"/>von erst in dem [.]ur[.].
+          <lb facs="#zone-11330060-6-r4l2"/>von erst in dem <gap reason="illegible"/>ur<gap reason="illegible"/>.
         </ab>
         <ab xml:id="ab-11330060-6-r5">
           <lb facs="#zone-11330060-6-r5l1"/>Item oben auf inn turen.

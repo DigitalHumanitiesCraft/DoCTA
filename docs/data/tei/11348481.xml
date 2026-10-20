@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -402,7 +402,7 @@
           <lb facs="#zone-11348481-1-r3l1"/>Zedel der phlegen
           <lb facs="#zone-11348481-1-r3l2"/>etlicher varender hab
           <lb facs="#zone-11348481-1-r3l3"/>und zewg der hewser.
-          <lb facs="#zone-11348481-1-r3l4"/>[.]w[..]t.
+          <lb facs="#zone-11348481-1-r3l4"/><gap reason="illegible"/>w<gap reason="illegible"/>t.
         </ab>
         <pb n="2" facs="#surface-11348481-2"/>
         <ab xml:id="ab-11348481-2-r1">
@@ -474,7 +474,7 @@
           <lb facs="#zone-11348481-5-r4l10"/>überzogen ist auch nicht vast gůt.
           <lb facs="#zone-11348481-5-r4l11"/>Item aber auf dem paläst ein pet in ainer
           <lb facs="#zone-11348481-5-r4l12"/>kammer mit ainer zwilchin ziechen über¬
-          <lb facs="#zone-11348481-5-r4l13"/>zogen und ist alt und  [..] zerrissen. Auch
+          <lb facs="#zone-11348481-5-r4l13"/>zogen und ist alt und  <gap reason="illegible"/> zerrissen. Auch
           <lb facs="#zone-11348481-5-r4l14"/>ist in derselben kammer ain lëre petstat.
           <lb facs="#zone-11348481-5-r4l15"/>Item aber auf dem palast ain klaines pöses
           <lb facs="#zone-11348481-5-r4l16"/>petlein von ainer person und ist auch

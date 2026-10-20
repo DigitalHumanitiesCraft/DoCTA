@@ -1366,3 +1366,108 @@ def test_generation_date_comes_from_the_argument() -> None:
     xml = next(iter(built.values()))
     assert f'<change when="2026-09-01" who="#{bt.RESP_GENERATION}">' in xml
     assert '<date when="2026-09-01">' in xml
+
+
+@pytest.mark.parametrize(
+    ("text", "encoded"),
+    [
+        ("a [?] b", 'a <gap reason="illegible"/> b'),
+        ("[.] [..] [....]", " ".join(['<gap reason="illegible"/>'] * 3)),
+        ("x [- - -] [---]", 'x <gap reason="illegible"/> <gap reason="illegible"/>'),
+        ("Item [Hannsen?] Lechner", "Item <unclear>Hannsen</unclear> Lechner"),
+        ("[sberg?]", "<unclear>sberg</unclear>"),
+        ("[zwen guldin?]", "<unclear>zwen guldin</unclear>"),
+        # supplied letters, folio marks and unmarked brackets stay text
+        ("hab[er] [r] [1r] [fol.1r]", "hab[er] [r] [1r] [fol.1r]"),
+        ("[ ?] [..?] [?word]", "[ ?] [..?] [?word]"),
+        ("a & [b<c?]", "a &amp; <unclear>b&lt;c</unclear>"),
+    ],
+)
+def test_unclear_reading_notation(text: str, encoded: str) -> None:
+    assert bt._line_content(text, [], readings=True) == encoded
+    assert bt._line_content(text, []) == bt._esc(text), "without readings: text"
+
+
+def _source_lines() -> list[str]:
+    lines = []
+    for path in sorted((bt.REGISTER).glob("*.json")):
+        for page in load_json(path)["pages"]:
+            for run in page["runs"]:
+                if run["source"] == "transkribus":
+                    lines += [ln["text"] or "" for ln in run["lines"]]
+    return lines
+
+
+def test_every_transcribed_line_encodes_to_wellformed_readings() -> None:
+    """Over the whole corpus, the notation yields well-formed markup and loses
+    no text: the line read back equals its source with the marks taken out."""
+    lines = _source_lines()
+    assert lines, "the corpus has transcribed lines"
+    gaps = 0
+    for text in lines:
+        xml = f'<l xmlns="{TEI[1:-1]}">{bt._line_content(text, [], readings=True)}</l>'
+        root = ElementTree.fromstring(xml)
+        clean = bt.VALID_XML.sub("", text)
+        expected = bt.GAP_MARK.sub("", bt.UNCLEAR_MARK.sub(r"\1", clean))
+        assert "".join(root.itertext()) == expected, text
+        gaps += len(root.findall(f"{TEI}gap"))
+    assert gaps, "the Transkribus layer carries illegible marks"
+
+
+def test_machine_marks_stay_text_until_a_reviewer_changes_the_line() -> None:
+    page = {
+        "pageNr": 1,
+        "regions": [
+            {
+                "id": "r1",
+                "lines": [
+                    {"id": "v1", "text": "Item [...] [sberg?]"},
+                    {"id": "v2", "text": "Item [...] [sberg?]", "corrected": True},
+                    {"id": "v3", "text": "55.", "corrected": True, "excluded": True},
+                ],
+            }
+        ],
+    }
+    body = "\n".join(bt._page_body(page, 1, {}, machine=True))
+    assert "<lb/>Item [...] [sberg?]" in body
+    assert '<lb/>Item <gap reason="illegible"/> <unclear>sberg</unclear>' in body
+    assert "55." not in body, "an excluded line is no text of the edition"
+
+
+def test_an_excluded_line_is_absent_from_the_built_tei() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        br.build(tmp)
+        original = _base_text(tmp, REVIEW_PAGE, REVIEW_LINE)
+        before, after = _review_build(
+            tmp,
+            {
+                str(REVIEW_PAGE): {
+                    "status": None,
+                    "date": REVIEW_DATE,
+                    "lines": [
+                        {
+                            "id": REVIEW_LINE,
+                            "original": original,
+                            "corrected": original,
+                            "excluded": True,
+                        }
+                    ],
+                }
+            },
+        )
+    count = lambda xml: len(ElementTree.fromstring(xml).findall(f".//{TEI}lb"))  # noqa: E731
+    assert count(after[REVIEW_DOC]) == count(before[REVIEW_DOC]) - 1
+    ElementTree.fromstring(after[REVIEW_DOC])
+
+
+def test_the_viewer_marks_what_the_tei_encodes() -> None:
+    """docs/js/readings.js carries the two patterns of this module as one.
+
+    JavaScript writes an opening bracket inside a class unescaped, so both
+    sides are compared with the escape before [ removed.
+    """
+    source = (bt.DATA.parent / "js" / "readings.js").read_text("utf-8")
+    js = re.search(r"const MARK = /(.+)/g;", source).group(1)
+    python = f"{bt.GAP_MARK.pattern}|{bt.UNCLEAR_MARK.pattern}"
+    assert js.replace(r"\[", "[") == python.replace(r"\[", "[")

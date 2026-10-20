@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -303,7 +303,7 @@
           <lb facs="#zone-11328739-6-r4l6"/>Ain tisch mit ain(em) schachzag(e)l.
           <lb facs="#zone-11328739-6-r4l7"/>Ain eysein later(e)n.
           <lb facs="#zone-11328739-6-r4l8"/>Ain kariol darauf ain pet¬
-          <lb facs="#zone-11328739-6-r4l9"/>polst(er) und ain [..]golter.
+          <lb facs="#zone-11328739-6-r4l9"/>polst(er) und ain <gap reason="illegible"/>golter.
           <lb facs="#zone-11328739-6-r4l10"/>Ain versperte truh(e)n.
         </ab>
         <pb n="7" facs="#surface-11328739-7"/>
@@ -323,7 +323,7 @@
         <ab xml:id="ab-11328739-7-r4">
           <lb facs="#zone-11328739-7-r4l1"/>It(em) zwai truh(e)l hat d(er) saltzmair lasß(e)n mach(e)n.
           <lb facs="#zone-11328739-7-r4l2"/>It(em) ain tisch mit ain(em) spilpret.
-          <lb facs="#zone-11328739-7-r4l3"/>It(em) [.]drei tisch.
+          <lb facs="#zone-11328739-7-r4l3"/>It(em) <gap reason="illegible"/>drei tisch.
           <lb facs="#zone-11328739-7-r4l4"/>It(em) zwen stŭl auf yed(en) ain lidrei(n)s kuß.
           <lb facs="#zone-11328739-7-r4l5"/>It(em) zwo vorpenck.
           <lb facs="#zone-11328739-7-r4l6"/>It(em) ain credenz tisch(e)l und ain

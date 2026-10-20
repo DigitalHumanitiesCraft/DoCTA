@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -311,7 +311,7 @@
         </ab>
         <ab xml:id="ab-11329059-2-r2">
           <lb facs="#zone-11329059-2-r2l1"/>In der camer
-          <lb facs="#zone-11329059-2-r2l2"/>[.]bei dem prunen.
+          <lb facs="#zone-11329059-2-r2l2"/><gap reason="illegible"/>bei dem prunen.
         </ab>
         <ab xml:id="ab-11329059-2-r3">
           <lb facs="#zone-11329059-2-r3l1"/>Item drei spanpet und
@@ -410,7 +410,7 @@
         </ab>
         <ab xml:id="ab-11329059-4-r3">
           <lb facs="#zone-11329059-4-r3l1"/>Ain schreibtisch, ist geschăczt I1/2 g(u)ld(en).
-          <lb facs="#zone-11329059-4-r3l2"/>Sum(m)a[..] IICXXX R(einische) g(u)ld(en).
+          <lb facs="#zone-11329059-4-r3l2"/>Sum(m)a<gap reason="illegible"/> IICXXX R(einische) g(u)ld(en).
           <lb facs="#zone-11329059-4-r3l3"/>Item zehen haubt vich dafŭr
           <lb facs="#zone-11329059-4-r3l4"/>angeslagen XXX g(u)ld(en).
           <lb facs="#zone-11329059-4-r3l5"/>Item umb hew̆, grumat und
@@ -499,13 +499,13 @@
           <lb facs="#zone-11329059-12-r2l11"/>mitß(am)t etlichen heilgigen gmalt.
           <lb facs="#zone-11329059-12-r2l12"/>Item ain hulczeine tafel daneben.
           <lb facs="#zone-11329059-12-r2l13"/>Ain weichkessel.
-          <lb facs="#zone-11329059-12-r2l14"/>Item [....] [.] h(er)r XII handtpuchsen.
+          <lb facs="#zone-11329059-12-r2l14"/>Item <gap reason="illegible"/> <gap reason="illegible"/> h(er)r XII handtpuchsen.
           <lb facs="#zone-11329059-12-r2l15"/>XVI haggenpuchsen ungfas(s)t.
           <lb facs="#zone-11329059-12-r2l16"/>Item zbay lange messer.
           <lb facs="#zone-11329059-12-r2l17"/>Zwo mordaxen.
           <lb facs="#zone-11329059-12-r2l18"/>Alles ist nach leut der inventari funden.
-          <lb facs="#zone-11329059-12-r2l19"/>Dan(n) die hăl in der kuchen [.]it.
-          <lb facs="#zone-11329059-12-r2l20"/>Zwo feŭr [.]anntn prantrait.
+          <lb facs="#zone-11329059-12-r2l19"/>Dan(n) die hăl in der kuchen <gap reason="illegible"/>it.
+          <lb facs="#zone-11329059-12-r2l20"/>Zwo feŭr <gap reason="illegible"/>anntn prantrait.
           <lb facs="#zone-11329059-12-r2l21"/>Ain wasserhafen kupfrein.
           <lb facs="#zone-11329059-12-r2l22"/>Ain rost.
           <lb facs="#zone-11329059-12-r2l23"/>Ain pratspiss.
@@ -514,16 +514,16 @@
           <lb facs="#zone-11329059-12-r2l26"/>Zway hackmesser.
           <lb facs="#zone-11329059-12-r2l27"/>Zwo eysnein kellen.
           <lb facs="#zone-11329059-12-r2l28"/>Item zbay̆ gemalte himeltŭch.
-          <lb facs="#zone-11329059-12-r2l29"/>Item ain newe petstat mit ain(em) hymel[..]
+          <lb facs="#zone-11329059-12-r2l29"/>Item ain newe petstat mit ain(em) hymel<gap reason="illegible"/>
           <lb facs="#zone-11329059-12-r2l30"/>ob dem schreibstubel in ainer camer.
           <lb facs="#zone-11329059-12-r2l31"/>Item im gwelb ain beslagner casten.
           <lb facs="#zone-11329059-12-r2l32"/>Item drai malen schlosser.
-          <lb facs="#zone-11329059-12-r2l33"/>Item ain blaws [.....] mesgband.
+          <lb facs="#zone-11329059-12-r2l33"/>Item ain blaws <gap reason="illegible"/> mesgband.
           <lb facs="#zone-11329059-12-r2l34"/>Item in ain(em) vass wein ist das vass X1/2 span(n)
           <lb facs="#zone-11329059-12-r2l35"/>lang und IIII1/2 weit sind und steet
           <lb facs="#zone-11329059-12-r2l36"/>1/2 span(n) wein sind VIII uren wein darinn
-          <lb facs="#zone-11329059-12-r2l37"/>gescha[..] uberslagen.
-          <lb facs="#zone-11329059-12-r2l38"/>Item ain klainer [..]scher.
+          <lb facs="#zone-11329059-12-r2l37"/>gescha<gap reason="illegible"/> uberslagen.
+          <lb facs="#zone-11329059-12-r2l38"/>Item ain klainer <gap reason="illegible"/>scher.
         </ab>
       </div>
     </body>

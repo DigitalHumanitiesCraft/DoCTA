@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -269,8 +269,8 @@
           <lb facs="#zone-11327964-1-r2l3"/>Gles das Slos Taur mit s(einer) zusach(en)
           <lb facs="#zone-11327964-1-r2l4"/>von ander hab es so hernach geschr(ieben) ders(elbe) so (der)
           <lb facs="#zone-11327964-1-r2l5"/>selb(er) geantwurt Peteren, Hansen Ubelhers
-          <lb facs="#zone-11327964-1-r2l6"/>[- - -] gelist(en) [- - -] [- - -] [- - -]
-          <lb facs="#zone-11327964-1-r2l7"/>[- - -]von [- - -] [- - -] [- - -].
+          <lb facs="#zone-11327964-1-r2l6"/><gap reason="illegible"/> gelist(en) <gap reason="illegible"/> <gap reason="illegible"/> <gap reason="illegible"/>
+          <lb facs="#zone-11327964-1-r2l7"/><gap reason="illegible"/>von <gap reason="illegible"/> <gap reason="illegible"/> <gap reason="illegible"/>.
         </ab>
         <ab xml:id="ab-11327964-1-r3">
           <lb facs="#zone-11327964-1-r3l1"/>In der grossen herrn stubenn als vor.
@@ -291,7 +291,7 @@
           <lb facs="#zone-11327964-1-r6l1"/>In der melkamer auch vor.
         </ab>
         <ab xml:id="ab-11327964-1-r7">
-          <lb facs="#zone-11327964-1-r7l1"/>Item ein vassel mit poten [- - -].
+          <lb facs="#zone-11327964-1-r7l1"/>Item ein vassel mit poten <gap reason="illegible"/>.
           <lb facs="#zone-11327964-1-r7l2"/>Item LVI XXV ster mel rigken dazu.
           <lb facs="#zone-11327964-1-r7l3"/>Item LVI VIII ster klays.
           <lb facs="#zone-11327964-1-r7l4"/>Item ein wag und gwichten dazu.
@@ -301,17 +301,17 @@
           <lb facs="#zone-11327964-1-r7l8"/>Item ein fleischpeil.
           <lb facs="#zone-11327964-1-r7l9"/>Item ein kupfreiner hafen zu ŏl.
           <lb facs="#zone-11327964-1-r7l10"/>Item ein morser mit sein sto̊se).
-          <lb facs="#zone-11327964-1-r7l11"/>Item an dem fenst(er) [- - -] etlich [- - -].
-          <lb facs="#zone-11327964-1-r7l12"/>Item so muss es [- - -] [- - -].
-          <lb facs="#zone-11327964-1-r7l13"/>I stŭ[.].
-          <lb facs="#zone-11327964-1-r7l14"/>VI [- - -].
+          <lb facs="#zone-11327964-1-r7l11"/>Item an dem fenst(er) <gap reason="illegible"/> etlich <gap reason="illegible"/>.
+          <lb facs="#zone-11327964-1-r7l12"/>Item so muss es <gap reason="illegible"/> <gap reason="illegible"/>.
+          <lb facs="#zone-11327964-1-r7l13"/>I stŭ<gap reason="illegible"/>.
+          <lb facs="#zone-11327964-1-r7l14"/>VI <gap reason="illegible"/>.
         </ab>
         <pb n="2" facs="#surface-11327964-2"/>
         <ab xml:id="ab-11327964-2-r1">
           <milestone unit="folio" n="1v"/>
         </ab>
         <ab xml:id="ab-11327964-2-r2">
-          <lb facs="#zone-11327964-2-r2l1"/>Item in d(er) [- - -] I grosess peck.
+          <lb facs="#zone-11327964-2-r2l1"/>Item in d(er) <gap reason="illegible"/> I grosess peck.
         </ab>
         <ab xml:id="ab-11327964-2-r3">
           <lb facs="#zone-11327964-2-r3l1"/>Item in der camer da ein pfleger inn ist
@@ -378,7 +378,7 @@
           <lb facs="#zone-11327964-3-r5l3"/>I strosack.
           <lb facs="#zone-11327964-3-r5l4"/>I p(er) lailach.
           <lb facs="#zone-11327964-3-r5l5"/>II rauch decken.
-          <lb facs="#zone-11327964-3-r5l6"/>I pl[.]se petstat.
+          <lb facs="#zone-11327964-3-r5l6"/>I pl<gap reason="illegible"/>se petstat.
         </ab>
         <ab xml:id="ab-11327964-3-r6">
           <lb facs="#zone-11327964-3-r6l1"/>Item aber in der drit(en) kamer.
@@ -396,11 +396,11 @@
         </ab>
         <ab xml:id="ab-11327964-3-r9">
           <lb facs="#zone-11327964-3-r9l1"/>VIIII pachen halb.
-          <lb facs="#zone-11327964-3-r9l2"/>LVI fleisch LVI [- - -].
+          <lb facs="#zone-11327964-3-r9l2"/>LVI fleisch LVI <gap reason="illegible"/>.
           <lb facs="#zone-11327964-3-r9l3"/>Item VIII groß speiskes.
           <lb facs="#zone-11327964-3-r9l4"/>II ziger tes(en).
           <lb facs="#zone-11327964-3-r9l5"/>I vasel vol unzerlassen unslit.
-          <lb facs="#zone-11327964-3-r9l6"/>I [- - -].
+          <lb facs="#zone-11327964-3-r9l6"/>I <gap reason="illegible"/>.
         </ab>
         <pb n="4" facs="#surface-11327964-4"/>
         <ab xml:id="ab-11327964-4-r1">
@@ -439,7 +439,7 @@
           <lb facs="#zone-11327964-4-r5l20"/>II pippen.
         </ab>
         <ab xml:id="ab-11327964-4-r6">
-          <lb facs="#zone-11327964-4-r6l1"/>[- - -]
+          <lb facs="#zone-11327964-4-r6l1"/><gap reason="illegible"/>
           <lb facs="#zone-11327964-4-r6l2"/>Item II hantuech.
           <lb facs="#zone-11327964-4-r6l3"/>II tisch tuecher.
           <lb facs="#zone-11327964-4-r6l4"/>I umbleg.
@@ -457,7 +457,7 @@
         </ab>
         <ab xml:id="ab-11327964-5-r2">
           <lb facs="#zone-11327964-5-r2l1"/>X kŭe.
-          <lb facs="#zone-11327964-5-r2l2"/>[- - -].
+          <lb facs="#zone-11327964-5-r2l2"/><gap reason="illegible"/>.
           <lb facs="#zone-11327964-5-r2l3"/>II wagenross mit irem gschir.
           <lb facs="#zone-11327964-5-r2l4"/>III wagen minder I rads, ist der I ganz new̆.
           <lb facs="#zone-11327964-5-r2l5"/>I holzsliten.
@@ -471,17 +471,17 @@
           <lb facs="#zone-11327964-5-r2l13"/>VI rechen pos und gut.
           <lb facs="#zone-11327964-5-r2l14"/>V gabeln hew̆.
           <lb facs="#zone-11327964-5-r2l15"/>III new mistgabeln.
-          <lb facs="#zone-11327964-5-r2l16"/>III [.]alt.
+          <lb facs="#zone-11327964-5-r2l16"/>III <gap reason="illegible"/>alt.
           <lb facs="#zone-11327964-5-r2l17"/>I mistkral.
           <lb facs="#zone-11327964-5-r2l18"/>III holzhacken.
-          <lb facs="#zone-11327964-5-r2l19"/>IIII [- - -].
+          <lb facs="#zone-11327964-5-r2l19"/>IIII <gap reason="illegible"/>.
           <lb facs="#zone-11327964-5-r2l20"/>IIII comat.
           <lb facs="#zone-11327964-5-r2l21"/>It(em) V capaun.
-          <lb facs="#zone-11327964-5-r2l22"/>[- - -].
+          <lb facs="#zone-11327964-5-r2l22"/><gap reason="illegible"/>.
           <lb facs="#zone-11327964-5-r2l23"/>XIX hennen.
           <lb facs="#zone-11327964-5-r2l24"/>I han.
           <lb facs="#zone-11327964-5-r2l25"/>Item holz hew̆ und strew̆ sol ansteen
-          <lb facs="#zone-11327964-5-r2l26"/>[- - -].
+          <lb facs="#zone-11327964-5-r2l26"/><gap reason="illegible"/>.
         </ab>
         <pb n="6" facs="#surface-11327964-6"/>
         <ab xml:id="ab-11327964-6-r1">

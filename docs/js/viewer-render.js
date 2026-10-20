@@ -8,6 +8,8 @@
  */
 
 import { escapeHTML, escapeAttr } from './utils.js';
+import { readingsHTML } from './readings.js';
+import { READINGS } from './strings.js';
 
 // Lines like "[fol.2r]", "[fol. 12v]" or bare "[1r]" are structure; the
 // endpaper marks "[us_vorne_r]" etc. count as structure as well.
@@ -26,14 +28,40 @@ export function folioLabel(text) {
 }
 
 /**
- * The synopsis of one page: line number, line text, and the entity marks over
- * it. The container is replaced wholesale and scrolled back to the top.
+ * The text and state of one synopsis line, shared by the full render and the
+ * single-line update after an edit. A deleted line keeps its text, struck
+ * through, with a Restore control that only the edit mode shows.
+ * @param {HTMLElement} lineEl
+ * @param {{ text: string, machine: boolean, corrected: boolean, excluded: boolean, original: string }} state
+ */
+export function fillLine(lineEl, { text, machine, corrected, excluded, original }) {
+  const span = lineEl.querySelector('.transcription__line-text');
+  span.innerHTML = readingsHTML(text, machine);
+  lineEl.classList.toggle('transcription__line--corrected', corrected);
+  lineEl.classList.toggle('transcription__line--excluded', excluded);
+  lineEl.querySelector('.transcription__line-restore')?.remove();
+  if (excluded) {
+    const restore = document.createElement('button');
+    restore.type = 'button';
+    restore.className = 'transcription__line-restore review-btn';
+    restore.textContent = READINGS.restoreLine;
+    restore.title = READINGS.restoreLineTitle;
+    lineEl.append(restore);
+  }
+  if (excluded) lineEl.title = READINGS.excluded;
+  else if (corrected) lineEl.title = `Original reading: ${original}`;
+  else lineEl.removeAttribute('title');
+}
+
+/**
+ * The synopsis of one page: line number and line text with its unclear marks.
+ * The container is replaced wholesale and scrolled back to the top.
  * @param {HTMLElement} container
  * @param {any} doc
  * @param {number} pageNr
- * @param {{ corrections: Map<string, any>, markText: (s: string) => string }} opts
+ * @param {{ corrections: Map<string, any>, machine: boolean }} opts
  */
-export function renderTranscription(container, doc, pageNr, { corrections, markText }) {
+export function renderTranscription(container, doc, pageNr, { corrections, machine }) {
   const page = doc.pages.find(p => p.pageNr === pageNr);
   if (!page) {
     container.innerHTML = '<div class="loading text-body-secondary">No transcription for this page</div>';
@@ -68,31 +96,52 @@ export function renderTranscription(container, doc, pageNr, { corrections, markT
                 `<span class="transcription__line-text">${escapeHTML(line.text)}</span></div>`;
         continue;
       }
-      // A stored correction replaces the text of its line; it is bound to the
-      // original it was made against, so a changed export drops it silently
-      const stored = line.id ? corrections.get(line.id) : null;
-      const corr = stored && stored.original === line.text ? stored : null;
-      let text = escapeHTML(corr ? corr.corrected : line.text);
-      if (!corr) text = markText(text, { pageNr, lineId: line.id, text: line.text });
-      const mark = corr ? ' transcription__line--corrected' : '';
-      const title = corr ? ` title="${escapeAttr(`Original reading: ${line.text}`)}"` : '';
-      html += `<div class="transcription__line${mark}${regionStart}"${lineAttr}${title}` +
-              ` data-original="${escapeAttr(line.text)}">` +
+      // A saved line states whether a reviewer changed or deleted it; only an
+      // unchanged line of a machine transcription keeps the model's marks.
+      const saved = ` data-original="${escapeAttr(line.text)}"` +
+        (line.excluded ? ' data-excluded="true"' : '') +
+        (machine && !line.corrected ? ' data-machine="true"' : '');
+      html += `<div class="transcription__line${regionStart}"${lineAttr}${saved}>` +
               `<span class="transcription__line-nr">${lineNr}</span>` +
-              `<span class="transcription__line-text">${text}</span></div>`;
+              '<span class="transcription__line-text"></span></div>';
     }
   }
   html += '</div>';
   container.innerHTML = html;
+  for (const lineEl of container.querySelectorAll('.transcription__line[data-original]')) {
+    fillLine(lineEl, lineState(lineEl, corrections.get(lineEl.dataset.lineId)));
+  }
   container.scrollTop = 0;
 }
 
 /**
- * Reading mode: the whole document as one text, without line numbers.
+ * What a line shows: the saved reading, or a browser draft made against it. A
+ * draft is bound to the original it was made against, so a changed export
+ * drops it silently. A draft without the excluded flag keeps the saved state.
+ * @param {HTMLElement} lineEl
+ * @param {any} stored the draft record of the line, if any
+ */
+export function lineState(lineEl, stored) {
+  const original = lineEl.dataset.original ?? '';
+  const savedExcluded = lineEl.dataset.excluded === 'true';
+  const corr = stored && stored.original === original ? stored : null;
+  return {
+    original,
+    text: corr ? corr.corrected : original,
+    machine: !corr && lineEl.dataset.machine === 'true',
+    corrected: Boolean(corr),
+    excluded: corr && typeof corr.excluded === 'boolean' ? corr.excluded : savedExcluded,
+  };
+}
+
+/**
+ * Reading mode: the whole document as one text, without line numbers and
+ * without the lines a reviewer deleted.
  * @param {HTMLElement} container
  * @param {any} doc
+ * @param {boolean} machine the document is a machine transcription
  */
-export function renderReading(container, doc) {
+export function renderReading(container, doc, machine = false) {
   const out = [];
   doc.pages.forEach((page, idx) => {
     const regions = (page.regions || []).filter(r => (r.lines || []).length);
@@ -105,6 +154,7 @@ export function renderReading(container, doc) {
     // display segmentation only and never enter the data.
     regions.forEach((region, ri) => {
       region.lines.forEach((l, li) => {
+        if (l.excluded) return;
         const fol = folioLabel(l.text);
         if (fol) {
           out.push(`<div class="folio-mark">${escapeHTML(fol)}</div>`);
@@ -113,7 +163,7 @@ export function renderReading(container, doc) {
         const cls = ['reading-line'];
         if (ri > 0 && li === 0) cls.push('reading-line--region-start');
         else if (/^item\b/i.test(l.text)) cls.push('reading-line--entry');
-        out.push(`<div class="${cls.join(' ')}">${escapeHTML(l.text)}</div>`);
+        out.push(`<div class="${cls.join(' ')}">${readingsHTML(l.text, machine && !l.corrected)}</div>`);
       });
     });
     out.push('</section>');

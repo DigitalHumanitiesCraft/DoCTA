@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -213,7 +213,7 @@
           <lb facs="#zone-11348799-1-r3l8"/>und Sannd Peterspergen.
         </ab>
         <ab xml:id="ab-11348799-1-r4">
-          <lb facs="#zone-11348799-1-r4l1"/>Item XVIII p[..].
+          <lb facs="#zone-11348799-1-r4l1"/>Item XVIII p<gap reason="illegible"/>.
           <lb facs="#zone-11348799-1-r4l2"/>Item II par laylachen.
           <lb facs="#zone-11348799-1-r4l3"/>Item XX raundeckhen.
           <lb facs="#zone-11348799-1-r4l4"/>Item XII haubtpolster.

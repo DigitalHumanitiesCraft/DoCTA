@@ -642,3 +642,87 @@ def test_an_unencodable_register_refuses_the_batch_before_any_write(
     with pytest.raises(ar.ReviewError):
         ar.ingest([first, second], pages_dir)
     assert (pages_dir / f"{DOC}.json").read_bytes() == before
+
+
+def _exclusion(tmp: Path, pages_dir: Path, excluded: bool, date: str) -> Path:
+    """An export that excludes or restores r2l1 without touching its text."""
+    text = _base_text(pages_dir, "r2l1")
+    path = tmp / f"exclude-{date}.json"
+    payload = _minimal(
+        {
+            str(PAGE): {
+                "status": None,
+                "date": date,
+                "lines": [
+                    {
+                        "id": "r2l1",
+                        "original": text,
+                        "corrected": text,
+                        "excluded": excluded,
+                    }
+                ],
+            }
+        },
+        schemaVersion=2,
+        exported=f"{date}T10:15:00Z",
+    )
+    path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def test_an_excluded_line_leaves_the_text_and_can_be_restored() -> None:
+    """Exclusion keeps the line, its id and its reading; restoring is a correction."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        text = _base_text(pages_dir, "r2l1")
+        ar.ingest([_exclusion(tmp, pages_dir, True, "2026-09-04")], pages_dir)
+        run = br.newest_review_run(_page(pages_dir))
+        saved = {ln["id"]: ln for ln in run["lines"]}
+        assert saved["r2l1"] == {"id": "r2l1", "text": text, "excluded": True}
+        assert all("excluded" not in ln for i, ln in saved.items() if i != "r2l1"), (
+            "lines never excluded keep the shape they always had"
+        )
+        effective = br.transcription_of(DOC, pages_dir)
+        page = next(p for p in effective["pages"] if p["pageNr"] == PAGE)
+        line = next(ln for ln in br.iter_lines(page) if ln["id"] == "r2l1")
+        assert line["excluded"] and line["corrected"] and line["text"] == text
+        assert page["changedLines"] == 1, "an exclusion counts as a changed line"
+
+        ar.ingest([_exclusion(tmp, pages_dir, False, "2026-09-05")], pages_dir)
+        run = br.newest_review_run(_page(pages_dir))
+        assert all("excluded" not in ln for ln in run["lines"])
+        effective = br.transcription_of(DOC, pages_dir)
+        page = next(p for p in effective["pages"] if p["pageNr"] == PAGE)
+        assert page["changedLines"] == 0
+
+
+def test_a_text_correction_keeps_an_earlier_exclusion() -> None:
+    """A correction without the flag leaves the line's exclusion as it was."""
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        pages_dir = _register(tmp)
+        ar.ingest([_exclusion(tmp, pages_dir, True, "2026-09-04")], pages_dir)
+        payload = json.loads((tmp / "exclude-2026-09-04.json").read_text("utf-8"))
+        payload["pages"][str(PAGE)]["date"] = "2026-09-05"
+        payload["exported"] = "2026-09-05T10:15:00Z"
+        payload["pages"][str(PAGE)]["lines"] = [
+            {
+                "id": "r2l2",
+                "original": _base_text(pages_dir, "r2l2"),
+                "corrected": "changed",
+            },
+        ]
+        later = tmp / "later.json"
+        later.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        ar.ingest([later], pages_dir)
+        saved = {ln["id"]: ln for ln in br.newest_review_run(_page(pages_dir))["lines"]}
+        assert saved["r2l1"].get("excluded") is True
+        assert saved["r2l2"]["text"] == "changed"
+
+
+def test_a_non_boolean_exclusion_is_refused() -> None:
+    lines = [{"id": "r2l1", "original": "a", "corrected": "a", "excluded": "yes"}]
+    data = _minimal({str(PAGE): {"status": None, "date": DATE, "lines": lines}})
+    with pytest.raises(ar.ReviewError, match="excluded"):
+        ar.validate(data, "test")

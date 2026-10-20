@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -192,7 +192,7 @@
           <lb facs="#zone-11797015-1-r4l2"/>mit ainer hanndgeschriben gemacht und aŭs ainanndern geschnitten, der ainer obemelter
           <lb facs="#zone-11797015-1-r4l3"/>f(ȗrstlicher) d(ȗrchleȗchtigkait) aȗf ir tirolisch raitcamer zȗ Y̑nnsprȗgg uberantwȗrt und der annder bedachtem
           <lb facs="#zone-11797015-1-r4l4"/>Banholcz gegeben ist. Beschehen an.
-          <lb facs="#zone-11797015-1-r4l5"/>Eberhart von Fre[.]berg
+          <lb facs="#zone-11797015-1-r4l5"/>Eberhart von Fre<gap reason="illegible"/>berg
           <lb facs="#zone-11797015-1-r4l6"/>f(ȗrstlicher) d(ȗrchleȗchtigkait) phleger zu Erenberg.
           <lb facs="#zone-11797015-1-r4l7"/>Sebastian Tescher gerichtsch(reiber)
           <lb facs="#zone-11797015-1-r4l8"/>zu Erenberg manu propria.
@@ -230,10 +230,10 @@
           <lb facs="#zone-11797015-3-r2l22"/>euch wo ich kan frŭntlichen gŭetwilligen diennst
           <lb facs="#zone-11797015-3-r2l23"/>way̆s zŭbewey̆sen bin ich alzeitt willig. Datum
           <lb facs="#zone-11797015-3-r2l24"/>Ernnberg den letzten tag julli anno etc. XXVtn.
-          <lb facs="#zone-11797015-3-r2l25"/>Ichhab p[...] die drit
-          <lb facs="#zone-11797015-3-r2l26"/>Ulrĭche hie aussen [.]altiß
-          <lb facs="#zone-11797015-3-r2l27"/>gene[..]tet.
-          <lb facs="#zone-11797015-3-r2l28"/>Eberhart [...] Freiberg
+          <lb facs="#zone-11797015-3-r2l25"/>Ichhab p<gap reason="illegible"/> die drit
+          <lb facs="#zone-11797015-3-r2l26"/>Ulrĭche hie aussen <gap reason="illegible"/>altiß
+          <lb facs="#zone-11797015-3-r2l27"/>gene<gap reason="illegible"/>tet.
+          <lb facs="#zone-11797015-3-r2l28"/>Eberhart <gap reason="illegible"/> Freiberg
           <lb facs="#zone-11797015-3-r2l29"/>f(ŭrstlicher) g(naden) pfleger zu Erenberg.
         </ab>
         <pb n="4" facs="#surface-11797015-4"/>

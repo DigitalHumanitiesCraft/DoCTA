@@ -9,7 +9,10 @@
  * reader is in comes from the getContext callback the page supplies.
  */
 
-import { escapeHTML, lsGet, lsSet } from './utils.js';
+import { lsGet, lsSet } from './utils.js';
+import { fillLine, lineState } from './viewer-render.js?v=20261020-readings';
+import { markUnclear } from './readings.js';
+import { READINGS } from './strings.js';
 
 const REVIEWER_KEY = 'docta-review-reviewer';
 const LEGACY_STATUS = new Set(['gesichtet', 'abgenommen']);
@@ -76,11 +79,10 @@ function prunePage(store, pageNr) {
  * }} els
  * @param {{
  *   getContext: () => { docId: number|null, pageNr: number|null, viewMode: string },
- *   markText: (escaped: string) => string,
  *   rerenderPage: (pageNr: number) => void
  * }} opts
  */
-export function createReviewView(els, { getContext, markText, rerenderPage, local, onSaved, onDraftChange }) {
+export function createReviewView(els, { getContext, rerenderPage, local, onSaved, onDraftChange }) {
   let reviewMode = false;
   let saving = false;
   let visibleDocId = null;
@@ -217,84 +219,118 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
   }
 
   /**
-   * One line after a correction, in the same shape renderTranscription gives
-   * it. Only this line is touched: a full re-render would detach the element
-   * whose blur committed the edit, and the click that caused the blur would
-   * land in a dropped subtree instead of opening the next line.
+   * Record a line's reading and, where given, whether it is deleted. Only this
+   * line is redrawn: a full re-render would detach the element whose blur
+   * committed the edit, and the click that caused the blur would land in a
+   * dropped subtree instead of opening the next line. A draft equal to the
+   * saved line is withdrawn; the excluded flag is written only where it
+   * differs from the saved state, which the save then carries over.
    */
-  function updateLineEl(lineEl, original, corrected) {
-    const span = lineEl.querySelector('.transcription__line-text');
-    if (!span) return;
-    let text = escapeHTML(corrected ?? original);
-    if (corrected == null) text = markText(text, { pageNr: getContext().pageNr, lineId: lineEl.dataset.lineId, text: original });
-    span.innerHTML = text;
-    lineEl.classList.toggle('transcription__line--corrected', corrected != null);
-    if (corrected == null) lineEl.removeAttribute('title');
-    else lineEl.title = `Original reading: ${original}`;
-  }
-
-  function commitCorrection(lineEl, rawValue) {
+  function commitCorrection(lineEl, rawValue, excludedChoice) {
     const id = lineEl.dataset.lineId;
     const { pageNr } = getContext();
     if (!id || pageNr == null) return;
     const original = lineEl.dataset.original ?? '';
+    const savedExcluded = lineEl.dataset.excluded === 'true';
     const value = rawValue.trim();
     const store = reviewStore();
     const page = ensurePage(store, pageNr);
     const idx = page.lines.findIndex(l => l && l.id === id);
+    const drafted = idx >= 0 && typeof page.lines[idx].excluded === 'boolean'
+      ? page.lines[idx].excluded : savedExcluded;
+    const excluded = typeof excludedChoice === 'boolean' ? excludedChoice : drafted;
     // Empty text deliberately removes a hallucinated reading without removing its anchor.
-    const withdrawn = value === original;
+    const withdrawn = value === original && excluded === savedExcluded;
+    const record = { id, original, corrected: value,
+      ...(excluded === savedExcluded ? {} : { excluded }) };
     if (withdrawn) {
       if (idx < 0) return;
       page.lines.splice(idx, 1);
     } else if (idx >= 0) {
-      page.lines[idx].corrected = value;
+      page.lines[idx] = record;
     } else {
-      page.lines.push({ id, original, corrected: value });
+      page.lines.push(record);
     }
     page.date = today();
     page.status = null;
     if (initialsValue().length >= 2) store.reviewer = initialsValue();
     prunePage(store, pageNr);
     saveReview(store);
-    updateLineEl(lineEl, original, withdrawn ? null : value);
+    fillLine(lineEl, lineState(lineEl, withdrawn ? null : record));
     syncReviewUI();
     lineEl.focus({ preventScroll: true });
+  }
+
+  /** Return a deleted line to the edition text with the reading it shows. */
+  function restoreLine(lineEl) {
+    if (saving || !reviewMode || !lineEl || !requireInitials()) return;
+    const record = reviewCorrections(getContext().pageNr).get(lineEl.dataset.lineId);
+    commitCorrection(lineEl, lineState(lineEl, record).text, false);
+  }
+
+  function lineAction(label, title) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'review-btn';
+    button.textContent = label;
+    button.title = title;
+    // Pressing keeps the caret and the selection in the input.
+    button.addEventListener('mousedown', event => event.preventDefault());
+    return button;
   }
 
   function beginEdit(lineEl) {
     if (saving) return;
     if (!reviewMode || getContext().viewMode !== 'synopsis') return;
     if (!lineEl || lineEl.classList.contains('transcription__line--folio')) return;
+    // A deleted line is restored first; its Restore control is the way back.
+    if (lineEl.classList.contains('transcription__line--excluded')) return;
     if (!requireInitials()) return;
     const span = lineEl.querySelector('.transcription__line-text');
     if (!span || lineEl.querySelector('.transcription__line-edit')) return;
 
+    const editor = document.createElement('div');
+    editor.className = 'transcription__line-editor';
     const input = document.createElement('input');
     input.type = 'text';
     input.className = 'transcription__line-edit';
     input.value = span.textContent;
     const initialValue = input.value;
     input.setAttribute('aria-label', 'Correct transcription line');
+    const unclear = lineAction(READINGS.markUnclear, READINGS.markUnclearTitle);
+    const remove = lineAction(READINGS.deleteLine, READINGS.deleteLineTitle);
+    editor.append(input, unclear, remove);
     let settled = false;
-    const finish = (commit) => {
+    const finish = (commit, excluded) => {
       if (settled) return;
       settled = true;
       activeEdit = null;
       const value = input.value;
-      input.remove();
+      editor.remove();
       span.hidden = false;
-      if (commit) commitCorrection(lineEl, value);
+      if (commit) commitCorrection(lineEl, value, excluded);
       else lineEl.focus({ preventScroll: true });
     };
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') { e.preventDefault(); finish(true); }
       else if (e.key === 'Escape') { e.preventDefault(); finish(false); }
     });
-    input.addEventListener('blur', () => finish(true));
+    unclear.addEventListener('click', () => {
+      const next = markUnclear(input.value, input.selectionStart ?? input.value.length,
+        input.selectionEnd ?? input.value.length);
+      input.value = next.value;
+      input.focus();
+      input.setSelectionRange(next.caret, next.caret);
+    });
+    remove.addEventListener('click', () => finish(true, true));
+    // The edit ends when focus leaves the line editor, not when it moves to
+    // one of its actions, so a keyboard user can reach them with Tab.
+    editor.addEventListener('focusout', (e) => {
+      if (!editor.contains(e.relatedTarget)) finish(true);
+    });
     activeEdit = { input, initialValue, finish };
     span.hidden = true;
-    span.after(input);
+    span.after(editor);
     input.focus();
     input.select();
   }
@@ -354,6 +390,7 @@ export function createReviewView(els, { getContext, markText, rerenderPage, loca
     get hasDraft() { return Object.keys(draft(getContext().docId)?.pages || {}).length > 0; },
     corrections: reviewCorrections,
     beginEdit,
+    restoreLine,
     applyMode: applyReviewMode,
     sync: syncReviewUI,
   };

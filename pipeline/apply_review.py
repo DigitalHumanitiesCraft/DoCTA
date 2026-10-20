@@ -194,6 +194,10 @@ def validate(data: Any, origin: str) -> dict[int, dict]:
                     raise ReviewError(
                         f"{where}, Zeile {line_id}: {field} fehlt oder ist kein Text"
                     )
+            if "excluded" in line and not isinstance(line["excluded"], bool):
+                raise ReviewError(
+                    f"{where}, Zeile {line_id}: excluded ist kein Wahrheitswert"
+                )
         out[int(key)] = page
     return out
 
@@ -223,9 +227,14 @@ def _corrected_lines(
     """Full line list of the page with the reported corrections applied.
 
     Refuses a correction whose reported original no longer matches the base, so
-    an export taken before another change cannot overwrite that change.
+    an export taken before another change cannot overwrite that change. An
+    excluded line keeps its text and leaves the edition text; the flag carries
+    over from the base until a correction sets it, so restoring is a correction
+    with ``excluded: false``. Only a set flag is written, which leaves the
+    lines never excluded in the shape they always had.
     """
     by_id = {line["id"]: line["text"] for line in base if line.get("id")}
+    excluded = {line["id"] for line in base if line.get("excluded")}
     replacements: dict[str, str] = {}
     for correction in corrections:
         line_id = correction["id"]
@@ -238,8 +247,16 @@ def _corrected_lines(
                 f" {correction['original']!r}"
             )
         replacements[line_id] = correction["corrected"]
+        if "excluded" in correction:
+            excluded.discard(line_id)
+            if correction["excluded"]:
+                excluded.add(line_id)
     return [
-        {"id": line["id"], "text": replacements.get(line["id"], line["text"])}
+        {
+            "id": line["id"],
+            "text": replacements.get(line["id"], line["text"]),
+            **({"excluded": True} if line["id"] in excluded else {}),
+        }
         for line in base
     ]
 

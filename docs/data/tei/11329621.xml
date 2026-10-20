@@ -15,7 +15,7 @@
         </respStmt>
         <respStmt xml:id="resp-tei-generation">
           <resp>Deterministic TEI generation from the Transkribus export, without editorial judgment</resp>
-          <name>pipeline/build_tei.py (sha256 edf07d8839e7)</name>
+          <name>pipeline/build_tei.py (sha256 311c90c7c4a4)</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -171,7 +171,7 @@
           <lb facs="#zone-11329621-1-r3l17"/>meinem gnädigen herren drew eỹsnplĕch und zway̆
           <lb facs="#zone-11329621-1-r3l18"/>wagen rĕder, costent XXVI gl., dỹ solt
           <lb facs="#zone-11329621-1-r3l19"/>er beschlagen.
-          <lb facs="#zone-11329621-1-r3l20"/>Dar an hat er h[...] I R(heinischen) gulden der ist
+          <lb facs="#zone-11329621-1-r3l20"/>Dar an hat er h<gap reason="illegible"/> I R(heinischen) gulden der ist
           <lb facs="#zone-11329621-1-r3l21"/>verrait meinem gnädigen herren.
         </ab>
         <pb n="2" facs="#surface-11329621-2"/>
