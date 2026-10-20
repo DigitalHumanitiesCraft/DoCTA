@@ -12,384 +12,371 @@ version: "1.0"
 created: 2026-02-18
 updated: 2026-10-20
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
+generated-with: Claude Code (Claude Fable 5, Claude Opus 5.5)
 template:
   name: Vorlage Journal
-  version: 0.4
+  version: 0.5
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
-related: [INDEX, project, handoff]
+related: [INDEX, project, specification, handoff]
 ---
 
 # Journal
 
-## Demonstration corrections removed (20.10.2026)
+## Entries
 
-The operator identified the three saved correction events of 2026-09-21 as their own test entries: one on page 2 of 11328300 with its reversal, and two lines on page 1 of 12647153. Removed the events and their review runs, rebuilt the register, projection and TEI, and deleted the static projection of 11328300 that only the review had produced. Both documents are back to their source text without a recorded review. The TEI regression that replayed the 12647153 event now carries the same two line corrections as a synthetic fixture. The corrected readings were never confirmed against the facsimile.
+Newest first. Each entry records one transition with its type (integrated, rejected, corrected, compacted), source, target and result. Figures inside an entry are the measurement of its date, not a current value; a later entry names any decision it supersedes.
 
-## Feedback round, interface language and unclear readings (20.10.2026)
+### 2026-10-20 compacted: whole journal
 
-The historical project lead tested the working edition. Corrections worked. Annotation appeared non-functional, most likely because she used the read-only GitHub Pages viewer, which hides the annotate controls without saying why. She asked to remove unneeded lines, mark unclear readings, annotate across line breaks, see work progress, reach more pages of the household chamberlain inventories, link persons to SiCProD, whether the exploration entities were made by an LLM, for a fully English working edition for an FWF proposal, and whether to fork. She was added as collaborator and clones rather than forks. The operator replied that a detailed answer follows, that annotation needs the locally started edition, and asked whether the proposal or the data matters more to her now. Her answer decides the next source selection.
+- Predecessor: commit `a2a960e`.
+- Scope: all entries from 2026-02-17 to 2026-10-20.
+- Result: every entry recast as type, source, target and result, wording condensed and repetition removed. All decisions, reasons, measurements and open points were kept, the closed prototype checklist of February 2026 as one summary line. Only narrative framing and the misplaced self-description paragraph, now the reading note under Entries, are preserved in Git alone.
 
-Repository inspection traced the unwanted lines most likely to modern archival notes, foliation and folio markers, as in the last lines of A 024.1. The VLM already labels such lines through `kind`, and Transkribus records region structure types, but the register drops `kind` and `scripts/fetch_transcriptions.py` loses the type. Emptying a line keeps an empty TEI line and stales its anchors. Line-break mentions such as `Jo` / `seph` are split because every entity is bound to one line. Only structural insertion, split and merge need the anchor-migration contract. The exploration entities are `entities_it01` LLM output without human input. The operator decided that the entire website including the guide is English, and that unclear readings get one uniform notation with tooltip, correction-mode editing and TEI conversion, its syntax left to a later package. The same pass corrected stale statements across CLAUDE.md, the READMEs and the knowledge documents (starters, commit hook, tests, accounts build, review overlay, absent sidecar folders, pilot2, reading order). Plan, specification, data, design and handoff carry the result. The documents now also record the English site with its read-only hint, `strings.js` and `vocabLabel`, the stricter review contract, the JSON error answers of the local API with removal of orphaned review events, the shared site-transcription path of the local build and the new `json.entity-corrected` finding. No code, data or published page was changed in this documentation step.
+### 2026-10-20 corrected: demonstration corrections removed
 
-## Compact installation guide (19.10.2026)
+- Source: operator, who identified the three correction events of 2026-09-21 as their own test entries (11328300 page 2 with its reversal, 12647153 page 1 with two lines).
+- Target: `pipeline/reviews/`, page register, static projections, TEI; `pipeline/test_build_tei.py`, `tests/viewer-ui-test.mjs`.
+- Result: events and review runs removed; register, projection and TEI rebuilt; the projection of 11328300, produced only by the review, deleted. Both documents carry their source text without a recorded review. The TEI regression replays the same two line corrections as a synthetic fixture, and the viewer line-count check serves a fixture projection, since the corpus now holds no saved correction. The corrected readings were never confirmed against the facsimile.
 
-Shortened the setup section at the operator's request. The guide now leads directly from cloning to opening the project terminal, then gives one command block per operating system. The dependency list is explained at the installation step, and a direct link continues to starting the editor. Setup commands, anchors and the separation of one-time installation from later sessions are retained.
+### 2026-10-20 integrated: feedback round, interface language and unclear readings
 
-## Dependency file for editorial onboarding (19.10.2026)
+- Source: the historical project lead's test of the working edition and feedback mail; operator decisions of the same day; repository inspection.
+- Target: [plan.md](plan.md#feedback-round-of-2026-10-20), specification.md, data.md, design.md, handoff.md, CLAUDE.md, READMEs.
+- Result:
+  - Feedback: corrections worked. Annotation looked non-functional, most likely because she used the read-only GitHub Pages viewer, which hid the annotate controls without a reason. Requests: remove unneeded lines, mark unclear readings, annotate across line breaks, see work progress, reach more pages of the household chamberlain inventories, link persons to SiCProD, confirm whether exploration entities came from an LLM, a fully English working edition for an FWF proposal, and whether to fork.
+  - Collaboration: she was added as collaborator and clones rather than forks. The operator replied that a detailed answer follows, that annotation needs the locally started edition, and asked whether the proposal or the data matters more to her now; her answer decides the next source selection.
+  - Findings: the unwanted lines are most likely modern archival notes, foliation and folio markers, as in the last lines of A 024.1. The VLM labels such lines through `kind` and Transkribus records region structure types, but the register drops `kind` and `scripts/fetch_transcriptions.py` loses the type. Emptying a line keeps an empty TEI line and stales its anchors. Line-break mentions such as `Jo` / `seph` split because every entity is bound to one line. Only structural insertion, split and merge need the anchor-migration contract. The exploration entities are `entities_it01` LLM output without human input.
+  - Decisions: the whole website including the guide is English. Unclear readings get one uniform notation with tooltip, correction-mode editing and TEI conversion; the syntax was left to a later package.
+  - Documentation: stale statements corrected across CLAUDE.md, the READMEs and the knowledge documents (starters, commit hook, tests, accounts build, review overlay, absent sidecar folders, pilot2, reading order). The documents record the English site with its read-only hint, `strings.js` and `vocabLabel`, the stricter review contract, JSON error answers of the local API with removal of orphaned review events, the shared site-transcription path of the local build and the `json.entity-corrected` finding. No code, data or published page changed in this documentation step.
 
-Renamed the runtime-only lock export to requirements.txt at the operator's request and updated the guide, README, maintainer command and test instructions. The guide now explains that cloning downloads this project file and that the one-time pip step installs its listed packages. Package versions and the installed-Python workflow are unchanged.
+### 2026-10-19 integrated: compact installation guide
 
-## Technical readiness for the feedback round (17.10.2026)
+- Source: operator request.
+- Target: guide.html.
+- Result: setup leads directly from cloning to the project terminal, then one command block per operating system. The dependency list is explained at the installation step, with a direct link to starting the editor. Commands, anchors and the split between one-time installation and later sessions unchanged.
 
-The operator requested a reviewed and cleaned working codebase while awaiting the historical project lead's feedback. Two separate local code reviews identified gaps in rebuild/save serialization, correction replay, alternate-root source isolation, focused-input protection and TEI cache invalidation. Integrated bounded fixes and regressions into the existing script pipeline and no-build viewer. The shared review lock moved to io_paths without changing its public compatibility import. Browser checks can reuse existing cached facsimiles, and isolated fixtures carry effective static text projections. Specification, plan, architecture and handoff now distinguish readiness of the existing functions from the scholarly decisions and feedback still outstanding. No source processing, new recognition run or publication was performed.
+### 2026-10-19 integrated: dependency file for editorial onboarding
 
-## Source coverage after a saved correction (17.10.2026)
+- Source: operator request.
+- Target: guide, README, maintainer command, test instructions.
+- Result: the runtime-only lock export is named `requirements.txt`. The guide explains that cloning downloads it and that the one-time pip step installs its packages. Versions and the installed-Python workflow unchanged.
 
-Traced the silver inventory A 006.8 (und .9), document 12647153, from its cached facsimile and immutable edition run through the saved correction event to TEI. The existing header lost its incomplete-coverage notice when a correction was present and described correction-only provenance as page review. Moved coverage reporting outside the review branches, retained the correction reason in revision prose and restricted the generator's fidelity claim to preservation of the effective register text. Added a regression that replays the existing correction without modifying source data. Architecture records the resulting contract. Original spelling and saved readings remain unchanged; abbreviation treatment and uncertain readings remain editorial decisions. No recognition run, source download or publication was performed.
+### 2026-10-17 integrated: technical readiness for the feedback round
 
-## Independent use and original spelling (16.10.2026)
+- Source: operator request for a reviewed, cleaned codebase; two separate local code reviews.
+- Target: pipeline, viewer, specification.md, plan.md, architecture.md, handoff.md.
+- Result: fixed gaps in rebuild/save serialization, correction replay, alternate-root source isolation, focused-input protection and TEI cache invalidation, each with a regression. The shared review lock moved to `io_paths` behind its compatibility import. Browser checks may reuse cached facsimiles, and isolated fixtures carry effective static text projections. The documents separate readiness of existing functions from outstanding scholarly decisions and feedback. No source processing, recognition run or publication.
 
-The operator confirmed independent use of the working edition across all source material already present in the project, with original spelling retained. Integrated this scope and spelling decision into project.md, plan.md and specification.md. Small passages remain technical trial cases. No processing was performed during this documentation change. Partner collaboration remains non-binding, and proposal submission is unconfirmed. Abbreviation expansion, uncertain readings, accepted references, source access, reuse rights and scholarly acceptance retain their separate decisions.
+### 2026-10-17 corrected: source coverage after a saved correction
 
-## Editorial collaboration on main (21.09.2026)
+- Source: trace of the silver inventory A 006.8 (and .9), document 12647153, from cached facsimile and edition run through a saved correction event to TEI.
+- Target: `pipeline/build_tei.py`, [architecture.md](architecture.md).
+- Result: the header had lost its incomplete-coverage notice when a correction existed and described correction-only provenance as page review. Coverage reporting moved outside the review branches, revision prose keeps the correction reason, and the generator's fidelity claim is restricted to preserving the effective register text. A regression replays the correction (since 2026-10-20 a synthetic fixture). Original spelling and saved readings unchanged; abbreviation treatment and uncertain readings remain editorial decisions.
 
-The operator selected main for all editorial collaboration. The README and architecture now remove branch selection and separate-branch integration from the workflow. Local saving, commits and public uploads remain distinct, with publication scope agreed before transferring research data.
+### 2026-10-16 integrated: independent use and original spelling
 
-## Compact guide with installed Python (21.09.2026)
+- Source: operator confirmation.
+- Target: project.md, plan.md, specification.md.
+- Result: the working edition may be used independently across all source material already in the project, with original spelling. Small passages remain technical trial cases. Partner collaboration stays non-binding and proposal submission unconfirmed. Abbreviation expansion, uncertain readings, accepted references, source access, reuse rights and scholarly acceptance keep their separate decisions.
 
-Reduced the working guide to setup, launch, editing and saving after the operator found the combined onboarding and reference text too long. Git operations and recovery now remain in the README. Editorial setup follows the supplied teaching route with installed Python and the VS Code terminal. A runtime-only requirements export from the existing lock supports pip without installing uv on the editor's machine. Python 3.14 venv creation and package installation were exercised on Windows, followed by the real-backend browser walkthrough in that environment. Store installation, native macOS setup and recipient-side GitHub Desktop operation remain unobserved. The prior pip-install-project suggestion is replaced by the explicit requirements command.
+### 2026-09-21 integrated: editorial collaboration on main
 
-## Clarified installation and repository exchange (21.09.2026)
+- Source: operator decision.
+- Target: README, architecture.md.
+- Result: all editorial collaboration runs on main; branch selection and separate-branch integration removed. Local saving, commits and public uploads stay distinct, and publication scope is agreed before research data are transferred.
 
-Corrected the setup explanation after the operator identified confusion between Python, VS Code and Live Server. The supplied technical-preparation slides describe a development environment, while the working edition starts its own write-capable server through the existing launchers. The operator selected GitHub Desktop cloning as the sole installation route, replacing the earlier ZIP instructions. The guide and README now explain account creation, uv as the Python installation helper and optional VS Code use. Added a documented path for commits and synchronization, with explicit public-data visibility and preservation of earlier local work. The example remains optional and the invitation supports independent source work and feedback. GitHub Desktop instructions follow provider documentation rather than an observed recipient-side installation.
+### 2026-09-21 corrected: compact guide with installed Python
 
-## Guided first use and preservation of local work (21.09.2026)
+- Source: operator, who found the combined onboarding and reference text too long; the supplied teaching route.
+- Target: guide.html, README, `requirements.txt`.
+- Result: the guide covers setup, launch, editing and saving; Git operations and recovery stay in the README. Setup uses installed Python and the VS Code terminal, with a runtime-only requirements export from the lock so the editor's machine needs no uv. Replaces the earlier pip-install-project suggestion. Exercised: Python 3.14 venv creation and package installation on Windows, followed by the real-backend browser walkthrough. Unobserved: Store installation, native macOS setup, recipient-side GitHub Desktop operation.
 
-Reworked the German guide around ZIP setup, separate operating-system steps and one source-bound person exercise. The local example link now requires the existing editor capability, so a public reader is directed to reopen the guide in the local application. Entry creation and occurrence saving are explained separately. Text correction is optional where the image supports it, with a further saved correction as the remedy for a mistaken reading. Backup instructions distinguish saved files from browser drafts. A compatible update retains the canonical text and editorial folders while keeping the old project intact. Isolated Windows launcher checks covered a fresh locked environment, its subsequent environment fallback and transfer of saved corrections and registry identities. A reviews-only control confirmed that startup does not reconstruct effective readings from events alone. Native macOS startup and first-time installation of uv on an unprepared machine remain unobserved.
+### 2026-09-21 corrected: installation and repository exchange
 
-The executable guide walkthrough exercised the actual local backend with isolated corpus copies. It verified entry creation, occurrence saving and reload, Index lookup and return, annotation editing and removal, and correction followed by restoration. Static and local guide routing, keyboard navigation and narrow reflow at increased scale were checked. Source selection was scripted through the browser DOM. Research-file hashes and file inventories remained unchanged. This supplies technical evidence and does not establish first-time-user acceptance.
+- Source: operator, who identified confusion between Python, VS Code and Live Server; the technical-preparation slides describe a development environment.
+- Target: guide, README.
+- Result: the working edition starts its own write-capable server through the launchers. GitHub Desktop cloning became the sole installation route, replacing ZIP instructions. Guide and README explain account creation, uv as installation helper, optional VS Code, commits and synchronization with explicit public-data visibility and preservation of earlier local work. The example stays optional. GitHub Desktop steps follow provider documentation, not an observed installation.
 
-## Public working guide and documentation boundary (21.09.2026)
+### 2026-09-21 integrated: guided first use and preservation of local work
 
-Added the German installation and working guide as a maintained site entry point and linked it from the repository documentation and architecture. Current knowledge documents now describe durable implementation decisions without correspondence summaries. The handoff distinguishes working version 0.2.0, saved human corrections, retained machine output and the scholarly decisions that remain open. Review selection now orders schema version 2 runs by their timezone-aware save timestamp and reads the time suffix of older local run IDs, independently of reviewer initials. Shift with the horizontal arrow keys preserves native text selection instead of changing the page. Targeted backend and browser tests cover both corrections. No publication of research data or scholarly acceptance follows from this documentation state.
+- Source: guide rework; isolated launcher checks; executable guide walkthrough.
+- Target: guide (then German), README, `tests/guide-walkthrough-test.mjs`.
+- Result:
+  - Guide: ZIP setup (superseded the same day by GitHub Desktop), separate operating-system steps, one source-bound person exercise. The local example link requires the editor capability, so a public reader is sent to the local application. Entry creation and occurrence saving explained separately. Text correction optional where the image supports it; a further saved correction remedies a mistaken reading. Backups distinguish saved files from browser drafts. A compatible update keeps canonical text and editorial folders and leaves the old project intact.
+  - Checks: Windows launchers covered a fresh locked environment, its environment fallback and transfer of saved corrections and registry identities. A reviews-only control confirmed that startup does not rebuild effective readings from events alone. The walkthrough exercised the real backend over isolated corpus copies: entry creation, occurrence save and reload, Index lookup and return, annotation edit and removal, correction and restoration, static and local routing, keyboard navigation, narrow reflow at increased scale. Source selection was scripted through the DOM. Research-file hashes and inventories unchanged.
+  - Limits: native macOS startup and first-time uv installation unobserved. Technical evidence only, no first-time-user acceptance.
 
-## Source overview and consolidated vocabulary (21.09.2026)
+### 2026-09-21 integrated: public working guide and documentation boundary
 
-Retired the separate research-tag surface while preserving its data and compatible API. Reworked source selection around German search, availability and provenance, removed aggregate progress and pipeline-stage initials, and replaced BETA with Research preview. Sources with only a recorded first image can open that image without constructing missing pages or masking transcription errors. The shared annotation field and Index remain the entry points for controlled vocabulary. Browser verification covers source filtering, image-only navigation, the absent tag interface and responsive access. Scholarly workflow acceptance remains with the editor.
+- Source: operator request; review-ordering and keyboard defects.
+- Target: guide.html, README, architecture.md, handoff.md, `build_register.newest_review_run`, viewer.
+- Result: the guide became a site entry point. Knowledge documents hold durable decisions without correspondence summaries. The handoff distinguishes working version 0.2.0, saved corrections, retained machine output and open scholarly decisions. Review selection orders schema-2 runs by their timezone-aware save timestamp and reads the time suffix of older local run ids, independently of reviewer initials. Shift with horizontal arrows keeps native text selection instead of paging. Targeted backend and browser tests cover both.
 
-## Editor-owned annotation and Index view (21.09.2026)
+### 2026-09-21 integrated: source overview and consolidated vocabulary
 
-Simplified the working workflow after inspection of the combined annotation field. Removed machine proposals, their marks and editing controls from the viewer. The source-bound form now serves the editor's own assignments and vocabulary alone. Preserved earlier extraction files and curation decisions for pipeline compatibility. Added Index beside Viewer to browse saved persons, places and controlled terms through search, category filters and source links. The index resolves identities by entry ID and performs no writes or automatic reconciliation. Removed decorative horizontal separators and documented the revised interaction. The earlier shared-field implementation remains part of the development history, while its machine-proposal surface is superseded by this decision.
+- Source: interface inspection.
+- Target: index page, viewer, design.md.
+- Result: the separate research-tag surface retired, its data and API kept. Source selection reworked around search, availability and provenance; aggregate progress and pipeline-stage initials removed; BETA replaced by Research preview. A source with only a first image opens it without constructing missing pages or masking transcription errors. The shared annotation field and Index are the entry points for controlled vocabulary. Browser checks cover filtering, image-only navigation, the absent tag interface and responsive access.
 
-## Shared annotation field (21.09.2026)
+### 2026-09-21 rejected: machine proposals in the working interface
 
-Inspection of a source-bound assignment exposed the fragmented interaction between selection, assignment and machine-proposal information. Consolidated these into one source-bound popover. Register entries can be created and edited within it, while the sidebar remains available for browsing. Machine evidence and human assignment retain their separate histories and explicit save actions. Shared navigation guards preserve drafts across dismissal and prevent changing the source while inputs remain unsaved. Independent review also identified an older registry response replacing a more recent saved state, which is now guarded by request and mutation generations. Browser regression checks cover the unified field, inline entry editing, persistence and the delayed-response case. Scholarly acceptance remains with the historical editor.
+- Source: inspection of the combined annotation field.
+- Target: viewer, design.md, CLAUDE.md.
+- Reason: the working editor serves the editor's own assignments; machine proposals fragmented the interaction.
+- Result: proposals, their marks and editing controls removed; extraction files and curation decisions kept for pipeline compatibility. Index added beside Viewer to browse saved persons, places and terms by search, category filter and source link; it resolves identities by entry id, writes nothing and reconciles nothing. Decorative horizontal separators removed. Supersedes the proposal surface of the shared annotation field below.
 
-## Source-bound annotation interaction (21.09.2026)
+### 2026-09-21 integrated: shared annotation field
 
-Interface inspection established that annotation belongs in the reading workspace. Added a selection toolbar, anchored nonmodal editing and a collapsible register sidebar for working version 0.2.0. Persons, terms and places use independent register identities. Date mentions retain their source quotation and optional exact or bounded normalization, with uncertainty separate from precision. Right-click supplements the visible toolbar and keyboard entry point. The initial tall form obscured its source, so the compact layout collapses optional notes and fits the available space beside the passage.
+- Source: inspection of a source-bound assignment; independent review.
+- Target: viewer registry modules, design.md.
+- Result: selection, assignment and proposal information consolidated into one source-bound popover, where register entries are also created and edited; the sidebar stays for browsing. Machine evidence and human assignment keep separate histories and explicit saves. Navigation guards preserve drafts across dismissal and block source changes while input is unsaved. An older registry response could replace a newer saved state; request and mutation generations now guard it. Browser regressions cover the field, inline entry editing, persistence and the delayed response.
 
-Refactored the registry interaction into controller, form markup, display, source-anchor and shared popover modules. Preserved the existing persistence and history contract. Independent review identified and fixed delayed-load and outdated-response failures in the machine-proposal editor and prevented an in-progress decision from silently acquiring the digest of a corrected source. Regression checks exercise these cases. The working interaction still requires the historical editor's assessment on actual research passages. Updated the README and canonical knowledge contracts, while the Vault overview records the stable editorial responsibilities and distinguishes human assignments from machine proposals.
+### 2026-09-21 integrated: source-bound annotation interaction
 
-## Internal working version 0.1.0 (21.09.2026)
+- Source: interface inspection; independent review.
+- Target: viewer (working version 0.2.0), README, architecture.md, Vault overview.
+- Result: annotation moved into the reading workspace with a selection toolbar, anchored nonmodal editing and a collapsible register sidebar. Persons, terms and places have independent register identities. Dates keep their source quotation with optional exact or bounded normalization, uncertainty separate from precision. Right-click supplements the toolbar and keyboard entry. The first tall form hid its source, so optional notes collapse and the form fits beside the passage. The interaction was split into controller, form markup, display, source-anchor and popover modules under the unchanged persistence contract. Review fixed delayed-load and outdated-response failures in the proposal editor and stopped an in-progress decision from silently taking a corrected source's digest. The Vault overview records editorial responsibilities and separates human assignments from machine proposals.
 
-Implemented the editor-owned person register and controlled vocabulary with name-independent identities, variants, optional broader terms and source-bound single-line assignments. The viewer supports local search, manual annotation editing, direct decisions on highlighted machine proposals and separate transcription provenance. Registry and annotation changes retain actor, timestamp and before/after values. Changed source text requires anchor rechecking. Editorial assignments remain separate from generated TEI and graph identities and export as JSON. No external reconciliation or model calls were added.
+### 2026-09-21 integrated: internal working version 0.1.0
 
-Added Windows and macOS launchers using locked dependencies and browser opening after a successful bind. Set the package version to 0.1.0 for the internal working edition. Regenerating the stale lockfile removed unused, undeclared JSON Schema dependencies. CI now declares Linux, Windows and macOS, while native macOS execution remains unobserved locally. Updated the README, implementation contracts and handoff to distinguish implemented behavior from scholarly decisions and later export integration. Source selection and editor acceptance remain open.
+- Source: register requirements of the same day.
+- Target: `pipeline/local_editor.py`, registry modules, launchers, CI, README, handoff.md.
+- Result:
+  - Register: person register and controlled vocabulary with name-independent identities, variants, optional broader terms and source-bound single-line assignments; local search, manual annotation editing, decisions on highlighted proposals (later removed), separate transcription provenance. Changes keep actor, timestamp and before/after values; changed source text requires anchor rechecking. Assignments stay separate from TEI and graph identities and export as JSON. No external reconciliation or model calls.
+  - Operation: Windows and macOS launchers with locked dependencies that open the browser after a successful bind; package version 0.1.0. Regenerating the stale lockfile removed unused JSON Schema dependencies. CI declares Linux, Windows and macOS; native macOS unobserved locally.
+  - Verification: Python suite (slow tests in the commit gate), browser checks for register, tags, viewer and static site. Register tests ran an isolated real backend over corpus data: save and reload, history, stale anchors, equal names, keyboard, narrow views. TEI baseline tests derive fixtures from source exports, not from a corrected register.
 
-Verification passed the Python suite, with slow tests reserved for the commit gate, and the browser checks for the register, tags, viewer and public static site. Register browser tests used an isolated real backend and existing corpus data, including save/reload, history, stale anchors, equal names, keyboard interaction and narrow views. TEI baseline tests now derive their fixtures from source exports rather than a corrected working register. Existing research corrections were preserved.
+### 2026-09-21 integrated: editorial onboarding and register requirements
 
-## Editorial onboarding and register requirements (21.09.2026)
+- Source: cross-source person and object research.
+- Target: specification.md, README.
+- Result: requirement for an editor-owned person index and vocabulary, with uncertain links and object classification kept apart from physical-object identity. Inspection found automatic name-based aggregation in the generated index and no event history in the earlier annotation sidecars. README gained startup, separate saves, reload, local versioning and feedback instructions.
 
-Cross-source person and object research established the requirement for an editor-owned person index and vocabulary. Recorded the register and provenance behavior in specification.md, with uncertain links and object classification kept distinct from physical-object identity. Inspection found automatic name-based aggregation in the generated index and no event history in the earlier annotation sidecars. Expanded the README with startup, separate saves, reload, local versioning and feedback instructions. No research data or application behavior changed.
+### 2026-09-21 integrated: research-first documentation alignment
 
-A dated log. Entries record the state at the date they carry, and figures inside an entry are the measurement of that day rather than a current value. Where a decision has since been superseded, the later entry says so.
+- Source: meeting preparation.
+- Target: README, CLAUDE.md, pipeline and test documentation, Vault project overview.
+- Result: entry points, correction contract and knowledge follow the order goals, material, annotation needs, intended analysis, then demonstration. Legacy status fields are distinguished from the correction-only interface. Independent provenance of Inventaria transcription and DoCTA annotations recorded. "Disposable code" replaced by maintained, tested implementation. Historical prompts, runs and research corrections kept.
 
-## Research-first documentation alignment (21.09.2026)
+### 2026-09-21 integrated: meeting guide and evidence boundaries
 
-Aligned the entry points, correction contract and knowledge documents with the research-first order of goals, material, annotation needs, intended analysis and then demonstration. The README now introduces the local working edition, the action layer routes to maintained contracts, and the pipeline and test documentation distinguish legacy status fields from the correction-only interface. Recorded the independent provenance of Inventaria transcription and DoCTA model annotations. Direct editing at highlighted mentions remained proposed at this stage. The Vault project overview retains stable research context and links to the repository for implementation detail. Historical prompts, runs and research corrections were preserved. Replaced the conflicting disposable-code wording with maintained, tested implementation. No software behavior changed.
+- Source: joint walkthrough preparation.
+- Target: guide, [plan.md](plan.md#meeting-answers-and-scope).
+- Result: a working guide for the walkthrough. The meeting boundaries separate the local pilot from funded scope, explain source access and import, and separate transcription accuracy, correction evidence and historical quantification. Obsolete effort-measurement wording corrected.
 
-## Meeting guide and evidence boundaries (21.09.2026)
+### 2026-09-21 rejected: time tracking and page review stages
 
-Prepared a German working guide for the joint walkthrough. The [meeting boundaries](plan.md#meeting-answers-and-scope) distinguish the usable local pilot from funded research scope, explain source access and import, and separate transcription accuracy, correction evidence and historical quantification. Corrected obsolete effort-measurement wording. The guide supports installation and editorial use and records no scholarly acceptance.
+- Source: continued walkthrough inspection.
+- Target: viewer, [design.md](design.md#working-editor-hierarchy), architecture.md, plan.md.
+- Reason: the operator excluded time measurement and separate page approval from the working workflow.
+- Result: these controls and active measurement removed. Correction provenance stays in the saved event and the effective page register; legacy records kept. Metadata and annotation entry points share one wrapping row, and the source attribution opens the original edition.
 
-## Correction provenance and compact tools (21.09.2026)
+### 2026-09-21 integrated: working editor navigation and controls
 
-Corrected the interaction model after continued inspection. Metadata and annotation entry points share a wrapping row, and the source attribution directly opens the original edition. Time tracking and separate page review stages were excluded from the working workflow. These controls and active measurement were removed from the working editor. Correction provenance remains in the saved event and effective page register, with legacy records preserved. The design decision is recorded in [design.md](design.md#working-editor-hierarchy), the persistence model in [architecture.md](architecture.md), and the revised exercise in [plan.md](plan.md).
+- Source: walkthrough observations.
+- Target: viewer, [design.md](design.md#working-editor-hierarchy), [plan.md](plan.md#guided-editor-exercise).
+- Result: source identity above image and text, the image opens fitted, corrections have a direct editing entry point, supplemental actions are disclosed at their point of use. The build rejects unsaved transcription drafts. Browser regressions cover image bounds, page changes, dialog focus, reflow under CSS zoom and save/reload against an in-memory service, and the running viewer was inspected for full-image presentation, metadata access and the simplified controls. No screen-reader audit.
 
-## Working editor navigation and controls (21.09.2026)
+### 2026-09-21 integrated: local working edition and source-bound pilot plan
 
-Integrated observed walkthrough findings into the viewer and [design.md](design.md#working-editor-hierarchy). Source identity moved above image and text, image opening now fits the whole image, and corrections have a German editing entry point. Supplemental review actions, annotations and edition output are disclosed at their point of use. The existing save contract remains explicit and the build rejects unsaved transcription drafts. [plan.md](plan.md#guided-editor-exercise) carries the revised exercise and distinguishes observed orientation and navigation from automated checks and pending scholarly assessment. Browser regression checks cover image bounds, page changes, dialog keyboard focus, responsive reflow with CSS zoom, and save/reload against an isolated in-memory service. The running local viewer was inspected for full-image presentation, metadata access and the simplified editing controls. These checks do not establish scholarly acceptance or a screen-reader audit.
+- Source: owner request for a first correction and annotation exercise, following the project lead's question who does what with which objects and where; independent review; Hersch and SZD as write-back references.
+- Target: `pipeline/local_editor.py`, project.md, specification.md, plan.md, architecture.md.
+- Result:
+  - Editor: manual page and line tags with notes, reviewers and retained source readings, as provisional working terms separate from entity decisions and TEI/RDF claims (tags later retired); a source change marks tags for recheck. Loopback saving of review records and effective readings, conflict detection, rebuild of the connected TEI set and static projections. Empty readings are real corrections; editing an approved text reopened its review. Annotation decisions stored against source digests and projected into TEI and graph, with curation and authority per attestation. Source import keeps Inventaria PAGE annotations, and the accounts preparation build supplies a checked TranscriptionRevision and manifest without inventing accounting annotations.
+  - Plan: the exercise uses the silver inventory and a purchase wording in the Thaur inventory, and binds demonstration, reference sample, permissions and case selection to contributions and acceptance evidence. Technical availability is distinguished from commission and acceptance.
+  - Review: write races, inconsistent partial builds and a draft-status omission fixed. A real-source scratch copy passed save, reload, reading view, TEI rebuild and annotation read-back. Persistence checks and an isolated browser exercise covered save, reload, filtering and the changed-source warning. Python suite, lint and formatting passed, and the healthcheck confirmed schema validity and byte-identical rebuild. Derived files regenerated under the existing edition date. No research correction, reference approval, paid run or publication.
+  - References: SZD keeps machine text and correction history, but its unchecked asynchronous save, direct file replacement and implicit approval miss the editor's persistence contract; pinned links in architecture.md.
+  - Open at the time: the Inventaria test import stays private and ignored; missing image keys need authorized Transkribus metadata; structural line edits, new annotation spans, the accepted account-book reference, specialized HTR comparison and released accounting TEI/RDF; narrow-viewport acceptance (the browser adapter ignored the viewport). Scientific decisions and proposal text lie with the project lead.
 
-## Local working edition and a source-bound pilot plan (21.09.2026)
+### 2026-09-20 integrated: three owner decisions
 
-The owner requested a first correction and annotation exercise following the project lead's recorded question of who does what with which objects and where. The local editor now offers manual page and line tags with notes, reviewers and retained source readings. Working terms remain provisional, separate from entity decisions and TEI/RDF claims. `plan.md` ties the exercise to the silver inventory and a purchase wording in the Thaur inventory. Source changes mark tags for recheck, and conflicting revisions are rejected. Automated persistence checks and an isolated browser exercise cover save, reload, filtering and the changed-source warning.
+- Source: project owner.
+- Target: specification.md, accounting-encoding.md, `pipeline/schema/SOURCES.md`.
+- Result:
+  - DoCTA becomes a locally run editing tool. The editor clones the repository, edits research data in the running application and commits with GitHub Desktop. It replaces browser localStorage drafts ingested by the operator through `apply_review.py`, because the project lead must operate the pipeline herself; interfaces and functions are worked out with her.
+  - No TEI ODD. RELAX NG, and in the accounts pilot Schematron and SHACL, carry validation; an ODD follows only if DoCTA publishes a reusable customisation. Replaces "deferred".
+  - The working edition proposed on 2026-08-28 was still unconfirmed; an introduction meeting was set for 2026-09-21. Transcription convention, annotation vocabulary (priority object categories, order of reconciliation sources, the free-text `role` field of entity iteration 01, place versus space) and confirmation lie with the project lead.
 
-`project.md`, `specification.md` and the indexed `plan.md` distinguish technical availability from an agreed commission and scholarly acceptance. The plan binds the inventory demonstration, reference sample, source permissions and historical case selection to concrete contributions and acceptance evidence.
+### 2026-09-20 corrected: knowledge base checked against the repository
 
-The loopback editor now saves review records and effective readings, detects concurrent changes and rebuilds the connected TEI set and static projections. Empty readings remain real corrections, and editing an approved text reopens its review. Annotation decisions are stored against source digests and projected into TEI and graph. The graph attributes curation and authority to individual attestations. The original recognition runs and extraction files are preserved. Source import preserves Inventaria PAGE annotations, and the accounts preparation build supplies a checked TranscriptionRevision and manifest without inventing accepted accounting annotations.
+- Source: read of every knowledge document against code, data and artefacts.
+- Target: architecture.md, design.md, INDEX.md, specification.md, README, `pipeline/README.md`, `apply_review.py`, edition README, handoff.md.
+- Result: the viewer has a line overlay (`buildLineOverlay`). The entity layer comes from `data/entities/`; the demo fallback no longer triggers. No page loads `lib/marked.min.js`. The display takes no grading from model output (the entity prompt forbids a confidence field, the loader drops the demo file's), and the `--conf-*` tokens colour text-layer states. `transkribus_collection.json`, `transkribus_status.json` and `raitbuch2_pages.json` are pipeline inputs; `stats.json` holds no current figures. The benchmark computes metrics per page; zone stratification and line loss are specified only. The `provenance` field of `documents.json` is a constant. The handoff states that the review step was implemented but never run with a real export and that no account-book edition path exists; the pilot 2 process lessons wait for a reviewed sample. Open then: how edit mode writes into the repository; the constant `provenance` misstating the two self-transcribed documents; the unused `marked.min.js`; the `--conf-*` names.
 
-Independent review found and corrected write races, inconsistent partial builds and a frontend draft-status omission. A real-source scratch copy passed save, reload, Reading, TEI rebuild and annotation read-back in the browser. The complete Python suite, lint and formatting passed, and the pipeline healthcheck confirmed schema validity and byte-identical rebuild. Derived site files were regenerated under the existing edition date to preserve their generator provenance. No research correction, reference approval, paid recognition run or publication was performed.
+### 2026-08-28 corrected: methods review of the HTR evaluation
 
-The Hersch and remote SZD implementations were inspected as write-back references. SZD preserves machine text and correction history, but its unchecked asynchronous save, direct file replacement and implicit approval do not meet the local editor's persistence contract. The comparison and pinned source links are recorded in `architecture.md`.
+- Source: critical methodological review.
+- Target: htr-evaluation.md, benchmark and pilot summaries, `analyze_summary.py`, site.
+- Result:
+  - Weaknesses: it02 was developed on the measured reference pages (glossary lemmata verbatim in the gt_lines, strict-CER gain as the prompt document expected, fair CER flat), so the in-sample comparison cannot carry the iteration choice; remedy, an it01 run over the pilot page sets (needs API access). htr-evaluation.md had described unimplemented components in the present tense and now separates operating state from a requirements register. The reference is the Transkribus transcript with workflow status DONE, not a human Inventaria reference; corrected wherever displayed.
+  - Phase one: symmetric repeat agreement (Dice over a deterministically oriented alignment, since difflib depends on argument order); folio markers stripped in all spellings; summary with distances, reference class, a degenerate flag (fair reference under 100 characters, reproducing the two excluded pages) and a versioned normalisation profile; pilots recomputed with the old figures kept as oldmetric files; amounts report with coverage (17 of 70 blocks decide); benchmark summary and published copy under the healthcheck.
+  - Phase two: word consistency correlates with fair CER at Spearman -0.93 (it01) and -0.79 (it02), exact permutation p 0.007 and 0.048 at n=7, which licenses consistency-based triage. it02 has lower strict CER on 7 of 7 pages (sign test p=0.0078) at flat fair CER, replacing the site's undersized noise threshold. Uncertain markers reach 95.4 % precision at 25.4 % recall under it01 against 88.4 % at 39.3 % under it02. The site uses length-weighted micro CER (page mean secondary) and excludes degenerate references by flag. The untuned pilot document scores about four CER points better than the benchmark pages. The it02 prompts are accepted as the frozen production configuration of the edition track; their hashes match the committed runs.
 
-The Inventaria test import stays private and ignored by Git. Missing image keys still require authorized Transkribus metadata. Structural line edits, new annotation spans, the accepted account-book reference, specialized HTR comparison and released accounting TEI/RDF remain open. The browser adapter did not apply the requested narrow viewport, so responsive and zoom accessibility acceptance remains incomplete. The scientific decisions and proposal text remain assigned to the project lead.
+### 2026-08-28 corrected: second stabilization wave
 
-## Three owner decisions, and the knowledge base checked against the repository (20.09.2026)
+- Source: items deferred from the morning pass.
+- Target: benchmark metric, `io_paths.py`, `build_register.py`, `build_graph.py`, viewer modules, `transform_sources.py`.
+- Result:
+  - Numeral metric: numberishness is decided on the uncollapsed token, before the fair profile's v-to-u collapse; 684 tokens in 61 types returned to numbers at about two percent false positives (`vil`, `vm`). Pages without numerals report null. 31 of 36 page-iteration values changed (numbers down, words slightly up); it02 still raises number consistency. Pilot figures keep the old metric because both experiments are closed. Prompt assembly byte-identical by hash.
+  - Consolidation: one atomic JSON writer, loader and `PIPELINE_DIR`/`REPO_ROOT` in `io_paths.py`; Inventaria derivation and input loaders once in `build_register`; `build_graph --out` puts `graph.jsonld` under the byte-identical gate. `extract_entities` keeps its own writer, because its committed files are research data without trailing newline. Known consequence: the TEI self-digest hashes `build_tei.py` alone although imported modules shape its output.
+  - Viewer: inline JavaScript moved into `entity-view.js`, `viewer-render.js` and `viewer-review.js`, verified byte-identical in exports and markup; `nextStatus` exported for testing.
+  - Dating: century ranges had collapsed to the first century, "15.–18. Jh." read as the eighteenth, a leading "bis" became a negative year. Eleven entries changed; an open start is null, renders from the raw string and sorts with the undated. The migrate path recomputes `datierung` from `raw`. Open: two years with intervening material (`1280 (ca.)-1480 (ca.)`) collapse to the first year, and trailing-dash open ends stay asymmetric, pending a decision on forms like `ca. (1450) 1600–1850`.
 
-Three decisions of the project owner. First, DoCTA becomes a locally run editing tool. The editor clones the repository, edits the research data in an edit mode of the locally running application and commits her changes herself with GitHub Desktop. The present path, corrections held in the browser's localStorage until an exported review file is ingested by the operator with `apply_review.py`, is the state to be replaced. The decision answers the requirement that the project lead must be able to operate the pipeline herself, and which interfaces and functions she needs is worked out together with her. Home of the decision is `specification.md`. Second, a TEI ODD is not needed. RELAX NG and, in the accounts pilot, Schematron and SHACL carry validation, and an ODD stays a possible later step only if DoCTA publishes a reusable TEI customisation. This replaces the wording "deferred" in `accounting-encoding.md` and `pipeline/schema/SOURCES.md`. Third, the working edition proposed on 28.08.2026 is still unconfirmed, and an introduction meeting with the project lead is set for 21.09.2026. The transcription convention with its permitted normalisations, the annotation vocabulary (priority object categories, order of the reconciliation sources, the free-text `role` field of entity iteration 01, place versus space) and the confirmation of the working edition lie with the project lead, recorded as responsibility in `specification.md`.
+### 2026-08-28 corrected: stabilization pass over pipeline, viewer and stylesheet
 
-A read of every knowledge document against code, data and generated artefacts corrected statements the repository contradicts. The viewer has a line overlay (`buildLineOverlay`), which `architecture.md` called missing and `design.md` listed as open. The viewer reads its entity layer from `data/entities/`, with the demo file as a fallback that no longer triggers for the one document it covers. No page loads `lib/marked.min.js`. The display takes no grading from model output, since the entity prompt forbids a confidence field and the loader drops the one of the demo file, and the `--conf-*` tokens colour states of the text layer. `data/transkribus_collection.json`, `data/transkribus_status.json` and `data/raitbuch2_pages.json` have consumers and moved from the exploration artefacts to the pipeline inputs in `INDEX.md`. `data/stats.json` is no source of current figures. The benchmark computes metrics per page, and zone stratification and line loss are specified only, which `INDEX.md`, `specification.md` and the benchmark README now say. The README no longer lists the removed knowledge page, names `project.md` and `handoff.md`, and states that no page has passed review. `pipeline/README.md` says that the `provenance` field of `documents.json` is a constant, the docstring of `apply_review.py` names the edition run as a base, and the edition README names the blocked benchmark page that `errors.json` records.
+- Source: four-part deep review (pipeline, evaluation and scripts, site JavaScript, CSS and tooling).
+- Target: `check_pipeline.py`, `apply_review.py`, viewer, TEI.
+- Result:
+  - The idempotence check rebuilds the register with `carry_from` at the real pipeline directory; the empty-directory rebuild lost review state and would have turned the gate red with the first review. `_only_review_state` removed.
+  - Review export: a missing `status` key is refused in validation, malformed JSON is a named refusal, and edition runs are accepted as review base, without which self-transcribed documents were unreviewable.
+  - Viewer: status buttons got explicit toggle semantics (the shared toggle demoted an approved page to `gesichtet`). The `page` parameter is a page number, not an array index. The draft badge is the floor of machine-output marking in synopsis mode.
+  - Editing `build_tei.py` re-pins the digest in all TEI headers; regenerated under the on-disk date. Deferred to the second wave: numeral metric, zero consistency for pages without numerals, date normalization, fail-closed writes in the SiCProD fetch scripts, viewer module extraction, shared `io_paths`.
 
-`handoff.md` gained the current result and the open work. The inventory path runs from the pipeline's own transcription through entity extraction to TEI valid in both stages for the documents where it was run, the review step is implemented and has never been run with a real export, and no edition path exists for the account books. The process lessons of the pilot 2 review are named there once as open work after the reviewed sample exists, none of them being implemented. No document was removed or renamed.
+### 2026-08-28 integrated: register view and catalogue extent
 
-Four points stay open. How the edit mode writes into the repository, since the technical constraints of `specification.md` were written for the published static site. The constant `provenance` field in `documents.json` misstates the origin of the two documents DoCTA transcribed itself and is a code matter. `docs/lib/marked.min.js` is an unused file of the published site. The token names `--conf-*` still carry the confidence wording they no longer mean.
+- Source: two approved packages.
+- Target: exploration, `sources.json`, `transform_sources.py`, site.
+- Result: `?view=register` shows the corpus-wide entity index from `graph.jsonld` with type tabs, attested spellings, deep links per attestation and the `register.xml` fragment as citable address. `seiten` replaced by `catalogue_extent {value, unit, raw}` with a conservatively derived unit (`bilder` where account-book evidence proves it, `seiten` where A 006 side counts hold, `unbekannt` otherwise; `raw` empty until the catalogue CSV is next available); `transkribus_docs` is an array; `digital_images` the derived sum. The site shows scans first with the catalogue extent as labelled secondary, and the progress bar computes both sides from the register in one unit. Migration runs as `transform_sources.py --migrate` because the CSV is outside the public clone.
 
-## Methods review of the HTR evaluation, and its two correction phases (28.08.2026)
+### 2026-08-28 integrated: feedback response to the project lead
 
-A critical methodological review of the evaluation found the measurement infrastructure sound and three structural weaknesses beside it. First, iteration it02 was developed on the same reference pages the benchmark measures, its glossary lemmata stand verbatim in the gt_lines and the measured strict-CER gain matches the prompt document's own expectation while fair CER stayed flat, so the in-sample comparison cannot carry the iteration choice; pilot2 supports it02 on unseen material without comparing, and the open remedy is an it01 run over the pilot page sets, which needs API access. Second, htr-evaluation.md described unimplemented measurement components in the present tense; the document now separates operating state from a labelled requirements register. Third, the site named the reference a human reference from the Inventaria edition while the measured reference is the Transkribus transcript with workflow status DONE, a workflow status and no scholarly approval; the wording is corrected wherever displayed.
+- Source: fourteen feedback points on the prototype.
+- Target: response document, handoff.md, project.md, specification.md.
+- Result: seven implemented, two clarified as data-function questions (SiCProD exports versus SiCProD-mediated digitisations; source-based network instead of the old database view), four partly open (independent non-Inventaria source, annotation harvest, review-effort quantification, proposal reconciliation), one superseded. The mail proposed a working edition for the project lead's research, offered Inventaria the generated TEI in return for clarified transcription use and annotation licensing, and announced an annotation editor with reconciliation against SiCProD, Wikidata, GND, Inventaria and Getty AAT. This revived the Inventaria coordination set aside that morning, now mediated by the project lead.
 
-Phase one made the repeat-agreement metric symmetric (Dice over a deterministically oriented alignment, since difflib's alignment choice depends on argument order), stripped folio markers in all their spellings, enriched the summary with distances, reference class, a criterion-based degenerate flag (fair reference under 100 characters, reproducing exactly the two excluded pages) and a versioned normalisation profile, recomputed the pilot summaries on the corrected metric with the originally published figures preserved beside them as oldmetric files, gave the amounts report a coverage section (17 of 70 blocks decide, the rest is unverifiable), and put the benchmark summary and its published copy under the healthcheck.
+### 2026-08-28 corrected: Inventaria in the TEI headers
 
-Phase two added analyze_summary.py, which turns previously unbacked claims into reported statistics: word consistency correlates with fair CER at Spearman -0.93 (it01) and -0.79 (it02) with exact permutation p of 0.007 and 0.048 at n=7, which is the empirical licence for consistency-based triage; it02 reaches a lower strict CER on 7 of 7 reference pages (exact sign test p=0.0078) while fair CER is flat, which replaces the site's undersized noise threshold with a paired page tally; and the uncertain markers reach 95.4 percent precision at 25.4 percent recall under it01 against 88.4 at 39.3 under it02, both far above the random base rate, so the it02 trade buys recall with precision. The site aggregates by length-weighted micro CER with the page mean as secondary, excludes degenerate references by the data flag, and the corrected pilot claim now reads the stronger way: the untuned pilot document scores about four CER points better than the benchmark reference pages. The it02 prompt documents no longer call themselves drafts; their prompt_hash values match the committed runs unchanged, and this entry records their acceptance as the frozen production configuration of the edition track.
+- Source: TEI that named Inventaria nowhere and claimed an unrevised layer for fully corrected documents.
+- Target: `build_tei.py`, `docta.rng`, `check_pipeline.py`.
+- Result: every attributed document carries `resp-inventaria-transcription`, worded by Transkribus done status (all pages, a stated split, or none), a `bibl` with the edition link where known, and a matching editorialDecl. Done is named a platform workflow status and an Inventaria step; DoCTA's facsimile review stays a separate axis. Attribution mirrors the projection's derivation from `source_mapping.json` and `inventaria_mapping.json`. `docta.rng` gained the three needed shapes; the entity-reference check is scoped to elements with the entity responsibility, since `@ref` on a project name addresses the project.
 
-## Second stabilization wave: metric correction, consolidation, module extraction, dating fix (28.08.2026)
+### 2026-08-28 corrected: layer-explicit provenance, sticky controls, exploration
 
-The deferred items of the morning's stabilization pass landed in four commits. The benchmark numeral metric now decides numberishness on the uncollapsed token, before the fair profile's v-to-u collapse, so roman numerals containing v count as numerals again; 684 tokens in 61 types moved back into the number bucket at roughly two percent false positives (`vil`, `vm`), a failure mode the old rule already had for j-free words. Pages without numeral tokens report null instead of a false zero. The recomputed summary changed 31 of 36 page-iteration values, uniformly numbers down and words slightly up, and the qualitative finding stands: iteration 02 still raises number consistency substantially. Pilot and pilot2 keep their old-metric figures because both experiments are closed; htr-evaluation.md records the correction. The prompt assembly stayed byte-identical, verified by hash, so the frozen iterations are untouched.
+- Source: operator session over the running site.
+- Target: viewer, home page, exploration.
+- Result: the entity legend leads with "Entities" and every text chip with "Text:", since an unlabelled extraction model beside "Human-corrected (Inventaria)" read as a contradiction. The Transkribus fallback reads "no correction recorded", because a missing done status documents nothing. Search row, chips and key stick under the navbar; the navbar itself had lost `sticky-top` to Bootstrap's `position-relative !important` added by the BETA code. A returning-visitor 404 came from a projection shape change without a `DATA_VERSION` bump; shape changes under `data/` must bump it. The entities view moves constant columns into a facts line and gains a filter and deep links; the network gains neighbourhood isolation, legend, shared tooltips, triangle object nodes and keyboard access. VLM-transcribed documents are clickable from home, and thumbnails fall back to collection metadata.
 
-The pipeline's file layer consolidated into `io_paths.py` (one atomic JSON writer, one loader, `PIPELINE_DIR`/`REPO_ROOT` ending the ROOT name collision), the Inventaria derivation and the input-table loaders exist once in `build_register`, and `build_graph` gained `--out` so `graph.jsonld` joined the byte-identical rebuild gate. One deliberate exception: `extract_entities` keeps its own writer because the committed extraction files carry a serialization without trailing newline and are research data, not rebuildable artifacts. Known consequence, recorded rather than solved: the TEI self-digest still hashes `build_tei.py` alone, while imported modules can now shape its output without moving the digest.
+### 2026-08-28 rejected: knowledge page on the site
 
-The viewer's inline JavaScript, half the site's code and outside every linter and test, moved into `entity-view.js`, `viewer-render.js` and `viewer-review.js`; review exports and all rendered entity markup were verified byte-identical against the pristine tree, and `nextStatus` is exported precisely so the status contract is testable alone.
+- Source: operator decision.
+- Target: `docs/knowledge.html` (removed), About, benchmark.
+- Reason: the knowledge base addresses agents and repository readers; site visitors do not use it, and GitHub renders the Markdown.
+- Result: page, sidebar styles and entry points removed; About and benchmark link to `docs/knowledge/` on GitHub. Supersedes the knowledge viewer part of the refactor below; naming and frontmatter stay.
 
-The date normalization in `transform_sources.py` produced wrong published datings: century ranges collapsed to the first century, the split "15.–18. Jh." read as the eighteenth, and a leading "bis" dash became a negative year sorting to the top. Eleven entries changed; an open start is now a null start rendering from the raw string and sorting with the undated. The migrate path recomputes `datierung` from `raw`, which it previously did not, so corrections reach the file at all. Still open, recorded in the tests as current behaviour rather than endorsed: raw values naming two years with intervening material (`1280 (ca.)-1480 (ca.)`) collapse to their first year, and trailing-dash open ends stay symmetric-less; both await a decision on reading forms like `ca. (1450) 1600–1850`.
+### 2026-08-28 integrated: knowledge base on the Promptotyping convention
 
-## Stabilization pass over pipeline, viewer and stylesheet (28.08.2026)
+- Source: the convention's naming contract.
+- Target: `docs/knowledge/`.
+- Result: lowercase canonical names with `INDEX.md` as registered exception: `REQUIREMENTS.md` to `specification.md`, `TECH.md` to `architecture.md`, `CONTEXT.md` to `domain-knowledge.md`. Frontmatter core on every hand-written document with `version: "1.0"` and `template:` where a template exists. `project.md` (charter from INDEX and README) and `handoff.md` added. `INDEX.md` became navigation, glossary and routing register; its phase narrative moved to `project.md`. Keeping uppercase names was rejected, because the file name is the agents' primary routing signal.
 
-A four-part deep review (pipeline, evaluation and scripts, site JavaScript, CSS and tooling) fed a first correction wave, applied in three commits with disjoint file scopes. The decisions that carry reasons:
+### 2026-08-28 corrected: About page framing
 
-The idempotence healthcheck now rebuilds the register with `carry_from` pointing at the real pipeline directory, because the previous empty-directory rebuild lost ingested review state and the projection comparison had no exemption, so the first committed review would have turned the pre-commit gate permanently red. The register-only exemption (`_only_review_state`) fell away with it; the check is one statement again. The review-export contract closed on three edges: a missing `status` key is refused in validation instead of crashing the ingest, malformed JSON becomes a named refusal, and edition runs are accepted as review base, which the README had promised and the code denied — without this, precisely the documents DoCTA transcribed itself were unreviewable.
+- Source: operator review.
+- Target: about.html.
+- Result: the page no longer presents the prototype as a reply to reviewers or proof of a predetermined claim. It starts from the historical scope, names the questions the prototype tests, states coverage and separates edition provenance from DoCTA annotations; the workflow is research infrastructure for comparative source analysis. Reproducibility guarantees stay in the knowledge base.
 
-In the viewer, the two status buttons received explicit toggle semantics because the old shared toggle silently demoted an approved page to `gesichtet` on a Reviewed click, and that demotion would have entered the export. The `page` URL parameter now means the page number rather than an array index; every producer already passed a page number, so the index reading was a latent wrong-folio bug for any document with a gap. The draft badge became the floor of the machine-output marking in synopsis mode, since the provenance chip could vanish on two silent paths and the marking must not depend on it.
+### 2026-08-28 integrated: a document DoCTA transcribes itself
 
-Editing `build_tei.py` forces a digest re-pin in all sixty TEI headers because the generator writes its own sha256 into every file; the regeneration used the on-disk date and changed nothing but the digest line. Deferred to a second wave, because they alter published figures or are larger cuts: the benchmark numeral metric (the fair profile's v-to-u collapse runs before a numeral check whose character class lacks `u`, so roman numerals containing `v` leave the number metric), the `consistency_numbers` zero for pages without numerals, the date normalization in `transform_sources.py` (century ranges collapse, a leading "bis" dash produces negative years on the published site), fail-closed writes in the SiCProD fetch scripts, the extraction of the viewer's inline JavaScript into testable modules, and a shared `io_paths` module for the six copies of JSON I/O.
+- Source: document 12593450 (A 024.1, one sheet, 1489) without Transkribus transcription; 12647153 (A 006.8) page 1.
+- Target: `docta.rng`, `build_register.py`, `build_tei.py`, `evaluation/edition/`, viewer.
+- Result: the pipeline transcribes, encodes, extracts entities and displays these documents, naming DoCTA at every step. Five decisions, each against a named alternative:
+  - `resp-vlm-transcription` as a fifth responsibility naming model and prompt iteration; reusing `resp-transkribus-layer` would assert a work step that never ran. Status stays `machine-unrevised`, since the axis measures revision, not the model.
+  - Synthetic line ids `v1..vn`, assigned deterministically from run line order and relative to the run, for the edition cohort only; benchmark and pilot runs keep `null`. Ids for every VLM run would rewrite hundreds of measuring runs to no purpose.
+  - A separate append-only `edition` cohort with one reading per page and no summary, because a second reading raises the question which is the edition text, and without repeats or reference there is no metric.
+  - A site projection at `docs/data/pipeline/transcriptions/<docId>.json` instead of a fake export; `docs/data/transcriptions/` stays Transkribus alone and `source_mapping.json` keeps `has_text: false`.
+  - No content-class value: such a page stays `unknown` until adjudication on the scan, and is not counted as a page with text.
+  - The TEI has no zones and unbound `lb`, keeps the facsimile with the IIIF URL the model read, and one `<ab>` per page. Pages 2 to 6 of 12647153 need an authenticated Transkribus `fulldoc` call with `TRANSKRIBUS_USER` and `TRANSKRIBUS_PASS`; they stay empty until it runs.
 
-## Register view, and the catalogue figure separated from the image count (28.08.2026)
+### 2026-08-26 integrated: VLM transcription test
 
-Two approved packages landed together. The exploration gained `?view=register`, the corpus-wide entity index from `graph.jsonld` with tabs per type, attested spellings, every attestation as a deep link into the viewer and the `register.xml` fragment as citable address. And `sources.json` no longer carries the ambiguous `seiten`: `catalogue_extent {value, unit, raw}` holds the catalogue figure with a conservatively derived unit (`bilder` where the account-book evidence proves it, `seiten` where the A 006 side-count evidence holds, `unbekannt` otherwise, `raw` empty until the catalogue CSV is next available), `transkribus_docs` is an array so a shelfmark spanning two Transkribus documents loses neither, and `digital_images` is the derived sum. The site shows scans as the primary figure with the catalogue extent as a labelled secondary where it diverges, and the progress bar computes both sides from the register in one unit, so it no longer divides written sides by scanned openings. The migration runs as `transform_sources.py --migrate` because the CSV lives outside the public clone; the CSV path produces the same schema with the true raw cell.
-
-## Feedback response sent to the project lead (28.08.2026)
-
-The fourteen feedback points on the prototype were answered in a response document with per-point status and direct links: seven implemented on the published site, two clarified as data-function questions (the SiCProD exports against the SiCProD-mediated digitisations, and the source-based network in place of the old database view), four partly open (independent non-Inventaria source pending the remaining images, annotation harvest pending coordination, review-effort quantification pending a representative sample, proposal reconciliation pending its ground version), one superseded (the old SiCProD network observation). The accompanying mail proposes DoCTA's next form as a working edition tailored to the project lead's research, offers Inventaria the generated TEI files in return for clarified transcription use and annotation licensing, and announces the annotation editor with reconciliation against SiCProD, Wikidata, GND, Inventaria and Getty AAT. The open points moved into `handoff.md`; the working-edition framing into `project.md`; the annotation editor into `specification.md`. This partially revives the Inventaria coordination that the morning session had set aside, now mediated by the project lead and with the TEI return offer as the new element.
-
-## Inventaria enters the TEI headers (28.08.2026)
-
-The generated TEI had named the Inventaria project nowhere, and for the fully corrected documents the header even claimed an unrevised recognition layer. Every attributed document now carries `resp-inventaria-transcription` with a resp text differentiated by Transkribus done status (all pages, a stated split, or none), a `bibl` with the published edition link where the harvest holds one, and an editorialDecl that matches; the done status is named as a workflow status of the platform and a step of the Inventaria project, while DoCTA's own facsimile review stays a separate axis. The attribution mirrors the register projection's derivation from `source_mapping.json` and `inventaria_mapping.json`, `docta.rng` grew exactly the three shapes needed, and the entity-reference healthcheck was scoped to elements carrying the entity responsibility, because the new `@ref` on a project name addresses the project and never a register entry.
-
-## Provenance made layer-explicit, controls sticky, exploration reworked (28.08.2026)
-
-Operator session over the running site. The viewer's toolbar had shown the entity extraction's "gemini-3.7-flash · not verified" unlabelled beside the text chip "Human-corrected (Inventaria)", which read as a contradiction; the legend now leads with "Entities" and every text chip leads with "Text:". The Transkribus fallback chip was reworded to "Transkribus HTR · no correction recorded", because a missing done status documents nothing about actual correction work. On the home page the search row, category chips and stage key stick under the navbar as one block; the root cause of the navbar itself not sticking was the BETA-badge code adding Bootstrap's `position-relative` utility (with `!important`) to the navbar, which killed its `sticky-top`. A returning-visitor 404 in the viewer traced to the register projection having gained `transcription_source` without a `DATA_VERSION` bump; shape changes under `data/` must bump it. The exploration entities view drops per-source constant columns into a facts line, gains a free-text filter and row deep-links into the viewer; the network view gains neighbourhood isolation, a legend, shared tooltips, triangle object nodes and working keyboard access. VLM-transcribed documents are now clickable from the home page, and thumbnails fall back to the collection metadata for mapped documents without a register entry.
-
-## Knowledge vault page removed from the site (28.08.2026)
-
-`knowledge.html` is gone, together with its sidebar styles and its entry points from other pages; About and benchmark now link to `docs/knowledge/` on GitHub. Operator decision of the same day: the knowledge base addresses agents and repository readers, site visitors do not understand it, and a public repository leaves the Markdown readable without a renderer. The refactoring of the same morning (viewer manifest, legacy anchors, frontmatter stripping) is thereby superseded where it concerns the viewer; the naming contract and frontmatter of the documents stay. This partially supersedes the entry below.
-
-## Knowledge base refactored onto the Promptotyping convention (28.08.2026)
-
-The knowledge folder now follows the naming contract of the Promptotyping documents convention, lowercase canonical function names with `INDEX.md` as the registered uppercase exception. `REQUIREMENTS.md` became `specification.md` and `TECH.md` became `architecture.md`, because the convention names these functions canonically; `CONTEXT.md` became `domain-knowledge.md`, matching the template slug of the Domain Knowledge function; the remaining documents kept their names in lowercase. Every hand-written document carries the frontmatter core of the convention (`title`, `project`, `method`, `status`, `created`, `updated`) with `version: "1.0"` as the repo-wide schema version, and documents with a catalogue template reference it in a `template:` field. Two documents the convention triggers unconditionally were added, `project.md` as the charter, distilled from the former INDEX state section and the README, and `handoff.md` as the standing process inbox. `INDEX.md` was rewritten as navigation plus glossary with a document register of routing questions; its phase narrative moved to `project.md`. The knowledge viewer strips frontmatter before rendering and keeps the old uppercase hash anchors working through a redirect map. The alternative, keeping the historical uppercase names, was rejected because the file name is the primary routing signal for agents and the convention is what the method site itself practises.
-
-## About-page reframing (28.08.2026)
-
-The About page no longer presents the prototype as a response to reviewers or as proof of a predetermined methodological claim. It begins with the historical research scope, identifies the questions tested by the prototype, states the current coverage and separates the provenance of source editions from DoCTA annotations. The digital workflow is described as research infrastructure for comparative source analysis. Technical reproducibility guarantees remain documented in the Knowledge Vault rather than in the public project description.
-
-## A document DoCTA transcribes itself, end to end (28.08.2026)
-
-Until now every text in the pipeline came from Transkribus, and the whole chain was built on that assumption. The edition track breaks it. Document 12593450 (A 024.1, one sheet, 1489) has no Transkribus transcription, and the pipeline now produces its text itself, encodes it, extracts entities from it and shows it in the viewer, with DoCTA named as the responsible party at every step. Document 12647153 (A 006.8) takes the same route for its first page.
-
-Five decisions were needed, and each one had an alternative that was rejected for a stated reason.
-
-**A fifth responsibility, `resp-vlm-transcription`.** The closed list in `schema/docta.rng` held one transcription step, `resp-transkribus-layer`, whose prose names the Transkribus recognition layer. Reusing it for a text produced by our own model would have asserted a work step that never ran on that source, which is exactly what the closed list exists to prevent. The new value names the model and the prompt iteration in its `name`. The status axis stays as it was, and such a document reports `machine-unrevised`, because that axis measures how far a text has been revised and a model reading is unrevised whichever model produced it.
-
-**Synthetic line ids `v1`, `v2`, ... for edition runs.** A review decision, an entity anchor and an `lb` all address a single line, and a vision model returns text without layout identity. The ids are assigned deterministically at register build from the line order of the run, they are relative to that run, and the register says so. Only the edition cohort gets them; a benchmark or pilot run keeps `null`, since it is measured as a whole and nothing addresses a line of it. The alternative, minting ids for every VLM run, would have rewritten hundreds of measuring runs to no purpose.
-
-**A separate run cohort `edition`.** The benchmark and the pilots repeat every page because they measure; this cohort transcribes each page once, because a second reading would raise the question which of the two is the edition text and nothing in the pipeline answers that. Its runs are append-only like every other cohort, and it writes no summary file, since without repeats and without a reference there is no metric to compute.
-
-**A site projection instead of a fake export.** `docs/data/transcriptions/` is the Transkribus export and nothing else writes into it. The viewer therefore reads a document DoCTA transcribed from `docs/data/pipeline/transcriptions/<docId>.json`, generated beside the register projection and carrying its provenance and the state `machine-unrevised`. `source_mapping.json` keeps `has_text: false` for these documents, because that field states what Transkribus holds.
-
-**No entry in the content-class vocabulary.** A page carrying an edition run stays `unknown`. What a page holds is settled on the scan in an adjudication step, and that step has not run; recording the transcription as a run asserts nothing beyond what happened. The consequence is visible in the site figures, where such a page is not counted as a page with text.
-
-The TEI files carry no zones for these documents and their `lb` elements stay unbound, because no layout analysis produced a polygon. The facsimile stays, with the IIIF URL of the page the model actually read, and the body has one `<ab>` per page rather than an invented region structure.
-
-What is not done is the rest of document 12647153. A document without a Transkribus export carries no page list, so the only image key the repository holds for it is the first page, from `transkribus_collection.json`. The keys of pages 2 to 6 need an authenticated Transkribus `fulldoc` call, and no environment of this repository currently holds `TRANSKRIBUS_USER` and `TRANSKRIBUS_PASS`. The five pages stay empty in the register until that call runs.
-
-## Phase status (as of 26.08.2026)
-
-| Phase | State | Result |
-|-------|-------|--------|
-| 1. Preparation | Done | Source documents collected (project-internal, not in the public repository) |
-| 2. Exploration | Done | SiCProD API probed, catalogue CSV analysed, Transkribus collection mapped (115 documents, 12,236 pages), IIIF verified |
-| 3. Distillation | Done | Eight knowledge files plus a project-internal implementation plan (`IMPLEMENTATION.md`, likewise not in the public repository) |
-| 4. Implementation | Done | Eight pages built, data wired in, public since 19.02.2026 at https://dhcraft.org/DoCTA/ |
-| HTR iteration | Running | Five test images evaluated with six prompt variants; the comparison against a specialised HTR model and a scholarly account-book reference are still open |
-
-## Promptotyping iteration (26.08.2026)
-
-### The VLM transcription test
-
-The test processes four openings from account book 2 and one inventory page with six variants of `gemini-3.7-flash`. Raw outputs, metrics and a synopsis viewer are under `experiments/transcription-test/`. Technical function was observed. Scholarly checking and user acceptance are outstanding, so every output of this run is unrevised machine transcription.
+- Source: four openings of account book 2 and one inventory page, six variants of `gemini-3.7-flash`, outputs under `experiments/transcription-test/`.
+- Target: htr-evaluation.md.
+- Result:
 
 | Finding | Consequence |
 |---------|-------------|
-| V3 few-shot reaches the best strict and fair CER on the inventory reference candidate | V3 is carried on as the current development configuration |
-| V6 image enhancement reaches the highest word overlap and the second-best fair CER | V6 stays a comparison candidate for hard-to-read pages |
-| V4 page splitting worsens the inventory values | Crops are used only in a targeted way, for difficult regions |
-| Account-book outputs vary in names, years and monetary amounts | The configuration currently suits structural and category survey; research data need adjudication |
-| The blank test page is recognised correctly by all structured variants | Blank-page and layout triage can go into a continuous run |
+| V3 few-shot reaches the best strict and fair CER on the inventory reference candidate | V3 carried on as development configuration |
+| V6 image enhancement reaches the highest word overlap and second-best fair CER | V6 stays a candidate for hard pages |
+| V4 page splitting worsens the inventory values | Crops only for difficult regions |
+| Account-book outputs vary in names, years and amounts | Suits structural and category survey; research data need adjudication |
+| The blank test page is recognised by all structured variants | Blank-page and layout triage can enter a continuous run |
 
-### Correcting the notion of a reference
+  Three inventories hold `DONE`, the rest `IN_PROGRESS`, none a documented ground-truth status, and two transcription conventions occur; "ground truth" therefore reads as **inventory reference candidate**. Production decisions are taken per task (category survey, diplomatic transcription, amounts), and the next comparison uses one held-out account-book set for the current configuration, a stronger VLM and a specialised Transkribus model, with divergences shown with image details for adjudication. All outputs are unrevised.
 
-The inventories in the collection carry working transcriptions. Three documents hold the Transkribus status `DONE`, the remainder `IN_PROGRESS`. None holds a formal ground-truth status documented within the project, and two transcription conventions are present besides. The viewer's use of the term "ground truth" is therefore read methodologically as **inventory reference candidate** until convention and scholarly approval are documented.
+  Phase status on 2026-08-26: preparation, exploration (SiCProD, catalogue CSV, Transkribus collection of 115 documents and 12,236 pages, IIIF), distillation (eight knowledge files and a project-internal `IMPLEMENTATION.md`) and implementation (eight pages, public since 2026-02-19) done; HTR iteration running.
 
-### Methodological decision
+### 2026-02-19 integrated: implementation-phase decisions
 
-The production decision is taken per task. Category survey, diplomatic transcription and the reading of amounts receive separate checks. The next model comparison uses the same held-out account-book set for the current configuration, a stronger vision-language model and a specialised Transkribus model. Divergences are presented with image details for scholarly adjudication. The full review contract is in `htr-evaluation.md`.
-
-## Decisions (17.02.2026)
-
-### Agreed with the DH partner
+- Source: implementation commits of 2026-02-18 and 2026-02-19.
+- Target: network view, help page, home page.
+- Result:
 
 | Question | Decision | Reason |
 |----------|----------|--------|
-| Type of prototype | A functional tool rather than a mockup | The reviewer should be able to interact with it |
-| Priorities | Pipeline demo first, faceted search second, source exploration third | The pipeline addresses the review criticism most directly |
-| Technology stack | Vanilla JavaScript, as in coOCR/HTR | Consistency, no build process |
+| Network entry (86783f2) | Ego network by default, Sigmund at the centre, up to fifty neighbours, concentric layout; click opens a node's ego network; full network of the 75 best-connected nodes (COSE) behind a toggle | The full network was a cloud without a statement; an ego network answers who stands around a person |
+| Faulty node types (d89a58c) | Entities without index entry (`event-*`) filtered before drawing | The full network crashed |
+| coOCR/HTR (d89a58c, 25489aa) | Named in the HTR pipeline step and the reviewer section as editor in the loop for Transkribus results | Answers review point 3 concretely |
+| Data commitments (25489aa) | FAIR publication of all research data and a documented REST API over persons, relations, sources and transcriptions, beside the open repository | Makes reusability checkable |
+| Home figures | Six raw counts, no derived ratios | A ratio needs a denominator that does not yet exist |
+
+### 2026-02-17 integrated: prototype decisions with the DH partner
+
+- Source: agreement with the DH partner.
+- Target: architecture.md, specification.md.
+- Result:
+
+| Question | Decision | Reason |
+|----------|----------|--------|
+| Prototype type | Functional tool, not a mockup | The reviewer should interact with it |
+| Priorities | Pipeline demo, then faceted search, then source exploration | The pipeline answers the review criticism most directly |
+| Stack | Vanilla JavaScript as in coOCR/HTR | Consistency, no build |
 | Deployment | GitHub Pages | Static and public |
-| Authentication | None | The prototype has to be reachable for reviewers |
-| Images | Transkribus IIIF URLs, with a fallback if needed | IIIF in `<img>` presumed to be CORS-free |
+| Authentication | None | Reachable for reviewers |
+| Images | Transkribus IIIF URLs, fallback if needed | IIIF in `<img>` presumed CORS-free |
 
-### Open decisions at that date
+  Open at that date: the case study (kitchen categories in account book 2, "Provision und Sold" as its own study, or another account book; the project lead after checking a possible master of the kitchen), entity granularity (four demo types against nine in SiCPAS; project lead with the BeNASch team), mapping practice onto BeNASch (on example entries, with the Bern team), open-source positioning of coOCR/HTR (raised 2026-02-04, response outstanding). Still open for the proposal: a methodological text module for the resubmission, the case study, the BeNASch mapping, literature on historical linguistics (review point 5); optional: a spreadsheet URL for further metadata and the glossary idea of the project lead.
 
-| Question | Options | Who decides |
-|----------|---------|-------------|
-| Case study for the prototype | Search account book 2 for kitchen categories, treat "Provision und Sold" as its own study, or choose a different account book | The project lead, after verifying the possible mention of a master of the kitchen |
-| Entity granularity | Four entity types in the demo (person, place, object, time) against nine in SiCPAS | The project lead with the BeNASch team |
-| Mapping practice onto BeNASch | Worked out on a handful of example entries | The project lead with the Bern team |
-| Open-source positioning of coOCR/HTR | Raised with the project lead on 04.02.2026 | The project lead, response outstanding |
+### 2026-02-17 integrated: SiCProD, catalogue and Transkribus exploration
 
-## Decisions (18.–19.02.2026, implementation phase)
+- Source: SiCProD API, catalogue CSV, Transkribus collection 2197991 (figures updated 2026-08-26).
+- Target: data.md, domain-knowledge.md, specification.md.
+- Result:
 
-| Question | Decision | Reason |
-|----------|----------|--------|
-| Entry point into the network (commit 86783f2, 18.02.) | The ego network as the default view, with Sigmund at the centre, up to fifty neighbours and a concentric layout. Clicking a node opens that node's ego network. The full network, the seventy-five best-connected nodes under a COSE layout, sits behind a toggle. | The previous entry point through the full network was a cloud without a statement. An ego network answers a question immediately, namely who stands around this person, and makes exploration the obvious next action. |
-| Handling faulty node types (commit d89a58c, 19.02.) | Entities without an entry in the index (`event-*`) are filtered out before drawing. | The full network crashed otherwise. |
-| Positioning of coOCR/HTR (commits d89a58c and 25489aa, 19.02.) | coOCR/HTR is named explicitly as a tool in two places, in the HTR step of the pipeline demo and in the reviewer section of the help page, each time as the editor in the loop for validating and correcting Transkribus results. | The sister project answers review point 3 on language-model approaches concretely instead of abstractly, and shows that quality assurance does not still have to be invented. |
-| Data commitments towards reviewers (commit 25489aa, 19.02.) | The help page names two commitments for the full project: publication of all research data under the FAIR principles, and a documented REST API over persons, relations, sources and transcriptions, alongside the open GitHub repository. | Reusability was only asserted in the proposal. Named as a commitment in the prototype it becomes checkable. |
-| Figures on the home page | Six raw counts (persons, relations, places, sources, transcriptions, functions) and no derived ratios. | A ratio such as relation coverage in percent would need a defined denominator that does not yet exist methodologically. An invented percentage does more harm than an honest count does good. |
+| Assumed | Found | Consequence |
+|---------|-------|-------------|
+| SiCProD events, number unknown | Only 28 (diets, imperial diets, weddings) | Everyday practice comes from the account books |
+| Salaries, 2,906 records | No amounts, only person-function links | Financial data from the account books |
+| Institutions, 215 typed | 207 without type | Institution filter of little use |
+| About 99 functions | About eighty court offices | Good for faceted search and court structure |
+| 736 places with coordinates | Many without lat/lng | A map will have gaps |
+| 6,288 persons | `first_name` filled for 6,281, `status` always empty, `alternative_label` useful | Given name shown, `status` not exported |
+| About 55 inventories transcribed | 57 carry text (8,979 lines, 35,724 words); three `DONE`, 54 `IN_PROGRESS` | Working transcriptions, partitioned by convention |
+| Account books untranscribed | Confirmed: 26 books, 8,561 pages; volumes 1 to 6 have layout analysis; since 2026-08-26 unrevised VLM output for four openings of book 2 | Compare a specialised HTR model against a checked reference |
+| Collection extent unclear | 115 documents, 12,236 pages: 64 inventories, 26 account books, 12 copybooks, 13 others | More material than expected |
+| IIIF possibly blocked by CORS | Loads without authentication | OpenSeadragon uses IIIF directly |
+| PAGE XML unknown | Page, TextRegion with coordinates, TextLine with coordinates, baseline and Unicode | Pre-fetch parser is straightforward |
 
-## Exploration results (17.02.2026)
+  Prototype prerequisites, all closed: credentials through `TRANSKRIBUS_USER` and `TRANSKRIBUS_PASS`; collection 2197991; 115 documents in `data/transkribus_collection.json`; IIIF without authentication; IIIF URLs for all 123 openings of account book 2 in `data/raitbuch2_pages.json`; 57 PAGE exports as JSON in `data/transcriptions/`; all 64 inventories matched to shelfmarks in `data/source_mapping.json`.
 
-### SiCProD API, expectation against reality
+  Catalogue CSV: sixteen empty Excel columns; Digitalisiert holds a page count; Transkribiert holds "Inventaria" or nothing; more than ten date formats; inconsistent dashes between the Repertorium section and the rest; Hs. 0041 duplicated, A 002.1 and A 2.1 a near duplicate; seven sources outside Sigismund's lifetime; a date in the Art column (row 304). 57 of 312 sources are transcribed, all castle inventories from Inventaria, no account book.
 
-| What we assumed | What we found | Consequence |
-|-----------------|---------------|-------------|
-| Events, number unknown | **Only 28 events**, namely diets, imperial diets and weddings | Everyday practices come from the account books rather than from SiCProD |
-| Salaries, 2,906 records | **No monetary amounts**, only links between person and function | Financial data have to be extracted from the account books |
-| Institutions, 215 with types | **207 without a type** | An institution filter is of little use |
-| Functions, some 99 distinct | Around eighty court offices, good variety | Excellent for faceted search and for analysing court structure |
-| Places, 736 with coordinates | Many without lat/lng | A map will have gaps |
-| Persons, 6,288 | Well documented. `first_name` is filled for 6,281 of 6,288, `status` is empty throughout. | The given name is shown in search and network, `status` is not exported at all. Name variants (`alternative_label`) are present and useful. |
+  Documents in the collection not marked transcribed in the CSV: twelve copybooks (2,224 pages, images only); court and regiment ordinances TLA_HS_208.1 and 208.2 (149 pages); the wedding cluster Hs. 2466, 2467, 2468, 2469 with 33, 58, 19 and 54 scans against catalogue statements of 60, 100, 35 and 140 pages, which set represents the complete volume being unresolved (data.md); Hs. 113 (133), Hs. 324 (86), Hs. 514 (16), Hs. 792 (7), Hs. 5087.1+2 (218).
 
-### The catalogue CSV, quality problems
+  Coverage gaps closed from project-internal sources (not in the public repository): epistemic asymmetry (`sources/coocr-htr-epistemologie.md`) and the category discrepancy between the proposal and SiCPAS into domain-knowledge.md; phase 1 sequencing and the project lead's requirements into specification.md; open questions on account book 2 into data.md. Deliberately not captured: the proposal's bibliography, work packages and Gantt chart, financial detail.
 
-Serious problems:
+### 2026-02-17 rejected: dead ends
 
-- Sixteen empty ghost columns, artifacts of an Excel export
-- The Digitalisiert column holds a page count rather than a boolean
-- The Transkribiert column holds either "Inventaria" or nothing
-- More than ten different date formats
-- En dash against hyphen used inconsistently, the Repertorium section against the rest
+- Source: exploration and prototype work, one item from 2026-08-05.
+- Target: none; lessons apply to future work.
+- Result:
 
-Duplicates and errors:
-
-- Hs. 0041, a true duplicate
-- A 002.1 and A 2.1, a near duplicate with a typo
-- Seven sources outside Sigismund's lifetime
-- A date value in the Art column, row 304
-
-Structural finding: 57 of 312 sources are transcribed, exclusively castle inventories from the Inventaria project. No account book is transcribed.
-
-### File inventory, coverage gaps (closed)
-
-The source documents named below are project-internal and are not contained in the public repository (see INDEX.md).
-
-| Gap | Source document (project-internal) | Now captured in |
-|-----|------------------------------------|-----------------|
-| Epistemic asymmetry | `sources/coocr-htr-epistemologie.md` | domain-knowledge.md |
-| Sequencing of phase 1 | `sources/strategische-planung.md` | specification.md |
-| The project lead's own wording of the requirements | `sources/requirements-projektleitung.md` | specification.md |
-| Entity category discrepancy | `sources/fwf-proposal-2025.md` against SiCPAS | domain-knowledge.md |
-| Open source questions on account book 2 | `sources/raitbuch-2-analyse.md` | data.md |
-
-### Deliberately not captured, proposal level rather than code
-
-- The bibliography of the proposal, around a hundred references
-- Work-package detail and the Gantt chart over 36 months
-- The financial detail of the proposal
-
-## Dead ends
-
-| What | Why it was a dead end | Lesson |
-|------|-----------------------|--------|
-| The Transkribus API in the browser | CORS blocks it, and OAuth2 in the client is insecure | Pre-fetch with Python |
-| SiCProD events as a source of practice data | Only 28 major events | Everyday practices come from the account books |
-| SiCProD salaries as a source of financial data | No amounts, only links | Financial data come from the account books |
-| Reading the SVG model diagram | 742 KB on a single line | The content was carried over as text into domain-knowledge.md |
-| Reading the PDF on Windows | pdftoppm unavailable | Agent-based extraction |
-| Transkribus authentication | The initial authentication failed with 401; it succeeded after correcting the credentials | Take credentials directly from the user |
-| The "correction" of the funding body (18.02.2026) | A review round classified the correct references to the funding body as errors and replaced them project-wide with "FWF". Reverted on 05.08.2026: APART-GSK is a programme of the body originally named, and the review of the first submission was that body's review. | A review can turn a correct statement into a wrong one. Proper names of funding programmes and institutions are checked against an external source rather than against the majority of occurrences inside the repository. |
-
-## Transkribus exploration (17.02.2026, updated 26.08.2026)
-
-### Collection 2197991, expectation against reality
-
-| What we assumed | What we found | Consequence |
-|-----------------|---------------|-------------|
-| Around 55 inventories transcribed | **57 carry text** (8,979 lines, 35,724 words). Three `DONE`, 54 `IN_PROGRESS`, no documented formal ground-truth status. | Treat them as working transcriptions and partition them by convention |
-| Account books not transcribed | **Confirmed for Transkribus.** 26 account books, 8,561 pages, no text. Volumes 1 to 6 carry a layout analysis. Since 26.08.2026 experimental, unrevised VLM output exists for four openings of account book 2. | Compare a specialised HTR model against a scholarly checked account-book reference |
-| Extent of the collection unclear | **115 documents, 12,236 pages**, comprising 64 inventories, 26 account books, 12 copybooks and 13 others | Considerably more material than expected |
-| IIIF URLs possibly a CORS problem | **No problem.** IIIF and direct URLs load without authentication. | OpenSeadragon can use IIIF directly, no pre-fetch needed for images |
-| PAGE XML format unknown | Structured as Page, then TextRegion with coordinates, then TextLine with coordinates, baseline and Unicode | The parser logic is clear and a pre-fetch script can be written |
-
-### Additional documents, absent from the CSV
-
-The collection holds documents that the catalogue CSV does not mark as transcribed:
-
-- Twelve copybooks, 2,224 pages, images only
-- Court and regiment ordinances, TLA_HS_208.1 and 208.2, 149 pages
-- The wedding cluster: Hs. 2466 with 33, Hs. 2467 with 58, Hs. 2468 with 19 and Hs. 2469 with 54 scans. These are counted scans from Transkribus. For the same four volumes the CSV states 60, 100, 35 and 140 pages, which are catalogue statements. Both sets are real; which of them represents the complete volume is unresolved (see data.md on the court ordinances).
-- Further manuscripts: Hs. 113 with 133, Hs. 324 with 86, Hs. 514 with 16, Hs. 792 with 7 and Hs. 5087.1+2 with 218 pages
-
-## Open points (consolidated)
-
-### Blocking for the prototype, all resolved
-
-- [x] Transkribus credentials, verified through the environment variables TRANSKRIBUS_USER and TRANSKRIBUS_PASS
-- [x] Collection ID, 2197991 at https://app.transkribus.org/collection/2197991
-- [x] Document IDs enumerated, 115 documents mapped, in `data/transkribus_collection.json`
-- [x] IIIF URLs tested without authentication, they work
-- [x] Sample facsimiles made accessible, IIIF URLs for all 123 openings of account book 2 in `data/raitbuch2_pages.json`
-- [x] PAGE XML of the transcribed inventories exported as JSON, 57 files in `data/transcriptions/`
-- [x] Mapping from Transkribus titles to catalogue shelfmarks, all 64 inventories matched, in `data/source_mapping.json`
-
-### Important for the proposal
-
-- [ ] A short methodological text module for the planned resubmission
-- [ ] Finalise the case study, including verification of the possible mention of a master of the kitchen (the project lead)
-- [ ] The mapping between practice and BeNASch, with the Bern team
-- [ ] Literature on historical linguistics, review point 5
-
-### Nice to have
-
-- [ ] A spreadsheet URL for additional metadata
-- [ ] Evaluate the glossary idea raised by the project lead
+| What | Why | Lesson |
+|------|-----|--------|
+| Transkribus API in the browser | CORS, and OAuth2 in the client is insecure | Pre-fetch with Python |
+| SiCProD events for practice data | Only 28 major events | Practice comes from the account books |
+| SiCProD salaries for financial data | No amounts | Financial data from the account books |
+| Reading the SVG model diagram | 742 KB on one line | Content carried into domain-knowledge.md as text |
+| PDF reading on Windows | pdftoppm unavailable | Agent-based extraction |
+| Transkribus authentication | 401 until the credentials were corrected | Take credentials directly from the user |
+| "Correcting" the funding body (2026-02-18) | A review replaced correct references project-wide with "FWF"; reverted 2026-08-05, since APART-GSK is a programme of the originally named body, whose review it was | Check proper names of programmes and institutions against an external source, not against majority use in the repository |
