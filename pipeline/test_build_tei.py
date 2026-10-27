@@ -1185,6 +1185,7 @@ def test_silver_inventory_correction_preserves_coverage_and_review_scope(
     assert "nothing is normalised, expanded or corrected" not in decl
     change = root.find(f'.//{TEI}change[@n="review"]')
     assert "Page 1 text corrected" in change.text
+    assert change.text.endswith("(state): reviewed")
     body = "".join(root.find(f"{TEI}text").itertext())
     for correction in event["pages"]["1"]["lines"]:
         assert correction["corrected"] in body

@@ -142,6 +142,10 @@ REVIEWED, APPROVED = "partly-reviewed", "approved"
 # page; the machine states of the register assert no reading of the scan.
 REVIEWED_STATUS = ("gesichtet", "abgenommen")
 
+# The German values stay in the register; the English TEI prose names them with
+# the labels the site shows through vocabLabel in docs/js/utils.js.
+REVIEW_STATUS_LABEL = {"gesichtet": "reviewed", "abgenommen": "accepted"}
+
 # A responsibility is declared only for a step that actually ran; the
 # verification statement therefore appears only in a file with a review layer,
 # and exactly one of the two transcription responsibilities is declared, the one
@@ -707,7 +711,8 @@ def _header(
         out.append(
             f'      <change{when} who="#{RESP_VERIFICATION}" n="review">Page'
             f" {page['pageNr']} {action} in the DoCTA viewer by"
-            f" {_esc(initials)} (state): {page['status']}</change>"
+            f" {_esc(initials)} (state):"
+            f" {REVIEW_STATUS_LABEL.get(page['status'], page['status'])}</change>"
         )
     out += [
         f'      <change n="transcription-summary" status="{stream}">'
