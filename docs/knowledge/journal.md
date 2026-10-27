@@ -10,7 +10,7 @@ status: active
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-20
+updated: 2026-10-27
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5.5)
 template:
@@ -26,6 +26,18 @@ related: [INDEX, project, specification, handoff]
 ## Entries
 
 Newest first. Each entry records one transition with its type (integrated, rejected, corrected, compacted), source, target and result. Figures inside an entry are the measurement of its date, not a current value; a later entry names any decision it supersedes.
+
+### 2026-10-27 corrected: review status wording in the TEI change note
+
+- Source: operator decision of 2026-10-27 on the `revisionDesc` wording left open on 2026-10-20.
+- Target: `pipeline/build_tei.py`, `pipeline/test_build_tei.py`, `docs/data/tei/`.
+- Result: the review note names the page status with the English label the site shows (`gesichtet` as reviewed, `abgenommen` as accepted), and the stored register values stay German. The "(state):" pattern stays, because every `revisionDesc` entry uses it. No current TEI file carries a review note; the rebuild with the date of the files on disk changed only the generator digest.
+
+### 2026-10-27 integrated: SiCProD feasibility and the open handoff points
+
+- Source: research of the SiCProD API on 2026-10-27 and the project lead's answer on proposal or data in the meeting of 2026-10-22.
+- Target: [handoff.md](handoff.md#current-boundaries), [plan.md](plan.md#feedback-round-of-2026-10-20), [specification.md](specification.md).
+- Result: SiCProD matching is recorded as feasible semi-automatically, with every identification left to the project lead. An automatic merge of extraction entities divided at a line end is rejected, since the same normalised name on adjacent lines is as often two inventory entries. The handoff point on proposal or data is closed, the stale statements on line exclusion and single-line annotation are corrected.
 
 ### 2026-10-20 corrected: findings of the browser acceptance
 

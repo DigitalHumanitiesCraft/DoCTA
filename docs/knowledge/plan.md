@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: 2026-09-21
-updated: 2026-10-20
+updated: 2026-10-27
 authors: [Christopher Pollin]
 template:
   name: Vorlage Plan
@@ -51,7 +51,7 @@ The historical project lead tested the working edition. Her requests and the fin
 | Annotate across line breaks | Every annotation and extracted entity is bound to one line, so a word divided at the line end, such as `Jo` / `seph`, is split or duplicated | Built on 2026-10-20: a selection across a line break saves one segment per line; the extraction entities stay line-bound |
 | See the progress of the work | No overview of corrected and annotated pages exists in the interface | Built on 2026-10-20: a dot per page under the facsimile toolbar and the count of corrected pages in source header and overview |
 | Access more pages of the household chamberlain inventories | A 024.1 is a single sheet and fully transcribed. The register holds no image reference for the pages of A 024.2, so further pages need image keys from authorized Transkribus metadata | Obtain the metadata through the account holder |
-| Link persons to SiCProD | External identity enrichment is future work (specification.md) | To be asked of the project lead before any work |
+| Link persons to SiCProD | External identity enrichment is future work (specification.md) | Feasible semi-automatically, researched on 2026-10-27 ([handoff.md](handoff.md#current-boundaries)); awaits the project lead's decision to use SiCProD as an authority |
 | Fully English working edition | Decided by the operator on 2026-10-20 | Site and guide translated, German kept for source text and stored data vocabulary |
 
 ## Joint walkthrough
@@ -96,7 +96,7 @@ Automated Inventaria import is technically implemented for an explicitly selecte
 
 Quantification distinguishes transcription error against an accepted reference, documented correction kinds, and historical counts derived from interpreted entries. It records no working duration. A changed line is neither one error nor one scholarly decision. Historical quantities require a defined unit and denominator, with Roman numerals, monetary units, omissions, source coverage and duplicate mentions checked separately. The comparison of recognition methods requires a common reference and a specialized HTR comparator.
 
-The editor-in-the-loop interaction is the scholar's correction of a source-bound reading and assignment to her own person register or vocabulary. It does not retrain a recognition model or automatically write back to Transkribus. The [annotation contract](specification.md#annotation-curation-in-the-viewer) distinguishes text corrections, retained legacy data and manual assignments. Highlighted mentions open their corresponding editing form. New assignments cover a selection within one saved line and currently export as JSON separately from TEI and the graph.
+The editor-in-the-loop interaction is the scholar's correction of a source-bound reading and assignment to her own person register or vocabulary. It does not retrain a recognition model or automatically write back to Transkribus. The [annotation contract](specification.md#annotation-curation-in-the-viewer) distinguishes text corrections, retained legacy data and manual assignments. Highlighted mentions open their corresponding editing form. New assignments cover a selection within one saved line or one drag across a line break, saved as one segment per line, and currently export as JSON separately from TEI and the graph.
 
 The meeting of 2026-09-21 shaped the working editor hierarchy ([design.md](design.md#working-editor-hierarchy)). The first historical question, a bounded source passage, the remaining transcription rules, useful controlled terms, the reference sample and the intended edition output are still to be established with the historical project lead. Inventory passages demonstrate the interface. Account books remain the project's leading research source and require their own accepted pilot. Repeated entity mentions and graph co-occurrence do not establish ownership, exchange or a historical event.
 

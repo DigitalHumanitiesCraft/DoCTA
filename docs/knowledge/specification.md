@@ -10,7 +10,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-02-18
-updated: 2026-10-20
+updated: 2026-10-27
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 template:
@@ -141,7 +141,7 @@ The full review specification is in `htr-evaluation.md`.
 
 ## Annotation curation in the viewer
 
-The working viewer shows editor-owned annotations only. Selecting text within one saved line opens Person, Term, Place and Date. Right-click is an additional entry point, while a toolbar button and Alt+A keep the action accessible without it. Persons, places and terms link to the editorial register. Dates preserve their quotation with optional exact or bounded normalization and uncertainty. Opening the viewer or selecting text performs no model API call and does not display stored machine proposals.
+The working viewer shows editor-owned annotations only. Selecting text within one saved line, or by one drag across a line break, opens Person, Term, Place and Date. Right-click is an additional entry point, while a toolbar button and Alt+A keep the action accessible without it. Persons, places and terms link to the editorial register. Dates preserve their quotation with optional exact or bounded normalization and uncertainty. Opening the viewer or selecting text performs no model API call and does not display stored machine proposals.
 
 Index beside Viewer provides a dedicated view of the saved persons, places and controlled vocabulary. Search covers names, spelling variants and notes. Category filters narrow the entries, and source links return to the exact assignment. Names never establish identity on their own. Entry creation and correction remain attached to source passages in the viewer. The persistence and publication boundaries are defined in [architecture.md](architecture.md#editorial-register-persistence).
 
@@ -191,5 +191,4 @@ These decisions remain with the historical project lead.
 ## Open questions
 
 - Structural line insertion, split and merge require an explicit identity, region and annotation-migration contract before they can safely change source anchors. Excluding a line from the edition text, marking an unclear reading and a mention made of segments that each sit in one line leave line identities unchanged and need no such contract.
-- How lines that are not source text are excluded, such as modern archival notes, foliation and editorial folio markers. Emptying the line is unsuitable, as recorded in [plan.md](plan.md#boundaries-still-requiring-implementation-or-evidence).
 - Which case study the resubmission builds on is not decided (see domain-knowledge.md).
